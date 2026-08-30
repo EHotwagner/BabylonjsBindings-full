@@ -18,6 +18,8 @@ drift, and clean-consumer evidence before release.
 
 `npm run generate:candidate` writes only tracked `generated-candidates/`; it never overwrites maintained source or advances the declaration lock. `npm run check:drift` follows every selected relative declaration import/export and fails on changed transitive hashes. Unsupported TypeScript constructs must be recorded in `coverage-and-drift.json`, never silently exposed as `obj`. Product skills are supplied by the Templates-owned `fable-bindings` skill manifest rather than copied into this provider template. Local proof precedes publication and any registry/wizard activation.
 
+`npm run coverage:generate` inventories every reachable module export in the locked core/loaders declaration graph and assigns a typed, runtime-only, blocked, or lossy disposition. `npm run coverage:check` validates the report schema and input digests; `npm run coverage:require-complete` is the release gate and intentionally fails while any blocked, lossy, or unsupported entry remains. A compile-clean generated candidate does not count as typed maintained coverage.
+
 ## Package locking
 
 `./build.sh` (also `npm run build`) is this workspace's .NET entrypoint: it asserts the lockfiles, restores in locked mode, builds, then runs the pinned npm install, doctor, drift and Node runtime lanes.

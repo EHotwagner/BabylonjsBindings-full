@@ -50,12 +50,14 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["path", "syntaxKind", "reason", "disposition"],
+        "required": ["path", "syntaxKind", "reason", "disposition", "occurrences", "coverageImpact"],
         "properties": {
           "path": { "type": "string", "minLength": 1 },
           "syntaxKind": { "type": "string", "minLength": 1 },
           "reason": { "type": "string", "minLength": 1 },
-          "disposition": { "enum": ["blocked", "lossy", "runtime-only"] }
+          "disposition": { "enum": ["blocked", "lossy", "runtime-only"] },
+          "occurrences": { "type": "integer", "minimum": 1 },
+          "coverageImpact": { "enum": ["excluded-from-typed"] }
         },
         "additionalProperties": false
       }

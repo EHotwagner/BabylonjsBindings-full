@@ -44,4 +44,5 @@ dotnet build BabylonjsBindings.slnx --no-restore
 npm ci --ignore-scripts
 npm run doctor
 npm run check:drift
+npm run coverage:check
 npm run test:runtime
