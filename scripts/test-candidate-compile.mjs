@@ -14,6 +14,7 @@ const simpleAliasProposalPath = resolve(root, "generated-candidates/SimpleAliase
 const simpleInterfaceProposalPath = resolve(root, "generated-candidates/SimpleInterfaces.proposal.fs");
 const simpleClassProposalPath = resolve(root, "generated-candidates/SimpleClasses.proposal.fs");
 const simpleFunctionProposalPath = resolve(root, "generated-candidates/SimpleFunctions.proposal.fs");
+const simpleVariableProposalPath = resolve(root, "generated-candidates/SimpleVariables.proposal.fs");
 const reportPath = resolve(root, "generated-candidates/compile-diagnostics.json");
 const candidate = await readFile(candidatePath);
 const loadersCandidate = await readFile(loadersCandidatePath);
@@ -25,6 +26,7 @@ const simpleAliasProposal = await readFile(simpleAliasProposalPath);
 const simpleInterfaceProposal = await readFile(simpleInterfaceProposalPath);
 const simpleClassProposal = await readFile(simpleClassProposalPath);
 const simpleFunctionProposal = await readFile(simpleFunctionProposalPath);
+const simpleVariableProposal = await readFile(simpleVariableProposalPath);
 const execution = spawnSync(
   "dotnet",
   ["build", "generated-candidates/BabylonjsBindings.FullCandidate.fsproj", "--no-restore"],
@@ -57,6 +59,7 @@ const report = {
   simpleInterfaceProposalSha256: createHash("sha256").update(simpleInterfaceProposal).digest("hex"),
   simpleClassProposalSha256: createHash("sha256").update(simpleClassProposal).digest("hex"),
   simpleFunctionProposalSha256: createHash("sha256").update(simpleFunctionProposal).digest("hex"),
+  simpleVariableProposalSha256: createHash("sha256").update(simpleVariableProposal).digest("hex"),
   status: execution.status === 0 ? "pass" : "fail",
   exitCode: execution.status,
   errorCount: diagnostics.size,

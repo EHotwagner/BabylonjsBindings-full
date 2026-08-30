@@ -51,6 +51,12 @@ const promotionFamilies = [
     manifestPath: "src/BabylonjsBindings/simple-function-coverage-manifest.json",
     proposalPath: "generated-candidates/SimpleFunctions.proposal.fs",
     description: "dependency-closed runtime function"
+  },
+  {
+    maintainedPath: "src/BabylonjsBindings/SimpleVariables.fs",
+    manifestPath: "src/BabylonjsBindings/simple-variable-coverage-manifest.json",
+    proposalPath: "generated-candidates/SimpleVariables.proposal.fs",
+    description: "dependency-closed runtime variable or constant"
   }
 ];
 const schemaPath = resolve(root, "work/001-full-babylonjs-bindings/contracts/coverage-and-drift.schema.json");

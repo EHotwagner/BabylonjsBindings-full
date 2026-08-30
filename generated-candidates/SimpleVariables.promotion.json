@@ -1,0 +1,181 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "declarationLock": "declaration-lock.json",
+    "packageVersion": "9.19.0"
+  },
+  "proposalSha256": "acec6cd5333c9ef3dffca2005f0a90f62755c26fa2f5c7a1a1c9098b5e7d74d5",
+  "exports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
+      "name": "_BabylonLoaderRegistered",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._BabylonLoaderRegistered",
+      "fsharpType": "bool"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Helpers/sceneHelpers.pure",
+      "name": "_forceSceneHelpersToBundle",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._forceSceneHelpersToBundle",
+      "fsharpType": "bool"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Extensions/engine.transformFeedback.pure",
+      "name": "_forceTransformFeedbackToBundle",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._forceTransformFeedbackToBundle",
+      "fsharpType": "bool"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "_IsMacPlatform",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._IsMacPlatform",
+      "fsharpType": "bool"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
+      "name": "backbufferColorTextureHandle",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.backbufferColorTextureHandle",
+      "fsharpType": "BabylonjsBindings.TypeAliases.FrameGraphTextureHandle"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
+      "name": "backbufferDepthStencilTextureHandle",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.backbufferDepthStencilTextureHandle",
+      "fsharpType": "BabylonjsBindings.TypeAliases.FrameGraphTextureHandle"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "BITMAP_SIZE",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BITMAP_SIZE",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
+      "name": "BodyJointParentIndex",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BodyJointParentIndex",
+      "fsharpType": "ResizeArray<float>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.constants",
+      "name": "Epsilon",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Epsilon",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "HUF_DECMASK",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HUF_DECMASK",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "HUF_DECSIZE",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HUF_DECSIZE",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "HUF_ENCSIZE",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HUF_ENCSIZE",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.constants",
+      "name": "PHI",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PHI",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Rendering/geometryBufferRenderer.pure",
+      "name": "Samplers",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Samplers",
+      "fsharpType": "ResizeArray<string>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "SHORTEST_LONG_RUN",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SHORTEST_LONG_RUN",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.constants",
+      "name": "ToGammaSpace",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ToGammaSpace",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Rendering/geometryBufferRenderer.pure",
+      "name": "Uniforms",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Uniforms",
+      "fsharpType": "ResizeArray<string>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Compat/compatibilityOptions",
+      "name": "useOpenGLOrientationForUV",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.useOpenGLOrientationForUV",
+      "fsharpType": "bool"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "USHORT_RANGE",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.USHORT_RANGE",
+      "fsharpType": "float"
+    }
+  ]
+}

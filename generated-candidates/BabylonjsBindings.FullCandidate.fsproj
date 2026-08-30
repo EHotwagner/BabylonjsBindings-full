@@ -13,6 +13,7 @@
     <Compile Include="SimpleInterfaces.proposal.fs" />
     <Compile Include="SimpleClasses.proposal.fs" />
     <Compile Include="SimpleFunctions.proposal.fs" />
+    <Compile Include="SimpleVariables.proposal.fs" />
     <Compile Include="BabylonBindings.generated.fs" />
     <Compile Include="BabylonGltf2Interface.generated.fs" />
     <Compile Include="BabylonLoadersBindings.generated.fs" />

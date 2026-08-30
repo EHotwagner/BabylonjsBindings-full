@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "75ad358963323f493252e18f8db90072e2c307b8a1b214ca16d1c682eac0363a"
+    "sha256": "4e9330e9c9379e24faf14d89520c5c208c4747d178b28b34edc0d4ebf839b069"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,10 +13,11 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "c8e2a708549a98ad4f29c66d0dac94271add5a76b703a4698c3e9da010b590f0",
+  "emittedProgramSha256": "ec21385282eb6dfbc9b3020904d994118c3ee494b5f38d8bff4c6996e18b0ce8",
   "imports": [
     "@babylonjs/core/Buffers/buffer.pure.js",
     "@babylonjs/core/Engines/nullEngine.pure.js",
+    "@babylonjs/core/Maths/math.constants.js",
     "@babylonjs/core/Maths/math.vector.pure.js",
     "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js",
     "@babylonjs/core/Misc/bitArray.js",

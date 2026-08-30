@@ -8,6 +8,7 @@ open BabylonjsBindings.StringEnums
 open BabylonjsBindings.ObjectTypes
 open BabylonjsBindings.SimpleInterfaces
 open BabylonjsBindings.SimpleClasses
+open BabylonjsBindings.SimpleVariables
 
 [<Emit("$0")>]
 let private asString (value: 'T) : string = jsNative
@@ -54,6 +55,8 @@ let bitWasSet = bits.``get``(3.0)
 let curveMidpoint = BezierCurve.``Interpolate``(0.5, 0.0, 0.0, 1.0, 1.0)
 let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
+let epsilon = ``Epsilon``
+let phi = ``PHI``
 
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then
     failwith "full candidate did not construct a Babylon scene"
@@ -77,6 +80,8 @@ if not bitWasSet || curveMidpoint <= 0.0 || curveMidpoint >= 1.0 then
     failwith "Babylon dependency-free class import was not preserved"
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
+if epsilon <> 0.001 || phi < 1.618 || phi > 1.619 then
+    failwith "Babylon dependency-closed variable import was not preserved"
 
 loaderRegistration |> ignore
 camera.dispose()

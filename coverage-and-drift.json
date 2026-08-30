@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "10dfea5277dda378697fc439a6325411848836aed9b29540b4a28cbcdc7e55f9",
+  "maintainedSurfaceDigest": "e843a197f9ebf92da5158ddfff59d7183c5b724eecf8b29751af49d103ebc513",
   "summary": {
     "total": 4323,
-    "typed": 1240,
+    "typed": 1259,
     "runtimeOnly": 1,
-    "blocked": 3076,
+    "blocked": 3057,
     "lossy": 6
   },
   "exports": [
@@ -3385,8 +3385,9 @@
       "module": "@babylonjs/core/Compat/compatibilityOptions",
       "name": "useOpenGLOrientationForUV",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.useOpenGLOrientationForUV"
     },
     {
       "package": "@babylonjs/core",
@@ -4657,8 +4658,9 @@
       "module": "@babylonjs/core/Engines/Extensions/engine.transformFeedback.pure",
       "name": "_forceTransformFeedbackToBundle",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._forceTransformFeedbackToBundle"
     },
     {
       "package": "@babylonjs/core",
@@ -9191,8 +9193,9 @@
       "module": "@babylonjs/core/FlowGraph/utils",
       "name": "_IsMacPlatform",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._IsMacPlatform"
     },
     {
       "package": "@babylonjs/core",
@@ -9311,16 +9314,18 @@
       "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
       "name": "backbufferColorTextureHandle",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.backbufferColorTextureHandle"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
       "name": "backbufferDepthStencilTextureHandle",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.backbufferDepthStencilTextureHandle"
     },
     {
       "package": "@babylonjs/core",
@@ -11126,8 +11131,9 @@
       "module": "@babylonjs/core/Helpers/sceneHelpers.pure",
       "name": "_forceSceneHelpersToBundle",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._forceSceneHelpersToBundle"
     },
     {
       "package": "@babylonjs/core",
@@ -11729,8 +11735,9 @@
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
       "name": "_BabylonLoaderRegistered",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._BabylonLoaderRegistered"
     },
     {
       "package": "@babylonjs/core",
@@ -16740,8 +16747,9 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "BITMAP_SIZE",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BITMAP_SIZE"
     },
     {
       "package": "@babylonjs/core",
@@ -16764,16 +16772,18 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "HUF_DECMASK",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HUF_DECMASK"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "HUF_DECSIZE",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HUF_DECSIZE"
     },
     {
       "package": "@babylonjs/core",
@@ -16788,8 +16798,9 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "HUF_ENCSIZE",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HUF_ENCSIZE"
     },
     {
       "package": "@babylonjs/core",
@@ -16869,8 +16880,9 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "SHORTEST_LONG_RUN",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SHORTEST_LONG_RUN"
     },
     {
       "package": "@babylonjs/core",
@@ -16885,8 +16897,9 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "USHORT_RANGE",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.USHORT_RANGE"
     },
     {
       "package": "@babylonjs/core",
@@ -17660,24 +17673,27 @@
       "module": "@babylonjs/core/Maths/math.constants",
       "name": "Epsilon",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Epsilon"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants",
       "name": "PHI",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PHI"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants",
       "name": "ToGammaSpace",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ToGammaSpace"
     },
     {
       "package": "@babylonjs/core",
@@ -27945,16 +27961,18 @@
       "module": "@babylonjs/core/Rendering/geometryBufferRenderer.pure",
       "name": "Samplers",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Samplers"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Rendering/geometryBufferRenderer.pure",
       "name": "Uniforms",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Uniforms"
     },
     {
       "package": "@babylonjs/core",
@@ -32367,8 +32385,9 @@
       "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
       "name": "BodyJointParentIndex",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BodyJointParentIndex"
     },
     {
       "package": "@babylonjs/core",

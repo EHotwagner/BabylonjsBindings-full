@@ -15,6 +15,7 @@ let easing: IEasingFunction = Unchecked.defaultof<IEasingFunction>
 let bitArray: BitArray = Unchecked.defaultof<BitArray>
 let bitArrayFactory: BitArrayStatic = BitArray
 let strideFunction = BabylonjsBindings.SimpleFunctions.``VertexBufferDeduceStride``
+let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let engine = nullEngine ()
 let scene = scene engine
 let _ = box "compile-smoke" scene
@@ -28,4 +29,5 @@ easing |> ignore
 bitArray |> ignore
 bitArrayFactory |> ignore
 strideFunction |> ignore
+epsilon |> ignore
 printfn "curated Babylon binding compile smoke passed"
