@@ -60,6 +60,32 @@ module SimpleClasses =
     [<Import("AbstractStereoAudio", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio.js")>]
     let AbstractStereoAudio: AbstractStereoAudioStatic = jsNative
 
+    /// @babylonjs/core/States/alphaCullingState
+    [<AllowNullLiteral>]
+    type AlphaState =
+        abstract ``_blendFunctionParameters``: ResizeArray<float option> with get, set
+        abstract ``_blendEquationParameters``: ResizeArray<float option> with get, set
+        abstract ``_blendConstants``: ResizeArray<float option> with get, set
+        abstract ``_isBlendConstantsDirty``: bool with get, set
+        abstract ``_alphaBlend``: ResizeArray<obj> with get, set
+        abstract ``_numTargetEnabled``: float with get, set
+        abstract ``setAlphaBlend``: ``value``: bool * ?``targetIndex``: float -> unit
+        abstract ``setAlphaBlendConstants``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> unit
+        abstract ``setAlphaBlendFunctionParameters``: ``srcRGBFactor``: float * ``dstRGBFactor``: float * ``srcAlphaFactor``: float * ``dstAlphaFactor``: float * ?``targetIndex``: float -> unit
+        abstract ``setAlphaEquationParameters``: ``rgbEquation``: float * ``alphaEquation``: float * ?``targetIndex``: float -> unit
+        abstract ``reset``: unit -> unit
+        abstract ``apply``: ``gl``: Browser.Types.WebGLRenderingContext * ?``numTargets``: float -> unit
+        abstract ``setAlphaMode``: ``mode``: float * ``targetIndex``: float -> unit
+        abstract ``isDirty``: bool with get
+        abstract ``alphaBlend``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type AlphaStateStatic =
+        [<EmitConstructor>] abstract Create: ``_supportBlendParametersPerTarget``: bool -> AlphaState
+
+    [<Import("AlphaState", "@babylonjs/core/States/alphaCullingState.js")>]
+    let AlphaState: AlphaStateStatic = jsNative
+
     /// @babylonjs/core/Animations/animationGroupMask
     [<AllowNullLiteral>]
     type AnimationGroupMask =
@@ -209,6 +235,28 @@ module SimpleClasses =
 
     [<Import("DefaultLoadingScreen", "@babylonjs/core/Loading/loadingScreen.pure.js")>]
     let DefaultLoadingScreen: DefaultLoadingScreenStatic = jsNative
+
+    /// @babylonjs/core/States/depthCullingState
+    [<AllowNullLiteral>]
+    type DepthCullingState =
+        abstract ``reset``: unit -> unit
+        abstract ``apply``: ``gl``: Browser.Types.WebGLRenderingContext -> unit
+        abstract ``isDirty``: bool with get
+        abstract ``zOffset``: float with get, set
+        abstract ``zOffsetUnits``: float with get, set
+        abstract ``cullFace``: float option with get, set
+        abstract ``cull``: bool option with get, set
+        abstract ``depthFunc``: float option with get, set
+        abstract ``depthMask``: bool with get, set
+        abstract ``depthTest``: bool with get, set
+        abstract ``frontFace``: float option with get, set
+
+    [<AllowNullLiteral>]
+    type DepthCullingStateStatic =
+        [<EmitConstructor>] abstract Create: ?``reset``: bool -> DepthCullingState
+
+    [<Import("DepthCullingState", "@babylonjs/core/States/depthCullingState.js")>]
+    let DepthCullingState: DepthCullingStateStatic = jsNative
 
     /// @babylonjs/core/Particles/solidParticle
     [<AllowNullLiteral>]
@@ -804,6 +852,20 @@ module SimpleClasses =
 
     [<Import("KeyboardInfoPre", "@babylonjs/core/Events/keyboardEvents.js")>]
     let KeyboardInfoPre: KeyboardInfoPreStatic = jsNative
+
+    /// @babylonjs/core/Meshes/WebGL/webGLDataBuffer
+    [<AllowNullLiteral>]
+    type WebGLDataBuffer =
+        inherit DataBuffer
+        abstract ``underlyingResource``: obj with get
+
+    [<AllowNullLiteral>]
+    type WebGLDataBufferStatic =
+        inherit DataBufferStatic
+        [<EmitConstructor>] abstract Create: ``resource``: Browser.Types.WebGLBuffer -> WebGLDataBuffer
+
+    [<Import("WebGLDataBuffer", "@babylonjs/core/Meshes/WebGL/webGLDataBuffer.js")>]
+    let WebGLDataBuffer: WebGLDataBufferStatic = jsNative
 
     /// @babylonjs/core/Engines/WebGPU/webgpuPerfCounter
     [<AllowNullLiteral>]

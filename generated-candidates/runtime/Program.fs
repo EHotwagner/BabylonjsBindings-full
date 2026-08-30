@@ -56,6 +56,8 @@ let bitWasSet = bits.``get``(3.0)
 let curveMidpoint = BezierCurve.``Interpolate``(0.5, 0.0, 0.0, 1.0, 1.0)
 let animationMask = AnimationGroupMask.Create(names = ResizeArray [ "hero" ])
 animationMask.``addTargetName``(U2.Case1 "enemy")
+let alphaState = AlphaState.Create(true)
+alphaState.``setAlphaBlend``(true)
 let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
 let shortIndices: TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
@@ -89,6 +91,8 @@ if not bitWasSet || curveMidpoint <= 0.0 || curveMidpoint >= 1.0 then
     failwith "Babylon dependency-free class import was not preserved"
 if not (animationMask.``hasTarget``("hero")) || not (animationMask.``hasTarget``("enemy")) then
     failwith "Babylon erased-union class method was not preserved"
+if not alphaState.``alphaBlend`` then
+    failwith "Babylon WebGL state class was not preserved"
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
 if indicesNeed32Bits then

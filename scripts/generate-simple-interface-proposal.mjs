@@ -63,7 +63,12 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     }
     const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
-    const browserTypes = new Set(["Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent"]);
+    const browserTypes = new Set([
+      "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
+      "ImageBitmap", "ImageData", "OffscreenCanvas", "WebGLUniformLocation", "WebGLRenderingContext", "WebGL2RenderingContext",
+      "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
+      "WebGLSampler", "WebGLTransformFeedback", "WebGLVertexArrayObject"
+    ]);
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
     if (available.has(node.typeName.text)) {

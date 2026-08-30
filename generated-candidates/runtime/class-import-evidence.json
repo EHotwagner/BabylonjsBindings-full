@@ -31,6 +31,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/States/alphaCullingState.js",
+      "export": "AlphaState",
+      "moduleSha256": "3e589deda74ca92f2930a9bb7c59460ae62a5e844a947e83b655be7cb8a5523e"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/animationGroupMask.js",
       "export": "AnimationGroupMask",
       "moduleSha256": "4cab4e4e00f877face37f38d12401b025bf826d49cfe4a465d2d92d09dbd9f49"
@@ -88,6 +94,12 @@
       "module": "@babylonjs/core/Loading/loadingScreen.pure.js",
       "export": "DefaultLoadingScreen",
       "moduleSha256": "a8d971975abd51e11fa3484adc69814af4447beba8aa2b4f5135262a841a41d2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/States/depthCullingState.js",
+      "export": "DepthCullingState",
+      "moduleSha256": "4f24e5e851defd72b0e0ab698a8f0efc4b00bf82ae5a0c1a2326409bbf2399f6"
     },
     {
       "package": "@babylonjs/core",
@@ -292,6 +304,12 @@
       "module": "@babylonjs/core/Events/keyboardEvents.js",
       "export": "KeyboardInfoPre",
       "moduleSha256": "e899370df9e58c34452694035bab0f623a7fb9826e6fa19a04b68eedcaa64b66"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/WebGL/webGLDataBuffer.js",
+      "export": "WebGLDataBuffer",
+      "moduleSha256": "3a0f1c81a75bdc9daa99f4346b199b87e591b0d7628781c0ef1bd5a7d4487d0c"
     },
     {
       "package": "@babylonjs/core",

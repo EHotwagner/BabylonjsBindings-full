@@ -82,6 +82,8 @@ bits.\`\`set\`\`(9.0, true)
 let bitWasSet = bits.\`\`get\`\`(9.0)
 let animationMask = AnimationGroupMask.Create(names = ResizeArray [ "hero" ])
 animationMask.\`\`addTargetName\`\`(U2.Case1 "enemy")
+let alphaState = AlphaState.Create(true)
+alphaState.\`\`setAlphaBlend\`\`(true)
 let positionStride = BabylonjsBindings.SimpleFunctions.\`\`VertexBufferDeduceStride\`\`.Invoke("position")
 let shortIndices: BabylonjsBindings.TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
 let indicesNeed32Bits = BabylonjsBindings.SimpleFunctions.\`\`AreIndices32Bits\`\`.Invoke(shortIndices, 3.0)
@@ -100,6 +102,7 @@ match inspectableOption.\`\`value\`\` with
 | _ -> failwith "clean consumer interface erased union failed"
 if not bitWasSet then failwith "clean consumer class import failed"
 if not (animationMask.\`\`hasTarget\`\`("hero")) || not (animationMask.\`\`hasTarget\`\`("enemy")) then failwith "clean consumer union class method failed"
+if not alphaState.\`\`alphaBlend\`\` then failwith "clean consumer WebGL state class failed"
 if positionStride <> 3.0 then failwith "clean consumer function import failed"
 if indicesNeed32Bits then failwith "clean consumer union alias/function failed"
 if epsilon <> 0.001 then failwith "clean consumer variable import failed"

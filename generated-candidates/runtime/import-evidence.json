@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "d8b11a24687df38b36c0f0927b68689aed09a95a624e26802b2df46dd23204c8"
+    "sha256": "0d3bdcbdf149ed220ee6f10461e1f916841c9bc3d808002bc3b4595b77b24976"
   },
   "imports": [
     {
@@ -129,6 +129,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/SmartAssets/smartAssetSerializer.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/States/alphaCullingState.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/States/alphaCullingState.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

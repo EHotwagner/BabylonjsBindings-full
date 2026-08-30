@@ -36,7 +36,12 @@ const maintainedSymbols = new Map(dependencyExports
   .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, arity: entry.typeParameterCount ?? 0 }]));
 
 const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
-const browserTypes = new Set(["Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent"]);
+const browserTypes = new Set([
+  "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
+  "ImageBitmap", "ImageData", "OffscreenCanvas", "WebGLUniformLocation", "WebGLRenderingContext", "WebGL2RenderingContext",
+  "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
+  "WebGLSampler", "WebGLTransformFeedback", "WebGLVertexArrayObject"
+]);
 const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";

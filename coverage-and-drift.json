@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "48bf45750edbb4a6a8a102979a790c83f5ba25577b82e7e54d7e2ed8e3388bef",
+  "maintainedSurfaceDigest": "6033f5800b34a2b255f8c19a82444c5a27ab89d991dd06dda5ac8d547941a9e4",
   "summary": {
     "total": 4323,
-    "typed": 1675,
+    "typed": 1678,
     "runtimeOnly": 1,
-    "blocked": 2641,
+    "blocked": 2638,
     "lossy": 6
   },
   "exports": [
@@ -22110,8 +22110,9 @@
       "module": "@babylonjs/core/Meshes/WebGL/webGLDataBuffer",
       "name": "WebGLDataBuffer",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGLDataBuffer"
     },
     {
       "package": "@babylonjs/core",
@@ -32334,16 +32335,18 @@
       "module": "@babylonjs/core/States/alphaCullingState",
       "name": "AlphaState",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AlphaState"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/States/depthCullingState",
       "name": "DepthCullingState",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DepthCullingState"
     },
     {
       "package": "@babylonjs/core",

@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "2575456ce3e9c9d8dec5dbf4ff293846d4936d9793a2b1ef918ffa0a77ac2c59",
+  "proposalSha256": "76757c33f5ac1dc32f6f82a6a2d383eebaef94bd4eeb56736f2031c3fd6ebd86",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -33,6 +33,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractStereoAudio",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/States/alphaCullingState",
+      "name": "AlphaState",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AlphaState",
+      "memberCount": 16
     },
     {
       "package": "@babylonjs/core",
@@ -123,6 +132,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DefaultLoadingScreen",
       "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/States/depthCullingState",
+      "name": "DepthCullingState",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DepthCullingState",
+      "memberCount": 12
     },
     {
       "package": "@babylonjs/core",
@@ -429,6 +447,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KeyboardInfoPre",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/WebGL/webGLDataBuffer",
+      "name": "WebGLDataBuffer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGLDataBuffer",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
