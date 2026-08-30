@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "2e06f2f820ed334f3743969a8b60fa5078aad65514b9dcebf04cb07504220a26",
+  "proposalSha256": "08f112e2f2151cf796ca8dda46bbdfab4c95bb7bae63e11ce12520eadb8adedb",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -4361,6 +4361,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.vrMultiviewToSingleviewPixelShader",
       "fsharpType": "VariableShape_vrMultiviewToSingleviewPixelShader",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions",
+      "name": "Wgs84Ellipsoid",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Wgs84Ellipsoid",
+      "fsharpType": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIEllipsoidLike"
     }
   ]
 }

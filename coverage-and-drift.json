@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "8cd2ea2bafedd80ab1da48187c592d124e0dc99af28f183f21fdc969246f26b8",
+  "maintainedSurfaceDigest": "7c5569b562730af15b6fbe4cee1e567f1a59ef5ccb8e60cf6fe4cc0b50445ecb",
   "summary": {
     "total": 4323,
-    "typed": 1780,
+    "typed": 1798,
     "runtimeOnly": 1,
-    "blocked": 2536,
+    "blocked": 2518,
     "lossy": 6
   },
   "exports": [
@@ -12410,8 +12410,9 @@
       "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides",
       "name": "GetFullOffsetViewProjectionToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetFullOffsetViewProjectionToRef"
     },
     {
       "package": "@babylonjs/core",
@@ -17855,8 +17856,9 @@
       "module": "@babylonjs/core/Maths/math.geospatial.functions",
       "name": "Wgs84Ellipsoid",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Wgs84Ellipsoid"
     },
     {
       "package": "@babylonjs/core",
@@ -18285,8 +18287,9 @@
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector2ToFixed",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector2ToFixed"
     },
     {
       "package": "@babylonjs/core",
@@ -18301,24 +18304,27 @@
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3Distance",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3Distance"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3DistanceSquared",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3DistanceSquared"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3Dot",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3Dot"
     },
     {
       "package": "@babylonjs/core",
@@ -18333,16 +18339,18 @@
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3Length",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3Length"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3LengthSquared",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3LengthSquared"
     },
     {
       "package": "@babylonjs/core",
@@ -18381,8 +18389,9 @@
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3SignedDistanceToPlaneFromPositionAndNormal",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3SignedDistanceToPlaneFromPositionAndNormal"
     },
     {
       "package": "@babylonjs/core",
@@ -18397,24 +18406,27 @@
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3ToFixed",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3ToFixed"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector4Dot",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector4Dot"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector4ToFixed",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector4ToFixed"
     },
     {
       "package": "@babylonjs/core",
@@ -18592,16 +18604,18 @@
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "CopyMatrixToArray",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CopyMatrixToArray"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "CopyMatrixToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CopyMatrixToRef"
     },
     {
       "package": "@babylonjs/core",
@@ -18617,16 +18631,18 @@
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "InvertMatrixToArray",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.InvertMatrixToArray"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "InvertMatrixToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.InvertMatrixToRef"
     },
     {
       "package": "@babylonjs/core",
@@ -18651,16 +18667,18 @@
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "MultiplyMatricesToArray",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MultiplyMatricesToArray"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "MultiplyMatricesToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MultiplyMatricesToRef"
     },
     {
       "package": "@babylonjs/core",

@@ -125,6 +125,37 @@ let translation = tupleItem matrixValues 12, tupleItem matrixValues 13, tupleIte
 BabylonjsBindings.SimpleFunctions.``ScalingMatrixToRef``.Invoke(5.0, 6.0, 7.0, matrixLike)
 let scaling = tupleItem matrixValues 0, tupleItem matrixValues 5, tupleItem matrixValues 10
 BabylonjsBindings.SimpleFunctions.``MarkAsDirty``.Invoke(matrixLike)
+let readonlyMatrix: DeepImmutableIMatrixLike = matrixLike :> DeepImmutableIMatrixLike
+let copiedMatrix = ResizeArray(List.replicate 16 0.0)
+BabylonjsBindings.SimpleFunctions.``CopyMatrixToArray``.Invoke(readonlyMatrix, U2.Case2 copiedMatrix)
+let targetMatrixValues = (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+let targetMatrix: IMatrixLike = createObj [ "asArray" ==> (fun () -> targetMatrixValues); "updateFlag" ==> -1.0 ] |> unbox
+BabylonjsBindings.SimpleFunctions.``CopyMatrixToRef``.Invoke(readonlyMatrix, targetMatrix)
+let copiedTargetScale = tupleItem targetMatrixValues 0
+let inverseMatrix = ResizeArray(List.replicate 16 0.0)
+let invertible = BabylonjsBindings.SimpleFunctions.``InvertMatrixToArray``.Invoke(readonlyMatrix, U2.Case2 inverseMatrix)
+let inverseTargetValues = (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+let inverseTarget: IMatrixLike = createObj [ "asArray" ==> (fun () -> inverseTargetValues); "updateFlag" ==> -1.0 ] |> unbox
+let invertibleToRef = BabylonjsBindings.SimpleFunctions.``InvertMatrixToRef``.Invoke(readonlyMatrix, inverseTarget)
+let product = ResizeArray(List.replicate 16 0.0)
+BabylonjsBindings.SimpleFunctions.``MultiplyMatricesToArray``.Invoke(readonlyMatrix, inverseTarget :> DeepImmutableIMatrixLike, U2.Case2 product)
+BabylonjsBindings.SimpleFunctions.``MultiplyMatricesToRef``.Invoke(readonlyMatrix, inverseTarget :> DeepImmutableIMatrixLike, targetMatrix)
+let vectorA: IVector3Like = createObj [ "x" ==> 1.0; "y" ==> 2.0; "z" ==> 2.0 ] |> unbox
+let vectorB: IVector3Like = createObj [ "x" ==> 4.0; "y" ==> 6.0; "z" ==> 2.0 ] |> unbox
+let vector4A: IVector4Like = createObj [ "x" ==> 1.0; "y" ==> 2.0; "z" ==> 3.0; "w" ==> 4.0 ] |> unbox
+let vector4B: IVector4Like = createObj [ "x" ==> 2.0; "y" ==> 3.0; "z" ==> 4.0; "w" ==> 5.0 ] |> unbox
+let vector2Text = BabylonjsBindings.SimpleFunctions.``Vector2ToFixed``.Invoke(vectorA :> DeepImmutableIVector2Like, 1.0)
+let vector3Dot = BabylonjsBindings.SimpleFunctions.``Vector3Dot``.Invoke(vectorA :> DeepImmutableIVector3Like, vectorB :> DeepImmutableIVector3Like)
+let vector3Length = BabylonjsBindings.SimpleFunctions.``Vector3Length``.Invoke(vectorA :> DeepImmutableIVector3Like)
+let vector3LengthSquared = BabylonjsBindings.SimpleFunctions.``Vector3LengthSquared``.Invoke(vectorA :> DeepImmutableIVector3Like)
+let vector3Distance = BabylonjsBindings.SimpleFunctions.``Vector3Distance``.Invoke(vectorA :> DeepImmutableIVector3Like, vectorB :> DeepImmutableIVector3Like)
+let vector3DistanceSquared = BabylonjsBindings.SimpleFunctions.``Vector3DistanceSquared``.Invoke(vectorA :> DeepImmutableIVector3Like, vectorB :> DeepImmutableIVector3Like)
+let planeDistance = BabylonjsBindings.SimpleFunctions.``Vector3SignedDistanceToPlaneFromPositionAndNormal``.Invoke(vectorA :> DeepImmutableIVector3Like, vectorA :> DeepImmutableIVector3Like, vectorB :> DeepImmutableIVector3Like)
+let vector3Text = BabylonjsBindings.SimpleFunctions.``Vector3ToFixed``.Invoke(vectorA :> DeepImmutableIVector3Like, 1.0)
+let vector4Dot = BabylonjsBindings.SimpleFunctions.``Vector4Dot``.Invoke(vector4A :> DeepImmutableIVector4Like, vector4B :> DeepImmutableIVector4Like)
+let vector4Text = BabylonjsBindings.SimpleFunctions.``Vector4ToFixed``.Invoke(vector4A :> DeepImmutableIVector4Like, 1.0)
+let wgs84 = SimpleVariables.``Wgs84Ellipsoid``
+let floatingOriginResult = BabylonjsBindings.SimpleFunctions.``GetFullOffsetViewProjectionToRef``.Invoke(vectorA, inverseTarget :> DeepImmutableIMatrixLike, inverseTarget :> DeepImmutableIMatrixLike, targetMatrix)
 let filesToLoad = FilesInputStore.``FilesToLoad``
 let shaderStore = ShaderStore.``GetShadersStore``()
 shaderStore.["codexInlineObjectProof"] <- "void main() {}"
@@ -229,6 +260,12 @@ if readFileError.name <> "ReadFileError" || readFileError.``errorCode`` <> Error
     failwith "Babylon read-file error inheritance was not preserved"
 if identityDiagonal <> (1.0, 1.0, 1.0, 1.0) || translation <> (2.0, 3.0, 4.0) || scaling <> (5.0, 6.0, 7.0) || matrixLike.``updateFlag`` < 0.0 then
     failwith "Babylon fixed matrix tuple functions were not preserved"
+if copiedMatrix[0] <> 5.0 || copiedMatrix[5] <> 6.0 || copiedMatrix[10] <> 7.0 || copiedTargetScale <> 5.0 || not invertible || not invertibleToRef || inverseMatrix[0] <> 0.2 || product[0] <> 1.0 then
+    failwith "Babylon readonly matrix function closure was not preserved"
+if vector2Text <> "{X: 1.0 Y: 2.0}" || vector3Dot <> 20.0 || vector3Length <> 3.0 || vector3LengthSquared <> 9.0 || vector3Distance <> 5.0 || vector3DistanceSquared <> 25.0 || planeDistance <> 11.0 || vector3Text <> "{X: 1.0 Y: 2.0 Z: 2.0}" || vector4Dot <> 40.0 || vector4Text <> "{X: 1.0 Y: 2.0 Z: 3.0 W: 4.0}" then
+    failwith "Babylon readonly vector function closure was not preserved"
+if wgs84.``semiMajorAxis`` <> 6378137.0 || wgs84.``semiMinorAxis`` >= wgs84.``semiMajorAxis`` || not (obj.ReferenceEquals(floatingOriginResult, targetMatrix)) then
+    failwith "Babylon readonly geospatial and floating-origin closure was not preserved"
 if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.``GetShadersRepository``() <> "src/Shaders/" || uniformMat4Size <> 16.0 then
     failwith "Babylon inline object class returns and static stores were not preserved"
 if observer.IsNone || not (observableA.``hasObservers``()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then

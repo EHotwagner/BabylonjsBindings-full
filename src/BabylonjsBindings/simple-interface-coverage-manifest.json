@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "a2d2ec6c9cc775ef2edc2ef4597720056dedd526680579fe6cdbad2c082b82ba",
+  "proposalSha256": "33d6c0ce9acb8821e327f8ba5a0ba0f0776bddad695b5abcc8a25f0c8e5b1037",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -240,6 +240,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IColor3Like",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like",
       "memberCount": 3
     },
     {
@@ -411,6 +412,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEllipsoidLike",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIEllipsoidLike",
       "memberCount": 5
     },
     {
@@ -727,6 +729,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ILatLonLike",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableILatLonLike",
       "memberCount": 2
     },
     {
@@ -781,6 +784,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMatrixLike",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike",
       "memberCount": 2
     },
     {
@@ -1197,6 +1201,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector2Like",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector2Like",
       "memberCount": 2
     },
     {
@@ -1206,6 +1211,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector3LikeInternal",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3LikeInternal",
       "memberCount": 4
     },
     {
@@ -1505,6 +1511,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IColor4Like",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like",
       "memberCount": 1
     },
     {
@@ -1577,6 +1584,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ILatLonAltLike",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableILatLonAltLike",
       "memberCount": 1
     },
     {
@@ -1640,6 +1648,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector3Like",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like",
       "memberCount": 1
     },
     {
@@ -1739,6 +1748,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPlaneLike",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIPlaneLike",
       "memberCount": 3
     },
     {
@@ -1811,6 +1821,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector4Like",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector4Like",
       "memberCount": 1
     },
     {

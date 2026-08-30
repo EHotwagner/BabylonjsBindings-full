@@ -4246,3 +4246,7 @@ module SimpleVariables =
     /// @babylonjs/core/Shaders/vrMultiviewToSingleview.fragment
     [<Import("vrMultiviewToSingleviewPixelShader", "@babylonjs/core/Shaders/vrMultiviewToSingleview.fragment.js")>]
     let ``vrMultiviewToSingleviewPixelShader``: VariableShape_vrMultiviewToSingleviewPixelShader = jsNative
+
+    /// @babylonjs/core/Maths/math.geospatial.functions
+    [<Import("Wgs84Ellipsoid", "@babylonjs/core/Maths/math.geospatial.functions.js")>]
+    let ``Wgs84Ellipsoid``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIEllipsoidLike = jsNative

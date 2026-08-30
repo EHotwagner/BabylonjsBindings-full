@@ -18,6 +18,24 @@ const program = ts.createProgram([...lockedPaths].map(file => resolve(nodeModule
   skipLibCheck: true
 });
 const checker = program.getTypeChecker();
+const deepImmutableInterfaceNames = new Set();
+for (const sourceFile of program.getSourceFiles()) {
+  const lockedPath = normalize(sourceFile.fileName);
+  if (!lockedPaths.has(lockedPath)) continue;
+  const visit = node => {
+    if (ts.isTypeReferenceNode(node)
+      && ts.isIdentifier(node.typeName)
+      && node.typeName.text === "DeepImmutable"
+      && node.typeArguments?.length === 1
+      && ts.isTypeReferenceNode(node.typeArguments[0])
+      && ts.isIdentifier(node.typeArguments[0].typeName)
+      && !node.typeArguments[0].typeArguments?.length) {
+      deepImmutableInterfaceNames.add(node.typeArguments[0].typeName.text);
+    }
+    ts.forEachChild(node, visit);
+  };
+  visit(sourceFile);
+}
 
 const dependencyManifestPaths = [
   "src/BabylonjsBindings/coverage-manifest.json",
@@ -222,6 +240,12 @@ while (true) {
   rank += 1;
 }
 const entries = [...selected.values()].sort((left, right) => left.rank - right.rank || left.name.localeCompare(right.name));
+const projectedNames = new Set(entries.filter(entry => deepImmutableInterfaceNames.has(entry.name)).map(entry => entry.name));
+const deepImmutableType = type => {
+  let rendered = type;
+  for (const name of projectedNames) rendered = rendered.replace(new RegExp(`\\b${name}\\b`, "g"), `DeepImmutable${name}`);
+  return rendered;
+};
 const pascal = value => value.replace(/(^|[^A-Za-z0-9]+)([A-Za-z0-9])/g, (_, __, character) => character.toUpperCase());
 const callbackArguments = callback => callback.parameters.length === 0
   ? "unit"
@@ -240,11 +264,32 @@ for (const entry of entries) {
     ? `<${entry.declaration.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}>`
     : "";
   for (const member of entry.members.filter(member => member.kind === "callbackProperty")) {
+    member.helperName = `${entry.name}${pascal(member.name)}Callback${genericParameters}`;
+  }
+  const hasProjection = projectedNames.has(entry.name);
+  if (hasProjection) {
+    lines.push("", `    /// Exact readonly projection of ${entry.name} used by Babylon DeepImmutable<${entry.name}> signatures.`, "    [<AllowNullLiteral>]", `    type DeepImmutable${entry.name}${genericParameters} =`);
+    for (const base of entry.bases) {
+      const baseName = base.replace(/<.*$/, "").replace(/^.*\./, "");
+      lines.push(`        inherit ${projectedNames.has(baseName) ? `DeepImmutable${base}` : base}`);
+    }
+    if (entry.members.length === 0 && entry.bases.length === 0) lines.push("        interface end");
+    for (const member of entry.members) {
+      if (member.kind === "property") {
+        lines.push(`        abstract \`\`${member.name}\`\`: ${deepImmutableType(member.type)} with get`);
+      } else if (member.kind === "callbackProperty") {
+        lines.push(`        abstract \`\`${member.name}\`\`: ${member.helperName}${member.optional ? " option" : ""} with get`);
+      } else {
+        lines.push(`        abstract \`\`${member.name}\`\`: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
+      }
+    }
+  }
+  for (const member of entry.members.filter(member => member.kind === "callbackProperty")) {
     const helperName = `${entry.name}${pascal(member.name)}Callback`;
-    member.helperName = `${helperName}${genericParameters}`;
     lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName}${genericParameters} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
   }
   lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name}${genericParameters} =`);
+  if (hasProjection) lines.push(`        inherit DeepImmutable${entry.name}${genericParameters}`);
   for (const base of entry.bases) lines.push(`        inherit ${base}`);
   if (entry.members.length === 0 && entry.bases.length === 0) {
     lines.push("        interface end");
@@ -272,6 +317,7 @@ const manifest = {
     kind: "interface",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleInterfaces.${entry.name}`,
+    ...(projectedNames.has(entry.name) ? { deepImmutableSymbol: `BabylonjsBindings.SimpleInterfaces.DeepImmutable${entry.name}` } : {}),
     ...(entry.declaration.typeParameters?.length ? { typeParameterCount: entry.declaration.typeParameters.length } : {}),
     memberCount: entry.members.length
   }))

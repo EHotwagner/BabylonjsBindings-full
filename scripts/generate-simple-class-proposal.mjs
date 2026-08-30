@@ -33,7 +33,7 @@ const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
-  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, arity: entry.typeParameterCount ?? 0 }]));
+  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, deepImmutableSymbol: entry.deepImmutableSymbol, arity: entry.typeParameterCount ?? 0 }]));
 
 const hasModifier = (node, kind) => node.modifiers?.some(modifier => modifier.kind === kind) ?? false;
 const inaccessible = node => hasModifier(node, ts.SyntaxKind.PrivateKeyword) || hasModifier(node, ts.SyntaxKind.ProtectedKeyword);
@@ -73,6 +73,13 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "DeepImmutable"
+      && node.typeArguments?.length === 1
+      && ts.isTypeReferenceNode(node.typeArguments[0])
+      && ts.isIdentifier(node.typeArguments[0].typeName)
+      && !node.typeArguments[0].typeArguments?.length) {
+      return maintainedSymbols.get(node.typeArguments[0].typeName.text)?.deepImmutableSymbol;
+    }
     if (node.typeName.text === "Error" && !node.typeArguments?.length) return "System.Exception";
     if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);

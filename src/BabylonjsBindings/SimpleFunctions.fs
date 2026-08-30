@@ -126,6 +126,22 @@ module SimpleFunctions =
     [<Import("ComputeOverlayCssTransform", "@babylonjs/core/Materials/Textures/HTML/htmlInteractionManager.js")>]
     let ``ComputeOverlayCssTransform``: FunctionBinding_ComputeOverlayCssTransform = jsNative
 
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_CopyMatrixToArray =
+        [<Emit("$0($1...)")>] abstract Invoke: ``matrix``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``array``: U2<JS.Float32Array, ResizeArray<float>> * ?``offset``: float -> unit
+
+    [<Import("CopyMatrixToArray", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``CopyMatrixToArray``: FunctionBinding_CopyMatrixToArray = jsNative
+
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_CopyMatrixToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``matrix``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``target``: BabylonjsBindings.SimpleInterfaces.IMatrixLike -> unit
+
+    [<Import("CopyMatrixToRef", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``CopyMatrixToRef``: FunctionBinding_CopyMatrixToRef = jsNative
+
     /// @babylonjs/core/Materials/Textures/textureMerger
     [<AllowNullLiteral>]
     type FunctionBinding_CreateConstantInput =
@@ -270,6 +286,14 @@ module SimpleFunctions =
     [<Import("GetExtensionFromUrl", "@babylonjs/core/Misc/urlTools.js")>]
     let ``GetExtensionFromUrl``: FunctionBinding_GetExtensionFromUrl = jsNative
 
+    /// @babylonjs/core/Materials/floatingOriginMatrixOverrides
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetFullOffsetViewProjectionToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``offset``: BabylonjsBindings.SimpleInterfaces.IVector3Like * ``viewMatrix``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``projectionMatrix``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``ref``: BabylonjsBindings.SimpleInterfaces.IMatrixLike -> BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike
+
+    [<Import("GetFullOffsetViewProjectionToRef", "@babylonjs/core/Materials/floatingOriginMatrixOverrides.js")>]
+    let ``GetFullOffsetViewProjectionToRef``: FunctionBinding_GetFullOffsetViewProjectionToRef = jsNative
+
     /// @babylonjs/core/Meshes/Builders/greasedLineBuilder
     [<AllowNullLiteral>]
     type FunctionBinding_GetPointsCount =
@@ -365,6 +389,22 @@ module SimpleFunctions =
 
     [<Import("InverseLerp", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``InverseLerp``: FunctionBinding_InverseLerp = jsNative
+
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_InvertMatrixToArray =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``target``: U2<JS.Float32Array, ResizeArray<float>> -> bool
+
+    [<Import("InvertMatrixToArray", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``InvertMatrixToArray``: FunctionBinding_InvertMatrixToArray = jsNative
+
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_InvertMatrixToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``target``: BabylonjsBindings.SimpleInterfaces.IMatrixLike -> bool
+
+    [<Import("InvertMatrixToRef", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``InvertMatrixToRef``: FunctionBinding_InvertMatrixToRef = jsNative
 
     /// @babylonjs/core/SmartAssets/smartAssetSerializer
     [<AllowNullLiteral>]
@@ -485,6 +525,22 @@ module SimpleFunctions =
 
     [<Import("MoveTowardsAngle", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``MoveTowardsAngle``: FunctionBinding_MoveTowardsAngle = jsNative
+
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_MultiplyMatricesToArray =
+        [<Emit("$0($1...)")>] abstract Invoke: ``a``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``b``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``output``: U2<JS.Float32Array, ResizeArray<float>> * ?``offset``: float -> unit
+
+    [<Import("MultiplyMatricesToArray", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``MultiplyMatricesToArray``: FunctionBinding_MultiplyMatricesToArray = jsNative
+
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_MultiplyMatricesToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``a``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``b``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIMatrixLike * ``result``: BabylonjsBindings.SimpleInterfaces.IMatrixLike * ?``offset``: float -> unit
+
+    [<Import("MultiplyMatricesToRef", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``MultiplyMatricesToRef``: FunctionBinding_MultiplyMatricesToRef = jsNative
 
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]
@@ -6149,6 +6205,86 @@ module SimpleFunctions =
 
     [<Import("unregisterTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager.js")>]
     let ``unregisterTextureLoader``: FunctionBinding_unregisterTextureLoader = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector2ToFixed =
+        [<Emit("$0($1...)")>] abstract Invoke: ``vector``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector2Like * ``decimalCount``: float -> string
+
+    [<Import("Vector2ToFixed", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector2ToFixed``: FunctionBinding_Vector2ToFixed = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3Distance =
+        [<Emit("$0($1...)")>] abstract Invoke: ``a``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``b``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like -> float
+
+    [<Import("Vector3Distance", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3Distance``: FunctionBinding_Vector3Distance = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3DistanceSquared =
+        [<Emit("$0($1...)")>] abstract Invoke: ``a``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``b``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like -> float
+
+    [<Import("Vector3DistanceSquared", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3DistanceSquared``: FunctionBinding_Vector3DistanceSquared = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3Dot =
+        [<Emit("$0($1...)")>] abstract Invoke: ``a``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``b``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like -> float
+
+    [<Import("Vector3Dot", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3Dot``: FunctionBinding_Vector3Dot = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3Length =
+        [<Emit("$0($1...)")>] abstract Invoke: ``vector``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like -> float
+
+    [<Import("Vector3Length", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3Length``: FunctionBinding_Vector3Length = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3LengthSquared =
+        [<Emit("$0($1...)")>] abstract Invoke: ``vector``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like -> float
+
+    [<Import("Vector3LengthSquared", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3LengthSquared``: FunctionBinding_Vector3LengthSquared = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3SignedDistanceToPlaneFromPositionAndNormal =
+        [<Emit("$0($1...)")>] abstract Invoke: ``origin``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``normal``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``point``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like -> float
+
+    [<Import("Vector3SignedDistanceToPlaneFromPositionAndNormal", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3SignedDistanceToPlaneFromPositionAndNormal``: FunctionBinding_Vector3SignedDistanceToPlaneFromPositionAndNormal = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3ToFixed =
+        [<Emit("$0($1...)")>] abstract Invoke: ``vector``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``decimalCount``: float -> string
+
+    [<Import("Vector3ToFixed", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3ToFixed``: FunctionBinding_Vector3ToFixed = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector4Dot =
+        [<Emit("$0($1...)")>] abstract Invoke: ``a``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector4Like * ``b``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector4Like -> float
+
+    [<Import("Vector4Dot", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector4Dot``: FunctionBinding_Vector4Dot = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector4ToFixed =
+        [<Emit("$0($1...)")>] abstract Invoke: ``vector``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector4Like * ``decimalCount``: float -> string
+
+    [<Import("Vector4ToFixed", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector4ToFixed``: FunctionBinding_Vector4ToFixed = jsNative
 
     /// @babylonjs/core/Buffers/buffer.pure
     [<AllowNullLiteral>]

@@ -3076,6 +3076,13 @@
       "export": "vrMultiviewToSingleviewPixelShader",
       "runtimeExport": "vrMultiviewToSingleviewPixelShader",
       "moduleSha256": "49c6fa5bd0128820415534810ddd00c0460057f8a5d25f818f1f22b8dbe5671e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions.js",
+      "export": "Wgs84Ellipsoid",
+      "runtimeExport": "Wgs84Ellipsoid",
+      "moduleSha256": "c651ac38d8ca45a396e96f1930e20375fd69684d610edbeb2a90bad080a4a922"
     }
   ],
   "status": "pass"

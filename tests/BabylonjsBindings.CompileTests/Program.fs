@@ -19,6 +19,9 @@ let easing: IEasingFunction = Unchecked.defaultof<IEasingFunction>
 let inspectableOptions: IInspectableOptions = Unchecked.defaultof<IInspectableOptions>
 let computePipelineContext: IComputePipelineContext = Unchecked.defaultof<IComputePipelineContext>
 let matrixLike: IMatrixLike = Unchecked.defaultof<IMatrixLike>
+let readonlyMatrixLike: DeepImmutableIMatrixLike = Unchecked.defaultof<DeepImmutableIMatrixLike>
+let readonlyVector3Like: DeepImmutableIVector3Like = Unchecked.defaultof<DeepImmutableIVector3Like>
+let readonlyEllipsoidLike: DeepImmutableIEllipsoidLike = Unchecked.defaultof<DeepImmutableIEllipsoidLike>
 let mipmap: IMipmap = Unchecked.defaultof<IMipmap>
 let simplificationInterface: ISimplificationSettings = Unchecked.defaultof<ISimplificationSettings>
 let decodedData: IDecodedData = Unchecked.defaultof<IDecodedData>
@@ -73,6 +76,16 @@ let identityMatrixToRef: BabylonjsBindings.SimpleFunctions.FunctionBinding_Ident
 let markAsDirty: BabylonjsBindings.SimpleFunctions.FunctionBinding_MarkAsDirty = BabylonjsBindings.SimpleFunctions.``MarkAsDirty``
 let scalingMatrixToRef: BabylonjsBindings.SimpleFunctions.FunctionBinding_ScalingMatrixToRef = BabylonjsBindings.SimpleFunctions.``ScalingMatrixToRef``
 let translationMatrixToRef: BabylonjsBindings.SimpleFunctions.FunctionBinding_TranslationMatrixToRef = BabylonjsBindings.SimpleFunctions.``TranslationMatrixToRef``
+let copyMatrixToArray = BabylonjsBindings.SimpleFunctions.``CopyMatrixToArray``
+let copyMatrixToRef = BabylonjsBindings.SimpleFunctions.``CopyMatrixToRef``
+let invertMatrixToArray = BabylonjsBindings.SimpleFunctions.``InvertMatrixToArray``
+let invertMatrixToRef = BabylonjsBindings.SimpleFunctions.``InvertMatrixToRef``
+let multiplyMatricesToArray = BabylonjsBindings.SimpleFunctions.``MultiplyMatricesToArray``
+let multiplyMatricesToRef = BabylonjsBindings.SimpleFunctions.``MultiplyMatricesToRef``
+let vector3Distance = BabylonjsBindings.SimpleFunctions.``Vector3Distance``
+let vector3Dot = BabylonjsBindings.SimpleFunctions.``Vector3Dot``
+let vector4Dot = BabylonjsBindings.SimpleFunctions.``Vector4Dot``
+let fullOffsetViewProjection = BabylonjsBindings.SimpleFunctions.``GetFullOffsetViewProjectionToRef``
 let materialDefinesFactory: MaterialDefinesStatic = MaterialDefines
 let decalMapDefinesFactory: DecalMapDefinesStatic = DecalMapDefines
 let imageProcessingDefinesFactory: ImageProcessingConfigurationDefinesStatic = ImageProcessingConfigurationDefines
@@ -90,6 +103,7 @@ let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShader
 let padNumber = BabylonjsBindings.SimpleVariables.``PadNumber``
 let testBase64DataUrl = BabylonjsBindings.SimpleVariables.``TestBase64DataUrl``
 let errorCodes: BabylonjsBindings.SimpleVariables.VariableShape_ErrorCodes = BabylonjsBindings.SimpleVariables.``ErrorCodes``
+let wgs84Ellipsoid: DeepImmutableIEllipsoidLike = BabylonjsBindings.SimpleVariables.``Wgs84Ellipsoid``
 let engine = nullEngine ()
 let scene = scene engine
 let _ = box "compile-smoke" scene
@@ -107,6 +121,9 @@ easing |> ignore
 inspectableOptions |> ignore
 computePipelineContext |> ignore
 matrixLike |> ignore
+readonlyMatrixLike |> ignore
+readonlyVector3Like |> ignore
+readonlyEllipsoidLike |> ignore
 mipmap |> ignore
 simplificationInterface |> ignore
 decodedData |> ignore
@@ -161,6 +178,16 @@ identityMatrixToRef |> ignore
 markAsDirty |> ignore
 scalingMatrixToRef |> ignore
 translationMatrixToRef |> ignore
+copyMatrixToArray |> ignore
+copyMatrixToRef |> ignore
+invertMatrixToArray |> ignore
+invertMatrixToRef |> ignore
+multiplyMatricesToArray |> ignore
+multiplyMatricesToRef |> ignore
+vector3Distance |> ignore
+vector3Dot |> ignore
+vector4Dot |> ignore
+fullOffsetViewProjection |> ignore
 materialDefinesFactory |> ignore
 decalMapDefinesFactory |> ignore
 imageProcessingDefinesFactory |> ignore
@@ -178,4 +205,5 @@ shaderDescriptor |> ignore
 padNumber |> ignore
 testBase64DataUrl |> ignore
 errorCodes |> ignore
+wgs84Ellipsoid |> ignore
 printfn "curated Babylon binding compile smoke passed"

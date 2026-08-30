@@ -149,6 +149,14 @@ let translation = tupleItem matrixValues 12, tupleItem matrixValues 13, tupleIte
 BabylonjsBindings.SimpleFunctions.\`\`ScalingMatrixToRef\`\`.Invoke(5.0, 6.0, 7.0, matrixLike)
 let scaling = tupleItem matrixValues 0, tupleItem matrixValues 5, tupleItem matrixValues 10
 BabylonjsBindings.SimpleFunctions.\`\`MarkAsDirty\`\`.Invoke(matrixLike)
+let readonlyMatrix: DeepImmutableIMatrixLike = matrixLike :> DeepImmutableIMatrixLike
+let copiedMatrix = ResizeArray(List.replicate 16 0.0)
+BabylonjsBindings.SimpleFunctions.\`\`CopyMatrixToArray\`\`.Invoke(readonlyMatrix, U2.Case2 copiedMatrix)
+let vectorA: IVector3Like = createObj [ "x" ==> 1.0; "y" ==> 2.0; "z" ==> 2.0 ] |> unbox
+let vectorB: IVector3Like = createObj [ "x" ==> 4.0; "y" ==> 6.0; "z" ==> 2.0 ] |> unbox
+let readonlyDistance = BabylonjsBindings.SimpleFunctions.\`\`Vector3Distance\`\`.Invoke(vectorA :> DeepImmutableIVector3Like, vectorB :> DeepImmutableIVector3Like)
+let readonlyDot = BabylonjsBindings.SimpleFunctions.\`\`Vector3Dot\`\`.Invoke(vectorA :> DeepImmutableIVector3Like, vectorB :> DeepImmutableIVector3Like)
+let wgs84 = BabylonjsBindings.SimpleVariables.\`\`Wgs84Ellipsoid\`\`
 let filesToLoad = FilesInputStore.\`\`FilesToLoad\`\`
 let shaderStore = ShaderStore.\`\`GetShadersStore\`\`()
 shaderStore.["codexInlineObjectProof"] <- "void main() {}"
@@ -213,6 +221,7 @@ if abortError.name <> "AbortError" || abortError.message <> "binding aborted" ||
 if runtimeError.name <> "RuntimeError" || runtimeError.\`\`errorCode\`\` <> ErrorCodesType.\`\`SceneLoaderError\`\` || runtimeError.\`\`innerError\`\`.IsNone || BabylonjsBindings.SimpleVariables.\`\`ErrorCodes\`\`.\`\`ReadFileError\`\` <> ErrorCodesType.\`\`ReadFileError\`\` then failwith "clean consumer runtime error code closure failed"
 if readFileError.name <> "ReadFileError" || readFileError.\`\`errorCode\`\` <> ErrorCodesType.\`\`ReadFileError\`\` || not (obj.ReferenceEquals(readFileError.\`\`file\`\`, proofFile)) then failwith "clean consumer read-file error inheritance failed"
 if identityDiagonal <> (1.0, 1.0, 1.0, 1.0) || translation <> (2.0, 3.0, 4.0) || scaling <> (5.0, 6.0, 7.0) || matrixLike.\`\`updateFlag\`\` < 0.0 then failwith "clean consumer fixed matrix tuple functions failed"
+if copiedMatrix[0] <> 5.0 || copiedMatrix[5] <> 6.0 || copiedMatrix[10] <> 7.0 || readonlyDistance <> 5.0 || readonlyDot <> 20.0 || wgs84.\`\`semiMajorAxis\`\` <> 6378137.0 then failwith "clean consumer readonly projection closure failed"
 if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.\`\`GetShadersRepository\`\`() <> "src/Shaders/" || uniformMat4Size <> 16.0 then failwith "clean consumer inline object class stores failed"
 if observer.IsNone || not (observableA.\`\`hasObservers\`\`()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then failwith "clean consumer observable closure failed"
 if not thinAnimationEnded || thinSprite.\`\`animationStarted\`\` then failwith "clean consumer nullable callback class failed"

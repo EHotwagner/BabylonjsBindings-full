@@ -118,6 +118,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "CopyMatrixToArray",
+      "runtimeExport": "CopyMatrixToArray",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "CopyMatrixToRef",
+      "runtimeExport": "CopyMatrixToRef",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/textureMerger.js",
       "export": "CreateConstantInput",
       "runtimeExport": "CreateConstantInput",
@@ -244,6 +258,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides.js",
+      "export": "GetFullOffsetViewProjectionToRef",
+      "runtimeExport": "GetFullOffsetViewProjectionToRef",
+      "moduleSha256": "3ee5aee2b6ae54115ec9d78895f43f1f0964c37c467bf852c7986a69140cc7a7"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js",
       "export": "GetPointsCount",
       "runtimeExport": "GetPointsCount",
@@ -325,6 +346,20 @@
       "export": "InverseLerp",
       "runtimeExport": "InverseLerp",
       "moduleSha256": "ee64720d425acac869fd4da5e5dc43d9114de1f60f92912e18208d7114b5a898"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "InvertMatrixToArray",
+      "runtimeExport": "InvertMatrixToArray",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "InvertMatrixToRef",
+      "runtimeExport": "InvertMatrixToRef",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
     },
     {
       "package": "@babylonjs/core",
@@ -430,6 +465,20 @@
       "export": "MoveTowardsAngle",
       "runtimeExport": "MoveTowardsAngle",
       "moduleSha256": "ee64720d425acac869fd4da5e5dc43d9114de1f60f92912e18208d7114b5a898"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "MultiplyMatricesToArray",
+      "runtimeExport": "MultiplyMatricesToArray",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "MultiplyMatricesToRef",
+      "runtimeExport": "MultiplyMatricesToRef",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
     },
     {
       "package": "@babylonjs/core",
@@ -5386,6 +5435,76 @@
       "export": "unregisterTextureLoader",
       "runtimeExport": "unregisterTextureLoader",
       "moduleSha256": "1a99501acf171d87f2f42012f0eed2a92465c278e26f4ca61fb121b38a44216c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector2ToFixed",
+      "runtimeExport": "Vector2ToFixed",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3Distance",
+      "runtimeExport": "Vector3Distance",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3DistanceSquared",
+      "runtimeExport": "Vector3DistanceSquared",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3Dot",
+      "runtimeExport": "Vector3Dot",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3Length",
+      "runtimeExport": "Vector3Length",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3LengthSquared",
+      "runtimeExport": "Vector3LengthSquared",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3SignedDistanceToPlaneFromPositionAndNormal",
+      "runtimeExport": "Vector3SignedDistanceToPlaneFromPositionAndNormal",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3ToFixed",
+      "runtimeExport": "Vector3ToFixed",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector4Dot",
+      "runtimeExport": "Vector4Dot",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector4ToFixed",
+      "runtimeExport": "Vector4ToFixed",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
     },
     {
       "package": "@babylonjs/core",

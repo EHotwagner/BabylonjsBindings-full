@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "748754f9716a0bf9209985192ff1d15363bf35bb1bc113526e65c4670dc143c0"
+    "sha256": "5d7e5552401958dc69c9d14388d002d96c38963c6856a981623f74dda13aeab6"
   },
   "imports": [
     {
@@ -152,6 +152,15 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Materials/floatingOriginMatrixOverrides.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/floatingOriginMatrixOverrides.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
@@ -278,10 +287,28 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Maths/math.geospatial.functions.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/math.geospatial.functions.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Maths/math.path.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Maths/math.path.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Maths/math.vector.functions.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/math.vector.functions.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

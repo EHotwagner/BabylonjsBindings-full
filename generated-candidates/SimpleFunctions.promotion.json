@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "deffee3c35e53bb1b65233ddd3798f5b3cb11244ab8f3c7c91580a5d694af1f9",
+  "proposalSha256": "cd049c304e253f294335033699ce65d2d3ec2ad822f7f0a49fa714f28f088691",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -139,6 +139,24 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ComputeOverlayCssTransform",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "CopyMatrixToArray",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CopyMatrixToArray",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "CopyMatrixToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CopyMatrixToRef",
       "overloadCount": 1
     },
     {
@@ -305,6 +323,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides",
+      "name": "GetFullOffsetViewProjectionToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetFullOffsetViewProjectionToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder",
       "name": "GetPointsCount",
       "kind": "function",
@@ -409,6 +436,24 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.InverseLerp",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "InvertMatrixToArray",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.InvertMatrixToArray",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "InvertMatrixToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.InvertMatrixToRef",
       "overloadCount": 1
     },
     {
@@ -545,6 +590,24 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MoveTowardsAngle",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "MultiplyMatricesToArray",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MultiplyMatricesToArray",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "MultiplyMatricesToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MultiplyMatricesToRef",
       "overloadCount": 1
     },
     {
@@ -6917,6 +6980,96 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.unregisterTextureLoader",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector2ToFixed",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector2ToFixed",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3Distance",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3Distance",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3DistanceSquared",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3DistanceSquared",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3Dot",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3Dot",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3Length",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3Length",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3LengthSquared",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3LengthSquared",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3SignedDistanceToPlaneFromPositionAndNormal",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3SignedDistanceToPlaneFromPositionAndNormal",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3ToFixed",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3ToFixed",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector4Dot",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector4Dot",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector4ToFixed",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector4ToFixed",
       "overloadCount": 1
     },
     {

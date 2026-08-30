@@ -235,9 +235,17 @@ module SimpleInterfaces =
     type ICanvasGradient =
         abstract ``addColorStop``: ``offset``: float * ``color``: string -> unit
 
+    /// Exact readonly projection of IColor3Like used by Babylon DeepImmutable<IColor3Like> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableIColor3Like =
+        abstract ``r``: BabylonjsBindings.TypeAliases.float with get
+        abstract ``g``: BabylonjsBindings.TypeAliases.float with get
+        abstract ``b``: BabylonjsBindings.TypeAliases.float with get
+
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
     type IColor3Like =
+        inherit DeepImmutableIColor3Like
         abstract ``r``: BabylonjsBindings.TypeAliases.float with get, set
         abstract ``g``: BabylonjsBindings.TypeAliases.float with get, set
         abstract ``b``: BabylonjsBindings.TypeAliases.float with get, set
@@ -386,9 +394,19 @@ module SimpleInterfaces =
         abstract ``positions``: ResizeArray<float> option with get, set
         abstract ``indices``: ResizeArray<float> option with get, set
 
+    /// Exact readonly projection of IEllipsoidLike used by Babylon DeepImmutable<IEllipsoidLike> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableIEllipsoidLike =
+        abstract ``semiMajorAxis``: float with get
+        abstract ``semiMinorAxis``: float with get
+        abstract ``flattening``: float with get
+        abstract ``firstEccentricitySquared``: float with get
+        abstract ``secondEccentricitySquared``: float with get
+
     /// @babylonjs/core/Maths/math.geospatial
     [<AllowNullLiteral>]
     type IEllipsoidLike =
+        inherit DeepImmutableIEllipsoidLike
         abstract ``semiMajorAxis``: float with get, set
         abstract ``semiMinorAxis``: float with get, set
         abstract ``flattening``: float with get, set
@@ -691,9 +709,16 @@ module SimpleInterfaces =
         abstract ``standalone``: bool option with get, set
         abstract ``doNotInjectCode``: bool option with get, set
 
+    /// Exact readonly projection of ILatLonLike used by Babylon DeepImmutable<ILatLonLike> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableILatLonLike =
+        abstract ``lat``: float with get
+        abstract ``lon``: float with get
+
     /// @babylonjs/core/Maths/math.geospatial
     [<AllowNullLiteral>]
     type ILatLonLike =
+        inherit DeepImmutableILatLonLike
         abstract ``lat``: float with get, set
         abstract ``lon``: float with get, set
 
@@ -746,9 +771,16 @@ module SimpleInterfaces =
         abstract ``useVertexPulling``: bool with get, set
         abstract ``reset``: unit -> unit
 
+    /// Exact readonly projection of IMatrixLike used by Babylon DeepImmutable<IMatrixLike> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableIMatrixLike =
+        abstract ``asArray``: unit -> (float * float * float * float * float * float * float * float * float * float * float * float * float * float * float * float)
+        abstract ``updateFlag``: BabylonjsBindings.TypeAliases.int with get
+
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
     type IMatrixLike =
+        inherit DeepImmutableIMatrixLike
         abstract ``asArray``: unit -> (float * float * float * float * float * float * float * float * float * float * float * float * float * float * float * float)
         abstract ``updateFlag``: BabylonjsBindings.TypeAliases.int with get, set
 
@@ -1153,15 +1185,31 @@ module SimpleInterfaces =
     type IValueGradient =
         abstract ``gradient``: float with get, set
 
+    /// Exact readonly projection of IVector2Like used by Babylon DeepImmutable<IVector2Like> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableIVector2Like =
+        abstract ``x``: BabylonjsBindings.TypeAliases.float with get
+        abstract ``y``: BabylonjsBindings.TypeAliases.float with get
+
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
     type IVector2Like =
+        inherit DeepImmutableIVector2Like
         abstract ``x``: BabylonjsBindings.TypeAliases.float with get, set
         abstract ``y``: BabylonjsBindings.TypeAliases.float with get, set
+
+    /// Exact readonly projection of IVector3LikeInternal used by Babylon DeepImmutable<IVector3LikeInternal> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableIVector3LikeInternal =
+        abstract ``_x``: float with get
+        abstract ``_y``: float with get
+        abstract ``_z``: float with get
+        abstract ``_isDirty``: bool option with get
 
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
     type IVector3LikeInternal =
+        inherit DeepImmutableIVector3LikeInternal
         abstract ``_x``: float with get, set
         abstract ``_y``: float with get, set
         abstract ``_z``: float with get, set
@@ -1422,9 +1470,16 @@ module SimpleInterfaces =
         abstract ``removeBehavior``: ``behavior``: Behavior<'T> -> 'T
         abstract ``getBehaviorByName``: ``name``: string -> Behavior<'T> option
 
+    /// Exact readonly projection of IColor4Like used by Babylon DeepImmutable<IColor4Like> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableIColor4Like =
+        inherit DeepImmutableIColor3Like
+        abstract ``a``: BabylonjsBindings.TypeAliases.float with get
+
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
     type IColor4Like =
+        inherit DeepImmutableIColor4Like
         inherit IColor3Like
         abstract ``a``: BabylonjsBindings.TypeAliases.float with get, set
 
@@ -1509,9 +1564,16 @@ module SimpleInterfaces =
         abstract ``shiftKey``: bool with get, set
         abstract ``repeat``: bool option with get, set
 
+    /// Exact readonly projection of ILatLonAltLike used by Babylon DeepImmutable<ILatLonAltLike> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableILatLonAltLike =
+        inherit DeepImmutableILatLonLike
+        abstract ``alt``: float with get
+
     /// @babylonjs/core/Maths/math.geospatial
     [<AllowNullLiteral>]
     type ILatLonAltLike =
+        inherit DeepImmutableILatLonAltLike
         inherit ILatLonLike
         abstract ``alt``: float with get, set
 
@@ -1576,9 +1638,16 @@ module SimpleInterfaces =
         inherit IStencilStateProperties
         abstract ``reset``: unit -> unit
 
+    /// Exact readonly projection of IVector3Like used by Babylon DeepImmutable<IVector3Like> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableIVector3Like =
+        inherit DeepImmutableIVector2Like
+        abstract ``z``: BabylonjsBindings.TypeAliases.float with get
+
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
     type IVector3Like =
+        inherit DeepImmutableIVector3Like
         inherit IVector2Like
         abstract ``z``: BabylonjsBindings.TypeAliases.float with get, set
 
@@ -1645,9 +1714,17 @@ module SimpleInterfaces =
         abstract ``getClassName``: unit -> string
         abstract ``inspectableCustomProperties``: ResizeArray<IInspectable> with get, set
 
+    /// Exact readonly projection of IPlaneLike used by Babylon DeepImmutable<IPlaneLike> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableIPlaneLike =
+        abstract ``normal``: DeepImmutableIVector3Like with get
+        abstract ``d``: BabylonjsBindings.TypeAliases.float with get
+        abstract ``normalize``: unit -> unit
+
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
     type IPlaneLike =
+        inherit DeepImmutableIPlaneLike
         abstract ``normal``: IVector3Like with get, set
         abstract ``d``: BabylonjsBindings.TypeAliases.float with get, set
         abstract ``normalize``: unit -> unit
@@ -1696,9 +1773,16 @@ module SimpleInterfaces =
         inherit IAbstractSoundStoredOptions
         inherit IStreamingSoundOptionsBase
 
+    /// Exact readonly projection of IVector4Like used by Babylon DeepImmutable<IVector4Like> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableIVector4Like =
+        inherit DeepImmutableIVector3Like
+        abstract ``w``: BabylonjsBindings.TypeAliases.float with get
+
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
     type IVector4Like =
+        inherit DeepImmutableIVector4Like
         inherit IVector3Like
         abstract ``w``: BabylonjsBindings.TypeAliases.float with get, set
 
