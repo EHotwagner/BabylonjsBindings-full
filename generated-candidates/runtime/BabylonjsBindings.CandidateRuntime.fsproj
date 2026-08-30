@@ -7,6 +7,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="_candidateSources/CoreEnums.proposal.fs" />
+    <Compile Include="_candidateSources/StringEnums.proposal.fs" />
     <Compile Include="_candidateSources/BabylonBindings.generated.fs" />
     <Compile Include="_candidateSources/BabylonGltf2Interface.generated.fs" />
     <Compile Include="_candidateSources/BabylonLoadersBindings.generated.fs" />
@@ -18,6 +19,7 @@
   <Target Name="PrepareCandidateRuntimeSources" BeforeTargets="CoreCompile">
     <MakeDir Directories="_candidateSources" />
     <Copy SourceFiles="../CoreEnums.proposal.fs" DestinationFiles="_candidateSources/CoreEnums.proposal.fs" />
+    <Copy SourceFiles="../StringEnums.proposal.fs" DestinationFiles="_candidateSources/StringEnums.proposal.fs" />
     <Copy SourceFiles="../BabylonBindings.generated.fs" DestinationFiles="_candidateSources/BabylonBindings.generated.fs" />
     <Copy SourceFiles="../BabylonGltf2Interface.generated.fs" DestinationFiles="_candidateSources/BabylonGltf2Interface.generated.fs" />
     <Copy SourceFiles="../BabylonLoadersBindings.generated.fs" DestinationFiles="_candidateSources/BabylonLoadersBindings.generated.fs" />

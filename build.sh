@@ -45,5 +45,6 @@ npm ci --ignore-scripts
 npm run doctor
 npm run check:drift
 npm run check:enum-proposal
+npm run check:string-enum-proposal
 npm run coverage:check
 npm run test:runtime

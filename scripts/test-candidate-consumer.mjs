@@ -46,6 +46,10 @@ open Fable.Core
 open Fable.Core.JsInterop
 open BabylonjsBindings.FullCandidate
 open BabylonjsBindings.Enums
+open BabylonjsBindings.StringEnums
+
+[<Emit("$0")>]
+let asString (value: 'T) : string = jsNative
 
 [<ImportAll("@babylonjs/loaders/glTF/index.js")>]
 let loaderRegistration: obj = jsNative
@@ -56,6 +60,7 @@ let origin = \`\`babylonjs/Maths/math.vector.pure\`\`.Vector3.Create(0.0, 0.0, 0
 let mesh = \`\`babylonjs/Meshes/Builders/boxBuilder.pure\`\`.CreateBox("consumer-box", scene = Some scene)
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then failwith "clean consumer scene failed"
 if uint32 NodeRenderGraphBlockConnectionPointTypes.\`\`All\`\` <> 4294967295u then failwith "clean consumer enum failed"
+if asString PowerPreference.\`\`HighPerformance\`\` <> "high-performance" then failwith "clean consumer string enum failed"
 loaderRegistration |> ignore
 engine.dispose()
 printfn "Babylon candidate clean consumer passed"

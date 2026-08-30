@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "e12e45963ef78131ef87aedda76eec3d2711f834add9c656657ca80dd2dae506",
+  "maintainedSurfaceDigest": "7854269e7526389781d1304fb7423f025616927589cc4de7b7d019c0bd71ca44",
   "summary": {
     "total": 4323,
-    "typed": 148,
+    "typed": 213,
     "runtimeOnly": 1,
-    "blocked": 4168,
+    "blocked": 4103,
     "lossy": 6
   },
   "exports": [
@@ -1084,8 +1084,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "AudioEngineV2State",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.AudioEngineV2State"
     },
     {
       "package": "@babylonjs/core",
@@ -1364,8 +1365,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/audioSubNode",
       "name": "AudioSubNode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.AudioSubNode"
     },
     {
       "package": "@babylonjs/core",
@@ -1556,8 +1558,9 @@
       "module": "@babylonjs/core/AudioV2/audioParameter",
       "name": "AudioParameterRampShape",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.AudioParameterRampShape"
     },
     {
       "package": "@babylonjs/core",
@@ -2538,8 +2541,9 @@
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "InputSource",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.InputSource"
     },
     {
       "package": "@babylonjs/core",
@@ -3684,8 +3688,9 @@
       "module": "@babylonjs/core/Debug/debugLayer.pure",
       "name": "IInspectorContextMenuType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.IInspectorContextMenuType"
     },
     {
       "package": "@babylonjs/core",
@@ -4373,8 +4378,9 @@
       "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
       "name": "ComputeCompilationMessageType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.ComputeCompilationMessageType"
     },
     {
       "package": "@babylonjs/core",
@@ -5271,48 +5277,54 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "AddressMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.AddressMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "AutoLayoutMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.AutoLayoutMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "BlendFactor",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.BlendFactor"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "BlendOperation",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.BlendOperation"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "BufferBindingType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.BufferBindingType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "BufferMapState",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.BufferMapState"
     },
     {
       "package": "@babylonjs/core",
@@ -5328,16 +5340,18 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "CanvasAlphaMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.CanvasAlphaMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "CanvasToneMappingMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.CanvasToneMappingMode"
     },
     {
       "package": "@babylonjs/core",
@@ -5353,88 +5367,99 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "CompareFunction",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.CompareFunction"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "CompilationMessageType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.CompilationMessageType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "ComputePassTimestampLocation",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.ComputePassTimestampLocation"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "CullMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.CullMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "DeviceLostReason",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.DeviceLostReason"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "ErrorFilter",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.ErrorFilter"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "FeatureName",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FeatureName"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "FilterMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FilterMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "FrontFace",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FrontFace"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "IndexFormat",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.IndexFormat"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "LoadOp",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.LoadOp"
     },
     {
       "package": "@babylonjs/core",
@@ -5450,56 +5475,63 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "MipmapFilterMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.MipmapFilterMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "PipelineErrorReason",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.PipelineErrorReason"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "PowerPreference",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.PowerPreference"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "PrimitiveTopology",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.PrimitiveTopology"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "QueryType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.QueryType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "RenderPassTimestampLocation",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.RenderPassTimestampLocation"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "SamplerBindingType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.SamplerBindingType"
     },
     {
       "package": "@babylonjs/core",
@@ -5515,56 +5547,63 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "StencilOperation",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.StencilOperation"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "StorageTextureAccess",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.StorageTextureAccess"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "StoreOp",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.StoreOp"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "TextureAspect",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.TextureAspect"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "TextureDimension",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.TextureDimension"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "TextureFormat",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.TextureFormat"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "TextureSampleType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.TextureSampleType"
     },
     {
       "package": "@babylonjs/core",
@@ -5580,24 +5619,27 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "TextureViewDimension",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.TextureViewDimension"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "VertexFormat",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.VertexFormat"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "VertexStepMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.VertexStepMode"
     },
     {
       "package": "@babylonjs/core",
@@ -8126,8 +8168,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/flowGraphBlockNames",
       "name": "FlowGraphBlockNames",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FlowGraphBlockNames"
     },
     {
       "package": "@babylonjs/core",
@@ -8223,8 +8266,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphAssetsContext",
       "name": "FlowGraphAssetType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FlowGraphAssetType"
     },
     {
       "package": "@babylonjs/core",
@@ -8376,8 +8420,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphEventType",
       "name": "FlowGraphEventType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FlowGraphEventType"
     },
     {
       "package": "@babylonjs/core",
@@ -8400,8 +8445,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphLogger",
       "name": "FlowGraphAction",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FlowGraphAction"
     },
     {
       "package": "@babylonjs/core",
@@ -8536,8 +8582,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "FlowGraphTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FlowGraphTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -9972,8 +10019,9 @@
       "module": "@babylonjs/core/FrameGraph/Tasks/Layers/baseLayerTask",
       "name": "FrameGraphBaseLayerBlurType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FrameGraphBaseLayerBlurType"
     },
     {
       "package": "@babylonjs/core",
@@ -19017,16 +19065,18 @@
       "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
       "name": "DracoAttributeName",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.DracoAttributeName"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
       "name": "DracoEncoderMethod",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.DracoEncoderMethod"
     },
     {
       "package": "@babylonjs/core",
@@ -22655,8 +22705,9 @@
       "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker",
       "name": "AllowedKeys",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.AllowedKeys"
     },
     {
       "package": "@babylonjs/core",
@@ -25473,8 +25524,9 @@
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "PhysicsEventType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.PhysicsEventType"
     },
     {
       "package": "@babylonjs/core",
@@ -31404,8 +31456,9 @@
       "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
       "name": "BodyPart",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.BodyPart"
     },
     {
       "package": "@babylonjs/core",
@@ -31444,8 +31497,9 @@
       "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
       "name": "WebXRBodyJoint",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.WebXRBodyJoint"
     },
     {
       "package": "@babylonjs/core",
@@ -31612,8 +31666,9 @@
       "module": "@babylonjs/core/XR/features/WebXRDepthSensing.pure",
       "name": "WebXRDepthDataFormat",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.WebXRDepthDataFormat"
     },
     {
       "package": "@babylonjs/core",
@@ -31628,8 +31683,9 @@
       "module": "@babylonjs/core/XR/features/WebXRDepthSensing.pure",
       "name": "WebXRDepthUsage",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.WebXRDepthUsage"
     },
     {
       "package": "@babylonjs/core",
@@ -31700,8 +31756,9 @@
       "module": "@babylonjs/core/XR/features/WebXRHandTracking.pure",
       "name": "HandPart",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.HandPart"
     },
     {
       "package": "@babylonjs/core",
@@ -31732,8 +31789,9 @@
       "module": "@babylonjs/core/XR/features/WebXRHandTracking.pure",
       "name": "WebXRHandJoint",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.WebXRHandJoint"
     },
     {
       "package": "@babylonjs/core",
@@ -32141,24 +32199,27 @@
       "module": "@babylonjs/core/XR/motionController/webXRAbstractMotionController",
       "name": "MotionControllerComponentStateType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.MotionControllerComponentStateType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/motionController/webXRAbstractMotionController",
       "name": "MotionControllerComponentType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.MotionControllerComponentType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/motionController/webXRAbstractMotionController",
       "name": "MotionControllerHandedness",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.MotionControllerHandedness"
     },
     {
       "package": "@babylonjs/core",
@@ -32566,8 +32627,9 @@
       "module": "@babylonjs/core/XR/webXRLayerWrapper",
       "name": "WebXRCompositionLayerType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.WebXRCompositionLayerType"
     },
     {
       "package": "@babylonjs/core",
@@ -32590,8 +32652,9 @@
       "module": "@babylonjs/core/XR/webXRLayerWrapper",
       "name": "WebXRQuadLayerType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.WebXRQuadLayerType"
     },
     {
       "package": "@babylonjs/core",
@@ -32760,8 +32823,9 @@
       "module": "@babylonjs/loaders/FBX/fbxFileLoader.pure",
       "name": "FBXNormalMapCoordinateSystem",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.FBXNormalMapCoordinateSystem"
     },
     {
       "package": "@babylonjs/loaders",
@@ -34683,8 +34747,9 @@
       "module": "@babylonjs/loaders/SPLAT/gaussianSplattingStream",
       "name": "GaussianSplattingStreamDebugLodSource",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained string enum or literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.StringEnums.GaussianSplattingStreamDebugLodSource"
     },
     {
       "package": "@babylonjs/loaders",

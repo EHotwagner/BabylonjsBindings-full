@@ -4,6 +4,10 @@ open Fable.Core
 open Fable.Core.JsInterop
 open BabylonjsBindings.FullCandidate
 open BabylonjsBindings.Enums
+open BabylonjsBindings.StringEnums
+
+[<Emit("$0")>]
+let private asString (value: 'T) : string = jsNative
 
 [<ImportAll("@babylonjs/loaders/glTF/index.js")>]
 let loaderRegistration: obj = jsNative
@@ -22,6 +26,8 @@ if uint32 NodeRenderGraphBlockConnectionPointTypes.``All`` <> 4294967295u then
     failwith "unsigned Babylon enum value was not preserved"
 if int EShaderType.``FRAGMENT`` <> 35632 then
     failwith "loader enum value was not preserved"
+if asString PowerPreference.``HighPerformance`` <> "high-performance" then
+    failwith "Babylon string enum value was not preserved"
 
 loaderRegistration |> ignore
 camera.dispose()

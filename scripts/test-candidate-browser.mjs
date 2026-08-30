@@ -9,6 +9,7 @@ const pagePath = "generated-candidates/runtime/browser/index.html";
 const evidencePath = resolve(root, "generated-candidates/runtime/browser-evidence.json");
 const sha256 = value => createHash("sha256").update(value).digest("hex");
 const mimeTypes = new Map([[".html", "text/html"], [".js", "text/javascript"], [".json", "application/json"]]);
+const requestFailures = [];
 const run = (command, args) => new Promise((accept, reject) => {
   const child = spawn(command, args, { cwd: root });
   let stdout = "";
@@ -27,7 +28,8 @@ const server = createServer(async (request, response) => {
     if (!(await stat(file)).isFile()) throw new Error("not a file");
     response.writeHead(200, { "content-type": mimeTypes.get(extname(file)) ?? "application/octet-stream" });
     response.end(await readFile(file));
-  } catch {
+  } catch (error) {
+    requestFailures.push({ url: request.url, message: error instanceof Error ? error.message : String(error) });
     response.writeHead(404);
     response.end("not found");
   }
@@ -47,7 +49,7 @@ try {
   const expected = "Babylon full candidate browser smoke passed";
   const renderedOutput = browser.stdout.match(/<output>([^<]*)<\/output>/)?.[1];
   if (renderedOutput !== expected) {
-    throw new Error(`Chromium did not report success\n${browser.stdout}\n${browser.stderr}`);
+    throw new Error(`Chromium did not report success\nHTTP failures: ${JSON.stringify(requestFailures)}\n${browser.stdout}\n${browser.stderr}`);
   }
   const page = await readFile(resolve(root, pagePath));
   const program = await readFile(resolve(root, "generated-candidates/runtime/dist/Program.js"));

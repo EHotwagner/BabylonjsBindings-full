@@ -17,6 +17,7 @@ TestResults/
 nuget-cache/
 generated-candidates/package/_packageSources/
 generated-candidates/runtime/_candidateSources/
+generated-candidates/runtime/dist/
 
 # Restored JavaScript and repository-local NuGet dependencies.
 node_modules/
