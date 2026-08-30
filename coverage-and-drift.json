@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "11a92510fd8c2aa9a7e558a576d8dde426eec07801063ad1a9b182e632235a5f",
+  "maintainedSurfaceDigest": "6c7e82b8078bd7179d83cea7e35ce3840cb88b06e49ab236fdfdca36b0a24b86",
   "summary": {
     "total": 4323,
-    "typed": 1706,
+    "typed": 1712,
     "runtimeOnly": 1,
-    "blocked": 2610,
+    "blocked": 2604,
     "lossy": 6
   },
   "exports": [
@@ -10767,8 +10767,9 @@
       "module": "@babylonjs/core/Gamepads/gamepad",
       "name": "Gamepad",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Gamepad"
     },
     {
       "package": "@babylonjs/core",
@@ -22141,8 +22142,9 @@
       "module": "@babylonjs/core/Misc/andOrNotEvaluator",
       "name": "AndOrNotEvaluator",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AndOrNotEvaluator"
     },
     {
       "package": "@babylonjs/core",
@@ -23268,8 +23270,9 @@
       "module": "@babylonjs/core/Misc/gradients",
       "name": "GradientHelper",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GradientHelper"
     },
     {
       "package": "@babylonjs/core",
@@ -23568,8 +23571,9 @@
       "module": "@babylonjs/core/Misc/lazy",
       "name": "Lazy",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Lazy"
     },
     {
       "package": "@babylonjs/core",
@@ -23981,8 +23985,9 @@
       "module": "@babylonjs/core/Misc/smartArray",
       "name": "SmartArray",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SmartArray"
     },
     {
       "package": "@babylonjs/core",
@@ -24508,8 +24513,9 @@
       "module": "@babylonjs/core/Offline/database.pure",
       "name": "Database",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Database"
     },
     {
       "package": "@babylonjs/core",

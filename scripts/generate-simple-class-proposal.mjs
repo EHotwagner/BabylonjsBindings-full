@@ -97,8 +97,8 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   }
   return undefined;
 };
-const callbackShape = (node, available, dependencies, typeParameters) => {
-  if (node.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
+const directCallbackShape = (node, available, dependencies, typeParameters) => {
+  if (node.typeParameters?.length || node.parameters.some(parameter => parameter.dotDotDotToken || parameter.questionToken)) return undefined;
   const returnType = node.type ? fsharpType(node.type, available, dependencies, typeParameters) : undefined;
   const parameters = node.parameters.map(parameter => ({
     name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
@@ -107,19 +107,43 @@ const callbackShape = (node, available, dependencies, typeParameters) => {
   }));
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
 };
+const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, context, ownerName) => {
+  if (node.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
+  const returnType = node.type ? fsharpType(node.type, available, dependencies, typeParameters) : undefined;
+  const parameters = node.parameters.map((parameter, index) => {
+    let type = parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined;
+    if (!type && parameter.type && ts.isFunctionTypeNode(parameter.type)) {
+      const nested = directCallbackShape(parameter.type, available, dependencies, typeParameters);
+      const usesOwner = nested && [nested.returnType, ...nested.parameters.map(item => item.type)].some(type => new RegExp(`(^|[^A-Za-z0-9_])${ownerName}([^A-Za-z0-9_]|$)`).test(type));
+      if (nested && !usesOwner) {
+        const name = `${context}Parameter${index + 1}Callback`;
+        const genericParameters = typeParameters.size ? `<${[...typeParameters].map(value => `'${value}`).join(", ")}>` : "";
+        nestedCallbacks.push({ name, genericParameters, callback: nested });
+        type = `${name}${genericParameters}`;
+      }
+    }
+    return {
+      name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
+      type,
+      optional: Boolean(parameter.questionToken)
+    };
+  });
+  return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
+};
 const renderClass = (declaration, available, hasBase) => {
   const dependencies = new Set();
   const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
+  const nestedCallbacks = [];
   const instanceMembers = [];
   const staticMembers = [];
   const constructors = [];
   const accessors = new Map();
   const constructorDeclarations = declaration.members.filter(ts.isConstructorDeclaration);
-  for (const member of declaration.members) {
+  for (const [memberIndex, member] of declaration.members.entries()) {
     if (inaccessible(member)) continue;
     const target = hasModifier(member, ts.SyntaxKind.StaticKeyword) ? staticMembers : instanceMembers;
     if (ts.isConstructorDeclaration(member)) {
-      const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } }, available, dependencies, typeParameters);
+      const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } }, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Constructor${memberIndex + 1}`, declaration.name.text);
       if (!callback) return undefined;
       constructors.push(callback);
     } else if (ts.isPropertyDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
@@ -128,7 +152,7 @@ const renderClass = (declaration, available, hasBase) => {
         // both flags participate independently below.
       }
       if (ts.isFunctionTypeNode(member.type)) {
-        const callback = callbackShape(member.type, available, dependencies, typeParameters);
+        const callback = callbackShape(member.type, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Property${memberIndex + 1}`, declaration.name.text);
         if (!callback) return undefined;
         target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken), readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
       } else {
@@ -138,7 +162,7 @@ const renderClass = (declaration, available, hasBase) => {
       }
     } else if (ts.isMethodDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       if (member.questionToken) return undefined;
-      const callback = callbackShape(member, available, dependencies, typeParameters);
+      const callback = callbackShape(member, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Method${memberIndex + 1}`, declaration.name.text);
       if (!callback) return undefined;
       target.push({ kind: "method", name: member.name.text, callback });
     } else if ((ts.isGetAccessorDeclaration(member) || ts.isSetAccessorDeclaration(member)) && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
@@ -165,7 +189,7 @@ const renderClass = (declaration, available, hasBase) => {
   if (constructorDeclarations.length === 0 && !hasBase && !hasModifier(declaration, ts.SyntaxKind.AbstractKeyword)) {
     constructors.push({ parameters: [], returnType: "unit" });
   }
-  return { instanceMembers, staticMembers, constructors, dependencies: [...dependencies] };
+  return { instanceMembers, staticMembers, constructors, nestedCallbacks, dependencies: [...dependencies] };
 };
 const renderBase = (declaration, available) => {
   const extendsTypes = (declaration.heritageClauses ?? [])
@@ -237,6 +261,11 @@ const pascal = value => value.replace(/(^|[^A-Za-z0-9]+)([A-Za-z0-9])/g, (_, __,
 const callbackArguments = callback => callback.parameters.length === 0
   ? "unit"
   : callback.parameters.map(parameter => `${parameter.optional ? "?" : ""}\`\`${parameter.name}\`\`: ${parameter.type}`).join(" * ");
+const delegateType = callback => {
+  const parameterTypes = callback.parameters.map(parameter => parameter.type);
+  if (callback.returnType === "unit") return parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`;
+  return `System.Func<${[...parameterTypes, callback.returnType].join(", ")}>`;
+};
 const renderMember = member => {
   if (member.kind === "property") return `abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`;
   if (member.kind === "accessor") return `abstract \`\`${member.name}\`\`: ${member.type} with ${member.canGet ? "get" : ""}${member.canGet && member.canSet ? ", " : ""}${member.canSet ? "set" : ""}`;
@@ -254,6 +283,9 @@ const lines = [
 ];
 for (const entry of entries) {
   const genericParameters = entry.arity ? `<${entry.declaration.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}>` : "";
+  for (const nested of entry.nestedCallbacks) {
+    lines.push("", `    /// Uncurried function-valued argument used by ${entry.name}.`, `    type ${nested.name}${nested.genericParameters} = ${delegateType(nested.callback)}`);
+  }
   for (const member of [...entry.instanceMembers, ...entry.staticMembers].filter(member => member.kind === "callbackProperty")) {
     const helperName = `${entry.name}${pascal(member.name)}Callback`;
     member.helperName = `${helperName}${genericParameters}`;

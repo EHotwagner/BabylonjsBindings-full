@@ -86,6 +86,22 @@ module SimpleClasses =
     [<Import("AlphaState", "@babylonjs/core/States/alphaCullingState.js")>]
     let AlphaState: AlphaStateStatic = jsNative
 
+    /// Uncurried function-valued argument used by AndOrNotEvaluator.
+    type AndOrNotEvaluatorMethod1Parameter2Callback = System.Func<obj, bool>
+
+    /// @babylonjs/core/Misc/andOrNotEvaluator
+    [<AllowNullLiteral>]
+    type AndOrNotEvaluator =
+        interface end
+
+    [<AllowNullLiteral>]
+    type AndOrNotEvaluatorStatic =
+        [<EmitConstructor>] abstract Create: unit -> AndOrNotEvaluator
+        abstract ``Eval``: ``query``: string * ``evaluateCallback``: AndOrNotEvaluatorMethod1Parameter2Callback -> bool
+
+    [<Import("AndOrNotEvaluator", "@babylonjs/core/Misc/andOrNotEvaluator.js")>]
+    let AndOrNotEvaluator: AndOrNotEvaluatorStatic = jsNative
+
     /// @babylonjs/core/Animations/animationGroupMask
     [<AllowNullLiteral>]
     type AnimationGroupMask =
@@ -171,6 +187,41 @@ module SimpleClasses =
 
     [<Import("BitArray", "@babylonjs/core/Misc/bitArray.js")>]
     let BitArray: BitArrayStatic = jsNative
+
+    /// Uncurried function-valued argument used by Database.
+    type DatabaseConstructor14Parameter2Callback = System.Func<bool, obj>
+
+    /// Uncurried function-valued argument used by Database.
+    type DatabaseMethod18Parameter1Callback = System.Action
+
+    /// Uncurried function-valued argument used by Database.
+    type DatabaseMethod18Parameter2Callback = System.Action
+
+    /// Uncurried function-valued argument used by Database.
+    type DatabaseMethod25Parameter2Callback = System.Action<obj>
+
+    /// Uncurried function-valued argument used by Database.
+    type DatabaseMethod25Parameter3Callback = System.Action<obj>
+
+    /// Uncurried function-valued argument used by Database.
+    type DatabaseMethod25Parameter4Callback = System.Action
+
+    /// @babylonjs/core/Offline/database.pure
+    [<AllowNullLiteral>]
+    type Database =
+        abstract ``open``: ``successCallback``: DatabaseMethod18Parameter1Callback * ``errorCallback``: DatabaseMethod18Parameter2Callback -> unit
+        abstract ``loadImage``: ``url``: string * ``image``: Browser.Types.HTMLImageElement -> unit
+        abstract ``loadFile``: ``url``: string * ``sceneLoaded``: DatabaseMethod25Parameter2Callback * ?``progressCallBack``: DatabaseMethod25Parameter3Callback * ?``errorCallback``: DatabaseMethod25Parameter4Callback * ?``useArrayBuffer``: bool -> unit
+        abstract ``enableSceneOffline``: bool with get
+        abstract ``enableTexturesOffline``: bool with get
+
+    [<AllowNullLiteral>]
+    type DatabaseStatic =
+        [<EmitConstructor>] abstract Create: ``urlToScene``: string * ``callbackManifestChecked``: DatabaseConstructor14Parameter2Callback * ?``disableManifestCheck``: bool -> Database
+        abstract ``IDBStorageEnabled``: bool with get, set
+
+    [<Import("Database", "@babylonjs/core/Offline/database.pure.js")>]
+    let Database: DatabaseStatic = jsNative
 
     /// @babylonjs/core/Buffers/dataBuffer
     [<AllowNullLiteral>]
@@ -372,6 +423,22 @@ module SimpleClasses =
     [<Import("FlowGraphLogger", "@babylonjs/core/FlowGraph/flowGraphLogger.js")>]
     let FlowGraphLogger: FlowGraphLoggerStatic = jsNative
 
+    /// Uncurried function-valued argument used by GradientHelper.
+    type GradientHelperMethod1Parameter3Callback = System.Action<BabylonjsBindings.SimpleInterfaces.IValueGradient, BabylonjsBindings.SimpleInterfaces.IValueGradient, float>
+
+    /// @babylonjs/core/Misc/gradients
+    [<AllowNullLiteral>]
+    type GradientHelper =
+        interface end
+
+    [<AllowNullLiteral>]
+    type GradientHelperStatic =
+        [<EmitConstructor>] abstract Create: unit -> GradientHelper
+        abstract ``GetCurrentGradient``: ``ratio``: float * ``gradients``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IValueGradient> * ``updateFunc``: GradientHelperMethod1Parameter3Callback -> unit
+
+    [<Import("GradientHelper", "@babylonjs/core/Misc/gradients.js")>]
+    let GradientHelper: GradientHelperStatic = jsNative
+
     /// @babylonjs/core/Collisions/intersectionInfo
     [<AllowNullLiteral>]
     type IntersectionInfo =
@@ -401,6 +468,21 @@ module SimpleClasses =
 
     [<Import("KeyboardInfo", "@babylonjs/core/Events/keyboardEvents.js")>]
     let KeyboardInfo: KeyboardInfoStatic = jsNative
+
+    /// Uncurried function-valued argument used by Lazy.
+    type LazyConstructor3Parameter1Callback<'T> = System.Func<'T>
+
+    /// @babylonjs/core/Misc/lazy
+    [<AllowNullLiteral>]
+    type Lazy<'T> =
+        abstract ``value``: 'T with get
+
+    [<AllowNullLiteral>]
+    type LazyStatic =
+        [<EmitConstructor>] abstract Create<'T>: ``factory``: LazyConstructor3Parameter1Callback<'T> -> Lazy<'T>
+
+    [<Import("Lazy", "@babylonjs/core/Misc/lazy.js")>]
+    let Lazy: LazyStatic = jsNative
 
     /// @babylonjs/core/Materials/materialFlags
     [<AllowNullLiteral>]
@@ -719,6 +801,33 @@ module SimpleClasses =
     [<Import("Size", "@babylonjs/core/Maths/math.size.js")>]
     let Size: SizeStatic = jsNative
 
+    /// Uncurried function-valued argument used by SmartArray.
+    type SmartArrayMethod6Parameter1Callback<'T> = System.Action<'T>
+
+    /// Uncurried function-valued argument used by SmartArray.
+    type SmartArrayMethod7Parameter1Callback<'T> = System.Func<'T, 'T, float>
+
+    /// @babylonjs/core/Misc/smartArray
+    [<AllowNullLiteral>]
+    type SmartArray<'T> =
+        abstract ``data``: ResizeArray<'T> with get, set
+        abstract ``length``: float with get, set
+        abstract ``push``: ``value``: 'T -> unit
+        abstract ``forEach``: ``func``: SmartArrayMethod6Parameter1Callback<'T> -> unit
+        abstract ``sort``: ``compareFn``: SmartArrayMethod7Parameter1Callback<'T> -> unit
+        abstract ``reset``: unit -> unit
+        abstract ``dispose``: unit -> unit
+        abstract ``concat``: ``array``: obj -> unit
+        abstract ``indexOf``: ``value``: 'T -> float
+        abstract ``contains``: ``value``: 'T -> bool
+
+    [<AllowNullLiteral>]
+    type SmartArrayStatic =
+        [<EmitConstructor>] abstract Create<'T>: ``capacity``: float -> SmartArray<'T>
+
+    [<Import("SmartArray", "@babylonjs/core/Misc/smartArray.js")>]
+    let SmartArray: SmartArrayStatic = jsNative
+
     /// @babylonjs/core/Gamepads/gamepad
     [<AllowNullLiteral>]
     type StickValues =
@@ -856,6 +965,40 @@ module SimpleClasses =
 
     [<Import("WebGPUTintWASM", "@babylonjs/core/Engines/WebGPU/webgpuTintWASM.js")>]
     let WebGPUTintWASM: WebGPUTintWASMStatic = jsNative
+
+    /// Uncurried function-valued argument used by Gamepad.
+    type GamepadMethod22Parameter1Callback = System.Action<StickValues>
+
+    /// Uncurried function-valued argument used by Gamepad.
+    type GamepadMethod23Parameter1Callback = System.Action<StickValues>
+
+    /// @babylonjs/core/Gamepads/gamepad
+    [<AllowNullLiteral>]
+    type Gamepad =
+        abstract ``id``: string with get, set
+        abstract ``index``: float with get, set
+        abstract ``browserGamepad``: obj with get, set
+        abstract ``type``: float with get, set
+        abstract ``_isConnected``: bool with get, set
+        abstract ``onleftstickchanged``: ``callback``: GamepadMethod22Parameter1Callback -> unit
+        abstract ``onrightstickchanged``: ``callback``: GamepadMethod23Parameter1Callback -> unit
+        abstract ``update``: unit -> unit
+        abstract ``dispose``: unit -> unit
+        abstract ``isConnected``: bool with get
+        abstract ``leftStick``: StickValues with get, set
+        abstract ``rightStick``: StickValues with get, set
+
+    [<AllowNullLiteral>]
+    type GamepadStatic =
+        [<EmitConstructor>] abstract Create: ``id``: string * ``index``: float * ``browserGamepad``: obj * ?``leftStickX``: float * ?``leftStickY``: float * ?``rightStickX``: float * ?``rightStickY``: float -> Gamepad
+        abstract ``GAMEPAD``: float with get, set
+        abstract ``GENERIC``: float with get, set
+        abstract ``XBOX``: float with get, set
+        abstract ``POSE_ENABLED``: float with get, set
+        abstract ``DUALSHOCK``: float with get, set
+
+    [<Import("Gamepad", "@babylonjs/core/Gamepads/gamepad.js")>]
+    let Gamepad: GamepadStatic = jsNative
 
     /// @babylonjs/core/Events/keyboardEvents
     [<AllowNullLiteral>]

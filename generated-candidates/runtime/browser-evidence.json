@@ -6,6 +6,6 @@
     "path": "generated-candidates/runtime/browser/index.html",
     "sha256": "eea76ef0abcf113f5998fc53bd1cad3bc497aade03fa9278a14f29e9e09ff68c"
   },
-  "emittedProgramSha256": "d7658707b37f18432b3547ab65bfa64852bec58b9a8b6a928393af03a17beeef",
+  "emittedProgramSha256": "293c6da70cd4a29c441154c147a07c7f325791b40a2a96889d666429b513433b",
   "status": "pass"
 }

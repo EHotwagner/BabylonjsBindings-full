@@ -37,6 +37,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/andOrNotEvaluator.js",
+      "export": "AndOrNotEvaluator",
+      "moduleSha256": "43a5afca15c2d243544b32d458e9ebf320c8ad74a535279e5947c1cfa229e3e9"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/animationGroupMask.js",
       "export": "AnimationGroupMask",
       "moduleSha256": "4cab4e4e00f877face37f38d12401b025bf826d49cfe4a465d2d92d09dbd9f49"
@@ -70,6 +76,12 @@
       "module": "@babylonjs/core/Misc/bitArray.js",
       "export": "BitArray",
       "moduleSha256": "6b6ae6e316234069092200491ae7668cb2499cbcaee7cfc814514e1a65fd0679"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Offline/database.pure.js",
+      "export": "Database",
+      "moduleSha256": "40f1a8e7a3eab5c42aa771a14a25a4467b900b3e843590d1cfc39bcf026694e8"
     },
     {
       "package": "@babylonjs/core",
@@ -145,6 +157,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/gradients.js",
+      "export": "GradientHelper",
+      "moduleSha256": "704f9e59cf8ca5b9bff89c06bd62590af8d94598095e49f1b057a449fdf5dc50"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Collisions/intersectionInfo.js",
       "export": "IntersectionInfo",
       "moduleSha256": "f3ce98565a7a7e5fad8188ccdb1a0c12cb2ddc265aff9520db07b7ca23b9f7cb"
@@ -154,6 +172,12 @@
       "module": "@babylonjs/core/Events/keyboardEvents.js",
       "export": "KeyboardInfo",
       "moduleSha256": "e899370df9e58c34452694035bab0f623a7fb9826e6fa19a04b68eedcaa64b66"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/lazy.js",
+      "export": "Lazy",
+      "moduleSha256": "16d572644a8699f1f60c8a2a3ce90f5488a32f998aa1cfce498bbe6111e97aa8"
     },
     {
       "package": "@babylonjs/core",
@@ -259,6 +283,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/smartArray.js",
+      "export": "SmartArray",
+      "moduleSha256": "bd024818d86bbce6dc630ee9322cba6b5dda30ef7281293b0503b5b804e97967"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Gamepads/gamepad.js",
       "export": "StickValues",
       "moduleSha256": "26b3e161808a56c713216792829a5a7a365912a1b0ef92fb9e76217fbe9309ca"
@@ -304,6 +334,12 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuTintWASM.js",
       "export": "WebGPUTintWASM",
       "moduleSha256": "5adb265aab0f57de13bb91b8b5ed9059e102eef6d5a473fa6d72ceabf7fc37bf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/gamepad.js",
+      "export": "Gamepad",
+      "moduleSha256": "26b3e161808a56c713216792829a5a7a365912a1b0ef92fb9e76217fbe9309ca"
     },
     {
       "package": "@babylonjs/core",

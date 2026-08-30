@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "776453ce29bb58c3404fe51cab8e8426d193b8ba9a936c2f8d67c3554ceb9a28",
+  "proposalSha256": "53a6a24236aa26b4e93d069c0d4cfa2e6f733b7cc2aa6deb9b2682445075a993",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -41,6 +41,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AlphaState",
       "memberCount": 16
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/andOrNotEvaluator",
+      "name": "AndOrNotEvaluator",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AndOrNotEvaluator",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -95,6 +104,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BitArray",
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Offline/database.pure",
+      "name": "Database",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Database",
+      "memberCount": 7
     },
     {
       "package": "@babylonjs/core",
@@ -206,6 +224,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/gradients",
+      "name": "GradientHelper",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GradientHelper",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Collisions/intersectionInfo",
       "name": "IntersectionInfo",
       "kind": "class",
@@ -221,6 +248,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KeyboardInfo",
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/lazy",
+      "name": "Lazy",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Lazy",
+      "typeParameterCount": 1,
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -378,6 +415,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/smartArray",
+      "name": "SmartArray",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SmartArray",
+      "typeParameterCount": 1,
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Gamepads/gamepad",
       "name": "StickValues",
       "kind": "class",
@@ -447,6 +494,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUTintWASM",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/gamepad",
+      "name": "Gamepad",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Gamepad",
+      "memberCount": 18
     },
     {
       "package": "@babylonjs/core",

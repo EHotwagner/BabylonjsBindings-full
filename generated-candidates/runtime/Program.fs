@@ -61,6 +61,13 @@ animationMask.``addTargetName``(U2.Case1 "enemy")
 let alphaState = AlphaState.Create(true)
 alphaState.``setAlphaBlend``(true)
 let customRichType = RichType.Create("custom-string", "default")
+let lazyFactory: LazyConstructor3Parameter1Callback<string> = System.Func<string>(fun () -> "lazy-value")
+let lazyValue: Lazy<string> = Lazy.Create(lazyFactory)
+let smartValues: SmartArray<float> = SmartArray.Create(4.0)
+smartValues.``push``(2.0)
+smartValues.``push``(1.0)
+let smartComparer: SmartArrayMethod7Parameter1Callback<float> = System.Func<float, float, float>(fun left right -> left - right)
+smartValues.``sort``(smartComparer)
 let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
 let shortIndices: TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
@@ -110,6 +117,8 @@ if not alphaState.``alphaBlend`` then
     failwith "Babylon WebGL state class was not preserved"
 if customRichType.``typeName`` <> "custom-string" || customRichType.``defaultValue`` <> "default" then
     failwith "Babylon generic runtime class was not preserved"
+if lazyValue.``value`` <> "lazy-value" || smartValues.``data``[0] <> 1.0 then
+    failwith "Babylon nested-callback generic class was not preserved"
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
 if indicesNeed32Bits then

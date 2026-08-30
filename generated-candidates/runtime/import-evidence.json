@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "d7658707b37f18432b3547ab65bfa64852bec58b9a8b6a928393af03a17beeef"
+    "sha256": "293c6da70cd4a29c441154c147a07c7f325791b40a2a96889d666429b513433b"
   },
   "imports": [
     {
@@ -120,6 +120,24 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Misc/fileTools.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/lazy.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/lazy.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/smartArray.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/smartArray.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

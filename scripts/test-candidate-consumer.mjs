@@ -87,6 +87,13 @@ animationMask.\`\`addTargetName\`\`(U2.Case1 "enemy")
 let alphaState = AlphaState.Create(true)
 alphaState.\`\`setAlphaBlend\`\`(true)
 let customRichType = RichType.Create("custom-string", "default")
+let lazyFactory: LazyConstructor3Parameter1Callback<string> = System.Func<string>(fun () -> "lazy-value")
+let lazyValue: Lazy<string> = Lazy.Create(lazyFactory)
+let smartValues: SmartArray<float> = SmartArray.Create(4.0)
+smartValues.\`\`push\`\`(2.0)
+smartValues.\`\`push\`\`(1.0)
+let smartComparer: SmartArrayMethod7Parameter1Callback<float> = System.Func<float, float, float>(fun left right -> left - right)
+smartValues.\`\`sort\`\`(smartComparer)
 let positionStride = BabylonjsBindings.SimpleFunctions.\`\`VertexBufferDeduceStride\`\`.Invoke("position")
 let shortIndices: BabylonjsBindings.TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
 let indicesNeed32Bits = BabylonjsBindings.SimpleFunctions.\`\`AreIndices32Bits\`\`.Invoke(shortIndices, 3.0)
@@ -114,6 +121,7 @@ if not bitWasSet then failwith "clean consumer class import failed"
 if not (animationMask.\`\`hasTarget\`\`("hero")) || not (animationMask.\`\`hasTarget\`\`("enemy")) then failwith "clean consumer union class method failed"
 if not alphaState.\`\`alphaBlend\`\` then failwith "clean consumer WebGL state class failed"
 if customRichType.\`\`typeName\`\` <> "custom-string" || customRichType.\`\`defaultValue\`\` <> "default" then failwith "clean consumer generic class failed"
+if lazyValue.\`\`value\`\` <> "lazy-value" || smartValues.\`\`data\`\`[0] <> 1.0 then failwith "clean consumer nested callback class failed"
 if positionStride <> 3.0 then failwith "clean consumer function import failed"
 if indicesNeed32Bits then failwith "clean consumer union alias/function failed"
 if epsilon <> 0.001 then failwith "clean consumer variable import failed"
