@@ -4,8 +4,28 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "220a41636d2c1e98a526c69954f81494efa90b6f95620e6eba72bacdb38af940",
+  "proposalSha256": "f2a7c9adbcc5bd735ea5fd263f2a4f6f98b109133cbf65409fdd158c43ad7db9",
   "exports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Cameras/interpolatingBehavior",
+      "name": "AllowedAnimValue",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.AllowedAnimValue",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.optimizations",
+      "name": "AnimationOptimization",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.AnimationOptimization",
+      "shape": "alias",
+      "memberCount": 1
+    },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
@@ -43,6 +63,16 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.double",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Empty",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.Empty",
       "shape": "alias",
       "memberCount": 1
     },
@@ -287,6 +317,16 @@
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.SimpleStageAction",
       "shape": "callback",
       "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/tensor",
+      "name": "TensorValue",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.TensorValue",
+      "shape": "recursiveUnionAlias",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",

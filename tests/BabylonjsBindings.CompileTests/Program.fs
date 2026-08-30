@@ -121,8 +121,15 @@ let nativeData: BabylonjsBindings.TypeAliases.NativeData = Unchecked.defaultof<B
 let computeBindingMapping: BabylonjsBindings.TypeAliases.ComputeBindingMapping = Unchecked.defaultof<BabylonjsBindings.TypeAliases.ComputeBindingMapping>
 let textureSize: BabylonjsBindings.TypeAliases.TextureSize = Unchecked.defaultof<BabylonjsBindings.TypeAliases.TextureSize>
 let bodyRigMapping: BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping = Unchecked.defaultof<BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping>
+let animationOptimization: BabylonjsBindings.TypeAliases.AnimationOptimization = Unchecked.defaultof<BabylonjsBindings.TypeAliases.AnimationOptimization>
+let tensorValue: BabylonjsBindings.TypeAliases.TensorValue = Unchecked.defaultof<BabylonjsBindings.TypeAliases.TensorValue>
 let computeShaderOptions: IComputeShaderOptions = Unchecked.defaultof<IComputeShaderOptions>
 let imageTrackingOptions: IWebXRImageTrackingOptions = Unchecked.defaultof<IWebXRImageTrackingOptions>
+let flowGraphBlockConfiguration: IFlowGraphBlockConfiguration = Unchecked.defaultof<IFlowGraphBlockConfiguration>
+let exrHeader: IEXRHeader = Unchecked.defaultof<IEXRHeader>
+let gltfLoaderData: IGLTFLoaderData = Unchecked.defaultof<IGLTFLoaderData>
+let createDecoderAsync: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDecoderAsync = BabylonjsBindings.SimpleFunctions.``CreateDecoderAsync``
+let getExrHeader: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetExrHeader = BabylonjsBindings.SimpleFunctions.``GetExrHeader``
 let basisFileInfoFactory: BasisFileInfoStatic = BasisFileInfo
 let nativeDataStreamFactory: NativeDataStreamStatic = NativeDataStream
 let validatedNativeDataStreamFactory: ValidatedNativeDataStreamStatic = ValidatedNativeDataStream
@@ -133,6 +140,9 @@ let textureSizeIsObject = BabylonjsBindings.SimpleFunctions.``textureSizeIsObjec
 let getMimeType = BabylonjsBindings.SimpleVariables.``GetMimeType``
 let mixamoRigMapping = BabylonjsBindings.SimpleVariables.``MixamoRigMapping``
 let stringTools = BabylonjsBindings.SimpleVariables.``StringTools``
+let guid = BabylonjsBindings.SimpleVariables.``GUID``
+let bvhLoaderMetadata = BabylonjsBindings.SimpleVariables.``BVHFileLoaderMetadata``
+let gltfMagicBase64Encoded = BabylonjsBindings.SimpleVariables.``GLTFMagicBase64Encoded``
 let errorCodes: BabylonjsBindings.SimpleVariables.VariableShape_ErrorCodes = BabylonjsBindings.SimpleVariables.``ErrorCodes``
 let wgs84Ellipsoid: DeepImmutableIEllipsoidLike = BabylonjsBindings.SimpleVariables.``Wgs84Ellipsoid``
 let richTypeColor3: RichType<Color3> = BabylonjsBindings.SimpleVariables.``RichTypeColor3``
@@ -259,8 +269,15 @@ nativeData |> ignore
 computeBindingMapping |> ignore
 textureSize |> ignore
 bodyRigMapping |> ignore
+animationOptimization |> ignore
+tensorValue |> ignore
 computeShaderOptions |> ignore
 imageTrackingOptions |> ignore
+flowGraphBlockConfiguration |> ignore
+exrHeader |> ignore
+gltfLoaderData |> ignore
+createDecoderAsync |> ignore
+getExrHeader |> ignore
 basisFileInfoFactory |> ignore
 nativeDataStreamFactory |> ignore
 validatedNativeDataStreamFactory |> ignore
@@ -271,6 +288,9 @@ textureSizeIsObject |> ignore
 getMimeType |> ignore
 mixamoRigMapping |> ignore
 stringTools |> ignore
+guid |> ignore
+bvhLoaderMetadata |> ignore
+gltfMagicBase64Encoded |> ignore
 errorCodes |> ignore
 wgs84Ellipsoid |> ignore
 richTypeColor3 |> ignore

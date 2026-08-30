@@ -34,6 +34,35 @@ module SimpleFunctions =
 
     /// Exact inline object used by a Babylon function signature.
     [<AllowNullLiteral>]
+    type InlineObject793fc298b906 =
+        abstract ``name``: string with get, set
+        abstract ``pixelType``: float with get, set
+        abstract ``pLinear``: float with get, set
+        abstract ``xSampling``: float with get, set
+        abstract ``ySampling``: float with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject5dbb9f7bffa0 =
+        abstract ``redX``: float with get, set
+        abstract ``redY``: float with get, set
+        abstract ``greenX``: float with get, set
+        abstract ``greenY``: float with get, set
+        abstract ``blueX``: float with get, set
+        abstract ``blueY``: float with get, set
+        abstract ``whiteX``: float with get, set
+        abstract ``whiteY``: float with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject1d36c15dc75c =
+        abstract ``xMin``: float with get, set
+        abstract ``yMin``: float with get, set
+        abstract ``xMax``: float with get, set
+        abstract ``yMax``: float with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
     type InlineObjectd76e3eabe256 =
         [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
 
@@ -213,6 +242,14 @@ module SimpleFunctions =
     [<Import("CreateConstantInput", "@babylonjs/core/Materials/Textures/textureMerger.js")>]
     let ``CreateConstantInput``: FunctionBinding_CreateConstantInput = jsNative
 
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.decoder
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateDecoderAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``header``: BabylonjsBindings.SimpleInterfaces.IEXRHeader * ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor * ``outputType``: BabylonjsBindings.Enums.EXROutputType -> JS.Promise<BabylonjsBindings.SimpleInterfaces.IEXRDecoder>
+
+    [<Import("CreateDecoderAsync", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.decoder.js")>]
+    let ``CreateDecoderAsync``: FunctionBinding_CreateDecoderAsync = jsNative
+
     /// @babylonjs/core/Misc/fileTools.pure
     [<AllowNullLiteral>]
     type FunctionBinding_DecodeBase64UrlToBinary =
@@ -260,6 +297,15 @@ module SimpleFunctions =
 
     [<Import("DumpData", "@babylonjs/core/Misc/dumpTools.pure.js")>]
     let ``DumpData``: FunctionBinding_DumpData = jsNative
+
+    /// @babylonjs/core/Misc/dumpTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_DumpDataAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``width``: float * ``height``: float * ``data``: JS.ArrayBufferView * ``mimeType``: string option * ``fileName``: string option * ``invertY``: bool option * ``toArrayBuffer``: bool * ?``quality``: float -> JS.Promise<JS.ArrayBuffer>
+        [<Emit("$0($1...)")>] abstract Invoke: ``width``: float * ``height``: float * ``data``: JS.ArrayBufferView * ?``mimeType``: string * ?``fileName``: string * ?``invertY``: bool * ?``toArrayBuffer``: bool * ?``quality``: float -> JS.Promise<string>
+
+    [<Import("DumpDataAsync", "@babylonjs/core/Misc/dumpTools.pure.js")>]
+    let ``DumpDataAsync``: FunctionBinding_DumpDataAsync = jsNative
 
     /// @babylonjs/core/Engines/engine.common
     [<AllowNullLiteral>]
@@ -380,6 +426,14 @@ module SimpleFunctions =
 
     [<Import("GetElementPixelFromUv", "@babylonjs/core/Materials/Textures/HTML/htmlRaycastInteractionManager.js")>]
     let ``GetElementPixelFromUv``: FunctionBinding_GetElementPixelFromUv = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.header
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetExrHeader =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> BabylonjsBindings.SimpleInterfaces.IEXRHeader
+
+    [<Import("GetExrHeader", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.header.js")>]
+    let ``GetExrHeader``: FunctionBinding_GetExrHeader = jsNative
 
     /// @babylonjs/core/Misc/urlTools
     [<AllowNullLiteral>]
@@ -804,6 +858,14 @@ module SimpleFunctions =
 
     [<Import("ParseUint8Array", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
     let ``ParseUint8Array``: FunctionBinding_ParseUint8Array = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseValue =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor * ``type``: string * ``size``: float -> U6<string, float, ResizeArray<float>, ResizeArray<InlineObject793fc298b906>, InlineObject5dbb9f7bffa0, InlineObject1d36c15dc75c> option
+
+    [<Import("ParseValue", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``ParseValue``: FunctionBinding_ParseValue = jsNative
 
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]
@@ -6357,6 +6419,14 @@ module SimpleFunctions =
     [<Import("ScalingMatrixToRef", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
     let ``ScalingMatrixToRef``: FunctionBinding_ScalingMatrixToRef = jsNative
 
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.decoder
+    [<AllowNullLiteral>]
+    type FunctionBinding_ScanData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``decoder``: BabylonjsBindings.SimpleInterfaces.IEXRDecoder * ``header``: BabylonjsBindings.SimpleInterfaces.IEXRHeader * ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> unit
+
+    [<Import("ScanData", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.decoder.js")>]
+    let ``ScanData``: FunctionBinding_ScanData = jsNative
+
     /// @babylonjs/core/Compat/compatibilityOptions
     [<AllowNullLiteral>]
     type FunctionBinding_setOpenGLOrientationForUV =
@@ -6404,6 +6474,46 @@ module SimpleFunctions =
 
     [<Import("TranslationMatrixToRef", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
     let ``TranslationMatrixToRef``: FunctionBinding_TranslationMatrixToRef = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression
+    [<AllowNullLiteral>]
+    type FunctionBinding_UncompressPIZ =
+        [<Emit("$0($1...)")>] abstract Invoke: ``decoder``: BabylonjsBindings.SimpleInterfaces.IEXRDecoder -> JS.DataView
+
+    [<Import("UncompressPIZ", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js")>]
+    let ``UncompressPIZ``: FunctionBinding_UncompressPIZ = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression
+    [<AllowNullLiteral>]
+    type FunctionBinding_UncompressPXR =
+        [<Emit("$0($1...)")>] abstract Invoke: ``decoder``: BabylonjsBindings.SimpleInterfaces.IEXRDecoder -> JS.DataView
+
+    [<Import("UncompressPXR", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js")>]
+    let ``UncompressPXR``: FunctionBinding_UncompressPXR = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression
+    [<AllowNullLiteral>]
+    type FunctionBinding_UncompressRAW =
+        [<Emit("$0($1...)")>] abstract Invoke: ``decoder``: BabylonjsBindings.SimpleInterfaces.IEXRDecoder -> JS.DataView
+
+    [<Import("UncompressRAW", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js")>]
+    let ``UncompressRAW``: FunctionBinding_UncompressRAW = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression
+    [<AllowNullLiteral>]
+    type FunctionBinding_UncompressRLE =
+        [<Emit("$0($1...)")>] abstract Invoke: ``decoder``: BabylonjsBindings.SimpleInterfaces.IEXRDecoder -> JS.DataView
+
+    [<Import("UncompressRLE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js")>]
+    let ``UncompressRLE``: FunctionBinding_UncompressRLE = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression
+    [<AllowNullLiteral>]
+    type FunctionBinding_UncompressZIP =
+        [<Emit("$0($1...)")>] abstract Invoke: ``decoder``: BabylonjsBindings.SimpleInterfaces.IEXRDecoder -> JS.DataView
+
+    [<Import("UncompressZIP", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js")>]
+    let ``UncompressZIP``: FunctionBinding_UncompressZIP = jsNative
 
     /// @babylonjs/core/Materials/Textures/HTML/htmlInCanvasPolyfill
     [<AllowNullLiteral>]

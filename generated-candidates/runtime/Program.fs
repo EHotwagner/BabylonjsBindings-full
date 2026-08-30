@@ -230,6 +230,12 @@ let startsWithBaby = ``StartsWith``.Invoke("babylon", "baby")
 let base64DataUrl = ``TestBase64DataUrl``.Invoke("data:text/plain;base64,QQ==")
 let stringRichType = ``RichTypeString``
 let lookedUpStringRichType = SimpleFunctions.``getRichTypeByFlowGraphType``.Invoke(flowGraphType = "string")
+let generatedGuid = ``GUID``.``RandomId``.Invoke()
+let bvhLoaderMetadata = ``BVHFileLoaderMetadata``
+let gltfMagicBase64Encoded = ``GLTFMagicBase64Encoded``
+let maxHalfFloat = ``MaxHalfFloat``
+let int8Size = ``INT8_SIZE``
+let nodeHasWindow = ``DomManagement``.``IsWindowObjectExist``.Invoke()
 
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then
     failwith "full candidate did not construct a Babylon scene"
@@ -365,6 +371,9 @@ if not base64DataUrl.``match`` || base64DataUrl.``type`` <> "text/plain" then
     failwith "Babylon callable variable inline result was not preserved"
 if stringRichType.``typeName`` <> "string" || lookedUpStringRichType.``typeName`` <> "string" then
     failwith "Babylon generic class dependency closure was not preserved"
+if generatedGuid.Length = 0 || bvhLoaderMetadata.``name`` <> "bvh" || bvhLoaderMetadata.``extensions``.``.bvh``.``isBinary`` || gltfMagicBase64Encoded.Length = 0 || maxHalfFloat <> 65504.0 || int8Size <> 1.0 then
+    failwith "Babylon native helper and loader metadata batch was not preserved"
+nodeHasWindow |> ignore
 
 loaderRegistration |> ignore
 camera.dispose()

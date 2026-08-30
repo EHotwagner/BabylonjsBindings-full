@@ -440,6 +440,35 @@ module SimpleVariables =
     [<Import("bumpFragmentWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/bumpFragment.js")>]
     let ``bumpFragmentWGSL``: VariableShape_bumpFragmentWGSL = jsNative
 
+    /// Nested inline object shape used by BVHFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_BVHFileLoaderMetadataProperty2ObjectProperty1Object =
+        abstract ``isBinary``: bool with get
+
+    /// Nested inline object shape used by BVHFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_BVHFileLoaderMetadataProperty2Object =
+        abstract ``.bvh``: VariableShape_BVHFileLoaderMetadataProperty2ObjectProperty1Object with get
+
+    /// Inline object shape of BVHFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_BVHFileLoaderMetadata =
+        abstract ``name``: string with get
+        abstract ``extensions``: VariableShape_BVHFileLoaderMetadataProperty2Object with get
+
+    /// @babylonjs/loaders/BVH/bvhFileLoader.metadata
+    [<Import("BVHFileLoaderMetadata", "@babylonjs/loaders/BVH/bvhFileLoader.metadata.js")>]
+    let ``BVHFileLoaderMetadata``: VariableShape_BVHFileLoaderMetadata = jsNative
+
+    /// Inline object shape of CameraInputTypes.
+    [<AllowNullLiteral>]
+    type VariableShape_CameraInputTypes =
+        interface end
+
+    /// @babylonjs/core/Cameras/cameraInputsManager
+    [<Import("CameraInputTypes", "@babylonjs/core/Cameras/cameraInputsManager.js")>]
+    let ``CameraInputTypes``: VariableShape_CameraInputTypes = jsNative
+
     /// Inline object shape of chromaticAberrationPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_chromaticAberrationPixelShader =
@@ -945,6 +974,18 @@ module SimpleVariables =
     [<Import("displayPassPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/displayPass.fragment.js")>]
     let ``displayPassPixelShaderWGSL``: VariableShape_displayPassPixelShaderWGSL = jsNative
 
+    /// Inline object shape of DomManagement.
+    [<AllowNullLiteral>]
+    type VariableShape_DomManagement =
+        abstract ``IsWindowObjectExist``: BabylonjsBindings.SimpleFunctions.FunctionBinding_IsWindowObjectExist with get, set
+        abstract ``IsNavigatorAvailable``: BabylonjsBindings.SimpleFunctions.FunctionBinding_IsNavigatorAvailable with get, set
+        abstract ``IsDocumentAvailable``: BabylonjsBindings.SimpleFunctions.FunctionBinding_IsDocumentAvailable with get, set
+        abstract ``GetDOMTextContent``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetDOMTextContent with get, set
+
+    /// @babylonjs/core/Misc/domManagement
+    [<Import("DomManagement", "@babylonjs/core/Misc/domManagement.js")>]
+    let ``DomManagement``: VariableShape_DomManagement = jsNative
+
     /// Callable shape of EmptyGeneratorFunc.
     [<AllowNullLiteral>]
     type VariableFunction_EmptyGeneratorFunc =
@@ -1021,6 +1062,26 @@ module SimpleVariables =
     [<Import("extractHighlightsPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/extractHighlights.fragment.js")>]
     let ``extractHighlightsPixelShaderWGSL``: VariableShape_extractHighlightsPixelShaderWGSL = jsNative
 
+    /// Nested inline object shape used by FBXFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_FBXFileLoaderMetadataProperty2ObjectProperty1Object =
+        abstract ``isBinary``: bool with get
+
+    /// Nested inline object shape used by FBXFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_FBXFileLoaderMetadataProperty2Object =
+        abstract ``.fbx``: VariableShape_FBXFileLoaderMetadataProperty2ObjectProperty1Object with get
+
+    /// Inline object shape of FBXFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_FBXFileLoaderMetadata =
+        abstract ``name``: string with get
+        abstract ``extensions``: VariableShape_FBXFileLoaderMetadataProperty2Object with get
+
+    /// @babylonjs/loaders/FBX/fbxFileLoader.metadata
+    [<Import("FBXFileLoaderMetadata", "@babylonjs/loaders/FBX/fbxFileLoader.metadata.js")>]
+    let ``FBXFileLoaderMetadata``: VariableShape_FBXFileLoaderMetadata = jsNative
+
     /// Inline object shape of filterPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_filterPixelShader =
@@ -1040,6 +1101,10 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/filter.fragment
     [<Import("filterPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/filter.fragment.js")>]
     let ``filterPixelShaderWGSL``: VariableShape_filterPixelShaderWGSL = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
+    [<Import("FLOAT32_SIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
+    let ``FLOAT32_SIZE``: float = jsNative
 
     /// Inline object shape of fluidRenderingBilateralBlurPixelShader.
     [<AllowNullLiteral>]
@@ -1421,6 +1486,10 @@ module SimpleVariables =
     [<Import("gaussianSplattingFragmentDeclarationWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/gaussianSplattingFragmentDeclaration.js")>]
     let ``gaussianSplattingFragmentDeclarationWGSL``: VariableShape_gaussianSplattingFragmentDeclarationWGSL = jsNative
 
+    /// @babylonjs/core/Materials/GaussianSplatting/gaussianSplattingMaterial.pure
+    [<Import("GaussianSplattingMaxPartCount", "@babylonjs/core/Materials/GaussianSplatting/gaussianSplattingMaterial.pure.js")>]
+    let ``GaussianSplattingMaxPartCount``: float = jsNative
+
     /// Inline object shape of gaussianSplattingVertexDeclaration.
     [<AllowNullLiteral>]
     type VariableShape_gaussianSplattingVertexDeclaration =
@@ -1600,6 +1669,55 @@ module SimpleVariables =
     [<Import("glowMapMergeVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/glowMapMerge.vertex.js")>]
     let ``glowMapMergeVertexShaderWGSL``: VariableShape_glowMapMergeVertexShaderWGSL = jsNative
 
+    /// Nested inline object shape used by GLTFFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_GLTFFileLoaderMetadataProperty2ObjectProperty1Object =
+        abstract ``isBinary``: bool with get
+        abstract ``mimeType``: string with get
+
+    /// Nested inline object shape used by GLTFFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_GLTFFileLoaderMetadataProperty2ObjectProperty2Object =
+        abstract ``isBinary``: bool with get
+        abstract ``mimeType``: string with get
+
+    /// Nested inline object shape used by GLTFFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_GLTFFileLoaderMetadataProperty2Object =
+        abstract ``.gltf``: VariableShape_GLTFFileLoaderMetadataProperty2ObjectProperty1Object with get
+        abstract ``.glb``: VariableShape_GLTFFileLoaderMetadataProperty2ObjectProperty2Object with get
+
+    /// Inline object shape of GLTFFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_GLTFFileLoaderMetadata =
+        abstract ``name``: string with get
+        abstract ``extensions``: VariableShape_GLTFFileLoaderMetadataProperty2Object with get
+        abstract ``canDirectLoad``: System.Func<string, bool> with get
+
+    /// @babylonjs/loaders/glTF/glTFFileLoader.metadata
+    [<Import("GLTFFileLoaderMetadata", "@babylonjs/loaders/glTF/glTFFileLoader.metadata.js")>]
+    let ``GLTFFileLoaderMetadata``: VariableShape_GLTFFileLoaderMetadata = jsNative
+
+    /// @babylonjs/loaders/glTF/glTFFileLoader.metadata
+    [<Import("GLTFMagicBase64Encoded", "@babylonjs/loaders/glTF/glTFFileLoader.metadata.js")>]
+    let ``GLTFMagicBase64Encoded``: string = jsNative
+
+    /// Nested inline object shape used by gltfTypeToBabylonType.
+    [<AllowNullLiteral>]
+    type VariableShape_gltfTypeToBabylonTypeProperty1Object =
+        abstract ``length``: float with get, set
+        abstract ``flowGraphType``: BabylonjsBindings.StringEnums.FlowGraphTypes with get, set
+        abstract ``elementType``: U2<string, string> with get, set
+
+    /// Inline object shape of gltfTypeToBabylonType.
+    [<AllowNullLiteral>]
+    type VariableShape_gltfTypeToBabylonType =
+        [<EmitIndexer>] abstract Item: ``key``: string -> VariableShape_gltfTypeToBabylonTypeProperty1Object with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser
+    [<Import("gltfTypeToBabylonType", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js")>]
+    let ``gltfTypeToBabylonType``: VariableShape_gltfTypeToBabylonType = jsNative
+
     /// Inline object shape of gpuRenderParticlesPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_gpuRenderParticlesPixelShader =
@@ -1710,6 +1828,10 @@ module SimpleVariables =
     [<Import("greasedLinePixelShaderWGSL", "@babylonjs/core/ShadersWGSL/greasedLine.fragment.js")>]
     let ``greasedLinePixelShaderWGSL``: VariableShape_greasedLinePixelShaderWGSL = jsNative
 
+    /// @babylonjs/core/Materials/GreasedLine/greasedLineSimpleMaterial
+    [<Import("GreasedLineUseOffsetsSimpleMaterialDefine", "@babylonjs/core/Materials/GreasedLine/greasedLineSimpleMaterial.js")>]
+    let ``GreasedLineUseOffsetsSimpleMaterialDefine``: string = jsNative
+
     /// Inline object shape of greasedLineVertexShader.
     [<AllowNullLiteral>]
     type VariableShape_greasedLineVertexShader =
@@ -1729,6 +1851,15 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/greasedLine.vertex
     [<Import("greasedLineVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/greasedLine.vertex.js")>]
     let ``greasedLineVertexShaderWGSL``: VariableShape_greasedLineVertexShaderWGSL = jsNative
+
+    /// Inline object shape of GUID.
+    [<AllowNullLiteral>]
+    type VariableShape_GUID =
+        abstract ``RandomId``: BabylonjsBindings.SimpleFunctions.FunctionBinding_RandomGUID with get, set
+
+    /// @babylonjs/core/Misc/guid
+    [<Import("GUID", "@babylonjs/core/Misc/guid.js")>]
+    let ``GUID``: VariableShape_GUID = jsNative
 
     /// Inline object shape of hdrFilteringFunctions.
     [<AllowNullLiteral>]
@@ -1830,6 +1961,17 @@ module SimpleVariables =
     [<Import("hdrIrradianceFilteringVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/hdrIrradianceFiltering.vertex.js")>]
     let ``hdrIrradianceFilteringVertexShaderWGSL``: VariableShape_hdrIrradianceFilteringVertexShaderWGSL = jsNative
 
+    /// Inline object shape of HDRTools.
+    [<AllowNullLiteral>]
+    type VariableShape_HDRTools =
+        abstract ``RGBE_ReadHeader``: BabylonjsBindings.SimpleFunctions.FunctionBinding_RGBE_ReadHeader with get, set
+        abstract ``GetCubeMapTextureData``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetCubeMapTextureData with get, set
+        abstract ``RGBE_ReadPixels``: BabylonjsBindings.SimpleFunctions.FunctionBinding_RGBE_ReadPixels with get, set
+
+    /// @babylonjs/core/Misc/HighDynamicRange/hdr
+    [<Import("HDRTools", "@babylonjs/core/Misc/HighDynamicRange/hdr.js")>]
+    let ``HDRTools``: VariableShape_HDRTools = jsNative
+
     /// Inline object shape of helperFunctions.
     [<AllowNullLiteral>]
     type VariableShape_helperFunctions =
@@ -1871,12 +2013,20 @@ module SimpleVariables =
     let ``highlightsPixelShaderWGSL``: VariableShape_highlightsPixelShaderWGSL = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
+    [<Import("HUF_DECBITS", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
+    let ``HUF_DECBITS``: float = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
     [<Import("HUF_DECMASK", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
     let ``HUF_DECMASK``: float = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
     [<Import("HUF_DECSIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
     let ``HUF_DECSIZE``: float = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
+    [<Import("HUF_ENCBITS", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
+    let ``HUF_ENCBITS``: float = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
     [<Import("HUF_ENCSIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
@@ -2361,6 +2511,18 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/ShadersInclude/instancesVertex
     [<Import("instancesVertexWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/instancesVertex.js")>]
     let ``instancesVertexWGSL``: VariableShape_instancesVertexWGSL = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
+    [<Import("INT16_SIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
+    let ``INT16_SIZE``: float = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
+    [<Import("INT32_SIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
+    let ``INT32_SIZE``: float = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
+    [<Import("INT8_SIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
+    let ``INT8_SIZE``: float = jsNative
 
     /// Inline object shape of intersectionFunctions.
     [<AllowNullLiteral>]
@@ -2847,6 +3009,10 @@ module SimpleVariables =
     [<Import("logOperation", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
     let ``logOperation``: VariableFunction_logOperation = jsNative
 
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
+    [<Import("LONG_ZEROCODE_RUN", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
+    let ``LONG_ZEROCODE_RUN``: float = jsNative
+
     /// Inline object shape of ltcHelperFunctions.
     [<AllowNullLiteral>]
     type VariableShape_ltcHelperFunctions =
@@ -2866,6 +3032,10 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/ShadersInclude/ltcHelperFunctions
     [<Import("ltcHelperFunctionsWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/ltcHelperFunctions.js")>]
     let ``ltcHelperFunctionsWGSL``: VariableShape_ltcHelperFunctionsWGSL = jsNative
+
+    /// @babylonjs/core/Misc/halfFloat
+    [<Import("MaxHalfFloat", "@babylonjs/core/Misc/halfFloat.js")>]
+    let ``MaxHalfFloat``: float = jsNative
 
     /// Inline object shape of meshUboDeclarationWGSL.
     [<AllowNullLiteral>]
@@ -3017,6 +3187,15 @@ module SimpleVariables =
     [<Import("minmaxReduxPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/minmaxRedux.fragment.js")>]
     let ``minmaxReduxPixelShaderWGSL``: VariableShape_minmaxReduxPixelShaderWGSL = jsNative
 
+    /// Nested inline object shape used by MixamoAimChildOverrides.
+    [<AllowNullLiteral>]
+    type VariableShape_MixamoAimChildOverridesIndexerObject =
+        [<EmitIndexer>] abstract Item: ``key``: BabylonjsBindings.StringEnums.WebXRBodyJoint -> BabylonjsBindings.StringEnums.WebXRBodyJoint option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRBodyTracking.pure
+    [<Import("MixamoAimChildOverrides", "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js")>]
+    let ``MixamoAimChildOverrides``: VariableShape_MixamoAimChildOverridesIndexerObject = jsNative
+
     /// @babylonjs/core/XR/features/WebXRBodyTracking.pure
     [<Import("MixamoRigMapping", "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js")>]
     let ``MixamoRigMapping``: BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping = jsNative
@@ -3120,6 +3299,16 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/motionBlur.fragment
     [<Import("motionBlurPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/motionBlur.fragment.js")>]
     let ``motionBlurPixelShaderWGSL``: VariableShape_motionBlurPixelShaderWGSL = jsNative
+
+    /// Inline object shape of OBJFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_OBJFileLoaderMetadata =
+        abstract ``name``: string with get
+        abstract ``extensions``: string with get
+
+    /// @babylonjs/loaders/OBJ/objFileLoader.metadata
+    [<Import("OBJFileLoaderMetadata", "@babylonjs/loaders/OBJ/objFileLoader.metadata.js")>]
+    let ``OBJFileLoaderMetadata``: VariableShape_OBJFileLoaderMetadata = jsNative
 
     /// Inline object shape of oitBackBlendPixelShader.
     [<AllowNullLiteral>]
@@ -3524,6 +3713,15 @@ module SimpleVariables =
     [<Import("refractionPixelShader", "@babylonjs/core/Shaders/refraction.fragment.js")>]
     let ``refractionPixelShader``: VariableShape_refractionPixelShader = jsNative
 
+    /// Inline object shape of renderableTextureFormatToIndex.
+    [<AllowNullLiteral>]
+    type VariableShape_renderableTextureFormatToIndex =
+        [<EmitIndexer>] abstract Item: ``name``: string -> float with get, set
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuTextureManager
+    [<Import("renderableTextureFormatToIndex", "@babylonjs/core/Engines/WebGPU/webgpuTextureManager.js")>]
+    let ``renderableTextureFormatToIndex``: VariableShape_renderableTextureFormatToIndex = jsNative
+
     /// Inline object shape of rgbdDecodePixelShader.
     [<AllowNullLiteral>]
     type VariableShape_rgbdDecodePixelShader =
@@ -3790,6 +3988,10 @@ module SimpleVariables =
     [<Import("SetCorsBehavior", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ``SetCorsBehavior``: VariableFunction_SetCorsBehavior = jsNative
 
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/smartFilterFragmentOutputBlock.pure
+    [<Import("SfeModeDefine", "@babylonjs/core/Materials/Node/Blocks/Fragment/smartFilterFragmentOutputBlock.pure.js")>]
+    let ``SfeModeDefine``: string = jsNative
+
     /// Inline object shape of shadowMapFragment.
     [<AllowNullLiteral>]
     type VariableShape_shadowMapFragment =
@@ -3951,8 +4153,56 @@ module SimpleVariables =
     let ``sharpenPixelShaderWGSL``: VariableShape_sharpenPixelShaderWGSL = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
+    [<Import("SHORT_ZEROCODE_RUN", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
+    let ``SHORT_ZEROCODE_RUN``: float = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
     [<Import("SHORTEST_LONG_RUN", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
     let ``SHORTEST_LONG_RUN``: float = jsNative
+
+    /// Nested inline object shape used by SPLATFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty1Object =
+        abstract ``isBinary``: bool with get
+
+    /// Nested inline object shape used by SPLATFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty2Object =
+        abstract ``isBinary``: bool with get
+
+    /// Nested inline object shape used by SPLATFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty3Object =
+        abstract ``isBinary``: bool with get
+
+    /// Nested inline object shape used by SPLATFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty4Object =
+        abstract ``isBinary``: bool with get
+
+    /// Nested inline object shape used by SPLATFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty5Object =
+        abstract ``isBinary``: bool with get
+
+    /// Nested inline object shape used by SPLATFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_SPLATFileLoaderMetadataProperty2Object =
+        abstract ``.splat``: VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty1Object with get
+        abstract ``.ply``: VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty2Object with get
+        abstract ``.spz``: VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty3Object with get
+        abstract ``.json``: VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty4Object with get
+        abstract ``.sog``: VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty5Object with get
+
+    /// Inline object shape of SPLATFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_SPLATFileLoaderMetadata =
+        abstract ``name``: string with get
+        abstract ``extensions``: VariableShape_SPLATFileLoaderMetadataProperty2Object with get
+
+    /// @babylonjs/loaders/SPLAT/splatFileLoader.metadata
+    [<Import("SPLATFileLoaderMetadata", "@babylonjs/loaders/SPLAT/splatFileLoader.metadata.js")>]
+    let ``SPLATFileLoaderMetadata``: VariableShape_SPLATFileLoaderMetadata = jsNative
 
     /// Inline object shape of spriteMapPixelShader.
     [<AllowNullLiteral>]
@@ -4093,6 +4343,26 @@ module SimpleVariables =
     [<Import("stereoscopicInterlacePixelShader", "@babylonjs/core/Shaders/stereoscopicInterlace.fragment.js")>]
     let ``stereoscopicInterlacePixelShader``: VariableShape_stereoscopicInterlacePixelShader = jsNative
 
+    /// Nested inline object shape used by STLFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_STLFileLoaderMetadataProperty2ObjectProperty1Object =
+        abstract ``isBinary``: bool with get
+
+    /// Nested inline object shape used by STLFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_STLFileLoaderMetadataProperty2Object =
+        abstract ``.stl``: VariableShape_STLFileLoaderMetadataProperty2ObjectProperty1Object with get
+
+    /// Inline object shape of STLFileLoaderMetadata.
+    [<AllowNullLiteral>]
+    type VariableShape_STLFileLoaderMetadata =
+        abstract ``name``: string with get
+        abstract ``extensions``: VariableShape_STLFileLoaderMetadataProperty2Object with get
+
+    /// @babylonjs/loaders/STL/stlFileLoader.metadata
+    [<Import("STLFileLoaderMetadata", "@babylonjs/loaders/STL/stlFileLoader.metadata.js")>]
+    let ``STLFileLoaderMetadata``: VariableShape_STLFileLoaderMetadata = jsNative
+
     /// Inline object shape of StringTools.
     [<AllowNullLiteral>]
     type VariableShape_StringTools =
@@ -4147,6 +4417,10 @@ module SimpleVariables =
     [<Import("ToGammaSpace", "@babylonjs/core/Maths/math.constants.js")>]
     let ``ToGammaSpace``: float = jsNative
 
+    /// @babylonjs/core/Maths/math.constants
+    [<Import("ToLinearSpace", "@babylonjs/core/Maths/math.constants.js")>]
+    let ``ToLinearSpace``: float = jsNative
+
     /// Inline object shape of tonemapPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_tonemapPixelShader =
@@ -4166,6 +4440,10 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/tonemap.fragment
     [<Import("tonemapPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/tonemap.fragment.js")>]
     let ``tonemapPixelShaderWGSL``: VariableShape_tonemapPixelShaderWGSL = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
+    [<Import("ULONG_SIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
+    let ``ULONG_SIZE``: float = jsNative
 
     /// @babylonjs/core/Rendering/geometryBufferRenderer.pure
     [<Import("Uniforms", "@babylonjs/core/Rendering/geometryBufferRenderer.pure.js")>]

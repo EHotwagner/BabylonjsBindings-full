@@ -80,13 +80,31 @@ const erasedUnionType = branches => {
   if (branches.length <= 9) return `U${branches.length}<${branches.join(", ")}>`;
   return `U2<${erasedUnionType(branches.slice(0, 8))}, ${erasedUnionType(branches.slice(8))}>`;
 };
+const numericLiteralValues = new Set();
+const stringLiteralTypes = new Map();
+const fsharpString = value => `"${value.replaceAll("\\", "\\\\").replaceAll("\"", "\\\"").replaceAll("\n", "\\n").replaceAll("\r", "\\r")}"`;
+const numericLiteralType = value => {
+  const numeric = Number(value);
+  if (!Number.isSafeInteger(numeric) || numeric < -2147483648 || numeric > 2147483647) return undefined;
+  numericLiteralValues.add(numeric);
+  return `NumericLiteral${numeric < 0 ? `Negative${Math.abs(numeric)}` : numeric}`;
+};
+const stringLiteralType = value => {
+  const name = `StringLiteral${createHash("sha256").update(value).digest("hex").slice(0, 12)}`;
+  stringLiteralTypes.set(name, value);
+  return name;
+};
 
 const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "System.Double";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
+  if (node.kind === ts.SyntaxKind.NeverKeyword) return "BabylonjsBindings.SimpleClasses.Never";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
+  if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
+  if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
+  if (ts.isLiteralTypeNode(node) && (node.literal.kind === ts.SyntaxKind.TrueKeyword || node.literal.kind === ts.SyntaxKind.FalseKeyword)) return "bool";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
     if (ts.isArrayTypeNode(node.type)) {
@@ -95,9 +113,10 @@ const fsharpType = node => {
     }
     return fsharpType(node.type);
   }
-  if (ts.isUnionTypeNode(node) && node.types.length === 2 && node.types.filter(isAbsentType).length === 1) {
-    const inner = fsharpType(node.types.find(branch => !isAbsentType(branch)));
-    return inner ? asOption(inner) : undefined;
+  if (ts.isUnionTypeNode(node) && node.types.some(isAbsentType)) {
+    const branches = node.types.filter(branch => !isAbsentType(branch)).map(fsharpType);
+    if (branches.some(branch => !branch) || branches.length === 0) return undefined;
+    return asOption(branches.length === 1 ? branches[0] : erasedUnionType(branches));
   }
   if (ts.isUnionTypeNode(node) && node.types.length >= 2) {
     const branches = node.types.map(fsharpType);
@@ -107,6 +126,7 @@ const fsharpType = node => {
     const element = fsharpType(node.elementType);
     return element ? `ResizeArray<${element}>` : undefined;
   }
+  if (ts.isTupleTypeNode(node) && node.elements.length === 0) return "ResizeArray<BabylonjsBindings.SimpleClasses.Never>";
   if (ts.isTupleTypeNode(node) && node.elements.length >= 2) {
     const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type) : !ts.isNamedTupleMember(element) ? fsharpType(element) : undefined);
     return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
@@ -181,6 +201,7 @@ const fsharpType = node => {
       if (renderedArguments.some(argument => !argument)) return undefined;
       return maintained.arity === 0 ? maintained.fsharpSymbol : `${maintained.fsharpSymbol}<${renderedArguments.join(", ")}>`;
     }
+    if (!node.typeArguments?.length && node.typeName.text === diagnosedAlias) return `BabylonjsBindings.TypeAliases.${diagnosedAlias}`;
   }
   recordTypeFailure(node);
   return undefined;
@@ -318,7 +339,13 @@ for (const sourceFile of program.getSourceFiles()) {
       entry = { package: packageName, module, name, shape: "callback", returnType, parameters };
     } else if (!declaration.typeParameters?.length) {
       const targetType = fsharpType(declaration.type);
-      if (targetType) entry = {
+      const selfSymbol = `BabylonjsBindings.TypeAliases.${name}`;
+      const recursiveUnionBranches = ts.isUnionTypeNode(declaration.type)
+        ? declaration.type.types.map(fsharpType)
+        : [];
+      if (recursiveUnionBranches.length >= 2 && recursiveUnionBranches.every(Boolean) && recursiveUnionBranches.some(branch => branch.includes(selfSymbol))) {
+        entry = { package: packageName, module, name, shape: "recursiveUnionAlias", branches: recursiveUnionBranches };
+      } else if (targetType) entry = {
         package: packageName,
         module,
         name,
@@ -354,6 +381,14 @@ const lines = [
   "/// Exact primitive aliases and dependency-free callbacks exported by Babylon.js 9.19.0.",
   "module TypeAliases ="
 ];
+const aliasReferenceText = JSON.stringify(entries);
+for (const value of [...numericLiteralValues].filter(value => aliasReferenceText.includes(`NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`)).sort((left, right) => left - right)) {
+  const name = `NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`;
+  lines.push("", `    /// Exact numeric literal type for ${value}.`, `    type ${name} =`, `        | Value = ${value}`);
+}
+for (const [name, value] of [...stringLiteralTypes].filter(([name]) => aliasReferenceText.includes(name)).sort(([left], [right]) => left.localeCompare(right))) {
+  lines.push("", `    /// Exact string literal type for ${fsharpString(value)}.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, `        | [<CompiledName(${fsharpString(value)})>] Value`);
+}
 let auxiliaryReferenceText = JSON.stringify(entries);
 const retainedAuxiliaryObjectTypes = [];
 while (true) {
@@ -381,6 +416,9 @@ for (const entry of entries) {
       ? "unit"
       : entry.parameters.map(parameter => `${parameter.optional ? "?" : ""}${parameter.name}: ${parameter.type}`).join(" * ");
     lines.push("    [<AllowNullLiteral>]", `    type ${entry.name} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${argumentsType} -> ${entry.returnType}`);
+  } else if (entry.shape === "recursiveUnionAlias") {
+    lines.push("    [<Erase>]", `    type ${entry.name} =`);
+    entry.branches.forEach((branch, index) => lines.push(`        | ${entry.name}Case${index + 1} of ${branch}`));
   } else if (entry.shape === "objectAlias") {
     lines.push("    [<AllowNullLiteral>]", `    type ${entry.name} =`);
     for (const member of entry.members) {
@@ -412,7 +450,7 @@ const manifest = {
     ...(entry.deepImmutableTarget ? { deepImmutableSymbol: `BabylonjsBindings.TypeAliases.DeepImmutable${entry.name}` } : {}),
     shape: entry.shape,
     ...(entry.shape === "genericAlias" ? { typeParameterCount: 1 } : {}),
-    memberCount: entry.shape === "callback" ? entry.parameters.length : entry.shape === "objectAlias" ? entry.members.length : entry.shape === "intersectionAlias" ? entry.bases.length + entry.members.length : 1
+    memberCount: entry.shape === "callback" ? entry.parameters.length : entry.shape === "recursiveUnionAlias" ? entry.branches.length : entry.shape === "objectAlias" ? entry.members.length : entry.shape === "intersectionAlias" ? entry.bases.length + entry.members.length : 1
   }))
 };
 const proposalPath = resolve(root, "generated-candidates/SimpleAliases.proposal.fs");

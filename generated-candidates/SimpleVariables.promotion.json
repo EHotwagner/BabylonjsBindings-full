@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "0454fe8f56d62e2ee211a0bf2ad437b3d36266e2170c6b813a01b63d53bc378e",
+  "proposalSha256": "7447d4f20eb578e5f8bf5504cb2a94e704d871844c47d4c53223dd4e473e295a",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -494,6 +494,26 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bumpFragmentWGSL",
       "fsharpType": "VariableShape_bumpFragmentWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/BVH/bvhFileLoader.metadata",
+      "name": "BVHFileLoaderMetadata",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BVHFileLoaderMetadata",
+      "fsharpType": "VariableShape_BVHFileLoaderMetadata",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/cameraInputsManager",
+      "name": "CameraInputTypes",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.CameraInputTypes",
+      "fsharpType": "VariableShape_CameraInputTypes",
+      "memberCount": 0
     },
     {
       "package": "@babylonjs/core",
@@ -1007,6 +1027,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/domManagement",
+      "name": "DomManagement",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DomManagement",
+      "fsharpType": "VariableShape_DomManagement",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Particles/EmitterTypes/customParticleEmitter",
       "name": "EmptyGeneratorFunc",
       "kind": "variable",
@@ -1085,6 +1115,16 @@
       "memberCount": 2
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/FBX/fbxFileLoader.metadata",
+      "name": "FBXFileLoaderMetadata",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FBXFileLoaderMetadata",
+      "fsharpType": "VariableShape_FBXFileLoaderMetadata",
+      "memberCount": 2
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/filter.fragment",
       "name": "filterPixelShader",
@@ -1103,6 +1143,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.filterPixelShaderWGSL",
       "fsharpType": "VariableShape_filterPixelShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "FLOAT32_SIZE",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FLOAT32_SIZE",
+      "fsharpType": "float"
     },
     {
       "package": "@babylonjs/core",
@@ -1486,6 +1535,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GaussianSplatting/gaussianSplattingMaterial.pure",
+      "name": "GaussianSplattingMaxPartCount",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GaussianSplattingMaxPartCount",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/gaussianSplattingVertexDeclaration",
       "name": "gaussianSplattingVertexDeclaration",
       "kind": "variable",
@@ -1665,6 +1723,35 @@
       "memberCount": 2
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.metadata",
+      "name": "GLTFFileLoaderMetadata",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GLTFFileLoaderMetadata",
+      "fsharpType": "VariableShape_GLTFFileLoaderMetadata",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.metadata",
+      "name": "GLTFMagicBase64Encoded",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GLTFMagicBase64Encoded",
+      "fsharpType": "string"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser",
+      "name": "gltfTypeToBabylonType",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gltfTypeToBabylonType",
+      "fsharpType": "VariableShape_gltfTypeToBabylonType",
+      "memberCount": 1
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/gpuRenderParticles.fragment",
       "name": "gpuRenderParticlesPixelShader",
@@ -1776,6 +1863,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GreasedLine/greasedLineSimpleMaterial",
+      "name": "GreasedLineUseOffsetsSimpleMaterialDefine",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GreasedLineUseOffsetsSimpleMaterialDefine",
+      "fsharpType": "string"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/greasedLine.vertex",
       "name": "greasedLineVertexShader",
       "kind": "variable",
@@ -1793,6 +1889,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.greasedLineVertexShaderWGSL",
       "fsharpType": "VariableShape_greasedLineVertexShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/guid",
+      "name": "GUID",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GUID",
+      "fsharpType": "VariableShape_GUID",
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",
@@ -1896,6 +2002,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/HighDynamicRange/hdr",
+      "name": "HDRTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HDRTools",
+      "fsharpType": "VariableShape_HDRTools",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/helperFunctions",
       "name": "helperFunctions",
       "kind": "variable",
@@ -1937,6 +2053,15 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "HUF_DECBITS",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HUF_DECBITS",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "HUF_DECMASK",
       "kind": "variable",
       "disposition": "typed",
@@ -1950,6 +2075,15 @@
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HUF_DECSIZE",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "HUF_ENCBITS",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HUF_ENCBITS",
       "fsharpType": "float"
     },
     {
@@ -2443,6 +2577,33 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "INT16_SIZE",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.INT16_SIZE",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "INT32_SIZE",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.INT32_SIZE",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "INT8_SIZE",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.INT8_SIZE",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/intersectionFunctions",
       "name": "intersectionFunctions",
       "kind": "variable",
@@ -2923,6 +3084,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "LONG_ZEROCODE_RUN",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LONG_ZEROCODE_RUN",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/ltcHelperFunctions",
       "name": "ltcHelperFunctions",
       "kind": "variable",
@@ -2940,6 +3110,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ltcHelperFunctionsWGSL",
       "fsharpType": "VariableShape_ltcHelperFunctionsWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/halfFloat",
+      "name": "MaxHalfFloat",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.MaxHalfFloat",
+      "fsharpType": "float"
     },
     {
       "package": "@babylonjs/core",
@@ -3094,6 +3273,15 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
+      "name": "MixamoAimChildOverrides",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.MixamoAimChildOverrides",
+      "fsharpType": "VariableShape_MixamoAimChildOverridesIndexerObject"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
       "name": "MixamoRigMapping",
       "kind": "variable",
       "disposition": "typed",
@@ -3198,6 +3386,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.motionBlurPixelShaderWGSL",
       "fsharpType": "VariableShape_motionBlurPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/OBJ/objFileLoader.metadata",
+      "name": "OBJFileLoaderMetadata",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.OBJFileLoaderMetadata",
+      "fsharpType": "VariableShape_OBJFileLoaderMetadata",
       "memberCount": 2
     },
     {
@@ -3611,6 +3809,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuTextureManager",
+      "name": "renderableTextureFormatToIndex",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.renderableTextureFormatToIndex",
+      "fsharpType": "VariableShape_renderableTextureFormatToIndex",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/rgbdDecode.fragment",
       "name": "rgbdDecodePixelShader",
       "kind": "variable",
@@ -3913,6 +4121,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/Fragment/smartFilterFragmentOutputBlock.pure",
+      "name": "SfeModeDefine",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SfeModeDefine",
+      "fsharpType": "string"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapFragment",
       "name": "shadowMapFragment",
       "kind": "variable",
@@ -4074,11 +4291,30 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "SHORT_ZEROCODE_RUN",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SHORT_ZEROCODE_RUN",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "SHORTEST_LONG_RUN",
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SHORTEST_LONG_RUN",
       "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/SPLAT/splatFileLoader.metadata",
+      "name": "SPLATFileLoaderMetadata",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SPLATFileLoaderMetadata",
+      "fsharpType": "VariableShape_SPLATFileLoaderMetadata",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -4221,6 +4457,16 @@
       "memberCount": 2
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/STL/stlFileLoader.metadata",
+      "name": "STLFileLoaderMetadata",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.STLFileLoaderMetadata",
+      "fsharpType": "VariableShape_STLFileLoaderMetadata",
+      "memberCount": 2
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/stringTools",
       "name": "StringTools",
@@ -4271,6 +4517,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.constants",
+      "name": "ToLinearSpace",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ToLinearSpace",
+      "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/tonemap.fragment",
       "name": "tonemapPixelShader",
       "kind": "variable",
@@ -4288,6 +4543,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.tonemapPixelShaderWGSL",
       "fsharpType": "VariableShape_tonemapPixelShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "ULONG_SIZE",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ULONG_SIZE",
+      "fsharpType": "float"
     },
     {
       "package": "@babylonjs/core",

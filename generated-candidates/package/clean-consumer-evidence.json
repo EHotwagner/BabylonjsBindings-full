@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "f756f561b80f164b12211345ff54b09baee7f18aa5cb5a6aed6b8bc204f00566"
+    "sha256": "dd19d045ed8cdb7ea0f864480e0e3479549e75ba2072a5cb4f497e23c5522be8"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,7 +13,7 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "ceba2d5b36f1199dfc0b70483ce661a406a3083e2c3fbf6672f2445c28915c48",
+  "emittedProgramSha256": "3a1dc428a7f465910cb28e4f9c99de4649fe54a7cafcea811e25a472cf94cd3b",
   "imports": [
     "@babylonjs/core/Animations/animation.pure.js",
     "@babylonjs/core/Animations/animationEvent.js",
@@ -37,6 +37,7 @@
     "@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration.js",
     "@babylonjs/core/Materials/PBR/pbrSheenConfiguration.js",
     "@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration.js",
+    "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
     "@babylonjs/core/Materials/Textures/textureCreationOptions.js",
     "@babylonjs/core/Materials/fresnelParameters.pure.js",
     "@babylonjs/core/Materials/imageProcessingConfiguration.defines.js",
@@ -61,6 +62,8 @@
     "@babylonjs/core/Misc/fileTools.pure.js",
     "@babylonjs/core/Misc/filesInputStore.js",
     "@babylonjs/core/Misc/gradients.js",
+    "@babylonjs/core/Misc/guid.js",
+    "@babylonjs/core/Misc/halfFloat.js",
     "@babylonjs/core/Misc/lazy.js",
     "@babylonjs/core/Misc/logger.js",
     "@babylonjs/core/Misc/observable.extensions.pure.js",
@@ -74,6 +77,8 @@
     "@babylonjs/core/States/stencilStateComposer.js",
     "@babylonjs/core/scene.pure.js",
     "@babylonjs/core/sceneComponent.js",
+    "@babylonjs/loaders/BVH/bvhFileLoader.metadata.js",
+    "@babylonjs/loaders/glTF/glTFFileLoader.metadata.js",
     "@babylonjs/loaders/glTF/index.js"
   ],
   "projectReference": false,

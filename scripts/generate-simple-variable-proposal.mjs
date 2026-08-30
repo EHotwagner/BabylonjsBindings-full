@@ -40,7 +40,8 @@ const dependencyManifestPaths = [
   "src/BabylonjsBindings/object-type-coverage-manifest.json",
   "generated-candidates/SimpleAliases.promotion.json",
   "generated-candidates/SimpleInterfaces.promotion.json",
-  "generated-candidates/SimpleClasses.promotion.json"
+  "generated-candidates/SimpleClasses.promotion.json",
+  "generated-candidates/SimpleFunctions.promotion.json"
 ];
 const dependencyExports = (await Promise.all(dependencyManifestPaths.map(async path => JSON.parse(await readFile(resolve(root, path), "utf8")))))
   .flatMap(manifest => manifest.exports);
@@ -48,7 +49,7 @@ const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
-  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, arity: entry.typeParameterCount ?? 0 }]));
+  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, fsharpType: entry.fsharpType, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, arity: entry.typeParameterCount ?? 0 }]));
 
 const isAbsentType = node => node.kind === ts.SyntaxKind.UndefinedKeyword
   || (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
@@ -59,6 +60,12 @@ const browserTypes = new Set([
   "ImageData", "OfflineAudioContext", "WebGLUniformLocation", "WebGLRenderingContext",
   "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
 ]);
+const initializerType = node => {
+  if (ts.isNumericLiteral(node) || (ts.isPrefixUnaryExpression(node) && ts.isNumericLiteral(node.operand))) return "float";
+  if (ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) return "string";
+  if (node.kind === ts.SyntaxKind.TrueKeyword || node.kind === ts.SyntaxKind.FalseKeyword) return "bool";
+  return undefined;
+};
 const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
@@ -66,6 +73,9 @@ const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.NeverKeyword) return "BabylonjsBindings.SimpleClasses.Never";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
+  if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return "float";
+  if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return "string";
+  if (ts.isLiteralTypeNode(node) && (node.literal.kind === ts.SyntaxKind.TrueKeyword || node.literal.kind === ts.SyntaxKind.FalseKeyword)) return "bool";
   if (ts.isTypePredicateNode(node)) return "bool";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
@@ -107,6 +117,9 @@ const fsharpType = node => {
     && !node.typeArguments?.length) {
     const target = maintainedSymbols.get(node.qualifier.text);
     if (target?.arity === 0) return target.fsharpSymbol;
+  }
+  if (ts.isTypeQueryNode(node) && ts.isIdentifier(node.exprName)) {
+    return maintainedSymbols.get(node.exprName.text)?.fsharpType;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (node.typeName.text === "DeepImmutable"
@@ -181,21 +194,45 @@ const functionShape = (node, exportName) => {
   }));
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters, inlineShapes } : undefined;
 };
-const typeLiteralShape = (node, numericLiteralType) => {
-  if (!ts.isTypeLiteralNode(node) || node.members.length === 0) return undefined;
+const typeLiteralShape = (node, numericLiteralType, nestedShapes = [], context = "VariableInline") => {
+  if (!ts.isTypeLiteralNode(node)) return undefined;
   const members = [];
-  for (const member of node.members) {
-    if (!ts.isPropertySignature(member) || !member.type || (!ts.isIdentifier(member.name) && !ts.isStringLiteral(member.name))) return undefined;
-    let type = fsharpType(member.type);
-    if (!type && numericLiteralType && ts.isLiteralTypeNode(member.type) && (ts.isNumericLiteral(member.type.literal) || (ts.isPrefixUnaryExpression(member.type.literal) && ts.isNumericLiteral(member.type.literal.operand)))) {
-      type = numericLiteralType;
-    }
-    if (!type) return undefined;
-    members.push({
-      name: member.name.text,
-      type: member.questionToken ? `${type} option` : type,
-      readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false
-    });
+  for (const [index, member] of node.members.entries()) {
+    if (ts.isPropertySignature(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
+      let type = numericLiteralType
+        && ts.isLiteralTypeNode(member.type)
+        && (ts.isNumericLiteral(member.type.literal) || (ts.isPrefixUnaryExpression(member.type.literal) && ts.isNumericLiteral(member.type.literal.operand)))
+        ? numericLiteralType
+        : fsharpType(member.type);
+      if (!type && ts.isTypeLiteralNode(member.type)) {
+        const name = `${context}Property${index + 1}Object`;
+        const nestedMembers = typeLiteralShape(member.type, numericLiteralType, nestedShapes, name);
+        if (nestedMembers) {
+          nestedShapes.push({ name, members: nestedMembers });
+          type = name;
+        }
+      }
+      if (!type) return undefined;
+      members.push({
+        kind: "property",
+        name: member.name.text,
+        type: member.questionToken ? `${type} option` : type,
+        readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false
+      });
+    } else if (ts.isIndexSignatureDeclaration(member) && member.parameters.length === 1 && member.parameters[0].type && member.type && ts.isIdentifier(member.parameters[0].name)) {
+      const keyType = fsharpType(member.parameters[0].type);
+      let valueType = fsharpType(member.type);
+      if (!valueType && ts.isTypeLiteralNode(member.type)) {
+      const name = `${context}Property${index + 1}Object`;
+      const nestedMembers = typeLiteralShape(member.type, numericLiteralType, nestedShapes, name);
+      if (nestedMembers) {
+        nestedShapes.push({ name, members: nestedMembers });
+          valueType = name;
+        }
+      }
+      if (!keyType || !valueType) return undefined;
+      members.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false });
+    } else return undefined;
   }
   return members;
 };
@@ -246,11 +283,40 @@ for (const sourceFile of program.getSourceFiles()) {
     const variableDeclarations = declarations.filter(ts.isVariableDeclaration);
     if (variableDeclarations.length !== 1 || declarations.some(declaration => !ts.isVariableDeclaration(declaration))) continue;
     const declaration = variableDeclarations[0];
-    if (!declaration.type || !ts.isIdentifier(declaration.name)) continue;
+    if ((!declaration.type && !declaration.initializer) || !ts.isIdentifier(declaration.name)) continue;
     const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
-    const shape = typeLiteralShape(declaration.type, indexedConstEnumTypes.get(`${module}|${exported.getName()}`));
-    const callable = functionShape(declaration.type, exported.getName());
-    const type = fsharpType(declaration.type);
+    const shapeHelpers = [];
+    const shapeContext = `VariableShape_${exported.getName().replace(/[^A-Za-z0-9_]/g, "_")}`;
+    const shape = declaration.type ? typeLiteralShape(declaration.type, indexedConstEnumTypes.get(`${module}|${exported.getName()}`), shapeHelpers, shapeContext) : undefined;
+    const callable = declaration.type ? functionShape(declaration.type, exported.getName()) : undefined;
+    let type = declaration.type ? fsharpType(declaration.type) : initializerType(declaration.initializer);
+    if (!type && declaration.type
+      && ts.isTypeReferenceNode(declaration.type)
+      && ts.isIdentifier(declaration.type.typeName)
+      && declaration.type.typeName.text === "Partial"
+      && declaration.type.typeArguments?.length === 1) {
+      const record = declaration.type.typeArguments[0];
+      if (ts.isTypeReferenceNode(record)
+        && ts.isIdentifier(record.typeName)
+        && record.typeName.text === "Record"
+        && record.typeArguments?.length === 2) {
+        const keyType = fsharpType(record.typeArguments[0]);
+        const valueType = fsharpType(record.typeArguments[1]);
+        if (keyType && valueType) {
+          const helperName = `${shapeContext}IndexerObject`;
+          shapeHelpers.push({ name: helperName, members: [{ kind: "indexer", name: "key", keyType, valueType: `${valueType} option`, readonly: false }] });
+          type = helperName;
+        }
+      }
+    }
+    if (!type && declaration.type && ts.isArrayTypeNode(declaration.type) && ts.isTypeLiteralNode(declaration.type.elementType)) {
+      const helperName = `${shapeContext}ElementObject`;
+      const helperMembers = typeLiteralShape(declaration.type.elementType, undefined, shapeHelpers, helperName);
+      if (helperMembers) {
+        shapeHelpers.push({ name: helperName, members: helperMembers });
+        type = `ResizeArray<${helperName}>`;
+      }
+    }
     if (!type && !shape && !callable) continue;
     const packageName = module.startsWith("@babylonjs/core/")
       ? "@babylonjs/core"
@@ -260,7 +326,7 @@ for (const sourceFile of program.getSourceFiles()) {
     if (!packageName) continue;
     const name = exported.getName();
     const runtimeExport = target.getName();
-    variables.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, runtimeExport, type, shape, callable });
+    variables.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, runtimeExport, type, shape, shapeHelpers, callable });
   }
 }
 diagnosedVariable = undefined;
@@ -282,11 +348,20 @@ const safeFunctionName = value => `VariableFunction_${value.replace(/[^A-Za-z0-9
 const callbackArguments = callback => callback.parameters.length === 0
   ? "unit"
   : callback.parameters.map(parameter => `${parameter.optional ? "?" : ""}\`\`${parameter.name}\`\`: ${parameter.type}`).join(" * ");
+const renderShapeMember = member => member.kind === "indexer"
+  ? `[<EmitIndexer>] abstract Item: \`\`${member.name}\`\`: ${member.keyType} -> ${member.valueType} with get${member.readonly ? "" : ", set"}`
+  : `abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`;
 for (const entry of entries) {
+  for (const helper of entry.shapeHelpers) {
+    lines.push("", `    /// Nested inline object shape used by ${entry.name}.`, "    [<AllowNullLiteral>]", `    type ${helper.name} =`);
+    if (helper.members.length === 0) lines.push("        interface end");
+    else for (const member of helper.members) lines.push(`        ${renderShapeMember(member)}`);
+  }
   if (entry.shape) {
     entry.type = safeName(entry.name);
     lines.push("", `    /// Inline object shape of ${entry.name}.`, "    [<AllowNullLiteral>]", `    type ${entry.type} =`);
-    for (const member of entry.shape) lines.push(`        abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`);
+    if (entry.shape.length === 0) lines.push("        interface end");
+    else for (const member of entry.shape) lines.push(`        ${renderShapeMember(member)}`);
   } else if (entry.callable) {
     entry.type = safeFunctionName(entry.name);
     for (const inlineShape of entry.callable.inlineShapes) {

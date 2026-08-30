@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "17f84d8fdb1b99367e258363703de13a1fd57025a99c73c1633ba52f38a86b79"
+    "sha256": "3b7086c53db07b5663d840952c96a17751da43843bb08b0d9a6076224b0dd462"
   },
   "imports": [
     {
@@ -287,6 +287,15 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Materials/Textures/textureCreationOptions.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
@@ -431,6 +440,15 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Misc/domManagement.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/domManagement.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Misc/error.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
@@ -462,6 +480,24 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Misc/gradients.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/guid.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/guid.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/halfFloat.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/halfFloat.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]
@@ -597,6 +633,24 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/XR/webXRFeaturesManager.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/BVH/bvhFileLoader.metadata.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/BVH/bvhFileLoader.metadata.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/glTFFileLoader.metadata.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/glTFFileLoader.metadata.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

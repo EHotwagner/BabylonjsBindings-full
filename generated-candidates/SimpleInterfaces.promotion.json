@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "d87106af8822842c858b3c73a76103c3af08819dbea49f14fdb82f02e3b2aec9",
+  "proposalSha256": "e88e3a31610ea729bfbfc32d21bbcdf5f32fb2c51ec005c8da0f9dc7ac07bce4",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -394,6 +394,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "IDecodeChannel",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDecodeChannel",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Compression/dracoDecoder.types",
       "name": "IDecodeMeshDoneMessage",
       "kind": "interface",
@@ -481,6 +490,15 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFileRequest",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphBlock",
+      "name": "IFlowGraphBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
       "memberCount": 2
     },
     {
@@ -649,11 +667,29 @@
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFProperty",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFProperty",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "IGLTFSpotLight",
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFSpotLight",
       "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFTechniqueCommonProfile",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFTechniqueCommonProfile",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/loaders",
@@ -1121,6 +1157,15 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ISceneLoaderPluginExtensions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginExtensions",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "ISceneLoaderProgressEvent",
       "kind": "interface",
       "disposition": "typed",
@@ -1512,6 +1557,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRDOMOverlay.pure",
+      "name": "IWebXRDomOverlayOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRDomOverlayOptions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRGraphicsBinding",
       "name": "IWebXRGraphicsBinding",
       "kind": "interface",
@@ -1770,6 +1824,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/rawTexture2DArray.functions",
+      "name": "ICreateTexture2DArrayFromImageUrlsOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICreateTexture2DArrayFromImageUrlsOptions",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
       "name": "IDecodedData",
       "kind": "interface",
@@ -1797,6 +1860,281 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "IEXRDecoder",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEXRDecoder",
+      "memberCount": 24
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
+      "name": "IEXRHeader",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEXRHeader",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "IFlowGraphBitwiseBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphBitwiseBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "IFlowGraphCombineMatrixBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphCombineMatrixBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphConsoleLogBlock.pure",
+      "name": "IFlowGraphConsoleLogBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphConsoleLogBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConstantBlock.pure",
+      "name": "IFlowGraphConstantBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphConstantBlockConfiguration",
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphDataSwitchBlock.pure",
+      "name": "IFlowGraphDataSwitchBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphDataSwitchBlockConfiguration",
+      "typeParameterCount": 1,
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphDoNBlock.pure",
+      "name": "IFlowGraphDoNBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphDoNBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphFlipFlopBlock.pure",
+      "name": "IFlowGraphFlipFlopBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphFlipFlopBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
+      "name": "IFlowGraphFloatToIntConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphFloatToIntConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphForLoopBlock.pure",
+      "name": "IFlowGraphForLoopBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphForLoopBlockConfiguration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetAssetBlock.pure",
+      "name": "IFlowGraphGetAssetBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphGetAssetBlockConfiguration",
+      "typeParameterCount": 1,
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetVariableBlock.pure",
+      "name": "IFlowGraphGetVariableBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphGetVariableBlockConfiguration",
+      "typeParameterCount": 1,
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphInterpolationBlock.pure",
+      "name": "IFlowGraphInterpolationBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphInterpolationBlockConfiguration",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyboardEventBlock",
+      "name": "IFlowGraphKeyboardEventBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphKeyboardEventBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "IFlowGraphMathBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphMathBlockConfiguration",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
+      "name": "IFlowGraphMatrixBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrixBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphMultiGateBlock.pure",
+      "name": "IFlowGraphMultiGateBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphMultiGateBlockConfiguration",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "IFlowGraphNormalizeBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphNormalizeBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPhysicsCollisionEventBlock.pure",
+      "name": "IFlowGraphPhysicsCollisionEventBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphPhysicsCollisionEventBlockConfiguration",
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "IFlowGraphRandomBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphRandomBlockConfiguration",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphReceiveCustomEventBlock.pure",
+      "name": "IFlowGraphReceiveCustomEventBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphReceiveCustomEventBlockConfiguration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "IFlowGraphRoundBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphRoundBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSendCustomEventBlock.pure",
+      "name": "IFlowGraphSendCustomEventBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphSendCustomEventBlockConfiguration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSequenceBlock.pure",
+      "name": "IFlowGraphSequenceBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphSequenceBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetVariableBlock.pure",
+      "name": "IFlowGraphSetVariableBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphSetVariableBlockConfiguration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSwitchBlock.pure",
+      "name": "IFlowGraphSwitchBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphSwitchBlockConfiguration",
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "IFlowGraphTransformBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphTransformBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWaitAllBlock.pure",
+      "name": "IFlowGraphWaitAllBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphWaitAllBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWhileLoopBlock.pure",
+      "name": "IFlowGraphWhileLoopBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphWhileLoopBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/textBuilder",
       "name": "IFontData",
       "kind": "interface",
@@ -1812,6 +2150,33 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFAnimationChannel",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFChildRootProperty",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFChildRootProperty",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+      "name": "IGLTFLoaderData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFMeshPrimitive",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFMeshPrimitive",
+      "memberCount": 4
     },
     {
       "package": "@babylonjs/loaders",
@@ -1867,6 +2232,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMakeAnimationGroupAdditiveOptions",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/motionController/webXRAbstractMotionController",
+      "name": "IMotionControllerLayoutMap",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMotionControllerLayoutMap",
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",
@@ -2047,6 +2421,150 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyDownEventBlock",
+      "name": "IFlowGraphKeyDownEventBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphKeyDownEventBlockConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFAccessor",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFAccessor",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFAnimation",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFAnimation",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFBuffer",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFBuffer",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFBufferView",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFBufferView",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFCamera",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFCamera",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFImage",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFImage",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFLight",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFLight",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFMaterial",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFMaterial",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFMesh",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFMesh",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFProgram",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFProgram",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFSampler",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFSampler",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFScene",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFScene",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFShader",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFTechnique",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFTechnique",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/motionController/webXRAbstractMotionController",
+      "name": "IMotionControllerProfile",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMotionControllerProfile",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IPlaneLike",
       "kind": "interface",
@@ -2072,6 +2590,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraph",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Sprites/ISprites",
+      "name": "ISpriteJSONAtlas",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISpriteJSONAtlas",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",

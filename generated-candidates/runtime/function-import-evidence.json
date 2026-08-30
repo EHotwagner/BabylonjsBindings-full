@@ -167,6 +167,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.decoder.js",
+      "export": "CreateDecoderAsync",
+      "runtimeExport": "CreateDecoderAsync",
+      "moduleSha256": "4d4b4f9ffffc655f944cda7ec231d8ce0b5933e86a1a8e6ae2c504747cba0380"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/fileTools.pure.js",
       "export": "DecodeBase64UrlToBinary",
       "runtimeExport": "DecodeBase64UrlToBinary",
@@ -205,6 +212,13 @@
       "module": "@babylonjs/core/Misc/dumpTools.pure.js",
       "export": "DumpData",
       "runtimeExport": "DumpData",
+      "moduleSha256": "d14deb6fd221e4ceedaa90d41b08c5a88d9348e1769d5ab4c55074b7f157311a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dumpTools.pure.js",
+      "export": "DumpDataAsync",
+      "runtimeExport": "DumpDataAsync",
       "moduleSha256": "d14deb6fd221e4ceedaa90d41b08c5a88d9348e1769d5ab4c55074b7f157311a"
     },
     {
@@ -311,6 +325,13 @@
       "export": "GetElementPixelFromUv",
       "runtimeExport": "GetElementPixelFromUv",
       "moduleSha256": "fd8f6aaf18811e756fb7f4d8ed15a669007aa9663b58881fb4cc952582af9572"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.header.js",
+      "export": "GetExrHeader",
+      "runtimeExport": "GetExrHeader",
+      "moduleSha256": "828761007299bcac2dce28153d0b589072ff9ec3eea7e5447445221556b177d9"
     },
     {
       "package": "@babylonjs/core",
@@ -681,6 +702,13 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js",
       "export": "ParseUint8Array",
       "runtimeExport": "ParseUint8Array",
+      "moduleSha256": "fefdf123ea91336ff2b3cda550df63dea4cf22a96cc43f78925f38bc36fa6a75"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js",
+      "export": "ParseValue",
+      "runtimeExport": "ParseValue",
       "moduleSha256": "fefdf123ea91336ff2b3cda550df63dea4cf22a96cc43f78925f38bc36fa6a75"
     },
     {
@@ -5543,6 +5571,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.decoder.js",
+      "export": "ScanData",
+      "runtimeExport": "ScanData",
+      "moduleSha256": "4d4b4f9ffffc655f944cda7ec231d8ce0b5933e86a1a8e6ae2c504747cba0380"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Compat/compatibilityOptions.js",
       "export": "setOpenGLOrientationForUV",
       "runtimeExport": "setOpenGLOrientationForUV",
@@ -5582,6 +5617,41 @@
       "export": "TranslationMatrixToRef",
       "runtimeExport": "TranslationMatrixToRef",
       "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js",
+      "export": "UncompressPIZ",
+      "runtimeExport": "UncompressPIZ",
+      "moduleSha256": "566187e301498176d7e78ec34ce7bc6370e40cc45e6495ad98e3251ca13d06ff"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js",
+      "export": "UncompressPXR",
+      "runtimeExport": "UncompressPXR",
+      "moduleSha256": "566187e301498176d7e78ec34ce7bc6370e40cc45e6495ad98e3251ca13d06ff"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js",
+      "export": "UncompressRAW",
+      "runtimeExport": "UncompressRAW",
+      "moduleSha256": "566187e301498176d7e78ec34ce7bc6370e40cc45e6495ad98e3251ca13d06ff"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js",
+      "export": "UncompressRLE",
+      "runtimeExport": "UncompressRLE",
+      "moduleSha256": "566187e301498176d7e78ec34ce7bc6370e40cc45e6495ad98e3251ca13d06ff"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.js",
+      "export": "UncompressZIP",
+      "runtimeExport": "UncompressZIP",
+      "moduleSha256": "566187e301498176d7e78ec34ce7bc6370e40cc45e6495ad98e3251ca13d06ff"
     },
     {
       "package": "@babylonjs/core",

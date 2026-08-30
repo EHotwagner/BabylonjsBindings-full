@@ -16,6 +16,17 @@ module TypeAliases =
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
+    type AliasObject38fb0477dfc1 =
+        abstract ``mergeRuntimeAnimations``: bool with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectc2a40b3b5670 =
+        abstract ``mergeRuntimeAnimations``: bool with get, set
+        abstract ``mergeKeyFrames``: bool with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
     type AliasObject4d81806d37f7 =
         [<EmitIndexer>] abstract Item: ``key``: BabylonjsBindings.StringEnums.WebXRBodyJoint -> string option with get, set
 
@@ -86,6 +97,12 @@ module TypeAliases =
         abstract ``type``: string with get, set
         abstract ``default``: obj with get, set
 
+    /// @babylonjs/core/Behaviors/Cameras/interpolatingBehavior
+    type AllowedAnimValue = U8<System.Double, BabylonjsBindings.SimpleInterfaces.IVector2Like, BabylonjsBindings.SimpleInterfaces.IVector3Like, BabylonjsBindings.SimpleInterfaces.IQuaternionLike, BabylonjsBindings.SimpleInterfaces.IMatrixLike, BabylonjsBindings.SimpleInterfaces.IColor3Like, BabylonjsBindings.SimpleInterfaces.IColor4Like, BabylonjsBindings.ObjectTypes.SizeLike> option
+
+    /// @babylonjs/core/Animations/animation.optimizations
+    type AnimationOptimization = U2<AliasObject38fb0477dfc1, AliasObjectc2a40b3b5670>
+
     /// @babylonjs/core/Engines/Extensions/engine.computeShader.pure
     type ComputeBindingList = AliasObject6d99c3efc0a5
 
@@ -97,6 +114,9 @@ module TypeAliases =
 
     /// @babylonjs/core/types
     type double = System.Double
+
+    /// @babylonjs/core/types
+    type Empty = ResizeArray<BabylonjsBindings.SimpleClasses.Never>
 
     /// @babylonjs/core/types
     type float = System.Double
@@ -183,6 +203,12 @@ module TypeAliases =
     [<AllowNullLiteral>]
     type SimpleStageAction =
         [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/Maths/tensor
+    [<Erase>]
+    type TensorValue =
+        | TensorValueCase1 of ResizeArray<System.Double>
+        | TensorValueCase2 of ResizeArray<BabylonjsBindings.TypeAliases.TensorValue>
 
     /// @babylonjs/core/Materials/Textures/textureCreationOptions
     type TextureSize = U2<System.Double, AliasObjectde9f6c1b6b0f>

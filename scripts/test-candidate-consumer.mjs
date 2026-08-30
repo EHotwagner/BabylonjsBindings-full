@@ -217,6 +217,11 @@ let shaderDescriptor = \`\`clearQuadVertexShaderWGSL\`\`
 let paddedNumber = \`\`PadNumber\`\`.Invoke(7.0, 3.0)
 let base64DataUrl = \`\`TestBase64DataUrl\`\`.Invoke("data:text/plain;base64,QQ==")
 let stringRichType = \`\`RichTypeString\`\`
+let generatedGuid = \`\`GUID\`\`.\`\`RandomId\`\`.Invoke()
+let bvhLoaderMetadata = \`\`BVHFileLoaderMetadata\`\`
+let gltfMagicBase64Encoded = \`\`GLTFMagicBase64Encoded\`\`
+let maxHalfFloat = \`\`MaxHalfFloat\`\`
+let int8Size = \`\`INT8_SIZE\`\`
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then failwith "clean consumer scene failed"
 if fresnel.\`\`bias\`\` <> 0.25 || fresnel.\`\`power\`\` <> 3.0 || serializedFresnel.\`\`bias\`\` <> 0.25 || not textureObjectRecognized || glbMimeType <> Some "model/gltf-binary" then failwith "clean consumer recursive alias and promoted import closure failed"
 if uint32 NodeRenderGraphBlockConnectionPointTypes.\`\`All\`\` <> 4294967295u then failwith "clean consumer enum failed"
@@ -291,6 +296,7 @@ if shaderDescriptor.\`\`name\`\` <> "clearQuadVertexShader" || shaderDescriptor.
 if paddedNumber <> "007" then failwith "clean consumer callable variable failed"
 if not base64DataUrl.\`\`match\`\` || base64DataUrl.\`\`type\`\` <> "text/plain" then failwith "clean consumer callable variable result failed"
 if stringRichType.\`\`typeName\`\` <> "string" then failwith "clean consumer generic class variable failed"
+if generatedGuid.Length = 0 || bvhLoaderMetadata.\`\`name\`\` <> "bvh" || bvhLoaderMetadata.\`\`extensions\`\`.\`\`.bvh\`\`.\`\`isBinary\`\` || gltfMagicBase64Encoded.Length = 0 || maxHalfFloat <> 65504.0 || int8Size <> 1.0 then failwith "clean consumer native helper and loader metadata batch failed"
 loaderRegistration |> ignore
 engine.dispose()
 printfn "Babylon candidate clean consumer passed"

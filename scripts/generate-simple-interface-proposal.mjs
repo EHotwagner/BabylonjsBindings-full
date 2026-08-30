@@ -90,11 +90,17 @@ const isAbsentType = node => node.kind === ts.SyntaxKind.UndefinedKeyword
   || (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
 const asOption = type => type.endsWith(" option") ? type : `${type} option`;
 const asOptionalParameterType = type => type.endsWith(" option") ? type.slice(0, -" option".length) : type;
+const erasedUnionType = branches => {
+  if (branches.length < 2) return branches[0];
+  if (branches.length <= 9) return `U${branches.length}<${branches.join(", ")}>`;
+  return `U2<${erasedUnionType(branches.slice(0, 8))}, ${erasedUnionType(branches.slice(8))}>`;
+};
 const fsharpType = (node, available, dependencies = new Set(), typeParameters = new Set()) => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
+  if (node.kind === ts.SyntaxKind.ObjectKeyword) return "JavaScriptObject";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
@@ -106,13 +112,14 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     }
     return fsharpType(node.type, available, dependencies, typeParameters);
   }
-  if (ts.isUnionTypeNode(node) && node.types.length === 2 && node.types.filter(isAbsentType).length === 1) {
-    const inner = fsharpType(node.types.find(branch => !isAbsentType(branch)), available, dependencies, typeParameters);
-    return inner ? asOption(inner) : undefined;
+  if (ts.isUnionTypeNode(node) && node.types.some(isAbsentType)) {
+    const branches = node.types.filter(branch => !isAbsentType(branch)).map(branch => fsharpType(branch, available, dependencies, typeParameters));
+    if (branches.some(branch => !branch) || branches.length === 0) return undefined;
+    return asOption(branches.length === 1 ? branches[0] : erasedUnionType(branches));
   }
-  if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
+  if (ts.isUnionTypeNode(node) && node.types.length >= 2) {
     const branches = node.types.map(branch => fsharpType(branch, available, dependencies, typeParameters));
-    return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
+    return branches.every(Boolean) ? erasedUnionType(branches) : undefined;
   }
   if (ts.isArrayTypeNode(node)) {
     const element = fsharpType(node.elementType, available, dependencies, typeParameters);
@@ -168,13 +175,14 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? asOption(inner) : undefined;
     }
-    const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
+    const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "DataView", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
     const browserTypes = new Set([
-      "AudioContext", "AudioNode", "Blob", "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
+      "AudioContext", "AudioDestinationNode", "AudioNode", "Blob", "Element", "Event", "File", "GainNode", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
       "ImageData", "OfflineAudioContext", "WebGLUniformLocation", "WebGLRenderingContext",
       "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
     ]);
+    if (!node.typeArguments?.length && node.typeName.text === "ImageBitmapOptions") return "BrowserImageBitmapOptions";
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BrowserImageBitmap";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
@@ -280,6 +288,15 @@ const renderMembers = (declaration, available) => {
       const callback = callbackShape(member, available, dependencies, typeParameters);
       if (!callback) return undefined;
       members.push({ kind: "method", name: member.name.text, callback });
+    } else if (ts.isIndexSignatureDeclaration(member)
+      && member.parameters.length === 1
+      && member.parameters[0].type
+      && member.type
+      && ts.isIdentifier(member.parameters[0].name)) {
+      const keyType = fsharpType(member.parameters[0].type, available, dependencies, typeParameters);
+      const valueType = fsharpType(member.type, available, dependencies, typeParameters);
+      if (!keyType || !valueType) return undefined;
+      members.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false });
     } else {
       return undefined;
     }
@@ -471,6 +488,12 @@ const lines = [
   "module SimpleInterfaces ="
 ];
 lines.push("", "    /// Exact structural browser ImageBitmap surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserImageBitmap =", "        abstract width: float with get", "        abstract height: float with get", "        abstract close: unit -> unit");
+lines.push("", "    /// Exact browser image color-space conversion literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserColorSpaceConversion =", "        | [<CompiledName(\"default\")>] Default", "        | [<CompiledName(\"none\")>] None");
+lines.push("", "    /// Exact browser image orientation literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserImageOrientation =", "        | [<CompiledName(\"flipY\")>] FlipY", "        | [<CompiledName(\"from-image\")>] FromImage", "        | [<CompiledName(\"none\")>] None");
+lines.push("", "    /// Exact browser premultiplied-alpha literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserPremultiplyAlpha =", "        | [<CompiledName(\"default\")>] Default", "        | [<CompiledName(\"none\")>] None", "        | [<CompiledName(\"premultiply\")>] Premultiply");
+lines.push("", "    /// Exact browser bitmap resize-quality literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserResizeQuality =", "        | [<CompiledName(\"high\")>] High", "        | [<CompiledName(\"low\")>] Low", "        | [<CompiledName(\"medium\")>] Medium", "        | [<CompiledName(\"pixelated\")>] Pixelated");
+lines.push("", "    /// Exact structural browser ImageBitmapOptions surface.", "    [<AllowNullLiteral>]", "    type BrowserImageBitmapOptions =", "        abstract colorSpaceConversion: BrowserColorSpaceConversion option with get, set", "        abstract imageOrientation: BrowserImageOrientation option with get, set", "        abstract premultiplyAlpha: BrowserPremultiplyAlpha option with get, set", "        abstract resizeHeight: float option with get, set", "        abstract resizeQuality: BrowserResizeQuality option with get, set", "        abstract resizeWidth: float option with get, set");
+lines.push("", "    /// Structural non-primitive JavaScript object surface used by TypeScript `object` declarations.", "    [<AllowNullLiteral>]", "    type JavaScriptObject =", "        interface end");
 for (const value of [...numericLiteralValues].sort((left, right) => left - right)) {
   const name = `NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`;
   lines.push("", `    /// Exact numeric literal type for ${value}.`, `    type ${name} =`, `        | Value = ${value}`);
@@ -521,6 +544,8 @@ for (const entry of entries) {
         lines.push(`        abstract \`\`${member.name}\`\`: ${deepImmutableType(member.type)} with get`);
       } else if (member.kind === "callbackProperty") {
         lines.push(`        abstract \`\`${member.name}\`\`: ${member.helperName}${member.optional ? " option" : ""} with get`);
+      } else if (member.kind === "indexer") {
+        lines.push(`        [<EmitIndexer>] abstract Item: \`\`${member.name}\`\`: ${member.keyType} -> ${deepImmutableType(member.valueType)} with get`);
       } else {
         lines.push(`        abstract \`\`${member.name}\`\`: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
       }
@@ -542,6 +567,8 @@ for (const entry of entries) {
       lines.push(`        abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`);
     } else if (member.kind === "callbackProperty") {
       lines.push(`        abstract \`\`${member.name}\`\`: ${member.helperName}${member.optional ? " option" : ""} with get${member.readonly ? "" : ", set"}`);
+    } else if (member.kind === "indexer") {
+      lines.push(`        [<EmitIndexer>] abstract Item: \`\`${member.name}\`\`: ${member.keyType} -> ${member.valueType} with get${member.readonly ? "" : ", set"}`);
     } else {
       lines.push(`        abstract \`\`${member.name}\`\`: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
     }
@@ -568,6 +595,8 @@ for (const entry of entries) {
         lines.push(`        abstract \`\`${member.name}\`\`: ${asOption(member.type)} with get${member.readonly ? "" : ", set"}`);
       } else if (member.kind === "callbackProperty") {
         lines.push(`        abstract \`\`${member.name}\`\`: ${asOption(member.helperName)} with get${member.readonly ? "" : ", set"}`);
+      } else if (member.kind === "indexer") {
+        lines.push(`        [<EmitIndexer>] abstract Item: \`\`${member.name}\`\`: ${member.keyType} -> ${asOption(member.valueType)} with get${member.readonly ? "" : ", set"}`);
       } else {
         lines.push(`        abstract \`\`${member.name}\`\`: ${entry.name}${pascal(member.name)}PartialCallback${genericParameters} option with get, set`);
       }

@@ -74,6 +74,11 @@ const numericLiteralType = value => {
   numericLiteralValues.add(numeric);
   return `NumericLiteral${numeric < 0 ? `Negative${Math.abs(numeric)}` : numeric}`;
 };
+const erasedUnionType = branches => {
+  if (branches.length < 2) return branches[0];
+  if (branches.length <= 9) return `U${branches.length}<${branches.join(", ")}>`;
+  return `U2<${erasedUnionType(branches.slice(0, 8))}, ${erasedUnionType(branches.slice(8))}>`;
+};
 const fsharpType = (node, typeParameters = new Map()) => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
@@ -83,6 +88,7 @@ const fsharpType = (node, typeParameters = new Map()) => {
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
+  if (ts.isLiteralTypeNode(node) && (node.literal.kind === ts.SyntaxKind.TrueKeyword || node.literal.kind === ts.SyntaxKind.FalseKeyword)) return "bool";
   if (ts.isTypePredicateNode(node)) return "bool";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, typeParameters);
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
@@ -92,13 +98,14 @@ const fsharpType = (node, typeParameters = new Map()) => {
     }
     return fsharpType(node.type, typeParameters);
   }
-  if (ts.isUnionTypeNode(node) && node.types.length === 2 && node.types.filter(isAbsentType).length === 1) {
-    const inner = fsharpType(node.types.find(branch => !isAbsentType(branch)), typeParameters);
-    return inner ? asOption(inner) : undefined;
+  if (ts.isUnionTypeNode(node) && node.types.some(isAbsentType)) {
+    const branches = node.types.filter(branch => !isAbsentType(branch)).map(branch => fsharpType(branch, typeParameters));
+    if (branches.some(branch => !branch) || branches.length === 0) return undefined;
+    return asOption(branches.length === 1 ? branches[0] : erasedUnionType(branches));
   }
-  if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
+  if (ts.isUnionTypeNode(node) && node.types.length >= 2) {
     const branches = node.types.map(branch => fsharpType(branch, typeParameters));
-    return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
+    return branches.every(Boolean) ? erasedUnionType(branches) : undefined;
   }
   if (ts.isArrayTypeNode(node)) {
     const element = fsharpType(node.elementType, typeParameters);
@@ -323,6 +330,7 @@ const manifest = {
     kind: "function",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleFunctions.${entry.name}`,
+    fsharpType: `BabylonjsBindings.SimpleFunctions.${safeName(entry.name)}`,
     ...(entry.runtimeExport !== entry.name ? { runtimeExport: entry.runtimeExport } : {}),
     overloadCount: entry.signatures.length
   }))

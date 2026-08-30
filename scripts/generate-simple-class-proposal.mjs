@@ -83,6 +83,11 @@ const isAbsentType = node => node.kind === ts.SyntaxKind.UndefinedKeyword
   || (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
 const asOption = type => type.endsWith(" option") ? type : `${type} option`;
 const asOptionalParameterType = type => type.endsWith(" option") ? type.slice(0, -" option".length) : type;
+const erasedUnionType = branches => {
+  if (branches.length < 2) return branches[0];
+  if (branches.length <= 9) return `U${branches.length}<${branches.join(", ")}>`;
+  return `U2<${erasedUnionType(branches.slice(0, 8))}, ${erasedUnionType(branches.slice(8))}>`;
+};
 const numericLiteralValues = new Set();
 const stringLiteralTypes = new Map();
 const utilityInlineTypes = [];
@@ -121,9 +126,9 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     const inner = fsharpType(node.types.find(branch => !isAbsentType(branch)), available, dependencies, typeParameters);
     return inner ? asOption(inner) : undefined;
   }
-  if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
+  if (ts.isUnionTypeNode(node) && node.types.length >= 2) {
     const branches = node.types.map(branch => fsharpType(branch, available, dependencies, typeParameters));
-    return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
+    return branches.every(Boolean) ? erasedUnionType(branches) : undefined;
   }
   if (ts.isArrayTypeNode(node)) {
     const element = fsharpType(node.elementType, available, dependencies, typeParameters);
@@ -212,7 +217,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
         const element = fsharpType(inner.typeArguments[0], available, dependencies, typeParameters);
         if (element) return `System.Collections.Generic.IReadOnlyList<${element}>`;
       }
-      if (ts.isUnionTypeNode(inner) && inner.types.length >= 2 && inner.types.length <= 9) {
+      if (ts.isUnionTypeNode(inner) && inner.types.length >= 2) {
         const branches = inner.types.map(branch => {
           if (ts.isArrayTypeNode(branch)) {
             const element = fsharpType(branch.elementType, available, dependencies, typeParameters);
@@ -224,7 +229,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
           }
           return fsharpType(branch, available, dependencies, typeParameters);
         });
-        if (branches.every(Boolean)) return `U${branches.length}<${branches.join(", ")}>`;
+        if (branches.every(Boolean)) return erasedUnionType(branches);
       }
       const rendered = fsharpType(inner, available, dependencies, typeParameters);
       if (rendered && (ts.isTupleTypeNode(inner) || (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && inner.typeName.text === "Tuple"))) return rendered;
@@ -398,6 +403,7 @@ const inlineObjectType = (node, available, dependencies, typeParameters, inlineT
       if (!keyType || !valueType) return undefined;
       members.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
     } else {
+      recordTypeFailure(member);
       return undefined;
     }
   }
@@ -491,7 +497,10 @@ const renderClass = (declaration, available, hasBase) => {
     const target = hasModifier(member, ts.SyntaxKind.StaticKeyword) ? staticMembers : instanceMembers;
     if (ts.isConstructorDeclaration(member)) {
       const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } }, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, `${declaration.name.text}Constructor${memberIndex + 1}`, declaration.name.text);
-      if (!callback) return undefined;
+      if (!callback) {
+        recordTypeFailure(member);
+        return undefined;
+      }
       constructors.push(callback);
     } else if (ts.isPropertyDeclaration(member) && (member.type || member.initializer) && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       if (member.questionToken && hasModifier(member, ts.SyntaxKind.ReadonlyKeyword)) {
@@ -501,13 +510,19 @@ const renderClass = (declaration, available, hasBase) => {
       const callbackProperty = member.type ? callbackPropertyType(member.type) : undefined;
       if (callbackProperty) {
         const callback = callbackShape(callbackProperty.node, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, `${declaration.name.text}Property${memberIndex + 1}`, declaration.name.text);
-        if (!callback) return undefined;
+        if (!callback) {
+          recordTypeFailure(member);
+          return undefined;
+        }
         target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken) || callbackProperty.optional, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
       } else {
         let type = member.type && ts.isTypeLiteralNode(member.type)
           ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Property${memberIndex + 1}`)
           : member.type ? fsharpType(member.type, available, dependencies, typeParameters) : initializerType(member.initializer);
-        if (!type) return undefined;
+        if (!type) {
+          recordTypeFailure(member);
+          return undefined;
+        }
         target.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
       }
     } else if (ts.isMethodDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
@@ -515,9 +530,11 @@ const renderClass = (declaration, available, hasBase) => {
       const callback = callbackShape(member, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, `${declaration.name.text}Method${memberIndex + 1}`, declaration.name.text);
       if (!callback) {
         if ((methodCounts.get(member.name.text) ?? 0) > 1) {
+          recordTypeFailure(member);
           failedOverloadNames.add(member.name.text);
           continue;
         }
+        recordTypeFailure(member);
         return undefined;
       }
       if ((methodCounts.get(member.name.text) ?? 0) > 1) {
@@ -530,7 +547,10 @@ const renderClass = (declaration, available, hasBase) => {
     } else if (ts.isIndexSignatureDeclaration(member) && member.parameters.length === 1 && member.parameters[0].type && member.type && ts.isIdentifier(member.parameters[0].name)) {
       const keyType = fsharpType(member.parameters[0].type, available, dependencies, typeParameters);
       const valueType = fsharpType(member.type, available, dependencies, typeParameters);
-      if (!keyType || !valueType) return undefined;
+      if (!keyType || !valueType) {
+        recordTypeFailure(member);
+        return undefined;
+      }
       target.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
     } else if ((ts.isGetAccessorDeclaration(member) || ts.isSetAccessorDeclaration(member)) && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       const key = `${hasModifier(member, ts.SyntaxKind.StaticKeyword) ? "static" : "instance"}|${member.name.text}`;
@@ -539,7 +559,10 @@ const renderClass = (declaration, available, hasBase) => {
         let type = member.type && ts.isTypeLiteralNode(member.type)
           ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Accessor${memberIndex + 1}`)
           : member.type ? fsharpType(member.type, available, dependencies, typeParameters) : undefined;
-        if (!type) return undefined;
+        if (!type) {
+          recordTypeFailure(member);
+          return undefined;
+        }
         accessor.type = type;
         accessor.canGet = true;
       } else {
@@ -547,13 +570,20 @@ const renderClass = (declaration, available, hasBase) => {
         let type = parameterType && ts.isTypeLiteralNode(parameterType)
           ? inlineObjectType(parameterType, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Accessor${memberIndex + 1}`)
           : parameterType ? fsharpType(parameterType, available, dependencies, typeParameters) : undefined;
-        if (!type) return undefined;
-        if (accessor.type && accessor.type !== type) return undefined;
+        if (!type) {
+          recordTypeFailure(member);
+          return undefined;
+        }
+        if (accessor.type && accessor.type !== type) {
+          recordTypeFailure(member);
+          return undefined;
+        }
         accessor.type = type;
         accessor.canSet = true;
       }
       accessors.set(key, accessor);
     } else {
+      recordTypeFailure(member);
       return undefined;
     }
   }
@@ -681,6 +711,66 @@ while (true) {
   }
   rank += 1;
 }
+
+// The maintained build projects aliases, interfaces, and classes through a
+// single `namespace rec` file. Use that recursive boundary to admit a closed
+// class dependency graph in one reviewed batch instead of requiring every
+// edge to have been selected in an earlier rank.
+const optimisticAvailable = new Map(available);
+for (const entry of declarations.values()) {
+  if (nameCounts.get(entry.name) === 1) optimisticAvailable.set(entry.name, { arity: entry.arity, deepImmutableSymbol: entry.deepImmutableSymbol });
+}
+const retainedNumericLiterals = new Set(numericLiteralValues);
+const retainedStringLiterals = new Map(stringLiteralTypes);
+const retainedUtilityInlineTypeCount = utilityInlineTypes.length;
+const recursiveCandidates = new Map();
+for (const [identity, entry] of declarations) {
+  if (selected.has(identity) || nameCounts.get(entry.name) !== 1) continue;
+  const base = renderBase(entry.declaration, optimisticAvailable);
+  if (base === null) continue;
+  const rendered = renderClass(entry.declaration, optimisticAvailable, Boolean(base));
+  if (!rendered) continue;
+  recursiveCandidates.set(entry.name, { identity, entry, base, rendered });
+}
+const recursivelyClosedNames = new Set(recursiveCandidates.keys());
+while (true) {
+  const rejected = [...recursivelyClosedNames].filter(name => {
+    const candidate = recursiveCandidates.get(name);
+    const dependencies = [
+      ...(candidate.base && !candidate.base.builtin ? [candidate.base.name] : []),
+      ...candidate.rendered.dependencies
+    ];
+    return dependencies.some(dependency => !available.has(dependency) && !recursivelyClosedNames.has(dependency));
+  });
+  if (rejected.length === 0) break;
+  for (const name of rejected) recursivelyClosedNames.delete(name);
+}
+numericLiteralValues.clear();
+for (const value of retainedNumericLiterals) numericLiteralValues.add(value);
+stringLiteralTypes.clear();
+for (const [name, value] of retainedStringLiterals) stringLiteralTypes.set(name, value);
+utilityInlineTypes.length = retainedUtilityInlineTypeCount;
+for (const name of recursivelyClosedNames) {
+  const candidate = recursiveCandidates.get(name);
+  candidate.base = renderBase(candidate.entry.declaration, optimisticAvailable);
+  candidate.rendered = renderClass(candidate.entry.declaration, optimisticAvailable, Boolean(candidate.base));
+}
+const recursiveConstructors = name => {
+  const candidate = recursiveCandidates.get(name);
+  if (!candidate || !recursivelyClosedNames.has(name)) return selectedByName.get(name)?.constructors ?? [];
+  if (candidate.rendered.constructors.length > 0 || !candidate.base || candidate.base.builtin) return candidate.rendered.constructors;
+  return recursiveConstructors(candidate.base.name).map(constructor => ({ ...constructor }));
+};
+for (const name of [...recursivelyClosedNames].sort()) {
+  const candidate = recursiveCandidates.get(name);
+  if (candidate.base && !candidate.base.builtin && candidate.entry.declaration.members.every(member => !ts.isConstructorDeclaration(member))) {
+    candidate.rendered.constructors = recursiveConstructors(candidate.base.name);
+  }
+  const promoted = { ...candidate.entry, ...candidate.rendered, base: candidate.base, rank };
+  selected.set(candidate.identity, promoted);
+  selectedByName.set(name, promoted);
+  available.set(name, { arity: promoted.arity, deepImmutableSymbol: promoted.deepImmutableSymbol });
+}
 const entries = [...selected.values()].sort((left, right) => left.rank - right.rank || left.name.localeCompare(right.name));
 if (diagnose) {
   const optimistic = new Map([...declarations.values()]
@@ -695,6 +785,15 @@ if (diagnose) {
     if (selected.has(identity) || nameCounts.get(entry.name) !== 1) continue;
     diagnosedClass = entry.name;
     const base = renderBase(entry.declaration, optimistic);
+    if (base === null) {
+      const failures = typeFailuresByClass.get(entry.name) ?? new Set();
+      const heritage = (entry.declaration.heritageClauses ?? [])
+        .filter(clause => clause.token === ts.SyntaxKind.ExtendsKeyword)
+        .map(clause => clause.getText(entry.declaration.getSourceFile()).replace(/\s+/g, " "))
+        .join(", ");
+      failures.add(`Unrenderable base: ${heritage || "unknown"}`);
+      typeFailuresByClass.set(entry.name, failures);
+    }
     const rendered = base !== null ? renderClass(entry.declaration, optimistic, Boolean(base)) : undefined;
     if (rendered) {
       shapeReady.push(entry.name);
@@ -731,6 +830,14 @@ if (diagnose) {
   console.log(unrenderableDependencies.slice(0, 80).map(([name, count]) => `${name} ${count}`).join("\n"));
   console.log("failure types for highest-impact unrenderable classes:");
   console.log(unrenderableDependencies.slice(0, 20).map(([name, count]) => `${name} (${count} downstream): ${[...(typeFailuresByClass.get(name) ?? [])].slice(0, 8).join(" | ") || "non-type member shape"}`).join("\n"));
+  console.log("failure types for foundational class bridge targets:");
+  console.log(["TransformNode", "FlowGraphContext", "Scene", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix", "Plane"]
+    .map(name => {
+      const identities = [...declarations].filter(([, entry]) => entry.name === name).map(([identity]) => identity);
+      const state = `declarations=${identities.length}, selected=${identities.filter(identity => selected.has(identity)).length}, recursive=${recursiveCandidates.has(name)}`;
+      return `${name} (${state}): ${[...(typeFailuresByClass.get(name) ?? [])].slice(0, 12).join(" | ") || "non-type member shape"}`;
+    })
+    .join("\n"));
   const closedNames = new Set(shapeReady);
   while (true) {
     const rejected = [...closedNames].filter(name => shapeReadyDependencies.get(name).some(dependency => !available.has(dependency) && !closedNames.has(dependency)));

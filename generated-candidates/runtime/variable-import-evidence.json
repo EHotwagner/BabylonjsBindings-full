@@ -362,6 +362,20 @@
       "moduleSha256": "52ef7d5a506f5af007ca62a0e95b6278e51d54485a15e1303dbe18a4c63a2e6d"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/BVH/bvhFileLoader.metadata.js",
+      "export": "BVHFileLoaderMetadata",
+      "runtimeExport": "BVHFileLoaderMetadata",
+      "moduleSha256": "292966a816968d1730c6130df24ad82cab8d67d18378fe3e865ecc9523767117"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/cameraInputsManager.js",
+      "export": "CameraInputTypes",
+      "runtimeExport": "CameraInputTypes",
+      "moduleSha256": "6a736210086a50a36b10f20aa95390a839a52d8481bc69f46143b7444aa80e38"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/chromaticAberration.fragment.js",
       "export": "chromaticAberrationPixelShader",
@@ -720,6 +734,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/domManagement.js",
+      "export": "DomManagement",
+      "runtimeExport": "DomManagement",
+      "moduleSha256": "0ea856fdc2829823b7e00e2f2eeb45b4d161198e3e8667d026e37ad28e38701c"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Particles/EmitterTypes/customParticleEmitter.js",
       "export": "EmptyGeneratorFunc",
       "runtimeExport": "EmptyGeneratorFunc",
@@ -775,6 +796,13 @@
       "moduleSha256": "38841c44dc94e17018b926a26467b9885010b49d9e8c0057fa2ac57a1b90231a"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/FBX/fbxFileLoader.metadata.js",
+      "export": "FBXFileLoaderMetadata",
+      "runtimeExport": "FBXFileLoaderMetadata",
+      "moduleSha256": "9a4c21b5e7e86c7a583afcb1b0a862a9544cffd95c5922bdd03075e3168e2495"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/filter.fragment.js",
       "export": "filterPixelShader",
@@ -787,6 +815,13 @@
       "export": "filterPixelShaderWGSL",
       "runtimeExport": "filterPixelShaderWGSL",
       "moduleSha256": "6f07a5022cdccda9348dc612f4dfafc4d1835e191e1ef5782251ef9ebd97e6b7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "export": "FLOAT32_SIZE",
+      "runtimeExport": "FLOAT32_SIZE",
+      "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
     },
     {
       "package": "@babylonjs/core",
@@ -1056,6 +1091,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GaussianSplatting/gaussianSplattingMaterial.pure.js",
+      "export": "GaussianSplattingMaxPartCount",
+      "runtimeExport": "GaussianSplattingMaxPartCount",
+      "moduleSha256": "09dadd50b78986f61096f85f0843191223748cde1415eda426de354eb158c5d8"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/gaussianSplattingVertexDeclaration.js",
       "export": "gaussianSplattingVertexDeclaration",
       "runtimeExport": "gaussianSplattingVertexDeclaration",
@@ -1181,6 +1223,27 @@
       "moduleSha256": "0dce38d8bf5e369bcddd489f6ea4d357d8004378c9034922e758c2fe31baf738"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.metadata.js",
+      "export": "GLTFFileLoaderMetadata",
+      "runtimeExport": "GLTFFileLoaderMetadata",
+      "moduleSha256": "66f0d1c6bd51de7c08a7e777e9145e0d1a9f49f1d6dfa1691c3adc098cdee1b6"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.metadata.js",
+      "export": "GLTFMagicBase64Encoded",
+      "runtimeExport": "GLTFMagicBase64Encoded",
+      "moduleSha256": "66f0d1c6bd51de7c08a7e777e9145e0d1a9f49f1d6dfa1691c3adc098cdee1b6"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js",
+      "export": "gltfTypeToBabylonType",
+      "runtimeExport": "gltfTypeToBabylonType",
+      "moduleSha256": "fa0d80fb70457a4115069d2885c13b3f3774cce82a01839a1510633f0348ec14"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/gpuRenderParticles.fragment.js",
       "export": "gpuRenderParticlesPixelShader",
@@ -1259,6 +1322,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GreasedLine/greasedLineSimpleMaterial.js",
+      "export": "GreasedLineUseOffsetsSimpleMaterialDefine",
+      "runtimeExport": "GreasedLineUseOffsetsSimpleMaterialDefine",
+      "moduleSha256": "4c1beae9f3a7047b709d4e8bf75a3288109ad6c3ea7f24a193f759b56150356d"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/greasedLine.vertex.js",
       "export": "greasedLineVertexShader",
       "runtimeExport": "greasedLineVertexShader",
@@ -1270,6 +1340,13 @@
       "export": "greasedLineVertexShaderWGSL",
       "runtimeExport": "greasedLineVertexShaderWGSL",
       "moduleSha256": "a975a286477de694acc4b79d4b998844671b8ab0916bf8ab1ad86043c09e76f4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/guid.js",
+      "export": "GUID",
+      "runtimeExport": "GUID",
+      "moduleSha256": "38f5c60124c605674eef651c88356cd90c1ce4c51685ff1e321457fb307a16dc"
     },
     {
       "package": "@babylonjs/core",
@@ -1343,6 +1420,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/HighDynamicRange/hdr.js",
+      "export": "HDRTools",
+      "runtimeExport": "HDRTools",
+      "moduleSha256": "7be93026ff8c84871b4db902e04607a674ea727ca69c1b439b44db4fae635928"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/helperFunctions.js",
       "export": "helperFunctions",
       "runtimeExport": "helperFunctions",
@@ -1372,6 +1456,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "export": "HUF_DECBITS",
+      "runtimeExport": "HUF_DECBITS",
+      "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
       "export": "HUF_DECMASK",
       "runtimeExport": "HUF_DECMASK",
       "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
@@ -1381,6 +1472,13 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
       "export": "HUF_DECSIZE",
       "runtimeExport": "HUF_DECSIZE",
+      "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "export": "HUF_ENCBITS",
+      "runtimeExport": "HUF_ENCBITS",
       "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
     },
     {
@@ -1728,6 +1826,27 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "export": "INT16_SIZE",
+      "runtimeExport": "INT16_SIZE",
+      "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "export": "INT32_SIZE",
+      "runtimeExport": "INT32_SIZE",
+      "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "export": "INT8_SIZE",
+      "runtimeExport": "INT8_SIZE",
+      "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/intersectionFunctions.js",
       "export": "intersectionFunctions",
       "runtimeExport": "intersectionFunctions",
@@ -2064,6 +2183,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "export": "LONG_ZEROCODE_RUN",
+      "runtimeExport": "LONG_ZEROCODE_RUN",
+      "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/ltcHelperFunctions.js",
       "export": "ltcHelperFunctions",
       "runtimeExport": "ltcHelperFunctions",
@@ -2075,6 +2201,13 @@
       "export": "ltcHelperFunctionsWGSL",
       "runtimeExport": "ltcHelperFunctionsWGSL",
       "moduleSha256": "f3e42c159906dcad7fd9301acbb7ddd13458c730a35d24738005ba500c03e858"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/halfFloat.js",
+      "export": "MaxHalfFloat",
+      "runtimeExport": "MaxHalfFloat",
+      "moduleSha256": "d868acf9252d270f89841b50b3f0a6f5e462cd7fbf283aadc06859f46d334d39"
     },
     {
       "package": "@babylonjs/core",
@@ -2184,6 +2317,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js",
+      "export": "MixamoAimChildOverrides",
+      "runtimeExport": "MixamoAimChildOverrides",
+      "moduleSha256": "7e22d965ac1e6e2a7c106727e73dc8716eb5be0072f689bb0bfbcda919b28dc0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js",
       "export": "MixamoRigMapping",
       "runtimeExport": "MixamoRigMapping",
       "moduleSha256": "7e22d965ac1e6e2a7c106727e73dc8716eb5be0072f689bb0bfbcda919b28dc0"
@@ -2257,6 +2397,13 @@
       "export": "motionBlurPixelShaderWGSL",
       "runtimeExport": "motionBlurPixelShaderWGSL",
       "moduleSha256": "66c026cca7406d894850cdf81e7def010e0f8cc25d632099ac889f93bb019a40"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/OBJ/objFileLoader.metadata.js",
+      "export": "OBJFileLoaderMetadata",
+      "runtimeExport": "OBJFileLoaderMetadata",
+      "moduleSha256": "6fc740fc0ef0fe50f5ab84e900774caa73892baf0b4da55261ca02355b7c4dc1"
     },
     {
       "package": "@babylonjs/core",
@@ -2547,6 +2694,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuTextureManager.js",
+      "export": "renderableTextureFormatToIndex",
+      "runtimeExport": "renderableTextureFormatToIndex",
+      "moduleSha256": "fccf08740e394cafea2add69524f40e0125af66a3fc81f56a6529bbedd413665"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/rgbdDecode.fragment.js",
       "export": "rgbdDecodePixelShader",
       "runtimeExport": "rgbdDecodePixelShader",
@@ -2764,6 +2918,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/Fragment/smartFilterFragmentOutputBlock.pure.js",
+      "export": "SfeModeDefine",
+      "runtimeExport": "SfeModeDefine",
+      "moduleSha256": "51f3ac9aea67cfc2b4fdd17bc4b6c132b5e466551ada6623ea0c35d7f0bb435a"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapFragment.js",
       "export": "shadowMapFragment",
       "runtimeExport": "shadowMapFragment",
@@ -2877,9 +3038,23 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "export": "SHORT_ZEROCODE_RUN",
+      "runtimeExport": "SHORT_ZEROCODE_RUN",
+      "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
       "export": "SHORTEST_LONG_RUN",
       "runtimeExport": "SHORTEST_LONG_RUN",
       "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/SPLAT/splatFileLoader.metadata.js",
+      "export": "SPLATFileLoaderMetadata",
+      "runtimeExport": "SPLATFileLoaderMetadata",
+      "moduleSha256": "7ac29e956029a3330919171d1ac6b3d29e71bd01256c8c6f9a0f20f4becb4208"
     },
     {
       "package": "@babylonjs/core",
@@ -2980,6 +3155,13 @@
       "moduleSha256": "dfa7cb3258b54cdfaebac3088c89f02d4aef51bd2868de7cc9f071cd3cfe1d70"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/STL/stlFileLoader.metadata.js",
+      "export": "STLFileLoaderMetadata",
+      "runtimeExport": "STLFileLoaderMetadata",
+      "moduleSha256": "2e0ae9fa66d02fe3b92da9c6ca71053a3f92b2ae0bd3443621b2d53b7011868e"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/stringTools.js",
       "export": "StringTools",
@@ -3016,6 +3198,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.constants.js",
+      "export": "ToLinearSpace",
+      "runtimeExport": "ToLinearSpace",
+      "moduleSha256": "109a8559f79cbb3b037fd5ab809f1171ca0c95be039227e738cdefa5539bf89b"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/tonemap.fragment.js",
       "export": "tonemapPixelShader",
       "runtimeExport": "tonemapPixelShader",
@@ -3027,6 +3216,13 @@
       "export": "tonemapPixelShaderWGSL",
       "runtimeExport": "tonemapPixelShaderWGSL",
       "moduleSha256": "48042c631d786fc2260b1061fa5f70a1161474dbe251e9f0c73dd0ecd8aa8877"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
+      "export": "ULONG_SIZE",
+      "runtimeExport": "ULONG_SIZE",
+      "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
     },
     {
       "package": "@babylonjs/core",
