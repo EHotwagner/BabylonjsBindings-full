@@ -72,6 +72,13 @@ let duplicateEntry = createObj [ "name" ==> "single" ]
 let uniqueValues: SmartArrayNoDuplicate<obj> = SmartArrayNoDuplicate.Create(4.0)
 let firstUniquePush = uniqueValues.``pushNoDuplicate``(duplicateEntry)
 let secondUniquePush = uniqueValues.``pushNoDuplicate``(duplicateEntry)
+let mutable animationEventFrame = -1.0
+let animationEventAction: AnimationEventConstructor5Parameter2Callback = System.Action<float>(fun frame -> animationEventFrame <- frame)
+let animationEvent = AnimationEvent.Create(12.0, animationEventAction, onlyOnce = true)
+animationEvent.``action``.Invoke(animationEvent.``frame``)
+let factorGradient = FactorGradient.Create(0.5, 2.0)
+let simplificationSettings = SimplificationSettings.Create(0.75, 20.0, optimizeMesh = true)
+let stencilState = StencilStateComposer.Create(true)
 let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
 let shortIndices: TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
@@ -125,6 +132,10 @@ if lazyValue.``value`` <> "lazy-value" || smartValues.``data``[0] <> 1.0 then
     failwith "Babylon nested-callback generic class was not preserved"
 if not firstUniquePush || secondUniquePush || uniqueValues.``length`` <> 1.0 then
     failwith "Babylon inherited generic class was not preserved"
+if animationEventFrame <> 12.0 || animationEvent.``onlyOnce`` <> Some true then
+    failwith "Babylon undefined-union callback class was not preserved"
+if factorGradient.``getFactor``() <> 2.0 || simplificationSettings.``optimizeMesh`` <> Some true || not stencilState.``isDirty`` then
+    failwith "Babylon undefined-union class state was not preserved"
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
 if indicesNeed32Bits then

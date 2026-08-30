@@ -24,6 +24,12 @@ let richTypeFactory: RichTypeStatic = RichType
 let lazyFactoryType: LazyStatic = Lazy
 let smartArrayFactory: SmartArrayStatic = SmartArray
 let smartArrayNoDuplicateFactory: SmartArrayNoDuplicateStatic = SmartArrayNoDuplicate
+let animationEventFactory: AnimationEventStatic = AnimationEvent
+let factorGradientFactory: FactorGradientStatic = FactorGradient
+let performanceConfiguratorFactory: PerformanceConfiguratorStatic = PerformanceConfigurator
+let simplificationSettingsFactory: SimplificationSettingsStatic = SimplificationSettings
+let stencilStateComposerFactory: StencilStateComposerStatic = StencilStateComposer
+let webGLHardwareTextureFactory: WebGLHardwareTextureStatic = WebGLHardwareTexture
 let strideFunction = BabylonjsBindings.SimpleFunctions.``VertexBufferDeduceStride``
 let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
@@ -51,6 +57,12 @@ richTypeFactory |> ignore
 lazyFactoryType |> ignore
 smartArrayFactory |> ignore
 smartArrayNoDuplicateFactory |> ignore
+animationEventFactory |> ignore
+factorGradientFactory |> ignore
+performanceConfiguratorFactory |> ignore
+simplificationSettingsFactory |> ignore
+stencilStateComposerFactory |> ignore
+webGLHardwareTextureFactory |> ignore
 strideFunction |> ignore
 epsilon |> ignore
 shaderDescriptor |> ignore

@@ -4,9 +4,18 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "04372707ba5d2df822144a89d1b263278c42793e02fcddbf8891d07d8b118b9e"
+    "sha256": "97ae7b4fd27663eaa740a67f62adbcbf75c055f3d9853b1499a2c3ce2e315557"
   },
   "imports": [
+    {
+      "specifier": "@babylonjs/core/Animations/animationEvent.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Animations/animationEvent.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
     {
       "specifier": "@babylonjs/core/Animations/animationGroupMask.js",
       "package": "@babylonjs/core",
@@ -107,6 +116,15 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Meshes/meshSimplification.common.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Meshes/meshSimplification.common.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Misc/bitArray.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
@@ -120,6 +138,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Misc/fileTools.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/gradients.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/gradients.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]
@@ -183,6 +210,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/States/alphaCullingState.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/States/stencilStateComposer.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/States/stencilStateComposer.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

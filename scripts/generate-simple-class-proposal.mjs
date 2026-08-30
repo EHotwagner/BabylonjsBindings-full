@@ -36,6 +36,10 @@ const maintainedSymbols = new Map(dependencyExports
 
 const hasModifier = (node, kind) => node.modifiers?.some(modifier => modifier.kind === kind) ?? false;
 const inaccessible = node => hasModifier(node, ts.SyntaxKind.PrivateKeyword) || hasModifier(node, ts.SyntaxKind.ProtectedKeyword);
+const isAbsentType = node => node.kind === ts.SyntaxKind.UndefinedKeyword
+  || (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
+const asOption = type => type.endsWith(" option") ? type : `${type} option`;
+const asOptionalParameterType = type => type.endsWith(" option") ? type.slice(0, -" option".length) : type;
 const fsharpType = (node, available, dependencies = new Set(), typeParameters = new Set()) => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
@@ -43,6 +47,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
+  if (ts.isUnionTypeNode(node) && node.types.length === 2 && node.types.filter(isAbsentType).length === 1) {
+    const inner = fsharpType(node.types.find(branch => !isAbsentType(branch)), available, dependencies, typeParameters);
+    return inner ? asOption(inner) : undefined;
+  }
   if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
     const branches = node.types.map(branch => fsharpType(branch, available, dependencies, typeParameters));
     return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
@@ -66,7 +74,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     }
     if (node.typeName.text === "Nullable" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
-      return inner ? `${inner} option` : undefined;
+      return inner ? asOption(inner) : undefined;
     }
     const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
@@ -124,7 +132,7 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
     }
     return {
       name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
-      type,
+      type: parameter.questionToken && type ? asOptionalParameterType(type) : type,
       optional: Boolean(parameter.questionToken)
     };
   });
@@ -158,7 +166,7 @@ const renderClass = (declaration, available, hasBase) => {
       } else {
         const type = fsharpType(member.type, available, dependencies, typeParameters);
         if (!type) return undefined;
-        target.push({ kind: "property", name: member.name.text, type: member.questionToken ? `${type} option` : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
+        target.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
       }
     } else if (ts.isMethodDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       if (member.questionToken) return undefined;

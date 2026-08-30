@@ -43,6 +43,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationEvent.js",
+      "export": "AnimationEvent",
+      "moduleSha256": "4b09cb868008d709e9b03e7ed22281f7c88b954ba983a491e7bc5eb0bdac3a1c"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/animationGroupMask.js",
       "export": "AnimationGroupMask",
       "moduleSha256": "4cab4e4e00f877face37f38d12401b025bf826d49cfe4a465d2d92d09dbd9f49"
@@ -145,6 +151,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/gradients.js",
+      "export": "FactorGradient",
+      "moduleSha256": "704f9e59cf8ca5b9bff89c06bd62590af8d94598095e49f1b057a449fdf5dc50"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure.js",
       "export": "FlowGraphInteger",
       "moduleSha256": "49be50789679fee7e09fe3addbc2fede16f24bf259fa6021a125eb6a4d0123fb"
@@ -217,6 +229,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/performanceConfigurator.js",
+      "export": "PerformanceConfigurator",
+      "moduleSha256": "2c1deca6b3e50090b379deb5adba5fbaf030a4e4db5ddd0cfcccb048e2baf590"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/performanceMonitor.js",
       "export": "PerformanceMonitor",
       "moduleSha256": "cf49766c58602125c303dd28c962f409653f78e796d670150f15b8ccde1084ec"
@@ -277,6 +295,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/meshSimplification.common.js",
+      "export": "SimplificationSettings",
+      "moduleSha256": "92163d39637d1107e039765269dbea02d3aae044987dfb624d8f29851d979415"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.size.js",
       "export": "Size",
       "moduleSha256": "397d1d56b22af85b5350223fa364d2519ef04059eab4c1a74ec4234054e1e85f"
@@ -286,6 +310,12 @@
       "module": "@babylonjs/core/Misc/smartArray.js",
       "export": "SmartArray",
       "moduleSha256": "bd024818d86bbce6dc630ee9322cba6b5dda30ef7281293b0503b5b804e97967"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/States/stencilStateComposer.js",
+      "export": "StencilStateComposer",
+      "moduleSha256": "72ebb88aafb2b2253639a144a5d86d95ecd27d55dc0f32f4222243e0ee3f8c6a"
     },
     {
       "package": "@babylonjs/core",
@@ -328,6 +358,12 @@
       "module": "@babylonjs/core/Engines/WebGL/webGL2ShaderProcessors.js",
       "export": "WebGL2ShaderProcessor",
       "moduleSha256": "52f16ee7b753576f8500129a3f4342e3e32ff69c1baa885ba00f93f2a1173b6f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGL/webGLHardwareTexture.js",
+      "export": "WebGLHardwareTexture",
+      "moduleSha256": "1e7ad7342d775833cd825f4c25bb3ba20596940aa646c8003083250008273fa9"
     },
     {
       "package": "@babylonjs/core",

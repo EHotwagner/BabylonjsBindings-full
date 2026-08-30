@@ -102,6 +102,30 @@ module SimpleClasses =
     [<Import("AndOrNotEvaluator", "@babylonjs/core/Misc/andOrNotEvaluator.js")>]
     let AndOrNotEvaluator: AndOrNotEvaluatorStatic = jsNative
 
+    /// Uncurried function-valued argument used by AnimationEvent.
+    type AnimationEventConstructor5Parameter2Callback = System.Action<float>
+
+    /// Function-valued AnimationEvent.action property.
+    [<AllowNullLiteral>]
+    type AnimationEventActionCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``currentFrame``: float -> unit
+
+    /// @babylonjs/core/Animations/animationEvent
+    [<AllowNullLiteral>]
+    type AnimationEvent =
+        abstract ``frame``: float with get, set
+        abstract ``action``: AnimationEventActionCallback with get, set
+        abstract ``onlyOnce``: bool option with get, set
+        abstract ``isDone``: bool with get, set
+        abstract ``_clone``: unit -> AnimationEvent
+
+    [<AllowNullLiteral>]
+    type AnimationEventStatic =
+        [<EmitConstructor>] abstract Create: ``frame``: float * ``action``: AnimationEventConstructor5Parameter2Callback * ?``onlyOnce``: bool -> AnimationEvent
+
+    [<Import("AnimationEvent", "@babylonjs/core/Animations/animationEvent.js")>]
+    let AnimationEvent: AnimationEventStatic = jsNative
+
     /// @babylonjs/core/Animations/animationGroupMask
     [<AllowNullLiteral>]
     type AnimationGroupMask =
@@ -387,6 +411,21 @@ module SimpleClasses =
     [<Import("ExrLoaderGlobalConfiguration", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.configuration.js")>]
     let ExrLoaderGlobalConfiguration: ExrLoaderGlobalConfigurationStatic = jsNative
 
+    /// @babylonjs/core/Misc/gradients
+    [<AllowNullLiteral>]
+    type FactorGradient =
+        abstract ``gradient``: float with get, set
+        abstract ``factor1``: float with get, set
+        abstract ``factor2``: float option with get, set
+        abstract ``getFactor``: unit -> float
+
+    [<AllowNullLiteral>]
+    type FactorGradientStatic =
+        [<EmitConstructor>] abstract Create: ``gradient``: float * ``factor1``: float * ?``factor2``: float -> FactorGradient
+
+    [<Import("FactorGradient", "@babylonjs/core/Misc/gradients.js")>]
+    let FactorGradient: FactorGradientStatic = jsNative
+
     /// @babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure
     [<AllowNullLiteral>]
     type FlowGraphInteger =
@@ -604,6 +643,23 @@ module SimpleClasses =
     [<Import("PerfCounter", "@babylonjs/core/Misc/perfCounter.js")>]
     let PerfCounter: PerfCounterStatic = jsNative
 
+    /// @babylonjs/core/Engines/performanceConfigurator
+    [<AllowNullLiteral>]
+    type PerformanceConfigurator =
+        interface end
+
+    [<AllowNullLiteral>]
+    type PerformanceConfiguratorStatic =
+        [<EmitConstructor>] abstract Create: unit -> PerformanceConfigurator
+        abstract ``MatrixUse64Bits``: bool with get, set
+        abstract ``MatrixTrackPrecisionChange``: bool with get, set
+        abstract ``MatrixCurrentType``: obj with get, set
+        abstract ``MatrixTrackedMatrices``: ResizeArray<obj> option with get, set
+        abstract ``SetMatrixPrecision``: ``use64bits``: bool -> unit
+
+    [<Import("PerformanceConfigurator", "@babylonjs/core/Engines/performanceConfigurator.js")>]
+    let PerformanceConfigurator: PerformanceConfiguratorStatic = jsNative
+
     /// @babylonjs/core/Misc/performanceMonitor
     [<AllowNullLiteral>]
     type PerformanceMonitor =
@@ -773,6 +829,20 @@ module SimpleClasses =
     [<Import("ShaderCodeInliner", "@babylonjs/core/Engines/Processors/shaderCodeInliner.js")>]
     let ShaderCodeInliner: ShaderCodeInlinerStatic = jsNative
 
+    /// @babylonjs/core/Meshes/meshSimplification.common
+    [<AllowNullLiteral>]
+    type SimplificationSettings =
+        abstract ``quality``: float with get, set
+        abstract ``distance``: float with get, set
+        abstract ``optimizeMesh``: bool option with get, set
+
+    [<AllowNullLiteral>]
+    type SimplificationSettingsStatic =
+        [<EmitConstructor>] abstract Create: ``quality``: float * ``distance``: float * ?``optimizeMesh``: bool -> SimplificationSettings
+
+    [<Import("SimplificationSettings", "@babylonjs/core/Meshes/meshSimplification.common.js")>]
+    let SimplificationSettings: SimplificationSettingsStatic = jsNative
+
     /// @babylonjs/core/Maths/math.size
     [<AllowNullLiteral>]
     type Size =
@@ -827,6 +897,35 @@ module SimpleClasses =
 
     [<Import("SmartArray", "@babylonjs/core/Misc/smartArray.js")>]
     let SmartArray: SmartArrayStatic = jsNative
+
+    /// @babylonjs/core/States/stencilStateComposer
+    [<AllowNullLiteral>]
+    type StencilStateComposer =
+        abstract ``stencilGlobal``: BabylonjsBindings.SimpleInterfaces.IStencilState with get, set
+        abstract ``stencilMaterial``: BabylonjsBindings.SimpleInterfaces.IStencilState option with get, set
+        abstract ``useStencilGlobalOnly``: bool with get, set
+        abstract ``reset``: unit -> unit
+        abstract ``apply``: ?``gl``: Browser.Types.WebGLRenderingContext -> unit
+        abstract ``isDirty``: bool with get
+        abstract ``func``: float with get, set
+        abstract ``backFunc``: float with get, set
+        abstract ``funcRef``: float with get, set
+        abstract ``funcMask``: float with get, set
+        abstract ``opStencilFail``: float with get, set
+        abstract ``opDepthFail``: float with get, set
+        abstract ``opStencilDepthPass``: float with get, set
+        abstract ``backOpStencilFail``: float with get, set
+        abstract ``backOpDepthFail``: float with get, set
+        abstract ``backOpStencilDepthPass``: float with get, set
+        abstract ``mask``: float with get, set
+        abstract ``enabled``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type StencilStateComposerStatic =
+        [<EmitConstructor>] abstract Create: ?``reset``: bool -> StencilStateComposer
+
+    [<Import("StencilStateComposer", "@babylonjs/core/States/stencilStateComposer.js")>]
+    let StencilStateComposer: StencilStateComposerStatic = jsNative
 
     /// @babylonjs/core/Gamepads/gamepad
     [<AllowNullLiteral>]
@@ -950,6 +1049,26 @@ module SimpleClasses =
 
     [<Import("WebGL2ShaderProcessor", "@babylonjs/core/Engines/WebGL/webGL2ShaderProcessors.js")>]
     let WebGL2ShaderProcessor: WebGL2ShaderProcessorStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGL/webGLHardwareTexture
+    [<AllowNullLiteral>]
+    type WebGLHardwareTexture =
+        abstract ``memoryAllocated``: bool option with get, set
+        abstract ``setUsage``: unit -> unit
+        abstract ``set``: ``hardwareTexture``: Browser.Types.WebGLTexture -> unit
+        abstract ``reset``: unit -> unit
+        abstract ``addMSAARenderBuffer``: ``buffer``: Browser.Types.WebGLRenderbuffer -> unit
+        abstract ``releaseMSAARenderBuffers``: unit -> unit
+        abstract ``getMSAARenderBuffer``: ?``index``: float -> Browser.Types.WebGLRenderbuffer option
+        abstract ``release``: unit -> unit
+        abstract ``underlyingResource``: Browser.Types.WebGLTexture option with get
+
+    [<AllowNullLiteral>]
+    type WebGLHardwareTextureStatic =
+        [<EmitConstructor>] abstract Create: ``existingTexture``: Browser.Types.WebGLTexture option * ``context``: Browser.Types.WebGLRenderingContext -> WebGLHardwareTexture
+
+    [<Import("WebGLHardwareTexture", "@babylonjs/core/Engines/WebGL/webGLHardwareTexture.js")>]
+    let WebGLHardwareTexture: WebGLHardwareTextureStatic = jsNative
 
     /// @babylonjs/core/Engines/WebGPU/webgpuTintWASM
     [<AllowNullLiteral>]

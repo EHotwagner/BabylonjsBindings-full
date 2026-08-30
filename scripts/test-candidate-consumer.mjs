@@ -98,6 +98,13 @@ let duplicateEntry = createObj [ "name" ==> "single" ]
 let uniqueValues: SmartArrayNoDuplicate<obj> = SmartArrayNoDuplicate.Create(4.0)
 let firstUniquePush = uniqueValues.\`\`pushNoDuplicate\`\`(duplicateEntry)
 let secondUniquePush = uniqueValues.\`\`pushNoDuplicate\`\`(duplicateEntry)
+let mutable animationEventFrame = -1.0
+let animationEventAction: AnimationEventConstructor5Parameter2Callback = System.Action<float>(fun frame -> animationEventFrame <- frame)
+let animationEvent = AnimationEvent.Create(12.0, animationEventAction, onlyOnce = true)
+animationEvent.\`\`action\`\`.Invoke(animationEvent.\`\`frame\`\`)
+let factorGradient = FactorGradient.Create(0.5, 2.0)
+let simplificationSettings = SimplificationSettings.Create(0.75, 20.0, optimizeMesh = true)
+let stencilState = StencilStateComposer.Create(true)
 let positionStride = BabylonjsBindings.SimpleFunctions.\`\`VertexBufferDeduceStride\`\`.Invoke("position")
 let shortIndices: BabylonjsBindings.TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
 let indicesNeed32Bits = BabylonjsBindings.SimpleFunctions.\`\`AreIndices32Bits\`\`.Invoke(shortIndices, 3.0)
@@ -127,6 +134,8 @@ if not alphaState.\`\`alphaBlend\`\` then failwith "clean consumer WebGL state c
 if customRichType.\`\`typeName\`\` <> "custom-string" || customRichType.\`\`defaultValue\`\` <> "default" then failwith "clean consumer generic class failed"
 if lazyValue.\`\`value\`\` <> "lazy-value" || smartValues.\`\`data\`\`[0] <> 1.0 then failwith "clean consumer nested callback class failed"
 if not firstUniquePush || secondUniquePush || uniqueValues.\`\`length\`\` <> 1.0 then failwith "clean consumer inherited generic class failed"
+if animationEventFrame <> 12.0 || animationEvent.\`\`onlyOnce\`\` <> Some true then failwith "clean consumer undefined-union callback class failed"
+if factorGradient.\`\`getFactor\`\`() <> 2.0 || simplificationSettings.\`\`optimizeMesh\`\` <> Some true || not stencilState.\`\`isDirty\`\` then failwith "clean consumer undefined-union class state failed"
 if positionStride <> 3.0 then failwith "clean consumer function import failed"
 if indicesNeed32Bits then failwith "clean consumer union alias/function failed"
 if epsilon <> 0.001 then failwith "clean consumer variable import failed"

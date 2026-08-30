@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "59b31262c48500208374200ccf38ccebb5d4c11a82ed81abb8dfb05e2c0f1eec",
+  "proposalSha256": "7702b6dacf9e59cf0ebb2be937ace857cee28c8b2f00387fd168effdaeeaecf1",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -51,6 +51,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AndOrNotEvaluator",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationEvent",
+      "name": "AnimationEvent",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AnimationEvent",
+      "memberCount": 6
     },
     {
       "package": "@babylonjs/core",
@@ -207,6 +216,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/gradients",
+      "name": "FactorGradient",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FactorGradient",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure",
       "name": "FlowGraphInteger",
       "kind": "class",
@@ -316,6 +334,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/performanceConfigurator",
+      "name": "PerformanceConfigurator",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PerformanceConfigurator",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/performanceMonitor",
       "name": "PerformanceMonitor",
       "kind": "class",
@@ -407,6 +434,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/meshSimplification.common",
+      "name": "SimplificationSettings",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SimplificationSettings",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.size",
       "name": "Size",
       "kind": "class",
@@ -423,6 +459,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SmartArray",
       "typeParameterCount": 1,
       "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/States/stencilStateComposer",
+      "name": "StencilStateComposer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StencilStateComposer",
+      "memberCount": 19
     },
     {
       "package": "@babylonjs/core",
@@ -486,6 +531,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGL2ShaderProcessor",
       "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGL/webGLHardwareTexture",
+      "name": "WebGLHardwareTexture",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGLHardwareTexture",
+      "memberCount": 10
     },
     {
       "package": "@babylonjs/core",

@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "d4176ca4c64d624b6639296ecb97f66431f07e9c4acadfb1415302e4b641fc90"
+    "sha256": "d3958e2d16957bae2640eb176f6565da4cde4ff25b30b617bbf8e787313c5def"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,8 +13,9 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "d0236d833c37d54583975f2f6011c5b65a6218120a7c3505526e4070cb9b3158",
+  "emittedProgramSha256": "aac1b5e12bd73118e7382f4a89b982b6d042676ed39bd26246e33983dc2b2aec",
   "imports": [
+    "@babylonjs/core/Animations/animationEvent.js",
     "@babylonjs/core/Animations/animationGroupMask.js",
     "@babylonjs/core/Buffers/buffer.pure.js",
     "@babylonjs/core/Buffers/bufferUtils.js",
@@ -23,13 +24,16 @@
     "@babylonjs/core/Maths/math.constants.js",
     "@babylonjs/core/Maths/math.vector.pure.js",
     "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js",
+    "@babylonjs/core/Meshes/meshSimplification.common.js",
     "@babylonjs/core/Misc/bitArray.js",
     "@babylonjs/core/Misc/fileTools.pure.js",
+    "@babylonjs/core/Misc/gradients.js",
     "@babylonjs/core/Misc/lazy.js",
     "@babylonjs/core/Misc/smartArray.js",
     "@babylonjs/core/Misc/stringTools.js",
     "@babylonjs/core/ShadersWGSL/clearQuad.vertex.js",
     "@babylonjs/core/States/alphaCullingState.js",
+    "@babylonjs/core/States/stencilStateComposer.js",
     "@babylonjs/core/scene.pure.js",
     "@babylonjs/loaders/glTF/index.js"
   ],

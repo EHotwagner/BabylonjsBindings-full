@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "4437395c141f9024f0094fd3a55eeea78000f05f429bc9583b793ff33688e4fb",
+  "maintainedSurfaceDigest": "f24fef0b2be6db8ee39204389c861e8162c3e1e9df6cd8ad7882e3a202d03af6",
   "summary": {
     "total": 4323,
-    "typed": 1713,
+    "typed": 1719,
     "runtimeOnly": 1,
-    "blocked": 2603,
+    "blocked": 2597,
     "lossy": 6
   },
   "exports": [
@@ -482,8 +482,9 @@
       "module": "@babylonjs/core/Animations/animationEvent",
       "name": "AnimationEvent",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AnimationEvent"
     },
     {
       "package": "@babylonjs/core",
@@ -4984,8 +4985,9 @@
       "module": "@babylonjs/core/Engines/performanceConfigurator",
       "name": "PerformanceConfigurator",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PerformanceConfigurator"
     },
     {
       "package": "@babylonjs/core",
@@ -5237,8 +5239,9 @@
       "module": "@babylonjs/core/Engines/WebGL/webGLHardwareTexture",
       "name": "WebGLHardwareTexture",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGLHardwareTexture"
     },
     {
       "package": "@babylonjs/core",
@@ -20381,8 +20384,9 @@
       "module": "@babylonjs/core/Meshes/meshSimplification.common",
       "name": "SimplificationSettings",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SimplificationSettings"
     },
     {
       "package": "@babylonjs/core",
@@ -23262,8 +23266,9 @@
       "module": "@babylonjs/core/Misc/gradients",
       "name": "FactorGradient",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FactorGradient"
     },
     {
       "package": "@babylonjs/core",
@@ -32412,8 +32417,9 @@
       "module": "@babylonjs/core/States/stencilStateComposer",
       "name": "StencilStateComposer",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StencilStateComposer"
     },
     {
       "package": "@babylonjs/core",
