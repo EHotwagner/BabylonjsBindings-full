@@ -65,9 +65,8 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
     const browserTypes = new Set([
       "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
-      "ImageBitmap", "ImageData", "OffscreenCanvas", "WebGLUniformLocation", "WebGLRenderingContext", "WebGL2RenderingContext",
+      "ImageData", "WebGLUniformLocation", "WebGLRenderingContext",
       "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
-      "WebGLSampler", "WebGLTransformFeedback", "WebGLVertexArrayObject"
     ]);
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;

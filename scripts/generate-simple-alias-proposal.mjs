@@ -41,6 +41,8 @@ const fsharpType = node => {
     }
     const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
+    const browserTypes = new Set(["HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "ImageData"]);
+    if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
   }
   return undefined;
 };
@@ -65,7 +67,15 @@ for (const sourceFile of program.getSourceFiles()) {
     if (!packageName) continue;
     const name = exported.getName();
     let entry;
-    if (!declaration.typeParameters?.length && ts.isFunctionTypeNode(declaration.type)) {
+    const isNullable = name === "Nullable"
+      && declaration.typeParameters?.length === 1
+      && ts.isUnionTypeNode(declaration.type)
+      && declaration.type.types.length === 2
+      && declaration.type.types.some(node => ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName) && node.typeName.text === declaration.typeParameters[0].name.text)
+      && declaration.type.types.some(node => ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
+    if (isNullable) {
+      entry = { package: packageName, module, name, shape: "genericAlias", typeParameter: declaration.typeParameters[0].name.text, target: `'${declaration.typeParameters[0].name.text} option` };
+    } else if (!declaration.typeParameters?.length && ts.isFunctionTypeNode(declaration.type)) {
       if (declaration.type.parameters.some(parameter => parameter.dotDotDotToken)) continue;
       const returnType = fsharpType(declaration.type.type);
       const parameters = declaration.type.parameters.map(parameter => ({
@@ -100,8 +110,9 @@ const lines = [
 ];
 for (const entry of entries) {
   lines.push("", `    /// ${entry.module}`);
-  if (entry.shape === "alias") {
-    lines.push(`    type ${entry.name} = ${entry.target}`);
+  if (entry.shape === "alias" || entry.shape === "genericAlias") {
+    const generic = entry.shape === "genericAlias" ? `<'${entry.typeParameter}>` : "";
+    lines.push(`    type ${entry.name}${generic} = ${entry.target}`);
   } else {
     const argumentsType = entry.parameters.length === 0
       ? "unit"
@@ -122,6 +133,7 @@ const manifest = {
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.TypeAliases.${entry.name}`,
     shape: entry.shape,
+    ...(entry.shape === "genericAlias" ? { typeParameterCount: 1 } : {}),
     memberCount: entry.shape === "callback" ? entry.parameters.length : 1
   }))
 };

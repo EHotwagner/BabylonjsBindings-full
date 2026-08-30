@@ -74,6 +74,7 @@ cameraHandlers.\`\`zoom\`\`.Invoke(6.0)
 let mutable stageCalled = false
 let stageAction: BabylonjsBindings.TypeAliases.SimpleStageAction = unbox (fun () -> stageCalled <- true)
 stageAction.Invoke()
+let absentLabel: BabylonjsBindings.TypeAliases.Nullable<string> = None
 let easing: IEasingFunction = createObj [ "ease" ==> (fun (gradient: float) -> gradient * 2.0) ] |> unbox
 let eased = easing.\`\`ease\`\`(3.0)
 let inspectableOption: IInspectableOptions = createObj [ "label" ==> "quality"; "value" ==> 2.0 ] |> unbox
@@ -95,9 +96,11 @@ if isNull (mesh :> obj) || scene.meshes.Count <> 1 then failwith "clean consumer
 if uint32 NodeRenderGraphBlockConnectionPointTypes.\`\`All\`\` <> 4294967295u then failwith "clean consumer enum failed"
 if int AudioAnalyzerFFTSizeType.\`\`N32768\`\` <> 32768 then failwith "clean consumer numeric literal union failed"
 if asString PowerPreference.\`\`HighPerformance\`\` <> "high-performance" then failwith "clean consumer string enum failed"
+if asString ArcRotateInteraction.\`\`Pan\`\` <> "pan" || asString WebXRLayerType.\`\`XRWebGLLayer\`\` <> "XRWebGLLayer" then failwith "clean consumer resolved string union failed"
 if dimensions.\`\`width\`\` <> 8.0 || dimensions.\`\`height\`\` <> 4.0 then failwith "clean consumer object type failed"
 if zoomDelta <> 6.0 then failwith "clean consumer object callback failed"
 if not stageCalled then failwith "clean consumer callback alias failed"
+if absentLabel.IsSome then failwith "clean consumer nullable alias failed"
 if eased <> 6.0 then failwith "clean consumer interface method failed"
 match inspectableOption.\`\`value\`\` with
 | U2.Case1 value when value = 2.0 -> ()

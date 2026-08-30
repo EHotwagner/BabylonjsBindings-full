@@ -29,6 +29,9 @@ module TypeAliases =
     /// @babylonjs/core/types
     type int = System.Double
 
+    /// @babylonjs/core/types
+    type Nullable<'T> = 'T option
+
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderingGroupStageAction =

@@ -28,6 +28,13 @@ module StringEnums =
         | [<CompiledName("jsDecoderModule")>] ``JsDecoderModule``
         | [<CompiledName("jsMSCTranscoder")>] ``JsMSCTranscoder``
 
+    /// @babylonjs/core/Cameras/arcRotateCameraMovement
+    [<StringEnum; RequireQualifiedAccess>]
+    type ArcRotateInteraction =
+        | [<CompiledName("pan")>] ``Pan``
+        | [<CompiledName("rotate")>] ``Rotate``
+        | [<CompiledName("zoom")>] ``Zoom``
+
     /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
     [<StringEnum; RequireQualifiedAccess>]
     type AudioEngineV2State =
@@ -479,6 +486,13 @@ module StringEnums =
         | [<CompiledName("optimal")>] ``Optimal``
         | [<CompiledName("current")>] ``Current``
 
+    /// @babylonjs/core/Cameras/geospatialCameraMovement
+    [<StringEnum; RequireQualifiedAccess>]
+    type GeospatialInteraction =
+        | [<CompiledName("pan")>] ``Pan``
+        | [<CompiledName("rotate")>] ``Rotate``
+        | [<CompiledName("zoom")>] ``Zoom``
+
     /// @babylonjs/core/XR/features/WebXRHandTracking.pure
     [<StringEnum; RequireQualifiedAccess>]
     type HandPart =
@@ -621,6 +635,12 @@ module StringEnums =
     type StoreOp =
         | [<CompiledName("store")>] ``Store``
         | [<CompiledName("discard")>] ``Discard``
+
+    /// @babylonjs/core/Cameras/targetCameraMovement
+    [<StringEnum; RequireQualifiedAccess>]
+    type TargetCameraInteraction =
+        | [<CompiledName("rotate")>] ``Rotate``
+        | [<CompiledName("translate")>] ``Translate``
 
     /// @babylonjs/core/Engines/WebGPU/webgpuConstants
     [<StringEnum; RequireQualifiedAccess>]
@@ -944,6 +964,13 @@ module StringEnums =
         | [<CompiledName("pinky-finger-phalanx-intermediate")>] ``PINKYFINGERPHALANXINTERMEDIATE``
         | [<CompiledName("pinky-finger-phalanx-distal")>] ``PINKYFINGERPHALANXDISTAL``
         | [<CompiledName("pinky-finger-tip")>] ``PINKYFINGERTIP``
+
+    /// @babylonjs/core/XR/webXRLayerWrapper
+    [<StringEnum; RequireQualifiedAccess>]
+    type WebXRLayerType =
+        | [<CompiledName("XRProjectionLayer")>] ``XRProjectionLayer``
+        | [<CompiledName("XRQuadLayer")>] ``XRQuadLayer``
+        | [<CompiledName("XRWebGLLayer")>] ``XRWebGLLayer``
 
     /// @babylonjs/core/XR/webXRLayerWrapper
     [<StringEnum; RequireQualifiedAccess>]

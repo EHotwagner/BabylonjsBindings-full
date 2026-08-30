@@ -35,6 +35,7 @@ cameraHandlers.``pan``.Invoke(3.0, 2.0)
 let mutable stageCalled = false
 let stageAction: TypeAliases.SimpleStageAction = unbox (fun () -> stageCalled <- true)
 stageAction.Invoke()
+let absentLabel: TypeAliases.Nullable<string> = None
 let mutable renderingGroup = -1.0
 let renderingGroupAction: TypeAliases.RenderingGroupStageAction = unbox (fun (group: float) -> renderingGroup <- group)
 renderingGroupAction.Invoke(7.0)
@@ -79,12 +80,16 @@ if int AudioAnalyzerFFTSizeType.``N32768`` <> 32768 then
     failwith "numeric literal-union value was not preserved"
 if asString PowerPreference.``HighPerformance`` <> "high-performance" then
     failwith "Babylon string enum value was not preserved"
+if asString ArcRotateInteraction.``Pan`` <> "pan" || asString WebXRLayerType.``XRWebGLLayer`` <> "XRWebGLLayer" then
+    failwith "Babylon resolved string-alias union was not preserved"
 if dimensions.``width`` <> 4.0 || dimensions.``height`` <> 2.0 then
     failwith "Babylon primitive object binding was not preserved"
 if panDelta <> 3.0 then
     failwith "Babylon function-valued object property was not preserved"
 if not stageCalled || renderingGroup <> 7.0 then
     failwith "Babylon callback alias invocation was not preserved"
+if absentLabel.IsSome then
+    failwith "Babylon generic nullable alias was not preserved"
 if eased <> 0.25 || not loadingShown then
     failwith "Babylon dependency-free interface invocation was not preserved"
 match inspectableOption.``value`` with

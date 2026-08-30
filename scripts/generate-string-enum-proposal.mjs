@@ -52,10 +52,11 @@ for (const sourceFile of program.getSourceFiles()) {
         members = declaration.members.map((member, index) => ({ name: caseNameFor(member.name.getText().replace(/^['"]|['"]$/g, "")), value: values[index] }));
       }
     } else if (ts.isTypeAliasDeclaration(declaration)) {
-      const nodes = ts.isUnionTypeNode(declaration.type) ? declaration.type.types : [declaration.type];
-      if (nodes.every(node => ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal))) {
+      const resolved = checker.getTypeFromTypeNode(declaration.type);
+      const types = resolved.isUnion() ? resolved.types : [resolved];
+      if (types.every(type => (type.flags & ts.TypeFlags.StringLiteral) !== 0)) {
         sourceKind = "type";
-        members = nodes.map(node => ({ name: caseNameFor(node.literal.text), value: node.literal.text }));
+        members = types.map(type => ({ name: caseNameFor(type.value), value: type.value }));
       }
     }
     if (!members) continue;

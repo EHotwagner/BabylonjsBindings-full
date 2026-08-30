@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "a5985de175aad002431f721267b92a7a77c71947fff3345f7db252186cbf1cff",
+  "proposalSha256": "17d5604e39927a17f73da2adf611d2b1c9013e344421d67c5841e411e864660e",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -75,6 +75,17 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.int",
       "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Nullable",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.Nullable",
+      "shape": "genericAlias",
+      "typeParameterCount": 1,
       "memberCount": 1
     },
     {
