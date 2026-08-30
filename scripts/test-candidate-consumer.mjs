@@ -63,6 +63,7 @@ let scene = \`\`babylonjs/scene.pure\`\`.Scene.Create(engine)
 let origin = \`\`babylonjs/Maths/math.vector.pure\`\`.Vector3.Create(0.0, 0.0, 0.0)
 let mesh = \`\`babylonjs/Meshes/Builders/boxBuilder.pure\`\`.CreateBox("consumer-box", scene = Some scene)
 let dimensions: SizeLike = createObj [ "width" ==> 8.0; "height" ==> 4.0 ] |> unbox
+let hotSpot: HotSpotQuery = createObj [ "pointIndex" ==> (1.0, 2.0, 3.0); "barycentric" ==> (0.2, 0.3, 0.5) ] |> unbox
 let mutable zoomDelta = 0.0
 let cameraHandlers: ArcRotateHandlers =
     createObj [
@@ -98,6 +99,8 @@ if int AudioAnalyzerFFTSizeType.\`\`N32768\`\` <> 32768 then failwith "clean con
 if asString PowerPreference.\`\`HighPerformance\`\` <> "high-performance" then failwith "clean consumer string enum failed"
 if asString ArcRotateInteraction.\`\`Pan\`\` <> "pan" || asString WebXRLayerType.\`\`XRWebGLLayer\`\` <> "XRWebGLLayer" then failwith "clean consumer resolved string union failed"
 if dimensions.\`\`width\`\` <> 8.0 || dimensions.\`\`height\`\` <> 4.0 then failwith "clean consumer object type failed"
+let pointX, pointY, pointZ = hotSpot.\`\`pointIndex\`\`
+if pointX <> 1.0 || pointY <> 2.0 || pointZ <> 3.0 then failwith "clean consumer tuple object failed"
 if zoomDelta <> 6.0 then failwith "clean consumer object callback failed"
 if not stageCalled then failwith "clean consumer callback alias failed"
 if absentLabel.IsSome then failwith "clean consumer nullable alias failed"

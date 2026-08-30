@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "6ae2cf413ac7f04b6c2f6ba53c521c11710e1eda52f4e6c07b0e65505e035b8e",
+  "proposalSha256": "6d6cc7e1fc34d5b1f95a9e353ceb1cc5d20db69393bf9ccb9131570a383fca08",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -916,6 +916,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IRenderingManagerAutoClearSetup",
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure",
+      "name": "ISafeOrbitCameraLimits",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISafeOrbitCameraLimits",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",

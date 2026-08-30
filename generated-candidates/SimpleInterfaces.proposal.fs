@@ -908,6 +908,12 @@ module SimpleInterfaces =
         abstract ``depth``: bool with get, set
         abstract ``stencil``: bool with get, set
 
+    /// @babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure
+    [<AllowNullLiteral>]
+    type ISafeOrbitCameraLimits =
+        abstract ``radiusMin``: float option with get, set
+        abstract ``elevationMinMax``: (float * float) option with get, set
+
     /// @babylonjs/core/Loading/sceneLoader
     [<AllowNullLiteral>]
     type ISceneLoaderProgressEvent =

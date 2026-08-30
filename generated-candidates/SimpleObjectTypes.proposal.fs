@@ -68,6 +68,12 @@ module ObjectTypes =
         abstract ``sizeZ``: float option with get, set
         abstract ``sideOrientation``: float option with get, set
 
+    /// @babylonjs/core/Meshes/abstractMesh.hotSpot
+    [<AllowNullLiteral>]
+    type HotSpotQuery =
+        abstract ``pointIndex``: (float * float * float) with get, set
+        abstract ``barycentric``: (float * float * float) with get, set
+
     /// @babylonjs/core/Compute/computeEffect
     [<AllowNullLiteral>]
     type IComputeShaderPath =

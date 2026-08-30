@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "568df79aa9fc309e7ed1f78b5fc757d9a86d6e39eb65910385568691d068dfe1"
+    "sha256": "654875254dbcc5ddaea5a3ba44a30f2b202870d405aba77fe99cff0959d766ab"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,7 +13,7 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "f65d0718c6e40e22e4b3d827bfb925e34c9470eeaa5125e71ca7ff619aef42aa",
+  "emittedProgramSha256": "4bf5adc3663c7eccdd5bf9d3759a0089a571ee43d688222ea88a4dae8da9bb86",
   "imports": [
     "@babylonjs/core/Animations/animationGroupMask.js",
     "@babylonjs/core/Buffers/buffer.pure.js",

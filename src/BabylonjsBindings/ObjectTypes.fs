@@ -1,4 +1,4 @@
-// MAINTAINED REVIEWED BINDING — exact Babylon.js 9.19.0 dependency-closed object aliases
+// REVIEWED MAINTAINED SOURCE — exact declaration review and runtime shape proof recorded in generated-candidates
 namespace BabylonjsBindings
 
 open Fable.Core
@@ -67,6 +67,12 @@ module ObjectTypes =
         abstract ``sizeY``: float option with get, set
         abstract ``sizeZ``: float option with get, set
         abstract ``sideOrientation``: float option with get, set
+
+    /// @babylonjs/core/Meshes/abstractMesh.hotSpot
+    [<AllowNullLiteral>]
+    type HotSpotQuery =
+        abstract ``pointIndex``: (float * float * float) with get, set
+        abstract ``barycentric``: (float * float * float) with get, set
 
     /// @babylonjs/core/Compute/computeEffect
     [<AllowNullLiteral>]

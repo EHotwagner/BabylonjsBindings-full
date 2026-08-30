@@ -34,6 +34,10 @@ const fsharpType = node => {
     const element = fsharpType(node.elementType);
     return element ? `ResizeArray<${element}>` : undefined;
   }
+  if (ts.isTupleTypeNode(node) && node.elements.length >= 2) {
+    const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type) : !ts.isNamedTupleMember(element) ? fsharpType(element) : undefined);
+    return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
+  }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0]);

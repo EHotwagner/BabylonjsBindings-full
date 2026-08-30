@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "ce075e59545c3b09fa3eb2e26cc4a578334ccad8b7ef73d273d1e222da8b7c49",
+  "proposalSha256": "bf5a9a0dbdcffe32960ba11d80a2de4e0cdc953f577fc6f1f8f170488835057c",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -59,6 +59,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.ObjectTypes.GoldbergVertexDataOption",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/abstractMesh.hotSpot",
+      "name": "HotSpotQuery",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.HotSpotQuery",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",

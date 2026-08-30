@@ -10,6 +10,7 @@ let fftSize: AudioAnalyzerFFTSizeType = AudioAnalyzerFFTSizeType.``N32768``
 let powerPreference: PowerPreference = PowerPreference.``HighPerformance``
 let arcRotateInteraction: ArcRotateInteraction = ArcRotateInteraction.``Pan``
 let sizeLike: SizeLike = Unchecked.defaultof<SizeLike>
+let hotSpotQuery: HotSpotQuery = Unchecked.defaultof<HotSpotQuery>
 let textureHandle: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle = 1.0
 let stageAction: BabylonjsBindings.TypeAliases.SimpleStageAction = Unchecked.defaultof<BabylonjsBindings.TypeAliases.SimpleStageAction>
 let nullableLabel: BabylonjsBindings.TypeAliases.Nullable<string> = None
@@ -32,6 +33,7 @@ if int shaderLanguage <> 1 || int loaderState <> 1 || int fftSize <> 32768 then 
 powerPreference |> ignore
 arcRotateInteraction |> ignore
 sizeLike |> ignore
+hotSpotQuery |> ignore
 textureHandle |> ignore
 stageAction |> ignore
 nullableLabel |> ignore

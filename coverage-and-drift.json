@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "e7b17c4bb7dd78e0f5a9212798c3ef815593c306c5f807b4b4778f434d4d7ff5",
+  "maintainedSurfaceDigest": "ac293c38ad09009bb525b6026754713ff60139da60f08fcc1f0b5a9373af34a0",
   "summary": {
     "total": 4323,
-    "typed": 1696,
+    "typed": 1698,
     "runtimeOnly": 1,
-    "blocked": 2620,
+    "blocked": 2618,
     "lossy": 6
   },
   "exports": [
@@ -18662,8 +18662,9 @@
       "module": "@babylonjs/core/Meshes/abstractMesh.hotSpot",
       "name": "HotSpotQuery",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.HotSpotQuery"
     },
     {
       "package": "@babylonjs/core",
@@ -19919,8 +19920,9 @@
       "module": "@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure",
       "name": "ISafeOrbitCameraLimits",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISafeOrbitCameraLimits"
     },
     {
       "package": "@babylonjs/core",

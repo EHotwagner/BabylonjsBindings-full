@@ -24,6 +24,7 @@ let camera = ``babylonjs/Cameras/freeCamera.pure``.FreeCamera.Create("camera", o
 let light = ``babylonjs/Lights/hemisphericLight.pure``.HemisphericLight.Create("light", up, scene)
 let mesh = ``babylonjs/Meshes/Builders/boxBuilder.pure``.CreateBox("box", scene = Some scene)
 let dimensions: SizeLike = createObj [ "width" ==> 4.0; "height" ==> 2.0 ] |> unbox
+let hotSpot: HotSpotQuery = createObj [ "pointIndex" ==> (1.0, 2.0, 3.0); "barycentric" ==> (0.2, 0.3, 0.5) ] |> unbox
 let mutable panDelta = 0.0
 let cameraHandlers: ArcRotateHandlers =
     createObj [
@@ -84,6 +85,9 @@ if asString ArcRotateInteraction.``Pan`` <> "pan" || asString WebXRLayerType.``X
     failwith "Babylon resolved string-alias union was not preserved"
 if dimensions.``width`` <> 4.0 || dimensions.``height`` <> 2.0 then
     failwith "Babylon primitive object binding was not preserved"
+let pointX, pointY, pointZ = hotSpot.``pointIndex``
+if pointX <> 1.0 || pointY <> 2.0 || pointZ <> 3.0 then
+    failwith "Babylon tuple-valued object binding was not preserved"
 if panDelta <> 3.0 then
     failwith "Babylon function-valued object property was not preserved"
 if not stageCalled || renderingGroup <> 7.0 then

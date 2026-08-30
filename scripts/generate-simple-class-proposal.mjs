@@ -51,6 +51,10 @@ const fsharpType = (node, available, dependencies = new Set()) => {
     const element = fsharpType(node.elementType, available, dependencies);
     return element ? `ResizeArray<${element}>` : undefined;
   }
+  if (ts.isTupleTypeNode(node) && node.elements.length >= 2) {
+    const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type, available, dependencies) : !ts.isNamedTupleMember(element) ? fsharpType(element, available, dependencies) : undefined);
+    return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
+  }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies);
