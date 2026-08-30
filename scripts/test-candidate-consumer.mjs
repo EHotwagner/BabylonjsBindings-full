@@ -132,6 +132,7 @@ let compressionFormats: BasisTranscodeConfigurationProperty1Object =
 let basisConfiguration = BasisTranscodeConfiguration.Create()
 basisConfiguration.\`\`supportedCompressionFormats\`\` <- Some compressionFormats
 basisConfiguration.\`\`loadMipmapLevels\`\` <- Some true
+let abortError: BaseError = AbortError.Create("binding aborted") :> BaseError
 let filesToLoad = FilesInputStore.\`\`FilesToLoad\`\`
 let shaderStore = ShaderStore.\`\`GetShadersStore\`\`()
 shaderStore.["codexInlineObjectProof"] <- "void main() {}"
@@ -192,6 +193,7 @@ if LightConstants.\`\`FALLOFF_PHYSICAL\`\` <> 1.0 || Logger.\`\`AllLogLevel\`\` 
 if (halton.\`\`x\`\` = 0.0 && halton.\`\`y\`\` = 0.0) || easingSamples.Length <> 12 || (easingSamples |> List.exists System.Double.IsNaN) then failwith "clean consumer inferred class closure failed"
 if storedValue <> "stored" then failwith "clean consumer generic static class method failed"
 if basisConfiguration.\`\`supportedCompressionFormats\`\`.Value.\`\`etc1\`\` <> Some true || basisConfiguration.\`\`loadMipmapLevels\`\` <> Some true || isNull (box filesToLoad) then failwith "clean consumer inline object class properties failed"
+if abortError.name <> "AbortError" || abortError.message <> "binding aborted" || abortError.stack.IsNone || abortError.cause.IsSome then failwith "clean consumer JavaScript Error inheritance failed"
 if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.\`\`GetShadersRepository\`\`() <> "src/Shaders/" || uniformMat4Size <> 16.0 then failwith "clean consumer inline object class stores failed"
 if observer.IsNone || not (observableA.\`\`hasObservers\`\`()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then failwith "clean consumer observable closure failed"
 if not thinAnimationEnded || thinSprite.\`\`animationStarted\`\` then failwith "clean consumer nullable callback class failed"

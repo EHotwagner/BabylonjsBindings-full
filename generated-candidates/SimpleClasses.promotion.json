@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "5397ed4936d0ec80888d0d756c39de91a949daf375dba1d594e2f89c2cfeb645",
+  "proposalSha256": "c1da9b5ed1c536a74d8bf6d59dbaac6ed33496a1340826a799369da38d027ad1",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -95,6 +95,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BabylonFileLoaderConfiguration",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/error",
+      "name": "BaseError",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BaseError",
+      "memberCount": 0
     },
     {
       "package": "@babylonjs/core",
@@ -701,6 +710,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUTintWASM",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/error",
+      "name": "AbortError",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbortError",
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",

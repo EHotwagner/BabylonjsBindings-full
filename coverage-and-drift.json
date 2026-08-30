@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "03982a386431d69b98491185a5ff3b11c3edc6c5cc2bf4736a91edeca6c42cf9",
+  "maintainedSurfaceDigest": "398f8e52ae923e3acb4bac76296cd8f3028b7665ce5da8eab1cdc9e94e9b209c",
   "summary": {
     "total": 4323,
-    "typed": 1769,
+    "typed": 1771,
     "runtimeOnly": 1,
-    "blocked": 2547,
+    "blocked": 2545,
     "lossy": 6
   },
   "exports": [
@@ -23070,16 +23070,18 @@
       "module": "@babylonjs/core/Misc/error",
       "name": "AbortError",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbortError"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/error",
       "name": "BaseError",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BaseError"
     },
     {
       "package": "@babylonjs/core",

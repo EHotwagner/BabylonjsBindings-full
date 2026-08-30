@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "4b1809a980da4654848a09e5249822f4cf6451f53a264fcce53b4937ce503ce4"
+    "sha256": "fb2af0955a8f64eed1a5d09141c2ca87d50af1277a2044637936c7e07297ed77"
   },
   "imports": [
     {
@@ -336,6 +336,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Misc/dataStorage.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/error.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/error.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

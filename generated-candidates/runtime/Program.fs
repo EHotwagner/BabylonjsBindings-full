@@ -108,6 +108,7 @@ let compressionFormats: BasisTranscodeConfigurationProperty1Object =
 let basisConfiguration = BasisTranscodeConfiguration.Create()
 basisConfiguration.``supportedCompressionFormats`` <- Some compressionFormats
 basisConfiguration.``loadMipmapLevels`` <- Some true
+let abortError: BaseError = AbortError.Create("binding aborted") :> BaseError
 let filesToLoad = FilesInputStore.``FilesToLoad``
 let shaderStore = ShaderStore.``GetShadersStore``()
 shaderStore.["codexInlineObjectProof"] <- "void main() {}"
@@ -204,6 +205,8 @@ if storedValue <> "stored" then
     failwith "Babylon generic static class method was not preserved"
 if basisConfiguration.``supportedCompressionFormats``.Value.``etc1`` <> Some true || basisConfiguration.``loadMipmapLevels`` <> Some true || isNull (box filesToLoad) then
     failwith "Babylon inline object class properties were not preserved"
+if abortError.name <> "AbortError" || abortError.message <> "binding aborted" || abortError.stack.IsNone || abortError.cause.IsSome then
+    failwith "Babylon JavaScript Error inheritance was not preserved"
 if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.``GetShadersRepository``() <> "src/Shaders/" || uniformMat4Size <> 16.0 then
     failwith "Babylon inline object class returns and static stores were not preserved"
 if observer.IsNone || not (observableA.``hasObservers``()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then

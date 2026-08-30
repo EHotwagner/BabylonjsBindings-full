@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "2953efe4f083b06b4ff8257e582025ee2a5ab034d65ce0699a0e83fac77e5842"
+    "sha256": "dc8d24490fbacec67f86334f90177a74e08b0a301b1c6162489e06b218e35c9c"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,7 +13,7 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "21516236289df285549e7ced4f430be9c266801972534d0a99d4c15dfa6803fa",
+  "emittedProgramSha256": "8d3a5b79e47c94465e9259725eb2e95115b7c5854b5f948d66fac04c5c0384c0",
   "imports": [
     "@babylonjs/core/Animations/animationEvent.js",
     "@babylonjs/core/Animations/animationGroupMask.js",
@@ -49,6 +49,7 @@
     "@babylonjs/core/Misc/basis.pure.js",
     "@babylonjs/core/Misc/bitArray.js",
     "@babylonjs/core/Misc/dataStorage.js",
+    "@babylonjs/core/Misc/error.js",
     "@babylonjs/core/Misc/fileTools.pure.js",
     "@babylonjs/core/Misc/filesInputStore.js",
     "@babylonjs/core/Misc/gradients.js",

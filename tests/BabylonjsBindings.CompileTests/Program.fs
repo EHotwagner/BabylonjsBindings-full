@@ -31,6 +31,9 @@ let smartArrayNoDuplicateFactory: SmartArrayNoDuplicateStatic = SmartArrayNoDupl
 let animationEventFactory: AnimationEventStatic = AnimationEvent
 let factorGradientFactory: FactorGradientStatic = FactorGradient
 let basisTranscodeConfigurationFactory: BasisTranscodeConfigurationStatic = BasisTranscodeConfiguration
+let javascriptError: JavaScriptError = Unchecked.defaultof<JavaScriptError>
+let baseErrorFactory: BaseErrorStatic = BaseError
+let abortErrorFactory: AbortErrorStatic = AbortError
 let filesInputStoreFactory: FilesInputStoreStatic = FilesInputStore
 let shaderStoreFactory: ShaderStoreStatic = ShaderStore
 let webGPUShaderProcessorFactory: WebGPUShaderProcessorStatic = WebGPUShaderProcessor
@@ -107,6 +110,9 @@ smartArrayNoDuplicateFactory |> ignore
 animationEventFactory |> ignore
 factorGradientFactory |> ignore
 basisTranscodeConfigurationFactory |> ignore
+javascriptError |> ignore
+baseErrorFactory |> ignore
+abortErrorFactory |> ignore
 filesInputStoreFactory |> ignore
 shaderStoreFactory |> ignore
 webGPUShaderProcessorFactory |> ignore

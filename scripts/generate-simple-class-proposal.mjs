@@ -316,6 +316,9 @@ const renderBase = (declaration, available) => {
   if (extendsTypes.length === 0) return undefined;
   if (extendsTypes.length !== 1 || !ts.isIdentifier(extendsTypes[0].expression)) return null;
   const name = extendsTypes[0].expression.text;
+  if (name === "Error" && !(extendsTypes[0].typeArguments?.length)) {
+    return { name: "JavaScriptError", rendered: "JavaScriptError", builtin: true };
+  }
   const target = available.get(name);
   if (!target) return null;
   const arguments_ = extendsTypes[0].typeArguments ?? [];
@@ -370,7 +373,7 @@ while (true) {
     renderAvailable.set(entry.name, { arity: entry.arity });
     const rendered = renderClass(entry.declaration, renderAvailable, Boolean(base));
     if (!rendered) continue;
-    if (base && entry.declaration.members.every(member => !ts.isConstructorDeclaration(member))) {
+    if (base && !base.builtin && entry.declaration.members.every(member => !ts.isConstructorDeclaration(member))) {
       rendered.constructors = selectedByName.get(base.name).constructors.map(constructor => ({ ...constructor }));
     }
     additions.push([identity, { ...entry, ...rendered, base, rank }]);
@@ -389,6 +392,7 @@ if (diagnose) {
     .filter(entry => nameCounts.get(entry.name) === 1)
     .map(entry => [entry.name, { arity: entry.arity }]));
   const shapeReady = [];
+  const shapeReadyDependencies = new Map();
   const missingCounts = new Map();
   const singleMissing = [];
   for (const [identity, entry] of declarations) {
@@ -398,6 +402,7 @@ if (diagnose) {
     if (rendered) {
       shapeReady.push(entry.name);
       const missing = [...new Set([...(base && !available.has(base.name) ? [base.name] : []), ...rendered.dependencies.filter(name => !available.has(name))])];
+      shapeReadyDependencies.set(entry.name, missing);
       for (const name of missing) missingCounts.set(name, (missingCounts.get(name) ?? 0) + 1);
       if (missing.length === 1) singleMissing.push(`${entry.name} <- ${missing[0]}`);
     }
@@ -407,6 +412,49 @@ if (diagnose) {
   console.log([...missingCounts].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 40).map(([name, count]) => `${name} ${count}`).join("\n"));
   console.log("single unresolved dependency:");
   console.log(singleMissing.sort().slice(0, 200).join("\n"));
+  const closedNames = new Set(shapeReady);
+  while (true) {
+    const rejected = [...closedNames].filter(name => shapeReadyDependencies.get(name).some(dependency => !available.has(dependency) && !closedNames.has(dependency)));
+    if (rejected.length === 0) break;
+    for (const name of rejected) closedNames.delete(name);
+  }
+  const indices = new Map();
+  const lowLinks = new Map();
+  const stack = [];
+  const onStack = new Set();
+  const components = [];
+  let nextIndex = 0;
+  const visit = name => {
+    indices.set(name, nextIndex);
+    lowLinks.set(name, nextIndex);
+    nextIndex += 1;
+    stack.push(name);
+    onStack.add(name);
+    for (const dependency of shapeReadyDependencies.get(name).filter(value => closedNames.has(value))) {
+      if (!indices.has(dependency)) {
+        visit(dependency);
+        lowLinks.set(name, Math.min(lowLinks.get(name), lowLinks.get(dependency)));
+      } else if (onStack.has(dependency)) {
+        lowLinks.set(name, Math.min(lowLinks.get(name), indices.get(dependency)));
+      }
+    }
+    if (lowLinks.get(name) === indices.get(name)) {
+      const component = [];
+      while (true) {
+        const member = stack.pop();
+        onStack.delete(member);
+        component.push(member);
+        if (member === name) break;
+      }
+      components.push(component.sort());
+    }
+  };
+  for (const name of [...closedNames].sort()) if (!indices.has(name)) visit(name);
+  const componentByName = new Map(components.flatMap((component, index) => component.map(name => [name, index])));
+  const foundations = components.filter((component, index) => component.every(name => shapeReadyDependencies.get(name).every(dependency => available.has(dependency) || componentByName.get(dependency) === index)));
+  console.log(`closed renderable dependency graph: ${closedNames.size} classes in ${components.length} strongly connected components`);
+  console.log("smallest foundational components:");
+  console.log(foundations.sort((left, right) => left.length - right.length || left[0].localeCompare(right[0])).slice(0, 40).map(component => `${component.length}: ${component.join(", ")}`).join("\n"));
 }
 const pascal = value => value.replace(/(^|[^A-Za-z0-9]+)([A-Za-z0-9])/g, (_, __, character) => character.toUpperCase());
 const callbackArguments = callback => callback.parameters.length === 0
@@ -431,7 +479,15 @@ const lines = [
   "open Fable.Core",
   "",
   "/// Exact dependency-closed runtime classes exported by Babylon.js 9.19.0.",
-  "module SimpleClasses ="
+  "module SimpleClasses =",
+  "",
+  "    /// Structural instance surface of the standard JavaScript Error base class.",
+  "    [<AllowNullLiteral>]",
+  "    type JavaScriptError =",
+  "        abstract name: string with get, set",
+  "        abstract message: string with get, set",
+  "        abstract stack: string option with get, set",
+  "        abstract cause: obj option with get, set"
 ];
 for (const entry of entries) {
   const genericParameters = entry.arity ? `<${entry.declaration.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}>` : "";
@@ -455,8 +511,8 @@ for (const entry of entries) {
   if (entry.instanceMembers.length === 0 && !entry.base) lines.push("        interface end");
   else for (const member of entry.instanceMembers) lines.push(`        ${renderMember(member)}`);
   lines.push("", "    [<AllowNullLiteral>]", `    type ${entry.name}Static =`);
-  if (entry.base) lines.push(`        inherit ${entry.base.name}Static`);
-  if (entry.constructors.length === 0 && entry.staticMembers.length === 0 && !entry.base) lines.push("        interface end");
+  if (entry.base && !entry.base.builtin) lines.push(`        inherit ${entry.base.name}Static`);
+  if (entry.constructors.length === 0 && entry.staticMembers.length === 0 && (!entry.base || entry.base.builtin)) lines.push("        interface end");
   for (const constructor of entry.constructors) lines.push(`        [<EmitConstructor>] abstract Create${genericParameters}: ${callbackArguments(constructor)} -> ${entry.name}${genericParameters}`);
   for (const member of entry.staticMembers) lines.push(`        ${renderMember(member)}`);
   lines.push("", `    [<Import("${entry.name}", "${entry.module}.js")>]`, `    let ${entry.name}: ${entry.name}Static = jsNative`);

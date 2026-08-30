@@ -6,6 +6,14 @@ open Fable.Core
 /// Exact dependency-closed runtime classes exported by Babylon.js 9.19.0.
 module SimpleClasses =
 
+    /// Structural instance surface of the standard JavaScript Error base class.
+    [<AllowNullLiteral>]
+    type JavaScriptError =
+        abstract name: string with get, set
+        abstract message: string with get, set
+        abstract stack: string option with get, set
+        abstract cause: obj option with get, set
+
     /// @babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure
     [<AllowNullLiteral>]
     type _OcclusionDataStorage =
@@ -184,6 +192,18 @@ module SimpleClasses =
 
     [<Import("BabylonFileLoaderConfiguration", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
     let BabylonFileLoaderConfiguration: BabylonFileLoaderConfigurationStatic = jsNative
+
+    /// @babylonjs/core/Misc/error
+    [<AllowNullLiteral>]
+    type BaseError =
+        inherit JavaScriptError
+
+    [<AllowNullLiteral>]
+    type BaseErrorStatic =
+        interface end
+
+    [<Import("BaseError", "@babylonjs/core/Misc/error.js")>]
+    let BaseError: BaseErrorStatic = jsNative
 
     /// Inline object shape used by BasisTranscodeConfiguration.
     [<AllowNullLiteral>]
@@ -1946,6 +1966,19 @@ module SimpleClasses =
 
     [<Import("WebGPUTintWASM", "@babylonjs/core/Engines/WebGPU/webgpuTintWASM.js")>]
     let WebGPUTintWASM: WebGPUTintWASMStatic = jsNative
+
+    /// @babylonjs/core/Misc/error
+    [<AllowNullLiteral>]
+    type AbortError =
+        inherit BaseError
+
+    [<AllowNullLiteral>]
+    type AbortErrorStatic =
+        inherit BaseErrorStatic
+        [<EmitConstructor>] abstract Create: ?``message``: string -> AbortError
+
+    [<Import("AbortError", "@babylonjs/core/Misc/error.js")>]
+    let AbortError: AbortErrorStatic = jsNative
 
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
