@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "3b6ef4d6b17530fbeefa7ec63feca20d14b647686cc62027805d56ad416abef2",
+  "proposalSha256": "fa31b65cb111eed4aea76dfebea08f3b46dff6d35c7f4aab2bca336fd9309e45",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -28,6 +28,66 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileParser.function",
+      "name": "BabylonFileParser",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.BabylonFileParser",
+      "shape": "callback",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "CameraStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CameraStageAction",
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "CameraStageFrameBufferAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CameraStageFrameBufferAction",
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureMerger",
+      "name": "ChannelInput",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ChannelInput",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/circleOfConfusionPostProcess.pure",
+      "name": "CircleOfConfusionPostProcessOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CircleOfConfusionPostProcessOptions",
+      "shape": "intersectionAlias",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphCodeExecutionBlock",
+      "name": "CodeExecutionFunction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CodeExecutionFunction",
+      "shape": "callback",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
       "name": "ComputeBindingList",
       "kind": "type",
@@ -43,6 +103,16 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ComputeBindingMapping",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "ConstrainedBodyPair",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ConstrainedBodyPair",
       "shape": "alias",
       "memberCount": 1
     },
@@ -89,6 +159,36 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Meshes/pointerDragEvents",
+      "name": "DragEvent",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.DragEvent",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Meshes/pointerDragEvents",
+      "name": "DragStartEndEvent",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.DragStartEndEvent",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effectRenderer.pure",
+      "name": "EffectWrapperCustomShaderCodeProcessing",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.EffectWrapperCustomShaderCodeProcessing",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Empty",
       "kind": "type",
@@ -96,6 +196,16 @@
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.Empty",
       "shape": "alias",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "EvaluateSubMeshStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.EvaluateSubMeshStageAction",
+      "shape": "callback",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -121,10 +231,40 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "FlowGraphMathOperationType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "FlowGraphMatrix",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphMatrix",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
       "name": "FlowGraphNumber",
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphNumber",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "FlowGraphVector",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphVector",
       "shape": "alias",
       "memberCount": 1
     },
@@ -159,6 +299,26 @@
       "memberCount": 1
     },
     {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.geometryrendering",
+      "name": "GeometryRenderingConfiguration",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GeometryRenderingConfiguration",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/geospatialCamera.pure",
+      "name": "GeospatialCameraOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GeospatialCameraOptions",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation",
       "name": "GetValueFn",
@@ -180,11 +340,51 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/goldbergMesh.pure",
+      "name": "GoldbergData",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GoldbergData",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
+      "name": "GreasedLinePoints",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GreasedLinePoints",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
+      "name": "GreasedLineRibbonOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GreasedLineRibbonOptions",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/fresnelParameters.pure",
       "name": "IFresnelParametersCreationOptions",
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.IFresnelParametersCreationOptions",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Lights/LTC/ltcTextureTool",
+      "name": "ILTCTextures",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ILTCTextures",
       "shape": "alias",
       "memberCount": 1
     },
@@ -210,11 +410,51 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileParser.function",
+      "name": "IndividualBabylonFileParser",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.IndividualBabylonFileParser",
+      "shape": "callback",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "int",
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.int",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Sprites/spriteSceneComponent.pure",
+      "name": "InternalSpriteAugmentedScene",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.InternalSpriteAugmentedScene",
+      "shape": "intersectionAlias",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Navigation/INavigationEngine",
+      "name": "IObstacle",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.IObstacle",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginBindForSubMesh",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginBindForSubMesh",
       "shape": "alias",
       "memberCount": 1
     },
@@ -231,12 +471,122 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginFillRenderTargetTextures",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginFillRenderTargetTextures",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginGetActiveTextures",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginGetActiveTextures",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginGetAnimatables",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginGetAnimatables",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
       "name": "MaterialPluginGetDefineNames",
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginGetDefineNames",
       "shape": "alias",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginHardBindForSubMesh",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginHardBindForSubMesh",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginHasTexture",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginHasTexture",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginIsReadyForSubMesh",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginIsReadyForSubMesh",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginPrepareDefines",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginPrepareDefines",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginPrepareEffect",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginPrepareEffect",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginPrepareUniformBuffer",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginPrepareUniformBuffer",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "MeshPredicate",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MeshPredicate",
+      "shape": "callback",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "MeshStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MeshStageAction",
+      "shape": "callback",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -300,11 +650,51 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/node",
+      "name": "NodeConstructor",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeConstructor",
+      "shape": "callback",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
+      "name": "NodeMaterialTextureBlocks",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeMaterialTextureBlocks",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
+      "name": "NodeRenderGraphBlockConnectionPointValueType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeRenderGraphBlockConnectionPointValueType",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FrameGraph/Node/Blocks/inputBlock.pure",
       "name": "NodeRenderGraphInputCreationOptions",
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeRenderGraphInputCreationOptions",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Blocks/inputBlock.pure",
+      "name": "NodeRenderGraphValueType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeRenderGraphValueType",
       "shape": "alias",
       "memberCount": 1
     },
@@ -320,6 +710,16 @@
       "memberCount": 1
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/OBJ/objLoadingOptions",
+      "name": "OBJLoadingOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.OBJLoadingOptions",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure",
       "name": "OcclusionQuery",
@@ -327,6 +727,26 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.OcclusionQuery",
       "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/PerformanceViewer/performanceViewerCollectionStrategies",
+      "name": "PerfStrategyInitialization",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PerfStrategyInitialization",
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginManager.pure",
+      "name": "PluginMaterialFactory",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PluginMaterialFactory",
+      "shape": "callback",
       "memberCount": 1
     },
     {
@@ -342,12 +762,112 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/sceneComponent",
+      "name": "PointerMoveStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PointerMoveStageAction",
+      "shape": "callback",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "PointerUpDownStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PointerUpDownStageAction",
+      "shape": "callback",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/postProcess.pure",
+      "name": "PostProcessOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PostProcessOptions",
+      "shape": "intersectionAlias",
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "PreActiveMeshStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PreActiveMeshStageAction",
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.pure",
+      "name": "PrepareTextureFunction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrepareTextureFunction",
+      "shape": "callback",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.pure",
+      "name": "PrepareTextureProcessFunction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrepareTextureProcessFunction",
+      "shape": "callback",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioBus",
+      "name": "PrimaryAudioBus",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrimaryAudioBus",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
       "name": "RenderingGroupStageAction",
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderingGroupStageAction",
       "shape": "callback",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "RenderingMeshStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderingMeshStageAction",
+      "shape": "callback",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "RenderTargetsStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderTargetsStageAction",
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "RenderTargetStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderTargetStageAction",
+      "shape": "callback",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",
@@ -358,6 +878,16 @@
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderTargetTextureSize",
       "shape": "alias",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "SceneLoaderSuccessCallback",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.SceneLoaderSuccessCallback",
+      "shape": "callback",
+      "memberCount": 8
     },
     {
       "package": "@babylonjs/core",
@@ -381,6 +911,26 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "SmartAssetManager",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.SmartAssetManager",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/SPLAT/splatLoadingOptions",
+      "name": "SPLATLoadingOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.SPLATLoadingOptions",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/tensor",
       "name": "TensorValue",
       "kind": "type",
@@ -401,6 +951,26 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/tonemapPostProcess.pure",
+      "name": "ToneMapPostProcessOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ToneMapPostProcessOptions",
+      "shape": "intersectionAlias",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "TrianglePickingPredicate",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.TrianglePickingPredicate",
+      "shape": "callback",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/thinEngine.functions",
       "name": "WebGLContext",
       "kind": "type",
@@ -408,6 +978,16 @@
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebGLContext",
       "shape": "alias",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "WebXRFeatureConstructor",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebXRFeatureConstructor",
+      "shape": "callback",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",

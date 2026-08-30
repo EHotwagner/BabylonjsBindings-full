@@ -323,6 +323,7 @@ const fsharpType = node => {
       ,["MediaTrackConstraints", "BrowserMediaTrackConstraints"]
       ,["PointerEventInit", "BrowserPointerEventInit"]
       ,["WebGLVertexArrayObject", "BrowserWebGLVertexArrayObject"]
+      ,["Worker", "BrowserWorker"]
     ]);
     if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
     if (!node.typeArguments?.length && node.typeName.text === "GPUBufferUsageFlags") return "float";
@@ -557,10 +558,11 @@ for (const value of [...numericLiteralValues].filter(value => aliasReferenceText
   const name = `NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`;
   lines.push("", `    /// Exact numeric literal type for ${value}.`, `    type ${name} =`, `        | Value = ${value}`);
 }
-for (const [name, value] of [...stringLiteralTypes].filter(([name]) => aliasReferenceText.includes(name)).sort(([left], [right]) => left.localeCompare(right))) {
+const auxiliaryTypeReferenceText = `${aliasReferenceText}${JSON.stringify([...auxiliaryObjectTypes.values()])}`;
+for (const [name, value] of [...stringLiteralTypes].filter(([name]) => auxiliaryTypeReferenceText.includes(name)).sort(([left], [right]) => left.localeCompare(right))) {
   lines.push("", `    /// Exact string literal type for ${fsharpString(value)}.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, `        | [<CompiledName(${fsharpString(value)})>] Value`);
 }
-const localEnumReferenceText = `${aliasReferenceText}${JSON.stringify([...auxiliaryObjectTypes.values()])}`;
+const localEnumReferenceText = auxiliaryTypeReferenceText;
 for (const { name, members } of [...localEnumTypes.values()].filter(entry => localEnumReferenceText.includes(entry.name)).sort((left, right) => left.name.localeCompare(right.name))) {
   lines.push("", "    /// Exact internal numeric enum required by an exported Babylon alias.", `    type ${name} =`);
   for (const member of members) lines.push(`        | \`\`${member.name}\`\` = ${member.value}`);

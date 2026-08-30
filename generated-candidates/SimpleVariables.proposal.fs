@@ -34,6 +34,17 @@ module SimpleVariables =
     [<Import("_IsMacPlatform", "@babylonjs/core/FlowGraph/utils.js")>]
     let ``_IsMacPlatform``: bool = jsNative
 
+    /// Inline object shape of _SpatialAudioListenerDefaults.
+    [<AllowNullLiteral>]
+    type VariableShape__SpatialAudioListenerDefaults =
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get
+        abstract ``rotation``: BabylonjsBindings.SimpleClasses.Vector3 with get
+        abstract ``rotationQuaternion``: BabylonjsBindings.SimpleClasses.Quaternion with get
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener
+    [<Import("_SpatialAudioListenerDefaults", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener.js")>]
+    let ``_SpatialAudioListenerDefaults``: VariableShape__SpatialAudioListenerDefaults = jsNative
+
     /// @babylonjs/core/Animations/animation.pure
     [<Import("_StaticOffsetValueColor3", "@babylonjs/core/Animations/animation.pure.js")>]
     let ``_StaticOffsetValueColor3``: BabylonjsBindings.SimpleClasses.DeepImmutableColor3 = jsNative
@@ -43,8 +54,20 @@ module SimpleVariables =
     let ``_StaticOffsetValueColor4``: BabylonjsBindings.SimpleClasses.DeepImmutableColor4 = jsNative
 
     /// @babylonjs/core/Animations/animation.pure
+    [<Import("_StaticOffsetValueQuaternion", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``_StaticOffsetValueQuaternion``: BabylonjsBindings.SimpleClasses.DeepImmutableQuaternion = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
     [<Import("_StaticOffsetValueSize", "@babylonjs/core/Animations/animation.pure.js")>]
     let ``_StaticOffsetValueSize``: BabylonjsBindings.SimpleClasses.DeepImmutableSize = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<Import("_StaticOffsetValueVector2", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``_StaticOffsetValueVector2``: BabylonjsBindings.SimpleClasses.DeepImmutableVector2 = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<Import("_StaticOffsetValueVector3", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``_StaticOffsetValueVector3``: BabylonjsBindings.SimpleClasses.DeepImmutableVector3 = jsNative
 
     /// Inline object shape of _StereoAudioDefaults.
     [<AllowNullLiteral>]
@@ -380,6 +403,26 @@ module SimpleVariables =
     [<Import("boundingInfoComputeShaderWGSL", "@babylonjs/core/ShadersWGSL/boundingInfo.compute.js")>]
     let ``boundingInfoComputeShaderWGSL``: VariableShape_boundingInfoComputeShaderWGSL = jsNative
 
+    /// Inline object shape of BoxBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_BoxBuilder =
+        abstract ``CreateBox``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateBox with get, set
+
+    /// @babylonjs/core/Meshes/Builders/boxBuilder.pure
+    [<Import("BoxBuilder", "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js")>]
+    let ``BoxBuilder``: VariableShape_BoxBuilder = jsNative
+
+    /// Inline object shape of BRDFTextureTools.
+    [<AllowNullLiteral>]
+    type VariableShape_BRDFTextureTools =
+        abstract ``GetEnvironmentBRDFTexture``: System.Func<BabylonjsBindings.SimpleClasses.Scene, BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+        abstract ``GetEnvironmentFuzzBRDFTexture``: System.Func<BabylonjsBindings.SimpleClasses.Scene, BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+        abstract ``GetOpenPBREnvironmentBRDFTexture``: System.Func<BabylonjsBindings.SimpleClasses.Scene, BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+
+    /// @babylonjs/core/Misc/brdfTextureTools
+    [<Import("BRDFTextureTools", "@babylonjs/core/Misc/brdfTextureTools.js")>]
+    let ``BRDFTextureTools``: VariableShape_BRDFTextureTools = jsNative
+
     /// Inline object shape of bumpFragment.
     [<AllowNullLiteral>]
     type VariableShape_bumpFragment =
@@ -468,6 +511,15 @@ module SimpleVariables =
     /// @babylonjs/core/Cameras/cameraInputsManager
     [<Import("CameraInputTypes", "@babylonjs/core/Cameras/cameraInputsManager.js")>]
     let ``CameraInputTypes``: VariableShape_CameraInputTypes = jsNative
+
+    /// Inline object shape of CapsuleBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_CapsuleBuilder =
+        abstract ``CreateCapsule``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCapsule with get, set
+
+    /// @babylonjs/core/Meshes/Builders/capsuleBuilder.pure
+    [<Import("CapsuleBuilder", "@babylonjs/core/Meshes/Builders/capsuleBuilder.pure.js")>]
+    let ``CapsuleBuilder``: VariableShape_CapsuleBuilder = jsNative
 
     /// Inline object shape of chromaticAberrationPixelShader.
     [<AllowNullLiteral>]
@@ -758,6 +810,35 @@ module SimpleVariables =
     [<Import("copyTextureToTexturePixelShaderWGSL", "@babylonjs/core/ShadersWGSL/copyTextureToTexture.fragment.js")>]
     let ``copyTextureToTexturePixelShaderWGSL``: VariableShape_copyTextureToTexturePixelShaderWGSL = jsNative
 
+    /// Inline object shape of CopyTools.
+    [<AllowNullLiteral>]
+    type VariableShape_CopyTools =
+        abstract ``GenerateBase64StringFromPixelData``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GenerateBase64StringFromPixelData with get, set
+        abstract ``GenerateBase64StringFromTexture``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GenerateBase64StringFromTexture with get, set
+        abstract ``GenerateBase64StringFromTextureAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GenerateBase64StringFromTextureAsync with get, set
+
+    /// @babylonjs/core/Misc/copyTools
+    [<Import("CopyTools", "@babylonjs/core/Misc/copyTools.js")>]
+    let ``CopyTools``: VariableShape_CopyTools = jsNative
+
+    /// Inline object shape of CylinderBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_CylinderBuilder =
+        abstract ``CreateCylinder``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCylinder with get, set
+
+    /// @babylonjs/core/Meshes/Builders/cylinderBuilder.pure
+    [<Import("CylinderBuilder", "@babylonjs/core/Meshes/Builders/cylinderBuilder.pure.js")>]
+    let ``CylinderBuilder``: VariableShape_CylinderBuilder = jsNative
+
+    /// Inline object shape of DecalBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_DecalBuilder =
+        abstract ``CreateDecal``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDecal with get, set
+
+    /// @babylonjs/core/Meshes/Builders/decalBuilder.pure
+    [<Import("DecalBuilder", "@babylonjs/core/Meshes/Builders/decalBuilder.pure.js")>]
+    let ``DecalBuilder``: VariableShape_DecalBuilder = jsNative
+
     /// Inline object shape of decalFragmentWGSL.
     [<AllowNullLiteral>]
     type VariableShape_decalFragmentWGSL =
@@ -954,6 +1035,15 @@ module SimpleVariables =
     [<Import("depthVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/depth.vertex.js")>]
     let ``depthVertexShaderWGSL``: VariableShape_depthVertexShaderWGSL = jsNative
 
+    /// Inline object shape of DiscBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_DiscBuilder =
+        abstract ``CreateDisc``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDisc with get, set
+
+    /// @babylonjs/core/Meshes/Builders/discBuilder.pure
+    [<Import("DiscBuilder", "@babylonjs/core/Meshes/Builders/discBuilder.pure.js")>]
+    let ``DiscBuilder``: VariableShape_DiscBuilder = jsNative
+
     /// Inline object shape of displayPassPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_displayPassPixelShader =
@@ -985,6 +1075,18 @@ module SimpleVariables =
     /// @babylonjs/core/Misc/domManagement
     [<Import("DomManagement", "@babylonjs/core/Misc/domManagement.js")>]
     let ``DomManagement``: VariableShape_DomManagement = jsNative
+
+    /// Inline object shape of DumpTools.
+    [<AllowNullLiteral>]
+    type VariableShape_DumpTools =
+        abstract ``DumpData``: BabylonjsBindings.SimpleFunctions.FunctionBinding_DumpData with get, set
+        abstract ``DumpDataAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_DumpDataAsync with get, set
+        abstract ``DumpFramebuffer``: BabylonjsBindings.SimpleFunctions.FunctionBinding_DumpFramebuffer with get, set
+        abstract ``Dispose``: BabylonjsBindings.SimpleFunctions.FunctionBinding_Dispose with get, set
+
+    /// @babylonjs/core/Misc/dumpTools.pure
+    [<Import("DumpTools", "@babylonjs/core/Misc/dumpTools.pure.js")>]
+    let ``DumpTools``: VariableShape_DumpTools = jsNative
 
     /// Callable shape of EmptyGeneratorFunc.
     [<AllowNullLiteral>]
@@ -1117,9 +1219,28 @@ module SimpleVariables =
     [<Import("filterPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/filter.fragment.js")>]
     let ``filterPixelShaderWGSL``: VariableShape_filterPixelShaderWGSL = jsNative
 
+    /// Callable shape of FindMaterial.
+    [<AllowNullLiteral>]
+    type VariableFunction_FindMaterial =
+        [<Emit("$0($1...)")>] abstract Invoke: ``materialId``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.Material option
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("FindMaterial", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``FindMaterial``: VariableFunction_FindMaterial = jsNative
+
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
     [<Import("FLOAT32_SIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
     let ``FLOAT32_SIZE``: float = jsNative
+
+    /// Inline object shape of FloatingOriginCurrentScene.
+    [<AllowNullLiteral>]
+    type VariableShape_FloatingOriginCurrentScene =
+        abstract ``getScene``: System.Func<BabylonjsBindings.SimpleClasses.Scene option> with get, set
+        abstract ``eyeAtCamera``: bool with get, set
+
+    /// @babylonjs/core/Materials/floatingOriginMatrixOverrides
+    [<Import("FloatingOriginCurrentScene", "@babylonjs/core/Materials/floatingOriginMatrixOverrides.js")>]
+    let ``FloatingOriginCurrentScene``: VariableShape_FloatingOriginCurrentScene = jsNative
 
     /// Inline object shape of fluidRenderingBilateralBlurPixelShader.
     [<AllowNullLiteral>]
@@ -1381,6 +1502,17 @@ module SimpleVariables =
     [<Import("fogVertexWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/fogVertex.js")>]
     let ``fogVertexWGSL``: VariableShape_fogVertexWGSL = jsNative
 
+    /// Inline object shape of FrameGraphUtils.
+    [<AllowNullLiteral>]
+    type VariableShape_FrameGraphUtils =
+        abstract ``FindMainCamera``: BabylonjsBindings.SimpleFunctions.FunctionBinding_FindMainCamera with get, set
+        abstract ``FindMainObjectRenderer``: BabylonjsBindings.SimpleFunctions.FunctionBinding_FindMainObjectRenderer with get, set
+        abstract ``CreateUtilityLayerRenderer``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateUtilityLayerRenderer with get, set
+
+    /// @babylonjs/core/FrameGraph/frameGraphUtils
+    [<Import("FrameGraphUtils", "@babylonjs/core/FrameGraph/frameGraphUtils.js")>]
+    let ``FrameGraphUtils``: VariableShape_FrameGraphUtils = jsNative
+
     /// Inline object shape of fresnelFunctionWGSL.
     [<AllowNullLiteral>]
     type VariableShape_fresnelFunctionWGSL =
@@ -1575,6 +1707,33 @@ module SimpleVariables =
     [<Import("geometryVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/geometry.vertex.js")>]
     let ``geometryVertexShaderWGSL``: VariableShape_geometryVertexShaderWGSL = jsNative
 
+    /// Callable shape of GetEnvironmentBRDFTexture.
+    [<AllowNullLiteral>]
+    type VariableFunction_GetEnvironmentBRDFTexture =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.BaseTexture
+
+    /// @babylonjs/core/Misc/brdfTextureTools
+    [<Import("GetEnvironmentBRDFTexture", "@babylonjs/core/Misc/brdfTextureTools.js")>]
+    let ``GetEnvironmentBRDFTexture``: VariableFunction_GetEnvironmentBRDFTexture = jsNative
+
+    /// Callable shape of GetEnvironmentFuzzBRDFTexture.
+    [<AllowNullLiteral>]
+    type VariableFunction_GetEnvironmentFuzzBRDFTexture =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.BaseTexture
+
+    /// @babylonjs/core/Misc/brdfTextureTools
+    [<Import("GetEnvironmentFuzzBRDFTexture", "@babylonjs/core/Misc/brdfTextureTools.js")>]
+    let ``GetEnvironmentFuzzBRDFTexture``: VariableFunction_GetEnvironmentFuzzBRDFTexture = jsNative
+
+    /// Callable shape of GetInternalFormatFromBasisFormat.
+    [<AllowNullLiteral>]
+    type VariableFunction_GetInternalFormatFromBasisFormat =
+        [<Emit("$0($1...)")>] abstract Invoke: ``basisFormat``: float * ``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine -> float
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<Import("GetInternalFormatFromBasisFormat", "@babylonjs/core/Misc/basis.pure.js")>]
+    let ``GetInternalFormatFromBasisFormat``: VariableFunction_GetInternalFormatFromBasisFormat = jsNative
+
     /// Callable shape of GetMimeType.
     [<AllowNullLiteral>]
     type VariableFunction_GetMimeType =
@@ -1583,6 +1742,15 @@ module SimpleVariables =
     /// @babylonjs/core/Misc/fileTools.pure
     [<Import("GetMimeType", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ``GetMimeType``: VariableFunction_GetMimeType = jsNative
+
+    /// Callable shape of GetOpenPBREnvironmentBRDFTexture.
+    [<AllowNullLiteral>]
+    type VariableFunction_GetOpenPBREnvironmentBRDFTexture =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.BaseTexture
+
+    /// @babylonjs/core/Misc/brdfTextureTools
+    [<Import("GetOpenPBREnvironmentBRDFTexture", "@babylonjs/core/Misc/brdfTextureTools.js")>]
+    let ``GetOpenPBREnvironmentBRDFTexture``: VariableFunction_GetOpenPBREnvironmentBRDFTexture = jsNative
 
     /// Inline object shape of glowBlurPostProcessPixelShader.
     [<AllowNullLiteral>]
@@ -2007,6 +2175,15 @@ module SimpleVariables =
     [<Import("helperFunctionsWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/helperFunctions.js")>]
     let ``helperFunctionsWGSL``: VariableShape_helperFunctionsWGSL = jsNative
 
+    /// Inline object shape of HemisphereBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_HemisphereBuilder =
+        abstract ``CreateHemisphere``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateHemisphere with get, set
+
+    /// @babylonjs/core/Meshes/Builders/hemisphereBuilder.pure
+    [<Import("HemisphereBuilder", "@babylonjs/core/Meshes/Builders/hemisphereBuilder.pure.js")>]
+    let ``HemisphereBuilder``: VariableShape_HemisphereBuilder = jsNative
+
     /// Inline object shape of highlightsPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_highlightsPixelShader =
@@ -2387,6 +2564,15 @@ module SimpleVariables =
     [<Import("iblVoxelGridVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/iblVoxelGrid.vertex.js")>]
     let ``iblVoxelGridVertexShaderWGSL``: VariableShape_iblVoxelGridVertexShaderWGSL = jsNative
 
+    /// Inline object shape of IcoSphereBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_IcoSphereBuilder =
+        abstract ``CreateIcoSphere``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateIcoSphere with get, set
+
+    /// @babylonjs/core/Meshes/Builders/icoSphereBuilder.pure
+    [<Import("IcoSphereBuilder", "@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure.js")>]
+    let ``IcoSphereBuilder``: VariableShape_IcoSphereBuilder = jsNative
+
     /// Inline object shape of imageProcessingCompatibility.
     [<AllowNullLiteral>]
     type VariableShape_imageProcessingCompatibility =
@@ -2616,6 +2802,15 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/kernelBlur.vertex
     [<Import("kernelBlurVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/kernelBlur.vertex.js")>]
     let ``kernelBlurVertexShaderWGSL``: VariableShape_kernelBlurVertexShaderWGSL = jsNative
+
+    /// Inline object shape of LatheBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_LatheBuilder =
+        abstract ``CreateLathe``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLathe with get, set
+
+    /// @babylonjs/core/Meshes/Builders/latheBuilder.pure
+    [<Import("LatheBuilder", "@babylonjs/core/Meshes/Builders/latheBuilder.pure.js")>]
+    let ``LatheBuilder``: VariableShape_LatheBuilder = jsNative
 
     /// Inline object shape of layerPixelShader.
     [<AllowNullLiteral>]
@@ -2887,6 +3082,17 @@ module SimpleVariables =
     [<Import("linePixelShaderWGSL", "@babylonjs/core/ShadersWGSL/line.fragment.js")>]
     let ``linePixelShaderWGSL``: VariableShape_linePixelShaderWGSL = jsNative
 
+    /// Inline object shape of LinesBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_LinesBuilder =
+        abstract ``CreateDashedLines``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDashedLines with get, set
+        abstract ``CreateLineSystem``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLineSystem with get, set
+        abstract ``CreateLines``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLines with get, set
+
+    /// @babylonjs/core/Meshes/Builders/linesBuilder.pure
+    [<Import("LinesBuilder", "@babylonjs/core/Meshes/Builders/linesBuilder.pure.js")>]
+    let ``LinesBuilder``: VariableShape_LinesBuilder = jsNative
+
     /// Inline object shape of lineVertexShader.
     [<AllowNullLiteral>]
     type VariableShape_lineVertexShader =
@@ -2906,6 +3112,15 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/line.vertex
     [<Import("lineVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/line.vertex.js")>]
     let ``lineVertexShaderWGSL``: VariableShape_lineVertexShaderWGSL = jsNative
+
+    /// Callable shape of LoadDetailLevels.
+    [<AllowNullLiteral>]
+    type VariableFunction_LoadDetailLevels =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh -> unit
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("LoadDetailLevels", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``LoadDetailLevels``: VariableFunction_LoadDetailLevels = jsNative
 
     /// Inline object shape of lodCubePixelShader.
     [<AllowNullLiteral>]
@@ -3365,6 +3580,10 @@ module SimpleVariables =
     [<Import("oitFinalPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/oitFinal.fragment.js")>]
     let ``oitFinalPixelShaderWGSL``: VariableShape_oitFinalPixelShaderWGSL = jsNative
 
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<Import("OnAudioEngineV2CreatedObservable", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``OnAudioEngineV2CreatedObservable``: BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleClasses.AudioEngineV2> = jsNative
+
     /// Inline object shape of openpbrPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_openpbrPixelShader =
@@ -3618,6 +3837,10 @@ module SimpleVariables =
     [<Import("PHI", "@babylonjs/core/Maths/math.constants.js")>]
     let ``PHI``: float = jsNative
 
+    /// @babylonjs/core/Culling/ray.core
+    [<Import("PickingCustomization", "@babylonjs/core/Culling/ray.core.js")>]
+    let ``PickingCustomization``: BabylonjsBindings.SimpleInterfaces.IPickingCustomization = jsNative
+
     /// Inline object shape of pickingPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_pickingPixelShader =
@@ -3657,6 +3880,34 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/picking.vertex
     [<Import("pickingVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/picking.vertex.js")>]
     let ``pickingVertexShaderWGSL``: VariableShape_pickingVertexShaderWGSL = jsNative
+
+    /// Inline object shape of PlaneBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_PlaneBuilder =
+        abstract ``CreatePlane``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePlane with get, set
+
+    /// @babylonjs/core/Meshes/Builders/planeBuilder.pure
+    [<Import("PlaneBuilder", "@babylonjs/core/Meshes/Builders/planeBuilder.pure.js")>]
+    let ``PlaneBuilder``: VariableShape_PlaneBuilder = jsNative
+
+    /// Inline object shape of PolygonBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_PolygonBuilder =
+        abstract ``ExtrudePolygon``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtrudePolygon with get, set
+        abstract ``CreatePolygon``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolygon with get, set
+
+    /// @babylonjs/core/Meshes/Builders/polygonBuilder.pure
+    [<Import("PolygonBuilder", "@babylonjs/core/Meshes/Builders/polygonBuilder.pure.js")>]
+    let ``PolygonBuilder``: VariableShape_PolygonBuilder = jsNative
+
+    /// Inline object shape of PolyhedronBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_PolyhedronBuilder =
+        abstract ``CreatePolyhedron``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolyhedron with get, set
+
+    /// @babylonjs/core/Meshes/Builders/polyhedronBuilder.pure
+    [<Import("PolyhedronBuilder", "@babylonjs/core/Meshes/Builders/polyhedronBuilder.pure.js")>]
+    let ``PolyhedronBuilder``: VariableShape_PolyhedronBuilder = jsNative
 
     /// Inline object shape of postprocessVertexShader.
     [<AllowNullLiteral>]
@@ -3777,6 +4028,15 @@ module SimpleVariables =
     [<Import("rgbdEncodePixelShaderWGSL", "@babylonjs/core/ShadersWGSL/rgbdEncode.fragment.js")>]
     let ``rgbdEncodePixelShaderWGSL``: VariableShape_rgbdEncodePixelShaderWGSL = jsNative
 
+    /// Inline object shape of RibbonBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_RibbonBuilder =
+        abstract ``CreateRibbon``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateRibbon with get, set
+
+    /// @babylonjs/core/Meshes/Builders/ribbonBuilder.pure
+    [<Import("RibbonBuilder", "@babylonjs/core/Meshes/Builders/ribbonBuilder.pure.js")>]
+    let ``RibbonBuilder``: VariableShape_RibbonBuilder = jsNative
+
     /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
     [<Import("RichTypeAny", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
     let ``RichTypeAny``: BabylonjsBindings.SimpleClasses.RichType<obj> = jsNative
@@ -3798,12 +4058,40 @@ module SimpleVariables =
     let ``RichTypeFlowGraphInteger``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.FlowGraphInteger> = jsNative
 
     /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeMatrix", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeMatrix``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Matrix> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeMatrix2D", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeMatrix2D``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.FlowGraphMatrix2D> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeMatrix3D", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeMatrix3D``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.FlowGraphMatrix3D> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
     [<Import("RichTypeNumber", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
     let ``RichTypeNumber``: BabylonjsBindings.SimpleClasses.RichType<float> = jsNative
 
     /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeQuaternion", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeQuaternion``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Quaternion> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
     [<Import("RichTypeString", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
     let ``RichTypeString``: BabylonjsBindings.SimpleClasses.RichType<string> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeVector2", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeVector2``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Vector2> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeVector3", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeVector3``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Vector3> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeVector4", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeVector4``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Vector4> = jsNative
 
     /// Inline object shape of rsmFullGlobalIlluminationPixelShader.
     [<AllowNullLiteral>]
@@ -4175,6 +4463,15 @@ module SimpleVariables =
     [<Import("SHORTEST_LONG_RUN", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
     let ``SHORTEST_LONG_RUN``: float = jsNative
 
+    /// Inline object shape of SphereBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_SphereBuilder =
+        abstract ``CreateSphere``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSphere with get, set
+
+    /// @babylonjs/core/Meshes/Builders/sphereBuilder.pure
+    [<Import("SphereBuilder", "@babylonjs/core/Meshes/Builders/sphereBuilder.pure.js")>]
+    let ``SphereBuilder``: VariableShape_SphereBuilder = jsNative
+
     /// Nested inline object shape used by SPLATFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty1Object =
@@ -4413,6 +4710,33 @@ module SimpleVariables =
     [<Import("taaPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/taa.fragment.js")>]
     let ``taaPixelShaderWGSL``: VariableShape_taaPixelShaderWGSL = jsNative
 
+    /// Inline object shape of TempMaterialIndexContainer.
+    [<AllowNullLiteral>]
+    type VariableShape_TempMaterialIndexContainer =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleClasses.Material with get, set
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("TempMaterialIndexContainer", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``TempMaterialIndexContainer``: VariableShape_TempMaterialIndexContainer = jsNative
+
+    /// Inline object shape of TempMorphTargetManagerIndexContainer.
+    [<AllowNullLiteral>]
+    type VariableShape_TempMorphTargetManagerIndexContainer =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleClasses.MorphTargetManager with get, set
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("TempMorphTargetManagerIndexContainer", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``TempMorphTargetManagerIndexContainer``: VariableShape_TempMorphTargetManagerIndexContainer = jsNative
+
+    /// Inline object shape of TempSkeletonIndexContainer.
+    [<AllowNullLiteral>]
+    type VariableShape_TempSkeletonIndexContainer =
+        [<EmitIndexer>] abstract Item: ``key``: float -> BabylonjsBindings.SimpleClasses.Skeleton with get, set
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("TempSkeletonIndexContainer", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``TempSkeletonIndexContainer``: VariableShape_TempSkeletonIndexContainer = jsNative
+
     /// Inline callable object shape used by TestBase64DataUrl.
     [<AllowNullLiteral>]
     type VariableInline_TestBase64DataUrl_Return =
@@ -4427,6 +4751,37 @@ module SimpleVariables =
     /// @babylonjs/core/Misc/fileTools.pure
     [<Import("TestBase64DataUrl", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ``TestBase64DataUrl``: VariableFunction_TestBase64DataUrl = jsNative
+
+    /// Inline object shape of TextureTools.
+    [<AllowNullLiteral>]
+    type VariableShape_TextureTools =
+        abstract ``CreateResizedCopy``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateResizedCopy with get, set
+        abstract ``ApplyPostProcess``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ApplyPostProcess with get, set
+        abstract ``ToHalfFloat``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ToHalfFloat with get, set
+        abstract ``FromHalfFloat``: BabylonjsBindings.SimpleFunctions.FunctionBinding_FromHalfFloat with get, set
+        abstract ``GetTextureDataAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetTextureDataAsync with get, set
+
+    /// @babylonjs/core/Misc/textureTools
+    [<Import("TextureTools", "@babylonjs/core/Misc/textureTools.js")>]
+    let ``TextureTools``: VariableShape_TextureTools = jsNative
+
+    /// Inline object shape of TiledBoxBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_TiledBoxBuilder =
+        abstract ``CreateTiledBox``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledBox with get, set
+
+    /// @babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure
+    [<Import("TiledBoxBuilder", "@babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure.js")>]
+    let ``TiledBoxBuilder``: VariableShape_TiledBoxBuilder = jsNative
+
+    /// Inline object shape of TiledPlaneBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_TiledPlaneBuilder =
+        abstract ``CreateTiledPlane``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledPlane with get, set
+
+    /// @babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure
+    [<Import("TiledPlaneBuilder", "@babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure.js")>]
+    let ``TiledPlaneBuilder``: VariableShape_TiledPlaneBuilder = jsNative
 
     /// @babylonjs/core/Maths/math.constants
     [<Import("ToGammaSpace", "@babylonjs/core/Maths/math.constants.js")>]
@@ -4455,6 +4810,24 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/tonemap.fragment
     [<Import("tonemapPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/tonemap.fragment.js")>]
     let ``tonemapPixelShaderWGSL``: VariableShape_tonemapPixelShaderWGSL = jsNative
+
+    /// Inline object shape of TorusBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_TorusBuilder =
+        abstract ``CreateTorus``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorus with get, set
+
+    /// @babylonjs/core/Meshes/Builders/torusBuilder.pure
+    [<Import("TorusBuilder", "@babylonjs/core/Meshes/Builders/torusBuilder.pure.js")>]
+    let ``TorusBuilder``: VariableShape_TorusBuilder = jsNative
+
+    /// Inline object shape of TorusKnotBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_TorusKnotBuilder =
+        abstract ``CreateTorusKnot``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorusKnot with get, set
+
+    /// @babylonjs/core/Meshes/Builders/torusKnotBuilder.pure
+    [<Import("TorusKnotBuilder", "@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure.js")>]
+    let ``TorusKnotBuilder``: VariableShape_TorusKnotBuilder = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
     [<Import("ULONG_SIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]

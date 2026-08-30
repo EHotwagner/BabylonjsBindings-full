@@ -4,8 +4,18 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "c9966bda91b93149c340e087da6f96123ee6951b2b08ed2f07fcdf57b394a334",
+  "proposalSha256": "a95615fb6e4d512f0915d47e7267ed2f5b6f2c8ec6657624dc80bd46993e1eef",
   "exports": [
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure",
+      "name": "_AddInteractivityObjectModel",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._AddInteractivityObjectModel",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__AddInteractivityObjectModel",
+      "overloadCount": 1
+    },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/utils",
@@ -38,6 +48,26 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/engine.common",
+      "name": "_CommonDispose",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._CommonDispose",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__CommonDispose",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/engine.common",
+      "name": "_CommonInit",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._CommonInit",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__CommonInit",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/abstractEngine.functions",
       "name": "_ConcatenateShader",
       "kind": "function",
@@ -48,12 +78,62 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Queue/executionQueue",
+      "name": "_ConnectAfter",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ConnectAfter",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ConnectAfter",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Queue/executionQueue",
+      "name": "_ConnectAtTheEnd",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ConnectAtTheEnd",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ConnectAtTheEnd",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Queue/executionQueue",
+      "name": "_ConnectBefore",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ConnectBefore",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ConnectBefore",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "_GetAudioEngine",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetAudioEngine",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__GetAudioEngine",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/utils",
       "name": "_GetClassNameOf",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetClassNameOf",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__GetClassNameOf",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager",
+      "name": "_GetCompatibleTextureLoader",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetCompatibleTextureLoader",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__GetCompatibleTextureLoader",
       "overloadCount": 1
     },
     {
@@ -78,12 +158,42 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode",
+      "name": "_GetVolumeAudioSubNode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetVolumeAudioSubNode",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__GetVolumeAudioSubNode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer",
       "name": "_HasAudioAnalyzerOptions",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._HasAudioAnalyzerOptions",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__HasAudioAnalyzerOptions",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener",
+      "name": "_HasSpatialAudioListenerOptions",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._HasSpatialAudioListenerOptions",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__HasSpatialAudioListenerOptions",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio",
+      "name": "_HasSpatialAudioOptions",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._HasSpatialAudioOptions",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__HasSpatialAudioOptions",
       "overloadCount": 1
     },
     {
@@ -98,12 +208,72 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoCodec",
+      "name": "_IsConfigurationAvailable",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._IsConfigurationAvailable",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__IsConfigurationAvailable",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "_IsDescendantOf",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._IsDescendantOf",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__IsDescendantOf",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "_isRenderingStateCompiled",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._isRenderingStateCompiled",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__isRenderingStateCompiled",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/tools.internals",
       "name": "_LoadScriptModuleAsync",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._LoadScriptModuleAsync",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__LoadScriptModuleAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.functions",
+      "name": "_ProcessShaderCode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ProcessShaderCode",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ProcessShaderCode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Queue/executionQueue",
+      "name": "_RemoveFromQueue",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._RemoveFromQueue",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__RemoveFromQueue",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
+      "name": "_ResolveMixamoRigMapping",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ResolveMixamoRigMapping",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ResolveMixamoRigMapping",
       "overloadCount": 1
     },
     {
@@ -118,12 +288,82 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/RigModes/stereoscopicAnaglyphRigMode",
+      "name": "_SetStereoscopicAnaglyphRigMode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._SetStereoscopicAnaglyphRigMode",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__SetStereoscopicAnaglyphRigMode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/RigModes/stereoscopicRigMode",
+      "name": "_SetStereoscopicRigMode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._SetStereoscopicRigMode",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__SetStereoscopicRigMode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/RigModes/vrRigMode",
+      "name": "_SetVrRigMode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._SetVrRigMode",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__SetVrRigMode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "_UpdateRGBDAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._UpdateRGBDAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__UpdateRGBDAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/clipPlaneMaterialHelper",
       "name": "AddClipPlaneUniforms",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AddClipPlaneUniforms",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AddClipPlaneUniforms",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileParser.function",
+      "name": "AddIndividualParser",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AddIndividualParser",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AddIndividualParser",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileParser.function",
+      "name": "AddParser",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AddParser",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AddParser",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "AddSmartAssetManagerCreatedObserver",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AddSmartAssetManagerCreatedObserver",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AddSmartAssetManagerCreatedObserver",
       "overloadCount": 1
     },
     {
@@ -138,12 +378,192 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationAppendSerializedAnimations",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationAppendSerializedAnimations",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationAppendSerializedAnimations",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationCreateAndStartAnimation",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationCreateAndStartAnimation",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationCreateAndStartAnimation",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationCreateAndStartHierarchyAnimation",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationCreateAndStartHierarchyAnimation",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationCreateAndStartHierarchyAnimation",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationCreateAnimation",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationCreateAnimation",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationCreateAnimation",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationCreateMergeAndStartAnimation",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationCreateMergeAndStartAnimation",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationCreateMergeAndStartAnimation",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroup.pure",
+      "name": "AnimationGroupClipFrames",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationGroupClipFrames",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationGroupClipFrames",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroup.pure",
+      "name": "AnimationGroupClipFramesInPlace",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationGroupClipFramesInPlace",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationGroupClipFramesInPlace",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroup.pure",
+      "name": "AnimationGroupClipInPlace",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationGroupClipInPlace",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationGroupClipInPlace",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroup.pure",
+      "name": "AnimationGroupClipKeys",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationGroupClipKeys",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationGroupClipKeys",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroup.pure",
+      "name": "AnimationGroupClipKeysInPlace",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationGroupClipKeysInPlace",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationGroupClipKeysInPlace",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroup.pure",
+      "name": "AnimationGroupMakeAnimationAdditive",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationGroupMakeAnimationAdditive",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationGroupMakeAnimationAdditive",
+      "overloadCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroup.pure",
+      "name": "AnimationGroupMergeAnimationGroups",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationGroupMergeAnimationGroups",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationGroupMergeAnimationGroups",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroup.pure",
+      "name": "AnimationGroupParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationGroupParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationGroupParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationMakeAnimationAdditive",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationMakeAnimationAdditive",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationMakeAnimationAdditive",
+      "overloadCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationParseFromFileAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationParseFromFileAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationParseFromFileAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationTransitionTo",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationTransitionTo",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationTransitionTo",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.huf",
       "name": "ApplyLut",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ApplyLut",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ApplyLut",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/textureTools",
+      "name": "ApplyPostProcess",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ApplyPostProcess",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ApplyPostProcess",
       "overloadCount": 1
     },
     {
@@ -158,12 +578,212 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "AreLightsTexturesReady",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AreLightsTexturesReady",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AreLightsTexturesReady",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindBonesParameters",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindBonesParameters",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindBonesParameters",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/clipPlaneMaterialHelper",
+      "name": "BindClipPlane",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindClipPlane",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindClipPlane",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindFogParameters",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindFogParameters",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindFogParameters",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindIBLParameters",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindIBLParameters",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindIBLParameters",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindIBLSamplers",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindIBLSamplers",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindIBLSamplers",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindLight",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindLight",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindLight",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindLightProperties",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindLightProperties",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindLightProperties",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindLights",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindLights",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindLights",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindLogDepth",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindLogDepth",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindLogDepth",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindMorphTargetParameters",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindMorphTargetParameters",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindMorphTargetParameters",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindSceneUniformBuffer",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindSceneUniformBuffer",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindSceneUniformBuffer",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "BindTextureMatrix",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindTextureMatrix",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindTextureMatrix",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/vertexPullingHelper.functions",
+      "name": "BindVertexPullingUniforms",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.BindVertexPullingUniforms",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_BindVertexPullingUniforms",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/camera.pure",
+      "name": "CameraParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CameraParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CameraParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/equirectangularCapture.pure",
+      "name": "captureEquirectangularFromScene",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.captureEquirectangularFromScene",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_captureEquirectangularFromScene",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions",
       "name": "Clamp",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Clamp",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_Clamp",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/geospatialCameraMovement",
+      "name": "ClampCenterFromPolesInPlace",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ClampCenterFromPolesInPlace",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ClampCenterFromPolesInPlace",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/colorCurves.pure",
+      "name": "ColorCurvesBind",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ColorCurvesBind",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ColorCurvesBind",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/colorCurves.pure",
+      "name": "ColorCurvesParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ColorCurvesParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ColorCurvesParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/colorGradingTexture.pure",
+      "name": "ColorGradingTextureParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ColorGradingTextureParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ColorGradingTextureParse",
       "overloadCount": 1
     },
     {
@@ -189,11 +809,51 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Cameras/arcRotateCamera.pure",
+      "name": "ComputeAlpha",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ComputeAlpha",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ComputeAlpha",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/arcRotateCamera.pure",
       "name": "ComputeBeta",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ComputeBeta",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ComputeBeta",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/geospatialCameraMovement",
+      "name": "ComputeLocalBasisToRefs",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ComputeLocalBasisToRefs",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ComputeLocalBasisToRefs",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/geospatialCamera.pure",
+      "name": "ComputeLookAtFromYawPitchToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ComputeLookAtFromYawPitchToRef",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ComputeLookAtFromYawPitchToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/meshUtils",
+      "name": "computeMaxExtents",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.computeMaxExtents",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_computeMaxExtents",
       "overloadCount": 1
     },
     {
@@ -204,6 +864,36 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ComputeOverlayCssTransform",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ComputeOverlayCssTransform",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Compute/computeShader.pure",
+      "name": "ComputeShaderParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ComputeShaderParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ComputeShaderParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/geospatialCamera.pure",
+      "name": "ComputeYawPitchFromLookAtToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ComputeYawPitchFromLookAtToRef",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ComputeYawPitchFromLookAtToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/nodeParticleSystemSet.helper",
+      "name": "ConvertToNodeParticleSystemSetAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ConvertToNodeParticleSystemSetAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ConvertToNodeParticleSystemSetAsync",
       "overloadCount": 1
     },
     {
@@ -238,6 +928,66 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateAudioBusAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateAudioBusAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateAudioBusAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioEngine",
+      "name": "CreateAudioEngineAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateAudioEngineAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateAudioEngineAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/boxBuilder.pure",
+      "name": "CreateBox",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateBox",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateBox",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/boxBuilder.pure",
+      "name": "CreateBoxVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateBoxVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateBoxVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/capsuleBuilder.pure",
+      "name": "CreateCapsule",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateCapsule",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCapsule",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/capsuleBuilder.pure",
+      "name": "CreateCapsuleVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateCapsuleVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCapsuleVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/textureMerger",
       "name": "CreateConstantInput",
       "kind": "function",
@@ -248,12 +998,792 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/cylinderBuilder.pure",
+      "name": "CreateCylinder",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateCylinder",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCylinder",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/cylinderBuilder.pure",
+      "name": "CreateCylinderVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateCylinderVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCylinderVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/linesBuilder.pure",
+      "name": "CreateDashedLines",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateDashedLines",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDashedLines",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/linesBuilder.pure",
+      "name": "CreateDashedLinesVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateDashedLinesVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDashedLinesVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/decalBuilder.pure",
+      "name": "CreateDecal",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateDecal",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDecal",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.decoder",
       "name": "CreateDecoderAsync",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateDecoderAsync",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDecoderAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginFactoryExport",
+      "name": "createDetailMapPlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.createDetailMapPlugin",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_createDetailMapPlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/discBuilder.pure",
+      "name": "CreateDisc",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateDisc",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDisc",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/discBuilder.pure",
+      "name": "CreateDiscVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateDiscVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDiscVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "CreateEnvTextureAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateEnvTextureAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateEnvTextureAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "CreateFactorOperand",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateFactorOperand",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateFactorOperand",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/geodesicBuilder",
+      "name": "CreateGeodesic",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateGeodesic",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGeodesic",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/goldbergBuilder",
+      "name": "CreateGoldberg",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateGoldberg",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGoldberg",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/goldbergBuilder",
+      "name": "CreateGoldbergVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateGoldbergVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGoldbergVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder",
+      "name": "CreateGreasedLine",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateGreasedLine",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGreasedLine",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder",
+      "name": "CreateGreasedLineMaterial",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateGreasedLineMaterial",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGreasedLineMaterial",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure",
+      "name": "CreateGround",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateGround",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGround",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure",
+      "name": "CreateGroundFromHeightMapVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateGroundFromHeightMapVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGroundFromHeightMapVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure",
+      "name": "CreateGroundVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateGroundVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGroundVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/hemisphereBuilder.pure",
+      "name": "CreateHemisphere",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateHemisphere",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateHemisphere",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/abstractMesh.hotSpot",
+      "name": "CreateHotSpotQueryForPickingInfo",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateHotSpotQueryForPickingInfo",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateHotSpotQueryForPickingInfo",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure",
+      "name": "CreateIcoSphere",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateIcoSphere",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateIcoSphere",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure",
+      "name": "CreateIcoSphereVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateIcoSphereVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateIcoSphereVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/latheBuilder.pure",
+      "name": "CreateLathe",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateLathe",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLathe",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/linesBuilder.pure",
+      "name": "CreateLines",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateLines",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLines",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/linesBuilder.pure",
+      "name": "CreateLineSystem",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateLineSystem",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLineSystem",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/linesBuilder.pure",
+      "name": "CreateLineSystemVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateLineSystemVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLineSystemVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateMainAudioBusAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateMainAudioBusAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateMainAudioBusAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateMicrophoneSoundSourceAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateMicrophoneSoundSourceAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateMicrophoneSoundSourceAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginFactoryExport",
+      "name": "createPBRAnisotropicPlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.createPBRAnisotropicPlugin",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_createPBRAnisotropicPlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginFactoryExport",
+      "name": "createPBRBRDFPlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.createPBRBRDFPlugin",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_createPBRBRDFPlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginFactoryExport",
+      "name": "createPBRClearCoatPlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.createPBRClearCoatPlugin",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_createPBRClearCoatPlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginFactoryExport",
+      "name": "createPBRIridescencePlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.createPBRIridescencePlugin",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_createPBRIridescencePlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginFactoryExport",
+      "name": "createPBRSheenPlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.createPBRSheenPlugin",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_createPBRSheenPlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginFactoryExport",
+      "name": "createPBRSubSurfacePlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.createPBRSubSurfacePlugin",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_createPBRSubSurfacePlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "CreatePickingRay",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePickingRay",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePickingRay",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "CreatePickingRayInCameraSpace",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePickingRayInCameraSpace",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePickingRayInCameraSpace",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "CreatePickingRayInCameraSpaceToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePickingRayInCameraSpaceToRef",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePickingRayInCameraSpaceToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "CreatePickingRayToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePickingRayToRef",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePickingRayToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "createPipelineContext",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.createPipelineContext",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_createPipelineContext",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/planeBuilder.pure",
+      "name": "CreatePlane",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePlane",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePlane",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/planeBuilder.pure",
+      "name": "CreatePlaneVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePlaneVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePlaneVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/polygonBuilder.pure",
+      "name": "CreatePolygon",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePolygon",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolygon",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/polygonBuilder.pure",
+      "name": "CreatePolygonVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePolygonVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolygonVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/polyhedronBuilder.pure",
+      "name": "CreatePolyhedron",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePolyhedron",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolyhedron",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/polyhedronBuilder.pure",
+      "name": "CreatePolyhedronVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreatePolyhedronVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolyhedronVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/textureTools",
+      "name": "CreateResizedCopy",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateResizedCopy",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateResizedCopy",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureMerger",
+      "name": "CreateRGBAConfiguration",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateRGBAConfiguration",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateRGBAConfiguration",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/ribbonBuilder.pure",
+      "name": "CreateRibbon",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateRibbon",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateRibbon",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/ribbonBuilder.pure",
+      "name": "CreateRibbonVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateRibbonVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateRibbonVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure",
+      "name": "CreateScreenshot",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateScreenshot",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshot",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure",
+      "name": "CreateScreenshotAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateScreenshotAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure",
+      "name": "CreateScreenshotWithResizeAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateScreenshotWithResizeAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotWithResizeAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/boxBuilder.pure",
+      "name": "CreateSegmentedBoxVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSegmentedBoxVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSegmentedBoxVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Bones/skeleton.functions",
+      "name": "CreateSkeletonFromTransformNodeHierarchy",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSkeletonFromTransformNodeHierarchy",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSkeletonFromTransformNodeHierarchy",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateSoundAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSoundAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSoundAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateSoundBufferAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSoundBufferAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSoundBufferAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateSoundSourceAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSoundSourceAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSoundSourceAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/sphereBuilder.pure",
+      "name": "CreateSphere",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSphere",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSphere",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/sphereBuilder.pure",
+      "name": "CreateSphereVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSphereVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSphereVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/textBuilder",
+      "name": "CreateText",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateText",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateText",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/rawTexture2DArray.functions",
+      "name": "CreateTexture2DArrayFromKTX2Async",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTexture2DArrayFromKTX2Async",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTexture2DArrayFromKTX2Async",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureMerger",
+      "name": "CreateTextureInput",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTextureInput",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTextureInput",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "CreateTextureOperand",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTextureOperand",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTextureOperand",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "CreateTextureWithFactorOperand",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTextureWithFactorOperand",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTextureWithFactorOperand",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure",
+      "name": "CreateTiledBox",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTiledBox",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledBox",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure",
+      "name": "CreateTiledBoxVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTiledBoxVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledBoxVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure",
+      "name": "CreateTiledGround",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTiledGround",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledGround",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure",
+      "name": "CreateTiledGroundVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTiledGroundVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledGroundVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure",
+      "name": "CreateTiledPlane",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTiledPlane",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledPlane",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure",
+      "name": "CreateTiledPlaneVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTiledPlaneVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledPlaneVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/torusBuilder.pure",
+      "name": "CreateTorus",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTorus",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorus",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure",
+      "name": "CreateTorusKnot",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTorusKnot",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorusKnot",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure",
+      "name": "CreateTorusKnotVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTorusKnotVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorusKnotVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/torusBuilder.pure",
+      "name": "CreateTorusVertexData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTorusVertexData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorusVertexData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphUtils",
+      "name": "CreateUtilityLayerRenderer",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateUtilityLayerRenderer",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateUtilityLayerRenderer",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/cubeTexture.pure",
+      "name": "CubeTextureCreateFromImages",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CubeTextureCreateFromImages",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CubeTextureCreateFromImages",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/cubeTexture.pure",
+      "name": "CubeTextureCreateFromPrefilteredData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CubeTextureCreateFromPrefilteredData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CubeTextureCreateFromPrefilteredData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/cubeTexture.pure",
+      "name": "CubeTextureParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CubeTextureParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CubeTextureParse",
       "overloadCount": 1
     },
     {
@@ -274,6 +1804,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DecodeFloat32",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_DecodeFloat32",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/defaultRenderingPipeline.pure",
+      "name": "DefaultRenderingPipelineParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DefaultRenderingPipelineParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_DefaultRenderingPipelineParse",
       "overloadCount": 1
     },
     {
@@ -318,6 +1858,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "DisposeSmartAssetManager",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DisposeSmartAssetManager",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_DisposeSmartAssetManager",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/dumpTools.pure",
       "name": "DumpData",
       "kind": "function",
@@ -335,6 +1885,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DumpDataAsync",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_DumpDataAsync",
       "overloadCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dumpTools.pure",
+      "name": "DumpFramebuffer",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DumpFramebuffer",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_DumpFramebuffer",
+      "overloadCount": 1
     },
     {
       "package": "@babylonjs/core",
@@ -378,6 +1938,86 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "ExtractChannelAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ExtractChannelAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtractChannelAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "ExtractMaxChannelAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ExtractMaxChannelAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtractMaxChannelAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.functions",
+      "name": "extractMinAndMax",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.extractMinAndMax",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_extractMinAndMax",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.functions",
+      "name": "extractMinAndMaxIndexed",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.extractMinAndMaxIndexed",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_extractMinAndMaxIndexed",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/polygonBuilder.pure",
+      "name": "ExtrudePolygon",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ExtrudePolygon",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtrudePolygon",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphUtils",
+      "name": "FindMainCamera",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.FindMainCamera",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_FindMainCamera",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphUtils",
+      "name": "FindMainObjectRenderer",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.FindMainObjectRenderer",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_FindMainObjectRenderer",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "FindSmartAssetKeyForObject",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.FindSmartAssetKeyForObject",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_FindSmartAssetKeyForObject",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.functions",
       "name": "FixFlippedFaces",
       "kind": "function",
@@ -417,6 +2057,26 @@
       "overloadCount": 1
     },
     {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/copyTools",
+      "name": "GenerateBase64StringFromTexture",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GenerateBase64StringFromTexture",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GenerateBase64StringFromTexture",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/copyTools",
+      "name": "GenerateBase64StringFromTextureAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GenerateBase64StringFromTextureAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GenerateBase64StringFromTextureAsync",
+      "overloadCount": 1
+    },
+    {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper",
       "name": "getAllSupportedNativeNodeTypes",
@@ -434,6 +2094,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getAnimationTypeByFlowGraphType",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_getAnimationTypeByFlowGraphType",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.functions",
+      "name": "getCachedPipeline",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getCachedPipeline",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_getCachedPipeline",
       "overloadCount": 1
     },
     {
@@ -468,6 +2138,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser",
+      "name": "GetDataOutConnectionByUniqueId",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetDataOutConnectionByUniqueId",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetDataOutConnectionByUniqueId",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/textureCreationOptions",
       "name": "getDimensionsFromTextureSize",
       "kind": "function",
@@ -484,6 +2164,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetDOMTextContent",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetDOMTextContent",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Decorators/nodeDecorator",
+      "name": "GetEditableProperties",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetEditableProperties",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetEditableProperties",
       "overloadCount": 1
     },
     {
@@ -528,12 +2218,42 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "GetFogState",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetFogState",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetFogState",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/engine.common",
       "name": "GetFontOffset",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetFontOffset",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetFontOffset",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "GetForwardRay",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetForwardRay",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetForwardRay",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "GetForwardRayToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetForwardRayToRef",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetForwardRayToRef",
       "overloadCount": 1
     },
     {
@@ -548,6 +2268,36 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GaussianSplatting/gaussianSplattingMaterial.pure",
+      "name": "GetGaussianSplattingMaxPartCount",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetGaussianSplattingMaxPartCount",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetGaussianSplattingMaxPartCount",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/abstractMesh.hotSpot",
+      "name": "GetHotSpotToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetHotSpotToRef",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetHotSpotToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileParser.function",
+      "name": "GetIndividualParser",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetIndividualParser",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetIndividualParser",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/utils",
       "name": "getNumericValue",
       "kind": "function",
@@ -558,12 +2308,42 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides",
+      "name": "GetOffsetTransformMatrices",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetOffsetTransformMatrices",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetOffsetTransformMatrices",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileParser.function",
+      "name": "GetParser",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetParser",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetParser",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder",
       "name": "GetPointsCount",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetPointsCount",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetPointsCount",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation",
+      "name": "getQuaternion",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getQuaternion",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_getQuaternion",
       "overloadCount": 1
     },
     {
@@ -588,6 +2368,36 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser",
+      "name": "GetSignalInConnectionByUniqueId",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetSignalInConnectionByUniqueId",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetSignalInConnectionByUniqueId",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "GetSmartAssetManager",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetSmartAssetManager",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetSmartAssetManager",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/textureTools",
+      "name": "GetTextureDataAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetTextureDataAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetTextureDataAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/tga",
       "name": "GetTGAHeader",
       "kind": "function",
@@ -598,12 +2408,42 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/abstractMesh.hotSpot",
+      "name": "GetTransformedPosition",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetTransformedPosition",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetTransformedPosition",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Buffers/bufferUtils",
       "name": "GetTypeByteLength",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetTypeByteLength",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetTypeByteLength",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation",
+      "name": "getVector3",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getVector3",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_getVector3",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "HandleFallbacksForShadows",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.HandleFallbacksForShadows",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_HandleFallbacksForShadows",
       "overloadCount": 1
     },
     {
@@ -668,6 +2508,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/imageProcessingConfiguration.pure",
+      "name": "ImageProcessingConfigurationParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ImageProcessingConfigurationParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ImageProcessingConfigurationParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/csg2",
       "name": "InitializeCSG2Async",
       "kind": "function",
@@ -728,6 +2578,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "InvertTextureAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.InvertTextureAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_InvertTextureAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/SmartAssets/smartAssetSerializer",
       "name": "IsAbsoluteOrSpecialUrl",
       "kind": "function",
@@ -778,12 +2638,32 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/HTML/htmlTexture",
+      "name": "IsHtmlInCanvasUploadSupported",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.IsHtmlInCanvasUploadSupported",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_IsHtmlInCanvasUploadSupported",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/domManagement",
       "name": "IsNavigatorAvailable",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.IsNavigatorAvailable",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_IsNavigatorAvailable",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "isNumeric",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.isNumeric",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_isNumeric",
       "overloadCount": 1
     },
     {
@@ -798,6 +2678,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/drawWrapper.functions",
+      "name": "IsWrapper",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.IsWrapper",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_IsWrapper",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker",
       "name": "KTX2WorkerFunction",
       "kind": "function",
@@ -805,6 +2695,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.KTX2WorkerFunction",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_KTX2WorkerFunction",
       "runtimeExport": "workerFunction",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "LastCreatedAudioEngine",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LastCreatedAudioEngine",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LastCreatedAudioEngine",
       "overloadCount": 1
     },
     {
@@ -849,12 +2749,42 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "LerpTexturesAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LerpTexturesAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LerpTexturesAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "LoadAllSmartAssetsAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadAllSmartAssetsAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LoadAllSmartAssetsAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Lights/IES/iesLoader",
       "name": "LoadIESData",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadIESData",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LoadIESData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/rawTexture2DArray.functions",
+      "name": "LoadImageToTexture2DArrayLayerAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadImageToTexture2DArrayLayerAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LoadImageToTexture2DArrayLayerAsync",
       "overloadCount": 1
     },
     {
@@ -879,6 +2809,26 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "MaxTexturesAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MaxTexturesAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_MaxTexturesAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureMerger",
+      "name": "MergeTexturesAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MergeTexturesAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_MergeTexturesAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions",
       "name": "MoveTowards",
       "kind": "function",
@@ -895,6 +2845,36 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MoveTowardsAngle",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_MoveTowardsAngle",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/multiMaterial.pure",
+      "name": "MultiMaterialParseMultiMaterial",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MultiMaterialParseMultiMaterial",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_MultiMaterialParseMultiMaterial",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "MultiPick",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MultiPick",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_MultiPick",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "MultiPickWithRay",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MultiPickWithRay",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_MultiPickWithRay",
       "overloadCount": 1
     },
     {
@@ -919,6 +2899,56 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "MultiplyTexturesAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MultiplyTexturesAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_MultiplyTexturesAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
+      "name": "NodeMaterialBlockIsTextureBlock",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.NodeMaterialBlockIsTextureBlock",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_NodeMaterialBlockIsTextureBlock",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
+      "name": "NodeMaterialCreateDefault",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.NodeMaterialCreateDefault",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_NodeMaterialCreateDefault",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
+      "name": "NodeMaterialParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.NodeMaterialParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_NodeMaterialParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
+      "name": "NodeMaterialParseFromFileAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.NodeMaterialParseFromFileAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_NodeMaterialParseFromFileAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions",
       "name": "Normalize",
       "kind": "function",
@@ -935,6 +2965,26 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.NormalizeRadians",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_NormalizeRadians",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides",
+      "name": "OffsetClipPlaneToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.OffsetClipPlaneToRef",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_OffsetClipPlaneToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides",
+      "name": "OffsetViewToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.OffsetViewToRef",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_OffsetViewToRef",
       "overloadCount": 1
     },
     {
@@ -969,6 +3019,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileParser.function",
+      "name": "Parse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Parse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_Parse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
       "name": "ParseFloat16",
       "kind": "function",
@@ -985,6 +3045,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseFloat32",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ParseFloat32",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser",
+      "name": "ParseFlowGraphContext",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseFlowGraphContext",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ParseFlowGraphContext",
       "overloadCount": 1
     },
     {
@@ -1069,6 +3139,36 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "Pick",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Pick",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_Pick",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "PickWithBoundingInfo",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PickWithBoundingInfo",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PickWithBoundingInfo",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "PickWithRay",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PickWithRay",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PickWithRay",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions",
       "name": "PingPong",
       "kind": "function",
@@ -1090,11 +3190,221 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareAttributesForBakedVertexAnimation",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareAttributesForBakedVertexAnimation",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareAttributesForBakedVertexAnimation",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareAttributesForBones",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareAttributesForBones",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareAttributesForBones",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
       "name": "PrepareAttributesForInstances",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareAttributesForInstances",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareAttributesForInstances",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareAttributesForMorphTargets",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareAttributesForMorphTargets",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareAttributesForMorphTargets",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareAttributesForMorphTargetsInfluencers",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareAttributesForMorphTargetsInfluencers",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareAttributesForMorphTargetsInfluencers",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesAndAttributesForMorphTargets",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesAndAttributesForMorphTargets",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesAndAttributesForMorphTargets",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForAttributes",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForAttributes",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForAttributes",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForBakedVertexAnimation",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForBakedVertexAnimation",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForBakedVertexAnimation",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForBones",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForBones",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForBones",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForCamera",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForCamera",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForCamera",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForFrameBoundValues",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForFrameBoundValues",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForFrameBoundValues",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForIBL",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForIBL",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForIBL",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForLight",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForLight",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForLight",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForLights",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForLights",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForLights",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForMergedUV",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForMergedUV",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForMergedUV",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForMisc",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForMisc",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForMisc",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForMorphTargets",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForMorphTargets",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForMorphTargets",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForMultiview",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForMultiview",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForMultiview",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForOIT",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForOIT",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForOIT",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareDefinesForPrePass",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForPrePass",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareDefinesForPrePass",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/clipPlaneMaterialHelper",
+      "name": "PrepareStringDefinesForClipPlanes",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareStringDefinesForClipPlanes",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareStringDefinesForClipPlanes",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareUniformLayoutForIBL",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareUniformLayoutForIBL",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareUniformLayoutForIBL",
       "overloadCount": 1
     },
     {
@@ -1115,6 +3425,26 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareUniformsAndSamplersForLight",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareUniformsAndSamplersForLight",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareUniformsAndSamplersList",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareUniformsAndSamplersList",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareUniformsAndSamplersList",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/vertexPullingHelper.functions",
+      "name": "PrepareVertexPullingUniforms",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareVertexPullingUniforms",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_PrepareVertexPullingUniforms",
       "overloadCount": 1
     },
     {
@@ -1168,6 +3498,16 @@
       "overloadCount": 1
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/BVH/bvhLoader",
+      "name": "ReadBvh",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ReadBvh",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ReadBvh",
+      "overloadCount": 1
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/exrTextureLoader",
       "name": "ReadExrDataAsync",
@@ -1175,6 +3515,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ReadExrDataAsync",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ReadExrDataAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Probes/reflectionProbe.pure",
+      "name": "ReflectionProbeParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ReflectionProbeParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ReflectionProbeParse",
       "overloadCount": 1
     },
     {
@@ -5099,6 +7449,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginManager.pure",
+      "name": "RegisterMaterialPlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterMaterialPlugin",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RegisterMaterialPlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/materialPluginBase.pure",
       "name": "RegisterMaterialPluginBase",
       "kind": "function",
@@ -7089,6 +9449,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animatable.core",
+      "name": "RegisterTargetForLateAnimationBinding",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterTargetForLateAnimationBinding",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RegisterTargetForLateAnimationBinding",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Node/Blocks/Fragment/TBNBlock.pure",
       "name": "RegisterTBNBlock",
       "kind": "function",
@@ -7909,6 +10279,36 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "ReloadSmartAssetAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ReloadSmartAssetAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ReloadSmartAssetAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "RemoveSmartAssetAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RemoveSmartAssetAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RemoveSmartAssetAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/meshUtils",
+      "name": "RemoveUnreferencedVerticesData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RemoveUnreferencedVerticesData",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RemoveUnreferencedVerticesData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions",
       "name": "Repeat",
       "kind": "function",
@@ -7939,12 +10339,32 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.functions",
+      "name": "resetCachedPipeline",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.resetCachedPipeline",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_resetCachedPipeline",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides",
       "name": "ResetMatrixFunctions",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ResetMatrixFunctions",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ResetMatrixFunctions",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/engine.common",
+      "name": "ResizeImageBitmap",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ResizeImageBitmap",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ResizeImageBitmap",
       "overloadCount": 1
     },
     {
@@ -8008,6 +10428,16 @@
       "overloadCount": 1
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
+      "name": "SetInterpolationForKey",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.SetInterpolationForKey",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_SetInterpolationForKey",
+      "overloadCount": 1
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Compat/compatibilityOptions",
       "name": "setOpenGLOrientationForUV",
@@ -8019,12 +10449,112 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterialDefault",
+      "name": "SetToDefaultGaussianSplatting",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.SetToDefaultGaussianSplatting",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_SetToDefaultGaussianSplatting",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterialDefault",
+      "name": "SetToDefaultSFE",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.SetToDefaultSFE",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_SetToDefaultSFE",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/shaderMaterial.pure",
+      "name": "ShaderMaterialParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ShaderMaterialParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ShaderMaterialParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/shaderMaterial.pure",
+      "name": "ShaderMaterialParseFromFileAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ShaderMaterialParseFromFileAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ShaderMaterialParseFromFileAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions",
       "name": "SmoothStep",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.SmoothStep",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_SmoothStep",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Helpers/materialConversionHelper",
+      "name": "SpecularPowerToRoughness",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.SpecularPowerToRoughness",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_SpecularPowerToRoughness",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/ssao2RenderingPipeline.pure",
+      "name": "SSAO2RenderingPipelineParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.SSAO2RenderingPipelineParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_SSAO2RenderingPipelineParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/ssrRenderingPipeline.pure",
+      "name": "SSRRenderingPipelineParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.SSRRenderingPipelineParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_SSRRenderingPipelineParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/standardRenderingPipeline.pure",
+      "name": "StandardRenderingPipelineParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.StandardRenderingPipelineParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_StandardRenderingPipelineParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/mesh.vertexData.subdivide",
+      "name": "Subdivide",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Subdivide",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_Subdivide",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/taaRenderingPipeline.pure",
+      "name": "TAARenderingPipelineParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.TAARenderingPipelineParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_TAARenderingPipelineParse",
       "overloadCount": 1
     },
     {
@@ -8055,6 +10585,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ToHex",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ToHex",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/transformNode.pure",
+      "name": "TransformNodeParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.TransformNodeParse",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_TransformNodeParse",
       "overloadCount": 1
     },
     {
@@ -8129,6 +10669,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "UnloadSmartAssetAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.UnloadSmartAssetAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_UnloadSmartAssetAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/materialPluginManager.pure",
       "name": "UnregisterAllMaterialPlugins",
       "kind": "function",
@@ -8165,6 +10715,66 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.unregisterTextureLoader",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_unregisterTextureLoader",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tga",
+      "name": "UploadContent",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.UploadContent",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadContent",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/rawTexture2DArray.functions",
+      "name": "UploadImageToTexture2DArrayLayer",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.UploadImageToTexture2DArrayLayer",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadImageToTexture2DArrayLayer",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "UploadIrradianceLevelsAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.UploadIrradianceLevelsAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadIrradianceLevelsAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "UploadRadianceLevelsAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.UploadRadianceLevelsAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadRadianceLevelsAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
+      "name": "ValidateFlowGraph",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ValidateFlowGraph",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ValidateFlowGraph",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
+      "name": "ValidateFlowGraphWithBlockList",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ValidateFlowGraphWithBlockList",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ValidateFlowGraphWithBlockList",
       "overloadCount": 1
     },
     {
@@ -8395,6 +11005,26 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Wav2Decode",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_Wav2Decode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRNearInteraction.pure",
+      "name": "WebXRNearInteractionPickMeshWithSphere",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.WebXRNearInteractionPickMeshWithSphere",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_WebXRNearInteractionPickMeshWithSphere",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/textureTools",
+      "name": "WhenTextureReadyAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.WhenTextureReadyAsync",
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_WhenTextureReadyAsync",
       "overloadCount": 1
     },
     {

@@ -59,6 +59,11 @@ const browserTypes = new Set([
   "ImageData", "OfflineAudioContext", "WebGLUniformLocation", "WebGLRenderingContext",
   "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
 ]);
+const ambientHandleTypes = new Map([
+  ["AudioBuffer", "BrowserAudioBuffer"],
+  ["AudioNode", "BrowserAudioNode"],
+  ["OfflineAudioContext", "BrowserOfflineAudioContext"]
+]);
 const numericLiteralValues = new Set();
 const stringLiteralTypes = new Map();
 const inlineTypesByName = new Map();
@@ -175,6 +180,7 @@ const fsharpType = (node, typeParameters = new Map()) => {
     }
     if (node.typeName.text === "Error" && !node.typeArguments?.length) return "System.Exception";
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
+    if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (maintainedSymbols.has(node.typeName.text)) {
@@ -297,7 +303,7 @@ while (true) {
   retainedFunctionInlineTypes.push(...additions);
   inlineReferenceText += JSON.stringify(additions);
 }
-for (const inline of retainedFunctionInlineTypes) {
+for (const inline of [...retainedFunctionInlineTypes].reverse()) {
   lines.push("", "    /// Exact inline object used by a Babylon function signature.", "    [<AllowNullLiteral>]", `    type ${inline.name}${inline.genericParameters} =`);
   if (inline.members.length === 0) lines.push("        interface end");
   for (const member of inline.members) {

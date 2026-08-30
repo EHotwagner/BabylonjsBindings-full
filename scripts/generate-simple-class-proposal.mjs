@@ -583,6 +583,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ,["MediaTrackConstraints", "BrowserMediaTrackConstraints"]
       ,["PointerEventInit", "BrowserPointerEventInit"]
       ,["WebGLVertexArrayObject", "BrowserWebGLVertexArrayObject"]
+      ,["Worker", "BrowserWorker"]
     ]);
     if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
     if (!node.typeArguments?.length && node.typeName.text === "GPUBufferUsageFlags") return "float";
@@ -1130,7 +1131,14 @@ const renderBase = (declaration, available) => {
   const extendsTypes = (declaration.heritageClauses ?? [])
     .filter(clause => clause.token === ts.SyntaxKind.ExtendsKeyword)
     .flatMap(clause => [...clause.types]);
-  if (extendsTypes.length === 0) return undefined;
+  if (extendsTypes.length === 0) {
+    if (declaration.name?.text === "FlowGraphConnection") {
+      const connectable = maintainedSymbols.get("IConnectable");
+      if (!connectable || connectable.arity !== 0) return null;
+      return { name: "IConnectable", rendered: connectable.fsharpSymbol, builtin: true };
+    }
+    return undefined;
+  }
   if (extendsTypes.length !== 1 || !ts.isIdentifier(extendsTypes[0].expression)) return null;
   const name = extendsTypes[0].expression.text;
   if (name === "Error" && !(extendsTypes[0].typeArguments?.length)) {
@@ -1389,7 +1397,7 @@ if (diagnose) {
   console.log("failure types for highest-impact unrenderable classes:");
   console.log(unrenderableDependencies.slice(0, 20).map(([name, count]) => `${name} (${count} downstream): ${[...(typeFailuresByClass.get(name) ?? [])].slice(0, 8).join(" | ") || "non-type member shape"}`).join("\n"));
   console.log("failure types for foundational class bridge targets:");
-  console.log(["Node", "TransformNode", "FlowGraphContext", "Scene", "AbstractEngine", "Buffer", "VertexBuffer", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix", "Plane", "WebGPUEngine", "WebGPUBufferManager", "WebGPUHardwareTexture", "WebGPUPipelineContext", "WebGPUTimestampQuery", "AudioEngineV2", "_WebAudioEngine", "AudioBus", "MainAudioBus", "_WebAudioStaticSound", "_WebAudioStreamingSound"]
+  console.log(["Node", "TransformNode", "FlowGraphContext", "Scene", "AbstractEngine", "Buffer", "VertexBuffer", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix", "Plane", "WebGPUEngine", "WebGPUBufferManager", "WebGPUHardwareTexture", "WebGPUPipelineContext", "WebGPUTimestampQuery", "AudioEngineV2", "_WebAudioEngine", "AudioBus", "MainAudioBus", "_WebAudioStaticSound", "_WebAudioStreamingSound", "WorkerPool", "AutoReleaseWorkerPool", "TransmissionHelper", "InteractivityGraphToFlowGraphParser"]
     .map(name => {
       const identities = [...declarations].filter(([, entry]) => entry.name === name).map(([identity]) => identity);
       const missing = shapeReadyDependencies.get(name) ?? [];
@@ -1563,8 +1571,13 @@ for (const entry of entries) {
   }
   for (const member of [...entry.instanceMembers, ...entry.staticMembers].filter(member => member.kind === "callbackProperty")) {
     const helperName = `${entry.name}${pascal(member.name)}Callback`;
-    member.helperName = `${helperName}${genericArguments}`;
-    lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName}${genericParameters} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
+    const callbackText = JSON.stringify(member.callback);
+    const helperGenericNames = genericParameterNames.filter(name => callbackText.includes(name));
+    const helperConstraints = entry.genericConstraints.filter(constraint => helperGenericNames.some(name => constraint.startsWith(`${name} `)));
+    const helperGenericParameters = helperGenericNames.length ? `<${helperGenericNames.join(", ")}${helperConstraints.length ? ` when ${helperConstraints.join(" and ")}` : ""}>` : "";
+    const helperGenericArguments = helperGenericNames.length ? `<${helperGenericNames.join(", ")}>` : "";
+    member.helperName = `${helperName}${helperGenericArguments}`;
+    lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName}${helperGenericParameters} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
   }
   lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name}${genericParameters} =`);
   if (entry.base) lines.push(`        inherit ${entry.base.rendered}`);

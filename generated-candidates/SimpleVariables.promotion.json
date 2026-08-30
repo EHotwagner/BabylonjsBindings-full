@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "57502f7b4b54470e6c2990fe427f61fb82e1be20ea038f0539fc72d00f01cc81",
+  "proposalSha256": "310eeab3d387053789179308739eaac3ec1d72227e288b4b9fee4ec163fde556",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -54,6 +54,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener",
+      "name": "_SpatialAudioListenerDefaults",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._SpatialAudioListenerDefaults",
+      "fsharpType": "VariableShape__SpatialAudioListenerDefaults",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/animation.pure",
       "name": "_StaticOffsetValueColor3",
       "kind": "variable",
@@ -73,11 +83,38 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "_StaticOffsetValueQuaternion",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueQuaternion",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableQuaternion"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
       "name": "_StaticOffsetValueSize",
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueSize",
       "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableSize"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "_StaticOffsetValueVector2",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueVector2",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableVector2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "_StaticOffsetValueVector3",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueVector3",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableVector3"
     },
     {
       "package": "@babylonjs/core",
@@ -437,6 +474,26 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/boxBuilder.pure",
+      "name": "BoxBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BoxBuilder",
+      "fsharpType": "VariableShape_BoxBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/brdfTextureTools",
+      "name": "BRDFTextureTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BRDFTextureTools",
+      "fsharpType": "VariableShape_BRDFTextureTools",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/bumpFragment",
       "name": "bumpFragment",
       "kind": "variable",
@@ -514,6 +571,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.CameraInputTypes",
       "fsharpType": "VariableShape_CameraInputTypes",
       "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/capsuleBuilder.pure",
+      "name": "CapsuleBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.CapsuleBuilder",
+      "fsharpType": "VariableShape_CapsuleBuilder",
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",
@@ -807,6 +874,36 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/copyTools",
+      "name": "CopyTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.CopyTools",
+      "fsharpType": "VariableShape_CopyTools",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/cylinderBuilder.pure",
+      "name": "CylinderBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.CylinderBuilder",
+      "fsharpType": "VariableShape_CylinderBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/decalBuilder.pure",
+      "name": "DecalBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DecalBuilder",
+      "fsharpType": "VariableShape_DecalBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/decalFragment",
       "name": "decalFragmentWGSL",
       "kind": "variable",
@@ -1007,6 +1104,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/discBuilder.pure",
+      "name": "DiscBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DiscBuilder",
+      "fsharpType": "VariableShape_DiscBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/displayPass.fragment",
       "name": "displayPassPixelShader",
       "kind": "variable",
@@ -1033,6 +1140,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DomManagement",
       "fsharpType": "VariableShape_DomManagement",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dumpTools.pure",
+      "name": "DumpTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DumpTools",
+      "fsharpType": "VariableShape_DumpTools",
       "memberCount": 4
     },
     {
@@ -1156,12 +1273,32 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
+      "name": "FindMaterial",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FindMaterial",
+      "fsharpType": "VariableFunction_FindMaterial",
+      "parameterCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "FLOAT32_SIZE",
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FLOAT32_SIZE",
       "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides",
+      "name": "FloatingOriginCurrentScene",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FloatingOriginCurrentScene",
+      "fsharpType": "VariableShape_FloatingOriginCurrentScene",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -1425,6 +1562,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphUtils",
+      "name": "FrameGraphUtils",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FrameGraphUtils",
+      "fsharpType": "VariableShape_FrameGraphUtils",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fresnelFunction",
       "name": "fresnelFunctionWGSL",
       "kind": "variable",
@@ -1624,12 +1771,52 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/brdfTextureTools",
+      "name": "GetEnvironmentBRDFTexture",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GetEnvironmentBRDFTexture",
+      "fsharpType": "VariableFunction_GetEnvironmentBRDFTexture",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/brdfTextureTools",
+      "name": "GetEnvironmentFuzzBRDFTexture",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GetEnvironmentFuzzBRDFTexture",
+      "fsharpType": "VariableFunction_GetEnvironmentFuzzBRDFTexture",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "GetInternalFormatFromBasisFormat",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GetInternalFormatFromBasisFormat",
+      "fsharpType": "VariableFunction_GetInternalFormatFromBasisFormat",
+      "parameterCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "GetMimeType",
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GetMimeType",
       "fsharpType": "VariableFunction_GetMimeType",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/brdfTextureTools",
+      "name": "GetOpenPBREnvironmentBRDFTexture",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GetOpenPBREnvironmentBRDFTexture",
+      "fsharpType": "VariableFunction_GetOpenPBREnvironmentBRDFTexture",
       "parameterCount": 1
     },
     {
@@ -2042,6 +2229,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/hemisphereBuilder.pure",
+      "name": "HemisphereBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.HemisphereBuilder",
+      "fsharpType": "VariableShape_HemisphereBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/highlights.fragment",
       "name": "highlightsPixelShader",
       "kind": "variable",
@@ -2447,6 +2644,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure",
+      "name": "IcoSphereBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.IcoSphereBuilder",
+      "fsharpType": "VariableShape_IcoSphereBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/imageProcessingCompatibility",
       "name": "imageProcessingCompatibility",
       "kind": "variable",
@@ -2691,6 +2898,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.kernelBlurVertexShaderWGSL",
       "fsharpType": "VariableShape_kernelBlurVertexShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/latheBuilder.pure",
+      "name": "LatheBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LatheBuilder",
+      "fsharpType": "VariableShape_LatheBuilder",
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",
@@ -2964,6 +3181,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/linesBuilder.pure",
+      "name": "LinesBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LinesBuilder",
+      "fsharpType": "VariableShape_LinesBuilder",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/line.vertex",
       "name": "lineVertexShader",
       "kind": "variable",
@@ -2981,6 +3208,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lineVertexShaderWGSL",
       "fsharpType": "VariableShape_lineVertexShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
+      "name": "LoadDetailLevels",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LoadDetailLevels",
+      "fsharpType": "VariableFunction_LoadDetailLevels",
+      "parameterCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -3450,6 +3687,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "OnAudioEngineV2CreatedObservable",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.OnAudioEngineV2CreatedObservable",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleClasses.AudioEngineV2>"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/openpbr.fragment",
       "name": "openpbrPixelShader",
       "kind": "variable",
@@ -3709,6 +3955,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "PickingCustomization",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PickingCustomization",
+      "fsharpType": "BabylonjsBindings.SimpleInterfaces.IPickingCustomization"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/picking.fragment",
       "name": "pickingPixelShader",
       "kind": "variable",
@@ -3746,6 +4001,36 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pickingVertexShaderWGSL",
       "fsharpType": "VariableShape_pickingVertexShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/planeBuilder.pure",
+      "name": "PlaneBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PlaneBuilder",
+      "fsharpType": "VariableShape_PlaneBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/polygonBuilder.pure",
+      "name": "PolygonBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PolygonBuilder",
+      "fsharpType": "VariableShape_PolygonBuilder",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/polyhedronBuilder.pure",
+      "name": "PolyhedronBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PolyhedronBuilder",
+      "fsharpType": "VariableShape_PolyhedronBuilder",
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",
@@ -3869,6 +4154,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/ribbonBuilder.pure",
+      "name": "RibbonBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RibbonBuilder",
+      "fsharpType": "VariableShape_RibbonBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "RichTypeAny",
       "kind": "variable",
@@ -3915,6 +4210,33 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeMatrix",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeMatrix",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Matrix>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeMatrix2D",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeMatrix2D",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.FlowGraphMatrix2D>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeMatrix3D",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeMatrix3D",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.FlowGraphMatrix3D>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "RichTypeNumber",
       "kind": "variable",
       "disposition": "typed",
@@ -3924,11 +4246,47 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeQuaternion",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeQuaternion",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Quaternion>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "RichTypeString",
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeString",
       "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<string>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeVector2",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeVector2",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Vector2>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeVector3",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeVector3",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Vector3>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeVector4",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeVector4",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Vector4>"
     },
     {
       "package": "@babylonjs/core",
@@ -4317,6 +4675,16 @@
       "fsharpType": "float"
     },
     {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/sphereBuilder.pure",
+      "name": "SphereBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SphereBuilder",
+      "fsharpType": "VariableShape_SphereBuilder",
+      "memberCount": 1
+    },
+    {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/SPLAT/splatFileLoader.metadata",
       "name": "SPLATFileLoaderMetadata",
@@ -4508,6 +4876,36 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
+      "name": "TempMaterialIndexContainer",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TempMaterialIndexContainer",
+      "fsharpType": "VariableShape_TempMaterialIndexContainer",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
+      "name": "TempMorphTargetManagerIndexContainer",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TempMorphTargetManagerIndexContainer",
+      "fsharpType": "VariableShape_TempMorphTargetManagerIndexContainer",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
+      "name": "TempSkeletonIndexContainer",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TempSkeletonIndexContainer",
+      "fsharpType": "VariableShape_TempSkeletonIndexContainer",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "TestBase64DataUrl",
       "kind": "variable",
@@ -4515,6 +4913,36 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TestBase64DataUrl",
       "fsharpType": "VariableFunction_TestBase64DataUrl",
       "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/textureTools",
+      "name": "TextureTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TextureTools",
+      "fsharpType": "VariableShape_TextureTools",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure",
+      "name": "TiledBoxBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TiledBoxBuilder",
+      "fsharpType": "VariableShape_TiledBoxBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure",
+      "name": "TiledPlaneBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TiledPlaneBuilder",
+      "fsharpType": "VariableShape_TiledPlaneBuilder",
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",
@@ -4553,6 +4981,26 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.tonemapPixelShaderWGSL",
       "fsharpType": "VariableShape_tonemapPixelShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/torusBuilder.pure",
+      "name": "TorusBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TorusBuilder",
+      "fsharpType": "VariableShape_TorusBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure",
+      "name": "TorusKnotBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TorusKnotBuilder",
+      "fsharpType": "VariableShape_TorusKnotBuilder",
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",

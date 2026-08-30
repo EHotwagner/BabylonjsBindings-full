@@ -176,7 +176,14 @@ const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
-  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, arity: entry.typeParameterCount ?? 0 }]));
+  .map(entry => [entry.name, {
+    fsharpSymbol: entry.fsharpSymbol,
+    deepImmutableSymbol: entry.deepImmutableSymbol,
+    partialSymbol: entry.partialSymbol,
+    requiredNonNullableSymbol: entry.requiredNonNullableSymbol,
+    requiredSymbol: entry.requiredSymbol,
+    arity: entry.typeParameterCount ?? 0
+  }]));
 
 // The maintained build compiles aliases, interfaces, and classes in one recursive
 // namespace. A bootstrap pass can therefore expose exact class names to interface
@@ -453,6 +460,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ["MediaTrackConstraints", "BrowserMediaTrackConstraints"],
       ["PointerEventInit", "BrowserPointerEventInit"],
       ["WebGLVertexArrayObject", "BrowserWebGLVertexArrayObject"],
+      ["Worker", "BrowserWorker"],
       ["RegExp", "BrowserRegExp"],
       ["XMLHttpRequest", "BrowserXMLHttpRequest"],
       ["URL", "BrowserURL"],
@@ -607,7 +615,11 @@ const renderMembers = (declaration, available) => {
   }
   const members = [];
   const inlineTypes = [];
+  const seenMemberTexts = new Set();
   for (const member of declaration.members) {
+    const memberText = member.getText().replace(/\s+/g, " ");
+    if (seenMemberTexts.has(memberText)) continue;
+    seenMemberTexts.add(memberText);
     if ((ts.isPropertySignature(member) || ts.isMethodSignature(member)) && (!ts.isIdentifier(member.name) && !ts.isStringLiteral(member.name))) return undefined;
     if (ts.isPropertySignature(member) && member.type) {
       const callbackProperty = callbackPropertyType(member.type);
@@ -851,7 +863,7 @@ if (diagnose) {
   console.log("top unresolved interface dependencies:");
   console.log([...missingCounts].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 40).map(([name, count]) => `${name} ${count}`).join("\n"));
   console.log("failure types for foundational interface bridge targets:");
-  console.log(["AbstractEngineOptions", "EngineOptions", "IAccessibilityTag", "IAudioEngineOptions", "IAudioBusOptions", "IAbstractSoundOptions", "IStaticSoundOptions", "IStreamingSoundOptions", "ICreateAndPreparePipelineContextOptions", "IInternalTextureLoader", "IImage", "IMeshDataOptions", "IParticleSystem", "IPipelineGenerationOptions", "IShadowGenerator", "ICollisionCoordinator", "IFlowGraphPendingActivation", "IAssetContainer", "IBakedVertexAnimationManager", "ICullable", "IPipelineContext", "IShaderProcessor", "EngineCapabilities", "WebXRRenderTarget", "IWebXRFeature", "WebGPUEngineOptions"]
+  console.log(["AbstractEngineOptions", "EngineOptions", "IAccessibilityTag", "IAudioEngineOptions", "IAudioBusOptions", "IAbstractSoundOptions", "IStaticSoundOptions", "IStreamingSoundOptions", "ICreateAndPreparePipelineContextOptions", "IInternalTextureLoader", "IImage", "IMeshDataOptions", "IParticleSystem", "IPipelineGenerationOptions", "IShadowGenerator", "ICollisionCoordinator", "IFlowGraphPendingActivation", "IAssetContainer", "IBakedVertexAnimationManager", "ICullable", "IPipelineContext", "IShaderProcessor", "EngineCapabilities", "WebXRRenderTarget", "IWebXRFeature", "WebGPUEngineOptions", "ITransmissionHelperMaterialImpl"]
     .map(name => {
       const identities = [...declarations].filter(([, entry]) => entry.name === name).map(([identity]) => identity);
       const state = `declarations=${identities.length}, selected=${identities.filter(identity => selected.has(identity)).length}, recursive=${identities.filter(identity => recursiveCandidates.has(identity)).length}, missing=${(missingByInterface.get(name) ?? []).join(",") || "none"}`;
@@ -988,7 +1000,7 @@ for (const [name, description, values] of [
   ["BrowserGPUTextureViewDimension", "texture-view dimension", ["1d", "2d", "2d-array", "cube", "cube-array", "3d"]]
 ]) lines.push("", `    /// Exact WebGPU ${description} literals.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, ...values.map(value => `        | [<CompiledName(${fsharpString(value)})>] ${value.split(/[^A-Za-z0-9]+/).map(part => `${/^[0-9]/.test(part) ? "D" : ""}${part[0].toUpperCase()}${part.slice(1)}`).join("")}`));
 lines.push("", "    /// Exact WebGPU GPUBuffer instance surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserGPUBuffer =", "        abstract label: string with get, set", "        abstract size: float with get", "        abstract usage: float with get", "        abstract mapState: BrowserGPUBufferMapState with get", "        abstract mapAsync: mode: float * ?offset: float * ?size: float -> JS.Promise<unit>", "        abstract getMappedRange: ?offset: float * ?size: float -> JS.ArrayBuffer", "        abstract unmap: unit -> unit", "        abstract destroy: unit -> unit");
-for (const [name, description] of [["BrowserGPUDevice", "WebGPU device"], ["BrowserGPURenderPassEncoder", "WebGPU render-pass encoder"], ["BrowserGPURenderPipeline", "WebGPU render pipeline"], ["BrowserGPUQuerySet", "WebGPU query set"], ["BrowserGPUCommandEncoder", "WebGPU command encoder"], ["BrowserGPURenderBundle", "WebGPU render bundle"], ["BrowserGPUTexture", "WebGPU texture"], ["BrowserGPUSampler", "WebGPU sampler"], ["BrowserGPUBindGroup", "WebGPU bind group"], ["BrowserGPUBindGroupLayout", "WebGPU bind-group layout"], ["BrowserGPUPipelineLayout", "WebGPU pipeline layout"], ["BrowserGPUShaderModule", "WebGPU shader module"], ["BrowserGPUComputePipeline", "WebGPU compute pipeline"], ["BrowserGPUCommandBuffer", "WebGPU command buffer"], ["BrowserGPUTextureView", "WebGPU texture view"], ["BrowserGPUAdapter", "WebGPU adapter"], ["BrowserGPUCanvasContext", "WebGPU canvas context"], ["BrowserGPUExternalTexture", "WebGPU external texture"], ["BrowserGPURenderBundleEncoder", "WebGPU render-bundle encoder"], ["BrowserGPURenderPassDescriptor", "WebGPU render-pass descriptor"], ["BrowserGPURenderPipelineDescriptor", "WebGPU render-pipeline descriptor"], ["BrowserGPUProgrammableStage", "WebGPU programmable-stage descriptor"], ["BrowserGPUBindGroupLayoutEntry", "WebGPU bind-group-layout entry"], ["BrowserGPUBindGroupEntry", "WebGPU bind-group entry"], ["BrowserGPUComputePassDescriptor", "WebGPU compute-pass descriptor"], ["BrowserGPUTextureViewDescriptor", "WebGPU texture-view descriptor"], ["BrowserXRWebGLBinding", "WebXR WebGL binding"], ["BrowserXRCompositionLayer", "WebXR composition-layer"], ["BrowserAudioBuffer", "Web Audio buffer"], ["BrowserAudioNode", "Web Audio node"], ["BrowserGainNode", "Web Audio gain node"], ["BrowserOfflineAudioContext", "offline Web Audio context"], ["BrowserAudioBufferSourceNode", "Web Audio buffer-source node"], ["BrowserMediaTrackConstraints", "media-track constraints"], ["BrowserPointerEventInit", "pointer-event initializer"], ["BrowserWebGLVertexArrayObject", "WebGL vertex-array object"]]) {
+for (const [name, description] of [["BrowserGPUDevice", "WebGPU device"], ["BrowserGPURenderPassEncoder", "WebGPU render-pass encoder"], ["BrowserGPURenderPipeline", "WebGPU render pipeline"], ["BrowserGPUQuerySet", "WebGPU query set"], ["BrowserGPUCommandEncoder", "WebGPU command encoder"], ["BrowserGPURenderBundle", "WebGPU render bundle"], ["BrowserGPUTexture", "WebGPU texture"], ["BrowserGPUSampler", "WebGPU sampler"], ["BrowserGPUBindGroup", "WebGPU bind group"], ["BrowserGPUPipelineLayout", "WebGPU pipeline layout"], ["BrowserGPUBindGroupLayout", "WebGPU bind-group layout"], ["BrowserGPUShaderModule", "WebGPU shader module"], ["BrowserGPUComputePipeline", "WebGPU compute pipeline"], ["BrowserGPUCommandBuffer", "WebGPU command buffer"], ["BrowserGPUTextureView", "WebGPU texture view"], ["BrowserGPUAdapter", "WebGPU adapter"], ["BrowserGPUCanvasContext", "WebGPU canvas context"], ["BrowserGPUExternalTexture", "WebGPU external texture"], ["BrowserGPURenderBundleEncoder", "WebGPU render-bundle encoder"], ["BrowserGPURenderPassDescriptor", "WebGPU render-pass descriptor"], ["BrowserGPURenderPipelineDescriptor", "WebGPU render-pipeline descriptor"], ["BrowserGPUProgrammableStage", "WebGPU programmable-stage descriptor"], ["BrowserGPUBindGroupLayoutEntry", "WebGPU bind-group-layout entry"], ["BrowserGPUBindGroupEntry", "WebGPU bind-group entry"], ["BrowserGPUComputePassDescriptor", "WebGPU compute-pass descriptor"], ["BrowserGPUTextureViewDescriptor", "WebGPU texture-view descriptor"], ["BrowserXRWebGLBinding", "WebXR WebGL binding"], ["BrowserXRCompositionLayer", "WebXR composition-layer"], ["BrowserAudioBuffer", "Web Audio buffer"], ["BrowserAudioNode", "Web Audio node"], ["BrowserGainNode", "Web Audio gain node"], ["BrowserOfflineAudioContext", "offline Web Audio context"], ["BrowserAudioBufferSourceNode", "Web Audio buffer-source node"], ["BrowserMediaTrackConstraints", "media-track constraints"], ["BrowserPointerEventInit", "pointer-event initializer"], ["BrowserWebGLVertexArrayObject", "WebGL vertex-array object"], ["BrowserWorker", "Web Worker"]]) {
   lines.push("", `    /// Distinct ambient ${description} handle.`, "    [<AllowNullLiteral>]", `    type ${name} =`, "        interface end");
 }
 lines.push("", "    /// Distinct ambient WebGPU device-descriptor surface.", "    [<AllowNullLiteral>]", "    type BrowserGPUDeviceDescriptor =", "        interface end");
