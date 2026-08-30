@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "6a649b336bd10d44c706ddda092404bff9477f9e164f11113dd6f94e20247c37",
+  "proposalSha256": "fb09897bca27781eacb6d99f7cf1b11eb1db1f441c8858639cf11a8a92ffcab3",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -88,6 +88,24 @@
       "memberCount": 5
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoader.pure",
+      "name": "ArrayItem",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ArrayItem",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tools.pure",
+      "name": "AsyncLoop",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AsyncLoop",
+      "memberCount": 7
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
       "name": "BabylonFileLoaderConfiguration",
@@ -140,6 +158,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ClipboardEventTypes",
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.color.pure",
+      "name": "Color4",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Color4",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableColor4",
+      "memberCount": 71
     },
     {
       "package": "@babylonjs/core",
@@ -287,6 +315,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphConnection",
+      "name": "FlowGraphConnection",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConnection",
+      "typeParameterCount": 2,
+      "memberCount": 17
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure",
       "name": "FlowGraphInteger",
       "kind": "class",
@@ -402,6 +440,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MatrixManagement",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/meshoptCompression",
+      "name": "MeshoptCompression",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MeshoptCompression",
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -582,6 +629,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Size",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableSize",
       "memberCount": 18
     },
     {
@@ -641,6 +689,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix",
+      "name": "ThinMatrix",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ThinMatrix",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Sprites/thinSprite",
       "name": "ThinSprite",
       "kind": "class",
@@ -673,6 +730,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Viewport",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableViewport",
       "memberCount": 8
     },
     {
@@ -710,6 +768,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUTintWASM",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "WebXRFeatureName",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRFeatureName",
+      "memberCount": 23
     },
     {
       "package": "@babylonjs/core",
@@ -755,6 +822,25 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CircleEase",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.color.pure",
+      "name": "Color3",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Color3",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableColor3",
+      "memberCount": 87
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/gradients",
+      "name": "ColorGradient",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ColorGradient",
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -985,6 +1071,24 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/gradients",
+      "name": "Color3Gradient",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Color3Gradient",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/gradientBlock.pure",
+      "name": "GradientBlockColorStep",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GradientBlockColorStep",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/observable.pure",
       "name": "Observable",
       "kind": "class",
@@ -1001,6 +1105,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ReadFileError",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.color.pure",
+      "name": "TmpColors",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.TmpColors",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",

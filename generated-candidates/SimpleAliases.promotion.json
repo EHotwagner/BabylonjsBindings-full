@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "17d5604e39927a17f73da2adf611d2b1c9013e344421d67c5841e411e864660e",
+  "proposalSha256": "f8d64337db16efd5c61a1802d03b29a136a3920db89c6a83bc8a36b929d9ebaa",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -33,6 +33,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FloatArray",
+      "deepImmutableSymbol": "BabylonjsBindings.TypeAliases.DeepImmutableFloatArray",
       "shape": "alias",
       "memberCount": 1
     },

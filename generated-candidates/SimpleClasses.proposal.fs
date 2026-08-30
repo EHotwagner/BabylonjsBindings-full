@@ -14,6 +14,196 @@ module SimpleClasses =
         abstract stack: string option with get, set
         abstract cause: obj option with get, set
 
+    /// Uninhabited return marker for TypeScript `never` members.
+    type Never = private Never of unit
+
+    /// JavaScript constructor object compatible with `new (...args: any[]) => T`.
+    [<AllowNullLiteral>]
+    type Constructor<'T> =
+        [<EmitConstructor>] abstract Create: [<System.ParamArray>] args: obj[] -> 'T
+
+    /// Exact read-only JavaScript tuple shape with one element.
+    [<AllowNullLiteral>]
+    type ReadonlyTuple1<'T> =
+        [<Emit("$0[0]")>] abstract Item1: 'T
+
+    /// Exact numeric literal type for 1.
+    type NumericLiteral1 =
+        | Value = 1
+
+    /// Exact numeric literal type for 2.
+    type NumericLiteral2 =
+        | Value = 2
+
+    /// Exact numeric literal type for 3.
+    type NumericLiteral3 =
+        | Value = 3
+
+    /// Exact numeric literal type for 4.
+    type NumericLiteral4 =
+        | Value = 4
+
+    /// Exact string literal type for "xr-walking-locomotion".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral01523b3dbcda =
+        | [<CompiledName("xr-walking-locomotion")>] Value
+
+    /// Exact string literal type for "xr-mesh-detection".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral02f2c64c3c6e =
+        | [<CompiledName("xr-mesh-detection")>] Value
+
+    /// Exact string literal type for "xr-hand-tracking".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral030241635d52 =
+        | [<CompiledName("xr-hand-tracking")>] Value
+
+    /// Exact string literal type for "xr-hit-test".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral038540c29087 =
+        | [<CompiledName("xr-hit-test")>] Value
+
+    /// Exact string literal type for "xr-controller-movement".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral33d177285f0d =
+        | [<CompiledName("xr-controller-movement")>] Value
+
+    /// Exact string literal type for "xr-controller-teleportation".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral4bff47d82478 =
+        | [<CompiledName("xr-controller-teleportation")>] Value
+
+    /// Exact string literal type for "xr-raw-camera-access".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral50cc4e104033 =
+        | [<CompiledName("xr-raw-camera-access")>] Value
+
+    /// Exact string literal type for "xr-plane-detection".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral6a69383955b8 =
+        | [<CompiledName("xr-plane-detection")>] Value
+
+    /// Exact string literal type for "xr-light-estimation".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral7032ede09087 =
+        | [<CompiledName("xr-light-estimation")>] Value
+
+    /// Exact string literal type for "xr-near-interaction".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral76a2d47646e9 =
+        | [<CompiledName("xr-near-interaction")>] Value
+
+    /// Exact string literal type for "inverse".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral7705accd2694 =
+        | [<CompiledName("inverse")>] Value
+
+    /// Exact string literal type for "bvh".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral793acfa0f18b =
+        | [<CompiledName("bvh")>] Value
+
+    /// Exact string literal type for "splat".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral7cb4bd2c12a4 =
+        | [<CompiledName("splat")>] Value
+
+    /// Exact string literal type for "linear".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral7f2fe580edb3 =
+        | [<CompiledName("linear")>] Value
+
+    /// Exact string literal type for "xr-space-warp".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral88cc4eeec491 =
+        | [<CompiledName("xr-space-warp")>] Value
+
+    /// Exact string literal type for "fbx".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral932153c31e61 =
+        | [<CompiledName("fbx")>] Value
+
+    /// Exact string literal type for "xr-dom-overlay".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral955401cfb798 =
+        | [<CompiledName("xr-dom-overlay")>] Value
+
+    /// Exact string literal type for "xr-controller-pointer-selection".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral9607d79e7e6e =
+        | [<CompiledName("xr-controller-pointer-selection")>] Value
+
+    /// Exact string literal type for "xr-anchor-system".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral9e130c3af18e =
+        | [<CompiledName("xr-anchor-system")>] Value
+
+    /// Exact string literal type for "xr-image-tracking".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiterala08dc5432e1f =
+        | [<CompiledName("xr-image-tracking")>] Value
+
+    /// Exact string literal type for "TRIANGLES".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiterala47bc963946f =
+        | [<CompiledName("TRIANGLES")>] Value
+
+    /// Exact string literal type for "ATTRIBUTES".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralafa7e559a55d =
+        | [<CompiledName("ATTRIBUTES")>] Value
+
+    /// Exact string literal type for "xr-eye-tracking".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralbe2f3b88c67d =
+        | [<CompiledName("xr-eye-tracking")>] Value
+
+    /// Exact string literal type for "xr-physics-controller".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralc472f4f2d0c2 =
+        | [<CompiledName("xr-physics-controller")>] Value
+
+    /// Exact string literal type for "exponential".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiterald075063d475b =
+        | [<CompiledName("exponential")>] Value
+
+    /// Exact string literal type for "xr-background-remover".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteraldf6ae87ca350 =
+        | [<CompiledName("xr-background-remover")>] Value
+
+    /// Exact string literal type for "INDICES".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiterale21255ec54ba =
+        | [<CompiledName("INDICES")>] Value
+
+    /// Exact string literal type for "xr-layers".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralefbd279abf11 =
+        | [<CompiledName("xr-layers")>] Value
+
+    /// Exact string literal type for "xr-depth-sensing".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralf184bcb50f8c =
+        | [<CompiledName("xr-depth-sensing")>] Value
+
+    /// Exact string literal type for "xr-body-tracking".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralfa28fe3971d3 =
+        | [<CompiledName("xr-body-tracking")>] Value
+
+    /// Exact string literal type for "xr-feature-points".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralfcd8fcbdec72 =
+        | [<CompiledName("xr-feature-points")>] Value
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type PartialObject7429cbc53590Object =
+        abstract ``message``: string option with get, set
+        abstract ``exception``: obj option with get, set
+
     /// @babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure
     [<AllowNullLiteral>]
     type _OcclusionDataStorage =
@@ -28,6 +218,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type _OcclusionDataStorageStatic =
+        inherit Constructor<_OcclusionDataStorage>
         [<EmitConstructor>] abstract Create: unit -> _OcclusionDataStorage
 
     [<Import("_OcclusionDataStorage", "@babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure.js")>]
@@ -89,13 +280,11 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type AlphaStateStatic =
+        inherit Constructor<AlphaState>
         [<EmitConstructor>] abstract Create: ``_supportBlendParametersPerTarget``: bool -> AlphaState
 
     [<Import("AlphaState", "@babylonjs/core/States/alphaCullingState.js")>]
     let AlphaState: AlphaStateStatic = jsNative
-
-    /// Uncurried function-valued argument used by AndOrNotEvaluator.
-    type AndOrNotEvaluatorMethod1Parameter2Callback = System.Func<obj, bool>
 
     /// @babylonjs/core/Misc/andOrNotEvaluator
     [<AllowNullLiteral>]
@@ -104,14 +293,12 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type AndOrNotEvaluatorStatic =
+        inherit Constructor<AndOrNotEvaluator>
         [<EmitConstructor>] abstract Create: unit -> AndOrNotEvaluator
-        abstract ``Eval``: ``query``: string * ``evaluateCallback``: AndOrNotEvaluatorMethod1Parameter2Callback -> bool
+        abstract ``Eval``: ``query``: string * ``evaluateCallback``: System.Func<obj, bool> -> bool
 
     [<Import("AndOrNotEvaluator", "@babylonjs/core/Misc/andOrNotEvaluator.js")>]
     let AndOrNotEvaluator: AndOrNotEvaluatorStatic = jsNative
-
-    /// Uncurried function-valued argument used by AnimationEvent.
-    type AnimationEventConstructor5Parameter2Callback = System.Action<float>
 
     /// Function-valued AnimationEvent.action property.
     [<AllowNullLiteral>]
@@ -129,7 +316,8 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type AnimationEventStatic =
-        [<EmitConstructor>] abstract Create: ``frame``: float * ``action``: AnimationEventConstructor5Parameter2Callback * ?``onlyOnce``: bool -> AnimationEvent
+        inherit Constructor<AnimationEvent>
+        [<EmitConstructor>] abstract Create: ``frame``: float * ``action``: System.Action<float> * ?``onlyOnce``: bool -> AnimationEvent
 
     [<Import("AnimationEvent", "@babylonjs/core/Animations/animationEvent.js")>]
     let AnimationEvent: AnimationEventStatic = jsNative
@@ -146,6 +334,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type AnimationGroupMaskStatic =
+        inherit Constructor<AnimationGroupMask>
         [<EmitConstructor>] abstract Create: ?``names``: ResizeArray<string> * ?``mode``: BabylonjsBindings.Enums.AnimationGroupMaskMode -> AnimationGroupMask
 
     [<Import("AnimationGroupMask", "@babylonjs/core/Animations/animationGroupMask.js")>]
@@ -160,6 +349,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type AnimationPropertiesOverrideStatic =
+        inherit Constructor<AnimationPropertiesOverride>
         [<EmitConstructor>] abstract Create: unit -> AnimationPropertiesOverride
 
     [<Import("AnimationPropertiesOverride", "@babylonjs/core/Animations/animationPropertiesOverride.js")>]
@@ -175,10 +365,45 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type AnimationRangeStatic =
+        inherit Constructor<AnimationRange>
         [<EmitConstructor>] abstract Create: ``name``: string * ``from``: float * ``to``: float -> AnimationRange
 
     [<Import("AnimationRange", "@babylonjs/core/Animations/animationRange.js")>]
     let AnimationRange: AnimationRangeStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoader.pure
+    [<AllowNullLiteral>]
+    type ArrayItem =
+        interface end
+
+    [<AllowNullLiteral>]
+    type ArrayItemStatic =
+        inherit Constructor<ArrayItem>
+        [<EmitConstructor>] abstract Create: unit -> ArrayItem
+        abstract ``Get``<'T>: ``context``: string * ``array``: System.Collections.Generic.IReadOnlyList<'T> option * ``index``: float option -> 'T
+        abstract ``TryGet``<'T>: ``array``: System.Collections.Generic.IReadOnlyList<'T> option * ``index``: float option -> 'T option
+        abstract ``Assign``: ?``array``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IArrayItem> -> unit
+
+    [<Import("ArrayItem", "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js")>]
+    let ArrayItem: ArrayItemStatic = jsNative
+
+    /// @babylonjs/core/Misc/tools.pure
+    [<AllowNullLiteral>]
+    type AsyncLoop =
+        abstract ``iterations``: float with get, set
+        abstract ``index``: float with get, set
+        abstract ``executeNext``: unit -> unit
+        abstract ``breakLoop``: unit -> unit
+
+    [<AllowNullLiteral>]
+    type AsyncLoopStatic =
+        inherit Constructor<AsyncLoop>
+        [<EmitConstructor>] abstract Create: ``iterations``: float * ``func``: System.Action<AsyncLoop> * ``successCallback``: System.Action * ?``offset``: float -> AsyncLoop
+        abstract ``Run``: ``iterations``: float * ``fn``: System.Action<AsyncLoop> * ``successCallback``: System.Action * ?``offset``: float -> AsyncLoop
+        abstract ``SyncAsyncForLoop``: ``iterations``: float * ``syncedIterations``: float * ``fn``: System.Action<float> * ``callback``: System.Action * ?``breakFunction``: System.Func<bool> * ?``timeout``: float -> AsyncLoop
+
+    [<Import("AsyncLoop", "@babylonjs/core/Misc/tools.pure.js")>]
+    let AsyncLoop: AsyncLoopStatic = jsNative
 
     /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
     [<AllowNullLiteral>]
@@ -187,6 +412,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type BabylonFileLoaderConfigurationStatic =
+        inherit Constructor<BabylonFileLoaderConfiguration>
         [<EmitConstructor>] abstract Create: unit -> BabylonFileLoaderConfiguration
         abstract ``LoaderInjectedPhysicsEngine``: obj with get, set
 
@@ -224,6 +450,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type BasisTranscodeConfigurationStatic =
+        inherit Constructor<BasisTranscodeConfiguration>
         [<EmitConstructor>] abstract Create: unit -> BasisTranscodeConfiguration
 
     [<Import("BasisTranscodeConfiguration", "@babylonjs/core/Misc/basis.pure.js")>]
@@ -236,6 +463,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type BezierCurveStatic =
+        inherit Constructor<BezierCurve>
         [<EmitConstructor>] abstract Create: unit -> BezierCurve
         abstract ``Interpolate``: ``t``: float * ``x1``: float * ``y1``: float * ``x2``: float * ``y2``: float -> float
 
@@ -251,6 +479,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type BitArrayStatic =
+        inherit Constructor<BitArray>
         [<EmitConstructor>] abstract Create: ``size``: float -> BitArray
 
     [<Import("BitArray", "@babylonjs/core/Misc/bitArray.js")>]
@@ -263,6 +492,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type ClipboardEventTypesStatic =
+        inherit Constructor<ClipboardEventTypes>
         [<EmitConstructor>] abstract Create: unit -> ClipboardEventTypes
         abstract ``COPY``: float with get
         abstract ``CUT``: float with get
@@ -271,6 +501,150 @@ module SimpleClasses =
     [<Import("ClipboardEventTypes", "@babylonjs/core/Events/clipboardEvents.js")>]
     let ClipboardEventTypes: ClipboardEventTypesStatic = jsNative
 
+    /// @babylonjs/core/Maths/math.color.pure
+    [<AllowNullLiteral>]
+    type Color4 =
+        abstract ``r``: float with get, set
+        abstract ``g``: float with get, set
+        abstract ``b``: float with get, set
+        abstract ``a``: float with get, set
+        abstract ``dimension``: ReadonlyTuple1<NumericLiteral4> with get
+        abstract ``rank``: NumericLiteral1 with get
+        abstract ``asArray``: unit -> (float * float * float * float)
+        abstract ``toArray``: ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color4
+        abstract ``fromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color4
+        abstract ``equals``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> bool
+        abstract ``add``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``addInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``addInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``subtract``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``subtractInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``subtractFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``r``: float * ``g``: float * ``b``: float * ``a``: float * ``result``: 'T -> 'T
+        abstract ``scale``: ``scale``: float -> Color4
+        abstract ``scaleInPlace``: ``scale``: float -> Color4
+        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``scale``: float * ``result``: 'T -> 'T
+        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``scale``: float * ``result``: 'T -> 'T
+        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
+        abstract ``multiply``: ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``multiplyInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``multiplyByFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``divide``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
+        abstract ``divideToRef``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``divideInPlace``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
+        abstract ``minimizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``maximizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``minimizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``maximizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``floorToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``floor``: unit -> Never
+        abstract ``fractToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``fract``: unit -> Never
+        abstract ``negate``: unit -> Never
+        abstract ``negateInPlace``: unit -> Never
+        abstract ``negateToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``equalsWithEpsilon``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ?``epsilon``: float -> bool
+        abstract ``equalsToFloats``: ``x``: float * ``y``: float * ``z``: float * ``w``: float -> bool
+        abstract ``toString``: unit -> string
+        abstract ``getClassName``: unit -> string
+        abstract ``getHashCode``: unit -> float
+        abstract ``clone``: unit -> Color4
+        abstract ``copyFrom``: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``copyFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``set``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``setAll``: ``v``: float -> Color4
+        abstract ``toHexString``: ?``returnAsColor3``: bool -> string
+        abstract ``fromHexString``: ``hex``: string -> Color4
+        abstract ``toLinearSpace``: ?``exact``: bool -> Color4
+        abstract ``toLinearSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
+        abstract ``toGammaSpace``: ?``exact``: bool -> Color4
+        abstract ``toGammaSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
+
+    /// Exact readonly projection of Color4 used by Babylon DeepImmutable<Color4> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableColor4 =
+        abstract ``r``: float with get
+        abstract ``g``: float with get
+        abstract ``b``: float with get
+        abstract ``a``: float with get
+        abstract ``dimension``: ReadonlyTuple1<NumericLiteral4> with get
+        abstract ``rank``: NumericLiteral1 with get
+        abstract ``asArray``: unit -> (float * float * float * float)
+        abstract ``toArray``: ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color4
+        abstract ``fromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color4
+        abstract ``equals``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> bool
+        abstract ``add``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``addInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``addInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``subtract``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``subtractInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``subtractFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``r``: float * ``g``: float * ``b``: float * ``a``: float * ``result``: 'T -> 'T
+        abstract ``scale``: ``scale``: float -> Color4
+        abstract ``scaleInPlace``: ``scale``: float -> Color4
+        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``scale``: float * ``result``: 'T -> 'T
+        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``scale``: float * ``result``: 'T -> 'T
+        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
+        abstract ``multiply``: ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``multiplyInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``multiplyByFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``divide``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
+        abstract ``divideToRef``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``divideInPlace``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
+        abstract ``minimizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``maximizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``minimizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``maximizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``floorToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``floor``: unit -> Never
+        abstract ``fractToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``fract``: unit -> Never
+        abstract ``negate``: unit -> Never
+        abstract ``negateInPlace``: unit -> Never
+        abstract ``negateToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``equalsWithEpsilon``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ?``epsilon``: float -> bool
+        abstract ``equalsToFloats``: ``x``: float * ``y``: float * ``z``: float * ``w``: float -> bool
+        abstract ``toString``: unit -> string
+        abstract ``getClassName``: unit -> string
+        abstract ``getHashCode``: unit -> float
+        abstract ``clone``: unit -> Color4
+        abstract ``copyFrom``: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``copyFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``set``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``setAll``: ``v``: float -> Color4
+        abstract ``toHexString``: ?``returnAsColor3``: bool -> string
+        abstract ``fromHexString``: ``hex``: string -> Color4
+        abstract ``toLinearSpace``: ?``exact``: bool -> Color4
+        abstract ``toLinearSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
+        abstract ``toGammaSpace``: ?``exact``: bool -> Color4
+        abstract ``toGammaSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
+
+    [<AllowNullLiteral>]
+    type Color4Static =
+        inherit Constructor<Color4>
+        [<EmitConstructor>] abstract Create: ?``r``: float * ?``g``: float * ?``b``: float * ?``a``: float -> Color4
+        abstract ``_V8PerformanceHack``: DeepImmutableColor4 with get, set
+        abstract ``FromHexString``: ``hex``: string -> Color4
+        abstract ``Lerp``: ``left``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``right``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``amount``: float -> Color4
+        abstract ``LerpToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``left``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``right``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``amount``: float * ``result``: 'T -> 'T
+        abstract ``Hermite``: ``value1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``value2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``amount``: float -> Color4
+        abstract ``Hermite1stDerivative``: ``value1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``value2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``time``: float -> Color4
+        abstract ``Hermite1stDerivativeToRef``: ``value1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``value2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``time``: float * ``result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> unit
+        abstract ``FromColor3``: ``color3``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ?``alpha``: float -> Color4
+        abstract ``FromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color4
+        abstract ``FromArrayToRef``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ``offset``: float option * ``result``: Color4 -> unit
+        abstract ``FromInts``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``CheckColors4``: ``colors``: ResizeArray<float> * ``count``: float -> ResizeArray<float>
+
+    [<Import("Color4", "@babylonjs/core/Maths/math.color.pure.js")>]
+    let Color4: Color4Static = jsNative
+
     /// @babylonjs/core/Engines/constants
     [<AllowNullLiteral>]
     type Constants =
@@ -278,6 +652,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type ConstantsStatic =
+        inherit Constructor<Constants>
         [<EmitConstructor>] abstract Create: unit -> Constants
         abstract ``AUTOSAMPLERSUFFIX``: string with get
         abstract ``DISABLEUA``: string with get
@@ -637,36 +1012,19 @@ module SimpleClasses =
     [<Import("Constants", "@babylonjs/core/Engines/constants.js")>]
     let Constants: ConstantsStatic = jsNative
 
-    /// Uncurried function-valued argument used by Database.
-    type DatabaseConstructor14Parameter2Callback = System.Func<bool, obj>
-
-    /// Uncurried function-valued argument used by Database.
-    type DatabaseMethod18Parameter1Callback = System.Action
-
-    /// Uncurried function-valued argument used by Database.
-    type DatabaseMethod18Parameter2Callback = System.Action
-
-    /// Uncurried function-valued argument used by Database.
-    type DatabaseMethod25Parameter2Callback = System.Action<obj>
-
-    /// Uncurried function-valued argument used by Database.
-    type DatabaseMethod25Parameter3Callback = System.Action<obj>
-
-    /// Uncurried function-valued argument used by Database.
-    type DatabaseMethod25Parameter4Callback = System.Action
-
     /// @babylonjs/core/Offline/database.pure
     [<AllowNullLiteral>]
     type Database =
-        abstract ``open``: ``successCallback``: DatabaseMethod18Parameter1Callback * ``errorCallback``: DatabaseMethod18Parameter2Callback -> unit
+        abstract ``open``: ``successCallback``: System.Action * ``errorCallback``: System.Action -> unit
         abstract ``loadImage``: ``url``: string * ``image``: Browser.Types.HTMLImageElement -> unit
-        abstract ``loadFile``: ``url``: string * ``sceneLoaded``: DatabaseMethod25Parameter2Callback * ?``progressCallBack``: DatabaseMethod25Parameter3Callback * ?``errorCallback``: DatabaseMethod25Parameter4Callback * ?``useArrayBuffer``: bool -> unit
+        abstract ``loadFile``: ``url``: string * ``sceneLoaded``: System.Action<obj> * ?``progressCallBack``: System.Action<obj> * ?``errorCallback``: System.Action * ?``useArrayBuffer``: bool -> unit
         abstract ``enableSceneOffline``: bool with get
         abstract ``enableTexturesOffline``: bool with get
 
     [<AllowNullLiteral>]
     type DatabaseStatic =
-        [<EmitConstructor>] abstract Create: ``urlToScene``: string * ``callbackManifestChecked``: DatabaseConstructor14Parameter2Callback * ?``disableManifestCheck``: bool -> Database
+        inherit Constructor<Database>
+        [<EmitConstructor>] abstract Create: ``urlToScene``: string * ``callbackManifestChecked``: System.Func<bool, obj> * ?``disableManifestCheck``: bool -> Database
         abstract ``IDBStorageEnabled``: bool with get, set
 
     [<Import("Database", "@babylonjs/core/Offline/database.pure.js")>]
@@ -683,6 +1041,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type DataBufferStatic =
+        inherit Constructor<DataBuffer>
         [<EmitConstructor>] abstract Create: unit -> DataBuffer
 
     [<Import("DataBuffer", "@babylonjs/core/Buffers/dataBuffer.js")>]
@@ -701,6 +1060,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type DataReaderStatic =
+        inherit Constructor<DataReader>
         [<EmitConstructor>] abstract Create: ``buffer``: BabylonjsBindings.SimpleInterfaces.IDataBuffer -> DataReader
 
     [<Import("DataReader", "@babylonjs/core/Misc/dataReader.js")>]
@@ -713,6 +1073,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type DataStorageStatic =
+        inherit Constructor<DataStorage>
         [<EmitConstructor>] abstract Create: unit -> DataStorage
         abstract ``ReadString``: ``key``: string * ``defaultValue``: string -> string
         abstract ``WriteString``: ``key``: string * ``value``: string -> unit
@@ -733,6 +1094,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type DeepCopierStatic =
+        inherit Constructor<DeepCopier>
         [<EmitConstructor>] abstract Create: unit -> DeepCopier
         abstract ``DeepCopy``: ``source``: obj * ``destination``: obj * ?``doNotCopyList``: ResizeArray<string> * ?``mustCopyList``: ResizeArray<string> * ?``shallowCopyValues``: bool -> unit
 
@@ -749,6 +1111,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type DefaultLoadingScreenStatic =
+        inherit Constructor<DefaultLoadingScreen>
         [<EmitConstructor>] abstract Create: ``_renderingCanvas``: Browser.Types.HTMLCanvasElement * ?``_loadingText``: string * ?``_loadingDivBackgroundColor``: string -> DefaultLoadingScreen
         abstract ``DefaultLogoUrl``: string with get, set
         abstract ``DefaultSpinnerUrl``: string with get, set
@@ -773,6 +1136,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type DepthCullingStateStatic =
+        inherit Constructor<DepthCullingState>
         [<EmitConstructor>] abstract Create: ?``reset``: bool -> DepthCullingState
 
     [<Import("DepthCullingState", "@babylonjs/core/States/depthCullingState.js")>]
@@ -789,6 +1153,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type DepthSortedParticleStatic =
+        inherit Constructor<DepthSortedParticle>
         [<EmitConstructor>] abstract Create: ``idx``: float * ``ind``: float * ``indLength``: float * ``materialIndex``: float -> DepthSortedParticle
 
     [<Import("DepthSortedParticle", "@babylonjs/core/Particles/solidParticle.js")>]
@@ -804,6 +1169,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type DynamicFloat32ArrayStatic =
+        inherit Constructor<DynamicFloat32Array>
         [<EmitConstructor>] abstract Create: ``itemCapacity``: float -> DynamicFloat32Array
 
     [<Import("DynamicFloat32Array", "@babylonjs/core/Misc/PerformanceViewer/dynamicFloat32Array.js")>]
@@ -819,6 +1185,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type EasingFunctionStatic =
+        inherit Constructor<EasingFunction>
         [<EmitConstructor>] abstract Create: unit -> EasingFunction
         abstract ``EASINGMODE_EASEIN``: float with get
         abstract ``EASINGMODE_EASEOUT``: float with get
@@ -827,6 +1194,11 @@ module SimpleClasses =
     [<Import("EasingFunction", "@babylonjs/core/Animations/easing.js")>]
     let EasingFunction: EasingFunctionStatic = jsNative
 
+    /// @babylonjs/core/Misc/dumpTools.pure
+    [<AllowNullLiteral>]
+    type EncodingHelper =
+        interface end
+
     /// @babylonjs/core/Events/deviceInputEvents
     [<AllowNullLiteral>]
     type EventConstants =
@@ -834,6 +1206,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type EventConstantsStatic =
+        inherit Constructor<EventConstants>
         [<EmitConstructor>] abstract Create: unit -> EventConstants
         abstract ``DOM_DELTA_PIXEL``: float with get, set
         abstract ``DOM_DELTA_LINE``: float with get, set
@@ -855,6 +1228,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type EventStateStatic =
+        inherit Constructor<EventState>
         [<EmitConstructor>] abstract Create: ``mask``: float * ?``skipNextObservers``: bool * ?``target``: obj * ?``currentTarget``: obj -> EventState
 
     [<Import("EventState", "@babylonjs/core/Misc/observable.pure.js")>]
@@ -867,6 +1241,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type ExrLoaderGlobalConfigurationStatic =
+        inherit Constructor<ExrLoaderGlobalConfiguration>
         [<EmitConstructor>] abstract Create: unit -> ExrLoaderGlobalConfiguration
         abstract ``DefaultOutputType``: BabylonjsBindings.Enums.EXROutputType with get, set
         abstract ``FFLATEUrl``: string with get, set
@@ -884,6 +1259,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type FactorGradientStatic =
+        inherit Constructor<FactorGradient>
         [<EmitConstructor>] abstract Create: ``gradient``: float * ``factor1``: float * ?``factor2``: float -> FactorGradient
 
     [<Import("FactorGradient", "@babylonjs/core/Misc/gradients.js")>]
@@ -901,11 +1277,39 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type FilesInputStoreStatic =
+        inherit Constructor<FilesInputStore>
         [<EmitConstructor>] abstract Create: unit -> FilesInputStore
         abstract ``FilesToLoad``: FilesInputStoreProperty1Object with get, set
 
     [<Import("FilesInputStore", "@babylonjs/core/Misc/filesInputStore.js")>]
     let FilesInputStore: FilesInputStoreStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphConnection
+    [<AllowNullLiteral>]
+    type FlowGraphConnection<'BlockT, 'ConnectedToT when 'ConnectedToT :> BabylonjsBindings.SimpleInterfaces.IConnectable> =
+        abstract ``_ownerBlock``: 'BlockT with get, set
+        abstract ``_connectedPoint``: ResizeArray<'ConnectedToT> with get, set
+        abstract ``uniqueId``: string with get, set
+        abstract ``name``: string with get, set
+        abstract ``_connectionType``: BabylonjsBindings.Enums.FlowGraphConnectionType with get, set
+        abstract ``connectedPointIds``: ResizeArray<obj> with get, set
+        abstract ``_isSingularConnection``: unit -> bool
+        abstract ``isConnected``: unit -> bool
+        abstract ``connectTo``: ``point``: 'ConnectedToT -> unit
+        abstract ``disconnectFrom``: ``point``: 'ConnectedToT * ?``removeFromLocal``: bool -> unit
+        abstract ``disconnectFromAll``: unit -> unit
+        abstract ``dispose``: unit -> unit
+        abstract ``serialize``: ?``serializationObject``: obj -> unit
+        abstract ``getClassName``: unit -> string
+        abstract ``deserialize``: ``serializationObject``: obj -> unit
+        abstract ``connectionType``: BabylonjsBindings.Enums.FlowGraphConnectionType with get
+
+    [<AllowNullLiteral>]
+    type FlowGraphConnectionStatic =
+        [<EmitConstructor>] abstract Create<'BlockT, 'ConnectedToT when 'ConnectedToT :> BabylonjsBindings.SimpleInterfaces.IConnectable>: ``name``: string * ``_connectionType``: BabylonjsBindings.Enums.FlowGraphConnectionType * ``_ownerBlock``: 'BlockT -> FlowGraphConnection<'BlockT, 'ConnectedToT>
+
+    [<Import("FlowGraphConnection", "@babylonjs/core/FlowGraph/flowGraphConnection.js")>]
+    let FlowGraphConnection: FlowGraphConnectionStatic = jsNative
 
     /// @babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure
     [<AllowNullLiteral>]
@@ -921,6 +1325,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type FlowGraphIntegerStatic =
+        inherit Constructor<FlowGraphInteger>
         [<EmitConstructor>] abstract Create: ``value``: float -> FlowGraphInteger
         abstract ``ClassName``: string with get, set
         abstract ``FromValue``: ``value``: float -> FlowGraphInteger
@@ -938,13 +1343,38 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type FlowGraphLoggerStatic =
+        inherit Constructor<FlowGraphLogger>
         [<EmitConstructor>] abstract Create: unit -> FlowGraphLogger
 
     [<Import("FlowGraphLogger", "@babylonjs/core/FlowGraph/flowGraphLogger.js")>]
     let FlowGraphLogger: FlowGraphLoggerStatic = jsNative
 
-    /// Uncurried function-valued argument used by GradientHelper.
-    type GradientHelperMethod1Parameter3Callback = System.Action<BabylonjsBindings.SimpleInterfaces.IValueGradient, BabylonjsBindings.SimpleInterfaces.IValueGradient, float>
+    /// @babylonjs/loaders/glTF/glTFFileLoader.pure
+    [<AllowNullLiteral>]
+    type GLTFLoaderBaseOptions =
+        abstract ``alwaysComputeBoundingBox``: bool with get, set
+        abstract ``alwaysComputeSkeletonRootNode``: bool with get, set
+        abstract ``animationStartMode``: BabylonjsBindings.Enums.GLTFLoaderAnimationStartMode with get, set
+        abstract ``compileMaterials``: bool with get, set
+        abstract ``compileShadowGenerators``: bool with get, set
+        abstract ``coordinateSystemMode``: BabylonjsBindings.Enums.GLTFLoaderCoordinateSystemMode with get, set
+        abstract ``createInstances``: bool with get, set
+        abstract ``loadAllMaterials``: bool with get, set
+        abstract ``loadMorphTargets``: bool with get, set
+        abstract ``useMaxMorphTargetInfluencers``: bool with get, set
+        abstract ``loadNodeAnimations``: bool with get, set
+        abstract ``loadOnlyMaterials``: bool with get, set
+        abstract ``loadSkins``: bool with get, set
+        abstract ``skipMaterials``: bool with get, set
+        abstract ``targetFps``: float with get, set
+        abstract ``transparencyAsCoverage``: bool with get, set
+        abstract ``useClipPlane``: bool with get, set
+        abstract ``useGltfTextureNames``: bool with get, set
+        abstract ``useRangeRequests``: bool with get, set
+        abstract ``useSRGBBuffers``: bool with get, set
+        abstract ``validate``: bool with get, set
+        abstract ``useOpenPBR``: bool with get, set
+        abstract ``dontUseTransmissionHelper``: bool with get, set
 
     /// @babylonjs/core/Misc/gradients
     [<AllowNullLiteral>]
@@ -953,8 +1383,9 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type GradientHelperStatic =
+        inherit Constructor<GradientHelper>
         [<EmitConstructor>] abstract Create: unit -> GradientHelper
-        abstract ``GetCurrentGradient``: ``ratio``: float * ``gradients``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IValueGradient> * ``updateFunc``: GradientHelperMethod1Parameter3Callback -> unit
+        abstract ``GetCurrentGradient``: ``ratio``: float * ``gradients``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IValueGradient> * ``updateFunc``: System.Action<BabylonjsBindings.SimpleInterfaces.IValueGradient, BabylonjsBindings.SimpleInterfaces.IValueGradient, float> -> unit
 
     [<Import("GradientHelper", "@babylonjs/core/Misc/gradients.js")>]
     let GradientHelper: GradientHelperStatic = jsNative
@@ -970,6 +1401,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type Halton2DSequenceStatic =
+        inherit Constructor<Halton2DSequence>
         [<EmitConstructor>] abstract Create: ``numSamples``: float * ?``baseX``: float * ?``baseY``: float * ?``width``: float * ?``height``: float -> Halton2DSequence
 
     [<Import("Halton2DSequence", "@babylonjs/core/Maths/halton2DSequence.js")>]
@@ -987,6 +1419,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type IntersectionInfoStatic =
+        inherit Constructor<IntersectionInfo>
         [<EmitConstructor>] abstract Create: ``bu``: float option * ``bv``: float option * ``distance``: float -> IntersectionInfo
 
     [<Import("IntersectionInfo", "@babylonjs/core/Collisions/intersectionInfo.js")>]
@@ -999,6 +1432,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type KeyboardEventTypesStatic =
+        inherit Constructor<KeyboardEventTypes>
         [<EmitConstructor>] abstract Create: unit -> KeyboardEventTypes
         abstract ``KEYDOWN``: float with get
         abstract ``KEYUP``: float with get
@@ -1014,13 +1448,11 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type KeyboardInfoStatic =
+        inherit Constructor<KeyboardInfo>
         [<EmitConstructor>] abstract Create: ``type``: float * ``event``: BabylonjsBindings.SimpleInterfaces.IKeyboardEvent -> KeyboardInfo
 
     [<Import("KeyboardInfo", "@babylonjs/core/Events/keyboardEvents.js")>]
     let KeyboardInfo: KeyboardInfoStatic = jsNative
-
-    /// Uncurried function-valued argument used by Lazy.
-    type LazyConstructor3Parameter1Callback<'T> = System.Func<'T>
 
     /// @babylonjs/core/Misc/lazy
     [<AllowNullLiteral>]
@@ -1029,7 +1461,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type LazyStatic =
-        [<EmitConstructor>] abstract Create<'T>: ``factory``: LazyConstructor3Parameter1Callback<'T> -> Lazy<'T>
+        [<EmitConstructor>] abstract Create<'T>: ``factory``: System.Func<'T> -> Lazy<'T>
 
     [<Import("Lazy", "@babylonjs/core/Misc/lazy.js")>]
     let Lazy: LazyStatic = jsNative
@@ -1041,6 +1473,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type LightConstantsStatic =
+        inherit Constructor<LightConstants>
         [<EmitConstructor>] abstract Create: unit -> LightConstants
         abstract ``FALLOFF_DEFAULT``: float with get
         abstract ``FALLOFF_PHYSICAL``: float with get
@@ -1092,6 +1525,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type LoggerStatic =
+        inherit Constructor<Logger>
         [<EmitConstructor>] abstract Create: unit -> Logger
         abstract ``NoneLogLevel``: float with get
         abstract ``MessageLogLevel``: float with get
@@ -1159,6 +1593,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type MaterialDefinesStatic =
+        inherit Constructor<MaterialDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialDefines
 
     [<Import("MaterialDefines", "@babylonjs/core/Materials/materialDefines.js")>]
@@ -1171,6 +1606,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type MaterialFlagsStatic =
+        inherit Constructor<MaterialFlags>
         [<EmitConstructor>] abstract Create: unit -> MaterialFlags
         abstract ``DiffuseTextureEnabled``: bool with get, set
         abstract ``BaseWeightTextureEnabled``: bool with get, set
@@ -1208,11 +1644,28 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type MatrixManagementStatic =
+        inherit Constructor<MatrixManagement>
         [<EmitConstructor>] abstract Create: unit -> MatrixManagement
         abstract ``_UpdateFlagSeed``: float with get, set
 
     [<Import("MatrixManagement", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
     let MatrixManagement: MatrixManagementStatic = jsNative
+
+    /// @babylonjs/core/Meshes/Compression/meshoptCompression
+    [<AllowNullLiteral>]
+    type MeshoptCompression =
+        abstract ``dispose``: unit -> unit
+        abstract ``decodeGltfBufferAsync``: ``source``: JS.Uint8Array * ``count``: float * ``stride``: float * ``mode``: U3<StringLiteralafa7e559a55d, StringLiterala47bc963946f, StringLiterale21255ec54ba> * ?``filter``: string -> JS.Promise<JS.Uint8Array>
+
+    [<AllowNullLiteral>]
+    type MeshoptCompressionStatic =
+        inherit Constructor<MeshoptCompression>
+        [<EmitConstructor>] abstract Create: unit -> MeshoptCompression
+        abstract ``Configuration``: BabylonjsBindings.SimpleInterfaces.IMeshoptCompressionConfiguration with get, set
+        abstract ``Default``: MeshoptCompression with get
+
+    [<Import("MeshoptCompression", "@babylonjs/core/Meshes/Compression/meshoptCompression.js")>]
+    let MeshoptCompression: MeshoptCompressionStatic = jsNative
 
     /// @babylonjs/core/Engines/nullEngine.pure
     [<AllowNullLiteral>]
@@ -1229,6 +1682,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type NullEngineOptionsStatic =
+        inherit Constructor<NullEngineOptions>
         [<EmitConstructor>] abstract Create: unit -> NullEngineOptions
 
     [<Import("NullEngineOptions", "@babylonjs/core/Engines/nullEngine.pure.js")>]
@@ -1241,6 +1695,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type OnAfterEnteringVRObservableEventStatic =
+        inherit Constructor<OnAfterEnteringVRObservableEvent>
         [<EmitConstructor>] abstract Create: unit -> OnAfterEnteringVRObservableEvent
 
     [<Import("OnAfterEnteringVRObservableEvent", "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure.js")>]
@@ -1253,6 +1708,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PanoramaToCubeMapToolsStatic =
+        inherit Constructor<PanoramaToCubeMapTools>
         [<EmitConstructor>] abstract Create: unit -> PanoramaToCubeMapTools
         abstract ``ConvertPanoramaToCubemap``: ``float32Array``: JS.Float32Array * ``inputWidth``: float * ``inputHeight``: float * ``size``: float * ?``supersample``: bool * ?``invertY``: bool -> BabylonjsBindings.SimpleInterfaces.CubeMapInfo
 
@@ -1278,6 +1734,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PerfCounterStatic =
+        inherit Constructor<PerfCounter>
         [<EmitConstructor>] abstract Create: unit -> PerfCounter
         abstract ``Enabled``: bool with get, set
 
@@ -1291,6 +1748,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PerformanceConfiguratorStatic =
+        inherit Constructor<PerformanceConfigurator>
         [<EmitConstructor>] abstract Create: unit -> PerformanceConfigurator
         abstract ``MatrixUse64Bits``: bool with get, set
         abstract ``MatrixTrackPrecisionChange``: bool with get, set
@@ -1318,6 +1776,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PerformanceMonitorStatic =
+        inherit Constructor<PerformanceMonitor>
         [<EmitConstructor>] abstract Create: ?``frameSampleSize``: float -> PerformanceMonitor
 
     [<Import("PerformanceMonitor", "@babylonjs/core/Misc/performanceMonitor.js")>]
@@ -1334,6 +1793,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type Physics6DoFLimitStatic =
+        inherit Constructor<Physics6DoFLimit>
         [<EmitConstructor>] abstract Create: unit -> Physics6DoFLimit
 
     [<Import("Physics6DoFLimit", "@babylonjs/core/Physics/v2/physicsConstraint.js")>]
@@ -1349,6 +1809,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PhysicsUpdraftEventOptionsStatic =
+        inherit Constructor<PhysicsUpdraftEventOptions>
         [<EmitConstructor>] abstract Create: unit -> PhysicsUpdraftEventOptions
 
     [<Import("PhysicsUpdraftEventOptions", "@babylonjs/core/Physics/physicsHelper.js")>]
@@ -1367,6 +1828,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PhysicsVortexEventOptionsStatic =
+        inherit Constructor<PhysicsVortexEventOptions>
         [<EmitConstructor>] abstract Create: unit -> PhysicsVortexEventOptions
 
     [<Import("PhysicsVortexEventOptions", "@babylonjs/core/Physics/physicsHelper.js")>]
@@ -1379,6 +1841,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PointerEventTypesStatic =
+        inherit Constructor<PointerEventTypes>
         [<EmitConstructor>] abstract Create: unit -> PointerEventTypes
         abstract ``POINTERDOWN``: float with get
         abstract ``POINTERUP``: float with get
@@ -1402,6 +1865,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PolyhedronDataStatic =
+        inherit Constructor<PolyhedronData>
         [<EmitConstructor>] abstract Create: ``name``: string * ``category``: string * ``vertex``: ResizeArray<ResizeArray<float>> * ``face``: ResizeArray<ResizeArray<float>> -> PolyhedronData
 
     [<Import("PolyhedronData", "@babylonjs/core/Meshes/geodesicMesh.js")>]
@@ -1414,6 +1878,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PrecisionDateStatic =
+        inherit Constructor<PrecisionDate>
         [<EmitConstructor>] abstract Create: unit -> PrecisionDate
         abstract ``Now``: float with get
 
@@ -1453,6 +1918,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type RollingAverageStatic =
+        inherit Constructor<RollingAverage>
         [<EmitConstructor>] abstract Create: ``length``: float -> RollingAverage
 
     [<Import("RollingAverage", "@babylonjs/core/Misc/performanceMonitor.js")>]
@@ -1465,6 +1931,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type SceneComponentConstantsStatic =
+        inherit Constructor<SceneComponentConstants>
         [<EmitConstructor>] abstract Create: unit -> SceneComponentConstants
         abstract ``NAME_EFFECTLAYER``: string with get
         abstract ``NAME_LAYER``: string with get
@@ -1542,6 +2009,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type SceneLoaderFlagsStatic =
+        inherit Constructor<SceneLoaderFlags>
         [<EmitConstructor>] abstract Create: unit -> SceneLoaderFlags
         abstract ``ForceFullSceneLoadingForIncremental``: bool with get, set
         abstract ``ShowLoadingScreen``: bool with get, set
@@ -1561,6 +2029,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type ShaderCodeInlinerStatic =
+        inherit Constructor<ShaderCodeInliner>
         [<EmitConstructor>] abstract Create: ``sourceCode``: string * ?``numMaxIterations``: float -> ShaderCodeInliner
 
     [<Import("ShaderCodeInliner", "@babylonjs/core/Engines/Processors/shaderCodeInliner.js")>]
@@ -1603,6 +2072,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type ShaderStoreStatic =
+        inherit Constructor<ShaderStore>
         [<EmitConstructor>] abstract Create: unit -> ShaderStore
         abstract ``ShadersRepository``: string with get, set
         abstract ``ShadersStore``: ShaderStoreProperty2Object with get, set
@@ -1626,6 +2096,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type SimplificationSettingsStatic =
+        inherit Constructor<SimplificationSettings>
         [<EmitConstructor>] abstract Create: ``quality``: float * ``distance``: float * ?``optimizeMesh``: bool -> SimplificationSettings
 
     [<Import("SimplificationSettings", "@babylonjs/core/Meshes/meshSimplification.common.js")>]
@@ -1650,8 +2121,28 @@ module SimpleClasses =
         abstract ``scale``: ``scale``: float -> Size
         abstract ``surface``: float with get
 
+    /// Exact readonly projection of Size used by Babylon DeepImmutable<Size> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableSize =
+        abstract ``width``: float with get
+        abstract ``height``: float with get
+        abstract ``toString``: unit -> string
+        abstract ``getClassName``: unit -> string
+        abstract ``getHashCode``: unit -> float
+        abstract ``copyFrom``: ``src``: Size -> unit
+        abstract ``copyFromFloats``: ``width``: float * ``height``: float -> Size
+        abstract ``set``: ``width``: float * ``height``: float -> Size
+        abstract ``multiplyByFloats``: ``w``: float * ``h``: float -> Size
+        abstract ``clone``: unit -> Size
+        abstract ``equals``: ``other``: Size -> bool
+        abstract ``add``: ``otherSize``: Size -> Size
+        abstract ``subtract``: ``otherSize``: Size -> Size
+        abstract ``scale``: ``scale``: float -> Size
+        abstract ``surface``: float with get
+
     [<AllowNullLiteral>]
     type SizeStatic =
+        inherit Constructor<Size>
         [<EmitConstructor>] abstract Create: ``width``: float * ``height``: float -> Size
         abstract ``Zero``: unit -> Size
         abstract ``Lerp``: ``start``: Size * ``end``: Size * ``amount``: float -> Size
@@ -1659,20 +2150,14 @@ module SimpleClasses =
     [<Import("Size", "@babylonjs/core/Maths/math.size.js")>]
     let Size: SizeStatic = jsNative
 
-    /// Uncurried function-valued argument used by SmartArray.
-    type SmartArrayMethod6Parameter1Callback<'T> = System.Action<'T>
-
-    /// Uncurried function-valued argument used by SmartArray.
-    type SmartArrayMethod7Parameter1Callback<'T> = System.Func<'T, 'T, float>
-
     /// @babylonjs/core/Misc/smartArray
     [<AllowNullLiteral>]
     type SmartArray<'T> =
         abstract ``data``: ResizeArray<'T> with get, set
         abstract ``length``: float with get, set
         abstract ``push``: ``value``: 'T -> unit
-        abstract ``forEach``: ``func``: SmartArrayMethod6Parameter1Callback<'T> -> unit
-        abstract ``sort``: ``compareFn``: SmartArrayMethod7Parameter1Callback<'T> -> unit
+        abstract ``forEach``: ``func``: System.Action<'T> -> unit
+        abstract ``sort``: ``compareFn``: System.Func<'T, 'T, float> -> unit
         abstract ``reset``: unit -> unit
         abstract ``dispose``: unit -> unit
         abstract ``concat``: ``array``: obj -> unit
@@ -1717,6 +2202,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type StencilStateStatic =
+        inherit Constructor<StencilState>
         [<EmitConstructor>] abstract Create: unit -> StencilState
         abstract ``ALWAYS``: float with get
         abstract ``KEEP``: float with get
@@ -1749,6 +2235,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type StencilStateComposerStatic =
+        inherit Constructor<StencilStateComposer>
         [<EmitConstructor>] abstract Create: ?``reset``: bool -> StencilStateComposer
 
     [<Import("StencilStateComposer", "@babylonjs/core/States/stencilStateComposer.js")>]
@@ -1762,6 +2249,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type StickValuesStatic =
+        inherit Constructor<StickValues>
         [<EmitConstructor>] abstract Create: ``x``: float * ``y``: float -> StickValues
 
     [<Import("StickValues", "@babylonjs/core/Gamepads/gamepad.js")>]
@@ -1774,6 +2262,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type TagsStatic =
+        inherit Constructor<Tags>
         [<EmitConstructor>] abstract Create: unit -> Tags
         abstract ``EnableFor``: ``obj``: obj -> unit
         abstract ``DisableFor``: ``obj``: obj -> unit
@@ -1809,13 +2298,25 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type TextureSamplerStatic =
+        inherit Constructor<TextureSampler>
         [<EmitConstructor>] abstract Create: unit -> TextureSampler
 
     [<Import("TextureSampler", "@babylonjs/core/Materials/Textures/textureSampler.js")>]
     let TextureSampler: TextureSamplerStatic = jsNative
 
-    /// Uncurried function-valued argument used by ThinSprite.
-    type ThinSpriteMethod29Parameter5Callback = System.Action
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix
+    [<AllowNullLiteral>]
+    type ThinMatrix =
+        abstract ``asArray``: unit -> (float * float * float * float * float * float * float * float * float * float * float * float * float * float * float * float)
+        abstract ``updateFlag``: float with get, set
+
+    [<AllowNullLiteral>]
+    type ThinMatrixStatic =
+        inherit Constructor<ThinMatrix>
+        [<EmitConstructor>] abstract Create: unit -> ThinMatrix
+
+    [<Import("ThinMatrix", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.js")>]
+    let ThinMatrix: ThinMatrixStatic = jsNative
 
     /// @babylonjs/core/Sprites/thinSprite
     [<AllowNullLiteral>]
@@ -1834,7 +2335,7 @@ module SimpleClasses =
         abstract ``_yOffset``: float with get, set
         abstract ``_xSize``: float with get, set
         abstract ``_ySize``: float with get, set
-        abstract ``playAnimation``: ``from``: float * ``to``: float * ``loop``: bool * ``delay``: float * ``onAnimationEnd``: ThinSpriteMethod29Parameter5Callback option -> unit
+        abstract ``playAnimation``: ``from``: float * ``to``: float * ``loop``: bool * ``delay``: float * ``onAnimationEnd``: System.Action option -> unit
         abstract ``stopAnimation``: unit -> unit
         abstract ``_animate``: ``deltaTime``: float -> unit
         abstract ``animationStarted``: bool with get
@@ -1845,6 +2346,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type ThinSpriteStatic =
+        inherit Constructor<ThinSprite>
         [<EmitConstructor>] abstract Create: unit -> ThinSprite
 
     [<Import("ThinSprite", "@babylonjs/core/Sprites/thinSprite.js")>]
@@ -1857,6 +2359,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type UniqueIdGeneratorStatic =
+        inherit Constructor<UniqueIdGenerator>
         [<EmitConstructor>] abstract Create: unit -> UniqueIdGenerator
         abstract ``UniqueId``: float with get
 
@@ -1874,6 +2377,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type VertexDataMaterialInfoStatic =
+        inherit Constructor<VertexDataMaterialInfo>
         [<EmitConstructor>] abstract Create: unit -> VertexDataMaterialInfo
 
     [<Import("VertexDataMaterialInfo", "@babylonjs/core/Meshes/mesh.vertexData.js")>]
@@ -1890,8 +2394,20 @@ module SimpleClasses =
         abstract ``toGlobalToRef``: ``renderWidth``: float * ``renderHeight``: float * ``ref``: Viewport -> Viewport
         abstract ``clone``: unit -> Viewport
 
+    /// Exact readonly projection of Viewport used by Babylon DeepImmutable<Viewport> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableViewport =
+        abstract ``x``: float with get
+        abstract ``y``: float with get
+        abstract ``width``: float with get
+        abstract ``height``: float with get
+        abstract ``toGlobal``: ``renderWidth``: float * ``renderHeight``: float -> Viewport
+        abstract ``toGlobalToRef``: ``renderWidth``: float * ``renderHeight``: float * ``ref``: Viewport -> Viewport
+        abstract ``clone``: unit -> Viewport
+
     [<AllowNullLiteral>]
     type ViewportStatic =
+        inherit Constructor<Viewport>
         [<EmitConstructor>] abstract Create: ``x``: float * ``y``: float * ``width``: float * ``height``: float -> Viewport
 
     [<Import("Viewport", "@babylonjs/core/Maths/math.viewport.js")>]
@@ -1908,6 +2424,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type WebGL2ShaderProcessorStatic =
+        inherit Constructor<WebGL2ShaderProcessor>
         [<EmitConstructor>] abstract Create: unit -> WebGL2ShaderProcessor
 
     [<Import("WebGL2ShaderProcessor", "@babylonjs/core/Engines/WebGL/webGL2ShaderProcessors.js")>]
@@ -1928,6 +2445,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type WebGLHardwareTextureStatic =
+        inherit Constructor<WebGLHardwareTexture>
         [<EmitConstructor>] abstract Create: ``existingTexture``: Browser.Types.WebGLTexture option * ``context``: Browser.Types.WebGLRenderingContext -> WebGLHardwareTexture
 
     [<Import("WebGLHardwareTexture", "@babylonjs/core/Engines/WebGL/webGLHardwareTexture.js")>]
@@ -1960,12 +2478,48 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type WebGPUTintWASMStatic =
+        inherit Constructor<WebGPUTintWASM>
         [<EmitConstructor>] abstract Create: unit -> WebGPUTintWASM
         abstract ``ShowWGSLShaderCode``: bool with get, set
         abstract ``DisableUniformityAnalysis``: bool with get, set
 
     [<Import("WebGPUTintWASM", "@babylonjs/core/Engines/WebGPU/webgpuTintWASM.js")>]
     let WebGPUTintWASM: WebGPUTintWASMStatic = jsNative
+
+    /// @babylonjs/core/XR/webXRFeaturesManager
+    [<AllowNullLiteral>]
+    type WebXRFeatureName =
+        interface end
+
+    [<AllowNullLiteral>]
+    type WebXRFeatureNameStatic =
+        inherit Constructor<WebXRFeatureName>
+        [<EmitConstructor>] abstract Create: unit -> WebXRFeatureName
+        abstract ``ANCHOR_SYSTEM``: StringLiteral9e130c3af18e with get
+        abstract ``BACKGROUND_REMOVER``: StringLiteraldf6ae87ca350 with get
+        abstract ``HIT_TEST``: StringLiteral038540c29087 with get
+        abstract ``MESH_DETECTION``: StringLiteral02f2c64c3c6e with get
+        abstract ``PHYSICS_CONTROLLERS``: StringLiteralc472f4f2d0c2 with get
+        abstract ``PLANE_DETECTION``: StringLiteral6a69383955b8 with get
+        abstract ``POINTER_SELECTION``: StringLiteral9607d79e7e6e with get
+        abstract ``TELEPORTATION``: StringLiteral4bff47d82478 with get
+        abstract ``FEATURE_POINTS``: StringLiteralfcd8fcbdec72 with get
+        abstract ``HAND_TRACKING``: StringLiteral030241635d52 with get
+        abstract ``IMAGE_TRACKING``: StringLiterala08dc5432e1f with get
+        abstract ``NEAR_INTERACTION``: StringLiteral76a2d47646e9 with get
+        abstract ``DOM_OVERLAY``: StringLiteral955401cfb798 with get
+        abstract ``MOVEMENT``: StringLiteral33d177285f0d with get
+        abstract ``LIGHT_ESTIMATION``: StringLiteral7032ede09087 with get
+        abstract ``EYE_TRACKING``: StringLiteralbe2f3b88c67d with get
+        abstract ``WALKING_LOCOMOTION``: StringLiteral01523b3dbcda with get
+        abstract ``LAYERS``: StringLiteralefbd279abf11 with get
+        abstract ``DEPTH_SENSING``: StringLiteralf184bcb50f8c with get
+        abstract ``SPACE_WARP``: StringLiteral88cc4eeec491 with get
+        abstract ``RAW_CAMERA_ACCESS``: StringLiteral50cc4e104033 with get
+        abstract ``BODY_TRACKING``: StringLiteralfa28fe3971d3 with get
+
+    [<Import("WebXRFeatureName", "@babylonjs/core/XR/webXRFeaturesManager.js")>]
+    let WebXRFeatureName: WebXRFeatureNameStatic = jsNative
 
     /// @babylonjs/core/Misc/error
     [<AllowNullLiteral>]
@@ -1975,6 +2529,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type AbortErrorStatic =
         inherit BaseErrorStatic
+        inherit Constructor<AbortError>
         [<EmitConstructor>] abstract Create: ?``message``: string -> AbortError
 
     [<Import("AbortError", "@babylonjs/core/Misc/error.js")>]
@@ -1990,6 +2545,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BackEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<BackEase>
         [<EmitConstructor>] abstract Create: ?``amplitude``: float -> BackEase
 
     [<Import("BackEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2008,6 +2564,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BezierCurveEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<BezierCurveEase>
         [<EmitConstructor>] abstract Create: ?``x1``: float * ?``y1``: float * ?``x2``: float * ?``y2``: float -> BezierCurveEase
 
     [<Import("BezierCurveEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2024,6 +2581,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BounceEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<BounceEase>
         [<EmitConstructor>] abstract Create: ?``bounces``: float * ?``bounciness``: float -> BounceEase
 
     [<Import("BounceEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2038,10 +2596,191 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CircleEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<CircleEase>
         [<EmitConstructor>] abstract Create: unit -> CircleEase
 
     [<Import("CircleEase", "@babylonjs/core/Animations/easing.js")>]
     let CircleEase: CircleEaseStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.color.pure
+    [<AllowNullLiteral>]
+    type Color3 =
+        abstract ``r``: float with get, set
+        abstract ``g``: float with get, set
+        abstract ``b``: float with get, set
+        abstract ``dimension``: ReadonlyTuple1<NumericLiteral3> with get
+        abstract ``rank``: NumericLiteral1 with get
+        abstract ``toString``: unit -> string
+        abstract ``getClassName``: unit -> string
+        abstract ``getHashCode``: unit -> float
+        abstract ``toArray``: ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color3
+        abstract ``fromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color3
+        abstract ``toColor4``: ?``alpha``: float -> Color4
+        abstract ``asArray``: unit -> (float * float * float)
+        abstract ``toLuminance``: unit -> float
+        abstract ``multiply``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``multiplyInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``multiplyByFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``divide``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
+        abstract ``divideToRef``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``divideInPlace``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
+        abstract ``minimizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``maximizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``minimizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``maximizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``floorToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``floor``: unit -> Never
+        abstract ``fractToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``fract``: unit -> Never
+        abstract ``equals``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> bool
+        abstract ``equalsFloats``: ``r``: float * ``g``: float * ``b``: float -> bool
+        abstract ``equalsToFloats``: ``r``: float * ``g``: float * ``b``: float -> bool
+        abstract ``equalsWithEpsilon``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ?``epsilon``: float -> bool
+        abstract ``negate``: unit -> Never
+        abstract ``negateInPlace``: unit -> Never
+        abstract ``negateToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``scale``: ``scale``: float -> Color3
+        abstract ``scaleInPlace``: ``scale``: float -> Color3
+        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``scale``: float * ``result``: 'T -> 'T
+        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``scale``: float * ``result``: 'T -> 'T
+        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
+        abstract ``add``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``addInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``addInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``subtract``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``subtractInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``subtractFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``r``: float * ``g``: float * ``b``: float * ``result``: 'T -> 'T
+        abstract ``clone``: unit -> Color3
+        abstract ``copyFrom``: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``copyFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``set``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``setAll``: ``v``: float -> Color3
+        abstract ``toHexString``: unit -> string
+        abstract ``fromHexString``: ``hex``: string -> Color3
+        abstract ``toHSV``: unit -> Color3
+        abstract ``toHSVToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``result``: 'T -> 'T
+        abstract ``toLinearSpace``: ?``exact``: bool -> Color3
+        abstract ``toLinearSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
+        abstract ``toGammaSpace``: ?``exact``: bool -> Color3
+        abstract ``toGammaSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
+
+    /// Exact readonly projection of Color3 used by Babylon DeepImmutable<Color3> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableColor3 =
+        abstract ``r``: float with get
+        abstract ``g``: float with get
+        abstract ``b``: float with get
+        abstract ``dimension``: ReadonlyTuple1<NumericLiteral3> with get
+        abstract ``rank``: NumericLiteral1 with get
+        abstract ``toString``: unit -> string
+        abstract ``getClassName``: unit -> string
+        abstract ``getHashCode``: unit -> float
+        abstract ``toArray``: ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color3
+        abstract ``fromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color3
+        abstract ``toColor4``: ?``alpha``: float -> Color4
+        abstract ``asArray``: unit -> (float * float * float)
+        abstract ``toLuminance``: unit -> float
+        abstract ``multiply``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``multiplyInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``multiplyByFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``divide``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
+        abstract ``divideToRef``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``divideInPlace``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
+        abstract ``minimizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``maximizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``minimizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``maximizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``floorToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``floor``: unit -> Never
+        abstract ``fractToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``fract``: unit -> Never
+        abstract ``equals``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> bool
+        abstract ``equalsFloats``: ``r``: float * ``g``: float * ``b``: float -> bool
+        abstract ``equalsToFloats``: ``r``: float * ``g``: float * ``b``: float -> bool
+        abstract ``equalsWithEpsilon``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ?``epsilon``: float -> bool
+        abstract ``negate``: unit -> Never
+        abstract ``negateInPlace``: unit -> Never
+        abstract ``negateToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``scale``: ``scale``: float -> Color3
+        abstract ``scaleInPlace``: ``scale``: float -> Color3
+        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``scale``: float * ``result``: 'T -> 'T
+        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``scale``: float * ``result``: 'T -> 'T
+        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
+        abstract ``add``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``addInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``addInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``subtract``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``subtractInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``subtractFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``r``: float * ``g``: float * ``b``: float * ``result``: 'T -> 'T
+        abstract ``clone``: unit -> Color3
+        abstract ``copyFrom``: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``copyFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``set``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``setAll``: ``v``: float -> Color3
+        abstract ``toHexString``: unit -> string
+        abstract ``fromHexString``: ``hex``: string -> Color3
+        abstract ``toHSV``: unit -> Color3
+        abstract ``toHSVToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``result``: 'T -> 'T
+        abstract ``toLinearSpace``: ?``exact``: bool -> Color3
+        abstract ``toLinearSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
+        abstract ``toGammaSpace``: ?``exact``: bool -> Color3
+        abstract ``toGammaSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
+
+    [<AllowNullLiteral>]
+    type Color3Static =
+        inherit Constructor<Color3>
+        [<EmitConstructor>] abstract Create: ?``r``: float * ?``g``: float * ?``b``: float -> Color3
+        abstract ``_V8PerformanceHack``: DeepImmutableColor3 with get, set
+        abstract ``HSVtoRGBToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``hue``: float * ``saturation``: float * ``value``: float * ``result``: 'T -> 'T
+        abstract ``FromHSV``: ``hue``: float * ``saturation``: float * ``value``: float -> Color3
+        abstract ``FromHexString``: ``hex``: string -> Color3
+        abstract ``FromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color3
+        abstract ``FromArrayToRef``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ``offset``: float option * ``result``: Color3 -> unit
+        abstract ``FromInts``: ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``Lerp``: ``start``: DeepImmutableColor3 * ``end``: DeepImmutableColor3 * ``amount``: float -> Color3
+        abstract ``LerpToRef``: ``left``: DeepImmutableColor3 * ``right``: DeepImmutableColor3 * ``amount``: float * ``result``: Color3 -> unit
+        abstract ``Hermite``: ``value1``: DeepImmutableColor3 * ``tangent1``: DeepImmutableColor3 * ``value2``: DeepImmutableColor3 * ``tangent2``: DeepImmutableColor3 * ``amount``: float -> Color3
+        abstract ``Hermite1stDerivative``: ``value1``: DeepImmutableColor3 * ``tangent1``: DeepImmutableColor3 * ``value2``: DeepImmutableColor3 * ``tangent2``: DeepImmutableColor3 * ``time``: float -> Color3
+        abstract ``Hermite1stDerivativeToRef``: ``value1``: DeepImmutableColor3 * ``tangent1``: DeepImmutableColor3 * ``value2``: DeepImmutableColor3 * ``tangent2``: DeepImmutableColor3 * ``time``: float * ``result``: Color3 -> unit
+        abstract ``Red``: unit -> Color3
+        abstract ``Green``: unit -> Color3
+        abstract ``Blue``: unit -> Color3
+        abstract ``Black``: unit -> Color3
+        abstract ``White``: unit -> Color3
+        abstract ``Purple``: unit -> Color3
+        abstract ``Magenta``: unit -> Color3
+        abstract ``Yellow``: unit -> Color3
+        abstract ``Gray``: unit -> Color3
+        abstract ``Teal``: unit -> Color3
+        abstract ``Random``: unit -> Color3
+        abstract ``BlackReadOnly``: DeepImmutableColor3 with get
+
+    [<Import("Color3", "@babylonjs/core/Maths/math.color.pure.js")>]
+    let Color3: Color3Static = jsNative
+
+    /// @babylonjs/core/Misc/gradients
+    [<AllowNullLiteral>]
+    type ColorGradient =
+        abstract ``gradient``: float with get, set
+        abstract ``color1``: Color4 with get, set
+        abstract ``color2``: Color4 option with get, set
+        abstract ``getColorToRef``: ``result``: Color4 -> unit
+
+    [<AllowNullLiteral>]
+    type ColorGradientStatic =
+        inherit Constructor<ColorGradient>
+        [<EmitConstructor>] abstract Create: ``gradient``: float * ``color1``: Color4 * ?``color2``: Color4 -> ColorGradient
+
+    [<Import("ColorGradient", "@babylonjs/core/Misc/gradients.js")>]
+    let ColorGradient: ColorGradientStatic = jsNative
 
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
@@ -2052,6 +2791,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CubicEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<CubicEase>
         [<EmitConstructor>] abstract Create: unit -> CubicEase
 
     [<Import("CubicEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2069,6 +2809,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type DecalMapDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<DecalMapDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> DecalMapDefines
 
     [<Import("DecalMapDefines", "@babylonjs/core/Materials/material.decalMapConfiguration.pure.js")>]
@@ -2085,6 +2826,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ElasticEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<ElasticEase>
         [<EmitConstructor>] abstract Create: ?``oscillations``: float * ?``springiness``: float -> ElasticEase
 
     [<Import("ElasticEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2100,16 +2842,11 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ExponentialEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<ExponentialEase>
         [<EmitConstructor>] abstract Create: ?``exponent``: float -> ExponentialEase
 
     [<Import("ExponentialEase", "@babylonjs/core/Animations/easing.js")>]
     let ExponentialEase: ExponentialEaseStatic = jsNative
-
-    /// Uncurried function-valued argument used by Gamepad.
-    type GamepadMethod22Parameter1Callback = System.Action<StickValues>
-
-    /// Uncurried function-valued argument used by Gamepad.
-    type GamepadMethod23Parameter1Callback = System.Action<StickValues>
 
     /// @babylonjs/core/Gamepads/gamepad
     [<AllowNullLiteral>]
@@ -2119,8 +2856,8 @@ module SimpleClasses =
         abstract ``browserGamepad``: obj with get, set
         abstract ``type``: float with get, set
         abstract ``_isConnected``: bool with get, set
-        abstract ``onleftstickchanged``: ``callback``: GamepadMethod22Parameter1Callback -> unit
-        abstract ``onrightstickchanged``: ``callback``: GamepadMethod23Parameter1Callback -> unit
+        abstract ``onleftstickchanged``: ``callback``: System.Action<StickValues> -> unit
+        abstract ``onrightstickchanged``: ``callback``: System.Action<StickValues> -> unit
         abstract ``update``: unit -> unit
         abstract ``dispose``: unit -> unit
         abstract ``isConnected``: bool with get
@@ -2129,6 +2866,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type GamepadStatic =
+        inherit Constructor<Gamepad>
         [<EmitConstructor>] abstract Create: ``id``: string * ``index``: float * ``browserGamepad``: obj * ?``leftStickX``: float * ?``leftStickY``: float * ?``rightStickX``: float * ?``rightStickY``: float -> Gamepad
         abstract ``GAMEPAD``: float with get, set
         abstract ``GENERIC``: float with get, set
@@ -2138,6 +2876,22 @@ module SimpleClasses =
 
     [<Import("Gamepad", "@babylonjs/core/Gamepads/gamepad.js")>]
     let Gamepad: GamepadStatic = jsNative
+
+    /// @babylonjs/core/Materials/GaussianSplatting/gaussianSplattingDebugMaterialPlugin.pure
+    [<AllowNullLiteral>]
+    type GaussianSplattingDebugDefines =
+        inherit MaterialDefines
+        abstract ``GS_DBG_ENABLED``: bool with get, set
+        abstract ``GS_DBG_CLIP``: float with get, set
+        abstract ``GS_DBG_CULL_OPACITY``: float with get, set
+        abstract ``GS_DBG_CULL_SIZE``: float with get, set
+        abstract ``GS_DBG_OPACITY_SCALE``: float with get, set
+        abstract ``GS_DBG_OPACITY_SATURATE``: float with get, set
+        abstract ``GS_DBG_SH_DC``: float with get, set
+        abstract ``GS_DBG_SH_ORDER1``: float with get, set
+        abstract ``GS_DBG_SH_ORDER2``: float with get, set
+        abstract ``GS_DBG_SH_ORDER3``: float with get, set
+        abstract ``GS_DBG_SH_ORDER4``: float with get, set
 
     /// @babylonjs/core/Materials/imageProcessingConfiguration.defines
     [<AllowNullLiteral>]
@@ -2162,6 +2916,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ImageProcessingConfigurationDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<ImageProcessingConfigurationDefines>
         [<EmitConstructor>] abstract Create: unit -> ImageProcessingConfigurationDefines
 
     [<Import("ImageProcessingConfigurationDefines", "@babylonjs/core/Materials/imageProcessingConfiguration.defines.js")>]
@@ -2179,6 +2934,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type KeyboardInfoPreStatic =
         inherit KeyboardInfoStatic
+        inherit Constructor<KeyboardInfoPre>
         [<EmitConstructor>] abstract Create: ``type``: float * ``event``: BabylonjsBindings.SimpleInterfaces.IKeyboardEvent -> KeyboardInfoPre
 
     [<Import("KeyboardInfoPre", "@babylonjs/core/Events/keyboardEvents.js")>]
@@ -2197,6 +2953,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MaterialAnisotropicDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<MaterialAnisotropicDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialAnisotropicDefines
 
     [<Import("MaterialAnisotropicDefines", "@babylonjs/core/Materials/PBR/pbrAnisotropicConfiguration.js")>]
@@ -2219,6 +2976,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MaterialBRDFDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<MaterialBRDFDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialBRDFDefines
 
     [<Import("MaterialBRDFDefines", "@babylonjs/core/Materials/PBR/pbrBRDFConfiguration.js")>]
@@ -2246,6 +3004,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MaterialClearCoatDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<MaterialClearCoatDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialClearCoatDefines
 
     [<Import("MaterialClearCoatDefines", "@babylonjs/core/Materials/PBR/pbrClearCoatConfiguration.js")>]
@@ -2262,10 +3021,18 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MaterialDetailMapDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<MaterialDetailMapDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialDetailMapDefines
 
     [<Import("MaterialDetailMapDefines", "@babylonjs/core/Materials/material.detailMapConfiguration.js")>]
     let MaterialDetailMapDefines: MaterialDetailMapDefinesStatic = jsNative
+
+    /// @babylonjs/core/Rendering/GlobalIllumination/giRSMManager.pure
+    [<AllowNullLiteral>]
+    type MaterialGIRSMRenderDefines =
+        inherit MaterialDefines
+        abstract ``RENDER_WITH_GIRSM``: bool with get, set
+        abstract ``RSMCREATE_PROJTEXTURE``: bool with get, set
 
     /// @babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure
     [<AllowNullLiteral>]
@@ -2281,6 +3048,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MaterialGreasedLineDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<MaterialGreasedLineDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialGreasedLineDefines
 
     [<Import("MaterialGreasedLineDefines", "@babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure.js")>]
@@ -2299,10 +3067,19 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MaterialIridescenceDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<MaterialIridescenceDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialIridescenceDefines
 
     [<Import("MaterialIridescenceDefines", "@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration.js")>]
     let MaterialIridescenceDefines: MaterialIridescenceDefinesStatic = jsNative
+
+    /// @babylonjs/core/Rendering/reflectiveShadowMap.pure
+    [<AllowNullLiteral>]
+    type MaterialRSMCreateDefines =
+        inherit MaterialDefines
+        abstract ``RSMCREATE``: bool with get, set
+        abstract ``RSMCREATE_PROJTEXTURE``: bool with get, set
+        abstract ``RSMCREATE_LIGHT_IS_SPOT``: bool with get, set
 
     /// @babylonjs/core/Materials/PBR/pbrSheenConfiguration
     [<AllowNullLiteral>]
@@ -2322,6 +3099,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MaterialSheenDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<MaterialSheenDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialSheenDefines
 
     [<Import("MaterialSheenDefines", "@babylonjs/core/Materials/PBR/pbrSheenConfiguration.js")>]
@@ -2366,13 +3144,19 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MaterialSubSurfaceDefinesStatic =
         inherit MaterialDefinesStatic
+        inherit Constructor<MaterialSubSurfaceDefines>
         [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialSubSurfaceDefines
 
     [<Import("MaterialSubSurfaceDefines", "@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration.js")>]
     let MaterialSubSurfaceDefines: MaterialSubSurfaceDefinesStatic = jsNative
 
-    /// Uncurried function-valued argument used by Observer.
-    type ObserverConstructor7Parameter1Callback<'T> = System.Action<'T, EventState>
+    /// @babylonjs/core/Materials/meshDebugPluginMaterial.pure
+    [<AllowNullLiteral>]
+    type MeshDebugDefines =
+        inherit MaterialDefines
+        abstract ``DBG_MODE``: BabylonjsBindings.Enums.MeshDebugMode with get, set
+        abstract ``DBG_MULTIPLY``: bool with get, set
+        abstract ``DBG_ENABLED``: bool with get, set
 
     /// Function-valued Observer.callback property.
     [<AllowNullLiteral>]
@@ -2397,7 +3181,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type ObserverStatic =
-        [<EmitConstructor>] abstract Create<'T>: ``callback``: ObserverConstructor7Parameter1Callback<'T> * ``mask``: float * ?``scope``: obj -> Observer<'T>
+        [<EmitConstructor>] abstract Create<'T>: ``callback``: System.Action<'T, EventState> * ``mask``: float * ?``scope``: obj -> Observer<'T>
 
     [<Import("Observer", "@babylonjs/core/Misc/observable.pure.js")>]
     let Observer: ObserverStatic = jsNative
@@ -2412,6 +3196,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type PowerEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<PowerEase>
         [<EmitConstructor>] abstract Create: ?``power``: float -> PowerEase
 
     [<Import("PowerEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2426,6 +3211,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type QuadraticEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<QuadraticEase>
         [<EmitConstructor>] abstract Create: unit -> QuadraticEase
 
     [<Import("QuadraticEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2440,6 +3226,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type QuarticEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<QuarticEase>
         [<EmitConstructor>] abstract Create: unit -> QuarticEase
 
     [<Import("QuarticEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2454,6 +3241,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type QuinticEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<QuinticEase>
         [<EmitConstructor>] abstract Create: unit -> QuinticEase
 
     [<Import("QuinticEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2469,6 +3257,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type RuntimeErrorStatic =
         inherit BaseErrorStatic
+        inherit Constructor<RuntimeError>
         [<EmitConstructor>] abstract Create: ``message``: string * ``errorCode``: BabylonjsBindings.Enums.ErrorCodesType * ?``innerError``: System.Exception -> RuntimeError
 
     [<Import("RuntimeError", "@babylonjs/core/Misc/error.js")>]
@@ -2483,6 +3272,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SineEaseStatic =
         inherit EasingFunctionStatic
+        inherit Constructor<SineEase>
         [<EmitConstructor>] abstract Create: unit -> SineEase
 
     [<Import("SineEase", "@babylonjs/core/Animations/easing.js")>]
@@ -2514,6 +3304,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type WebGLDataBufferStatic =
         inherit DataBufferStatic
+        inherit Constructor<WebGLDataBuffer>
         [<EmitConstructor>] abstract Create: ``resource``: Browser.Types.WebGLBuffer -> WebGLDataBuffer
 
     [<Import("WebGLDataBuffer", "@babylonjs/core/Meshes/WebGL/webGLDataBuffer.js")>]
@@ -2527,32 +3318,49 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type WebGPUPerfCounterStatic =
+        inherit Constructor<WebGPUPerfCounter>
         [<EmitConstructor>] abstract Create: unit -> WebGPUPerfCounter
 
     [<Import("WebGPUPerfCounter", "@babylonjs/core/Engines/WebGPU/webgpuPerfCounter.js")>]
     let WebGPUPerfCounter: WebGPUPerfCounterStatic = jsNative
 
-    /// Uncurried function-valued argument used by Observable.
-    type ObservableConstructor10Parameter1Callback<'T> = System.Action<Observer<'T>>
+    /// @babylonjs/core/Misc/gradients
+    [<AllowNullLiteral>]
+    type Color3Gradient =
+        abstract ``gradient``: float with get, set
+        abstract ``color``: Color3 with get, set
 
-    /// Uncurried function-valued argument used by Observable.
-    type ObservableMethod13Parameter1Callback<'T> = System.Action<'T, EventState>
+    [<AllowNullLiteral>]
+    type Color3GradientStatic =
+        inherit Constructor<Color3Gradient>
+        [<EmitConstructor>] abstract Create: ``gradient``: float * ``color``: Color3 -> Color3Gradient
 
-    /// Uncurried function-valued argument used by Observable.
-    type ObservableMethod16Parameter1Callback<'T> = System.Action<'T, EventState>
+    [<Import("Color3Gradient", "@babylonjs/core/Misc/gradients.js")>]
+    let Color3Gradient: Color3GradientStatic = jsNative
 
-    /// Uncurried function-valued argument used by Observable.
-    type ObservableMethod18Parameter1Callback<'T> = System.Action<'T, EventState>
+    /// @babylonjs/core/Materials/Node/Blocks/gradientBlock.pure
+    [<AllowNullLiteral>]
+    type GradientBlockColorStep =
+        abstract ``step``: float with get, set
+        abstract ``color``: Color3 with get, set
+
+    [<AllowNullLiteral>]
+    type GradientBlockColorStepStatic =
+        inherit Constructor<GradientBlockColorStep>
+        [<EmitConstructor>] abstract Create: ``step``: float * ``color``: Color3 -> GradientBlockColorStep
+
+    [<Import("GradientBlockColorStep", "@babylonjs/core/Materials/Node/Blocks/gradientBlock.pure.js")>]
+    let GradientBlockColorStep: GradientBlockColorStepStatic = jsNative
 
     /// @babylonjs/core/Misc/observable.pure
     [<AllowNullLiteral>]
     type Observable<'T> =
         abstract ``notifyIfTriggered``: bool with get, set
         abstract ``_eventState``: EventState with get, set
-        abstract ``add``: ?``callback``: ObservableMethod13Parameter1Callback<'T> * ?``mask``: float * ?``insertFirst``: bool * ?``scope``: obj * ?``unregisterOnFirstCall``: bool -> Observer<'T> option
-        abstract ``addOnce``: ?``callback``: ObservableMethod16Parameter1Callback<'T> -> Observer<'T> option
+        abstract ``add``: ?``callback``: System.Action<'T, EventState> * ?``mask``: float * ?``insertFirst``: bool * ?``scope``: obj * ?``unregisterOnFirstCall``: bool -> Observer<'T> option
+        abstract ``addOnce``: ?``callback``: System.Action<'T, EventState> -> Observer<'T> option
         abstract ``remove``: ``observer``: Observer<'T> option -> bool
-        abstract ``removeCallback``: ``callback``: ObservableMethod18Parameter1Callback<'T> * ?``scope``: obj -> bool
+        abstract ``removeCallback``: ``callback``: System.Action<'T, EventState> * ?``scope``: obj -> bool
         abstract ``_deferUnregister``: ``observer``: Observer<'T> -> unit
         abstract ``makeObserverTopPriority``: ``observer``: Observer<'T> -> unit
         abstract ``makeObserverBottomPriority``: ``observer``: Observer<'T> -> unit
@@ -2567,7 +3375,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type ObservableStatic =
-        [<EmitConstructor>] abstract Create<'T>: ?``onObserverAdded``: ObservableConstructor10Parameter1Callback<'T> * ?``notifyIfTriggered``: bool -> Observable<'T>
+        [<EmitConstructor>] abstract Create<'T>: ?``onObserverAdded``: System.Action<Observer<'T>> * ?``notifyIfTriggered``: bool -> Observable<'T>
         abstract ``FromPromise``<'T, 'E>: ``promise``: JS.Promise<'T> * ?``onErrorObservable``: Observable<'E> -> Observable<'T>
 
     [<Import("Observable", "@babylonjs/core/Misc/observable.pure.js")>]
@@ -2582,28 +3390,26 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ReadFileErrorStatic =
         inherit RuntimeErrorStatic
+        inherit Constructor<ReadFileError>
         [<EmitConstructor>] abstract Create: ``message``: string * ``file``: Browser.Types.File -> ReadFileError
 
     [<Import("ReadFileError", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ReadFileError: ReadFileErrorStatic = jsNative
 
-    /// Uncurried function-valued argument used by DualShockPad.
-    type DualShockPadMethod28Parameter1Callback = System.Action<float>
+    /// @babylonjs/core/Maths/math.color.pure
+    [<AllowNullLiteral>]
+    type TmpColors =
+        interface end
 
-    /// Uncurried function-valued argument used by DualShockPad.
-    type DualShockPadMethod29Parameter1Callback = System.Action<float>
+    [<AllowNullLiteral>]
+    type TmpColorsStatic =
+        inherit Constructor<TmpColors>
+        [<EmitConstructor>] abstract Create: unit -> TmpColors
+        abstract ``Color3``: ResizeArray<Color3> with get, set
+        abstract ``Color4``: ResizeArray<Color4> with get, set
 
-    /// Uncurried function-valued argument used by DualShockPad.
-    type DualShockPadMethod34Parameter1Callback = System.Action<BabylonjsBindings.Enums.DualShockButton>
-
-    /// Uncurried function-valued argument used by DualShockPad.
-    type DualShockPadMethod35Parameter1Callback = System.Action<BabylonjsBindings.Enums.DualShockButton>
-
-    /// Uncurried function-valued argument used by DualShockPad.
-    type DualShockPadMethod36Parameter1Callback = System.Action<BabylonjsBindings.Enums.DualShockDpad>
-
-    /// Uncurried function-valued argument used by DualShockPad.
-    type DualShockPadMethod37Parameter1Callback = System.Action<BabylonjsBindings.Enums.DualShockDpad>
+    [<Import("TmpColors", "@babylonjs/core/Maths/math.color.pure.js")>]
+    let TmpColors: TmpColorsStatic = jsNative
 
     /// @babylonjs/core/Gamepads/dualShockGamepad
     [<AllowNullLiteral>]
@@ -2613,12 +3419,12 @@ module SimpleClasses =
         abstract ``onButtonUpObservable``: Observable<BabylonjsBindings.Enums.DualShockButton> with get, set
         abstract ``onPadDownObservable``: Observable<BabylonjsBindings.Enums.DualShockDpad> with get, set
         abstract ``onPadUpObservable``: Observable<BabylonjsBindings.Enums.DualShockDpad> with get, set
-        abstract ``onlefttriggerchanged``: ``callback``: DualShockPadMethod28Parameter1Callback -> unit
-        abstract ``onrighttriggerchanged``: ``callback``: DualShockPadMethod29Parameter1Callback -> unit
-        abstract ``onbuttondown``: ``callback``: DualShockPadMethod34Parameter1Callback -> unit
-        abstract ``onbuttonup``: ``callback``: DualShockPadMethod35Parameter1Callback -> unit
-        abstract ``ondpaddown``: ``callback``: DualShockPadMethod36Parameter1Callback -> unit
-        abstract ``ondpadup``: ``callback``: DualShockPadMethod37Parameter1Callback -> unit
+        abstract ``onlefttriggerchanged``: ``callback``: System.Action<float> -> unit
+        abstract ``onrighttriggerchanged``: ``callback``: System.Action<float> -> unit
+        abstract ``onbuttondown``: ``callback``: System.Action<BabylonjsBindings.Enums.DualShockButton> -> unit
+        abstract ``onbuttonup``: ``callback``: System.Action<BabylonjsBindings.Enums.DualShockButton> -> unit
+        abstract ``ondpaddown``: ``callback``: System.Action<BabylonjsBindings.Enums.DualShockDpad> -> unit
+        abstract ``ondpadup``: ``callback``: System.Action<BabylonjsBindings.Enums.DualShockDpad> -> unit
         abstract ``update``: unit -> unit
         abstract ``dispose``: unit -> unit
         abstract ``leftTrigger``: float with get, set
@@ -2641,16 +3447,11 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type DualShockPadStatic =
         inherit GamepadStatic
+        inherit Constructor<DualShockPad>
         [<EmitConstructor>] abstract Create: ``id``: string * ``index``: float * ``gamepad``: obj -> DualShockPad
 
     [<Import("DualShockPad", "@babylonjs/core/Gamepads/dualShockGamepad.js")>]
     let DualShockPad: DualShockPadStatic = jsNative
-
-    /// Uncurried function-valued argument used by GenericPad.
-    type GenericPadMethod6Parameter1Callback = System.Action<float>
-
-    /// Uncurried function-valued argument used by GenericPad.
-    type GenericPadMethod7Parameter1Callback = System.Action<float>
 
     /// @babylonjs/core/Gamepads/gamepad
     [<AllowNullLiteral>]
@@ -2658,21 +3459,19 @@ module SimpleClasses =
         inherit Gamepad
         abstract ``onButtonDownObservable``: Observable<float> with get, set
         abstract ``onButtonUpObservable``: Observable<float> with get, set
-        abstract ``onbuttondown``: ``callback``: GenericPadMethod6Parameter1Callback -> unit
-        abstract ``onbuttonup``: ``callback``: GenericPadMethod7Parameter1Callback -> unit
+        abstract ``onbuttondown``: ``callback``: System.Action<float> -> unit
+        abstract ``onbuttonup``: ``callback``: System.Action<float> -> unit
         abstract ``update``: unit -> unit
         abstract ``dispose``: unit -> unit
 
     [<AllowNullLiteral>]
     type GenericPadStatic =
         inherit GamepadStatic
+        inherit Constructor<GenericPad>
         [<EmitConstructor>] abstract Create: ``id``: string * ``index``: float * ``browserGamepad``: obj -> GenericPad
 
     [<Import("GenericPad", "@babylonjs/core/Gamepads/gamepad.js")>]
     let GenericPad: GenericPadStatic = jsNative
-
-    /// Uncurried function-valued argument used by MultiObserver.
-    type MultiObserverMethod4Parameter2Callback<'T> = System.Action<'T, EventState>
 
     /// @babylonjs/core/Misc/observable.extensions.pure
     [<AllowNullLiteral>]
@@ -2682,28 +3481,10 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MultiObserverStatic =
         [<EmitConstructor>] abstract Create<'T>: unit -> MultiObserver<'T>
-        abstract ``Watch``<'T>: ``observables``: ResizeArray<Observable<'T>> * ``callback``: MultiObserverMethod4Parameter2Callback<'T> * ?``mask``: float * ?``scope``: obj -> MultiObserver<'T>
+        abstract ``Watch``<'T>: ``observables``: ResizeArray<Observable<'T>> * ``callback``: System.Action<'T, EventState> * ?``mask``: float * ?``scope``: obj -> MultiObserver<'T>
 
     [<Import("MultiObserver", "@babylonjs/core/Misc/observable.extensions.pure.js")>]
     let MultiObserver: MultiObserverStatic = jsNative
-
-    /// Uncurried function-valued argument used by Xbox360Pad.
-    type Xbox360PadMethod29Parameter1Callback = System.Action<float>
-
-    /// Uncurried function-valued argument used by Xbox360Pad.
-    type Xbox360PadMethod30Parameter1Callback = System.Action<float>
-
-    /// Uncurried function-valued argument used by Xbox360Pad.
-    type Xbox360PadMethod35Parameter1Callback = System.Action<BabylonjsBindings.Enums.Xbox360Button>
-
-    /// Uncurried function-valued argument used by Xbox360Pad.
-    type Xbox360PadMethod36Parameter1Callback = System.Action<BabylonjsBindings.Enums.Xbox360Button>
-
-    /// Uncurried function-valued argument used by Xbox360Pad.
-    type Xbox360PadMethod37Parameter1Callback = System.Action<BabylonjsBindings.Enums.Xbox360Dpad>
-
-    /// Uncurried function-valued argument used by Xbox360Pad.
-    type Xbox360PadMethod38Parameter1Callback = System.Action<BabylonjsBindings.Enums.Xbox360Dpad>
 
     /// @babylonjs/core/Gamepads/xboxGamepad
     [<AllowNullLiteral>]
@@ -2713,12 +3494,12 @@ module SimpleClasses =
         abstract ``onButtonUpObservable``: Observable<BabylonjsBindings.Enums.Xbox360Button> with get, set
         abstract ``onPadDownObservable``: Observable<BabylonjsBindings.Enums.Xbox360Dpad> with get, set
         abstract ``onPadUpObservable``: Observable<BabylonjsBindings.Enums.Xbox360Dpad> with get, set
-        abstract ``onlefttriggerchanged``: ``callback``: Xbox360PadMethod29Parameter1Callback -> unit
-        abstract ``onrighttriggerchanged``: ``callback``: Xbox360PadMethod30Parameter1Callback -> unit
-        abstract ``onbuttondown``: ``callback``: Xbox360PadMethod35Parameter1Callback -> unit
-        abstract ``onbuttonup``: ``callback``: Xbox360PadMethod36Parameter1Callback -> unit
-        abstract ``ondpaddown``: ``callback``: Xbox360PadMethod37Parameter1Callback -> unit
-        abstract ``ondpadup``: ``callback``: Xbox360PadMethod38Parameter1Callback -> unit
+        abstract ``onlefttriggerchanged``: ``callback``: System.Action<float> -> unit
+        abstract ``onrighttriggerchanged``: ``callback``: System.Action<float> -> unit
+        abstract ``onbuttondown``: ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Button> -> unit
+        abstract ``onbuttonup``: ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Button> -> unit
+        abstract ``ondpaddown``: ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Dpad> -> unit
+        abstract ``ondpadup``: ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Dpad> -> unit
         abstract ``update``: unit -> unit
         abstract ``dispose``: unit -> unit
         abstract ``leftTrigger``: float with get, set
@@ -2741,6 +3522,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type Xbox360PadStatic =
         inherit GamepadStatic
+        inherit Constructor<Xbox360Pad>
         [<EmitConstructor>] abstract Create: ``id``: string * ``index``: float * ``gamepad``: obj * ?``xboxOne``: bool -> Xbox360Pad
 
     [<Import("Xbox360Pad", "@babylonjs/core/Gamepads/xboxGamepad.js")>]

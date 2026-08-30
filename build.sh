@@ -50,6 +50,8 @@ npm run check:simple-object-proposal
 npm run check:simple-alias-proposal
 npm run check:simple-interface-proposal
 npm run check:simple-class-proposal
+npm run check:simple-types-proposal
+npm run check:simple-types-maintained
 npm run check:simple-function-proposal
 npm run check:simple-variable-proposal
 npm run coverage:check

@@ -104,6 +104,14 @@ module SimpleFunctions =
 
     /// @babylonjs/core/Meshes/Builders/greasedLineBuilder
     [<AllowNullLiteral>]
+    type FunctionBinding_CompleteGreasedLineColorTable =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pointCount``: float * ``colors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color3> * ``colorDistribution``: BabylonjsBindings.Enums.GreasedLineMeshColorDistribution * ``defaultColor``: BabylonjsBindings.SimpleClasses.Color3 -> ResizeArray<BabylonjsBindings.SimpleClasses.Color3>
+
+    [<Import("CompleteGreasedLineColorTable", "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js")>]
+    let ``CompleteGreasedLineColorTable``: FunctionBinding_CompleteGreasedLineColorTable = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/greasedLineBuilder
+    [<AllowNullLiteral>]
     type FunctionBinding_CompleteGreasedLineWidthTable =
         [<Emit("$0($1...)")>] abstract Invoke: ``pointCount``: float * ``widths``: ResizeArray<float> * ``widthsDistribution``: BabylonjsBindings.Enums.GreasedLineMeshWidthDistribution * ?``defaultWidthUpper``: float * ?``defaultWidthLower``: float -> ResizeArray<float>
 

@@ -24,6 +24,16 @@ module SimpleInterfaces =
         abstract ``wrapU``: float with get, set
         abstract ``wrapV``: float with get, set
 
+    /// Inline object shape used by _IShaderProcessingContext.
+    [<AllowNullLiteral>]
+    type _IShaderProcessingContextProperty1Object =
+        [<EmitIndexer>] abstract Item: ``kind``: string -> float with get, set
+
+    /// @babylonjs/core/Engines/Processors/shaderProcessingOptions
+    [<AllowNullLiteral>]
+    type _IShaderProcessingContext =
+        abstract ``vertexBufferKindToNumberOfComponents``: _IShaderProcessingContextProperty1Object option with get, set
+
     /// @babylonjs/core/Misc/workerPool
     [<AllowNullLiteral>]
     type AutoReleaseWorkerPoolOptions =
@@ -138,6 +148,11 @@ module SimpleInterfaces =
     type FBXFileLoaderOptions =
         abstract ``normalMapCoordinateSystem``: BabylonjsBindings.StringEnums.FBXNormalMapCoordinateSystem option with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<FBXFileLoaderOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialFBXFileLoaderOptions =
+        abstract ``normalMapCoordinateSystem``: BabylonjsBindings.StringEnums.FBXNormalMapCoordinateSystem option with get, set
+
     /// @babylonjs/core/Gamepads/gamepad
     [<AllowNullLiteral>]
     type GamepadButtonChanges =
@@ -188,6 +203,12 @@ module SimpleInterfaces =
         abstract ``loop``: bool with get, set
         abstract ``startOffset``: float with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<IAbstractSoundPlayOptionsBase> signatures.
+    [<AllowNullLiteral>]
+    type PartialIAbstractSoundPlayOptionsBase =
+        abstract ``loop``: bool option with get, set
+        abstract ``startOffset``: float option with get, set
+
     /// @babylonjs/core/Navigation/INavigationEngine
     [<AllowNullLiteral>]
     type IAgentParameters =
@@ -224,11 +245,26 @@ module SimpleInterfaces =
         abstract ``analyzerMaxDecibels``: float with get, set
         abstract ``analyzerSmoothing``: float with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<IAudioAnalyzerOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIAudioAnalyzerOptions =
+        abstract ``analyzerEnabled``: bool option with get, set
+        abstract ``analyzerFFTSize``: BabylonjsBindings.Enums.AudioAnalyzerFFTSizeType option with get, set
+        abstract ``analyzerMinDecibels``: float option with get, set
+        abstract ``analyzerMaxDecibels``: float option with get, set
+        abstract ``analyzerSmoothing``: float option with get, set
+
     /// @babylonjs/core/AudioV2/audioParameter
     [<AllowNullLiteral>]
     type IAudioParameterRampOptions =
         abstract ``duration``: float with get, set
         abstract ``shape``: BabylonjsBindings.StringEnums.AudioParameterRampShape with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IAudioParameterRampOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIAudioParameterRampOptions =
+        abstract ``duration``: float option with get, set
+        abstract ``shape``: BabylonjsBindings.StringEnums.AudioParameterRampShape option with get, set
 
     /// @babylonjs/core/Engines/ICanvas
     [<AllowNullLiteral>]
@@ -312,6 +348,13 @@ module SimpleInterfaces =
         abstract ``manifoldUrl``: string option with get, set
         abstract ``manifoldInstance``: obj with get, set
         abstract ``manifoldMeshInstance``: obj with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<ICSG2Options> signatures.
+    [<AllowNullLiteral>]
+    type PartialICSG2Options =
+        abstract ``manifoldUrl``: string option with get, set
+        abstract ``manifoldInstance``: obj option with get, set
+        abstract ``manifoldMeshInstance``: obj option with get, set
 
     /// Function-valued ICubeTextureCreationOptions.onLoad property.
     [<AllowNullLiteral>]
@@ -430,6 +473,17 @@ module SimpleInterfaces =
     type IEXRCHannel =
         abstract ``name``: string with get, set
         abstract ``pixelType``: float with get, set
+
+    /// Function-valued IFileRequest.abort property.
+    [<AllowNullLiteral>]
+    type IFileRequestAbortCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/Misc/fileRequest
+    [<AllowNullLiteral>]
+    type IFileRequest =
+        abstract ``onCompleteObservable``: BabylonjsBindings.SimpleClasses.Observable<IFileRequest> with get, set
+        abstract ``abort``: IFileRequestAbortCallback with get, set
 
     /// @babylonjs/core/FlowGraph/flowGraphSceneEventCoordinator
     [<AllowNullLiteral>]
@@ -764,6 +818,12 @@ module SimpleInterfaces =
         abstract ``clipPlane``: bool with get, set
         abstract ``useInstances``: bool with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<IMaterialCompilationOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIMaterialCompilationOptions =
+        abstract ``clipPlane``: bool option with get, set
+        abstract ``useInstances``: bool option with get, set
+
     /// @babylonjs/core/Engines/IMaterialContext
     [<AllowNullLiteral>]
     type IMaterialContext =
@@ -783,6 +843,27 @@ module SimpleInterfaces =
         inherit DeepImmutableIMatrixLike
         abstract ``asArray``: unit -> (float * float * float * float * float * float * float * float * float * float * float * float * float * float * float * float)
         abstract ``updateFlag``: BabylonjsBindings.TypeAliases.int with get, set
+
+    /// Inline object shape used by IMeshDataCache.
+    [<AllowNullLiteral>]
+    type IMeshDataCacheProperty2Object =
+        [<EmitIndexer>] abstract Item: ``kind``: string -> JS.Float32Array with get, set
+
+    /// @babylonjs/core/Meshes/abstractMesh.pure
+    [<AllowNullLiteral>]
+    type IMeshDataCache =
+        abstract ``_outputData``: JS.Float32Array option with get, set
+        abstract ``_vertexData``: IMeshDataCacheProperty2Object option with get, set
+
+    /// Inline object shape used by IMeshoptCompressionConfiguration.
+    [<AllowNullLiteral>]
+    type IMeshoptCompressionConfigurationProperty1Object =
+        abstract ``url``: string with get, set
+
+    /// @babylonjs/core/Meshes/Compression/meshoptCompression
+    [<AllowNullLiteral>]
+    type IMeshoptCompressionConfiguration =
+        abstract ``decoder``: IMeshoptCompressionConfigurationProperty1Object with get, set
 
     /// @babylonjs/core/Meshes/meshUVSpaceRenderer.pure
     [<AllowNullLiteral>]
@@ -865,11 +946,40 @@ module SimpleInterfaces =
     type INodeGeometryInstancingContext =
         abstract ``getInstanceIndex``: unit -> float
 
+    /// Inline object shape used by INodeMaterialEditorOptions.
+    [<AllowNullLiteral>]
+    type INodeMaterialEditorOptionsProperty2Object =
+        abstract ``backgroundColor``: BabylonjsBindings.SimpleClasses.Color4 option with get, set
+
+    /// @babylonjs/core/Materials/Node/nodeMaterial.pure
+    [<AllowNullLiteral>]
+    type INodeMaterialEditorOptions =
+        abstract ``editorURL``: string option with get, set
+        abstract ``nodeEditorConfig``: INodeMaterialEditorOptionsProperty2Object option with get, set
+
     /// @babylonjs/core/Materials/Node/nodeMaterial.pure
     [<AllowNullLiteral>]
     type INodeMaterialOptions =
         abstract ``emitComments``: bool with get, set
         abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<INodeMaterialOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialINodeMaterialOptions =
+        abstract ``emitComments``: bool option with get, set
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage option with get, set
+
+    /// Inline object shape used by INodeParticleEditorOptions.
+    [<AllowNullLiteral>]
+    type INodeParticleEditorOptionsProperty2Object =
+        abstract ``backgroundColor``: BabylonjsBindings.SimpleClasses.Color4 option with get, set
+        abstract ``disposeOnClose``: bool option with get, set
+
+    /// @babylonjs/core/Particles/Node/nodeParticleSystemSet
+    [<AllowNullLiteral>]
+    type INodeParticleEditorOptions =
+        abstract ``editorURL``: string option with get, set
+        abstract ``nodeEditorConfig``: INodeParticleEditorOptionsProperty2Object option with get, set
 
     /// @babylonjs/core/Particles/Node/Blocks/particleSourceTextureBlock.pure
     [<AllowNullLiteral>]
@@ -926,11 +1036,27 @@ module SimpleInterfaces =
     type IObserver =
         abstract ``remove``: ?``defer``: bool -> unit
 
+    /// @babylonjs/core/Offline/IOfflineProvider
+    [<AllowNullLiteral>]
+    type IOfflineProvider =
+        abstract ``enableSceneOffline``: bool with get, set
+        abstract ``enableTexturesOffline``: bool with get, set
+        abstract ``open``: ``successCallback``: System.Action * ``errorCallback``: System.Action -> unit
+        abstract ``loadImage``: ``url``: string * ``image``: Browser.Types.HTMLImageElement -> unit
+        abstract ``loadFile``: ``url``: string * ``sceneLoaded``: System.Action<obj> * ?``progressCallBack``: System.Action<obj> * ?``errorCallback``: System.Action * ?``useArrayBuffer``: bool -> unit
+
     /// @babylonjs/core/Misc/interfaces/iPerfViewer
     [<AllowNullLiteral>]
     type IPerfCustomEvent =
         abstract ``name``: string with get, set
         abstract ``value``: float option with get, set
+
+    /// @babylonjs/core/Misc/interfaces/iPerfViewer
+    [<AllowNullLiteral>]
+    type IPerfDatasets =
+        abstract ``ids``: ResizeArray<string> with get, set
+        abstract ``data``: BabylonjsBindings.SimpleClasses.DynamicFloat32Array with get, set
+        abstract ``startingIndices``: BabylonjsBindings.SimpleClasses.DynamicFloat32Array with get, set
 
     /// @babylonjs/core/Misc/interfaces/iPerfViewer
     [<AllowNullLiteral>]
@@ -994,6 +1120,37 @@ module SimpleInterfaces =
         abstract ``connectedPointIds``: ResizeArray<string> with get, set
         abstract ``defaultValue``: obj option with get, set
 
+    /// Inline object shape used by ISerializedFlowGraphContext.
+    [<AllowNullLiteral>]
+    type ISerializedFlowGraphContextProperty3Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// Inline object shape used by ISerializedFlowGraphContext.
+    [<AllowNullLiteral>]
+    type ISerializedFlowGraphContextProperty4Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by ISerializedFlowGraphContext.
+    [<AllowNullLiteral>]
+    type ISerializedFlowGraphContextProperty5Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// Inline object shape used by ISerializedFlowGraphContext.
+    [<AllowNullLiteral>]
+    type ISerializedFlowGraphContextProperty6Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// @babylonjs/core/FlowGraph/typeDefinitions
+    [<AllowNullLiteral>]
+    type ISerializedFlowGraphContext =
+        abstract ``uniqueId``: string with get, set
+        abstract ``name``: string option with get, set
+        abstract ``_userVariables``: ISerializedFlowGraphContextProperty3Object with get, set
+        abstract ``_variableTypes``: ISerializedFlowGraphContextProperty4Object option with get, set
+        abstract ``_connectionValues``: ISerializedFlowGraphContextProperty5Object with get, set
+        abstract ``_assetsContext``: ISerializedFlowGraphContextProperty6Object option with get, set
+        abstract ``enableLogging``: bool option with get, set
+
     /// Function-valued IShaderMaterialOptions.extraInitializationsAsync property.
     [<AllowNullLiteral>]
     type IShaderMaterialOptionsExtraInitializationsAsyncCallback =
@@ -1016,6 +1173,23 @@ module SimpleInterfaces =
         abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage option with get, set
         abstract ``extraInitializationsAsync``: IShaderMaterialOptionsExtraInitializationsAsyncCallback option with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<IShaderMaterialOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIShaderMaterialOptions =
+        abstract ``needAlphaBlending``: bool option with get, set
+        abstract ``needAlphaTesting``: bool option with get, set
+        abstract ``attributes``: ResizeArray<string> option with get, set
+        abstract ``uniforms``: ResizeArray<string> option with get, set
+        abstract ``uniformBuffers``: ResizeArray<string> option with get, set
+        abstract ``samplers``: ResizeArray<string> option with get, set
+        abstract ``externalTextures``: ResizeArray<string> option with get, set
+        abstract ``samplerObjects``: ResizeArray<string> option with get, set
+        abstract ``storageBuffers``: ResizeArray<string> option with get, set
+        abstract ``defines``: ResizeArray<string> option with get, set
+        abstract ``useClipPlane``: bool option with get, set
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage option with get, set
+        abstract ``extraInitializationsAsync``: IShaderMaterialOptionsExtraInitializationsAsyncCallback option with get, set
+
     /// @babylonjs/core/Meshes/meshSimplification.common
     [<AllowNullLiteral>]
     type ISimplificationSettings =
@@ -1028,6 +1202,12 @@ module SimpleInterfaces =
     type ISize =
         abstract ``width``: float with get, set
         abstract ``height``: float with get, set
+
+    /// @babylonjs/core/Debug/ISkeletonViewer
+    [<AllowNullLiteral>]
+    type ISkeletonMapShaderColorMapKnot =
+        abstract ``color``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``location``: float with get, set
 
     /// @babylonjs/core/Debug/ISkeletonViewer
     [<AllowNullLiteral>]
@@ -1078,10 +1258,20 @@ module SimpleInterfaces =
     type IStaticSoundBufferCloneOptions =
         abstract ``name``: string with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<IStaticSoundBufferCloneOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStaticSoundBufferCloneOptions =
+        abstract ``name``: string option with get, set
+
     /// @babylonjs/core/AudioV2/abstractAudio/staticSoundBuffer
     [<AllowNullLiteral>]
     type IStaticSoundBufferOptions =
         abstract ``skipCodecCheck``: bool with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IStaticSoundBufferOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStaticSoundBufferOptions =
+        abstract ``skipCodecCheck``: bool option with get, set
 
     /// @babylonjs/core/AudioV2/abstractAudio/staticSound
     [<AllowNullLiteral>]
@@ -1090,10 +1280,22 @@ module SimpleInterfaces =
         abstract ``loopEnd``: float with get, set
         abstract ``loopStart``: float with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<IStaticSoundOptionsBase> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStaticSoundOptionsBase =
+        abstract ``duration``: float option with get, set
+        abstract ``loopEnd``: float option with get, set
+        abstract ``loopStart``: float option with get, set
+
     /// @babylonjs/core/AudioV2/abstractAudio/staticSound
     [<AllowNullLiteral>]
     type IStaticSoundStopOptions =
         abstract ``waitTime``: float with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IStaticSoundStopOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStaticSoundStopOptions =
+        abstract ``waitTime``: float option with get, set
 
     /// @babylonjs/core/States/IStencilState
     [<AllowNullLiteral>]
@@ -1117,6 +1319,12 @@ module SimpleInterfaces =
         abstract ``stereoEnabled``: bool with get, set
         abstract ``stereoPan``: float with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<IStereoAudioOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStereoAudioOptions =
+        abstract ``stereoEnabled``: bool option with get, set
+        abstract ``stereoPan``: float option with get, set
+
     /// @babylonjs/core/AudioV2/abstractAudio/streamingSound
     [<AllowNullLiteral>]
     type IStreamingSoundOptionsBase =
@@ -1131,6 +1339,15 @@ module SimpleInterfaces =
         abstract ``preserveEdges``: bool option with get, set
         abstract ``weight``: float option with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<ISubdivideOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialISubdivideOptions =
+        abstract ``flatOnly``: bool option with get, set
+        abstract ``split``: bool option with get, set
+        abstract ``uvSmooth``: bool option with get, set
+        abstract ``preserveEdges``: bool option with get, set
+        abstract ``weight``: float option with get, set
+
     /// @babylonjs/core/Engines/ICanvas
     [<AllowNullLiteral>]
     type ITextMetrics =
@@ -1139,6 +1356,23 @@ module SimpleInterfaces =
         abstract ``actualBoundingBoxRight``: float with get
         abstract ``actualBoundingBoxAscent``: float with get
         abstract ``actualBoundingBoxDescent``: float with get
+
+    /// @babylonjs/core/Materials/Textures/Packer/packer
+    [<AllowNullLiteral>]
+    type ITexturePackerOptions =
+        abstract ``map``: ResizeArray<string> option with get, set
+        abstract ``uvsIn``: string option with get, set
+        abstract ``uvsOut``: string option with get, set
+        abstract ``layout``: float option with get, set
+        abstract ``colnum``: float option with get, set
+        abstract ``updateInputMeshes``: bool option with get, set
+        abstract ``disposeSources``: bool option with get, set
+        abstract ``fillBlanks``: bool option with get, set
+        abstract ``customFillColor``: string option with get, set
+        abstract ``frameSize``: float option with get, set
+        abstract ``paddingRatio``: float option with get, set
+        abstract ``paddingMode``: float option with get, set
+        abstract ``paddingColor``: U2<BabylonjsBindings.SimpleClasses.Color3, BabylonjsBindings.SimpleClasses.Color4> option with get, set
 
     /// @babylonjs/core/Misc/timer
     [<AllowNullLiteral>]
@@ -1158,6 +1392,28 @@ module SimpleInterfaces =
         abstract ``sections``: float option with get, set
         abstract ``doNotTaper``: bool option with get, set
         abstract ``autoStart``: bool option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper
+    [<AllowNullLiteral>]
+    type ITransmissionHelperOptions =
+        abstract ``renderSize``: float with get, set
+        abstract ``samples``: float with get, set
+        abstract ``lodGenerationScale``: float with get, set
+        abstract ``lodGenerationOffset``: float with get, set
+        abstract ``renderTargetTextureType``: float with get, set
+        abstract ``generateMipmaps``: bool with get, set
+        abstract ``clearColor``: BabylonjsBindings.SimpleClasses.Color4 option with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<ITransmissionHelperOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialITransmissionHelperOptions =
+        abstract ``renderSize``: float option with get, set
+        abstract ``samples``: float option with get, set
+        abstract ``lodGenerationScale``: float option with get, set
+        abstract ``lodGenerationOffset``: float option with get, set
+        abstract ``renderTargetTextureType``: float option with get, set
+        abstract ``generateMipmaps``: bool option with get, set
+        abstract ``clearColor``: BabylonjsBindings.SimpleClasses.Color4 option with get, set
 
     /// Function-valued IUIEvent.preventDefault property.
     [<AllowNullLiteral>]
@@ -1255,6 +1511,11 @@ module SimpleInterfaces =
     type IVertexDataRebuildOptions =
         abstract ``rebuildNormals``: bool option with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<IVertexDataRebuildOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIVertexDataRebuildOptions =
+        abstract ``rebuildNormals``: bool option with get, set
+
     /// @babylonjs/core/Materials/vertexPullingHelper.functions
     [<AllowNullLiteral>]
     type IVertexPullingMetadata =
@@ -1275,6 +1536,11 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IVolumeAudioOptions =
         abstract ``volume``: float with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IVolumeAudioOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIVolumeAudioOptions =
+        abstract ``volume``: float option with get, set
 
     /// @babylonjs/core/Misc/interfaces/iWebRequest
     [<AllowNullLiteral>]
@@ -1322,6 +1588,23 @@ module SimpleInterfaces =
     type IWebXRRawCameraAccessOptions =
         abstract ``doNotDisposeOnDetach``: bool option with get, set
 
+    /// @babylonjs/core/Materials/meshDebugPluginMaterial.pure
+    [<AllowNullLiteral>]
+    type MeshDebugOptions =
+        abstract ``mode``: BabylonjsBindings.Enums.MeshDebugMode option with get, set
+        abstract ``multiply``: bool option with get, set
+        abstract ``shadedDiffuseColor``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``shadedSpecularColor``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``shadedSpecularPower``: float option with get, set
+        abstract ``wireframeThickness``: float option with get, set
+        abstract ``wireframeTrianglesColor``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``wireframeVerticesColor``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``vertexColor``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``vertexRadius``: float option with get, set
+        abstract ``uvScale``: float option with get, set
+        abstract ``uvPrimaryColor``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``uvSecondaryColor``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+
     /// @babylonjs/core/Rendering/objectRenderer
     [<AllowNullLiteral>]
     type ObjectRendererOptions =
@@ -1356,6 +1639,11 @@ module SimpleInterfaces =
         abstract ``restitution``: float option with get, set
         abstract ``frictionCombine``: BabylonjsBindings.Enums.PhysicsMaterialCombineMode option with get, set
         abstract ``restitutionCombine``: BabylonjsBindings.Enums.PhysicsMaterialCombineMode option with get, set
+
+    /// @babylonjs/core/Gizmos/rotationGizmo
+    [<AllowNullLiteral>]
+    type PlaneRotationGizmoOptions =
+        abstract ``color``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
 
     /// @babylonjs/core/Events/pointerEvents
     [<AllowNullLiteral>]
@@ -1410,6 +1698,17 @@ module SimpleInterfaces =
         abstract ``format``: float option with get, set
         abstract ``independentVideoSource``: bool option with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<VideoTextureSettings> signatures.
+    [<AllowNullLiteral>]
+    type PartialVideoTextureSettings =
+        abstract ``autoPlay``: bool option with get, set
+        abstract ``muted``: bool option with get, set
+        abstract ``loop``: bool option with get, set
+        abstract ``autoUpdateTexture``: bool option with get, set
+        abstract ``poster``: string option with get, set
+        abstract ``format``: float option with get, set
+        abstract ``independentVideoSource``: bool option with get, set
+
     /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext
     [<AllowNullLiteral>]
     type WebGPUBindGroupLayoutEntryInfo =
@@ -1435,6 +1734,12 @@ module SimpleInterfaces =
         inherit IAudioAnalyzerOptions
         inherit IVolumeAudioOptions
 
+    /// Exact optional-property projection used by Babylon Partial<IAbstractAudioOutNodeOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIAbstractAudioOutNodeOptions =
+        inherit PartialIAudioAnalyzerOptions
+        inherit PartialIVolumeAudioOptions
+
     /// @babylonjs/core/AudioV2/abstractAudio/abstractSoundInstance
     [<AllowNullLiteral>]
     type IAbstractSoundInstanceOptions =
@@ -1445,6 +1750,12 @@ module SimpleInterfaces =
     type IAbstractSoundPlayOptions =
         inherit IAbstractSoundPlayOptionsBase
         inherit IVolumeAudioOptions
+
+    /// Exact optional-property projection used by Babylon Partial<IAbstractSoundPlayOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIAbstractSoundPlayOptions =
+        inherit PartialIAbstractSoundPlayOptionsBase
+        inherit PartialIVolumeAudioOptions
 
     /// @babylonjs/core/AudioV2/abstractAudio/abstractSound
     [<AllowNullLiteral>]
@@ -1513,6 +1824,25 @@ module SimpleInterfaces =
     type IExplorerExtensibilityGroup =
         abstract ``predicate``: IExplorerExtensibilityGroupPredicateCallback with get, set
         abstract ``entries``: ResizeArray<IExplorerExtensibilityOption> with get, set
+
+    /// Inline object shape used by IFontData.
+    [<AllowNullLiteral>]
+    type IFontDataProperty3Object =
+        abstract ``yMax``: float with get, set
+        abstract ``yMin``: float with get, set
+
+    /// Inline object shape used by IFontData.
+    [<AllowNullLiteral>]
+    type IFontDataProperty4Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> IGlyphData with get, set
+
+    /// @babylonjs/core/Meshes/Builders/textBuilder
+    [<AllowNullLiteral>]
+    type IFontData =
+        abstract ``resolution``: float with get, set
+        abstract ``underlineThickness``: float with get, set
+        abstract ``boundingBox``: IFontDataProperty3Object with get, set
+        abstract ``glyphs``: IFontDataProperty4Object with get, set
 
     /// @babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces
     [<AllowNullLiteral>]
@@ -1599,6 +1929,13 @@ module SimpleInterfaces =
         abstract ``rect``: ``x``: float * ``y``: float * ``width``: float * ``height``: float -> unit
         abstract ``roundRect``: ``x``: float * ``y``: float * ``width``: float * ``height``: float * ``radii``: float -> unit
 
+    /// @babylonjs/core/Engines/abstractEngine.pure
+    [<AllowNullLiteral>]
+    type ISceneLike =
+        abstract ``addPendingData``: ``data``: obj -> unit
+        abstract ``removePendingData``: ``data``: obj -> unit
+        abstract ``offlineProvider``: IOfflineProvider with get, set
+
     /// @babylonjs/core/FlowGraph/typeDefinitions
     [<AllowNullLiteral>]
     type ISerializedFlowGraphBlock =
@@ -1622,6 +1959,16 @@ module SimpleInterfaces =
         abstract ``computeBonesUsingShaders``: bool with get, set
         abstract ``useAllBones``: bool with get, set
 
+    /// Exact optional-property projection used by Babylon Partial<ISkeletonViewerOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialISkeletonViewerOptions =
+        abstract ``pauseAnimations``: bool option with get, set
+        abstract ``returnToRest``: bool option with get, set
+        abstract ``displayMode``: float option with get, set
+        abstract ``displayOptions``: ISkeletonViewerDisplayOptions option with get, set
+        abstract ``computeBonesUsingShaders``: bool option with get, set
+        abstract ``useAllBones``: bool option with get, set
+
     /// @babylonjs/core/Sprites/ISprites
     [<AllowNullLiteral>]
     type ISpriteJSONSprite =
@@ -1637,6 +1984,52 @@ module SimpleInterfaces =
     type IStencilState =
         inherit IStencilStateProperties
         abstract ``reset``: unit -> unit
+
+    /// @babylonjs/core/Materials/Textures/Packer/packer
+    [<AllowNullLiteral>]
+    type ITexturePackerJSON =
+        abstract ``name``: string with get, set
+        abstract ``sets``: obj with get, set
+        abstract ``options``: ITexturePackerOptions with get, set
+        abstract ``frames``: ResizeArray<float> with get, set
+
+    /// Inline object shape used by ITimerOptions.
+    [<AllowNullLiteral>]
+    type ITimerOptionsProperty3Object<'T> =
+        abstract ``mask``: float option with get, set
+        abstract ``insertFirst``: bool option with get, set
+        abstract ``scope``: obj option with get, set
+
+    /// Function-valued ITimerOptions.breakCondition property.
+    [<AllowNullLiteral>]
+    type ITimerOptionsBreakConditionCallback<'T> =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``data``: ITimerData<'T> -> bool
+
+    /// Function-valued ITimerOptions.onEnded property.
+    [<AllowNullLiteral>]
+    type ITimerOptionsOnEndedCallback<'T> =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: ITimerData<obj> -> unit
+
+    /// Function-valued ITimerOptions.onAborted property.
+    [<AllowNullLiteral>]
+    type ITimerOptionsOnAbortedCallback<'T> =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: ITimerData<obj> -> unit
+
+    /// Function-valued ITimerOptions.onTick property.
+    [<AllowNullLiteral>]
+    type ITimerOptionsOnTickCallback<'T> =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: ITimerData<obj> -> unit
+
+    /// @babylonjs/core/Misc/timer
+    [<AllowNullLiteral>]
+    type ITimerOptions<'T> =
+        abstract ``timeout``: float with get, set
+        abstract ``contextObservable``: BabylonjsBindings.SimpleClasses.Observable<'T> with get, set
+        abstract ``observableParameters``: ITimerOptionsProperty3Object<'T> option with get, set
+        abstract ``breakCondition``: ITimerOptionsBreakConditionCallback<'T> option with get, set
+        abstract ``onEnded``: ITimerOptionsOnEndedCallback<'T> option with get, set
+        abstract ``onAborted``: ITimerOptionsOnAbortedCallback<'T> option with get, set
+        abstract ``onTick``: ITimerOptionsOnTickCallback<'T> option with get, set
 
     /// Exact readonly projection of IVector3Like used by Babylon DeepImmutable<IVector3Like> signatures.
     [<AllowNullLiteral>]
@@ -1662,9 +2055,25 @@ module SimpleInterfaces =
         inherit IAudioAnalyzerOptions
         inherit IVolumeAudioOptions
 
+    /// Exact optional-property projection used by Babylon Partial<IWebAudioBaseSubGraphOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIWebAudioBaseSubGraphOptions =
+        inherit PartialIAudioAnalyzerOptions
+        inherit PartialIVolumeAudioOptions
+
     /// @babylonjs/core/XR/webXRInput
     [<AllowNullLiteral>]
     type IWebXRInputOptions =
+        abstract ``doNotLoadControllerMeshes``: bool option with get, set
+        abstract ``forceInputProfile``: string option with get, set
+        abstract ``disableOnlineControllerRepository``: bool option with get, set
+        abstract ``customControllersRepositoryURL``: string option with get, set
+        abstract ``disableControllerAnimation``: bool option with get, set
+        abstract ``controllerOptions``: IWebXRControllerOptions option with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IWebXRInputOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIWebXRInputOptions =
         abstract ``doNotLoadControllerMeshes``: bool option with get, set
         abstract ``forceInputProfile``: string option with get, set
         abstract ``disableOnlineControllerRepository``: bool option with get, set
@@ -1707,6 +2116,11 @@ module SimpleInterfaces =
     type IAbstractAudioBusOptions =
         inherit IAbstractAudioOutNodeOptions
 
+    /// Exact optional-property projection used by Babylon Partial<IAbstractAudioBusOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIAbstractAudioBusOptions =
+        inherit PartialIAbstractAudioOutNodeOptions
+
     /// @babylonjs/core/Debug/debugLayer.pure
     [<AllowNullLiteral>]
     type IExplorerAdditionalChild =
@@ -1735,6 +2149,15 @@ module SimpleInterfaces =
         inherit IVector3Like
         abstract ``w``: BabylonjsBindings.TypeAliases.float with get, set
 
+    /// @babylonjs/core/FlowGraph/typeDefinitions
+    [<AllowNullLiteral>]
+    type ISerializedFlowGraph =
+        abstract ``name``: string option with get, set
+        abstract ``uniqueId``: string option with get, set
+        abstract ``executionContexts``: ResizeArray<ISerializedFlowGraphContext> with get, set
+        abstract ``allBlocks``: ResizeArray<ISerializedFlowGraphBlock> with get, set
+        abstract ``rightHanded``: bool option with get, set
+
     /// @babylonjs/core/AudioV2/abstractAudio/staticSoundInstance
     [<AllowNullLiteral>]
     type IStaticSoundInstanceOptions =
@@ -1747,6 +2170,13 @@ module SimpleInterfaces =
         inherit IAbstractSoundPlayOptions
         inherit IStaticSoundOptionsBase
         abstract ``waitTime``: float with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IStaticSoundPlayOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStaticSoundPlayOptions =
+        inherit PartialIAbstractSoundPlayOptions
+        inherit PartialIStaticSoundOptionsBase
+        abstract ``waitTime``: float option with get, set
 
     /// @babylonjs/core/AudioV2/abstractAudio/staticSound
     [<AllowNullLiteral>]
@@ -1766,6 +2196,11 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IStreamingSoundPlayOptions =
         inherit IAbstractSoundPlayOptions
+
+    /// Exact optional-property projection used by Babylon Partial<IStreamingSoundPlayOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStreamingSoundPlayOptions =
+        inherit PartialIAbstractSoundPlayOptions
 
     /// @babylonjs/core/AudioV2/abstractAudio/streamingSound
     [<AllowNullLiteral>]
@@ -1796,3 +2231,8 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IMainAudioBusOptions =
         inherit IAbstractAudioBusOptions
+
+    /// Exact optional-property projection used by Babylon Partial<IMainAudioBusOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIMainAudioBusOptions =
+        inherit PartialIAbstractAudioBusOptions

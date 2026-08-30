@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "27b29c4aa159b18b51468c99f624e267f987771a30d24a73d4f6e78860462911",
+  "proposalSha256": "800732e4888ad7f7dee3e70d77e96fd1fc40d8133be9dcc0aca5fce2f8d08e5d",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -113,6 +113,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Clamp",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder",
+      "name": "CompleteGreasedLineColorTable",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CompleteGreasedLineColorTable",
       "overloadCount": 1
     },
     {

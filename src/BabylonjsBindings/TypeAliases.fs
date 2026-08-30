@@ -14,6 +14,7 @@ module TypeAliases =
 
     /// @babylonjs/core/types
     type FloatArray = U2<ResizeArray<System.Double>, JS.Float32Array>
+    type DeepImmutableFloatArray = U2<System.Collections.Generic.IReadOnlyList<System.Double>, JS.Float32Array>
 
     /// @babylonjs/core/FrameGraph/frameGraphTypes
     type FrameGraphTextureHandle = System.Double

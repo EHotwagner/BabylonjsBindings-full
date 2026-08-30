@@ -1,4 +1,4 @@
-// REVIEWED MAINTAINED SOURCE — exact declaration and runtime export proof recorded in generated-candidates
+// REVIEWED MAINTAINED SOURCE — exact declaration, import, and runtime proof recorded in generated-candidates
 namespace BabylonjsBindings
 
 open Fable.Core
@@ -33,6 +33,18 @@ module SimpleVariables =
     /// @babylonjs/core/FlowGraph/utils
     [<Import("_IsMacPlatform", "@babylonjs/core/FlowGraph/utils.js")>]
     let ``_IsMacPlatform``: bool = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<Import("_StaticOffsetValueColor3", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``_StaticOffsetValueColor3``: BabylonjsBindings.SimpleClasses.DeepImmutableColor3 = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<Import("_StaticOffsetValueColor4", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``_StaticOffsetValueColor4``: BabylonjsBindings.SimpleClasses.DeepImmutableColor4 = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<Import("_StaticOffsetValueSize", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``_StaticOffsetValueSize``: BabylonjsBindings.SimpleClasses.DeepImmutableSize = jsNative
 
     /// Inline object shape of _StereoAudioDefaults.
     [<AllowNullLiteral>]
@@ -3546,6 +3558,14 @@ module SimpleVariables =
     /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
     [<Import("RichTypeBoolean", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
     let ``RichTypeBoolean``: BabylonjsBindings.SimpleClasses.RichType<bool> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeColor3", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeColor3``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Color3> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeColor4", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeColor4``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Color4> = jsNative
 
     /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
     [<Import("RichTypeFlowGraphInteger", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]

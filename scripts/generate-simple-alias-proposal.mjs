@@ -18,6 +18,24 @@ const program = ts.createProgram([...lockedPaths].map(file => resolve(nodeModule
   skipLibCheck: true
 });
 const checker = program.getTypeChecker();
+const deepImmutableAliasNames = new Set();
+for (const sourceFile of program.getSourceFiles()) {
+  const lockedPath = normalize(sourceFile.fileName);
+  if (!lockedPaths.has(lockedPath)) continue;
+  const visit = node => {
+    if (ts.isTypeReferenceNode(node)
+      && ts.isIdentifier(node.typeName)
+      && node.typeName.text === "DeepImmutable"
+      && node.typeArguments?.length === 1
+      && ts.isTypeReferenceNode(node.typeArguments[0])
+      && ts.isIdentifier(node.typeArguments[0].typeName)
+      && !node.typeArguments[0].typeArguments?.length) {
+      deepImmutableAliasNames.add(node.typeArguments[0].typeName.text);
+    }
+    ts.forEachChild(node, visit);
+  };
+  visit(sourceFile);
+}
 
 const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
@@ -47,6 +65,29 @@ const fsharpType = node => {
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
     const browserTypes = new Set(["HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "ImageData"]);
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
+  }
+  return undefined;
+};
+const deepImmutableFsharpType = node => {
+  if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
+  if (node.kind === ts.SyntaxKind.NumberKeyword) return "System.Double";
+  if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
+  if (ts.isParenthesizedTypeNode(node)) return deepImmutableFsharpType(node.type);
+  if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
+    const branches = node.types.map(deepImmutableFsharpType);
+    return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
+  }
+  if (ts.isArrayTypeNode(node)) {
+    const element = deepImmutableFsharpType(node.elementType);
+    return element ? `System.Collections.Generic.IReadOnlyList<${element}>` : undefined;
+  }
+  if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
+      const element = deepImmutableFsharpType(node.typeArguments[0]);
+      return element ? `System.Collections.Generic.IReadOnlyList<${element}>` : undefined;
+    }
+    const typedArrays = new Set(["BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
+    if (!node.typeArguments?.length && typedArrays.has(node.typeName.text)) return `JS.${node.typeName.text}`;
   }
   return undefined;
 };
@@ -91,7 +132,14 @@ for (const sourceFile of program.getSourceFiles()) {
       entry = { package: packageName, module, name, shape: "callback", returnType, parameters };
     } else if (!declaration.typeParameters?.length) {
       const targetType = fsharpType(declaration.type);
-      if (targetType) entry = { package: packageName, module, name, shape: "alias", target: targetType };
+      if (targetType) entry = {
+        package: packageName,
+        module,
+        name,
+        shape: "alias",
+        target: targetType,
+        ...(deepImmutableAliasNames.has(name) && deepImmutableFsharpType(declaration.type) ? { deepImmutableTarget: deepImmutableFsharpType(declaration.type) } : {})
+      };
     }
     if (entry) entriesByIdentity.set(`${packageName}|${module}|${name}`, entry);
   }
@@ -117,6 +165,7 @@ for (const entry of entries) {
   if (entry.shape === "alias" || entry.shape === "genericAlias") {
     const generic = entry.shape === "genericAlias" ? `<'${entry.typeParameter}>` : "";
     lines.push(`    type ${entry.name}${generic} = ${entry.target}`);
+    if (entry.deepImmutableTarget) lines.push(`    type DeepImmutable${entry.name} = ${entry.deepImmutableTarget}`);
   } else {
     const argumentsType = entry.parameters.length === 0
       ? "unit"
@@ -136,6 +185,7 @@ const manifest = {
     kind: "type",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.TypeAliases.${entry.name}`,
+    ...(entry.deepImmutableTarget ? { deepImmutableSymbol: `BabylonjsBindings.TypeAliases.DeepImmutable${entry.name}` } : {}),
     shape: entry.shape,
     ...(entry.shape === "genericAlias" ? { typeParameterCount: 1 } : {}),
     memberCount: entry.shape === "callback" ? entry.parameters.length : 1

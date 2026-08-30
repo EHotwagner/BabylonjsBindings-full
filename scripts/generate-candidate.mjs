@@ -15,6 +15,7 @@ const maintainedPaths = [
   "src/BabylonjsBindings/TypeAliases.fs",
   "src/BabylonjsBindings/SimpleInterfaces.fs",
   "src/BabylonjsBindings/SimpleClasses.fs",
+  "src/BabylonjsBindings/SimpleTypes.fs",
   "src/BabylonjsBindings/SimpleFunctions.fs",
   "src/BabylonjsBindings/SimpleVariables.fs"
 ];

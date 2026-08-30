@@ -13,6 +13,7 @@ const simpleObjectProposalPath = resolve(root, "generated-candidates/SimpleObjec
 const simpleAliasProposalPath = resolve(root, "generated-candidates/SimpleAliases.proposal.fs");
 const simpleInterfaceProposalPath = resolve(root, "generated-candidates/SimpleInterfaces.proposal.fs");
 const simpleClassProposalPath = resolve(root, "generated-candidates/SimpleClasses.proposal.fs");
+const simpleTypesProposalPath = resolve(root, "generated-candidates/SimpleTypes.proposal.fs");
 const simpleFunctionProposalPath = resolve(root, "generated-candidates/SimpleFunctions.proposal.fs");
 const simpleVariableProposalPath = resolve(root, "generated-candidates/SimpleVariables.proposal.fs");
 const reportPath = resolve(root, "generated-candidates/compile-diagnostics.json");
@@ -25,6 +26,7 @@ const simpleObjectProposal = await readFile(simpleObjectProposalPath);
 const simpleAliasProposal = await readFile(simpleAliasProposalPath);
 const simpleInterfaceProposal = await readFile(simpleInterfaceProposalPath);
 const simpleClassProposal = await readFile(simpleClassProposalPath);
+const simpleTypesProposal = await readFile(simpleTypesProposalPath);
 const simpleFunctionProposal = await readFile(simpleFunctionProposalPath);
 const simpleVariableProposal = await readFile(simpleVariableProposalPath);
 const execution = spawnSync(
@@ -58,6 +60,7 @@ const report = {
   simpleAliasProposalSha256: createHash("sha256").update(simpleAliasProposal).digest("hex"),
   simpleInterfaceProposalSha256: createHash("sha256").update(simpleInterfaceProposal).digest("hex"),
   simpleClassProposalSha256: createHash("sha256").update(simpleClassProposal).digest("hex"),
+  simpleTypesProposalSha256: createHash("sha256").update(simpleTypesProposal).digest("hex"),
   simpleFunctionProposalSha256: createHash("sha256").update(simpleFunctionProposal).digest("hex"),
   simpleVariableProposalSha256: createHash("sha256").update(simpleVariableProposal).digest("hex"),
   status: execution.status === 0 ? "pass" : "fail",

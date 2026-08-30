@@ -75,24 +75,36 @@ let bits = BitArray.Create(8.0)
 bits.``set``(3.0, true)
 let bitWasSet = bits.``get``(3.0)
 let curveMidpoint = BezierCurve.``Interpolate``(0.5, 0.0, 0.0, 1.0, 1.0)
+let red = Color3.Create(1.0, 0.0, 0.0)
+let blue = Color3.Create(0.0, 0.0, 1.0)
+let magenta = red.``add``(unbox<DeepImmutableIColor3Like> blue)
+let translucentMagenta = Color4.``FromColor3``(unbox<DeepImmutableIColor3Like> magenta, 0.5)
+let completedColors = BabylonjsBindings.SimpleFunctions.``CompleteGreasedLineColorTable``.Invoke(4.0, ResizeArray [ red; blue ], GreasedLineMeshColorDistribution.``COLOR_DISTRIBUTION_REPEAT``, Color3.``Black``())
+let richColor3 = SimpleVariables.``RichTypeColor3``
+let richColor4 = SimpleVariables.``RichTypeColor4``
+let staticColor3 = SimpleVariables.``_StaticOffsetValueColor3``
+let staticColor4 = SimpleVariables.``_StaticOffsetValueColor4``
+let staticSize = SimpleVariables.``_StaticOffsetValueSize``
+let meshoptDecoderUrl = MeshoptCompression.``Configuration``.``decoder``.``url``
+let anchorFeatureName = asString WebXRFeatureName.``ANCHOR_SYSTEM``
 let animationMask = AnimationGroupMask.Create(names = ResizeArray [ "hero" ])
 animationMask.``addTargetName``(U2.Case1 "enemy")
 let alphaState = AlphaState.Create(true)
 alphaState.``setAlphaBlend``(true)
 let customRichType = RichType.Create("custom-string", "default")
-let lazyFactory: LazyConstructor3Parameter1Callback<string> = System.Func<string>(fun () -> "lazy-value")
+let lazyFactory = System.Func<string>(fun () -> "lazy-value")
 let lazyValue: Lazy<string> = Lazy.Create(lazyFactory)
 let smartValues: SmartArray<float> = SmartArray.Create(4.0)
 smartValues.``push``(2.0)
 smartValues.``push``(1.0)
-let smartComparer: SmartArrayMethod7Parameter1Callback<float> = System.Func<float, float, float>(fun left right -> left - right)
+let smartComparer = System.Func<float, float, float>(fun left right -> left - right)
 smartValues.``sort``(smartComparer)
 let duplicateEntry = createObj [ "name" ==> "single" ]
 let uniqueValues: SmartArrayNoDuplicate<obj> = SmartArrayNoDuplicate.Create(4.0)
 let firstUniquePush = uniqueValues.``pushNoDuplicate``(duplicateEntry)
 let secondUniquePush = uniqueValues.``pushNoDuplicate``(duplicateEntry)
 let mutable animationEventFrame = -1.0
-let animationEventAction: AnimationEventConstructor5Parameter2Callback = System.Action<float>(fun frame -> animationEventFrame <- frame)
+let animationEventAction = System.Action<float>(fun frame -> animationEventFrame <- frame)
 let animationEvent = AnimationEvent.Create(12.0, animationEventAction, onlyOnce = true)
 animationEvent.``action``.Invoke(animationEvent.``frame``)
 let factorGradient = FactorGradient.Create(0.5, 2.0)
@@ -184,17 +196,17 @@ let uniformMat4Size = WebGPUShaderProcessor.``UniformSizes``.["mat4"]
 let observableA: Observable<string> = Observable.Create()
 let observableB: Observable<string> = Observable.Create()
 let mutable observedValues = ResizeArray<string>()
-let observableCallback: ObservableMethod13Parameter1Callback<string> =
+let observableCallback =
     System.Action<string, EventState>(fun value _ -> observedValues.Add(value))
 let observer = observableA.``add``(callback = observableCallback)
-let multiCallback: MultiObserverMethod4Parameter2Callback<string> =
+let multiCallback =
     System.Action<string, EventState>(fun value _ -> observedValues.Add($"multi:{value}"))
 let multiObserver = MultiObserver.``Watch``(ResizeArray [ observableA; observableB ], multiCallback)
 observableA.``notifyObservers``("first") |> ignore
 observableB.``notifyObservers``("second") |> ignore
 let thinSprite = ThinSprite.Create()
 let mutable thinAnimationEnded = false
-let thinAnimationEnd: ThinSpriteMethod29Parameter5Callback = System.Action(fun () -> thinAnimationEnded <- true)
+let thinAnimationEnd = System.Action(fun () -> thinAnimationEnded <- true)
 thinSprite.``playAnimation``(0.0, 1.0, false, 1.0, Some thinAnimationEnd)
 thinSprite.``_animate``(2.0)
 thinSprite.``_animate``(2.0)
@@ -245,6 +257,12 @@ if decodedData.``mipmaps``[0].``data``.Value.length <> 4 || decodedData.``errors
     failwith "Babylon optional interface dependency closure was not preserved"
 if not bitWasSet || curveMidpoint <= 0.0 || curveMidpoint >= 1.0 then
     failwith "Babylon dependency-free class import was not preserved"
+if magenta.``r`` <> 1.0 || magenta.``g`` <> 0.0 || magenta.``b`` <> 1.0 || translucentMagenta.``a`` <> 0.5 || completedColors.Count <> 4 || not (obj.ReferenceEquals(completedColors[0], red)) || not (obj.ReferenceEquals(completedColors[2], red)) then
+    failwith "Babylon constrained color classes and greased-line function were not preserved"
+if richColor3.``typeName`` <> "Color3" || richColor4.``typeName`` <> "Color4" || staticColor3.``r`` <> 0.0 || staticColor4.``a`` <> 0.0 || staticSize.``width`` <> 0.0 then
+    failwith "Babylon color and readonly offset variables were not preserved"
+if not (meshoptDecoderUrl.Contains("meshopt")) || anchorFeatureName <> "xr-anchor-system" then
+    failwith "Babylon recursive interface/class imports were not preserved"
 if not (animationMask.``hasTarget``("hero")) || not (animationMask.``hasTarget``("enemy")) then
     failwith "Babylon erased-union class method was not preserved"
 if not alphaState.``alphaBlend`` then

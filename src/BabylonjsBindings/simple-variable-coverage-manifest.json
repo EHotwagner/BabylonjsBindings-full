@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "08f112e2f2151cf796ca8dda46bbdfab4c95bb7bae63e11ce12520eadb8adedb",
+  "proposalSha256": "13bfc3186b952ab9804e1a1effe4fef0b5b87b45cd45962db6a1e4e84897e47d",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -52,6 +52,33 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables._IsMacPlatform",
       "fsharpType": "bool"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "_StaticOffsetValueColor3",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueColor3",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableColor3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "_StaticOffsetValueColor4",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueColor4",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableColor4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "_StaticOffsetValueSize",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueSize",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableSize"
     },
     {
       "package": "@babylonjs/core",
@@ -3621,6 +3648,24 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeBoolean",
       "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<bool>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeColor3",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeColor3",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Color3>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeColor4",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeColor4",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Color4>"
     },
     {
       "package": "@babylonjs/core",

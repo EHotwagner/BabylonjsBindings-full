@@ -10,8 +10,7 @@
     <Compile Include="StringEnums.proposal.fs" />
     <Compile Include="SimpleObjectTypes.proposal.fs" />
     <Compile Include="SimpleAliases.proposal.fs" />
-    <Compile Include="SimpleInterfaces.proposal.fs" />
-    <Compile Include="SimpleClasses.proposal.fs" />
+    <Compile Include="SimpleTypes.proposal.fs" />
     <Compile Include="SimpleFunctions.proposal.fs" />
     <Compile Include="SimpleVariables.proposal.fs" />
     <Compile Include="BabylonBindings.generated.fs" />

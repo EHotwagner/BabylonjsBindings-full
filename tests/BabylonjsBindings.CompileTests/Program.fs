@@ -27,6 +27,11 @@ let simplificationInterface: ISimplificationSettings = Unchecked.defaultof<ISimp
 let decodedData: IDecodedData = Unchecked.defaultof<IDecodedData>
 let bitArray: BitArray = Unchecked.defaultof<BitArray>
 let bitArrayFactory: BitArrayStatic = BitArray
+let color3Factory: Color3Static = Color3
+let color4Factory: Color4Static = Color4
+let meshoptFactory: MeshoptCompressionStatic = MeshoptCompression
+let webXRFeatureNameFactory: WebXRFeatureNameStatic = WebXRFeatureName
+let partialNodeMaterialOptions: PartialINodeMaterialOptions = Unchecked.defaultof<PartialINodeMaterialOptions>
 let animationMaskFactory: AnimationGroupMaskStatic = AnimationGroupMask
 let alphaStateFactory: AlphaStateStatic = AlphaState
 let richTypeFactory: RichTypeStatic = RichType
@@ -95,6 +100,7 @@ let vector3NormalizeToRef = BabylonjsBindings.SimpleFunctions.``Vector3Normalize
 let vector3ScaleInPlace = BabylonjsBindings.SimpleFunctions.``Vector3ScaleInPlace``
 let vector3ScaleToRef = BabylonjsBindings.SimpleFunctions.``Vector3ScaleToRef``
 let vector3SubtractToRef = BabylonjsBindings.SimpleFunctions.``Vector3SubtractToRef``
+let completeGreasedLineColorTable = BabylonjsBindings.SimpleFunctions.``CompleteGreasedLineColorTable``
 let materialDefinesFactory: MaterialDefinesStatic = MaterialDefines
 let decalMapDefinesFactory: DecalMapDefinesStatic = DecalMapDefines
 let imageProcessingDefinesFactory: ImageProcessingConfigurationDefinesStatic = ImageProcessingConfigurationDefines
@@ -113,6 +119,11 @@ let padNumber = BabylonjsBindings.SimpleVariables.``PadNumber``
 let testBase64DataUrl = BabylonjsBindings.SimpleVariables.``TestBase64DataUrl``
 let errorCodes: BabylonjsBindings.SimpleVariables.VariableShape_ErrorCodes = BabylonjsBindings.SimpleVariables.``ErrorCodes``
 let wgs84Ellipsoid: DeepImmutableIEllipsoidLike = BabylonjsBindings.SimpleVariables.``Wgs84Ellipsoid``
+let richTypeColor3: RichType<Color3> = BabylonjsBindings.SimpleVariables.``RichTypeColor3``
+let richTypeColor4: RichType<Color4> = BabylonjsBindings.SimpleVariables.``RichTypeColor4``
+let staticOffsetColor3: DeepImmutableColor3 = BabylonjsBindings.SimpleVariables.``_StaticOffsetValueColor3``
+let staticOffsetColor4: DeepImmutableColor4 = BabylonjsBindings.SimpleVariables.``_StaticOffsetValueColor4``
+let staticOffsetSize: DeepImmutableSize = BabylonjsBindings.SimpleVariables.``_StaticOffsetValueSize``
 let engine = nullEngine ()
 let scene = scene engine
 let _ = box "compile-smoke" scene
@@ -138,6 +149,11 @@ simplificationInterface |> ignore
 decodedData |> ignore
 bitArray |> ignore
 bitArrayFactory |> ignore
+color3Factory |> ignore
+color4Factory |> ignore
+meshoptFactory |> ignore
+webXRFeatureNameFactory |> ignore
+partialNodeMaterialOptions |> ignore
 animationMaskFactory |> ignore
 alphaStateFactory |> ignore
 richTypeFactory |> ignore
@@ -206,6 +222,7 @@ vector3NormalizeToRef |> ignore
 vector3ScaleInPlace |> ignore
 vector3ScaleToRef |> ignore
 vector3SubtractToRef |> ignore
+completeGreasedLineColorTable |> ignore
 materialDefinesFactory |> ignore
 decalMapDefinesFactory |> ignore
 imageProcessingDefinesFactory |> ignore
@@ -224,4 +241,9 @@ padNumber |> ignore
 testBase64DataUrl |> ignore
 errorCodes |> ignore
 wgs84Ellipsoid |> ignore
+richTypeColor3 |> ignore
+richTypeColor4 |> ignore
+staticOffsetColor3 |> ignore
+staticOffsetColor4 |> ignore
+staticOffsetSize |> ignore
 printfn "curated Babylon binding compile smoke passed"

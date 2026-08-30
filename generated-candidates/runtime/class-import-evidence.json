@@ -66,6 +66,18 @@
       "moduleSha256": "8a7cefaf29cc3222332f7ae7e8837e75bd9217982cef6059c8a0beb8e171dfef"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js",
+      "export": "ArrayItem",
+      "moduleSha256": "63b7799ac402265fd81f3c443496e08ca0bc6e167fd1bd374dcaebb62ecb1d91"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tools.pure.js",
+      "export": "AsyncLoop",
+      "moduleSha256": "d56734e8eb028a023411a97cd3eb0f4a072224b40a748b198ced9dfae6f3ab0a"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js",
       "export": "BabylonFileLoaderConfiguration",
@@ -100,6 +112,12 @@
       "module": "@babylonjs/core/Events/clipboardEvents.js",
       "export": "ClipboardEventTypes",
       "moduleSha256": "a07538c1aa5dfe43f1266f7878742b5952002307987a6e083e8767d4b29d1b1c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.color.pure.js",
+      "export": "Color4",
+      "moduleSha256": "3779838105192592e77aabd48a7415fbccaa7581973d78630c0be87dd85495eb"
     },
     {
       "package": "@babylonjs/core",
@@ -199,6 +217,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphConnection.js",
+      "export": "FlowGraphConnection",
+      "moduleSha256": "e4e6c71c842b45a0714220e3f6571bee7b53206969f42fef4583e8a4db684695"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure.js",
       "export": "FlowGraphInteger",
       "moduleSha256": "49be50789679fee7e09fe3addbc2fede16f24bf259fa6021a125eb6a4d0123fb"
@@ -274,6 +298,12 @@
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
       "export": "MatrixManagement",
       "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/meshoptCompression.js",
+      "export": "MeshoptCompression",
+      "moduleSha256": "7600dfbfb2b3c14c76984d510344c9c5bc4c66b65f3f4be47a1ad5014c03d70b"
     },
     {
       "package": "@babylonjs/core",
@@ -433,6 +463,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.js",
+      "export": "ThinMatrix",
+      "moduleSha256": "978765cd0afb8247bf993a80edd94244f58630380e27b344a223fd261fb47612"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Sprites/thinSprite.js",
       "export": "ThinSprite",
       "moduleSha256": "824ec8dcb356df46fdf2b560e26f27988d519e3d9a2021cfcc2e0979acf86420"
@@ -481,6 +517,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager.js",
+      "export": "WebXRFeatureName",
+      "moduleSha256": "62b7ab45acf2b6e88dd2db3d6952720ee7bfade7400e512382dc552ff85793d4"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/error.js",
       "export": "AbortError",
       "moduleSha256": "99abf025cae723420dd125c25304b3e00e84ea10e3bce0bcc4878170ad73ad78"
@@ -508,6 +550,18 @@
       "module": "@babylonjs/core/Animations/easing.js",
       "export": "CircleEase",
       "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.color.pure.js",
+      "export": "Color3",
+      "moduleSha256": "3779838105192592e77aabd48a7415fbccaa7581973d78630c0be87dd85495eb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/gradients.js",
+      "export": "ColorGradient",
+      "moduleSha256": "704f9e59cf8ca5b9bff89c06bd62590af8d94598095e49f1b057a449fdf5dc50"
     },
     {
       "package": "@babylonjs/core",
@@ -661,6 +715,18 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/gradients.js",
+      "export": "Color3Gradient",
+      "moduleSha256": "704f9e59cf8ca5b9bff89c06bd62590af8d94598095e49f1b057a449fdf5dc50"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/gradientBlock.pure.js",
+      "export": "GradientBlockColorStep",
+      "moduleSha256": "3a13802c72ec54ec5bda86ca189790918ade22378a591878df8a31c2e804cda9"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/observable.pure.js",
       "export": "Observable",
       "moduleSha256": "a708a7f9d2f5ff92d454323a38ceaa72f68c9fe46a19faef4bdb7c2d54f618e0"
@@ -670,6 +736,12 @@
       "module": "@babylonjs/core/Misc/fileTools.pure.js",
       "export": "ReadFileError",
       "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.color.pure.js",
+      "export": "TmpColors",
+      "moduleSha256": "3779838105192592e77aabd48a7415fbccaa7581973d78630c0be87dd85495eb"
     },
     {
       "package": "@babylonjs/core",

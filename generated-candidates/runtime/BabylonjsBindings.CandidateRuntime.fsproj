@@ -10,8 +10,7 @@
     <Compile Include="_candidateSources/StringEnums.proposal.fs" />
     <Compile Include="_candidateSources/SimpleObjectTypes.proposal.fs" />
     <Compile Include="_candidateSources/SimpleAliases.proposal.fs" />
-    <Compile Include="_candidateSources/SimpleInterfaces.proposal.fs" />
-    <Compile Include="_candidateSources/SimpleClasses.proposal.fs" />
+    <Compile Include="_candidateSources/SimpleTypes.proposal.fs" />
     <Compile Include="_candidateSources/SimpleFunctions.proposal.fs" />
     <Compile Include="_candidateSources/SimpleVariables.proposal.fs" />
     <Compile Include="_candidateSources/BabylonBindings.generated.fs" />
@@ -28,8 +27,7 @@
     <Copy SourceFiles="../StringEnums.proposal.fs" DestinationFiles="_candidateSources/StringEnums.proposal.fs" />
     <Copy SourceFiles="../SimpleObjectTypes.proposal.fs" DestinationFiles="_candidateSources/SimpleObjectTypes.proposal.fs" />
     <Copy SourceFiles="../SimpleAliases.proposal.fs" DestinationFiles="_candidateSources/SimpleAliases.proposal.fs" />
-    <Copy SourceFiles="../SimpleInterfaces.proposal.fs" DestinationFiles="_candidateSources/SimpleInterfaces.proposal.fs" />
-    <Copy SourceFiles="../SimpleClasses.proposal.fs" DestinationFiles="_candidateSources/SimpleClasses.proposal.fs" />
+    <Copy SourceFiles="../SimpleTypes.proposal.fs" DestinationFiles="_candidateSources/SimpleTypes.proposal.fs" />
     <Copy SourceFiles="../SimpleFunctions.proposal.fs" DestinationFiles="_candidateSources/SimpleFunctions.proposal.fs" />
     <Copy SourceFiles="../SimpleVariables.proposal.fs" DestinationFiles="_candidateSources/SimpleVariables.proposal.fs" />
     <Copy SourceFiles="../BabylonBindings.generated.fs" DestinationFiles="_candidateSources/BabylonBindings.generated.fs" />

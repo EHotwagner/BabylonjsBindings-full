@@ -48,6 +48,27 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure.js",
+      "export": "_StaticOffsetValueColor3",
+      "runtimeExport": "_StaticOffsetValueColor3",
+      "moduleSha256": "2cf795f48354d5431807fcc9f6bc6b037472a99b8f32791a2f19adbe8a139e94"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure.js",
+      "export": "_StaticOffsetValueColor4",
+      "runtimeExport": "_StaticOffsetValueColor4",
+      "moduleSha256": "2cf795f48354d5431807fcc9f6bc6b037472a99b8f32791a2f19adbe8a139e94"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure.js",
+      "export": "_StaticOffsetValueSize",
+      "runtimeExport": "_StaticOffsetValueSize",
+      "moduleSha256": "2cf795f48354d5431807fcc9f6bc6b037472a99b8f32791a2f19adbe8a139e94"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio.js",
       "export": "_StereoAudioDefaults",
       "runtimeExport": "_StereoAudioDefaults",
@@ -2550,6 +2571,20 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
       "export": "RichTypeBoolean",
       "runtimeExport": "RichTypeBoolean",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "RichTypeColor3",
+      "runtimeExport": "RichTypeColor3",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "RichTypeColor4",
+      "runtimeExport": "RichTypeColor4",
       "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
     },
     {

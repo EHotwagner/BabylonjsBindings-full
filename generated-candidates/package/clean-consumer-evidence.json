@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "0dd540ac4cb181e1188a58edb84e4f5abbb606cb0af0b4dc85c0445e01a829c9"
+    "sha256": "00b5a3d46b7deced8f718eee7a0eea0490fd701b36e10caf74b38b2b938e5c3c"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,8 +13,9 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "5ff996d664198de4628775100aaf67ea7261d9ab00f9e5c70cabd2e8dab8890d",
+  "emittedProgramSha256": "d5baaa19aa222f21490721601f43f035d9a2f731863cb9cb35bf13db1f14f2c8",
   "imports": [
+    "@babylonjs/core/Animations/animation.pure.js",
     "@babylonjs/core/Animations/animationEvent.js",
     "@babylonjs/core/Animations/animationGroupMask.js",
     "@babylonjs/core/Animations/easing.js",
@@ -43,11 +44,13 @@
     "@babylonjs/core/Materials/materialHelper.functions.js",
     "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
     "@babylonjs/core/Maths/halton2DSequence.js",
+    "@babylonjs/core/Maths/math.color.pure.js",
     "@babylonjs/core/Maths/math.constants.js",
     "@babylonjs/core/Maths/math.geospatial.functions.js",
     "@babylonjs/core/Maths/math.vector.functions.js",
     "@babylonjs/core/Maths/math.vector.pure.js",
     "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js",
+    "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js",
     "@babylonjs/core/Meshes/meshSimplification.common.js",
     "@babylonjs/core/Misc/basis.pure.js",
     "@babylonjs/core/Misc/bitArray.js",

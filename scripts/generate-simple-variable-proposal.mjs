@@ -23,9 +23,9 @@ const dependencyManifestPaths = [
   "src/BabylonjsBindings/coverage-manifest.json",
   "src/BabylonjsBindings/string-coverage-manifest.json",
   "src/BabylonjsBindings/object-type-coverage-manifest.json",
-  "src/BabylonjsBindings/type-alias-coverage-manifest.json",
-  "src/BabylonjsBindings/simple-interface-coverage-manifest.json",
-  "src/BabylonjsBindings/simple-class-coverage-manifest.json"
+  "generated-candidates/SimpleAliases.promotion.json",
+  "generated-candidates/SimpleInterfaces.promotion.json",
+  "generated-candidates/SimpleClasses.promotion.json"
 ];
 const dependencyExports = (await Promise.all(dependencyManifestPaths.map(async path => JSON.parse(await readFile(resolve(root, path), "utf8")))))
   .flatMap(manifest => manifest.exports);

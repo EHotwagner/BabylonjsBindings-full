@@ -4,9 +4,18 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "114f13882192ad17953415fa784c94eed9f3347e43fc21043048d564189c90cb"
+    "sha256": "2db629bfc2f4a6124c4e5f71d698384f2ad0bcce42d37bbb5eabb7dda2934eff"
   },
   "imports": [
+    {
+      "specifier": "@babylonjs/core/Animations/animation.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Animations/animation.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
     {
       "specifier": "@babylonjs/core/Animations/animationEvent.js",
       "package": "@babylonjs/core",
@@ -278,6 +287,15 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Maths/math.color.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/math.color.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Maths/math.constants.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
@@ -336,6 +354,24 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Meshes/Builders/boxBuilder.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Meshes/Builders/greasedLineBuilder.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Meshes/Compression/meshoptCompression.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Meshes/Compression/meshoptCompression.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]
@@ -534,6 +570,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/States/stencilStateComposer.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/XR/webXRFeaturesManager.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/XR/webXRFeaturesManager.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

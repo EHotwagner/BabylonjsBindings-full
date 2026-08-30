@@ -98,6 +98,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js",
+      "export": "CompleteGreasedLineColorTable",
+      "runtimeExport": "CompleteGreasedLineColorTable",
+      "moduleSha256": "80c77d42f6bc8c5bf9490fbf9965efe362976874977308b85ad584e5e451aa25"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js",
       "export": "CompleteGreasedLineWidthTable",
       "runtimeExport": "CompleteGreasedLineWidthTable",
       "moduleSha256": "80c77d42f6bc8c5bf9490fbf9965efe362976874977308b85ad584e5e451aa25"
