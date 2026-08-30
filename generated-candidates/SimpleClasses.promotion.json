@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "57ab10db0d645ecf2aae75ff6cb61966b4a5b49a12b3a5ae49f2571977233919",
+  "proposalSha256": "60b5c9dfa82d73383c5d89cb7e7be18f823913a91cb0451abeaef71e2a9f7843",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -789,6 +789,60 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "WebGPURenderItemBeginOcclusionQuery",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemBeginOcclusionQuery",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "WebGPURenderItemBlendColor",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemBlendColor",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "WebGPURenderItemEndOcclusionQuery",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemEndOcclusionQuery",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "WebGPURenderItemScissor",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemScissor",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "WebGPURenderItemStencilRef",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemStencilRef",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "WebGPURenderItemViewport",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemViewport",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor",
       "name": "WebGPUShaderProcessor",
       "kind": "class",
@@ -804,6 +858,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUTintWASM",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/webRequest",
+      "name": "WebRequest",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebRequest",
+      "memberCount": 38
     },
     {
       "package": "@babylonjs/core",
@@ -1070,6 +1133,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/retryStrategy",
+      "name": "RetryStrategy",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RetryStrategy",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/error",
       "name": "RuntimeError",
       "kind": "class",
@@ -1171,6 +1243,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "LoadFileError",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.LoadFileError",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
       "name": "NodeMaterialDefines",
       "kind": "class",
@@ -1204,6 +1285,15 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ReadFileError",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "RequestFileError",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RequestFileError",
       "memberCount": 2
     },
     {

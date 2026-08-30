@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "7447d4f20eb578e5f8bf5504cb2a94e704d871844c47d4c53223dd4e473e295a",
+  "proposalSha256": "57502f7b4b54470e6c2990fe427f61fb82e1be20ea038f0539fc72d00f01cc81",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1123,6 +1123,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FBXFileLoaderMetadata",
       "fsharpType": "VariableShape_FBXFileLoaderMetadata",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "FileToolsOptions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FileToolsOptions",
+      "fsharpType": "VariableShape_FileToolsOptions",
+      "memberCount": 7
     },
     {
       "package": "@babylonjs/core",

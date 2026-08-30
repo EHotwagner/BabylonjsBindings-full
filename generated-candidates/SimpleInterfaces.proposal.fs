@@ -66,6 +66,60 @@ module SimpleInterfaces =
     type BrowserMediaStream =
         interface end
 
+    /// Distinct ambient AbortSignal handle.
+    [<AllowNullLiteral>]
+    type BrowserAbortSignal =
+        interface end
+
+    /// Ambient XMLHttpRequest handle used by Babylon request modifiers.
+    [<AllowNullLiteral>]
+    type BrowserXMLHttpRequest =
+        abstract setRequestHeader: name: string * value: string -> unit
+
+    /// Distinct ambient URL handle.
+    [<AllowNullLiteral>]
+    type BrowserURL =
+        interface end
+
+    /// Exact structural DOMRect surface.
+    [<AllowNullLiteral>]
+    type BrowserDOMRect =
+        abstract x: float with get, set
+        abstract y: float with get, set
+        abstract width: float with get, set
+        abstract height: float with get, set
+        abstract top: float with get
+        abstract right: float with get
+        abstract bottom: float with get
+        abstract left: float with get
+        abstract toJSON: unit -> obj
+
+    /// Distinct ambient FormData handle.
+    [<AllowNullLiteral>]
+    type BrowserFormData =
+        interface end
+
+    /// Distinct ambient URLSearchParams handle.
+    [<AllowNullLiteral>]
+    type BrowserURLSearchParams =
+        interface end
+
+    /// Exact XMLHttpRequest request-body union.
+    type BrowserXMLHttpRequestBodyInit = U6<Browser.Types.Blob, JS.ArrayBufferView, JS.ArrayBuffer, BrowserFormData, BrowserURLSearchParams, string>
+
+    /// Exact DOM event-listener options surface.
+    [<AllowNullLiteral>]
+    type BrowserEventListenerOptions =
+        abstract capture: bool option with get, set
+
+    /// Exact DOM add-event-listener options surface.
+    [<AllowNullLiteral>]
+    type BrowserAddEventListenerOptions =
+        inherit BrowserEventListenerOptions
+        abstract once: bool option with get, set
+        abstract passive: bool option with get, set
+        abstract signal: BrowserAbortSignal option with get, set
+
     /// Distinct ambient WebXR reference-space handle.
     [<AllowNullLiteral>]
     type BrowserXRReferenceSpace =
@@ -154,6 +208,12 @@ module SimpleInterfaces =
         | [<CompiledName("none")>] None
         | [<CompiledName("right")>] Right
 
+    /// Exact WebGPU power-preference literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUPowerPreference =
+        | [<CompiledName("high-performance")>] HighPerformance
+        | [<CompiledName("low-power")>] LowPower
+
     /// Exact XMLHttpRequest response-type literals.
     [<StringEnum; RequireQualifiedAccess>]
     type BrowserXMLHttpRequestResponseType =
@@ -206,6 +266,23 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type JavaScriptObject =
         interface end
+
+    /// Exact structural ECMAScript iterator surface used by readonly sets.
+    [<AllowNullLiteral>]
+    type BrowserIterator<'T> =
+        abstract next: ?value: obj -> JS.IteratorResult<'T>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
+
+    /// Exact readonly ECMAScript Set surface used by Babylon declarations.
+    [<AllowNullLiteral>]
+    type BrowserReadonlySet<'T> =
+        abstract size: float with get
+        abstract has: value: 'T -> bool
+        abstract forEach: callbackfn: System.Action<'T, 'T, BrowserReadonlySet<'T>> * ?thisArg: obj -> unit
+        abstract entries: unit -> BrowserIterator<'T * 'T>
+        abstract keys: unit -> BrowserIterator<'T>
+        abstract values: unit -> BrowserIterator<'T>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
 
     /// Exact numeric literal type for 1.
     type NumericLiteral1 =
@@ -304,6 +381,41 @@ module SimpleInterfaces =
         abstract getMappedRange: ?offset: float * ?size: float -> JS.ArrayBuffer
         abstract unmap: unit -> unit
         abstract destroy: unit -> unit
+
+    /// Distinct ambient WebGPU device handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUDevice =
+        interface end
+
+    /// Distinct ambient WebGPU render-pass encoder handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderPassEncoder =
+        interface end
+
+    /// Distinct ambient WebGPU render pipeline handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderPipeline =
+        interface end
+
+    /// Distinct ambient WebGPU query set handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUQuerySet =
+        interface end
+
+    /// Distinct ambient WebGPU command encoder handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUCommandEncoder =
+        interface end
+
+    /// Distinct ambient WebGPU render bundle handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderBundle =
+        interface end
+
+    /// Distinct ambient WebXR WebGL binding handle.
+    [<AllowNullLiteral>]
+    type BrowserXRWebGLBinding =
+        interface end
 
     /// Exact WEBGL_compressed_texture_s3tc extension surface.
     [<AllowNullLiteral>]
@@ -2989,6 +3101,12 @@ module SimpleInterfaces =
     type IWebGPUMaterialContextSamplerCache =
         abstract ``sampler``: BabylonjsBindings.SimpleClasses.TextureSampler option with get, set
         abstract ``hashCode``: float with get, set
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
+    [<AllowNullLiteral>]
+    type IWebGPURenderItem =
+        abstract ``run``: ``renderPass``: BrowserGPURenderPassEncoder -> unit
+        abstract ``clone``: unit -> IWebGPURenderItem
 
     /// @babylonjs/core/Misc/interfaces/iWebRequest
     [<AllowNullLiteral>]

@@ -360,6 +360,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `JS.Set<${inner}>` : undefined;
     }
+    if (node.typeName.text === "ReadonlySet" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      return inner ? `BrowserReadonlySet<${inner}>` : undefined;
+    }
     if (node.typeName.text === "Map" && node.typeArguments?.length === 2) {
       const key = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       const value = fsharpType(node.typeArguments[1], available, dependencies, typeParameters);
@@ -371,6 +375,12 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     }
     const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "DataView", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
+    if (node.typeArguments?.length === 1
+      && jsTypes.has(node.typeName.text)
+      && ts.isTypeReferenceNode(node.typeArguments[0])
+      && ts.isIdentifier(node.typeArguments[0].typeName)
+      && node.typeArguments[0].typeName.text === "ArrayBuffer"
+      && !node.typeArguments[0].typeArguments?.length) return `JS.${node.typeName.text}`;
     const browserTypes = new Set([
       "AudioContext", "AudioDestinationNode", "AudioNode", "Blob", "Element", "Event", "File", "GainNode", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent", "MediaStreamAudioDestinationNode",
       "ImageData", "OfflineAudioContext", "WebGLContextAttributes", "WebGLUniformLocation", "WebGL2RenderingContext", "WebGLRenderingContext",
@@ -391,7 +401,17 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ["EXT_texture_filter_anisotropic", "BrowserExtTextureFilterAnisotropic"],
       ["EXT_disjoint_timer_query", "BrowserExtDisjointTimerQuery"],
       ["GPUBuffer", "BrowserGPUBuffer"],
+      ["GPUDevice", "BrowserGPUDevice"],
+      ["GPURenderPassEncoder", "BrowserGPURenderPassEncoder"],
+      ["GPURenderPipeline", "BrowserGPURenderPipeline"],
+      ["GPUQuerySet", "BrowserGPUQuerySet"],
+      ["GPUCommandEncoder", "BrowserGPUCommandEncoder"],
+      ["GPURenderBundle", "BrowserGPURenderBundle"],
+      ["XRWebGLBinding", "BrowserXRWebGLBinding"],
       ["RegExp", "BrowserRegExp"],
+      ["XMLHttpRequest", "BrowserXMLHttpRequest"],
+      ["URL", "BrowserURL"],
+      ["DOMRect", "BrowserDOMRect"],
       ["WebGLQuery", "BrowserWebGLQuery"]
       ,["WebGL2RenderingContext", "BrowserWebGL2RenderingContext"]
       ,["XRLayer", "BrowserXRLayer"]
@@ -410,6 +430,8 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ,["XRReferenceSpaceType", "BrowserXRReferenceSpaceType"]
       ,["XRSessionMode", "BrowserXRSessionMode"]
       ,["XREye", "BrowserXREye"]
+      ,["GPUPowerPreference", "BrowserGPUPowerPreference"]
+      ,["XMLHttpRequestBodyInit", "BrowserXMLHttpRequestBodyInit"]
     ]);
     if (!node.typeArguments?.length && browserExtensionTypes.has(node.typeName.text)) return browserExtensionTypes.get(node.typeName.text);
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
@@ -780,7 +802,7 @@ if (diagnose) {
   console.log("top unresolved interface dependencies:");
   console.log([...missingCounts].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 40).map(([name, count]) => `${name} ${count}`).join("\n"));
   console.log("failure types for foundational interface bridge targets:");
-  console.log(["AbstractEngineOptions", "EngineOptions", "IAccessibilityTag", "IAudioEngineOptions", "ICreateAndPreparePipelineContextOptions", "IInternalTextureLoader", "IImage", "IMeshDataOptions", "IParticleSystem", "IPipelineGenerationOptions", "IShadowGenerator", "ICollisionCoordinator", "IFlowGraphPendingActivation", "IAssetContainer", "IBakedVertexAnimationManager", "ICullable", "IPipelineContext", "IShaderProcessor", "EngineCapabilities", "WebXRRenderTarget", "IWebXRFeature"]
+  console.log(["AbstractEngineOptions", "EngineOptions", "IAccessibilityTag", "IAudioEngineOptions", "ICreateAndPreparePipelineContextOptions", "IInternalTextureLoader", "IImage", "IMeshDataOptions", "IParticleSystem", "IPipelineGenerationOptions", "IShadowGenerator", "ICollisionCoordinator", "IFlowGraphPendingActivation", "IAssetContainer", "IBakedVertexAnimationManager", "ICullable", "IPipelineContext", "IShaderProcessor", "EngineCapabilities", "WebXRRenderTarget", "IWebXRFeature", "WebGPUEngineOptions"]
     .map(name => {
       const identities = [...declarations].filter(([, entry]) => entry.name === name).map(([identity]) => identity);
       const state = `declarations=${identities.length}, selected=${identities.filter(identity => selected.has(identity)).length}, recursive=${identities.filter(identity => recursiveCandidates.has(identity)).length}, missing=${(missingByInterface.get(name) ?? []).join(",") || "none"}`;
@@ -847,6 +869,15 @@ lines.push("", "    /// Distinct ambient media-stream audio destination-node han
 lines.push("", "    /// Distinct ambient Fetch Response handle.", "    [<AllowNullLiteral>]", "    type BrowserResponse =", "        interface end");
 lines.push("", "    /// Distinct ambient Fetch BodyInit value handle.", "    [<AllowNullLiteral>]", "    type BrowserBodyInit =", "        interface end");
 lines.push("", "    /// Distinct ambient MediaStream handle.", "    [<AllowNullLiteral>]", "    type BrowserMediaStream =", "        interface end");
+lines.push("", "    /// Distinct ambient AbortSignal handle.", "    [<AllowNullLiteral>]", "    type BrowserAbortSignal =", "        interface end");
+lines.push("", "    /// Ambient XMLHttpRequest handle used by Babylon request modifiers.", "    [<AllowNullLiteral>]", "    type BrowserXMLHttpRequest =", "        abstract setRequestHeader: name: string * value: string -> unit");
+lines.push("", "    /// Distinct ambient URL handle.", "    [<AllowNullLiteral>]", "    type BrowserURL =", "        interface end");
+lines.push("", "    /// Exact structural DOMRect surface.", "    [<AllowNullLiteral>]", "    type BrowserDOMRect =", "        abstract x: float with get, set", "        abstract y: float with get, set", "        abstract width: float with get, set", "        abstract height: float with get, set", "        abstract top: float with get", "        abstract right: float with get", "        abstract bottom: float with get", "        abstract left: float with get", "        abstract toJSON: unit -> obj");
+lines.push("", "    /// Distinct ambient FormData handle.", "    [<AllowNullLiteral>]", "    type BrowserFormData =", "        interface end");
+lines.push("", "    /// Distinct ambient URLSearchParams handle.", "    [<AllowNullLiteral>]", "    type BrowserURLSearchParams =", "        interface end");
+lines.push("", "    /// Exact XMLHttpRequest request-body union.", "    type BrowserXMLHttpRequestBodyInit = U6<Browser.Types.Blob, JS.ArrayBufferView, JS.ArrayBuffer, BrowserFormData, BrowserURLSearchParams, string>");
+lines.push("", "    /// Exact DOM event-listener options surface.", "    [<AllowNullLiteral>]", "    type BrowserEventListenerOptions =", "        abstract capture: bool option with get, set");
+lines.push("", "    /// Exact DOM add-event-listener options surface.", "    [<AllowNullLiteral>]", "    type BrowserAddEventListenerOptions =", "        inherit BrowserEventListenerOptions", "        abstract once: bool option with get, set", "        abstract passive: bool option with get, set", "        abstract signal: BrowserAbortSignal option with get, set");
 lines.push("", "    /// Distinct ambient WebXR reference-space handle.", "    [<AllowNullLiteral>]", "    type BrowserXRReferenceSpace =", "        interface end");
 lines.push("", "    /// Distinct ambient WebXR frame handle.", "    [<AllowNullLiteral>]", "    type BrowserXRFrame =", "        interface end");
 lines.push("", "    /// Distinct ambient WebXR session handle.", "    [<AllowNullLiteral>]", "    type BrowserXRSession =", "        interface end");
@@ -863,6 +894,7 @@ lines.push("", "    /// Distinct ambient WebXR render-state initialization surfa
 lines.push("", "    /// Exact WebXR reference-space literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserXRReferenceSpaceType =", "        | [<CompiledName(\"viewer\")>] Viewer", "        | [<CompiledName(\"local\")>] Local", "        | [<CompiledName(\"local-floor\")>] LocalFloor", "        | [<CompiledName(\"bounded-floor\")>] BoundedFloor", "        | [<CompiledName(\"unbounded\")>] Unbounded");
 lines.push("", "    /// Exact WebXR session-mode literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserXRSessionMode =", "        | [<CompiledName(\"inline\")>] Inline", "        | [<CompiledName(\"immersive-ar\")>] ImmersiveAr", "        | [<CompiledName(\"immersive-vr\")>] ImmersiveVr");
 lines.push("", "    /// Exact WebXR eye literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserXREye =", "        | [<CompiledName(\"left\")>] Left", "        | [<CompiledName(\"none\")>] None", "        | [<CompiledName(\"right\")>] Right");
+lines.push("", "    /// Exact WebGPU power-preference literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserGPUPowerPreference =", "        | [<CompiledName(\"high-performance\")>] HighPerformance", "        | [<CompiledName(\"low-power\")>] LowPower");
 lines.push("", "    /// Exact XMLHttpRequest response-type literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserXMLHttpRequestResponseType =", "        | [<CompiledName(\"\")>] Default", "        | [<CompiledName(\"arraybuffer\")>] ArrayBuffer", "        | [<CompiledName(\"blob\")>] Blob", "        | [<CompiledName(\"document\")>] Document", "        | [<CompiledName(\"json\")>] Json", "        | [<CompiledName(\"text\")>] Text");
 lines.push("", "    /// Exact browser image color-space conversion literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserColorSpaceConversion =", "        | [<CompiledName(\"default\")>] Default", "        | [<CompiledName(\"none\")>] None");
 lines.push("", "    /// Exact browser image orientation literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserImageOrientation =", "        | [<CompiledName(\"flipY\")>] FlipY", "        | [<CompiledName(\"from-image\")>] FromImage", "        | [<CompiledName(\"none\")>] None");
@@ -870,6 +902,8 @@ lines.push("", "    /// Exact browser premultiplied-alpha literals.", "    [<Str
 lines.push("", "    /// Exact browser bitmap resize-quality literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserResizeQuality =", "        | [<CompiledName(\"high\")>] High", "        | [<CompiledName(\"low\")>] Low", "        | [<CompiledName(\"medium\")>] Medium", "        | [<CompiledName(\"pixelated\")>] Pixelated");
 lines.push("", "    /// Exact structural browser ImageBitmapOptions surface.", "    [<AllowNullLiteral>]", "    type BrowserImageBitmapOptions =", "        abstract colorSpaceConversion: BrowserColorSpaceConversion option with get, set", "        abstract imageOrientation: BrowserImageOrientation option with get, set", "        abstract premultiplyAlpha: BrowserPremultiplyAlpha option with get, set", "        abstract resizeHeight: float option with get, set", "        abstract resizeQuality: BrowserResizeQuality option with get, set", "        abstract resizeWidth: float option with get, set");
 lines.push("", "    /// Structural non-primitive JavaScript object surface used by TypeScript `object` declarations.", "    [<AllowNullLiteral>]", "    type JavaScriptObject =", "        interface end");
+lines.push("", "    /// Exact structural ECMAScript iterator surface used by readonly sets.", "    [<AllowNullLiteral>]", "    type BrowserIterator<'T> =", "        abstract next: ?value: obj -> JS.IteratorResult<'T>", "        [<Emit(\"$0[Symbol.iterator]()\")>] abstract GetIterator: unit -> BrowserIterator<'T>");
+lines.push("", "    /// Exact readonly ECMAScript Set surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserReadonlySet<'T> =", "        abstract size: float with get", "        abstract has: value: 'T -> bool", "        abstract forEach: callbackfn: System.Action<'T, 'T, BrowserReadonlySet<'T>> * ?thisArg: obj -> unit", "        abstract entries: unit -> BrowserIterator<'T * 'T>", "        abstract keys: unit -> BrowserIterator<'T>", "        abstract values: unit -> BrowserIterator<'T>", "        [<Emit(\"$0[Symbol.iterator]()\")>] abstract GetIterator: unit -> BrowserIterator<'T>");
 for (const value of [...numericLiteralValues].sort((left, right) => left - right)) {
   const name = `NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`;
   lines.push("", `    /// Exact numeric literal type for ${value}.`, `    type ${name} =`, `        | Value = ${value}`);
@@ -882,6 +916,9 @@ lines.push("", "    /// Exact opaque WebGLQuery handle.", "    [<AllowNullLitera
 lines.push("", "    /// Distinct opaque handle for the ambient JavaScript RegExp API.", "    [<AllowNullLiteral>]", "    type BrowserRegExp =", "        interface end");
 lines.push("", "    /// Exact GPUBuffer map-state literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserGPUBufferMapState =", "        | [<CompiledName(\"mapped\")>] Mapped", "        | [<CompiledName(\"pending\")>] Pending", "        | [<CompiledName(\"unmapped\")>] Unmapped");
 lines.push("", "    /// Exact WebGPU GPUBuffer instance surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserGPUBuffer =", "        abstract label: string with get, set", "        abstract size: float with get", "        abstract usage: float with get", "        abstract mapState: BrowserGPUBufferMapState with get", "        abstract mapAsync: mode: float * ?offset: float * ?size: float -> JS.Promise<unit>", "        abstract getMappedRange: ?offset: float * ?size: float -> JS.ArrayBuffer", "        abstract unmap: unit -> unit", "        abstract destroy: unit -> unit");
+for (const [name, description] of [["BrowserGPUDevice", "WebGPU device"], ["BrowserGPURenderPassEncoder", "WebGPU render-pass encoder"], ["BrowserGPURenderPipeline", "WebGPU render pipeline"], ["BrowserGPUQuerySet", "WebGPU query set"], ["BrowserGPUCommandEncoder", "WebGPU command encoder"], ["BrowserGPURenderBundle", "WebGPU render bundle"], ["BrowserXRWebGLBinding", "WebXR WebGL binding"]]) {
+  lines.push("", `    /// Distinct ambient ${description} handle.`, "    [<AllowNullLiteral>]", `    type ${name} =`, "        interface end");
+}
 lines.push("", "    /// Exact WEBGL_compressed_texture_s3tc extension surface.", "    [<AllowNullLiteral>]", "    type BrowserWebGLCompressedTextureS3tc =", "        abstract COMPRESSED_RGB_S3TC_DXT1_EXT: NumericLiteral33776 with get", "        abstract COMPRESSED_RGBA_S3TC_DXT1_EXT: NumericLiteral33777 with get", "        abstract COMPRESSED_RGBA_S3TC_DXT3_EXT: NumericLiteral33778 with get", "        abstract COMPRESSED_RGBA_S3TC_DXT5_EXT: NumericLiteral33779 with get");
 lines.push("", "    /// Exact WEBGL_compressed_texture_s3tc_srgb extension surface.", "    [<AllowNullLiteral>]", "    type BrowserWebGLCompressedTextureS3tcSrgb =", "        abstract COMPRESSED_SRGB_S3TC_DXT1_EXT: NumericLiteral35916 with get", "        abstract COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT: NumericLiteral35917 with get", "        abstract COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT: NumericLiteral35918 with get", "        abstract COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT: NumericLiteral35919 with get");
 lines.push("", "    /// Exact EXT_texture_filter_anisotropic extension surface.", "    [<AllowNullLiteral>]", "    type BrowserExtTextureFilterAnisotropic =", "        abstract TEXTURE_MAX_ANISOTROPY_EXT: NumericLiteral34046 with get", "        abstract MAX_TEXTURE_MAX_ANISOTROPY_EXT: NumericLiteral34047 with get");

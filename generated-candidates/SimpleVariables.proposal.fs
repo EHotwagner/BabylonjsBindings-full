@@ -1082,6 +1082,21 @@ module SimpleVariables =
     [<Import("FBXFileLoaderMetadata", "@babylonjs/loaders/FBX/fbxFileLoader.metadata.js")>]
     let ``FBXFileLoaderMetadata``: VariableShape_FBXFileLoaderMetadata = jsNative
 
+    /// Inline object shape of FileToolsOptions.
+    [<AllowNullLiteral>]
+    type VariableShape_FileToolsOptions =
+        abstract ``DefaultRetryStrategy``: System.Func<string, BabylonjsBindings.SimpleClasses.WebRequest, float, float> with get, set
+        abstract ``BaseUrl``: string with get, set
+        abstract ``CorsBehavior``: U2<string, System.Func<U2<string, ResizeArray<string>>, string>> with get, set
+        abstract ``PreprocessUrl``: System.Func<string, string> with get, set
+        abstract ``ScriptBaseUrl``: string with get, set
+        abstract ``ScriptPreprocessUrl``: System.Func<string, string> with get, set
+        abstract ``CleanUrl``: System.Func<string, string> with get, set
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("FileToolsOptions", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``FileToolsOptions``: VariableShape_FileToolsOptions = jsNative
+
     /// Inline object shape of filterPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_filterPixelShader =

@@ -21,6 +21,21 @@ module TypeAliases =
         abstract grow: ?newByteLength: float -> unit
         [<Emit("$0[Symbol.toStringTag]")>] abstract toStringTag: BrowserSharedArrayBufferTag with get
 
+    /// Yield branch returned by a Babylon coroutine iterator.
+    [<AllowNullLiteral>]
+    type CoroutineInternalYieldResult =
+        abstract ``done``: bool option with get
+        abstract value: unit with get
+
+    /// Completion branch returned by a Babylon coroutine iterator.
+    [<AllowNullLiteral>]
+    type CoroutineInternalReturnResult<'T> =
+        abstract ``done``: bool with get
+        abstract value: 'T with get
+
+    /// Exact IteratorResult<void, T> union returned by a Babylon coroutine.
+    type CoroutineInternalResult<'T> = U2<CoroutineInternalYieldResult, CoroutineInternalReturnResult<'T>>
+
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObjectde9f6c1b6b0f =
@@ -123,6 +138,14 @@ module TypeAliases =
 
     /// @babylonjs/core/Engines/Extensions/engine.computeShader.pure
     type ComputeBindingMapping = AliasObject1818ddef00ab
+
+    /// @babylonjs/core/Misc/coroutine
+    [<AllowNullLiteral>]
+    type Coroutine<'T> =
+        abstract next: ?value: unit -> CoroutineInternalResult<'T>
+        [<Emit("$0.return === undefined ? undefined : $0.return($1)")>] abstract tryReturn: ?value: 'T -> CoroutineInternalResult<'T> option
+        [<Emit("$0.throw === undefined ? undefined : $0.throw($1)")>] abstract tryThrow: ?error: obj -> CoroutineInternalResult<'T> option
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> Coroutine<'T>
 
     /// @babylonjs/core/types
     type DataArray = U3<ResizeArray<System.Double>, U2<JS.ArrayBuffer, BrowserSharedArrayBuffer>, JS.ArrayBufferView>
@@ -312,6 +335,60 @@ module SimpleInterfaces =
     type BrowserMediaStream =
         interface end
 
+    /// Distinct ambient AbortSignal handle.
+    [<AllowNullLiteral>]
+    type BrowserAbortSignal =
+        interface end
+
+    /// Ambient XMLHttpRequest handle used by Babylon request modifiers.
+    [<AllowNullLiteral>]
+    type BrowserXMLHttpRequest =
+        abstract setRequestHeader: name: string * value: string -> unit
+
+    /// Distinct ambient URL handle.
+    [<AllowNullLiteral>]
+    type BrowserURL =
+        interface end
+
+    /// Exact structural DOMRect surface.
+    [<AllowNullLiteral>]
+    type BrowserDOMRect =
+        abstract x: float with get, set
+        abstract y: float with get, set
+        abstract width: float with get, set
+        abstract height: float with get, set
+        abstract top: float with get
+        abstract right: float with get
+        abstract bottom: float with get
+        abstract left: float with get
+        abstract toJSON: unit -> obj
+
+    /// Distinct ambient FormData handle.
+    [<AllowNullLiteral>]
+    type BrowserFormData =
+        interface end
+
+    /// Distinct ambient URLSearchParams handle.
+    [<AllowNullLiteral>]
+    type BrowserURLSearchParams =
+        interface end
+
+    /// Exact XMLHttpRequest request-body union.
+    type BrowserXMLHttpRequestBodyInit = U6<Browser.Types.Blob, JS.ArrayBufferView, JS.ArrayBuffer, BrowserFormData, BrowserURLSearchParams, string>
+
+    /// Exact DOM event-listener options surface.
+    [<AllowNullLiteral>]
+    type BrowserEventListenerOptions =
+        abstract capture: bool option with get, set
+
+    /// Exact DOM add-event-listener options surface.
+    [<AllowNullLiteral>]
+    type BrowserAddEventListenerOptions =
+        inherit BrowserEventListenerOptions
+        abstract once: bool option with get, set
+        abstract passive: bool option with get, set
+        abstract signal: BrowserAbortSignal option with get, set
+
     /// Distinct ambient WebXR reference-space handle.
     [<AllowNullLiteral>]
     type BrowserXRReferenceSpace =
@@ -400,6 +477,12 @@ module SimpleInterfaces =
         | [<CompiledName("none")>] None
         | [<CompiledName("right")>] Right
 
+    /// Exact WebGPU power-preference literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUPowerPreference =
+        | [<CompiledName("high-performance")>] HighPerformance
+        | [<CompiledName("low-power")>] LowPower
+
     /// Exact XMLHttpRequest response-type literals.
     [<StringEnum; RequireQualifiedAccess>]
     type BrowserXMLHttpRequestResponseType =
@@ -452,6 +535,23 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type JavaScriptObject =
         interface end
+
+    /// Exact structural ECMAScript iterator surface used by readonly sets.
+    [<AllowNullLiteral>]
+    type BrowserIterator<'T> =
+        abstract next: ?value: obj -> JS.IteratorResult<'T>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
+
+    /// Exact readonly ECMAScript Set surface used by Babylon declarations.
+    [<AllowNullLiteral>]
+    type BrowserReadonlySet<'T> =
+        abstract size: float with get
+        abstract has: value: 'T -> bool
+        abstract forEach: callbackfn: System.Action<'T, 'T, BrowserReadonlySet<'T>> * ?thisArg: obj -> unit
+        abstract entries: unit -> BrowserIterator<'T * 'T>
+        abstract keys: unit -> BrowserIterator<'T>
+        abstract values: unit -> BrowserIterator<'T>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
 
     /// Exact numeric literal type for 1.
     type NumericLiteral1 =
@@ -550,6 +650,41 @@ module SimpleInterfaces =
         abstract getMappedRange: ?offset: float * ?size: float -> JS.ArrayBuffer
         abstract unmap: unit -> unit
         abstract destroy: unit -> unit
+
+    /// Distinct ambient WebGPU device handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUDevice =
+        interface end
+
+    /// Distinct ambient WebGPU render-pass encoder handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderPassEncoder =
+        interface end
+
+    /// Distinct ambient WebGPU render pipeline handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderPipeline =
+        interface end
+
+    /// Distinct ambient WebGPU query set handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUQuerySet =
+        interface end
+
+    /// Distinct ambient WebGPU command encoder handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUCommandEncoder =
+        interface end
+
+    /// Distinct ambient WebGPU render bundle handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderBundle =
+        interface end
+
+    /// Distinct ambient WebXR WebGL binding handle.
+    [<AllowNullLiteral>]
+    type BrowserXRWebGLBinding =
+        interface end
 
     /// Exact WEBGL_compressed_texture_s3tc extension surface.
     [<AllowNullLiteral>]
@@ -3236,6 +3371,12 @@ module SimpleInterfaces =
         abstract ``sampler``: BabylonjsBindings.SimpleClasses.TextureSampler option with get, set
         abstract ``hashCode``: float with get, set
 
+    /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
+    [<AllowNullLiteral>]
+    type IWebGPURenderItem =
+        abstract ``run``: ``renderPass``: BrowserGPURenderPassEncoder -> unit
+        abstract ``clone``: unit -> IWebGPURenderItem
+
     /// @babylonjs/core/Misc/interfaces/iWebRequest
     [<AllowNullLiteral>]
     type IWebRequest =
@@ -4741,6 +4882,98 @@ module SimpleClasses =
     type ReadonlyTuple1<'T> =
         [<Emit("$0[0]")>] abstract Item1: 'T
 
+    /// Exact Animation discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphAnimationAssetType =
+        | [<CompiledName("Animation")>] Value
+
+    /// Exact AnimationGroup discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphAnimationGroupAssetType =
+        | [<CompiledName("AnimationGroup")>] Value
+
+    /// Exact Mesh discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphMeshAssetType =
+        | [<CompiledName("Mesh")>] Value
+
+    /// Exact Material discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphMaterialAssetType =
+        | [<CompiledName("Material")>] Value
+
+    /// Exact Camera discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphCameraAssetType =
+        | [<CompiledName("Camera")>] Value
+
+    /// Exact Light discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphLightAssetType =
+        | [<CompiledName("Light")>] Value
+
+    /// Exact abort event discriminator accepted by WebRequest.
+    [<StringEnum; RequireQualifiedAccess>]
+    type XmlHttpRequestAbortEventType =
+        | [<CompiledName("abort")>] Value
+
+    /// Exact error event discriminator accepted by WebRequest.
+    [<StringEnum; RequireQualifiedAccess>]
+    type XmlHttpRequestErrorEventType =
+        | [<CompiledName("error")>] Value
+
+    /// Exact load event discriminator accepted by WebRequest.
+    [<StringEnum; RequireQualifiedAccess>]
+    type XmlHttpRequestLoadEventType =
+        | [<CompiledName("load")>] Value
+
+    /// Exact loadend event discriminator accepted by WebRequest.
+    [<StringEnum; RequireQualifiedAccess>]
+    type XmlHttpRequestLoadEndEventType =
+        | [<CompiledName("loadend")>] Value
+
+    /// Exact loadstart event discriminator accepted by WebRequest.
+    [<StringEnum; RequireQualifiedAccess>]
+    type XmlHttpRequestLoadStartEventType =
+        | [<CompiledName("loadstart")>] Value
+
+    /// Exact progress event discriminator accepted by WebRequest.
+    [<StringEnum; RequireQualifiedAccess>]
+    type XmlHttpRequestProgressEventType =
+        | [<CompiledName("progress")>] Value
+
+    /// Exact readystatechange event discriminator accepted by WebRequest.
+    [<StringEnum; RequireQualifiedAccess>]
+    type XmlHttpRequestReadyStateChangeEventType =
+        | [<CompiledName("readystatechange")>] Value
+
+    /// Exact timeout event discriminator accepted by WebRequest.
+    [<StringEnum; RequireQualifiedAccess>]
+    type XmlHttpRequestTimeoutEventType =
+        | [<CompiledName("timeout")>] Value
+
+    /// Exact metadata properties accepted by PerformanceViewerCollector.updateMetadata.
+    [<StringEnum; RequireQualifiedAccess>]
+    type PerfMetadataProperty =
+        | [<CompiledName("category")>] Category
+        | [<CompiledName("color")>] Color
+        | [<CompiledName("hidden")>] Hidden
+
+    /// Exact category metadata-property discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type PerfMetadataCategoryProperty =
+        | [<CompiledName("category")>] Value
+
+    /// Exact color metadata-property discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type PerfMetadataColorProperty =
+        | [<CompiledName("color")>] Value
+
+    /// Exact hidden metadata-property discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type PerfMetadataHiddenProperty =
+        | [<CompiledName("hidden")>] Value
+
     /// Exact numeric literal type for 1.
     type NumericLiteral1 =
         | Value = 1
@@ -4777,10 +5010,25 @@ module SimpleClasses =
     type StringLiteral038540c29087 =
         | [<CompiledName("xr-hit-test")>] Value
 
+    /// Exact string literal type for "none".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral140bedbf9c3f =
+        | [<CompiledName("none")>] Value
+
+    /// Exact string literal type for "right".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral27042f4e6eca =
+        | [<CompiledName("right")>] Value
+
     /// Exact string literal type for "xr-controller-movement".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral33d177285f0d =
         | [<CompiledName("xr-controller-movement")>] Value
+
+    /// Exact string literal type for "left".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral360f84035942 =
+        | [<CompiledName("left")>] Value
 
     /// Exact string literal type for "stl".
     [<StringEnum; RequireQualifiedAccess>]
@@ -4922,6 +5170,16 @@ module SimpleClasses =
         | Task = 0
         | Graph = 1
         | External = 2
+
+    /// Exact internal numeric enum required by a Babylon class signature.
+    type NodeMaterialBlockTargetsSubset68ef1f64 =
+        | Fragment = 2
+        | VertexAndFragment = 3
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type RecordObjectda57c00e8bb8 =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
 
     /// Inline object shape used by a TypeScript utility projection.
     [<AllowNullLiteral>]
@@ -6562,6 +6820,23 @@ module SimpleClasses =
     [<Import("NativeDataStream", "@babylonjs/core/Engines/Native/nativeDataStream.js")>]
     let NativeDataStream: NativeDataStreamStatic = jsNative
 
+    /// Inline object shape used by NodeState.
+    [<AllowNullLiteral>]
+    type NodeStateProperty1Object =
+        [<EmitIndexer>] abstract Item: ``id``: float -> NodeState with get, set
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuCacheRenderPipelineTree
+    [<AllowNullLiteral>]
+    type NodeState =
+        abstract ``values``: NodeStateProperty1Object with get, set
+        abstract ``pipeline``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPipeline with get, set
+        abstract ``count``: unit -> (float * float)
+
+    [<AllowNullLiteral>]
+    type NodeStateStatic =
+        inherit Constructor<NodeState>
+        [<EmitConstructor>] abstract Create: unit -> NodeState
+
     /// @babylonjs/core/Engines/nullEngine.pure
     [<AllowNullLiteral>]
     type NullEngineOptions =
@@ -7360,6 +7635,101 @@ module SimpleClasses =
     [<Import("WebGLHardwareTexture", "@babylonjs/core/Engines/WebGL/webGLHardwareTexture.js")>]
     let WebGLHardwareTexture: WebGLHardwareTextureStatic = jsNative
 
+    /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
+    [<AllowNullLiteral>]
+    type WebGPURenderItemBeginOcclusionQuery =
+        abstract ``query``: float with get, set
+        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone``: unit -> WebGPURenderItemBeginOcclusionQuery
+
+    [<AllowNullLiteral>]
+    type WebGPURenderItemBeginOcclusionQueryStatic =
+        inherit Constructor<WebGPURenderItemBeginOcclusionQuery>
+        [<EmitConstructor>] abstract Create: ``query``: float -> WebGPURenderItemBeginOcclusionQuery
+
+    [<Import("WebGPURenderItemBeginOcclusionQuery", "@babylonjs/core/Engines/WebGPU/webgpuBundleList.js")>]
+    let WebGPURenderItemBeginOcclusionQuery: WebGPURenderItemBeginOcclusionQueryStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
+    [<AllowNullLiteral>]
+    type WebGPURenderItemBlendColor =
+        abstract ``color``: ResizeArray<float option> with get, set
+        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone``: unit -> WebGPURenderItemBlendColor
+
+    [<AllowNullLiteral>]
+    type WebGPURenderItemBlendColorStatic =
+        inherit Constructor<WebGPURenderItemBlendColor>
+        [<EmitConstructor>] abstract Create: ``color``: ResizeArray<float option> -> WebGPURenderItemBlendColor
+
+    [<Import("WebGPURenderItemBlendColor", "@babylonjs/core/Engines/WebGPU/webgpuBundleList.js")>]
+    let WebGPURenderItemBlendColor: WebGPURenderItemBlendColorStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
+    [<AllowNullLiteral>]
+    type WebGPURenderItemEndOcclusionQuery =
+        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone``: unit -> WebGPURenderItemEndOcclusionQuery
+
+    [<AllowNullLiteral>]
+    type WebGPURenderItemEndOcclusionQueryStatic =
+        inherit Constructor<WebGPURenderItemEndOcclusionQuery>
+        [<EmitConstructor>] abstract Create: unit -> WebGPURenderItemEndOcclusionQuery
+
+    [<Import("WebGPURenderItemEndOcclusionQuery", "@babylonjs/core/Engines/WebGPU/webgpuBundleList.js")>]
+    let WebGPURenderItemEndOcclusionQuery: WebGPURenderItemEndOcclusionQueryStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
+    [<AllowNullLiteral>]
+    type WebGPURenderItemScissor =
+        abstract ``x``: float with get, set
+        abstract ``y``: float with get, set
+        abstract ``w``: float with get, set
+        abstract ``h``: float with get, set
+        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone``: unit -> WebGPURenderItemScissor
+
+    [<AllowNullLiteral>]
+    type WebGPURenderItemScissorStatic =
+        inherit Constructor<WebGPURenderItemScissor>
+        [<EmitConstructor>] abstract Create: ``x``: float * ``y``: float * ``w``: float * ``h``: float -> WebGPURenderItemScissor
+
+    [<Import("WebGPURenderItemScissor", "@babylonjs/core/Engines/WebGPU/webgpuBundleList.js")>]
+    let WebGPURenderItemScissor: WebGPURenderItemScissorStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
+    [<AllowNullLiteral>]
+    type WebGPURenderItemStencilRef =
+        abstract ``ref``: float with get, set
+        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone``: unit -> WebGPURenderItemStencilRef
+
+    [<AllowNullLiteral>]
+    type WebGPURenderItemStencilRefStatic =
+        inherit Constructor<WebGPURenderItemStencilRef>
+        [<EmitConstructor>] abstract Create: ``ref``: float -> WebGPURenderItemStencilRef
+
+    [<Import("WebGPURenderItemStencilRef", "@babylonjs/core/Engines/WebGPU/webgpuBundleList.js")>]
+    let WebGPURenderItemStencilRef: WebGPURenderItemStencilRefStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
+    [<AllowNullLiteral>]
+    type WebGPURenderItemViewport =
+        abstract ``x``: float with get, set
+        abstract ``y``: float with get, set
+        abstract ``w``: float with get, set
+        abstract ``h``: float with get, set
+        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone``: unit -> WebGPURenderItemViewport
+
+    [<AllowNullLiteral>]
+    type WebGPURenderItemViewportStatic =
+        inherit Constructor<WebGPURenderItemViewport>
+        [<EmitConstructor>] abstract Create: ``x``: float * ``y``: float * ``w``: float * ``h``: float -> WebGPURenderItemViewport
+
+    [<Import("WebGPURenderItemViewport", "@babylonjs/core/Engines/WebGPU/webgpuBundleList.js")>]
+    let WebGPURenderItemViewport: WebGPURenderItemViewportStatic = jsNative
+
     /// Inline object shape used by WebGPUShaderProcessor.
     [<AllowNullLiteral>]
     type WebGPUShaderProcessorProperty3Object =
@@ -7394,6 +7764,73 @@ module SimpleClasses =
 
     [<Import("WebGPUTintWASM", "@babylonjs/core/Engines/WebGPU/webgpuTintWASM.js")>]
     let WebGPUTintWASM: WebGPUTintWASMStatic = jsNative
+
+    /// Inline object shape used by WebRequest.
+    [<AllowNullLiteral>]
+    type WebRequestProperty2Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by WebRequest.
+    [<AllowNullLiteral>]
+    type WebRequestMethod8ReturnObject =
+        abstract ``url``: string with get, set
+        abstract ``headers``: RecordObjectda57c00e8bb8 with get, set
+
+    /// Inline object shape used by WebRequest.
+    [<AllowNullLiteral>]
+    type WebRequestMethod9Parameter2Object =
+        abstract ``method``: string option with get, set
+        abstract ``headers``: RecordObjectda57c00e8bb8 option with get, set
+        abstract ``body``: BabylonjsBindings.SimpleInterfaces.BrowserBodyInit option with get, set
+
+    /// @babylonjs/core/Misc/webRequest
+    [<AllowNullLiteral>]
+    type WebRequest =
+        abstract ``addEventListener``: ``type``: XmlHttpRequestAbortEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener``: ``type``: XmlHttpRequestErrorEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener``: ``type``: XmlHttpRequestLoadEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener``: ``type``: XmlHttpRequestLoadEndEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener``: ``type``: XmlHttpRequestLoadStartEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener``: ``type``: XmlHttpRequestProgressEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener``: ``type``: XmlHttpRequestReadyStateChangeEventType * ``listener``: System.Func<Browser.Types.Event, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener``: ``type``: XmlHttpRequestTimeoutEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``removeEventListener``: ``type``: XmlHttpRequestAbortEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener``: ``type``: XmlHttpRequestErrorEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener``: ``type``: XmlHttpRequestLoadEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener``: ``type``: XmlHttpRequestLoadEndEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener``: ``type``: XmlHttpRequestLoadStartEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener``: ``type``: XmlHttpRequestProgressEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener``: ``type``: XmlHttpRequestReadyStateChangeEventType * ``listener``: System.Func<Browser.Types.Event, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener``: ``type``: XmlHttpRequestTimeoutEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``abort``: unit -> unit
+        abstract ``send``: ?``body``: U2<Browser.Types.Document, BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequestBodyInit> -> unit
+        abstract ``open``: ``method``: string * ``url``: string * ?``baseHeaders``: RecordObjectda57c00e8bb8 -> unit
+        abstract ``setRequestHeader``: ``name``: string * ``value``: string -> unit
+        abstract ``getResponseHeader``: ``name``: string -> string option
+        abstract ``requestURL``: string with get
+        abstract ``onprogress``: System.Func<Browser.Types.ProgressEvent, obj> option with get, set
+        abstract ``readyState``: float with get
+        abstract ``status``: float with get
+        abstract ``statusText``: string with get
+        abstract ``response``: obj with get
+        abstract ``responseURL``: string with get
+        abstract ``responseText``: string with get
+        abstract ``responseType``: BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequestResponseType with get, set
+        abstract ``timeout``: float with get, set
+
+    [<AllowNullLiteral>]
+    type WebRequestStatic =
+        inherit Constructor<WebRequest>
+        [<EmitConstructor>] abstract Create: unit -> WebRequest
+        abstract ``CustomRequestHeaders``: WebRequestProperty2Object with get, set
+        abstract ``CustomRequestModifiers``: ResizeArray<System.Func<BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequest, string, U2<string, unit>>> with get, set
+        abstract ``SkipRequestModificationForBabylonCDN``: bool with get, set
+        abstract ``_CollectCustomizations``: ``url``: string * ?``baseHeaders``: RecordObjectda57c00e8bb8 -> WebRequestMethod8ReturnObject
+        abstract ``FetchAsync``: ``url``: string * ?``options``: WebRequestMethod9Parameter2Object -> JS.Promise<BabylonjsBindings.SimpleInterfaces.BrowserResponse>
+        abstract ``IsCustomRequestAvailable``: bool with get
+
+    [<Import("WebRequest", "@babylonjs/core/Misc/webRequest.js")>]
+    let WebRequest: WebRequestStatic = jsNative
 
     /// @babylonjs/core/XR/webXREnterExitUI
     [<AllowNullLiteral>]
@@ -8245,6 +8682,20 @@ module SimpleClasses =
     [<Import("QuinticEase", "@babylonjs/core/Animations/easing.js")>]
     let QuinticEase: QuinticEaseStatic = jsNative
 
+    /// @babylonjs/core/Misc/retryStrategy
+    [<AllowNullLiteral>]
+    type RetryStrategy =
+        interface end
+
+    [<AllowNullLiteral>]
+    type RetryStrategyStatic =
+        inherit Constructor<RetryStrategy>
+        [<EmitConstructor>] abstract Create: unit -> RetryStrategy
+        abstract ``ExponentialBackoff``: ?``maxRetries``: float * ?``baseInterval``: float -> System.Func<string, WebRequest, float, float>
+
+    [<Import("RetryStrategy", "@babylonjs/core/Misc/retryStrategy.js")>]
+    let RetryStrategy: RetryStrategyStatic = jsNative
+
     /// @babylonjs/core/Misc/error
     [<AllowNullLiteral>]
     type RuntimeError =
@@ -8518,6 +8969,22 @@ module SimpleClasses =
 
     [<Import("GradientBlockColorStep", "@babylonjs/core/Materials/Node/Blocks/gradientBlock.pure.js")>]
     let GradientBlockColorStep: GradientBlockColorStepStatic = jsNative
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<AllowNullLiteral>]
+    type LoadFileError =
+        inherit RuntimeError
+        abstract ``request``: WebRequest option with get, set
+        abstract ``file``: Browser.Types.File option with get, set
+
+    [<AllowNullLiteral>]
+    type LoadFileErrorStatic =
+        inherit RuntimeErrorStatic
+        inherit Constructor<LoadFileError>
+        [<EmitConstructor>] abstract Create: ``message``: string * ?``object``: U2<WebRequest, Browser.Types.File> -> LoadFileError
+
+    [<Import("LoadFileError", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let LoadFileError: LoadFileErrorStatic = jsNative
 
     /// @babylonjs/core/Materials/Node/nodeMaterial.pure
     [<AllowNullLiteral>]
@@ -8813,6 +9280,21 @@ module SimpleClasses =
 
     [<Import("ReadFileError", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ReadFileError: ReadFileErrorStatic = jsNative
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<AllowNullLiteral>]
+    type RequestFileError =
+        inherit RuntimeError
+        abstract ``request``: WebRequest with get, set
+
+    [<AllowNullLiteral>]
+    type RequestFileErrorStatic =
+        inherit RuntimeErrorStatic
+        inherit Constructor<RequestFileError>
+        [<EmitConstructor>] abstract Create: ``message``: string * ``request``: WebRequest -> RequestFileError
+
+    [<Import("RequestFileError", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let RequestFileError: RequestFileErrorStatic = jsNative
 
     /// Inline object shape used by StandardMaterialDefines.
     [<AllowNullLiteral>]

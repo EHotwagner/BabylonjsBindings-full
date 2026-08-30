@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "85d2dbf86564e13e83fea555a68de7c59307dcaf9af4ff79296276f3e63ca858",
+  "proposalSha256": "4c740b77c99539e59986cc00bdf4146eebcf467c89d9f215d77edbf9cb32cafc",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -2963,6 +2963,14 @@
       "name": "IWebGPUMaterialContextSamplerCache",
       "kind": "interface-support",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebGPUMaterialContextSamplerCache",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "IWebGPURenderItem",
+      "kind": "interface-support",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem",
       "memberCount": 2
     },
     {

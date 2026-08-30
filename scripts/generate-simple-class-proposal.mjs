@@ -91,7 +91,9 @@ const erasedUnionType = branches => {
 const numericLiteralValues = new Set();
 const stringLiteralTypes = new Map();
 const utilityInlineTypes = [];
+const utilityConstructorTypes = [];
 const internalEnumTypes = new Map();
+const resolvingInternalAliases = new Set();
 const fsharpString = value => `"${value.replaceAll("\\", "\\\\").replaceAll("\"", "\\\"").replaceAll("\n", "\\n").replaceAll("\r", "\\r")}"`;
 const stringLiteralType = value => {
   const name = `StringLiteral${createHash("sha256").update(value).digest("hex").slice(0, 12)}`;
@@ -103,6 +105,27 @@ const numericLiteralType = value => {
   if (!Number.isSafeInteger(numeric) || numeric < -2147483648 || numeric > 2147483647) return undefined;
   numericLiteralValues.add(numeric);
   return `NumericLiteral${numeric < 0 ? `Negative${Math.abs(numeric)}` : numeric}`;
+};
+const enumMemberUnionType = node => {
+  if (!ts.isUnionTypeNode(node) || node.types.length < 2) return undefined;
+  const references = node.types.map(branch => ts.isTypeReferenceNode(branch) && ts.isQualifiedName(branch.typeName) ? branch.typeName : undefined);
+  if (references.some(reference => !reference)) return undefined;
+  const enumName = references[0].left.getText();
+  if (!references.every(reference => reference.left.getText() === enumName)) return undefined;
+  let symbol = checker.getSymbolAtLocation(references[0].left);
+  if (symbol?.flags & ts.SymbolFlags.Alias) {
+    try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+  }
+  const declaration = symbol?.declarations?.find(ts.isEnumDeclaration);
+  if (!declaration) return undefined;
+  const selectedNames = new Set(references.map(reference => reference.right.text));
+  const members = declaration.members
+    .filter(member => (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name)) && selectedNames.has(member.name.text))
+    .map(member => ({ name: member.name.text, value: checker.getConstantValue(member) }));
+  if (members.length !== selectedNames.size || !members.every(member => typeof member.value === "number")) return undefined;
+  const name = `${enumName.replace(/[^A-Za-z0-9_]/g, "")}Subset${createHash("sha256").update([...selectedNames].sort().join("|")).digest("hex").slice(0, 8)}`;
+  internalEnumTypes.set(name, members);
+  return name;
 };
 const fsharpType = (node, available, dependencies = new Set(), typeParameters = new Set()) => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
@@ -118,6 +141,8 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (ts.isTypePredicateNode(node)) return "bool";
   if (node.kind === ts.SyntaxKind.ThisType && typeParameters.ownerName) return typeParameters.ownerName;
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
+  const restrictedEnum = enumMemberUnionType(node);
+  if (restrictedEnum) return restrictedEnum;
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
     if (ts.isArrayTypeNode(node.type)) {
       const element = fsharpType(node.type.elementType, available, dependencies, typeParameters);
@@ -138,9 +163,21 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     const element = fsharpType(node.elementType, available, dependencies, typeParameters);
     return element ? `ResizeArray<${element}>` : undefined;
   }
+  if (ts.isTupleTypeNode(node) && node.elements.length === 0) return "ResizeArray<Never>";
   if (ts.isTupleTypeNode(node) && node.elements.length >= 1) {
     const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type, available, dependencies, typeParameters) : !ts.isNamedTupleMember(element) ? fsharpType(element, available, dependencies, typeParameters) : undefined);
     return elements.every(Boolean) ? node.elements.length === 1 ? `ReadonlyTuple1<${elements[0]}>` : `(${elements.join(" * ")})` : undefined;
+  }
+  if (ts.isMappedTypeNode(node) && node.typeParameter.constraint && node.type) {
+    const keyType = fsharpType(node.typeParameter.constraint, available, dependencies, typeParameters);
+    const valueType = fsharpType(node.type, available, dependencies, typeParameters);
+    if (keyType && valueType) {
+      const name = `MappedObject${createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12)}`;
+      if (!utilityInlineTypes.some(inline => inline.name === name)) {
+        utilityInlineTypes.push({ name, genericParameters: "", members: [{ kind: "indexer", name: "key", keyType, valueType: node.questionToken ? asOption(valueType) : valueType, readonly: false }] });
+      }
+      return name;
+    }
   }
   if (ts.isConstructorTypeNode(node)
     && !node.typeParameters?.length
@@ -152,19 +189,73 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     const instanceType = fsharpType(node.type, available, dependencies, typeParameters);
     return instanceType ? `Constructor<${instanceType}>` : undefined;
   }
+  if (ts.isConstructorTypeNode(node) && !node.parameters.some(parameter => parameter.dotDotDotToken)) {
+    const renderedParameters = node.parameters.map(parameter => {
+      const rendered = parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined;
+      return {
+        name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
+        type: parameter.questionToken && rendered ? asOptionalParameterType(rendered) : rendered,
+        optional: Boolean(parameter.questionToken)
+      };
+    });
+    const returnType = fsharpType(node.type, available, dependencies, typeParameters);
+    if (returnType && renderedParameters.every(parameter => parameter.name && parameter.type)) {
+      const name = `TypedConstructor${createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12)}`;
+      const genericParameters = typeParameters.size ? `<${[...typeParameters].map(value => `'${value}`).join(", ")}>` : "";
+      if (!utilityConstructorTypes.some(type => type.name === name)) utilityConstructorTypes.push({ name, genericParameters, parameters: renderedParameters, returnType });
+      return `${name}${genericParameters}`;
+    }
+  }
   if (ts.isImportTypeNode(node)
     && node.qualifier
     && ts.isIdentifier(node.qualifier)
-    && !node.typeArguments?.length) {
-    const name = node.qualifier.text;
-    if (available.has(name)) {
-      const target = available.get(name);
-      if (target.arity !== 0) return undefined;
-      dependencies.add(name);
-      return name;
+    && node.qualifier.text === "DeepImmutableObject"
+    && node.typeArguments?.length === 1) {
+    const inner = node.typeArguments[0];
+    if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && !inner.typeArguments?.length) {
+      const name = inner.typeName.text;
+      const target = available.get(name) ?? maintainedSymbols.get(name);
+      if (target?.deepImmutableSymbol) {
+        if (available.has(name)) dependencies.add(name);
+        return target.deepImmutableSymbol;
+      }
     }
-    const maintained = maintainedSymbols.get(name);
-    if (maintained?.arity === 0) return maintained.fsharpSymbol;
+  }
+  if (ts.isImportTypeNode(node)
+    && node.qualifier
+    && ts.isIdentifier(node.qualifier)) {
+    const name = node.qualifier.text;
+    const target = available.get(name) ?? maintainedSymbols.get(name);
+    const arguments_ = node.typeArguments ?? [];
+    if (target && arguments_.length === target.arity) {
+      const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies, typeParameters));
+      if (renderedArguments.every(Boolean)) {
+        if (available.has(name)) dependencies.add(name);
+        const symbol = available.has(name) ? name : target.fsharpSymbol;
+        return target.arity === 0 ? symbol : `${symbol}<${renderedArguments.join(", ")}>`;
+      }
+    }
+  }
+  if (ts.isTypeQueryNode(node) && ts.isQualifiedName(node.exprName)) {
+    let symbol = checker.getSymbolAtLocation(node.exprName.right);
+    if (symbol?.flags & ts.SymbolFlags.Alias) {
+      try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+    }
+    const method = symbol?.declarations?.find(ts.isMethodDeclaration);
+    if (method?.type && !method.typeParameters?.length && !method.parameters.some(parameter => parameter.dotDotDotToken)) {
+      const parameterTypes = method.parameters.map(parameter => {
+        const rendered = parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined;
+        return parameter.questionToken && rendered ? asOption(rendered) : rendered;
+      });
+      const returnType = fsharpType(method.type, available, dependencies, typeParameters);
+      if (returnType && parameterTypes.every(Boolean)) {
+        return returnType === "unit"
+          ? parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`
+          : `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
+      }
+    }
+    recordTypeFailure(node);
+    return undefined;
   }
   if (ts.isFunctionTypeNode(node)
     && !node.typeParameters?.length
@@ -335,6 +426,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `JS.Set<${inner}>` : undefined;
     }
+    if (node.typeName.text === "ReadonlySet" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      return inner ? `BabylonjsBindings.SimpleInterfaces.BrowserReadonlySet<${inner}>` : undefined;
+    }
     if (node.typeName.text === "Map" && node.typeArguments?.length === 2) {
       const key = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       const value = fsharpType(node.typeArguments[1], available, dependencies, typeParameters);
@@ -346,6 +441,12 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     }
     const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
+    if (node.typeArguments?.length === 1
+      && jsTypes.has(node.typeName.text)
+      && ts.isTypeReferenceNode(node.typeArguments[0])
+      && ts.isIdentifier(node.typeArguments[0].typeName)
+      && node.typeArguments[0].typeName.text === "ArrayBuffer"
+      && !node.typeArguments[0].typeArguments?.length) return `JS.${node.typeName.text}`;
     const browserTypes = new Set([
       "AudioBuffer", "AudioBufferSourceNode", "AudioContext", "AudioDestinationNode", "AudioNode", "Blob", "Document", "Element", "Event", "File", "GainNode", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLMediaElement", "HTMLVideoElement", "KeyboardEvent", "MediaStreamAudioDestinationNode", "MediaTrackConstraints", "OfflineAudioContext", "PointerEvent", "PointerEventInit", "ProgressEvent", "Window", "XMLHttpRequest",
       "ImageData", "WebGLUniformLocation", "WebGL2RenderingContext", "WebGLRenderingContext",
@@ -375,6 +476,21 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && node.typeName.text === "XRRenderState") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderState";
     if (!node.typeArguments?.length && node.typeName.text === "XRRenderStateInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderStateInit";
     if (!node.typeArguments?.length && node.typeName.text === "XRReferenceSpaceType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType";
+    if (!node.typeArguments?.length && node.typeName.text === "GPUPowerPreference") return "BabylonjsBindings.SimpleInterfaces.BrowserGPUPowerPreference";
+    if (!node.typeArguments?.length && node.typeName.text === "XMLHttpRequestBodyInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequestBodyInit";
+    if (!node.typeArguments?.length && node.typeName.text === "XMLHttpRequest") return "BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequest";
+    if (!node.typeArguments?.length && node.typeName.text === "URL") return "BabylonjsBindings.SimpleInterfaces.BrowserURL";
+    if (!node.typeArguments?.length && node.typeName.text === "DOMRect") return "BabylonjsBindings.SimpleInterfaces.BrowserDOMRect";
+    const ambientHandleTypes = new Map([
+      ["GPUDevice", "BrowserGPUDevice"],
+      ["GPURenderPassEncoder", "BrowserGPURenderPassEncoder"],
+      ["GPURenderPipeline", "BrowserGPURenderPipeline"],
+      ["GPUQuerySet", "BrowserGPUQuerySet"],
+      ["GPUCommandEncoder", "BrowserGPUCommandEncoder"],
+      ["GPURenderBundle", "BrowserGPURenderBundle"],
+      ["XRWebGLBinding", "BrowserXRWebGLBinding"]
+    ]);
+    if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
     if (!node.typeArguments?.length && node.typeName.text === "WebXRRenderTarget" && (available.has("WebXRRenderTarget") || maintainedSymbols.has("WebXRRenderTarget"))) {
       if (available.has("WebXRRenderTarget")) dependencies.add("WebXRRenderTarget");
       return "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer>";
@@ -413,6 +529,12 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       if (aliasDeclaration && !aliasDeclaration.typeParameters?.length && ts.isTypeLiteralNode(aliasDeclaration.type)) {
         const digest = createHash("sha256").update(`${node.typeName.text}|${aliasDeclaration.type.getText().replace(/\s+/g, " ")}`).digest("hex").slice(0, 12);
         return inlineObjectType(aliasDeclaration.type, available, dependencies, typeParameters, utilityInlineTypes, `InternalAlias${digest}`);
+      }
+      if (aliasDeclaration && !aliasDeclaration.typeParameters?.length && !resolvingInternalAliases.has(aliasDeclaration)) {
+        resolvingInternalAliases.add(aliasDeclaration);
+        const rendered = fsharpType(aliasDeclaration.type, available, dependencies, typeParameters);
+        resolvingInternalAliases.delete(aliasDeclaration);
+        if (rendered) return rendered;
       }
       const enumDeclaration = symbol?.declarations?.find(ts.isEnumDeclaration);
       if (enumDeclaration) {
@@ -513,6 +635,7 @@ const inlineObjectType = (node, available, dependencies, typeParameters, inlineT
   if (existing) return `${name}${existing.genericParameters}`;
   const genericParameters = typeParameters.size ? `<${[...typeParameters].map(value => `'${value}`).join(", ")}>` : "";
   const members = [];
+  const renderedAccessors = new Set();
   for (const [memberIndex, member] of node.members.entries()) {
     if (ts.isPropertySignature(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       let type = ts.isTypeLiteralNode(member.type)
@@ -533,6 +656,20 @@ const inlineObjectType = (node, available, dependencies, typeParameters, inlineT
       const callback = directCallbackShape(member, available, dependencies, typeParameters);
       if (!callback) return undefined;
       members.push({ kind: "method", name: member.name.text, callback: { ...callback, genericParameters: "" } });
+    } else if ((ts.isGetAccessorDeclaration(member) || ts.isSetAccessorDeclaration(member))
+      && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
+      if (renderedAccessors.has(member.name.text)) continue;
+      const accessors = node.members.filter(candidate => (ts.isGetAccessorDeclaration(candidate) || ts.isSetAccessorDeclaration(candidate))
+        && (ts.isIdentifier(candidate.name) || ts.isStringLiteral(candidate.name))
+        && candidate.name.text === member.name.text);
+      const getter = accessors.find(ts.isGetAccessorDeclaration);
+      const setter = accessors.find(ts.isSetAccessorDeclaration);
+      const getterType = getter?.type ? fsharpType(getter.type, available, dependencies, typeParameters) : undefined;
+      const setterType = setter?.parameters?.[0]?.type ? fsharpType(setter.parameters[0].type, available, dependencies, typeParameters) : undefined;
+      const type = getterType ?? setterType;
+      if (!type || (getterType && setterType && getterType !== setterType)) return undefined;
+      members.push({ kind: "accessor", name: member.name.text, type, canGet: Boolean(getter), canSet: Boolean(setter) });
+      renderedAccessors.add(member.name.text);
     } else {
       recordTypeFailure(member);
       return undefined;
@@ -556,6 +693,29 @@ const intersectionObjectType = (node, available, dependencies, typeParameters, i
   inlineTypes.push({ name, genericParameters, bases: [...otherBases, objectBase], members: [] });
   return `${name}${genericParameters}`;
 };
+const flowGraphAssetKinds = [
+  ["Animation", "FlowGraphAnimationAssetType"],
+  ["AnimationGroup", "FlowGraphAnimationGroupAssetType"],
+  ["Mesh", "FlowGraphMeshAssetType"],
+  ["Material", "FlowGraphMaterialAssetType"],
+  ["Camera", "FlowGraphCameraAssetType"],
+  ["Light", "FlowGraphLightAssetType"]
+];
+const xmlHttpRequestEventKinds = [
+  ["abort", "XmlHttpRequestAbortEventType", "Browser.Types.ProgressEvent"],
+  ["error", "XmlHttpRequestErrorEventType", "Browser.Types.ProgressEvent"],
+  ["load", "XmlHttpRequestLoadEventType", "Browser.Types.ProgressEvent"],
+  ["loadend", "XmlHttpRequestLoadEndEventType", "Browser.Types.ProgressEvent"],
+  ["loadstart", "XmlHttpRequestLoadStartEventType", "Browser.Types.ProgressEvent"],
+  ["progress", "XmlHttpRequestProgressEventType", "Browser.Types.ProgressEvent"],
+  ["readystatechange", "XmlHttpRequestReadyStateChangeEventType", "Browser.Types.Event"],
+  ["timeout", "XmlHttpRequestTimeoutEventType", "Browser.Types.ProgressEvent"]
+];
+const perfMetadataKinds = [
+  ["category", "PerfMetadataCategoryProperty", "string"],
+  ["color", "PerfMetadataColorProperty", "string"],
+  ["hidden", "PerfMetadataHiddenProperty", "bool"]
+];
 const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, context, ownerName) => {
   const localTypeParameters = new Set(typeParameters);
   localTypeParameters.deepImmutableSymbols = new Map(typeParameters.deepImmutableSymbols ?? []);
@@ -583,6 +743,10 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
         && ts.isArrayTypeNode(parameter.type)
         && (parameter.type.elementType.kind === ts.SyntaxKind.UnknownKeyword || parameter.type.elementType.kind === ts.SyntaxKind.AnyKeyword)) {
         return [{ name: ts.isIdentifier(parameter.name) ? parameter.name.text : "args", type: "obj[]", optional: false, paramArray: true }];
+      }
+      if (parameter.type && ts.isArrayTypeNode(parameter.type)) {
+        const element = fsharpType(parameter.type.elementType, available, dependencies, localTypeParameters);
+        if (element) return [{ name: ts.isIdentifier(parameter.name) ? parameter.name.text : "args", type: `${element}[]`, optional: false, paramArray: true }];
       }
       const expanded = parameter.type ? expandFixedRestTypes(parameter.type, available, dependencies, localTypeParameters) : undefined;
       return expanded
@@ -678,6 +842,104 @@ const renderClass = (declaration, available, hasBase) => {
         target.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
       }
     } else if (ts.isMethodDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
+      if (declaration.name.text === "Angle" && member.name.text === "BetweenTwoVectors") {
+        for (const vector of ["Vector2", "Vector3", "Vector4"]) {
+          const targetVector = available.get(vector);
+          if (!targetVector?.deepImmutableSymbol) {
+            recordTypeFailure(member);
+            return undefined;
+          }
+          dependencies.add(vector);
+          target.push({
+            kind: "method",
+            name: member.name.text,
+            callback: {
+              parameters: [
+                { name: "a", type: targetVector.deepImmutableSymbol, optional: false },
+                { name: "b", type: targetVector.deepImmutableSymbol, optional: false }
+              ],
+              returnType: "Angle",
+              genericParameters: ""
+            }
+          });
+        }
+        renderedMethodNames.add(member.name.text);
+        continue;
+      }
+      if (declaration.name.text === "FlowGraphContext" && member.name.text === "getAsset") {
+        const missingAsset = flowGraphAssetKinds.find(([asset]) => !available.has(asset));
+        if (missingAsset) {
+          recordTypeFailure(member);
+          return undefined;
+        }
+        for (const [asset] of flowGraphAssetKinds) dependencies.add(asset);
+        const parameters = (type) => [
+          { name: "type", type, optional: false },
+          { name: "index", type: "float", optional: false }
+        ];
+        target.push({
+          kind: "method",
+          name: "getAsset",
+          callback: {
+            parameters: parameters("BabylonjsBindings.StringEnums.FlowGraphAssetType"),
+            returnType: `U6<${flowGraphAssetKinds.map(([asset]) => asset).join(", ")}> option`,
+            genericParameters: ""
+          }
+        });
+        for (const [asset, marker] of flowGraphAssetKinds) {
+          target.push({
+            kind: "method",
+            name: "getAsset",
+            callback: { parameters: parameters(marker), returnType: `${asset} option`, genericParameters: "" }
+          });
+        }
+        renderedMethodNames.add(member.name.text);
+        continue;
+      }
+      if (declaration.name.text === "WebRequest" && ["addEventListener", "removeEventListener"].includes(member.name.text)) {
+        const add = member.name.text === "addEventListener";
+        for (const [, marker, eventType] of xmlHttpRequestEventKinds) {
+          target.push({
+            kind: "method",
+            name: member.name.text,
+            callback: {
+              parameters: [
+                { name: "type", type: marker, optional: false },
+                { name: "listener", type: `System.Func<${eventType}, obj>`, optional: false },
+                { name: "options", type: `U2<bool, BabylonjsBindings.SimpleInterfaces.${add ? "BrowserAddEventListenerOptions" : "BrowserEventListenerOptions"}>`, optional: true }
+              ],
+              returnType: "unit",
+              genericParameters: ""
+            }
+          });
+        }
+        renderedMethodNames.add(member.name.text);
+        continue;
+      }
+      if (declaration.name.text === "PerformanceViewerCollector" && member.name.text === "updateMetadata") {
+        target.push({ kind: "method", name: member.name.text, callback: {
+          parameters: [
+            { name: "id", type: "string", optional: false },
+            { name: "prop", type: "PerfMetadataProperty", optional: false },
+            { name: "value", type: "U2<string, bool>", optional: false }
+          ],
+          returnType: "unit",
+          genericParameters: ""
+        }});
+        for (const [, marker, valueType] of perfMetadataKinds) {
+          target.push({ kind: "method", name: member.name.text, callback: {
+            parameters: [
+              { name: "id", type: "string", optional: false },
+              { name: "prop", type: marker, optional: false },
+              { name: "value", type: valueType, optional: false }
+            ],
+            returnType: "unit",
+            genericParameters: ""
+          }});
+        }
+        renderedMethodNames.add(member.name.text);
+        continue;
+      }
       if (member.questionToken) {
         const callback = callbackShape(member, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, `${declaration.name.text}Method${memberIndex + 1}`, declaration.name.text);
         if (!callback) {
@@ -903,6 +1165,7 @@ for (const entry of declarations.values()) {
 const retainedNumericLiterals = new Set(numericLiteralValues);
 const retainedStringLiterals = new Map(stringLiteralTypes);
 const retainedUtilityInlineTypeCount = utilityInlineTypes.length;
+const retainedUtilityConstructorTypeCount = utilityConstructorTypes.length;
 const recursiveCandidates = new Map();
 for (const [identity, entry] of declarations) {
   if (selected.has(identity) || nameCounts.get(entry.name) !== 1) continue;
@@ -931,6 +1194,7 @@ for (const value of retainedNumericLiterals) numericLiteralValues.add(value);
 stringLiteralTypes.clear();
 for (const [name, value] of retainedStringLiterals) stringLiteralTypes.set(name, value);
 utilityInlineTypes.length = retainedUtilityInlineTypeCount;
+utilityConstructorTypes.length = retainedUtilityConstructorTypeCount;
 for (const name of recursivelyClosedNames) {
   const candidate = recursiveCandidates.get(name);
   candidate.base = renderBase(candidate.entry.declaration, optimisticAvailable);
@@ -1129,6 +1393,16 @@ const lines = [
 lines.push("", "    /// Uninhabited return marker for TypeScript `never` members.", "    type Never = private Never of unit");
 lines.push("", "    /// JavaScript constructor object compatible with `new (...args: any[]) => T`.", "    [<AllowNullLiteral>]", "    type Constructor<'T> =", "        [<EmitConstructor>] abstract Create: [<System.ParamArray>] args: obj[] -> 'T");
 lines.push("", "    /// Exact read-only JavaScript tuple shape with one element.", "    [<AllowNullLiteral>]", "    type ReadonlyTuple1<'T> =", "        [<Emit(\"$0[0]\")>] abstract Item1: 'T");
+for (const [value, name] of flowGraphAssetKinds) {
+  lines.push("", `    /// Exact ${value} discriminator accepted by FlowGraphContext.getAsset.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, `        | [<CompiledName(${fsharpString(value)})>] Value`);
+}
+for (const [value, name] of xmlHttpRequestEventKinds) {
+  lines.push("", `    /// Exact ${value} event discriminator accepted by WebRequest.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, `        | [<CompiledName(${fsharpString(value)})>] Value`);
+}
+lines.push("", "    /// Exact metadata properties accepted by PerformanceViewerCollector.updateMetadata.", "    [<StringEnum; RequireQualifiedAccess>]", "    type PerfMetadataProperty =", ...perfMetadataKinds.map(([value]) => `        | [<CompiledName(${fsharpString(value)})>] ${value[0].toUpperCase()}${value.slice(1)}`));
+for (const [value, name] of perfMetadataKinds) {
+  lines.push("", `    /// Exact ${value} metadata-property discriminator.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, `        | [<CompiledName(${fsharpString(value)})>] Value`);
+}
 for (const value of [...numericLiteralValues].sort((left, right) => left - right)) {
   const name = `NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`;
   lines.push("", `    /// Exact numeric literal type for ${value}.`, `    type ${name} =`, `        | Value = ${value}`);
@@ -1153,6 +1427,9 @@ for (const inline of retainedClassUtilityInlineTypes) {
   for (const base of inline.bases ?? []) lines.push(`        inherit ${base}`);
   if (inline.members.length === 0 && !(inline.bases?.length)) lines.push("        interface end");
   else for (const member of inline.members) lines.push(`        ${renderMember(member)}`);
+}
+for (const constructorType of utilityConstructorTypes.filter(type => classUtilityReferenceText.includes(type.name))) {
+  lines.push("", "    /// Exact typed JavaScript constructor object used by a Babylon signature.", "    [<AllowNullLiteral>]", `    type ${constructorType.name}${constructorType.genericParameters} =`, `        [<EmitConstructor>] abstract Create: ${callbackArguments({ parameters: constructorType.parameters })} -> ${constructorType.returnType}`);
 }
 for (const entry of entries) {
   const genericParameterNames = entry.declaration.typeParameters?.map(parameter => `'${parameter.name.text}`) ?? [];

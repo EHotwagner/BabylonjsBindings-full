@@ -225,6 +225,10 @@ const fsharpType = node => {
       const inner = fsharpType(node.typeArguments[0]);
       return inner ? `JS.Set<${inner}>` : undefined;
     }
+    if (node.typeName.text === "ReadonlySet" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0]);
+      return inner ? `BabylonjsBindings.SimpleInterfaces.BrowserReadonlySet<${inner}>` : undefined;
+    }
     if (node.typeName.text === "Map" && node.typeArguments?.length === 2) {
       const key = fsharpType(node.typeArguments[0]);
       const value = fsharpType(node.typeArguments[1]);
@@ -263,6 +267,21 @@ const fsharpType = node => {
     if (!node.typeArguments?.length && node.typeName.text === "XRRenderState") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderState";
     if (!node.typeArguments?.length && node.typeName.text === "XRRenderStateInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderStateInit";
     if (!node.typeArguments?.length && node.typeName.text === "XRReferenceSpaceType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType";
+    if (!node.typeArguments?.length && node.typeName.text === "GPUPowerPreference") return "BabylonjsBindings.SimpleInterfaces.BrowserGPUPowerPreference";
+    if (!node.typeArguments?.length && node.typeName.text === "XMLHttpRequestBodyInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequestBodyInit";
+    if (!node.typeArguments?.length && node.typeName.text === "XMLHttpRequest") return "BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequest";
+    if (!node.typeArguments?.length && node.typeName.text === "URL") return "BabylonjsBindings.SimpleInterfaces.BrowserURL";
+    if (!node.typeArguments?.length && node.typeName.text === "DOMRect") return "BabylonjsBindings.SimpleInterfaces.BrowserDOMRect";
+    const ambientHandleTypes = new Map([
+      ["GPUDevice", "BrowserGPUDevice"],
+      ["GPURenderPassEncoder", "BrowserGPURenderPassEncoder"],
+      ["GPURenderPipeline", "BrowserGPURenderPipeline"],
+      ["GPUQuerySet", "BrowserGPUQuerySet"],
+      ["GPUCommandEncoder", "BrowserGPUCommandEncoder"],
+      ["GPURenderBundle", "BrowserGPURenderBundle"],
+      ["XRWebGLBinding", "BrowserXRWebGLBinding"]
+    ]);
+    if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
     const maintained = maintainedSymbols.get(node.typeName.text);
     if (maintained) {
       const arguments_ = node.typeArguments ?? [];
@@ -291,7 +310,10 @@ const typeLiteralShape = (node, context = "Alias") => {
           rendered = nestedName;
         }
       }
-      if (!rendered) return undefined;
+      if (!rendered) {
+        recordTypeFailure(member);
+        return undefined;
+      }
       members.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(rendered) : rendered, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false });
     } else if (ts.isIndexSignatureDeclaration(member)
       && member.parameters.length === 1
@@ -308,9 +330,15 @@ const typeLiteralShape = (node, context = "Alias") => {
           valueType = nestedName;
         }
       }
-      if (!keyType || !valueType) return undefined;
+      if (!keyType || !valueType) {
+        recordTypeFailure(member);
+        return undefined;
+      }
       members.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false });
-    } else return undefined;
+    } else {
+      recordTypeFailure(member);
+      return undefined;
+    }
   }
   return members;
 };
@@ -338,7 +366,10 @@ const intersectionShape = node => {
       members.push(...renderedMembers);
     } else {
       const rendered = fsharpType(branch);
-      if (!rendered) return undefined;
+      if (!rendered) {
+        recordTypeFailure(branch);
+        return undefined;
+      }
       bases.push(rendered);
     }
   }
@@ -395,7 +426,12 @@ for (const sourceFile of program.getSourceFiles()) {
       && declaration.type.types.length === 2
       && declaration.type.types.some(node => ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName) && node.typeName.text === declaration.typeParameters[0].name.text)
       && declaration.type.types.some(node => ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
-    if (isNullable) {
+    const isCoroutine = name === "Coroutine"
+      && declaration.typeParameters?.length === 1
+      && declaration.typeParameters[0].name.text === "T";
+    if (isCoroutine) {
+      entry = { package: packageName, module, name, shape: "coroutine", typeParameter: "T" };
+    } else if (isNullable) {
       entry = { package: packageName, module, name, shape: "genericAlias", typeParameter: declaration.typeParameters[0].name.text, target: `'${declaration.typeParameters[0].name.text} option` };
     } else if (!declaration.typeParameters?.length && ts.isFunctionTypeNode(declaration.type)) {
       if (declaration.type.parameters.some(parameter => parameter.dotDotDotToken)) continue;
@@ -453,6 +489,9 @@ const lines = [
 ];
 lines.push("", "    /// Exact Symbol.toStringTag literal exposed by SharedArrayBuffer.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserSharedArrayBufferTag =", "        | [<CompiledName(\"SharedArrayBuffer\")>] SharedArrayBuffer");
 lines.push("", "    /// Exact ESNext SharedArrayBuffer instance surface used by ArrayBufferLike declarations.", "    [<AllowNullLiteral>]", "    type BrowserSharedArrayBuffer =", "        abstract byteLength: float with get", "        abstract growable: bool with get", "        abstract maxByteLength: float with get", "        abstract slice: ?beginIndex: float * ?endIndex: float -> BrowserSharedArrayBuffer", "        abstract grow: ?newByteLength: float -> unit", "        [<Emit(\"$0[Symbol.toStringTag]\")>] abstract toStringTag: BrowserSharedArrayBufferTag with get");
+lines.push("", "    /// Yield branch returned by a Babylon coroutine iterator.", "    [<AllowNullLiteral>]", "    type CoroutineInternalYieldResult =", "        abstract ``done``: bool option with get", "        abstract value: unit with get");
+lines.push("", "    /// Completion branch returned by a Babylon coroutine iterator.", "    [<AllowNullLiteral>]", "    type CoroutineInternalReturnResult<'T> =", "        abstract ``done``: bool with get", "        abstract value: 'T with get");
+lines.push("", "    /// Exact IteratorResult<void, T> union returned by a Babylon coroutine.", "    type CoroutineInternalResult<'T> = U2<CoroutineInternalYieldResult, CoroutineInternalReturnResult<'T>>");
 const aliasReferenceText = JSON.stringify(entries);
 for (const value of [...numericLiteralValues].filter(value => aliasReferenceText.includes(`NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`)).sort((left, right) => left - right)) {
   const name = `NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`;
@@ -483,6 +522,8 @@ for (const entry of entries) {
     const generic = entry.shape === "genericAlias" ? `<'${entry.typeParameter}>` : "";
     lines.push(`    type ${entry.name}${generic} = ${entry.target}`);
     if (entry.deepImmutableTarget) lines.push(`    type DeepImmutable${entry.name} = ${entry.deepImmutableTarget}`);
+  } else if (entry.shape === "coroutine") {
+    lines.push("    [<AllowNullLiteral>]", `    type ${entry.name}<'${entry.typeParameter}> =`, `        abstract next: ?value: unit -> CoroutineInternalResult<'${entry.typeParameter}>`, `        [<Emit(\"$0.return === undefined ? undefined : $0.return($1)\")>] abstract tryReturn: ?value: '${entry.typeParameter} -> CoroutineInternalResult<'${entry.typeParameter}> option`, `        [<Emit(\"$0.throw === undefined ? undefined : $0.throw($1)\")>] abstract tryThrow: ?error: obj -> CoroutineInternalResult<'${entry.typeParameter}> option`, `        [<Emit(\"$0[Symbol.iterator]()\")>] abstract GetIterator: unit -> ${entry.name}<'${entry.typeParameter}>`);
   } else if (entry.shape === "callback") {
     const argumentsType = entry.parameters.length === 0
       ? "unit"
@@ -521,7 +562,7 @@ const manifest = {
     fsharpSymbol: `BabylonjsBindings.TypeAliases.${entry.name}`,
     ...(entry.deepImmutableTarget ? { deepImmutableSymbol: `BabylonjsBindings.TypeAliases.DeepImmutable${entry.name}` } : {}),
     shape: entry.shape,
-    ...(entry.shape === "genericAlias" ? { typeParameterCount: 1 } : {}),
+    ...(["genericAlias", "coroutine"].includes(entry.shape) ? { typeParameterCount: 1 } : {}),
     memberCount: entry.shape === "callback" ? entry.parameters.length : entry.shape === "recursiveUnionAlias" ? entry.branches.length : entry.shape === "objectAlias" ? entry.members.length : entry.shape === "intersectionAlias" ? entry.bases.length + entry.members.length : 1
   }))
 };

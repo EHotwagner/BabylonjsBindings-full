@@ -73,8 +73,10 @@ const promotions = await Promise.all(promotionFamilies.map(async family => {
   if (manifest.schemaVersion !== 1 || manifest.reviewStatus !== "maintained") {
     throw new Error(`${family.description} coverage manifest has an unsupported schema or is not reviewed`);
   }
-  if (maintainedSource.split("\n").slice(1).join("\n") !== proposalSource.split("\n").slice(1).join("\n")) {
-    throw new Error(`maintained ${family.description} bindings drifted from the reviewed exact-declaration proposal`);
+  const proposalHeader = proposalSource.split("\n")[0];
+  const maintainedAsProposal = [proposalHeader, ...maintainedSource.split("\n").slice(1)].join("\n");
+  if (sha256(maintainedAsProposal) !== manifest.proposalSha256) {
+    throw new Error(`maintained ${family.description} bindings drifted from its pinned reviewed proposal`);
   }
   return { ...family, maintainedSource, manifest };
 }));

@@ -21,6 +21,21 @@ module TypeAliases =
         abstract grow: ?newByteLength: float -> unit
         [<Emit("$0[Symbol.toStringTag]")>] abstract toStringTag: BrowserSharedArrayBufferTag with get
 
+    /// Yield branch returned by a Babylon coroutine iterator.
+    [<AllowNullLiteral>]
+    type CoroutineInternalYieldResult =
+        abstract ``done``: bool option with get
+        abstract value: unit with get
+
+    /// Completion branch returned by a Babylon coroutine iterator.
+    [<AllowNullLiteral>]
+    type CoroutineInternalReturnResult<'T> =
+        abstract ``done``: bool with get
+        abstract value: 'T with get
+
+    /// Exact IteratorResult<void, T> union returned by a Babylon coroutine.
+    type CoroutineInternalResult<'T> = U2<CoroutineInternalYieldResult, CoroutineInternalReturnResult<'T>>
+
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObjectde9f6c1b6b0f =
@@ -123,6 +138,14 @@ module TypeAliases =
 
     /// @babylonjs/core/Engines/Extensions/engine.computeShader.pure
     type ComputeBindingMapping = AliasObject1818ddef00ab
+
+    /// @babylonjs/core/Misc/coroutine
+    [<AllowNullLiteral>]
+    type Coroutine<'T> =
+        abstract next: ?value: unit -> CoroutineInternalResult<'T>
+        [<Emit("$0.return === undefined ? undefined : $0.return($1)")>] abstract tryReturn: ?value: 'T -> CoroutineInternalResult<'T> option
+        [<Emit("$0.throw === undefined ? undefined : $0.throw($1)")>] abstract tryThrow: ?error: obj -> CoroutineInternalResult<'T> option
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> Coroutine<'T>
 
     /// @babylonjs/core/types
     type DataArray = U3<ResizeArray<System.Double>, U2<JS.ArrayBuffer, BrowserSharedArrayBuffer>, JS.ArrayBufferView>
