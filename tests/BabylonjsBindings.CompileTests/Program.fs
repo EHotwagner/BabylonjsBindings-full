@@ -3,6 +3,7 @@ open BabylonjsBindings.Enums
 open BabylonjsBindings.StringEnums
 open BabylonjsBindings.ObjectTypes
 open BabylonjsBindings.SimpleInterfaces
+open BabylonjsBindings.SimpleClasses
 let shaderLanguage: ShaderLanguage = ShaderLanguage.``WGSL``
 let loaderState: GLTFLoaderState = GLTFLoaderState.``READY``
 let fftSize: AudioAnalyzerFFTSizeType = AudioAnalyzerFFTSizeType.``N32768``
@@ -11,6 +12,8 @@ let sizeLike: SizeLike = Unchecked.defaultof<SizeLike>
 let textureHandle: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle = 1.0
 let stageAction: BabylonjsBindings.TypeAliases.SimpleStageAction = Unchecked.defaultof<BabylonjsBindings.TypeAliases.SimpleStageAction>
 let easing: IEasingFunction = Unchecked.defaultof<IEasingFunction>
+let bitArray: BitArray = Unchecked.defaultof<BitArray>
+let bitArrayFactory: BitArrayStatic = BitArray
 let engine = nullEngine ()
 let scene = scene engine
 let _ = box "compile-smoke" scene
@@ -21,4 +24,6 @@ sizeLike |> ignore
 textureHandle |> ignore
 stageAction |> ignore
 easing |> ignore
+bitArray |> ignore
+bitArrayFactory |> ignore
 printfn "curated Babylon binding compile smoke passed"

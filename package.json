@@ -36,7 +36,7 @@
     "coverage:require-complete": "node --max-old-space-size=8192 scripts/generate-coverage.mjs --check --require-complete",
     "test:candidate-compile": "node scripts/test-candidate-compile.mjs",
     "test:candidate-fable": "dotnet fable generated-candidates/runtime/BabylonjsBindings.CandidateRuntime.fsproj --outDir generated-candidates/runtime/dist --noCache",
-    "test:candidate-imports": "node scripts/check-emitted-imports.mjs",
+    "test:candidate-imports": "node scripts/check-emitted-imports.mjs && node scripts/check-class-imports.mjs",
     "test:candidate-runtime": "node generated-candidates/runtime/dist/Program.js",
     "test:candidate-browser": "node scripts/test-candidate-browser.mjs",
     "test:candidate-consumer": "node scripts/test-candidate-consumer.mjs",
@@ -53,6 +53,8 @@
     "check:simple-alias-proposal": "node --max-old-space-size=8192 scripts/generate-simple-alias-proposal.mjs --check",
     "generate:simple-interface-proposal": "node --max-old-space-size=8192 scripts/generate-simple-interface-proposal.mjs",
     "check:simple-interface-proposal": "node --max-old-space-size=8192 scripts/generate-simple-interface-proposal.mjs --check",
+    "generate:simple-class-proposal": "node --max-old-space-size=8192 scripts/generate-simple-class-proposal.mjs",
+    "check:simple-class-proposal": "node --max-old-space-size=8192 scripts/generate-simple-class-proposal.mjs --check",
     "test:browser": "chromium --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --dump-dom http://127.0.0.1:4173/runtime/browser/",
     "test:lifecycle": "bash scripts/run-sdd-lifecycle.sh reports/bindings.junit.xml",
     "doctor": "node scripts/doctor.mjs"

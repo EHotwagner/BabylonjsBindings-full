@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "acd380fdd4bbf37c6c7d3ed17f48c1e5229b19374e3eef60b56aab9b5052976f",
+  "maintainedSurfaceDigest": "b49dbf2c27bbe8792f6ee6c16d660c6fdd45abaf4c19808e9080019f89f27b9f",
   "summary": {
     "total": 4323,
-    "typed": 362,
+    "typed": 437,
     "runtimeOnly": 1,
-    "blocked": 3954,
+    "blocked": 3879,
     "lossy": 6
   },
   "exports": [
@@ -306,7 +306,7 @@
       "name": "_IAnimationState",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces._IAnimationState"
     },
     {
@@ -459,7 +459,7 @@
       "name": "IMakeAnimationAdditiveOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMakeAnimationAdditiveOptions"
     },
     {
@@ -555,8 +555,9 @@
       "module": "@babylonjs/core/Animations/animationGroup.pure",
       "name": "IMakeAnimationGroupAdditiveOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMakeAnimationGroupAdditiveOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -605,16 +606,18 @@
       "module": "@babylonjs/core/Animations/animationKey",
       "name": "IAnimationKey",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAnimationKey"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/animationPropertiesOverride",
       "name": "AnimationPropertiesOverride",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AnimationPropertiesOverride"
     },
     {
       "package": "@babylonjs/core",
@@ -710,7 +713,7 @@
       "name": "IEasingFunction",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
     },
     {
@@ -887,7 +890,7 @@
       "name": "ISoundTrackOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISoundTrackOptions"
     },
     {
@@ -919,8 +922,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioBus",
       "name": "IAbstractAudioBusOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractAudioBusOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -960,8 +964,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioOutNode",
       "name": "IAbstractAudioOutNodeOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractAudioOutNodeOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -985,7 +990,7 @@
       "name": "IAbstractSoundOptionsBase",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractSoundOptionsBase"
     },
     {
@@ -993,8 +998,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSound",
       "name": "IAbstractSoundPlayOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractSoundPlayOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1002,7 +1008,7 @@
       "name": "IAbstractSoundPlayOptionsBase",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractSoundPlayOptionsBase"
     },
     {
@@ -1010,8 +1016,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSound",
       "name": "IAbstractSoundStoredOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractSoundStoredOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1026,8 +1033,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSoundInstance",
       "name": "IAbstractSoundInstanceOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractSoundInstanceOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1179,8 +1187,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/mainAudioBus",
       "name": "IMainAudioBusOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMainAudioBusOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1220,7 +1229,7 @@
       "name": "IStaticSoundOptionsBase",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundOptionsBase"
     },
     {
@@ -1228,8 +1237,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/staticSound",
       "name": "IStaticSoundPlayOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundPlayOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1237,7 +1247,7 @@
       "name": "IStaticSoundStopOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundStopOptions"
     },
     {
@@ -1245,8 +1255,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/staticSound",
       "name": "IStaticSoundStoredOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundStoredOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1262,7 +1273,7 @@
       "name": "IStaticSoundBufferCloneOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundBufferCloneOptions"
     },
     {
@@ -1271,7 +1282,7 @@
       "name": "IStaticSoundBufferOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundBufferOptions"
     },
     {
@@ -1295,8 +1306,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/staticSoundInstance",
       "name": "IStaticSoundInstanceOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundInstanceOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1312,7 +1324,7 @@
       "name": "IStreamingSoundOptionsBase",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStreamingSoundOptionsBase"
     },
     {
@@ -1320,16 +1332,18 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/streamingSound",
       "name": "IStreamingSoundPlayOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStreamingSoundPlayOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/streamingSound",
       "name": "IStreamingSoundStoredOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStreamingSoundStoredOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1352,8 +1366,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/streamingSoundInstance",
       "name": "IStreamingSoundInstanceOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStreamingSoundInstanceOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1418,7 +1433,7 @@
       "name": "IVolumeAudioOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVolumeAudioOptions"
     },
     {
@@ -1459,8 +1474,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer",
       "name": "IAudioAnalyzerOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAudioAnalyzerOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1547,8 +1563,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio",
       "name": "AbstractStereoAudio",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractStereoAudio"
     },
     {
       "package": "@babylonjs/core",
@@ -1556,7 +1573,7 @@
       "name": "IStereoAudioOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStereoAudioOptions"
     },
     {
@@ -1581,8 +1598,9 @@
       "module": "@babylonjs/core/AudioV2/audioParameter",
       "name": "IAudioParameterRampOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAudioParameterRampOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1615,8 +1633,9 @@
       "module": "@babylonjs/core/AudioV2/webAudio/subNodes/webAudioBaseSubGraph",
       "name": "IWebAudioBaseSubGraphOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebAudioBaseSubGraphOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -2020,7 +2039,7 @@
       "name": "IVertexBufferOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVertexBufferOptions"
     },
     {
@@ -2164,8 +2183,9 @@
       "module": "@babylonjs/core/Buffers/dataBuffer",
       "name": "DataBuffer",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DataBuffer"
     },
     {
       "package": "@babylonjs/core",
@@ -2262,7 +2282,7 @@
       "name": "IObliqueParams",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IObliqueParams"
     },
     {
@@ -3169,8 +3189,9 @@
       "module": "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure",
       "name": "OnAfterEnteringVRObservableEvent",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OnAfterEnteringVRObservableEvent"
     },
     {
       "package": "@babylonjs/core",
@@ -3258,8 +3279,9 @@
       "module": "@babylonjs/core/Collisions/gpuPicker",
       "name": "IGPUMultiPickOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGPUMultiPickOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -3380,7 +3402,7 @@
       "name": "IComputeContext",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IComputeContext"
     },
     {
@@ -3693,8 +3715,9 @@
       "module": "@babylonjs/core/Debug/debugLayer.pure",
       "name": "IExplorerExtensibilityGroup",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IExplorerExtensibilityGroup"
     },
     {
       "package": "@babylonjs/core",
@@ -3702,7 +3725,7 @@
       "name": "IExplorerExtensibilityOption",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IExplorerExtensibilityOption"
     },
     {
@@ -3711,7 +3734,7 @@
       "name": "IInspectorContextMenuItem",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IInspectorContextMenuItem"
     },
     {
@@ -3777,7 +3800,7 @@
       "name": "ISkeletonViewerDisplayOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISkeletonViewerDisplayOptions"
     },
     {
@@ -3785,8 +3808,9 @@
       "module": "@babylonjs/core/Debug/ISkeletonViewer",
       "name": "ISkeletonViewerOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISkeletonViewerOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -3834,7 +3858,7 @@
       "name": "IEditablePropertyListOption",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEditablePropertyListOption"
     },
     {
@@ -3962,8 +3986,9 @@
       "module": "@babylonjs/core/DeviceInput/inputInterfaces",
       "name": "IDeviceInputSystem",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDeviceInputSystem"
     },
     {
       "package": "@babylonjs/core",
@@ -4059,7 +4084,7 @@
       "name": "HostInformation",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.HostInformation"
     },
     {
@@ -4115,8 +4140,9 @@
       "module": "@babylonjs/core/Engines/AbstractEngine/abstractEngine.dom.pure",
       "name": "IViewportOwnerLike",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IViewportOwnerLike"
     },
     {
       "package": "@babylonjs/core",
@@ -4147,8 +4173,9 @@
       "module": "@babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure",
       "name": "_OcclusionDataStorage",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._OcclusionDataStorage"
     },
     {
       "package": "@babylonjs/core",
@@ -4340,7 +4367,7 @@
       "name": "EngineFeatures",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.EngineFeatures"
     },
     {
@@ -4576,7 +4603,7 @@
       "name": "DOMMatrix",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.DOMMatrix"
     },
     {
@@ -4593,7 +4620,7 @@
       "name": "ICanvasGradient",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICanvasGradient"
     },
     {
@@ -4626,7 +4653,7 @@
       "name": "ITextMetrics",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITextMetrics"
     },
     {
@@ -4643,7 +4670,7 @@
       "name": "IMaterialContext",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterialContext"
     },
     {
@@ -4652,7 +4679,7 @@
       "name": "InstancingAttributeInfo",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.InstancingAttributeInfo"
     },
     {
@@ -4814,8 +4841,9 @@
       "module": "@babylonjs/core/Engines/nativeEngine.pure",
       "name": "NativeEngineOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.NativeEngineOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -4863,8 +4891,9 @@
       "module": "@babylonjs/core/Engines/Processors/shaderCodeInliner",
       "name": "ShaderCodeInliner",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ShaderCodeInliner"
     },
     {
       "package": "@babylonjs/core",
@@ -5073,7 +5102,7 @@
       "name": "ThinNativeEngineOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ThinNativeEngineOptions"
     },
     {
@@ -5755,7 +5784,7 @@
       "name": "WebGPUBindGroupLayoutEntryInfo",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebGPUBindGroupLayoutEntryInfo"
     },
     {
@@ -5764,7 +5793,7 @@
       "name": "WebGPUBindingInfo",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebGPUBindingInfo"
     },
     {
@@ -5772,8 +5801,9 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext",
       "name": "WebGPUBufferDescription",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebGPUBufferDescription"
     },
     {
       "package": "@babylonjs/core",
@@ -5861,7 +5891,7 @@
       "name": "TwgslOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.TwgslOptions"
     },
     {
@@ -5878,7 +5908,7 @@
       "name": "GlslangOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GlslangOptions"
     },
     {
@@ -5935,16 +5965,18 @@
       "module": "@babylonjs/core/Events/deviceInputEvents",
       "name": "EventConstants",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EventConstants"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Events/deviceInputEvents",
       "name": "IKeyboardEvent",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IKeyboardEvent"
     },
     {
       "package": "@babylonjs/core",
@@ -5968,7 +6000,7 @@
       "name": "IUIEvent",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IUIEvent"
     },
     {
@@ -6041,7 +6073,7 @@
       "name": "PointerTouch",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PointerTouch"
     },
     {
@@ -7530,7 +7562,7 @@
       "name": "IFlowGraphOnTickEventPayload",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphOnTickEventPayload"
     },
     {
@@ -8513,8 +8545,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphLogger",
       "name": "IFlowGraphLogItem",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphLogItem"
     },
     {
       "package": "@babylonjs/core",
@@ -8810,8 +8843,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphSceneEventCoordinator",
       "name": "IFlowGraphEventTrigger",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphEventTrigger"
     },
     {
       "package": "@babylonjs/core",
@@ -8899,16 +8933,18 @@
       "module": "@babylonjs/core/FlowGraph/typeDefinitions",
       "name": "ISerializedFlowGraphBlock",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/typeDefinitions",
       "name": "ISerializedFlowGraphConnection",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphConnection"
     },
     {
       "package": "@babylonjs/core",
@@ -9982,7 +10018,7 @@
       "name": "INodeRenderGraphCreateOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INodeRenderGraphCreateOptions"
     },
     {
@@ -10372,7 +10408,7 @@
       "name": "IFrameGraphGeometryRendererTextureDescription",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFrameGraphGeometryRendererTextureDescription"
     },
     {
@@ -10479,7 +10515,7 @@
       "name": "GamepadButtonChanges",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GamepadButtonChanges"
     },
     {
@@ -10495,8 +10531,9 @@
       "module": "@babylonjs/core/Gamepads/gamepad",
       "name": "StickValues",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StickValues"
     },
     {
       "package": "@babylonjs/core",
@@ -11254,7 +11291,7 @@
       "name": "ISortableLight",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISortableLight"
     },
     {
@@ -11359,7 +11396,7 @@
       "name": "ICustomShaderOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICustomShaderOptions"
     },
     {
@@ -11424,7 +11461,7 @@
       "name": "ILoadingScreen",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ILoadingScreen"
     },
     {
@@ -11448,8 +11485,9 @@
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
       "name": "BabylonFileLoaderConfiguration",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BabylonFileLoaderConfiguration"
     },
     {
       "package": "@babylonjs/core",
@@ -11713,7 +11751,7 @@
       "name": "ISceneLoaderProgressEvent",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent"
     },
     {
@@ -11826,8 +11864,9 @@
       "module": "@babylonjs/core/Loading/sceneLoaderFlags",
       "name": "SceneLoaderFlags",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SceneLoaderFlags"
     },
     {
       "package": "@babylonjs/core",
@@ -12044,7 +12083,7 @@
       "name": "IEffectRendererOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEffectRendererOptions"
     },
     {
@@ -12345,7 +12384,7 @@
       "name": "IImageProcessingConfigurationDefines",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IImageProcessingConfigurationDefines"
     },
     {
@@ -12433,8 +12472,9 @@
       "module": "@babylonjs/core/Materials/material.pure",
       "name": "ICustomShaderNameResolveOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICustomShaderNameResolveOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -12442,7 +12482,7 @@
       "name": "IMaterialCompilationOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterialCompilationOptions"
     },
     {
@@ -12466,8 +12506,9 @@
       "module": "@babylonjs/core/Materials/materialFlags",
       "name": "MaterialFlags",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialFlags"
     },
     {
       "package": "@babylonjs/core",
@@ -15091,8 +15132,9 @@
       "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
       "name": "INodeMaterialOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INodeMaterialOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -15551,7 +15593,7 @@
       "name": "IIOptionShadowDepthMaterial",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IIOptionShadowDepthMaterial"
     },
     {
@@ -15752,7 +15794,7 @@
       "name": "IHardwareTextureWrapper",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IHardwareTextureWrapper"
     },
     {
@@ -15939,7 +15981,7 @@
       "name": "ICompressedFormatCapabilities",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICompressedFormatCapabilities"
     },
     {
@@ -15971,8 +16013,9 @@
       "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
       "name": "ILeaf",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ILeaf"
     },
     {
       "package": "@babylonjs/core",
@@ -16144,7 +16187,7 @@
       "name": "DataCursor",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.DataCursor"
     },
     {
@@ -16345,7 +16388,7 @@
       "name": "IEXRCHannel",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEXRCHannel"
     },
     {
@@ -16530,7 +16573,7 @@
       "name": "IMultiRenderTargetOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMultiRenderTargetOptions"
     },
     {
@@ -16707,7 +16750,7 @@
       "name": "ICreateTexture2DArrayFromKTX2Options",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICreateTexture2DArrayFromKTX2Options"
     },
     {
@@ -16716,7 +16759,7 @@
       "name": "IUploadImageToTexture2DArrayLayerOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IUploadImageToTexture2DArrayLayerOptions"
     },
     {
@@ -16805,7 +16848,7 @@
       "name": "DepthTextureCreationOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.DepthTextureCreationOptions"
     },
     {
@@ -16822,7 +16865,7 @@
       "name": "InternalTextureCreationOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.InternalTextureCreationOptions"
     },
     {
@@ -16887,7 +16930,7 @@
       "name": "IConstantChannelInput",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IConstantChannelInput"
     },
     {
@@ -17067,7 +17110,7 @@
       "name": "VideoTextureSettings",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.VideoTextureSettings"
     },
     {
@@ -17108,7 +17151,7 @@
       "name": "IVertexPullingMetadata",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVertexPullingMetadata"
     },
     {
@@ -17255,7 +17298,7 @@
       "name": "IEllipsoidLike",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEllipsoidLike"
     },
     {
@@ -17263,8 +17306,9 @@
       "module": "@babylonjs/core/Maths/math.geospatial",
       "name": "ILatLonAltLike",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ILatLonAltLike"
     },
     {
       "package": "@babylonjs/core",
@@ -17272,7 +17316,7 @@
       "name": "ILatLonLike",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ILatLonLike"
     },
     {
@@ -17320,16 +17364,18 @@
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IColor3Like",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IColor3Like"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IColor4Like",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IColor4Like"
     },
     {
       "package": "@babylonjs/core",
@@ -17344,32 +17390,36 @@
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IPlaneLike",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPlaneLike"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IQuaternionLike",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IQuaternionLike"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IVector2Like",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector2Like"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IVector3Like",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector3Like"
     },
     {
       "package": "@babylonjs/core",
@@ -17377,7 +17427,7 @@
       "name": "IVector3LikeInternal",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector3LikeInternal"
     },
     {
@@ -17385,16 +17435,18 @@
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IVector4Like",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector4Like"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IViewportLike",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IViewportLike"
     },
     {
       "package": "@babylonjs/core",
@@ -17417,8 +17469,9 @@
       "module": "@babylonjs/core/Maths/math.path",
       "name": "BezierCurve",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BezierCurve"
     },
     {
       "package": "@babylonjs/core",
@@ -17683,7 +17736,7 @@
       "name": "ISize",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISize"
     },
     {
@@ -18052,8 +18105,9 @@
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "MatrixManagement",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MatrixManagement"
     },
     {
       "package": "@babylonjs/core",
@@ -18872,7 +18926,7 @@
       "name": "IGlyphData",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGlyphData"
     },
     {
@@ -19235,7 +19289,7 @@
       "name": "ICSG2Options",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICSG2Options"
     },
     {
@@ -19268,7 +19322,7 @@
       "name": "IVertexDataRebuildOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVertexDataRebuildOptions"
     },
     {
@@ -19341,7 +19395,7 @@
       "name": "IGaussianSplattingSplatRange",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGaussianSplattingSplatRange"
     },
     {
@@ -19470,7 +19524,7 @@
       "name": "GreasedLinePointsOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GreasedLinePointsOptions"
     },
     {
@@ -19697,8 +19751,9 @@
       "module": "@babylonjs/core/Meshes/mesh.vertexData",
       "name": "VertexDataMaterialInfo",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.VertexDataMaterialInfo"
     },
     {
       "package": "@babylonjs/core",
@@ -19714,7 +19769,7 @@
       "name": "ISubdivideOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISubdivideOptions"
     },
     {
@@ -19837,7 +19892,7 @@
       "name": "IMeshUVSpaceRendererOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMeshUVSpaceRendererOptions"
     },
     {
@@ -21290,7 +21345,7 @@
       "name": "INodeGeometryInstancingContext",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INodeGeometryInstancingContext"
     },
     {
@@ -21397,7 +21452,7 @@
       "name": "ITrailMeshOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITrailMeshOptions"
     },
     {
@@ -21686,8 +21741,9 @@
       "module": "@babylonjs/core/Misc/bitArray",
       "name": "BitArray",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BitArray"
     },
     {
       "package": "@babylonjs/core",
@@ -22048,7 +22104,7 @@
       "name": "ICopySourceOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICopySourceOptions"
     },
     {
@@ -22064,8 +22120,9 @@
       "module": "@babylonjs/core/Misc/deepCopier",
       "name": "DeepCopier",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DeepCopier"
     },
     {
       "package": "@babylonjs/core",
@@ -22209,7 +22266,7 @@
       "name": "CreateEnvTextureOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.CreateEnvTextureOptions"
     },
     {
@@ -22578,7 +22635,7 @@
       "name": "IValueGradient",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IValueGradient"
     },
     {
@@ -22651,7 +22708,7 @@
       "name": "HDRInfo",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.HDRInfo"
     },
     {
@@ -22733,7 +22790,7 @@
       "name": "IPerfCustomEvent",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPerfCustomEvent"
     },
     {
@@ -22750,7 +22807,7 @@
       "name": "IPerfMetadata",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPerfMetadata"
     },
     {
@@ -22759,7 +22816,7 @@
       "name": "IWebRequest",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebRequest"
     },
     {
@@ -22768,7 +22825,7 @@
       "name": "IScreenshotSize",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IScreenshotSize"
     },
     {
@@ -22914,7 +22971,7 @@
       "name": "IObserver",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IObserver"
     },
     {
@@ -22954,24 +23011,27 @@
       "module": "@babylonjs/core/Misc/perfCounter",
       "name": "PerfCounter",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PerfCounter"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/performanceMonitor",
       "name": "PerformanceMonitor",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PerformanceMonitor"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/performanceMonitor",
       "name": "RollingAverage",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RollingAverage"
     },
     {
       "package": "@babylonjs/core",
@@ -22987,7 +23047,7 @@
       "name": "IPerfViewerCollectionStrategy",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPerfViewerCollectionStrategy"
     },
     {
@@ -23035,8 +23095,9 @@
       "module": "@babylonjs/core/Misc/precisionDate",
       "name": "PrecisionDate",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PrecisionDate"
     },
     {
       "package": "@babylonjs/core",
@@ -23284,7 +23345,7 @@
       "name": "SnapshotRenderingHelpersOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.SnapshotRenderingHelpersOptions"
     },
     {
@@ -23364,8 +23425,9 @@
       "module": "@babylonjs/core/Misc/tags",
       "name": "Tags",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Tags"
     },
     {
       "package": "@babylonjs/core",
@@ -23582,8 +23644,9 @@
       "module": "@babylonjs/core/Misc/uniqueIdGenerator",
       "name": "UniqueIdGenerator",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.UniqueIdGenerator"
     },
     {
       "package": "@babylonjs/core",
@@ -23648,7 +23711,7 @@
       "name": "AutoReleaseWorkerPoolOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.AutoReleaseWorkerPoolOptions"
     },
     {
@@ -23681,7 +23744,7 @@
       "name": "IAgentParameters",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAgentParameters"
     },
     {
@@ -23706,7 +23769,7 @@
       "name": "INavMeshParameters",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INavMeshParameters"
     },
     {
@@ -25064,8 +25127,9 @@
       "module": "@babylonjs/core/Particles/solidParticle",
       "name": "DepthSortedParticle",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DepthSortedParticle"
     },
     {
       "package": "@babylonjs/core",
@@ -25275,8 +25339,9 @@
       "module": "@babylonjs/core/Physics/physicsHelper",
       "name": "PhysicsVortexEventOptions",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-free runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PhysicsVortexEventOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -25388,7 +25453,7 @@
       "name": "PhysicsImpostorParameters",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PhysicsImpostorParameters"
     },
     {
@@ -25437,7 +25502,7 @@
       "name": "IMotorEnabledJoint",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMotorEnabledJoint"
     },
     {
@@ -25815,8 +25880,9 @@
       "module": "@babylonjs/core/Physics/v2/physicsMaterial",
       "name": "PhysicsMaterial",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PhysicsMaterial"
     },
     {
       "package": "@babylonjs/core",
@@ -25929,7 +25995,7 @@
       "name": "HavokPluginParameters",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.HavokPluginParameters"
     },
     {
@@ -27037,7 +27103,7 @@
       "name": "IEdgesRendererOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEdgesRendererOptions"
     },
     {
@@ -27151,7 +27217,7 @@
       "name": "IGeometryBufferTextureTypeAndFormat",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGeometryBufferTextureTypeAndFormat"
     },
     {
@@ -27272,7 +27338,7 @@
       "name": "ObjectRendererOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ObjectRendererOptions"
     },
     {
@@ -27361,7 +27427,7 @@
       "name": "IRenderingManagerAutoClearSetup",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IRenderingManagerAutoClearSetup"
     },
     {
@@ -27426,7 +27492,7 @@
       "name": "ICreateSceneUboOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICreateSceneUboOptions"
     },
     {
@@ -27435,7 +27501,7 @@
       "name": "IDisposable",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDisposable"
     },
     {
@@ -27461,7 +27527,7 @@
       "name": "SceneOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.SceneOptions"
     },
     {
@@ -30968,8 +31034,9 @@
       "module": "@babylonjs/core/Sprites/ISprites",
       "name": "ISpriteJSONSprite",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISpriteJSONSprite"
     },
     {
       "package": "@babylonjs/core",
@@ -30977,7 +31044,7 @@
       "name": "ISpriteJSONSpriteFrameData",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISpriteJSONSpriteFrameData"
     },
     {
@@ -30986,7 +31053,7 @@
       "name": "ISpriteJSONSpriteSourceSize",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISpriteJSONSpriteSourceSize"
     },
     {
@@ -31018,8 +31085,9 @@
       "module": "@babylonjs/core/Sprites/spriteManager",
       "name": "SpriteManagerOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.SpriteManagerOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -31076,7 +31144,7 @@
       "name": "SpriteRendererOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.SpriteRendererOptions"
     },
     {
@@ -31132,8 +31200,9 @@
       "module": "@babylonjs/core/States/IStencilState",
       "name": "IStencilState",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStencilState"
     },
     {
       "package": "@babylonjs/core",
@@ -31141,7 +31210,7 @@
       "name": "IStencilStateProperties",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStencilStateProperties"
     },
     {
@@ -31779,8 +31848,9 @@
       "module": "@babylonjs/core/XR/features/WebXRDepthSensing.pure",
       "name": "IWebXRDepthSensingOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRDepthSensingOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -32201,7 +32271,7 @@
       "name": "IWebXRRawCameraAccessOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRRawCameraAccessOptions"
     },
     {
@@ -32365,7 +32435,7 @@
       "name": "IWebXRMotionControllerAxesValue",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerAxesValue"
     },
     {
@@ -32614,7 +32684,7 @@
       "name": "WebXRSpectatorModeOption",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebXRSpectatorModeOption"
     },
     {
@@ -32694,8 +32764,9 @@
       "module": "@babylonjs/core/XR/webXRGraphicsBinding",
       "name": "IWebXRGraphicsBinding",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRGraphicsBinding"
     },
     {
       "package": "@babylonjs/core",
@@ -32727,8 +32798,9 @@
       "module": "@babylonjs/core/XR/webXRInput",
       "name": "IWebXRInputOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRInputOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -32744,7 +32816,7 @@
       "name": "IWebXRControllerOptions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRControllerOptions"
     },
     {
@@ -32949,8 +33021,9 @@
       "module": "@babylonjs/loaders/FBX/fbxFileLoader.pure",
       "name": "FBXFileLoaderOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.FBXFileLoaderOptions"
     },
     {
       "package": "@babylonjs/loaders",
@@ -33087,7 +33160,7 @@
       "name": "IGLTFAmbienLight",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFAmbienLight"
     },
     {
@@ -33103,8 +33176,9 @@
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "IGLTFAnimationChannel",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFAnimationChannel"
     },
     {
       "package": "@babylonjs/loaders",
@@ -33112,7 +33186,7 @@
       "name": "IGLTFAnimationChannelTarget",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFAnimationChannelTarget"
     },
     {
@@ -33121,7 +33195,7 @@
       "name": "IGLTFAnimationSampler",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFAnimationSampler"
     },
     {
@@ -33154,7 +33228,7 @@
       "name": "IGLTFCameraOrthographic",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFCameraOrthographic"
     },
     {
@@ -33163,7 +33237,7 @@
       "name": "IGLTFCameraPerspective",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFCameraPerspective"
     },
     {
@@ -33180,7 +33254,7 @@
       "name": "IGLTFDirectionalLight",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFDirectionalLight"
     },
     {
@@ -33237,7 +33311,7 @@
       "name": "IGLTFNodeInstanceSkin",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFNodeInstanceSkin"
     },
     {
@@ -33246,7 +33320,7 @@
       "name": "IGLTFPointLight",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFPointLight"
     },
     {
@@ -33311,7 +33385,7 @@
       "name": "IGLTFSpotLight",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFSpotLight"
     },
     {
@@ -33343,8 +33417,9 @@
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "IGLTFTechniqueStates",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFTechniqueStates"
     },
     {
       "package": "@babylonjs/loaders",
@@ -33352,7 +33427,7 @@
       "name": "IGLTFTechniqueStatesFunctions",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFTechniqueStatesFunctions"
     },
     {
@@ -34257,7 +34332,7 @@
       "name": "IGLTFObjectModelTreeMeshesObject",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeMeshesObject"
     },
     {
@@ -34466,7 +34541,7 @@
       "name": "_ISamplerData",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces._ISamplerData"
     },
     {
@@ -34507,7 +34582,7 @@
       "name": "IArrayItem",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IArrayItem"
     },
     {
@@ -34798,9 +34873,8 @@
       "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
       "name": "IGLTFLoaderExtension",
       "kind": "interface",
-      "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
-      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFLoaderExtension"
+      "disposition": "blocked",
+      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
     },
     {
       "package": "@babylonjs/loaders",
@@ -34824,7 +34898,7 @@
       "name": "IGLTFValidationConfiguration",
       "kind": "interface",
       "disposition": "typed",
-      "reason": "Reviewed maintained dependency-free interface with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFValidationConfiguration"
     },
     {
@@ -34905,8 +34979,9 @@
       "module": "@babylonjs/loaders/SPLAT/gaussianSplattingStream",
       "name": "IGaussianSplattingStreamOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGaussianSplattingStreamOptions"
     },
     {
       "package": "@babylonjs/loaders",

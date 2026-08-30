@@ -7,6 +7,7 @@ open BabylonjsBindings.Enums
 open BabylonjsBindings.StringEnums
 open BabylonjsBindings.ObjectTypes
 open BabylonjsBindings.SimpleInterfaces
+open BabylonjsBindings.SimpleClasses
 
 [<Emit("$0")>]
 let private asString (value: 'T) : string = jsNative
@@ -47,6 +48,10 @@ let loadingScreen: ILoadingScreen =
         "loadingUIText" ==> "loading"
     ] |> unbox
 loadingScreen.``displayLoadingUI``.Invoke()
+let bits = BitArray.Create(8.0)
+bits.``set``(3.0, true)
+let bitWasSet = bits.``get``(3.0)
+let curveMidpoint = BezierCurve.``Interpolate``(0.5, 0.0, 0.0, 1.0, 1.0)
 
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then
     failwith "full candidate did not construct a Babylon scene"
@@ -66,6 +71,8 @@ if not stageCalled || renderingGroup <> 7.0 then
     failwith "Babylon callback alias invocation was not preserved"
 if eased <> 0.25 || not loadingShown then
     failwith "Babylon dependency-free interface invocation was not preserved"
+if not bitWasSet || curveMidpoint <= 0.0 || curveMidpoint >= 1.0 then
+    failwith "Babylon dependency-free class import was not preserved"
 
 loaderRegistration |> ignore
 camera.dispose()

@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "1f749a1deb593b8c6b2c07ae473b85c8ed11bc32ecf3c39ecb126c1fd71250ec"
+    "sha256": "026f6a25ba90083a103b33a6c84d200de97250ab75bd83f51ae80a0ce98738dc"
   },
   "imports": [
     {
@@ -35,6 +35,15 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Maths/math.path.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/math.path.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Maths/math.vector.pure.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
@@ -48,6 +57,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Meshes/Builders/boxBuilder.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/bitArray.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/bitArray.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

@@ -49,6 +49,7 @@ open BabylonjsBindings.Enums
 open BabylonjsBindings.StringEnums
 open BabylonjsBindings.ObjectTypes
 open BabylonjsBindings.SimpleInterfaces
+open BabylonjsBindings.SimpleClasses
 
 [<Emit("$0")>]
 let asString (value: 'T) : string = jsNative
@@ -74,6 +75,9 @@ let stageAction: BabylonjsBindings.TypeAliases.SimpleStageAction = unbox (fun ()
 stageAction.Invoke()
 let easing: IEasingFunction = createObj [ "ease" ==> (fun (gradient: float) -> gradient * 2.0) ] |> unbox
 let eased = easing.\`\`ease\`\`(3.0)
+let bits = BitArray.Create(16.0)
+bits.\`\`set\`\`(9.0, true)
+let bitWasSet = bits.\`\`get\`\`(9.0)
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then failwith "clean consumer scene failed"
 if uint32 NodeRenderGraphBlockConnectionPointTypes.\`\`All\`\` <> 4294967295u then failwith "clean consumer enum failed"
 if int AudioAnalyzerFFTSizeType.\`\`N32768\`\` <> 32768 then failwith "clean consumer numeric literal union failed"
@@ -82,6 +86,7 @@ if dimensions.\`\`width\`\` <> 8.0 || dimensions.\`\`height\`\` <> 4.0 then fail
 if zoomDelta <> 6.0 then failwith "clean consumer object callback failed"
 if not stageCalled then failwith "clean consumer callback alias failed"
 if eased <> 6.0 then failwith "clean consumer interface method failed"
+if not bitWasSet then failwith "clean consumer class import failed"
 loaderRegistration |> ignore
 engine.dispose()
 printfn "Babylon candidate clean consumer passed"

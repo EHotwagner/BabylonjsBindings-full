@@ -38,7 +38,13 @@ const promotionFamilies = [
     maintainedPath: "src/BabylonjsBindings/SimpleInterfaces.fs",
     manifestPath: "src/BabylonjsBindings/simple-interface-coverage-manifest.json",
     proposalPath: "generated-candidates/SimpleInterfaces.proposal.fs",
-    description: "dependency-free interface"
+    description: "dependency-closed interface"
+  },
+  {
+    maintainedPath: "src/BabylonjsBindings/SimpleClasses.fs",
+    manifestPath: "src/BabylonjsBindings/simple-class-coverage-manifest.json",
+    proposalPath: "generated-candidates/SimpleClasses.proposal.fs",
+    description: "dependency-free runtime class"
   }
 ];
 const schemaPath = resolve(root, "work/001-full-babylonjs-bindings/contracts/coverage-and-drift.schema.json");

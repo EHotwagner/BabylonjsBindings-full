@@ -1,0 +1,32 @@
+import { createHash } from "node:crypto";
+import { readFile, writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
+
+const root = resolve(import.meta.dirname, "..");
+const manifest = JSON.parse(await readFile(resolve(root, "src/BabylonjsBindings/simple-class-coverage-manifest.json"), "utf8"));
+if (manifest.schemaVersion !== 1 || manifest.reviewStatus !== "maintained") throw new Error("class import check requires a reviewed maintained manifest");
+
+const imports = [];
+for (const entry of manifest.exports) {
+  const specifier = `${entry.module}.js`;
+  const imported = await import(specifier);
+  if (!Object.hasOwn(imported, entry.name)) throw new Error(`${specifier} does not export ${entry.name}`);
+  const source = await readFile(resolve(root, "node_modules", specifier));
+  imports.push({
+    package: entry.package,
+    module: specifier,
+    export: entry.name,
+    moduleSha256: createHash("sha256").update(source).digest("hex")
+  });
+}
+const evidence = {
+  schemaVersion: 1,
+  packages: [
+    { name: "@babylonjs/core", version: "9.19.0" },
+    { name: "@babylonjs/loaders", version: "9.19.0" }
+  ],
+  imports,
+  status: "pass"
+};
+await writeFile(resolve(root, "generated-candidates/runtime/class-import-evidence.json"), `${JSON.stringify(evidence, null, 2)}\n`);
+console.log(`resolved ${imports.length} maintained class exports from exact Babylon modules`);

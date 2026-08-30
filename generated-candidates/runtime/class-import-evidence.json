@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "packages": [
+    {
+      "name": "@babylonjs/core",
+      "version": "9.19.0"
+    },
+    {
+      "name": "@babylonjs/loaders",
+      "version": "9.19.0"
+    }
+  ],
+  "imports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure.js",
+      "export": "_OcclusionDataStorage",
+      "moduleSha256": "6fc305e11874e5fa6e3c92356122e109db8088de560ac620173188ef7bc1409c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio.js",
+      "export": "AbstractStereoAudio",
+      "moduleSha256": "af868581b00df6c4047103c11d8aef466de9fb7f66a056da429e6e95f160efc7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationPropertiesOverride.js",
+      "export": "AnimationPropertiesOverride",
+      "moduleSha256": "9aab0171aec642e514a0a2785353408bb6f32dd22d44de4a6d8477e15f9b7718"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js",
+      "export": "BabylonFileLoaderConfiguration",
+      "moduleSha256": "6a6b745ff99f67f2fa5a02eae879b411f1c377c33f431a7200e095c060efc58f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.path.js",
+      "export": "BezierCurve",
+      "moduleSha256": "a81ead2c2a26fb3f440a8320f0db05e311ae851f79aff196013e6d60bcc232c1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/bitArray.js",
+      "export": "BitArray",
+      "moduleSha256": "6b6ae6e316234069092200491ae7668cb2499cbcaee7cfc814514e1a65fd0679"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/dataBuffer.js",
+      "export": "DataBuffer",
+      "moduleSha256": "bb2306ce32a8dddda2d789bb639d3915270aff0bd9bbd2220d28f3677ea89b7e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/deepCopier.js",
+      "export": "DeepCopier",
+      "moduleSha256": "004763a82c74649eedd83a83d43409213dc6de1bc0f8ec2b552521ba82c126b5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/solidParticle.js",
+      "export": "DepthSortedParticle",
+      "moduleSha256": "e1d6f442e4315619b3781bea7899b9dae2b4ad6da1cd01459a54cf76f2c33305"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/deviceInputEvents.js",
+      "export": "EventConstants",
+      "moduleSha256": "975059ee662413954fff24bf7287c828b90cd5a35ae03c68eee3adb6734d4990"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialFlags.js",
+      "export": "MaterialFlags",
+      "moduleSha256": "59429f9df73b5cff265b6f92bd6513e9b90f438c3ecbf5670e4b92b64f778541"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "MatrixManagement",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure.js",
+      "export": "OnAfterEnteringVRObservableEvent",
+      "moduleSha256": "fe96f38092ea874925e6b72de9420a6c8da0ddc92fb39ce2f54989df6f24654c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/perfCounter.js",
+      "export": "PerfCounter",
+      "moduleSha256": "ba524c1a0be43625a6aa9d6f8d2bfcf6d2a6da41f42fcb94aada4ddc684b9aa9"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/performanceMonitor.js",
+      "export": "PerformanceMonitor",
+      "moduleSha256": "cf49766c58602125c303dd28c962f409653f78e796d670150f15b8ccde1084ec"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/physicsHelper.js",
+      "export": "PhysicsVortexEventOptions",
+      "moduleSha256": "fe54f2be1ef22752dae355d13feed09e14dee847d4164b505fd9ef694fa1fb7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/precisionDate.js",
+      "export": "PrecisionDate",
+      "moduleSha256": "ab3bc4293466774160b96b96c58d0fda51ee39b2e5c08a58bb0e37249227edc1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/performanceMonitor.js",
+      "export": "RollingAverage",
+      "moduleSha256": "cf49766c58602125c303dd28c962f409653f78e796d670150f15b8ccde1084ec"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoaderFlags.js",
+      "export": "SceneLoaderFlags",
+      "moduleSha256": "2922db3f1ba347d7fa7b633673cdd3e6018001560316c3fae5b081ef1e2cee83"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Processors/shaderCodeInliner.js",
+      "export": "ShaderCodeInliner",
+      "moduleSha256": "cad1690135f0d9d3a7ed0b3c028c4789d5d8c78d97a9a3572aeb7c6f2bf5132b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/gamepad.js",
+      "export": "StickValues",
+      "moduleSha256": "26b3e161808a56c713216792829a5a7a365912a1b0ef92fb9e76217fbe9309ca"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tags.js",
+      "export": "Tags",
+      "moduleSha256": "84c90e2dc1c303df656d8040ea5dcab5ac413163d0ccb2aa74fdfc24ec6ca6cb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/uniqueIdGenerator.js",
+      "export": "UniqueIdGenerator",
+      "moduleSha256": "931b4e2f8cb051950466bd76c5d6e42825f75dc5402096a3918d29bacf7926f6"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/mesh.vertexData.js",
+      "export": "VertexDataMaterialInfo",
+      "moduleSha256": "5c5b673f6bd68344b2ac2957d7b82bf9bb1d7cf5a55879995ee93577a79118bf"
+    }
+  ],
+  "status": "pass"
+}
