@@ -552,6 +552,34 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools.js",
+      "export": "Decode",
+      "runtimeExport": "Decode",
+      "moduleSha256": "9ddf67ee7e15b609620e0dd1928235a6ebecb3dd75161576efc53fd0cc5120fe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools.js",
+      "export": "DecodeBase64ToBinary",
+      "runtimeExport": "DecodeBase64ToBinary",
+      "moduleSha256": "9ddf67ee7e15b609620e0dd1928235a6ebecb3dd75161576efc53fd0cc5120fe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools.js",
+      "export": "DecodeBase64ToString",
+      "runtimeExport": "DecodeBase64ToString",
+      "moduleSha256": "9ddf67ee7e15b609620e0dd1928235a6ebecb3dd75161576efc53fd0cc5120fe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "DecodeBase64UrlToString",
+      "runtimeExport": "DecodeBase64UrlToString",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/default.fragment.js",
       "export": "defaultPixelShader",
       "runtimeExport": "defaultPixelShader",
@@ -668,6 +696,27 @@
       "export": "displayPassPixelShaderWGSL",
       "runtimeExport": "displayPassPixelShaderWGSL",
       "moduleSha256": "ef3ea05af151ad3f6a16d9968d4a44758c6eb3c8da98fce9d86886a5d4568d01"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/EmitterTypes/customParticleEmitter.js",
+      "export": "EmptyGeneratorFunc",
+      "runtimeExport": "EmptyGeneratorFunc",
+      "moduleSha256": "10dcb03c827ce9777a554d4b07c87500def92ab0762abc0beab4478788ecdbb3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools.js",
+      "export": "EncodeArrayBufferToBase64",
+      "runtimeExport": "EncodeArrayBufferToBase64",
+      "moduleSha256": "9ddf67ee7e15b609620e0dd1928235a6ebecb3dd75161576efc53fd0cc5120fe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools.js",
+      "export": "EndsWith",
+      "runtimeExport": "EndsWith",
+      "moduleSha256": "9ddf67ee7e15b609620e0dd1928235a6ebecb3dd75161576efc53fd0cc5120fe"
     },
     {
       "package": "@babylonjs/core",
@@ -1658,6 +1707,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "IsBase64DataUrl",
+      "runtimeExport": "IsBase64DataUrl",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "IsFileURL",
+      "runtimeExport": "IsFileURL",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/kernelBlur.fragment.js",
       "export": "kernelBlurPixelShader",
       "runtimeExport": "kernelBlurPixelShader",
@@ -2246,6 +2309,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools.js",
+      "export": "PadNumber",
+      "runtimeExport": "PadNumber",
+      "moduleSha256": "9ddf67ee7e15b609620e0dd1928235a6ebecb3dd75161576efc53fd0cc5120fe"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/particles.fragment.js",
       "export": "particlesPixelShader",
       "runtimeExport": "particlesPixelShader",
@@ -2789,6 +2859,13 @@
       "export": "standardPixelShader",
       "runtimeExport": "standardPixelShader",
       "moduleSha256": "707595e9036bd1d356d6a1f137cff759402dd501e4b97496d61e3641e49a8b00"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools.js",
+      "export": "StartsWith",
+      "runtimeExport": "StartsWith",
+      "moduleSha256": "9ddf67ee7e15b609620e0dd1928235a6ebecb3dd75161576efc53fd0cc5120fe"
     },
     {
       "package": "@babylonjs/core",

@@ -33,7 +33,7 @@ const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
-  .map(entry => [entry.name, entry.fsharpSymbol]));
+  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, arity: entry.typeParameterCount ?? 0 }]));
 
 const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
 const browserTypes = new Set([
@@ -46,7 +46,13 @@ const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
+  if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
+  if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
+  if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
+    const branches = node.types.map(fsharpType);
+    return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
+  }
   if (ts.isArrayTypeNode(node)) {
     const element = fsharpType(node.elementType);
     return element ? `ResizeArray<${element}>` : undefined;
@@ -66,9 +72,26 @@ const fsharpType = node => {
     }
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
-    if (!node.typeArguments?.length && maintainedSymbols.has(node.typeName.text)) return maintainedSymbols.get(node.typeName.text);
+    if (maintainedSymbols.has(node.typeName.text)) {
+      const target = maintainedSymbols.get(node.typeName.text);
+      const arguments_ = node.typeArguments ?? [];
+      if (arguments_.length !== target.arity) return undefined;
+      const renderedArguments = arguments_.map(fsharpType);
+      if (renderedArguments.some(argument => !argument)) return undefined;
+      return target.arity === 0 ? target.fsharpSymbol : `${target.fsharpSymbol}<${renderedArguments.join(", ")}>`;
+    }
   }
   return undefined;
+};
+const functionShape = node => {
+  if (!ts.isFunctionTypeNode(node) || node.typeParameters?.length || node.parameters.some(parameter => parameter.dotDotDotToken || (ts.isIdentifier(parameter.name) && parameter.name.text === "this"))) return undefined;
+  const returnType = fsharpType(node.type);
+  const parameters = node.parameters.map(parameter => ({
+    name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
+    type: parameter.type ? fsharpType(parameter.type) : undefined,
+    optional: Boolean(parameter.questionToken)
+  }));
+  return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
 };
 const typeLiteralShape = node => {
   if (!ts.isTypeLiteralNode(node) || node.members.length === 0) return undefined;
@@ -101,8 +124,9 @@ for (const sourceFile of program.getSourceFiles()) {
     const declaration = variableDeclarations[0];
     if (!declaration.type || !ts.isIdentifier(declaration.name)) continue;
     const shape = typeLiteralShape(declaration.type);
+    const callable = functionShape(declaration.type);
     const type = fsharpType(declaration.type);
-    if (!type && !shape) continue;
+    if (!type && !shape && !callable) continue;
     const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
     const packageName = module.startsWith("@babylonjs/core/")
       ? "@babylonjs/core"
@@ -112,7 +136,7 @@ for (const sourceFile of program.getSourceFiles()) {
     if (!packageName) continue;
     const name = exported.getName();
     const runtimeExport = target.getName();
-    variables.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, runtimeExport, type, shape });
+    variables.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, runtimeExport, type, shape, callable });
   }
 }
 
@@ -129,11 +153,18 @@ const lines = [
   "module SimpleVariables ="
 ];
 const safeName = value => `VariableShape_${value.replace(/[^A-Za-z0-9_]/g, "_")}`;
+const safeFunctionName = value => `VariableFunction_${value.replace(/[^A-Za-z0-9_]/g, "_")}`;
+const callbackArguments = callback => callback.parameters.length === 0
+  ? "unit"
+  : callback.parameters.map(parameter => `${parameter.optional ? "?" : ""}\`\`${parameter.name}\`\`: ${parameter.type}`).join(" * ");
 for (const entry of entries) {
   if (entry.shape) {
     entry.type = safeName(entry.name);
     lines.push("", `    /// Inline object shape of ${entry.name}.`, "    [<AllowNullLiteral>]", `    type ${entry.type} =`);
     for (const member of entry.shape) lines.push(`        abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`);
+  } else if (entry.callable) {
+    entry.type = safeFunctionName(entry.name);
+    lines.push("", `    /// Callable shape of ${entry.name}.`, "    [<AllowNullLiteral>]", `    type ${entry.type} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(entry.callable)} -> ${entry.callable.returnType}`);
   }
   lines.push("", `    /// ${entry.module}`, `    [<Import("${entry.runtimeExport}", "${entry.module}.js")>]`, `    let \`\`${entry.name}\`\`: ${entry.type} = jsNative`);
 }
@@ -151,7 +182,8 @@ const manifest = {
     fsharpSymbol: `BabylonjsBindings.SimpleVariables.${entry.name}`,
     ...(entry.runtimeExport !== entry.name ? { runtimeExport: entry.runtimeExport } : {}),
     fsharpType: entry.type,
-    ...(entry.shape ? { memberCount: entry.shape.length } : {})
+    ...(entry.shape ? { memberCount: entry.shape.length } : {}),
+    ...(entry.callable ? { parameterCount: entry.callable.parameters.length } : {})
   }))
 };
 const proposalPath = resolve(root, "generated-candidates/SimpleVariables.proposal.fs");

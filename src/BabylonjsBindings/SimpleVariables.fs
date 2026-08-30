@@ -727,6 +727,42 @@ module SimpleVariables =
     [<Import("decalFragmentWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/decalFragment.js")>]
     let ``decalFragmentWGSL``: VariableShape_decalFragmentWGSL = jsNative
 
+    /// Callable shape of Decode.
+    [<AllowNullLiteral>]
+    type VariableFunction_Decode =
+        [<Emit("$0($1...)")>] abstract Invoke: ``buffer``: U2<JS.Uint8Array, JS.Uint16Array> -> string
+
+    /// @babylonjs/core/Misc/stringTools
+    [<Import("Decode", "@babylonjs/core/Misc/stringTools.js")>]
+    let ``Decode``: VariableFunction_Decode = jsNative
+
+    /// Callable shape of DecodeBase64ToBinary.
+    [<AllowNullLiteral>]
+    type VariableFunction_DecodeBase64ToBinary =
+        [<Emit("$0($1...)")>] abstract Invoke: ``base64Data``: string -> JS.ArrayBuffer
+
+    /// @babylonjs/core/Misc/stringTools
+    [<Import("DecodeBase64ToBinary", "@babylonjs/core/Misc/stringTools.js")>]
+    let ``DecodeBase64ToBinary``: VariableFunction_DecodeBase64ToBinary = jsNative
+
+    /// Callable shape of DecodeBase64ToString.
+    [<AllowNullLiteral>]
+    type VariableFunction_DecodeBase64ToString =
+        [<Emit("$0($1...)")>] abstract Invoke: ``base64Data``: string -> string
+
+    /// @babylonjs/core/Misc/stringTools
+    [<Import("DecodeBase64ToString", "@babylonjs/core/Misc/stringTools.js")>]
+    let ``DecodeBase64ToString``: VariableFunction_DecodeBase64ToString = jsNative
+
+    /// Callable shape of DecodeBase64UrlToString.
+    [<AllowNullLiteral>]
+    type VariableFunction_DecodeBase64UrlToString =
+        [<Emit("$0($1...)")>] abstract Invoke: ``uri``: string -> string
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("DecodeBase64UrlToString", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``DecodeBase64UrlToString``: VariableFunction_DecodeBase64UrlToString = jsNative
+
     /// Inline object shape of defaultPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_defaultPixelShader =
@@ -896,6 +932,33 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/displayPass.fragment
     [<Import("displayPassPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/displayPass.fragment.js")>]
     let ``displayPassPixelShaderWGSL``: VariableShape_displayPassPixelShaderWGSL = jsNative
+
+    /// Callable shape of EmptyGeneratorFunc.
+    [<AllowNullLiteral>]
+    type VariableFunction_EmptyGeneratorFunc =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/Particles/EmitterTypes/customParticleEmitter
+    [<Import("EmptyGeneratorFunc", "@babylonjs/core/Particles/EmitterTypes/customParticleEmitter.js")>]
+    let ``EmptyGeneratorFunc``: VariableFunction_EmptyGeneratorFunc = jsNative
+
+    /// Callable shape of EncodeArrayBufferToBase64.
+    [<AllowNullLiteral>]
+    type VariableFunction_EncodeArrayBufferToBase64 =
+        [<Emit("$0($1...)")>] abstract Invoke: ``buffer``: U2<JS.ArrayBuffer, JS.ArrayBufferView> -> string
+
+    /// @babylonjs/core/Misc/stringTools
+    [<Import("EncodeArrayBufferToBase64", "@babylonjs/core/Misc/stringTools.js")>]
+    let ``EncodeArrayBufferToBase64``: VariableFunction_EncodeArrayBufferToBase64 = jsNative
+
+    /// Callable shape of EndsWith.
+    [<AllowNullLiteral>]
+    type VariableFunction_EndsWith =
+        [<Emit("$0($1...)")>] abstract Invoke: ``str``: string * ``suffix``: string -> bool
+
+    /// @babylonjs/core/Misc/stringTools
+    [<Import("EndsWith", "@babylonjs/core/Misc/stringTools.js")>]
+    let ``EndsWith``: VariableFunction_EndsWith = jsNative
 
     /// @babylonjs/core/Maths/math.constants
     [<Import("Epsilon", "@babylonjs/core/Maths/math.constants.js")>]
@@ -2283,6 +2346,24 @@ module SimpleVariables =
     [<Import("intersectionFunctionsWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/intersectionFunctions.js")>]
     let ``intersectionFunctionsWGSL``: VariableShape_intersectionFunctionsWGSL = jsNative
 
+    /// Callable shape of IsBase64DataUrl.
+    [<AllowNullLiteral>]
+    type VariableFunction_IsBase64DataUrl =
+        [<Emit("$0($1...)")>] abstract Invoke: ``uri``: string -> bool
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("IsBase64DataUrl", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``IsBase64DataUrl``: VariableFunction_IsBase64DataUrl = jsNative
+
+    /// Callable shape of IsFileURL.
+    [<AllowNullLiteral>]
+    type VariableFunction_IsFileURL =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> bool
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("IsFileURL", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``IsFileURL``: VariableFunction_IsFileURL = jsNative
+
     /// Inline object shape of kernelBlurPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_kernelBlurPixelShader =
@@ -3123,6 +3204,15 @@ module SimpleVariables =
     [<Import("packingFunctionsWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/packingFunctions.js")>]
     let ``packingFunctionsWGSL``: VariableShape_packingFunctionsWGSL = jsNative
 
+    /// Callable shape of PadNumber.
+    [<AllowNullLiteral>]
+    type VariableFunction_PadNumber =
+        [<Emit("$0($1...)")>] abstract Invoke: ``num``: float * ``length``: float -> string
+
+    /// @babylonjs/core/Misc/stringTools
+    [<Import("PadNumber", "@babylonjs/core/Misc/stringTools.js")>]
+    let ``PadNumber``: VariableFunction_PadNumber = jsNative
+
     /// Inline object shape of particlesPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_particlesPixelShader =
@@ -3884,6 +3974,15 @@ module SimpleVariables =
     /// @babylonjs/core/Shaders/standard.fragment
     [<Import("standardPixelShader", "@babylonjs/core/Shaders/standard.fragment.js")>]
     let ``standardPixelShader``: VariableShape_standardPixelShader = jsNative
+
+    /// Callable shape of StartsWith.
+    [<AllowNullLiteral>]
+    type VariableFunction_StartsWith =
+        [<Emit("$0($1...)")>] abstract Invoke: ``str``: string * ``suffix``: string -> bool
+
+    /// @babylonjs/core/Misc/stringTools
+    [<Import("StartsWith", "@babylonjs/core/Misc/stringTools.js")>]
+    let ``StartsWith``: VariableFunction_StartsWith = jsNative
 
     /// Inline object shape of stereoscopicInterlacePixelShader.
     [<AllowNullLiteral>]

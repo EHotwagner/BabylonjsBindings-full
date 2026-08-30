@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "6033f5800b34a2b255f8c19a82444c5a27ab89d991dd06dda5ac8d547941a9e4",
+  "maintainedSurfaceDigest": "4d4c36bf54ceda15dd4fa2bb5989d2a872a443e005d6cc28f3d6ff3ffdce5de3",
   "summary": {
     "total": 4323,
-    "typed": 1678,
+    "typed": 1689,
     "runtimeOnly": 1,
-    "blocked": 2638,
+    "blocked": 2627,
     "lossy": 6
   },
   "exports": [
@@ -23089,8 +23089,9 @@
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "DecodeBase64UrlToString",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DecodeBase64UrlToString"
     },
     {
       "package": "@babylonjs/core",
@@ -23121,16 +23122,18 @@
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "IsBase64DataUrl",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.IsBase64DataUrl"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "IsFileURL",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.IsFileURL"
     },
     {
       "package": "@babylonjs/core",
@@ -24004,56 +24007,63 @@
       "module": "@babylonjs/core/Misc/stringTools",
       "name": "Decode",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Decode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/stringTools",
       "name": "DecodeBase64ToBinary",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DecodeBase64ToBinary"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/stringTools",
       "name": "DecodeBase64ToString",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DecodeBase64ToString"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/stringTools",
       "name": "EncodeArrayBufferToBase64",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EncodeArrayBufferToBase64"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/stringTools",
       "name": "EndsWith",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EndsWith"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/stringTools",
       "name": "PadNumber",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PadNumber"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/stringTools",
       "name": "StartsWith",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.StartsWith"
     },
     {
       "package": "@babylonjs/core",
@@ -24598,8 +24608,9 @@
       "module": "@babylonjs/core/Particles/EmitterTypes/customParticleEmitter",
       "name": "EmptyGeneratorFunc",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EmptyGeneratorFunc"
     },
     {
       "package": "@babylonjs/core",

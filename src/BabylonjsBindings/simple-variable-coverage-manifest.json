@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "198052e1a271f283d01092d8dc7f84f20b992d30e0d4b4c7e7226b614157d57c",
+  "proposalSha256": "87ab1f79571ec3f92899293b7f8fa6ba0e5870b70279c22ba101efb3a27eec0d",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -771,6 +771,46 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools",
+      "name": "Decode",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Decode",
+      "fsharpType": "VariableFunction_Decode",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools",
+      "name": "DecodeBase64ToBinary",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DecodeBase64ToBinary",
+      "fsharpType": "VariableFunction_DecodeBase64ToBinary",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools",
+      "name": "DecodeBase64ToString",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DecodeBase64ToString",
+      "fsharpType": "VariableFunction_DecodeBase64ToString",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "DecodeBase64UrlToString",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DecodeBase64UrlToString",
+      "fsharpType": "VariableFunction_DecodeBase64UrlToString",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/default.fragment",
       "name": "defaultPixelShader",
       "kind": "variable",
@@ -938,6 +978,36 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.displayPassPixelShaderWGSL",
       "fsharpType": "VariableShape_displayPassPixelShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/EmitterTypes/customParticleEmitter",
+      "name": "EmptyGeneratorFunc",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EmptyGeneratorFunc",
+      "fsharpType": "VariableFunction_EmptyGeneratorFunc",
+      "parameterCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools",
+      "name": "EncodeArrayBufferToBase64",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EncodeArrayBufferToBase64",
+      "fsharpType": "VariableFunction_EncodeArrayBufferToBase64",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools",
+      "name": "EndsWith",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EndsWith",
+      "fsharpType": "VariableFunction_EndsWith",
+      "parameterCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -2347,6 +2417,26 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "IsBase64DataUrl",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.IsBase64DataUrl",
+      "fsharpType": "VariableFunction_IsBase64DataUrl",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "IsFileURL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.IsFileURL",
+      "fsharpType": "VariableFunction_IsFileURL",
+      "parameterCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/kernelBlur.fragment",
       "name": "kernelBlurPixelShader",
       "kind": "variable",
@@ -3187,6 +3277,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools",
+      "name": "PadNumber",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PadNumber",
+      "fsharpType": "VariableFunction_PadNumber",
+      "parameterCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/particles.fragment",
       "name": "particlesPixelShader",
       "kind": "variable",
@@ -3961,6 +4061,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.standardPixelShader",
       "fsharpType": "VariableShape_standardPixelShader",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools",
+      "name": "StartsWith",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.StartsWith",
+      "fsharpType": "VariableFunction_StartsWith",
+      "parameterCount": 2
     },
     {
       "package": "@babylonjs/core",

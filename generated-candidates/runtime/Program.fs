@@ -65,6 +65,8 @@ let indicesNeed32Bits = SimpleFunctions.``AreIndices32Bits``.Invoke(shortIndices
 let epsilon = ``Epsilon``
 let phi = ``PHI``
 let shaderDescriptor = ``clearQuadVertexShaderWGSL``
+let paddedNumber = ``PadNumber``.Invoke(7.0, 3.0)
+let startsWithBaby = ``StartsWith``.Invoke("babylon", "baby")
 
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then
     failwith "full candidate did not construct a Babylon scene"
@@ -101,6 +103,8 @@ if epsilon <> 0.001 || phi < 1.618 || phi > 1.619 then
     failwith "Babylon dependency-closed variable import was not preserved"
 if shaderDescriptor.``name`` <> "clearQuadVertexShader" || shaderDescriptor.``shader``.Length = 0 then
     failwith "Babylon inline object variable shape was not preserved"
+if paddedNumber <> "007" || not startsWithBaby then
+    failwith "Babylon callable variable import was not preserved"
 
 loaderRegistration |> ignore
 camera.dispose()

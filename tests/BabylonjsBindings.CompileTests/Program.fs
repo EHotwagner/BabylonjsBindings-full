@@ -20,6 +20,7 @@ let alphaStateFactory: AlphaStateStatic = AlphaState
 let strideFunction = BabylonjsBindings.SimpleFunctions.``VertexBufferDeduceStride``
 let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
+let padNumber = BabylonjsBindings.SimpleVariables.``PadNumber``
 let engine = nullEngine ()
 let scene = scene engine
 let _ = box "compile-smoke" scene
@@ -38,4 +39,5 @@ alphaStateFactory |> ignore
 strideFunction |> ignore
 epsilon |> ignore
 shaderDescriptor |> ignore
+padNumber |> ignore
 printfn "curated Babylon binding compile smoke passed"
