@@ -200,9 +200,21 @@ module SimpleClasses =
 
     /// Inline object shape used by a TypeScript utility projection.
     [<AllowNullLiteral>]
-    type PartialObject7429cbc53590Object =
-        abstract ``message``: string option with get, set
-        abstract ``exception``: obj option with get, set
+    type InlineObject6606480d34c3Object =
+        abstract ``levels``: ResizeArray<InlineObject92b639d82261Object> with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject4b84b3d5395bObject =
+        abstract ``x``: float with get, set
+        abstract ``y``: float with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject92b639d82261Object =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``transcodedPixels``: JS.ArrayBufferView with get, set
 
     /// @babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure
     [<AllowNullLiteral>]
@@ -430,6 +442,20 @@ module SimpleClasses =
 
     [<Import("BaseError", "@babylonjs/core/Misc/error.js")>]
     let BaseError: BaseErrorStatic = jsNative
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<AllowNullLiteral>]
+    type BasisFileInfo =
+        abstract ``hasAlpha``: bool with get, set
+        abstract ``images``: ResizeArray<InlineObject6606480d34c3Object> with get, set
+
+    [<AllowNullLiteral>]
+    type BasisFileInfoStatic =
+        inherit Constructor<BasisFileInfo>
+        [<EmitConstructor>] abstract Create: unit -> BasisFileInfo
+
+    [<Import("BasisFileInfo", "@babylonjs/core/Misc/basis.pure.js")>]
+    let BasisFileInfo: BasisFileInfoStatic = jsNative
 
     /// Inline object shape used by BasisTranscodeConfiguration.
     [<AllowNullLiteral>]
@@ -1666,6 +1692,26 @@ module SimpleClasses =
 
     [<Import("MeshoptCompression", "@babylonjs/core/Meshes/Compression/meshoptCompression.js")>]
     let MeshoptCompression: MeshoptCompressionStatic = jsNative
+
+    /// @babylonjs/core/Engines/Native/nativeDataStream
+    [<AllowNullLiteral>]
+    type NativeDataStream =
+        abstract ``writeUint32``: ``value``: float -> unit
+        abstract ``writeInt32``: ``value``: float -> unit
+        abstract ``writeFloat32``: ``value``: float -> unit
+        abstract ``writeUint32Array``: ``values``: JS.Uint32Array -> unit
+        abstract ``writeInt32Array``: ``values``: JS.Int32Array -> unit
+        abstract ``writeFloat32Array``: ``values``: BabylonjsBindings.TypeAliases.DeepImmutableFloatArray -> unit
+        abstract ``writeNativeData``: ``handle``: BabylonjsBindings.TypeAliases.NativeData -> unit
+        abstract ``writeBoolean``: ``value``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type NativeDataStreamStatic =
+        inherit Constructor<NativeDataStream>
+        [<EmitConstructor>] abstract Create: unit -> NativeDataStream
+
+    [<Import("NativeDataStream", "@babylonjs/core/Engines/Native/nativeDataStream.js")>]
+    let NativeDataStream: NativeDataStreamStatic = jsNative
 
     /// @babylonjs/core/Engines/nullEngine.pure
     [<AllowNullLiteral>]
@@ -3158,6 +3204,13 @@ module SimpleClasses =
         abstract ``DBG_MULTIPLY``: bool with get, set
         abstract ``DBG_ENABLED``: bool with get, set
 
+    /// @babylonjs/core/Engines/thinNativeEngine.pure
+    [<AllowNullLiteral>]
+    type NativeDataBuffer =
+        inherit DataBuffer
+        abstract ``nativeIndexBuffer``: BabylonjsBindings.TypeAliases.NativeData option with get, set
+        abstract ``nativeVertexBuffer``: BabylonjsBindings.TypeAliases.NativeData option with get, set
+
     /// Function-valued Observer.callback property.
     [<AllowNullLiteral>]
     type ObserverCallbackCallback<'T> =
@@ -3295,6 +3348,34 @@ module SimpleClasses =
     [<Import("SmartArrayNoDuplicate", "@babylonjs/core/Misc/smartArray.js")>]
     let SmartArrayNoDuplicate: SmartArrayNoDuplicateStatic = jsNative
 
+    /// @babylonjs/core/Misc/basis.pure
+    [<AllowNullLiteral>]
+    type TranscodeResult =
+        abstract ``fileInfo``: BasisFileInfo with get, set
+        abstract ``format``: float with get, set
+
+    /// @babylonjs/core/Engines/Native/validatedNativeDataStream.pure
+    [<AllowNullLiteral>]
+    type ValidatedNativeDataStream =
+        inherit NativeDataStream
+        abstract ``writeUint32``: ``value``: float -> unit
+        abstract ``writeInt32``: ``value``: float -> unit
+        abstract ``writeFloat32``: ``value``: float -> unit
+        abstract ``writeUint32Array``: ``values``: JS.Uint32Array -> unit
+        abstract ``writeInt32Array``: ``values``: JS.Int32Array -> unit
+        abstract ``writeFloat32Array``: ``values``: JS.Float32Array -> unit
+        abstract ``writeNativeData``: ``handle``: BabylonjsBindings.TypeAliases.NativeData -> unit
+        abstract ``writeBoolean``: ``value``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ValidatedNativeDataStreamStatic =
+        inherit NativeDataStreamStatic
+        inherit Constructor<ValidatedNativeDataStream>
+        [<EmitConstructor>] abstract Create: unit -> ValidatedNativeDataStream
+
+    [<Import("ValidatedNativeDataStream", "@babylonjs/core/Engines/Native/validatedNativeDataStream.pure.js")>]
+    let ValidatedNativeDataStream: ValidatedNativeDataStreamStatic = jsNative
+
     /// @babylonjs/core/Meshes/WebGL/webGLDataBuffer
     [<AllowNullLiteral>]
     type WebGLDataBuffer =
@@ -3337,6 +3418,38 @@ module SimpleClasses =
 
     [<Import("Color3Gradient", "@babylonjs/core/Misc/gradients.js")>]
     let Color3Gradient: Color3GradientStatic = jsNative
+
+    /// @babylonjs/core/Materials/fresnelParameters.pure
+    [<AllowNullLiteral>]
+    type FresnelParameters =
+        abstract ``leftColor``: Color3 with get, set
+        abstract ``rightColor``: Color3 with get, set
+        abstract ``bias``: float with get, set
+        abstract ``power``: float with get, set
+        abstract ``clone``: unit -> FresnelParameters
+        abstract ``equals``: ``otherFresnelParameters``: DeepImmutableFresnelParameters -> bool
+        abstract ``serialize``: unit -> BabylonjsBindings.ObjectTypes.IFresnelParametersSerialized
+        abstract ``isEnabled``: bool with get, set
+
+    /// Exact readonly projection of FresnelParameters used by Babylon DeepImmutable<FresnelParameters> signatures.
+    [<AllowNullLiteral>]
+    type DeepImmutableFresnelParameters =
+        abstract ``leftColor``: DeepImmutableColor3 with get
+        abstract ``rightColor``: DeepImmutableColor3 with get
+        abstract ``bias``: float with get
+        abstract ``power``: float with get
+        abstract ``clone``: unit -> FresnelParameters
+        abstract ``equals``: ``otherFresnelParameters``: DeepImmutableFresnelParameters -> bool
+        abstract ``serialize``: unit -> BabylonjsBindings.ObjectTypes.IFresnelParametersSerialized
+        abstract ``isEnabled``: bool with get
+
+    [<AllowNullLiteral>]
+    type FresnelParametersStatic =
+        inherit Constructor<FresnelParameters>
+        [<EmitConstructor>] abstract Create: ?``options``: BabylonjsBindings.TypeAliases.IFresnelParametersCreationOptions -> FresnelParameters
+
+    [<Import("FresnelParameters", "@babylonjs/core/Materials/fresnelParameters.pure.js")>]
+    let FresnelParameters: FresnelParametersStatic = jsNative
 
     /// @babylonjs/core/Materials/Node/Blocks/gradientBlock.pure
     [<AllowNullLiteral>]
@@ -3485,6 +3598,37 @@ module SimpleClasses =
 
     [<Import("MultiObserver", "@babylonjs/core/Misc/observable.extensions.pure.js")>]
     let MultiObserver: MultiObserverStatic = jsNative
+
+    /// @babylonjs/core/XR/motionController/webXRControllerComponent
+    [<AllowNullLiteral>]
+    type WebXRControllerComponent =
+        abstract ``id``: string with get, set
+        abstract ``type``: BabylonjsBindings.StringEnums.MotionControllerComponentType with get, set
+        abstract ``onAxisValueChangedObservable``: Observable<InlineObject4b84b3d5395bObject> with get, set
+        abstract ``onButtonStateChangedObservable``: Observable<WebXRControllerComponent> with get, set
+        abstract ``dispose``: unit -> unit
+        abstract ``isAxes``: unit -> bool
+        abstract ``isButton``: unit -> bool
+        abstract ``update``: ``nativeController``: BabylonjsBindings.SimpleInterfaces.IMinimalMotionControllerObject -> unit
+        abstract ``axes``: BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerAxesValue with get
+        abstract ``changes``: BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerComponentChanges with get
+        abstract ``hasChanges``: bool with get
+        abstract ``pressed``: bool with get
+        abstract ``touched``: bool with get
+        abstract ``value``: float with get
+
+    [<AllowNullLiteral>]
+    type WebXRControllerComponentStatic =
+        inherit Constructor<WebXRControllerComponent>
+        [<EmitConstructor>] abstract Create: ``id``: string * ``type``: BabylonjsBindings.StringEnums.MotionControllerComponentType * ?``_buttonIndex``: float * ?``_axesIndices``: ResizeArray<float> -> WebXRControllerComponent
+        abstract ``BUTTON_TYPE``: BabylonjsBindings.StringEnums.MotionControllerComponentType with get, set
+        abstract ``SQUEEZE_TYPE``: BabylonjsBindings.StringEnums.MotionControllerComponentType with get, set
+        abstract ``THUMBSTICK_TYPE``: BabylonjsBindings.StringEnums.MotionControllerComponentType with get, set
+        abstract ``TOUCHPAD_TYPE``: BabylonjsBindings.StringEnums.MotionControllerComponentType with get, set
+        abstract ``TRIGGER_TYPE``: BabylonjsBindings.StringEnums.MotionControllerComponentType with get, set
+
+    [<Import("WebXRControllerComponent", "@babylonjs/core/XR/motionController/webXRControllerComponent.js")>]
+    let WebXRControllerComponent: WebXRControllerComponentStatic = jsNative
 
     /// @babylonjs/core/Gamepads/xboxGamepad
     [<AllowNullLiteral>]

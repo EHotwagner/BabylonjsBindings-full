@@ -117,6 +117,22 @@ let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
 let padNumber = BabylonjsBindings.SimpleVariables.``PadNumber``
 let testBase64DataUrl = BabylonjsBindings.SimpleVariables.``TestBase64DataUrl``
+let nativeData: BabylonjsBindings.TypeAliases.NativeData = Unchecked.defaultof<BabylonjsBindings.TypeAliases.NativeData>
+let computeBindingMapping: BabylonjsBindings.TypeAliases.ComputeBindingMapping = Unchecked.defaultof<BabylonjsBindings.TypeAliases.ComputeBindingMapping>
+let textureSize: BabylonjsBindings.TypeAliases.TextureSize = Unchecked.defaultof<BabylonjsBindings.TypeAliases.TextureSize>
+let bodyRigMapping: BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping = Unchecked.defaultof<BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping>
+let computeShaderOptions: IComputeShaderOptions = Unchecked.defaultof<IComputeShaderOptions>
+let imageTrackingOptions: IWebXRImageTrackingOptions = Unchecked.defaultof<IWebXRImageTrackingOptions>
+let basisFileInfoFactory: BasisFileInfoStatic = BasisFileInfo
+let nativeDataStreamFactory: NativeDataStreamStatic = NativeDataStream
+let validatedNativeDataStreamFactory: ValidatedNativeDataStreamStatic = ValidatedNativeDataStream
+let fresnelParametersFactory: FresnelParametersStatic = FresnelParameters
+let webXRControllerComponentFactory: WebXRControllerComponentStatic = WebXRControllerComponent
+let parseUint8 = BabylonjsBindings.SimpleFunctions.``ParseUint8``
+let textureSizeIsObject = BabylonjsBindings.SimpleFunctions.``textureSizeIsObject``
+let getMimeType = BabylonjsBindings.SimpleVariables.``GetMimeType``
+let mixamoRigMapping = BabylonjsBindings.SimpleVariables.``MixamoRigMapping``
+let stringTools = BabylonjsBindings.SimpleVariables.``StringTools``
 let errorCodes: BabylonjsBindings.SimpleVariables.VariableShape_ErrorCodes = BabylonjsBindings.SimpleVariables.``ErrorCodes``
 let wgs84Ellipsoid: DeepImmutableIEllipsoidLike = BabylonjsBindings.SimpleVariables.``Wgs84Ellipsoid``
 let richTypeColor3: RichType<Color3> = BabylonjsBindings.SimpleVariables.``RichTypeColor3``
@@ -239,6 +255,22 @@ epsilon |> ignore
 shaderDescriptor |> ignore
 padNumber |> ignore
 testBase64DataUrl |> ignore
+nativeData |> ignore
+computeBindingMapping |> ignore
+textureSize |> ignore
+bodyRigMapping |> ignore
+computeShaderOptions |> ignore
+imageTrackingOptions |> ignore
+basisFileInfoFactory |> ignore
+nativeDataStreamFactory |> ignore
+validatedNativeDataStreamFactory |> ignore
+fresnelParametersFactory |> ignore
+webXRControllerComponentFactory |> ignore
+parseUint8 |> ignore
+textureSizeIsObject |> ignore
+getMimeType |> ignore
+mixamoRigMapping |> ignore
+stringTools |> ignore
 errorCodes |> ignore
 wgs84Ellipsoid |> ignore
 richTypeColor3 |> ignore

@@ -1,12 +1,41 @@
 {
   "schemaVersion": 1,
-  "reviewStatus": "maintained",
   "source": {
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "f8d64337db16efd5c61a1802d03b29a136a3920db89c6a83bc8a36b929d9ebaa",
+  "proposalSha256": "220a41636d2c1e98a526c69954f81494efa90b6f95620e6eba72bacdb38af940",
   "exports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
+      "name": "ComputeBindingList",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ComputeBindingList",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
+      "name": "ComputeBindingMapping",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ComputeBindingMapping",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoDecoder.types",
+      "name": "DecoderMessage",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.DecoderMessage",
+      "shape": "alias",
+      "memberCount": 1
+    },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
@@ -40,6 +69,36 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "FlowGraphNumber",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphNumber",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
+      "name": "FrameGraphTextureCreationOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FrameGraphTextureCreationOptions",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
+      "name": "FrameGraphTextureDescription",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FrameGraphTextureDescription",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
       "name": "FrameGraphTextureHandle",
       "kind": "type",
@@ -60,6 +119,26 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/goldbergBuilder",
+      "name": "GoldbergCreationOption",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GoldbergCreationOption",
+      "shape": "intersectionAlias",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/fresnelParameters.pure",
+      "name": "IFresnelParametersCreationOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.IFresnelParametersCreationOptions",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "IndicesArray",
       "kind": "type",
@@ -75,6 +154,86 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.int",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginGetDefineNames",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginGetDefineNames",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeDataStream",
+      "name": "NativeData",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeData",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
+      "name": "NativeFramebuffer",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeFramebuffer",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
+      "name": "NativeProgram",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeProgram",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
+      "name": "NativeTexture",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeTexture",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
+      "name": "NativeUniform",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeUniform",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
+      "name": "NativeVertexArrayObject",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeVertexArrayObject",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Blocks/inputBlock.pure",
+      "name": "NodeRenderGraphInputCreationOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeRenderGraphInputCreationOptions",
       "shape": "alias",
       "memberCount": 1
     },
@@ -101,6 +260,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Extensions/engine.renderTarget.pure",
+      "name": "RenderTargetTextureSize",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderTargetTextureSize",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/Processors/shaderProcessingOptions",
       "name": "ShaderCustomProcessingFunction",
       "kind": "type",
@@ -118,6 +287,37 @@
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.SimpleStageAction",
       "shape": "callback",
       "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureCreationOptions",
+      "name": "TextureSize",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.TextureSize",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
+      "name": "XRBodyMeshRigMapping",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHandTracking.pure",
+      "name": "XRHandMeshRigMapping",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.XRHandMeshRigMapping",
+      "shape": "alias",
+      "memberCount": 1
     }
-  ]
+  ],
+  "reviewStatus": "maintained"
 }

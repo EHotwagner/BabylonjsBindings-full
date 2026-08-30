@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 const root = resolve(import.meta.dirname, "..");
 const check = process.argv.includes("--check");
 const maintained = process.argv.includes("--maintained");
+const aliasPath = resolve(root, maintained ? "src/BabylonjsBindings/TypeAliases.fs" : "generated-candidates/SimpleAliases.proposal.fs");
 const interfacePath = resolve(root, maintained ? "src/BabylonjsBindings/SimpleInterfaces.fs" : "generated-candidates/SimpleInterfaces.proposal.fs");
 const classPath = resolve(root, maintained ? "src/BabylonjsBindings/SimpleClasses.fs" : "generated-candidates/SimpleClasses.proposal.fs");
 const outputPath = resolve(root, maintained ? "src/BabylonjsBindings/SimpleTypes.fs" : "generated-candidates/SimpleTypes.proposal.fs");
@@ -16,15 +17,18 @@ const moduleBody = (source, moduleName) => {
   return lines.slice(documentationIndex).join("\n").trimEnd();
 };
 
+const aliases = moduleBody(await readFile(aliasPath, "utf8"), "TypeAliases");
 const interfaces = moduleBody(await readFile(interfacePath, "utf8"), "SimpleInterfaces");
 const classes = moduleBody(await readFile(classPath, "utf8"), "SimpleClasses");
 const proposal = [
   maintained
-    ? "// DERIVED BUILD PROJECTION — authoritative reviewed fragments are SimpleInterfaces.fs and SimpleClasses.fs"
-    : "// REVIEWED-PROMOTION PROPOSAL — recursive interface/class closure compiled as one F# namespace",
+    ? "// DERIVED BUILD PROJECTION — authoritative reviewed fragments are TypeAliases.fs, SimpleInterfaces.fs, and SimpleClasses.fs"
+    : "// REVIEWED-PROMOTION PROPOSAL — recursive alias/interface/class closure compiled as one F# namespace",
   "namespace rec BabylonjsBindings",
   "",
   "open Fable.Core",
+  "",
+  aliases,
   "",
   interfaces,
   "",
@@ -38,4 +42,4 @@ if (check) {
   await writeFile(outputPath, proposal);
 }
 
-console.log(`generated combined recursive interface/class ${maintained ? "maintained build projection" : "proposal"}`);
+console.log(`generated combined recursive alias/interface/class ${maintained ? "maintained build projection" : "proposal"}`);

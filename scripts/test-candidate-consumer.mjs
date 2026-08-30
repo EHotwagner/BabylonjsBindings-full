@@ -204,12 +204,21 @@ thinSprite.\`\`_animate\`\`(2.0)
 let positionStride = BabylonjsBindings.SimpleFunctions.\`\`VertexBufferDeduceStride\`\`.Invoke("position")
 let shortIndices: BabylonjsBindings.TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
 let indicesNeed32Bits = BabylonjsBindings.SimpleFunctions.\`\`AreIndices32Bits\`\`.Invoke(shortIndices, 3.0)
+let fresnel = FresnelParameters.Create()
+fresnel.\`\`bias\`\` <- 0.25
+fresnel.\`\`power\`\` <- 3.0
+let serializedFresnel = fresnel.\`\`serialize\`\`()
+let objectTextureSize: BabylonjsBindings.TypeAliases.TextureSize =
+    createObj [ "width" ==> 16.0; "height" ==> 8.0 ] |> unbox
+let textureObjectRecognized = BabylonjsBindings.SimpleFunctions.\`\`textureSizeIsObject\`\`.Invoke(objectTextureSize)
+let glbMimeType = BabylonjsBindings.SimpleVariables.\`\`GetMimeType\`\`.Invoke("model.glb")
 let epsilon = \`\`Epsilon\`\`
 let shaderDescriptor = \`\`clearQuadVertexShaderWGSL\`\`
 let paddedNumber = \`\`PadNumber\`\`.Invoke(7.0, 3.0)
 let base64DataUrl = \`\`TestBase64DataUrl\`\`.Invoke("data:text/plain;base64,QQ==")
 let stringRichType = \`\`RichTypeString\`\`
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then failwith "clean consumer scene failed"
+if fresnel.\`\`bias\`\` <> 0.25 || fresnel.\`\`power\`\` <> 3.0 || serializedFresnel.\`\`bias\`\` <> 0.25 || not textureObjectRecognized || glbMimeType <> Some "model/gltf-binary" then failwith "clean consumer recursive alias and promoted import closure failed"
 if uint32 NodeRenderGraphBlockConnectionPointTypes.\`\`All\`\` <> 4294967295u then failwith "clean consumer enum failed"
 if int AudioAnalyzerFFTSizeType.\`\`N32768\`\` <> 32768 then failwith "clean consumer numeric literal union failed"
 if asString PowerPreference.\`\`HighPerformance\`\` <> "high-performance" then failwith "clean consumer string enum failed"

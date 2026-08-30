@@ -21,6 +21,21 @@ const checker = program.getTypeChecker();
 const diagnose = process.argv.includes("--diagnose");
 const typeFailureCounts = new Map();
 let collectTypeFailures = false;
+const utilityInlineTypes = [];
+const numericLiteralValues = new Set();
+const stringLiteralTypes = new Map();
+const fsharpString = value => `"${value.replaceAll("\\", "\\\\").replaceAll("\"", "\\\"").replaceAll("\n", "\\n").replaceAll("\r", "\\r")}"`;
+const stringLiteralType = value => {
+  const name = `StringLiteral${createHash("sha256").update(value).digest("hex").slice(0, 12)}`;
+  stringLiteralTypes.set(name, value);
+  return name;
+};
+const numericLiteralType = value => {
+  const numeric = Number(value);
+  if (!Number.isSafeInteger(numeric) || numeric < -2147483648 || numeric > 2147483647) return undefined;
+  numericLiteralValues.add(numeric);
+  return `NumericLiteral${numeric < 0 ? `Negative${Math.abs(numeric)}` : numeric}`;
+};
 const recordTypeFailure = node => {
   if (!collectTypeFailures) return;
   const text = node.getText().replace(/\s+/g, " ");
@@ -81,6 +96,8 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
+  if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
+  if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
     if (ts.isArrayTypeNode(node.type)) {
@@ -115,6 +132,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       return `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
     }
   }
+  if (ts.isTypeLiteralNode(node)) {
+    const digest = createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12);
+    return inlineObjectType(node, available, dependencies, typeParameters, utilityInlineTypes, `InlineObject${digest}`);
+  }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (node.typeName.text === "Tuple" && node.typeArguments?.length === 2) {
       const element = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
@@ -134,6 +155,15 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `JS.Promise<${inner}>` : undefined;
     }
+    if (node.typeName.text === "Set" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      return inner ? `JS.Set<${inner}>` : undefined;
+    }
+    if (node.typeName.text === "Map" && node.typeArguments?.length === 2) {
+      const key = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      const value = fsharpType(node.typeArguments[1], available, dependencies, typeParameters);
+      return key && value ? `JS.Map<${key}, ${value}>` : undefined;
+    }
     if (node.typeName.text === "Nullable" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? asOption(inner) : undefined;
@@ -142,9 +172,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
     const browserTypes = new Set([
       "AudioContext", "AudioNode", "Blob", "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
-      "ImageBitmap", "ImageData", "OfflineAudioContext", "WebGLUniformLocation", "WebGLRenderingContext",
+      "ImageData", "OfflineAudioContext", "WebGLUniformLocation", "WebGLRenderingContext",
       "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
     ]);
+    if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BrowserImageBitmap";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
     if (available.has(node.typeName.text)) {
@@ -206,6 +237,25 @@ const callbackShape = (node, available, dependencies, typeParameters) => {
   });
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
 };
+const functionType = node => ts.isFunctionTypeNode(node)
+  ? node
+  : ts.isParenthesizedTypeNode(node) && ts.isFunctionTypeNode(node.type)
+    ? node.type
+    : undefined;
+const callbackPropertyType = node => {
+  const direct = functionType(node);
+  if (direct) return { node: direct, optional: false };
+  if (ts.isTypeReferenceNode(node)
+    && ts.isIdentifier(node.typeName)
+    && node.typeName.text === "Nullable"
+    && node.typeArguments?.length === 1
+    && functionType(node.typeArguments[0])) return { node: functionType(node.typeArguments[0]), optional: true };
+  if (ts.isUnionTypeNode(node) && node.types.length === 2) {
+    const callback = node.types.map(functionType).find(Boolean);
+    if (callback && node.types.some(isAbsentType)) return { node: callback, optional: true };
+  }
+  return undefined;
+};
 const renderMembers = (declaration, available) => {
   const dependencies = new Set();
   const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
@@ -214,10 +264,11 @@ const renderMembers = (declaration, available) => {
   for (const member of declaration.members) {
     if ((ts.isPropertySignature(member) || ts.isMethodSignature(member)) && (!ts.isIdentifier(member.name) && !ts.isStringLiteral(member.name))) return undefined;
     if (ts.isPropertySignature(member) && member.type) {
-      if (ts.isFunctionTypeNode(member.type)) {
-        const callback = callbackShape(member.type, available, dependencies, typeParameters);
+      const callbackProperty = callbackPropertyType(member.type);
+      if (callbackProperty) {
+        const callback = callbackShape(callbackProperty.node, available, dependencies, typeParameters);
         if (!callback) return undefined;
-        members.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken), readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false, callback });
+        members.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken) || callbackProperty.optional, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false, callback });
       } else {
         let type = fsharpType(member.type, available, dependencies, typeParameters);
         if (!type && ts.isTypeLiteralNode(member.type)) type = inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Property${members.length + 1}`);
@@ -267,7 +318,7 @@ const renderHeritage = (declaration, available) => {
   return { bases, dependencies: [...dependencies] };
 };
 
-const declarations = new Map();
+const rawDeclarations = new Map();
 for (const sourceFile of program.getSourceFiles()) {
   const lockedPath = normalize(sourceFile.fileName);
   if (!lockedPaths.has(lockedPath) || !sourceFile.symbol) continue;
@@ -289,7 +340,27 @@ for (const sourceFile of program.getSourceFiles()) {
         : undefined;
     if (!packageName) continue;
     const name = exported.getName();
-    declarations.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, declaration });
+    rawDeclarations.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, declaration });
+  }
+}
+
+const declarations = new Map();
+const declarationsByName = new Map();
+for (const [identity, entry] of rawDeclarations) {
+  const group = declarationsByName.get(entry.name) ?? [];
+  group.push([identity, entry]);
+  declarationsByName.set(entry.name, group);
+}
+for (const group of declarationsByName.values()) {
+  const normalizedShapes = new Set(group.map(([, entry]) => entry.declaration.getText().replace(/\s+/g, " ")));
+  if (normalizedShapes.size === 1) {
+    const [identity, representative] = group[0];
+    declarations.set(identity, {
+      ...representative,
+      coverageEntries: group.map(([, entry]) => ({ package: entry.package, module: entry.module, name: entry.name }))
+    });
+  } else {
+    for (const [identity, entry] of group) declarations.set(identity, { ...entry, coverageEntries: [{ package: entry.package, module: entry.module, name: entry.name }] });
   }
 }
 
@@ -314,6 +385,33 @@ while (true) {
     available.set(entry.name, { arity: entry.declaration.typeParameters?.length ?? 0 });
   }
   rank += 1;
+}
+const recursiveOptimistic = new Map([...declarations.values()]
+  .filter(entry => nameCounts.get(entry.name) === 1)
+  .map(entry => [entry.name, { arity: entry.declaration.typeParameters?.length ?? 0 }]));
+const recursiveCandidates = new Map();
+for (const [identity, entry] of declarations) {
+  if (selected.has(identity) || nameCounts.get(entry.name) !== 1) continue;
+  const renderedMembers = renderMembers(entry.declaration, recursiveOptimistic);
+  const renderedHeritage = renderHeritage(entry.declaration, recursiveOptimistic);
+  if (!renderedMembers || !renderedHeritage) continue;
+  recursiveCandidates.set(identity, {
+    ...entry,
+    ...renderedMembers,
+    ...renderedHeritage,
+    dependencies: [...new Set([...renderedMembers.dependencies, ...renderedHeritage.dependencies])],
+    rank
+  });
+}
+while (true) {
+  const candidateNames = new Set([...recursiveCandidates.values()].map(entry => entry.name));
+  const rejected = [...recursiveCandidates].filter(([, entry]) => entry.dependencies.some(dependency => !available.has(dependency) && !candidateNames.has(dependency)));
+  if (rejected.length === 0) break;
+  for (const [identity] of rejected) recursiveCandidates.delete(identity);
+}
+for (const [identity, entry] of recursiveCandidates) {
+  selected.set(identity, entry);
+  available.set(entry.name, { arity: entry.declaration.typeParameters?.length ?? 0 });
 }
 const entries = [...selected.values()].sort((left, right) => left.rank - right.rank || left.name.localeCompare(right.name));
 if (diagnose) {
@@ -372,11 +470,37 @@ const lines = [
   "/// Exact dependency-closed interfaces exported by Babylon.js 9.19.0.",
   "module SimpleInterfaces ="
 ];
+lines.push("", "    /// Exact structural browser ImageBitmap surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserImageBitmap =", "        abstract width: float with get", "        abstract height: float with get", "        abstract close: unit -> unit");
+for (const value of [...numericLiteralValues].sort((left, right) => left - right)) {
+  const name = `NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`;
+  lines.push("", `    /// Exact numeric literal type for ${value}.`, `    type ${name} =`, `        | Value = ${value}`);
+}
+for (const [name, value] of [...stringLiteralTypes].sort(([left], [right]) => left.localeCompare(right))) {
+  lines.push("", `    /// Exact string literal type for ${fsharpString(value)}.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, `        | [<CompiledName(${fsharpString(value)})>] Value`);
+}
+let utilityReferenceText = JSON.stringify(entries.map(entry => ({ members: entry.members, bases: entry.bases, inlineTypes: entry.inlineTypes })));
+const retainedUtilityInlineTypes = [];
+while (true) {
+  const additions = utilityInlineTypes.filter(inline => !retainedUtilityInlineTypes.includes(inline) && utilityReferenceText.includes(inline.name));
+  if (additions.length === 0) break;
+  retainedUtilityInlineTypes.push(...additions);
+  utilityReferenceText += JSON.stringify(additions);
+}
+const emittedInlineTypeNames = new Set();
+for (const inline of retainedUtilityInlineTypes) {
+  if (emittedInlineTypeNames.has(inline.name)) continue;
+  emittedInlineTypeNames.add(inline.name);
+  lines.push("", "    /// Exact inline object used by a Babylon interface signature.", "    [<AllowNullLiteral>]", `    type ${inline.name}${inline.genericParameters} =`);
+  if (inline.members.length === 0) lines.push("        interface end");
+  else for (const member of inline.members) lines.push(`        ${renderInlineMember(member)}`);
+}
 for (const entry of entries) {
   const genericParameters = entry.declaration.typeParameters?.length
     ? `<${entry.declaration.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}>`
     : "";
   for (const inline of entry.inlineTypes) {
+    if (emittedInlineTypeNames.has(inline.name)) continue;
+    emittedInlineTypeNames.add(inline.name);
     lines.push("", `    /// Inline object shape used by ${entry.name}.`, "    [<AllowNullLiteral>]", `    type ${inline.name}${inline.genericParameters} =`);
     if (inline.members.length === 0) lines.push("        interface end");
     else for (const member of inline.members) lines.push(`        ${renderInlineMember(member)}`);
@@ -455,10 +579,10 @@ const manifest = {
   schemaVersion: 1,
   source: { declarationLock: "declaration-lock.json", packageVersion: "9.19.0" },
   proposalSha256: sha256(proposal),
-  exports: entries.map(entry => ({
-    package: entry.package,
-    module: entry.module,
-    name: entry.name,
+  exports: entries.flatMap(entry => entry.coverageEntries.map(coverage => ({
+    package: coverage.package,
+    module: coverage.module,
+    name: coverage.name,
     kind: "interface",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleInterfaces.${entry.name}`,
@@ -466,7 +590,7 @@ const manifest = {
     ...(partialProjectedNames.has(entry.name) ? { partialSymbol: `BabylonjsBindings.SimpleInterfaces.Partial${entry.name}` } : {}),
     ...(entry.declaration.typeParameters?.length ? { typeParameterCount: entry.declaration.typeParameters.length } : {}),
     memberCount: entry.members.length
-  }))
+  })))
 };
 const proposalPath = resolve(root, "generated-candidates/SimpleInterfaces.proposal.fs");
 const manifestPath = resolve(root, "generated-candidates/SimpleInterfaces.promotion.json");

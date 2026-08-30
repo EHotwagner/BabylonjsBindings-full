@@ -1105,6 +1105,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "GetMimeType",
+      "runtimeExport": "GetMimeType",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/glowBlurPostProcess.fragment.js",
       "export": "glowBlurPostProcessPixelShader",
       "runtimeExport": "glowBlurPostProcessPixelShader",
@@ -2176,6 +2183,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js",
+      "export": "MixamoRigMapping",
+      "runtimeExport": "MixamoRigMapping",
+      "moduleSha256": "7e22d965ac1e6e2a7c106727e73dc8716eb5be0072f689bb0bfbcda919b28dc0"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertex.js",
       "export": "morphTargetsVertex",
       "runtimeExport": "morphTargetsVertex",
@@ -2743,6 +2757,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "SetCorsBehavior",
+      "runtimeExport": "SetCorsBehavior",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapFragment.js",
       "export": "shadowMapFragment",
       "runtimeExport": "shadowMapFragment",
@@ -2957,6 +2978,13 @@
       "export": "stereoscopicInterlacePixelShader",
       "runtimeExport": "stereoscopicInterlacePixelShader",
       "moduleSha256": "dfa7cb3258b54cdfaebac3088c89f02d4aef51bd2868de7cc9f071cd3cfe1d70"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools.js",
+      "export": "StringTools",
+      "runtimeExport": "StringTools",
+      "moduleSha256": "9ddf67ee7e15b609620e0dd1928235a6ebecb3dd75161576efc53fd0cc5120fe"
     },
     {
       "package": "@babylonjs/core",

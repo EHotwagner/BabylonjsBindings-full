@@ -1,11 +1,10 @@
 {
   "schemaVersion": 1,
-  "reviewStatus": "maintained",
   "source": {
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "13bfc3186b952ab9804e1a1effe4fef0b5b87b45cd45962db6a1e4e84897e47d",
+  "proposalSha256": "0454fe8f56d62e2ee211a0bf2ad437b3d36266e2170c6b813a01b63d53bc378e",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1557,6 +1556,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "GetMimeType",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GetMimeType",
+      "fsharpType": "VariableFunction_GetMimeType",
+      "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/glowBlurPostProcess.fragment",
       "name": "glowBlurPostProcessPixelShader",
       "kind": "variable",
@@ -3084,6 +3093,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
+      "name": "MixamoRigMapping",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.MixamoRigMapping",
+      "fsharpType": "BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertex",
       "name": "morphTargetsVertex",
       "kind": "variable",
@@ -3885,6 +3903,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "SetCorsBehavior",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SetCorsBehavior",
+      "fsharpType": "VariableFunction_SetCorsBehavior",
+      "parameterCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapFragment",
       "name": "shadowMapFragment",
       "kind": "variable",
@@ -4194,6 +4222,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringTools",
+      "name": "StringTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.StringTools",
+      "fsharpType": "VariableShape_StringTools",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/taa.fragment",
       "name": "taaPixelShader",
       "kind": "variable",
@@ -4417,5 +4455,6 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Wgs84Ellipsoid",
       "fsharpType": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIEllipsoidLike"
     }
-  ]
+  ],
+  "reviewStatus": "maintained"
 }

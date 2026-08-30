@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "fb09897bca27781eacb6d99f7cf1b11eb1db1f441c8858639cf11a8a92ffcab3",
+  "proposalSha256": "ef1dfc91970c1d8e9e2c60ae156d49ce7210417c50cedd86628b4fe87e300f39",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -122,6 +122,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BaseError",
       "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "BasisFileInfo",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BasisFileInfo",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",
@@ -449,6 +458,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MeshoptCompression",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeDataStream",
+      "name": "NativeDataStream",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.NativeDataStream",
+      "memberCount": 9
     },
     {
       "package": "@babylonjs/core",
@@ -1053,6 +1071,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/validatedNativeDataStream.pure",
+      "name": "ValidatedNativeDataStream",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ValidatedNativeDataStream",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/WebGL/webGLDataBuffer",
       "name": "WebGLDataBuffer",
       "kind": "class",
@@ -1077,6 +1104,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Color3Gradient",
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/fresnelParameters.pure",
+      "name": "FresnelParameters",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FresnelParameters",
+      "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableFresnelParameters",
+      "memberCount": 9
     },
     {
       "package": "@babylonjs/core",
@@ -1142,6 +1179,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MultiObserver",
       "typeParameterCount": 1,
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/motionController/webXRControllerComponent",
+      "name": "WebXRControllerComponent",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRControllerComponent",
+      "memberCount": 20
     },
     {
       "package": "@babylonjs/core",

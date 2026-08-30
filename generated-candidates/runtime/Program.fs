@@ -214,6 +214,14 @@ let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("positi
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
 let shortIndices: TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
 let indicesNeed32Bits = SimpleFunctions.``AreIndices32Bits``.Invoke(shortIndices, 3.0)
+let fresnel = FresnelParameters.Create()
+fresnel.``bias`` <- 0.25
+fresnel.``power`` <- 3.0
+let serializedFresnel = fresnel.``serialize``()
+let objectTextureSize: TypeAliases.TextureSize =
+    createObj [ "width" ==> 16.0; "height" ==> 8.0 ] |> unbox
+let textureObjectRecognized = SimpleFunctions.``textureSizeIsObject``.Invoke(objectTextureSize)
+let glbMimeType = SimpleVariables.``GetMimeType``.Invoke("model.glb")
 let epsilon = ``Epsilon``
 let phi = ``PHI``
 let shaderDescriptor = ``clearQuadVertexShaderWGSL``
@@ -225,6 +233,8 @@ let lookedUpStringRichType = SimpleFunctions.``getRichTypeByFlowGraphType``.Invo
 
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then
     failwith "full candidate did not construct a Babylon scene"
+if fresnel.``bias`` <> 0.25 || fresnel.``power`` <> 3.0 || serializedFresnel.``bias`` <> 0.25 || not textureObjectRecognized || glbMimeType <> Some "model/gltf-binary" then
+    failwith "candidate recursive alias and promoted import closure failed"
 if uint32 NodeRenderGraphBlockConnectionPointTypes.``All`` <> 4294967295u then
     failwith "unsigned Babylon enum value was not preserved"
 if int EShaderType.``FRAGMENT`` <> 35632 then

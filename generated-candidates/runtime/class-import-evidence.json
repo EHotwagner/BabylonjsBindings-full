@@ -92,6 +92,12 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/basis.pure.js",
+      "export": "BasisFileInfo",
+      "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure.js",
       "export": "BasisTranscodeConfiguration",
       "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
     },
@@ -304,6 +310,12 @@
       "module": "@babylonjs/core/Meshes/Compression/meshoptCompression.js",
       "export": "MeshoptCompression",
       "moduleSha256": "7600dfbfb2b3c14c76984d510344c9c5bc4c66b65f3f4be47a1ad5014c03d70b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeDataStream.js",
+      "export": "NativeDataStream",
+      "moduleSha256": "f4d67463c21a2cda910869acd2a9432c5a0744e78f1058c24bd1c8b0e66c9b23"
     },
     {
       "package": "@babylonjs/core",
@@ -703,6 +715,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/validatedNativeDataStream.pure.js",
+      "export": "ValidatedNativeDataStream",
+      "moduleSha256": "ab59da6040dcda88227daca41db73b9d1084f2262eadd76fb963c60f488fd6ea"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/WebGL/webGLDataBuffer.js",
       "export": "WebGLDataBuffer",
       "moduleSha256": "3a0f1c81a75bdc9daa99f4346b199b87e591b0d7628781c0ef1bd5a7d4487d0c"
@@ -718,6 +736,12 @@
       "module": "@babylonjs/core/Misc/gradients.js",
       "export": "Color3Gradient",
       "moduleSha256": "704f9e59cf8ca5b9bff89c06bd62590af8d94598095e49f1b057a449fdf5dc50"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/fresnelParameters.pure.js",
+      "export": "FresnelParameters",
+      "moduleSha256": "76ccaf195a381ac54353be84dd9ae892f574d71be2ae5b728e5cfc68397c366b"
     },
     {
       "package": "@babylonjs/core",
@@ -760,6 +784,12 @@
       "module": "@babylonjs/core/Misc/observable.extensions.pure.js",
       "export": "MultiObserver",
       "moduleSha256": "31478edc7a7e0ccc21765ddbfcca985eabc6a96f1d0279885757797d35f8081c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/motionController/webXRControllerComponent.js",
+      "export": "WebXRControllerComponent",
+      "moduleSha256": "e67638e483697829e973d229cc1e8d4699926fceb7dea9c1d0ffb6428972c864"
     },
     {
       "package": "@babylonjs/core",

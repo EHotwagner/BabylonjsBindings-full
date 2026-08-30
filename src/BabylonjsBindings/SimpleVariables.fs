@@ -1,4 +1,4 @@
-// REVIEWED MAINTAINED SOURCE — exact declaration, import, and runtime proof recorded in generated-candidates
+// REVIEWED MAINTAINED SOURCE — exact declaration review and compile proof recorded in generated-candidates
 namespace BabylonjsBindings
 
 open Fable.Core
@@ -1490,6 +1490,15 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/geometry.vertex
     [<Import("geometryVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/geometry.vertex.js")>]
     let ``geometryVertexShaderWGSL``: VariableShape_geometryVertexShaderWGSL = jsNative
+
+    /// Callable shape of GetMimeType.
+    [<AllowNullLiteral>]
+    type VariableFunction_GetMimeType =
+        [<Emit("$0($1...)")>] abstract Invoke: ``url``: string -> string option
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("GetMimeType", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``GetMimeType``: VariableFunction_GetMimeType = jsNative
 
     /// Inline object shape of glowBlurPostProcessPixelShader.
     [<AllowNullLiteral>]
@@ -3008,6 +3017,10 @@ module SimpleVariables =
     [<Import("minmaxReduxPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/minmaxRedux.fragment.js")>]
     let ``minmaxReduxPixelShaderWGSL``: VariableShape_minmaxReduxPixelShaderWGSL = jsNative
 
+    /// @babylonjs/core/XR/features/WebXRBodyTracking.pure
+    [<Import("MixamoRigMapping", "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js")>]
+    let ``MixamoRigMapping``: BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping = jsNative
+
     /// Inline object shape of morphTargetsVertex.
     [<AllowNullLiteral>]
     type VariableShape_morphTargetsVertex =
@@ -3763,6 +3776,20 @@ module SimpleVariables =
     [<Import("screenSpaceReflectionPixelShader", "@babylonjs/core/Shaders/screenSpaceReflection.fragment.js")>]
     let ``screenSpaceReflectionPixelShader``: VariableShape_screenSpaceReflectionPixelShader = jsNative
 
+    /// Inline callable object shape used by SetCorsBehavior.
+    [<AllowNullLiteral>]
+    type VariableInline_SetCorsBehavior_Parameter2 =
+        abstract ``crossOrigin``: string option with get, set
+
+    /// Callable shape of SetCorsBehavior.
+    [<AllowNullLiteral>]
+    type VariableFunction_SetCorsBehavior =
+        [<Emit("$0($1...)")>] abstract Invoke: ``url``: U2<string, ResizeArray<string>> * ``element``: VariableInline_SetCorsBehavior_Parameter2 -> unit
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("SetCorsBehavior", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``SetCorsBehavior``: VariableFunction_SetCorsBehavior = jsNative
+
     /// Inline object shape of shadowMapFragment.
     [<AllowNullLiteral>]
     type VariableShape_shadowMapFragment =
@@ -4065,6 +4092,21 @@ module SimpleVariables =
     /// @babylonjs/core/Shaders/stereoscopicInterlace.fragment
     [<Import("stereoscopicInterlacePixelShader", "@babylonjs/core/Shaders/stereoscopicInterlace.fragment.js")>]
     let ``stereoscopicInterlacePixelShader``: VariableShape_stereoscopicInterlacePixelShader = jsNative
+
+    /// Inline object shape of StringTools.
+    [<AllowNullLiteral>]
+    type VariableShape_StringTools =
+        abstract ``EndsWith``: System.Func<string, string, bool> with get, set
+        abstract ``StartsWith``: System.Func<string, string, bool> with get, set
+        abstract ``Decode``: System.Func<U2<JS.Uint8Array, JS.Uint16Array>, string> with get, set
+        abstract ``EncodeArrayBufferToBase64``: System.Func<U2<JS.ArrayBuffer, JS.ArrayBufferView>, string> with get, set
+        abstract ``DecodeBase64ToString``: System.Func<string, string> with get, set
+        abstract ``DecodeBase64ToBinary``: System.Func<string, JS.ArrayBuffer> with get, set
+        abstract ``PadNumber``: System.Func<float, float, string> with get, set
+
+    /// @babylonjs/core/Misc/stringTools
+    [<Import("StringTools", "@babylonjs/core/Misc/stringTools.js")>]
+    let ``StringTools``: VariableShape_StringTools = jsNative
 
     /// Inline object shape of taaPixelShader.
     [<AllowNullLiteral>]

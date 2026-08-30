@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "e7693fd5e2be1e671e419e0796d506e2eb5e43b0e584288b81d315fd43aa79eb",
+  "proposalSha256": "d87106af8822842c858b3c73a76103c3af08819dbea49f14fdb82f02e3b2aec9",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -51,6 +51,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.Behavior",
       "typeParameterCount": 1,
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
+      "name": "ComputeCompilationMessages",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ComputeCompilationMessages",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -284,6 +293,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Compute/computeShader.pure",
+      "name": "IComputeShaderOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IComputeShaderOptions",
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIComputeShaderOptions",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphConnection",
       "name": "IConnectable",
       "kind": "interface",
@@ -371,6 +390,15 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDataBuffer",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoDecoder.types",
+      "name": "IDecodeMeshDoneMessage",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDecodeMeshDoneMessage",
       "memberCount": 2
     },
     {
@@ -683,6 +711,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/HTML/htmlInCanvasPolyfill",
+      "name": "IHtmlInCanvasPolyfillModule",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IHtmlInCanvasPolyfillModule",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/HTML/htmlInteractionManager",
       "name": "IHtmlInteractionManagerOptions",
       "kind": "interface",
@@ -716,6 +753,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IImageProcessingConfigurationDefines",
       "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoDecoder.types",
+      "name": "IIndicesMessage",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IIndicesMessage",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -839,12 +885,30 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/motionController/webXRAbstractMotionController",
+      "name": "IMinimalMotionControllerObject",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMinimalMotionControllerObject",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
       "name": "IMipmap",
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMipmap",
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/motionController/webXRAbstractMotionController",
+      "name": "IMotionControllerLayout",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMotionControllerLayout",
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -947,6 +1011,15 @@
       "memberCount": 7
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser",
+      "name": "InteractivityEvent",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.InteractivityEvent",
+      "memberCount": 2
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/textureCreationOptions",
       "name": "InternalTextureCreationOptions",
@@ -1026,6 +1099,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IRenderingManagerAutoClearSetup",
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animatorAvatar",
+      "name": "IRetargetOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IRetargetOptions",
+      "memberCount": 11
     },
     {
       "package": "@babylonjs/core",
@@ -1136,6 +1218,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISortableLight",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Audio/Interfaces/ISoundOptions",
+      "name": "ISoundOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISoundOptions",
+      "memberCount": 14
     },
     {
       "package": "@babylonjs/core",
@@ -1430,6 +1521,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRImageTracking.pure",
+      "name": "IWebXRImageTrackingOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRImageTrackingOptions",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/motionController/webXRControllerComponent",
       "name": "IWebXRMotionControllerAxesValue",
       "kind": "interface",
@@ -1641,6 +1741,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoDecoder.types",
+      "name": "IAttributeMessage",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAttributeMessage",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Behaviors/behavior",
       "name": "IBehaviorAware",
       "kind": "interface",
@@ -1721,6 +1830,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IInspectable",
       "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/HTML/htmlInCanvasPolyfill",
+      "name": "IInstallHtmlInCanvasPolyfillOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IInstallHtmlInCanvasPolyfillOptions",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",

@@ -18,6 +18,21 @@ const program = ts.createProgram([...lockedPaths].map(file => resolve(nodeModule
   skipLibCheck: true
 });
 const checker = program.getTypeChecker();
+const diagnose = process.argv.includes("--diagnose");
+const typeFailureCounts = new Map();
+const failedVariables = new Map();
+let diagnosedVariable;
+const recordTypeFailure = node => {
+  if (!diagnose) return;
+  const text = node.getText().replace(/\s+/g, " ");
+  const key = `${ts.SyntaxKind[node.kind]}: ${text.length > 160 ? `${text.slice(0, 157)}...` : text}`;
+  typeFailureCounts.set(key, (typeFailureCounts.get(key) ?? 0) + 1);
+  if (diagnosedVariable) {
+    const failures = failedVariables.get(diagnosedVariable) ?? new Set();
+    failures.add(key);
+    failedVariables.set(diagnosedVariable, failures);
+  }
+};
 
 const dependencyManifestPaths = [
   "src/BabylonjsBindings/coverage-manifest.json",
@@ -33,12 +48,15 @@ const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
-  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, deepImmutableSymbol: entry.deepImmutableSymbol, arity: entry.typeParameterCount ?? 0 }]));
+  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, arity: entry.typeParameterCount ?? 0 }]));
 
-const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
+const isAbsentType = node => node.kind === ts.SyntaxKind.UndefinedKeyword
+  || (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
+const asOption = type => type.endsWith(" option") ? type : `${type} option`;
+const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "DataView", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
 const browserTypes = new Set([
-  "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
-  "ImageData", "WebGLUniformLocation", "WebGLRenderingContext",
+  "AudioBuffer", "AudioContext", "AudioNode", "Blob", "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
+  "ImageData", "OfflineAudioContext", "WebGLUniformLocation", "WebGLRenderingContext",
   "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
 ]);
 const fsharpType = node => {
@@ -46,8 +64,21 @@ const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
+  if (node.kind === ts.SyntaxKind.NeverKeyword) return "BabylonjsBindings.SimpleClasses.Never";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
+  if (ts.isTypePredicateNode(node)) return "bool";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
+  if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
+    if (ts.isArrayTypeNode(node.type)) {
+      const element = fsharpType(node.type.elementType);
+      return element ? `System.Collections.Generic.IReadOnlyList<${element}>` : undefined;
+    }
+    return fsharpType(node.type);
+  }
+  if (ts.isUnionTypeNode(node) && node.types.length === 2 && node.types.filter(isAbsentType).length === 1) {
+    const inner = fsharpType(node.types.find(branch => !isAbsentType(branch)));
+    return inner ? asOption(inner) : undefined;
+  }
   if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
     const branches = node.types.map(fsharpType);
     return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
@@ -60,6 +91,23 @@ const fsharpType = node => {
     const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type) : !ts.isNamedTupleMember(element) ? fsharpType(element) : undefined);
     return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
   }
+  if (ts.isFunctionTypeNode(node)
+    && !node.typeParameters?.length
+    && !node.parameters.some(parameter => parameter.dotDotDotToken || parameter.questionToken)) {
+    const parameterTypes = node.parameters.map(parameter => parameter.type ? fsharpType(parameter.type) : undefined);
+    const returnType = fsharpType(node.type);
+    if (returnType && parameterTypes.every(Boolean)) {
+      if (returnType === "unit") return parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`;
+      return `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
+    }
+  }
+  if (ts.isImportTypeNode(node)
+    && node.qualifier
+    && ts.isIdentifier(node.qualifier)
+    && !node.typeArguments?.length) {
+    const target = maintainedSymbols.get(node.qualifier.text);
+    if (target?.arity === 0) return target.fsharpSymbol;
+  }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (node.typeName.text === "DeepImmutable"
       && node.typeArguments?.length === 1
@@ -68,9 +116,17 @@ const fsharpType = node => {
       && !node.typeArguments[0].typeArguments?.length) {
       return maintainedSymbols.get(node.typeArguments[0].typeName.text)?.deepImmutableSymbol;
     }
+    if (node.typeName.text === "Partial" && node.typeArguments?.length === 1) {
+      const inner = node.typeArguments[0];
+      if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && !inner.typeArguments?.length) return maintainedSymbols.get(inner.typeName.text)?.partialSymbol;
+    }
     if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0]);
       return inner ? `ResizeArray<${inner}>` : undefined;
+    }
+    if (["ArrayLike", "ReadonlyArray"].includes(node.typeName.text) && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0]);
+      return inner ? `System.Collections.Generic.IReadOnlyList<${inner}>` : undefined;
     }
     if (node.typeName.text === "Promise" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0]);
@@ -80,7 +136,18 @@ const fsharpType = node => {
       const inner = fsharpType(node.typeArguments[0]);
       return inner ? `${inner} option` : undefined;
     }
+    if (node.typeName.text === "Set" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0]);
+      return inner ? `JS.Set<${inner}>` : undefined;
+    }
+    if (node.typeName.text === "Map" && node.typeArguments?.length === 2) {
+      const key = fsharpType(node.typeArguments[0]);
+      const value = fsharpType(node.typeArguments[1]);
+      return key && value ? `JS.Map<${key}, ${value}>` : undefined;
+    }
+    if (node.typeName.text === "Error" && !node.typeArguments?.length) return "System.Exception";
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
+    if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (maintainedSymbols.has(node.typeName.text)) {
       const target = maintainedSymbols.get(node.typeName.text);
@@ -91,6 +158,7 @@ const fsharpType = node => {
       return target.arity === 0 ? target.fsharpSymbol : `${target.fsharpSymbol}<${renderedArguments.join(", ")}>`;
     }
   }
+  recordTypeFailure(node);
   return undefined;
 };
 const functionShape = (node, exportName) => {
@@ -148,6 +216,7 @@ for (const sourceFile of program.getSourceFiles()) {
   const lockedPath = normalize(sourceFile.fileName);
   if (!lockedPaths.has(lockedPath) || !sourceFile.symbol) continue;
   for (const exported of checker.getExportsOfModule(sourceFile.symbol)) {
+    diagnosedVariable = exported.getName();
     let target = exported;
     if (exported.flags & ts.SymbolFlags.Alias) {
       try { target = checker.getAliasedSymbol(exported); } catch { continue; }
@@ -161,12 +230,14 @@ for (const sourceFile of program.getSourceFiles()) {
     }
   }
 }
+diagnosedVariable = undefined;
 
 const variables = new Map();
 for (const sourceFile of program.getSourceFiles()) {
   const lockedPath = normalize(sourceFile.fileName);
   if (!lockedPaths.has(lockedPath) || !sourceFile.symbol) continue;
   for (const exported of checker.getExportsOfModule(sourceFile.symbol)) {
+    diagnosedVariable = exported.getName();
     let target = exported;
     if (exported.flags & ts.SymbolFlags.Alias) {
       try { target = checker.getAliasedSymbol(exported); } catch { /* unresolved aliases are excluded */ }
@@ -192,6 +263,7 @@ for (const sourceFile of program.getSourceFiles()) {
     variables.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, runtimeExport, type, shape, callable });
   }
 }
+diagnosedVariable = undefined;
 
 const nameCounts = new Map();
 for (const entry of variables.values()) nameCounts.set(entry.name, (nameCounts.get(entry.name) ?? 0) + 1);
@@ -253,3 +325,10 @@ if (check) {
   await writeFile(manifestPath, renderedManifest);
 }
 console.log(`generated reviewed-promotion proposal for ${entries.length} exact dependency-closed variables (${sha256(proposal)})`);
+if (diagnose) {
+  console.log("top unresolved variable types:");
+  console.log([...typeFailureCounts].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 100).map(([type, count]) => `${count} ${type}`).join("\n"));
+  console.log(`diagnostic: ${failedVariables.size} exported variables encountered unresolved types`);
+  console.log("sample blocked variables:");
+  console.log([...failedVariables].sort(([left], [right]) => left.localeCompare(right)).slice(0, 160).map(([name, failures]) => `${name}: ${[...failures].slice(0, 5).join(" | ")}`).join("\n"));
+}

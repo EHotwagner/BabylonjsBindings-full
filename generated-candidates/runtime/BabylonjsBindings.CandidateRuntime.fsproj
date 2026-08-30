@@ -9,7 +9,6 @@
     <Compile Include="_candidateSources/CoreEnums.proposal.fs" />
     <Compile Include="_candidateSources/StringEnums.proposal.fs" />
     <Compile Include="_candidateSources/SimpleObjectTypes.proposal.fs" />
-    <Compile Include="_candidateSources/SimpleAliases.proposal.fs" />
     <Compile Include="_candidateSources/SimpleTypes.proposal.fs" />
     <Compile Include="_candidateSources/SimpleFunctions.proposal.fs" />
     <Compile Include="_candidateSources/SimpleVariables.proposal.fs" />
@@ -26,7 +25,6 @@
     <Copy SourceFiles="../CoreEnums.proposal.fs" DestinationFiles="_candidateSources/CoreEnums.proposal.fs" />
     <Copy SourceFiles="../StringEnums.proposal.fs" DestinationFiles="_candidateSources/StringEnums.proposal.fs" />
     <Copy SourceFiles="../SimpleObjectTypes.proposal.fs" DestinationFiles="_candidateSources/SimpleObjectTypes.proposal.fs" />
-    <Copy SourceFiles="../SimpleAliases.proposal.fs" DestinationFiles="_candidateSources/SimpleAliases.proposal.fs" />
     <Copy SourceFiles="../SimpleTypes.proposal.fs" DestinationFiles="_candidateSources/SimpleTypes.proposal.fs" />
     <Copy SourceFiles="../SimpleFunctions.proposal.fs" DestinationFiles="_candidateSources/SimpleFunctions.proposal.fs" />
     <Copy SourceFiles="../SimpleVariables.proposal.fs" DestinationFiles="_candidateSources/SimpleVariables.proposal.fs" />

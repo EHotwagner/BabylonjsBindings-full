@@ -9,7 +9,6 @@
     <Compile Include="CoreEnums.proposal.fs" />
     <Compile Include="StringEnums.proposal.fs" />
     <Compile Include="SimpleObjectTypes.proposal.fs" />
-    <Compile Include="SimpleAliases.proposal.fs" />
     <Compile Include="SimpleTypes.proposal.fs" />
     <Compile Include="SimpleFunctions.proposal.fs" />
     <Compile Include="SimpleVariables.proposal.fs" />

@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "00b5a3d46b7deced8f718eee7a0eea0490fd701b36e10caf74b38b2b938e5c3c"
+    "sha256": "f756f561b80f164b12211345ff54b09baee7f18aa5cb5a6aed6b8bc204f00566"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,7 +13,7 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "d5baaa19aa222f21490721601f43f035d9a2f731863cb9cb35bf13db1f14f2c8",
+  "emittedProgramSha256": "ceba2d5b36f1199dfc0b70483ce661a406a3083e2c3fbf6672f2445c28915c48",
   "imports": [
     "@babylonjs/core/Animations/animation.pure.js",
     "@babylonjs/core/Animations/animationEvent.js",
@@ -37,6 +37,8 @@
     "@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration.js",
     "@babylonjs/core/Materials/PBR/pbrSheenConfiguration.js",
     "@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration.js",
+    "@babylonjs/core/Materials/Textures/textureCreationOptions.js",
+    "@babylonjs/core/Materials/fresnelParameters.pure.js",
     "@babylonjs/core/Materials/imageProcessingConfiguration.defines.js",
     "@babylonjs/core/Materials/material.decalMapConfiguration.pure.js",
     "@babylonjs/core/Materials/material.detailMapConfiguration.js",

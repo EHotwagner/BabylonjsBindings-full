@@ -6,6 +6,37 @@ open Fable.Core
 /// Exact dependency-closed functions exported by Babylon.js 9.19.0.
 module SimpleFunctions =
 
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObjecte486d92413e0 =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject74fcddba75aa =
+        abstract ``ascent``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``descent``: float with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObjectd54d549eb3b8 =
+        abstract ``x``: float with get, set
+        abstract ``y``: float with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObjectd4c7fe3a4c5c =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``data``: JS.Float32Array option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObjectd76e3eabe256 =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
     /// @babylonjs/core/FlowGraph/utils
     [<AllowNullLiteral>]
     type FunctionBinding__AreSameIntegerClass =
@@ -53,6 +84,30 @@ module SimpleFunctions =
 
     [<Import("_GetDefaultNumWorkers", "@babylonjs/core/Meshes/Compression/dracoCodec.js")>]
     let ``_GetDefaultNumWorkers``: FunctionBinding__GetDefaultNumWorkers = jsNative
+
+    /// @babylonjs/core/Engines/abstractEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding__GetGlobalDefines =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``defines``: InlineObjectd76e3eabe256 * ?``isNDCHalfZRange``: bool * ?``useReverseDepthBuffer``: bool * ?``useExactSrgbConversions``: bool -> string option
+
+    [<Import("_GetGlobalDefines", "@babylonjs/core/Engines/abstractEngine.functions.js")>]
+    let ``_GetGlobalDefines``: FunctionBinding__GetGlobalDefines = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer
+    [<AllowNullLiteral>]
+    type FunctionBinding__HasAudioAnalyzerOptions =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioAnalyzerOptions -> bool
+
+    [<Import("_HasAudioAnalyzerOptions", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer.js")>]
+    let ``_HasAudioAnalyzerOptions``: FunctionBinding__HasAudioAnalyzerOptions = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio
+    [<AllowNullLiteral>]
+    type FunctionBinding__HasStereoAudioOptions =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: BabylonjsBindings.SimpleInterfaces.PartialIStereoAudioOptions -> bool
+
+    [<Import("_HasStereoAudioOptions", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio.js")>]
+    let ``_HasStereoAudioOptions``: FunctionBinding__HasStereoAudioOptions = jsNative
 
     /// @babylonjs/core/Misc/tools.internals
     [<AllowNullLiteral>]
@@ -166,6 +221,14 @@ module SimpleFunctions =
     [<Import("DecodeBase64UrlToBinary", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ``DecodeBase64UrlToBinary``: FunctionBinding_DecodeBase64UrlToBinary = jsNative
 
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_DecodeFloat32 =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> float
+
+    [<Import("DecodeFloat32", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``DecodeFloat32``: FunctionBinding_DecodeFloat32 = jsNative
+
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]
     type FunctionBinding_DeltaAngle =
@@ -189,6 +252,14 @@ module SimpleFunctions =
 
     [<Import("Dispose", "@babylonjs/core/Misc/dumpTools.pure.js")>]
     let ``Dispose``: FunctionBinding_Dispose = jsNative
+
+    /// @babylonjs/core/Misc/dumpTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_DumpData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``width``: float * ``height``: float * ``data``: JS.ArrayBufferView * ?``successCallback``: System.Action<U2<string, JS.ArrayBuffer>> * ?``mimeType``: string * ?``fileName``: string * ?``invertY``: bool * ?``toArrayBuffer``: bool * ?``quality``: float -> unit
+
+    [<Import("DumpData", "@babylonjs/core/Misc/dumpTools.pure.js")>]
+    let ``DumpData``: FunctionBinding_DumpData = jsNative
 
     /// @babylonjs/core/Engines/engine.common
     [<AllowNullLiteral>]
@@ -221,6 +292,14 @@ module SimpleFunctions =
 
     [<Import("FixFlippedFaces", "@babylonjs/core/Maths/math.functions.js")>]
     let ``FixFlippedFaces``: FunctionBinding_FixFlippedFaces = jsNative
+
+    /// @babylonjs/core/Materials/fresnelParameters.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_FresnelParametersParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``parsedFresnelParameters``: BabylonjsBindings.ObjectTypes.IFresnelParametersSerialized -> BabylonjsBindings.SimpleClasses.FresnelParameters
+
+    [<Import("FresnelParametersParse", "@babylonjs/core/Materials/fresnelParameters.pure.js")>]
+    let ``FresnelParametersParse``: FunctionBinding_FresnelParametersParse = jsNative
 
     /// @babylonjs/core/Misc/halfFloat
     [<AllowNullLiteral>]
@@ -278,6 +357,14 @@ module SimpleFunctions =
     [<Import("GetCubeMapTextureData", "@babylonjs/core/Misc/HighDynamicRange/hdr.js")>]
     let ``GetCubeMapTextureData``: FunctionBinding_GetCubeMapTextureData = jsNative
 
+    /// @babylonjs/core/Materials/Textures/textureCreationOptions
+    [<AllowNullLiteral>]
+    type FunctionBinding_getDimensionsFromTextureSize =
+        [<Emit("$0($1...)")>] abstract Invoke: ``size``: BabylonjsBindings.TypeAliases.TextureSize -> InlineObjecte486d92413e0
+
+    [<Import("getDimensionsFromTextureSize", "@babylonjs/core/Materials/Textures/textureCreationOptions.js")>]
+    let ``getDimensionsFromTextureSize``: FunctionBinding_getDimensionsFromTextureSize = jsNative
+
     /// @babylonjs/core/Misc/domManagement
     [<AllowNullLiteral>]
     type FunctionBinding_GetDOMTextContent =
@@ -285,6 +372,14 @@ module SimpleFunctions =
 
     [<Import("GetDOMTextContent", "@babylonjs/core/Misc/domManagement.js")>]
     let ``GetDOMTextContent``: FunctionBinding_GetDOMTextContent = jsNative
+
+    /// @babylonjs/core/Materials/Textures/HTML/htmlRaycastInteractionManager
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetElementPixelFromUv =
+        [<Emit("$0($1...)")>] abstract Invoke: ``u``: float * ``v``: float * ``width``: float * ``height``: float * ?``invertY``: bool -> InlineObjectd54d549eb3b8
+
+    [<Import("GetElementPixelFromUv", "@babylonjs/core/Materials/Textures/HTML/htmlRaycastInteractionManager.js")>]
+    let ``GetElementPixelFromUv``: FunctionBinding_GetElementPixelFromUv = jsNative
 
     /// @babylonjs/core/Misc/urlTools
     [<AllowNullLiteral>]
@@ -294,6 +389,14 @@ module SimpleFunctions =
     [<Import("GetExtensionFromUrl", "@babylonjs/core/Misc/urlTools.js")>]
     let ``GetExtensionFromUrl``: FunctionBinding_GetExtensionFromUrl = jsNative
 
+    /// @babylonjs/core/Engines/engine.common
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetFontOffset =
+        [<Emit("$0($1...)")>] abstract Invoke: ``font``: string -> InlineObject74fcddba75aa
+
+    [<Import("GetFontOffset", "@babylonjs/core/Engines/engine.common.js")>]
+    let ``GetFontOffset``: FunctionBinding_GetFontOffset = jsNative
+
     /// @babylonjs/core/Materials/floatingOriginMatrixOverrides
     [<AllowNullLiteral>]
     type FunctionBinding_GetFullOffsetViewProjectionToRef =
@@ -301,6 +404,14 @@ module SimpleFunctions =
 
     [<Import("GetFullOffsetViewProjectionToRef", "@babylonjs/core/Materials/floatingOriginMatrixOverrides.js")>]
     let ``GetFullOffsetViewProjectionToRef``: FunctionBinding_GetFullOffsetViewProjectionToRef = jsNative
+
+    /// @babylonjs/core/FlowGraph/utils
+    [<AllowNullLiteral>]
+    type FunctionBinding_getNumericValue =
+        [<Emit("$0($1...)")>] abstract Invoke: ``a``: BabylonjsBindings.TypeAliases.FlowGraphNumber -> float
+
+    [<Import("getNumericValue", "@babylonjs/core/FlowGraph/utils.js")>]
+    let ``getNumericValue``: FunctionBinding_getNumericValue = jsNative
 
     /// @babylonjs/core/Meshes/Builders/greasedLineBuilder
     [<AllowNullLiteral>]
@@ -366,6 +477,14 @@ module SimpleFunctions =
     [<Import("HighestCommonFactor", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``HighestCommonFactor``: FunctionBinding_HighestCommonFactor = jsNative
 
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.huf
+    [<AllowNullLiteral>]
+    type FunctionBinding_HufUncompress =
+        [<Emit("$0($1...)")>] abstract Invoke: ``array``: JS.Uint8Array * ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor * ``nCompressed``: float * ``outBuffer``: JS.Uint16Array * ``nRaw``: float -> unit
+
+    [<Import("HufUncompress", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.huf.js")>]
+    let ``HufUncompress``: FunctionBinding_HufUncompress = jsNative
+
     /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
     [<AllowNullLiteral>]
     type FunctionBinding_IdentityMatrixToRef =
@@ -381,6 +500,22 @@ module SimpleFunctions =
 
     [<Import("ILog2", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``ILog2``: FunctionBinding_ILog2 = jsNative
+
+    /// @babylonjs/core/Meshes/csg2
+    [<AllowNullLiteral>]
+    type FunctionBinding_InitializeCSG2Async =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``options``: BabylonjsBindings.SimpleInterfaces.PartialICSG2Options -> JS.Promise<unit>
+
+    [<Import("InitializeCSG2Async", "@babylonjs/core/Meshes/csg2.js")>]
+    let ``InitializeCSG2Async``: FunctionBinding_InitializeCSG2Async = jsNative
+
+    /// @babylonjs/core/Materials/Textures/HTML/htmlInCanvasPolyfill
+    [<AllowNullLiteral>]
+    type FunctionBinding_InstallHtmlInCanvasPolyfill =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``options``: BabylonjsBindings.SimpleInterfaces.IInstallHtmlInCanvasPolyfillOptions -> JS.Promise<bool>
+
+    [<Import("InstallHtmlInCanvasPolyfill", "@babylonjs/core/Materials/Textures/HTML/htmlInCanvasPolyfill.js")>]
+    let ``InstallHtmlInCanvasPolyfill``: FunctionBinding_InstallHtmlInCanvasPolyfill = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
     [<AllowNullLiteral>]
@@ -608,6 +743,62 @@ module SimpleFunctions =
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
     [<AllowNullLiteral>]
+    type FunctionBinding_ParseFloat16 =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> float
+
+    [<Import("ParseFloat16", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``ParseFloat16``: FunctionBinding_ParseFloat16 = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseFloat32 =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> float
+
+    [<Import("ParseFloat32", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``ParseFloat32``: FunctionBinding_ParseFloat32 = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseInt32 =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> float
+
+    [<Import("ParseInt32", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``ParseInt32``: FunctionBinding_ParseInt32 = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseInt64 =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> float
+
+    [<Import("ParseInt64", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``ParseInt64``: FunctionBinding_ParseInt64 = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseUint16 =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> float
+
+    [<Import("ParseUint16", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``ParseUint16``: FunctionBinding_ParseUint16 = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseUint32 =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> float
+
+    [<Import("ParseUint32", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``ParseUint32``: FunctionBinding_ParseUint32 = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseUint8 =
+        [<Emit("$0($1...)")>] abstract Invoke: ``dataView``: JS.DataView * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> float
+
+    [<Import("ParseUint8", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``ParseUint8``: FunctionBinding_ParseUint8 = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
     type FunctionBinding_ParseUint8Array =
         [<Emit("$0($1...)")>] abstract Invoke: ``array``: JS.Uint8Array * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> float
 
@@ -670,6 +861,14 @@ module SimpleFunctions =
     [<Import("PushAttributesForInstances", "@babylonjs/core/Materials/materialHelper.functions.js")>]
     let ``PushAttributesForInstances``: FunctionBinding_PushAttributesForInstances = jsNative
 
+    /// @babylonjs/core/Engines/abstractEngine.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_QueueNewFrame =
+        [<Emit("$0($1...)")>] abstract Invoke: ``func``: System.Action * ?``requester``: obj -> float
+
+    [<Import("QueueNewFrame", "@babylonjs/core/Engines/abstractEngine.pure.js")>]
+    let ``QueueNewFrame``: FunctionBinding_QueueNewFrame = jsNative
+
     /// @babylonjs/core/Misc/guid
     [<AllowNullLiteral>]
     type FunctionBinding_RandomGUID =
@@ -693,6 +892,14 @@ module SimpleFunctions =
 
     [<Import("RangeToPercent", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``RangeToPercent``: FunctionBinding_RangeToPercent = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/exrTextureLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_ReadExrDataAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: JS.ArrayBuffer -> JS.Promise<InlineObjectd4c7fe3a4c5c>
+
+    [<Import("ReadExrDataAsync", "@babylonjs/core/Materials/Textures/Loaders/exrTextureLoader.js")>]
+    let ``ReadExrDataAsync``: FunctionBinding_ReadExrDataAsync = jsNative
 
     /// @babylonjs/core/Engines/AbstractEngine/abstractEngine.alpha.pure
     [<AllowNullLiteral>]
@@ -6166,6 +6373,14 @@ module SimpleFunctions =
     [<Import("SmoothStep", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``SmoothStep``: FunctionBinding_SmoothStep = jsNative
 
+    /// @babylonjs/core/Materials/Textures/textureCreationOptions
+    [<AllowNullLiteral>]
+    type FunctionBinding_textureSizeIsObject =
+        [<Emit("$0($1...)")>] abstract Invoke: ``size``: BabylonjsBindings.TypeAliases.TextureSize -> bool
+
+    [<Import("textureSizeIsObject", "@babylonjs/core/Materials/Textures/textureCreationOptions.js")>]
+    let ``textureSizeIsObject``: FunctionBinding_textureSizeIsObject = jsNative
+
     /// @babylonjs/core/Misc/halfFloat
     [<AllowNullLiteral>]
     type FunctionBinding_ToHalfFloat =
@@ -6381,6 +6596,14 @@ module SimpleFunctions =
 
     [<Import("VertexBufferGetTypeByteLength", "@babylonjs/core/Buffers/buffer.pure.js")>]
     let ``VertexBufferGetTypeByteLength``: FunctionBinding_VertexBufferGetTypeByteLength = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.huf
+    [<AllowNullLiteral>]
+    type FunctionBinding_Wav2Decode =
+        [<Emit("$0($1...)")>] abstract Invoke: ``buffer``: JS.Uint16Array * ``j``: float * ``nx``: float * ``ox``: float * ``ny``: float * ``oy``: float * ``mx``: float -> float option
+
+    [<Import("Wav2Decode", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.huf.js")>]
+    let ``Wav2Decode``: FunctionBinding_Wav2Decode = jsNative
 
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]

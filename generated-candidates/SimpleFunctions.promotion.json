@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "800732e4888ad7f7dee3e70d77e96fd1fc40d8133be9dcc0aca5fce2f8d08e5d",
+  "proposalSha256": "5930be258f4b706f62ee06e67f7be77bd2a55938b78f2793370a3f24e24fd855",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -58,6 +58,33 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetDefaultNumWorkers",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.functions",
+      "name": "_GetGlobalDefines",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetGlobalDefines",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer",
+      "name": "_HasAudioAnalyzerOptions",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._HasAudioAnalyzerOptions",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio",
+      "name": "_HasStereoAudioOptions",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._HasStereoAudioOptions",
       "overloadCount": 1
     },
     {
@@ -188,6 +215,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "DecodeFloat32",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DecodeFloat32",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions",
       "name": "DeltaAngle",
       "kind": "function",
@@ -211,6 +247,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Dispose",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dumpTools.pure",
+      "name": "DumpData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DumpData",
       "overloadCount": 1
     },
     {
@@ -247,6 +292,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.FixFlippedFaces",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/fresnelParameters.pure",
+      "name": "FresnelParametersParse",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.FresnelParametersParse",
       "overloadCount": 1
     },
     {
@@ -314,11 +368,29 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureCreationOptions",
+      "name": "getDimensionsFromTextureSize",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getDimensionsFromTextureSize",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/domManagement",
       "name": "GetDOMTextContent",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetDOMTextContent",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/HTML/htmlRaycastInteractionManager",
+      "name": "GetElementPixelFromUv",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetElementPixelFromUv",
       "overloadCount": 1
     },
     {
@@ -332,11 +404,29 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/engine.common",
+      "name": "GetFontOffset",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetFontOffset",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides",
       "name": "GetFullOffsetViewProjectionToRef",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetFullOffsetViewProjectionToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "getNumericValue",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getNumericValue",
       "overloadCount": 1
     },
     {
@@ -413,6 +503,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.huf",
+      "name": "HufUncompress",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.HufUncompress",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "IdentityMatrixToRef",
       "kind": "function",
@@ -427,6 +526,24 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ILog2",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/csg2",
+      "name": "InitializeCSG2Async",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.InitializeCSG2Async",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/HTML/htmlInCanvasPolyfill",
+      "name": "InstallHtmlInCanvasPolyfill",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.InstallHtmlInCanvasPolyfill",
       "overloadCount": 1
     },
     {
@@ -685,6 +802,69 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "ParseFloat16",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseFloat16",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "ParseFloat32",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseFloat32",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "ParseInt32",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseInt32",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "ParseInt64",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseInt64",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "ParseUint16",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseUint16",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "ParseUint32",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseUint32",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "ParseUint8",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseUint8",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
       "name": "ParseUint8Array",
       "kind": "function",
       "disposition": "typed",
@@ -756,6 +936,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.pure",
+      "name": "QueueNewFrame",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.QueueNewFrame",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/guid",
       "name": "RandomGUID",
       "kind": "function",
@@ -779,6 +968,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RangeToPercent",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/exrTextureLoader",
+      "name": "ReadExrDataAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ReadExrDataAsync",
       "overloadCount": 1
     },
     {
@@ -6939,6 +7137,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureCreationOptions",
+      "name": "textureSizeIsObject",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.textureSizeIsObject",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/halfFloat",
       "name": "ToHalfFloat",
       "kind": "function",
@@ -7178,6 +7385,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.VertexBufferGetTypeByteLength",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.huf",
+      "name": "Wav2Decode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Wav2Decode",
       "overloadCount": 1
     },
     {

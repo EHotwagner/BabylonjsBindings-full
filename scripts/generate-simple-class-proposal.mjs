@@ -167,6 +167,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       return `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
     }
   }
+  if (ts.isTypeLiteralNode(node)) {
+    const digest = createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12);
+    return inlineObjectType(node, available, dependencies, typeParameters, utilityInlineTypes, `InlineObject${digest}`);
+  }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (node.typeName.text === "Partial"
       && node.typeArguments?.length === 1) {
@@ -272,9 +276,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
     const browserTypes = new Set([
       "Blob", "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
-      "ImageBitmap", "ImageData", "WebGLUniformLocation", "WebGLRenderingContext",
+      "ImageData", "WebGLUniformLocation", "WebGLRenderingContext",
       "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
     ]);
+    if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
     if (available.has(node.typeName.text)) {
@@ -380,14 +385,16 @@ const inlineObjectType = (node, available, dependencies, typeParameters, inlineT
   const members = [];
   for (const [memberIndex, member] of node.members.entries()) {
     if (ts.isPropertySignature(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
-      let type = fsharpType(member.type, available, dependencies, typeParameters);
-      if (!type && ts.isTypeLiteralNode(member.type)) type = inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Property${memberIndex + 1}`, forceOptional);
+      let type = ts.isTypeLiteralNode(member.type)
+        ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Property${memberIndex + 1}`, forceOptional)
+        : fsharpType(member.type, available, dependencies, typeParameters);
       if (!type) return undefined;
       members.push({ kind: "property", name: member.name.text, type: member.questionToken || forceOptional ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
     } else if (ts.isIndexSignatureDeclaration(member) && member.parameters.length === 1 && member.parameters[0].type && member.type && ts.isIdentifier(member.parameters[0].name)) {
       const keyType = fsharpType(member.parameters[0].type, available, dependencies, typeParameters);
-      let valueType = fsharpType(member.type, available, dependencies, typeParameters);
-      if (!valueType && ts.isTypeLiteralNode(member.type)) valueType = inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Value${memberIndex + 1}`, forceOptional);
+      let valueType = ts.isTypeLiteralNode(member.type)
+        ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Value${memberIndex + 1}`, forceOptional)
+        : fsharpType(member.type, available, dependencies, typeParameters);
       if (!keyType || !valueType) return undefined;
       members.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
     } else {
@@ -411,10 +418,9 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
     if (!constraint) return undefined;
     constraints.push(`'${parameter.name.text} :> ${constraint}`);
   }
-  let returnType = node.type ? fsharpType(node.type, available, dependencies, localTypeParameters) : undefined;
-  if (!returnType && node.type && ts.isTypeLiteralNode(node.type)) {
-    returnType = inlineObjectType(node.type, available, dependencies, localTypeParameters, inlineTypes, `${context}Return`);
-  }
+  let returnType = node.type && ts.isTypeLiteralNode(node.type)
+    ? inlineObjectType(node.type, available, dependencies, localTypeParameters, inlineTypes, `${context}Return`)
+    : node.type ? fsharpType(node.type, available, dependencies, localTypeParameters) : undefined;
   const parameters = node.parameters.flatMap((parameter, index) => {
     if (parameter.dotDotDotToken) {
       const expanded = parameter.type ? expandFixedRestTypes(parameter.type, available, dependencies, localTypeParameters) : undefined;
@@ -422,7 +428,9 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
         ? expanded.map((type, expandedIndex) => ({ name: `${ts.isIdentifier(parameter.name) ? parameter.name.text : "arg"}${expandedIndex + 1}`, type, optional: false }))
         : [{ name: undefined, type: undefined, optional: false }];
     }
-    let type = parameter.type ? fsharpType(parameter.type, available, dependencies, localTypeParameters) : undefined;
+    let type = parameter.type && ts.isTypeLiteralNode(parameter.type)
+      ? inlineObjectType(parameter.type, available, dependencies, localTypeParameters, inlineTypes, `${context}Parameter${index + 1}`)
+      : parameter.type ? fsharpType(parameter.type, available, dependencies, localTypeParameters) : undefined;
     const nestedProperty = parameter.type ? callbackPropertyType(parameter.type) : undefined;
     if (!type && nestedProperty) {
       const nested = directCallbackShape(nestedProperty.node, available, dependencies, localTypeParameters);
@@ -438,9 +446,6 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
         }
         if (nestedProperty.optional) type = asOption(type);
       }
-    }
-    if (!type && parameter.type && ts.isTypeLiteralNode(parameter.type)) {
-      type = inlineObjectType(parameter.type, available, dependencies, localTypeParameters, inlineTypes, `${context}Parameter${index + 1}`);
     }
     return [{
       name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
@@ -499,10 +504,9 @@ const renderClass = (declaration, available, hasBase) => {
         if (!callback) return undefined;
         target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken) || callbackProperty.optional, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
       } else {
-        let type = member.type ? fsharpType(member.type, available, dependencies, typeParameters) : initializerType(member.initializer);
-        if (!type && member.type && ts.isTypeLiteralNode(member.type)) {
-          type = inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Property${memberIndex + 1}`);
-        }
+        let type = member.type && ts.isTypeLiteralNode(member.type)
+          ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Property${memberIndex + 1}`)
+          : member.type ? fsharpType(member.type, available, dependencies, typeParameters) : initializerType(member.initializer);
         if (!type) return undefined;
         target.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
       }
@@ -532,19 +536,17 @@ const renderClass = (declaration, available, hasBase) => {
       const key = `${hasModifier(member, ts.SyntaxKind.StaticKeyword) ? "static" : "instance"}|${member.name.text}`;
       const accessor = accessors.get(key) ?? { kind: "accessor", name: member.name.text, static: hasModifier(member, ts.SyntaxKind.StaticKeyword), canGet: false, canSet: false };
       if (ts.isGetAccessorDeclaration(member)) {
-        let type = member.type ? fsharpType(member.type, available, dependencies, typeParameters) : undefined;
-        if (!type && member.type && ts.isTypeLiteralNode(member.type)) {
-          type = inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Accessor${memberIndex + 1}`);
-        }
+        let type = member.type && ts.isTypeLiteralNode(member.type)
+          ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Accessor${memberIndex + 1}`)
+          : member.type ? fsharpType(member.type, available, dependencies, typeParameters) : undefined;
         if (!type) return undefined;
         accessor.type = type;
         accessor.canGet = true;
       } else {
         const parameterType = member.parameters.length === 1 ? member.parameters[0].type : undefined;
-        let type = parameterType ? fsharpType(parameterType, available, dependencies, typeParameters) : undefined;
-        if (!type && parameterType && ts.isTypeLiteralNode(parameterType)) {
-          type = inlineObjectType(parameterType, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Accessor${memberIndex + 1}`);
-        }
+        let type = parameterType && ts.isTypeLiteralNode(parameterType)
+          ? inlineObjectType(parameterType, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Accessor${memberIndex + 1}`)
+          : parameterType ? fsharpType(parameterType, available, dependencies, typeParameters) : undefined;
         if (!type) return undefined;
         if (accessor.type && accessor.type !== type) return undefined;
         accessor.type = type;
@@ -843,7 +845,15 @@ for (const value of [...numericLiteralValues].sort((left, right) => left - right
 for (const [name, value] of [...stringLiteralTypes].sort(([left], [right]) => left.localeCompare(right))) {
   lines.push("", `    /// Exact string literal type for ${fsharpString(value)}.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, `        | [<CompiledName(${fsharpString(value)})>] Value`);
 }
-for (const inline of utilityInlineTypes) {
+let classUtilityReferenceText = JSON.stringify(entries.map(entry => ({ instanceMembers: entry.instanceMembers, staticMembers: entry.staticMembers, constructors: entry.constructors, base: entry.base, inlineTypes: entry.inlineTypes })));
+const retainedClassUtilityInlineTypes = [];
+while (true) {
+  const additions = utilityInlineTypes.filter(inline => !retainedClassUtilityInlineTypes.includes(inline) && classUtilityReferenceText.includes(inline.name));
+  if (additions.length === 0) break;
+  retainedClassUtilityInlineTypes.push(...additions);
+  classUtilityReferenceText += JSON.stringify(additions);
+}
+for (const inline of retainedClassUtilityInlineTypes) {
   lines.push("", "    /// Inline object shape used by a TypeScript utility projection.", "    [<AllowNullLiteral>]", `    type ${inline.name}${inline.genericParameters} =`);
   if (inline.members.length === 0) lines.push("        interface end");
   else for (const member of inline.members) lines.push(`        ${renderMember(member)}`);
