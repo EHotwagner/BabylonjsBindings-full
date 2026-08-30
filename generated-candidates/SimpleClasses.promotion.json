@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "93f2b107d5dfc2d6491b88c2c5f9eee27e26c5e83049a3497e0d2106fe454e2e",
+  "proposalSha256": "f2fd3f3aace9af8cbd3ea2bb57668e118595a40a58d304a93898f0d704b6d990",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -9252,6 +9252,7 @@
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Physics/v2/physicsEngine",
       "name": "PhysicsEngineV2",
+      "runtimeExport": "PhysicsEngine",
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PhysicsEngineV2",

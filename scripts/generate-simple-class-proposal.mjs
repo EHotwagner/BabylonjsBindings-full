@@ -1210,10 +1210,12 @@ for (const sourceFile of program.getSourceFiles()) {
         : undefined;
     if (!packageName) continue;
     const name = exported.getName();
+    const runtimeExport = target.getName();
     declarations.set(`${packageName}|${module}|${name}`, {
       package: packageName,
       module,
       name,
+      runtimeExport,
       declaration,
       arity: declaration.typeParameters?.length ?? 0,
       ...(deepImmutableTypeNames.has(name) ? { deepImmutableSymbol: `DeepImmutable${name}` } : {})
@@ -1601,7 +1603,7 @@ for (const entry of entries) {
   for (const constructor of entry.constructors) lines.push(`        [<EmitConstructor>] abstract Create${genericParameters}: ${callbackArguments(constructor)} -> ${entry.name}${genericArguments}`);
   for (const member of entry.staticMembers) lines.push(`        ${renderMember(member)}`);
   if (entry.supportOnly) continue;
-  lines.push("", `    [<Import("${entry.name}", "${entry.module}.js")>]`, `    let ${entry.name}: ${entry.name}Static = jsNative`);
+  lines.push("", `    [<Import("${entry.runtimeExport}", "${entry.module}.js")>]`, `    let ${entry.name}: ${entry.name}Static = jsNative`);
 }
 const proposal = `${lines.join("\n")}\n`;
 const manifest = {
@@ -1612,6 +1614,7 @@ const manifest = {
     package: entry.package,
     module: entry.module,
     name: entry.name,
+    ...(entry.runtimeExport !== entry.name ? { runtimeExport: entry.runtimeExport } : {}),
     kind: "class",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleClasses.${entry.name}`,

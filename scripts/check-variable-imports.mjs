@@ -3,8 +3,8 @@ import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
-const manifest = JSON.parse(await readFile(resolve(root, "src/BabylonjsBindings/simple-variable-coverage-manifest.json"), "utf8"));
-if (manifest.schemaVersion !== 1 || manifest.reviewStatus !== "maintained") throw new Error("variable import check requires a reviewed maintained manifest");
+const manifest = JSON.parse(await readFile(resolve(root, "generated-candidates/SimpleVariables.promotion.json"), "utf8"));
+if (manifest.schemaVersion !== 1 || manifest.source?.packageVersion !== "9.19.0") throw new Error("variable import check requires the locked candidate manifest");
 
 const imports = [];
 for (const entry of manifest.exports) {
@@ -27,8 +27,9 @@ const evidence = {
     { name: "@babylonjs/core", version: "9.19.0" },
     { name: "@babylonjs/loaders", version: "9.19.0" }
   ],
+  target: "review-candidate",
   imports,
   status: "pass"
 };
 await writeFile(resolve(root, "generated-candidates/runtime/variable-import-evidence.json"), `${JSON.stringify(evidence, null, 2)}\n`);
-console.log(`resolved ${imports.length} maintained variable exports from exact Babylon modules`);
+console.log(`resolved ${imports.length} candidate variable exports from exact Babylon modules`);

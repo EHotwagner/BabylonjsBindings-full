@@ -3,19 +3,21 @@ import { readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
-const manifest = JSON.parse(await readFile(resolve(root, "src/BabylonjsBindings/simple-class-coverage-manifest.json"), "utf8"));
-if (manifest.schemaVersion !== 1 || manifest.reviewStatus !== "maintained") throw new Error("class import check requires a reviewed maintained manifest");
+const manifest = JSON.parse(await readFile(resolve(root, "generated-candidates/SimpleClasses.promotion.json"), "utf8"));
+if (manifest.schemaVersion !== 1 || manifest.source?.packageVersion !== "9.19.0") throw new Error("class import check requires the locked candidate manifest");
 
 const imports = [];
 for (const entry of manifest.exports) {
   const specifier = `${entry.module}.js`;
   const imported = await import(specifier);
-  if (!Object.hasOwn(imported, entry.name)) throw new Error(`${specifier} does not export ${entry.name}`);
+  const runtimeExport = entry.runtimeExport ?? entry.name;
+  if (!Object.hasOwn(imported, runtimeExport)) throw new Error(`${specifier} does not export ${runtimeExport} for ${entry.name}`);
   const source = await readFile(resolve(root, "node_modules", specifier));
   imports.push({
     package: entry.package,
     module: specifier,
     export: entry.name,
+    runtimeExport,
     moduleSha256: createHash("sha256").update(source).digest("hex")
   });
 }
@@ -25,8 +27,9 @@ const evidence = {
     { name: "@babylonjs/core", version: "9.19.0" },
     { name: "@babylonjs/loaders", version: "9.19.0" }
   ],
+  target: "review-candidate",
   imports,
   status: "pass"
 };
 await writeFile(resolve(root, "generated-candidates/runtime/class-import-evidence.json"), `${JSON.stringify(evidence, null, 2)}\n`);
-console.log(`resolved ${imports.length} maintained class exports from exact Babylon modules`);
+console.log(`resolved ${imports.length} candidate class exports from exact Babylon modules`);

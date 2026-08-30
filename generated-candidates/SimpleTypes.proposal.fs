@@ -39920,7 +39920,7 @@ module SimpleClasses =
         [<EmitConstructor>] abstract Create: ``gravity``: Vector3 option * ?``_physicsPlugin``: BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePluginV2 -> PhysicsEngineV2
         abstract ``DefaultPluginFactory`` : unit -> BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePluginV2
 
-    [<Import("PhysicsEngineV2", "@babylonjs/core/Physics/v2/physicsEngine.js")>]
+    [<Import("PhysicsEngine", "@babylonjs/core/Physics/v2/physicsEngine.js")>]
     let PhysicsEngineV2: PhysicsEngineV2Static = jsNative
 
     /// @babylonjs/core/Physics/physicsHelper
