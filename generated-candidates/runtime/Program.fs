@@ -67,6 +67,7 @@ let phi = ``PHI``
 let shaderDescriptor = ``clearQuadVertexShaderWGSL``
 let paddedNumber = ``PadNumber``.Invoke(7.0, 3.0)
 let startsWithBaby = ``StartsWith``.Invoke("babylon", "baby")
+let base64DataUrl = ``TestBase64DataUrl``.Invoke("data:text/plain;base64,QQ==")
 
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then
     failwith "full candidate did not construct a Babylon scene"
@@ -105,6 +106,8 @@ if shaderDescriptor.``name`` <> "clearQuadVertexShader" || shaderDescriptor.``sh
     failwith "Babylon inline object variable shape was not preserved"
 if paddedNumber <> "007" || not startsWithBaby then
     failwith "Babylon callable variable import was not preserved"
+if not base64DataUrl.``match`` || base64DataUrl.``type`` <> "text/plain" then
+    failwith "Babylon callable variable inline result was not preserved"
 
 loaderRegistration |> ignore
 camera.dispose()

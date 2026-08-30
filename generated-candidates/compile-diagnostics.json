@@ -10,7 +10,7 @@
   "simpleInterfaceProposalSha256": "6ae2cf413ac7f04b6c2f6ba53c521c11710e1eda52f4e6c07b0e65505e035b8e",
   "simpleClassProposalSha256": "76757c33f5ac1dc32f6f82a6a2d383eebaef94bd4eeb56736f2031c3fd6ebd86",
   "simpleFunctionProposalSha256": "4bb685b59e78ad01a79cc2dfab250c5eb48520c63319883d27a64903697aed4c",
-  "simpleVariableProposalSha256": "87ab1f79571ec3f92899293b7f8fa6ba0e5870b70279c22ba101efb3a27eec0d",
+  "simpleVariableProposalSha256": "ec52a789a019e9bb5f23b37241162403f1ed3cf1da5111872a54bb4f2567aae5",
   "status": "pass",
   "exitCode": 0,
   "errorCount": 0,

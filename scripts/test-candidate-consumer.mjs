@@ -90,6 +90,7 @@ let indicesNeed32Bits = BabylonjsBindings.SimpleFunctions.\`\`AreIndices32Bits\`
 let epsilon = \`\`Epsilon\`\`
 let shaderDescriptor = \`\`clearQuadVertexShaderWGSL\`\`
 let paddedNumber = \`\`PadNumber\`\`.Invoke(7.0, 3.0)
+let base64DataUrl = \`\`TestBase64DataUrl\`\`.Invoke("data:text/plain;base64,QQ==")
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then failwith "clean consumer scene failed"
 if uint32 NodeRenderGraphBlockConnectionPointTypes.\`\`All\`\` <> 4294967295u then failwith "clean consumer enum failed"
 if int AudioAnalyzerFFTSizeType.\`\`N32768\`\` <> 32768 then failwith "clean consumer numeric literal union failed"
@@ -109,6 +110,7 @@ if indicesNeed32Bits then failwith "clean consumer union alias/function failed"
 if epsilon <> 0.001 then failwith "clean consumer variable import failed"
 if shaderDescriptor.\`\`name\`\` <> "clearQuadVertexShader" || shaderDescriptor.\`\`shader\`\`.Length = 0 then failwith "clean consumer variable shape failed"
 if paddedNumber <> "007" then failwith "clean consumer callable variable failed"
+if not base64DataUrl.\`\`match\`\` || base64DataUrl.\`\`type\`\` <> "text/plain" then failwith "clean consumer callable variable result failed"
 loaderRegistration |> ignore
 engine.dispose()
 printfn "Babylon candidate clean consumer passed"

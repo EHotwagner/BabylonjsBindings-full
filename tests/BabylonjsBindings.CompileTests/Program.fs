@@ -21,6 +21,7 @@ let strideFunction = BabylonjsBindings.SimpleFunctions.``VertexBufferDeduceStrid
 let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
 let padNumber = BabylonjsBindings.SimpleVariables.``PadNumber``
+let testBase64DataUrl = BabylonjsBindings.SimpleVariables.``TestBase64DataUrl``
 let engine = nullEngine ()
 let scene = scene engine
 let _ = box "compile-smoke" scene
@@ -40,4 +41,5 @@ strideFunction |> ignore
 epsilon |> ignore
 shaderDescriptor |> ignore
 padNumber |> ignore
+testBase64DataUrl |> ignore
 printfn "curated Babylon binding compile smoke passed"

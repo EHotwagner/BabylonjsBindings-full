@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "81442d1b849c10ec70f33f145f8d898fe2d6345ceee9d60243eb25dbeac89337"
+    "sha256": "573e70d426dcfbe6ae5148be78ede7e646d2d0d3750b87c88fc977afec98943f"
   },
   "imports": [
     {
@@ -102,6 +102,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Misc/bitArray.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/fileTools.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/fileTools.pure.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

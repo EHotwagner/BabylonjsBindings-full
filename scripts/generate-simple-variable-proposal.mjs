@@ -83,15 +83,25 @@ const fsharpType = node => {
   }
   return undefined;
 };
-const functionShape = node => {
+const functionShape = (node, exportName) => {
   if (!ts.isFunctionTypeNode(node) || node.typeParameters?.length || node.parameters.some(parameter => parameter.dotDotDotToken || (ts.isIdentifier(parameter.name) && parameter.name.text === "this"))) return undefined;
-  const returnType = fsharpType(node.type);
-  const parameters = node.parameters.map(parameter => ({
+  const inlineShapes = [];
+  const renderType = (typeNode, role) => {
+    const direct = fsharpType(typeNode);
+    if (direct) return direct;
+    const members = typeLiteralShape(typeNode);
+    if (!members) return undefined;
+    const name = `VariableInline_${exportName.replace(/[^A-Za-z0-9_]/g, "_")}_${role.replace(/[^A-Za-z0-9_]/g, "_")}`;
+    inlineShapes.push({ name, members });
+    return name;
+  };
+  const returnType = renderType(node.type, "Return");
+  const parameters = node.parameters.map((parameter, index) => ({
     name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
-    type: parameter.type ? fsharpType(parameter.type) : undefined,
+    type: parameter.type ? renderType(parameter.type, `Parameter${index + 1}`) : undefined,
     optional: Boolean(parameter.questionToken)
   }));
-  return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
+  return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters, inlineShapes } : undefined;
 };
 const typeLiteralShape = node => {
   if (!ts.isTypeLiteralNode(node) || node.members.length === 0) return undefined;
@@ -124,7 +134,7 @@ for (const sourceFile of program.getSourceFiles()) {
     const declaration = variableDeclarations[0];
     if (!declaration.type || !ts.isIdentifier(declaration.name)) continue;
     const shape = typeLiteralShape(declaration.type);
-    const callable = functionShape(declaration.type);
+    const callable = functionShape(declaration.type, exported.getName());
     const type = fsharpType(declaration.type);
     if (!type && !shape && !callable) continue;
     const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
@@ -164,6 +174,10 @@ for (const entry of entries) {
     for (const member of entry.shape) lines.push(`        abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`);
   } else if (entry.callable) {
     entry.type = safeFunctionName(entry.name);
+    for (const inlineShape of entry.callable.inlineShapes) {
+      lines.push("", `    /// Inline callable object shape used by ${entry.name}.`, "    [<AllowNullLiteral>]", `    type ${inlineShape.name} =`);
+      for (const member of inlineShape.members) lines.push(`        abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`);
+    }
     lines.push("", `    /// Callable shape of ${entry.name}.`, "    [<AllowNullLiteral>]", `    type ${entry.type} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(entry.callable)} -> ${entry.callable.returnType}`);
   }
   lines.push("", `    /// ${entry.module}`, `    [<Import("${entry.runtimeExport}", "${entry.module}.js")>]`, `    let \`\`${entry.name}\`\`: ${entry.type} = jsNative`);

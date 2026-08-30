@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "4d4c36bf54ceda15dd4fa2bb5989d2a872a443e005d6cc28f3d6ff3ffdce5de3",
+  "maintainedSurfaceDigest": "5896178b00f314b3e9ac568dce4740c2a8e0da44e7351d6690e6d617e6c97d20",
   "summary": {
     "total": 4323,
-    "typed": 1689,
+    "typed": 1691,
     "runtimeOnly": 1,
-    "blocked": 2627,
+    "blocked": 2625,
     "lossy": 6
   },
   "exports": [
@@ -11793,8 +11793,9 @@
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
       "name": "logOperation",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.logOperation"
     },
     {
       "package": "@babylonjs/core",
@@ -23221,8 +23222,9 @@
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "TestBase64DataUrl",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TestBase64DataUrl"
     },
     {
       "package": "@babylonjs/core",

@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "87ab1f79571ec3f92899293b7f8fa6ba0e5870b70279c22ba101efb3a27eec0d",
+  "proposalSha256": "ec52a789a019e9bb5f23b37241162403f1ed3cf1da5111872a54bb4f2567aae5",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -2867,6 +2867,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
+      "name": "logOperation",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.logOperation",
+      "fsharpType": "VariableFunction_logOperation",
+      "parameterCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/ltcHelperFunctions",
       "name": "ltcHelperFunctions",
       "kind": "variable",
@@ -4101,6 +4111,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.taaPixelShaderWGSL",
       "fsharpType": "VariableShape_taaPixelShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "TestBase64DataUrl",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TestBase64DataUrl",
+      "fsharpType": "VariableFunction_TestBase64DataUrl",
+      "parameterCount": 1
     },
     {
       "package": "@babylonjs/core",

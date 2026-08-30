@@ -2794,6 +2794,23 @@ module SimpleVariables =
     [<Import("logDepthVertexWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/logDepthVertex.js")>]
     let ``logDepthVertexWGSL``: VariableShape_logDepthVertexWGSL = jsNative
 
+    /// Inline callable object shape used by logOperation.
+    [<AllowNullLiteral>]
+    type VariableInline_logOperation_Parameter2 =
+        abstract ``file``: string with get, set
+        abstract ``name``: string with get, set
+        abstract ``version``: string with get, set
+        abstract ``exporter_version``: string with get, set
+
+    /// Callable shape of logOperation.
+    [<AllowNullLiteral>]
+    type VariableFunction_logOperation =
+        [<Emit("$0($1...)")>] abstract Invoke: ``operation``: string * ``producer``: VariableInline_logOperation_Parameter2 -> string
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("logOperation", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``logOperation``: VariableFunction_logOperation = jsNative
+
     /// Inline object shape of ltcHelperFunctions.
     [<AllowNullLiteral>]
     type VariableShape_ltcHelperFunctions =
@@ -4013,6 +4030,21 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/taa.fragment
     [<Import("taaPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/taa.fragment.js")>]
     let ``taaPixelShaderWGSL``: VariableShape_taaPixelShaderWGSL = jsNative
+
+    /// Inline callable object shape used by TestBase64DataUrl.
+    [<AllowNullLiteral>]
+    type VariableInline_TestBase64DataUrl_Return =
+        abstract ``match``: bool with get, set
+        abstract ``type``: string with get, set
+
+    /// Callable shape of TestBase64DataUrl.
+    [<AllowNullLiteral>]
+    type VariableFunction_TestBase64DataUrl =
+        [<Emit("$0($1...)")>] abstract Invoke: ``uri``: string -> VariableInline_TestBase64DataUrl_Return
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("TestBase64DataUrl", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``TestBase64DataUrl``: VariableFunction_TestBase64DataUrl = jsNative
 
     /// @babylonjs/core/Maths/math.constants
     [<Import("ToGammaSpace", "@babylonjs/core/Maths/math.constants.js")>]
