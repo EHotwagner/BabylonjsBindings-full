@@ -4,8 +4,18 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "acec6cd5333c9ef3dffca2005f0a90f62755c26fa2f5c7a1a1c9098b5e7d74d5",
+  "proposalSha256": "198052e1a271f283d01092d8dc7f84f20b992d30e0d4b4c7e7226b614157d57c",
   "exports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer",
+      "name": "_AudioAnalyzerDefaults",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._AudioAnalyzerDefaults",
+      "fsharpType": "VariableShape__AudioAnalyzerDefaults",
+      "memberCount": 4
+    },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
@@ -44,6 +54,66 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio",
+      "name": "_StereoAudioDefaults",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StereoAudioDefaults",
+      "fsharpType": "VariableShape__StereoAudioDefaults",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode",
+      "name": "_VolumeAudioDefaults",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._VolumeAudioDefaults",
+      "fsharpType": "VariableShape__VolumeAudioDefaults",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/anaglyph.fragment",
+      "name": "anaglyphPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.anaglyphPixelShader",
+      "fsharpType": "VariableShape_anaglyphPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/anaglyph.fragment",
+      "name": "anaglyphPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.anaglyphPixelShaderWGSL",
+      "fsharpType": "VariableShape_anaglyphPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/areaLightTextureProcessing.fragment",
+      "name": "areaLightTextureProcessingPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.areaLightTextureProcessingPixelShader",
+      "fsharpType": "VariableShape_areaLightTextureProcessingPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/areaLightTextureProcessing.fragment",
+      "name": "areaLightTextureProcessingPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.areaLightTextureProcessingPixelShaderWGSL",
+      "fsharpType": "VariableShape_areaLightTextureProcessingPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
       "name": "backbufferColorTextureHandle",
       "kind": "variable",
@@ -62,12 +132,182 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/background.fragment",
+      "name": "backgroundPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.backgroundPixelShader",
+      "fsharpType": "VariableShape_backgroundPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/background.fragment",
+      "name": "backgroundPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.backgroundPixelShaderWGSL",
+      "fsharpType": "VariableShape_backgroundPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/background.vertex",
+      "name": "backgroundVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.backgroundVertexShader",
+      "fsharpType": "VariableShape_backgroundVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/background.vertex",
+      "name": "backgroundVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.backgroundVertexShaderWGSL",
+      "fsharpType": "VariableShape_backgroundVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bakedVertexAnimation",
+      "name": "bakedVertexAnimation",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bakedVertexAnimation",
+      "fsharpType": "VariableShape_bakedVertexAnimation",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bakedVertexAnimationDeclaration",
+      "name": "bakedVertexAnimationDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bakedVertexAnimationDeclaration",
+      "fsharpType": "VariableShape_bakedVertexAnimationDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bakedVertexAnimationDeclaration",
+      "name": "bakedVertexAnimationDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bakedVertexAnimationDeclarationWGSL",
+      "fsharpType": "VariableShape_bakedVertexAnimationDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bakedVertexAnimation",
+      "name": "bakedVertexAnimationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bakedVertexAnimationWGSL",
+      "fsharpType": "VariableShape_bakedVertexAnimationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "BasisToolsOptions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BasisToolsOptions",
+      "fsharpType": "VariableShape_BasisToolsOptions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/bilateralBlur.fragment",
+      "name": "bilateralBlurPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bilateralBlurPixelShader",
+      "fsharpType": "VariableShape_bilateralBlurPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/bilateralBlur.fragment",
+      "name": "bilateralBlurPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bilateralBlurPixelShaderWGSL",
+      "fsharpType": "VariableShape_bilateralBlurPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/bilateralBlurQuality.fragment",
+      "name": "bilateralBlurQualityPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bilateralBlurQualityPixelShader",
+      "fsharpType": "VariableShape_bilateralBlurQualityPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/bilateralBlurQuality.fragment",
+      "name": "bilateralBlurQualityPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bilateralBlurQualityPixelShaderWGSL",
+      "fsharpType": "VariableShape_bilateralBlurQualityPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "BITMAP_SIZE",
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BITMAP_SIZE",
       "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/blackAndWhite.fragment",
+      "name": "blackAndWhitePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.blackAndWhitePixelShader",
+      "fsharpType": "VariableShape_blackAndWhitePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/blackAndWhite.fragment",
+      "name": "blackAndWhitePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.blackAndWhitePixelShaderWGSL",
+      "fsharpType": "VariableShape_blackAndWhitePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/bloomMerge.fragment",
+      "name": "bloomMergePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bloomMergePixelShader",
+      "fsharpType": "VariableShape_bloomMergePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/bloomMerge.fragment",
+      "name": "bloomMergePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bloomMergePixelShaderWGSL",
+      "fsharpType": "VariableShape_bloomMergePixelShaderWGSL",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -80,12 +320,1502 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bonesDeclaration",
+      "name": "bonesDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bonesDeclaration",
+      "fsharpType": "VariableShape_bonesDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bonesDeclaration",
+      "name": "bonesDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bonesDeclarationWGSL",
+      "fsharpType": "VariableShape_bonesDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bonesVertex",
+      "name": "bonesVertex",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bonesVertex",
+      "fsharpType": "VariableShape_bonesVertex",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bonesVertex",
+      "name": "bonesVertexWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bonesVertexWGSL",
+      "fsharpType": "VariableShape_bonesVertexWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/boundingBoxRenderer.fragment",
+      "name": "boundingBoxRendererPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.boundingBoxRendererPixelShader",
+      "fsharpType": "VariableShape_boundingBoxRendererPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/boundingBoxRenderer.fragment",
+      "name": "boundingBoxRendererPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.boundingBoxRendererPixelShaderWGSL",
+      "fsharpType": "VariableShape_boundingBoxRendererPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/boundingBoxRenderer.vertex",
+      "name": "boundingBoxRendererVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.boundingBoxRendererVertexShader",
+      "fsharpType": "VariableShape_boundingBoxRendererVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/boundingBoxRenderer.vertex",
+      "name": "boundingBoxRendererVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.boundingBoxRendererVertexShaderWGSL",
+      "fsharpType": "VariableShape_boundingBoxRendererVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/boundingInfo.compute",
+      "name": "boundingInfoComputeShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.boundingInfoComputeShaderWGSL",
+      "fsharpType": "VariableShape_boundingInfoComputeShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bumpFragment",
+      "name": "bumpFragment",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bumpFragment",
+      "fsharpType": "VariableShape_bumpFragment",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bumpFragmentFunctions",
+      "name": "bumpFragmentFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bumpFragmentFunctions",
+      "fsharpType": "VariableShape_bumpFragmentFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bumpFragmentFunctions",
+      "name": "bumpFragmentFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bumpFragmentFunctionsWGSL",
+      "fsharpType": "VariableShape_bumpFragmentFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bumpFragmentMainFunctions",
+      "name": "bumpFragmentMainFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bumpFragmentMainFunctions",
+      "fsharpType": "VariableShape_bumpFragmentMainFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bumpFragmentMainFunctions",
+      "name": "bumpFragmentMainFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bumpFragmentMainFunctionsWGSL",
+      "fsharpType": "VariableShape_bumpFragmentMainFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bumpFragment",
+      "name": "bumpFragmentWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.bumpFragmentWGSL",
+      "fsharpType": "VariableShape_bumpFragmentWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/chromaticAberration.fragment",
+      "name": "chromaticAberrationPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.chromaticAberrationPixelShader",
+      "fsharpType": "VariableShape_chromaticAberrationPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/chromaticAberration.fragment",
+      "name": "chromaticAberrationPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.chromaticAberrationPixelShaderWGSL",
+      "fsharpType": "VariableShape_chromaticAberrationPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/circleOfConfusion.fragment",
+      "name": "circleOfConfusionPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.circleOfConfusionPixelShader",
+      "fsharpType": "VariableShape_circleOfConfusionPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/circleOfConfusion.fragment",
+      "name": "circleOfConfusionPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.circleOfConfusionPixelShaderWGSL",
+      "fsharpType": "VariableShape_circleOfConfusionPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/clearQuad.fragment",
+      "name": "clearQuadPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clearQuadPixelShaderWGSL",
+      "fsharpType": "VariableShape_clearQuadPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/clearQuad.vertex",
+      "name": "clearQuadVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clearQuadVertexShaderWGSL",
+      "fsharpType": "VariableShape_clearQuadVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clipPlaneFragment",
+      "name": "clipPlaneFragment",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clipPlaneFragment",
+      "fsharpType": "VariableShape_clipPlaneFragment",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clipPlaneFragmentDeclaration",
+      "name": "clipPlaneFragmentDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clipPlaneFragmentDeclaration",
+      "fsharpType": "VariableShape_clipPlaneFragmentDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clipPlaneFragmentDeclaration",
+      "name": "clipPlaneFragmentDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clipPlaneFragmentDeclarationWGSL",
+      "fsharpType": "VariableShape_clipPlaneFragmentDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clipPlaneFragment",
+      "name": "clipPlaneFragmentWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clipPlaneFragmentWGSL",
+      "fsharpType": "VariableShape_clipPlaneFragmentWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clipPlaneVertex",
+      "name": "clipPlaneVertex",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clipPlaneVertex",
+      "fsharpType": "VariableShape_clipPlaneVertex",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clipPlaneVertexDeclaration",
+      "name": "clipPlaneVertexDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clipPlaneVertexDeclaration",
+      "fsharpType": "VariableShape_clipPlaneVertexDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clipPlaneVertexDeclaration",
+      "name": "clipPlaneVertexDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clipPlaneVertexDeclarationWGSL",
+      "fsharpType": "VariableShape_clipPlaneVertexDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clipPlaneVertex",
+      "name": "clipPlaneVertexWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clipPlaneVertexWGSL",
+      "fsharpType": "VariableShape_clipPlaneVertexWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clusteredLightingFunctions",
+      "name": "clusteredLightingFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clusteredLightingFunctions",
+      "fsharpType": "VariableShape_clusteredLightingFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clusteredLightingFunctions",
+      "name": "clusteredLightingFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.clusteredLightingFunctionsWGSL",
+      "fsharpType": "VariableShape_clusteredLightingFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/colorCorrection.fragment",
+      "name": "colorCorrectionPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.colorCorrectionPixelShader",
+      "fsharpType": "VariableShape_colorCorrectionPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/colorCorrection.fragment",
+      "name": "colorCorrectionPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.colorCorrectionPixelShaderWGSL",
+      "fsharpType": "VariableShape_colorCorrectionPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/color.fragment",
+      "name": "colorPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.colorPixelShader",
+      "fsharpType": "VariableShape_colorPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/color.fragment",
+      "name": "colorPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.colorPixelShaderWGSL",
+      "fsharpType": "VariableShape_colorPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/color.vertex",
+      "name": "colorVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.colorVertexShader",
+      "fsharpType": "VariableShape_colorVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/color.vertex",
+      "name": "colorVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.colorVertexShaderWGSL",
+      "fsharpType": "VariableShape_colorVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Compat/compatibilityOptions",
+      "name": "CompatibilityOptions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.CompatibilityOptions",
+      "fsharpType": "VariableShape_CompatibilityOptions",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/convolution.fragment",
+      "name": "convolutionPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.convolutionPixelShader",
+      "fsharpType": "VariableShape_convolutionPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/convolution.fragment",
+      "name": "convolutionPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.convolutionPixelShaderWGSL",
+      "fsharpType": "VariableShape_convolutionPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/copyTexture3DLayerToTexture.fragment",
+      "name": "copyTexture3DLayerToTexturePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.copyTexture3DLayerToTexturePixelShader",
+      "fsharpType": "VariableShape_copyTexture3DLayerToTexturePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/copyTexture3DLayerToTexture.fragment",
+      "name": "copyTexture3DLayerToTexturePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.copyTexture3DLayerToTexturePixelShaderWGSL",
+      "fsharpType": "VariableShape_copyTexture3DLayerToTexturePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/copyTextureToTexture.fragment",
+      "name": "copyTextureToTexturePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.copyTextureToTexturePixelShader",
+      "fsharpType": "VariableShape_copyTextureToTexturePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/copyTextureToTexture.fragment",
+      "name": "copyTextureToTexturePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.copyTextureToTexturePixelShaderWGSL",
+      "fsharpType": "VariableShape_copyTextureToTexturePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/decalFragment",
+      "name": "decalFragmentWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.decalFragmentWGSL",
+      "fsharpType": "VariableShape_decalFragmentWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/default.fragment",
+      "name": "defaultPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.defaultPixelShader",
+      "fsharpType": "VariableShape_defaultPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/default.fragment",
+      "name": "defaultPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.defaultPixelShaderWGSL",
+      "fsharpType": "VariableShape_defaultPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/default.vertex",
+      "name": "defaultVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.defaultVertexShader",
+      "fsharpType": "VariableShape_defaultVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/default.vertex",
+      "name": "defaultVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.defaultVertexShaderWGSL",
+      "fsharpType": "VariableShape_defaultVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depthBoxBlur.fragment",
+      "name": "depthBoxBlurPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthBoxBlurPixelShader",
+      "fsharpType": "VariableShape_depthBoxBlurPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/depthBoxBlur.fragment",
+      "name": "depthBoxBlurPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthBoxBlurPixelShaderWGSL",
+      "fsharpType": "VariableShape_depthBoxBlurPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depthOfFieldMerge.fragment",
+      "name": "depthOfFieldMergePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthOfFieldMergePixelShader",
+      "fsharpType": "VariableShape_depthOfFieldMergePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/depthOfFieldMerge.fragment",
+      "name": "depthOfFieldMergePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthOfFieldMergePixelShaderWGSL",
+      "fsharpType": "VariableShape_depthOfFieldMergePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depthOfField.fragment",
+      "name": "depthOfFieldPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthOfFieldPixelShader",
+      "fsharpType": "VariableShape_depthOfFieldPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depth.fragment",
+      "name": "depthPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthPixelShader",
+      "fsharpType": "VariableShape_depthPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/depth.fragment",
+      "name": "depthPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthPixelShaderWGSL",
+      "fsharpType": "VariableShape_depthPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/depthPrePass",
+      "name": "depthPrePass",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthPrePass",
+      "fsharpType": "VariableShape_depthPrePass",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/depthPrePass",
+      "name": "depthPrePassWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthPrePassWGSL",
+      "fsharpType": "VariableShape_depthPrePassWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depth.vertex",
+      "name": "depthVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthVertexShader",
+      "fsharpType": "VariableShape_depthVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/depth.vertex",
+      "name": "depthVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.depthVertexShaderWGSL",
+      "fsharpType": "VariableShape_depthVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/displayPass.fragment",
+      "name": "displayPassPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.displayPassPixelShader",
+      "fsharpType": "VariableShape_displayPassPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/displayPass.fragment",
+      "name": "displayPassPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.displayPassPixelShaderWGSL",
+      "fsharpType": "VariableShape_displayPassPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants",
       "name": "Epsilon",
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Epsilon",
       "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/equirectangularPanorama.fragment",
+      "name": "equirectangularPanoramaPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.equirectangularPanoramaPixelShader",
+      "fsharpType": "VariableShape_equirectangularPanoramaPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/extractHighlights.fragment",
+      "name": "extractHighlightsPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.extractHighlightsPixelShader",
+      "fsharpType": "VariableShape_extractHighlightsPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/extractHighlights.fragment",
+      "name": "extractHighlightsPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.extractHighlightsPixelShaderWGSL",
+      "fsharpType": "VariableShape_extractHighlightsPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/filter.fragment",
+      "name": "filterPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.filterPixelShader",
+      "fsharpType": "VariableShape_filterPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/filter.fragment",
+      "name": "filterPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.filterPixelShaderWGSL",
+      "fsharpType": "VariableShape_filterPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingBilateralBlur.fragment",
+      "name": "fluidRenderingBilateralBlurPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingBilateralBlurPixelShader",
+      "fsharpType": "VariableShape_fluidRenderingBilateralBlurPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingBilateralBlur.fragment",
+      "name": "fluidRenderingBilateralBlurPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingBilateralBlurPixelShaderWGSL",
+      "fsharpType": "VariableShape_fluidRenderingBilateralBlurPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleDepth.fragment",
+      "name": "fluidRenderingParticleDepthPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleDepthPixelShader",
+      "fsharpType": "VariableShape_fluidRenderingParticleDepthPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleDepth.fragment",
+      "name": "fluidRenderingParticleDepthPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleDepthPixelShaderWGSL",
+      "fsharpType": "VariableShape_fluidRenderingParticleDepthPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleDepth.vertex",
+      "name": "fluidRenderingParticleDepthVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleDepthVertexShader",
+      "fsharpType": "VariableShape_fluidRenderingParticleDepthVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleDepth.vertex",
+      "name": "fluidRenderingParticleDepthVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleDepthVertexShaderWGSL",
+      "fsharpType": "VariableShape_fluidRenderingParticleDepthVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleDiffuse.fragment",
+      "name": "fluidRenderingParticleDiffusePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleDiffusePixelShader",
+      "fsharpType": "VariableShape_fluidRenderingParticleDiffusePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleDiffuse.fragment",
+      "name": "fluidRenderingParticleDiffusePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleDiffusePixelShaderWGSL",
+      "fsharpType": "VariableShape_fluidRenderingParticleDiffusePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleDiffuse.vertex",
+      "name": "fluidRenderingParticleDiffuseVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleDiffuseVertexShader",
+      "fsharpType": "VariableShape_fluidRenderingParticleDiffuseVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleDiffuse.vertex",
+      "name": "fluidRenderingParticleDiffuseVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleDiffuseVertexShaderWGSL",
+      "fsharpType": "VariableShape_fluidRenderingParticleDiffuseVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleThickness.fragment",
+      "name": "fluidRenderingParticleThicknessPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleThicknessPixelShader",
+      "fsharpType": "VariableShape_fluidRenderingParticleThicknessPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleThickness.fragment",
+      "name": "fluidRenderingParticleThicknessPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleThicknessPixelShaderWGSL",
+      "fsharpType": "VariableShape_fluidRenderingParticleThicknessPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleThickness.vertex",
+      "name": "fluidRenderingParticleThicknessVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleThicknessVertexShader",
+      "fsharpType": "VariableShape_fluidRenderingParticleThicknessVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleThickness.vertex",
+      "name": "fluidRenderingParticleThicknessVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingParticleThicknessVertexShaderWGSL",
+      "fsharpType": "VariableShape_fluidRenderingParticleThicknessVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingRender.fragment",
+      "name": "fluidRenderingRenderPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingRenderPixelShader",
+      "fsharpType": "VariableShape_fluidRenderingRenderPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingRender.fragment",
+      "name": "fluidRenderingRenderPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingRenderPixelShaderWGSL",
+      "fsharpType": "VariableShape_fluidRenderingRenderPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingStandardBlur.fragment",
+      "name": "fluidRenderingStandardBlurPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingStandardBlurPixelShader",
+      "fsharpType": "VariableShape_fluidRenderingStandardBlurPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingStandardBlur.fragment",
+      "name": "fluidRenderingStandardBlurPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fluidRenderingStandardBlurPixelShaderWGSL",
+      "fsharpType": "VariableShape_fluidRenderingStandardBlurPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/fogFragment",
+      "name": "fogFragment",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fogFragment",
+      "fsharpType": "VariableShape_fogFragment",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/fogFragmentDeclaration",
+      "name": "fogFragmentDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fogFragmentDeclaration",
+      "fsharpType": "VariableShape_fogFragmentDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fogFragmentDeclaration",
+      "name": "fogFragmentDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fogFragmentDeclarationWGSL",
+      "fsharpType": "VariableShape_fogFragmentDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fogFragment",
+      "name": "fogFragmentWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fogFragmentWGSL",
+      "fsharpType": "VariableShape_fogFragmentWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/fogVertex",
+      "name": "fogVertex",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fogVertex",
+      "fsharpType": "VariableShape_fogVertex",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/fogVertexDeclaration",
+      "name": "fogVertexDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fogVertexDeclaration",
+      "fsharpType": "VariableShape_fogVertexDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fogVertexDeclaration",
+      "name": "fogVertexDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fogVertexDeclarationWGSL",
+      "fsharpType": "VariableShape_fogVertexDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fogVertex",
+      "name": "fogVertexWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fogVertexWGSL",
+      "fsharpType": "VariableShape_fogVertexWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fresnelFunction",
+      "name": "fresnelFunctionWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fresnelFunctionWGSL",
+      "fsharpType": "VariableShape_fresnelFunctionWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fxaa.fragment",
+      "name": "fxaaPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fxaaPixelShader",
+      "fsharpType": "VariableShape_fxaaPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fxaa.fragment",
+      "name": "fxaaPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fxaaPixelShaderWGSL",
+      "fsharpType": "VariableShape_fxaaPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fxaa.vertex",
+      "name": "fxaaVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fxaaVertexShader",
+      "fsharpType": "VariableShape_fxaaVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fxaa.vertex",
+      "name": "fxaaVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.fxaaVertexShaderWGSL",
+      "fsharpType": "VariableShape_fxaaVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/gaussianSplatting",
+      "name": "gaussianSplatting",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplatting",
+      "fsharpType": "VariableShape_gaussianSplatting",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gaussianSplattingDepth.fragment",
+      "name": "gaussianSplattingDepthPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplattingDepthPixelShader",
+      "fsharpType": "VariableShape_gaussianSplattingDepthPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/gaussianSplattingDepth.fragment",
+      "name": "gaussianSplattingDepthPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplattingDepthPixelShaderWGSL",
+      "fsharpType": "VariableShape_gaussianSplattingDepthPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gaussianSplattingDepth.vertex",
+      "name": "gaussianSplattingDepthVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplattingDepthVertexShader",
+      "fsharpType": "VariableShape_gaussianSplattingDepthVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/gaussianSplattingDepth.vertex",
+      "name": "gaussianSplattingDepthVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplattingDepthVertexShaderWGSL",
+      "fsharpType": "VariableShape_gaussianSplattingDepthVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/gaussianSplattingFragmentDeclaration",
+      "name": "gaussianSplattingFragmentDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplattingFragmentDeclaration",
+      "fsharpType": "VariableShape_gaussianSplattingFragmentDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/gaussianSplattingFragmentDeclaration",
+      "name": "gaussianSplattingFragmentDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplattingFragmentDeclarationWGSL",
+      "fsharpType": "VariableShape_gaussianSplattingFragmentDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/gaussianSplattingVertexDeclaration",
+      "name": "gaussianSplattingVertexDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplattingVertexDeclaration",
+      "fsharpType": "VariableShape_gaussianSplattingVertexDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/gaussianSplattingVertexDeclaration",
+      "name": "gaussianSplattingVertexDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplattingVertexDeclarationWGSL",
+      "fsharpType": "VariableShape_gaussianSplattingVertexDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/gaussianSplatting",
+      "name": "gaussianSplattingWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gaussianSplattingWGSL",
+      "fsharpType": "VariableShape_gaussianSplattingWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/geometry.fragment",
+      "name": "geometryPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.geometryPixelShader",
+      "fsharpType": "VariableShape_geometryPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/geometry.fragment",
+      "name": "geometryPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.geometryPixelShaderWGSL",
+      "fsharpType": "VariableShape_geometryPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/geometry.vertex",
+      "name": "geometryVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.geometryVertexShader",
+      "fsharpType": "VariableShape_geometryVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/geometry.vertex",
+      "name": "geometryVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.geometryVertexShaderWGSL",
+      "fsharpType": "VariableShape_geometryVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowBlurPostProcess.fragment",
+      "name": "glowBlurPostProcessPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowBlurPostProcessPixelShader",
+      "fsharpType": "VariableShape_glowBlurPostProcessPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowBlurPostProcess.fragment",
+      "name": "glowBlurPostProcessPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowBlurPostProcessPixelShaderWGSL",
+      "fsharpType": "VariableShape_glowBlurPostProcessPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowMapGeneration.fragment",
+      "name": "glowMapGenerationPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowMapGenerationPixelShader",
+      "fsharpType": "VariableShape_glowMapGenerationPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowMapGeneration.fragment",
+      "name": "glowMapGenerationPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowMapGenerationPixelShaderWGSL",
+      "fsharpType": "VariableShape_glowMapGenerationPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowMapGeneration.vertex",
+      "name": "glowMapGenerationVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowMapGenerationVertexShader",
+      "fsharpType": "VariableShape_glowMapGenerationVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowMapGeneration.vertex",
+      "name": "glowMapGenerationVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowMapGenerationVertexShaderWGSL",
+      "fsharpType": "VariableShape_glowMapGenerationVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowMapMerge.fragment",
+      "name": "glowMapMergePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowMapMergePixelShader",
+      "fsharpType": "VariableShape_glowMapMergePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowMapMerge.fragment",
+      "name": "glowMapMergePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowMapMergePixelShaderWGSL",
+      "fsharpType": "VariableShape_glowMapMergePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowMapMerge.vertex",
+      "name": "glowMapMergeVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowMapMergeVertexShader",
+      "fsharpType": "VariableShape_glowMapMergeVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowMapMerge.vertex",
+      "name": "glowMapMergeVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.glowMapMergeVertexShaderWGSL",
+      "fsharpType": "VariableShape_glowMapMergeVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuRenderParticles.fragment",
+      "name": "gpuRenderParticlesPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gpuRenderParticlesPixelShader",
+      "fsharpType": "VariableShape_gpuRenderParticlesPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuRenderParticles.vertex",
+      "name": "gpuRenderParticlesVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gpuRenderParticlesVertexShader",
+      "fsharpType": "VariableShape_gpuRenderParticlesVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuTransform.fragment",
+      "name": "gpuTransformPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gpuTransformPixelShader",
+      "fsharpType": "VariableShape_gpuTransformPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuTransform.vertex",
+      "name": "gpuTransformVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gpuTransformVertexShader",
+      "fsharpType": "VariableShape_gpuTransformVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/gpuUpdateParticles.compute",
+      "name": "gpuUpdateParticlesComputeShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gpuUpdateParticlesComputeShaderWGSL",
+      "fsharpType": "VariableShape_gpuUpdateParticlesComputeShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuUpdateParticles.fragment",
+      "name": "gpuUpdateParticlesPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gpuUpdateParticlesPixelShader",
+      "fsharpType": "VariableShape_gpuUpdateParticlesPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuUpdateParticles.vertex",
+      "name": "gpuUpdateParticlesVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.gpuUpdateParticlesVertexShader",
+      "fsharpType": "VariableShape_gpuUpdateParticlesVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/grain.fragment",
+      "name": "grainPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.grainPixelShader",
+      "fsharpType": "VariableShape_grainPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/grain.fragment",
+      "name": "grainPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.grainPixelShaderWGSL",
+      "fsharpType": "VariableShape_grainPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/greasedLine.fragment",
+      "name": "greasedLinePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.greasedLinePixelShader",
+      "fsharpType": "VariableShape_greasedLinePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/greasedLine.fragment",
+      "name": "greasedLinePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.greasedLinePixelShaderWGSL",
+      "fsharpType": "VariableShape_greasedLinePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/greasedLine.vertex",
+      "name": "greasedLineVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.greasedLineVertexShader",
+      "fsharpType": "VariableShape_greasedLineVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/greasedLine.vertex",
+      "name": "greasedLineVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.greasedLineVertexShaderWGSL",
+      "fsharpType": "VariableShape_greasedLineVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/hdrFilteringFunctions",
+      "name": "hdrFilteringFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrFilteringFunctions",
+      "fsharpType": "VariableShape_hdrFilteringFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/hdrFilteringFunctions",
+      "name": "hdrFilteringFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrFilteringFunctionsWGSL",
+      "fsharpType": "VariableShape_hdrFilteringFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/hdrFiltering.fragment",
+      "name": "hdrFilteringPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrFilteringPixelShader",
+      "fsharpType": "VariableShape_hdrFilteringPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/hdrFiltering.fragment",
+      "name": "hdrFilteringPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrFilteringPixelShaderWGSL",
+      "fsharpType": "VariableShape_hdrFilteringPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/hdrFiltering.vertex",
+      "name": "hdrFilteringVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrFilteringVertexShader",
+      "fsharpType": "VariableShape_hdrFilteringVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/hdrFiltering.vertex",
+      "name": "hdrFilteringVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrFilteringVertexShaderWGSL",
+      "fsharpType": "VariableShape_hdrFilteringVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/hdrIrradianceFiltering.fragment",
+      "name": "hdrIrradianceFilteringPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrIrradianceFilteringPixelShader",
+      "fsharpType": "VariableShape_hdrIrradianceFilteringPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/hdrIrradianceFiltering.fragment",
+      "name": "hdrIrradianceFilteringPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrIrradianceFilteringPixelShaderWGSL",
+      "fsharpType": "VariableShape_hdrIrradianceFilteringPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/hdrIrradianceFiltering.vertex",
+      "name": "hdrIrradianceFilteringVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrIrradianceFilteringVertexShader",
+      "fsharpType": "VariableShape_hdrIrradianceFilteringVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/hdrIrradianceFiltering.vertex",
+      "name": "hdrIrradianceFilteringVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.hdrIrradianceFilteringVertexShaderWGSL",
+      "fsharpType": "VariableShape_hdrIrradianceFilteringVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/helperFunctions",
+      "name": "helperFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.helperFunctions",
+      "fsharpType": "VariableShape_helperFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/helperFunctions",
+      "name": "helperFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.helperFunctionsWGSL",
+      "fsharpType": "VariableShape_helperFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/highlights.fragment",
+      "name": "highlightsPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.highlightsPixelShader",
+      "fsharpType": "VariableShape_highlightsPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/highlights.fragment",
+      "name": "highlightsPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.highlightsPixelShaderWGSL",
+      "fsharpType": "VariableShape_highlightsPixelShaderWGSL",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -116,12 +1846,1702 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblCdfDebug.fragment",
+      "name": "iblCdfDebugPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblCdfDebugPixelShader",
+      "fsharpType": "VariableShape_iblCdfDebugPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblCdfDebug.fragment",
+      "name": "iblCdfDebugPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblCdfDebugPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblCdfDebugPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblCdfx.fragment",
+      "name": "iblCdfxPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblCdfxPixelShader",
+      "fsharpType": "VariableShape_iblCdfxPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblCdfx.fragment",
+      "name": "iblCdfxPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblCdfxPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblCdfxPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblCdfy.fragment",
+      "name": "iblCdfyPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblCdfyPixelShader",
+      "fsharpType": "VariableShape_iblCdfyPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblCdfy.fragment",
+      "name": "iblCdfyPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblCdfyPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblCdfyPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblCombineVoxelGrids.fragment",
+      "name": "iblCombineVoxelGridsPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblCombineVoxelGridsPixelShader",
+      "fsharpType": "VariableShape_iblCombineVoxelGridsPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblCombineVoxelGrids.fragment",
+      "name": "iblCombineVoxelGridsPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblCombineVoxelGridsPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblCombineVoxelGridsPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblDominantDirection.fragment",
+      "name": "iblDominantDirectionPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblDominantDirectionPixelShader",
+      "fsharpType": "VariableShape_iblDominantDirectionPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblDominantDirection.fragment",
+      "name": "iblDominantDirectionPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblDominantDirectionPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblDominantDirectionPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblGenerateVoxelMip.fragment",
+      "name": "iblGenerateVoxelMipPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblGenerateVoxelMipPixelShader",
+      "fsharpType": "VariableShape_iblGenerateVoxelMipPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblGenerateVoxelMip.fragment",
+      "name": "iblGenerateVoxelMipPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblGenerateVoxelMipPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblGenerateVoxelMipPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblIcdf.fragment",
+      "name": "iblIcdfPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblIcdfPixelShader",
+      "fsharpType": "VariableShape_iblIcdfPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblIcdf.fragment",
+      "name": "iblIcdfPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblIcdfPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblIcdfPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblScaledLuminance.fragment",
+      "name": "iblScaledLuminancePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblScaledLuminancePixelShader",
+      "fsharpType": "VariableShape_iblScaledLuminancePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblScaledLuminance.fragment",
+      "name": "iblScaledLuminancePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblScaledLuminancePixelShaderWGSL",
+      "fsharpType": "VariableShape_iblScaledLuminancePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowAccumulation.fragment",
+      "name": "iblShadowAccumulationPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowAccumulationPixelShader",
+      "fsharpType": "VariableShape_iblShadowAccumulationPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowAccumulation.fragment",
+      "name": "iblShadowAccumulationPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowAccumulationPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblShadowAccumulationPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowDebug.fragment",
+      "name": "iblShadowDebugPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowDebugPixelShader",
+      "fsharpType": "VariableShape_iblShadowDebugPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowDebug.fragment",
+      "name": "iblShadowDebugPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowDebugPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblShadowDebugPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowGBufferDebug.fragment",
+      "name": "iblShadowGBufferDebugPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowGBufferDebugPixelShader",
+      "fsharpType": "VariableShape_iblShadowGBufferDebugPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowGBufferDebug.fragment",
+      "name": "iblShadowGBufferDebugPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowGBufferDebugPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblShadowGBufferDebugPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowsCombine.fragment",
+      "name": "iblShadowsCombinePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowsCombinePixelShader",
+      "fsharpType": "VariableShape_iblShadowsCombinePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowsCombine.fragment",
+      "name": "iblShadowsCombinePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowsCombinePixelShaderWGSL",
+      "fsharpType": "VariableShape_iblShadowsCombinePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowSpatialBlur.fragment",
+      "name": "iblShadowSpatialBlurPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowSpatialBlurPixelShader",
+      "fsharpType": "VariableShape_iblShadowSpatialBlurPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowSpatialBlur.fragment",
+      "name": "iblShadowSpatialBlurPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowSpatialBlurPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblShadowSpatialBlurPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowVoxelTracing.fragment",
+      "name": "iblShadowVoxelTracingPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowVoxelTracingPixelShader",
+      "fsharpType": "VariableShape_iblShadowVoxelTracingPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowVoxelTracing.fragment",
+      "name": "iblShadowVoxelTracingPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblShadowVoxelTracingPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblShadowVoxelTracingPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblVoxelGrid2dArrayDebug.fragment",
+      "name": "iblVoxelGrid2dArrayDebugPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblVoxelGrid2dArrayDebugPixelShader",
+      "fsharpType": "VariableShape_iblVoxelGrid2dArrayDebugPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblVoxelGrid2dArrayDebug.fragment",
+      "name": "iblVoxelGrid2dArrayDebugPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblVoxelGrid2dArrayDebugPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblVoxelGrid2dArrayDebugPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblVoxelGrid.fragment",
+      "name": "iblVoxelGridPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblVoxelGridPixelShader",
+      "fsharpType": "VariableShape_iblVoxelGridPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblVoxelGrid.fragment",
+      "name": "iblVoxelGridPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblVoxelGridPixelShaderWGSL",
+      "fsharpType": "VariableShape_iblVoxelGridPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblVoxelGrid.vertex",
+      "name": "iblVoxelGridVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblVoxelGridVertexShader",
+      "fsharpType": "VariableShape_iblVoxelGridVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblVoxelGrid.vertex",
+      "name": "iblVoxelGridVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.iblVoxelGridVertexShaderWGSL",
+      "fsharpType": "VariableShape_iblVoxelGridVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/imageProcessingCompatibility",
+      "name": "imageProcessingCompatibility",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.imageProcessingCompatibility",
+      "fsharpType": "VariableShape_imageProcessingCompatibility",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/imageProcessingCompatibility",
+      "name": "imageProcessingCompatibilityWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.imageProcessingCompatibilityWGSL",
+      "fsharpType": "VariableShape_imageProcessingCompatibilityWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/imageProcessingDeclaration",
+      "name": "imageProcessingDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.imageProcessingDeclaration",
+      "fsharpType": "VariableShape_imageProcessingDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/imageProcessingDeclaration",
+      "name": "imageProcessingDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.imageProcessingDeclarationWGSL",
+      "fsharpType": "VariableShape_imageProcessingDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/imageProcessingFunctions",
+      "name": "imageProcessingFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.imageProcessingFunctions",
+      "fsharpType": "VariableShape_imageProcessingFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/imageProcessingFunctions",
+      "name": "imageProcessingFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.imageProcessingFunctionsWGSL",
+      "fsharpType": "VariableShape_imageProcessingFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/imageProcessing.fragment",
+      "name": "imageProcessingPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.imageProcessingPixelShader",
+      "fsharpType": "VariableShape_imageProcessingPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/imageProcessing.fragment",
+      "name": "imageProcessingPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.imageProcessingPixelShaderWGSL",
+      "fsharpType": "VariableShape_imageProcessingPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/importanceSampling",
+      "name": "importanceSampling",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.importanceSampling",
+      "fsharpType": "VariableShape_importanceSampling",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/importanceSampling",
+      "name": "importanceSamplingWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.importanceSamplingWGSL",
+      "fsharpType": "VariableShape_importanceSamplingWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/instancesDeclaration",
+      "name": "instancesDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.instancesDeclaration",
+      "fsharpType": "VariableShape_instancesDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/instancesDeclaration",
+      "name": "instancesDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.instancesDeclarationWGSL",
+      "fsharpType": "VariableShape_instancesDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/instancesVertex",
+      "name": "instancesVertex",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.instancesVertex",
+      "fsharpType": "VariableShape_instancesVertex",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/instancesVertex",
+      "name": "instancesVertexWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.instancesVertexWGSL",
+      "fsharpType": "VariableShape_instancesVertexWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/intersectionFunctions",
+      "name": "intersectionFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.intersectionFunctions",
+      "fsharpType": "VariableShape_intersectionFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/intersectionFunctions",
+      "name": "intersectionFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.intersectionFunctionsWGSL",
+      "fsharpType": "VariableShape_intersectionFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/kernelBlur.fragment",
+      "name": "kernelBlurPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.kernelBlurPixelShader",
+      "fsharpType": "VariableShape_kernelBlurPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/kernelBlur.fragment",
+      "name": "kernelBlurPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.kernelBlurPixelShaderWGSL",
+      "fsharpType": "VariableShape_kernelBlurPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/kernelBlur.vertex",
+      "name": "kernelBlurVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.kernelBlurVertexShader",
+      "fsharpType": "VariableShape_kernelBlurVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/kernelBlur.vertex",
+      "name": "kernelBlurVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.kernelBlurVertexShaderWGSL",
+      "fsharpType": "VariableShape_kernelBlurVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/layer.fragment",
+      "name": "layerPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.layerPixelShader",
+      "fsharpType": "VariableShape_layerPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/layer.fragment",
+      "name": "layerPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.layerPixelShaderWGSL",
+      "fsharpType": "VariableShape_layerPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/layer.vertex",
+      "name": "layerVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.layerVertexShader",
+      "fsharpType": "VariableShape_layerVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/layer.vertex",
+      "name": "layerVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.layerVertexShaderWGSL",
+      "fsharpType": "VariableShape_layerVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lensFlare.fragment",
+      "name": "lensFlarePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lensFlarePixelShader",
+      "fsharpType": "VariableShape_lensFlarePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lensFlare.fragment",
+      "name": "lensFlarePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lensFlarePixelShaderWGSL",
+      "fsharpType": "VariableShape_lensFlarePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lensFlare.vertex",
+      "name": "lensFlareVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lensFlareVertexShader",
+      "fsharpType": "VariableShape_lensFlareVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lensFlare.vertex",
+      "name": "lensFlareVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lensFlareVertexShaderWGSL",
+      "fsharpType": "VariableShape_lensFlareVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lensHighlights.fragment",
+      "name": "lensHighlightsPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lensHighlightsPixelShader",
+      "fsharpType": "VariableShape_lensHighlightsPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightFragment",
+      "name": "lightFragment",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightFragment",
+      "fsharpType": "VariableShape_lightFragment",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightFragmentDeclaration",
+      "name": "lightFragmentDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightFragmentDeclaration",
+      "fsharpType": "VariableShape_lightFragmentDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightFragment",
+      "name": "lightFragmentWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightFragmentWGSL",
+      "fsharpType": "VariableShape_lightFragmentWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lightingVolume.compute",
+      "name": "lightingVolumeComputeShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightingVolumeComputeShaderWGSL",
+      "fsharpType": "VariableShape_lightingVolumeComputeShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lightProxy.fragment",
+      "name": "lightProxyPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightProxyPixelShader",
+      "fsharpType": "VariableShape_lightProxyPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lightProxy.fragment",
+      "name": "lightProxyPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightProxyPixelShaderWGSL",
+      "fsharpType": "VariableShape_lightProxyPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lightProxy.vertex",
+      "name": "lightProxyVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightProxyVertexShader",
+      "fsharpType": "VariableShape_lightProxyVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lightProxy.vertex",
+      "name": "lightProxyVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightProxyVertexShaderWGSL",
+      "fsharpType": "VariableShape_lightProxyVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightsFragmentFunctions",
+      "name": "lightsFragmentFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightsFragmentFunctions",
+      "fsharpType": "VariableShape_lightsFragmentFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightsFragmentFunctions",
+      "name": "lightsFragmentFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightsFragmentFunctionsWGSL",
+      "fsharpType": "VariableShape_lightsFragmentFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightUboDeclaration",
+      "name": "lightUboDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightUboDeclaration",
+      "fsharpType": "VariableShape_lightUboDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightUboDeclaration",
+      "name": "lightUboDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightUboDeclarationWGSL",
+      "fsharpType": "VariableShape_lightUboDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightVxFragmentDeclaration",
+      "name": "lightVxFragmentDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightVxFragmentDeclaration",
+      "fsharpType": "VariableShape_lightVxFragmentDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightVxFragmentDeclaration",
+      "name": "lightVxFragmentDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightVxFragmentDeclarationWGSL",
+      "fsharpType": "VariableShape_lightVxFragmentDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightVxUboDeclaration",
+      "name": "lightVxUboDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightVxUboDeclaration",
+      "fsharpType": "VariableShape_lightVxUboDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightVxUboDeclaration",
+      "name": "lightVxUboDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lightVxUboDeclarationWGSL",
+      "fsharpType": "VariableShape_lightVxUboDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/line.fragment",
+      "name": "linePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.linePixelShader",
+      "fsharpType": "VariableShape_linePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/line.fragment",
+      "name": "linePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.linePixelShaderWGSL",
+      "fsharpType": "VariableShape_linePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/line.vertex",
+      "name": "lineVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lineVertexShader",
+      "fsharpType": "VariableShape_lineVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/line.vertex",
+      "name": "lineVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lineVertexShaderWGSL",
+      "fsharpType": "VariableShape_lineVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lodCube.fragment",
+      "name": "lodCubePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lodCubePixelShader",
+      "fsharpType": "VariableShape_lodCubePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lodCube.fragment",
+      "name": "lodCubePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lodCubePixelShaderWGSL",
+      "fsharpType": "VariableShape_lodCubePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lod.fragment",
+      "name": "lodPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lodPixelShader",
+      "fsharpType": "VariableShape_lodPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lod.fragment",
+      "name": "lodPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.lodPixelShaderWGSL",
+      "fsharpType": "VariableShape_lodPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/logDepthDeclaration",
+      "name": "logDepthDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.logDepthDeclaration",
+      "fsharpType": "VariableShape_logDepthDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/logDepthDeclaration",
+      "name": "logDepthDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.logDepthDeclarationWGSL",
+      "fsharpType": "VariableShape_logDepthDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/logDepthFragment",
+      "name": "logDepthFragment",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.logDepthFragment",
+      "fsharpType": "VariableShape_logDepthFragment",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/logDepthFragment",
+      "name": "logDepthFragmentWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.logDepthFragmentWGSL",
+      "fsharpType": "VariableShape_logDepthFragmentWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/logDepthVertex",
+      "name": "logDepthVertex",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.logDepthVertex",
+      "fsharpType": "VariableShape_logDepthVertex",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/logDepthVertex",
+      "name": "logDepthVertexWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.logDepthVertexWGSL",
+      "fsharpType": "VariableShape_logDepthVertexWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/ltcHelperFunctions",
+      "name": "ltcHelperFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ltcHelperFunctions",
+      "fsharpType": "VariableShape_ltcHelperFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/ltcHelperFunctions",
+      "name": "ltcHelperFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ltcHelperFunctionsWGSL",
+      "fsharpType": "VariableShape_ltcHelperFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/meshUboDeclaration",
+      "name": "meshUboDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUboDeclarationWGSL",
+      "fsharpType": "VariableShape_meshUboDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRendererFinaliser.fragment",
+      "name": "meshUVSpaceRendererFinaliserPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererFinaliserPixelShader",
+      "fsharpType": "VariableShape_meshUVSpaceRendererFinaliserPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRendererFinaliser.fragment",
+      "name": "meshUVSpaceRendererFinaliserPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererFinaliserPixelShaderWGSL",
+      "fsharpType": "VariableShape_meshUVSpaceRendererFinaliserPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRendererFinaliser.vertex",
+      "name": "meshUVSpaceRendererFinaliserVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererFinaliserVertexShader",
+      "fsharpType": "VariableShape_meshUVSpaceRendererFinaliserVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRendererFinaliser.vertex",
+      "name": "meshUVSpaceRendererFinaliserVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererFinaliserVertexShaderWGSL",
+      "fsharpType": "VariableShape_meshUVSpaceRendererFinaliserVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRendererMasker.fragment",
+      "name": "meshUVSpaceRendererMaskerPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererMaskerPixelShader",
+      "fsharpType": "VariableShape_meshUVSpaceRendererMaskerPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRendererMasker.fragment",
+      "name": "meshUVSpaceRendererMaskerPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererMaskerPixelShaderWGSL",
+      "fsharpType": "VariableShape_meshUVSpaceRendererMaskerPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRendererMasker.vertex",
+      "name": "meshUVSpaceRendererMaskerVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererMaskerVertexShader",
+      "fsharpType": "VariableShape_meshUVSpaceRendererMaskerVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRendererMasker.vertex",
+      "name": "meshUVSpaceRendererMaskerVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererMaskerVertexShaderWGSL",
+      "fsharpType": "VariableShape_meshUVSpaceRendererMaskerVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRenderer.fragment",
+      "name": "meshUVSpaceRendererPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererPixelShader",
+      "fsharpType": "VariableShape_meshUVSpaceRendererPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRenderer.fragment",
+      "name": "meshUVSpaceRendererPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererPixelShaderWGSL",
+      "fsharpType": "VariableShape_meshUVSpaceRendererPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRenderer.vertex",
+      "name": "meshUVSpaceRendererVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererVertexShader",
+      "fsharpType": "VariableShape_meshUVSpaceRendererVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRenderer.vertex",
+      "name": "meshUVSpaceRendererVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.meshUVSpaceRendererVertexShaderWGSL",
+      "fsharpType": "VariableShape_meshUVSpaceRendererVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/minmaxRedux.fragment",
+      "name": "minmaxReduxPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.minmaxReduxPixelShader",
+      "fsharpType": "VariableShape_minmaxReduxPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/minmaxRedux.fragment",
+      "name": "minmaxReduxPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.minmaxReduxPixelShaderWGSL",
+      "fsharpType": "VariableShape_minmaxReduxPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertex",
+      "name": "morphTargetsVertex",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.morphTargetsVertex",
+      "fsharpType": "VariableShape_morphTargetsVertex",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertexDeclaration",
+      "name": "morphTargetsVertexDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.morphTargetsVertexDeclaration",
+      "fsharpType": "VariableShape_morphTargetsVertexDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/morphTargetsVertexDeclaration",
+      "name": "morphTargetsVertexDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.morphTargetsVertexDeclarationWGSL",
+      "fsharpType": "VariableShape_morphTargetsVertexDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertexGlobal",
+      "name": "morphTargetsVertexGlobal",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.morphTargetsVertexGlobal",
+      "fsharpType": "VariableShape_morphTargetsVertexGlobal",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertexGlobalDeclaration",
+      "name": "morphTargetsVertexGlobalDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.morphTargetsVertexGlobalDeclaration",
+      "fsharpType": "VariableShape_morphTargetsVertexGlobalDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/morphTargetsVertexGlobalDeclaration",
+      "name": "morphTargetsVertexGlobalDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.morphTargetsVertexGlobalDeclarationWGSL",
+      "fsharpType": "VariableShape_morphTargetsVertexGlobalDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/morphTargetsVertexGlobal",
+      "name": "morphTargetsVertexGlobalWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.morphTargetsVertexGlobalWGSL",
+      "fsharpType": "VariableShape_morphTargetsVertexGlobalWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/morphTargetsVertex",
+      "name": "morphTargetsVertexWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.morphTargetsVertexWGSL",
+      "fsharpType": "VariableShape_morphTargetsVertexWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/motionBlur.fragment",
+      "name": "motionBlurPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.motionBlurPixelShader",
+      "fsharpType": "VariableShape_motionBlurPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/motionBlur.fragment",
+      "name": "motionBlurPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.motionBlurPixelShaderWGSL",
+      "fsharpType": "VariableShape_motionBlurPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/oitBackBlend.fragment",
+      "name": "oitBackBlendPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.oitBackBlendPixelShader",
+      "fsharpType": "VariableShape_oitBackBlendPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/oitBackBlend.fragment",
+      "name": "oitBackBlendPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.oitBackBlendPixelShaderWGSL",
+      "fsharpType": "VariableShape_oitBackBlendPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/oitFinal.fragment",
+      "name": "oitFinalPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.oitFinalPixelShader",
+      "fsharpType": "VariableShape_oitFinalPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/oitFinal.fragment",
+      "name": "oitFinalPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.oitFinalPixelShaderWGSL",
+      "fsharpType": "VariableShape_oitFinalPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/openpbr.fragment",
+      "name": "openpbrPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.openpbrPixelShader",
+      "fsharpType": "VariableShape_openpbrPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/openpbr.fragment",
+      "name": "openpbrPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.openpbrPixelShaderWGSL",
+      "fsharpType": "VariableShape_openpbrPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/openpbr.vertex",
+      "name": "openpbrVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.openpbrVertexShader",
+      "fsharpType": "VariableShape_openpbrVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/openpbr.vertex",
+      "name": "openpbrVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.openpbrVertexShaderWGSL",
+      "fsharpType": "VariableShape_openpbrVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/outline.fragment",
+      "name": "outlinePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.outlinePixelShader",
+      "fsharpType": "VariableShape_outlinePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/outline.fragment",
+      "name": "outlinePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.outlinePixelShaderWGSL",
+      "fsharpType": "VariableShape_outlinePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/outline.vertex",
+      "name": "outlineVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.outlineVertexShader",
+      "fsharpType": "VariableShape_outlineVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/outline.vertex",
+      "name": "outlineVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.outlineVertexShaderWGSL",
+      "fsharpType": "VariableShape_outlineVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/packingFunctions",
+      "name": "packingFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.packingFunctions",
+      "fsharpType": "VariableShape_packingFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/packingFunctions",
+      "name": "packingFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.packingFunctionsWGSL",
+      "fsharpType": "VariableShape_packingFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/particles.fragment",
+      "name": "particlesPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.particlesPixelShader",
+      "fsharpType": "VariableShape_particlesPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/particles.fragment",
+      "name": "particlesPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.particlesPixelShaderWGSL",
+      "fsharpType": "VariableShape_particlesPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/particles.vertex",
+      "name": "particlesVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.particlesVertexShader",
+      "fsharpType": "VariableShape_particlesVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/particles.vertex",
+      "name": "particlesVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.particlesVertexShaderWGSL",
+      "fsharpType": "VariableShape_particlesVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/passCube.fragment",
+      "name": "passCubePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.passCubePixelShader",
+      "fsharpType": "VariableShape_passCubePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/passCube.fragment",
+      "name": "passCubePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.passCubePixelShaderWGSL",
+      "fsharpType": "VariableShape_passCubePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/pass.fragment",
+      "name": "passPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.passPixelShader",
+      "fsharpType": "VariableShape_passPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/pass.fragment",
+      "name": "passPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.passPixelShaderWGSL",
+      "fsharpType": "VariableShape_passPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/pbrBRDFFunctions",
+      "name": "pbrBRDFFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pbrBRDFFunctions",
+      "fsharpType": "VariableShape_pbrBRDFFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/pbrBRDFFunctions",
+      "name": "pbrBRDFFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pbrBRDFFunctionsWGSL",
+      "fsharpType": "VariableShape_pbrBRDFFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/pbr.fragment",
+      "name": "pbrPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pbrPixelShader",
+      "fsharpType": "VariableShape_pbrPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/pbr.fragment",
+      "name": "pbrPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pbrPixelShaderWGSL",
+      "fsharpType": "VariableShape_pbrPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/pbr.vertex",
+      "name": "pbrVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pbrVertexShader",
+      "fsharpType": "VariableShape_pbrVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/pbr.vertex",
+      "name": "pbrVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pbrVertexShaderWGSL",
+      "fsharpType": "VariableShape_pbrVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants",
       "name": "PHI",
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PHI",
       "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/picking.fragment",
+      "name": "pickingPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pickingPixelShader",
+      "fsharpType": "VariableShape_pickingPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/picking.fragment",
+      "name": "pickingPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pickingPixelShaderWGSL",
+      "fsharpType": "VariableShape_pickingPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/picking.vertex",
+      "name": "pickingVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pickingVertexShader",
+      "fsharpType": "VariableShape_pickingVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/picking.vertex",
+      "name": "pickingVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.pickingVertexShaderWGSL",
+      "fsharpType": "VariableShape_pickingVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/postprocess.vertex",
+      "name": "postprocessVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.postprocessVertexShader",
+      "fsharpType": "VariableShape_postprocessVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/postprocess.vertex",
+      "name": "postprocessVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.postprocessVertexShaderWGSL",
+      "fsharpType": "VariableShape_postprocessVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/procedural.vertex",
+      "name": "proceduralVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.proceduralVertexShader",
+      "fsharpType": "VariableShape_proceduralVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/procedural.vertex",
+      "name": "proceduralVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.proceduralVertexShaderWGSL",
+      "fsharpType": "VariableShape_proceduralVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/reflectionFunction",
+      "name": "reflectionFunction",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.reflectionFunction",
+      "fsharpType": "VariableShape_reflectionFunction",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/reflectionFunction",
+      "name": "reflectionFunctionWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.reflectionFunctionWGSL",
+      "fsharpType": "VariableShape_reflectionFunctionWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/refraction.fragment",
+      "name": "refractionPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.refractionPixelShader",
+      "fsharpType": "VariableShape_refractionPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/rgbdDecode.fragment",
+      "name": "rgbdDecodePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.rgbdDecodePixelShader",
+      "fsharpType": "VariableShape_rgbdDecodePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/rgbdDecode.fragment",
+      "name": "rgbdDecodePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.rgbdDecodePixelShaderWGSL",
+      "fsharpType": "VariableShape_rgbdDecodePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/rgbdEncode.fragment",
+      "name": "rgbdEncodePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.rgbdEncodePixelShader",
+      "fsharpType": "VariableShape_rgbdEncodePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/rgbdEncode.fragment",
+      "name": "rgbdEncodePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.rgbdEncodePixelShaderWGSL",
+      "fsharpType": "VariableShape_rgbdEncodePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/rsmFullGlobalIllumination.fragment",
+      "name": "rsmFullGlobalIlluminationPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.rsmFullGlobalIlluminationPixelShader",
+      "fsharpType": "VariableShape_rsmFullGlobalIlluminationPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/rsmFullGlobalIllumination.fragment",
+      "name": "rsmFullGlobalIlluminationPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.rsmFullGlobalIlluminationPixelShaderWGSL",
+      "fsharpType": "VariableShape_rsmFullGlobalIlluminationPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/rsmGlobalIllumination.fragment",
+      "name": "rsmGlobalIlluminationPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.rsmGlobalIlluminationPixelShader",
+      "fsharpType": "VariableShape_rsmGlobalIlluminationPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/rsmGlobalIllumination.fragment",
+      "name": "rsmGlobalIlluminationPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.rsmGlobalIlluminationPixelShaderWGSL",
+      "fsharpType": "VariableShape_rsmGlobalIlluminationPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/samplerFragmentDeclaration",
+      "name": "samplerFragmentDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.samplerFragmentDeclaration",
+      "fsharpType": "VariableShape_samplerFragmentDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/samplerFragmentDeclaration",
+      "name": "samplerFragmentDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.samplerFragmentDeclarationWGSL",
+      "fsharpType": "VariableShape_samplerFragmentDeclarationWGSL",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -134,6 +3554,286 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/sceneFragmentDeclaration",
+      "name": "sceneFragmentDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.sceneFragmentDeclaration",
+      "fsharpType": "VariableShape_sceneFragmentDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/sceneUboDeclaration",
+      "name": "sceneUboDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.sceneUboDeclaration",
+      "fsharpType": "VariableShape_sceneUboDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/sceneUboDeclaration",
+      "name": "sceneUboDeclarationWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.sceneUboDeclarationWGSL",
+      "fsharpType": "VariableShape_sceneUboDeclarationWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/sceneVertexDeclaration",
+      "name": "sceneVertexDeclaration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.sceneVertexDeclaration",
+      "fsharpType": "VariableShape_sceneVertexDeclaration",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceCurvature.fragment",
+      "name": "screenSpaceCurvaturePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.screenSpaceCurvaturePixelShader",
+      "fsharpType": "VariableShape_screenSpaceCurvaturePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceReflection2BlurCombiner.fragment",
+      "name": "screenSpaceReflection2BlurCombinerPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.screenSpaceReflection2BlurCombinerPixelShader",
+      "fsharpType": "VariableShape_screenSpaceReflection2BlurCombinerPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/screenSpaceReflection2BlurCombiner.fragment",
+      "name": "screenSpaceReflection2BlurCombinerPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.screenSpaceReflection2BlurCombinerPixelShaderWGSL",
+      "fsharpType": "VariableShape_screenSpaceReflection2BlurCombinerPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceReflection2Blur.fragment",
+      "name": "screenSpaceReflection2BlurPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.screenSpaceReflection2BlurPixelShader",
+      "fsharpType": "VariableShape_screenSpaceReflection2BlurPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/screenSpaceReflection2Blur.fragment",
+      "name": "screenSpaceReflection2BlurPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.screenSpaceReflection2BlurPixelShaderWGSL",
+      "fsharpType": "VariableShape_screenSpaceReflection2BlurPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceReflection2.fragment",
+      "name": "screenSpaceReflection2PixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.screenSpaceReflection2PixelShader",
+      "fsharpType": "VariableShape_screenSpaceReflection2PixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/screenSpaceReflection2.fragment",
+      "name": "screenSpaceReflection2PixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.screenSpaceReflection2PixelShaderWGSL",
+      "fsharpType": "VariableShape_screenSpaceReflection2PixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceReflection.fragment",
+      "name": "screenSpaceReflectionPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.screenSpaceReflectionPixelShader",
+      "fsharpType": "VariableShape_screenSpaceReflectionPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapFragment",
+      "name": "shadowMapFragment",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapFragment",
+      "fsharpType": "VariableShape_shadowMapFragment",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapFragmentSoftTransparentShadow",
+      "name": "shadowMapFragmentSoftTransparentShadow",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapFragmentSoftTransparentShadow",
+      "fsharpType": "VariableShape_shadowMapFragmentSoftTransparentShadow",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowMapFragmentSoftTransparentShadow",
+      "name": "shadowMapFragmentSoftTransparentShadowWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapFragmentSoftTransparentShadowWGSL",
+      "fsharpType": "VariableShape_shadowMapFragmentSoftTransparentShadowWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowMapFragment",
+      "name": "shadowMapFragmentWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapFragmentWGSL",
+      "fsharpType": "VariableShape_shadowMapFragmentWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/shadowMap.fragment",
+      "name": "shadowMapPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapPixelShader",
+      "fsharpType": "VariableShape_shadowMapPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/shadowMap.fragment",
+      "name": "shadowMapPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapPixelShaderWGSL",
+      "fsharpType": "VariableShape_shadowMapPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapVertexMetric",
+      "name": "shadowMapVertexMetric",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapVertexMetric",
+      "fsharpType": "VariableShape_shadowMapVertexMetric",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowMapVertexMetric",
+      "name": "shadowMapVertexMetricWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapVertexMetricWGSL",
+      "fsharpType": "VariableShape_shadowMapVertexMetricWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/shadowMap.vertex",
+      "name": "shadowMapVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapVertexShader",
+      "fsharpType": "VariableShape_shadowMapVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/shadowMap.vertex",
+      "name": "shadowMapVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowMapVertexShaderWGSL",
+      "fsharpType": "VariableShape_shadowMapVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowsFragmentFunctions",
+      "name": "shadowsFragmentFunctions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowsFragmentFunctions",
+      "fsharpType": "VariableShape_shadowsFragmentFunctions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowsFragmentFunctions",
+      "name": "shadowsFragmentFunctionsWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowsFragmentFunctionsWGSL",
+      "fsharpType": "VariableShape_shadowsFragmentFunctionsWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowsVertex",
+      "name": "shadowsVertex",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowsVertex",
+      "fsharpType": "VariableShape_shadowsVertex",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowsVertex",
+      "name": "shadowsVertexWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.shadowsVertexWGSL",
+      "fsharpType": "VariableShape_shadowsVertexWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/sharpen.fragment",
+      "name": "sharpenPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.sharpenPixelShader",
+      "fsharpType": "VariableShape_sharpenPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/sharpen.fragment",
+      "name": "sharpenPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.sharpenPixelShaderWGSL",
+      "fsharpType": "VariableShape_sharpenPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces",
       "name": "SHORTEST_LONG_RUN",
       "kind": "variable",
@@ -143,12 +3843,182 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/spriteMap.fragment",
+      "name": "spriteMapPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.spriteMapPixelShader",
+      "fsharpType": "VariableShape_spriteMapPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/spriteMap.vertex",
+      "name": "spriteMapVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.spriteMapVertexShader",
+      "fsharpType": "VariableShape_spriteMapVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/sprites.fragment",
+      "name": "spritesPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.spritesPixelShader",
+      "fsharpType": "VariableShape_spritesPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/sprites.fragment",
+      "name": "spritesPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.spritesPixelShaderWGSL",
+      "fsharpType": "VariableShape_spritesPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/sprites.vertex",
+      "name": "spritesVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.spritesVertexShader",
+      "fsharpType": "VariableShape_spritesVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/sprites.vertex",
+      "name": "spritesVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.spritesVertexShaderWGSL",
+      "fsharpType": "VariableShape_spritesVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ssao2.fragment",
+      "name": "ssao2PixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ssao2PixelShader",
+      "fsharpType": "VariableShape_ssao2PixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ssao2.fragment",
+      "name": "ssao2PixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ssao2PixelShaderWGSL",
+      "fsharpType": "VariableShape_ssao2PixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ssaoCombine.fragment",
+      "name": "ssaoCombinePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ssaoCombinePixelShader",
+      "fsharpType": "VariableShape_ssaoCombinePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ssaoCombine.fragment",
+      "name": "ssaoCombinePixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ssaoCombinePixelShaderWGSL",
+      "fsharpType": "VariableShape_ssaoCombinePixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ssao.fragment",
+      "name": "ssaoPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ssaoPixelShader",
+      "fsharpType": "VariableShape_ssaoPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/standard.fragment",
+      "name": "standardPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.standardPixelShader",
+      "fsharpType": "VariableShape_standardPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/stereoscopicInterlace.fragment",
+      "name": "stereoscopicInterlacePixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.stereoscopicInterlacePixelShader",
+      "fsharpType": "VariableShape_stereoscopicInterlacePixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/taa.fragment",
+      "name": "taaPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.taaPixelShader",
+      "fsharpType": "VariableShape_taaPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/taa.fragment",
+      "name": "taaPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.taaPixelShaderWGSL",
+      "fsharpType": "VariableShape_taaPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants",
       "name": "ToGammaSpace",
       "kind": "variable",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ToGammaSpace",
       "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/tonemap.fragment",
+      "name": "tonemapPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.tonemapPixelShader",
+      "fsharpType": "VariableShape_tonemapPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/tonemap.fragment",
+      "name": "tonemapPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.tonemapPixelShaderWGSL",
+      "fsharpType": "VariableShape_tonemapPixelShaderWGSL",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -176,6 +4046,136 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.USHORT_RANGE",
       "fsharpType": "float"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/velocity.fragment",
+      "name": "velocityPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.velocityPixelShader",
+      "fsharpType": "VariableShape_velocityPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/velocity.vertex",
+      "name": "velocityVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.velocityVertexShader",
+      "fsharpType": "VariableShape_velocityVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/vertexColorMixing",
+      "name": "vertexColorMixing",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.vertexColorMixing",
+      "fsharpType": "VariableShape_vertexColorMixing",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/vertexColorMixing",
+      "name": "vertexColorMixingWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.vertexColorMixingWGSL",
+      "fsharpType": "VariableShape_vertexColorMixingWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/volumetricLightScatteringPass.fragment",
+      "name": "volumetricLightScatteringPassPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.volumetricLightScatteringPassPixelShader",
+      "fsharpType": "VariableShape_volumetricLightScatteringPassPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/volumetricLightScatteringPass.fragment",
+      "name": "volumetricLightScatteringPassPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.volumetricLightScatteringPassPixelShaderWGSL",
+      "fsharpType": "VariableShape_volumetricLightScatteringPassPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/volumetricLightScatteringPass.vertex",
+      "name": "volumetricLightScatteringPassVertexShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.volumetricLightScatteringPassVertexShader",
+      "fsharpType": "VariableShape_volumetricLightScatteringPassVertexShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/volumetricLightScatteringPass.vertex",
+      "name": "volumetricLightScatteringPassVertexShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.volumetricLightScatteringPassVertexShaderWGSL",
+      "fsharpType": "VariableShape_volumetricLightScatteringPassVertexShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/volumetricLightScattering.fragment",
+      "name": "volumetricLightScatteringPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.volumetricLightScatteringPixelShader",
+      "fsharpType": "VariableShape_volumetricLightScatteringPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/volumetricLightScattering.fragment",
+      "name": "volumetricLightScatteringPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.volumetricLightScatteringPixelShaderWGSL",
+      "fsharpType": "VariableShape_volumetricLightScatteringPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/vrDistortionCorrection.fragment",
+      "name": "vrDistortionCorrectionPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.vrDistortionCorrectionPixelShader",
+      "fsharpType": "VariableShape_vrDistortionCorrectionPixelShader",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/vrDistortionCorrection.fragment",
+      "name": "vrDistortionCorrectionPixelShaderWGSL",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.vrDistortionCorrectionPixelShaderWGSL",
+      "fsharpType": "VariableShape_vrDistortionCorrectionPixelShaderWGSL",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/vrMultiviewToSingleview.fragment",
+      "name": "vrMultiviewToSingleviewPixelShader",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.vrMultiviewToSingleviewPixelShader",
+      "fsharpType": "VariableShape_vrMultiviewToSingleviewPixelShader",
+      "memberCount": 2
     }
   ]
 }

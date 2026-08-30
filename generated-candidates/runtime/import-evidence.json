@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "cac7d37cfc35164632a388f81c582b3986ac7d68481e2c30e4f5e2bfae8920f9"
+    "sha256": "defc5a9da98c59d18220da9a6b0873f8d673c7698ed334940db903a17272f6d9"
   },
   "imports": [
     {
@@ -93,6 +93,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/scene.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/ShadersWGSL/clearQuad.vertex.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/ShadersWGSL/clearQuad.vertex.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

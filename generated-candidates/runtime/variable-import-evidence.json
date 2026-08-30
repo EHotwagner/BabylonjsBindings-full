@@ -13,6 +13,13 @@
   "imports": [
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer.js",
+      "export": "_AudioAnalyzerDefaults",
+      "runtimeExport": "_AudioAnalyzerDefaults",
+      "moduleSha256": "c2af5cc88f0d82916185563b89c7f615cd50b56791fcdfe729ad5d165813230b"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js",
       "export": "_BabylonLoaderRegistered",
       "runtimeExport": "_BabylonLoaderRegistered",
@@ -41,6 +48,48 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio.js",
+      "export": "_StereoAudioDefaults",
+      "runtimeExport": "_StereoAudioDefaults",
+      "moduleSha256": "af868581b00df6c4047103c11d8aef466de9fb7f66a056da429e6e95f160efc7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode.js",
+      "export": "_VolumeAudioDefaults",
+      "runtimeExport": "_VolumeAudioDefaults",
+      "moduleSha256": "480bc010332cb127c2788349016875c918e31a0c777e4df877589b85b2d44706"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/anaglyph.fragment.js",
+      "export": "anaglyphPixelShader",
+      "runtimeExport": "anaglyphPixelShader",
+      "moduleSha256": "add9df3ba65a87b52e921a3b84b759cdda6d47ac097ec659da150c541efc012f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/anaglyph.fragment.js",
+      "export": "anaglyphPixelShaderWGSL",
+      "runtimeExport": "anaglyphPixelShaderWGSL",
+      "moduleSha256": "c18f2a3e54a63135f4fe8a09a3b8e828cff2b4f0b52a1ecceb47fa9237db16a0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/areaLightTextureProcessing.fragment.js",
+      "export": "areaLightTextureProcessingPixelShader",
+      "runtimeExport": "areaLightTextureProcessingPixelShader",
+      "moduleSha256": "694898d569999112e21f05a5fa65d3e8974c0ccb2203d2753d06cb3504332596"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/areaLightTextureProcessing.fragment.js",
+      "export": "areaLightTextureProcessingPixelShaderWGSL",
+      "runtimeExport": "areaLightTextureProcessingPixelShaderWGSL",
+      "moduleSha256": "c7f5fb7167c888b513a2310b6dd8071ecbec110897b5bf2ae35168c2316eb708"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FrameGraph/frameGraphTypes.js",
       "export": "backbufferColorTextureHandle",
       "runtimeExport": "backbufferColorTextureHandle",
@@ -55,10 +104,129 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/background.fragment.js",
+      "export": "backgroundPixelShader",
+      "runtimeExport": "backgroundPixelShader",
+      "moduleSha256": "c2be82821c8c51c20538e81314fff7dc11b5f384c60d1701cc487a7d089b9c78"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/background.fragment.js",
+      "export": "backgroundPixelShaderWGSL",
+      "runtimeExport": "backgroundPixelShaderWGSL",
+      "moduleSha256": "85c8526fd88fe2694a6a1a4f20f092d3f2b78ca6477e9180a2974ac7853427ee"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/background.vertex.js",
+      "export": "backgroundVertexShader",
+      "runtimeExport": "backgroundVertexShader",
+      "moduleSha256": "ae60013ea03bea321118fded9ca9a17774504b18329f29210d72c0f06df8307e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/background.vertex.js",
+      "export": "backgroundVertexShaderWGSL",
+      "runtimeExport": "backgroundVertexShaderWGSL",
+      "moduleSha256": "0d2b0e6a1b63220089b79356b08e3e700bc009b99a85c1be6eb80a732c28fe21"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bakedVertexAnimation.js",
+      "export": "bakedVertexAnimation",
+      "runtimeExport": "bakedVertexAnimation",
+      "moduleSha256": "5c27146fcc6e8426af179c87e634db41977d99877c65e9b695a6a4caa56e7a9d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bakedVertexAnimationDeclaration.js",
+      "export": "bakedVertexAnimationDeclaration",
+      "runtimeExport": "bakedVertexAnimationDeclaration",
+      "moduleSha256": "b5c713c99da4c2431e10263275e677989ac413663f1d0b925279049c1ef0446e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bakedVertexAnimationDeclaration.js",
+      "export": "bakedVertexAnimationDeclarationWGSL",
+      "runtimeExport": "bakedVertexAnimationDeclarationWGSL",
+      "moduleSha256": "c23c59e8310ea56878c88d0a90d4060eb3043f14c94fd04652946ba1787c968c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bakedVertexAnimation.js",
+      "export": "bakedVertexAnimationWGSL",
+      "runtimeExport": "bakedVertexAnimationWGSL",
+      "moduleSha256": "c3495eef301706f28ec4d835da117531abaab0cfb2feef0dc2585e46b8ef531b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure.js",
+      "export": "BasisToolsOptions",
+      "runtimeExport": "BasisToolsOptions",
+      "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/bilateralBlur.fragment.js",
+      "export": "bilateralBlurPixelShader",
+      "runtimeExport": "bilateralBlurPixelShader",
+      "moduleSha256": "dfda11996f8f9bb4aab7deaadf84d1a09139cbdf28245b40cd9c5c0e8b8f4f67"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/bilateralBlur.fragment.js",
+      "export": "bilateralBlurPixelShaderWGSL",
+      "runtimeExport": "bilateralBlurPixelShaderWGSL",
+      "moduleSha256": "287ce017a552bbfc2b3e7d123913b8e3f24996cfad308e81bbbfe4064305446f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/bilateralBlurQuality.fragment.js",
+      "export": "bilateralBlurQualityPixelShader",
+      "runtimeExport": "bilateralBlurQualityPixelShader",
+      "moduleSha256": "48adf1bb97d394fdab9c72f9a4cc7200efd0435fb1318b849a0bf697a15fa2ba"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/bilateralBlurQuality.fragment.js",
+      "export": "bilateralBlurQualityPixelShaderWGSL",
+      "runtimeExport": "bilateralBlurQualityPixelShaderWGSL",
+      "moduleSha256": "52c7ecae2c75ae5ad4f06a8924e46a357ec6a00c5e9179a6d97b9e73d97fc17c"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
       "export": "BITMAP_SIZE",
       "runtimeExport": "BITMAP_SIZE",
       "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/blackAndWhite.fragment.js",
+      "export": "blackAndWhitePixelShader",
+      "runtimeExport": "blackAndWhitePixelShader",
+      "moduleSha256": "f4f9e820ed78532558688eb5315bb2a0f0a6c55aa608bbd055d0b7147991d462"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/blackAndWhite.fragment.js",
+      "export": "blackAndWhitePixelShaderWGSL",
+      "runtimeExport": "blackAndWhitePixelShaderWGSL",
+      "moduleSha256": "4200651243411622e95c14cb2abea68384bd1922e71250fe3ea0d06dd6c7e6d6"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/bloomMerge.fragment.js",
+      "export": "bloomMergePixelShader",
+      "runtimeExport": "bloomMergePixelShader",
+      "moduleSha256": "c647d4f767e93335e30f242876c645a706c76803e86e17b27e40f3240efcc295"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/bloomMerge.fragment.js",
+      "export": "bloomMergePixelShaderWGSL",
+      "runtimeExport": "bloomMergePixelShaderWGSL",
+      "moduleSha256": "0235f2e172d77e1baeaf2db124a0d124c13aef21ef10b2c53b7aa3846a3f9ef1"
     },
     {
       "package": "@babylonjs/core",
@@ -69,10 +237,1053 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bonesDeclaration.js",
+      "export": "bonesDeclaration",
+      "runtimeExport": "bonesDeclaration",
+      "moduleSha256": "ce57f2b93864c64f925021650f702e73bc47ce4ce47a59aacf1dfdc3b6f81c95"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bonesDeclaration.js",
+      "export": "bonesDeclarationWGSL",
+      "runtimeExport": "bonesDeclarationWGSL",
+      "moduleSha256": "ea32a82aa6e9bf7600675d373a296ea0df7cb5c19513593ed69a76f2a3b02c0b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bonesVertex.js",
+      "export": "bonesVertex",
+      "runtimeExport": "bonesVertex",
+      "moduleSha256": "dbc0f478edcc864e7130d99df1730d2a0c1e25217e89c1727a6b1db6c779041a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bonesVertex.js",
+      "export": "bonesVertexWGSL",
+      "runtimeExport": "bonesVertexWGSL",
+      "moduleSha256": "b12345551fc0730c0b8ec904b1d6d96c16adef36ca8e943e8adfeb347124d5b1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/boundingBoxRenderer.fragment.js",
+      "export": "boundingBoxRendererPixelShader",
+      "runtimeExport": "boundingBoxRendererPixelShader",
+      "moduleSha256": "3abdffd9214dfcd78b61f2caaefaa4dd8eb975ec72ac1f4afc7c360bbeec4b59"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/boundingBoxRenderer.fragment.js",
+      "export": "boundingBoxRendererPixelShaderWGSL",
+      "runtimeExport": "boundingBoxRendererPixelShaderWGSL",
+      "moduleSha256": "0d9a24bdfbcf7e12d4180b203ad861f4b507def443840c5f6beb0431ede4482e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/boundingBoxRenderer.vertex.js",
+      "export": "boundingBoxRendererVertexShader",
+      "runtimeExport": "boundingBoxRendererVertexShader",
+      "moduleSha256": "983563c05440d3effcdef88f31495be7b794162c550bcdf8c21f48234afc62f0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/boundingBoxRenderer.vertex.js",
+      "export": "boundingBoxRendererVertexShaderWGSL",
+      "runtimeExport": "boundingBoxRendererVertexShaderWGSL",
+      "moduleSha256": "0d822c7881a3df3d7029ad4fc97bd36f4313af27596829def1dbe6e8b6e4e2a2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/boundingInfo.compute.js",
+      "export": "boundingInfoComputeShaderWGSL",
+      "runtimeExport": "boundingInfoComputeShaderWGSL",
+      "moduleSha256": "415b80a65d2e50641a685dfb27dac949234b4c367c94bf0fac5ee9c850dd5735"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bumpFragment.js",
+      "export": "bumpFragment",
+      "runtimeExport": "bumpFragment",
+      "moduleSha256": "787ab224ef217c000e26dde2e758d9e016e7bd5b1b378e51c4b10c9e0faef2b5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bumpFragmentFunctions.js",
+      "export": "bumpFragmentFunctions",
+      "runtimeExport": "bumpFragmentFunctions",
+      "moduleSha256": "3d583e2848b25c97a7bddb25dd1a2599c90173ad378779cefd59dc5a288506f6"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bumpFragmentFunctions.js",
+      "export": "bumpFragmentFunctionsWGSL",
+      "runtimeExport": "bumpFragmentFunctionsWGSL",
+      "moduleSha256": "6b5a2943c8a49f0db5699d040bb1cd6dc6637d3a49ebad280edaa70c054dd128"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/bumpFragmentMainFunctions.js",
+      "export": "bumpFragmentMainFunctions",
+      "runtimeExport": "bumpFragmentMainFunctions",
+      "moduleSha256": "1681f6404818f821e89390c783e361771678a4b67c31ee7351a8aedcf9b5d880"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bumpFragmentMainFunctions.js",
+      "export": "bumpFragmentMainFunctionsWGSL",
+      "runtimeExport": "bumpFragmentMainFunctionsWGSL",
+      "moduleSha256": "64b30296c7edffbbd96b9e9afa30e8c6c1751a9eeee3e8279cd259c3fb1a0fbe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/bumpFragment.js",
+      "export": "bumpFragmentWGSL",
+      "runtimeExport": "bumpFragmentWGSL",
+      "moduleSha256": "52ef7d5a506f5af007ca62a0e95b6278e51d54485a15e1303dbe18a4c63a2e6d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/chromaticAberration.fragment.js",
+      "export": "chromaticAberrationPixelShader",
+      "runtimeExport": "chromaticAberrationPixelShader",
+      "moduleSha256": "66aaf69edd845aba23d73c4fb79f337541c8d3446db77d3a5b0233525d04e99d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/chromaticAberration.fragment.js",
+      "export": "chromaticAberrationPixelShaderWGSL",
+      "runtimeExport": "chromaticAberrationPixelShaderWGSL",
+      "moduleSha256": "43c3ed527c5d8a42ce15310081cead6360449aee2cfba7b3a55e5372492d5f11"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/circleOfConfusion.fragment.js",
+      "export": "circleOfConfusionPixelShader",
+      "runtimeExport": "circleOfConfusionPixelShader",
+      "moduleSha256": "f4afa1779bf4cde6dfbd5df2a84c5a6cc2a74c6585a8d0e6d6310f246c903dc0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/circleOfConfusion.fragment.js",
+      "export": "circleOfConfusionPixelShaderWGSL",
+      "runtimeExport": "circleOfConfusionPixelShaderWGSL",
+      "moduleSha256": "24d85f06e7eb173b4410b339432b28f9ed2327f867f74b6d3d34bc1bac86e677"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/clearQuad.fragment.js",
+      "export": "clearQuadPixelShaderWGSL",
+      "runtimeExport": "clearQuadPixelShaderWGSL",
+      "moduleSha256": "87ca122ca0e4bd4a3e0f533a4eec8f1ea72e21d4897f5ba40b445dfb9314af86"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/clearQuad.vertex.js",
+      "export": "clearQuadVertexShaderWGSL",
+      "runtimeExport": "clearQuadVertexShaderWGSL",
+      "moduleSha256": "f8d192a715513a5950fc8107377b5ed5e2b73c754990ae0d28609fe983c290f5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clipPlaneFragment.js",
+      "export": "clipPlaneFragment",
+      "runtimeExport": "clipPlaneFragment",
+      "moduleSha256": "f92e6495d03a8444987d6e4b9f50c50ce5b61d9e51a907e4d09dbbe080b5c8d4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clipPlaneFragmentDeclaration.js",
+      "export": "clipPlaneFragmentDeclaration",
+      "runtimeExport": "clipPlaneFragmentDeclaration",
+      "moduleSha256": "38c72093112b9cd55abe931968603414e5aa330819b890f22413e4562235f4dc"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clipPlaneFragmentDeclaration.js",
+      "export": "clipPlaneFragmentDeclarationWGSL",
+      "runtimeExport": "clipPlaneFragmentDeclarationWGSL",
+      "moduleSha256": "a9c4f2c6c20749c6cdbdf91528e75da97d545ad3301ba94980affcf17ed6f0bd"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clipPlaneFragment.js",
+      "export": "clipPlaneFragmentWGSL",
+      "runtimeExport": "clipPlaneFragmentWGSL",
+      "moduleSha256": "4e81b808b28db8d79008d9a0add10a69c0872f4156de8af2bc391a6f7a791350"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clipPlaneVertex.js",
+      "export": "clipPlaneVertex",
+      "runtimeExport": "clipPlaneVertex",
+      "moduleSha256": "3257f1e6eb478f1e3409c5f6b421c1145c3988feac547ca6106048f88c8c94a6"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clipPlaneVertexDeclaration.js",
+      "export": "clipPlaneVertexDeclaration",
+      "runtimeExport": "clipPlaneVertexDeclaration",
+      "moduleSha256": "57e265f09cab0db309863df09e58eb582122640b76438ad2f2accdbab0bba218"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clipPlaneVertexDeclaration.js",
+      "export": "clipPlaneVertexDeclarationWGSL",
+      "runtimeExport": "clipPlaneVertexDeclarationWGSL",
+      "moduleSha256": "64d5696b845e51a0907c56fc9d637e1576a3a8ba8361ea02ef7a7c8c7318fbed"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clipPlaneVertex.js",
+      "export": "clipPlaneVertexWGSL",
+      "runtimeExport": "clipPlaneVertexWGSL",
+      "moduleSha256": "a59627da59b3430a74e15f57aa3dbe381d348b678edd7ff3cb757a36e910d91f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/clusteredLightingFunctions.js",
+      "export": "clusteredLightingFunctions",
+      "runtimeExport": "clusteredLightingFunctions",
+      "moduleSha256": "8d6e37d638a3a0cdfe3c1c837f9a571599a7a1f6b3d346df8fbaaaa58e58771c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/clusteredLightingFunctions.js",
+      "export": "clusteredLightingFunctionsWGSL",
+      "runtimeExport": "clusteredLightingFunctionsWGSL",
+      "moduleSha256": "5766acc73fd987df4f63ead46358b0a62bde3fbf7be534bdfa4b75f2415172e3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/colorCorrection.fragment.js",
+      "export": "colorCorrectionPixelShader",
+      "runtimeExport": "colorCorrectionPixelShader",
+      "moduleSha256": "fb8d7fe89bc417feaf3f26965df94f93f2358c53e75a2e148865a96b8bf11d86"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/colorCorrection.fragment.js",
+      "export": "colorCorrectionPixelShaderWGSL",
+      "runtimeExport": "colorCorrectionPixelShaderWGSL",
+      "moduleSha256": "4976c0e4a8663dade57ae661f8f88cb83a80ace85e120130ef7f7cf8f166f4fe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/color.fragment.js",
+      "export": "colorPixelShader",
+      "runtimeExport": "colorPixelShader",
+      "moduleSha256": "a7ee7d0c4f551890fa858263e1d5f5ed6939e5dcd844b394b06df3eaa1b7c40e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/color.fragment.js",
+      "export": "colorPixelShaderWGSL",
+      "runtimeExport": "colorPixelShaderWGSL",
+      "moduleSha256": "a3f68370c9e0438f3059d21cce35b97b913a5edda063face93d5bb0be6fdc959"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/color.vertex.js",
+      "export": "colorVertexShader",
+      "runtimeExport": "colorVertexShader",
+      "moduleSha256": "5646b8238ca0769712ac1e6ca55649513c84996ae0b29bef46b13479ea47df6f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/color.vertex.js",
+      "export": "colorVertexShaderWGSL",
+      "runtimeExport": "colorVertexShaderWGSL",
+      "moduleSha256": "1696326c70aeac48087c438b426d0437b8c6c7f25c122fa48e2a71440d750b79"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Compat/compatibilityOptions.js",
+      "export": "CompatibilityOptions",
+      "runtimeExport": "CompatibilityOptions",
+      "moduleSha256": "3e90d7837b6b07f8fc0889ecc7309484fb133505fa34675ce7e2a91562443ce0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/convolution.fragment.js",
+      "export": "convolutionPixelShader",
+      "runtimeExport": "convolutionPixelShader",
+      "moduleSha256": "a1c59fd9135f3b458a9c1b55e7a2f1509bff10da4a06fce54132b25ea8bc9e29"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/convolution.fragment.js",
+      "export": "convolutionPixelShaderWGSL",
+      "runtimeExport": "convolutionPixelShaderWGSL",
+      "moduleSha256": "dd33797e7aa9115a2c646c660b42ab1e1c1bb83f01cfb22829f0d9de66cbb401"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/copyTexture3DLayerToTexture.fragment.js",
+      "export": "copyTexture3DLayerToTexturePixelShader",
+      "runtimeExport": "copyTexture3DLayerToTexturePixelShader",
+      "moduleSha256": "21bc47dab77c2edacac06992eb1a8ef94c4169e5ae0855e696727e07729ed53c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/copyTexture3DLayerToTexture.fragment.js",
+      "export": "copyTexture3DLayerToTexturePixelShaderWGSL",
+      "runtimeExport": "copyTexture3DLayerToTexturePixelShaderWGSL",
+      "moduleSha256": "cecb773edad78d3e8f8e41865b4c0d926628a4d66e80f01522c8626a24ef5dd1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/copyTextureToTexture.fragment.js",
+      "export": "copyTextureToTexturePixelShader",
+      "runtimeExport": "copyTextureToTexturePixelShader",
+      "moduleSha256": "ddd9c8a37f54b86d0986071265afd8146f0cef3da5059484ad7110f74d1e0847"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/copyTextureToTexture.fragment.js",
+      "export": "copyTextureToTexturePixelShaderWGSL",
+      "runtimeExport": "copyTextureToTexturePixelShaderWGSL",
+      "moduleSha256": "4981def3e2b34638d54f9aecd021cc5224503a811cac96fc7f742a3a2ba4690f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/decalFragment.js",
+      "export": "decalFragmentWGSL",
+      "runtimeExport": "decalFragmentWGSL",
+      "moduleSha256": "285b39d5a657b6b0001af73c6953176bb668fe7ec9d18449ac151b36233e6a22"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/default.fragment.js",
+      "export": "defaultPixelShader",
+      "runtimeExport": "defaultPixelShader",
+      "moduleSha256": "b73ac037c96ea587e0070ce36a25e81d8ef2a323f5edce0185d08b447ab03d5a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/default.fragment.js",
+      "export": "defaultPixelShaderWGSL",
+      "runtimeExport": "defaultPixelShaderWGSL",
+      "moduleSha256": "a8ada2e1fdd563818f044d28239913a7960e69ed9d6618b0fd23be2b6c61cea3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/default.vertex.js",
+      "export": "defaultVertexShader",
+      "runtimeExport": "defaultVertexShader",
+      "moduleSha256": "ea805794ca029fb9cb5b62eb46d5427d5ea43bad5794e19d397cd901a89920eb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/default.vertex.js",
+      "export": "defaultVertexShaderWGSL",
+      "runtimeExport": "defaultVertexShaderWGSL",
+      "moduleSha256": "8eaeae1a031b5e6ff3dfafe253097d64b207a4b80d39d644e3bafd30bf066025"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depthBoxBlur.fragment.js",
+      "export": "depthBoxBlurPixelShader",
+      "runtimeExport": "depthBoxBlurPixelShader",
+      "moduleSha256": "41b04878de938c0d6894a11d161d89ca4c0cac1c840d43bab134bab1fcd329a1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/depthBoxBlur.fragment.js",
+      "export": "depthBoxBlurPixelShaderWGSL",
+      "runtimeExport": "depthBoxBlurPixelShaderWGSL",
+      "moduleSha256": "0cc4ca1b214969de8452b996f73ab33c6e9c8c583cd41ab527c741f21aee3e3f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depthOfFieldMerge.fragment.js",
+      "export": "depthOfFieldMergePixelShader",
+      "runtimeExport": "depthOfFieldMergePixelShader",
+      "moduleSha256": "ee3b2b244528717ab6b7bf54cb50437844ff682c56fdad86b38e8ee2786dc3e2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/depthOfFieldMerge.fragment.js",
+      "export": "depthOfFieldMergePixelShaderWGSL",
+      "runtimeExport": "depthOfFieldMergePixelShaderWGSL",
+      "moduleSha256": "071e8941b09ebf237899391521aec26078f52866fe9378cae4b48c48a8f03878"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depthOfField.fragment.js",
+      "export": "depthOfFieldPixelShader",
+      "runtimeExport": "depthOfFieldPixelShader",
+      "moduleSha256": "307b7bc00cbd309ba06d15fae7ef99302d227df6f7e19ffdfdcd9de4a1db72c1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depth.fragment.js",
+      "export": "depthPixelShader",
+      "runtimeExport": "depthPixelShader",
+      "moduleSha256": "80fb2f89da4f8b78b393ae593a2021678939060d54790ac046a1f8c1eb8909bc"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/depth.fragment.js",
+      "export": "depthPixelShaderWGSL",
+      "runtimeExport": "depthPixelShaderWGSL",
+      "moduleSha256": "cc9de349fdf3ad4bf4673e5585babc9244070656092d2d5d23ad580eda08b84d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/depthPrePass.js",
+      "export": "depthPrePass",
+      "runtimeExport": "depthPrePass",
+      "moduleSha256": "11d8d0e7e244ed884c4eadeb108bfb0dfb97606993bf927819d05ed2479edae1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/depthPrePass.js",
+      "export": "depthPrePassWGSL",
+      "runtimeExport": "depthPrePassWGSL",
+      "moduleSha256": "18fbc79f927ffe867e822c9d736eadf87a8dfaa94e9b9a41d483d29a3ca12918"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/depth.vertex.js",
+      "export": "depthVertexShader",
+      "runtimeExport": "depthVertexShader",
+      "moduleSha256": "fd7b2fabc056c4b8e76c198bfee9f7629e72d636908de9e4a88ca124869e2b54"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/depth.vertex.js",
+      "export": "depthVertexShaderWGSL",
+      "runtimeExport": "depthVertexShaderWGSL",
+      "moduleSha256": "e5e11b44e886ae09edff0d2e52e60c3f5971316aec2b34e7193f0c9a6972175c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/displayPass.fragment.js",
+      "export": "displayPassPixelShader",
+      "runtimeExport": "displayPassPixelShader",
+      "moduleSha256": "5045cc5ad9bc2d98901e2326ab8442cda4f6b32f96f30d36373c27f85a043f7e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/displayPass.fragment.js",
+      "export": "displayPassPixelShaderWGSL",
+      "runtimeExport": "displayPassPixelShaderWGSL",
+      "moduleSha256": "ef3ea05af151ad3f6a16d9968d4a44758c6eb3c8da98fce9d86886a5d4568d01"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants.js",
       "export": "Epsilon",
       "runtimeExport": "Epsilon",
       "moduleSha256": "109a8559f79cbb3b037fd5ab809f1171ca0c95be039227e738cdefa5539bf89b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/equirectangularPanorama.fragment.js",
+      "export": "equirectangularPanoramaPixelShader",
+      "runtimeExport": "equirectangularPanoramaPixelShader",
+      "moduleSha256": "d08c72bfa7f097bfd73c7f9fc31e280a3ab3505dd87de629a2ba84c0c9d5cb6d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/extractHighlights.fragment.js",
+      "export": "extractHighlightsPixelShader",
+      "runtimeExport": "extractHighlightsPixelShader",
+      "moduleSha256": "842912849d7252005812b88767358209775402d0cea71db560b0fc9a45d87b9c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/extractHighlights.fragment.js",
+      "export": "extractHighlightsPixelShaderWGSL",
+      "runtimeExport": "extractHighlightsPixelShaderWGSL",
+      "moduleSha256": "38841c44dc94e17018b926a26467b9885010b49d9e8c0057fa2ac57a1b90231a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/filter.fragment.js",
+      "export": "filterPixelShader",
+      "runtimeExport": "filterPixelShader",
+      "moduleSha256": "f392b9877c5592de51157c78c0c2914137f5999c8a5a2f76a7b466b4c0bcc69a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/filter.fragment.js",
+      "export": "filterPixelShaderWGSL",
+      "runtimeExport": "filterPixelShaderWGSL",
+      "moduleSha256": "6f07a5022cdccda9348dc612f4dfafc4d1835e191e1ef5782251ef9ebd97e6b7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingBilateralBlur.fragment.js",
+      "export": "fluidRenderingBilateralBlurPixelShader",
+      "runtimeExport": "fluidRenderingBilateralBlurPixelShader",
+      "moduleSha256": "60933289eac470ca695b74eb94957241d60c219c4e7e482edac5c1074ddd5c9e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingBilateralBlur.fragment.js",
+      "export": "fluidRenderingBilateralBlurPixelShaderWGSL",
+      "runtimeExport": "fluidRenderingBilateralBlurPixelShaderWGSL",
+      "moduleSha256": "1a3da41a8b4277a61d0adf23b13f69f7cf35ffd6c60ee2ba0ed0e5f746de832c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleDepth.fragment.js",
+      "export": "fluidRenderingParticleDepthPixelShader",
+      "runtimeExport": "fluidRenderingParticleDepthPixelShader",
+      "moduleSha256": "62dfe78090eaeb6219077e438c4335ebf6cdddfbaeac6ea65e8390cfd036aac8"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleDepth.fragment.js",
+      "export": "fluidRenderingParticleDepthPixelShaderWGSL",
+      "runtimeExport": "fluidRenderingParticleDepthPixelShaderWGSL",
+      "moduleSha256": "3cf4a40b096fb38579fd5549858b779b3568fd7e50dd61510d91d91178ecc0cc"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleDepth.vertex.js",
+      "export": "fluidRenderingParticleDepthVertexShader",
+      "runtimeExport": "fluidRenderingParticleDepthVertexShader",
+      "moduleSha256": "c80bff66c09056da62cdd4ca0c85fc4903f4142f3e951b32f24bb7628ba6eb03"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleDepth.vertex.js",
+      "export": "fluidRenderingParticleDepthVertexShaderWGSL",
+      "runtimeExport": "fluidRenderingParticleDepthVertexShaderWGSL",
+      "moduleSha256": "01f6361964e4a6ecb0ee92cdf7fcbfce86a54a4a0a412858b4b0d7e4c61445ed"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleDiffuse.fragment.js",
+      "export": "fluidRenderingParticleDiffusePixelShader",
+      "runtimeExport": "fluidRenderingParticleDiffusePixelShader",
+      "moduleSha256": "f9556338c890b368aa4d7ed70d16c085e2058fa543bfae65fdf93d9d297b8640"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleDiffuse.fragment.js",
+      "export": "fluidRenderingParticleDiffusePixelShaderWGSL",
+      "runtimeExport": "fluidRenderingParticleDiffusePixelShaderWGSL",
+      "moduleSha256": "5850a60c2595b84dcc96dde2960e2501317d20f9e8fee48d06fd590e9700996a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleDiffuse.vertex.js",
+      "export": "fluidRenderingParticleDiffuseVertexShader",
+      "runtimeExport": "fluidRenderingParticleDiffuseVertexShader",
+      "moduleSha256": "2299c575f38033c031732f1d5fbc97c6b9477d02c0f7cd71ba375864e1b38bab"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleDiffuse.vertex.js",
+      "export": "fluidRenderingParticleDiffuseVertexShaderWGSL",
+      "runtimeExport": "fluidRenderingParticleDiffuseVertexShaderWGSL",
+      "moduleSha256": "295978686095e4112457b350276673c68d2b24d818e95ddf917d676aaffc93f5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleThickness.fragment.js",
+      "export": "fluidRenderingParticleThicknessPixelShader",
+      "runtimeExport": "fluidRenderingParticleThicknessPixelShader",
+      "moduleSha256": "8a093f17d489f8822688307c9923ff27186ed8316d2fcc0de7ec373f31644bb3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleThickness.fragment.js",
+      "export": "fluidRenderingParticleThicknessPixelShaderWGSL",
+      "runtimeExport": "fluidRenderingParticleThicknessPixelShaderWGSL",
+      "moduleSha256": "13c2cff0af17bb43f7267cc76aca6029b7aebb632d9b218e7e0fc45dca32db06"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingParticleThickness.vertex.js",
+      "export": "fluidRenderingParticleThicknessVertexShader",
+      "runtimeExport": "fluidRenderingParticleThicknessVertexShader",
+      "moduleSha256": "206397d69aa46dc1c88aa773a185a19f47d261720794c3ca7a3852006867cb33"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingParticleThickness.vertex.js",
+      "export": "fluidRenderingParticleThicknessVertexShaderWGSL",
+      "runtimeExport": "fluidRenderingParticleThicknessVertexShaderWGSL",
+      "moduleSha256": "83b19910cf953190e6345d2a62a5782d7fd1e5168bf4d050c86fa5b5369d425c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingRender.fragment.js",
+      "export": "fluidRenderingRenderPixelShader",
+      "runtimeExport": "fluidRenderingRenderPixelShader",
+      "moduleSha256": "ef41b0d7718f9cfa3925b0e442b197725796ee6e6bb16ddbca5e4338def3fc65"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingRender.fragment.js",
+      "export": "fluidRenderingRenderPixelShaderWGSL",
+      "runtimeExport": "fluidRenderingRenderPixelShaderWGSL",
+      "moduleSha256": "adc4d4883051646dc66fd33ab9c280f984bf11211d1e62a1a88f8a4e8d6bc28d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fluidRenderingStandardBlur.fragment.js",
+      "export": "fluidRenderingStandardBlurPixelShader",
+      "runtimeExport": "fluidRenderingStandardBlurPixelShader",
+      "moduleSha256": "e7ba93acac52f89c46a00c1c315045d38ffd4bbfa2f270b1d3a625f88d13ad27"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fluidRenderingStandardBlur.fragment.js",
+      "export": "fluidRenderingStandardBlurPixelShaderWGSL",
+      "runtimeExport": "fluidRenderingStandardBlurPixelShaderWGSL",
+      "moduleSha256": "4ad6b6172660a9f3f3179f92364ed1120020fd88b89797edc192d171e1341ae7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/fogFragment.js",
+      "export": "fogFragment",
+      "runtimeExport": "fogFragment",
+      "moduleSha256": "500e106462a71421f07a24e1e0437775aa89480bd08473865385d1e1a45f52f2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/fogFragmentDeclaration.js",
+      "export": "fogFragmentDeclaration",
+      "runtimeExport": "fogFragmentDeclaration",
+      "moduleSha256": "bc6cccc78f7edc04d1783312b34225ab8ebb4f81a883ac691618e85c27dc38b8"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fogFragmentDeclaration.js",
+      "export": "fogFragmentDeclarationWGSL",
+      "runtimeExport": "fogFragmentDeclarationWGSL",
+      "moduleSha256": "9d015234ebc9a935a78c5d77874b157e27e299176d92a91f5be9a5f7afdb99bc"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fogFragment.js",
+      "export": "fogFragmentWGSL",
+      "runtimeExport": "fogFragmentWGSL",
+      "moduleSha256": "0a01189df328de9d3f95364b1e3cc3eb4a76f0d05555215b77e548f5aff20466"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/fogVertex.js",
+      "export": "fogVertex",
+      "runtimeExport": "fogVertex",
+      "moduleSha256": "ef855a01f23f05c2c8a7c9319a161f7fe724e436f024cdcecd361004819f3e7d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/fogVertexDeclaration.js",
+      "export": "fogVertexDeclaration",
+      "runtimeExport": "fogVertexDeclaration",
+      "moduleSha256": "0f5244cdd03ed32cc8c8e9340495d64afcf870c84d0db55d6dbd6f2f0316d166"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fogVertexDeclaration.js",
+      "export": "fogVertexDeclarationWGSL",
+      "runtimeExport": "fogVertexDeclarationWGSL",
+      "moduleSha256": "a3e158fa62d24e3556e2d2efa6d1ee24b7e2407588bf40552f4102ca3ed9de66"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fogVertex.js",
+      "export": "fogVertexWGSL",
+      "runtimeExport": "fogVertexWGSL",
+      "moduleSha256": "c8872990493bc9701cac1e3e9f82d99d36d19c676f83087d6457ee3b331cc114"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/fresnelFunction.js",
+      "export": "fresnelFunctionWGSL",
+      "runtimeExport": "fresnelFunctionWGSL",
+      "moduleSha256": "bc39500a31cb6e280c86b3c0954e9b271dd0956eb290399b74b40eb307194fdd"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fxaa.fragment.js",
+      "export": "fxaaPixelShader",
+      "runtimeExport": "fxaaPixelShader",
+      "moduleSha256": "995acc800c0454249e649577c68981aaf880ba60df2aa4247016fdf7c0955fbb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fxaa.fragment.js",
+      "export": "fxaaPixelShaderWGSL",
+      "runtimeExport": "fxaaPixelShaderWGSL",
+      "moduleSha256": "c2b50cd771dffb21d69969eb7cf15de2f3dca1294fd07279ee1644f27c5a5f98"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/fxaa.vertex.js",
+      "export": "fxaaVertexShader",
+      "runtimeExport": "fxaaVertexShader",
+      "moduleSha256": "4b8f8e24e25bd2c70f635e1fe76f5a6599da6f453ba8cc42168517fe0523d4f5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/fxaa.vertex.js",
+      "export": "fxaaVertexShaderWGSL",
+      "runtimeExport": "fxaaVertexShaderWGSL",
+      "moduleSha256": "0eab45c688915813c786a839d0047b4fd1822ada8e46a3adb95b33bebd6ef9a4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/gaussianSplatting.js",
+      "export": "gaussianSplatting",
+      "runtimeExport": "gaussianSplatting",
+      "moduleSha256": "754f508c103676b722bfde822796f290bc5ed7df34adb7920f7992a1b62460e0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gaussianSplattingDepth.fragment.js",
+      "export": "gaussianSplattingDepthPixelShader",
+      "runtimeExport": "gaussianSplattingDepthPixelShader",
+      "moduleSha256": "3b18523f166b8730a597436ec8320888d1dd84aa4ebc54967815b1bbe926d4db"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/gaussianSplattingDepth.fragment.js",
+      "export": "gaussianSplattingDepthPixelShaderWGSL",
+      "runtimeExport": "gaussianSplattingDepthPixelShaderWGSL",
+      "moduleSha256": "a99e1952b5d183e3e1d13a0516f24e144465306c871272b652070530f5730cb1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gaussianSplattingDepth.vertex.js",
+      "export": "gaussianSplattingDepthVertexShader",
+      "runtimeExport": "gaussianSplattingDepthVertexShader",
+      "moduleSha256": "a6c8fe7351484160cd237f8e853b6dbc951ef179e111c09edf751d9300faa0bb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/gaussianSplattingDepth.vertex.js",
+      "export": "gaussianSplattingDepthVertexShaderWGSL",
+      "runtimeExport": "gaussianSplattingDepthVertexShaderWGSL",
+      "moduleSha256": "65b90476230cb0968d00e6593d331726f41862a52936004c09d8bae8b18484b1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/gaussianSplattingFragmentDeclaration.js",
+      "export": "gaussianSplattingFragmentDeclaration",
+      "runtimeExport": "gaussianSplattingFragmentDeclaration",
+      "moduleSha256": "7102bcce7642e5ad507ff78cd4d736b4bb780d97bff240398273e498caef63c3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/gaussianSplattingFragmentDeclaration.js",
+      "export": "gaussianSplattingFragmentDeclarationWGSL",
+      "runtimeExport": "gaussianSplattingFragmentDeclarationWGSL",
+      "moduleSha256": "37db24d1e47773070441cd6f7c3996646e08241423a7be5644c5c5e162896beb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/gaussianSplattingVertexDeclaration.js",
+      "export": "gaussianSplattingVertexDeclaration",
+      "runtimeExport": "gaussianSplattingVertexDeclaration",
+      "moduleSha256": "dc2f862eceb59f543f8cfe46c5498675902f9b29c1d85c303b282ecfb4e6a7d6"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/gaussianSplattingVertexDeclaration.js",
+      "export": "gaussianSplattingVertexDeclarationWGSL",
+      "runtimeExport": "gaussianSplattingVertexDeclarationWGSL",
+      "moduleSha256": "cfd1ebfc0ecb440dcf25b23669b0de0ab6fff0e33948c9e27f54e7a8d0b1473d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/gaussianSplatting.js",
+      "export": "gaussianSplattingWGSL",
+      "runtimeExport": "gaussianSplattingWGSL",
+      "moduleSha256": "3c154e23e266534256ea9209c93fb1cce754e0ce55ea07147b7e2765eb381c88"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/geometry.fragment.js",
+      "export": "geometryPixelShader",
+      "runtimeExport": "geometryPixelShader",
+      "moduleSha256": "a6d7223c64d3e266170f28b56dfa3f50d4ee29b03a86eebd3a3b0b77f5867e4f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/geometry.fragment.js",
+      "export": "geometryPixelShaderWGSL",
+      "runtimeExport": "geometryPixelShaderWGSL",
+      "moduleSha256": "ab251d8897ac7fee00ed8ddaa9d915c6967dbfafcb27d63e9984df8e64dea447"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/geometry.vertex.js",
+      "export": "geometryVertexShader",
+      "runtimeExport": "geometryVertexShader",
+      "moduleSha256": "b0c875f4cf6983c8425582e28feaa2c9d5980f155c9773ed168d65580fbf1e53"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/geometry.vertex.js",
+      "export": "geometryVertexShaderWGSL",
+      "runtimeExport": "geometryVertexShaderWGSL",
+      "moduleSha256": "4d2f705f5b68df6f657cda725acb89019e8c066dce05bdb06930fa0bcbbb50fd"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowBlurPostProcess.fragment.js",
+      "export": "glowBlurPostProcessPixelShader",
+      "runtimeExport": "glowBlurPostProcessPixelShader",
+      "moduleSha256": "3880857b35aba7eb5e719b775beb84ac1d1a451481d005d8ac52a325e19c9649"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowBlurPostProcess.fragment.js",
+      "export": "glowBlurPostProcessPixelShaderWGSL",
+      "runtimeExport": "glowBlurPostProcessPixelShaderWGSL",
+      "moduleSha256": "5ff8c4d320a47c1d5d861347491b9e4c6b5a784cf2c05fc3c2e9d4e730fd8a7c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowMapGeneration.fragment.js",
+      "export": "glowMapGenerationPixelShader",
+      "runtimeExport": "glowMapGenerationPixelShader",
+      "moduleSha256": "f647eab3f7a1f18d0326cca8442bb921630d0bcaf16f8b6d9eed3851f6c3f700"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowMapGeneration.fragment.js",
+      "export": "glowMapGenerationPixelShaderWGSL",
+      "runtimeExport": "glowMapGenerationPixelShaderWGSL",
+      "moduleSha256": "8e28a47383593cd63eee8b67a655c845f4e0178690546de3bad325acc65be9ee"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowMapGeneration.vertex.js",
+      "export": "glowMapGenerationVertexShader",
+      "runtimeExport": "glowMapGenerationVertexShader",
+      "moduleSha256": "13352c2420a4b57f098ef8f8434b9dd436dfc7bc742a36c1798e0212b131502d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowMapGeneration.vertex.js",
+      "export": "glowMapGenerationVertexShaderWGSL",
+      "runtimeExport": "glowMapGenerationVertexShaderWGSL",
+      "moduleSha256": "3db70c057ad01d7be18363ea4ee1a7541ef0320f966410d4400f1d3cb385bcd2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowMapMerge.fragment.js",
+      "export": "glowMapMergePixelShader",
+      "runtimeExport": "glowMapMergePixelShader",
+      "moduleSha256": "08ccaa994a9bc3946cdb0b201dcb40b1991d831c125d3225fc9b9a9af7bbd977"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowMapMerge.fragment.js",
+      "export": "glowMapMergePixelShaderWGSL",
+      "runtimeExport": "glowMapMergePixelShaderWGSL",
+      "moduleSha256": "9fb2a46bc24521143172a472075df4070fc5830652e536640f912ad8b83f5a4f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/glowMapMerge.vertex.js",
+      "export": "glowMapMergeVertexShader",
+      "runtimeExport": "glowMapMergeVertexShader",
+      "moduleSha256": "4c5085cf30b45cf1bb71d7b3b20d0319124258ef7df007c402cd80d7b06f6ed0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/glowMapMerge.vertex.js",
+      "export": "glowMapMergeVertexShaderWGSL",
+      "runtimeExport": "glowMapMergeVertexShaderWGSL",
+      "moduleSha256": "0dce38d8bf5e369bcddd489f6ea4d357d8004378c9034922e758c2fe31baf738"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuRenderParticles.fragment.js",
+      "export": "gpuRenderParticlesPixelShader",
+      "runtimeExport": "gpuRenderParticlesPixelShader",
+      "moduleSha256": "2ee53737d5ab4729ce67b0601b4b2a468f79e653bf67f43f991a1a5a751e9974"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuRenderParticles.vertex.js",
+      "export": "gpuRenderParticlesVertexShader",
+      "runtimeExport": "gpuRenderParticlesVertexShader",
+      "moduleSha256": "a787972cba4289085e35b3edaf9f824f0f45021d5ea35e3509dfe35e4d0cd8ae"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuTransform.fragment.js",
+      "export": "gpuTransformPixelShader",
+      "runtimeExport": "gpuTransformPixelShader",
+      "moduleSha256": "3276acac453d355ee3e3248e84759e682e5025ea6fab5766405c3a90e6db9aaf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuTransform.vertex.js",
+      "export": "gpuTransformVertexShader",
+      "runtimeExport": "gpuTransformVertexShader",
+      "moduleSha256": "fb622b7adf65aea86c68ed7615445225af533731eee35dc8050f5fcc546c6b25"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/gpuUpdateParticles.compute.js",
+      "export": "gpuUpdateParticlesComputeShaderWGSL",
+      "runtimeExport": "gpuUpdateParticlesComputeShaderWGSL",
+      "moduleSha256": "61ab377616ba0571c7ff05f64e95edfcbfd08abf15b1ecc89234a77d978ea156"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuUpdateParticles.fragment.js",
+      "export": "gpuUpdateParticlesPixelShader",
+      "runtimeExport": "gpuUpdateParticlesPixelShader",
+      "moduleSha256": "66a08baff1fd0afc636d0f8996c474340b9b980fa691d8b693855f731785c96c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/gpuUpdateParticles.vertex.js",
+      "export": "gpuUpdateParticlesVertexShader",
+      "runtimeExport": "gpuUpdateParticlesVertexShader",
+      "moduleSha256": "9195d450596353988eee5a0fd5095f3b7c09f326c8da6aa0e7a1554a5a7a6ee9"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/grain.fragment.js",
+      "export": "grainPixelShader",
+      "runtimeExport": "grainPixelShader",
+      "moduleSha256": "dd2ae7212acc9ff7dda32e6386d13f65f57421eb0c865c78c3a7e885d63efb2b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/grain.fragment.js",
+      "export": "grainPixelShaderWGSL",
+      "runtimeExport": "grainPixelShaderWGSL",
+      "moduleSha256": "4ebc5171918ea0428264d0d9f9be7879c00913c3f1d688aa7dbf720e685d53d2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/greasedLine.fragment.js",
+      "export": "greasedLinePixelShader",
+      "runtimeExport": "greasedLinePixelShader",
+      "moduleSha256": "5dd7ad45de3b3f426817d5606ae44641f69a702a494c32ad26b3c56286096e5c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/greasedLine.fragment.js",
+      "export": "greasedLinePixelShaderWGSL",
+      "runtimeExport": "greasedLinePixelShaderWGSL",
+      "moduleSha256": "d036d5f8c41220b2c7e35cfc8356946bbe5165d9ace4bbf90a386b4114282bdf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/greasedLine.vertex.js",
+      "export": "greasedLineVertexShader",
+      "runtimeExport": "greasedLineVertexShader",
+      "moduleSha256": "8d6bc0098e2776931d9f795b9eb57311a462b3cb4cca8b95579b7e14b780818a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/greasedLine.vertex.js",
+      "export": "greasedLineVertexShaderWGSL",
+      "runtimeExport": "greasedLineVertexShaderWGSL",
+      "moduleSha256": "a975a286477de694acc4b79d4b998844671b8ab0916bf8ab1ad86043c09e76f4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/hdrFilteringFunctions.js",
+      "export": "hdrFilteringFunctions",
+      "runtimeExport": "hdrFilteringFunctions",
+      "moduleSha256": "b1ced195b5f0609bd949cdcd0f1114faf497b55696d1fa24e502461dbf1d0c9a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/hdrFilteringFunctions.js",
+      "export": "hdrFilteringFunctionsWGSL",
+      "runtimeExport": "hdrFilteringFunctionsWGSL",
+      "moduleSha256": "b2180d19db43e4a67430d25865935ec1941fc7e967fcaf6d5d948ac449749469"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/hdrFiltering.fragment.js",
+      "export": "hdrFilteringPixelShader",
+      "runtimeExport": "hdrFilteringPixelShader",
+      "moduleSha256": "f8a24696f19f682417fcbb66ea958da8b5bd5fa5ead150c58a6d4551d2bf2cf2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/hdrFiltering.fragment.js",
+      "export": "hdrFilteringPixelShaderWGSL",
+      "runtimeExport": "hdrFilteringPixelShaderWGSL",
+      "moduleSha256": "a1bcb60f3416c2f463a11b878bc301052b67951a7b2e4a38cecddaf1670f5d5c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/hdrFiltering.vertex.js",
+      "export": "hdrFilteringVertexShader",
+      "runtimeExport": "hdrFilteringVertexShader",
+      "moduleSha256": "8c7ae1e380455a0231cae6b973cefe67f48cc37e317af1f053976eb591e6efe8"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/hdrFiltering.vertex.js",
+      "export": "hdrFilteringVertexShaderWGSL",
+      "runtimeExport": "hdrFilteringVertexShaderWGSL",
+      "moduleSha256": "1c4cf0016535bbba0463119e0e26b8880844594837717dd6a3957fa8e103cbeb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/hdrIrradianceFiltering.fragment.js",
+      "export": "hdrIrradianceFilteringPixelShader",
+      "runtimeExport": "hdrIrradianceFilteringPixelShader",
+      "moduleSha256": "c6e7024e13cb50d53d4d4feb2756b2f4cb0e630c04e9961f6fe11f8b4e794fb4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/hdrIrradianceFiltering.fragment.js",
+      "export": "hdrIrradianceFilteringPixelShaderWGSL",
+      "runtimeExport": "hdrIrradianceFilteringPixelShaderWGSL",
+      "moduleSha256": "4d769286f003c7b7581e85c4c49b9960a3ded70894dbc7009ea6208327e958bc"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/hdrIrradianceFiltering.vertex.js",
+      "export": "hdrIrradianceFilteringVertexShader",
+      "runtimeExport": "hdrIrradianceFilteringVertexShader",
+      "moduleSha256": "9027730a412cd276df65b27473ab90a56b75dd7439a755bfdb2be49bb7312cf7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/hdrIrradianceFiltering.vertex.js",
+      "export": "hdrIrradianceFilteringVertexShaderWGSL",
+      "runtimeExport": "hdrIrradianceFilteringVertexShaderWGSL",
+      "moduleSha256": "0d541d8f91dca5bd6ec19982744e98b3e15745c210c1da4dab6dbdeb47ae123f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/helperFunctions.js",
+      "export": "helperFunctions",
+      "runtimeExport": "helperFunctions",
+      "moduleSha256": "6d65125ab6b3c27dd15ea37f7a705e52b95c70db331b9a876aa58da939147944"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/helperFunctions.js",
+      "export": "helperFunctionsWGSL",
+      "runtimeExport": "helperFunctionsWGSL",
+      "moduleSha256": "1ee03ab543606f6552c61eb610db0d45d6c00dfea2660176c53fb81aa14c02fb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/highlights.fragment.js",
+      "export": "highlightsPixelShader",
+      "runtimeExport": "highlightsPixelShader",
+      "moduleSha256": "09b5da279edb4e5699617bbf231e7163b240fd780d4e10959d9d40275461ac29"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/highlights.fragment.js",
+      "export": "highlightsPixelShaderWGSL",
+      "runtimeExport": "highlightsPixelShaderWGSL",
+      "moduleSha256": "3ade49e9bd185c4112cd69aa188f83e0fc11a0a178b1a417bf5c1ad31ee9be19"
     },
     {
       "package": "@babylonjs/core",
@@ -97,10 +1308,1193 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblCdfDebug.fragment.js",
+      "export": "iblCdfDebugPixelShader",
+      "runtimeExport": "iblCdfDebugPixelShader",
+      "moduleSha256": "c6df6e508945060cbe632dfd9039028a95933375b1ae9f60ecb1b28f928ecac4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblCdfDebug.fragment.js",
+      "export": "iblCdfDebugPixelShaderWGSL",
+      "runtimeExport": "iblCdfDebugPixelShaderWGSL",
+      "moduleSha256": "722c60402b9fae8bc2262655088b3bb4b48d5b6835926ce68047875d0464410f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblCdfx.fragment.js",
+      "export": "iblCdfxPixelShader",
+      "runtimeExport": "iblCdfxPixelShader",
+      "moduleSha256": "50122ba926c7d3e6ec8d6f2f9dd06180c6b558dae2aaacac4dc104a136b71810"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblCdfx.fragment.js",
+      "export": "iblCdfxPixelShaderWGSL",
+      "runtimeExport": "iblCdfxPixelShaderWGSL",
+      "moduleSha256": "6eb447bcb2b5e81de9559b20616c57349106682c6f2b46264d8a9425a6344f84"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblCdfy.fragment.js",
+      "export": "iblCdfyPixelShader",
+      "runtimeExport": "iblCdfyPixelShader",
+      "moduleSha256": "d6afca5e97b57d5279c8d259fe10cce12d1e5aed32e2c6daa6888534c09a7ab5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblCdfy.fragment.js",
+      "export": "iblCdfyPixelShaderWGSL",
+      "runtimeExport": "iblCdfyPixelShaderWGSL",
+      "moduleSha256": "4fd7bc75ae3d51188761aa87411c76aaa6ebfaa451b146682e179a6039dad19f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblCombineVoxelGrids.fragment.js",
+      "export": "iblCombineVoxelGridsPixelShader",
+      "runtimeExport": "iblCombineVoxelGridsPixelShader",
+      "moduleSha256": "93aa3ab60b8cd89a86bdb4d5e6cd4b8c66388d0b5cf7d35cfb6abfa8ca3c5d21"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblCombineVoxelGrids.fragment.js",
+      "export": "iblCombineVoxelGridsPixelShaderWGSL",
+      "runtimeExport": "iblCombineVoxelGridsPixelShaderWGSL",
+      "moduleSha256": "a26981f39716f4cbd0ef4475192524ba1a071bb31ea2356406f7284d7b890621"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblDominantDirection.fragment.js",
+      "export": "iblDominantDirectionPixelShader",
+      "runtimeExport": "iblDominantDirectionPixelShader",
+      "moduleSha256": "7da9e8a9a4f7c7e3ae00ecef065a6e0e5b93dd930239e3738efaacd1a8e5a84b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblDominantDirection.fragment.js",
+      "export": "iblDominantDirectionPixelShaderWGSL",
+      "runtimeExport": "iblDominantDirectionPixelShaderWGSL",
+      "moduleSha256": "ad5d77b0eb982470fba2527e0f910f41965e2b3026bf7e6e3c3c85e11f8286ca"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblGenerateVoxelMip.fragment.js",
+      "export": "iblGenerateVoxelMipPixelShader",
+      "runtimeExport": "iblGenerateVoxelMipPixelShader",
+      "moduleSha256": "f3cf5bb53f1b98ae3328545eed39689577248c473428d37ab092cf67a9061949"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblGenerateVoxelMip.fragment.js",
+      "export": "iblGenerateVoxelMipPixelShaderWGSL",
+      "runtimeExport": "iblGenerateVoxelMipPixelShaderWGSL",
+      "moduleSha256": "5e06b62bde4622e25264820c382c806c73fcc6fac536517cfc90ec0cec0c3d4f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblIcdf.fragment.js",
+      "export": "iblIcdfPixelShader",
+      "runtimeExport": "iblIcdfPixelShader",
+      "moduleSha256": "b203f32a1426669f0c8392f2b9c22f25d296f771380a2efef889ff535e06f98d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblIcdf.fragment.js",
+      "export": "iblIcdfPixelShaderWGSL",
+      "runtimeExport": "iblIcdfPixelShaderWGSL",
+      "moduleSha256": "ffcd9c60252556e80029f9a60032c2eca51782211b2276d482409f9080c9249c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblScaledLuminance.fragment.js",
+      "export": "iblScaledLuminancePixelShader",
+      "runtimeExport": "iblScaledLuminancePixelShader",
+      "moduleSha256": "9c45253d7ac7f914e743d97e4d4a66f8f3104d142afe7745cd01fa6d68a9f31d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblScaledLuminance.fragment.js",
+      "export": "iblScaledLuminancePixelShaderWGSL",
+      "runtimeExport": "iblScaledLuminancePixelShaderWGSL",
+      "moduleSha256": "3337d4ed2cd82d828ea90d973d2e430e3c29c335fb53518d8e16199203b7d47f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowAccumulation.fragment.js",
+      "export": "iblShadowAccumulationPixelShader",
+      "runtimeExport": "iblShadowAccumulationPixelShader",
+      "moduleSha256": "f0f03cabc2c71c35a946967e36b81cea758b21c633129bf861d602760f772b51"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowAccumulation.fragment.js",
+      "export": "iblShadowAccumulationPixelShaderWGSL",
+      "runtimeExport": "iblShadowAccumulationPixelShaderWGSL",
+      "moduleSha256": "d2bb230198bd80d93696f7e2cc180d9e1924b20b9ff4f70ede4aaea557d7134b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowDebug.fragment.js",
+      "export": "iblShadowDebugPixelShader",
+      "runtimeExport": "iblShadowDebugPixelShader",
+      "moduleSha256": "b343419f1c70cbdf9f3a8f01549bd3580c87d200a93163e2ad7042d6573fb5d2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowDebug.fragment.js",
+      "export": "iblShadowDebugPixelShaderWGSL",
+      "runtimeExport": "iblShadowDebugPixelShaderWGSL",
+      "moduleSha256": "ba40f618caba96032e39323739ad35cb9dd403860ca237fa3bfe647085a39ef0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowGBufferDebug.fragment.js",
+      "export": "iblShadowGBufferDebugPixelShader",
+      "runtimeExport": "iblShadowGBufferDebugPixelShader",
+      "moduleSha256": "9c8e27d1aea8cd4ddb799df2d0a3bbac2f5a2ba094392b217a70e8f44d402a85"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowGBufferDebug.fragment.js",
+      "export": "iblShadowGBufferDebugPixelShaderWGSL",
+      "runtimeExport": "iblShadowGBufferDebugPixelShaderWGSL",
+      "moduleSha256": "c9a3e421541f3a1c4f4a337bdc37617d3e9bec085e07c18f7d5ba2cf010e896a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowsCombine.fragment.js",
+      "export": "iblShadowsCombinePixelShader",
+      "runtimeExport": "iblShadowsCombinePixelShader",
+      "moduleSha256": "47351cc8748c38b8ff7c98768fe3e8bc7b1b8ba68a83fb20cc6710aa94856de0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowsCombine.fragment.js",
+      "export": "iblShadowsCombinePixelShaderWGSL",
+      "runtimeExport": "iblShadowsCombinePixelShaderWGSL",
+      "moduleSha256": "79ad7eca5d2208cecd16dbe74191dbfd2b4afcf9b3689423a6c14b4139ad4727"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowSpatialBlur.fragment.js",
+      "export": "iblShadowSpatialBlurPixelShader",
+      "runtimeExport": "iblShadowSpatialBlurPixelShader",
+      "moduleSha256": "65f510644862615b52860c89c1cad82855d5c47dd297d9d25797edbcb947f051"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowSpatialBlur.fragment.js",
+      "export": "iblShadowSpatialBlurPixelShaderWGSL",
+      "runtimeExport": "iblShadowSpatialBlurPixelShaderWGSL",
+      "moduleSha256": "15f7536c55d69b97162189b5d28f83aed1a397a6c7fd033f31425742bc6c073e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblShadowVoxelTracing.fragment.js",
+      "export": "iblShadowVoxelTracingPixelShader",
+      "runtimeExport": "iblShadowVoxelTracingPixelShader",
+      "moduleSha256": "8cba59b3b8fb9e79b6f8b61686f39b82280eda16e14904edc0c531d8132658df"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblShadowVoxelTracing.fragment.js",
+      "export": "iblShadowVoxelTracingPixelShaderWGSL",
+      "runtimeExport": "iblShadowVoxelTracingPixelShaderWGSL",
+      "moduleSha256": "39225aaa00615f22c5196e5cafbe2bd9a722ec595ac39e4a0a1dfb47e803cc8b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblVoxelGrid2dArrayDebug.fragment.js",
+      "export": "iblVoxelGrid2dArrayDebugPixelShader",
+      "runtimeExport": "iblVoxelGrid2dArrayDebugPixelShader",
+      "moduleSha256": "f29dd2bcff2eb9ad018d195413ad6c34ff0fb4fb7f336494445c5ba91d0c2cba"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblVoxelGrid2dArrayDebug.fragment.js",
+      "export": "iblVoxelGrid2dArrayDebugPixelShaderWGSL",
+      "runtimeExport": "iblVoxelGrid2dArrayDebugPixelShaderWGSL",
+      "moduleSha256": "902a9cdd8edf7dc575ebf69b9319551b618842b7eada625039d24c588a25ccf8"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblVoxelGrid.fragment.js",
+      "export": "iblVoxelGridPixelShader",
+      "runtimeExport": "iblVoxelGridPixelShader",
+      "moduleSha256": "d38f46a602b93cad2a1a56c95182768c5497c348d5224966df7f1a2e3ebb3151"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblVoxelGrid.fragment.js",
+      "export": "iblVoxelGridPixelShaderWGSL",
+      "runtimeExport": "iblVoxelGridPixelShaderWGSL",
+      "moduleSha256": "4979ee60a5d3d8d7bf71b4155b7dbe3742903a98cb3f3d9b07cf0997ee1fa69f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/iblVoxelGrid.vertex.js",
+      "export": "iblVoxelGridVertexShader",
+      "runtimeExport": "iblVoxelGridVertexShader",
+      "moduleSha256": "a29e004bc8163786d0385c062e069328f84c196ef359f6145ba00d1dbb590a81"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/iblVoxelGrid.vertex.js",
+      "export": "iblVoxelGridVertexShaderWGSL",
+      "runtimeExport": "iblVoxelGridVertexShaderWGSL",
+      "moduleSha256": "f4fd7f2626a51d87e95851f8bc84bb13678c699d2ef91e281cd2e69943748b9f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/imageProcessingCompatibility.js",
+      "export": "imageProcessingCompatibility",
+      "runtimeExport": "imageProcessingCompatibility",
+      "moduleSha256": "ca199d90514bb62c8bae34e4a69f9c6cc87f6057f659018922a34814eb03b6d9"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/imageProcessingCompatibility.js",
+      "export": "imageProcessingCompatibilityWGSL",
+      "runtimeExport": "imageProcessingCompatibilityWGSL",
+      "moduleSha256": "50b646e3e5b67d7cd84cb3b1a42ed37402afed16d289f2d59eaedbc6db2e6402"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/imageProcessingDeclaration.js",
+      "export": "imageProcessingDeclaration",
+      "runtimeExport": "imageProcessingDeclaration",
+      "moduleSha256": "01054c8b07ba1dd4be8223455704acf9154e19166413cb00137abda7386fba1c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/imageProcessingDeclaration.js",
+      "export": "imageProcessingDeclarationWGSL",
+      "runtimeExport": "imageProcessingDeclarationWGSL",
+      "moduleSha256": "5cd879bcb8fc144e6636f62ebb89116485393b3d9d8953efcc5a1945ab3f006f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/imageProcessingFunctions.js",
+      "export": "imageProcessingFunctions",
+      "runtimeExport": "imageProcessingFunctions",
+      "moduleSha256": "01eed323946686ee921334a10febf8e0234b4eb1cef49c30e72274b040c19c4c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/imageProcessingFunctions.js",
+      "export": "imageProcessingFunctionsWGSL",
+      "runtimeExport": "imageProcessingFunctionsWGSL",
+      "moduleSha256": "8cde99992107eee518414e47f676d72603973a9bc143ec1f780d013cfbd8aa84"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/imageProcessing.fragment.js",
+      "export": "imageProcessingPixelShader",
+      "runtimeExport": "imageProcessingPixelShader",
+      "moduleSha256": "99e68dd6cfb6a6352daac69a913acea5121dab5670f44199f2a9473f9fb18aaf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/imageProcessing.fragment.js",
+      "export": "imageProcessingPixelShaderWGSL",
+      "runtimeExport": "imageProcessingPixelShaderWGSL",
+      "moduleSha256": "b5dba3ca64eea40dac43a082a3f9d43d72bcfd116964327cff362f6227c5ad49"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/importanceSampling.js",
+      "export": "importanceSampling",
+      "runtimeExport": "importanceSampling",
+      "moduleSha256": "5d2f976d4ac3d331bae637820396ab7a8daedbc8988899b13a05a6c4c6738415"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/importanceSampling.js",
+      "export": "importanceSamplingWGSL",
+      "runtimeExport": "importanceSamplingWGSL",
+      "moduleSha256": "c117b9f47d38bc8ba6c9cef2938ff2ac11c768183844e3d7997c6f631a3aa530"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/instancesDeclaration.js",
+      "export": "instancesDeclaration",
+      "runtimeExport": "instancesDeclaration",
+      "moduleSha256": "b21f5418f277f1843c74b2fe27b9e6edf4c59d334a4f3946799114369303e451"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/instancesDeclaration.js",
+      "export": "instancesDeclarationWGSL",
+      "runtimeExport": "instancesDeclarationWGSL",
+      "moduleSha256": "cf973c9e1f2fd776027001c341b6960f8d774fb7a943cf37a57d09a3ecc4cff7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/instancesVertex.js",
+      "export": "instancesVertex",
+      "runtimeExport": "instancesVertex",
+      "moduleSha256": "73163a1787ac177726bdd4a45f5ca4a70783a9a5b7ea8b82600e5f0641b41877"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/instancesVertex.js",
+      "export": "instancesVertexWGSL",
+      "runtimeExport": "instancesVertexWGSL",
+      "moduleSha256": "100fbbd3b733a41d3ebb7507a0e19af9896e73dc2fbb66b91d2ba071254bef13"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/intersectionFunctions.js",
+      "export": "intersectionFunctions",
+      "runtimeExport": "intersectionFunctions",
+      "moduleSha256": "4e134dd12c9ca400d7b84c62e74e74334efa5ed4e176e8fb4701d2ec5bdc8746"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/intersectionFunctions.js",
+      "export": "intersectionFunctionsWGSL",
+      "runtimeExport": "intersectionFunctionsWGSL",
+      "moduleSha256": "95c925fed0d03ee41986cd39c5c36c75482cbcf12658745b64c8942f4ea5cf2d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/kernelBlur.fragment.js",
+      "export": "kernelBlurPixelShader",
+      "runtimeExport": "kernelBlurPixelShader",
+      "moduleSha256": "a03bf56ad0a2e2394337a14c550c6df578d682e28e9745db35b1ada222d4f45e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/kernelBlur.fragment.js",
+      "export": "kernelBlurPixelShaderWGSL",
+      "runtimeExport": "kernelBlurPixelShaderWGSL",
+      "moduleSha256": "dc6d7ef76b5e04a989b2107edf2f36e74d04293a7494f6a3564933048f3cc292"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/kernelBlur.vertex.js",
+      "export": "kernelBlurVertexShader",
+      "runtimeExport": "kernelBlurVertexShader",
+      "moduleSha256": "2e651b0cf20a151488a7cee22f9c5c56a87ec4811afc081a78ebedc2404f9345"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/kernelBlur.vertex.js",
+      "export": "kernelBlurVertexShaderWGSL",
+      "runtimeExport": "kernelBlurVertexShaderWGSL",
+      "moduleSha256": "6123d83deed0a7de9f9a19beff51d0061b979123d56436f11172e94508742901"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/layer.fragment.js",
+      "export": "layerPixelShader",
+      "runtimeExport": "layerPixelShader",
+      "moduleSha256": "002b5c9c2e76f7abfe7cc4d61c9c2cced9f431c05db1d0b8096fb9a30a6e43a3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/layer.fragment.js",
+      "export": "layerPixelShaderWGSL",
+      "runtimeExport": "layerPixelShaderWGSL",
+      "moduleSha256": "47db79d56f8d6c229952daeac665bdf91954d33572f1b3590b431cb862027b1b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/layer.vertex.js",
+      "export": "layerVertexShader",
+      "runtimeExport": "layerVertexShader",
+      "moduleSha256": "f35adf86898eae9c393bc2e6121ed3022c2b479b1e1a6165dba186eee665fe72"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/layer.vertex.js",
+      "export": "layerVertexShaderWGSL",
+      "runtimeExport": "layerVertexShaderWGSL",
+      "moduleSha256": "54b20cfbd7ca3ac34a3b2e173991c6ac913177f197225a7748636ab90adc63a1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lensFlare.fragment.js",
+      "export": "lensFlarePixelShader",
+      "runtimeExport": "lensFlarePixelShader",
+      "moduleSha256": "12ee47a5dd87b704df6b96ed341eb36afe2b20170f2e56558ab7750b05398744"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lensFlare.fragment.js",
+      "export": "lensFlarePixelShaderWGSL",
+      "runtimeExport": "lensFlarePixelShaderWGSL",
+      "moduleSha256": "40cf799d0f5d64f189bc1807ac0f4525aa817b4714ecb9308ac26254773866c7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lensFlare.vertex.js",
+      "export": "lensFlareVertexShader",
+      "runtimeExport": "lensFlareVertexShader",
+      "moduleSha256": "db52ba56a1f2ef55b589229440072265cb4f12689c87bec042ee274a44097a21"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lensFlare.vertex.js",
+      "export": "lensFlareVertexShaderWGSL",
+      "runtimeExport": "lensFlareVertexShaderWGSL",
+      "moduleSha256": "0ac337c21ed5833882c6844a5edac1876ae5591641061d718d5a6ca617eee911"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lensHighlights.fragment.js",
+      "export": "lensHighlightsPixelShader",
+      "runtimeExport": "lensHighlightsPixelShader",
+      "moduleSha256": "0705b3caab65fde1fdd5a49d1d050ffeeda9e8f9ecb17a70d102a2ccdcd51883"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightFragment.js",
+      "export": "lightFragment",
+      "runtimeExport": "lightFragment",
+      "moduleSha256": "f8e44f7cc1810a955ee6a2b485b11a8b1dcb100258f00ca48954878d8e399950"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightFragmentDeclaration.js",
+      "export": "lightFragmentDeclaration",
+      "runtimeExport": "lightFragmentDeclaration",
+      "moduleSha256": "4814d426aec6726dc3dc707ea7bea28a514f5ee0300840282f29095bfda27840"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightFragment.js",
+      "export": "lightFragmentWGSL",
+      "runtimeExport": "lightFragmentWGSL",
+      "moduleSha256": "80da72b13ec5ddd59731ccd87ed7f8881e92527f3ba172635e6df9bb191c37a8"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lightingVolume.compute.js",
+      "export": "lightingVolumeComputeShaderWGSL",
+      "runtimeExport": "lightingVolumeComputeShaderWGSL",
+      "moduleSha256": "94512f6e6aadc3bba699d820b18e1842937a284f4cf50a04719817b8b6490f4f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lightProxy.fragment.js",
+      "export": "lightProxyPixelShader",
+      "runtimeExport": "lightProxyPixelShader",
+      "moduleSha256": "64f50f599e588af671c72cb7d1a1284225fa6a16ab0b01b6702ce26c6b38bee5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lightProxy.fragment.js",
+      "export": "lightProxyPixelShaderWGSL",
+      "runtimeExport": "lightProxyPixelShaderWGSL",
+      "moduleSha256": "7797c880825a81a1381fc002332e8e624694e526fb3a8a26ffc938fbd998862d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lightProxy.vertex.js",
+      "export": "lightProxyVertexShader",
+      "runtimeExport": "lightProxyVertexShader",
+      "moduleSha256": "89589de2e10de48d4dc17b3b212746cf9d963b4a7f374e62abe0b389922806b3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lightProxy.vertex.js",
+      "export": "lightProxyVertexShaderWGSL",
+      "runtimeExport": "lightProxyVertexShaderWGSL",
+      "moduleSha256": "03f2738e86d6057a375ef275013ba66d0c1cf703993a72b25d49234def63a055"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightsFragmentFunctions.js",
+      "export": "lightsFragmentFunctions",
+      "runtimeExport": "lightsFragmentFunctions",
+      "moduleSha256": "e13e7d4a8cf9b45ce41b313dffbfbb7e116d930ba76f961b7e3cce82abf629b5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightsFragmentFunctions.js",
+      "export": "lightsFragmentFunctionsWGSL",
+      "runtimeExport": "lightsFragmentFunctionsWGSL",
+      "moduleSha256": "1c1f61719227a5da538f04dc3a0fceeb13b2b080f2360b4a432c8d3d32c04c3e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightUboDeclaration.js",
+      "export": "lightUboDeclaration",
+      "runtimeExport": "lightUboDeclaration",
+      "moduleSha256": "14a42968363502437c3f7686a1d17b237e6c76abd94ad68c70c655591eff1061"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightUboDeclaration.js",
+      "export": "lightUboDeclarationWGSL",
+      "runtimeExport": "lightUboDeclarationWGSL",
+      "moduleSha256": "a0cf76f38d4abf60d31c93817efccd2da34c594dc3149a1524ab7189fd29ef81"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightVxFragmentDeclaration.js",
+      "export": "lightVxFragmentDeclaration",
+      "runtimeExport": "lightVxFragmentDeclaration",
+      "moduleSha256": "c73bfc491260fcf81ada64bdc3a4ce7645f437df95b077d0bec9e53cce66cfa8"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightVxFragmentDeclaration.js",
+      "export": "lightVxFragmentDeclarationWGSL",
+      "runtimeExport": "lightVxFragmentDeclarationWGSL",
+      "moduleSha256": "53bb3b4af7b980964e2546945524ac7336c7c3b913325e7d55eeb8540f1cc89c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/lightVxUboDeclaration.js",
+      "export": "lightVxUboDeclaration",
+      "runtimeExport": "lightVxUboDeclaration",
+      "moduleSha256": "c31723d314eee54124dabe2c0ea8f2eca58e8e962c68b164725981dc23e3c9c7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/lightVxUboDeclaration.js",
+      "export": "lightVxUboDeclarationWGSL",
+      "runtimeExport": "lightVxUboDeclarationWGSL",
+      "moduleSha256": "ed48d6f92bf9ce60776e6397de92ab7e1519945efc900962eeb9d8c80857b8d4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/line.fragment.js",
+      "export": "linePixelShader",
+      "runtimeExport": "linePixelShader",
+      "moduleSha256": "086ae0535399b81907722005c0f72bbc4188e68b20d267927c6c29a7a9655c03"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/line.fragment.js",
+      "export": "linePixelShaderWGSL",
+      "runtimeExport": "linePixelShaderWGSL",
+      "moduleSha256": "9d1fafa366caf743cd0c741dc9bcb28eeae1757e48aba68f7f9e6a656cc93e80"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/line.vertex.js",
+      "export": "lineVertexShader",
+      "runtimeExport": "lineVertexShader",
+      "moduleSha256": "4ca259ed940bf35db57852a86f3d2f281cafeb936093faf147baa579ef59f099"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/line.vertex.js",
+      "export": "lineVertexShaderWGSL",
+      "runtimeExport": "lineVertexShaderWGSL",
+      "moduleSha256": "7cd6cbdfc2a41ead7546d889b098859599f6cf5028a0e3b25c2ec189640a63f8"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lodCube.fragment.js",
+      "export": "lodCubePixelShader",
+      "runtimeExport": "lodCubePixelShader",
+      "moduleSha256": "132693c2dc5f06c8a9825848a01fb4de10e2fc9c6381577d5e342ac9c0696f0e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lodCube.fragment.js",
+      "export": "lodCubePixelShaderWGSL",
+      "runtimeExport": "lodCubePixelShaderWGSL",
+      "moduleSha256": "8f5738013a88a7e0e6dbe6bb57e1960750439909ab93b64277171ee8eeff0f3b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/lod.fragment.js",
+      "export": "lodPixelShader",
+      "runtimeExport": "lodPixelShader",
+      "moduleSha256": "731aa2966e3f58898088f0a7516f6f00fd324027db857b2011b8b5b45aba8979"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/lod.fragment.js",
+      "export": "lodPixelShaderWGSL",
+      "runtimeExport": "lodPixelShaderWGSL",
+      "moduleSha256": "4adcda27aa9c4c3c19229c6cfd720f8449865fd7c65e5a41ddbccbb672b56d90"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/logDepthDeclaration.js",
+      "export": "logDepthDeclaration",
+      "runtimeExport": "logDepthDeclaration",
+      "moduleSha256": "745278e43870047b3f8fbdcbfd61e55c8dc43bff9bdf2702bfdcd1d40eae0a0f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/logDepthDeclaration.js",
+      "export": "logDepthDeclarationWGSL",
+      "runtimeExport": "logDepthDeclarationWGSL",
+      "moduleSha256": "edf83a9ec849676018048ea524bae777278606afaefe53d9c68869b8215f94de"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/logDepthFragment.js",
+      "export": "logDepthFragment",
+      "runtimeExport": "logDepthFragment",
+      "moduleSha256": "9186bf5bc42483b5a66f01b6d5e09f94284e1ef6a8b305f2a7aea006edeaf293"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/logDepthFragment.js",
+      "export": "logDepthFragmentWGSL",
+      "runtimeExport": "logDepthFragmentWGSL",
+      "moduleSha256": "8a2d59f79fec8382014dd80f0543f648c462fd4809c9447850c49915794043ec"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/logDepthVertex.js",
+      "export": "logDepthVertex",
+      "runtimeExport": "logDepthVertex",
+      "moduleSha256": "f28c9e78c5198b51dfd3eaa463590deb46b810364d2f5999d91a78953908b047"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/logDepthVertex.js",
+      "export": "logDepthVertexWGSL",
+      "runtimeExport": "logDepthVertexWGSL",
+      "moduleSha256": "db37335fb13b34d2cc168b078af4cce70ea5eeaa671f5bb12eb2458a8da45a80"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/ltcHelperFunctions.js",
+      "export": "ltcHelperFunctions",
+      "runtimeExport": "ltcHelperFunctions",
+      "moduleSha256": "8087abab0797390228f2ae47f4c38cc7d33049394918e6c95c499591d78c0a80"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/ltcHelperFunctions.js",
+      "export": "ltcHelperFunctionsWGSL",
+      "runtimeExport": "ltcHelperFunctionsWGSL",
+      "moduleSha256": "f3e42c159906dcad7fd9301acbb7ddd13458c730a35d24738005ba500c03e858"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/meshUboDeclaration.js",
+      "export": "meshUboDeclarationWGSL",
+      "runtimeExport": "meshUboDeclarationWGSL",
+      "moduleSha256": "cf7d12995b40d012f8f0a194affbf7656372c7712f243c814b3055a167c36512"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRendererFinaliser.fragment.js",
+      "export": "meshUVSpaceRendererFinaliserPixelShader",
+      "runtimeExport": "meshUVSpaceRendererFinaliserPixelShader",
+      "moduleSha256": "ce598a0c1fbf8ab381eca4dfc98973cb0e1f65027052991ca272f09ae240fa0c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRendererFinaliser.fragment.js",
+      "export": "meshUVSpaceRendererFinaliserPixelShaderWGSL",
+      "runtimeExport": "meshUVSpaceRendererFinaliserPixelShaderWGSL",
+      "moduleSha256": "08b09519d2c6778f916a48f15df9cffe1aae1d73e66bb4a20e3252758fa4b5c0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRendererFinaliser.vertex.js",
+      "export": "meshUVSpaceRendererFinaliserVertexShader",
+      "runtimeExport": "meshUVSpaceRendererFinaliserVertexShader",
+      "moduleSha256": "3978165b70e2779f09094b2b56afcbda0c8c8f2fa9ef7a60a2151818b77d538d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRendererFinaliser.vertex.js",
+      "export": "meshUVSpaceRendererFinaliserVertexShaderWGSL",
+      "runtimeExport": "meshUVSpaceRendererFinaliserVertexShaderWGSL",
+      "moduleSha256": "179014374a9cc7419d906e113d0c892266bdcfa24b75600967272662b132e4ff"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRendererMasker.fragment.js",
+      "export": "meshUVSpaceRendererMaskerPixelShader",
+      "runtimeExport": "meshUVSpaceRendererMaskerPixelShader",
+      "moduleSha256": "7d16b6e678b6525cd962931443021ac08436d073b1581482024bf20da3c80d59"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRendererMasker.fragment.js",
+      "export": "meshUVSpaceRendererMaskerPixelShaderWGSL",
+      "runtimeExport": "meshUVSpaceRendererMaskerPixelShaderWGSL",
+      "moduleSha256": "f4e1a3b07b43648d0c1cdbcf036fe2b10515896feb49dee90fdcbbbf4ffed5c1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRendererMasker.vertex.js",
+      "export": "meshUVSpaceRendererMaskerVertexShader",
+      "runtimeExport": "meshUVSpaceRendererMaskerVertexShader",
+      "moduleSha256": "5b1133ed6ff0d3ae7808ce936c73bafb2978c8d4cabdc0fcc2921352a8993118"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRendererMasker.vertex.js",
+      "export": "meshUVSpaceRendererMaskerVertexShaderWGSL",
+      "runtimeExport": "meshUVSpaceRendererMaskerVertexShaderWGSL",
+      "moduleSha256": "5ac1302d2f16c17522170eef64a34177991fe05c193f67cdacb669ea23705396"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRenderer.fragment.js",
+      "export": "meshUVSpaceRendererPixelShader",
+      "runtimeExport": "meshUVSpaceRendererPixelShader",
+      "moduleSha256": "ba0e4dce884f336d05d65c69384fe4d12f0adf7ca1800b2addc325e705c9d01a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRenderer.fragment.js",
+      "export": "meshUVSpaceRendererPixelShaderWGSL",
+      "runtimeExport": "meshUVSpaceRendererPixelShaderWGSL",
+      "moduleSha256": "e918220aa904146c6c4e244268af79ab51ff079732e131f32c739f1b8368030f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/meshUVSpaceRenderer.vertex.js",
+      "export": "meshUVSpaceRendererVertexShader",
+      "runtimeExport": "meshUVSpaceRendererVertexShader",
+      "moduleSha256": "0b9e4c20f04ecb92d286e21c570a1a019c7a61a8afe5ee5d4b3347b440178a00"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/meshUVSpaceRenderer.vertex.js",
+      "export": "meshUVSpaceRendererVertexShaderWGSL",
+      "runtimeExport": "meshUVSpaceRendererVertexShaderWGSL",
+      "moduleSha256": "37a905dbc7c9d602c0558bd5fe7c3469a18b26747f4c8190aab5c4056e71dec5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/minmaxRedux.fragment.js",
+      "export": "minmaxReduxPixelShader",
+      "runtimeExport": "minmaxReduxPixelShader",
+      "moduleSha256": "96304573a74b38a635e9f0ebfe2ca94f495fc878ba542cdf55a1568e952bc111"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/minmaxRedux.fragment.js",
+      "export": "minmaxReduxPixelShaderWGSL",
+      "runtimeExport": "minmaxReduxPixelShaderWGSL",
+      "moduleSha256": "1d80e6ffa6518b05077b2eb6082b374e971334981dc34ca2bafa4fa0ae3c8e93"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertex.js",
+      "export": "morphTargetsVertex",
+      "runtimeExport": "morphTargetsVertex",
+      "moduleSha256": "68068df16fa67ab2b33d9904ce718d7bb5c3f692e4cd5af04105b36370ab5613"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertexDeclaration.js",
+      "export": "morphTargetsVertexDeclaration",
+      "runtimeExport": "morphTargetsVertexDeclaration",
+      "moduleSha256": "1944026c77c8417cb70d1740541938a948de921051bbb28a140b3812d725a371"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/morphTargetsVertexDeclaration.js",
+      "export": "morphTargetsVertexDeclarationWGSL",
+      "runtimeExport": "morphTargetsVertexDeclarationWGSL",
+      "moduleSha256": "13c7d161c739c05f428d8827cf106561817d088656e9de89815ce20b41fa9899"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertexGlobal.js",
+      "export": "morphTargetsVertexGlobal",
+      "runtimeExport": "morphTargetsVertexGlobal",
+      "moduleSha256": "50f39eb1e63f4afd9f8029713a6b97cdeaf3926985929e423c2b8fe462331569"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/morphTargetsVertexGlobalDeclaration.js",
+      "export": "morphTargetsVertexGlobalDeclaration",
+      "runtimeExport": "morphTargetsVertexGlobalDeclaration",
+      "moduleSha256": "3d0fb017edce522b4bb9703be842e67b0737bb6e716fde2ed8681a798bac6f17"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/morphTargetsVertexGlobalDeclaration.js",
+      "export": "morphTargetsVertexGlobalDeclarationWGSL",
+      "runtimeExport": "morphTargetsVertexGlobalDeclarationWGSL",
+      "moduleSha256": "f094dd04c04873e3c4841ccc653b5c4d50710761077ef087c1ac864421efc2ba"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/morphTargetsVertexGlobal.js",
+      "export": "morphTargetsVertexGlobalWGSL",
+      "runtimeExport": "morphTargetsVertexGlobalWGSL",
+      "moduleSha256": "6e57defa475c3f9cafc30a0d34ab7f75cf7775100bd99764759e044d38560d96"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/morphTargetsVertex.js",
+      "export": "morphTargetsVertexWGSL",
+      "runtimeExport": "morphTargetsVertexWGSL",
+      "moduleSha256": "d4ed34da68fde1c10385e327d7cccaa366927061812bdf4f6f38d2853b2a6261"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/motionBlur.fragment.js",
+      "export": "motionBlurPixelShader",
+      "runtimeExport": "motionBlurPixelShader",
+      "moduleSha256": "f88031b46db20bd2a9a4fd0b48d8ec1b530cd33e31dc72d9b84db9bedf003526"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/motionBlur.fragment.js",
+      "export": "motionBlurPixelShaderWGSL",
+      "runtimeExport": "motionBlurPixelShaderWGSL",
+      "moduleSha256": "66c026cca7406d894850cdf81e7def010e0f8cc25d632099ac889f93bb019a40"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/oitBackBlend.fragment.js",
+      "export": "oitBackBlendPixelShader",
+      "runtimeExport": "oitBackBlendPixelShader",
+      "moduleSha256": "f4d37d97de97625755fb0cbad9ed2f379ff316e4ad023939fe42c7b5601db14e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/oitBackBlend.fragment.js",
+      "export": "oitBackBlendPixelShaderWGSL",
+      "runtimeExport": "oitBackBlendPixelShaderWGSL",
+      "moduleSha256": "cebec8b16a6a977f929d59dc006ad67e649a3506ed39ac27e2bf4bceba5bf907"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/oitFinal.fragment.js",
+      "export": "oitFinalPixelShader",
+      "runtimeExport": "oitFinalPixelShader",
+      "moduleSha256": "b89f2e6f3a15f706799f32b9a47cea2e362b2237b85183ec48f4dcbfd5d26313"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/oitFinal.fragment.js",
+      "export": "oitFinalPixelShaderWGSL",
+      "runtimeExport": "oitFinalPixelShaderWGSL",
+      "moduleSha256": "64d7f4cc210f44a126ed4cced8754c40da6f32a39e5b04ad09d712e85319e483"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/openpbr.fragment.js",
+      "export": "openpbrPixelShader",
+      "runtimeExport": "openpbrPixelShader",
+      "moduleSha256": "1c04880daae263d09ecaa730ce9295f53aa5130d9eb49f988b0c77ae0b0207c2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/openpbr.fragment.js",
+      "export": "openpbrPixelShaderWGSL",
+      "runtimeExport": "openpbrPixelShaderWGSL",
+      "moduleSha256": "ff18f6000babc24151a800999dedebe29337033a1b910452679c5623f9328a64"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/openpbr.vertex.js",
+      "export": "openpbrVertexShader",
+      "runtimeExport": "openpbrVertexShader",
+      "moduleSha256": "cd10f645be2dae94bbc5e0d2d607cfcfd48ec80963f73a15c3cf1e89bb7bd163"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/openpbr.vertex.js",
+      "export": "openpbrVertexShaderWGSL",
+      "runtimeExport": "openpbrVertexShaderWGSL",
+      "moduleSha256": "8180967bcaaa5c5a19b577707401cda3d6c257eb0fa889c8a7d129755273dbfd"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/outline.fragment.js",
+      "export": "outlinePixelShader",
+      "runtimeExport": "outlinePixelShader",
+      "moduleSha256": "a97466bb6f2ae1e7a51afdc761ef1cdec2ac715c65b566bea6282a484241fc0b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/outline.fragment.js",
+      "export": "outlinePixelShaderWGSL",
+      "runtimeExport": "outlinePixelShaderWGSL",
+      "moduleSha256": "dc258d31fb23346f968bb3c23506e826a6d7e758fbdf8dcbda1936f101b06265"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/outline.vertex.js",
+      "export": "outlineVertexShader",
+      "runtimeExport": "outlineVertexShader",
+      "moduleSha256": "3d972145f778e4c81423f5fc8746802f0128a99616d6556883671df9d1682df8"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/outline.vertex.js",
+      "export": "outlineVertexShaderWGSL",
+      "runtimeExport": "outlineVertexShaderWGSL",
+      "moduleSha256": "f88d133704761e9743ee23ba10a848afb1760a1d3b60c3b35f8628505477d6ed"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/packingFunctions.js",
+      "export": "packingFunctions",
+      "runtimeExport": "packingFunctions",
+      "moduleSha256": "f5c9c78668ac7853f15a39035e7f6b57d6f95aa0c144bc55c0d1320913b7e088"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/packingFunctions.js",
+      "export": "packingFunctionsWGSL",
+      "runtimeExport": "packingFunctionsWGSL",
+      "moduleSha256": "9f2583f4605f5dd9d17e4e03130fce8f9356584e1d89aa35d3b865857b6e4efa"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/particles.fragment.js",
+      "export": "particlesPixelShader",
+      "runtimeExport": "particlesPixelShader",
+      "moduleSha256": "b51f35601da300ddd111ad30174c0a57cb28b628d9c95d2973025bf5c8ee5c2d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/particles.fragment.js",
+      "export": "particlesPixelShaderWGSL",
+      "runtimeExport": "particlesPixelShaderWGSL",
+      "moduleSha256": "f32f53180b4df293fec72ff44d9f83cb19ae6cf94eb743a206347e3457622da2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/particles.vertex.js",
+      "export": "particlesVertexShader",
+      "runtimeExport": "particlesVertexShader",
+      "moduleSha256": "4935b607ba3ab20c3dab5307ad6865a770cf0826363e1e21cc857e237a0c389f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/particles.vertex.js",
+      "export": "particlesVertexShaderWGSL",
+      "runtimeExport": "particlesVertexShaderWGSL",
+      "moduleSha256": "d120eebc9b54c69e0aae9bf6ee925e5543121fd3a89f19a1024f44b729655f24"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/passCube.fragment.js",
+      "export": "passCubePixelShader",
+      "runtimeExport": "passCubePixelShader",
+      "moduleSha256": "d1a120df09f5f3cb531194938d42dc45ad0c3c6440e8ba0f3ba972ac89b9dd0a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/passCube.fragment.js",
+      "export": "passCubePixelShaderWGSL",
+      "runtimeExport": "passCubePixelShaderWGSL",
+      "moduleSha256": "bce03d8c06922e50bc256aafa231e7beb9d9a19de99c0c8b812d35e680707d3f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/pass.fragment.js",
+      "export": "passPixelShader",
+      "runtimeExport": "passPixelShader",
+      "moduleSha256": "98e33672a2939ea6cf8113f26f2c911dd99ab81fcca9580770a0bb930ef4e84f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/pass.fragment.js",
+      "export": "passPixelShaderWGSL",
+      "runtimeExport": "passPixelShaderWGSL",
+      "moduleSha256": "294d5e15f5d9a753732e120495a251b66b9c2b69f65fd5d5e0d03bd172ab8699"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/pbrBRDFFunctions.js",
+      "export": "pbrBRDFFunctions",
+      "runtimeExport": "pbrBRDFFunctions",
+      "moduleSha256": "0f33790c6aa7c681c3ac9d009a96c5a9ed1351a519cc5116e95291a8e14698c3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/pbrBRDFFunctions.js",
+      "export": "pbrBRDFFunctionsWGSL",
+      "runtimeExport": "pbrBRDFFunctionsWGSL",
+      "moduleSha256": "224f1b6dc2bf69844fa5ff120ef9af6db9ce39242c0170f06d16881e6c4d8c04"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/pbr.fragment.js",
+      "export": "pbrPixelShader",
+      "runtimeExport": "pbrPixelShader",
+      "moduleSha256": "d591945a9a1ebcda1b1abea26a74a142673e2f190a3a8e045f8e473f3d81944a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/pbr.fragment.js",
+      "export": "pbrPixelShaderWGSL",
+      "runtimeExport": "pbrPixelShaderWGSL",
+      "moduleSha256": "d9d07981dd540fa4d43ff1296715b6a48f8d26b3151a8de49e1f3c445b2e56e2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/pbr.vertex.js",
+      "export": "pbrVertexShader",
+      "runtimeExport": "pbrVertexShader",
+      "moduleSha256": "ca9a444cdf4c44f1caabe3792d4565e162bdb54692ae67be00c74e7bebf7db03"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/pbr.vertex.js",
+      "export": "pbrVertexShaderWGSL",
+      "runtimeExport": "pbrVertexShaderWGSL",
+      "moduleSha256": "a5a1e1a865892d753173c92837c0793fd382a35ec151d337d20bdfb91ef8b00a"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants.js",
       "export": "PHI",
       "runtimeExport": "PHI",
       "moduleSha256": "109a8559f79cbb3b037fd5ab809f1171ca0c95be039227e738cdefa5539bf89b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/picking.fragment.js",
+      "export": "pickingPixelShader",
+      "runtimeExport": "pickingPixelShader",
+      "moduleSha256": "a180cc666f88eff8c0a8864c3b4143b6b15a3770c4249f5179c8611c66010f96"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/picking.fragment.js",
+      "export": "pickingPixelShaderWGSL",
+      "runtimeExport": "pickingPixelShaderWGSL",
+      "moduleSha256": "30e479648b522d3c4b92f96a89380b919e607b2fd7d0ee0d6b0fbca6cecadc73"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/picking.vertex.js",
+      "export": "pickingVertexShader",
+      "runtimeExport": "pickingVertexShader",
+      "moduleSha256": "8cb606eb71e963e23e40aa8a357f8000d76214096f760eff2613da1fef692e47"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/picking.vertex.js",
+      "export": "pickingVertexShaderWGSL",
+      "runtimeExport": "pickingVertexShaderWGSL",
+      "moduleSha256": "d3c25447e4ec44078f58b0b85395dcdd18882cd3b45456323719b2f3b4da5511"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/postprocess.vertex.js",
+      "export": "postprocessVertexShader",
+      "runtimeExport": "postprocessVertexShader",
+      "moduleSha256": "d32e4df3b184e8dcdea763616c570c7ff423c6aa4a1d06b11b94a87bf4af66e6"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/postprocess.vertex.js",
+      "export": "postprocessVertexShaderWGSL",
+      "runtimeExport": "postprocessVertexShaderWGSL",
+      "moduleSha256": "59dcf05a8b8389e501d2e8f8d09fad244a133457bdb990359c4ebc9b5fe1f206"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/procedural.vertex.js",
+      "export": "proceduralVertexShader",
+      "runtimeExport": "proceduralVertexShader",
+      "moduleSha256": "2b721531ed5ab4279626cb5c27040d5ca6fc9f1e313d98cd6be87ac2e556140b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/procedural.vertex.js",
+      "export": "proceduralVertexShaderWGSL",
+      "runtimeExport": "proceduralVertexShaderWGSL",
+      "moduleSha256": "c266b93b9fab5f7a3f56d23df5b9e2f4de1ee7cb60a0f7a338e01401ff24133c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/reflectionFunction.js",
+      "export": "reflectionFunction",
+      "runtimeExport": "reflectionFunction",
+      "moduleSha256": "1d5c69890feab1c628119d9a947a12a3e34cb0ba6af408eb5064377a041cb03d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/reflectionFunction.js",
+      "export": "reflectionFunctionWGSL",
+      "runtimeExport": "reflectionFunctionWGSL",
+      "moduleSha256": "bf854ef3bacb0bdffa99f52ad458c39e782b8bf6f79073fef7ac0e21fa0d1777"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/refraction.fragment.js",
+      "export": "refractionPixelShader",
+      "runtimeExport": "refractionPixelShader",
+      "moduleSha256": "a604b83a1179e6c3e1975f254689f4854ecdff76da3449ef2d889b41984073a0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/rgbdDecode.fragment.js",
+      "export": "rgbdDecodePixelShader",
+      "runtimeExport": "rgbdDecodePixelShader",
+      "moduleSha256": "861cab9224340558e89bd8da510ca2c56e41c075885aae55d9bd82265279c24b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/rgbdDecode.fragment.js",
+      "export": "rgbdDecodePixelShaderWGSL",
+      "runtimeExport": "rgbdDecodePixelShaderWGSL",
+      "moduleSha256": "82184ece7910e3f4aa302fb9c3f1db39bb47fcc9638db58261714b4e9c6a21ec"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/rgbdEncode.fragment.js",
+      "export": "rgbdEncodePixelShader",
+      "runtimeExport": "rgbdEncodePixelShader",
+      "moduleSha256": "7b3868af527c17c9f76184f8b10e3be3777c1f6ac04aa3840240efdf05ccbd28"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/rgbdEncode.fragment.js",
+      "export": "rgbdEncodePixelShaderWGSL",
+      "runtimeExport": "rgbdEncodePixelShaderWGSL",
+      "moduleSha256": "8a78a4746f2036333cbe5f806c2a5cfe4930e54ef60b1ad00bf9fe3cc9182fe2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/rsmFullGlobalIllumination.fragment.js",
+      "export": "rsmFullGlobalIlluminationPixelShader",
+      "runtimeExport": "rsmFullGlobalIlluminationPixelShader",
+      "moduleSha256": "048db53d473f33a88d27568943c9d6c3cd1d1d90c6ee4e54e350224c19b230c7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/rsmFullGlobalIllumination.fragment.js",
+      "export": "rsmFullGlobalIlluminationPixelShaderWGSL",
+      "runtimeExport": "rsmFullGlobalIlluminationPixelShaderWGSL",
+      "moduleSha256": "85bbd2ac05b4c4b86a82b76e7fdddb4fff318d1ec85ccbc5057ba72496b1d9f6"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/rsmGlobalIllumination.fragment.js",
+      "export": "rsmGlobalIlluminationPixelShader",
+      "runtimeExport": "rsmGlobalIlluminationPixelShader",
+      "moduleSha256": "8917643e694be69c00d3cfb5370a9179002fa7124c6ac957f8f9336f492f42b2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/rsmGlobalIllumination.fragment.js",
+      "export": "rsmGlobalIlluminationPixelShaderWGSL",
+      "runtimeExport": "rsmGlobalIlluminationPixelShaderWGSL",
+      "moduleSha256": "0d3ff6afe5a021160af6d929f61f309a50bded9b8e57d67a0c3466abf0982d0e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/samplerFragmentDeclaration.js",
+      "export": "samplerFragmentDeclaration",
+      "runtimeExport": "samplerFragmentDeclaration",
+      "moduleSha256": "5549951c88f2d1220f0046b28f774c6cbd2f2adff88ca82aa38934e55dd3f650"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/samplerFragmentDeclaration.js",
+      "export": "samplerFragmentDeclarationWGSL",
+      "runtimeExport": "samplerFragmentDeclarationWGSL",
+      "moduleSha256": "ad8547aa2b0e0873f6511c3a53730f2f06cc5b264fbf0b8183a34e95e326bee5"
     },
     {
       "package": "@babylonjs/core",
@@ -111,6 +2505,202 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/sceneFragmentDeclaration.js",
+      "export": "sceneFragmentDeclaration",
+      "runtimeExport": "sceneFragmentDeclaration",
+      "moduleSha256": "501b31b18135558f7f848566fec37b97f78595c2c85131895db6652c971eabdf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/sceneUboDeclaration.js",
+      "export": "sceneUboDeclaration",
+      "runtimeExport": "sceneUboDeclaration",
+      "moduleSha256": "3a29b3e8a3aab9e9f17efc929fa73c578d69284c1e14e30df5c2d6ced8d2d622"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/sceneUboDeclaration.js",
+      "export": "sceneUboDeclarationWGSL",
+      "runtimeExport": "sceneUboDeclarationWGSL",
+      "moduleSha256": "df5a32a1df8b6ca281b9ac42ef25efa9fbc2a7aed34adb057f1130fa072385a3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/sceneVertexDeclaration.js",
+      "export": "sceneVertexDeclaration",
+      "runtimeExport": "sceneVertexDeclaration",
+      "moduleSha256": "52f7069f0d02569613f0706dac81619e987e9a34adcc3568aa23941d4afb228e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceCurvature.fragment.js",
+      "export": "screenSpaceCurvaturePixelShader",
+      "runtimeExport": "screenSpaceCurvaturePixelShader",
+      "moduleSha256": "12ad365193cf00f89651f0afbe42f9de9285964b56cac291adede427eb6591d2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceReflection2BlurCombiner.fragment.js",
+      "export": "screenSpaceReflection2BlurCombinerPixelShader",
+      "runtimeExport": "screenSpaceReflection2BlurCombinerPixelShader",
+      "moduleSha256": "c4477dc6b03d2c831506c32c54d91c8b49a6941ce1f7a37313aae53065a3e03b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/screenSpaceReflection2BlurCombiner.fragment.js",
+      "export": "screenSpaceReflection2BlurCombinerPixelShaderWGSL",
+      "runtimeExport": "screenSpaceReflection2BlurCombinerPixelShaderWGSL",
+      "moduleSha256": "cfc27d4750f6e1990676e2f72a5a99384a93bdb149fa1d781641073d9aae67ae"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceReflection2Blur.fragment.js",
+      "export": "screenSpaceReflection2BlurPixelShader",
+      "runtimeExport": "screenSpaceReflection2BlurPixelShader",
+      "moduleSha256": "247db7f93cb178799678b93450a7ae8c85214ded714669d7d199107b7ab8d0fa"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/screenSpaceReflection2Blur.fragment.js",
+      "export": "screenSpaceReflection2BlurPixelShaderWGSL",
+      "runtimeExport": "screenSpaceReflection2BlurPixelShaderWGSL",
+      "moduleSha256": "78e0659fbfbc5d693e14489eeb51351c9b354ba907225f4d2d9de51844fb7de3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceReflection2.fragment.js",
+      "export": "screenSpaceReflection2PixelShader",
+      "runtimeExport": "screenSpaceReflection2PixelShader",
+      "moduleSha256": "7518b28992c52a4a1134d741b65fab12053e9798ff1fad69800cba128704f0ec"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/screenSpaceReflection2.fragment.js",
+      "export": "screenSpaceReflection2PixelShaderWGSL",
+      "runtimeExport": "screenSpaceReflection2PixelShaderWGSL",
+      "moduleSha256": "90b1a432c73cc17e45b709c5878ff7ca3ca73021a79cbba0d685efda5f00a483"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/screenSpaceReflection.fragment.js",
+      "export": "screenSpaceReflectionPixelShader",
+      "runtimeExport": "screenSpaceReflectionPixelShader",
+      "moduleSha256": "319e804aa0971701890165648de6b07337d142f0b69df9c7c033384e07c51ccd"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapFragment.js",
+      "export": "shadowMapFragment",
+      "runtimeExport": "shadowMapFragment",
+      "moduleSha256": "177fe3376a58e9c650a44d1c551a259d522782d5afba3b2da3bb5ed9361c5cd7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapFragmentSoftTransparentShadow.js",
+      "export": "shadowMapFragmentSoftTransparentShadow",
+      "runtimeExport": "shadowMapFragmentSoftTransparentShadow",
+      "moduleSha256": "97f679514f42128f22ec1a33ac1c389542fc16e10b9c30b0b6eb433beba1015d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowMapFragmentSoftTransparentShadow.js",
+      "export": "shadowMapFragmentSoftTransparentShadowWGSL",
+      "runtimeExport": "shadowMapFragmentSoftTransparentShadowWGSL",
+      "moduleSha256": "a3122059fc2845515e1f9fa6fa3c0c455e851177aa13be4c8e20b3d4749cef8f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowMapFragment.js",
+      "export": "shadowMapFragmentWGSL",
+      "runtimeExport": "shadowMapFragmentWGSL",
+      "moduleSha256": "47928b203c846554a8e09f37471c2c37a351a4220fe2635a3e844f271d460e60"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/shadowMap.fragment.js",
+      "export": "shadowMapPixelShader",
+      "runtimeExport": "shadowMapPixelShader",
+      "moduleSha256": "d1f1773551c6a7b2695d48fcf7501aeb8028d1aadf1e02616653dade5063e7b2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/shadowMap.fragment.js",
+      "export": "shadowMapPixelShaderWGSL",
+      "runtimeExport": "shadowMapPixelShaderWGSL",
+      "moduleSha256": "1d906609cfee6c195f35d0ef4db69a90a098f496437145a05e8f5aa543c29f88"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapVertexMetric.js",
+      "export": "shadowMapVertexMetric",
+      "runtimeExport": "shadowMapVertexMetric",
+      "moduleSha256": "577e247c4ad7906668c49e1c056aec33af2b613090f2cbfeaef3888ff9405b5c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowMapVertexMetric.js",
+      "export": "shadowMapVertexMetricWGSL",
+      "runtimeExport": "shadowMapVertexMetricWGSL",
+      "moduleSha256": "f794aa7681364add067a7e9fc89bc0cd630f52c2eb5dec62a314f30563a31a4f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/shadowMap.vertex.js",
+      "export": "shadowMapVertexShader",
+      "runtimeExport": "shadowMapVertexShader",
+      "moduleSha256": "f52db4a4c3742db14cd542023b0e9e44ffc6b28d1915538bd4f48f9c7439ff93"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/shadowMap.vertex.js",
+      "export": "shadowMapVertexShaderWGSL",
+      "runtimeExport": "shadowMapVertexShaderWGSL",
+      "moduleSha256": "8b98d8108e181f661bae9d720f9a7b1ef85faf44ce93d58b62cff8886235b5c0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowsFragmentFunctions.js",
+      "export": "shadowsFragmentFunctions",
+      "runtimeExport": "shadowsFragmentFunctions",
+      "moduleSha256": "0a166e08415b9c958b36b628d5c867adc4b38f4ac5517e5ee430d83bcb8750ca"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowsFragmentFunctions.js",
+      "export": "shadowsFragmentFunctionsWGSL",
+      "runtimeExport": "shadowsFragmentFunctionsWGSL",
+      "moduleSha256": "3c24e7f5c14780e91f24da529c7a0e4b818813a853bf964eefc96e741401dc94"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/shadowsVertex.js",
+      "export": "shadowsVertex",
+      "runtimeExport": "shadowsVertex",
+      "moduleSha256": "a697319636fafa38d586614f98436a717c0cb8a8469f756b4fdb9693186b4d9e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowsVertex.js",
+      "export": "shadowsVertexWGSL",
+      "runtimeExport": "shadowsVertexWGSL",
+      "moduleSha256": "52e23835c064e309c287507b5c180b046ab11dd763bbad4812505ad6114e36a1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/sharpen.fragment.js",
+      "export": "sharpenPixelShader",
+      "runtimeExport": "sharpenPixelShader",
+      "moduleSha256": "720443c1ba1523db6deca57e8bc8d79f03bd3b2792c3317440c5680b97e7c2a1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/sharpen.fragment.js",
+      "export": "sharpenPixelShaderWGSL",
+      "runtimeExport": "sharpenPixelShaderWGSL",
+      "moduleSha256": "eff314195c77fc146bd61d5910851f33832ce2cf90800dccb1b3e9c3ace103b3"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js",
       "export": "SHORTEST_LONG_RUN",
       "runtimeExport": "SHORTEST_LONG_RUN",
@@ -118,10 +2708,129 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/spriteMap.fragment.js",
+      "export": "spriteMapPixelShader",
+      "runtimeExport": "spriteMapPixelShader",
+      "moduleSha256": "7df0c2ec4a58f55b0c1164daf48aa61a327f9dbe3b767255ce5f913e9fa2bf5d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/spriteMap.vertex.js",
+      "export": "spriteMapVertexShader",
+      "runtimeExport": "spriteMapVertexShader",
+      "moduleSha256": "44ad957aa78bb5ea47b74a418d5ea9c36ab5af09e39c193e7356be4d4ac49447"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/sprites.fragment.js",
+      "export": "spritesPixelShader",
+      "runtimeExport": "spritesPixelShader",
+      "moduleSha256": "57a097784067ea9ddcc25c1dc2d4542395f63b0fa66766e51b7d006317f0bd95"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/sprites.fragment.js",
+      "export": "spritesPixelShaderWGSL",
+      "runtimeExport": "spritesPixelShaderWGSL",
+      "moduleSha256": "386fb5df1c62f44ca52105944f77fbc5750dfcb8bc865ba9ab53177e7319dcbc"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/sprites.vertex.js",
+      "export": "spritesVertexShader",
+      "runtimeExport": "spritesVertexShader",
+      "moduleSha256": "99bac5b12ef07ea414a53392c86eb9d060cfa9ed860bd2a65f793a154a6c8647"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/sprites.vertex.js",
+      "export": "spritesVertexShaderWGSL",
+      "runtimeExport": "spritesVertexShaderWGSL",
+      "moduleSha256": "886a2cf928fedc67475283c6f490d5cb73d4e07879e36a0d7fef34f93e029aa6"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ssao2.fragment.js",
+      "export": "ssao2PixelShader",
+      "runtimeExport": "ssao2PixelShader",
+      "moduleSha256": "2a948ca4c353eb1195c437835486b48ba9827d770ee8070ec3ae7821bf2f43d0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ssao2.fragment.js",
+      "export": "ssao2PixelShaderWGSL",
+      "runtimeExport": "ssao2PixelShaderWGSL",
+      "moduleSha256": "1832738c9e8661b21adb4840072ce487a3276c174bfc5b90a13ea1e6d446278f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ssaoCombine.fragment.js",
+      "export": "ssaoCombinePixelShader",
+      "runtimeExport": "ssaoCombinePixelShader",
+      "moduleSha256": "3017cfad9f6f1e4918597e3ba7b1aa695c53e588c4bac71d19ae1fb597bbe884"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ssaoCombine.fragment.js",
+      "export": "ssaoCombinePixelShaderWGSL",
+      "runtimeExport": "ssaoCombinePixelShaderWGSL",
+      "moduleSha256": "4bdd86c9a3271e35d0c6303525c0be568263a868b3b86905b725c184fffe204a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ssao.fragment.js",
+      "export": "ssaoPixelShader",
+      "runtimeExport": "ssaoPixelShader",
+      "moduleSha256": "d9f4a63a7461b19c1c93dc06cb531c6ad92e5336603c421f3ce9a6fab4ed8d55"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/standard.fragment.js",
+      "export": "standardPixelShader",
+      "runtimeExport": "standardPixelShader",
+      "moduleSha256": "707595e9036bd1d356d6a1f137cff759402dd501e4b97496d61e3641e49a8b00"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/stereoscopicInterlace.fragment.js",
+      "export": "stereoscopicInterlacePixelShader",
+      "runtimeExport": "stereoscopicInterlacePixelShader",
+      "moduleSha256": "dfa7cb3258b54cdfaebac3088c89f02d4aef51bd2868de7cc9f071cd3cfe1d70"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/taa.fragment.js",
+      "export": "taaPixelShader",
+      "runtimeExport": "taaPixelShader",
+      "moduleSha256": "2f2a2d49b4595b692ec11efe8b32d33f72102e502300df858a82426530d5d865"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/taa.fragment.js",
+      "export": "taaPixelShaderWGSL",
+      "runtimeExport": "taaPixelShaderWGSL",
+      "moduleSha256": "00476ce7b2823072fb26963119c76f81e264f3905ca3227e8ee048704f5ef6f6"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants.js",
       "export": "ToGammaSpace",
       "runtimeExport": "ToGammaSpace",
       "moduleSha256": "109a8559f79cbb3b037fd5ab809f1171ca0c95be039227e738cdefa5539bf89b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/tonemap.fragment.js",
+      "export": "tonemapPixelShader",
+      "runtimeExport": "tonemapPixelShader",
+      "moduleSha256": "fc16a02eb0a8b006a8081ec05ed82639468fa3f9f652b949385f7d038647245a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/tonemap.fragment.js",
+      "export": "tonemapPixelShaderWGSL",
+      "runtimeExport": "tonemapPixelShaderWGSL",
+      "moduleSha256": "48042c631d786fc2260b1061fa5f70a1161474dbe251e9f0c73dd0ecd8aa8877"
     },
     {
       "package": "@babylonjs/core",
@@ -143,6 +2852,97 @@
       "export": "USHORT_RANGE",
       "runtimeExport": "USHORT_RANGE",
       "moduleSha256": "368b1ba6a53c343165c46c49d41a084b02c8d7b82046d7f06de2b7e160e72e1b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/velocity.fragment.js",
+      "export": "velocityPixelShader",
+      "runtimeExport": "velocityPixelShader",
+      "moduleSha256": "a14834f1375aa195e8277691837e44f1307c7aaeca930cdbba3c5a03a98fd95e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/velocity.vertex.js",
+      "export": "velocityVertexShader",
+      "runtimeExport": "velocityVertexShader",
+      "moduleSha256": "2c90e4f36f5204f0d263de100d93493a550ac7ecd0a3f1b26f8f398b2576548a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/ShadersInclude/vertexColorMixing.js",
+      "export": "vertexColorMixing",
+      "runtimeExport": "vertexColorMixing",
+      "moduleSha256": "aded50a902e75a2b770f658eeee72e99a329258bf8be22ea7f96eea630c96baa"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/ShadersInclude/vertexColorMixing.js",
+      "export": "vertexColorMixingWGSL",
+      "runtimeExport": "vertexColorMixingWGSL",
+      "moduleSha256": "cee60254065c6ff11d5ad16f0de1b44c2943de66754c300e5c7bf13fc4872281"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/volumetricLightScatteringPass.fragment.js",
+      "export": "volumetricLightScatteringPassPixelShader",
+      "runtimeExport": "volumetricLightScatteringPassPixelShader",
+      "moduleSha256": "47ddc7b087fa8b9893bc631b3c391fba114cdbde53156fad5dab526e3ac32723"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/volumetricLightScatteringPass.fragment.js",
+      "export": "volumetricLightScatteringPassPixelShaderWGSL",
+      "runtimeExport": "volumetricLightScatteringPassPixelShaderWGSL",
+      "moduleSha256": "b55782e7bd2b94b53c80191022f3479c8f9b835e2b655a3a377fdcff291f1c8d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/volumetricLightScatteringPass.vertex.js",
+      "export": "volumetricLightScatteringPassVertexShader",
+      "runtimeExport": "volumetricLightScatteringPassVertexShader",
+      "moduleSha256": "15eee7d5f14443df8c1ea5804d94cef099ffd98153da996cd935ad948809fd95"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/volumetricLightScatteringPass.vertex.js",
+      "export": "volumetricLightScatteringPassVertexShaderWGSL",
+      "runtimeExport": "volumetricLightScatteringPassVertexShaderWGSL",
+      "moduleSha256": "1b3985afdaa5ce758112e13f2d96f0b4d0b71e12bb77a030f0f3acbf39a82e10"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/volumetricLightScattering.fragment.js",
+      "export": "volumetricLightScatteringPixelShader",
+      "runtimeExport": "volumetricLightScatteringPixelShader",
+      "moduleSha256": "55b326e7f29feef7754459fb33aabd05be550a07551a092c0431e9a0d274959c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/volumetricLightScattering.fragment.js",
+      "export": "volumetricLightScatteringPixelShaderWGSL",
+      "runtimeExport": "volumetricLightScatteringPixelShaderWGSL",
+      "moduleSha256": "8d8c0e7e94e1892db68efcbf3e555573fd6af000b8a7eb3e2865dac5f503a492"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/vrDistortionCorrection.fragment.js",
+      "export": "vrDistortionCorrectionPixelShader",
+      "runtimeExport": "vrDistortionCorrectionPixelShader",
+      "moduleSha256": "5f1979ff58666fe800f0c0c9f59c302491eb4ebe82764ca9b380ee29f548f6e1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ShadersWGSL/vrDistortionCorrection.fragment.js",
+      "export": "vrDistortionCorrectionPixelShaderWGSL",
+      "runtimeExport": "vrDistortionCorrectionPixelShaderWGSL",
+      "moduleSha256": "f0a82823a9c8439b693975c8f6471a9c5a454a6068a8b2103556d23973cd92cf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Shaders/vrMultiviewToSingleview.fragment.js",
+      "export": "vrMultiviewToSingleviewPixelShader",
+      "runtimeExport": "vrMultiviewToSingleviewPixelShader",
+      "moduleSha256": "49c6fa5bd0128820415534810ddd00c0460057f8a5d25f818f1f22b8dbe5671e"
     }
   ],
   "status": "pass"

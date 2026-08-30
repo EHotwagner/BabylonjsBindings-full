@@ -65,6 +65,21 @@ const fsharpType = node => {
   }
   return undefined;
 };
+const typeLiteralShape = node => {
+  if (!ts.isTypeLiteralNode(node) || node.members.length === 0) return undefined;
+  const members = [];
+  for (const member of node.members) {
+    if (!ts.isPropertySignature(member) || !member.type || (!ts.isIdentifier(member.name) && !ts.isStringLiteral(member.name))) return undefined;
+    const type = fsharpType(member.type);
+    if (!type) return undefined;
+    members.push({
+      name: member.name.text,
+      type: member.questionToken ? `${type} option` : type,
+      readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false
+    });
+  }
+  return members;
+};
 
 const variables = new Map();
 for (const sourceFile of program.getSourceFiles()) {
@@ -80,8 +95,9 @@ for (const sourceFile of program.getSourceFiles()) {
     if (variableDeclarations.length !== 1 || declarations.some(declaration => !ts.isVariableDeclaration(declaration))) continue;
     const declaration = variableDeclarations[0];
     if (!declaration.type || !ts.isIdentifier(declaration.name)) continue;
+    const shape = typeLiteralShape(declaration.type);
     const type = fsharpType(declaration.type);
-    if (!type) continue;
+    if (!type && !shape) continue;
     const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
     const packageName = module.startsWith("@babylonjs/core/")
       ? "@babylonjs/core"
@@ -91,7 +107,7 @@ for (const sourceFile of program.getSourceFiles()) {
     if (!packageName) continue;
     const name = exported.getName();
     const runtimeExport = target.getName();
-    variables.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, runtimeExport, type });
+    variables.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, runtimeExport, type, shape });
   }
 }
 
@@ -107,7 +123,13 @@ const lines = [
   "/// Exact dependency-closed variables and constants exported by Babylon.js 9.19.0.",
   "module SimpleVariables ="
 ];
+const safeName = value => `VariableShape_${value.replace(/[^A-Za-z0-9_]/g, "_")}`;
 for (const entry of entries) {
+  if (entry.shape) {
+    entry.type = safeName(entry.name);
+    lines.push("", `    /// Inline object shape of ${entry.name}.`, "    [<AllowNullLiteral>]", `    type ${entry.type} =`);
+    for (const member of entry.shape) lines.push(`        abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`);
+  }
   lines.push("", `    /// ${entry.module}`, `    [<Import("${entry.runtimeExport}", "${entry.module}.js")>]`, `    let \`\`${entry.name}\`\`: ${entry.type} = jsNative`);
 }
 const proposal = `${lines.join("\n")}\n`;
@@ -123,7 +145,8 @@ const manifest = {
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleVariables.${entry.name}`,
     ...(entry.runtimeExport !== entry.name ? { runtimeExport: entry.runtimeExport } : {}),
-    fsharpType: entry.type
+    fsharpType: entry.type,
+    ...(entry.shape ? { memberCount: entry.shape.length } : {})
   }))
 };
 const proposalPath = resolve(root, "generated-candidates/SimpleVariables.proposal.fs");
