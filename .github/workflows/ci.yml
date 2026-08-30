@@ -59,6 +59,12 @@ jobs:
 
   candidate:
     name: Full candidate and clean consumer
+    # Hourly candidate checkpoints pay only the fast locked/drift cost. Run the
+    # complete browser and clean-consumer proof at review/promotion boundaries.
+    if: >-
+      github.event_name == 'pull_request' ||
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.head_commit.message, '[full-ci]')
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     steps:

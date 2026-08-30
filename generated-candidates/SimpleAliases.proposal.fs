@@ -36,6 +36,131 @@ module TypeAliases =
     /// Exact IteratorResult<void, T> union returned by a Babylon coroutine.
     type CoroutineInternalResult<'T> = U2<CoroutineInternalYieldResult, CoroutineInternalReturnResult<'T>>
 
+    /// Exact internal numeric enum required by an exported Babylon alias.
+    type AliasEnum150995365430 =
+        | ``FLOAT`` = 0
+        | ``INT`` = 1
+        | ``UINT`` = 2
+        | ``DOUBLE`` = 3
+        | ``UCHAR`` = 4
+        | ``UNDEFINED`` = 5
+
+    /// Exact internal numeric enum required by an exported Babylon alias.
+    type AliasEnum6bfd9a7c2404 =
+        | ``MIN_X`` = 0
+        | ``MIN_Y`` = 1
+        | ``MIN_Z`` = 2
+        | ``MAX_X`` = 3
+        | ``MAX_Y`` = 4
+        | ``MAX_Z`` = 5
+        | ``MIN_SCALE_X`` = 6
+        | ``MIN_SCALE_Y`` = 7
+        | ``MIN_SCALE_Z`` = 8
+        | ``MAX_SCALE_X`` = 9
+        | ``MAX_SCALE_Y`` = 10
+        | ``MAX_SCALE_Z`` = 11
+        | ``PACKED_POSITION`` = 12
+        | ``PACKED_ROTATION`` = 13
+        | ``PACKED_SCALE`` = 14
+        | ``PACKED_COLOR`` = 15
+        | ``X`` = 16
+        | ``Y`` = 17
+        | ``Z`` = 18
+        | ``SCALE_0`` = 19
+        | ``SCALE_1`` = 20
+        | ``SCALE_2`` = 21
+        | ``DIFFUSE_RED`` = 22
+        | ``DIFFUSE_GREEN`` = 23
+        | ``DIFFUSE_BLUE`` = 24
+        | ``OPACITY`` = 25
+        | ``F_DC_0`` = 26
+        | ``F_DC_1`` = 27
+        | ``F_DC_2`` = 28
+        | ``F_DC_3`` = 29
+        | ``ROT_0`` = 30
+        | ``ROT_1`` = 31
+        | ``ROT_2`` = 32
+        | ``ROT_3`` = 33
+        | ``MIN_COLOR_R`` = 34
+        | ``MIN_COLOR_G`` = 35
+        | ``MIN_COLOR_B`` = 36
+        | ``MAX_COLOR_R`` = 37
+        | ``MAX_COLOR_G`` = 38
+        | ``MAX_COLOR_B`` = 39
+        | ``SH_0`` = 40
+        | ``SH_1`` = 41
+        | ``SH_2`` = 42
+        | ``SH_3`` = 43
+        | ``SH_4`` = 44
+        | ``SH_5`` = 45
+        | ``SH_6`` = 46
+        | ``SH_7`` = 47
+        | ``SH_8`` = 48
+        | ``SH_9`` = 49
+        | ``SH_10`` = 50
+        | ``SH_11`` = 51
+        | ``SH_12`` = 52
+        | ``SH_13`` = 53
+        | ``SH_14`` = 54
+        | ``SH_15`` = 55
+        | ``SH_16`` = 56
+        | ``SH_17`` = 57
+        | ``SH_18`` = 58
+        | ``SH_19`` = 59
+        | ``SH_20`` = 60
+        | ``SH_21`` = 61
+        | ``SH_22`` = 62
+        | ``SH_23`` = 63
+        | ``SH_24`` = 64
+        | ``SH_25`` = 65
+        | ``SH_26`` = 66
+        | ``SH_27`` = 67
+        | ``SH_28`` = 68
+        | ``SH_29`` = 69
+        | ``SH_30`` = 70
+        | ``SH_31`` = 71
+        | ``SH_32`` = 72
+        | ``SH_33`` = 73
+        | ``SH_34`` = 74
+        | ``SH_35`` = 75
+        | ``SH_36`` = 76
+        | ``SH_37`` = 77
+        | ``SH_38`` = 78
+        | ``SH_39`` = 79
+        | ``SH_40`` = 80
+        | ``SH_41`` = 81
+        | ``SH_42`` = 82
+        | ``SH_43`` = 83
+        | ``SH_44`` = 84
+        | ``SH_45`` = 85
+        | ``SH_46`` = 86
+        | ``SH_47`` = 87
+        | ``SH_48`` = 88
+        | ``SH_49`` = 89
+        | ``SH_50`` = 90
+        | ``SH_51`` = 91
+        | ``SH_52`` = 92
+        | ``SH_53`` = 93
+        | ``SH_54`` = 94
+        | ``SH_55`` = 95
+        | ``SH_56`` = 96
+        | ``SH_57`` = 97
+        | ``SH_58`` = 98
+        | ``SH_59`` = 99
+        | ``SH_60`` = 100
+        | ``SH_61`` = 101
+        | ``SH_62`` = 102
+        | ``SH_63`` = 103
+        | ``SH_64`` = 104
+        | ``SH_65`` = 105
+        | ``SH_66`` = 106
+        | ``SH_67`` = 107
+        | ``SH_68`` = 108
+        | ``SH_69`` = 109
+        | ``SH_70`` = 110
+        | ``SH_71`` = 111
+        | ``UNDEFINED`` = 112
+
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObjectde9f6c1b6b0f =
@@ -102,6 +227,13 @@ module TypeAliases =
     [<AllowNullLiteral>]
     type AliasObject680fbaa03d9c =
         abstract ``defineNames``: AliasObject1aaf511ae5b6 option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectb68403858bab =
+        abstract ``value``: AliasEnum6bfd9a7c2404 with get, set
+        abstract ``type``: AliasEnum150995365430 with get, set
+        abstract ``offset``: System.Double with get, set
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
@@ -235,6 +367,9 @@ module TypeAliases =
 
     /// @babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure
     type OcclusionQuery = U2<BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery, System.Double>
+
+    /// @babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure
+    type PlyProperty = AliasObjectb68403858bab
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]

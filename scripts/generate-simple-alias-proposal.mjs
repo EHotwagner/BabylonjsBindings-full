@@ -115,6 +115,7 @@ const erasedUnionType = branches => {
 };
 const numericLiteralValues = new Set();
 const stringLiteralTypes = new Map();
+const localEnumTypes = new Map();
 const fsharpString = value => `"${value.replaceAll("\\", "\\\\").replaceAll("\"", "\\\"").replaceAll("\n", "\\n").replaceAll("\r", "\\r")}"`;
 const numericLiteralType = value => {
   const numeric = Number(value);
@@ -138,6 +139,7 @@ const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptNull";
   if (ts.isLiteralTypeNode(node) && (node.literal.kind === ts.SyntaxKind.TrueKeyword || node.literal.kind === ts.SyntaxKind.FalseKeyword)) return "bool";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
@@ -252,12 +254,13 @@ const fsharpType = node => {
       && jsTypes.has(node.typeName.text)
       && ts.isTypeReferenceNode(node.typeArguments[0])
       && ts.isIdentifier(node.typeArguments[0].typeName)
-      && node.typeArguments[0].typeName.text === "ArrayBuffer"
+      && ["ArrayBuffer", "ArrayBufferLike"].includes(node.typeArguments[0].typeName.text)
       && !node.typeArguments[0].typeArguments?.length) return `JS.${node.typeName.text}`;
-    const browserTypes = new Set(["AudioBuffer", "AudioContext", "AudioNode", "Blob", "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "ImageData", "KeyboardEvent", "OfflineAudioContext", "WebGLRenderingContext"]);
+    const browserTypes = new Set(["AudioContext", "Blob", "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLDivElement", "HTMLImageElement", "HTMLVideoElement", "ImageData", "KeyboardEvent", "WebGLRenderingContext"]);
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && node.typeName.text === "WebGL2RenderingContext") return "BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext";
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
+    if (!node.typeArguments?.length && node.typeName.text === "VideoFrame") return "BabylonjsBindings.SimpleInterfaces.BrowserVideoFrame";
     if (!node.typeArguments?.length && node.typeName.text === "OffscreenCanvas") return "BabylonjsBindings.SimpleInterfaces.BrowserOffscreenCanvas";
     if (!node.typeArguments?.length && node.typeName.text === "WebGLQuery") return "BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery";
     if (!node.typeArguments?.length && node.typeName.text === "XRLayer") return "BabylonjsBindings.SimpleInterfaces.BrowserXRLayer";
@@ -274,14 +277,71 @@ const fsharpType = node => {
     if (!node.typeArguments?.length && node.typeName.text === "DOMRect") return "BabylonjsBindings.SimpleInterfaces.BrowserDOMRect";
     const ambientHandleTypes = new Map([
       ["GPUDevice", "BrowserGPUDevice"],
+      ["GPUBuffer", "BrowserGPUBuffer"],
       ["GPURenderPassEncoder", "BrowserGPURenderPassEncoder"],
       ["GPURenderPipeline", "BrowserGPURenderPipeline"],
       ["GPUQuerySet", "BrowserGPUQuerySet"],
       ["GPUCommandEncoder", "BrowserGPUCommandEncoder"],
       ["GPURenderBundle", "BrowserGPURenderBundle"],
+      ["GPUTexture", "BrowserGPUTexture"],
+      ["GPUSampler", "BrowserGPUSampler"],
+      ["GPUBindGroup", "BrowserGPUBindGroup"],
+      ["GPUBindGroupLayout", "BrowserGPUBindGroupLayout"],
+      ["GPUPipelineLayout", "BrowserGPUPipelineLayout"],
+      ["GPUShaderModule", "BrowserGPUShaderModule"],
+      ["GPUComputePipeline", "BrowserGPUComputePipeline"],
+      ["GPUCommandBuffer", "BrowserGPUCommandBuffer"],
+      ["GPUTextureView", "BrowserGPUTextureView"],
+      ["GPUAdapter", "BrowserGPUAdapter"],
+      ["GPUCanvasContext", "BrowserGPUCanvasContext"],
+      ["GPUExternalTexture", "BrowserGPUExternalTexture"],
+      ["GPURenderBundleEncoder", "BrowserGPURenderBundleEncoder"],
+      ["GPURenderPassDescriptor", "BrowserGPURenderPassDescriptor"],
+      ["GPURenderPipelineDescriptor", "BrowserGPURenderPipelineDescriptor"],
+      ["GPUProgrammableStage", "BrowserGPUProgrammableStage"],
+      ["GPUBindGroupLayoutEntry", "BrowserGPUBindGroupLayoutEntry"],
+      ["GPUBindGroupEntry", "BrowserGPUBindGroupEntry"],
+      ["GPUComputePassDescriptor", "BrowserGPUComputePassDescriptor"],
+      ["GPUTextureViewDescriptor", "BrowserGPUTextureViewDescriptor"],
+      ["GPUDeviceDescriptor", "BrowserGPUDeviceDescriptor"],
+      ["GPUTextureFormat", "BrowserGPUTextureFormat"],
+      ["GPUFeatureName", "BrowserGPUFeatureName"],
+      ["GPUCompareFunction", "BrowserGPUCompareFunction"],
+      ["GPUStorageTextureAccess", "BrowserGPUStorageTextureAccess"],
+      ["GPUTextureSampleType", "BrowserGPUTextureSampleType"],
+      ["GPUSamplerBindingType", "BrowserGPUSamplerBindingType"],
+      ["GPUTextureViewDimension", "BrowserGPUTextureViewDimension"],
+      ["GPUSupportedLimits", "BrowserGPUSupportedLimits"],
       ["XRWebGLBinding", "BrowserXRWebGLBinding"]
+      ,["XRCompositionLayer", "BrowserXRCompositionLayer"]
+      ,["WebGLContextEvent", "BrowserWebGLContextEvent"]
+      ,["AudioBuffer", "BrowserAudioBuffer"]
+      ,["AudioNode", "BrowserAudioNode"]
+      ,["GainNode", "BrowserGainNode"]
+      ,["OfflineAudioContext", "BrowserOfflineAudioContext"]
+      ,["AudioBufferSourceNode", "BrowserAudioBufferSourceNode"]
+      ,["MediaTrackConstraints", "BrowserMediaTrackConstraints"]
+      ,["PointerEventInit", "BrowserPointerEventInit"]
+      ,["WebGLVertexArrayObject", "BrowserWebGLVertexArrayObject"]
     ]);
     if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
+    if (!node.typeArguments?.length && node.typeName.text === "GPUBufferUsageFlags") return "float";
+    if (!node.typeArguments?.length) {
+      let symbol = checker.getSymbolAtLocation(node.typeName);
+      if (symbol?.flags & ts.SymbolFlags.Alias) {
+        try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+      }
+      const declaration = symbol?.declarations?.find(ts.isEnumDeclaration);
+      if (declaration && !declaration.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ExportKeyword)) {
+        const members = declaration.members.map(member => ({ name: member.name.getText(), value: checker.getConstantValue(member) }));
+        if (members.length > 0 && members.every(member => Number.isInteger(member.value) && member.value >= -2147483648 && member.value <= 2147483647)) {
+          const identity = `${normalize(declaration.getSourceFile().fileName)}|${declaration.name.text}`;
+          const name = `AliasEnum${createHash("sha256").update(identity).digest("hex").slice(0, 12)}`;
+          localEnumTypes.set(name, { name, members });
+          return name;
+        }
+      }
+    }
     const maintained = maintainedSymbols.get(node.typeName.text);
     if (maintained) {
       const arguments_ = node.typeArguments ?? [];
@@ -499,6 +559,11 @@ for (const value of [...numericLiteralValues].filter(value => aliasReferenceText
 }
 for (const [name, value] of [...stringLiteralTypes].filter(([name]) => aliasReferenceText.includes(name)).sort(([left], [right]) => left.localeCompare(right))) {
   lines.push("", `    /// Exact string literal type for ${fsharpString(value)}.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, `        | [<CompiledName(${fsharpString(value)})>] Value`);
+}
+const localEnumReferenceText = `${aliasReferenceText}${JSON.stringify([...auxiliaryObjectTypes.values()])}`;
+for (const { name, members } of [...localEnumTypes.values()].filter(entry => localEnumReferenceText.includes(entry.name)).sort((left, right) => left.name.localeCompare(right.name))) {
+  lines.push("", "    /// Exact internal numeric enum required by an exported Babylon alias.", `    type ${name} =`);
+  for (const member of members) lines.push(`        | \`\`${member.name}\`\` = ${member.value}`);
 }
 let auxiliaryReferenceText = JSON.stringify(entries);
 const retainedAuxiliaryObjectTypes = [];

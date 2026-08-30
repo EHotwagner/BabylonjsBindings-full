@@ -132,11 +132,13 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
+  if (node.kind === ts.SyntaxKind.UndefinedKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.NeverKeyword) return "Never";
   if (node.kind === ts.SyntaxKind.ObjectKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptObject";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptNull";
   if (ts.isLiteralTypeNode(node) && (node.literal.kind === ts.SyntaxKind.TrueKeyword || node.literal.kind === ts.SyntaxKind.FalseKeyword)) return "bool";
   if (ts.isTypePredicateNode(node)) return "bool";
   if (node.kind === ts.SyntaxKind.ThisType && typeParameters.ownerName) return typeParameters.ownerName;
@@ -150,6 +152,11 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     }
     return fsharpType(node.type, available, dependencies, typeParameters);
   }
+  if (ts.isTypeOperatorNode(node)
+    && node.operator === ts.SyntaxKind.KeyOfKeyword
+    && ts.isTypeReferenceNode(node.type)
+    && ts.isIdentifier(node.type.typeName)
+    && typeParameters.has(node.type.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'${node.type.typeName.text}>`;
   if (ts.isUnionTypeNode(node) && node.types.some(isAbsentType)) {
     const branches = node.types.filter(branch => !isAbsentType(branch)).map(branch => fsharpType(branch, available, dependencies, typeParameters));
     if (branches.some(branch => !branch) || branches.length === 0) return undefined;
@@ -237,6 +244,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     }
   }
   if (ts.isTypeQueryNode(node) && ts.isQualifiedName(node.exprName)) {
+    if (ts.isIdentifier(node.exprName.left) && node.exprName.left.text === "WebGL2RenderingContext") {
+      const values = new Map([["SRGB", 0x8C40], ["SRGB8", 0x8C41], ["SRGB8_ALPHA8", 0x8C43]]);
+      if (values.has(node.exprName.right.text)) return numericLiteralType(values.get(node.exprName.right.text));
+    }
     let symbol = checker.getSymbolAtLocation(node.exprName.right);
     if (symbol?.flags & ts.SymbolFlags.Alias) {
       try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
@@ -257,6 +268,13 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     recordTypeFailure(node);
     return undefined;
   }
+  if (ts.isIndexedAccessTypeNode(node)
+    && ts.isTypeReferenceNode(node.objectType)
+    && ts.isIdentifier(node.objectType.typeName)
+    && node.objectType.typeName.text === "EXT_sRGB"
+    && ts.isLiteralTypeNode(node.indexType)
+    && ts.isStringLiteral(node.indexType.literal)
+    && node.indexType.literal.text === "SRGB_ALPHA_EXT") return numericLiteralType(0x8C42);
   if (ts.isFunctionTypeNode(node)
     && !node.typeParameters?.length
     && !node.parameters.some(parameter => parameter.dotDotDotToken)) {
@@ -283,6 +301,23 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     return intersectionObjectType(node, available, dependencies, typeParameters, utilityInlineTypes);
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (!node.typeArguments?.length && node.typeName.text === "Function") return "System.Delegate";
+    if (node.typeName.text === "InteractionName"
+      && node.typeArguments?.length === 1
+      && ts.isTypeReferenceNode(node.typeArguments[0])
+      && ts.isIdentifier(node.typeArguments[0].typeName)
+      && typeParameters.has(node.typeArguments[0].typeName.text)) return `BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'${node.typeArguments[0].typeName.text}>`;
+    if (node.typeName.text === "InputMapEntry" && node.typeArguments?.length === 1) {
+      const interaction = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      return interaction ? `BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<${interaction}>` : undefined;
+    }
+    if (node.typeName.text === "InterpolatingBehavior" && !node.typeArguments?.length && available.has("InterpolatingBehavior") && available.has("Camera")) {
+      dependencies.add("InterpolatingBehavior");
+      dependencies.add("Camera");
+      return "InterpolatingBehavior<Camera>";
+    }
+    if (!node.typeArguments?.length && new Set(["GLenum", "GLbitfield", "GLint", "GLsizei", "GLintptr", "GLsizeiptr", "GLuint", "GLfloat", "GLclampf"]).has(node.typeName.text)) return "float";
+    if (!node.typeArguments?.length && node.typeName.text === "GLboolean") return "bool";
     if (node.typeName.text === "Record" && node.typeArguments?.length === 2) {
       const keyType = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       const valueType = fsharpType(node.typeArguments[1], available, dependencies, typeParameters);
@@ -368,6 +403,19 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
         const typedArrays = new Set(["BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
         if (typedArrays.has(name)) return `JS.${name}`;
       }
+      if (ts.isArrayTypeNode(inner)) {
+        let element;
+        if (ts.isTypeReferenceNode(inner.elementType) && ts.isIdentifier(inner.elementType.typeName) && !inner.elementType.typeArguments?.length) {
+          const name = inner.elementType.typeName.text;
+          const candidate = available.get(name);
+          if (candidate?.deepImmutableSymbol) {
+            dependencies.add(name);
+            element = candidate.deepImmutableSymbol;
+          } else element = maintainedSymbols.get(name)?.deepImmutableSymbol;
+        }
+        element ??= fsharpType(inner.elementType, available, dependencies, typeParameters);
+        if (element) return `System.Collections.Generic.IReadOnlyList<${element}>`;
+      }
       if (ts.isTypeReferenceNode(inner)
         && ts.isIdentifier(inner.typeName)
         && ["Array", "ArrayLike", "ReadonlyArray"].includes(inner.typeName.text)
@@ -422,6 +470,12 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `JS.Promise<${inner}>` : undefined;
     }
+    if (node.typeName.text === "Generator" && node.typeArguments?.length === 3) {
+      const yieldType = node.typeArguments[0].kind === ts.SyntaxKind.UndefinedKeyword ? "unit" : fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      const returnType = fsharpType(node.typeArguments[1], available, dependencies, typeParameters);
+      const nextType = node.typeArguments[2].kind === ts.SyntaxKind.UnknownKeyword ? "obj" : fsharpType(node.typeArguments[2], available, dependencies, typeParameters);
+      return yieldType && returnType && nextType ? `BabylonjsBindings.SimpleInterfaces.BrowserGenerator<${yieldType}, ${returnType}, ${nextType}>` : undefined;
+    }
     if (node.typeName.text === "Set" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `JS.Set<${inner}>` : undefined;
@@ -445,10 +499,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       && jsTypes.has(node.typeName.text)
       && ts.isTypeReferenceNode(node.typeArguments[0])
       && ts.isIdentifier(node.typeArguments[0].typeName)
-      && node.typeArguments[0].typeName.text === "ArrayBuffer"
+      && ["ArrayBuffer", "ArrayBufferLike"].includes(node.typeArguments[0].typeName.text)
       && !node.typeArguments[0].typeArguments?.length) return `JS.${node.typeName.text}`;
     const browserTypes = new Set([
-      "AudioBuffer", "AudioBufferSourceNode", "AudioContext", "AudioDestinationNode", "AudioNode", "Blob", "Document", "Element", "Event", "File", "GainNode", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLMediaElement", "HTMLVideoElement", "KeyboardEvent", "MediaStreamAudioDestinationNode", "MediaTrackConstraints", "OfflineAudioContext", "PointerEvent", "PointerEventInit", "ProgressEvent", "Window", "XMLHttpRequest",
+      "AudioBuffer", "AudioBufferSourceNode", "AudioContext", "AudioDestinationNode", "AudioNode", "Blob", "Document", "Element", "Event", "File", "GainNode", "HTMLElement", "HTMLCanvasElement", "HTMLDivElement", "HTMLImageElement", "HTMLMediaElement", "HTMLVideoElement", "KeyboardEvent", "MediaStreamAudioDestinationNode", "MediaTrackConstraints", "OfflineAudioContext", "PointerEvent", "PointerEventInit", "ProgressEvent", "Window", "XMLHttpRequest",
       "ImageData", "WebGLUniformLocation", "WebGL2RenderingContext", "WebGLRenderingContext",
       "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer", "WebGLVertexArrayObject",
     ]);
@@ -483,14 +537,55 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && node.typeName.text === "DOMRect") return "BabylonjsBindings.SimpleInterfaces.BrowserDOMRect";
     const ambientHandleTypes = new Map([
       ["GPUDevice", "BrowserGPUDevice"],
+      ["GPUBuffer", "BrowserGPUBuffer"],
       ["GPURenderPassEncoder", "BrowserGPURenderPassEncoder"],
       ["GPURenderPipeline", "BrowserGPURenderPipeline"],
       ["GPUQuerySet", "BrowserGPUQuerySet"],
       ["GPUCommandEncoder", "BrowserGPUCommandEncoder"],
       ["GPURenderBundle", "BrowserGPURenderBundle"],
+      ["GPUTexture", "BrowserGPUTexture"],
+      ["GPUSampler", "BrowserGPUSampler"],
+      ["GPUBindGroup", "BrowserGPUBindGroup"],
+      ["GPUBindGroupLayout", "BrowserGPUBindGroupLayout"],
+      ["GPUPipelineLayout", "BrowserGPUPipelineLayout"],
+      ["GPUShaderModule", "BrowserGPUShaderModule"],
+      ["GPUComputePipeline", "BrowserGPUComputePipeline"],
+      ["GPUCommandBuffer", "BrowserGPUCommandBuffer"],
+      ["GPUTextureView", "BrowserGPUTextureView"],
+      ["GPUAdapter", "BrowserGPUAdapter"],
+      ["GPUCanvasContext", "BrowserGPUCanvasContext"],
+      ["GPUExternalTexture", "BrowserGPUExternalTexture"],
+      ["GPURenderBundleEncoder", "BrowserGPURenderBundleEncoder"],
+      ["GPURenderPassDescriptor", "BrowserGPURenderPassDescriptor"],
+      ["GPURenderPipelineDescriptor", "BrowserGPURenderPipelineDescriptor"],
+      ["GPUProgrammableStage", "BrowserGPUProgrammableStage"],
+      ["GPUBindGroupLayoutEntry", "BrowserGPUBindGroupLayoutEntry"],
+      ["GPUBindGroupEntry", "BrowserGPUBindGroupEntry"],
+      ["GPUComputePassDescriptor", "BrowserGPUComputePassDescriptor"],
+      ["GPUTextureViewDescriptor", "BrowserGPUTextureViewDescriptor"],
+      ["GPUDeviceDescriptor", "BrowserGPUDeviceDescriptor"],
+      ["GPUTextureFormat", "BrowserGPUTextureFormat"],
+      ["GPUFeatureName", "BrowserGPUFeatureName"],
+      ["GPUCompareFunction", "BrowserGPUCompareFunction"],
+      ["GPUStorageTextureAccess", "BrowserGPUStorageTextureAccess"],
+      ["GPUTextureSampleType", "BrowserGPUTextureSampleType"],
+      ["GPUSamplerBindingType", "BrowserGPUSamplerBindingType"],
+      ["GPUTextureViewDimension", "BrowserGPUTextureViewDimension"],
+      ["GPUSupportedLimits", "BrowserGPUSupportedLimits"],
       ["XRWebGLBinding", "BrowserXRWebGLBinding"]
+      ,["XRCompositionLayer", "BrowserXRCompositionLayer"]
+      ,["WebGLContextEvent", "BrowserWebGLContextEvent"]
+      ,["AudioBuffer", "BrowserAudioBuffer"]
+      ,["AudioNode", "BrowserAudioNode"]
+      ,["GainNode", "BrowserGainNode"]
+      ,["OfflineAudioContext", "BrowserOfflineAudioContext"]
+      ,["AudioBufferSourceNode", "BrowserAudioBufferSourceNode"]
+      ,["MediaTrackConstraints", "BrowserMediaTrackConstraints"]
+      ,["PointerEventInit", "BrowserPointerEventInit"]
+      ,["WebGLVertexArrayObject", "BrowserWebGLVertexArrayObject"]
     ]);
     if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
+    if (!node.typeArguments?.length && node.typeName.text === "GPUBufferUsageFlags") return "float";
     if (!node.typeArguments?.length && node.typeName.text === "WebXRRenderTarget" && (available.has("WebXRRenderTarget") || maintainedSymbols.has("WebXRRenderTarget"))) {
       if (available.has("WebXRRenderTarget")) dependencies.add("WebXRRenderTarget");
       return "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer>";
@@ -499,6 +594,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && node.typeName.text === "OffscreenCanvas") return "BabylonjsBindings.SimpleInterfaces.BrowserOffscreenCanvas";
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmapOptions") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmapOptions";
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
+    if (!node.typeArguments?.length && node.typeName.text === "VideoFrame") return "BabylonjsBindings.SimpleInterfaces.BrowserVideoFrame";
     if (!node.typeArguments?.length && node.typeName.text === "RegExp") return "BabylonjsBindings.SimpleInterfaces.BrowserRegExp";
     if (!node.typeArguments?.length && node.typeName.text === "WebGLQuery") return "BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
@@ -716,6 +812,14 @@ const perfMetadataKinds = [
   ["color", "PerfMetadataColorProperty", "string"],
   ["hidden", "PerfMetadataHiddenProperty", "bool"]
 ];
+const isNominalFsharpConstraint = node => {
+  if (!ts.isTypeReferenceNode(node) || !ts.isIdentifier(node.typeName)) return false;
+  let symbol = checker.getSymbolAtLocation(node.typeName);
+  if (symbol?.flags & ts.SymbolFlags.Alias) {
+    try { symbol = checker.getAliasedSymbol(symbol); } catch { return false; }
+  }
+  return Boolean(symbol?.declarations?.some(declaration => ts.isClassDeclaration(declaration) || ts.isInterfaceDeclaration(declaration)));
+};
 const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, context, ownerName) => {
   const localTypeParameters = new Set(typeParameters);
   localTypeParameters.deepImmutableSymbols = new Map(typeParameters.deepImmutableSymbols ?? []);
@@ -724,6 +828,7 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
   const constraints = [];
   for (const parameter of node.typeParameters ?? []) {
     if (!parameter.constraint) continue;
+    if (!isNominalFsharpConstraint(parameter.constraint)) continue;
     const constraint = fsharpType(parameter.constraint, available, dependencies, localTypeParameters);
     if (!constraint) return undefined;
     constraints.push(`'${parameter.name.text} :> ${constraint}`);
@@ -790,6 +895,7 @@ const renderClass = (declaration, available, hasBase) => {
   const genericConstraints = [];
   for (const parameter of declaration.typeParameters ?? []) {
     if (!parameter.constraint) continue;
+    if (!isNominalFsharpConstraint(parameter.constraint)) continue;
     const constraint = fsharpType(parameter.constraint, available, dependencies, typeParameters);
     if (!constraint) return undefined;
     genericConstraints.push(`'${parameter.name.text} :> ${constraint}`);
@@ -1029,6 +1135,13 @@ const renderBase = (declaration, available) => {
   const name = extendsTypes[0].expression.text;
   if (name === "Error" && !(extendsTypes[0].typeArguments?.length)) {
     return { name: "JavaScriptError", rendered: "JavaScriptError", builtin: true };
+  }
+  if (name === "Array" && extendsTypes[0].typeArguments?.length === 1) {
+    const dependencies = new Set();
+    const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
+    const element = fsharpType(extendsTypes[0].typeArguments[0], available, dependencies, typeParameters);
+    if (!element) return null;
+    return { name: "JavaScriptArray", rendered: `System.Collections.Generic.IList<${element}>`, builtin: true, extraDependencies: [...dependencies] };
   }
   const mixinVariable = declaration.getSourceFile().statements
     .filter(ts.isVariableStatement)
@@ -1276,7 +1389,7 @@ if (diagnose) {
   console.log("failure types for highest-impact unrenderable classes:");
   console.log(unrenderableDependencies.slice(0, 20).map(([name, count]) => `${name} (${count} downstream): ${[...(typeFailuresByClass.get(name) ?? [])].slice(0, 8).join(" | ") || "non-type member shape"}`).join("\n"));
   console.log("failure types for foundational class bridge targets:");
-  console.log(["Node", "TransformNode", "FlowGraphContext", "Scene", "AbstractEngine", "Buffer", "VertexBuffer", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix", "Plane"]
+  console.log(["Node", "TransformNode", "FlowGraphContext", "Scene", "AbstractEngine", "Buffer", "VertexBuffer", "Vector2", "Vector3", "Vector4", "Quaternion", "Matrix", "Plane", "WebGPUEngine", "WebGPUBufferManager", "WebGPUHardwareTexture", "WebGPUPipelineContext", "WebGPUTimestampQuery", "AudioEngineV2", "_WebAudioEngine", "AudioBus", "MainAudioBus", "_WebAudioStaticSound", "_WebAudioStreamingSound"]
     .map(name => {
       const identities = [...declarations].filter(([, entry]) => entry.name === name).map(([identity]) => identity);
       const missing = shapeReadyDependencies.get(name) ?? [];
@@ -1364,7 +1477,7 @@ const renderMember = member => {
   if (member.kind === "callbackProperty") return `abstract \`\`${member.name}\`\`: ${member.helperName}${member.optional ? " option" : ""} with get${member.readonly ? "" : ", set"}`;
   if (member.kind === "indexer") return `[<EmitIndexer>] abstract Item: \`\`${member.name}\`\`: ${member.keyType} -> ${member.valueType} with get${member.readonly ? "" : ", set"}`;
   if (member.kind === "setterMethod") return `[<Emit("$0.${member.emittedName} = $1")>] abstract \`\`${member.name}\`\`: value: ${member.type} -> unit`;
-  return `abstract \`\`${member.name}\`\`${member.callback.genericParameters}: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`;
+  return `abstract \`\`${member.name}\`\`${member.callback.genericParameters} : ${callbackArguments(member.callback)} -> ${member.callback.returnType}`;
 };
 const renderDeepImmutableMember = member => {
   if (member.kind === "setterMethod") return undefined;
@@ -1414,7 +1527,7 @@ for (const [name, members] of [...internalEnumTypes].sort(([left], [right]) => l
   lines.push("", "    /// Exact internal numeric enum required by a Babylon class signature.", `    type ${name} =`);
   for (const member of members) lines.push(`        | ${member.name} = ${member.value}`);
 }
-let classUtilityReferenceText = JSON.stringify(entries.map(entry => ({ instanceMembers: entry.instanceMembers, staticMembers: entry.staticMembers, constructors: entry.constructors, base: entry.base, inlineTypes: entry.inlineTypes })));
+let classUtilityReferenceText = JSON.stringify(entries.map(entry => ({ instanceMembers: entry.instanceMembers, staticMembers: entry.staticMembers, constructors: entry.constructors, base: entry.base, inlineTypes: entry.inlineTypes, genericConstraints: entry.genericConstraints })));
 const retainedClassUtilityInlineTypes = [];
 while (true) {
   const additions = utilityInlineTypes.filter(inline => !retainedClassUtilityInlineTypes.includes(inline) && classUtilityReferenceText.includes(inline.name));

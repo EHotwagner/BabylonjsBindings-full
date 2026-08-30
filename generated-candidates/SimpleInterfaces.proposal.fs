@@ -273,6 +273,29 @@ module SimpleInterfaces =
         abstract next: ?value: obj -> JS.IteratorResult<'T>
         [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
 
+    /// Yield branch returned by an ECMAScript generator.
+    [<AllowNullLiteral>]
+    type BrowserGeneratorYieldResult<'T> =
+        abstract ``done``: bool option with get
+        abstract value: 'T with get
+
+    /// Completion branch returned by an ECMAScript generator.
+    [<AllowNullLiteral>]
+    type BrowserGeneratorReturnResult<'T> =
+        abstract ``done``: bool with get
+        abstract value: 'T with get
+
+    /// Exact yield-or-return result of an ECMAScript generator.
+    type BrowserGeneratorResult<'TYield, 'TReturn> = U2<BrowserGeneratorYieldResult<'TYield>, BrowserGeneratorReturnResult<'TReturn>>
+
+    /// Exact synchronous ECMAScript Generator surface used by Babylon declarations.
+    [<AllowNullLiteral>]
+    type BrowserGenerator<'TYield, 'TReturn, 'TNext> =
+        abstract next: ?value: 'TNext -> BrowserGeneratorResult<'TYield, 'TReturn>
+        [<Emit("$0.return($1)")>] abstract ``return``: ?value: 'TReturn -> BrowserGeneratorResult<'TYield, 'TReturn>
+        [<Emit("$0.throw($1)")>] abstract ``throw``: ?error: obj -> BrowserGeneratorResult<'TYield, 'TReturn>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserGenerator<'TYield, 'TReturn, 'TNext>
+
     /// Exact readonly ECMAScript Set surface used by Babylon declarations.
     [<AllowNullLiteral>]
     type BrowserReadonlySet<'T> =
@@ -358,10 +381,94 @@ module SimpleInterfaces =
     type BrowserWebGLQuery =
         interface end
 
+    /// Exact WebGL context-event extension surface.
+    [<AllowNullLiteral>]
+    type BrowserWebGLContextEvent =
+        inherit Browser.Types.Event
+        abstract statusMessage: string with get
+
     /// Distinct opaque handle for the ambient JavaScript RegExp API.
     [<AllowNullLiteral>]
     type BrowserRegExp =
         interface end
+
+    /// Exact nominal type for a required JavaScript null literal.
+    [<AllowNullLiteral>]
+    type JavaScriptNull =
+        interface end
+
+    /// Erased, owner-typed JavaScript property key.
+    [<Erase>]
+    type JavaScriptKeyOf<'TOwner> =
+        | JavaScriptKeyOf of string
+
+    /// Exact pointer input-source discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserPointerInputSource =
+        | [<CompiledName("pointer")>] Value
+
+    /// Exact wheel input-source discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserWheelInputSource =
+        | [<CompiledName("wheel")>] Value
+
+    /// Exact touch input-source discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserTouchInputSource =
+        | [<CompiledName("touch")>] Value
+
+    /// Exact keyboard input-source discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserKeyboardInputSource =
+        | [<CompiledName("keyboard")>] Value
+
+    /// Exact modifier state shared by Babylon input-map entries.
+    [<AllowNullLiteral>]
+    type BrowserInputModifiers =
+        abstract ctrl: bool option with get, set
+        abstract shift: bool option with get, set
+        abstract alt: bool option with get, set
+
+    /// Exact pointer input-map entry.
+    [<AllowNullLiteral>]
+    type BrowserPointerInputMapEntry<'TInteraction> =
+        abstract source: BrowserPointerInputSource with get, set
+        abstract interaction: 'TInteraction with get, set
+        abstract sensitivity: float option with get, set
+        abstract sensitivityX: float option with get, set
+        abstract sensitivityY: float option with get, set
+        abstract button: float option with get, set
+        abstract modifiers: BrowserInputModifiers option with get, set
+
+    /// Exact wheel input-map entry.
+    [<AllowNullLiteral>]
+    type BrowserWheelInputMapEntry<'TInteraction> =
+        abstract source: BrowserWheelInputSource with get, set
+        abstract interaction: 'TInteraction with get, set
+        abstract sensitivity: float option with get, set
+        abstract modifiers: BrowserInputModifiers option with get, set
+
+    /// Exact touch input-map entry.
+    [<AllowNullLiteral>]
+    type BrowserTouchInputMapEntry<'TInteraction> =
+        abstract source: BrowserTouchInputSource with get, set
+        abstract interaction: 'TInteraction with get, set
+        abstract sensitivity: float option with get, set
+        abstract sensitivityX: float option with get, set
+        abstract sensitivityY: float option with get, set
+        abstract touchCount: float option with get, set
+
+    /// Exact keyboard input-map entry.
+    [<AllowNullLiteral>]
+    type BrowserKeyboardInputMapEntry<'TInteraction> =
+        abstract source: BrowserKeyboardInputSource with get, set
+        abstract interaction: 'TInteraction with get, set
+        abstract sensitivity: float option with get, set
+        abstract key: U2<float, ResizeArray<float>> option with get, set
+        abstract modifiers: BrowserInputModifiers option with get, set
+
+    /// Exact discriminated union of Babylon input-map entries.
+    type BrowserInputMapEntry<'TInteraction> = U4<BrowserPointerInputMapEntry<'TInteraction>, BrowserWheelInputMapEntry<'TInteraction>, BrowserTouchInputMapEntry<'TInteraction>, BrowserKeyboardInputMapEntry<'TInteraction>>
 
     /// Exact GPUBuffer map-state literals.
     [<StringEnum; RequireQualifiedAccess>]
@@ -369,6 +476,51 @@ module SimpleInterfaces =
         | [<CompiledName("mapped")>] Mapped
         | [<CompiledName("pending")>] Pending
         | [<CompiledName("unmapped")>] Unmapped
+
+    /// Exact WebGPU comparison-function literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUCompareFunction =
+        | [<CompiledName("never")>] Never
+        | [<CompiledName("less")>] Less
+        | [<CompiledName("equal")>] Equal
+        | [<CompiledName("less-equal")>] LessEqual
+        | [<CompiledName("greater")>] Greater
+        | [<CompiledName("not-equal")>] NotEqual
+        | [<CompiledName("greater-equal")>] GreaterEqual
+        | [<CompiledName("always")>] Always
+
+    /// Exact WebGPU storage-texture access literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUStorageTextureAccess =
+        | [<CompiledName("write-only")>] WriteOnly
+        | [<CompiledName("read-only")>] ReadOnly
+        | [<CompiledName("read-write")>] ReadWrite
+
+    /// Exact WebGPU texture sample type literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUTextureSampleType =
+        | [<CompiledName("float")>] Float
+        | [<CompiledName("unfilterable-float")>] UnfilterableFloat
+        | [<CompiledName("depth")>] Depth
+        | [<CompiledName("sint")>] Sint
+        | [<CompiledName("uint")>] Uint
+
+    /// Exact WebGPU sampler binding type literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUSamplerBindingType =
+        | [<CompiledName("filtering")>] Filtering
+        | [<CompiledName("non-filtering")>] NonFiltering
+        | [<CompiledName("comparison")>] Comparison
+
+    /// Exact WebGPU texture-view dimension literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUTextureViewDimension =
+        | [<CompiledName("1d")>] D1d
+        | [<CompiledName("2d")>] D2d
+        | [<CompiledName("2d-array")>] D2dArray
+        | [<CompiledName("cube")>] Cube
+        | [<CompiledName("cube-array")>] CubeArray
+        | [<CompiledName("3d")>] D3d
 
     /// Exact WebGPU GPUBuffer instance surface used by Babylon declarations.
     [<AllowNullLiteral>]
@@ -412,10 +564,305 @@ module SimpleInterfaces =
     type BrowserGPURenderBundle =
         interface end
 
+    /// Distinct ambient WebGPU texture handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUTexture =
+        interface end
+
+    /// Distinct ambient WebGPU sampler handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUSampler =
+        interface end
+
+    /// Distinct ambient WebGPU bind group handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUBindGroup =
+        interface end
+
+    /// Distinct ambient WebGPU bind-group layout handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUBindGroupLayout =
+        interface end
+
+    /// Distinct ambient WebGPU pipeline layout handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUPipelineLayout =
+        interface end
+
+    /// Distinct ambient WebGPU shader module handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUShaderModule =
+        interface end
+
+    /// Distinct ambient WebGPU compute pipeline handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUComputePipeline =
+        interface end
+
+    /// Distinct ambient WebGPU command buffer handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUCommandBuffer =
+        interface end
+
+    /// Distinct ambient WebGPU texture view handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUTextureView =
+        interface end
+
+    /// Distinct ambient WebGPU adapter handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUAdapter =
+        interface end
+
+    /// Distinct ambient WebGPU canvas context handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUCanvasContext =
+        interface end
+
+    /// Distinct ambient WebGPU external texture handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUExternalTexture =
+        interface end
+
+    /// Distinct ambient WebGPU render-bundle encoder handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderBundleEncoder =
+        interface end
+
+    /// Distinct ambient WebGPU render-pass descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderPassDescriptor =
+        interface end
+
+    /// Distinct ambient WebGPU render-pipeline descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderPipelineDescriptor =
+        interface end
+
+    /// Distinct ambient WebGPU programmable-stage descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUProgrammableStage =
+        interface end
+
+    /// Distinct ambient WebGPU bind-group-layout entry handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUBindGroupLayoutEntry =
+        interface end
+
+    /// Distinct ambient WebGPU bind-group entry handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUBindGroupEntry =
+        interface end
+
+    /// Distinct ambient WebGPU compute-pass descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUComputePassDescriptor =
+        interface end
+
+    /// Distinct ambient WebGPU texture-view descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUTextureViewDescriptor =
+        interface end
+
     /// Distinct ambient WebXR WebGL binding handle.
     [<AllowNullLiteral>]
     type BrowserXRWebGLBinding =
         interface end
+
+    /// Distinct ambient WebXR composition-layer handle.
+    [<AllowNullLiteral>]
+    type BrowserXRCompositionLayer =
+        interface end
+
+    /// Distinct ambient Web Audio buffer handle.
+    [<AllowNullLiteral>]
+    type BrowserAudioBuffer =
+        interface end
+
+    /// Distinct ambient Web Audio node handle.
+    [<AllowNullLiteral>]
+    type BrowserAudioNode =
+        interface end
+
+    /// Distinct ambient Web Audio gain node handle.
+    [<AllowNullLiteral>]
+    type BrowserGainNode =
+        interface end
+
+    /// Distinct ambient offline Web Audio context handle.
+    [<AllowNullLiteral>]
+    type BrowserOfflineAudioContext =
+        interface end
+
+    /// Distinct ambient Web Audio buffer-source node handle.
+    [<AllowNullLiteral>]
+    type BrowserAudioBufferSourceNode =
+        interface end
+
+    /// Distinct ambient media-track constraints handle.
+    [<AllowNullLiteral>]
+    type BrowserMediaTrackConstraints =
+        interface end
+
+    /// Distinct ambient pointer-event initializer handle.
+    [<AllowNullLiteral>]
+    type BrowserPointerEventInit =
+        interface end
+
+    /// Distinct ambient WebGL vertex-array object handle.
+    [<AllowNullLiteral>]
+    type BrowserWebGLVertexArrayObject =
+        interface end
+
+    /// Distinct ambient WebGPU device-descriptor surface.
+    [<AllowNullLiteral>]
+    type BrowserGPUDeviceDescriptor =
+        interface end
+
+    /// Exact WebGPU adapter-request options surface.
+    [<AllowNullLiteral>]
+    type BrowserGPURequestAdapterOptions =
+        abstract featureLevel: string option with get, set
+        abstract powerPreference: BrowserGPUPowerPreference option with get, set
+        abstract forceFallbackAdapter: bool option with get, set
+        abstract xrCompatible: bool option with get, set
+
+    /// Exact indexed WebGPU supported-limits surface exposed by Babylon's declaration augmentation.
+    [<AllowNullLiteral>]
+    type BrowserGPUSupportedLimits =
+        [<EmitIndexer>] abstract Item: name: string -> float with get
+
+    /// Exact GPUTextureFormat literals from the WebGPU specification.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUTextureFormat =
+        | [<CompiledName("r8unorm")>] R8unorm
+        | [<CompiledName("r8snorm")>] R8snorm
+        | [<CompiledName("r8uint")>] R8uint
+        | [<CompiledName("r8sint")>] R8sint
+        | [<CompiledName("r16unorm")>] R16unorm
+        | [<CompiledName("r16snorm")>] R16snorm
+        | [<CompiledName("r16uint")>] R16uint
+        | [<CompiledName("r16sint")>] R16sint
+        | [<CompiledName("r16float")>] R16float
+        | [<CompiledName("rg8unorm")>] Rg8unorm
+        | [<CompiledName("rg8snorm")>] Rg8snorm
+        | [<CompiledName("rg8uint")>] Rg8uint
+        | [<CompiledName("rg8sint")>] Rg8sint
+        | [<CompiledName("r32uint")>] R32uint
+        | [<CompiledName("r32sint")>] R32sint
+        | [<CompiledName("r32float")>] R32float
+        | [<CompiledName("rg16unorm")>] Rg16unorm
+        | [<CompiledName("rg16snorm")>] Rg16snorm
+        | [<CompiledName("rg16uint")>] Rg16uint
+        | [<CompiledName("rg16sint")>] Rg16sint
+        | [<CompiledName("rg16float")>] Rg16float
+        | [<CompiledName("rgba8unorm")>] Rgba8unorm
+        | [<CompiledName("rgba8unorm-srgb")>] Rgba8unormSrgb
+        | [<CompiledName("rgba8snorm")>] Rgba8snorm
+        | [<CompiledName("rgba8uint")>] Rgba8uint
+        | [<CompiledName("rgba8sint")>] Rgba8sint
+        | [<CompiledName("bgra8unorm")>] Bgra8unorm
+        | [<CompiledName("bgra8unorm-srgb")>] Bgra8unormSrgb
+        | [<CompiledName("rgb9e5ufloat")>] Rgb9e5ufloat
+        | [<CompiledName("rgb10a2uint")>] Rgb10a2uint
+        | [<CompiledName("rgb10a2unorm")>] Rgb10a2unorm
+        | [<CompiledName("rg11b10ufloat")>] Rg11b10ufloat
+        | [<CompiledName("rg32uint")>] Rg32uint
+        | [<CompiledName("rg32sint")>] Rg32sint
+        | [<CompiledName("rg32float")>] Rg32float
+        | [<CompiledName("rgba16unorm")>] Rgba16unorm
+        | [<CompiledName("rgba16snorm")>] Rgba16snorm
+        | [<CompiledName("rgba16uint")>] Rgba16uint
+        | [<CompiledName("rgba16sint")>] Rgba16sint
+        | [<CompiledName("rgba16float")>] Rgba16float
+        | [<CompiledName("rgba32uint")>] Rgba32uint
+        | [<CompiledName("rgba32sint")>] Rgba32sint
+        | [<CompiledName("rgba32float")>] Rgba32float
+        | [<CompiledName("stencil8")>] Stencil8
+        | [<CompiledName("depth16unorm")>] Depth16unorm
+        | [<CompiledName("depth24plus")>] Depth24plus
+        | [<CompiledName("depth24plus-stencil8")>] Depth24plusStencil8
+        | [<CompiledName("depth32float")>] Depth32float
+        | [<CompiledName("depth32float-stencil8")>] Depth32floatStencil8
+        | [<CompiledName("bc1-rgba-unorm")>] Bc1RgbaUnorm
+        | [<CompiledName("bc1-rgba-unorm-srgb")>] Bc1RgbaUnormSrgb
+        | [<CompiledName("bc2-rgba-unorm")>] Bc2RgbaUnorm
+        | [<CompiledName("bc2-rgba-unorm-srgb")>] Bc2RgbaUnormSrgb
+        | [<CompiledName("bc3-rgba-unorm")>] Bc3RgbaUnorm
+        | [<CompiledName("bc3-rgba-unorm-srgb")>] Bc3RgbaUnormSrgb
+        | [<CompiledName("bc4-r-unorm")>] Bc4RUnorm
+        | [<CompiledName("bc4-r-snorm")>] Bc4RSnorm
+        | [<CompiledName("bc5-rg-unorm")>] Bc5RgUnorm
+        | [<CompiledName("bc5-rg-snorm")>] Bc5RgSnorm
+        | [<CompiledName("bc6h-rgb-ufloat")>] Bc6hRgbUfloat
+        | [<CompiledName("bc6h-rgb-float")>] Bc6hRgbFloat
+        | [<CompiledName("bc7-rgba-unorm")>] Bc7RgbaUnorm
+        | [<CompiledName("bc7-rgba-unorm-srgb")>] Bc7RgbaUnormSrgb
+        | [<CompiledName("etc2-rgb8unorm")>] Etc2Rgb8unorm
+        | [<CompiledName("etc2-rgb8unorm-srgb")>] Etc2Rgb8unormSrgb
+        | [<CompiledName("etc2-rgb8a1unorm")>] Etc2Rgb8a1unorm
+        | [<CompiledName("etc2-rgb8a1unorm-srgb")>] Etc2Rgb8a1unormSrgb
+        | [<CompiledName("etc2-rgba8unorm")>] Etc2Rgba8unorm
+        | [<CompiledName("etc2-rgba8unorm-srgb")>] Etc2Rgba8unormSrgb
+        | [<CompiledName("eac-r11unorm")>] EacR11unorm
+        | [<CompiledName("eac-r11snorm")>] EacR11snorm
+        | [<CompiledName("eac-rg11unorm")>] EacRg11unorm
+        | [<CompiledName("eac-rg11snorm")>] EacRg11snorm
+        | [<CompiledName("astc-4x4-unorm")>] Astc4x4Unorm
+        | [<CompiledName("astc-4x4-unorm-srgb")>] Astc4x4UnormSrgb
+        | [<CompiledName("astc-5x4-unorm")>] Astc5x4Unorm
+        | [<CompiledName("astc-5x4-unorm-srgb")>] Astc5x4UnormSrgb
+        | [<CompiledName("astc-5x5-unorm")>] Astc5x5Unorm
+        | [<CompiledName("astc-5x5-unorm-srgb")>] Astc5x5UnormSrgb
+        | [<CompiledName("astc-6x5-unorm")>] Astc6x5Unorm
+        | [<CompiledName("astc-6x5-unorm-srgb")>] Astc6x5UnormSrgb
+        | [<CompiledName("astc-6x6-unorm")>] Astc6x6Unorm
+        | [<CompiledName("astc-6x6-unorm-srgb")>] Astc6x6UnormSrgb
+        | [<CompiledName("astc-8x5-unorm")>] Astc8x5Unorm
+        | [<CompiledName("astc-8x5-unorm-srgb")>] Astc8x5UnormSrgb
+        | [<CompiledName("astc-8x6-unorm")>] Astc8x6Unorm
+        | [<CompiledName("astc-8x6-unorm-srgb")>] Astc8x6UnormSrgb
+        | [<CompiledName("astc-8x8-unorm")>] Astc8x8Unorm
+        | [<CompiledName("astc-8x8-unorm-srgb")>] Astc8x8UnormSrgb
+        | [<CompiledName("astc-10x5-unorm")>] Astc10x5Unorm
+        | [<CompiledName("astc-10x5-unorm-srgb")>] Astc10x5UnormSrgb
+        | [<CompiledName("astc-10x6-unorm")>] Astc10x6Unorm
+        | [<CompiledName("astc-10x6-unorm-srgb")>] Astc10x6UnormSrgb
+        | [<CompiledName("astc-10x8-unorm")>] Astc10x8Unorm
+        | [<CompiledName("astc-10x8-unorm-srgb")>] Astc10x8UnormSrgb
+        | [<CompiledName("astc-10x10-unorm")>] Astc10x10Unorm
+        | [<CompiledName("astc-10x10-unorm-srgb")>] Astc10x10UnormSrgb
+        | [<CompiledName("astc-12x10-unorm")>] Astc12x10Unorm
+        | [<CompiledName("astc-12x10-unorm-srgb")>] Astc12x10UnormSrgb
+        | [<CompiledName("astc-12x12-unorm")>] Astc12x12Unorm
+        | [<CompiledName("astc-12x12-unorm-srgb")>] Astc12x12UnormSrgb
+
+    /// Exact GPUFeatureName literals from the WebGPU specification.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUFeatureName =
+        | [<CompiledName("core-features-and-limits")>] CoreFeaturesAndLimits
+        | [<CompiledName("depth-clip-control")>] DepthClipControl
+        | [<CompiledName("depth32float-stencil8")>] Depth32floatStencil8
+        | [<CompiledName("texture-compression-bc")>] TextureCompressionBc
+        | [<CompiledName("texture-compression-bc-sliced-3d")>] TextureCompressionBcSliced3d
+        | [<CompiledName("texture-compression-etc2")>] TextureCompressionEtc2
+        | [<CompiledName("texture-compression-astc")>] TextureCompressionAstc
+        | [<CompiledName("texture-compression-astc-sliced-3d")>] TextureCompressionAstcSliced3d
+        | [<CompiledName("timestamp-query")>] TimestampQuery
+        | [<CompiledName("indirect-first-instance")>] IndirectFirstInstance
+        | [<CompiledName("shader-f16")>] ShaderF16
+        | [<CompiledName("rg11b10ufloat-renderable")>] Rg11b10ufloatRenderable
+        | [<CompiledName("bgra8unorm-storage")>] Bgra8unormStorage
+        | [<CompiledName("float32-filterable")>] Float32Filterable
+        | [<CompiledName("float32-blendable")>] Float32Blendable
+        | [<CompiledName("clip-distances")>] ClipDistances
+        | [<CompiledName("dual-source-blending")>] DualSourceBlending
+        | [<CompiledName("subgroups")>] Subgroups
+        | [<CompiledName("texture-formats-tier1")>] TextureFormatsTier1
+        | [<CompiledName("texture-formats-tier2")>] TextureFormatsTier2
+        | [<CompiledName("primitive-index")>] PrimitiveIndex
+        | [<CompiledName("texture-component-swizzle")>] TextureComponentSwizzle
+        | [<CompiledName("subgroup-size-control")>] SubgroupSizeControl
 
     /// Exact WEBGL_compressed_texture_s3tc extension surface.
     [<AllowNullLiteral>]
@@ -3108,6 +3555,12 @@ module SimpleInterfaces =
         abstract ``run``: ``renderPass``: BrowserGPURenderPassEncoder -> unit
         abstract ``clone``: unit -> IWebGPURenderItem
 
+    /// @babylonjs/core/Engines/WebGPU/webgpuPipelineContext
+    [<AllowNullLiteral>]
+    type IWebGPURenderPipelineStageDescriptor =
+        abstract ``vertexStage``: BrowserGPUProgrammableStage with get, set
+        abstract ``fragmentStage``: BrowserGPUProgrammableStage option with get, set
+
     /// @babylonjs/core/Misc/interfaces/iWebRequest
     [<AllowNullLiteral>]
     type IWebRequest =
@@ -3241,6 +3694,21 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type PlaneRotationGizmoOptions =
         abstract ``color``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+
+    /// @babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure
+    [<AllowNullLiteral>]
+    type PLYHeader =
+        abstract ``vertexCount``: float with get, set
+        abstract ``chunkCount``: float with get, set
+        abstract ``rowVertexLength``: float with get, set
+        abstract ``rowChunkLength``: float with get, set
+        abstract ``vertexProperties``: ResizeArray<BabylonjsBindings.TypeAliases.PlyProperty> with get, set
+        abstract ``chunkProperties``: ResizeArray<BabylonjsBindings.TypeAliases.PlyProperty> with get, set
+        abstract ``dataView``: JS.DataView with get, set
+        abstract ``buffer``: JS.ArrayBuffer with get, set
+        abstract ``shDegree``: float with get, set
+        abstract ``shCoefficientCount``: float with get, set
+        abstract ``shBuffer``: JS.ArrayBuffer option with get, set
 
     /// @babylonjs/core/Events/pointerEvents
     [<AllowNullLiteral>]
@@ -4173,6 +4641,22 @@ module SimpleInterfaces =
     type WebGPUBufferDescription =
         abstract ``binding``: WebGPUBindingInfo with get, set
 
+    /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext
+    [<AllowNullLiteral>]
+    type WebGPUSamplerDescription =
+        abstract ``binding``: WebGPUBindingInfo with get, set
+        abstract ``type``: BrowserGPUSamplerBindingType with get, set
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext
+    [<AllowNullLiteral>]
+    type WebGPUTextureDescription =
+        abstract ``autoBindSampler``: bool option with get, set
+        abstract ``isTextureArray``: bool with get, set
+        abstract ``isStorageTexture``: bool with get, set
+        abstract ``storageTextureAccess``: BrowserGPUStorageTextureAccess option with get, set
+        abstract ``textures``: ResizeArray<WebGPUBindingInfo> with get, set
+        abstract ``sampleType``: BrowserGPUTextureSampleType option with get, set
+
     /// @babylonjs/core/XR/webXRTypes
     [<AllowNullLiteral>]
     type WebXRRenderTarget<'TContext, 'TLayer when 'TLayer :> BrowserXRLayer> =
@@ -4492,6 +4976,23 @@ module SimpleInterfaces =
         inherit DeepImmutableIVector4Like
         inherit IVector3Like
         abstract ``w``: BabylonjsBindings.TypeAliases.float with get, set
+
+    /// @babylonjs/core/Engines/webgpuEngine.pure
+    [<AllowNullLiteral>]
+    type WebGPUEngineOptions =
+        inherit AbstractEngineOptions
+        inherit BrowserGPURequestAdapterOptions
+        abstract ``featureLevel``: string option with get, set
+        abstract ``powerPreference``: BrowserGPUPowerPreference option with get, set
+        abstract ``forceFallbackAdapter``: bool option with get, set
+        abstract ``xrCompatible``: bool option with get, set
+        abstract ``deviceDescriptor``: BrowserGPUDeviceDescriptor option with get, set
+        abstract ``enableAllFeatures``: bool option with get, set
+        abstract ``setMaximumLimits``: bool option with get, set
+        abstract ``swapChainFormat``: BrowserGPUTextureFormat option with get, set
+        abstract ``enableGPUDebugMarkers``: bool option with get, set
+        abstract ``glslangOptions``: GlslangOptions option with get, set
+        abstract ``twgslOptions``: TwgslOptions option with get, set
 
     /// @babylonjs/core/Misc/environmentTextureTools.pure
     [<AllowNullLiteral>]

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "4aa7abdae1984088df7b942e1000b73a9a676850014d15078d78dbb8623dc143",
+  "proposalSha256": "3b6ef4d6b17530fbeefa7ec63feca20d14b647686cc62027805d56ad416abef2",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -326,6 +326,16 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.OcclusionQuery",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure",
+      "name": "PlyProperty",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PlyProperty",
       "shape": "alias",
       "memberCount": 1
     },

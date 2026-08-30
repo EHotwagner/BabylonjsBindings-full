@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "60b5c9dfa82d73383c5d89cb7e7be18f823913a91cb0451abeaef71e2a9f7843",
+  "proposalSha256": "afdcaed0f8f7a1c9112f41fb65629a1db52e3a3bd2f893a1382a09b0aefd56be",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -376,6 +376,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Halton2DSequence",
       "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/inputMapper",
+      "name": "InputMapper",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.InputMapper",
+      "typeParameterCount": 1,
+      "memberCount": 10
     },
     {
       "package": "@babylonjs/core",
@@ -790,6 +800,15 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "WebGPUBundleList",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUBundleList",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
       "name": "WebGPURenderItemBeginOcclusionQuery",
       "kind": "class",
       "disposition": "typed",
@@ -840,6 +859,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemViewport",
       "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext",
+      "name": "WebGPUShaderProcessingContext",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessingContext",
+      "memberCount": 26
     },
     {
       "package": "@babylonjs/core",
@@ -1185,6 +1213,24 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGLDataBuffer",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuCacheSampler",
+      "name": "WebGPUCacheSampler",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUCacheSampler",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/WebGPU/webgpuDataBuffer",
+      "name": "WebGPUDataBuffer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUDataBuffer",
+      "memberCount": 4
     },
     {
       "package": "@babylonjs/core",

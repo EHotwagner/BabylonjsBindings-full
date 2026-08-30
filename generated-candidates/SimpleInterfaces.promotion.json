@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "4c740b77c99539e59986cc00bdf4146eebcf467c89d9f215d77edbf9cb32cafc",
+  "proposalSha256": "81f149cefdf7e6b8779740c4107593b907beaad7fbd8d96775d71a555f729427",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1603,6 +1603,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuPipelineContext",
+      "name": "IWebGPURenderPipelineStageDescriptor",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebGPURenderPipelineStageDescriptor",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/interfaces/iWebRequest",
       "name": "IWebRequest",
       "kind": "interface",
@@ -1728,6 +1737,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PlaneRotationGizmoOptions",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure",
+      "name": "PLYHeader",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PLYHeader",
+      "memberCount": 11
     },
     {
       "package": "@babylonjs/core",
@@ -2549,6 +2567,24 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext",
+      "name": "WebGPUSamplerDescription",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebGPUSamplerDescription",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext",
+      "name": "WebGPUTextureDescription",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebGPUTextureDescription",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRTypes",
       "name": "WebXRRenderTarget",
       "kind": "interface",
@@ -2850,6 +2886,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector4Like",
       "deepImmutableSymbol": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector4Like",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/webgpuEngine.pure",
+      "name": "WebGPUEngineOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebGPUEngineOptions",
+      "memberCount": 11
     },
     {
       "package": "@babylonjs/core",

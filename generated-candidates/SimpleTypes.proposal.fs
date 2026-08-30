@@ -36,6 +36,131 @@ module TypeAliases =
     /// Exact IteratorResult<void, T> union returned by a Babylon coroutine.
     type CoroutineInternalResult<'T> = U2<CoroutineInternalYieldResult, CoroutineInternalReturnResult<'T>>
 
+    /// Exact internal numeric enum required by an exported Babylon alias.
+    type AliasEnum150995365430 =
+        | ``FLOAT`` = 0
+        | ``INT`` = 1
+        | ``UINT`` = 2
+        | ``DOUBLE`` = 3
+        | ``UCHAR`` = 4
+        | ``UNDEFINED`` = 5
+
+    /// Exact internal numeric enum required by an exported Babylon alias.
+    type AliasEnum6bfd9a7c2404 =
+        | ``MIN_X`` = 0
+        | ``MIN_Y`` = 1
+        | ``MIN_Z`` = 2
+        | ``MAX_X`` = 3
+        | ``MAX_Y`` = 4
+        | ``MAX_Z`` = 5
+        | ``MIN_SCALE_X`` = 6
+        | ``MIN_SCALE_Y`` = 7
+        | ``MIN_SCALE_Z`` = 8
+        | ``MAX_SCALE_X`` = 9
+        | ``MAX_SCALE_Y`` = 10
+        | ``MAX_SCALE_Z`` = 11
+        | ``PACKED_POSITION`` = 12
+        | ``PACKED_ROTATION`` = 13
+        | ``PACKED_SCALE`` = 14
+        | ``PACKED_COLOR`` = 15
+        | ``X`` = 16
+        | ``Y`` = 17
+        | ``Z`` = 18
+        | ``SCALE_0`` = 19
+        | ``SCALE_1`` = 20
+        | ``SCALE_2`` = 21
+        | ``DIFFUSE_RED`` = 22
+        | ``DIFFUSE_GREEN`` = 23
+        | ``DIFFUSE_BLUE`` = 24
+        | ``OPACITY`` = 25
+        | ``F_DC_0`` = 26
+        | ``F_DC_1`` = 27
+        | ``F_DC_2`` = 28
+        | ``F_DC_3`` = 29
+        | ``ROT_0`` = 30
+        | ``ROT_1`` = 31
+        | ``ROT_2`` = 32
+        | ``ROT_3`` = 33
+        | ``MIN_COLOR_R`` = 34
+        | ``MIN_COLOR_G`` = 35
+        | ``MIN_COLOR_B`` = 36
+        | ``MAX_COLOR_R`` = 37
+        | ``MAX_COLOR_G`` = 38
+        | ``MAX_COLOR_B`` = 39
+        | ``SH_0`` = 40
+        | ``SH_1`` = 41
+        | ``SH_2`` = 42
+        | ``SH_3`` = 43
+        | ``SH_4`` = 44
+        | ``SH_5`` = 45
+        | ``SH_6`` = 46
+        | ``SH_7`` = 47
+        | ``SH_8`` = 48
+        | ``SH_9`` = 49
+        | ``SH_10`` = 50
+        | ``SH_11`` = 51
+        | ``SH_12`` = 52
+        | ``SH_13`` = 53
+        | ``SH_14`` = 54
+        | ``SH_15`` = 55
+        | ``SH_16`` = 56
+        | ``SH_17`` = 57
+        | ``SH_18`` = 58
+        | ``SH_19`` = 59
+        | ``SH_20`` = 60
+        | ``SH_21`` = 61
+        | ``SH_22`` = 62
+        | ``SH_23`` = 63
+        | ``SH_24`` = 64
+        | ``SH_25`` = 65
+        | ``SH_26`` = 66
+        | ``SH_27`` = 67
+        | ``SH_28`` = 68
+        | ``SH_29`` = 69
+        | ``SH_30`` = 70
+        | ``SH_31`` = 71
+        | ``SH_32`` = 72
+        | ``SH_33`` = 73
+        | ``SH_34`` = 74
+        | ``SH_35`` = 75
+        | ``SH_36`` = 76
+        | ``SH_37`` = 77
+        | ``SH_38`` = 78
+        | ``SH_39`` = 79
+        | ``SH_40`` = 80
+        | ``SH_41`` = 81
+        | ``SH_42`` = 82
+        | ``SH_43`` = 83
+        | ``SH_44`` = 84
+        | ``SH_45`` = 85
+        | ``SH_46`` = 86
+        | ``SH_47`` = 87
+        | ``SH_48`` = 88
+        | ``SH_49`` = 89
+        | ``SH_50`` = 90
+        | ``SH_51`` = 91
+        | ``SH_52`` = 92
+        | ``SH_53`` = 93
+        | ``SH_54`` = 94
+        | ``SH_55`` = 95
+        | ``SH_56`` = 96
+        | ``SH_57`` = 97
+        | ``SH_58`` = 98
+        | ``SH_59`` = 99
+        | ``SH_60`` = 100
+        | ``SH_61`` = 101
+        | ``SH_62`` = 102
+        | ``SH_63`` = 103
+        | ``SH_64`` = 104
+        | ``SH_65`` = 105
+        | ``SH_66`` = 106
+        | ``SH_67`` = 107
+        | ``SH_68`` = 108
+        | ``SH_69`` = 109
+        | ``SH_70`` = 110
+        | ``SH_71`` = 111
+        | ``UNDEFINED`` = 112
+
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObjectde9f6c1b6b0f =
@@ -102,6 +227,13 @@ module TypeAliases =
     [<AllowNullLiteral>]
     type AliasObject680fbaa03d9c =
         abstract ``defineNames``: AliasObject1aaf511ae5b6 option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectb68403858bab =
+        abstract ``value``: AliasEnum6bfd9a7c2404 with get, set
+        abstract ``type``: AliasEnum150995365430 with get, set
+        abstract ``offset``: System.Double with get, set
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
@@ -235,6 +367,9 @@ module TypeAliases =
 
     /// @babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure
     type OcclusionQuery = U2<BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery, System.Double>
+
+    /// @babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure
+    type PlyProperty = AliasObjectb68403858bab
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
@@ -542,6 +677,29 @@ module SimpleInterfaces =
         abstract next: ?value: obj -> JS.IteratorResult<'T>
         [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
 
+    /// Yield branch returned by an ECMAScript generator.
+    [<AllowNullLiteral>]
+    type BrowserGeneratorYieldResult<'T> =
+        abstract ``done``: bool option with get
+        abstract value: 'T with get
+
+    /// Completion branch returned by an ECMAScript generator.
+    [<AllowNullLiteral>]
+    type BrowserGeneratorReturnResult<'T> =
+        abstract ``done``: bool with get
+        abstract value: 'T with get
+
+    /// Exact yield-or-return result of an ECMAScript generator.
+    type BrowserGeneratorResult<'TYield, 'TReturn> = U2<BrowserGeneratorYieldResult<'TYield>, BrowserGeneratorReturnResult<'TReturn>>
+
+    /// Exact synchronous ECMAScript Generator surface used by Babylon declarations.
+    [<AllowNullLiteral>]
+    type BrowserGenerator<'TYield, 'TReturn, 'TNext> =
+        abstract next: ?value: 'TNext -> BrowserGeneratorResult<'TYield, 'TReturn>
+        [<Emit("$0.return($1)")>] abstract ``return``: ?value: 'TReturn -> BrowserGeneratorResult<'TYield, 'TReturn>
+        [<Emit("$0.throw($1)")>] abstract ``throw``: ?error: obj -> BrowserGeneratorResult<'TYield, 'TReturn>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserGenerator<'TYield, 'TReturn, 'TNext>
+
     /// Exact readonly ECMAScript Set surface used by Babylon declarations.
     [<AllowNullLiteral>]
     type BrowserReadonlySet<'T> =
@@ -627,10 +785,94 @@ module SimpleInterfaces =
     type BrowserWebGLQuery =
         interface end
 
+    /// Exact WebGL context-event extension surface.
+    [<AllowNullLiteral>]
+    type BrowserWebGLContextEvent =
+        inherit Browser.Types.Event
+        abstract statusMessage: string with get
+
     /// Distinct opaque handle for the ambient JavaScript RegExp API.
     [<AllowNullLiteral>]
     type BrowserRegExp =
         interface end
+
+    /// Exact nominal type for a required JavaScript null literal.
+    [<AllowNullLiteral>]
+    type JavaScriptNull =
+        interface end
+
+    /// Erased, owner-typed JavaScript property key.
+    [<Erase>]
+    type JavaScriptKeyOf<'TOwner> =
+        | JavaScriptKeyOf of string
+
+    /// Exact pointer input-source discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserPointerInputSource =
+        | [<CompiledName("pointer")>] Value
+
+    /// Exact wheel input-source discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserWheelInputSource =
+        | [<CompiledName("wheel")>] Value
+
+    /// Exact touch input-source discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserTouchInputSource =
+        | [<CompiledName("touch")>] Value
+
+    /// Exact keyboard input-source discriminator.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserKeyboardInputSource =
+        | [<CompiledName("keyboard")>] Value
+
+    /// Exact modifier state shared by Babylon input-map entries.
+    [<AllowNullLiteral>]
+    type BrowserInputModifiers =
+        abstract ctrl: bool option with get, set
+        abstract shift: bool option with get, set
+        abstract alt: bool option with get, set
+
+    /// Exact pointer input-map entry.
+    [<AllowNullLiteral>]
+    type BrowserPointerInputMapEntry<'TInteraction> =
+        abstract source: BrowserPointerInputSource with get, set
+        abstract interaction: 'TInteraction with get, set
+        abstract sensitivity: float option with get, set
+        abstract sensitivityX: float option with get, set
+        abstract sensitivityY: float option with get, set
+        abstract button: float option with get, set
+        abstract modifiers: BrowserInputModifiers option with get, set
+
+    /// Exact wheel input-map entry.
+    [<AllowNullLiteral>]
+    type BrowserWheelInputMapEntry<'TInteraction> =
+        abstract source: BrowserWheelInputSource with get, set
+        abstract interaction: 'TInteraction with get, set
+        abstract sensitivity: float option with get, set
+        abstract modifiers: BrowserInputModifiers option with get, set
+
+    /// Exact touch input-map entry.
+    [<AllowNullLiteral>]
+    type BrowserTouchInputMapEntry<'TInteraction> =
+        abstract source: BrowserTouchInputSource with get, set
+        abstract interaction: 'TInteraction with get, set
+        abstract sensitivity: float option with get, set
+        abstract sensitivityX: float option with get, set
+        abstract sensitivityY: float option with get, set
+        abstract touchCount: float option with get, set
+
+    /// Exact keyboard input-map entry.
+    [<AllowNullLiteral>]
+    type BrowserKeyboardInputMapEntry<'TInteraction> =
+        abstract source: BrowserKeyboardInputSource with get, set
+        abstract interaction: 'TInteraction with get, set
+        abstract sensitivity: float option with get, set
+        abstract key: U2<float, ResizeArray<float>> option with get, set
+        abstract modifiers: BrowserInputModifiers option with get, set
+
+    /// Exact discriminated union of Babylon input-map entries.
+    type BrowserInputMapEntry<'TInteraction> = U4<BrowserPointerInputMapEntry<'TInteraction>, BrowserWheelInputMapEntry<'TInteraction>, BrowserTouchInputMapEntry<'TInteraction>, BrowserKeyboardInputMapEntry<'TInteraction>>
 
     /// Exact GPUBuffer map-state literals.
     [<StringEnum; RequireQualifiedAccess>]
@@ -638,6 +880,51 @@ module SimpleInterfaces =
         | [<CompiledName("mapped")>] Mapped
         | [<CompiledName("pending")>] Pending
         | [<CompiledName("unmapped")>] Unmapped
+
+    /// Exact WebGPU comparison-function literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUCompareFunction =
+        | [<CompiledName("never")>] Never
+        | [<CompiledName("less")>] Less
+        | [<CompiledName("equal")>] Equal
+        | [<CompiledName("less-equal")>] LessEqual
+        | [<CompiledName("greater")>] Greater
+        | [<CompiledName("not-equal")>] NotEqual
+        | [<CompiledName("greater-equal")>] GreaterEqual
+        | [<CompiledName("always")>] Always
+
+    /// Exact WebGPU storage-texture access literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUStorageTextureAccess =
+        | [<CompiledName("write-only")>] WriteOnly
+        | [<CompiledName("read-only")>] ReadOnly
+        | [<CompiledName("read-write")>] ReadWrite
+
+    /// Exact WebGPU texture sample type literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUTextureSampleType =
+        | [<CompiledName("float")>] Float
+        | [<CompiledName("unfilterable-float")>] UnfilterableFloat
+        | [<CompiledName("depth")>] Depth
+        | [<CompiledName("sint")>] Sint
+        | [<CompiledName("uint")>] Uint
+
+    /// Exact WebGPU sampler binding type literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUSamplerBindingType =
+        | [<CompiledName("filtering")>] Filtering
+        | [<CompiledName("non-filtering")>] NonFiltering
+        | [<CompiledName("comparison")>] Comparison
+
+    /// Exact WebGPU texture-view dimension literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUTextureViewDimension =
+        | [<CompiledName("1d")>] D1d
+        | [<CompiledName("2d")>] D2d
+        | [<CompiledName("2d-array")>] D2dArray
+        | [<CompiledName("cube")>] Cube
+        | [<CompiledName("cube-array")>] CubeArray
+        | [<CompiledName("3d")>] D3d
 
     /// Exact WebGPU GPUBuffer instance surface used by Babylon declarations.
     [<AllowNullLiteral>]
@@ -681,10 +968,305 @@ module SimpleInterfaces =
     type BrowserGPURenderBundle =
         interface end
 
+    /// Distinct ambient WebGPU texture handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUTexture =
+        interface end
+
+    /// Distinct ambient WebGPU sampler handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUSampler =
+        interface end
+
+    /// Distinct ambient WebGPU bind group handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUBindGroup =
+        interface end
+
+    /// Distinct ambient WebGPU bind-group layout handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUBindGroupLayout =
+        interface end
+
+    /// Distinct ambient WebGPU pipeline layout handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUPipelineLayout =
+        interface end
+
+    /// Distinct ambient WebGPU shader module handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUShaderModule =
+        interface end
+
+    /// Distinct ambient WebGPU compute pipeline handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUComputePipeline =
+        interface end
+
+    /// Distinct ambient WebGPU command buffer handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUCommandBuffer =
+        interface end
+
+    /// Distinct ambient WebGPU texture view handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUTextureView =
+        interface end
+
+    /// Distinct ambient WebGPU adapter handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUAdapter =
+        interface end
+
+    /// Distinct ambient WebGPU canvas context handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUCanvasContext =
+        interface end
+
+    /// Distinct ambient WebGPU external texture handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUExternalTexture =
+        interface end
+
+    /// Distinct ambient WebGPU render-bundle encoder handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderBundleEncoder =
+        interface end
+
+    /// Distinct ambient WebGPU render-pass descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderPassDescriptor =
+        interface end
+
+    /// Distinct ambient WebGPU render-pipeline descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPURenderPipelineDescriptor =
+        interface end
+
+    /// Distinct ambient WebGPU programmable-stage descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUProgrammableStage =
+        interface end
+
+    /// Distinct ambient WebGPU bind-group-layout entry handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUBindGroupLayoutEntry =
+        interface end
+
+    /// Distinct ambient WebGPU bind-group entry handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUBindGroupEntry =
+        interface end
+
+    /// Distinct ambient WebGPU compute-pass descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUComputePassDescriptor =
+        interface end
+
+    /// Distinct ambient WebGPU texture-view descriptor handle.
+    [<AllowNullLiteral>]
+    type BrowserGPUTextureViewDescriptor =
+        interface end
+
     /// Distinct ambient WebXR WebGL binding handle.
     [<AllowNullLiteral>]
     type BrowserXRWebGLBinding =
         interface end
+
+    /// Distinct ambient WebXR composition-layer handle.
+    [<AllowNullLiteral>]
+    type BrowserXRCompositionLayer =
+        interface end
+
+    /// Distinct ambient Web Audio buffer handle.
+    [<AllowNullLiteral>]
+    type BrowserAudioBuffer =
+        interface end
+
+    /// Distinct ambient Web Audio node handle.
+    [<AllowNullLiteral>]
+    type BrowserAudioNode =
+        interface end
+
+    /// Distinct ambient Web Audio gain node handle.
+    [<AllowNullLiteral>]
+    type BrowserGainNode =
+        interface end
+
+    /// Distinct ambient offline Web Audio context handle.
+    [<AllowNullLiteral>]
+    type BrowserOfflineAudioContext =
+        interface end
+
+    /// Distinct ambient Web Audio buffer-source node handle.
+    [<AllowNullLiteral>]
+    type BrowserAudioBufferSourceNode =
+        interface end
+
+    /// Distinct ambient media-track constraints handle.
+    [<AllowNullLiteral>]
+    type BrowserMediaTrackConstraints =
+        interface end
+
+    /// Distinct ambient pointer-event initializer handle.
+    [<AllowNullLiteral>]
+    type BrowserPointerEventInit =
+        interface end
+
+    /// Distinct ambient WebGL vertex-array object handle.
+    [<AllowNullLiteral>]
+    type BrowserWebGLVertexArrayObject =
+        interface end
+
+    /// Distinct ambient WebGPU device-descriptor surface.
+    [<AllowNullLiteral>]
+    type BrowserGPUDeviceDescriptor =
+        interface end
+
+    /// Exact WebGPU adapter-request options surface.
+    [<AllowNullLiteral>]
+    type BrowserGPURequestAdapterOptions =
+        abstract featureLevel: string option with get, set
+        abstract powerPreference: BrowserGPUPowerPreference option with get, set
+        abstract forceFallbackAdapter: bool option with get, set
+        abstract xrCompatible: bool option with get, set
+
+    /// Exact indexed WebGPU supported-limits surface exposed by Babylon's declaration augmentation.
+    [<AllowNullLiteral>]
+    type BrowserGPUSupportedLimits =
+        [<EmitIndexer>] abstract Item: name: string -> float with get
+
+    /// Exact GPUTextureFormat literals from the WebGPU specification.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUTextureFormat =
+        | [<CompiledName("r8unorm")>] R8unorm
+        | [<CompiledName("r8snorm")>] R8snorm
+        | [<CompiledName("r8uint")>] R8uint
+        | [<CompiledName("r8sint")>] R8sint
+        | [<CompiledName("r16unorm")>] R16unorm
+        | [<CompiledName("r16snorm")>] R16snorm
+        | [<CompiledName("r16uint")>] R16uint
+        | [<CompiledName("r16sint")>] R16sint
+        | [<CompiledName("r16float")>] R16float
+        | [<CompiledName("rg8unorm")>] Rg8unorm
+        | [<CompiledName("rg8snorm")>] Rg8snorm
+        | [<CompiledName("rg8uint")>] Rg8uint
+        | [<CompiledName("rg8sint")>] Rg8sint
+        | [<CompiledName("r32uint")>] R32uint
+        | [<CompiledName("r32sint")>] R32sint
+        | [<CompiledName("r32float")>] R32float
+        | [<CompiledName("rg16unorm")>] Rg16unorm
+        | [<CompiledName("rg16snorm")>] Rg16snorm
+        | [<CompiledName("rg16uint")>] Rg16uint
+        | [<CompiledName("rg16sint")>] Rg16sint
+        | [<CompiledName("rg16float")>] Rg16float
+        | [<CompiledName("rgba8unorm")>] Rgba8unorm
+        | [<CompiledName("rgba8unorm-srgb")>] Rgba8unormSrgb
+        | [<CompiledName("rgba8snorm")>] Rgba8snorm
+        | [<CompiledName("rgba8uint")>] Rgba8uint
+        | [<CompiledName("rgba8sint")>] Rgba8sint
+        | [<CompiledName("bgra8unorm")>] Bgra8unorm
+        | [<CompiledName("bgra8unorm-srgb")>] Bgra8unormSrgb
+        | [<CompiledName("rgb9e5ufloat")>] Rgb9e5ufloat
+        | [<CompiledName("rgb10a2uint")>] Rgb10a2uint
+        | [<CompiledName("rgb10a2unorm")>] Rgb10a2unorm
+        | [<CompiledName("rg11b10ufloat")>] Rg11b10ufloat
+        | [<CompiledName("rg32uint")>] Rg32uint
+        | [<CompiledName("rg32sint")>] Rg32sint
+        | [<CompiledName("rg32float")>] Rg32float
+        | [<CompiledName("rgba16unorm")>] Rgba16unorm
+        | [<CompiledName("rgba16snorm")>] Rgba16snorm
+        | [<CompiledName("rgba16uint")>] Rgba16uint
+        | [<CompiledName("rgba16sint")>] Rgba16sint
+        | [<CompiledName("rgba16float")>] Rgba16float
+        | [<CompiledName("rgba32uint")>] Rgba32uint
+        | [<CompiledName("rgba32sint")>] Rgba32sint
+        | [<CompiledName("rgba32float")>] Rgba32float
+        | [<CompiledName("stencil8")>] Stencil8
+        | [<CompiledName("depth16unorm")>] Depth16unorm
+        | [<CompiledName("depth24plus")>] Depth24plus
+        | [<CompiledName("depth24plus-stencil8")>] Depth24plusStencil8
+        | [<CompiledName("depth32float")>] Depth32float
+        | [<CompiledName("depth32float-stencil8")>] Depth32floatStencil8
+        | [<CompiledName("bc1-rgba-unorm")>] Bc1RgbaUnorm
+        | [<CompiledName("bc1-rgba-unorm-srgb")>] Bc1RgbaUnormSrgb
+        | [<CompiledName("bc2-rgba-unorm")>] Bc2RgbaUnorm
+        | [<CompiledName("bc2-rgba-unorm-srgb")>] Bc2RgbaUnormSrgb
+        | [<CompiledName("bc3-rgba-unorm")>] Bc3RgbaUnorm
+        | [<CompiledName("bc3-rgba-unorm-srgb")>] Bc3RgbaUnormSrgb
+        | [<CompiledName("bc4-r-unorm")>] Bc4RUnorm
+        | [<CompiledName("bc4-r-snorm")>] Bc4RSnorm
+        | [<CompiledName("bc5-rg-unorm")>] Bc5RgUnorm
+        | [<CompiledName("bc5-rg-snorm")>] Bc5RgSnorm
+        | [<CompiledName("bc6h-rgb-ufloat")>] Bc6hRgbUfloat
+        | [<CompiledName("bc6h-rgb-float")>] Bc6hRgbFloat
+        | [<CompiledName("bc7-rgba-unorm")>] Bc7RgbaUnorm
+        | [<CompiledName("bc7-rgba-unorm-srgb")>] Bc7RgbaUnormSrgb
+        | [<CompiledName("etc2-rgb8unorm")>] Etc2Rgb8unorm
+        | [<CompiledName("etc2-rgb8unorm-srgb")>] Etc2Rgb8unormSrgb
+        | [<CompiledName("etc2-rgb8a1unorm")>] Etc2Rgb8a1unorm
+        | [<CompiledName("etc2-rgb8a1unorm-srgb")>] Etc2Rgb8a1unormSrgb
+        | [<CompiledName("etc2-rgba8unorm")>] Etc2Rgba8unorm
+        | [<CompiledName("etc2-rgba8unorm-srgb")>] Etc2Rgba8unormSrgb
+        | [<CompiledName("eac-r11unorm")>] EacR11unorm
+        | [<CompiledName("eac-r11snorm")>] EacR11snorm
+        | [<CompiledName("eac-rg11unorm")>] EacRg11unorm
+        | [<CompiledName("eac-rg11snorm")>] EacRg11snorm
+        | [<CompiledName("astc-4x4-unorm")>] Astc4x4Unorm
+        | [<CompiledName("astc-4x4-unorm-srgb")>] Astc4x4UnormSrgb
+        | [<CompiledName("astc-5x4-unorm")>] Astc5x4Unorm
+        | [<CompiledName("astc-5x4-unorm-srgb")>] Astc5x4UnormSrgb
+        | [<CompiledName("astc-5x5-unorm")>] Astc5x5Unorm
+        | [<CompiledName("astc-5x5-unorm-srgb")>] Astc5x5UnormSrgb
+        | [<CompiledName("astc-6x5-unorm")>] Astc6x5Unorm
+        | [<CompiledName("astc-6x5-unorm-srgb")>] Astc6x5UnormSrgb
+        | [<CompiledName("astc-6x6-unorm")>] Astc6x6Unorm
+        | [<CompiledName("astc-6x6-unorm-srgb")>] Astc6x6UnormSrgb
+        | [<CompiledName("astc-8x5-unorm")>] Astc8x5Unorm
+        | [<CompiledName("astc-8x5-unorm-srgb")>] Astc8x5UnormSrgb
+        | [<CompiledName("astc-8x6-unorm")>] Astc8x6Unorm
+        | [<CompiledName("astc-8x6-unorm-srgb")>] Astc8x6UnormSrgb
+        | [<CompiledName("astc-8x8-unorm")>] Astc8x8Unorm
+        | [<CompiledName("astc-8x8-unorm-srgb")>] Astc8x8UnormSrgb
+        | [<CompiledName("astc-10x5-unorm")>] Astc10x5Unorm
+        | [<CompiledName("astc-10x5-unorm-srgb")>] Astc10x5UnormSrgb
+        | [<CompiledName("astc-10x6-unorm")>] Astc10x6Unorm
+        | [<CompiledName("astc-10x6-unorm-srgb")>] Astc10x6UnormSrgb
+        | [<CompiledName("astc-10x8-unorm")>] Astc10x8Unorm
+        | [<CompiledName("astc-10x8-unorm-srgb")>] Astc10x8UnormSrgb
+        | [<CompiledName("astc-10x10-unorm")>] Astc10x10Unorm
+        | [<CompiledName("astc-10x10-unorm-srgb")>] Astc10x10UnormSrgb
+        | [<CompiledName("astc-12x10-unorm")>] Astc12x10Unorm
+        | [<CompiledName("astc-12x10-unorm-srgb")>] Astc12x10UnormSrgb
+        | [<CompiledName("astc-12x12-unorm")>] Astc12x12Unorm
+        | [<CompiledName("astc-12x12-unorm-srgb")>] Astc12x12UnormSrgb
+
+    /// Exact GPUFeatureName literals from the WebGPU specification.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserGPUFeatureName =
+        | [<CompiledName("core-features-and-limits")>] CoreFeaturesAndLimits
+        | [<CompiledName("depth-clip-control")>] DepthClipControl
+        | [<CompiledName("depth32float-stencil8")>] Depth32floatStencil8
+        | [<CompiledName("texture-compression-bc")>] TextureCompressionBc
+        | [<CompiledName("texture-compression-bc-sliced-3d")>] TextureCompressionBcSliced3d
+        | [<CompiledName("texture-compression-etc2")>] TextureCompressionEtc2
+        | [<CompiledName("texture-compression-astc")>] TextureCompressionAstc
+        | [<CompiledName("texture-compression-astc-sliced-3d")>] TextureCompressionAstcSliced3d
+        | [<CompiledName("timestamp-query")>] TimestampQuery
+        | [<CompiledName("indirect-first-instance")>] IndirectFirstInstance
+        | [<CompiledName("shader-f16")>] ShaderF16
+        | [<CompiledName("rg11b10ufloat-renderable")>] Rg11b10ufloatRenderable
+        | [<CompiledName("bgra8unorm-storage")>] Bgra8unormStorage
+        | [<CompiledName("float32-filterable")>] Float32Filterable
+        | [<CompiledName("float32-blendable")>] Float32Blendable
+        | [<CompiledName("clip-distances")>] ClipDistances
+        | [<CompiledName("dual-source-blending")>] DualSourceBlending
+        | [<CompiledName("subgroups")>] Subgroups
+        | [<CompiledName("texture-formats-tier1")>] TextureFormatsTier1
+        | [<CompiledName("texture-formats-tier2")>] TextureFormatsTier2
+        | [<CompiledName("primitive-index")>] PrimitiveIndex
+        | [<CompiledName("texture-component-swizzle")>] TextureComponentSwizzle
+        | [<CompiledName("subgroup-size-control")>] SubgroupSizeControl
 
     /// Exact WEBGL_compressed_texture_s3tc extension surface.
     [<AllowNullLiteral>]
@@ -3377,6 +3959,12 @@ module SimpleInterfaces =
         abstract ``run``: ``renderPass``: BrowserGPURenderPassEncoder -> unit
         abstract ``clone``: unit -> IWebGPURenderItem
 
+    /// @babylonjs/core/Engines/WebGPU/webgpuPipelineContext
+    [<AllowNullLiteral>]
+    type IWebGPURenderPipelineStageDescriptor =
+        abstract ``vertexStage``: BrowserGPUProgrammableStage with get, set
+        abstract ``fragmentStage``: BrowserGPUProgrammableStage option with get, set
+
     /// @babylonjs/core/Misc/interfaces/iWebRequest
     [<AllowNullLiteral>]
     type IWebRequest =
@@ -3510,6 +4098,21 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type PlaneRotationGizmoOptions =
         abstract ``color``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+
+    /// @babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure
+    [<AllowNullLiteral>]
+    type PLYHeader =
+        abstract ``vertexCount``: float with get, set
+        abstract ``chunkCount``: float with get, set
+        abstract ``rowVertexLength``: float with get, set
+        abstract ``rowChunkLength``: float with get, set
+        abstract ``vertexProperties``: ResizeArray<BabylonjsBindings.TypeAliases.PlyProperty> with get, set
+        abstract ``chunkProperties``: ResizeArray<BabylonjsBindings.TypeAliases.PlyProperty> with get, set
+        abstract ``dataView``: JS.DataView with get, set
+        abstract ``buffer``: JS.ArrayBuffer with get, set
+        abstract ``shDegree``: float with get, set
+        abstract ``shCoefficientCount``: float with get, set
+        abstract ``shBuffer``: JS.ArrayBuffer option with get, set
 
     /// @babylonjs/core/Events/pointerEvents
     [<AllowNullLiteral>]
@@ -4442,6 +5045,22 @@ module SimpleInterfaces =
     type WebGPUBufferDescription =
         abstract ``binding``: WebGPUBindingInfo with get, set
 
+    /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext
+    [<AllowNullLiteral>]
+    type WebGPUSamplerDescription =
+        abstract ``binding``: WebGPUBindingInfo with get, set
+        abstract ``type``: BrowserGPUSamplerBindingType with get, set
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext
+    [<AllowNullLiteral>]
+    type WebGPUTextureDescription =
+        abstract ``autoBindSampler``: bool option with get, set
+        abstract ``isTextureArray``: bool with get, set
+        abstract ``isStorageTexture``: bool with get, set
+        abstract ``storageTextureAccess``: BrowserGPUStorageTextureAccess option with get, set
+        abstract ``textures``: ResizeArray<WebGPUBindingInfo> with get, set
+        abstract ``sampleType``: BrowserGPUTextureSampleType option with get, set
+
     /// @babylonjs/core/XR/webXRTypes
     [<AllowNullLiteral>]
     type WebXRRenderTarget<'TContext, 'TLayer when 'TLayer :> BrowserXRLayer> =
@@ -4762,6 +5381,23 @@ module SimpleInterfaces =
         inherit IVector3Like
         abstract ``w``: BabylonjsBindings.TypeAliases.float with get, set
 
+    /// @babylonjs/core/Engines/webgpuEngine.pure
+    [<AllowNullLiteral>]
+    type WebGPUEngineOptions =
+        inherit AbstractEngineOptions
+        inherit BrowserGPURequestAdapterOptions
+        abstract ``featureLevel``: string option with get, set
+        abstract ``powerPreference``: BrowserGPUPowerPreference option with get, set
+        abstract ``forceFallbackAdapter``: bool option with get, set
+        abstract ``xrCompatible``: bool option with get, set
+        abstract ``deviceDescriptor``: BrowserGPUDeviceDescriptor option with get, set
+        abstract ``enableAllFeatures``: bool option with get, set
+        abstract ``setMaximumLimits``: bool option with get, set
+        abstract ``swapChainFormat``: BrowserGPUTextureFormat option with get, set
+        abstract ``enableGPUDebugMarkers``: bool option with get, set
+        abstract ``glslangOptions``: GlslangOptions option with get, set
+        abstract ``twgslOptions``: TwgslOptions option with get, set
+
     /// @babylonjs/core/Misc/environmentTextureTools.pure
     [<AllowNullLiteral>]
     type EnvironmentTextureInfoV1 =
@@ -5015,6 +5651,11 @@ module SimpleClasses =
     type StringLiteral140bedbf9c3f =
         | [<CompiledName("none")>] Value
 
+    /// Exact string literal type for "pointer".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral1cdf95bd12e9 =
+        | [<CompiledName("pointer")>] Value
+
     /// Exact string literal type for "right".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral27042f4e6eca =
@@ -5085,6 +5726,11 @@ module SimpleClasses =
     type StringLiteral88cc4eeec491 =
         | [<CompiledName("xr-space-warp")>] Value
 
+    /// Exact string literal type for "keyboard".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral91f060a9ad4b =
+        | [<CompiledName("keyboard")>] Value
+
     /// Exact string literal type for "fbx".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral932153c31e61 =
@@ -5120,6 +5766,11 @@ module SimpleClasses =
     type StringLiteralafa7e559a55d =
         | [<CompiledName("ATTRIBUTES")>] Value
 
+    /// Exact string literal type for "wheel".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralba59926159d2 =
+        | [<CompiledName("wheel")>] Value
+
     /// Exact string literal type for "xr-eye-tracking".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteralbe2f3b88c67d =
@@ -5149,6 +5800,11 @@ module SimpleClasses =
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteralefbd279abf11 =
         | [<CompiledName("xr-layers")>] Value
+
+    /// Exact string literal type for "touch".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralf0956726750c =
+        | [<CompiledName("touch")>] Value
 
     /// Exact string literal type for "xr-depth-sensing".
     [<StringEnum; RequireQualifiedAccess>]
@@ -5180,6 +5836,13 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type RecordObjectda57c00e8bb8 =
         [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject64709ee167fbObject =
+        abstract ``name``: string with get, set
+        abstract ``type``: string with get, set
+        abstract ``length``: float with get, set
 
     /// Inline object shape used by a TypeScript utility projection.
     [<AllowNullLiteral>]
@@ -5340,12 +6003,12 @@ module SimpleClasses =
         abstract ``minDecibels``: float with get, set
         abstract ``maxDecibels``: float with get, set
         abstract ``smoothing``: float with get, set
-        abstract ``dispose``: unit -> unit
-        abstract ``enableAsync``: unit -> JS.Promise<unit>
-        abstract ``getByteFrequencyData``: unit -> JS.Uint8Array
-        abstract ``getByteTimeDomainData``: unit -> JS.Uint8Array
-        abstract ``getFloatFrequencyData``: unit -> JS.Float32Array
-        abstract ``getFloatTimeDomainData``: unit -> JS.Float32Array
+        abstract ``dispose`` : unit -> unit
+        abstract ``enableAsync`` : unit -> JS.Promise<unit>
+        abstract ``getByteFrequencyData`` : unit -> JS.Uint8Array
+        abstract ``getByteTimeDomainData`` : unit -> JS.Uint8Array
+        abstract ``getFloatFrequencyData`` : unit -> JS.Float32Array
+        abstract ``getFloatTimeDomainData`` : unit -> JS.Float32Array
         abstract ``frequencyBinCount``: float with get
 
     [<AllowNullLiteral>]
@@ -5376,13 +6039,13 @@ module SimpleClasses =
         abstract ``_isBlendConstantsDirty``: bool with get, set
         abstract ``_alphaBlend``: ResizeArray<obj> with get, set
         abstract ``_numTargetEnabled``: float with get, set
-        abstract ``setAlphaBlend``: ``value``: bool * ?``targetIndex``: float -> unit
-        abstract ``setAlphaBlendConstants``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> unit
-        abstract ``setAlphaBlendFunctionParameters``: ``srcRGBFactor``: float * ``dstRGBFactor``: float * ``srcAlphaFactor``: float * ``dstAlphaFactor``: float * ?``targetIndex``: float -> unit
-        abstract ``setAlphaEquationParameters``: ``rgbEquation``: float * ``alphaEquation``: float * ?``targetIndex``: float -> unit
-        abstract ``reset``: unit -> unit
-        abstract ``apply``: ``gl``: Browser.Types.WebGLRenderingContext * ?``numTargets``: float -> unit
-        abstract ``setAlphaMode``: ``mode``: float * ``targetIndex``: float -> unit
+        abstract ``setAlphaBlend`` : ``value``: bool * ?``targetIndex``: float -> unit
+        abstract ``setAlphaBlendConstants`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> unit
+        abstract ``setAlphaBlendFunctionParameters`` : ``srcRGBFactor``: float * ``dstRGBFactor``: float * ``srcAlphaFactor``: float * ``dstAlphaFactor``: float * ?``targetIndex``: float -> unit
+        abstract ``setAlphaEquationParameters`` : ``rgbEquation``: float * ``alphaEquation``: float * ?``targetIndex``: float -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``apply`` : ``gl``: Browser.Types.WebGLRenderingContext * ?``numTargets``: float -> unit
+        abstract ``setAlphaMode`` : ``mode``: float * ``targetIndex``: float -> unit
         abstract ``isDirty``: bool with get
         abstract ``alphaBlend``: bool with get, set
 
@@ -5403,7 +6066,7 @@ module SimpleClasses =
     type AndOrNotEvaluatorStatic =
         inherit Constructor<AndOrNotEvaluator>
         [<EmitConstructor>] abstract Create: unit -> AndOrNotEvaluator
-        abstract ``Eval``: ``query``: string * ``evaluateCallback``: System.Func<obj, bool> -> bool
+        abstract ``Eval`` : ``query``: string * ``evaluateCallback``: System.Func<obj, bool> -> bool
 
     [<Import("AndOrNotEvaluator", "@babylonjs/core/Misc/andOrNotEvaluator.js")>]
     let AndOrNotEvaluator: AndOrNotEvaluatorStatic = jsNative
@@ -5420,7 +6083,7 @@ module SimpleClasses =
         abstract ``action``: AnimationEventActionCallback with get, set
         abstract ``onlyOnce``: bool option with get, set
         abstract ``isDone``: bool with get, set
-        abstract ``_clone``: unit -> AnimationEvent
+        abstract ``_clone`` : unit -> AnimationEvent
 
     [<AllowNullLiteral>]
     type AnimationEventStatic =
@@ -5435,10 +6098,10 @@ module SimpleClasses =
     type AnimationGroupMask =
         abstract ``mode``: BabylonjsBindings.Enums.AnimationGroupMaskMode with get, set
         abstract ``disabled``: bool with get, set
-        abstract ``addTargetName``: ``name``: U2<string, ResizeArray<string>> -> unit
-        abstract ``removeTargetName``: ``name``: U2<string, ResizeArray<string>> -> unit
-        abstract ``hasTarget``: ``name``: string -> bool
-        abstract ``retainsTarget``: ``name``: string -> bool
+        abstract ``addTargetName`` : ``name``: U2<string, ResizeArray<string>> -> unit
+        abstract ``removeTargetName`` : ``name``: U2<string, ResizeArray<string>> -> unit
+        abstract ``hasTarget`` : ``name``: string -> bool
+        abstract ``retainsTarget`` : ``name``: string -> bool
 
     [<AllowNullLiteral>]
     type AnimationGroupMaskStatic =
@@ -5469,7 +6132,7 @@ module SimpleClasses =
         abstract ``name``: string with get, set
         abstract ``from``: float with get, set
         abstract ``to``: float with get, set
-        abstract ``clone``: unit -> AnimationRange
+        abstract ``clone`` : unit -> AnimationRange
 
     [<AllowNullLiteral>]
     type AnimationRangeStatic =
@@ -5488,9 +6151,9 @@ module SimpleClasses =
     type ArrayItemStatic =
         inherit Constructor<ArrayItem>
         [<EmitConstructor>] abstract Create: unit -> ArrayItem
-        abstract ``Get``<'T>: ``context``: string * ``array``: System.Collections.Generic.IReadOnlyList<'T> option * ``index``: float option -> 'T
-        abstract ``TryGet``<'T>: ``array``: System.Collections.Generic.IReadOnlyList<'T> option * ``index``: float option -> 'T option
-        abstract ``Assign``: ?``array``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IArrayItem> -> unit
+        abstract ``Get``<'T> : ``context``: string * ``array``: System.Collections.Generic.IReadOnlyList<'T> option * ``index``: float option -> 'T
+        abstract ``TryGet``<'T> : ``array``: System.Collections.Generic.IReadOnlyList<'T> option * ``index``: float option -> 'T option
+        abstract ``Assign`` : ?``array``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IArrayItem> -> unit
 
     [<Import("ArrayItem", "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js")>]
     let ArrayItem: ArrayItemStatic = jsNative
@@ -5500,15 +6163,15 @@ module SimpleClasses =
     type AsyncLoop =
         abstract ``iterations``: float with get, set
         abstract ``index``: float with get, set
-        abstract ``executeNext``: unit -> unit
-        abstract ``breakLoop``: unit -> unit
+        abstract ``executeNext`` : unit -> unit
+        abstract ``breakLoop`` : unit -> unit
 
     [<AllowNullLiteral>]
     type AsyncLoopStatic =
         inherit Constructor<AsyncLoop>
         [<EmitConstructor>] abstract Create: ``iterations``: float * ``func``: System.Action<AsyncLoop> * ``successCallback``: System.Action * ?``offset``: float -> AsyncLoop
-        abstract ``Run``: ``iterations``: float * ``fn``: System.Action<AsyncLoop> * ``successCallback``: System.Action * ?``offset``: float -> AsyncLoop
-        abstract ``SyncAsyncForLoop``: ``iterations``: float * ``syncedIterations``: float * ``fn``: System.Action<float> * ``callback``: System.Action * ?``breakFunction``: System.Func<bool> * ?``timeout``: float -> AsyncLoop
+        abstract ``Run`` : ``iterations``: float * ``fn``: System.Action<AsyncLoop> * ``successCallback``: System.Action * ?``offset``: float -> AsyncLoop
+        abstract ``SyncAsyncForLoop`` : ``iterations``: float * ``syncedIterations``: float * ``fn``: System.Action<float> * ``callback``: System.Action * ?``breakFunction``: System.Func<bool> * ?``timeout``: float -> AsyncLoop
 
     [<Import("AsyncLoop", "@babylonjs/core/Misc/tools.pure.js")>]
     let AsyncLoop: AsyncLoopStatic = jsNative
@@ -5587,7 +6250,7 @@ module SimpleClasses =
     type BezierCurveStatic =
         inherit Constructor<BezierCurve>
         [<EmitConstructor>] abstract Create: unit -> BezierCurve
-        abstract ``Interpolate``: ``t``: float * ``x1``: float * ``y1``: float * ``x2``: float * ``y2``: float -> float
+        abstract ``Interpolate`` : ``t``: float * ``x1``: float * ``y1``: float * ``x2``: float * ``y2``: float -> float
 
     [<Import("BezierCurve", "@babylonjs/core/Maths/math.path.js")>]
     let BezierCurve: BezierCurveStatic = jsNative
@@ -5596,8 +6259,8 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BitArray =
         abstract ``size``: float with get
-        abstract ``get``: ``bitIndex``: float -> bool
-        abstract ``set``: ``bitIndex``: float * ``value``: bool -> unit
+        abstract ``get`` : ``bitIndex``: float -> bool
+        abstract ``set`` : ``bitIndex``: float * ``value``: bool -> unit
 
     [<AllowNullLiteral>]
     type BitArrayStatic =
@@ -5632,58 +6295,58 @@ module SimpleClasses =
         abstract ``a``: float with get, set
         abstract ``dimension``: ReadonlyTuple1<NumericLiteral4> with get
         abstract ``rank``: NumericLiteral1 with get
-        abstract ``asArray``: unit -> (float * float * float * float)
-        abstract ``toArray``: ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color4
-        abstract ``fromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color4
-        abstract ``equals``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> bool
-        abstract ``add``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
-        abstract ``addInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``addInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``subtract``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
-        abstract ``subtractInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``subtractFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``r``: float * ``g``: float * ``b``: float * ``a``: float * ``result``: 'T -> 'T
-        abstract ``scale``: ``scale``: float -> Color4
-        abstract ``scaleInPlace``: ``scale``: float -> Color4
-        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``scale``: float * ``result``: 'T -> 'T
-        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``scale``: float * ``result``: 'T -> 'T
-        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
-        abstract ``multiply``: ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
-        abstract ``multiplyInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``multiplyByFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``divide``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
-        abstract ``divideToRef``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
-        abstract ``divideInPlace``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
-        abstract ``minimizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``maximizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``minimizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``maximizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``floorToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
-        abstract ``floor``: unit -> Never
-        abstract ``fractToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
-        abstract ``fract``: unit -> Never
-        abstract ``negate``: unit -> Never
-        abstract ``negateInPlace``: unit -> Never
-        abstract ``negateToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
-        abstract ``equalsWithEpsilon``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ?``epsilon``: float -> bool
-        abstract ``equalsToFloats``: ``x``: float * ``y``: float * ``z``: float * ``w``: float -> bool
-        abstract ``toString``: unit -> string
-        abstract ``getClassName``: unit -> string
-        abstract ``getHashCode``: unit -> float
-        abstract ``clone``: unit -> Color4
-        abstract ``copyFrom``: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``copyFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``set``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``setAll``: ``v``: float -> Color4
-        abstract ``toHexString``: ?``returnAsColor3``: bool -> string
-        abstract ``fromHexString``: ``hex``: string -> Color4
-        abstract ``toLinearSpace``: ?``exact``: bool -> Color4
-        abstract ``toLinearSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
-        abstract ``toGammaSpace``: ?``exact``: bool -> Color4
-        abstract ``toGammaSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
+        abstract ``asArray`` : unit -> (float * float * float * float)
+        abstract ``toArray`` : ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color4
+        abstract ``fromArray`` : ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color4
+        abstract ``equals`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> bool
+        abstract ``add`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``addInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``addInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``subtract`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``subtractInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``subtractFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``r``: float * ``g``: float * ``b``: float * ``a``: float * ``result``: 'T -> 'T
+        abstract ``scale`` : ``scale``: float -> Color4
+        abstract ``scaleInPlace`` : ``scale``: float -> Color4
+        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``scale``: float * ``result``: 'T -> 'T
+        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``scale``: float * ``result``: 'T -> 'T
+        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
+        abstract ``multiply`` : ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``multiplyInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``multiplyByFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``divide`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
+        abstract ``divideToRef`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``divideInPlace`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
+        abstract ``minimizeInPlace`` : ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``maximizeInPlace`` : ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``minimizeInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``maximizeInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``floorToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``floor`` : unit -> Never
+        abstract ``fractToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``fract`` : unit -> Never
+        abstract ``negate`` : unit -> Never
+        abstract ``negateInPlace`` : unit -> Never
+        abstract ``negateToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``equalsWithEpsilon`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ?``epsilon``: float -> bool
+        abstract ``equalsToFloats`` : ``x``: float * ``y``: float * ``z``: float * ``w``: float -> bool
+        abstract ``toString`` : unit -> string
+        abstract ``getClassName`` : unit -> string
+        abstract ``getHashCode`` : unit -> float
+        abstract ``clone`` : unit -> Color4
+        abstract ``copyFrom`` : ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``copyFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``set`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``setAll`` : ``v``: float -> Color4
+        abstract ``toHexString`` : ?``returnAsColor3``: bool -> string
+        abstract ``fromHexString`` : ``hex``: string -> Color4
+        abstract ``toLinearSpace`` : ?``exact``: bool -> Color4
+        abstract ``toLinearSpaceToRef`` : ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
+        abstract ``toGammaSpace`` : ?``exact``: bool -> Color4
+        abstract ``toGammaSpaceToRef`` : ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
 
     /// Exact readonly projection of Color4 used by Babylon DeepImmutable<Color4> signatures.
     [<AllowNullLiteral>]
@@ -5694,75 +6357,75 @@ module SimpleClasses =
         abstract ``a``: float with get
         abstract ``dimension``: ReadonlyTuple1<NumericLiteral4> with get
         abstract ``rank``: NumericLiteral1 with get
-        abstract ``asArray``: unit -> (float * float * float * float)
-        abstract ``toArray``: ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color4
-        abstract ``fromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color4
-        abstract ``equals``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> bool
-        abstract ``add``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
-        abstract ``addInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``addInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``subtract``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
-        abstract ``subtractInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``subtractFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``r``: float * ``g``: float * ``b``: float * ``a``: float * ``result``: 'T -> 'T
-        abstract ``scale``: ``scale``: float -> Color4
-        abstract ``scaleInPlace``: ``scale``: float -> Color4
-        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``scale``: float * ``result``: 'T -> 'T
-        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``scale``: float * ``result``: 'T -> 'T
-        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
-        abstract ``multiply``: ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
-        abstract ``multiplyInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``multiplyByFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``divide``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
-        abstract ``divideToRef``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
-        abstract ``divideInPlace``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
-        abstract ``minimizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``maximizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``minimizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``maximizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``floorToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
-        abstract ``floor``: unit -> Never
-        abstract ``fractToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
-        abstract ``fract``: unit -> Never
-        abstract ``negate``: unit -> Never
-        abstract ``negateInPlace``: unit -> Never
-        abstract ``negateToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
-        abstract ``equalsWithEpsilon``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ?``epsilon``: float -> bool
-        abstract ``equalsToFloats``: ``x``: float * ``y``: float * ``z``: float * ``w``: float -> bool
-        abstract ``toString``: unit -> string
-        abstract ``getClassName``: unit -> string
-        abstract ``getHashCode``: unit -> float
-        abstract ``clone``: unit -> Color4
-        abstract ``copyFrom``: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
-        abstract ``copyFromFloats``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``set``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``setAll``: ``v``: float -> Color4
-        abstract ``toHexString``: ?``returnAsColor3``: bool -> string
-        abstract ``fromHexString``: ``hex``: string -> Color4
-        abstract ``toLinearSpace``: ?``exact``: bool -> Color4
-        abstract ``toLinearSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
-        abstract ``toGammaSpace``: ?``exact``: bool -> Color4
-        abstract ``toGammaSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
+        abstract ``asArray`` : unit -> (float * float * float * float)
+        abstract ``toArray`` : ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color4
+        abstract ``fromArray`` : ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color4
+        abstract ``equals`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> bool
+        abstract ``add`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``addInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``addInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``subtract`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``subtractInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``subtractFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``r``: float * ``g``: float * ``b``: float * ``a``: float * ``result``: 'T -> 'T
+        abstract ``scale`` : ``scale``: float -> Color4
+        abstract ``scaleInPlace`` : ``scale``: float -> Color4
+        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``scale``: float * ``result``: 'T -> 'T
+        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``scale``: float * ``result``: 'T -> 'T
+        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
+        abstract ``multiply`` : ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``color``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``result``: 'T -> 'T
+        abstract ``multiplyInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``multiplyByFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``divide`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
+        abstract ``divideToRef`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``divideInPlace`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Never
+        abstract ``minimizeInPlace`` : ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``maximizeInPlace`` : ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``minimizeInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``maximizeInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``floorToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``floor`` : unit -> Never
+        abstract ``fractToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``fract`` : unit -> Never
+        abstract ``negate`` : unit -> Never
+        abstract ``negateInPlace`` : unit -> Never
+        abstract ``negateToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> Never
+        abstract ``equalsWithEpsilon`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ?``epsilon``: float -> bool
+        abstract ``equalsToFloats`` : ``x``: float * ``y``: float * ``z``: float * ``w``: float -> bool
+        abstract ``toString`` : unit -> string
+        abstract ``getClassName`` : unit -> string
+        abstract ``getHashCode`` : unit -> float
+        abstract ``clone`` : unit -> Color4
+        abstract ``copyFrom`` : ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like -> Color4
+        abstract ``copyFromFloats`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``set`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``setAll`` : ``v``: float -> Color4
+        abstract ``toHexString`` : ?``returnAsColor3``: bool -> string
+        abstract ``fromHexString`` : ``hex``: string -> Color4
+        abstract ``toLinearSpace`` : ?``exact``: bool -> Color4
+        abstract ``toLinearSpaceToRef`` : ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
+        abstract ``toGammaSpace`` : ?``exact``: bool -> Color4
+        abstract ``toGammaSpaceToRef`` : ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ?``exact``: bool -> Color4
 
     [<AllowNullLiteral>]
     type Color4Static =
         inherit Constructor<Color4>
         [<EmitConstructor>] abstract Create: ?``r``: float * ?``g``: float * ?``b``: float * ?``a``: float -> Color4
         abstract ``_V8PerformanceHack``: DeepImmutableColor4 with get, set
-        abstract ``FromHexString``: ``hex``: string -> Color4
-        abstract ``Lerp``: ``left``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``right``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``amount``: float -> Color4
-        abstract ``LerpToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like>: ``left``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``right``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``amount``: float * ``result``: 'T -> 'T
-        abstract ``Hermite``: ``value1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``value2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``amount``: float -> Color4
-        abstract ``Hermite1stDerivative``: ``value1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``value2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``time``: float -> Color4
-        abstract ``Hermite1stDerivativeToRef``: ``value1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``value2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``time``: float * ``result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> unit
-        abstract ``FromColor3``: ``color3``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ?``alpha``: float -> Color4
-        abstract ``FromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color4
-        abstract ``FromArrayToRef``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ``offset``: float option * ``result``: Color4 -> unit
-        abstract ``FromInts``: ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
-        abstract ``CheckColors4``: ``colors``: ResizeArray<float> * ``count``: float -> ResizeArray<float>
+        abstract ``FromHexString`` : ``hex``: string -> Color4
+        abstract ``Lerp`` : ``left``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``right``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``amount``: float -> Color4
+        abstract ``LerpToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor4Like> : ``left``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``right``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``amount``: float * ``result``: 'T -> 'T
+        abstract ``Hermite`` : ``value1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``value2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``amount``: float -> Color4
+        abstract ``Hermite1stDerivative`` : ``value1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``value2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``time``: float -> Color4
+        abstract ``Hermite1stDerivativeToRef`` : ``value1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent1``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``value2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``tangent2``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor4Like * ``time``: float * ``result``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> unit
+        abstract ``FromColor3`` : ``color3``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ?``alpha``: float -> Color4
+        abstract ``FromArray`` : ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color4
+        abstract ``FromArrayToRef`` : ``array``: System.Collections.Generic.IReadOnlyList<float> * ``offset``: float option * ``result``: Color4 -> unit
+        abstract ``FromInts`` : ``r``: float * ``g``: float * ``b``: float * ``a``: float -> Color4
+        abstract ``CheckColors4`` : ``colors``: ResizeArray<float> * ``count``: float -> ResizeArray<float>
 
     [<Import("Color4", "@babylonjs/core/Maths/math.color.pure.js")>]
     let Color4: Color4Static = jsNative
@@ -6137,9 +6800,9 @@ module SimpleClasses =
     /// @babylonjs/core/Offline/database.pure
     [<AllowNullLiteral>]
     type Database =
-        abstract ``open``: ``successCallback``: System.Action * ``errorCallback``: System.Action -> unit
-        abstract ``loadImage``: ``url``: string * ``image``: Browser.Types.HTMLImageElement -> unit
-        abstract ``loadFile``: ``url``: string * ``sceneLoaded``: System.Action<obj> * ?``progressCallBack``: System.Action<obj> * ?``errorCallback``: System.Action * ?``useArrayBuffer``: bool -> unit
+        abstract ``open`` : ``successCallback``: System.Action * ``errorCallback``: System.Action -> unit
+        abstract ``loadImage`` : ``url``: string * ``image``: Browser.Types.HTMLImageElement -> unit
+        abstract ``loadFile`` : ``url``: string * ``sceneLoaded``: System.Action<obj> * ?``progressCallBack``: System.Action<obj> * ?``errorCallback``: System.Action * ?``useArrayBuffer``: bool -> unit
         abstract ``enableSceneOffline``: bool with get
         abstract ``enableTexturesOffline``: bool with get
 
@@ -6174,11 +6837,11 @@ module SimpleClasses =
     type DataReader =
         abstract ``buffer``: BabylonjsBindings.SimpleInterfaces.IDataBuffer with get
         abstract ``byteOffset``: float with get, set
-        abstract ``loadAsync``: ``byteLength``: float -> JS.Promise<unit>
-        abstract ``readUint32``: unit -> float
-        abstract ``readUint8Array``: ``byteLength``: float -> JS.Uint8Array
-        abstract ``readString``: ``byteLength``: float -> string
-        abstract ``skipBytes``: ``byteLength``: float -> unit
+        abstract ``loadAsync`` : ``byteLength``: float -> JS.Promise<unit>
+        abstract ``readUint32`` : unit -> float
+        abstract ``readUint8Array`` : ``byteLength``: float -> JS.Uint8Array
+        abstract ``readString`` : ``byteLength``: float -> string
+        abstract ``skipBytes`` : ``byteLength``: float -> unit
 
     [<AllowNullLiteral>]
     type DataReaderStatic =
@@ -6197,14 +6860,14 @@ module SimpleClasses =
     type DataStorageStatic =
         inherit Constructor<DataStorage>
         [<EmitConstructor>] abstract Create: unit -> DataStorage
-        abstract ``ReadString``: ``key``: string * ``defaultValue``: string -> string
-        abstract ``WriteString``: ``key``: string * ``value``: string -> unit
-        abstract ``ReadBoolean``: ``key``: string * ``defaultValue``: bool -> bool
-        abstract ``WriteBoolean``: ``key``: string * ``value``: bool -> unit
-        abstract ``ReadNumber``: ``key``: string * ``defaultValue``: float -> float
-        abstract ``WriteNumber``: ``key``: string * ``value``: float -> unit
-        abstract ``ReadJson``<'T>: ``key``: string * ``defaultValue``: 'T -> 'T
-        abstract ``WriteJson``<'T>: ``key``: string * ``value``: 'T -> unit
+        abstract ``ReadString`` : ``key``: string * ``defaultValue``: string -> string
+        abstract ``WriteString`` : ``key``: string * ``value``: string -> unit
+        abstract ``ReadBoolean`` : ``key``: string * ``defaultValue``: bool -> bool
+        abstract ``WriteBoolean`` : ``key``: string * ``value``: bool -> unit
+        abstract ``ReadNumber`` : ``key``: string * ``defaultValue``: float -> float
+        abstract ``WriteNumber`` : ``key``: string * ``value``: float -> unit
+        abstract ``ReadJson``<'T> : ``key``: string * ``defaultValue``: 'T -> 'T
+        abstract ``WriteJson``<'T> : ``key``: string * ``value``: 'T -> unit
 
     [<Import("DataStorage", "@babylonjs/core/Misc/dataStorage.js")>]
     let DataStorage: DataStorageStatic = jsNative
@@ -6218,7 +6881,7 @@ module SimpleClasses =
     type DeepCopierStatic =
         inherit Constructor<DeepCopier>
         [<EmitConstructor>] abstract Create: unit -> DeepCopier
-        abstract ``DeepCopy``: ``source``: obj * ``destination``: obj * ?``doNotCopyList``: ResizeArray<string> * ?``mustCopyList``: ResizeArray<string> * ?``shallowCopyValues``: bool -> unit
+        abstract ``DeepCopy`` : ``source``: obj * ``destination``: obj * ?``doNotCopyList``: ResizeArray<string> * ?``mustCopyList``: ResizeArray<string> * ?``shallowCopyValues``: bool -> unit
 
     [<Import("DeepCopier", "@babylonjs/core/Misc/deepCopier.js")>]
     let DeepCopier: DeepCopierStatic = jsNative
@@ -6226,8 +6889,8 @@ module SimpleClasses =
     /// @babylonjs/core/Loading/loadingScreen.pure
     [<AllowNullLiteral>]
     type DefaultLoadingScreen =
-        abstract ``displayLoadingUI``: unit -> unit
-        abstract ``hideLoadingUI``: unit -> unit
+        abstract ``displayLoadingUI`` : unit -> unit
+        abstract ``hideLoadingUI`` : unit -> unit
         abstract ``loadingUIText``: string with get, set
         abstract ``loadingUIBackgroundColor``: string with get, set
 
@@ -6244,8 +6907,8 @@ module SimpleClasses =
     /// @babylonjs/core/States/depthCullingState
     [<AllowNullLiteral>]
     type DepthCullingState =
-        abstract ``reset``: unit -> unit
-        abstract ``apply``: ``gl``: Browser.Types.WebGLRenderingContext -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``apply`` : ``gl``: Browser.Types.WebGLRenderingContext -> unit
         abstract ``isDirty``: bool with get
         abstract ``zOffset``: float with get, set
         abstract ``zOffsetUnits``: float with get, set
@@ -6284,9 +6947,9 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/PerformanceViewer/dynamicFloat32Array
     [<AllowNullLiteral>]
     type DynamicFloat32Array =
-        abstract ``at``: ``index``: float -> float
-        abstract ``subarray``: ``start``: float * ``end``: float -> JS.Float32Array
-        abstract ``push``: ``item``: float -> unit
+        abstract ``at`` : ``index``: float -> float
+        abstract ``subarray`` : ``start``: float * ``end``: float -> JS.Float32Array
+        abstract ``push`` : ``item``: float -> unit
         abstract ``itemLength``: float with get
 
     [<AllowNullLiteral>]
@@ -6300,10 +6963,10 @@ module SimpleClasses =
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
     type EasingFunction =
-        abstract ``setEasingMode``: ``easingMode``: float -> unit
-        abstract ``getEasingMode``: unit -> float
-        abstract ``easeInCore``: ``gradient``: float -> float
-        abstract ``ease``: ``gradient``: float -> float
+        abstract ``setEasingMode`` : ``easingMode``: float -> unit
+        abstract ``getEasingMode`` : unit -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
+        abstract ``ease`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type EasingFunctionStatic =
@@ -6325,7 +6988,7 @@ module SimpleClasses =
     type EncodingHelperStatic =
         inherit Constructor<EncodingHelper>
         [<EmitConstructor>] abstract Create: unit -> EncodingHelper
-        abstract ``EncodeImageAsync``: ``pixelData``: JS.ArrayBufferView * ``width``: float * ``height``: float * ?``mimeType``: string * ?``invertY``: bool * ?``quality``: float -> JS.Promise<Browser.Types.Blob>
+        abstract ``EncodeImageAsync`` : ``pixelData``: JS.ArrayBufferView * ``width``: float * ``height``: float * ?``mimeType``: string * ?``invertY``: bool * ?``quality``: float -> JS.Promise<Browser.Types.Blob>
 
     /// @babylonjs/core/Events/deviceInputEvents
     [<AllowNullLiteral>]
@@ -6346,7 +7009,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/observable.pure
     [<AllowNullLiteral>]
     type EventState =
-        abstract ``initialize``: ``mask``: float * ?``skipNextObservers``: bool * ?``target``: obj * ?``currentTarget``: obj -> EventState
+        abstract ``initialize`` : ``mask``: float * ?``skipNextObservers``: bool * ?``target``: obj * ?``currentTarget``: obj -> EventState
         abstract ``skipNextObservers``: bool with get, set
         abstract ``mask``: float with get, set
         abstract ``target``: obj option with get, set
@@ -6383,7 +7046,7 @@ module SimpleClasses =
         abstract ``gradient``: float with get, set
         abstract ``factor1``: float with get, set
         abstract ``factor2``: float option with get, set
-        abstract ``getFactor``: unit -> float
+        abstract ``getFactor`` : unit -> float
 
     [<AllowNullLiteral>]
     type FactorGradientStatic =
@@ -6421,15 +7084,15 @@ module SimpleClasses =
         abstract ``name``: string with get, set
         abstract ``_connectionType``: BabylonjsBindings.Enums.FlowGraphConnectionType with get, set
         abstract ``connectedPointIds``: ResizeArray<obj> with get, set
-        abstract ``_isSingularConnection``: unit -> bool
-        abstract ``isConnected``: unit -> bool
-        abstract ``connectTo``: ``point``: 'ConnectedToT -> unit
-        abstract ``disconnectFrom``: ``point``: 'ConnectedToT * ?``removeFromLocal``: bool -> unit
-        abstract ``disconnectFromAll``: unit -> unit
-        abstract ``dispose``: unit -> unit
-        abstract ``serialize``: ?``serializationObject``: obj -> unit
-        abstract ``getClassName``: unit -> string
-        abstract ``deserialize``: ``serializationObject``: obj -> unit
+        abstract ``_isSingularConnection`` : unit -> bool
+        abstract ``isConnected`` : unit -> bool
+        abstract ``connectTo`` : ``point``: 'ConnectedToT -> unit
+        abstract ``disconnectFrom`` : ``point``: 'ConnectedToT * ?``removeFromLocal``: bool -> unit
+        abstract ``disconnectFromAll`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``deserialize`` : ``serializationObject``: obj -> unit
         abstract ``connectionType``: BabylonjsBindings.Enums.FlowGraphConnectionType with get
 
     [<AllowNullLiteral>]
@@ -6443,20 +7106,20 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type FlowGraphInteger =
         abstract ``value``: float with get
-        abstract ``add``: ``other``: FlowGraphInteger -> FlowGraphInteger
-        abstract ``subtract``: ``other``: FlowGraphInteger -> FlowGraphInteger
-        abstract ``multiply``: ``other``: FlowGraphInteger -> FlowGraphInteger
-        abstract ``divide``: ``other``: FlowGraphInteger -> FlowGraphInteger
-        abstract ``getClassName``: unit -> string
-        abstract ``equals``: ``other``: FlowGraphInteger -> bool
-        abstract ``toString``: unit -> string
+        abstract ``add`` : ``other``: FlowGraphInteger -> FlowGraphInteger
+        abstract ``subtract`` : ``other``: FlowGraphInteger -> FlowGraphInteger
+        abstract ``multiply`` : ``other``: FlowGraphInteger -> FlowGraphInteger
+        abstract ``divide`` : ``other``: FlowGraphInteger -> FlowGraphInteger
+        abstract ``getClassName`` : unit -> string
+        abstract ``equals`` : ``other``: FlowGraphInteger -> bool
+        abstract ``toString`` : unit -> string
 
     [<AllowNullLiteral>]
     type FlowGraphIntegerStatic =
         inherit Constructor<FlowGraphInteger>
         [<EmitConstructor>] abstract Create: ``value``: float -> FlowGraphInteger
         abstract ``ClassName``: string with get, set
-        abstract ``FromValue``: ``value``: float -> FlowGraphInteger
+        abstract ``FromValue`` : ``value``: float -> FlowGraphInteger
 
     [<Import("FlowGraphInteger", "@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure.js")>]
     let FlowGraphInteger: FlowGraphIntegerStatic = jsNative
@@ -6466,8 +7129,8 @@ module SimpleClasses =
     type FlowGraphLogger =
         abstract ``logToConsole``: bool with get, set
         abstract ``log``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IFlowGraphLogItem> with get, set
-        abstract ``addLogItem``: ``item``: BabylonjsBindings.SimpleInterfaces.IFlowGraphLogItem -> unit
-        abstract ``getItemsOfType``: ``action``: BabylonjsBindings.StringEnums.FlowGraphAction -> ResizeArray<BabylonjsBindings.SimpleInterfaces.IFlowGraphLogItem>
+        abstract ``addLogItem`` : ``item``: BabylonjsBindings.SimpleInterfaces.IFlowGraphLogItem -> unit
+        abstract ``getItemsOfType`` : ``action``: BabylonjsBindings.StringEnums.FlowGraphAction -> ResizeArray<BabylonjsBindings.SimpleInterfaces.IFlowGraphLogItem>
 
     [<AllowNullLiteral>]
     type FlowGraphLoggerStatic =
@@ -6518,7 +7181,7 @@ module SimpleClasses =
     type GradientHelperStatic =
         inherit Constructor<GradientHelper>
         [<EmitConstructor>] abstract Create: unit -> GradientHelper
-        abstract ``GetCurrentGradient``: ``ratio``: float * ``gradients``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IValueGradient> * ``updateFunc``: System.Action<BabylonjsBindings.SimpleInterfaces.IValueGradient, BabylonjsBindings.SimpleInterfaces.IValueGradient, float> -> unit
+        abstract ``GetCurrentGradient`` : ``ratio``: float * ``gradients``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IValueGradient> * ``updateFunc``: System.Action<BabylonjsBindings.SimpleInterfaces.IValueGradient, BabylonjsBindings.SimpleInterfaces.IValueGradient, float> -> unit
 
     [<Import("GradientHelper", "@babylonjs/core/Misc/gradients.js")>]
     let GradientHelper: GradientHelperStatic = jsNative
@@ -6528,9 +7191,9 @@ module SimpleClasses =
     type Halton2DSequence =
         abstract ``x``: float with get
         abstract ``y``: float with get
-        abstract ``regenerate``: ``numSamples``: float -> unit
-        abstract ``setDimensions``: ``width``: float * ``height``: float -> unit
-        abstract ``next``: unit -> unit
+        abstract ``regenerate`` : ``numSamples``: float -> unit
+        abstract ``setDimensions`` : ``width``: float * ``height``: float -> unit
+        abstract ``next`` : unit -> unit
 
     [<AllowNullLiteral>]
     type Halton2DSequenceStatic =
@@ -6539,6 +7202,26 @@ module SimpleClasses =
 
     [<Import("Halton2DSequence", "@babylonjs/core/Maths/halton2DSequence.js")>]
     let Halton2DSequence: Halton2DSequenceStatic = jsNative
+
+    /// @babylonjs/core/Cameras/inputMapper
+    [<AllowNullLiteral>]
+    type InputMapper<'THandlers> =
+        abstract ``inputMap``: ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>>> with get, set
+        abstract ``handlers``: 'THandlers with get
+        abstract ``resolveInteraction`` : ``source``: BabylonjsBindings.StringEnums.InputSource * ?``currentConditions``: BabylonjsBindings.ObjectTypes.InputConditions -> BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>> option
+        abstract ``resetInputMap`` : unit -> unit
+        abstract ``getEntry`` : ``source``: BabylonjsBindings.StringEnums.InputSource * ``interaction``: BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers> * ?``conditions``: BabylonjsBindings.ObjectTypes.InputConditions -> BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>> option
+        abstract ``getEntries`` : ``source``: BabylonjsBindings.StringEnums.InputSource * ``interaction``: BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers> * ?``conditions``: BabylonjsBindings.ObjectTypes.InputConditions -> ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>>>
+        abstract ``addEntry`` : ``entry``: BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>> -> unit
+        abstract ``setInteraction`` : ``source``: BabylonjsBindings.StringEnums.InputSource * ``conditions``: BabylonjsBindings.ObjectTypes.InputConditions option * ``interaction``: BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers> -> bool
+        abstract ``setInteractions`` : ``source``: BabylonjsBindings.StringEnums.InputSource * ``conditions``: BabylonjsBindings.ObjectTypes.InputConditions option * ``interaction``: BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers> -> float
+
+    [<AllowNullLiteral>]
+    type InputMapperStatic =
+        [<EmitConstructor>] abstract Create<'THandlers>: ``handlers``: 'THandlers * ?``createDefaultEntries``: System.Func<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>>>> -> InputMapper<'THandlers>
+
+    [<Import("InputMapper", "@babylonjs/core/Cameras/inputMapper.js")>]
+    let InputMapper: InputMapperStatic = jsNative
 
     /// @babylonjs/core/Collisions/intersectionInfo
     [<AllowNullLiteral>]
@@ -6626,7 +7309,7 @@ module SimpleClasses =
         abstract ``LIGHTTYPEID_HEMISPHERICLIGHT``: float with get
         abstract ``LIGHTTYPEID_RECT_AREALIGHT``: float with get
         abstract ``LIGHTTYPEID_CLUSTERED_CONTAINER``: float with get
-        abstract ``CompareLightsPriority``: ``a``: BabylonjsBindings.SimpleInterfaces.ISortableLight * ``b``: BabylonjsBindings.SimpleInterfaces.ISortableLight -> float
+        abstract ``CompareLightsPriority`` : ``a``: BabylonjsBindings.SimpleInterfaces.ISortableLight * ``b``: BabylonjsBindings.SimpleInterfaces.ISortableLight -> float
 
     [<Import("LightConstants", "@babylonjs/core/Lights/lightConstants.js")>]
     let LightConstants: LightConstantsStatic = jsNative
@@ -6671,7 +7354,7 @@ module SimpleClasses =
         abstract ``Log``: LoggerLogCallback with get, set
         abstract ``Warn``: LoggerWarnCallback with get, set
         abstract ``Error``: LoggerErrorCallback with get, set
-        abstract ``ClearLogCache``: unit -> unit
+        abstract ``ClearLogCache`` : unit -> unit
         abstract ``LogCache``: string with get
         abstract ``LogLevels``: float with set
 
@@ -6707,21 +7390,21 @@ module SimpleClasses =
         abstract ``_needNormals``: bool with get, set
         abstract ``_needUVs``: bool with get, set
         [<EmitIndexer>] abstract Item: ``id``: string -> obj with get, set
-        abstract ``markAsProcessed``: unit -> unit
-        abstract ``markAsUnprocessed``: unit -> unit
-        abstract ``markAllAsDirty``: unit -> unit
-        abstract ``markAsImageProcessingDirty``: unit -> unit
-        abstract ``markAsLightDirty``: ?``disposed``: bool -> unit
-        abstract ``markAsAttributesDirty``: unit -> unit
-        abstract ``markAsTexturesDirty``: unit -> unit
-        abstract ``markAsFresnelDirty``: unit -> unit
-        abstract ``markAsMiscDirty``: unit -> unit
-        abstract ``markAsPrePassDirty``: unit -> unit
-        abstract ``rebuild``: unit -> unit
-        abstract ``isEqual``: ``other``: MaterialDefines -> bool
-        abstract ``cloneTo``: ``other``: MaterialDefines -> unit
-        abstract ``reset``: unit -> unit
-        abstract ``toString``: unit -> string
+        abstract ``markAsProcessed`` : unit -> unit
+        abstract ``markAsUnprocessed`` : unit -> unit
+        abstract ``markAllAsDirty`` : unit -> unit
+        abstract ``markAsImageProcessingDirty`` : unit -> unit
+        abstract ``markAsLightDirty`` : ?``disposed``: bool -> unit
+        abstract ``markAsAttributesDirty`` : unit -> unit
+        abstract ``markAsTexturesDirty`` : unit -> unit
+        abstract ``markAsFresnelDirty`` : unit -> unit
+        abstract ``markAsMiscDirty`` : unit -> unit
+        abstract ``markAsPrePassDirty`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``isEqual`` : ``other``: MaterialDefines -> bool
+        abstract ``cloneTo`` : ``other``: MaterialDefines -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``toString`` : unit -> string
         abstract ``isDirty``: bool with get
 
     [<AllowNullLiteral>]
@@ -6787,8 +7470,8 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/Compression/meshoptCompression
     [<AllowNullLiteral>]
     type MeshoptCompression =
-        abstract ``dispose``: unit -> unit
-        abstract ``decodeGltfBufferAsync``: ``source``: JS.Uint8Array * ``count``: float * ``stride``: float * ``mode``: U3<StringLiteralafa7e559a55d, StringLiterala47bc963946f, StringLiterale21255ec54ba> * ?``filter``: string -> JS.Promise<JS.Uint8Array>
+        abstract ``dispose`` : unit -> unit
+        abstract ``decodeGltfBufferAsync`` : ``source``: JS.Uint8Array * ``count``: float * ``stride``: float * ``mode``: U3<StringLiteralafa7e559a55d, StringLiterala47bc963946f, StringLiterale21255ec54ba> * ?``filter``: string -> JS.Promise<JS.Uint8Array>
 
     [<AllowNullLiteral>]
     type MeshoptCompressionStatic =
@@ -6803,14 +7486,14 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/Native/nativeDataStream
     [<AllowNullLiteral>]
     type NativeDataStream =
-        abstract ``writeUint32``: ``value``: float -> unit
-        abstract ``writeInt32``: ``value``: float -> unit
-        abstract ``writeFloat32``: ``value``: float -> unit
-        abstract ``writeUint32Array``: ``values``: JS.Uint32Array -> unit
-        abstract ``writeInt32Array``: ``values``: JS.Int32Array -> unit
-        abstract ``writeFloat32Array``: ``values``: BabylonjsBindings.TypeAliases.DeepImmutableFloatArray -> unit
-        abstract ``writeNativeData``: ``handle``: BabylonjsBindings.TypeAliases.NativeData -> unit
-        abstract ``writeBoolean``: ``value``: bool -> unit
+        abstract ``writeUint32`` : ``value``: float -> unit
+        abstract ``writeInt32`` : ``value``: float -> unit
+        abstract ``writeFloat32`` : ``value``: float -> unit
+        abstract ``writeUint32Array`` : ``values``: JS.Uint32Array -> unit
+        abstract ``writeInt32Array`` : ``values``: JS.Int32Array -> unit
+        abstract ``writeFloat32Array`` : ``values``: BabylonjsBindings.TypeAliases.DeepImmutableFloatArray -> unit
+        abstract ``writeNativeData`` : ``handle``: BabylonjsBindings.TypeAliases.NativeData -> unit
+        abstract ``writeBoolean`` : ``value``: bool -> unit
 
     [<AllowNullLiteral>]
     type NativeDataStreamStatic =
@@ -6830,7 +7513,7 @@ module SimpleClasses =
     type NodeState =
         abstract ``values``: NodeStateProperty1Object with get, set
         abstract ``pipeline``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPipeline with get, set
-        abstract ``count``: unit -> (float * float)
+        abstract ``count`` : unit -> (float * float)
 
     [<AllowNullLiteral>]
     type NodeStateStatic =
@@ -6880,7 +7563,7 @@ module SimpleClasses =
     type PanoramaToCubeMapToolsStatic =
         inherit Constructor<PanoramaToCubeMapTools>
         [<EmitConstructor>] abstract Create: unit -> PanoramaToCubeMapTools
-        abstract ``ConvertPanoramaToCubemap``: ``float32Array``: JS.Float32Array * ``inputWidth``: float * ``inputHeight``: float * ``size``: float * ?``supersample``: bool * ?``invertY``: bool -> BabylonjsBindings.SimpleInterfaces.CubeMapInfo
+        abstract ``ConvertPanoramaToCubemap`` : ``float32Array``: JS.Float32Array * ``inputWidth``: float * ``inputHeight``: float * ``size``: float * ?``supersample``: bool * ?``invertY``: bool -> BabylonjsBindings.SimpleInterfaces.CubeMapInfo
 
     [<Import("PanoramaToCubeMapTools", "@babylonjs/core/Misc/HighDynamicRange/panoramaToCubemap.js")>]
     let PanoramaToCubeMapTools: PanoramaToCubeMapToolsStatic = jsNative
@@ -6888,12 +7571,12 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/perfCounter
     [<AllowNullLiteral>]
     type PerfCounter =
-        abstract ``fetchNewFrame``: unit -> unit
-        abstract ``addCount``: ``newCount``: float * ``fetchResult``: bool -> unit
-        abstract ``beginMonitoring``: unit -> unit
-        abstract ``endMonitoring``: ?``newFrame``: bool -> unit
-        abstract ``endFrame``: unit -> unit
-        abstract ``_fetchResult``: unit -> unit
+        abstract ``fetchNewFrame`` : unit -> unit
+        abstract ``addCount`` : ``newCount``: float * ``fetchResult``: bool -> unit
+        abstract ``beginMonitoring`` : unit -> unit
+        abstract ``endMonitoring`` : ?``newFrame``: bool -> unit
+        abstract ``endFrame`` : unit -> unit
+        abstract ``_fetchResult`` : unit -> unit
         abstract ``min``: float with get
         abstract ``max``: float with get
         abstract ``average``: float with get
@@ -6924,7 +7607,7 @@ module SimpleClasses =
         abstract ``MatrixTrackPrecisionChange``: bool with get, set
         abstract ``MatrixCurrentType``: obj with get, set
         abstract ``MatrixTrackedMatrices``: ResizeArray<obj> option with get, set
-        abstract ``SetMatrixPrecision``: ``use64bits``: bool -> unit
+        abstract ``SetMatrixPrecision`` : ``use64bits``: bool -> unit
 
     [<Import("PerformanceConfigurator", "@babylonjs/core/Engines/performanceConfigurator.js")>]
     let PerformanceConfigurator: PerformanceConfiguratorStatic = jsNative
@@ -6932,10 +7615,10 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/performanceMonitor
     [<AllowNullLiteral>]
     type PerformanceMonitor =
-        abstract ``sampleFrame``: ?``timeMs``: float -> unit
-        abstract ``enable``: unit -> unit
-        abstract ``disable``: unit -> unit
-        abstract ``reset``: unit -> unit
+        abstract ``sampleFrame`` : ?``timeMs``: float -> unit
+        abstract ``enable`` : unit -> unit
+        abstract ``disable`` : unit -> unit
+        abstract ``reset`` : unit -> unit
         abstract ``averageFrameTime``: float with get
         abstract ``averageFrameTimeVariance``: float with get
         abstract ``instantaneousFrameTime``: float with get
@@ -7081,7 +7764,7 @@ module SimpleClasses =
         abstract ``defaultValue``: 'T with get, set
         abstract ``animationType``: float with get, set
         abstract ``typeTransformer``: RichTypeTypeTransformerCallback<'T> with get, set
-        abstract ``serialize``: ``serializationObject``: obj -> unit
+        abstract ``serialize`` : ``serializationObject``: obj -> unit
 
     [<AllowNullLiteral>]
     type RichTypeStatic =
@@ -7095,10 +7778,10 @@ module SimpleClasses =
     type RollingAverage =
         abstract ``average``: float with get, set
         abstract ``variance``: float with get, set
-        abstract ``add``: ``v``: float -> unit
-        abstract ``history``: ``i``: float -> float
-        abstract ``isSaturated``: unit -> bool
-        abstract ``reset``: unit -> unit
+        abstract ``add`` : ``v``: float -> unit
+        abstract ``history`` : ``i``: float -> float
+        abstract ``isSaturated`` : unit -> bool
+        abstract ``reset`` : unit -> unit
 
     [<AllowNullLiteral>]
     type RollingAverageStatic =
@@ -7208,7 +7891,7 @@ module SimpleClasses =
     type ShaderCodeInliner =
         abstract ``inlineToken``: string with get, set
         abstract ``debug``: bool with get, set
-        abstract ``processCode``: unit -> unit
+        abstract ``processCode`` : unit -> unit
         abstract ``code``: string with get
 
     [<AllowNullLiteral>]
@@ -7264,9 +7947,9 @@ module SimpleClasses =
         abstract ``ShadersRepositoryWGSL``: string with get, set
         abstract ``ShadersStoreWGSL``: ShaderStoreProperty5Object with get, set
         abstract ``IncludesShadersStoreWGSL``: ShaderStoreProperty6Object with get, set
-        abstract ``GetShadersRepository``: ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> string
-        abstract ``GetShadersStore``: ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> ShaderStoreMethod8ReturnObject
-        abstract ``GetIncludesShadersStore``: ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> ShaderStoreMethod9ReturnObject
+        abstract ``GetShadersRepository`` : ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> string
+        abstract ``GetShadersStore`` : ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> ShaderStoreMethod8ReturnObject
+        abstract ``GetIncludesShadersStore`` : ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> ShaderStoreMethod9ReturnObject
 
     [<Import("ShaderStore", "@babylonjs/core/Engines/shaderStore.js")>]
     let ShaderStore: ShaderStoreStatic = jsNative
@@ -7291,18 +7974,18 @@ module SimpleClasses =
     type Size =
         abstract ``width``: float with get, set
         abstract ``height``: float with get, set
-        abstract ``toString``: unit -> string
-        abstract ``getClassName``: unit -> string
-        abstract ``getHashCode``: unit -> float
-        abstract ``copyFrom``: ``src``: Size -> unit
-        abstract ``copyFromFloats``: ``width``: float * ``height``: float -> Size
-        abstract ``set``: ``width``: float * ``height``: float -> Size
-        abstract ``multiplyByFloats``: ``w``: float * ``h``: float -> Size
-        abstract ``clone``: unit -> Size
-        abstract ``equals``: ``other``: Size -> bool
-        abstract ``add``: ``otherSize``: Size -> Size
-        abstract ``subtract``: ``otherSize``: Size -> Size
-        abstract ``scale``: ``scale``: float -> Size
+        abstract ``toString`` : unit -> string
+        abstract ``getClassName`` : unit -> string
+        abstract ``getHashCode`` : unit -> float
+        abstract ``copyFrom`` : ``src``: Size -> unit
+        abstract ``copyFromFloats`` : ``width``: float * ``height``: float -> Size
+        abstract ``set`` : ``width``: float * ``height``: float -> Size
+        abstract ``multiplyByFloats`` : ``w``: float * ``h``: float -> Size
+        abstract ``clone`` : unit -> Size
+        abstract ``equals`` : ``other``: Size -> bool
+        abstract ``add`` : ``otherSize``: Size -> Size
+        abstract ``subtract`` : ``otherSize``: Size -> Size
+        abstract ``scale`` : ``scale``: float -> Size
         abstract ``surface``: float with get
 
     /// Exact readonly projection of Size used by Babylon DeepImmutable<Size> signatures.
@@ -7310,26 +7993,26 @@ module SimpleClasses =
     type DeepImmutableSize =
         abstract ``width``: float with get
         abstract ``height``: float with get
-        abstract ``toString``: unit -> string
-        abstract ``getClassName``: unit -> string
-        abstract ``getHashCode``: unit -> float
-        abstract ``copyFrom``: ``src``: Size -> unit
-        abstract ``copyFromFloats``: ``width``: float * ``height``: float -> Size
-        abstract ``set``: ``width``: float * ``height``: float -> Size
-        abstract ``multiplyByFloats``: ``w``: float * ``h``: float -> Size
-        abstract ``clone``: unit -> Size
-        abstract ``equals``: ``other``: Size -> bool
-        abstract ``add``: ``otherSize``: Size -> Size
-        abstract ``subtract``: ``otherSize``: Size -> Size
-        abstract ``scale``: ``scale``: float -> Size
+        abstract ``toString`` : unit -> string
+        abstract ``getClassName`` : unit -> string
+        abstract ``getHashCode`` : unit -> float
+        abstract ``copyFrom`` : ``src``: Size -> unit
+        abstract ``copyFromFloats`` : ``width``: float * ``height``: float -> Size
+        abstract ``set`` : ``width``: float * ``height``: float -> Size
+        abstract ``multiplyByFloats`` : ``w``: float * ``h``: float -> Size
+        abstract ``clone`` : unit -> Size
+        abstract ``equals`` : ``other``: Size -> bool
+        abstract ``add`` : ``otherSize``: Size -> Size
+        abstract ``subtract`` : ``otherSize``: Size -> Size
+        abstract ``scale`` : ``scale``: float -> Size
         abstract ``surface``: float with get
 
     [<AllowNullLiteral>]
     type SizeStatic =
         inherit Constructor<Size>
         [<EmitConstructor>] abstract Create: ``width``: float * ``height``: float -> Size
-        abstract ``Zero``: unit -> Size
-        abstract ``Lerp``: ``start``: Size * ``end``: Size * ``amount``: float -> Size
+        abstract ``Zero`` : unit -> Size
+        abstract ``Lerp`` : ``start``: Size * ``end``: Size * ``amount``: float -> Size
 
     [<Import("Size", "@babylonjs/core/Maths/math.size.js")>]
     let Size: SizeStatic = jsNative
@@ -7339,14 +8022,14 @@ module SimpleClasses =
     type SmartArray<'T> =
         abstract ``data``: ResizeArray<'T> with get, set
         abstract ``length``: float with get, set
-        abstract ``push``: ``value``: 'T -> unit
-        abstract ``forEach``: ``func``: System.Action<'T> -> unit
-        abstract ``sort``: ``compareFn``: System.Func<'T, 'T, float> -> unit
-        abstract ``reset``: unit -> unit
-        abstract ``dispose``: unit -> unit
-        abstract ``concat``: ``array``: obj -> unit
-        abstract ``indexOf``: ``value``: 'T -> float
-        abstract ``contains``: ``value``: 'T -> bool
+        abstract ``push`` : ``value``: 'T -> unit
+        abstract ``forEach`` : ``func``: System.Action<'T> -> unit
+        abstract ``sort`` : ``compareFn``: System.Func<'T, 'T, float> -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``concat`` : ``array``: obj -> unit
+        abstract ``indexOf`` : ``value``: 'T -> float
+        abstract ``contains`` : ``value``: 'T -> bool
 
     [<AllowNullLiteral>]
     type SmartArrayStatic =
@@ -7358,7 +8041,7 @@ module SimpleClasses =
     /// @babylonjs/core/States/stencilState
     [<AllowNullLiteral>]
     type StencilState =
-        abstract ``reset``: unit -> unit
+        abstract ``reset`` : unit -> unit
         abstract ``func``: float with get, set
         abstract ``backFunc``: float with get, set
         abstract ``funcRef``: float with get, set
@@ -7401,8 +8084,8 @@ module SimpleClasses =
         abstract ``stencilGlobal``: BabylonjsBindings.SimpleInterfaces.IStencilState with get, set
         abstract ``stencilMaterial``: BabylonjsBindings.SimpleInterfaces.IStencilState option with get, set
         abstract ``useStencilGlobalOnly``: bool with get, set
-        abstract ``reset``: unit -> unit
-        abstract ``apply``: ?``gl``: Browser.Types.WebGLRenderingContext -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``apply`` : ?``gl``: Browser.Types.WebGLRenderingContext -> unit
         abstract ``isDirty``: bool with get
         abstract ``func``: float with get, set
         abstract ``backFunc``: float with get, set
@@ -7448,15 +8131,15 @@ module SimpleClasses =
     type TagsStatic =
         inherit Constructor<Tags>
         [<EmitConstructor>] abstract Create: unit -> Tags
-        abstract ``EnableFor``: ``obj``: obj -> unit
-        abstract ``DisableFor``: ``obj``: obj -> unit
-        abstract ``HasTags``: ``obj``: obj -> bool
-        abstract ``GetTags``: ``obj``: obj * ?``asString``: bool -> obj
-        abstract ``AddTagsTo``: ``obj``: obj * ``tagsString``: string -> unit
-        abstract ``_AddTagTo``: ``obj``: obj * ``tag``: string -> unit
-        abstract ``RemoveTagsFrom``: ``obj``: obj * ``tagsString``: string -> unit
-        abstract ``_RemoveTagFrom``: ``obj``: obj * ``tag``: string -> unit
-        abstract ``MatchesQuery``: ``obj``: obj * ``tagsQuery``: string -> bool
+        abstract ``EnableFor`` : ``obj``: obj -> unit
+        abstract ``DisableFor`` : ``obj``: obj -> unit
+        abstract ``HasTags`` : ``obj``: obj -> bool
+        abstract ``GetTags`` : ``obj``: obj * ?``asString``: bool -> obj
+        abstract ``AddTagsTo`` : ``obj``: obj * ``tagsString``: string -> unit
+        abstract ``_AddTagTo`` : ``obj``: obj * ``tag``: string -> unit
+        abstract ``RemoveTagsFrom`` : ``obj``: obj * ``tagsString``: string -> unit
+        abstract ``_RemoveTagFrom`` : ``obj``: obj * ``tag``: string -> unit
+        abstract ``MatchesQuery`` : ``obj``: obj * ``tagsQuery``: string -> bool
 
     [<Import("Tags", "@babylonjs/core/Misc/tags.js")>]
     let Tags: TagsStatic = jsNative
@@ -7471,8 +8154,8 @@ module SimpleClasses =
         abstract ``_cachedAnisotropicFilteringLevel``: float option with get, set
         abstract ``_comparisonFunction``: float with get, set
         abstract ``label``: string option with get, set
-        abstract ``setParameters``: ?``wrapU``: float * ?``wrapV``: float * ?``wrapR``: float * ?``anisotropicFilteringLevel``: float * ?``samplingMode``: float * ?``comparisonFunction``: float -> TextureSampler
-        abstract ``compareSampler``: ``other``: TextureSampler -> bool
+        abstract ``setParameters`` : ?``wrapU``: float * ?``wrapV``: float * ?``wrapR``: float * ?``anisotropicFilteringLevel``: float * ?``samplingMode``: float * ?``comparisonFunction``: float -> TextureSampler
+        abstract ``compareSampler`` : ``other``: TextureSampler -> bool
         abstract ``wrapU``: float option with get, set
         abstract ``wrapV``: float option with get, set
         abstract ``wrapR``: float option with get, set
@@ -7491,7 +8174,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix
     [<AllowNullLiteral>]
     type ThinMatrix =
-        abstract ``asArray``: unit -> (float * float * float * float * float * float * float * float * float * float * float * float * float * float * float * float)
+        abstract ``asArray`` : unit -> (float * float * float * float * float * float * float * float * float * float * float * float * float * float * float * float)
         abstract ``updateFlag``: float with get, set
 
     [<AllowNullLiteral>]
@@ -7519,9 +8202,9 @@ module SimpleClasses =
         abstract ``_yOffset``: float with get, set
         abstract ``_xSize``: float with get, set
         abstract ``_ySize``: float with get, set
-        abstract ``playAnimation``: ``from``: float * ``to``: float * ``loop``: bool * ``delay``: float * ``onAnimationEnd``: System.Action option -> unit
-        abstract ``stopAnimation``: unit -> unit
-        abstract ``_animate``: ``deltaTime``: float -> unit
+        abstract ``playAnimation`` : ``from``: float * ``to``: float * ``loop``: bool * ``delay``: float * ``onAnimationEnd``: System.Action option -> unit
+        abstract ``stopAnimation`` : unit -> unit
+        abstract ``_animate`` : ``deltaTime``: float -> unit
         abstract ``animationStarted``: bool with get
         abstract ``fromIndex``: float with get
         abstract ``toIndex``: float with get
@@ -7574,9 +8257,9 @@ module SimpleClasses =
         abstract ``y``: float with get, set
         abstract ``width``: float with get, set
         abstract ``height``: float with get, set
-        abstract ``toGlobal``: ``renderWidth``: float * ``renderHeight``: float -> Viewport
-        abstract ``toGlobalToRef``: ``renderWidth``: float * ``renderHeight``: float * ``ref``: Viewport -> Viewport
-        abstract ``clone``: unit -> Viewport
+        abstract ``toGlobal`` : ``renderWidth``: float * ``renderHeight``: float -> Viewport
+        abstract ``toGlobalToRef`` : ``renderWidth``: float * ``renderHeight``: float * ``ref``: Viewport -> Viewport
+        abstract ``clone`` : unit -> Viewport
 
     /// Exact readonly projection of Viewport used by Babylon DeepImmutable<Viewport> signatures.
     [<AllowNullLiteral>]
@@ -7585,9 +8268,9 @@ module SimpleClasses =
         abstract ``y``: float with get
         abstract ``width``: float with get
         abstract ``height``: float with get
-        abstract ``toGlobal``: ``renderWidth``: float * ``renderHeight``: float -> Viewport
-        abstract ``toGlobalToRef``: ``renderWidth``: float * ``renderHeight``: float * ``ref``: Viewport -> Viewport
-        abstract ``clone``: unit -> Viewport
+        abstract ``toGlobal`` : ``renderWidth``: float * ``renderHeight``: float -> Viewport
+        abstract ``toGlobalToRef`` : ``renderWidth``: float * ``renderHeight``: float * ``ref``: Viewport -> Viewport
+        abstract ``clone`` : unit -> Viewport
 
     [<AllowNullLiteral>]
     type ViewportStatic =
@@ -7601,10 +8284,10 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type WebGL2ShaderProcessor =
         abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
-        abstract ``attributeProcessor``: ``attribute``: string -> string
-        abstract ``varyingCheck``: ``varying``: string * ``_isFragment``: bool -> bool
-        abstract ``varyingProcessor``: ``varying``: string * ``isFragment``: bool -> string
-        abstract ``postProcessor``: ``code``: string * ``defines``: ResizeArray<string> * ``isFragment``: bool -> string
+        abstract ``attributeProcessor`` : ``attribute``: string -> string
+        abstract ``varyingCheck`` : ``varying``: string * ``_isFragment``: bool -> bool
+        abstract ``varyingProcessor`` : ``varying``: string * ``isFragment``: bool -> string
+        abstract ``postProcessor`` : ``code``: string * ``defines``: ResizeArray<string> * ``isFragment``: bool -> string
 
     [<AllowNullLiteral>]
     type WebGL2ShaderProcessorStatic =
@@ -7618,13 +8301,13 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type WebGLHardwareTexture =
         abstract ``memoryAllocated``: bool option with get, set
-        abstract ``setUsage``: unit -> unit
-        abstract ``set``: ``hardwareTexture``: Browser.Types.WebGLTexture -> unit
-        abstract ``reset``: unit -> unit
-        abstract ``addMSAARenderBuffer``: ``buffer``: Browser.Types.WebGLRenderbuffer -> unit
-        abstract ``releaseMSAARenderBuffers``: unit -> unit
-        abstract ``getMSAARenderBuffer``: ?``index``: float -> Browser.Types.WebGLRenderbuffer option
-        abstract ``release``: unit -> unit
+        abstract ``setUsage`` : unit -> unit
+        abstract ``set`` : ``hardwareTexture``: Browser.Types.WebGLTexture -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``addMSAARenderBuffer`` : ``buffer``: Browser.Types.WebGLRenderbuffer -> unit
+        abstract ``releaseMSAARenderBuffers`` : unit -> unit
+        abstract ``getMSAARenderBuffer`` : ?``index``: float -> Browser.Types.WebGLRenderbuffer option
+        abstract ``release`` : unit -> unit
         abstract ``underlyingResource``: Browser.Types.WebGLTexture option with get
 
     [<AllowNullLiteral>]
@@ -7637,10 +8320,30 @@ module SimpleClasses =
 
     /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
     [<AllowNullLiteral>]
+    type WebGPUBundleList =
+        abstract ``numDrawCalls``: float with get, set
+        abstract ``addBundle`` : ?``bundle``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderBundle -> unit
+        abstract ``addItem`` : ``item``: BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem -> unit
+        abstract ``getBundleEncoder`` : ``colorFormats``: ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserGPUTextureFormat option> * ``depthStencilFormat``: BabylonjsBindings.SimpleInterfaces.BrowserGPUTextureFormat option * ``sampleCount``: float -> BabylonjsBindings.SimpleInterfaces.BrowserGPURenderBundleEncoder
+        abstract ``close`` : unit -> unit
+        abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``clone`` : unit -> WebGPUBundleList
+
+    [<AllowNullLiteral>]
+    type WebGPUBundleListStatic =
+        inherit Constructor<WebGPUBundleList>
+        [<EmitConstructor>] abstract Create: ``device``: BabylonjsBindings.SimpleInterfaces.BrowserGPUDevice -> WebGPUBundleList
+
+    [<Import("WebGPUBundleList", "@babylonjs/core/Engines/WebGPU/webgpuBundleList.js")>]
+    let WebGPUBundleList: WebGPUBundleListStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
+    [<AllowNullLiteral>]
     type WebGPURenderItemBeginOcclusionQuery =
         abstract ``query``: float with get, set
-        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
-        abstract ``clone``: unit -> WebGPURenderItemBeginOcclusionQuery
+        abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone`` : unit -> WebGPURenderItemBeginOcclusionQuery
 
     [<AllowNullLiteral>]
     type WebGPURenderItemBeginOcclusionQueryStatic =
@@ -7654,8 +8357,8 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type WebGPURenderItemBlendColor =
         abstract ``color``: ResizeArray<float option> with get, set
-        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
-        abstract ``clone``: unit -> WebGPURenderItemBlendColor
+        abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone`` : unit -> WebGPURenderItemBlendColor
 
     [<AllowNullLiteral>]
     type WebGPURenderItemBlendColorStatic =
@@ -7668,8 +8371,8 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
     [<AllowNullLiteral>]
     type WebGPURenderItemEndOcclusionQuery =
-        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
-        abstract ``clone``: unit -> WebGPURenderItemEndOcclusionQuery
+        abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone`` : unit -> WebGPURenderItemEndOcclusionQuery
 
     [<AllowNullLiteral>]
     type WebGPURenderItemEndOcclusionQueryStatic =
@@ -7686,8 +8389,8 @@ module SimpleClasses =
         abstract ``y``: float with get, set
         abstract ``w``: float with get, set
         abstract ``h``: float with get, set
-        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
-        abstract ``clone``: unit -> WebGPURenderItemScissor
+        abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone`` : unit -> WebGPURenderItemScissor
 
     [<AllowNullLiteral>]
     type WebGPURenderItemScissorStatic =
@@ -7701,8 +8404,8 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type WebGPURenderItemStencilRef =
         abstract ``ref``: float with get, set
-        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
-        abstract ``clone``: unit -> WebGPURenderItemStencilRef
+        abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone`` : unit -> WebGPURenderItemStencilRef
 
     [<AllowNullLiteral>]
     type WebGPURenderItemStencilRefStatic =
@@ -7719,8 +8422,8 @@ module SimpleClasses =
         abstract ``y``: float with get, set
         abstract ``w``: float with get, set
         abstract ``h``: float with get, set
-        abstract ``run``: ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
-        abstract ``clone``: unit -> WebGPURenderItemViewport
+        abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
+        abstract ``clone`` : unit -> WebGPURenderItemViewport
 
     [<AllowNullLiteral>]
     type WebGPURenderItemViewportStatic =
@@ -7729,6 +8432,84 @@ module SimpleClasses =
 
     [<Import("WebGPURenderItemViewport", "@babylonjs/core/Engines/WebGPU/webgpuBundleList.js")>]
     let WebGPURenderItemViewport: WebGPURenderItemViewportStatic = jsNative
+
+    /// Inline object shape used by WebGPUShaderProcessingContext.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContextAccessor4Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleInterfaces.WebGPUBufferDescription with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessingContext.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContextProperty9Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> float with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessingContext.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContextProperty10Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> float with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessingContext.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContextProperty11Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleInterfaces.WebGPUBufferDescription with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessingContext.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContextProperty12Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleInterfaces.WebGPUTextureDescription with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessingContext.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContextProperty13Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleInterfaces.WebGPUSamplerDescription with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessingContext.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContextProperty24Object =
+        [<EmitIndexer>] abstract Item: ``kind``: string -> float with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessingContext.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContextMethod31ReturnObject =
+        abstract ``groupIndex``: float with get, set
+        abstract ``bindingIndex``: float with get, set
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContext =
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
+        abstract ``uboNextBindingIndex``: float with get, set
+        abstract ``freeGroupIndex``: float with get, set
+        abstract ``freeBindingIndex``: float with get, set
+        abstract ``availableVaryings``: WebGPUShaderProcessingContextProperty9Object with get, set
+        abstract ``availableAttributes``: WebGPUShaderProcessingContextProperty10Object with get, set
+        abstract ``availableBuffers``: WebGPUShaderProcessingContextProperty11Object with get, set
+        abstract ``availableTextures``: WebGPUShaderProcessingContextProperty12Object with get, set
+        abstract ``availableSamplers``: WebGPUShaderProcessingContextProperty13Object with get, set
+        abstract ``leftOverUniforms``: ResizeArray<InlineObject64709ee167fbObject> with get, set
+        abstract ``orderedAttributes``: ResizeArray<string> with get, set
+        abstract ``bindGroupLayoutEntries``: ResizeArray<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserGPUBindGroupLayoutEntry>> with get, set
+        abstract ``bindGroupLayoutEntryInfo``: ResizeArray<ResizeArray<BabylonjsBindings.SimpleInterfaces.WebGPUBindGroupLayoutEntryInfo>> with get, set
+        abstract ``bindGroupEntries``: ResizeArray<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserGPUBindGroupEntry>> with get, set
+        abstract ``bufferNames``: ResizeArray<string> with get, set
+        abstract ``textureNames``: ResizeArray<string> with get, set
+        abstract ``samplerNames``: ResizeArray<string> with get, set
+        abstract ``attributeNamesFromEffect``: ResizeArray<string> with get, set
+        abstract ``attributeLocationsFromEffect``: ResizeArray<float> with get, set
+        abstract ``vertexBufferKindToNumberOfComponents``: WebGPUShaderProcessingContextProperty24Object with get, set
+        abstract ``getAttributeNextLocation`` : ``dataType``: string * ?``arrayLength``: float -> float
+        abstract ``getVaryingNextLocation`` : ``dataType``: string * ?``arrayLength``: float -> float
+        abstract ``getNextFreeUBOBinding`` : unit -> WebGPUShaderProcessingContextMethod31ReturnObject
+
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessingContextStatic =
+        inherit Constructor<WebGPUShaderProcessingContext>
+        [<EmitConstructor>] abstract Create: ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage * ?``pureMode``: bool -> WebGPUShaderProcessingContext
+        abstract ``_SimplifiedKnownBindings``: bool with get, set
+        abstract ``KnownUBOs``: WebGPUShaderProcessingContextAccessor4Object with get
+
+    [<Import("WebGPUShaderProcessingContext", "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext.js")>]
+    let WebGPUShaderProcessingContext: WebGPUShaderProcessingContextStatic = jsNative
 
     /// Inline object shape used by WebGPUShaderProcessor.
     [<AllowNullLiteral>]
@@ -7752,8 +8533,8 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuTintWASM
     [<AllowNullLiteral>]
     type WebGPUTintWASM =
-        abstract ``initTwgsl``: ?``twgslOptions``: BabylonjsBindings.SimpleInterfaces.TwgslOptions -> JS.Promise<unit>
-        abstract ``convertSpirV2WGSL``: ``code``: JS.Uint32Array * ?``disableUniformityAnalysis``: bool -> string
+        abstract ``initTwgsl`` : ?``twgslOptions``: BabylonjsBindings.SimpleInterfaces.TwgslOptions -> JS.Promise<unit>
+        abstract ``convertSpirV2WGSL`` : ``code``: JS.Uint32Array * ?``disableUniformityAnalysis``: bool -> string
 
     [<AllowNullLiteral>]
     type WebGPUTintWASMStatic =
@@ -7786,27 +8567,27 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/webRequest
     [<AllowNullLiteral>]
     type WebRequest =
-        abstract ``addEventListener``: ``type``: XmlHttpRequestAbortEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
-        abstract ``addEventListener``: ``type``: XmlHttpRequestErrorEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
-        abstract ``addEventListener``: ``type``: XmlHttpRequestLoadEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
-        abstract ``addEventListener``: ``type``: XmlHttpRequestLoadEndEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
-        abstract ``addEventListener``: ``type``: XmlHttpRequestLoadStartEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
-        abstract ``addEventListener``: ``type``: XmlHttpRequestProgressEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
-        abstract ``addEventListener``: ``type``: XmlHttpRequestReadyStateChangeEventType * ``listener``: System.Func<Browser.Types.Event, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
-        abstract ``addEventListener``: ``type``: XmlHttpRequestTimeoutEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
-        abstract ``removeEventListener``: ``type``: XmlHttpRequestAbortEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
-        abstract ``removeEventListener``: ``type``: XmlHttpRequestErrorEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
-        abstract ``removeEventListener``: ``type``: XmlHttpRequestLoadEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
-        abstract ``removeEventListener``: ``type``: XmlHttpRequestLoadEndEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
-        abstract ``removeEventListener``: ``type``: XmlHttpRequestLoadStartEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
-        abstract ``removeEventListener``: ``type``: XmlHttpRequestProgressEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
-        abstract ``removeEventListener``: ``type``: XmlHttpRequestReadyStateChangeEventType * ``listener``: System.Func<Browser.Types.Event, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
-        abstract ``removeEventListener``: ``type``: XmlHttpRequestTimeoutEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
-        abstract ``abort``: unit -> unit
-        abstract ``send``: ?``body``: U2<Browser.Types.Document, BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequestBodyInit> -> unit
-        abstract ``open``: ``method``: string * ``url``: string * ?``baseHeaders``: RecordObjectda57c00e8bb8 -> unit
-        abstract ``setRequestHeader``: ``name``: string * ``value``: string -> unit
-        abstract ``getResponseHeader``: ``name``: string -> string option
+        abstract ``addEventListener`` : ``type``: XmlHttpRequestAbortEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener`` : ``type``: XmlHttpRequestErrorEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener`` : ``type``: XmlHttpRequestLoadEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener`` : ``type``: XmlHttpRequestLoadEndEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener`` : ``type``: XmlHttpRequestLoadStartEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener`` : ``type``: XmlHttpRequestProgressEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener`` : ``type``: XmlHttpRequestReadyStateChangeEventType * ``listener``: System.Func<Browser.Types.Event, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``addEventListener`` : ``type``: XmlHttpRequestTimeoutEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
+        abstract ``removeEventListener`` : ``type``: XmlHttpRequestAbortEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener`` : ``type``: XmlHttpRequestErrorEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener`` : ``type``: XmlHttpRequestLoadEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener`` : ``type``: XmlHttpRequestLoadEndEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener`` : ``type``: XmlHttpRequestLoadStartEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener`` : ``type``: XmlHttpRequestProgressEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener`` : ``type``: XmlHttpRequestReadyStateChangeEventType * ``listener``: System.Func<Browser.Types.Event, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``removeEventListener`` : ``type``: XmlHttpRequestTimeoutEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserEventListenerOptions> -> unit
+        abstract ``abort`` : unit -> unit
+        abstract ``send`` : ?``body``: U2<Browser.Types.Document, BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequestBodyInit> -> unit
+        abstract ``open`` : ``method``: string * ``url``: string * ?``baseHeaders``: RecordObjectda57c00e8bb8 -> unit
+        abstract ``setRequestHeader`` : ``name``: string * ``value``: string -> unit
+        abstract ``getResponseHeader`` : ``name``: string -> string option
         abstract ``requestURL``: string with get
         abstract ``onprogress``: System.Func<Browser.Types.ProgressEvent, obj> option with get, set
         abstract ``readyState``: float with get
@@ -7825,8 +8606,8 @@ module SimpleClasses =
         abstract ``CustomRequestHeaders``: WebRequestProperty2Object with get, set
         abstract ``CustomRequestModifiers``: ResizeArray<System.Func<BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequest, string, U2<string, unit>>> with get, set
         abstract ``SkipRequestModificationForBabylonCDN``: bool with get, set
-        abstract ``_CollectCustomizations``: ``url``: string * ?``baseHeaders``: RecordObjectda57c00e8bb8 -> WebRequestMethod8ReturnObject
-        abstract ``FetchAsync``: ``url``: string * ?``options``: WebRequestMethod9Parameter2Object -> JS.Promise<BabylonjsBindings.SimpleInterfaces.BrowserResponse>
+        abstract ``_CollectCustomizations`` : ``url``: string * ?``baseHeaders``: RecordObjectda57c00e8bb8 -> WebRequestMethod8ReturnObject
+        abstract ``FetchAsync`` : ``url``: string * ?``options``: WebRequestMethod9Parameter2Object -> JS.Promise<BabylonjsBindings.SimpleInterfaces.BrowserResponse>
         abstract ``IsCustomRequestAvailable``: bool with get
 
     [<Import("WebRequest", "@babylonjs/core/Misc/webRequest.js")>]
@@ -7838,7 +8619,7 @@ module SimpleClasses =
         abstract ``element``: Browser.Types.HTMLElement with get, set
         abstract ``sessionMode``: BabylonjsBindings.SimpleInterfaces.BrowserXRSessionMode with get, set
         abstract ``referenceSpaceType``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType with get, set
-        abstract ``update``: ``activeButton``: WebXREnterExitUIButton option -> unit
+        abstract ``update`` : ``activeButton``: WebXREnterExitUIButton option -> unit
 
     [<AllowNullLiteral>]
     type WebXREnterExitUIButtonStatic =
@@ -7902,7 +8683,7 @@ module SimpleClasses =
     type BackEase =
         inherit EasingFunction
         abstract ``amplitude``: float with get, set
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type BackEaseStatic =
@@ -7921,7 +8702,7 @@ module SimpleClasses =
         abstract ``y1``: float with get, set
         abstract ``x2``: float with get, set
         abstract ``y2``: float with get, set
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type BezierCurveEaseStatic =
@@ -7938,7 +8719,7 @@ module SimpleClasses =
         inherit EasingFunction
         abstract ``bounces``: float with get, set
         abstract ``bounciness``: float with get, set
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type BounceEaseStatic =
@@ -7953,7 +8734,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CircleEase =
         inherit EasingFunction
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type CircleEaseStatic =
@@ -7972,63 +8753,63 @@ module SimpleClasses =
         abstract ``b``: float with get, set
         abstract ``dimension``: ReadonlyTuple1<NumericLiteral3> with get
         abstract ``rank``: NumericLiteral1 with get
-        abstract ``toString``: unit -> string
-        abstract ``getClassName``: unit -> string
-        abstract ``getHashCode``: unit -> float
-        abstract ``toArray``: ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color3
-        abstract ``fromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color3
-        abstract ``toColor4``: ?``alpha``: float -> Color4
-        abstract ``asArray``: unit -> (float * float * float)
-        abstract ``toLuminance``: unit -> float
-        abstract ``multiply``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
-        abstract ``multiplyInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``multiplyByFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``divide``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
-        abstract ``divideToRef``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
-        abstract ``divideInPlace``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
-        abstract ``minimizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``maximizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``minimizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``maximizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``floorToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
-        abstract ``floor``: unit -> Never
-        abstract ``fractToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
-        abstract ``fract``: unit -> Never
-        abstract ``equals``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> bool
-        abstract ``equalsFloats``: ``r``: float * ``g``: float * ``b``: float -> bool
-        abstract ``equalsToFloats``: ``r``: float * ``g``: float * ``b``: float -> bool
-        abstract ``equalsWithEpsilon``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ?``epsilon``: float -> bool
-        abstract ``negate``: unit -> Never
-        abstract ``negateInPlace``: unit -> Never
-        abstract ``negateToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
-        abstract ``scale``: ``scale``: float -> Color3
-        abstract ``scaleInPlace``: ``scale``: float -> Color3
-        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``scale``: float * ``result``: 'T -> 'T
-        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``scale``: float * ``result``: 'T -> 'T
-        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
-        abstract ``add``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``addInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``addInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
-        abstract ``subtract``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
-        abstract ``subtractInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``subtractFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``r``: float * ``g``: float * ``b``: float * ``result``: 'T -> 'T
-        abstract ``clone``: unit -> Color3
-        abstract ``copyFrom``: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``copyFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``set``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``setAll``: ``v``: float -> Color3
-        abstract ``toHexString``: unit -> string
-        abstract ``fromHexString``: ``hex``: string -> Color3
-        abstract ``toHSV``: unit -> Color3
-        abstract ``toHSVToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``result``: 'T -> 'T
-        abstract ``toLinearSpace``: ?``exact``: bool -> Color3
-        abstract ``toLinearSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
-        abstract ``toGammaSpace``: ?``exact``: bool -> Color3
-        abstract ``toGammaSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
+        abstract ``toString`` : unit -> string
+        abstract ``getClassName`` : unit -> string
+        abstract ``getHashCode`` : unit -> float
+        abstract ``toArray`` : ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color3
+        abstract ``fromArray`` : ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color3
+        abstract ``toColor4`` : ?``alpha``: float -> Color4
+        abstract ``asArray`` : unit -> (float * float * float)
+        abstract ``toLuminance`` : unit -> float
+        abstract ``multiply`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``multiplyInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``multiplyByFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``divide`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
+        abstract ``divideToRef`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``divideInPlace`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
+        abstract ``minimizeInPlace`` : ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``maximizeInPlace`` : ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``minimizeInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``maximizeInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``floorToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``floor`` : unit -> Never
+        abstract ``fractToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``fract`` : unit -> Never
+        abstract ``equals`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> bool
+        abstract ``equalsFloats`` : ``r``: float * ``g``: float * ``b``: float -> bool
+        abstract ``equalsToFloats`` : ``r``: float * ``g``: float * ``b``: float -> bool
+        abstract ``equalsWithEpsilon`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ?``epsilon``: float -> bool
+        abstract ``negate`` : unit -> Never
+        abstract ``negateInPlace`` : unit -> Never
+        abstract ``negateToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``scale`` : ``scale``: float -> Color3
+        abstract ``scaleInPlace`` : ``scale``: float -> Color3
+        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``scale``: float * ``result``: 'T -> 'T
+        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``scale``: float * ``result``: 'T -> 'T
+        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
+        abstract ``add`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``addInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``addInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``subtract`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``subtractInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``subtractFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``r``: float * ``g``: float * ``b``: float * ``result``: 'T -> 'T
+        abstract ``clone`` : unit -> Color3
+        abstract ``copyFrom`` : ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``copyFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``set`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``setAll`` : ``v``: float -> Color3
+        abstract ``toHexString`` : unit -> string
+        abstract ``fromHexString`` : ``hex``: string -> Color3
+        abstract ``toHSV`` : unit -> Color3
+        abstract ``toHSVToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``result``: 'T -> 'T
+        abstract ``toLinearSpace`` : ?``exact``: bool -> Color3
+        abstract ``toLinearSpaceToRef`` : ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
+        abstract ``toGammaSpace`` : ?``exact``: bool -> Color3
+        abstract ``toGammaSpaceToRef`` : ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
 
     /// Exact readonly projection of Color3 used by Babylon DeepImmutable<Color3> signatures.
     [<AllowNullLiteral>]
@@ -8038,91 +8819,91 @@ module SimpleClasses =
         abstract ``b``: float with get
         abstract ``dimension``: ReadonlyTuple1<NumericLiteral3> with get
         abstract ``rank``: NumericLiteral1 with get
-        abstract ``toString``: unit -> string
-        abstract ``getClassName``: unit -> string
-        abstract ``getHashCode``: unit -> float
-        abstract ``toArray``: ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color3
-        abstract ``fromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color3
-        abstract ``toColor4``: ?``alpha``: float -> Color4
-        abstract ``asArray``: unit -> (float * float * float)
-        abstract ``toLuminance``: unit -> float
-        abstract ``multiply``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
-        abstract ``multiplyInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``multiplyByFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``divide``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
-        abstract ``divideToRef``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
-        abstract ``divideInPlace``: ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
-        abstract ``minimizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``maximizeInPlace``: ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``minimizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``maximizeInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``floorToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
-        abstract ``floor``: unit -> Never
-        abstract ``fractToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
-        abstract ``fract``: unit -> Never
-        abstract ``equals``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> bool
-        abstract ``equalsFloats``: ``r``: float * ``g``: float * ``b``: float -> bool
-        abstract ``equalsToFloats``: ``r``: float * ``g``: float * ``b``: float -> bool
-        abstract ``equalsWithEpsilon``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ?``epsilon``: float -> bool
-        abstract ``negate``: unit -> Never
-        abstract ``negateInPlace``: unit -> Never
-        abstract ``negateToRef``: ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
-        abstract ``scale``: ``scale``: float -> Color3
-        abstract ``scaleInPlace``: ``scale``: float -> Color3
-        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``scale``: float * ``result``: 'T -> 'T
-        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``scale``: float * ``result``: 'T -> 'T
-        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
-        abstract ``add``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``addInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``addInPlaceFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
-        abstract ``subtract``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
-        abstract ``subtractInPlace``: ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``subtractFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``r``: float * ``g``: float * ``b``: float * ``result``: 'T -> 'T
-        abstract ``clone``: unit -> Color3
-        abstract ``copyFrom``: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
-        abstract ``copyFromFloats``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``set``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``setAll``: ``v``: float -> Color3
-        abstract ``toHexString``: unit -> string
-        abstract ``fromHexString``: ``hex``: string -> Color3
-        abstract ``toHSV``: unit -> Color3
-        abstract ``toHSVToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``result``: 'T -> 'T
-        abstract ``toLinearSpace``: ?``exact``: bool -> Color3
-        abstract ``toLinearSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
-        abstract ``toGammaSpace``: ?``exact``: bool -> Color3
-        abstract ``toGammaSpaceToRef``: ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
+        abstract ``toString`` : unit -> string
+        abstract ``getClassName`` : unit -> string
+        abstract ``getHashCode`` : unit -> float
+        abstract ``toArray`` : ``array``: BabylonjsBindings.TypeAliases.FloatArray * ?``index``: float -> Color3
+        abstract ``fromArray`` : ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color3
+        abstract ``toColor4`` : ?``alpha``: float -> Color4
+        abstract ``asArray`` : unit -> (float * float * float)
+        abstract ``toLuminance`` : unit -> float
+        abstract ``multiply`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``multiplyToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``multiplyInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``multiplyByFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``divide`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
+        abstract ``divideToRef`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``divideInPlace`` : ``_other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Never
+        abstract ``minimizeInPlace`` : ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``maximizeInPlace`` : ``other``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``minimizeInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``maximizeInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``floorToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``floor`` : unit -> Never
+        abstract ``fractToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``fract`` : unit -> Never
+        abstract ``equals`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> bool
+        abstract ``equalsFloats`` : ``r``: float * ``g``: float * ``b``: float -> bool
+        abstract ``equalsToFloats`` : ``r``: float * ``g``: float * ``b``: float -> bool
+        abstract ``equalsWithEpsilon`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ?``epsilon``: float -> bool
+        abstract ``negate`` : unit -> Never
+        abstract ``negateInPlace`` : unit -> Never
+        abstract ``negateToRef`` : ``_result``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> Never
+        abstract ``scale`` : ``scale``: float -> Color3
+        abstract ``scaleInPlace`` : ``scale``: float -> Color3
+        abstract ``scaleToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``scale``: float * ``result``: 'T -> 'T
+        abstract ``scaleAndAddToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``scale``: float * ``result``: 'T -> 'T
+        abstract ``clampToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``min``: float option * ``max``: float option * ``result``: 'T -> 'T
+        abstract ``add`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``addInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``addInPlaceFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``addToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``subtract`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``subtractToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like * ``result``: 'T -> 'T
+        abstract ``subtractInPlace`` : ``otherColor``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``subtractFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``subtractFromFloatsToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``r``: float * ``g``: float * ``b``: float * ``result``: 'T -> 'T
+        abstract ``clone`` : unit -> Color3
+        abstract ``copyFrom`` : ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIColor3Like -> Color3
+        abstract ``copyFromFloats`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``set`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``setAll`` : ``v``: float -> Color3
+        abstract ``toHexString`` : unit -> string
+        abstract ``fromHexString`` : ``hex``: string -> Color3
+        abstract ``toHSV`` : unit -> Color3
+        abstract ``toHSVToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``result``: 'T -> 'T
+        abstract ``toLinearSpace`` : ?``exact``: bool -> Color3
+        abstract ``toLinearSpaceToRef`` : ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
+        abstract ``toGammaSpace`` : ?``exact``: bool -> Color3
+        abstract ``toGammaSpaceToRef`` : ``convertedColor``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ?``exact``: bool -> Color3
 
     [<AllowNullLiteral>]
     type Color3Static =
         inherit Constructor<Color3>
         [<EmitConstructor>] abstract Create: ?``r``: float * ?``g``: float * ?``b``: float -> Color3
         abstract ``_V8PerformanceHack``: DeepImmutableColor3 with get, set
-        abstract ``HSVtoRGBToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like>: ``hue``: float * ``saturation``: float * ``value``: float * ``result``: 'T -> 'T
-        abstract ``FromHSV``: ``hue``: float * ``saturation``: float * ``value``: float -> Color3
-        abstract ``FromHexString``: ``hex``: string -> Color3
-        abstract ``FromArray``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color3
-        abstract ``FromArrayToRef``: ``array``: System.Collections.Generic.IReadOnlyList<float> * ``offset``: float option * ``result``: Color3 -> unit
-        abstract ``FromInts``: ``r``: float * ``g``: float * ``b``: float -> Color3
-        abstract ``Lerp``: ``start``: DeepImmutableColor3 * ``end``: DeepImmutableColor3 * ``amount``: float -> Color3
-        abstract ``LerpToRef``: ``left``: DeepImmutableColor3 * ``right``: DeepImmutableColor3 * ``amount``: float * ``result``: Color3 -> unit
-        abstract ``Hermite``: ``value1``: DeepImmutableColor3 * ``tangent1``: DeepImmutableColor3 * ``value2``: DeepImmutableColor3 * ``tangent2``: DeepImmutableColor3 * ``amount``: float -> Color3
-        abstract ``Hermite1stDerivative``: ``value1``: DeepImmutableColor3 * ``tangent1``: DeepImmutableColor3 * ``value2``: DeepImmutableColor3 * ``tangent2``: DeepImmutableColor3 * ``time``: float -> Color3
-        abstract ``Hermite1stDerivativeToRef``: ``value1``: DeepImmutableColor3 * ``tangent1``: DeepImmutableColor3 * ``value2``: DeepImmutableColor3 * ``tangent2``: DeepImmutableColor3 * ``time``: float * ``result``: Color3 -> unit
-        abstract ``Red``: unit -> Color3
-        abstract ``Green``: unit -> Color3
-        abstract ``Blue``: unit -> Color3
-        abstract ``Black``: unit -> Color3
-        abstract ``White``: unit -> Color3
-        abstract ``Purple``: unit -> Color3
-        abstract ``Magenta``: unit -> Color3
-        abstract ``Yellow``: unit -> Color3
-        abstract ``Gray``: unit -> Color3
-        abstract ``Teal``: unit -> Color3
-        abstract ``Random``: unit -> Color3
+        abstract ``HSVtoRGBToRef``<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IColor3Like> : ``hue``: float * ``saturation``: float * ``value``: float * ``result``: 'T -> 'T
+        abstract ``FromHSV`` : ``hue``: float * ``saturation``: float * ``value``: float -> Color3
+        abstract ``FromHexString`` : ``hex``: string -> Color3
+        abstract ``FromArray`` : ``array``: System.Collections.Generic.IReadOnlyList<float> * ?``offset``: float -> Color3
+        abstract ``FromArrayToRef`` : ``array``: System.Collections.Generic.IReadOnlyList<float> * ``offset``: float option * ``result``: Color3 -> unit
+        abstract ``FromInts`` : ``r``: float * ``g``: float * ``b``: float -> Color3
+        abstract ``Lerp`` : ``start``: DeepImmutableColor3 * ``end``: DeepImmutableColor3 * ``amount``: float -> Color3
+        abstract ``LerpToRef`` : ``left``: DeepImmutableColor3 * ``right``: DeepImmutableColor3 * ``amount``: float * ``result``: Color3 -> unit
+        abstract ``Hermite`` : ``value1``: DeepImmutableColor3 * ``tangent1``: DeepImmutableColor3 * ``value2``: DeepImmutableColor3 * ``tangent2``: DeepImmutableColor3 * ``amount``: float -> Color3
+        abstract ``Hermite1stDerivative`` : ``value1``: DeepImmutableColor3 * ``tangent1``: DeepImmutableColor3 * ``value2``: DeepImmutableColor3 * ``tangent2``: DeepImmutableColor3 * ``time``: float -> Color3
+        abstract ``Hermite1stDerivativeToRef`` : ``value1``: DeepImmutableColor3 * ``tangent1``: DeepImmutableColor3 * ``value2``: DeepImmutableColor3 * ``tangent2``: DeepImmutableColor3 * ``time``: float * ``result``: Color3 -> unit
+        abstract ``Red`` : unit -> Color3
+        abstract ``Green`` : unit -> Color3
+        abstract ``Blue`` : unit -> Color3
+        abstract ``Black`` : unit -> Color3
+        abstract ``White`` : unit -> Color3
+        abstract ``Purple`` : unit -> Color3
+        abstract ``Magenta`` : unit -> Color3
+        abstract ``Yellow`` : unit -> Color3
+        abstract ``Gray`` : unit -> Color3
+        abstract ``Teal`` : unit -> Color3
+        abstract ``Random`` : unit -> Color3
         abstract ``BlackReadOnly``: DeepImmutableColor3 with get
 
     [<Import("Color3", "@babylonjs/core/Maths/math.color.pure.js")>]
@@ -8134,7 +8915,7 @@ module SimpleClasses =
         abstract ``gradient``: float with get, set
         abstract ``color1``: Color4 with get, set
         abstract ``color2``: Color4 option with get, set
-        abstract ``getColorToRef``: ``result``: Color4 -> unit
+        abstract ``getColorToRef`` : ``result``: Color4 -> unit
 
     [<AllowNullLiteral>]
     type ColorGradientStatic =
@@ -8148,7 +8929,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CubicEase =
         inherit EasingFunction
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type CubicEaseStatic =
@@ -8183,7 +8964,7 @@ module SimpleClasses =
         inherit EasingFunction
         abstract ``oscillations``: float with get, set
         abstract ``springiness``: float with get, set
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type ElasticEaseStatic =
@@ -8199,7 +8980,7 @@ module SimpleClasses =
     type ExponentialEase =
         inherit EasingFunction
         abstract ``exponent``: float with get, set
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type ExponentialEaseStatic =
@@ -8218,10 +8999,10 @@ module SimpleClasses =
         abstract ``browserGamepad``: obj with get, set
         abstract ``type``: float with get, set
         abstract ``_isConnected``: bool with get, set
-        abstract ``onleftstickchanged``: ``callback``: System.Action<StickValues> -> unit
-        abstract ``onrightstickchanged``: ``callback``: System.Action<StickValues> -> unit
-        abstract ``update``: unit -> unit
-        abstract ``dispose``: unit -> unit
+        abstract ``onleftstickchanged`` : ``callback``: System.Action<StickValues> -> unit
+        abstract ``onrightstickchanged`` : ``callback``: System.Action<StickValues> -> unit
+        abstract ``update`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
         abstract ``isConnected``: bool with get
         abstract ``leftStick``: StickValues with get, set
         abstract ``rightStick``: StickValues with get, set
@@ -8588,7 +9369,7 @@ module SimpleClasses =
         abstract ``_willBeUnregistered``: bool with get, set
         abstract ``unregisterOnNextCall``: bool with get, set
         abstract ``_remove``: ObserverRemoveCallback<'T> option with get, set
-        abstract ``remove``: ?``defer``: bool -> unit
+        abstract ``remove`` : ?``defer``: bool -> unit
 
     [<AllowNullLiteral>]
     type ObserverStatic =
@@ -8626,7 +9407,7 @@ module SimpleClasses =
     type PowerEase =
         inherit EasingFunction
         abstract ``power``: float with get, set
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type PowerEaseStatic =
@@ -8641,7 +9422,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type QuadraticEase =
         inherit EasingFunction
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type QuadraticEaseStatic =
@@ -8656,7 +9437,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type QuarticEase =
         inherit EasingFunction
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type QuarticEaseStatic =
@@ -8671,7 +9452,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type QuinticEase =
         inherit EasingFunction
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type QuinticEaseStatic =
@@ -8691,7 +9472,7 @@ module SimpleClasses =
     type RetryStrategyStatic =
         inherit Constructor<RetryStrategy>
         [<EmitConstructor>] abstract Create: unit -> RetryStrategy
-        abstract ``ExponentialBackoff``: ?``maxRetries``: float * ?``baseInterval``: float -> System.Func<string, WebRequest, float, float>
+        abstract ``ExponentialBackoff`` : ?``maxRetries``: float * ?``baseInterval``: float -> System.Func<string, WebRequest, float, float>
 
     [<Import("RetryStrategy", "@babylonjs/core/Misc/retryStrategy.js")>]
     let RetryStrategy: RetryStrategyStatic = jsNative
@@ -8716,7 +9497,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SineEase =
         inherit EasingFunction
-        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
     type SineEaseStatic =
@@ -8731,10 +9512,10 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SmartArrayNoDuplicate<'T> =
         inherit SmartArray<'T>
-        abstract ``push``: ``value``: 'T -> unit
-        abstract ``pushNoDuplicate``: ``value``: 'T -> bool
-        abstract ``reset``: unit -> unit
-        abstract ``concatWithNoDuplicate``: ``array``: obj -> unit
+        abstract ``push`` : ``value``: 'T -> unit
+        abstract ``pushNoDuplicate`` : ``value``: 'T -> bool
+        abstract ``reset`` : unit -> unit
+        abstract ``concatWithNoDuplicate`` : ``array``: obj -> unit
 
     [<AllowNullLiteral>]
     type SmartArrayNoDuplicateStatic =
@@ -8771,14 +9552,14 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ValidatedNativeDataStream =
         inherit NativeDataStream
-        abstract ``writeUint32``: ``value``: float -> unit
-        abstract ``writeInt32``: ``value``: float -> unit
-        abstract ``writeFloat32``: ``value``: float -> unit
-        abstract ``writeUint32Array``: ``values``: JS.Uint32Array -> unit
-        abstract ``writeInt32Array``: ``values``: JS.Int32Array -> unit
-        abstract ``writeFloat32Array``: ``values``: JS.Float32Array -> unit
-        abstract ``writeNativeData``: ``handle``: BabylonjsBindings.TypeAliases.NativeData -> unit
-        abstract ``writeBoolean``: ``value``: bool -> unit
+        abstract ``writeUint32`` : ``value``: float -> unit
+        abstract ``writeInt32`` : ``value``: float -> unit
+        abstract ``writeFloat32`` : ``value``: float -> unit
+        abstract ``writeUint32Array`` : ``values``: JS.Uint32Array -> unit
+        abstract ``writeInt32Array`` : ``values``: JS.Int32Array -> unit
+        abstract ``writeFloat32Array`` : ``values``: JS.Float32Array -> unit
+        abstract ``writeNativeData`` : ``handle``: BabylonjsBindings.TypeAliases.NativeData -> unit
+        abstract ``writeBoolean`` : ``value``: bool -> unit
 
     [<AllowNullLiteral>]
     type ValidatedNativeDataStreamStatic =
@@ -8804,11 +9585,44 @@ module SimpleClasses =
     [<Import("WebGLDataBuffer", "@babylonjs/core/Meshes/WebGL/webGLDataBuffer.js")>]
     let WebGLDataBuffer: WebGLDataBufferStatic = jsNative
 
+    /// @babylonjs/core/Engines/WebGPU/webgpuCacheSampler
+    [<AllowNullLiteral>]
+    type WebGPUCacheSampler =
+        abstract ``disabled``: bool with get, set
+        abstract ``getSampler`` : ``sampler``: TextureSampler * ?``bypassCache``: bool * ?``hash``: float * ?``label``: string -> BabylonjsBindings.SimpleInterfaces.BrowserGPUSampler
+
+    [<AllowNullLiteral>]
+    type WebGPUCacheSamplerStatic =
+        inherit Constructor<WebGPUCacheSampler>
+        [<EmitConstructor>] abstract Create: ``device``: BabylonjsBindings.SimpleInterfaces.BrowserGPUDevice -> WebGPUCacheSampler
+        abstract ``GetSamplerHashCode`` : ``sampler``: TextureSampler -> float
+        abstract ``GetCompareFunction`` : ``compareFunction``: float option -> BabylonjsBindings.SimpleInterfaces.BrowserGPUCompareFunction
+
+    [<Import("WebGPUCacheSampler", "@babylonjs/core/Engines/WebGPU/webgpuCacheSampler.js")>]
+    let WebGPUCacheSampler: WebGPUCacheSamplerStatic = jsNative
+
+    /// @babylonjs/core/Meshes/WebGPU/webgpuDataBuffer
+    [<AllowNullLiteral>]
+    type WebGPUDataBuffer =
+        inherit DataBuffer
+        abstract ``engineId``: float with get, set
+        abstract ``buffer``: BabylonjsBindings.SimpleInterfaces.BrowserGPUBuffer option with set
+        abstract ``underlyingResource``: obj with get
+
+    [<AllowNullLiteral>]
+    type WebGPUDataBufferStatic =
+        inherit DataBufferStatic
+        inherit Constructor<WebGPUDataBuffer>
+        [<EmitConstructor>] abstract Create: ?``resource``: BabylonjsBindings.SimpleInterfaces.BrowserGPUBuffer * ?``capacity``: float -> WebGPUDataBuffer
+
+    [<Import("WebGPUDataBuffer", "@babylonjs/core/Meshes/WebGPU/webgpuDataBuffer.js")>]
+    let WebGPUDataBuffer: WebGPUDataBufferStatic = jsNative
+
     /// @babylonjs/core/Engines/WebGPU/webgpuPerfCounter
     [<AllowNullLiteral>]
     type WebGPUPerfCounter =
         abstract ``counter``: PerfCounter with get, set
-        abstract ``_addDuration``: ``currentFrameId``: float * ``duration``: float -> unit
+        abstract ``_addDuration`` : ``currentFrameId``: float * ``duration``: float -> unit
 
     [<AllowNullLiteral>]
     type WebGPUPerfCounterStatic =
@@ -8868,15 +9682,15 @@ module SimpleClasses =
         abstract ``textureRegexp``: BabylonjsBindings.SimpleInterfaces.BrowserRegExp with get, set
         abstract ``noPrecision``: bool with get, set
         abstract ``pureMode``: bool with get, set
-        abstract ``initializeShaders``: ``processingContext``: BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext option -> unit
-        abstract ``preProcessShaderCode``: ``code``: string -> string
-        abstract ``varyingCheck``: ``varying``: string -> bool
-        abstract ``varyingProcessor``: ``varying``: string * ``isFragment``: bool * ``preProcessors``: WebGPUShaderProcessorWGSLMethod17Parameter3Object -> string
-        abstract ``attributeProcessor``: ``attribute``: string * ``preProcessors``: WebGPUShaderProcessorWGSLMethod18Parameter2Object -> string
-        abstract ``uniformProcessor``: ``uniform``: string * ``isFragment``: bool * ``preProcessors``: WebGPUShaderProcessorWGSLMethod19Parameter3Object -> string
-        abstract ``textureProcessor``: ``texture``: string * ``isFragment``: bool * ``preProcessors``: WebGPUShaderProcessorWGSLMethod20Parameter3Object -> string
-        abstract ``postProcessor``: ``code``: string * ``_defines``: ResizeArray<string> * ``_isFragment``: bool * ``_processingContext``: BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext option * ``_parameters``: WebGPUShaderProcessorWGSLMethod22Parameter5Object * ``preProcessors``: WebGPUShaderProcessorWGSLMethod22Parameter6Object * ``preProcessorsFromCode``: WebGPUShaderProcessorWGSLMethod22Parameter7Object -> string
-        abstract ``finalizeShaders``: ``vertexCode``: string * ``fragmentCode``: string -> WebGPUShaderProcessorWGSLMethod23ReturnObject
+        abstract ``initializeShaders`` : ``processingContext``: BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext option -> unit
+        abstract ``preProcessShaderCode`` : ``code``: string -> string
+        abstract ``varyingCheck`` : ``varying``: string -> bool
+        abstract ``varyingProcessor`` : ``varying``: string * ``isFragment``: bool * ``preProcessors``: WebGPUShaderProcessorWGSLMethod17Parameter3Object -> string
+        abstract ``attributeProcessor`` : ``attribute``: string * ``preProcessors``: WebGPUShaderProcessorWGSLMethod18Parameter2Object -> string
+        abstract ``uniformProcessor`` : ``uniform``: string * ``isFragment``: bool * ``preProcessors``: WebGPUShaderProcessorWGSLMethod19Parameter3Object -> string
+        abstract ``textureProcessor`` : ``texture``: string * ``isFragment``: bool * ``preProcessors``: WebGPUShaderProcessorWGSLMethod20Parameter3Object -> string
+        abstract ``postProcessor`` : ``code``: string * ``_defines``: ResizeArray<string> * ``_isFragment``: bool * ``_processingContext``: BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext option * ``_parameters``: WebGPUShaderProcessorWGSLMethod22Parameter5Object * ``preProcessors``: WebGPUShaderProcessorWGSLMethod22Parameter6Object * ``preProcessorsFromCode``: WebGPUShaderProcessorWGSLMethod22Parameter7Object -> string
+        abstract ``finalizeShaders`` : ``vertexCode``: string * ``fragmentCode``: string -> WebGPUShaderProcessorWGSLMethod23ReturnObject
 
     [<AllowNullLiteral>]
     type WebGPUShaderProcessorWGSLStatic =
@@ -8931,9 +9745,9 @@ module SimpleClasses =
         abstract ``rightColor``: Color3 with get, set
         abstract ``bias``: float with get, set
         abstract ``power``: float with get, set
-        abstract ``clone``: unit -> FresnelParameters
-        abstract ``equals``: ``otherFresnelParameters``: DeepImmutableFresnelParameters -> bool
-        abstract ``serialize``: unit -> BabylonjsBindings.ObjectTypes.IFresnelParametersSerialized
+        abstract ``clone`` : unit -> FresnelParameters
+        abstract ``equals`` : ``otherFresnelParameters``: DeepImmutableFresnelParameters -> bool
+        abstract ``serialize`` : unit -> BabylonjsBindings.ObjectTypes.IFresnelParametersSerialized
         abstract ``isEnabled``: bool with get, set
 
     /// Exact readonly projection of FresnelParameters used by Babylon DeepImmutable<FresnelParameters> signatures.
@@ -8943,9 +9757,9 @@ module SimpleClasses =
         abstract ``rightColor``: DeepImmutableColor3 with get
         abstract ``bias``: float with get
         abstract ``power``: float with get
-        abstract ``clone``: unit -> FresnelParameters
-        abstract ``equals``: ``otherFresnelParameters``: DeepImmutableFresnelParameters -> bool
-        abstract ``serialize``: unit -> BabylonjsBindings.ObjectTypes.IFresnelParametersSerialized
+        abstract ``clone`` : unit -> FresnelParameters
+        abstract ``equals`` : ``otherFresnelParameters``: DeepImmutableFresnelParameters -> bool
+        abstract ``serialize`` : unit -> BabylonjsBindings.ObjectTypes.IFresnelParametersSerialized
         abstract ``isEnabled``: bool with get
 
     [<AllowNullLiteral>]
@@ -9038,7 +9852,7 @@ module SimpleClasses =
         abstract ``AREALIGHTSUPPORTED``: bool with get, set
         abstract ``AREALIGHTNOROUGHTNESS``: bool with get, set
         abstract ``POSITIONW_AS_VARYING``: bool with get, set
-        abstract ``setValue``: ``name``: string * ``value``: obj * ?``markAsUnprocessedIfDirty``: bool -> unit
+        abstract ``setValue`` : ``name``: string * ``value``: obj * ?``markAsUnprocessedIfDirty``: bool -> unit
 
     [<AllowNullLiteral>]
     type NodeMaterialDefinesStatic =
@@ -9054,26 +9868,26 @@ module SimpleClasses =
     type Observable<'T> =
         abstract ``notifyIfTriggered``: bool with get, set
         abstract ``_eventState``: EventState with get, set
-        abstract ``add``: ?``callback``: System.Action<'T, EventState> * ?``mask``: float * ?``insertFirst``: bool * ?``scope``: obj * ?``unregisterOnFirstCall``: bool -> Observer<'T> option
-        abstract ``addOnce``: ?``callback``: System.Action<'T, EventState> -> Observer<'T> option
-        abstract ``remove``: ``observer``: Observer<'T> option -> bool
-        abstract ``removeCallback``: ``callback``: System.Action<'T, EventState> * ?``scope``: obj -> bool
-        abstract ``_deferUnregister``: ``observer``: Observer<'T> -> unit
-        abstract ``makeObserverTopPriority``: ``observer``: Observer<'T> -> unit
-        abstract ``makeObserverBottomPriority``: ``observer``: Observer<'T> -> unit
-        abstract ``notifyObservers``: ``eventData``: 'T * ?``mask``: float * ?``target``: obj * ?``currentTarget``: obj * ?``userInfo``: obj -> bool
-        abstract ``notifyObserver``: ``observer``: Observer<'T> * ``eventData``: 'T * ?``mask``: float -> unit
-        abstract ``hasObservers``: unit -> bool
-        abstract ``clear``: unit -> unit
-        abstract ``cleanLastNotifiedState``: unit -> unit
-        abstract ``clone``: unit -> Observable<'T>
-        abstract ``hasSpecificMask``: ?``mask``: float -> bool
+        abstract ``add`` : ?``callback``: System.Action<'T, EventState> * ?``mask``: float * ?``insertFirst``: bool * ?``scope``: obj * ?``unregisterOnFirstCall``: bool -> Observer<'T> option
+        abstract ``addOnce`` : ?``callback``: System.Action<'T, EventState> -> Observer<'T> option
+        abstract ``remove`` : ``observer``: Observer<'T> option -> bool
+        abstract ``removeCallback`` : ``callback``: System.Action<'T, EventState> * ?``scope``: obj -> bool
+        abstract ``_deferUnregister`` : ``observer``: Observer<'T> -> unit
+        abstract ``makeObserverTopPriority`` : ``observer``: Observer<'T> -> unit
+        abstract ``makeObserverBottomPriority`` : ``observer``: Observer<'T> -> unit
+        abstract ``notifyObservers`` : ``eventData``: 'T * ?``mask``: float * ?``target``: obj * ?``currentTarget``: obj * ?``userInfo``: obj -> bool
+        abstract ``notifyObserver`` : ``observer``: Observer<'T> * ``eventData``: 'T * ?``mask``: float -> unit
+        abstract ``hasObservers`` : unit -> bool
+        abstract ``clear`` : unit -> unit
+        abstract ``cleanLastNotifiedState`` : unit -> unit
+        abstract ``clone`` : unit -> Observable<'T>
+        abstract ``hasSpecificMask`` : ?``mask``: float -> bool
         abstract ``observers``: ResizeArray<Observer<'T>> with get
 
     [<AllowNullLiteral>]
     type ObservableStatic =
         [<EmitConstructor>] abstract Create<'T>: ?``onObserverAdded``: System.Action<Observer<'T>> * ?``notifyIfTriggered``: bool -> Observable<'T>
-        abstract ``FromPromise``<'T, 'E>: ``promise``: JS.Promise<'T> * ?``onErrorObservable``: Observable<'E> -> Observable<'T>
+        abstract ``FromPromise``<'T, 'E> : ``promise``: JS.Promise<'T> * ?``onErrorObservable``: Observable<'E> -> Observable<'T>
 
     [<Import("Observable", "@babylonjs/core/Misc/observable.pure.js")>]
     let Observable: ObservableStatic = jsNative
@@ -9255,7 +10069,7 @@ module SimpleClasses =
         abstract ``RIGHT_HANDED``: bool with get, set
         abstract ``CLUSTLIGHT_SLICES``: float with get, set
         abstract ``CLUSTLIGHT_BATCH``: float with get, set
-        abstract ``reset``: unit -> unit
+        abstract ``reset`` : unit -> unit
 
     [<AllowNullLiteral>]
     type PBRMaterialDefinesStatic =
@@ -9459,10 +10273,10 @@ module SimpleClasses =
         abstract ``onTimerAbortedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>> with get, set
         abstract ``onTimerEndedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>> with get, set
         abstract ``onStateChangedObservable``: Observable<BabylonjsBindings.Enums.TimerState> with get, set
-        abstract ``clearObservables``: unit -> unit
-        abstract ``start``: ?``timeToEnd``: float -> unit
-        abstract ``stop``: unit -> unit
-        abstract ``dispose``: unit -> unit
+        abstract ``clearObservables`` : unit -> unit
+        abstract ``start`` : ?``timeToEnd``: float -> unit
+        abstract ``stop`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
         abstract ``breakCondition``: System.Func<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>, bool> with set
 
     [<AllowNullLiteral>]
@@ -9480,14 +10294,14 @@ module SimpleClasses =
         abstract ``onButtonUpObservable``: Observable<BabylonjsBindings.Enums.DualShockButton> with get, set
         abstract ``onPadDownObservable``: Observable<BabylonjsBindings.Enums.DualShockDpad> with get, set
         abstract ``onPadUpObservable``: Observable<BabylonjsBindings.Enums.DualShockDpad> with get, set
-        abstract ``onlefttriggerchanged``: ``callback``: System.Action<float> -> unit
-        abstract ``onrighttriggerchanged``: ``callback``: System.Action<float> -> unit
-        abstract ``onbuttondown``: ``callback``: System.Action<BabylonjsBindings.Enums.DualShockButton> -> unit
-        abstract ``onbuttonup``: ``callback``: System.Action<BabylonjsBindings.Enums.DualShockButton> -> unit
-        abstract ``ondpaddown``: ``callback``: System.Action<BabylonjsBindings.Enums.DualShockDpad> -> unit
-        abstract ``ondpadup``: ``callback``: System.Action<BabylonjsBindings.Enums.DualShockDpad> -> unit
-        abstract ``update``: unit -> unit
-        abstract ``dispose``: unit -> unit
+        abstract ``onlefttriggerchanged`` : ``callback``: System.Action<float> -> unit
+        abstract ``onrighttriggerchanged`` : ``callback``: System.Action<float> -> unit
+        abstract ``onbuttondown`` : ``callback``: System.Action<BabylonjsBindings.Enums.DualShockButton> -> unit
+        abstract ``onbuttonup`` : ``callback``: System.Action<BabylonjsBindings.Enums.DualShockButton> -> unit
+        abstract ``ondpaddown`` : ``callback``: System.Action<BabylonjsBindings.Enums.DualShockDpad> -> unit
+        abstract ``ondpadup`` : ``callback``: System.Action<BabylonjsBindings.Enums.DualShockDpad> -> unit
+        abstract ``update`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
         abstract ``leftTrigger``: float with get, set
         abstract ``rightTrigger``: float with get, set
         abstract ``buttonCross``: float with get, set
@@ -9520,10 +10334,10 @@ module SimpleClasses =
         inherit Gamepad
         abstract ``onButtonDownObservable``: Observable<float> with get, set
         abstract ``onButtonUpObservable``: Observable<float> with get, set
-        abstract ``onbuttondown``: ``callback``: System.Action<float> -> unit
-        abstract ``onbuttonup``: ``callback``: System.Action<float> -> unit
-        abstract ``update``: unit -> unit
-        abstract ``dispose``: unit -> unit
+        abstract ``onbuttondown`` : ``callback``: System.Action<float> -> unit
+        abstract ``onbuttonup`` : ``callback``: System.Action<float> -> unit
+        abstract ``update`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
 
     [<AllowNullLiteral>]
     type GenericPadStatic =
@@ -9537,12 +10351,12 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/observable.extensions.pure
     [<AllowNullLiteral>]
     type MultiObserver<'T> =
-        abstract ``dispose``: unit -> unit
+        abstract ``dispose`` : unit -> unit
 
     [<AllowNullLiteral>]
     type MultiObserverStatic =
         [<EmitConstructor>] abstract Create<'T>: unit -> MultiObserver<'T>
-        abstract ``Watch``<'T>: ``observables``: ResizeArray<Observable<'T>> * ``callback``: System.Action<'T, EventState> * ?``mask``: float * ?``scope``: obj -> MultiObserver<'T>
+        abstract ``Watch``<'T> : ``observables``: ResizeArray<Observable<'T>> * ``callback``: System.Action<'T, EventState> * ?``mask``: float * ?``scope``: obj -> MultiObserver<'T>
 
     [<Import("MultiObserver", "@babylonjs/core/Misc/observable.extensions.pure.js")>]
     let MultiObserver: MultiObserverStatic = jsNative
@@ -9689,7 +10503,7 @@ module SimpleClasses =
         abstract ``BASE_DIFFUSE_MODEL``: float with get, set
         abstract ``DIELECTRIC_SPECULAR_MODEL``: float with get, set
         abstract ``CONDUCTOR_SPECULAR_MODEL``: float with get, set
-        abstract ``reset``: unit -> unit
+        abstract ``reset`` : unit -> unit
 
     [<AllowNullLiteral>]
     type OpenPBRMaterialDefinesStatic =
@@ -9707,10 +10521,10 @@ module SimpleClasses =
         abstract ``type``: BabylonjsBindings.StringEnums.MotionControllerComponentType with get, set
         abstract ``onAxisValueChangedObservable``: Observable<InlineObject4b84b3d5395bObject> with get, set
         abstract ``onButtonStateChangedObservable``: Observable<WebXRControllerComponent> with get, set
-        abstract ``dispose``: unit -> unit
-        abstract ``isAxes``: unit -> bool
-        abstract ``isButton``: unit -> bool
-        abstract ``update``: ``nativeController``: BabylonjsBindings.SimpleInterfaces.IMinimalMotionControllerObject -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``isAxes`` : unit -> bool
+        abstract ``isButton`` : unit -> bool
+        abstract ``update`` : ``nativeController``: BabylonjsBindings.SimpleInterfaces.IMinimalMotionControllerObject -> unit
         abstract ``axes``: BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerAxesValue with get
         abstract ``changes``: BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerComponentChanges with get
         abstract ``hasChanges``: bool with get
@@ -9739,14 +10553,14 @@ module SimpleClasses =
         abstract ``onButtonUpObservable``: Observable<BabylonjsBindings.Enums.Xbox360Button> with get, set
         abstract ``onPadDownObservable``: Observable<BabylonjsBindings.Enums.Xbox360Dpad> with get, set
         abstract ``onPadUpObservable``: Observable<BabylonjsBindings.Enums.Xbox360Dpad> with get, set
-        abstract ``onlefttriggerchanged``: ``callback``: System.Action<float> -> unit
-        abstract ``onrighttriggerchanged``: ``callback``: System.Action<float> -> unit
-        abstract ``onbuttondown``: ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Button> -> unit
-        abstract ``onbuttonup``: ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Button> -> unit
-        abstract ``ondpaddown``: ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Dpad> -> unit
-        abstract ``ondpadup``: ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Dpad> -> unit
-        abstract ``update``: unit -> unit
-        abstract ``dispose``: unit -> unit
+        abstract ``onlefttriggerchanged`` : ``callback``: System.Action<float> -> unit
+        abstract ``onrighttriggerchanged`` : ``callback``: System.Action<float> -> unit
+        abstract ``onbuttondown`` : ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Button> -> unit
+        abstract ``onbuttonup`` : ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Button> -> unit
+        abstract ``ondpaddown`` : ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Dpad> -> unit
+        abstract ``ondpadup`` : ``callback``: System.Action<BabylonjsBindings.Enums.Xbox360Dpad> -> unit
+        abstract ``update`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
         abstract ``leftTrigger``: float with get, set
         abstract ``rightTrigger``: float with get, set
         abstract ``buttonA``: float with get, set
