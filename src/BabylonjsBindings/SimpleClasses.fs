@@ -622,6 +622,27 @@ module SimpleClasses =
     [<Import("PrecisionDate", "@babylonjs/core/Misc/precisionDate.js")>]
     let PrecisionDate: PrecisionDateStatic = jsNative
 
+    /// Function-valued RichType.typeTransformer property.
+    [<AllowNullLiteral>]
+    type RichTypeTypeTransformerCallback<'T> =
+        [<Emit("$0($1...)")>] abstract Invoke: ``value``: obj -> 'T
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<AllowNullLiteral>]
+    type RichType<'T> =
+        abstract ``typeName``: string with get, set
+        abstract ``defaultValue``: 'T with get, set
+        abstract ``animationType``: float with get, set
+        abstract ``typeTransformer``: RichTypeTypeTransformerCallback<'T> with get, set
+        abstract ``serialize``: ``serializationObject``: obj -> unit
+
+    [<AllowNullLiteral>]
+    type RichTypeStatic =
+        [<EmitConstructor>] abstract Create<'T>: ``typeName``: string * ``defaultValue``: 'T * ?``animationType``: float -> RichType<'T>
+
+    [<Import("RichType", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let RichType: RichTypeStatic = jsNative
+
     /// @babylonjs/core/Misc/performanceMonitor
     [<AllowNullLiteral>]
     type RollingAverage =

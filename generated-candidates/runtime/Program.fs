@@ -60,6 +60,7 @@ let animationMask = AnimationGroupMask.Create(names = ResizeArray [ "hero" ])
 animationMask.``addTargetName``(U2.Case1 "enemy")
 let alphaState = AlphaState.Create(true)
 alphaState.``setAlphaBlend``(true)
+let customRichType = RichType.Create("custom-string", "default")
 let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
 let shortIndices: TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
@@ -70,6 +71,8 @@ let shaderDescriptor = ``clearQuadVertexShaderWGSL``
 let paddedNumber = ``PadNumber``.Invoke(7.0, 3.0)
 let startsWithBaby = ``StartsWith``.Invoke("babylon", "baby")
 let base64DataUrl = ``TestBase64DataUrl``.Invoke("data:text/plain;base64,QQ==")
+let stringRichType = ``RichTypeString``
+let lookedUpStringRichType = SimpleFunctions.``getRichTypeByFlowGraphType``.Invoke(flowGraphType = "string")
 
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then
     failwith "full candidate did not construct a Babylon scene"
@@ -105,6 +108,8 @@ if not (animationMask.``hasTarget``("hero")) || not (animationMask.``hasTarget``
     failwith "Babylon erased-union class method was not preserved"
 if not alphaState.``alphaBlend`` then
     failwith "Babylon WebGL state class was not preserved"
+if customRichType.``typeName`` <> "custom-string" || customRichType.``defaultValue`` <> "default" then
+    failwith "Babylon generic runtime class was not preserved"
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
 if indicesNeed32Bits then
@@ -117,6 +122,8 @@ if paddedNumber <> "007" || not startsWithBaby then
     failwith "Babylon callable variable import was not preserved"
 if not base64DataUrl.``match`` || base64DataUrl.``type`` <> "text/plain" then
     failwith "Babylon callable variable inline result was not preserved"
+if stringRichType.``typeName`` <> "string" || lookedUpStringRichType.``typeName`` <> "string" then
+    failwith "Babylon generic class dependency closure was not preserved"
 
 loaderRegistration |> ignore
 camera.dispose()

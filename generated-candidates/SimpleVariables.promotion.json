@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "ec52a789a019e9bb5f23b37241162403f1ed3cf1da5111872a54bb4f2567aae5",
+  "proposalSha256": "503bd6bb05b5adac768d7611ad75470d7def1fd907de37e9b1e45da91aa1d67a",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -3592,6 +3592,51 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.rgbdEncodePixelShaderWGSL",
       "fsharpType": "VariableShape_rgbdEncodePixelShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeAny",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeAny",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<obj>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeBoolean",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeBoolean",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<bool>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeFlowGraphInteger",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeFlowGraphInteger",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.FlowGraphInteger>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeNumber",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeNumber",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<float>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichTypeString",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeString",
+      "fsharpType": "BabylonjsBindings.SimpleClasses.RichType<string>"
     },
     {
       "package": "@babylonjs/core",

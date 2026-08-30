@@ -229,6 +229,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "RichType",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/performanceMonitor.js",
       "export": "RollingAverage",
       "moduleSha256": "cf49766c58602125c303dd28c962f409653f78e796d670150f15b8ccde1084ec"

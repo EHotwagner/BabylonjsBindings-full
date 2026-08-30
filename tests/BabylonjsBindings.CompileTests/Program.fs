@@ -20,6 +20,7 @@ let bitArray: BitArray = Unchecked.defaultof<BitArray>
 let bitArrayFactory: BitArrayStatic = BitArray
 let animationMaskFactory: AnimationGroupMaskStatic = AnimationGroupMask
 let alphaStateFactory: AlphaStateStatic = AlphaState
+let richTypeFactory: RichTypeStatic = RichType
 let strideFunction = BabylonjsBindings.SimpleFunctions.``VertexBufferDeduceStride``
 let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
@@ -43,6 +44,7 @@ bitArray |> ignore
 bitArrayFactory |> ignore
 animationMaskFactory |> ignore
 alphaStateFactory |> ignore
+richTypeFactory |> ignore
 strideFunction |> ignore
 epsilon |> ignore
 shaderDescriptor |> ignore

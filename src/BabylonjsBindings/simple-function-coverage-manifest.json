@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "4bb685b59e78ad01a79cc2dfab250c5eb48520c63319883d27a64903697aed4c",
+  "proposalSha256": "ad0559fc804a5d0f1a7d8d67920e17f44c535b75665bc07f67b29af7847dad0b",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -311,6 +311,24 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetPointsCount",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "getRichTypeByAnimationType",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getRichTypeByAnimationType",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "getRichTypeByFlowGraphType",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getRichTypeByFlowGraphType",
       "overloadCount": 1
     },
     {

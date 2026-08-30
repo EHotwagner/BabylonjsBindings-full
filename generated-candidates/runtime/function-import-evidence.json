@@ -251,6 +251,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "getRichTypeByAnimationType",
+      "runtimeExport": "getRichTypeByAnimationType",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "getRichTypeByFlowGraphType",
+      "runtimeExport": "getRichTypeByFlowGraphType",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/tga.js",
       "export": "GetTGAHeader",
       "runtimeExport": "GetTGAHeader",

@@ -2533,6 +2533,41 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "RichTypeAny",
+      "runtimeExport": "RichTypeAny",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "RichTypeBoolean",
+      "runtimeExport": "RichTypeBoolean",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "RichTypeFlowGraphInteger",
+      "runtimeExport": "RichTypeFlowGraphInteger",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "RichTypeNumber",
+      "runtimeExport": "RichTypeNumber",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "export": "RichTypeString",
+      "runtimeExport": "RichTypeString",
+      "moduleSha256": "59fc5e3c473773f90988c82b01003566222aa2ce9aa78dff9ec02ed4ca3543b0"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/rsmFullGlobalIllumination.fragment.js",
       "export": "rsmFullGlobalIlluminationPixelShader",
       "runtimeExport": "rsmFullGlobalIlluminationPixelShader",

@@ -36,36 +36,36 @@ const maintainedSymbols = new Map(dependencyExports
 
 const hasModifier = (node, kind) => node.modifiers?.some(modifier => modifier.kind === kind) ?? false;
 const inaccessible = node => hasModifier(node, ts.SyntaxKind.PrivateKeyword) || hasModifier(node, ts.SyntaxKind.ProtectedKeyword);
-const fsharpType = (node, available, dependencies = new Set()) => {
+const fsharpType = (node, available, dependencies = new Set(), typeParameters = new Set()) => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
-  if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies);
+  if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
   if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
-    const branches = node.types.map(branch => fsharpType(branch, available, dependencies));
+    const branches = node.types.map(branch => fsharpType(branch, available, dependencies, typeParameters));
     return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
   }
   if (ts.isArrayTypeNode(node)) {
-    const element = fsharpType(node.elementType, available, dependencies);
+    const element = fsharpType(node.elementType, available, dependencies, typeParameters);
     return element ? `ResizeArray<${element}>` : undefined;
   }
   if (ts.isTupleTypeNode(node) && node.elements.length >= 2) {
-    const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type, available, dependencies) : !ts.isNamedTupleMember(element) ? fsharpType(element, available, dependencies) : undefined);
+    const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type, available, dependencies, typeParameters) : !ts.isNamedTupleMember(element) ? fsharpType(element, available, dependencies, typeParameters) : undefined);
     return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
-      const inner = fsharpType(node.typeArguments[0], available, dependencies);
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `ResizeArray<${inner}>` : undefined;
     }
     if (node.typeName.text === "Promise" && node.typeArguments?.length === 1) {
-      const inner = fsharpType(node.typeArguments[0], available, dependencies);
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `JS.Promise<${inner}>` : undefined;
     }
     if (node.typeName.text === "Nullable" && node.typeArguments?.length === 1) {
-      const inner = fsharpType(node.typeArguments[0], available, dependencies);
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `${inner} option` : undefined;
     }
     const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
@@ -76,33 +76,40 @@ const fsharpType = (node, available, dependencies = new Set()) => {
       "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
     ]);
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
-    if (!node.typeArguments?.length && available.has(node.typeName.text)) {
+    if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
+    if (available.has(node.typeName.text)) {
+      const target = available.get(node.typeName.text);
+      const arguments_ = node.typeArguments ?? [];
+      if (arguments_.length !== target.arity) return undefined;
+      const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies, typeParameters));
+      if (renderedArguments.some(argument => !argument)) return undefined;
       dependencies.add(node.typeName.text);
-      return node.typeName.text;
+      return target.arity === 0 ? node.typeName.text : `${node.typeName.text}<${renderedArguments.join(", ")}>`;
     }
     if (maintainedSymbols.has(node.typeName.text)) {
       const target = maintainedSymbols.get(node.typeName.text);
       const arguments_ = node.typeArguments ?? [];
       if (arguments_.length !== target.arity) return undefined;
-      const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies));
+      const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies, typeParameters));
       if (renderedArguments.some(argument => !argument)) return undefined;
       return target.arity === 0 ? target.fsharpSymbol : `${target.fsharpSymbol}<${renderedArguments.join(", ")}>`;
     }
   }
   return undefined;
 };
-const callbackShape = (node, available, dependencies) => {
+const callbackShape = (node, available, dependencies, typeParameters) => {
   if (node.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
-  const returnType = node.type ? fsharpType(node.type, available, dependencies) : undefined;
+  const returnType = node.type ? fsharpType(node.type, available, dependencies, typeParameters) : undefined;
   const parameters = node.parameters.map(parameter => ({
     name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
-    type: parameter.type ? fsharpType(parameter.type, available, dependencies) : undefined,
+    type: parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined,
     optional: Boolean(parameter.questionToken)
   }));
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
 };
 const renderClass = (declaration, available, hasBase) => {
   const dependencies = new Set();
+  const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
   const instanceMembers = [];
   const staticMembers = [];
   const constructors = [];
@@ -112,7 +119,7 @@ const renderClass = (declaration, available, hasBase) => {
     if (inaccessible(member)) continue;
     const target = hasModifier(member, ts.SyntaxKind.StaticKeyword) ? staticMembers : instanceMembers;
     if (ts.isConstructorDeclaration(member)) {
-      const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } }, available, dependencies);
+      const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } }, available, dependencies, typeParameters);
       if (!callback) return undefined;
       constructors.push(callback);
     } else if (ts.isPropertyDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
@@ -121,29 +128,29 @@ const renderClass = (declaration, available, hasBase) => {
         // both flags participate independently below.
       }
       if (ts.isFunctionTypeNode(member.type)) {
-        const callback = callbackShape(member.type, available, dependencies);
+        const callback = callbackShape(member.type, available, dependencies, typeParameters);
         if (!callback) return undefined;
         target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken), readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
       } else {
-        const type = fsharpType(member.type, available, dependencies);
+        const type = fsharpType(member.type, available, dependencies, typeParameters);
         if (!type) return undefined;
         target.push({ kind: "property", name: member.name.text, type: member.questionToken ? `${type} option` : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
       }
     } else if (ts.isMethodDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       if (member.questionToken) return undefined;
-      const callback = callbackShape(member, available, dependencies);
+      const callback = callbackShape(member, available, dependencies, typeParameters);
       if (!callback) return undefined;
       target.push({ kind: "method", name: member.name.text, callback });
     } else if ((ts.isGetAccessorDeclaration(member) || ts.isSetAccessorDeclaration(member)) && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       const key = `${hasModifier(member, ts.SyntaxKind.StaticKeyword) ? "static" : "instance"}|${member.name.text}`;
       const accessor = accessors.get(key) ?? { kind: "accessor", name: member.name.text, static: hasModifier(member, ts.SyntaxKind.StaticKeyword), canGet: false, canSet: false };
       if (ts.isGetAccessorDeclaration(member)) {
-        const type = member.type ? fsharpType(member.type, available, dependencies) : undefined;
+        const type = member.type ? fsharpType(member.type, available, dependencies, typeParameters) : undefined;
         if (!type) return undefined;
         accessor.type = type;
         accessor.canGet = true;
       } else {
-        const type = member.parameters.length === 1 && member.parameters[0].type ? fsharpType(member.parameters[0].type, available, dependencies) : undefined;
+        const type = member.parameters.length === 1 && member.parameters[0].type ? fsharpType(member.parameters[0].type, available, dependencies, typeParameters) : undefined;
         if (!type) return undefined;
         if (accessor.type && accessor.type !== type) return undefined;
         accessor.type = type;
@@ -182,7 +189,8 @@ for (const sourceFile of program.getSourceFiles()) {
     const classDeclarations = target.declarations?.filter(ts.isClassDeclaration) ?? [];
     if (classDeclarations.length !== 1) continue;
     const declaration = classDeclarations[0];
-    if (declaration.typeParameters?.length) continue;
+    if (declaration.typeParameters?.some(parameter => parameter.constraint || parameter.default)) continue;
+    if (declaration.typeParameters?.length && declaration.heritageClauses?.some(clause => clause.token === ts.SyntaxKind.ExtendsKeyword && clause.types.length > 0)) continue;
     const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
     const packageName = module.startsWith("@babylonjs/core/")
       ? "@babylonjs/core"
@@ -191,7 +199,7 @@ for (const sourceFile of program.getSourceFiles()) {
         : undefined;
     if (!packageName) continue;
     const name = exported.getName();
-    declarations.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, declaration });
+    declarations.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, declaration, arity: declaration.typeParameters?.length ?? 0 });
   }
 }
 
@@ -199,7 +207,7 @@ const nameCounts = new Map();
 for (const entry of declarations.values()) nameCounts.set(entry.name, (nameCounts.get(entry.name) ?? 0) + 1);
 const selected = new Map();
 const selectedByName = new Map();
-const available = new Set();
+const available = new Map();
 let rank = 0;
 while (true) {
   const additions = [];
@@ -207,7 +215,8 @@ while (true) {
     if (selected.has(identity) || nameCounts.get(entry.name) !== 1) continue;
     const base = renderBase(entry.declaration, available);
     if (base === null) continue;
-    const renderAvailable = new Set([...available, entry.name]);
+    const renderAvailable = new Map(available);
+    renderAvailable.set(entry.name, { arity: entry.arity });
     const rendered = renderClass(entry.declaration, renderAvailable, Boolean(base));
     if (!rendered) continue;
     if (base && entry.declaration.members.every(member => !ts.isConstructorDeclaration(member))) {
@@ -219,7 +228,7 @@ while (true) {
   for (const [identity, entry] of additions) {
     selected.set(identity, entry);
     selectedByName.set(entry.name, entry);
-    available.add(entry.name);
+    available.set(entry.name, { arity: entry.arity });
   }
   rank += 1;
 }
@@ -244,19 +253,20 @@ const lines = [
   "module SimpleClasses ="
 ];
 for (const entry of entries) {
+  const genericParameters = entry.arity ? `<${entry.declaration.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}>` : "";
   for (const member of [...entry.instanceMembers, ...entry.staticMembers].filter(member => member.kind === "callbackProperty")) {
     const helperName = `${entry.name}${pascal(member.name)}Callback`;
-    member.helperName = helperName;
-    lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
+    member.helperName = `${helperName}${genericParameters}`;
+    lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName}${genericParameters} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
   }
-  lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name} =`);
+  lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name}${genericParameters} =`);
   if (entry.base) lines.push(`        inherit ${entry.base}`);
   if (entry.instanceMembers.length === 0 && !entry.base) lines.push("        interface end");
   else for (const member of entry.instanceMembers) lines.push(`        ${renderMember(member)}`);
   lines.push("", "    [<AllowNullLiteral>]", `    type ${entry.name}Static =`);
   if (entry.base) lines.push(`        inherit ${entry.base}Static`);
   if (entry.constructors.length === 0 && entry.staticMembers.length === 0 && !entry.base) lines.push("        interface end");
-  for (const constructor of entry.constructors) lines.push(`        [<EmitConstructor>] abstract Create: ${callbackArguments(constructor)} -> ${entry.name}`);
+  for (const constructor of entry.constructors) lines.push(`        [<EmitConstructor>] abstract Create${genericParameters}: ${callbackArguments(constructor)} -> ${entry.name}${genericParameters}`);
   for (const member of entry.staticMembers) lines.push(`        ${renderMember(member)}`);
   lines.push("", `    [<Import("${entry.name}", "${entry.module}.js")>]`, `    let ${entry.name}: ${entry.name}Static = jsNative`);
 }
@@ -272,6 +282,7 @@ const manifest = {
     kind: "class",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleClasses.${entry.name}`,
+    ...(entry.arity ? { typeParameterCount: entry.arity } : {}),
     memberCount: entry.instanceMembers.length + entry.staticMembers.length + entry.constructors.length
   }))
 };

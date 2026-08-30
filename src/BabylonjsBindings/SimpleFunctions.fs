@@ -278,6 +278,22 @@ module SimpleFunctions =
     [<Import("GetPointsCount", "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js")>]
     let ``GetPointsCount``: FunctionBinding_GetPointsCount = jsNative
 
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_getRichTypeByAnimationType =
+        [<Emit("$0($1...)")>] abstract Invoke: ``animationType``: float -> BabylonjsBindings.SimpleClasses.RichType<obj>
+
+    [<Import("getRichTypeByAnimationType", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``getRichTypeByAnimationType``: FunctionBinding_getRichTypeByAnimationType = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_getRichTypeByFlowGraphType =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``flowGraphType``: string -> BabylonjsBindings.SimpleClasses.RichType<obj>
+
+    [<Import("getRichTypeByFlowGraphType", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``getRichTypeByFlowGraphType``: FunctionBinding_getRichTypeByFlowGraphType = jsNative
+
     /// @babylonjs/core/Misc/tga
     [<AllowNullLiteral>]
     type FunctionBinding_GetTGAHeader =

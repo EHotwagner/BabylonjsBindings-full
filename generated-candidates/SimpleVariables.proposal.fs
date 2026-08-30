@@ -3524,6 +3524,26 @@ module SimpleVariables =
     [<Import("rgbdEncodePixelShaderWGSL", "@babylonjs/core/ShadersWGSL/rgbdEncode.fragment.js")>]
     let ``rgbdEncodePixelShaderWGSL``: VariableShape_rgbdEncodePixelShaderWGSL = jsNative
 
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeAny", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeAny``: BabylonjsBindings.SimpleClasses.RichType<obj> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeBoolean", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeBoolean``: BabylonjsBindings.SimpleClasses.RichType<bool> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeFlowGraphInteger", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeFlowGraphInteger``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.FlowGraphInteger> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeNumber", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeNumber``: BabylonjsBindings.SimpleClasses.RichType<float> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeString", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeString``: BabylonjsBindings.SimpleClasses.RichType<string> = jsNative
+
     /// Inline object shape of rsmFullGlobalIlluminationPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_rsmFullGlobalIlluminationPixelShader =

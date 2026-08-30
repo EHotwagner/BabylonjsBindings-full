@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "ac293c38ad09009bb525b6026754713ff60139da60f08fcc1f0b5a9373af34a0",
+  "maintainedSurfaceDigest": "11a92510fd8c2aa9a7e558a576d8dde426eec07801063ad1a9b182e632235a5f",
   "summary": {
     "total": 4323,
-    "typed": 1698,
+    "typed": 1706,
     "runtimeOnly": 1,
-    "blocked": 2618,
+    "blocked": 2610,
     "lossy": 6
   },
   "exports": [
@@ -8882,16 +8882,18 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "getRichTypeByAnimationType",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getRichTypeByAnimationType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "getRichTypeByFlowGraphType",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getRichTypeByFlowGraphType"
     },
     {
       "package": "@babylonjs/core",
@@ -8915,24 +8917,27 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "RichType",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RichType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "RichTypeAny",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeAny"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "RichTypeBoolean",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeBoolean"
     },
     {
       "package": "@babylonjs/core",
@@ -8955,8 +8960,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "RichTypeFlowGraphInteger",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeFlowGraphInteger"
     },
     {
       "package": "@babylonjs/core",
@@ -8987,8 +8993,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "RichTypeNumber",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeNumber"
     },
     {
       "package": "@babylonjs/core",
@@ -9003,8 +9010,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "RichTypeString",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RichTypeString"
     },
     {
       "package": "@babylonjs/core",

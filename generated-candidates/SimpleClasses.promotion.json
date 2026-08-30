@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "76757c33f5ac1dc32f6f82a6a2d383eebaef94bd4eeb56736f2031c3fd6ebd86",
+  "proposalSha256": "776453ce29bb58c3404fe51cab8e8426d193b8ba9a936c2f8d67c3554ceb9a28",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -329,6 +329,16 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PrecisionDate",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
+      "name": "RichType",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RichType",
+      "typeParameterCount": 1,
+      "memberCount": 6
     },
     {
       "package": "@babylonjs/core",
