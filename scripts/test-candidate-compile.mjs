@@ -10,6 +10,8 @@ const gltfInterfaceCandidatePath = resolve(root, "generated-candidates/BabylonGl
 const enumProposalPath = resolve(root, "generated-candidates/CoreEnums.proposal.fs");
 const stringEnumProposalPath = resolve(root, "generated-candidates/StringEnums.proposal.fs");
 const simpleObjectProposalPath = resolve(root, "generated-candidates/SimpleObjectTypes.proposal.fs");
+const simpleAliasProposalPath = resolve(root, "generated-candidates/SimpleAliases.proposal.fs");
+const simpleInterfaceProposalPath = resolve(root, "generated-candidates/SimpleInterfaces.proposal.fs");
 const reportPath = resolve(root, "generated-candidates/compile-diagnostics.json");
 const candidate = await readFile(candidatePath);
 const loadersCandidate = await readFile(loadersCandidatePath);
@@ -17,6 +19,8 @@ const gltfInterfaceCandidate = await readFile(gltfInterfaceCandidatePath);
 const enumProposal = await readFile(enumProposalPath);
 const stringEnumProposal = await readFile(stringEnumProposalPath);
 const simpleObjectProposal = await readFile(simpleObjectProposalPath);
+const simpleAliasProposal = await readFile(simpleAliasProposalPath);
+const simpleInterfaceProposal = await readFile(simpleInterfaceProposalPath);
 const execution = spawnSync(
   "dotnet",
   ["build", "generated-candidates/BabylonjsBindings.FullCandidate.fsproj", "--no-restore"],
@@ -45,6 +49,8 @@ const report = {
   enumProposalSha256: createHash("sha256").update(enumProposal).digest("hex"),
   stringEnumProposalSha256: createHash("sha256").update(stringEnumProposal).digest("hex"),
   simpleObjectProposalSha256: createHash("sha256").update(simpleObjectProposal).digest("hex"),
+  simpleAliasProposalSha256: createHash("sha256").update(simpleAliasProposal).digest("hex"),
+  simpleInterfaceProposalSha256: createHash("sha256").update(simpleInterfaceProposal).digest("hex"),
   status: execution.status === 0 ? "pass" : "fail",
   exitCode: execution.status,
   errorCount: diagnostics.size,

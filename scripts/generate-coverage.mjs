@@ -27,6 +27,18 @@ const promotionFamilies = [
     manifestPath: "src/BabylonjsBindings/object-type-coverage-manifest.json",
     proposalPath: "generated-candidates/SimpleObjectTypes.proposal.fs",
     description: "primitive-property object alias"
+  },
+  {
+    maintainedPath: "src/BabylonjsBindings/TypeAliases.fs",
+    manifestPath: "src/BabylonjsBindings/type-alias-coverage-manifest.json",
+    proposalPath: "generated-candidates/SimpleAliases.proposal.fs",
+    description: "primitive or dependency-free callback alias"
+  },
+  {
+    maintainedPath: "src/BabylonjsBindings/SimpleInterfaces.fs",
+    manifestPath: "src/BabylonjsBindings/simple-interface-coverage-manifest.json",
+    proposalPath: "generated-candidates/SimpleInterfaces.proposal.fs",
+    description: "dependency-free interface"
   }
 ];
 const schemaPath = resolve(root, "work/001-full-babylonjs-bindings/contracts/coverage-and-drift.schema.json");

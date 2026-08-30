@@ -1,8 +1,32 @@
-// MAINTAINED REVIEWED BINDING — exact Babylon.js 9.19.0 primitive object aliases
+// MAINTAINED REVIEWED BINDING — exact Babylon.js 9.19.0 dependency-closed object aliases
 namespace BabylonjsBindings
 
-/// Exact primitive-property object aliases exported by Babylon.js 9.19.0.
+open Fable.Core
+
+/// Exact dependency-closed object aliases exported by Babylon.js 9.19.0.
 module ObjectTypes =
+
+    /// Function-valued ArcRotateHandlers.pan property.
+    [<AllowNullLiteral>]
+    type ArcRotateHandlersPanCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: deltaX: float * deltaY: float -> unit
+
+    /// Function-valued ArcRotateHandlers.rotate property.
+    [<AllowNullLiteral>]
+    type ArcRotateHandlersRotateCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: deltaX: float * deltaY: float -> unit
+
+    /// Function-valued ArcRotateHandlers.zoom property.
+    [<AllowNullLiteral>]
+    type ArcRotateHandlersZoomCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: delta: float -> unit
+
+    /// @babylonjs/core/Cameras/arcRotateCameraMovement
+    [<AllowNullLiteral>]
+    type ArcRotateHandlers =
+        abstract ``pan``: ArcRotateHandlersPanCallback with get, set
+        abstract ``rotate``: ArcRotateHandlersRotateCallback with get, set
+        abstract ``zoom``: ArcRotateHandlersZoomCallback with get, set
 
     /// @babylonjs/loaders/BVH/bvhLoadingOptions
     [<AllowNullLiteral>]
@@ -27,6 +51,13 @@ module ObjectTypes =
         abstract ``useSRGBBuffers``: ResizeArray<bool> option with get, set
         abstract ``creationFlags``: ResizeArray<float> option with get, set
         abstract ``labels``: ResizeArray<string> option with get, set
+
+    /// @babylonjs/core/Cameras/geospatialCameraMovement
+    [<AllowNullLiteral>]
+    type GeospatialPanHandler =
+        abstract ``start``: screenX: float * screenY: float -> unit
+        abstract ``update``: screenX: float * screenY: float -> unit
+        abstract ``stop``: unit -> unit
 
     /// @babylonjs/core/Meshes/Builders/goldbergBuilder
     [<AllowNullLiteral>]
@@ -99,6 +130,22 @@ module ObjectTypes =
         abstract ``width``: float with get, set
         abstract ``height``: float with get, set
 
+    /// Function-valued TargetCameraHandlers.translate property.
+    [<AllowNullLiteral>]
+    type TargetCameraHandlersTranslateCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: deltaX: float * deltaY: float * deltaZ: float -> unit
+
+    /// Function-valued TargetCameraHandlers.rotate property.
+    [<AllowNullLiteral>]
+    type TargetCameraHandlersRotateCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: pitch: float * yaw: float -> unit
+
+    /// @babylonjs/core/Cameras/targetCameraMovement
+    [<AllowNullLiteral>]
+    type TargetCameraHandlers =
+        abstract ``translate``: TargetCameraHandlersTranslateCallback with get, set
+        abstract ``rotate``: TargetCameraHandlersRotateCallback with get, set
+
     /// @babylonjs/core/Cameras/inputMapper
     [<AllowNullLiteral>]
     type TouchConditions =
@@ -111,3 +158,45 @@ module ObjectTypes =
         abstract ``moveY``: float with get, set
         abstract ``rotateX``: float with get, set
         abstract ``rotateY``: float with get, set
+
+    /// Function-valued GeospatialHandlers.rotate property.
+    [<AllowNullLiteral>]
+    type GeospatialHandlersRotateCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: yaw: float * pitch: float -> unit
+
+    /// Function-valued GeospatialHandlers.zoom property.
+    [<AllowNullLiteral>]
+    type GeospatialHandlersZoomCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: delta: float * toCursor: bool -> unit
+
+    /// @babylonjs/core/Cameras/geospatialCameraMovement
+    [<AllowNullLiteral>]
+    type GeospatialHandlers =
+        abstract ``pan``: GeospatialPanHandler with get, set
+        abstract ``rotate``: GeospatialHandlersRotateCallback with get, set
+        abstract ``zoom``: GeospatialHandlersZoomCallback with get, set
+
+    /// @babylonjs/core/Cameras/inputMapper
+    [<AllowNullLiteral>]
+    type InputConditions =
+        abstract ``button``: float option with get, set
+        abstract ``modifiers``: InputModifiers option with get, set
+        abstract ``touchCount``: float option with get, set
+        abstract ``key``: float option with get, set
+
+    /// @babylonjs/core/Cameras/inputMapper
+    [<AllowNullLiteral>]
+    type KeyboardConditions =
+        abstract ``key``: float option with get, set
+        abstract ``modifiers``: InputModifiers option with get, set
+
+    /// @babylonjs/core/Cameras/inputMapper
+    [<AllowNullLiteral>]
+    type PointerConditions =
+        abstract ``button``: float option with get, set
+        abstract ``modifiers``: InputModifiers option with get, set
+
+    /// @babylonjs/core/Cameras/inputMapper
+    [<AllowNullLiteral>]
+    type WheelConditions =
+        abstract ``modifiers``: InputModifiers option with get, set

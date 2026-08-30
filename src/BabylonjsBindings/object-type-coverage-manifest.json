@@ -5,8 +5,17 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "08e0eff364e6616a886291ded84e10da1e5c789d055ab664c544f7f2b2e135b7",
+  "proposalSha256": "ce075e59545c3b09fa3eb2e26cc4a578334ccad8b7ef73d273d1e222da8b7c49",
   "exports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/arcRotateCameraMovement",
+      "name": "ArcRotateHandlers",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.ArcRotateHandlers",
+      "memberCount": 3
+    },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/BVH/bvhLoadingOptions",
@@ -33,6 +42,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.ObjectTypes.FrameGraphTextureOptions",
       "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/geospatialCameraMovement",
+      "name": "GeospatialPanHandler",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.GeospatialPanHandler",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",
@@ -126,6 +144,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/targetCameraMovement",
+      "name": "TargetCameraHandlers",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.TargetCameraHandlers",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "TouchConditions",
       "kind": "type",
@@ -141,6 +168,51 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.ObjectTypes.WebXRControllerMovementState",
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/geospatialCameraMovement",
+      "name": "GeospatialHandlers",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.GeospatialHandlers",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/inputMapper",
+      "name": "InputConditions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.InputConditions",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/inputMapper",
+      "name": "KeyboardConditions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.KeyboardConditions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/inputMapper",
+      "name": "PointerConditions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.PointerConditions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/inputMapper",
+      "name": "WheelConditions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.WheelConditions",
+      "memberCount": 1
     }
   ]
 }

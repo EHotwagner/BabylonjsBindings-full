@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "declarationLock": "declaration-lock.json",
+    "packageVersion": "9.19.0"
+  },
+  "proposalSha256": "3a8f711902085f5b52b17b3e9f24233d3485a44c3aa1b0d04e1bd9b7884615dd",
+  "exports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "double",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.double",
+      "shape": "number",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "float",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.float",
+      "shape": "number",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
+      "name": "FrameGraphTextureHandle",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FrameGraphTextureHandle",
+      "shape": "number",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "int",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.int",
+      "shape": "number",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "RenderingGroupStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderingGroupStageAction",
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Processors/shaderProcessingOptions",
+      "name": "ShaderCustomProcessingFunction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction",
+      "shape": "callback",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "SimpleStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.SimpleStageAction",
+      "shape": "callback",
+      "memberCount": 0
+    }
+  ]
+}

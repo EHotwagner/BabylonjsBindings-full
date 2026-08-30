@@ -48,6 +48,7 @@ open BabylonjsBindings.FullCandidate
 open BabylonjsBindings.Enums
 open BabylonjsBindings.StringEnums
 open BabylonjsBindings.ObjectTypes
+open BabylonjsBindings.SimpleInterfaces
 
 [<Emit("$0")>]
 let asString (value: 'T) : string = jsNative
@@ -60,11 +61,27 @@ let scene = \`\`babylonjs/scene.pure\`\`.Scene.Create(engine)
 let origin = \`\`babylonjs/Maths/math.vector.pure\`\`.Vector3.Create(0.0, 0.0, 0.0)
 let mesh = \`\`babylonjs/Meshes/Builders/boxBuilder.pure\`\`.CreateBox("consumer-box", scene = Some scene)
 let dimensions: SizeLike = createObj [ "width" ==> 8.0; "height" ==> 4.0 ] |> unbox
+let mutable zoomDelta = 0.0
+let cameraHandlers: ArcRotateHandlers =
+    createObj [
+        "pan" ==> (fun (_deltaX: float) (_deltaY: float) -> ())
+        "rotate" ==> (fun (_deltaX: float) (_deltaY: float) -> ())
+        "zoom" ==> (fun (delta: float) -> zoomDelta <- delta)
+    ] |> unbox
+cameraHandlers.\`\`zoom\`\`.Invoke(6.0)
+let mutable stageCalled = false
+let stageAction: BabylonjsBindings.TypeAliases.SimpleStageAction = unbox (fun () -> stageCalled <- true)
+stageAction.Invoke()
+let easing: IEasingFunction = createObj [ "ease" ==> (fun (gradient: float) -> gradient * 2.0) ] |> unbox
+let eased = easing.\`\`ease\`\`(3.0)
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then failwith "clean consumer scene failed"
 if uint32 NodeRenderGraphBlockConnectionPointTypes.\`\`All\`\` <> 4294967295u then failwith "clean consumer enum failed"
 if int AudioAnalyzerFFTSizeType.\`\`N32768\`\` <> 32768 then failwith "clean consumer numeric literal union failed"
 if asString PowerPreference.\`\`HighPerformance\`\` <> "high-performance" then failwith "clean consumer string enum failed"
 if dimensions.\`\`width\`\` <> 8.0 || dimensions.\`\`height\`\` <> 4.0 then failwith "clean consumer object type failed"
+if zoomDelta <> 6.0 then failwith "clean consumer object callback failed"
+if not stageCalled then failwith "clean consumer callback alias failed"
+if eased <> 6.0 then failwith "clean consumer interface method failed"
 loaderRegistration |> ignore
 engine.dispose()
 printfn "Babylon candidate clean consumer passed"

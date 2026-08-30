@@ -6,6 +6,7 @@ open BabylonjsBindings.FullCandidate
 open BabylonjsBindings.Enums
 open BabylonjsBindings.StringEnums
 open BabylonjsBindings.ObjectTypes
+open BabylonjsBindings.SimpleInterfaces
 
 [<Emit("$0")>]
 let private asString (value: 'T) : string = jsNative
@@ -21,6 +22,31 @@ let camera = ``babylonjs/Cameras/freeCamera.pure``.FreeCamera.Create("camera", o
 let light = ``babylonjs/Lights/hemisphericLight.pure``.HemisphericLight.Create("light", up, scene)
 let mesh = ``babylonjs/Meshes/Builders/boxBuilder.pure``.CreateBox("box", scene = Some scene)
 let dimensions: SizeLike = createObj [ "width" ==> 4.0; "height" ==> 2.0 ] |> unbox
+let mutable panDelta = 0.0
+let cameraHandlers: ArcRotateHandlers =
+    createObj [
+        "pan" ==> (fun (deltaX: float) (_deltaY: float) -> panDelta <- deltaX)
+        "rotate" ==> (fun (_deltaX: float) (_deltaY: float) -> ())
+        "zoom" ==> (fun (_delta: float) -> ())
+    ] |> unbox
+cameraHandlers.``pan``.Invoke(3.0, 2.0)
+let mutable stageCalled = false
+let stageAction: TypeAliases.SimpleStageAction = unbox (fun () -> stageCalled <- true)
+stageAction.Invoke()
+let mutable renderingGroup = -1.0
+let renderingGroupAction: TypeAliases.RenderingGroupStageAction = unbox (fun (group: float) -> renderingGroup <- group)
+renderingGroupAction.Invoke(7.0)
+let easing: IEasingFunction = createObj [ "ease" ==> (fun (gradient: float) -> gradient * gradient) ] |> unbox
+let eased = easing.``ease``(0.5)
+let mutable loadingShown = false
+let loadingScreen: ILoadingScreen =
+    createObj [
+        "displayLoadingUI" ==> (fun () -> loadingShown <- true)
+        "hideLoadingUI" ==> (fun () -> loadingShown <- false)
+        "loadingUIBackgroundColor" ==> "black"
+        "loadingUIText" ==> "loading"
+    ] |> unbox
+loadingScreen.``displayLoadingUI``.Invoke()
 
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then
     failwith "full candidate did not construct a Babylon scene"
@@ -34,6 +60,12 @@ if asString PowerPreference.``HighPerformance`` <> "high-performance" then
     failwith "Babylon string enum value was not preserved"
 if dimensions.``width`` <> 4.0 || dimensions.``height`` <> 2.0 then
     failwith "Babylon primitive object binding was not preserved"
+if panDelta <> 3.0 then
+    failwith "Babylon function-valued object property was not preserved"
+if not stageCalled || renderingGroup <> 7.0 then
+    failwith "Babylon callback alias invocation was not preserved"
+if eased <> 0.25 || not loadingShown then
+    failwith "Babylon dependency-free interface invocation was not preserved"
 
 loaderRegistration |> ignore
 camera.dispose()

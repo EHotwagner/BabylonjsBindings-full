@@ -47,5 +47,7 @@ npm run check:drift
 npm run check:enum-proposal
 npm run check:string-enum-proposal
 npm run check:simple-object-proposal
+npm run check:simple-alias-proposal
+npm run check:simple-interface-proposal
 npm run coverage:check
 npm run test:runtime

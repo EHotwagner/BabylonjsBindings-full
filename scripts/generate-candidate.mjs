@@ -11,7 +11,9 @@ const maintainedPaths = [
   "src/BabylonjsBindings/Bindings.fs",
   "src/BabylonjsBindings/Enums.fs",
   "src/BabylonjsBindings/StringEnums.fs",
-  "src/BabylonjsBindings/ObjectTypes.fs"
+  "src/BabylonjsBindings/ObjectTypes.fs",
+  "src/BabylonjsBindings/TypeAliases.fs",
+  "src/BabylonjsBindings/SimpleInterfaces.fs"
 ];
 const packageJson = JSON.parse(await readFile(resolve(root, "package.json"), "utf8"));
 const sourcePath = resolve(root, "node_modules/babylonjs/babylon.module.d.ts");

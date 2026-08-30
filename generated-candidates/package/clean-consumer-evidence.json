@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "542c6255ee175ee98ef02ffa269d2d67f36bc0dd802540a8bc9be782ce5d06d4"
+    "sha256": "def55a6983a13f7d1b96f76eb8c72b7e0266aaffbcc0d00a30518051388e0bee"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,7 +13,7 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "0006a4c5e8e9a5c5db20f8d6a66c8b874c78c19deef1ab920cdab7508e8e2f7b",
+  "emittedProgramSha256": "2184ab669bbddcd09f654869a50d58312a04c1e19e67b824130a17e51b777f46",
   "imports": [
     "@babylonjs/core/Engines/nullEngine.pure.js",
     "@babylonjs/core/Maths/math.vector.pure.js",

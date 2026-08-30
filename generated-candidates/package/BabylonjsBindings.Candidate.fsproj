@@ -16,6 +16,8 @@
     <Compile Include="_packageSources/CoreEnums.proposal.fs" />
     <Compile Include="_packageSources/StringEnums.proposal.fs" />
     <Compile Include="_packageSources/SimpleObjectTypes.proposal.fs" />
+    <Compile Include="_packageSources/SimpleAliases.proposal.fs" />
+    <Compile Include="_packageSources/SimpleInterfaces.proposal.fs" />
     <Compile Include="_packageSources/BabylonBindings.generated.fs" />
     <Compile Include="_packageSources/BabylonGltf2Interface.generated.fs" />
     <Compile Include="_packageSources/BabylonLoadersBindings.generated.fs" />
@@ -29,6 +31,8 @@
     <Copy SourceFiles="../CoreEnums.proposal.fs" DestinationFiles="_packageSources/CoreEnums.proposal.fs" />
     <Copy SourceFiles="../StringEnums.proposal.fs" DestinationFiles="_packageSources/StringEnums.proposal.fs" />
     <Copy SourceFiles="../SimpleObjectTypes.proposal.fs" DestinationFiles="_packageSources/SimpleObjectTypes.proposal.fs" />
+    <Copy SourceFiles="../SimpleAliases.proposal.fs" DestinationFiles="_packageSources/SimpleAliases.proposal.fs" />
+    <Copy SourceFiles="../SimpleInterfaces.proposal.fs" DestinationFiles="_packageSources/SimpleInterfaces.proposal.fs" />
     <Copy SourceFiles="../BabylonBindings.generated.fs" DestinationFiles="_packageSources/BabylonBindings.generated.fs" />
     <Copy SourceFiles="../BabylonGltf2Interface.generated.fs" DestinationFiles="_packageSources/BabylonGltf2Interface.generated.fs" />
     <Copy SourceFiles="../BabylonLoadersBindings.generated.fs" DestinationFiles="_packageSources/BabylonLoadersBindings.generated.fs" />
