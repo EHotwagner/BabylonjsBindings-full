@@ -34,6 +34,21 @@ let performanceConfiguratorFactory: PerformanceConfiguratorStatic = PerformanceC
 let simplificationSettingsFactory: SimplificationSettingsStatic = SimplificationSettings
 let stencilStateComposerFactory: StencilStateComposerStatic = StencilStateComposer
 let webGLHardwareTextureFactory: WebGLHardwareTextureStatic = WebGLHardwareTexture
+let constantsFactory: ConstantsStatic = Constants
+let easingFunctionFactory: EasingFunctionStatic = EasingFunction
+let backEaseFactory: BackEaseStatic = BackEase
+let bezierCurveEaseFactory: BezierCurveEaseStatic = BezierCurveEase
+let bounceEaseFactory: BounceEaseStatic = BounceEase
+let circleEaseFactory: CircleEaseStatic = CircleEase
+let cubicEaseFactory: CubicEaseStatic = CubicEase
+let elasticEaseFactory: ElasticEaseStatic = ElasticEase
+let exponentialEaseFactory: ExponentialEaseStatic = ExponentialEase
+let powerEaseFactory: PowerEaseStatic = PowerEase
+let quadraticEaseFactory: QuadraticEaseStatic = QuadraticEase
+let quarticEaseFactory: QuarticEaseStatic = QuarticEase
+let quinticEaseFactory: QuinticEaseStatic = QuinticEase
+let sineEaseFactory: SineEaseStatic = SineEase
+let stencilStateFactory: StencilStateStatic = StencilState
 let strideFunction = BabylonjsBindings.SimpleFunctions.``VertexBufferDeduceStride``
 let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
@@ -71,6 +86,21 @@ performanceConfiguratorFactory |> ignore
 simplificationSettingsFactory |> ignore
 stencilStateComposerFactory |> ignore
 webGLHardwareTextureFactory |> ignore
+constantsFactory |> ignore
+easingFunctionFactory |> ignore
+backEaseFactory |> ignore
+bezierCurveEaseFactory |> ignore
+bounceEaseFactory |> ignore
+circleEaseFactory |> ignore
+cubicEaseFactory |> ignore
+elasticEaseFactory |> ignore
+exponentialEaseFactory |> ignore
+powerEaseFactory |> ignore
+quadraticEaseFactory |> ignore
+quarticEaseFactory |> ignore
+quinticEaseFactory |> ignore
+sineEaseFactory |> ignore
+stencilStateFactory |> ignore
 strideFunction |> ignore
 epsilon |> ignore
 shaderDescriptor |> ignore

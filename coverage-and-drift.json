@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "902cfda7835d8dbd24ca3e8d8bda953996e7137103136acd956f806a1a67720b",
+  "maintainedSurfaceDigest": "5faa272763e8934e44a765bc6473054589829f9bc4497193c575a7be518a8969",
   "summary": {
     "total": 4323,
-    "typed": 1723,
+    "typed": 1745,
     "runtimeOnly": 1,
-    "blocked": 2593,
+    "blocked": 2571,
     "lossy": 6
   },
   "exports": [
@@ -659,64 +659,72 @@
       "module": "@babylonjs/core/Animations/easing",
       "name": "BackEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BackEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "BezierCurveEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BezierCurveEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "BounceEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BounceEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "CircleEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CircleEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "CubicEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CubicEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "EasingFunction",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EasingFunction"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "ElasticEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ElasticEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "ExponentialEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ExponentialEase"
     },
     {
       "package": "@babylonjs/core",
@@ -732,40 +740,45 @@
       "module": "@babylonjs/core/Animations/easing",
       "name": "PowerEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PowerEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "QuadraticEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuadraticEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "QuarticEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuarticEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "QuinticEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuinticEase"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "SineEase",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SineEase"
     },
     {
       "package": "@babylonjs/core",
@@ -4343,8 +4356,9 @@
       "module": "@babylonjs/core/Engines/constants",
       "name": "Constants",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Constants"
     },
     {
       "package": "@babylonjs/core",
@@ -6071,8 +6085,9 @@
       "module": "@babylonjs/core/Events/clipboardEvents",
       "name": "ClipboardEventTypes",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ClipboardEventTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -6147,8 +6162,9 @@
       "module": "@babylonjs/core/Events/keyboardEvents",
       "name": "KeyboardEventTypes",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KeyboardEventTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -6173,8 +6189,9 @@
       "module": "@babylonjs/core/Events/pointerEvents",
       "name": "PointerEventTypes",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PointerEventTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -11575,8 +11592,9 @@
       "module": "@babylonjs/core/Lights/lightConstants",
       "name": "LightConstants",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.LightConstants"
     },
     {
       "package": "@babylonjs/core",
@@ -17633,8 +17651,9 @@
       "module": "@babylonjs/core/Maths/halton2DSequence",
       "name": "Halton2DSequence",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Halton2DSequence"
     },
     {
       "package": "@babylonjs/core",
@@ -23589,8 +23608,9 @@
       "module": "@babylonjs/core/Misc/logger",
       "name": "Logger",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Logger"
     },
     {
       "package": "@babylonjs/core",
@@ -28443,8 +28463,9 @@
       "module": "@babylonjs/core/sceneComponent",
       "name": "SceneComponentConstants",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SceneComponentConstants"
     },
     {
       "package": "@babylonjs/core",
@@ -32413,8 +32434,9 @@
       "module": "@babylonjs/core/States/stencilState",
       "name": "StencilState",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StencilState"
     },
     {
       "package": "@babylonjs/core",

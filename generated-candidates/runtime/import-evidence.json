@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "479065f18307330b86fbf9095bd6fe1a238190035e47ded4658fa2348386a45c"
+    "sha256": "9fcd54d0d927e9897dc971db61384ad76d059e1e635e5d11636516836cfd291c"
   },
   "imports": [
     {
@@ -21,6 +21,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Animations/animationGroupMask.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Animations/easing.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Animations/easing.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]
@@ -53,10 +62,46 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Engines/constants.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/constants.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Engines/nullEngine.pure.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Engines/nullEngine.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Events/clipboardEvents.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Events/clipboardEvents.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Events/keyboardEvents.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Events/keyboardEvents.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Events/pointerEvents.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Events/pointerEvents.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]
@@ -75,6 +120,24 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Lights/hemisphericLight.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Lights/lightConstants.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Lights/lightConstants.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Maths/halton2DSequence.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/halton2DSequence.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]
@@ -161,6 +224,15 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Misc/logger.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/logger.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Misc/smartArray.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
@@ -188,6 +260,15 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/sceneComponent.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/sceneComponent.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/ShadersWGSL/clearQuad.vertex.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
@@ -210,6 +291,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/States/alphaCullingState.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/States/stencilState.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/States/stencilState.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

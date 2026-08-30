@@ -115,6 +115,14 @@ const directCallbackShape = (node, available, dependencies, typeParameters) => {
   }));
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
 };
+const initializerType = node => {
+  if (!node) return undefined;
+  if (ts.isNumericLiteral(node)) return "float";
+  if (ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) return "string";
+  if (node.kind === ts.SyntaxKind.TrueKeyword || node.kind === ts.SyntaxKind.FalseKeyword) return "bool";
+  if (ts.isPrefixUnaryExpression(node) && (node.operator === ts.SyntaxKind.PlusToken || node.operator === ts.SyntaxKind.MinusToken) && ts.isNumericLiteral(node.operand)) return "float";
+  return undefined;
+};
 const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, context, ownerName) => {
   if (node.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
   const returnType = node.type ? fsharpType(node.type, available, dependencies, typeParameters) : undefined;
@@ -154,17 +162,17 @@ const renderClass = (declaration, available, hasBase) => {
       const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } }, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Constructor${memberIndex + 1}`, declaration.name.text);
       if (!callback) return undefined;
       constructors.push(callback);
-    } else if (ts.isPropertyDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
+    } else if (ts.isPropertyDeclaration(member) && (member.type || member.initializer) && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       if (member.questionToken && hasModifier(member, ts.SyntaxKind.ReadonlyKeyword)) {
         // Optional readonly is representable; the branch merely documents that
         // both flags participate independently below.
       }
-      if (ts.isFunctionTypeNode(member.type)) {
+      if (member.type && ts.isFunctionTypeNode(member.type)) {
         const callback = callbackShape(member.type, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Property${memberIndex + 1}`, declaration.name.text);
         if (!callback) return undefined;
         target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken), readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
       } else {
-        const type = fsharpType(member.type, available, dependencies, typeParameters);
+        const type = member.type ? fsharpType(member.type, available, dependencies, typeParameters) : initializerType(member.initializer);
         if (!type) return undefined;
         target.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
       }

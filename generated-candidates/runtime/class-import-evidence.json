@@ -85,6 +85,18 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/clipboardEvents.js",
+      "export": "ClipboardEventTypes",
+      "moduleSha256": "a07538c1aa5dfe43f1266f7878742b5952002307987a6e083e8767d4b29d1b1c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/constants.js",
+      "export": "Constants",
+      "moduleSha256": "e690dac05edd3f14f5e766b1301d6310586cb67dc2d384202a2c960ca6daedaf"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Offline/database.pure.js",
       "export": "Database",
       "moduleSha256": "40f1a8e7a3eab5c42aa771a14a25a4467b900b3e843590d1cfc39bcf026694e8"
@@ -133,6 +145,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "EasingFunction",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Events/deviceInputEvents.js",
       "export": "EventConstants",
       "moduleSha256": "975059ee662413954fff24bf7287c828b90cd5a35ae03c68eee3adb6734d4990"
@@ -175,9 +193,21 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/halton2DSequence.js",
+      "export": "Halton2DSequence",
+      "moduleSha256": "735828bd5ad741837a46fc980be41d70b253b77eba86158da35ae24188a5ac80"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Collisions/intersectionInfo.js",
       "export": "IntersectionInfo",
       "moduleSha256": "f3ce98565a7a7e5fad8188ccdb1a0c12cb2ddc265aff9520db07b7ca23b9f7cb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/keyboardEvents.js",
+      "export": "KeyboardEventTypes",
+      "moduleSha256": "e899370df9e58c34452694035bab0f623a7fb9826e6fa19a04b68eedcaa64b66"
     },
     {
       "package": "@babylonjs/core",
@@ -190,6 +220,18 @@
       "module": "@babylonjs/core/Misc/lazy.js",
       "export": "Lazy",
       "moduleSha256": "16d572644a8699f1f60c8a2a3ce90f5488a32f998aa1cfce498bbe6111e97aa8"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Lights/lightConstants.js",
+      "export": "LightConstants",
+      "moduleSha256": "0521b95a49b2c755d7835709e02b6da0297d41355edd08503c071683bbf99cc7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/logger.js",
+      "export": "Logger",
+      "moduleSha256": "1473ab5093fd523886d81af2f80d4e077ae29b0de0ac90b454cc0574118b9099"
     },
     {
       "package": "@babylonjs/core",
@@ -259,6 +301,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/pointerEvents.js",
+      "export": "PointerEventTypes",
+      "moduleSha256": "b1d04f2ceffc45db5b91342818d43452f8e55126abc4db706b7f2a6e3314c6cd"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/geodesicMesh.js",
       "export": "PolyhedronData",
       "moduleSha256": "a5059445e4ecf51e198bd294338f66595500b7b7ecee5033a73bba76a4359f50"
@@ -280,6 +328,12 @@
       "module": "@babylonjs/core/Misc/performanceMonitor.js",
       "export": "RollingAverage",
       "moduleSha256": "cf49766c58602125c303dd28c962f409653f78e796d670150f15b8ccde1084ec"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent.js",
+      "export": "SceneComponentConstants",
+      "moduleSha256": "1cadedc3df718bb8de48251bf512835bf122f6d22ee2ea839a476a1aecb6e9a2"
     },
     {
       "package": "@babylonjs/core",
@@ -310,6 +364,12 @@
       "module": "@babylonjs/core/Misc/smartArray.js",
       "export": "SmartArray",
       "moduleSha256": "bd024818d86bbce6dc630ee9322cba6b5dda30ef7281293b0503b5b804e97967"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/States/stencilState.js",
+      "export": "StencilState",
+      "moduleSha256": "4d1289604d93444f2bb83feb3b01bc0f024fe670dad665b535178442089d9604"
     },
     {
       "package": "@babylonjs/core",
@@ -373,6 +433,48 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "BackEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "BezierCurveEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "BounceEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "CircleEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "CubicEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "ElasticEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "ExponentialEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Gamepads/gamepad.js",
       "export": "Gamepad",
       "moduleSha256": "26b3e161808a56c713216792829a5a7a365912a1b0ef92fb9e76217fbe9309ca"
@@ -382,6 +484,36 @@
       "module": "@babylonjs/core/Events/keyboardEvents.js",
       "export": "KeyboardInfoPre",
       "moduleSha256": "e899370df9e58c34452694035bab0f623a7fb9826e6fa19a04b68eedcaa64b66"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "PowerEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "QuadraticEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "QuarticEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "QuinticEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing.js",
+      "export": "SineEase",
+      "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
     },
     {
       "package": "@babylonjs/core",

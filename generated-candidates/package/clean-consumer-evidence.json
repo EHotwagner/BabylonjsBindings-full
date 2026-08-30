@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "8d7897aa81812f0c1b4c559221a9a1abc369a5c15fc013ad943610a13a2a27fa"
+    "sha256": "328fca9de60a9de699cb344837458722e07605e2dbae9864fe85bedbe155362b"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,14 +13,21 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "d8b1e9dca4dbe6d6f84789744ccace773cda9f5adc585efb83d16c065173f63d",
+  "emittedProgramSha256": "d9ac51319971225439047838716b736aa870b61441b04cc8f0c01ce0b7b5dd2c",
   "imports": [
     "@babylonjs/core/Animations/animationEvent.js",
     "@babylonjs/core/Animations/animationGroupMask.js",
+    "@babylonjs/core/Animations/easing.js",
     "@babylonjs/core/Buffers/buffer.pure.js",
     "@babylonjs/core/Buffers/bufferUtils.js",
+    "@babylonjs/core/Engines/constants.js",
     "@babylonjs/core/Engines/nullEngine.pure.js",
+    "@babylonjs/core/Events/clipboardEvents.js",
+    "@babylonjs/core/Events/keyboardEvents.js",
+    "@babylonjs/core/Events/pointerEvents.js",
     "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+    "@babylonjs/core/Lights/lightConstants.js",
+    "@babylonjs/core/Maths/halton2DSequence.js",
     "@babylonjs/core/Maths/math.constants.js",
     "@babylonjs/core/Maths/math.vector.pure.js",
     "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js",
@@ -29,12 +36,15 @@
     "@babylonjs/core/Misc/fileTools.pure.js",
     "@babylonjs/core/Misc/gradients.js",
     "@babylonjs/core/Misc/lazy.js",
+    "@babylonjs/core/Misc/logger.js",
     "@babylonjs/core/Misc/smartArray.js",
     "@babylonjs/core/Misc/stringTools.js",
     "@babylonjs/core/ShadersWGSL/clearQuad.vertex.js",
     "@babylonjs/core/States/alphaCullingState.js",
+    "@babylonjs/core/States/stencilState.js",
     "@babylonjs/core/States/stencilStateComposer.js",
     "@babylonjs/core/scene.pure.js",
+    "@babylonjs/core/sceneComponent.js",
     "@babylonjs/loaders/glTF/index.js"
   ],
   "projectReference": false,

@@ -212,6 +212,387 @@ module SimpleClasses =
     [<Import("BitArray", "@babylonjs/core/Misc/bitArray.js")>]
     let BitArray: BitArrayStatic = jsNative
 
+    /// @babylonjs/core/Events/clipboardEvents
+    [<AllowNullLiteral>]
+    type ClipboardEventTypes =
+        interface end
+
+    [<AllowNullLiteral>]
+    type ClipboardEventTypesStatic =
+        [<EmitConstructor>] abstract Create: unit -> ClipboardEventTypes
+        abstract ``COPY``: float with get
+        abstract ``CUT``: float with get
+        abstract ``PASTE``: float with get
+
+    [<Import("ClipboardEventTypes", "@babylonjs/core/Events/clipboardEvents.js")>]
+    let ClipboardEventTypes: ClipboardEventTypesStatic = jsNative
+
+    /// @babylonjs/core/Engines/constants
+    [<AllowNullLiteral>]
+    type Constants =
+        interface end
+
+    [<AllowNullLiteral>]
+    type ConstantsStatic =
+        [<EmitConstructor>] abstract Create: unit -> Constants
+        abstract ``AUTOSAMPLERSUFFIX``: string with get
+        abstract ``DISABLEUA``: string with get
+        abstract ``ALPHA_DISABLE``: float with get
+        abstract ``ALPHA_ADD``: float with get
+        abstract ``ALPHA_COMBINE``: float with get
+        abstract ``ALPHA_SUBTRACT``: float with get
+        abstract ``ALPHA_MULTIPLY``: float with get
+        abstract ``ALPHA_MAXIMIZED``: float with get
+        abstract ``ALPHA_ONEONE``: float with get
+        abstract ``ALPHA_PREMULTIPLIED``: float with get
+        abstract ``ALPHA_PREMULTIPLIED_PORTERDUFF``: float with get
+        abstract ``ALPHA_INTERPOLATE``: float with get
+        abstract ``ALPHA_SCREENMODE``: float with get
+        abstract ``ALPHA_ONEONE_ONEONE``: float with get
+        abstract ``ALPHA_ALPHATOCOLOR``: float with get
+        abstract ``ALPHA_REVERSEONEMINUS``: float with get
+        abstract ``ALPHA_SRC_DSTONEMINUSSRCALPHA``: float with get
+        abstract ``ALPHA_ONEONE_ONEZERO``: float with get
+        abstract ``ALPHA_EXCLUSION``: float with get
+        abstract ``ALPHA_LAYER_ACCUMULATE``: float with get
+        abstract ``ALPHA_MIN``: float with get
+        abstract ``ALPHA_MAX``: float with get
+        abstract ``ALPHA_DUAL_SRC0_ADD_SRC1xDST``: float with get
+        abstract ``ALPHA_REPLACE_COLOR``: float with get
+        abstract ``ALPHA_EQUATION_ADD``: float with get
+        abstract ``ALPHA_EQUATION_SUBSTRACT``: float with get
+        abstract ``ALPHA_EQUATION_REVERSE_SUBTRACT``: float with get
+        abstract ``ALPHA_EQUATION_MAX``: float with get
+        abstract ``ALPHA_EQUATION_MIN``: float with get
+        abstract ``ALPHA_EQUATION_DARKEN``: float with get
+        abstract ``DELAYLOADSTATE_NONE``: float with get
+        abstract ``DELAYLOADSTATE_LOADED``: float with get
+        abstract ``DELAYLOADSTATE_LOADING``: float with get
+        abstract ``DELAYLOADSTATE_NOTLOADED``: float with get
+        abstract ``NEVER``: float with get
+        abstract ``ALWAYS``: float with get
+        abstract ``LESS``: float with get
+        abstract ``EQUAL``: float with get
+        abstract ``LEQUAL``: float with get
+        abstract ``GREATER``: float with get
+        abstract ``GEQUAL``: float with get
+        abstract ``NOTEQUAL``: float with get
+        abstract ``KEEP``: float with get
+        abstract ``ZERO``: float with get
+        abstract ``REPLACE``: float with get
+        abstract ``INCR``: float with get
+        abstract ``DECR``: float with get
+        abstract ``INVERT``: float with get
+        abstract ``INCR_WRAP``: float with get
+        abstract ``DECR_WRAP``: float with get
+        abstract ``TEXTURE_CLAMP_ADDRESSMODE``: float with get
+        abstract ``TEXTURE_WRAP_ADDRESSMODE``: float with get
+        abstract ``TEXTURE_MIRROR_ADDRESSMODE``: float with get
+        abstract ``TEXTURE_REPETITION_NONE``: float with get
+        abstract ``TEXTURE_REPETITION_NOISE_BLEND``: float with get
+        abstract ``TEXTURE_REPETITION_HEX_TILING``: float with get
+        abstract ``TEXTURE_REPETITION_TILE_RANDOMIZATION``: float with get
+        abstract ``TEXTURE_REPETITION_VORONOI_BOMBING``: float with get
+        abstract ``TEXTURE_CREATIONFLAG_STORAGE``: float with get
+        abstract ``TEXTUREFORMAT_ALPHA``: float with get
+        abstract ``TEXTUREFORMAT_LUMINANCE``: float with get
+        abstract ``TEXTUREFORMAT_LUMINANCE_ALPHA``: float with get
+        abstract ``TEXTUREFORMAT_RGB``: float with get
+        abstract ``TEXTUREFORMAT_RGBA``: float with get
+        abstract ``TEXTUREFORMAT_RED``: float with get
+        abstract ``TEXTUREFORMAT_R``: float with get
+        abstract ``TEXTUREFORMAT_R16_UNORM``: float with get
+        abstract ``TEXTUREFORMAT_RG16_UNORM``: float with get
+        abstract ``TEXTUREFORMAT_RGB16_UNORM``: float with get
+        abstract ``TEXTUREFORMAT_RGBA16_UNORM``: float with get
+        abstract ``TEXTUREFORMAT_R16_SNORM``: float with get
+        abstract ``TEXTUREFORMAT_RG16_SNORM``: float with get
+        abstract ``TEXTUREFORMAT_RGB16_SNORM``: float with get
+        abstract ``TEXTUREFORMAT_RGBA16_SNORM``: float with get
+        abstract ``TEXTUREFORMAT_RG``: float with get
+        abstract ``TEXTUREFORMAT_RED_INTEGER``: float with get
+        abstract ``TEXTUREFORMAT_R_INTEGER``: float with get
+        abstract ``TEXTUREFORMAT_RG_INTEGER``: float with get
+        abstract ``TEXTUREFORMAT_RGB_INTEGER``: float with get
+        abstract ``TEXTUREFORMAT_RGBA_INTEGER``: float with get
+        abstract ``TEXTUREFORMAT_BGRA``: float with get
+        abstract ``TEXTUREFORMAT_DEPTH24_STENCIL8``: float with get
+        abstract ``TEXTUREFORMAT_DEPTH32_FLOAT``: float with get
+        abstract ``TEXTUREFORMAT_DEPTH16``: float with get
+        abstract ``TEXTUREFORMAT_DEPTH24``: float with get
+        abstract ``TEXTUREFORMAT_DEPTH24UNORM_STENCIL8``: float with get
+        abstract ``TEXTUREFORMAT_DEPTH32FLOAT_STENCIL8``: float with get
+        abstract ``TEXTUREFORMAT_STENCIL8``: float with get
+        abstract ``TEXTUREFORMAT_UNDEFINED``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_BPTC_UNORM``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB_ALPHA_BPTC_UNORM``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGB_BPTC_SIGNED_FLOAT``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_S3TC_DXT5``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_S3TC_DXT3``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_S3TC_DXT1``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGB_S3TC_DXT1``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB_S3TC_DXT1_EXT``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_4x4``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_5x4``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_5x5``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_6x5``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_6x6``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_8x5``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_8x6``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_8x8``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_10x5``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_10x6``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_10x8``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_10x10``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_12x10``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA_ASTC_12x12``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGB_ETC1_WEBGL``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGB8_ETC2``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ETC2``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_RGBA8_ETC2_EAC``: float with get
+        abstract ``TEXTUREFORMAT_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_BYTE``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_INT``: float with get
+        abstract ``TEXTURETYPE_FLOAT``: float with get
+        abstract ``TEXTURETYPE_HALF_FLOAT``: float with get
+        abstract ``TEXTURETYPE_BYTE``: float with get
+        abstract ``TEXTURETYPE_SHORT``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_SHORT``: float with get
+        abstract ``TEXTURETYPE_INT``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_INTEGER``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_SHORT_4_4_4_4``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_SHORT_5_5_5_1``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_SHORT_5_6_5``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_INT_2_10_10_10_REV``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_INT_24_8``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_INT_10F_11F_11F_REV``: float with get
+        abstract ``TEXTURETYPE_UNSIGNED_INT_5_9_9_9_REV``: float with get
+        abstract ``TEXTURETYPE_FLOAT_32_UNSIGNED_INT_24_8_REV``: float with get
+        abstract ``TEXTURETYPE_UNDEFINED``: float with get
+        abstract ``TEXTURE_2D``: float with get
+        abstract ``TEXTURE_2D_ARRAY``: float with get
+        abstract ``TEXTURE_CUBE_MAP``: float with get
+        abstract ``TEXTURE_CUBE_MAP_ARRAY``: float with get
+        abstract ``TEXTURE_3D``: float with get
+        abstract ``TEXTURE_NEAREST_SAMPLINGMODE``: float with get
+        abstract ``TEXTURE_NEAREST_NEAREST``: float with get
+        abstract ``TEXTURE_BILINEAR_SAMPLINGMODE``: float with get
+        abstract ``TEXTURE_LINEAR_LINEAR``: float with get
+        abstract ``TEXTURE_TRILINEAR_SAMPLINGMODE``: float with get
+        abstract ``TEXTURE_LINEAR_LINEAR_MIPLINEAR``: float with get
+        abstract ``TEXTURE_NEAREST_NEAREST_MIPNEAREST``: float with get
+        abstract ``TEXTURE_NEAREST_LINEAR_MIPNEAREST``: float with get
+        abstract ``TEXTURE_NEAREST_LINEAR_MIPLINEAR``: float with get
+        abstract ``TEXTURE_NEAREST_LINEAR``: float with get
+        abstract ``TEXTURE_NEAREST_NEAREST_MIPLINEAR``: float with get
+        abstract ``TEXTURE_LINEAR_NEAREST_MIPNEAREST``: float with get
+        abstract ``TEXTURE_LINEAR_NEAREST_MIPLINEAR``: float with get
+        abstract ``TEXTURE_LINEAR_LINEAR_MIPNEAREST``: float with get
+        abstract ``TEXTURE_LINEAR_NEAREST``: float with get
+        abstract ``TEXTURE_EXPLICIT_MODE``: float with get
+        abstract ``TEXTURE_SPHERICAL_MODE``: float with get
+        abstract ``TEXTURE_PLANAR_MODE``: float with get
+        abstract ``TEXTURE_CUBIC_MODE``: float with get
+        abstract ``TEXTURE_PROJECTION_MODE``: float with get
+        abstract ``TEXTURE_SKYBOX_MODE``: float with get
+        abstract ``TEXTURE_INVCUBIC_MODE``: float with get
+        abstract ``TEXTURE_EQUIRECTANGULAR_MODE``: float with get
+        abstract ``TEXTURE_FIXED_EQUIRECTANGULAR_MODE``: float with get
+        abstract ``TEXTURE_FIXED_EQUIRECTANGULAR_MIRRORED_MODE``: float with get
+        abstract ``TEXTURE_FILTERING_QUALITY_OFFLINE``: float with get
+        abstract ``TEXTURE_FILTERING_QUALITY_HIGH``: float with get
+        abstract ``TEXTURE_FILTERING_QUALITY_MEDIUM``: float with get
+        abstract ``TEXTURE_FILTERING_QUALITY_LOW``: float with get
+        abstract ``SCALEMODE_FLOOR``: float with get
+        abstract ``SCALEMODE_NEAREST``: float with get
+        abstract ``SCALEMODE_CEILING``: float with get
+        abstract ``MATERIAL_TextureDirtyFlag``: float with get
+        abstract ``MATERIAL_LightDirtyFlag``: float with get
+        abstract ``MATERIAL_FresnelDirtyFlag``: float with get
+        abstract ``MATERIAL_AttributesDirtyFlag``: float with get
+        abstract ``MATERIAL_MiscDirtyFlag``: float with get
+        abstract ``MATERIAL_PrePassDirtyFlag``: float with get
+        abstract ``MATERIAL_ImageProcessingDirtyFlag``: float with get
+        abstract ``MATERIAL_AllDirtyFlag``: float with get
+        abstract ``MATERIAL_TriangleFillMode``: float with get
+        abstract ``MATERIAL_WireFrameFillMode``: float with get
+        abstract ``MATERIAL_PointFillMode``: float with get
+        abstract ``MATERIAL_PointListDrawMode``: float with get
+        abstract ``MATERIAL_LineListDrawMode``: float with get
+        abstract ``MATERIAL_LineLoopDrawMode``: float with get
+        abstract ``MATERIAL_LineStripDrawMode``: float with get
+        abstract ``MATERIAL_TriangleStripDrawMode``: float with get
+        abstract ``MATERIAL_TriangleFanDrawMode``: float with get
+        abstract ``MATERIAL_ClockWiseSideOrientation``: float with get
+        abstract ``MATERIAL_CounterClockWiseSideOrientation``: float with get
+        abstract ``MATERIAL_DIFFUSE_MODEL_E_OREN_NAYAR``: float with get
+        abstract ``MATERIAL_DIFFUSE_MODEL_BURLEY``: float with get
+        abstract ``MATERIAL_DIFFUSE_MODEL_LAMBERT``: float with get
+        abstract ``MATERIAL_DIFFUSE_MODEL_LEGACY``: float with get
+        abstract ``MATERIAL_DIELECTRIC_SPECULAR_MODEL_GLTF``: float with get
+        abstract ``MATERIAL_DIELECTRIC_SPECULAR_MODEL_OPENPBR``: float with get
+        abstract ``MATERIAL_CONDUCTOR_SPECULAR_MODEL_GLTF``: float with get
+        abstract ``MATERIAL_CONDUCTOR_SPECULAR_MODEL_OPENPBR``: float with get
+        abstract ``ACTION_NothingTrigger``: float with get
+        abstract ``ACTION_OnPickTrigger``: float with get
+        abstract ``ACTION_OnLeftPickTrigger``: float with get
+        abstract ``ACTION_OnRightPickTrigger``: float with get
+        abstract ``ACTION_OnCenterPickTrigger``: float with get
+        abstract ``ACTION_OnPickDownTrigger``: float with get
+        abstract ``ACTION_OnDoublePickTrigger``: float with get
+        abstract ``ACTION_OnPickUpTrigger``: float with get
+        abstract ``ACTION_OnPickOutTrigger``: float with get
+        abstract ``ACTION_OnLongPressTrigger``: float with get
+        abstract ``ACTION_OnPointerOverTrigger``: float with get
+        abstract ``ACTION_OnPointerOutTrigger``: float with get
+        abstract ``ACTION_OnEveryFrameTrigger``: float with get
+        abstract ``ACTION_OnIntersectionEnterTrigger``: float with get
+        abstract ``ACTION_OnIntersectionExitTrigger``: float with get
+        abstract ``ACTION_OnKeyDownTrigger``: float with get
+        abstract ``ACTION_OnKeyUpTrigger``: float with get
+        abstract ``PARTICLES_BILLBOARDMODE_Y``: float with get
+        abstract ``PARTICLES_BILLBOARDMODE_ALL``: float with get
+        abstract ``PARTICLES_BILLBOARDMODE_STRETCHED``: float with get
+        abstract ``PARTICLES_BILLBOARDMODE_STRETCHED_LOCAL``: float with get
+        abstract ``MESHES_CULLINGSTRATEGY_STANDARD``: float with get
+        abstract ``MESHES_CULLINGSTRATEGY_BOUNDINGSPHERE_ONLY``: float with get
+        abstract ``MESHES_CULLINGSTRATEGY_OPTIMISTIC_INCLUSION``: float with get
+        abstract ``MESHES_CULLINGSTRATEGY_OPTIMISTIC_INCLUSION_THEN_BSPHERE_ONLY``: float with get
+        abstract ``SCENELOADER_NO_LOGGING``: float with get
+        abstract ``SCENELOADER_MINIMAL_LOGGING``: float with get
+        abstract ``SCENELOADER_SUMMARY_LOGGING``: float with get
+        abstract ``SCENELOADER_DETAILED_LOGGING``: float with get
+        abstract ``PREPASS_IRRADIANCE_LEGACY_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_POSITION_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_VELOCITY_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_REFLECTIVITY_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_COLOR_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_DEPTH_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_NORMAL_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_ALBEDO_SQRT_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_WORLD_NORMAL_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_LOCAL_POSITION_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_SCREENSPACE_DEPTH_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_VELOCITY_LINEAR_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_ALBEDO_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_NORMALIZED_VIEW_DEPTH_TEXTURE_TYPE``: float with get
+        abstract ``PREPASS_IRRADIANCE_TEXTURE_TYPE``: float with get
+        abstract ``BUFFER_CREATIONFLAG_READ``: float with get
+        abstract ``BUFFER_CREATIONFLAG_WRITE``: float with get
+        abstract ``BUFFER_CREATIONFLAG_READWRITE``: float with get
+        abstract ``BUFFER_CREATIONFLAG_UNIFORM``: float with get
+        abstract ``BUFFER_CREATIONFLAG_VERTEX``: float with get
+        abstract ``BUFFER_CREATIONFLAG_INDEX``: float with get
+        abstract ``BUFFER_CREATIONFLAG_STORAGE``: float with get
+        abstract ``BUFFER_CREATIONFLAG_INDIRECT``: float with get
+        abstract ``RENDERPASS_MAIN``: float with get
+        abstract ``INPUT_ALT_KEY``: float with get
+        abstract ``INPUT_CTRL_KEY``: float with get
+        abstract ``INPUT_META_KEY1``: float with get
+        abstract ``INPUT_META_KEY2``: float with get
+        abstract ``INPUT_META_KEY3``: float with get
+        abstract ``INPUT_SHIFT_KEY``: float with get
+        abstract ``SNAPSHOTRENDERING_STANDARD``: float with get
+        abstract ``SNAPSHOTRENDERING_FAST``: float with get
+        abstract ``PERSPECTIVE_CAMERA``: float with get
+        abstract ``ORTHOGRAPHIC_CAMERA``: float with get
+        abstract ``FOVMODE_VERTICAL_FIXED``: float with get
+        abstract ``FOVMODE_HORIZONTAL_FIXED``: float with get
+        abstract ``RIG_MODE_NONE``: float with get
+        abstract ``RIG_MODE_STEREOSCOPIC_ANAGLYPH``: float with get
+        abstract ``RIG_MODE_STEREOSCOPIC_SIDEBYSIDE_PARALLEL``: float with get
+        abstract ``RIG_MODE_STEREOSCOPIC_SIDEBYSIDE_CROSSEYED``: float with get
+        abstract ``RIG_MODE_STEREOSCOPIC_OVERUNDER``: float with get
+        abstract ``RIG_MODE_STEREOSCOPIC_INTERLACED``: float with get
+        abstract ``RIG_MODE_VR``: float with get
+        abstract ``RIG_MODE_CUSTOM``: float with get
+        abstract ``MAX_SUPPORTED_UV_SETS``: float with get
+        abstract ``GL_ALPHA_EQUATION_ADD``: float with get
+        abstract ``GL_ALPHA_EQUATION_MIN``: float with get
+        abstract ``GL_ALPHA_EQUATION_MAX``: float with get
+        abstract ``GL_ALPHA_EQUATION_SUBTRACT``: float with get
+        abstract ``GL_ALPHA_EQUATION_REVERSE_SUBTRACT``: float with get
+        abstract ``GL_ALPHA_FUNCTION_SRC``: float with get
+        abstract ``GL_ALPHA_FUNCTION_ONE_MINUS_SRC_COLOR``: float with get
+        abstract ``GL_ALPHA_FUNCTION_SRC_ALPHA``: float with get
+        abstract ``GL_ALPHA_FUNCTION_ONE_MINUS_SRC_ALPHA``: float with get
+        abstract ``GL_ALPHA_FUNCTION_DST_ALPHA``: float with get
+        abstract ``GL_ALPHA_FUNCTION_ONE_MINUS_DST_ALPHA``: float with get
+        abstract ``GL_ALPHA_FUNCTION_DST_COLOR``: float with get
+        abstract ``GL_ALPHA_FUNCTION_ONE_MINUS_DST_COLOR``: float with get
+        abstract ``GL_ALPHA_FUNCTION_SRC_ALPHA_SATURATED``: float with get
+        abstract ``GL_ALPHA_FUNCTION_CONSTANT_COLOR``: float with get
+        abstract ``GL_ALPHA_FUNCTION_ONE_MINUS_CONSTANT_COLOR``: float with get
+        abstract ``GL_ALPHA_FUNCTION_CONSTANT_ALPHA``: float with get
+        abstract ``GL_ALPHA_FUNCTION_ONE_MINUS_CONSTANT_ALPHA``: float with get
+        abstract ``GL_ALPHA_FUNCTION_SRC1_COLOR``: float with get
+        abstract ``GL_ALPHA_FUNCTION_ONE_MINUS_SRC1_COLOR``: float with get
+        abstract ``GL_ALPHA_FUNCTION_SRC1_ALPHA``: float with get
+        abstract ``GL_ALPHA_FUNCTION_ONE_MINUS_SRC1_ALPHA``: float with get
+        abstract ``SnippetUrl``: string with get, set
+        abstract ``FOGMODE_NONE``: float with get, set
+        abstract ``FOGMODE_EXP``: float with get, set
+        abstract ``FOGMODE_EXP2``: float with get, set
+        abstract ``FOGMODE_LINEAR``: float with get, set
+        abstract ``BYTE``: float with get, set
+        abstract ``UNSIGNED_BYTE``: float with get, set
+        abstract ``SHORT``: float with get, set
+        abstract ``UNSIGNED_SHORT``: float with get, set
+        abstract ``INT``: float with get, set
+        abstract ``UNSIGNED_INT``: float with get, set
+        abstract ``FLOAT``: float with get, set
+        abstract ``HALF_FLOAT``: float with get, set
+        abstract ``PositionKind``: string with get, set
+        abstract ``NormalKind``: string with get, set
+        abstract ``TangentKind``: string with get, set
+        abstract ``UVKind``: string with get, set
+        abstract ``UV2Kind``: string with get, set
+        abstract ``UV3Kind``: string with get, set
+        abstract ``UV4Kind``: string with get, set
+        abstract ``UV5Kind``: string with get, set
+        abstract ``UV6Kind``: string with get, set
+        abstract ``ColorKind``: string with get, set
+        abstract ``ColorInstanceKind``: string with get, set
+        abstract ``MatricesIndicesKind``: string with get, set
+        abstract ``MatricesWeightsKind``: string with get, set
+        abstract ``MatricesIndicesExtraKind``: string with get, set
+        abstract ``MatricesWeightsExtraKind``: string with get, set
+        abstract ``ANIMATIONTYPE_FLOAT``: float with get
+        abstract ``ANIMATIONTYPE_VECTOR3``: float with get
+        abstract ``ANIMATIONTYPE_QUATERNION``: float with get
+        abstract ``ANIMATIONTYPE_MATRIX``: float with get
+        abstract ``ANIMATIONTYPE_COLOR3``: float with get
+        abstract ``ANIMATIONTYPE_COLOR4``: float with get
+        abstract ``ANIMATIONTYPE_VECTOR2``: float with get
+        abstract ``ANIMATIONTYPE_SIZE``: float with get
+        abstract ``ShadowMinZ``: float with get, set
+        abstract ``ShadowMaxZ``: float with get, set
+        abstract ``OUTLINELAYER_SAMPLING_TRIDIRECTIONAL``: float with get
+        abstract ``OUTLINELAYER_SAMPLING_OCTADIRECTIONAL``: float with get
+
+    [<Import("Constants", "@babylonjs/core/Engines/constants.js")>]
+    let Constants: ConstantsStatic = jsNative
+
     /// Uncurried function-valued argument used by Database.
     type DatabaseConstructor14Parameter2Callback = System.Func<bool, obj>
 
@@ -364,6 +745,24 @@ module SimpleClasses =
     [<Import("DynamicFloat32Array", "@babylonjs/core/Misc/PerformanceViewer/dynamicFloat32Array.js")>]
     let DynamicFloat32Array: DynamicFloat32ArrayStatic = jsNative
 
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type EasingFunction =
+        abstract ``setEasingMode``: ``easingMode``: float -> unit
+        abstract ``getEasingMode``: unit -> float
+        abstract ``easeInCore``: ``gradient``: float -> float
+        abstract ``ease``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type EasingFunctionStatic =
+        [<EmitConstructor>] abstract Create: unit -> EasingFunction
+        abstract ``EASINGMODE_EASEIN``: float with get
+        abstract ``EASINGMODE_EASEOUT``: float with get
+        abstract ``EASINGMODE_EASEINOUT``: float with get
+
+    [<Import("EasingFunction", "@babylonjs/core/Animations/easing.js")>]
+    let EasingFunction: EasingFunctionStatic = jsNative
+
     /// @babylonjs/core/Events/deviceInputEvents
     [<AllowNullLiteral>]
     type EventConstants =
@@ -478,6 +877,22 @@ module SimpleClasses =
     [<Import("GradientHelper", "@babylonjs/core/Misc/gradients.js")>]
     let GradientHelper: GradientHelperStatic = jsNative
 
+    /// @babylonjs/core/Maths/halton2DSequence
+    [<AllowNullLiteral>]
+    type Halton2DSequence =
+        abstract ``x``: float with get
+        abstract ``y``: float with get
+        abstract ``regenerate``: ``numSamples``: float -> unit
+        abstract ``setDimensions``: ``width``: float * ``height``: float -> unit
+        abstract ``next``: unit -> unit
+
+    [<AllowNullLiteral>]
+    type Halton2DSequenceStatic =
+        [<EmitConstructor>] abstract Create: ``numSamples``: float * ?``baseX``: float * ?``baseY``: float * ?``width``: float * ?``height``: float -> Halton2DSequence
+
+    [<Import("Halton2DSequence", "@babylonjs/core/Maths/halton2DSequence.js")>]
+    let Halton2DSequence: Halton2DSequenceStatic = jsNative
+
     /// @babylonjs/core/Collisions/intersectionInfo
     [<AllowNullLiteral>]
     type IntersectionInfo =
@@ -494,6 +909,20 @@ module SimpleClasses =
 
     [<Import("IntersectionInfo", "@babylonjs/core/Collisions/intersectionInfo.js")>]
     let IntersectionInfo: IntersectionInfoStatic = jsNative
+
+    /// @babylonjs/core/Events/keyboardEvents
+    [<AllowNullLiteral>]
+    type KeyboardEventTypes =
+        interface end
+
+    [<AllowNullLiteral>]
+    type KeyboardEventTypesStatic =
+        [<EmitConstructor>] abstract Create: unit -> KeyboardEventTypes
+        abstract ``KEYDOWN``: float with get
+        abstract ``KEYUP``: float with get
+
+    [<Import("KeyboardEventTypes", "@babylonjs/core/Events/keyboardEvents.js")>]
+    let KeyboardEventTypes: KeyboardEventTypesStatic = jsNative
 
     /// @babylonjs/core/Events/keyboardEvents
     [<AllowNullLiteral>]
@@ -522,6 +951,83 @@ module SimpleClasses =
 
     [<Import("Lazy", "@babylonjs/core/Misc/lazy.js")>]
     let Lazy: LazyStatic = jsNative
+
+    /// @babylonjs/core/Lights/lightConstants
+    [<AllowNullLiteral>]
+    type LightConstants =
+        interface end
+
+    [<AllowNullLiteral>]
+    type LightConstantsStatic =
+        [<EmitConstructor>] abstract Create: unit -> LightConstants
+        abstract ``FALLOFF_DEFAULT``: float with get
+        abstract ``FALLOFF_PHYSICAL``: float with get
+        abstract ``FALLOFF_GLTF``: float with get
+        abstract ``FALLOFF_STANDARD``: float with get
+        abstract ``LIGHTMAP_DEFAULT``: float with get
+        abstract ``LIGHTMAP_SPECULAR``: float with get
+        abstract ``LIGHTMAP_SHADOWSONLY``: float with get
+        abstract ``INTENSITYMODE_AUTOMATIC``: float with get
+        abstract ``INTENSITYMODE_LUMINOUSPOWER``: float with get
+        abstract ``INTENSITYMODE_LUMINOUSINTENSITY``: float with get
+        abstract ``INTENSITYMODE_ILLUMINANCE``: float with get
+        abstract ``INTENSITYMODE_LUMINANCE``: float with get
+        abstract ``LIGHTTYPEID_POINTLIGHT``: float with get
+        abstract ``LIGHTTYPEID_DIRECTIONALLIGHT``: float with get
+        abstract ``LIGHTTYPEID_SPOTLIGHT``: float with get
+        abstract ``LIGHTTYPEID_HEMISPHERICLIGHT``: float with get
+        abstract ``LIGHTTYPEID_RECT_AREALIGHT``: float with get
+        abstract ``LIGHTTYPEID_CLUSTERED_CONTAINER``: float with get
+        abstract ``CompareLightsPriority``: ``a``: BabylonjsBindings.SimpleInterfaces.ISortableLight * ``b``: BabylonjsBindings.SimpleInterfaces.ISortableLight -> float
+
+    [<Import("LightConstants", "@babylonjs/core/Lights/lightConstants.js")>]
+    let LightConstants: LightConstantsStatic = jsNative
+
+    /// Function-valued Logger.OnNewCacheEntry property.
+    [<AllowNullLiteral>]
+    type LoggerOnNewCacheEntryCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``entry``: string -> unit
+
+    /// Function-valued Logger.Log property.
+    [<AllowNullLiteral>]
+    type LoggerLogCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``message``: U2<string, ResizeArray<obj>> * ?``limit``: float -> unit
+
+    /// Function-valued Logger.Warn property.
+    [<AllowNullLiteral>]
+    type LoggerWarnCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``message``: U2<string, ResizeArray<obj>> * ?``limit``: float -> unit
+
+    /// Function-valued Logger.Error property.
+    [<AllowNullLiteral>]
+    type LoggerErrorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``message``: U2<string, ResizeArray<obj>> * ?``limit``: float -> unit
+
+    /// @babylonjs/core/Misc/logger
+    [<AllowNullLiteral>]
+    type Logger =
+        interface end
+
+    [<AllowNullLiteral>]
+    type LoggerStatic =
+        [<EmitConstructor>] abstract Create: unit -> Logger
+        abstract ``NoneLogLevel``: float with get
+        abstract ``MessageLogLevel``: float with get
+        abstract ``WarningLogLevel``: float with get
+        abstract ``ErrorLogLevel``: float with get
+        abstract ``AllLogLevel``: float with get
+        abstract ``MessageLimitReached``: string with get, set
+        abstract ``errorsCount``: float with get, set
+        abstract ``OnNewCacheEntry``: LoggerOnNewCacheEntryCallback with get, set
+        abstract ``Log``: LoggerLogCallback with get, set
+        abstract ``Warn``: LoggerWarnCallback with get, set
+        abstract ``Error``: LoggerErrorCallback with get, set
+        abstract ``ClearLogCache``: unit -> unit
+        abstract ``LogCache``: string with get
+        abstract ``LogLevels``: float with set
+
+    [<Import("Logger", "@babylonjs/core/Misc/logger.js")>]
+    let Logger: LoggerStatic = jsNative
 
     /// @babylonjs/core/Materials/materialFlags
     [<AllowNullLiteral>]
@@ -731,6 +1237,25 @@ module SimpleClasses =
     [<Import("PhysicsVortexEventOptions", "@babylonjs/core/Physics/physicsHelper.js")>]
     let PhysicsVortexEventOptions: PhysicsVortexEventOptionsStatic = jsNative
 
+    /// @babylonjs/core/Events/pointerEvents
+    [<AllowNullLiteral>]
+    type PointerEventTypes =
+        interface end
+
+    [<AllowNullLiteral>]
+    type PointerEventTypesStatic =
+        [<EmitConstructor>] abstract Create: unit -> PointerEventTypes
+        abstract ``POINTERDOWN``: float with get
+        abstract ``POINTERUP``: float with get
+        abstract ``POINTERMOVE``: float with get
+        abstract ``POINTERWHEEL``: float with get
+        abstract ``POINTERPICK``: float with get
+        abstract ``POINTERTAP``: float with get
+        abstract ``POINTERDOUBLETAP``: float with get
+
+    [<Import("PointerEventTypes", "@babylonjs/core/Events/pointerEvents.js")>]
+    let PointerEventTypes: PointerEventTypesStatic = jsNative
+
     /// @babylonjs/core/Meshes/geodesicMesh
     [<AllowNullLiteral>]
     type PolyhedronData =
@@ -797,6 +1322,83 @@ module SimpleClasses =
 
     [<Import("RollingAverage", "@babylonjs/core/Misc/performanceMonitor.js")>]
     let RollingAverage: RollingAverageStatic = jsNative
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type SceneComponentConstants =
+        interface end
+
+    [<AllowNullLiteral>]
+    type SceneComponentConstantsStatic =
+        [<EmitConstructor>] abstract Create: unit -> SceneComponentConstants
+        abstract ``NAME_EFFECTLAYER``: string with get
+        abstract ``NAME_LAYER``: string with get
+        abstract ``NAME_LENSFLARESYSTEM``: string with get
+        abstract ``NAME_BOUNDINGBOXRENDERER``: string with get
+        abstract ``NAME_PARTICLESYSTEM``: string with get
+        abstract ``NAME_GAMEPAD``: string with get
+        abstract ``NAME_SIMPLIFICATIONQUEUE``: string with get
+        abstract ``NAME_GEOMETRYBUFFERRENDERER``: string with get
+        abstract ``NAME_PREPASSRENDERER``: string with get
+        abstract ``NAME_DEPTHRENDERER``: string with get
+        abstract ``NAME_DEPTHPEELINGRENDERER``: string with get
+        abstract ``NAME_POSTPROCESSRENDERPIPELINEMANAGER``: string with get
+        abstract ``NAME_SPRITE``: string with get
+        abstract ``NAME_SUBSURFACE``: string with get
+        abstract ``NAME_OUTLINERENDERER``: string with get
+        abstract ``NAME_PROCEDURALTEXTURE``: string with get
+        abstract ``NAME_SHADOWGENERATOR``: string with get
+        abstract ``NAME_OCTREE``: string with get
+        abstract ``NAME_PHYSICSENGINE``: string with get
+        abstract ``NAME_AUDIO``: string with get
+        abstract ``NAME_FLUIDRENDERER``: string with get
+        abstract ``NAME_IBLCDFGENERATOR``: string with get
+        abstract ``NAME_CLUSTEREDLIGHTING``: string with get
+        abstract ``STEP_ISREADYFORMESH_EFFECTLAYER``: float with get
+        abstract ``STEP_ISREADYFORMESH_DEPTHRENDERER``: float with get
+        abstract ``STEP_BEFOREEVALUATEACTIVEMESH_BOUNDINGBOXRENDERER``: float with get
+        abstract ``STEP_EVALUATESUBMESH_BOUNDINGBOXRENDERER``: float with get
+        abstract ``STEP_PREACTIVEMESH_BOUNDINGBOXRENDERER``: float with get
+        abstract ``STEP_CAMERADRAWRENDERTARGET_EFFECTLAYER``: float with get
+        abstract ``STEP_BEFORECAMERADRAW_PREPASS``: float with get
+        abstract ``STEP_BEFORECAMERADRAW_EFFECTLAYER``: float with get
+        abstract ``STEP_BEFORECAMERADRAW_LAYER``: float with get
+        abstract ``STEP_BEFORERENDERTARGETDRAW_PREPASS``: float with get
+        abstract ``STEP_BEFORERENDERTARGETDRAW_LAYER``: float with get
+        abstract ``STEP_BEFORERENDERINGMESH_PREPASS``: float with get
+        abstract ``STEP_BEFORERENDERINGMESH_OUTLINE``: float with get
+        abstract ``STEP_AFTERRENDERINGMESH_PREPASS``: float with get
+        abstract ``STEP_AFTERRENDERINGMESH_OUTLINE``: float with get
+        abstract ``STEP_AFTERRENDERINGGROUPDRAW_EFFECTLAYER_DRAW``: float with get
+        abstract ``STEP_AFTERRENDERINGGROUPDRAW_BOUNDINGBOXRENDERER``: float with get
+        abstract ``STEP_BEFORECAMERAUPDATE_SIMPLIFICATIONQUEUE``: float with get
+        abstract ``STEP_BEFORECLEAR_PROCEDURALTEXTURE``: float with get
+        abstract ``STEP_BEFORECLEAR_PREPASS``: float with get
+        abstract ``STEP_BEFORERENDERTARGETCLEAR_PREPASS``: float with get
+        abstract ``STEP_AFTERRENDERTARGETDRAW_PREPASS``: float with get
+        abstract ``STEP_AFTERRENDERTARGETDRAW_LAYER``: float with get
+        abstract ``STEP_AFTERCAMERADRAW_PREPASS``: float with get
+        abstract ``STEP_AFTERCAMERADRAW_EFFECTLAYER``: float with get
+        abstract ``STEP_AFTERCAMERADRAW_LENSFLARESYSTEM``: float with get
+        abstract ``STEP_AFTERCAMERADRAW_EFFECTLAYER_DRAW``: float with get
+        abstract ``STEP_AFTERCAMERADRAW_LAYER``: float with get
+        abstract ``STEP_AFTERCAMERADRAW_FLUIDRENDERER``: float with get
+        abstract ``STEP_AFTERCAMERAPOSTPROCESS_LAYER``: float with get
+        abstract ``STEP_AFTERRENDERTARGETPOSTPROCESS_LAYER``: float with get
+        abstract ``STEP_AFTERRENDER_AUDIO``: float with get
+        abstract ``STEP_GATHERRENDERTARGETS_DEPTHRENDERER``: float with get
+        abstract ``STEP_GATHERRENDERTARGETS_GEOMETRYBUFFERRENDERER``: float with get
+        abstract ``STEP_GATHERRENDERTARGETS_SHADOWGENERATOR``: float with get
+        abstract ``STEP_GATHERRENDERTARGETS_POSTPROCESSRENDERPIPELINEMANAGER``: float with get
+        abstract ``STEP_GATHERACTIVECAMERARENDERTARGETS_DEPTHRENDERER``: float with get
+        abstract ``STEP_GATHERACTIVECAMERARENDERTARGETS_FLUIDRENDERER``: float with get
+        abstract ``STEP_GATHERACTIVECAMERARENDERTARGETS_CLUSTEREDLIGHTING``: float with get
+        abstract ``STEP_POINTERMOVE_SPRITE``: float with get
+        abstract ``STEP_POINTERDOWN_SPRITE``: float with get
+        abstract ``STEP_POINTERUP_SPRITE``: float with get
+
+    [<Import("SceneComponentConstants", "@babylonjs/core/sceneComponent.js")>]
+    let SceneComponentConstants: SceneComponentConstantsStatic = jsNative
 
     /// @babylonjs/core/Loading/sceneLoaderFlags
     [<AllowNullLiteral>]
@@ -897,6 +1499,45 @@ module SimpleClasses =
 
     [<Import("SmartArray", "@babylonjs/core/Misc/smartArray.js")>]
     let SmartArray: SmartArrayStatic = jsNative
+
+    /// @babylonjs/core/States/stencilState
+    [<AllowNullLiteral>]
+    type StencilState =
+        abstract ``reset``: unit -> unit
+        abstract ``func``: float with get, set
+        abstract ``backFunc``: float with get, set
+        abstract ``funcRef``: float with get, set
+        abstract ``funcMask``: float with get, set
+        abstract ``opStencilFail``: float with get, set
+        abstract ``opDepthFail``: float with get, set
+        abstract ``opStencilDepthPass``: float with get, set
+        abstract ``backOpStencilFail``: float with get, set
+        abstract ``backOpDepthFail``: float with get, set
+        abstract ``backOpStencilDepthPass``: float with get, set
+        abstract ``mask``: float with get, set
+        abstract ``enabled``: bool with get, set
+        abstract ``stencilFunc``: float with get, set
+        abstract ``stencilBackFunc``: float with get, set
+        abstract ``stencilFuncRef``: float with get, set
+        abstract ``stencilFuncMask``: float with get, set
+        abstract ``stencilOpStencilFail``: float with get, set
+        abstract ``stencilOpDepthFail``: float with get, set
+        abstract ``stencilOpStencilDepthPass``: float with get, set
+        abstract ``stencilBackOpStencilFail``: float with get, set
+        abstract ``stencilBackOpDepthFail``: float with get, set
+        abstract ``stencilBackOpStencilDepthPass``: float with get, set
+        abstract ``stencilMask``: float with get, set
+        abstract ``stencilTest``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type StencilStateStatic =
+        [<EmitConstructor>] abstract Create: unit -> StencilState
+        abstract ``ALWAYS``: float with get
+        abstract ``KEEP``: float with get
+        abstract ``REPLACE``: float with get
+
+    [<Import("StencilState", "@babylonjs/core/States/stencilState.js")>]
+    let StencilState: StencilStateStatic = jsNative
 
     /// @babylonjs/core/States/stencilStateComposer
     [<AllowNullLiteral>]
@@ -1085,6 +1726,114 @@ module SimpleClasses =
     [<Import("WebGPUTintWASM", "@babylonjs/core/Engines/WebGPU/webgpuTintWASM.js")>]
     let WebGPUTintWASM: WebGPUTintWASMStatic = jsNative
 
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type BackEase =
+        inherit EasingFunction
+        abstract ``amplitude``: float with get, set
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type BackEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: ?``amplitude``: float -> BackEase
+
+    [<Import("BackEase", "@babylonjs/core/Animations/easing.js")>]
+    let BackEase: BackEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type BezierCurveEase =
+        inherit EasingFunction
+        abstract ``x1``: float with get, set
+        abstract ``y1``: float with get, set
+        abstract ``x2``: float with get, set
+        abstract ``y2``: float with get, set
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type BezierCurveEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: ?``x1``: float * ?``y1``: float * ?``x2``: float * ?``y2``: float -> BezierCurveEase
+
+    [<Import("BezierCurveEase", "@babylonjs/core/Animations/easing.js")>]
+    let BezierCurveEase: BezierCurveEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type BounceEase =
+        inherit EasingFunction
+        abstract ``bounces``: float with get, set
+        abstract ``bounciness``: float with get, set
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type BounceEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: ?``bounces``: float * ?``bounciness``: float -> BounceEase
+
+    [<Import("BounceEase", "@babylonjs/core/Animations/easing.js")>]
+    let BounceEase: BounceEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type CircleEase =
+        inherit EasingFunction
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type CircleEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: unit -> CircleEase
+
+    [<Import("CircleEase", "@babylonjs/core/Animations/easing.js")>]
+    let CircleEase: CircleEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type CubicEase =
+        inherit EasingFunction
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type CubicEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: unit -> CubicEase
+
+    [<Import("CubicEase", "@babylonjs/core/Animations/easing.js")>]
+    let CubicEase: CubicEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type ElasticEase =
+        inherit EasingFunction
+        abstract ``oscillations``: float with get, set
+        abstract ``springiness``: float with get, set
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type ElasticEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: ?``oscillations``: float * ?``springiness``: float -> ElasticEase
+
+    [<Import("ElasticEase", "@babylonjs/core/Animations/easing.js")>]
+    let ElasticEase: ElasticEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type ExponentialEase =
+        inherit EasingFunction
+        abstract ``exponent``: float with get, set
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type ExponentialEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: ?``exponent``: float -> ExponentialEase
+
+    [<Import("ExponentialEase", "@babylonjs/core/Animations/easing.js")>]
+    let ExponentialEase: ExponentialEaseStatic = jsNative
+
     /// Uncurried function-valued argument used by Gamepad.
     type GamepadMethod22Parameter1Callback = System.Action<StickValues>
 
@@ -1135,6 +1884,77 @@ module SimpleClasses =
 
     [<Import("KeyboardInfoPre", "@babylonjs/core/Events/keyboardEvents.js")>]
     let KeyboardInfoPre: KeyboardInfoPreStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type PowerEase =
+        inherit EasingFunction
+        abstract ``power``: float with get, set
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type PowerEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: ?``power``: float -> PowerEase
+
+    [<Import("PowerEase", "@babylonjs/core/Animations/easing.js")>]
+    let PowerEase: PowerEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type QuadraticEase =
+        inherit EasingFunction
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type QuadraticEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: unit -> QuadraticEase
+
+    [<Import("QuadraticEase", "@babylonjs/core/Animations/easing.js")>]
+    let QuadraticEase: QuadraticEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type QuarticEase =
+        inherit EasingFunction
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type QuarticEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: unit -> QuarticEase
+
+    [<Import("QuarticEase", "@babylonjs/core/Animations/easing.js")>]
+    let QuarticEase: QuarticEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type QuinticEase =
+        inherit EasingFunction
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type QuinticEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: unit -> QuinticEase
+
+    [<Import("QuinticEase", "@babylonjs/core/Animations/easing.js")>]
+    let QuinticEase: QuinticEaseStatic = jsNative
+
+    /// @babylonjs/core/Animations/easing
+    [<AllowNullLiteral>]
+    type SineEase =
+        inherit EasingFunction
+        abstract ``easeInCore``: ``gradient``: float -> float
+
+    [<AllowNullLiteral>]
+    type SineEaseStatic =
+        inherit EasingFunctionStatic
+        [<EmitConstructor>] abstract Create: unit -> SineEase
+
+    [<Import("SineEase", "@babylonjs/core/Animations/easing.js")>]
+    let SineEase: SineEaseStatic = jsNative
 
     /// @babylonjs/core/Misc/smartArray
     [<AllowNullLiteral>]

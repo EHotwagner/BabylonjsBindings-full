@@ -85,6 +85,22 @@ animationEvent.``action``.Invoke(animationEvent.``frame``)
 let factorGradient = FactorGradient.Create(0.5, 2.0)
 let simplificationSettings = SimplificationSettings.Create(0.75, 20.0, optimizeMesh = true)
 let stencilState = StencilStateComposer.Create(true)
+let halton = Halton2DSequence.Create(4.0)
+halton.``next``()
+let easingSamples =
+    [ BackEase.Create().``ease``(0.5)
+      BezierCurveEase.Create().``ease``(0.5)
+      BounceEase.Create().``ease``(0.5)
+      CircleEase.Create().``ease``(0.5)
+      CubicEase.Create().``ease``(0.5)
+      ElasticEase.Create().``ease``(0.5)
+      ExponentialEase.Create().``ease``(0.5)
+      PowerEase.Create().``ease``(0.5)
+      QuadraticEase.Create().``ease``(0.5)
+      QuarticEase.Create().``ease``(0.5)
+      QuinticEase.Create().``ease``(0.5)
+      SineEase.Create().``ease``(0.5) ]
+let stencilDefaults = StencilState.Create()
 let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
 let shortIndices: TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
@@ -146,6 +162,16 @@ if animationEventFrame <> 12.0 || animationEvent.``onlyOnce`` <> Some true then
     failwith "Babylon undefined-union callback class was not preserved"
 if factorGradient.``getFactor``() <> 2.0 || simplificationSettings.``optimizeMesh`` <> Some true || not stencilState.``isDirty`` then
     failwith "Babylon undefined-union class state was not preserved"
+if Constants.``AUTOSAMPLERSUFFIX`` <> "Sampler" || Constants.``ALPHA_ADD`` <> 1.0 || SceneComponentConstants.``NAME_LAYER`` <> "Layer" then
+    failwith "Babylon inferred literal class constants were not preserved"
+if ClipboardEventTypes.``COPY`` <> 1.0 || KeyboardEventTypes.``KEYDOWN`` <> 1.0 || PointerEventTypes.``POINTERDOUBLETAP`` <> 64.0 then
+    failwith "Babylon inferred event constants were not preserved"
+if LightConstants.``FALLOFF_PHYSICAL`` <> 1.0 || Logger.``AllLogLevel`` <> 7.0 || StencilState.``KEEP`` <> 7680.0 then
+    failwith "Babylon inferred subsystem constants were not preserved"
+if halton.``x`` = 0.0 && halton.``y`` = 0.0 then
+    failwith "Babylon inferred readonly instance state was not preserved"
+if easingSamples.Length <> 12 || (easingSamples |> List.exists System.Double.IsNaN) || stencilDefaults.``func`` <> StencilState.``ALWAYS`` then
+    failwith "Babylon inferred-literal class dependency closure was not preserved"
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
 if indicesNeed32Bits then

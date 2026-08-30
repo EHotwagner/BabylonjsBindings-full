@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "7702b6dacf9e59cf0ebb2be937ace857cee28c8b2f00387fd168effdaeeaecf1",
+  "proposalSha256": "7d140e42093ae4c2ef4499c580adb25b41922014b78d0fdd608a372d8505bc56",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -116,6 +116,24 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/clipboardEvents",
+      "name": "ClipboardEventTypes",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ClipboardEventTypes",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/constants",
+      "name": "Constants",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Constants",
+      "memberCount": 355
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Offline/database.pure",
       "name": "Database",
       "kind": "class",
@@ -188,6 +206,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "EasingFunction",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EasingFunction",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Events/deviceInputEvents",
       "name": "EventConstants",
       "kind": "class",
@@ -251,12 +278,30 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/halton2DSequence",
+      "name": "Halton2DSequence",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Halton2DSequence",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Collisions/intersectionInfo",
       "name": "IntersectionInfo",
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.IntersectionInfo",
       "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/keyboardEvents",
+      "name": "KeyboardEventTypes",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KeyboardEventTypes",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",
@@ -276,6 +321,24 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Lazy",
       "typeParameterCount": 1,
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Lights/lightConstants",
+      "name": "LightConstants",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.LightConstants",
+      "memberCount": 20
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/logger",
+      "name": "Logger",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Logger",
+      "memberCount": 15
     },
     {
       "package": "@babylonjs/core",
@@ -378,6 +441,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/pointerEvents",
+      "name": "PointerEventTypes",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PointerEventTypes",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/geodesicMesh",
       "name": "PolyhedronData",
       "kind": "class",
@@ -412,6 +484,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RollingAverage",
       "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "SceneComponentConstants",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SceneComponentConstants",
+      "memberCount": 66
     },
     {
       "package": "@babylonjs/core",
@@ -458,6 +539,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SmartArray",
       "typeParameterCount": 1,
       "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/States/stencilState",
+      "name": "StencilState",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StencilState",
+      "memberCount": 29
     },
     {
       "package": "@babylonjs/core",
@@ -551,6 +641,69 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "BackEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BackEase",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "BezierCurveEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BezierCurveEase",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "BounceEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BounceEase",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "CircleEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CircleEase",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "CubicEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CubicEase",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "ElasticEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ElasticEase",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "ExponentialEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ExponentialEase",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Gamepads/gamepad",
       "name": "Gamepad",
       "kind": "class",
@@ -566,6 +719,51 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KeyboardInfoPre",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "PowerEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PowerEase",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "QuadraticEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuadraticEase",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "QuarticEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuarticEase",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "QuinticEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuinticEase",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/easing",
+      "name": "SineEase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SineEase",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
