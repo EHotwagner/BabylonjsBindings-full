@@ -198,6 +198,31 @@ if observer.IsNone || not (observableA.``hasObservers``()) || observedValues.Cou
 if not thinAnimationEnded || thinSprite.``animationStarted`` then
     failwith "Babylon nullable callback class method was not preserved"
 multiObserver.``dispose``()
+let externalDefineValue: MaterialDefinesConstructor19Parameter1ObjectValue1Object =
+    createObj [ "type" ==> "boolean"; "default" ==> false ] |> unbox
+let externalDefines: MaterialDefinesConstructor19Parameter1Object =
+    createObj [ "CUSTOM" ==> externalDefineValue ] |> unbox
+let materialDefines = MaterialDefines.Create(externalDefines)
+materialDefines.["CUSTOM"] <- box true
+materialDefines.["INSTANCESCOLOR"] <- box true
+let instanceAttributes = ResizeArray<string>()
+SimpleFunctions.``PrepareAttributesForInstances``.Invoke(instanceAttributes, materialDefines)
+materialDefines.``markAsProcessed``()
+let derivedMaterialDefines: ResizeArray<MaterialDefines> =
+    ResizeArray [
+        DecalMapDefines.Create() :> MaterialDefines
+        ImageProcessingConfigurationDefines.Create() :> MaterialDefines
+        MaterialAnisotropicDefines.Create() :> MaterialDefines
+        MaterialBRDFDefines.Create() :> MaterialDefines
+        MaterialClearCoatDefines.Create() :> MaterialDefines
+        MaterialDetailMapDefines.Create() :> MaterialDefines
+        MaterialGreasedLineDefines.Create() :> MaterialDefines
+        MaterialIridescenceDefines.Create() :> MaterialDefines
+        MaterialSheenDefines.Create() :> MaterialDefines
+        MaterialSubSurfaceDefines.Create() :> MaterialDefines
+    ]
+if unbox<bool> materialDefines.["CUSTOM"] <> true || materialDefines.``isDirty`` || derivedMaterialDefines.Count <> 10 || not (instanceAttributes.Contains("instanceColor")) then
+    failwith "Babylon indexed inline-object material defines closure was not preserved"
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
 if indicesNeed32Bits then

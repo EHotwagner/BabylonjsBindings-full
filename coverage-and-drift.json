@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "f234592f25882e6c9c91486f46b0c5ff14903adea090980204c9cdfa585ec9d2",
+  "maintainedSurfaceDigest": "f3d4ffde134a514d73983e533d5be736237e417dc2c2902c8ac93561c8c76384",
   "summary": {
     "total": 4323,
-    "typed": 1753,
+    "typed": 1765,
     "runtimeOnly": 1,
-    "blocked": 2563,
+    "blocked": 2551,
     "lossy": 6
   },
   "exports": [
@@ -12651,8 +12651,9 @@
       "module": "@babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure",
       "name": "MaterialGreasedLineDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialGreasedLineDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -12709,8 +12710,9 @@
       "module": "@babylonjs/core/Materials/imageProcessingConfiguration.defines",
       "name": "ImageProcessingConfigurationDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ImageProcessingConfigurationDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -12758,8 +12760,9 @@
       "module": "@babylonjs/core/Materials/material.decalMapConfiguration.pure",
       "name": "DecalMapDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DecalMapDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -12783,8 +12786,9 @@
       "module": "@babylonjs/core/Materials/material.detailMapConfiguration",
       "name": "MaterialDetailMapDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialDetailMapDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -12817,8 +12821,9 @@
       "module": "@babylonjs/core/Materials/materialDefines",
       "name": "MaterialDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -12970,8 +12975,9 @@
       "module": "@babylonjs/core/Materials/materialHelper.functions",
       "name": "PrepareAttributesForInstances",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareAttributesForInstances"
     },
     {
       "package": "@babylonjs/core",
@@ -15771,8 +15777,9 @@
       "module": "@babylonjs/core/Materials/PBR/pbrAnisotropicConfiguration",
       "name": "MaterialAnisotropicDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialAnisotropicDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -15811,8 +15818,9 @@
       "module": "@babylonjs/core/Materials/PBR/pbrBRDFConfiguration",
       "name": "MaterialBRDFDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialBRDFDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -15827,8 +15835,9 @@
       "module": "@babylonjs/core/Materials/PBR/pbrClearCoatConfiguration",
       "name": "MaterialClearCoatDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialClearCoatDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -15843,8 +15852,9 @@
       "module": "@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration",
       "name": "MaterialIridescenceDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialIridescenceDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -15911,8 +15921,9 @@
       "module": "@babylonjs/core/Materials/PBR/pbrSheenConfiguration",
       "name": "MaterialSheenDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialSheenDefines"
     },
     {
       "package": "@babylonjs/core",
@@ -15944,8 +15955,9 @@
       "module": "@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration",
       "name": "MaterialSubSurfaceDefines",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialSubSurfaceDefines"
     },
     {
       "package": "@babylonjs/core",

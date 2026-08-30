@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "adc8c3f845c6504238e3822c28103f99002c0a5f7a693888705997bb1a5bc772",
+  "proposalSha256": "05e2b9f5d676be1079864a9869036a041a654427dfd3c59caee82c2156c8016b",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -348,6 +348,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Logger",
       "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialDefines",
+      "name": "MaterialDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialDefines",
+      "memberCount": 32
     },
     {
       "package": "@babylonjs/core",
@@ -704,6 +713,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/material.decalMapConfiguration.pure",
+      "name": "DecalMapDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DecalMapDefines",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "ElasticEase",
       "kind": "class",
@@ -731,12 +749,93 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/imageProcessingConfiguration.defines",
+      "name": "ImageProcessingConfigurationDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ImageProcessingConfigurationDefines",
+      "memberCount": 16
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Events/keyboardEvents",
       "name": "KeyboardInfoPre",
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KeyboardInfoPre",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrAnisotropicConfiguration",
+      "name": "MaterialAnisotropicDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialAnisotropicDefines",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrBRDFConfiguration",
+      "name": "MaterialBRDFDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialBRDFDefines",
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrClearCoatConfiguration",
+      "name": "MaterialClearCoatDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialClearCoatDefines",
+      "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/material.detailMapConfiguration",
+      "name": "MaterialDetailMapDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialDetailMapDefines",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure",
+      "name": "MaterialGreasedLineDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialGreasedLineDefines",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration",
+      "name": "MaterialIridescenceDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialIridescenceDefines",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrSheenConfiguration",
+      "name": "MaterialSheenDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialSheenDefines",
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration",
+      "name": "MaterialSubSurfaceDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialSubSurfaceDefines",
+      "memberCount": 32
     },
     {
       "package": "@babylonjs/core",

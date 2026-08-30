@@ -185,6 +185,30 @@ if storedValue <> "stored" then failwith "clean consumer generic static class me
 if observer.IsNone || not (observableA.\`\`hasObservers\`\`()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then failwith "clean consumer observable closure failed"
 if not thinAnimationEnded || thinSprite.\`\`animationStarted\`\` then failwith "clean consumer nullable callback class failed"
 multiObserver.\`\`dispose\`\`()
+let externalDefineValue: MaterialDefinesConstructor19Parameter1ObjectValue1Object =
+    createObj [ "type" ==> "boolean"; "default" ==> false ] |> unbox
+let externalDefines: MaterialDefinesConstructor19Parameter1Object =
+    createObj [ "CUSTOM" ==> externalDefineValue ] |> unbox
+let materialDefines = MaterialDefines.Create(externalDefines)
+materialDefines.["CUSTOM"] <- box true
+materialDefines.["INSTANCESCOLOR"] <- box true
+let instanceAttributes = ResizeArray<string>()
+BabylonjsBindings.SimpleFunctions.\`\`PrepareAttributesForInstances\`\`.Invoke(instanceAttributes, materialDefines)
+materialDefines.\`\`markAsProcessed\`\`()
+let derivedMaterialDefines: ResizeArray<MaterialDefines> =
+    ResizeArray [
+        DecalMapDefines.Create() :> MaterialDefines
+        ImageProcessingConfigurationDefines.Create() :> MaterialDefines
+        MaterialAnisotropicDefines.Create() :> MaterialDefines
+        MaterialBRDFDefines.Create() :> MaterialDefines
+        MaterialClearCoatDefines.Create() :> MaterialDefines
+        MaterialDetailMapDefines.Create() :> MaterialDefines
+        MaterialGreasedLineDefines.Create() :> MaterialDefines
+        MaterialIridescenceDefines.Create() :> MaterialDefines
+        MaterialSheenDefines.Create() :> MaterialDefines
+        MaterialSubSurfaceDefines.Create() :> MaterialDefines
+    ]
+if unbox<bool> materialDefines.["CUSTOM"] <> true || materialDefines.\`\`isDirty\`\` || derivedMaterialDefines.Count <> 10 || not (instanceAttributes.Contains("instanceColor")) then failwith "clean consumer material defines closure failed"
 if positionStride <> 3.0 then failwith "clean consumer function import failed"
 if indicesNeed32Bits then failwith "clean consumer union alias/function failed"
 if epsilon <> 0.001 then failwith "clean consumer variable import failed"

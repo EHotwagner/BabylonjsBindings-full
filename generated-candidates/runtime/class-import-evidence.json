@@ -241,6 +241,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialDefines.js",
+      "export": "MaterialDefines",
+      "moduleSha256": "fcb89b6c947b81c0907b80caf9f3259b83b0f597922a149f5288f1e9082ca847"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/materialFlags.js",
       "export": "MaterialFlags",
       "moduleSha256": "59429f9df73b5cff265b6f92bd6513e9b90f438c3ecbf5670e4b92b64f778541"
@@ -475,6 +481,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/material.decalMapConfiguration.pure.js",
+      "export": "DecalMapDefines",
+      "moduleSha256": "f436d9c10235aaeded0b21f454d270901793cce448cfb28354c0d17641529107"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing.js",
       "export": "ElasticEase",
       "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
@@ -493,9 +505,63 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/imageProcessingConfiguration.defines.js",
+      "export": "ImageProcessingConfigurationDefines",
+      "moduleSha256": "45c7e41951b5c5482fbe3abad2b88da8945117b998c6585148d164ece7db4f8d"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Events/keyboardEvents.js",
       "export": "KeyboardInfoPre",
       "moduleSha256": "e899370df9e58c34452694035bab0f623a7fb9826e6fa19a04b68eedcaa64b66"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrAnisotropicConfiguration.js",
+      "export": "MaterialAnisotropicDefines",
+      "moduleSha256": "ba7799a1c21246b85196d07a37d1354fc142d5afb423583aa9c10de3dc061437"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrBRDFConfiguration.js",
+      "export": "MaterialBRDFDefines",
+      "moduleSha256": "243c37450d4a42ff83fea07687c0ec9eb251ae4e9596b6f4efca5f7453eb1744"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrClearCoatConfiguration.js",
+      "export": "MaterialClearCoatDefines",
+      "moduleSha256": "b9aec2469347c0de99cc2d44185804c57503547a44b7dd912bf9437cdf0c3f46"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/material.detailMapConfiguration.js",
+      "export": "MaterialDetailMapDefines",
+      "moduleSha256": "5970aa171abc1d475fa1d5201ab368605ab532451303dbb511c374d68b88d7ec"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure.js",
+      "export": "MaterialGreasedLineDefines",
+      "moduleSha256": "50eb6c9e4e2efd8f0ab663fba7cee1083b68d11bed469d586336a5e4eee2ac67"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration.js",
+      "export": "MaterialIridescenceDefines",
+      "moduleSha256": "264d678aee93739e91aff381d36b0e13fff87627774c303348843df8d23d8253"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrSheenConfiguration.js",
+      "export": "MaterialSheenDefines",
+      "moduleSha256": "7db12bad4e70a94187637a0377679d575e3a77809390de69ae8411906499399e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration.js",
+      "export": "MaterialSubSurfaceDefines",
+      "moduleSha256": "1d31b942dea5112e7d6970bf2f2f4d8a9d077d7f3af79f49d299bc7b74d6d7e6"
     },
     {
       "package": "@babylonjs/core",

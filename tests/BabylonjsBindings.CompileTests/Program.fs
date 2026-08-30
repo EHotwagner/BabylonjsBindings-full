@@ -57,6 +57,18 @@ let dualShockPadFactory: DualShockPadStatic = DualShockPad
 let genericPadFactory: GenericPadStatic = GenericPad
 let multiObserverFactory: MultiObserverStatic = MultiObserver
 let xbox360PadFactory: Xbox360PadStatic = Xbox360Pad
+let prepareAttributesForInstances = BabylonjsBindings.SimpleFunctions.``PrepareAttributesForInstances``
+let materialDefinesFactory: MaterialDefinesStatic = MaterialDefines
+let decalMapDefinesFactory: DecalMapDefinesStatic = DecalMapDefines
+let imageProcessingDefinesFactory: ImageProcessingConfigurationDefinesStatic = ImageProcessingConfigurationDefines
+let anisotropicDefinesFactory: MaterialAnisotropicDefinesStatic = MaterialAnisotropicDefines
+let brdfDefinesFactory: MaterialBRDFDefinesStatic = MaterialBRDFDefines
+let clearCoatDefinesFactory: MaterialClearCoatDefinesStatic = MaterialClearCoatDefines
+let detailMapDefinesFactory: MaterialDetailMapDefinesStatic = MaterialDetailMapDefines
+let greasedLineDefinesFactory: MaterialGreasedLineDefinesStatic = MaterialGreasedLineDefines
+let iridescenceDefinesFactory: MaterialIridescenceDefinesStatic = MaterialIridescenceDefines
+let sheenDefinesFactory: MaterialSheenDefinesStatic = MaterialSheenDefines
+let subSurfaceDefinesFactory: MaterialSubSurfaceDefinesStatic = MaterialSubSurfaceDefines
 let strideFunction = BabylonjsBindings.SimpleFunctions.``VertexBufferDeduceStride``
 let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
@@ -117,6 +129,18 @@ dualShockPadFactory |> ignore
 genericPadFactory |> ignore
 multiObserverFactory |> ignore
 xbox360PadFactory |> ignore
+prepareAttributesForInstances |> ignore
+materialDefinesFactory |> ignore
+decalMapDefinesFactory |> ignore
+imageProcessingDefinesFactory |> ignore
+anisotropicDefinesFactory |> ignore
+brdfDefinesFactory |> ignore
+clearCoatDefinesFactory |> ignore
+detailMapDefinesFactory |> ignore
+greasedLineDefinesFactory |> ignore
+iridescenceDefinesFactory |> ignore
+sheenDefinesFactory |> ignore
+subSurfaceDefinesFactory |> ignore
 strideFunction |> ignore
 epsilon |> ignore
 shaderDescriptor |> ignore

@@ -483,6 +483,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/materialHelper.functions.js",
+      "export": "PrepareAttributesForInstances",
+      "runtimeExport": "PrepareAttributesForInstances",
+      "moduleSha256": "224c9ee3a0115be2e804bef55465a4281f02b856cf4740bd0ff98f02d4f68805"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions.js",
       "export": "PrepareUniformsAndSamplersForIBL",
       "runtimeExport": "PrepareUniformsAndSamplersForIBL",
       "moduleSha256": "224c9ee3a0115be2e804bef55465a4281f02b856cf4740bd0ff98f02d4f68805"

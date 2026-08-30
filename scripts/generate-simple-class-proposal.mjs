@@ -155,7 +155,31 @@ const callbackPropertyType = node => {
   }
   return undefined;
 };
-const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, context, ownerName) => {
+const inlineObjectType = (node, available, dependencies, typeParameters, inlineTypes, context) => {
+  if (!ts.isTypeLiteralNode(node)) return undefined;
+  const name = `${context}Object`;
+  const genericParameters = typeParameters.size ? `<${[...typeParameters].map(value => `'${value}`).join(", ")}>` : "";
+  const members = [];
+  for (const [memberIndex, member] of node.members.entries()) {
+    if (ts.isPropertySignature(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
+      let type = fsharpType(member.type, available, dependencies, typeParameters);
+      if (!type && ts.isTypeLiteralNode(member.type)) type = inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Property${memberIndex + 1}`);
+      if (!type) return undefined;
+      members.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
+    } else if (ts.isIndexSignatureDeclaration(member) && member.parameters.length === 1 && member.parameters[0].type && member.type && ts.isIdentifier(member.parameters[0].name)) {
+      const keyType = fsharpType(member.parameters[0].type, available, dependencies, typeParameters);
+      let valueType = fsharpType(member.type, available, dependencies, typeParameters);
+      if (!valueType && ts.isTypeLiteralNode(member.type)) valueType = inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Value${memberIndex + 1}`);
+      if (!keyType || !valueType) return undefined;
+      members.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
+    } else {
+      return undefined;
+    }
+  }
+  inlineTypes.push({ name, genericParameters, members });
+  return `${name}${genericParameters}`;
+};
+const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, context, ownerName) => {
   if (node.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
   if (node.typeParameters?.some(parameter => parameter.constraint)) return undefined;
   const localTypeParameters = new Set(typeParameters);
@@ -176,6 +200,9 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
         if (nestedProperty.optional) type = asOption(type);
       }
     }
+    if (!type && parameter.type && ts.isTypeLiteralNode(parameter.type)) {
+      type = inlineObjectType(parameter.type, available, dependencies, localTypeParameters, inlineTypes, `${context}Parameter${index + 1}`);
+    }
     return {
       name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
       type: parameter.questionToken && type ? asOptionalParameterType(type) : type,
@@ -192,6 +219,7 @@ const renderClass = (declaration, available, hasBase) => {
   const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
   typeParameters.ownerName = declaration.name.text;
   const nestedCallbacks = [];
+  const inlineTypes = [];
   const instanceMembers = [];
   const staticMembers = [];
   const constructors = [];
@@ -208,7 +236,7 @@ const renderClass = (declaration, available, hasBase) => {
     if (inaccessible(member)) continue;
     const target = hasModifier(member, ts.SyntaxKind.StaticKeyword) ? staticMembers : instanceMembers;
     if (ts.isConstructorDeclaration(member)) {
-      const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } }, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Constructor${memberIndex + 1}`, declaration.name.text);
+      const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } }, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, `${declaration.name.text}Constructor${memberIndex + 1}`, declaration.name.text);
       if (!callback) return undefined;
       constructors.push(callback);
     } else if (ts.isPropertyDeclaration(member) && (member.type || member.initializer) && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
@@ -218,7 +246,7 @@ const renderClass = (declaration, available, hasBase) => {
       }
       const callbackProperty = member.type ? callbackPropertyType(member.type) : undefined;
       if (callbackProperty) {
-        const callback = callbackShape(callbackProperty.node, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Property${memberIndex + 1}`, declaration.name.text);
+        const callback = callbackShape(callbackProperty.node, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, `${declaration.name.text}Property${memberIndex + 1}`, declaration.name.text);
         if (!callback) return undefined;
         target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken) || callbackProperty.optional, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
       } else {
@@ -228,7 +256,7 @@ const renderClass = (declaration, available, hasBase) => {
       }
     } else if (ts.isMethodDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       if (member.questionToken) return undefined;
-      const callback = callbackShape(member, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Method${memberIndex + 1}`, declaration.name.text);
+      const callback = callbackShape(member, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, `${declaration.name.text}Method${memberIndex + 1}`, declaration.name.text);
       if (!callback) {
         if ((methodCounts.get(member.name.text) ?? 0) > 1) {
           failedOverloadNames.add(member.name.text);
@@ -243,6 +271,11 @@ const renderClass = (declaration, available, hasBase) => {
       }
       target.push({ kind: "method", name: member.name.text, callback });
       renderedMethodNames.add(member.name.text);
+    } else if (ts.isIndexSignatureDeclaration(member) && member.parameters.length === 1 && member.parameters[0].type && member.type && ts.isIdentifier(member.parameters[0].name)) {
+      const keyType = fsharpType(member.parameters[0].type, available, dependencies, typeParameters);
+      const valueType = fsharpType(member.type, available, dependencies, typeParameters);
+      if (!keyType || !valueType) return undefined;
+      target.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
     } else if ((ts.isGetAccessorDeclaration(member) || ts.isSetAccessorDeclaration(member)) && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       const key = `${hasModifier(member, ts.SyntaxKind.StaticKeyword) ? "static" : "instance"}|${member.name.text}`;
       const accessor = accessors.get(key) ?? { kind: "accessor", name: member.name.text, static: hasModifier(member, ts.SyntaxKind.StaticKeyword), canGet: false, canSet: false };
@@ -268,7 +301,7 @@ const renderClass = (declaration, available, hasBase) => {
   if (constructorDeclarations.length === 0 && !hasBase && !hasModifier(declaration, ts.SyntaxKind.AbstractKeyword)) {
     constructors.push({ parameters: [], returnType: "unit" });
   }
-  return { instanceMembers, staticMembers, constructors, nestedCallbacks, dependencies: [...dependencies] };
+  return { instanceMembers, staticMembers, constructors, nestedCallbacks, inlineTypes, dependencies: [...dependencies] };
 };
 const renderBase = (declaration, available) => {
   const extendsTypes = (declaration.heritageClauses ?? [])
@@ -382,6 +415,7 @@ const renderMember = member => {
   if (member.kind === "property") return `abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`;
   if (member.kind === "accessor") return `abstract \`\`${member.name}\`\`: ${member.type} with ${member.canGet ? "get" : ""}${member.canGet && member.canSet ? ", " : ""}${member.canSet ? "set" : ""}`;
   if (member.kind === "callbackProperty") return `abstract \`\`${member.name}\`\`: ${member.helperName}${member.optional ? " option" : ""} with get${member.readonly ? "" : ", set"}`;
+  if (member.kind === "indexer") return `[<EmitIndexer>] abstract Item: \`\`${member.name}\`\`: ${member.keyType} -> ${member.valueType} with get${member.readonly ? "" : ", set"}`;
   return `abstract \`\`${member.name}\`\`${member.callback.genericParameters}: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`;
 };
 const lines = [
@@ -395,6 +429,11 @@ const lines = [
 ];
 for (const entry of entries) {
   const genericParameters = entry.arity ? `<${entry.declaration.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}>` : "";
+  for (const inline of entry.inlineTypes) {
+    lines.push("", `    /// Inline object shape used by ${entry.name}.`, "    [<AllowNullLiteral>]", `    type ${inline.name}${inline.genericParameters} =`);
+    if (inline.members.length === 0) lines.push("        interface end");
+    else for (const member of inline.members) lines.push(`        ${renderMember(member)}`);
+  }
   const retainedCallbacks = [...entry.constructors, ...entry.instanceMembers.map(member => member.callback), ...entry.staticMembers.map(member => member.callback)].filter(Boolean);
   const usedNestedCallbacks = entry.nestedCallbacks.filter(nested => retainedCallbacks.some(callback => callback.parameters.some(parameter => parameter.type.includes(nested.name))));
   for (const nested of usedNestedCallbacks) {

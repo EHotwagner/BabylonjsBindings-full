@@ -1049,6 +1049,59 @@ module SimpleClasses =
     [<Import("Logger", "@babylonjs/core/Misc/logger.js")>]
     let Logger: LoggerStatic = jsNative
 
+    /// Inline object shape used by MaterialDefines.
+    [<AllowNullLiteral>]
+    type MaterialDefinesConstructor19Parameter1ObjectValue1Object =
+        abstract ``type``: string with get, set
+        abstract ``default``: obj with get, set
+
+    /// Inline object shape used by MaterialDefines.
+    [<AllowNullLiteral>]
+    type MaterialDefinesConstructor19Parameter1Object =
+        [<EmitIndexer>] abstract Item: ``name``: string -> MaterialDefinesConstructor19Parameter1ObjectValue1Object with get, set
+
+    /// @babylonjs/core/Materials/materialDefines
+    [<AllowNullLiteral>]
+    type MaterialDefines =
+        abstract ``VERTEXOUTPUT_INVARIANT``: bool with get, set
+        abstract ``_renderId``: float with get, set
+        abstract ``_areLightsDirty``: bool with get, set
+        abstract ``_areLightsDisposed``: bool with get, set
+        abstract ``_areAttributesDirty``: bool with get, set
+        abstract ``_areTexturesDirty``: bool with get, set
+        abstract ``_areFresnelDirty``: bool with get, set
+        abstract ``_areMiscDirty``: bool with get, set
+        abstract ``_arePrePassDirty``: bool with get, set
+        abstract ``_areImageProcessingDirty``: bool with get, set
+        abstract ``_normals``: bool with get, set
+        abstract ``_uvs``: bool with get, set
+        abstract ``_needNormals``: bool with get, set
+        abstract ``_needUVs``: bool with get, set
+        [<EmitIndexer>] abstract Item: ``id``: string -> obj with get, set
+        abstract ``markAsProcessed``: unit -> unit
+        abstract ``markAsUnprocessed``: unit -> unit
+        abstract ``markAllAsDirty``: unit -> unit
+        abstract ``markAsImageProcessingDirty``: unit -> unit
+        abstract ``markAsLightDirty``: ?``disposed``: bool -> unit
+        abstract ``markAsAttributesDirty``: unit -> unit
+        abstract ``markAsTexturesDirty``: unit -> unit
+        abstract ``markAsFresnelDirty``: unit -> unit
+        abstract ``markAsMiscDirty``: unit -> unit
+        abstract ``markAsPrePassDirty``: unit -> unit
+        abstract ``rebuild``: unit -> unit
+        abstract ``isEqual``: ``other``: MaterialDefines -> bool
+        abstract ``cloneTo``: ``other``: MaterialDefines -> unit
+        abstract ``reset``: unit -> unit
+        abstract ``toString``: unit -> string
+        abstract ``isDirty``: bool with get
+
+    [<AllowNullLiteral>]
+    type MaterialDefinesStatic =
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialDefines
+
+    [<Import("MaterialDefines", "@babylonjs/core/Materials/materialDefines.js")>]
+    let MaterialDefines: MaterialDefinesStatic = jsNative
+
     /// @babylonjs/core/Materials/materialFlags
     [<AllowNullLiteral>]
     type MaterialFlags =
@@ -1859,6 +1912,23 @@ module SimpleClasses =
     [<Import("CubicEase", "@babylonjs/core/Animations/easing.js")>]
     let CubicEase: CubicEaseStatic = jsNative
 
+    /// @babylonjs/core/Materials/material.decalMapConfiguration.pure
+    [<AllowNullLiteral>]
+    type DecalMapDefines =
+        inherit MaterialDefines
+        abstract ``DECAL``: bool with get, set
+        abstract ``DECALDIRECTUV``: float with get, set
+        abstract ``DECAL_SMOOTHALPHA``: bool with get, set
+        abstract ``GAMMADECAL``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type DecalMapDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> DecalMapDefines
+
+    [<Import("DecalMapDefines", "@babylonjs/core/Materials/material.decalMapConfiguration.pure.js")>]
+    let DecalMapDefines: DecalMapDefinesStatic = jsNative
+
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
     type ElasticEase =
@@ -1924,6 +1994,34 @@ module SimpleClasses =
     [<Import("Gamepad", "@babylonjs/core/Gamepads/gamepad.js")>]
     let Gamepad: GamepadStatic = jsNative
 
+    /// @babylonjs/core/Materials/imageProcessingConfiguration.defines
+    [<AllowNullLiteral>]
+    type ImageProcessingConfigurationDefines =
+        inherit MaterialDefines
+        abstract ``IMAGEPROCESSING``: bool with get, set
+        abstract ``VIGNETTE``: bool with get, set
+        abstract ``VIGNETTEBLENDMODEMULTIPLY``: bool with get, set
+        abstract ``VIGNETTEBLENDMODEOPAQUE``: bool with get, set
+        abstract ``TONEMAPPING``: float with get, set
+        abstract ``CONTRAST``: bool with get, set
+        abstract ``COLORCURVES``: bool with get, set
+        abstract ``COLORGRADING``: bool with get, set
+        abstract ``COLORGRADING3D``: bool with get, set
+        abstract ``SAMPLER3DGREENDEPTH``: bool with get, set
+        abstract ``SAMPLER3DBGRMAP``: bool with get, set
+        abstract ``DITHER``: bool with get, set
+        abstract ``IMAGEPROCESSINGPOSTPROCESS``: bool with get, set
+        abstract ``EXPOSURE``: bool with get, set
+        abstract ``SKIPFINALCOLORCLAMP``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type ImageProcessingConfigurationDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: unit -> ImageProcessingConfigurationDefines
+
+    [<Import("ImageProcessingConfigurationDefines", "@babylonjs/core/Materials/imageProcessingConfiguration.defines.js")>]
+    let ImageProcessingConfigurationDefines: ImageProcessingConfigurationDefinesStatic = jsNative
+
     /// @babylonjs/core/Events/keyboardEvents
     [<AllowNullLiteral>]
     type KeyboardInfoPre =
@@ -1940,6 +2038,193 @@ module SimpleClasses =
 
     [<Import("KeyboardInfoPre", "@babylonjs/core/Events/keyboardEvents.js")>]
     let KeyboardInfoPre: KeyboardInfoPreStatic = jsNative
+
+    /// @babylonjs/core/Materials/PBR/pbrAnisotropicConfiguration
+    [<AllowNullLiteral>]
+    type MaterialAnisotropicDefines =
+        inherit MaterialDefines
+        abstract ``ANISOTROPIC``: bool with get, set
+        abstract ``ANISOTROPIC_TEXTURE``: bool with get, set
+        abstract ``ANISOTROPIC_TEXTUREDIRECTUV``: float with get, set
+        abstract ``ANISOTROPIC_LEGACY``: bool with get, set
+        abstract ``MAINUV1``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type MaterialAnisotropicDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialAnisotropicDefines
+
+    [<Import("MaterialAnisotropicDefines", "@babylonjs/core/Materials/PBR/pbrAnisotropicConfiguration.js")>]
+    let MaterialAnisotropicDefines: MaterialAnisotropicDefinesStatic = jsNative
+
+    /// @babylonjs/core/Materials/PBR/pbrBRDFConfiguration
+    [<AllowNullLiteral>]
+    type MaterialBRDFDefines =
+        inherit MaterialDefines
+        abstract ``BRDF_V_HEIGHT_CORRELATED``: bool with get, set
+        abstract ``MS_BRDF_ENERGY_CONSERVATION``: bool with get, set
+        abstract ``SPHERICAL_HARMONICS``: bool with get, set
+        abstract ``SPECULAR_GLOSSINESS_ENERGY_CONSERVATION``: bool with get, set
+        abstract ``MIX_IBL_RADIANCE_WITH_IRRADIANCE``: bool with get, set
+        abstract ``LEGACY_SPECULAR_ENERGY_CONSERVATION``: bool with get, set
+        abstract ``BASE_DIFFUSE_MODEL``: float with get, set
+        abstract ``DIELECTRIC_SPECULAR_MODEL``: float with get, set
+        abstract ``CONDUCTOR_SPECULAR_MODEL``: float with get, set
+
+    [<AllowNullLiteral>]
+    type MaterialBRDFDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialBRDFDefines
+
+    [<Import("MaterialBRDFDefines", "@babylonjs/core/Materials/PBR/pbrBRDFConfiguration.js")>]
+    let MaterialBRDFDefines: MaterialBRDFDefinesStatic = jsNative
+
+    /// @babylonjs/core/Materials/PBR/pbrClearCoatConfiguration
+    [<AllowNullLiteral>]
+    type MaterialClearCoatDefines =
+        inherit MaterialDefines
+        abstract ``CLEARCOAT``: bool with get, set
+        abstract ``CLEARCOAT_DEFAULTIOR``: bool with get, set
+        abstract ``CLEARCOAT_TEXTURE``: bool with get, set
+        abstract ``CLEARCOAT_TEXTURE_ROUGHNESS``: bool with get, set
+        abstract ``CLEARCOAT_TEXTUREDIRECTUV``: float with get, set
+        abstract ``CLEARCOAT_TEXTURE_ROUGHNESSDIRECTUV``: float with get, set
+        abstract ``CLEARCOAT_BUMP``: bool with get, set
+        abstract ``CLEARCOAT_BUMPDIRECTUV``: float with get, set
+        abstract ``CLEARCOAT_USE_ROUGHNESS_FROM_MAINTEXTURE``: bool with get, set
+        abstract ``CLEARCOAT_REMAP_F0``: bool with get, set
+        abstract ``CLEARCOAT_TINT``: bool with get, set
+        abstract ``CLEARCOAT_TINT_TEXTURE``: bool with get, set
+        abstract ``CLEARCOAT_TINT_TEXTUREDIRECTUV``: float with get, set
+        abstract ``CLEARCOAT_TINT_GAMMATEXTURE``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type MaterialClearCoatDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialClearCoatDefines
+
+    [<Import("MaterialClearCoatDefines", "@babylonjs/core/Materials/PBR/pbrClearCoatConfiguration.js")>]
+    let MaterialClearCoatDefines: MaterialClearCoatDefinesStatic = jsNative
+
+    /// @babylonjs/core/Materials/material.detailMapConfiguration
+    [<AllowNullLiteral>]
+    type MaterialDetailMapDefines =
+        inherit MaterialDefines
+        abstract ``DETAIL``: bool with get, set
+        abstract ``DETAILDIRECTUV``: float with get, set
+        abstract ``DETAIL_NORMALBLENDMETHOD``: float with get, set
+
+    [<AllowNullLiteral>]
+    type MaterialDetailMapDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialDetailMapDefines
+
+    [<Import("MaterialDetailMapDefines", "@babylonjs/core/Materials/material.detailMapConfiguration.js")>]
+    let MaterialDetailMapDefines: MaterialDetailMapDefinesStatic = jsNative
+
+    /// @babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure
+    [<AllowNullLiteral>]
+    type MaterialGreasedLineDefines =
+        inherit MaterialDefines
+        abstract ``GREASED_LINE_HAS_COLOR``: bool with get, set
+        abstract ``GREASED_LINE_SIZE_ATTENUATION``: bool with get, set
+        abstract ``GREASED_LINE_COLOR_DISTRIBUTION_TYPE_LINE``: bool with get, set
+        abstract ``GREASED_LINE_RIGHT_HANDED_COORDINATE_SYSTEM``: bool with get, set
+        abstract ``GREASED_LINE_CAMERA_FACING``: bool with get, set
+        abstract ``GREASED_LINE_USE_OFFSETS``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type MaterialGreasedLineDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialGreasedLineDefines
+
+    [<Import("MaterialGreasedLineDefines", "@babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure.js")>]
+    let MaterialGreasedLineDefines: MaterialGreasedLineDefinesStatic = jsNative
+
+    /// @babylonjs/core/Materials/PBR/pbrIridescenceConfiguration
+    [<AllowNullLiteral>]
+    type MaterialIridescenceDefines =
+        inherit MaterialDefines
+        abstract ``IRIDESCENCE``: bool with get, set
+        abstract ``IRIDESCENCE_TEXTURE``: bool with get, set
+        abstract ``IRIDESCENCE_TEXTUREDIRECTUV``: float with get, set
+        abstract ``IRIDESCENCE_THICKNESS_TEXTURE``: bool with get, set
+        abstract ``IRIDESCENCE_THICKNESS_TEXTUREDIRECTUV``: float with get, set
+
+    [<AllowNullLiteral>]
+    type MaterialIridescenceDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialIridescenceDefines
+
+    [<Import("MaterialIridescenceDefines", "@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration.js")>]
+    let MaterialIridescenceDefines: MaterialIridescenceDefinesStatic = jsNative
+
+    /// @babylonjs/core/Materials/PBR/pbrSheenConfiguration
+    [<AllowNullLiteral>]
+    type MaterialSheenDefines =
+        inherit MaterialDefines
+        abstract ``SHEEN``: bool with get, set
+        abstract ``SHEEN_TEXTURE``: bool with get, set
+        abstract ``SHEEN_GAMMATEXTURE``: bool with get, set
+        abstract ``SHEEN_TEXTURE_ROUGHNESS``: bool with get, set
+        abstract ``SHEEN_TEXTUREDIRECTUV``: float with get, set
+        abstract ``SHEEN_TEXTURE_ROUGHNESSDIRECTUV``: float with get, set
+        abstract ``SHEEN_LINKWITHALBEDO``: bool with get, set
+        abstract ``SHEEN_ROUGHNESS``: bool with get, set
+        abstract ``SHEEN_ALBEDOSCALING``: bool with get, set
+        abstract ``SHEEN_USE_ROUGHNESS_FROM_MAINTEXTURE``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type MaterialSheenDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialSheenDefines
+
+    [<Import("MaterialSheenDefines", "@babylonjs/core/Materials/PBR/pbrSheenConfiguration.js")>]
+    let MaterialSheenDefines: MaterialSheenDefinesStatic = jsNative
+
+    /// @babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration
+    [<AllowNullLiteral>]
+    type MaterialSubSurfaceDefines =
+        inherit MaterialDefines
+        abstract ``SUBSURFACE``: bool with get, set
+        abstract ``SS_REFRACTION``: bool with get, set
+        abstract ``SS_REFRACTION_USE_INTENSITY_FROM_THICKNESS``: bool with get, set
+        abstract ``SS_TRANSLUCENCY``: bool with get, set
+        abstract ``SS_TRANSLUCENCY_USE_INTENSITY_FROM_THICKNESS``: bool with get, set
+        abstract ``SS_SCATTERING``: bool with get, set
+        abstract ``SS_DISPERSION``: bool with get, set
+        abstract ``SS_THICKNESSANDMASK_TEXTURE``: bool with get, set
+        abstract ``SS_THICKNESSANDMASK_TEXTUREDIRECTUV``: float with get, set
+        abstract ``SS_HAS_THICKNESS``: bool with get, set
+        abstract ``SS_REFRACTIONINTENSITY_TEXTURE``: bool with get, set
+        abstract ``SS_REFRACTIONINTENSITY_TEXTUREDIRECTUV``: float with get, set
+        abstract ``SS_TRANSLUCENCYINTENSITY_TEXTURE``: bool with get, set
+        abstract ``SS_TRANSLUCENCYINTENSITY_TEXTUREDIRECTUV``: float with get, set
+        abstract ``SS_TRANSLUCENCYCOLOR_TEXTURE``: bool with get, set
+        abstract ``SS_TRANSLUCENCYCOLOR_TEXTUREDIRECTUV``: float with get, set
+        abstract ``SS_TRANSLUCENCYCOLOR_TEXTURE_GAMMA``: bool with get, set
+        abstract ``SS_REFRACTIONMAP_3D``: bool with get, set
+        abstract ``SS_REFRACTIONMAP_OPPOSITEZ``: bool with get, set
+        abstract ``SS_LODINREFRACTIONALPHA``: bool with get, set
+        abstract ``SS_GAMMAREFRACTION``: bool with get, set
+        abstract ``SS_RGBDREFRACTION``: bool with get, set
+        abstract ``SS_LINEARSPECULARREFRACTION``: bool with get, set
+        abstract ``SS_LINKREFRACTIONTOTRANSPARENCY``: bool with get, set
+        abstract ``SS_ALBEDOFORREFRACTIONTINT``: bool with get, set
+        abstract ``SS_ALBEDOFORTRANSLUCENCYTINT``: bool with get, set
+        abstract ``SS_USE_LOCAL_REFRACTIONMAP_CUBIC``: bool with get, set
+        abstract ``SS_USE_THICKNESS_AS_DEPTH``: bool with get, set
+        abstract ``SS_USE_GLTF_TEXTURES``: bool with get, set
+        abstract ``SS_APPLY_ALBEDO_AFTER_SUBSURFACE``: bool with get, set
+        abstract ``SS_TRANSLUCENCY_LEGACY``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type MaterialSubSurfaceDefinesStatic =
+        inherit MaterialDefinesStatic
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialSubSurfaceDefines
+
+    [<Import("MaterialSubSurfaceDefines", "@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration.js")>]
+    let MaterialSubSurfaceDefines: MaterialSubSurfaceDefinesStatic = jsNative
 
     /// Uncurried function-valued argument used by Observer.
     type ObserverConstructor7Parameter1Callback<'T> = System.Action<'T, EventState>

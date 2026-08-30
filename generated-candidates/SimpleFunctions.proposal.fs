@@ -544,6 +544,14 @@ module SimpleFunctions =
 
     /// @babylonjs/core/Materials/materialHelper.functions
     [<AllowNullLiteral>]
+    type FunctionBinding_PrepareAttributesForInstances =
+        [<Emit("$0($1...)")>] abstract Invoke: ``attribs``: ResizeArray<string> * ``defines``: BabylonjsBindings.SimpleClasses.MaterialDefines -> unit
+
+    [<Import("PrepareAttributesForInstances", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``PrepareAttributesForInstances``: FunctionBinding_PrepareAttributesForInstances = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
     type FunctionBinding_PrepareUniformsAndSamplersForIBL =
         [<Emit("$0($1...)")>] abstract Invoke: ``uniformsList``: ResizeArray<string> * ``samplersList``: ResizeArray<string> * ``useSH``: bool -> unit
 

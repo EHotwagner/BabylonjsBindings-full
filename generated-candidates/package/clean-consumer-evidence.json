@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "285866cd75c5fa5b24d469ccdec65e60cf994d15ed598c5e0851c0c98afb01eb"
+    "sha256": "9ebc01ec4707ef91eae68989029d4d2e7ed373fad46c66778a0f88bea67f5608"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,7 +13,7 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "9e5cf0ed083dcc4c41c1c02ddabcb99762399c1812b0709fb4c9a442c9069c0d",
+  "emittedProgramSha256": "c2e78272e69726167091a4c4c330e06e45730a8bdb294d0bce6335c0732a84dc",
   "imports": [
     "@babylonjs/core/Animations/animationEvent.js",
     "@babylonjs/core/Animations/animationGroupMask.js",
@@ -27,6 +27,18 @@
     "@babylonjs/core/Events/pointerEvents.js",
     "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
     "@babylonjs/core/Lights/lightConstants.js",
+    "@babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure.js",
+    "@babylonjs/core/Materials/PBR/pbrAnisotropicConfiguration.js",
+    "@babylonjs/core/Materials/PBR/pbrBRDFConfiguration.js",
+    "@babylonjs/core/Materials/PBR/pbrClearCoatConfiguration.js",
+    "@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration.js",
+    "@babylonjs/core/Materials/PBR/pbrSheenConfiguration.js",
+    "@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration.js",
+    "@babylonjs/core/Materials/imageProcessingConfiguration.defines.js",
+    "@babylonjs/core/Materials/material.decalMapConfiguration.pure.js",
+    "@babylonjs/core/Materials/material.detailMapConfiguration.js",
+    "@babylonjs/core/Materials/materialDefines.js",
+    "@babylonjs/core/Materials/materialHelper.functions.js",
     "@babylonjs/core/Maths/halton2DSequence.js",
     "@babylonjs/core/Maths/math.constants.js",
     "@babylonjs/core/Maths/math.vector.pure.js",

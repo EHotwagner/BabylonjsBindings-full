@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "ad0559fc804a5d0f1a7d8d67920e17f44c535b75665bc07f67b29af7847dad0b",
+  "proposalSha256": "044a79c615c589d0bb78a24629d31d361c640793e4df60d281ccc58716df8e15",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -609,6 +609,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Predictor",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.functions",
+      "name": "PrepareAttributesForInstances",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareAttributesForInstances",
       "overloadCount": 1
     },
     {
