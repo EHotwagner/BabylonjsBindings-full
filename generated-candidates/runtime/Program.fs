@@ -52,6 +52,8 @@ let bits = BitArray.Create(8.0)
 bits.``set``(3.0, true)
 let bitWasSet = bits.``get``(3.0)
 let curveMidpoint = BezierCurve.``Interpolate``(0.5, 0.0, 0.0, 1.0, 1.0)
+let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
+let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
 
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then
     failwith "full candidate did not construct a Babylon scene"
@@ -73,6 +75,8 @@ if eased <> 0.25 || not loadingShown then
     failwith "Babylon dependency-free interface invocation was not preserved"
 if not bitWasSet || curveMidpoint <= 0.0 || curveMidpoint >= 1.0 then
     failwith "Babylon dependency-free class import was not preserved"
+if positionStride <> 3.0 || not absoluteUrl then
+    failwith "Babylon dependency-closed function import was not preserved"
 
 loaderRegistration |> ignore
 camera.dispose()

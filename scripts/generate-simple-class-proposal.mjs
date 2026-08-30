@@ -19,31 +19,70 @@ const program = ts.createProgram([...lockedPaths].map(file => resolve(nodeModule
 });
 const checker = program.getTypeChecker();
 
+const dependencyManifestPaths = [
+  "src/BabylonjsBindings/coverage-manifest.json",
+  "src/BabylonjsBindings/string-coverage-manifest.json",
+  "src/BabylonjsBindings/object-type-coverage-manifest.json",
+  "src/BabylonjsBindings/type-alias-coverage-manifest.json",
+  "src/BabylonjsBindings/simple-interface-coverage-manifest.json"
+];
+const dependencyExports = (await Promise.all(dependencyManifestPaths.map(async path => JSON.parse(await readFile(resolve(root, path), "utf8")))))
+  .flatMap(manifest => manifest.exports);
+const dependencyNameCounts = new Map();
+for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
+const maintainedSymbols = new Map(dependencyExports
+  .filter(entry => dependencyNameCounts.get(entry.name) === 1)
+  .map(entry => [entry.name, entry.fsharpSymbol]));
+
 const hasModifier = (node, kind) => node.modifiers?.some(modifier => modifier.kind === kind) ?? false;
 const inaccessible = node => hasModifier(node, ts.SyntaxKind.PrivateKeyword) || hasModifier(node, ts.SyntaxKind.ProtectedKeyword);
-const fsharpType = node => {
+const fsharpType = (node, available, dependencies = new Set()) => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isArrayTypeNode(node)) {
-    const element = fsharpType(node.elementType);
+    const element = fsharpType(node.elementType, available, dependencies);
     return element ? `ResizeArray<${element}>` : undefined;
+  }
+  if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies);
+      return inner ? `ResizeArray<${inner}>` : undefined;
+    }
+    if (node.typeName.text === "Promise" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies);
+      return inner ? `JS.Promise<${inner}>` : undefined;
+    }
+    if (node.typeName.text === "Nullable" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies);
+      return inner ? `${inner} option` : undefined;
+    }
+    const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
+    if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
+    const browserTypes = new Set(["Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent"]);
+    if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
+    if (!node.typeArguments?.length && available.has(node.typeName.text)) {
+      dependencies.add(node.typeName.text);
+      return node.typeName.text;
+    }
+    if (!node.typeArguments?.length && maintainedSymbols.has(node.typeName.text)) return maintainedSymbols.get(node.typeName.text);
   }
   return undefined;
 };
-const callbackShape = node => {
+const callbackShape = (node, available, dependencies) => {
   if (node.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
-  const returnType = node.type ? fsharpType(node.type) : undefined;
+  const returnType = node.type ? fsharpType(node.type, available, dependencies) : undefined;
   const parameters = node.parameters.map(parameter => ({
     name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
-    type: parameter.type ? fsharpType(parameter.type) : undefined,
+    type: parameter.type ? fsharpType(parameter.type, available, dependencies) : undefined,
     optional: Boolean(parameter.questionToken)
   }));
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
 };
-const renderClass = declaration => {
+const renderClass = (declaration, available, hasBase) => {
+  const dependencies = new Set();
   const instanceMembers = [];
   const staticMembers = [];
   const constructors = [];
@@ -53,7 +92,7 @@ const renderClass = declaration => {
     if (inaccessible(member)) continue;
     const target = hasModifier(member, ts.SyntaxKind.StaticKeyword) ? staticMembers : instanceMembers;
     if (ts.isConstructorDeclaration(member)) {
-      const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } });
+      const callback = callbackShape({ parameters: member.parameters, type: { kind: ts.SyntaxKind.VoidKeyword } }, available, dependencies);
       if (!callback) return undefined;
       constructors.push(callback);
     } else if (ts.isPropertyDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
@@ -62,29 +101,29 @@ const renderClass = declaration => {
         // both flags participate independently below.
       }
       if (ts.isFunctionTypeNode(member.type)) {
-        const callback = callbackShape(member.type);
+        const callback = callbackShape(member.type, available, dependencies);
         if (!callback) return undefined;
         target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken), readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
       } else {
-        const type = fsharpType(member.type);
+        const type = fsharpType(member.type, available, dependencies);
         if (!type) return undefined;
         target.push({ kind: "property", name: member.name.text, type: member.questionToken ? `${type} option` : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
       }
     } else if (ts.isMethodDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       if (member.questionToken) return undefined;
-      const callback = callbackShape(member);
+      const callback = callbackShape(member, available, dependencies);
       if (!callback) return undefined;
       target.push({ kind: "method", name: member.name.text, callback });
     } else if ((ts.isGetAccessorDeclaration(member) || ts.isSetAccessorDeclaration(member)) && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       const key = `${hasModifier(member, ts.SyntaxKind.StaticKeyword) ? "static" : "instance"}|${member.name.text}`;
       const accessor = accessors.get(key) ?? { kind: "accessor", name: member.name.text, static: hasModifier(member, ts.SyntaxKind.StaticKeyword), canGet: false, canSet: false };
       if (ts.isGetAccessorDeclaration(member)) {
-        const type = member.type ? fsharpType(member.type) : undefined;
+        const type = member.type ? fsharpType(member.type, available, dependencies) : undefined;
         if (!type) return undefined;
         accessor.type = type;
         accessor.canGet = true;
       } else {
-        const type = member.parameters.length === 1 && member.parameters[0].type ? fsharpType(member.parameters[0].type) : undefined;
+        const type = member.parameters.length === 1 && member.parameters[0].type ? fsharpType(member.parameters[0].type, available, dependencies) : undefined;
         if (!type) return undefined;
         if (accessor.type && accessor.type !== type) return undefined;
         accessor.type = type;
@@ -96,10 +135,19 @@ const renderClass = declaration => {
     }
   }
   for (const accessor of accessors.values()) (accessor.static ? staticMembers : instanceMembers).push(accessor);
-  if (constructorDeclarations.length === 0 && !hasModifier(declaration, ts.SyntaxKind.AbstractKeyword)) {
+  if (constructorDeclarations.length === 0 && !hasBase && !hasModifier(declaration, ts.SyntaxKind.AbstractKeyword)) {
     constructors.push({ parameters: [], returnType: "unit" });
   }
-  return { instanceMembers, staticMembers, constructors };
+  return { instanceMembers, staticMembers, constructors, dependencies: [...dependencies] };
+};
+const renderBase = (declaration, available) => {
+  const extendsTypes = (declaration.heritageClauses ?? [])
+    .filter(clause => clause.token === ts.SyntaxKind.ExtendsKeyword)
+    .flatMap(clause => [...clause.types]);
+  if (extendsTypes.length === 0) return undefined;
+  if (extendsTypes.length !== 1 || extendsTypes[0].typeArguments?.length || !ts.isIdentifier(extendsTypes[0].expression)) return null;
+  const name = extendsTypes[0].expression.text;
+  return available.has(name) ? name : null;
 };
 
 const declarations = new Map();
@@ -114,7 +162,7 @@ for (const sourceFile of program.getSourceFiles()) {
     const classDeclarations = target.declarations?.filter(ts.isClassDeclaration) ?? [];
     if (classDeclarations.length !== 1) continue;
     const declaration = classDeclarations[0];
-    if (declaration.typeParameters?.length || declaration.heritageClauses?.length) continue;
+    if (declaration.typeParameters?.length) continue;
     const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
     const packageName = module.startsWith("@babylonjs/core/")
       ? "@babylonjs/core"
@@ -122,20 +170,44 @@ for (const sourceFile of program.getSourceFiles()) {
         ? "@babylonjs/loaders"
         : undefined;
     if (!packageName) continue;
-    const rendered = renderClass(declaration);
-    if (!rendered) continue;
     const name = exported.getName();
-    declarations.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, ...rendered });
+    declarations.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, declaration });
   }
 }
 
 const nameCounts = new Map();
 for (const entry of declarations.values()) nameCounts.set(entry.name, (nameCounts.get(entry.name) ?? 0) + 1);
-const entries = [...declarations.values()].filter(entry => nameCounts.get(entry.name) === 1).sort((left, right) => left.name.localeCompare(right.name));
+const selected = new Map();
+const selectedByName = new Map();
+const available = new Set();
+let rank = 0;
+while (true) {
+  const additions = [];
+  for (const [identity, entry] of declarations) {
+    if (selected.has(identity) || nameCounts.get(entry.name) !== 1) continue;
+    const base = renderBase(entry.declaration, available);
+    if (base === null) continue;
+    const renderAvailable = new Set([...available, entry.name]);
+    const rendered = renderClass(entry.declaration, renderAvailable, Boolean(base));
+    if (!rendered) continue;
+    if (base && entry.declaration.members.every(member => !ts.isConstructorDeclaration(member))) {
+      rendered.constructors = selectedByName.get(base).constructors.map(constructor => ({ ...constructor }));
+    }
+    additions.push([identity, { ...entry, ...rendered, base, rank }]);
+  }
+  if (additions.length === 0) break;
+  for (const [identity, entry] of additions) {
+    selected.set(identity, entry);
+    selectedByName.set(entry.name, entry);
+    available.add(entry.name);
+  }
+  rank += 1;
+}
+const entries = [...selected.values()].sort((left, right) => left.rank - right.rank || left.name.localeCompare(right.name));
 const pascal = value => value.replace(/(^|[^A-Za-z0-9]+)([A-Za-z0-9])/g, (_, __, character) => character.toUpperCase());
 const callbackArguments = callback => callback.parameters.length === 0
   ? "unit"
-  : callback.parameters.map(parameter => `${parameter.optional ? "?" : ""}${parameter.name}: ${parameter.type}`).join(" * ");
+  : callback.parameters.map(parameter => `${parameter.optional ? "?" : ""}\`\`${parameter.name}\`\`: ${parameter.type}`).join(" * ");
 const renderMember = member => {
   if (member.kind === "property") return `abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`;
   if (member.kind === "accessor") return `abstract \`\`${member.name}\`\`: ${member.type} with ${member.canGet ? "get" : ""}${member.canGet && member.canSet ? ", " : ""}${member.canSet ? "set" : ""}`;
@@ -148,7 +220,7 @@ const lines = [
   "",
   "open Fable.Core",
   "",
-  "/// Exact dependency-free runtime classes exported by Babylon.js 9.19.0.",
+  "/// Exact dependency-closed runtime classes exported by Babylon.js 9.19.0.",
   "module SimpleClasses ="
 ];
 for (const entry of entries) {
@@ -158,10 +230,12 @@ for (const entry of entries) {
     lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
   }
   lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name} =`);
-  if (entry.instanceMembers.length === 0) lines.push("        interface end");
+  if (entry.base) lines.push(`        inherit ${entry.base}`);
+  if (entry.instanceMembers.length === 0 && !entry.base) lines.push("        interface end");
   else for (const member of entry.instanceMembers) lines.push(`        ${renderMember(member)}`);
   lines.push("", "    [<AllowNullLiteral>]", `    type ${entry.name}Static =`);
-  if (entry.constructors.length === 0 && entry.staticMembers.length === 0) lines.push("        interface end");
+  if (entry.base) lines.push(`        inherit ${entry.base}Static`);
+  if (entry.constructors.length === 0 && entry.staticMembers.length === 0 && !entry.base) lines.push("        interface end");
   for (const constructor of entry.constructors) lines.push(`        [<EmitConstructor>] abstract Create: ${callbackArguments(constructor)} -> ${entry.name}`);
   for (const member of entry.staticMembers) lines.push(`        ${renderMember(member)}`);
   lines.push("", `    [<Import("${entry.name}", "${entry.module}.js")>]`, `    let ${entry.name}: ${entry.name}Static = jsNative`);
@@ -190,4 +264,4 @@ if (check) {
   await writeFile(proposalPath, proposal);
   await writeFile(manifestPath, renderedManifest);
 }
-console.log(`generated reviewed-promotion proposal for ${entries.length} exact dependency-free classes (${sha256(proposal)})`);
+console.log(`generated reviewed-promotion proposal for ${entries.length} exact dependency-closed classes (${sha256(proposal)})`);

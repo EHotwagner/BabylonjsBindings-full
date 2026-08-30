@@ -4,9 +4,18 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "026f6a25ba90083a103b33a6c84d200de97250ab75bd83f51ae80a0ce98738dc"
+    "sha256": "4424972f036abe41738179142bf7c78a2b4e6302e900859afbf0421817ac8037"
   },
   "imports": [
+    {
+      "specifier": "@babylonjs/core/Buffers/buffer.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Buffers/buffer.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
     {
       "specifier": "@babylonjs/core/Cameras/freeCamera.pure.js",
       "package": "@babylonjs/core",
@@ -75,6 +84,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/scene.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/SmartAssets/smartAssetSerializer.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/SmartAssets/smartAssetSerializer.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

@@ -33,57 +33,77 @@ const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
   .map(entry => [entry.name, entry.fsharpSymbol]));
 
-const fsharpType = (node, available, dependencies = new Set()) => {
+const fsharpType = (node, available, dependencies = new Set(), typeParameters = new Set()) => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isArrayTypeNode(node)) {
-    const element = fsharpType(node.elementType, available, dependencies);
+    const element = fsharpType(node.elementType, available, dependencies, typeParameters);
     return element ? `ResizeArray<${element}>` : undefined;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      return inner ? `ResizeArray<${inner}>` : undefined;
+    }
+    if (node.typeName.text === "Promise" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      return inner ? `JS.Promise<${inner}>` : undefined;
+    }
     if (node.typeName.text === "Nullable" && node.typeArguments?.length === 1) {
-      const inner = fsharpType(node.typeArguments[0], available, dependencies);
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `${inner} option` : undefined;
     }
-    if (!node.typeArguments?.length && available.has(node.typeName.text)) {
+    const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
+    if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
+    const browserTypes = new Set(["Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent"]);
+    if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
+    if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
+    if (available.has(node.typeName.text)) {
+      const target = available.get(node.typeName.text);
+      const arguments_ = node.typeArguments ?? [];
+      if (arguments_.length !== target.arity) return undefined;
+      const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies, typeParameters));
+      if (renderedArguments.some(argument => !argument)) return undefined;
       dependencies.add(node.typeName.text);
-      return node.typeName.text;
+      return target.arity === 0 ? node.typeName.text : `${node.typeName.text}<${renderedArguments.join(", ")}>`;
     }
     if (!node.typeArguments?.length && maintainedSymbols.has(node.typeName.text)) return maintainedSymbols.get(node.typeName.text);
   }
   return undefined;
 };
-const callbackShape = (node, available, dependencies) => {
+const callbackShape = (node, available, dependencies, typeParameters) => {
+  if (node.typeParameters?.length) return undefined;
   if (node.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
-  const returnType = fsharpType(node.type, available, dependencies);
+  const returnType = fsharpType(node.type, available, dependencies, typeParameters);
   const parameters = node.parameters.map(parameter => ({
     name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
-    type: parameter.type ? fsharpType(parameter.type, available, dependencies) : undefined,
+    type: parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined,
     optional: Boolean(parameter.questionToken)
   }));
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
 };
 const renderMembers = (declaration, available) => {
   const dependencies = new Set();
+  const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
   const members = [];
   for (const member of declaration.members) {
     if ((ts.isPropertySignature(member) || ts.isMethodSignature(member)) && (!ts.isIdentifier(member.name) && !ts.isStringLiteral(member.name))) return undefined;
     if (ts.isPropertySignature(member) && member.type) {
       if (ts.isFunctionTypeNode(member.type)) {
-        const callback = callbackShape(member.type, available, dependencies);
+        const callback = callbackShape(member.type, available, dependencies, typeParameters);
         if (!callback) return undefined;
         members.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken), readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false, callback });
       } else {
-        const type = fsharpType(member.type, available, dependencies);
+        const type = fsharpType(member.type, available, dependencies, typeParameters);
         if (!type) return undefined;
         members.push({ kind: "property", name: member.name.text, type: member.questionToken ? `${type} option` : type, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false });
       }
     } else if (ts.isMethodSignature(member)) {
       if (member.questionToken) return undefined;
-      const callback = callbackShape(member, available, dependencies);
+      const callback = callbackShape(member, available, dependencies, typeParameters);
       if (!callback) return undefined;
       members.push({ kind: "method", name: member.name.text, callback });
     } else {
@@ -94,16 +114,22 @@ const renderMembers = (declaration, available) => {
 };
 const renderHeritage = (declaration, available) => {
   const dependencies = new Set();
+  const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
   const bases = [];
   for (const clause of declaration.heritageClauses ?? []) {
     if (clause.token !== ts.SyntaxKind.ExtendsKeyword) return undefined;
     for (const type of clause.types) {
-      if (type.typeArguments?.length || !ts.isIdentifier(type.expression)) return undefined;
+      if (!ts.isIdentifier(type.expression)) return undefined;
       const name = type.expression.text;
       if (available.has(name)) {
+        const target = available.get(name);
+        const arguments_ = type.typeArguments ?? [];
+        if (arguments_.length !== target.arity) return undefined;
+        const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies, typeParameters));
+        if (renderedArguments.some(argument => !argument)) return undefined;
         dependencies.add(name);
-        bases.push(name);
-      } else if (maintainedSymbols.has(name)) {
+        bases.push(target.arity === 0 ? name : `${name}<${renderedArguments.join(", ")}>`);
+      } else if (!type.typeArguments?.length && maintainedSymbols.has(name)) {
         bases.push(maintainedSymbols.get(name));
       } else {
         return undefined;
@@ -123,9 +149,10 @@ for (const sourceFile of program.getSourceFiles()) {
       try { target = checker.getAliasedSymbol(exported); } catch { /* unresolved aliases are excluded */ }
     }
     const interfaceDeclarations = target.declarations?.filter(ts.isInterfaceDeclaration) ?? [];
+    if (target.declarations?.some(ts.isClassDeclaration)) continue;
     if (interfaceDeclarations.length !== 1) continue;
     const declaration = interfaceDeclarations[0];
-    if (declaration.typeParameters?.length) continue;
+    if (declaration.typeParameters?.some(parameter => parameter.constraint || parameter.default)) continue;
     const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
     const packageName = module.startsWith("@babylonjs/core/")
       ? "@babylonjs/core"
@@ -141,20 +168,22 @@ for (const sourceFile of program.getSourceFiles()) {
 const nameCounts = new Map();
 for (const entry of declarations.values()) nameCounts.set(entry.name, (nameCounts.get(entry.name) ?? 0) + 1);
 const selected = new Map();
-const available = new Set();
+const available = new Map();
 let rank = 0;
 while (true) {
   const additions = [];
   for (const [identity, entry] of declarations) {
     if (selected.has(identity) || nameCounts.get(entry.name) !== 1) continue;
-    const renderedMembers = renderMembers(entry.declaration, available);
-    const renderedHeritage = renderHeritage(entry.declaration, available);
+    const renderAvailable = new Map(available);
+    renderAvailable.set(entry.name, { arity: entry.declaration.typeParameters?.length ?? 0 });
+    const renderedMembers = renderMembers(entry.declaration, renderAvailable);
+    const renderedHeritage = renderHeritage(entry.declaration, renderAvailable);
     if (renderedMembers && renderedHeritage) additions.push([identity, { ...entry, ...renderedMembers, ...renderedHeritage, rank }]);
   }
   if (additions.length === 0) break;
   for (const [identity, entry] of additions) {
     selected.set(identity, entry);
-    available.add(entry.name);
+    available.set(entry.name, { arity: entry.declaration.typeParameters?.length ?? 0 });
   }
   rank += 1;
 }
@@ -162,7 +191,7 @@ const entries = [...selected.values()].sort((left, right) => left.rank - right.r
 const pascal = value => value.replace(/(^|[^A-Za-z0-9]+)([A-Za-z0-9])/g, (_, __, character) => character.toUpperCase());
 const callbackArguments = callback => callback.parameters.length === 0
   ? "unit"
-  : callback.parameters.map(parameter => `${parameter.optional ? "?" : ""}${parameter.name}: ${parameter.type}`).join(" * ");
+  : callback.parameters.map(parameter => `${parameter.optional ? "?" : ""}\`\`${parameter.name}\`\`: ${parameter.type}`).join(" * ");
 const lines = [
   "// REVIEWED-PROMOTION PROPOSAL — move to maintained source only after interface review, compile, and runtime proof",
   "namespace BabylonjsBindings",
@@ -173,12 +202,15 @@ const lines = [
   "module SimpleInterfaces ="
 ];
 for (const entry of entries) {
+  const genericParameters = entry.declaration.typeParameters?.length
+    ? `<${entry.declaration.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}>`
+    : "";
   for (const member of entry.members.filter(member => member.kind === "callbackProperty")) {
     const helperName = `${entry.name}${pascal(member.name)}Callback`;
-    member.helperName = helperName;
-    lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
+    member.helperName = `${helperName}${genericParameters}`;
+    lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName}${genericParameters} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
   }
-  lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name} =`);
+  lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name}${genericParameters} =`);
   for (const base of entry.bases) lines.push(`        inherit ${base}`);
   if (entry.members.length === 0 && entry.bases.length === 0) {
     lines.push("        interface end");

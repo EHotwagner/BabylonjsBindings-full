@@ -29,12 +29,35 @@ module SimpleInterfaces =
     type AutoReleaseWorkerPoolOptions =
         abstract ``idleTimeElapsedBeforeRelease``: float with get, set
 
+    /// @babylonjs/core/Behaviors/behavior
+    [<AllowNullLiteral>]
+    type Behavior<'T> =
+        abstract ``name``: string with get, set
+        abstract ``init``: unit -> unit
+        abstract ``attach``: ``target``: 'T -> unit
+        abstract ``detach``: unit -> unit
+        abstract ``attachedNode``: 'T option with get, set
+
     /// @babylonjs/core/Misc/environmentTextureTools.pure
     [<AllowNullLiteral>]
     type CreateEnvTextureOptions =
         abstract ``imageType``: string option with get, set
         abstract ``imageQuality``: float option with get, set
         abstract ``disableIrradianceTexture``: bool option with get, set
+
+    /// @babylonjs/core/Misc/HighDynamicRange/panoramaToCubemap
+    [<AllowNullLiteral>]
+    type CubeMapInfo =
+        abstract ``front``: JS.ArrayBufferView option with get, set
+        abstract ``back``: JS.ArrayBufferView option with get, set
+        abstract ``left``: JS.ArrayBufferView option with get, set
+        abstract ``right``: JS.ArrayBufferView option with get, set
+        abstract ``up``: JS.ArrayBufferView option with get, set
+        abstract ``down``: JS.ArrayBufferView option with get, set
+        abstract ``size``: float with get, set
+        abstract ``format``: float with get, set
+        abstract ``type``: float with get, set
+        abstract ``gammaSpace``: bool with get, set
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
     [<AllowNullLiteral>]
@@ -182,6 +205,16 @@ module SimpleInterfaces =
     type IArrayItem =
         abstract ``index``: float with get, set
 
+    /// @babylonjs/core/Meshes/Compression/dracoDecoder.types
+    [<AllowNullLiteral>]
+    type IAttributeData =
+        abstract ``kind``: string with get, set
+        abstract ``data``: JS.ArrayBufferView with get, set
+        abstract ``size``: float with get, set
+        abstract ``byteOffset``: float with get, set
+        abstract ``byteStride``: float with get, set
+        abstract ``normalized``: bool with get, set
+
     /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer
     [<AllowNullLiteral>]
     type IAudioAnalyzerOptions =
@@ -200,7 +233,7 @@ module SimpleInterfaces =
     /// @babylonjs/core/Engines/ICanvas
     [<AllowNullLiteral>]
     type ICanvasGradient =
-        abstract ``addColorStop``: offset: float * color: string -> unit
+        abstract ``addColorStop``: ``offset``: float * ``color``: string -> unit
 
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
@@ -223,6 +256,15 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IComputeContext =
         abstract ``clear``: unit -> unit
+
+    /// @babylonjs/core/FlowGraph/flowGraphConnection
+    [<AllowNullLiteral>]
+    type IConnectable =
+        abstract ``uniqueId``: string with get, set
+        abstract ``_connectedPoint``: ResizeArray<IConnectable> with get, set
+        abstract ``_isSingularConnection``: unit -> bool
+        abstract ``_connectionType``: BabylonjsBindings.Enums.FlowGraphConnectionType with get, set
+        abstract ``connectTo``: ``point``: IConnectable -> unit
 
     /// @babylonjs/core/Materials/Textures/textureMerger
     [<AllowNullLiteral>]
@@ -254,6 +296,35 @@ module SimpleInterfaces =
         abstract ``manifoldInstance``: obj with get, set
         abstract ``manifoldMeshInstance``: obj with get, set
 
+    /// Function-valued ICubeTextureCreationOptions.onLoad property.
+    [<AllowNullLiteral>]
+    type ICubeTextureCreationOptionsOnLoadCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// Function-valued ICubeTextureCreationOptions.onError property.
+    [<AllowNullLiteral>]
+    type ICubeTextureCreationOptionsOnErrorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``message``: string * ?``exception``: obj -> unit
+
+    /// @babylonjs/core/Materials/Textures/cubeTexture.pure
+    [<AllowNullLiteral>]
+    type ICubeTextureCreationOptions =
+        abstract ``extensions``: ResizeArray<string> option with get, set
+        abstract ``noMipmap``: bool option with get, set
+        abstract ``files``: ResizeArray<string> option with get, set
+        abstract ``buffer``: JS.ArrayBufferView option with get, set
+        abstract ``onLoad``: ICubeTextureCreationOptionsOnLoadCallback option with get, set
+        abstract ``onError``: ICubeTextureCreationOptionsOnErrorCallback option with get, set
+        abstract ``format``: float option with get, set
+        abstract ``prefiltered``: bool option with get, set
+        abstract ``forcedExtension``: obj option with get, set
+        abstract ``createPolynomials``: bool option with get, set
+        abstract ``lodScale``: float option with get, set
+        abstract ``lodOffset``: float option with get, set
+        abstract ``loaderOptions``: obj option with get, set
+        abstract ``useSRGBBuffer``: bool option with get, set
+        abstract ``sphericalPolynomialTargetSize``: float option with get, set
+
     /// @babylonjs/core/Materials/material.pure
     [<AllowNullLiteral>]
     type ICustomShaderNameResolveOptions =
@@ -268,6 +339,12 @@ module SimpleInterfaces =
         abstract ``samplers``: ResizeArray<string> option with get, set
         abstract ``defines``: ResizeArray<string> option with get, set
 
+    /// @babylonjs/core/Misc/dataReader
+    [<AllowNullLiteral>]
+    type IDataBuffer =
+        abstract ``readAsync``: ``byteOffset``: float * ``byteLength``: float -> JS.Promise<JS.ArrayBufferView>
+        abstract ``byteLength``: float with get
+
     /// @babylonjs/core/scene.pure
     [<AllowNullLiteral>]
     type IDisposable =
@@ -276,7 +353,7 @@ module SimpleInterfaces =
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
     type IEasingFunction =
-        abstract ``ease``: gradient: float -> float
+        abstract ``ease``: ``gradient``: float -> float
 
     /// @babylonjs/core/Rendering/edgesRenderer.pure
     [<AllowNullLiteral>]
@@ -312,7 +389,7 @@ module SimpleInterfaces =
     /// Function-valued IExplorerExtensibilityOption.action property.
     [<AllowNullLiteral>]
     type IExplorerExtensibilityOptionActionCallback =
-        [<Emit("$0($1...)")>] abstract Invoke: entity: obj -> unit
+        [<Emit("$0($1...)")>] abstract Invoke: ``entity``: obj -> unit
 
     /// @babylonjs/core/Debug/debugLayer.pure
     [<AllowNullLiteral>]
@@ -341,6 +418,29 @@ module SimpleInterfaces =
         abstract ``uniqueId``: string with get, set
         abstract ``action``: BabylonjsBindings.StringEnums.FlowGraphAction with get, set
         abstract ``payload``: obj option with get, set
+
+    /// @babylonjs/core/FlowGraph/CustomTypes/flowGraphMatrix
+    [<AllowNullLiteral>]
+    type IFlowGraphMatrix<'VectorType> =
+        abstract ``m``: ResizeArray<float> with get, set
+        abstract ``transformVector``: ``v``: 'VectorType -> 'VectorType
+        abstract ``transformVectorToRef``: ``v``: 'VectorType * ``result``: 'VectorType -> 'VectorType
+        abstract ``asArray``: unit -> ResizeArray<float>
+        abstract ``toArray``: ``emptyArray``: ResizeArray<float> -> ResizeArray<float>
+        abstract ``fromArray``: ``array``: ResizeArray<float> -> IFlowGraphMatrix<'VectorType>
+        abstract ``multiplyToRef``: ``other``: IFlowGraphMatrix<'VectorType> * ``result``: IFlowGraphMatrix<'VectorType> -> IFlowGraphMatrix<'VectorType>
+        abstract ``multiply``: ``other``: IFlowGraphMatrix<'VectorType> -> IFlowGraphMatrix<'VectorType>
+        abstract ``divideToRef``: ``other``: IFlowGraphMatrix<'VectorType> * ``result``: IFlowGraphMatrix<'VectorType> -> IFlowGraphMatrix<'VectorType>
+        abstract ``divide``: ``other``: IFlowGraphMatrix<'VectorType> -> IFlowGraphMatrix<'VectorType>
+        abstract ``addToRef``: ``other``: IFlowGraphMatrix<'VectorType> * ``result``: IFlowGraphMatrix<'VectorType> -> IFlowGraphMatrix<'VectorType>
+        abstract ``add``: ``other``: IFlowGraphMatrix<'VectorType> -> IFlowGraphMatrix<'VectorType>
+        abstract ``subtractToRef``: ``other``: IFlowGraphMatrix<'VectorType> * ``result``: IFlowGraphMatrix<'VectorType> -> IFlowGraphMatrix<'VectorType>
+        abstract ``subtract``: ``other``: IFlowGraphMatrix<'VectorType> -> IFlowGraphMatrix<'VectorType>
+        abstract ``transpose``: unit -> IFlowGraphMatrix<'VectorType>
+        abstract ``determinant``: unit -> float
+        abstract ``inverse``: unit -> IFlowGraphMatrix<'VectorType>
+        abstract ``getClassName``: unit -> string
+        abstract ``equals``: ``other``: IFlowGraphMatrix<'VectorType> * ?``epsilon``: float -> bool
 
     /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphSceneTickEventBlock.pure
     [<AllowNullLiteral>]
@@ -492,10 +592,30 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IHardwareTextureWrapper =
         abstract ``underlyingResource``: obj with get, set
-        abstract ``set``: hardwareTexture: obj -> unit
-        abstract ``setUsage``: textureSource: float * generateMipMaps: bool * is2DArray: bool * isCube: bool * is3D: bool * width: float * height: float * depth: float -> unit
+        abstract ``set``: ``hardwareTexture``: obj -> unit
+        abstract ``setUsage``: ``textureSource``: float * ``generateMipMaps``: bool * ``is2DArray``: bool * ``isCube``: bool * ``is3D``: bool * ``width``: float * ``height``: float * ``depth``: float -> unit
         abstract ``reset``: unit -> unit
         abstract ``release``: unit -> unit
+
+    /// @babylonjs/core/Materials/Textures/HTML/htmlInteractionManager
+    [<AllowNullLiteral>]
+    type IHtmlInteractionManagerOptions =
+        abstract ``targetElement``: Browser.Types.HTMLElement option with get, set
+        abstract ``enablePointerEvents``: bool option with get, set
+
+    /// @babylonjs/core/Materials/Textures/HTML/htmlRaycastInteractionManager
+    [<AllowNullLiteral>]
+    type IHtmlRaycastInteractionManagerOptions =
+        abstract ``targetElement``: Browser.Types.HTMLElement option with get, set
+        abstract ``backFaceCulling``: bool option with get, set
+        abstract ``invertY``: bool option with get, set
+
+    /// @babylonjs/core/Lights/IES/iesLoader
+    [<AllowNullLiteral>]
+    type IIESTextureData =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``data``: JS.Float32Array with get, set
 
     /// @babylonjs/core/Materials/imageProcessingConfiguration.defines
     [<AllowNullLiteral>]
@@ -519,7 +639,7 @@ module SimpleInterfaces =
     /// Function-valued IInspectorContextMenuItem.action property.
     [<AllowNullLiteral>]
     type IInspectorContextMenuItemActionCallback =
-        [<Emit("$0($1...)")>] abstract Invoke: ?entity: obj -> unit
+        [<Emit("$0($1...)")>] abstract Invoke: ?``entity``: obj -> unit
 
     /// @babylonjs/core/Debug/debugLayer.pure
     [<AllowNullLiteral>]
@@ -603,8 +723,8 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IMotorEnabledJoint =
         abstract ``physicsJoint``: obj with get, set
-        abstract ``setMotor``: ?force: float * ?maxForce: float * ?motorIndex: float -> unit
-        abstract ``setLimit``: upperLimit: float * ?lowerLimit: float * ?motorIndex: float -> unit
+        abstract ``setMotor``: ?``force``: float * ?``maxForce``: float * ?``motorIndex``: float -> unit
+        abstract ``setLimit``: ``upperLimit``: float * ?``lowerLimit``: float * ?``motorIndex``: float -> unit
 
     /// @babylonjs/core/Materials/Textures/multiRenderTarget.pure
     [<AllowNullLiteral>]
@@ -632,6 +752,11 @@ module SimpleInterfaces =
         abstract ``labels``: ResizeArray<string> option with get, set
         abstract ``label``: string option with get, set
         abstract ``dontCreateTextures``: bool option with get, set
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativeDataStream =
+        abstract ``writeBuffer``: ``buffer``: JS.ArrayBuffer * ``length``: float -> unit
 
     /// @babylonjs/core/Navigation/INavigationEngine
     [<AllowNullLiteral>]
@@ -662,6 +787,13 @@ module SimpleInterfaces =
     type INodeMaterialOptions =
         abstract ``emitComments``: bool with get, set
         abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleSourceTextureBlock.pure
+    [<AllowNullLiteral>]
+    type INodeParticleTextureData =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``data``: JS.Uint8ClampedArray with get, set
 
     /// @babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes
     [<AllowNullLiteral>]
@@ -709,7 +841,7 @@ module SimpleInterfaces =
     /// @babylonjs/core/Misc/observable.pure
     [<AllowNullLiteral>]
     type IObserver =
-        abstract ``remove``: ?defer: bool -> unit
+        abstract ``remove``: ?``defer``: bool -> unit
 
     /// @babylonjs/core/Misc/interfaces/iPerfViewer
     [<AllowNullLiteral>]
@@ -773,6 +905,28 @@ module SimpleInterfaces =
         abstract ``connectedPointIds``: ResizeArray<string> with get, set
         abstract ``defaultValue``: obj option with get, set
 
+    /// Function-valued IShaderMaterialOptions.extraInitializationsAsync property.
+    [<AllowNullLiteral>]
+    type IShaderMaterialOptionsExtraInitializationsAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> JS.Promise<unit>
+
+    /// @babylonjs/core/Materials/shaderMaterial.pure
+    [<AllowNullLiteral>]
+    type IShaderMaterialOptions =
+        abstract ``needAlphaBlending``: bool with get, set
+        abstract ``needAlphaTesting``: bool with get, set
+        abstract ``attributes``: ResizeArray<string> with get, set
+        abstract ``uniforms``: ResizeArray<string> with get, set
+        abstract ``uniformBuffers``: ResizeArray<string> with get, set
+        abstract ``samplers``: ResizeArray<string> with get, set
+        abstract ``externalTextures``: ResizeArray<string> with get, set
+        abstract ``samplerObjects``: ResizeArray<string> with get, set
+        abstract ``storageBuffers``: ResizeArray<string> with get, set
+        abstract ``defines``: ResizeArray<string> with get, set
+        abstract ``useClipPlane``: bool option with get, set
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage option with get, set
+        abstract ``extraInitializationsAsync``: IShaderMaterialOptionsExtraInitializationsAsyncCallback option with get, set
+
     /// @babylonjs/core/Maths/math.size
     [<AllowNullLiteral>]
     type ISize =
@@ -790,6 +944,12 @@ module SimpleInterfaces =
         abstract ``spurFollowsChild``: bool option with get, set
         abstract ``showLocalAxes``: bool option with get, set
         abstract ``localAxesSize``: float option with get, set
+
+    /// @babylonjs/core/Misc/smartArray
+    [<AllowNullLiteral>]
+    type ISmartArrayLike<'T> =
+        abstract ``data``: ResizeArray<'T> with get, set
+        abstract ``length``: float with get, set
 
     /// @babylonjs/core/Lights/lightConstants
     [<AllowNullLiteral>]
@@ -883,6 +1043,15 @@ module SimpleInterfaces =
         abstract ``actualBoundingBoxRight``: float with get
         abstract ``actualBoundingBoxAscent``: float with get
         abstract ``actualBoundingBoxDescent``: float with get
+
+    /// @babylonjs/core/Misc/timer
+    [<AllowNullLiteral>]
+    type ITimerData<'T> =
+        abstract ``startTime``: float with get, set
+        abstract ``currentTime``: float with get, set
+        abstract ``deltaTime``: float with get, set
+        abstract ``completeRate``: float with get, set
+        abstract ``payload``: 'T with get, set
 
     /// @babylonjs/core/Meshes/trailMesh.pure
     [<AllowNullLiteral>]
@@ -1010,6 +1179,12 @@ module SimpleInterfaces =
     type IWebXRMotionControllerAxesValue =
         abstract ``x``: float with get, set
         abstract ``y``: float with get, set
+
+    /// @babylonjs/core/XR/motionController/webXRControllerComponent
+    [<AllowNullLiteral>]
+    type IWebXRMotionControllerComponentChangesValues<'T> =
+        abstract ``current``: 'T with get, set
+        abstract ``previous``: 'T with get, set
 
     /// @babylonjs/core/XR/features/WebXRRawCameraAccess.pure
     [<AllowNullLiteral>]
@@ -1157,6 +1332,13 @@ module SimpleInterfaces =
         abstract ``lockedTangent``: bool option with get, set
         abstract ``easingFunction``: IEasingFunction option with get, set
 
+    /// @babylonjs/core/Behaviors/behavior
+    [<AllowNullLiteral>]
+    type IBehaviorAware<'T> =
+        abstract ``addBehavior``: ``behavior``: Behavior<'T> -> 'T
+        abstract ``removeBehavior``: ``behavior``: Behavior<'T> -> 'T
+        abstract ``getBehaviorByName``: ``name``: string -> Behavior<'T> option
+
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
     type IColor4Like =
@@ -1167,13 +1349,13 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IDeviceInputSystem =
         inherit IDisposable
-        abstract ``pollInput``: deviceType: BabylonjsBindings.Enums.DeviceType * deviceSlot: float * inputIndex: float -> float
-        abstract ``isDeviceAvailable``: deviceType: BabylonjsBindings.Enums.DeviceType -> bool
+        abstract ``pollInput``: ``deviceType``: BabylonjsBindings.Enums.DeviceType * ``deviceSlot``: float * ``inputIndex``: float -> float
+        abstract ``isDeviceAvailable``: ``deviceType``: BabylonjsBindings.Enums.DeviceType -> bool
 
     /// Function-valued IExplorerExtensibilityGroup.predicate property.
     [<AllowNullLiteral>]
     type IExplorerExtensibilityGroupPredicateCallback =
-        [<Emit("$0($1...)")>] abstract Invoke: entity: obj -> bool
+        [<Emit("$0($1...)")>] abstract Invoke: ``entity``: obj -> bool
 
     /// @babylonjs/core/Debug/debugLayer.pure
     [<AllowNullLiteral>]
@@ -1219,6 +1401,21 @@ module SimpleInterfaces =
         inherit IMakeAnimationAdditiveOptions
         abstract ``cloneOriginalAnimationGroup``: bool option with get, set
         abstract ``clonedAnimationGroupName``: string option with get, set
+
+    /// @babylonjs/core/Engines/ICanvas
+    [<AllowNullLiteral>]
+    type IPath2D =
+        abstract ``addPath``: ``path``: IPath2D * ?``transform``: DOMMatrix -> unit
+        abstract ``closePath``: unit -> unit
+        abstract ``moveTo``: ``x``: float * ``y``: float -> unit
+        abstract ``lineTo``: ``x``: float * ``y``: float -> unit
+        abstract ``bezierCurveTo``: ``cp1x``: float * ``cp1y``: float * ``cp2x``: float * ``cp2y``: float * ``x``: float * ``y``: float -> unit
+        abstract ``quadraticCurveTo``: ``cpx``: float * ``cpy``: float * ``x``: float * ``y``: float -> unit
+        abstract ``arc``: ``x``: float * ``y``: float * ``radius``: float * ``startAngle``: float * ``endAngle``: float * ?``counterclockwise``: bool -> unit
+        abstract ``arcTo``: ``x1``: float * ``y1``: float * ``x2``: float * ``y2``: float * ``radius``: float -> unit
+        abstract ``ellipse``: ``x``: float * ``y``: float * ``radiusX``: float * ``radiusY``: float * ``rotation``: float * ``startAngle``: float * ``endAngle``: float * ?``counterclockwise``: bool -> unit
+        abstract ``rect``: ``x``: float * ``y``: float * ``width``: float * ``height``: float -> unit
+        abstract ``roundRect``: ``x``: float * ``y``: float * ``width``: float * ``height``: float * ``radii``: float -> unit
 
     /// @babylonjs/core/FlowGraph/typeDefinitions
     [<AllowNullLiteral>]
@@ -1285,6 +1482,14 @@ module SimpleInterfaces =
         abstract ``customControllersRepositoryURL``: string option with get, set
         abstract ``disableControllerAnimation``: bool option with get, set
         abstract ``controllerOptions``: IWebXRControllerOptions option with get, set
+
+    /// @babylonjs/core/XR/motionController/webXRControllerComponent
+    [<AllowNullLiteral>]
+    type IWebXRMotionControllerComponentChanges =
+        abstract ``axes``: IWebXRMotionControllerComponentChangesValues<IWebXRMotionControllerAxesValue> option with get, set
+        abstract ``pressed``: IWebXRMotionControllerComponentChangesValues<bool> option with get, set
+        abstract ``touched``: IWebXRMotionControllerComponentChangesValues<bool> option with get, set
+        abstract ``value``: IWebXRMotionControllerComponentChangesValues<float> option with get, set
 
     /// @babylonjs/core/Engines/nativeEngine.pure
     [<AllowNullLiteral>]

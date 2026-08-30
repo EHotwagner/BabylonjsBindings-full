@@ -19,6 +19,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer.js",
+      "export": "AbstractAudioAnalyzer",
+      "moduleSha256": "c2af5cc88f0d82916185563b89c7f615cd50b56791fcdfe729ad5d165813230b"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio.js",
       "export": "AbstractStereoAudio",
       "moduleSha256": "af868581b00df6c4047103c11d8aef466de9fb7f66a056da429e6e95f160efc7"
@@ -28,6 +34,12 @@
       "module": "@babylonjs/core/Animations/animationPropertiesOverride.js",
       "export": "AnimationPropertiesOverride",
       "moduleSha256": "9aab0171aec642e514a0a2785353408bb6f32dd22d44de4a6d8477e15f9b7718"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationRange.js",
+      "export": "AnimationRange",
+      "moduleSha256": "8a7cefaf29cc3222332f7ae7e8837e75bd9217982cef6059c8a0beb8e171dfef"
     },
     {
       "package": "@babylonjs/core",
@@ -55,9 +67,21 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dataReader.js",
+      "export": "DataReader",
+      "moduleSha256": "a570bc74eccd357a593ad1c15b697d44b3a814f06cb8dca39603ad754c7fcfd3"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/deepCopier.js",
       "export": "DeepCopier",
       "moduleSha256": "004763a82c74649eedd83a83d43409213dc6de1bc0f8ec2b552521ba82c126b5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/loadingScreen.pure.js",
+      "export": "DefaultLoadingScreen",
+      "moduleSha256": "a8d971975abd51e11fa3484adc69814af4447beba8aa2b4f5135262a841a41d2"
     },
     {
       "package": "@babylonjs/core",
@@ -67,9 +91,51 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/PerformanceViewer/dynamicFloat32Array.js",
+      "export": "DynamicFloat32Array",
+      "moduleSha256": "8f8b21a650f3eee9d8842a73f86e98f7a934776f0d6c273258cdc1387721ef39"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Events/deviceInputEvents.js",
       "export": "EventConstants",
       "moduleSha256": "975059ee662413954fff24bf7287c828b90cd5a35ae03c68eee3adb6734d4990"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/observable.pure.js",
+      "export": "EventState",
+      "moduleSha256": "a708a7f9d2f5ff92d454323a38ceaa72f68c9fe46a19faef4bdb7c2d54f618e0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.configuration.js",
+      "export": "ExrLoaderGlobalConfiguration",
+      "moduleSha256": "d176348df7cb8380c5ba29ae81f7483485ec123e2afd42fc136a6f5ecdebb124"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure.js",
+      "export": "FlowGraphInteger",
+      "moduleSha256": "49be50789679fee7e09fe3addbc2fede16f24bf259fa6021a125eb6a4d0123fb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphLogger.js",
+      "export": "FlowGraphLogger",
+      "moduleSha256": "12cb5165115e9fb2da94ee21dc22b60e1b6a3f96299aa3f74e74c3a0671bea0e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Collisions/intersectionInfo.js",
+      "export": "IntersectionInfo",
+      "moduleSha256": "f3ce98565a7a7e5fad8188ccdb1a0c12cb2ddc265aff9520db07b7ca23b9f7cb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/keyboardEvents.js",
+      "export": "KeyboardInfo",
+      "moduleSha256": "e899370df9e58c34452694035bab0f623a7fb9826e6fa19a04b68eedcaa64b66"
     },
     {
       "package": "@babylonjs/core",
@@ -85,9 +151,21 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/nullEngine.pure.js",
+      "export": "NullEngineOptions",
+      "moduleSha256": "5c844b68167f2dca140491cb224b5c7cfab3472e4f6ce8676057d575e909b921"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure.js",
       "export": "OnAfterEnteringVRObservableEvent",
       "moduleSha256": "fe96f38092ea874925e6b72de9420a6c8da0ddc92fb39ce2f54989df6f24654c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/HighDynamicRange/panoramaToCubemap.js",
+      "export": "PanoramaToCubeMapTools",
+      "moduleSha256": "1da2eb907b3f42aa398c72db9c0d4aac32666c110a17b84e6194bc7829d230bb"
     },
     {
       "package": "@babylonjs/core",
@@ -100,6 +178,18 @@
       "module": "@babylonjs/core/Misc/performanceMonitor.js",
       "export": "PerformanceMonitor",
       "moduleSha256": "cf49766c58602125c303dd28c962f409653f78e796d670150f15b8ccde1084ec"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/physicsConstraint.js",
+      "export": "Physics6DoFLimit",
+      "moduleSha256": "4498bb00926b183104bc7bf3459917c4a70ecf655357ce3cf0df740e3009c910"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/physicsHelper.js",
+      "export": "PhysicsUpdraftEventOptions",
+      "moduleSha256": "fe54f2be1ef22752dae355d13feed09e14dee847d4164b505fd9ef694fa1fb7b"
     },
     {
       "package": "@babylonjs/core",
@@ -133,6 +223,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.size.js",
+      "export": "Size",
+      "moduleSha256": "397d1d56b22af85b5350223fa364d2519ef04059eab4c1a74ec4234054e1e85f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Gamepads/gamepad.js",
       "export": "StickValues",
       "moduleSha256": "26b3e161808a56c713216792829a5a7a365912a1b0ef92fb9e76217fbe9309ca"
@@ -145,6 +241,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureSampler.js",
+      "export": "TextureSampler",
+      "moduleSha256": "a491cede498a66a884be722fd8db640f4dd2876f699c940bd64ad97a48202965"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/uniqueIdGenerator.js",
       "export": "UniqueIdGenerator",
       "moduleSha256": "931b4e2f8cb051950466bd76c5d6e42825f75dc5402096a3918d29bacf7926f6"
@@ -154,6 +256,36 @@
       "module": "@babylonjs/core/Meshes/mesh.vertexData.js",
       "export": "VertexDataMaterialInfo",
       "moduleSha256": "5c5b673f6bd68344b2ac2957d7b82bf9bb1d7cf5a55879995ee93577a79118bf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.viewport.js",
+      "export": "Viewport",
+      "moduleSha256": "63f55717dbd9dcda50d923a6e2afa8e528208c7bab0c38a3d72ff019b03994db"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGL/webGL2ShaderProcessors.js",
+      "export": "WebGL2ShaderProcessor",
+      "moduleSha256": "52f16ee7b753576f8500129a3f4342e3e32ff69c1baa885ba00f93f2a1173b6f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuTintWASM.js",
+      "export": "WebGPUTintWASM",
+      "moduleSha256": "5adb265aab0f57de13bb91b8b5ed9059e102eef6d5a473fa6d72ceabf7fc37bf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/keyboardEvents.js",
+      "export": "KeyboardInfoPre",
+      "moduleSha256": "e899370df9e58c34452694035bab0f623a7fb9826e6fa19a04b68eedcaa64b66"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuPerfCounter.js",
+      "export": "WebGPUPerfCounter",
+      "moduleSha256": "1c7a32cbafcbd6e12f965282c811fb76fade7b93bffad9247ea7475a6d95b29d"
     }
   ],
   "status": "pass"

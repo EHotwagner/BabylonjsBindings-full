@@ -1,9 +1,9 @@
-// MAINTAINED REVIEWED BINDING — exact Babylon.js 9.19.0 dependency-free runtime classes
+// MAINTAINED REVIEWED BINDING — exact Babylon.js 9.19.0 dependency-closed runtime classes
 namespace BabylonjsBindings
 
 open Fable.Core
 
-/// Exact dependency-free runtime classes exported by Babylon.js 9.19.0.
+/// Exact dependency-closed runtime classes exported by Babylon.js 9.19.0.
 module SimpleClasses =
 
     /// @babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure
@@ -24,6 +24,29 @@ module SimpleClasses =
 
     [<Import("_OcclusionDataStorage", "@babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure.js")>]
     let _OcclusionDataStorage: _OcclusionDataStorageStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer
+    [<AllowNullLiteral>]
+    type AbstractAudioAnalyzer =
+        abstract ``fftSize``: BabylonjsBindings.Enums.AudioAnalyzerFFTSizeType with get, set
+        abstract ``isEnabled``: bool with get, set
+        abstract ``minDecibels``: float with get, set
+        abstract ``maxDecibels``: float with get, set
+        abstract ``smoothing``: float with get, set
+        abstract ``dispose``: unit -> unit
+        abstract ``enableAsync``: unit -> JS.Promise<unit>
+        abstract ``getByteFrequencyData``: unit -> JS.Uint8Array
+        abstract ``getByteTimeDomainData``: unit -> JS.Uint8Array
+        abstract ``getFloatFrequencyData``: unit -> JS.Float32Array
+        abstract ``getFloatTimeDomainData``: unit -> JS.Float32Array
+        abstract ``frequencyBinCount``: float with get
+
+    [<AllowNullLiteral>]
+    type AbstractAudioAnalyzerStatic =
+        interface end
+
+    [<Import("AbstractAudioAnalyzer", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer.js")>]
+    let AbstractAudioAnalyzer: AbstractAudioAnalyzerStatic = jsNative
 
     /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio
     [<AllowNullLiteral>]
@@ -51,6 +74,21 @@ module SimpleClasses =
     [<Import("AnimationPropertiesOverride", "@babylonjs/core/Animations/animationPropertiesOverride.js")>]
     let AnimationPropertiesOverride: AnimationPropertiesOverrideStatic = jsNative
 
+    /// @babylonjs/core/Animations/animationRange
+    [<AllowNullLiteral>]
+    type AnimationRange =
+        abstract ``name``: string with get, set
+        abstract ``from``: float with get, set
+        abstract ``to``: float with get, set
+        abstract ``clone``: unit -> AnimationRange
+
+    [<AllowNullLiteral>]
+    type AnimationRangeStatic =
+        [<EmitConstructor>] abstract Create: ``name``: string * ``from``: float * ``to``: float -> AnimationRange
+
+    [<Import("AnimationRange", "@babylonjs/core/Animations/animationRange.js")>]
+    let AnimationRange: AnimationRangeStatic = jsNative
+
     /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
     [<AllowNullLiteral>]
     type BabylonFileLoaderConfiguration =
@@ -72,7 +110,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BezierCurveStatic =
         [<EmitConstructor>] abstract Create: unit -> BezierCurve
-        abstract ``Interpolate``: t: float * x1: float * y1: float * x2: float * y2: float -> float
+        abstract ``Interpolate``: ``t``: float * ``x1``: float * ``y1``: float * ``x2``: float * ``y2``: float -> float
 
     [<Import("BezierCurve", "@babylonjs/core/Maths/math.path.js")>]
     let BezierCurve: BezierCurveStatic = jsNative
@@ -81,12 +119,12 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BitArray =
         abstract ``size``: float with get
-        abstract ``get``: bitIndex: float -> bool
-        abstract ``set``: bitIndex: float * value: bool -> unit
+        abstract ``get``: ``bitIndex``: float -> bool
+        abstract ``set``: ``bitIndex``: float * ``value``: bool -> unit
 
     [<AllowNullLiteral>]
     type BitArrayStatic =
-        [<EmitConstructor>] abstract Create: size: float -> BitArray
+        [<EmitConstructor>] abstract Create: ``size``: float -> BitArray
 
     [<Import("BitArray", "@babylonjs/core/Misc/bitArray.js")>]
     let BitArray: BitArrayStatic = jsNative
@@ -107,6 +145,24 @@ module SimpleClasses =
     [<Import("DataBuffer", "@babylonjs/core/Buffers/dataBuffer.js")>]
     let DataBuffer: DataBufferStatic = jsNative
 
+    /// @babylonjs/core/Misc/dataReader
+    [<AllowNullLiteral>]
+    type DataReader =
+        abstract ``buffer``: BabylonjsBindings.SimpleInterfaces.IDataBuffer with get
+        abstract ``byteOffset``: float with get, set
+        abstract ``loadAsync``: ``byteLength``: float -> JS.Promise<unit>
+        abstract ``readUint32``: unit -> float
+        abstract ``readUint8Array``: ``byteLength``: float -> JS.Uint8Array
+        abstract ``readString``: ``byteLength``: float -> string
+        abstract ``skipBytes``: ``byteLength``: float -> unit
+
+    [<AllowNullLiteral>]
+    type DataReaderStatic =
+        [<EmitConstructor>] abstract Create: ``buffer``: BabylonjsBindings.SimpleInterfaces.IDataBuffer -> DataReader
+
+    [<Import("DataReader", "@babylonjs/core/Misc/dataReader.js")>]
+    let DataReader: DataReaderStatic = jsNative
+
     /// @babylonjs/core/Misc/deepCopier
     [<AllowNullLiteral>]
     type DeepCopier =
@@ -115,10 +171,27 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type DeepCopierStatic =
         [<EmitConstructor>] abstract Create: unit -> DeepCopier
-        abstract ``DeepCopy``: source: obj * destination: obj * ?doNotCopyList: ResizeArray<string> * ?mustCopyList: ResizeArray<string> * ?shallowCopyValues: bool -> unit
+        abstract ``DeepCopy``: ``source``: obj * ``destination``: obj * ?``doNotCopyList``: ResizeArray<string> * ?``mustCopyList``: ResizeArray<string> * ?``shallowCopyValues``: bool -> unit
 
     [<Import("DeepCopier", "@babylonjs/core/Misc/deepCopier.js")>]
     let DeepCopier: DeepCopierStatic = jsNative
+
+    /// @babylonjs/core/Loading/loadingScreen.pure
+    [<AllowNullLiteral>]
+    type DefaultLoadingScreen =
+        abstract ``displayLoadingUI``: unit -> unit
+        abstract ``hideLoadingUI``: unit -> unit
+        abstract ``loadingUIText``: string with get, set
+        abstract ``loadingUIBackgroundColor``: string with get, set
+
+    [<AllowNullLiteral>]
+    type DefaultLoadingScreenStatic =
+        [<EmitConstructor>] abstract Create: ``_renderingCanvas``: Browser.Types.HTMLCanvasElement * ?``_loadingText``: string * ?``_loadingDivBackgroundColor``: string -> DefaultLoadingScreen
+        abstract ``DefaultLogoUrl``: string with get, set
+        abstract ``DefaultSpinnerUrl``: string with get, set
+
+    [<Import("DefaultLoadingScreen", "@babylonjs/core/Loading/loadingScreen.pure.js")>]
+    let DefaultLoadingScreen: DefaultLoadingScreenStatic = jsNative
 
     /// @babylonjs/core/Particles/solidParticle
     [<AllowNullLiteral>]
@@ -131,10 +204,25 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type DepthSortedParticleStatic =
-        [<EmitConstructor>] abstract Create: idx: float * ind: float * indLength: float * materialIndex: float -> DepthSortedParticle
+        [<EmitConstructor>] abstract Create: ``idx``: float * ``ind``: float * ``indLength``: float * ``materialIndex``: float -> DepthSortedParticle
 
     [<Import("DepthSortedParticle", "@babylonjs/core/Particles/solidParticle.js")>]
     let DepthSortedParticle: DepthSortedParticleStatic = jsNative
+
+    /// @babylonjs/core/Misc/PerformanceViewer/dynamicFloat32Array
+    [<AllowNullLiteral>]
+    type DynamicFloat32Array =
+        abstract ``at``: ``index``: float -> float
+        abstract ``subarray``: ``start``: float * ``end``: float -> JS.Float32Array
+        abstract ``push``: ``item``: float -> unit
+        abstract ``itemLength``: float with get
+
+    [<AllowNullLiteral>]
+    type DynamicFloat32ArrayStatic =
+        [<EmitConstructor>] abstract Create: ``itemCapacity``: float -> DynamicFloat32Array
+
+    [<Import("DynamicFloat32Array", "@babylonjs/core/Misc/PerformanceViewer/dynamicFloat32Array.js")>]
+    let DynamicFloat32Array: DynamicFloat32ArrayStatic = jsNative
 
     /// @babylonjs/core/Events/deviceInputEvents
     [<AllowNullLiteral>]
@@ -150,6 +238,104 @@ module SimpleClasses =
 
     [<Import("EventConstants", "@babylonjs/core/Events/deviceInputEvents.js")>]
     let EventConstants: EventConstantsStatic = jsNative
+
+    /// @babylonjs/core/Misc/observable.pure
+    [<AllowNullLiteral>]
+    type EventState =
+        abstract ``initialize``: ``mask``: float * ?``skipNextObservers``: bool * ?``target``: obj * ?``currentTarget``: obj -> EventState
+        abstract ``skipNextObservers``: bool with get, set
+        abstract ``mask``: float with get, set
+        abstract ``target``: obj option with get, set
+        abstract ``currentTarget``: obj option with get, set
+        abstract ``lastReturnValue``: obj option with get, set
+        abstract ``userInfo``: obj option with get, set
+
+    [<AllowNullLiteral>]
+    type EventStateStatic =
+        [<EmitConstructor>] abstract Create: ``mask``: float * ?``skipNextObservers``: bool * ?``target``: obj * ?``currentTarget``: obj -> EventState
+
+    [<Import("EventState", "@babylonjs/core/Misc/observable.pure.js")>]
+    let EventState: EventStateStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.configuration
+    [<AllowNullLiteral>]
+    type ExrLoaderGlobalConfiguration =
+        interface end
+
+    [<AllowNullLiteral>]
+    type ExrLoaderGlobalConfigurationStatic =
+        [<EmitConstructor>] abstract Create: unit -> ExrLoaderGlobalConfiguration
+        abstract ``DefaultOutputType``: BabylonjsBindings.Enums.EXROutputType with get, set
+        abstract ``FFLATEUrl``: string with get, set
+
+    [<Import("ExrLoaderGlobalConfiguration", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.configuration.js")>]
+    let ExrLoaderGlobalConfiguration: ExrLoaderGlobalConfigurationStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure
+    [<AllowNullLiteral>]
+    type FlowGraphInteger =
+        abstract ``value``: float with get
+        abstract ``add``: ``other``: FlowGraphInteger -> FlowGraphInteger
+        abstract ``subtract``: ``other``: FlowGraphInteger -> FlowGraphInteger
+        abstract ``multiply``: ``other``: FlowGraphInteger -> FlowGraphInteger
+        abstract ``divide``: ``other``: FlowGraphInteger -> FlowGraphInteger
+        abstract ``getClassName``: unit -> string
+        abstract ``equals``: ``other``: FlowGraphInteger -> bool
+        abstract ``toString``: unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphIntegerStatic =
+        [<EmitConstructor>] abstract Create: ``value``: float -> FlowGraphInteger
+        abstract ``ClassName``: string with get, set
+        abstract ``FromValue``: ``value``: float -> FlowGraphInteger
+
+    [<Import("FlowGraphInteger", "@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure.js")>]
+    let FlowGraphInteger: FlowGraphIntegerStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphLogger
+    [<AllowNullLiteral>]
+    type FlowGraphLogger =
+        abstract ``logToConsole``: bool with get, set
+        abstract ``log``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IFlowGraphLogItem> with get, set
+        abstract ``addLogItem``: ``item``: BabylonjsBindings.SimpleInterfaces.IFlowGraphLogItem -> unit
+        abstract ``getItemsOfType``: ``action``: BabylonjsBindings.StringEnums.FlowGraphAction -> ResizeArray<BabylonjsBindings.SimpleInterfaces.IFlowGraphLogItem>
+
+    [<AllowNullLiteral>]
+    type FlowGraphLoggerStatic =
+        [<EmitConstructor>] abstract Create: unit -> FlowGraphLogger
+
+    [<Import("FlowGraphLogger", "@babylonjs/core/FlowGraph/flowGraphLogger.js")>]
+    let FlowGraphLogger: FlowGraphLoggerStatic = jsNative
+
+    /// @babylonjs/core/Collisions/intersectionInfo
+    [<AllowNullLiteral>]
+    type IntersectionInfo =
+        abstract ``bu``: float option with get, set
+        abstract ``bv``: float option with get, set
+        abstract ``distance``: float with get, set
+        abstract ``faceId``: float with get, set
+        abstract ``subMeshId``: float with get, set
+        abstract ``_internalSubMeshId``: float with get, set
+
+    [<AllowNullLiteral>]
+    type IntersectionInfoStatic =
+        [<EmitConstructor>] abstract Create: ``bu``: float option * ``bv``: float option * ``distance``: float -> IntersectionInfo
+
+    [<Import("IntersectionInfo", "@babylonjs/core/Collisions/intersectionInfo.js")>]
+    let IntersectionInfo: IntersectionInfoStatic = jsNative
+
+    /// @babylonjs/core/Events/keyboardEvents
+    [<AllowNullLiteral>]
+    type KeyboardInfo =
+        abstract ``type``: float with get, set
+        abstract ``event``: BabylonjsBindings.SimpleInterfaces.IKeyboardEvent with get, set
+
+    [<AllowNullLiteral>]
+    type KeyboardInfoStatic =
+        [<EmitConstructor>] abstract Create: ``type``: float * ``event``: BabylonjsBindings.SimpleInterfaces.IKeyboardEvent -> KeyboardInfo
+
+    [<Import("KeyboardInfo", "@babylonjs/core/Events/keyboardEvents.js")>]
+    let KeyboardInfo: KeyboardInfoStatic = jsNative
 
     /// @babylonjs/core/Materials/materialFlags
     [<AllowNullLiteral>]
@@ -201,6 +387,26 @@ module SimpleClasses =
     [<Import("MatrixManagement", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
     let MatrixManagement: MatrixManagementStatic = jsNative
 
+    /// @babylonjs/core/Engines/nullEngine.pure
+    [<AllowNullLiteral>]
+    type NullEngineOptions =
+        abstract ``renderWidth``: float with get, set
+        abstract ``renderHeight``: float with get, set
+        abstract ``textureSize``: float with get, set
+        abstract ``deterministicLockstep``: bool with get, set
+        abstract ``timeStep``: float option with get, set
+        abstract ``lockstepMaxSteps``: float with get, set
+        abstract ``useHighPrecisionMatrix``: bool option with get, set
+        abstract ``renderingCanvas``: Browser.Types.HTMLCanvasElement option with get, set
+        abstract ``enableMultiview``: bool option with get, set
+
+    [<AllowNullLiteral>]
+    type NullEngineOptionsStatic =
+        [<EmitConstructor>] abstract Create: unit -> NullEngineOptions
+
+    [<Import("NullEngineOptions", "@babylonjs/core/Engines/nullEngine.pure.js")>]
+    let NullEngineOptions: NullEngineOptionsStatic = jsNative
+
     /// @babylonjs/core/Cameras/VR/vrExperienceHelper.pure
     [<AllowNullLiteral>]
     type OnAfterEnteringVRObservableEvent =
@@ -213,13 +419,26 @@ module SimpleClasses =
     [<Import("OnAfterEnteringVRObservableEvent", "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure.js")>]
     let OnAfterEnteringVRObservableEvent: OnAfterEnteringVRObservableEventStatic = jsNative
 
+    /// @babylonjs/core/Misc/HighDynamicRange/panoramaToCubemap
+    [<AllowNullLiteral>]
+    type PanoramaToCubeMapTools =
+        interface end
+
+    [<AllowNullLiteral>]
+    type PanoramaToCubeMapToolsStatic =
+        [<EmitConstructor>] abstract Create: unit -> PanoramaToCubeMapTools
+        abstract ``ConvertPanoramaToCubemap``: ``float32Array``: JS.Float32Array * ``inputWidth``: float * ``inputHeight``: float * ``size``: float * ?``supersample``: bool * ?``invertY``: bool -> BabylonjsBindings.SimpleInterfaces.CubeMapInfo
+
+    [<Import("PanoramaToCubeMapTools", "@babylonjs/core/Misc/HighDynamicRange/panoramaToCubemap.js")>]
+    let PanoramaToCubeMapTools: PanoramaToCubeMapToolsStatic = jsNative
+
     /// @babylonjs/core/Misc/perfCounter
     [<AllowNullLiteral>]
     type PerfCounter =
         abstract ``fetchNewFrame``: unit -> unit
-        abstract ``addCount``: newCount: float * fetchResult: bool -> unit
+        abstract ``addCount``: ``newCount``: float * ``fetchResult``: bool -> unit
         abstract ``beginMonitoring``: unit -> unit
-        abstract ``endMonitoring``: ?newFrame: bool -> unit
+        abstract ``endMonitoring``: ?``newFrame``: bool -> unit
         abstract ``endFrame``: unit -> unit
         abstract ``_fetchResult``: unit -> unit
         abstract ``min``: float with get
@@ -241,7 +460,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/performanceMonitor
     [<AllowNullLiteral>]
     type PerformanceMonitor =
-        abstract ``sampleFrame``: ?timeMs: float -> unit
+        abstract ``sampleFrame``: ?``timeMs``: float -> unit
         abstract ``enable``: unit -> unit
         abstract ``disable``: unit -> unit
         abstract ``reset``: unit -> unit
@@ -255,10 +474,41 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type PerformanceMonitorStatic =
-        [<EmitConstructor>] abstract Create: ?frameSampleSize: float -> PerformanceMonitor
+        [<EmitConstructor>] abstract Create: ?``frameSampleSize``: float -> PerformanceMonitor
 
     [<Import("PerformanceMonitor", "@babylonjs/core/Misc/performanceMonitor.js")>]
     let PerformanceMonitor: PerformanceMonitorStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsConstraint
+    [<AllowNullLiteral>]
+    type Physics6DoFLimit =
+        abstract ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis with get, set
+        abstract ``minLimit``: float option with get, set
+        abstract ``maxLimit``: float option with get, set
+        abstract ``stiffness``: float option with get, set
+        abstract ``damping``: float option with get, set
+
+    [<AllowNullLiteral>]
+    type Physics6DoFLimitStatic =
+        [<EmitConstructor>] abstract Create: unit -> Physics6DoFLimit
+
+    [<Import("Physics6DoFLimit", "@babylonjs/core/Physics/v2/physicsConstraint.js")>]
+    let Physics6DoFLimit: Physics6DoFLimitStatic = jsNative
+
+    /// @babylonjs/core/Physics/physicsHelper
+    [<AllowNullLiteral>]
+    type PhysicsUpdraftEventOptions =
+        abstract ``radius``: float with get, set
+        abstract ``strength``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``updraftMode``: BabylonjsBindings.Enums.PhysicsUpdraftMode with get, set
+
+    [<AllowNullLiteral>]
+    type PhysicsUpdraftEventOptionsStatic =
+        [<EmitConstructor>] abstract Create: unit -> PhysicsUpdraftEventOptions
+
+    [<Import("PhysicsUpdraftEventOptions", "@babylonjs/core/Physics/physicsHelper.js")>]
+    let PhysicsUpdraftEventOptions: PhysicsUpdraftEventOptionsStatic = jsNative
 
     /// @babylonjs/core/Physics/physicsHelper
     [<AllowNullLiteral>]
@@ -296,14 +546,14 @@ module SimpleClasses =
     type RollingAverage =
         abstract ``average``: float with get, set
         abstract ``variance``: float with get, set
-        abstract ``add``: v: float -> unit
-        abstract ``history``: i: float -> float
+        abstract ``add``: ``v``: float -> unit
+        abstract ``history``: ``i``: float -> float
         abstract ``isSaturated``: unit -> bool
         abstract ``reset``: unit -> unit
 
     [<AllowNullLiteral>]
     type RollingAverageStatic =
-        [<EmitConstructor>] abstract Create: length: float -> RollingAverage
+        [<EmitConstructor>] abstract Create: ``length``: float -> RollingAverage
 
     [<Import("RollingAverage", "@babylonjs/core/Misc/performanceMonitor.js")>]
     let RollingAverage: RollingAverageStatic = jsNative
@@ -334,10 +584,38 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type ShaderCodeInlinerStatic =
-        [<EmitConstructor>] abstract Create: sourceCode: string * ?numMaxIterations: float -> ShaderCodeInliner
+        [<EmitConstructor>] abstract Create: ``sourceCode``: string * ?``numMaxIterations``: float -> ShaderCodeInliner
 
     [<Import("ShaderCodeInliner", "@babylonjs/core/Engines/Processors/shaderCodeInliner.js")>]
     let ShaderCodeInliner: ShaderCodeInlinerStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.size
+    [<AllowNullLiteral>]
+    type Size =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``toString``: unit -> string
+        abstract ``getClassName``: unit -> string
+        abstract ``getHashCode``: unit -> float
+        abstract ``copyFrom``: ``src``: Size -> unit
+        abstract ``copyFromFloats``: ``width``: float * ``height``: float -> Size
+        abstract ``set``: ``width``: float * ``height``: float -> Size
+        abstract ``multiplyByFloats``: ``w``: float * ``h``: float -> Size
+        abstract ``clone``: unit -> Size
+        abstract ``equals``: ``other``: Size -> bool
+        abstract ``add``: ``otherSize``: Size -> Size
+        abstract ``subtract``: ``otherSize``: Size -> Size
+        abstract ``scale``: ``scale``: float -> Size
+        abstract ``surface``: float with get
+
+    [<AllowNullLiteral>]
+    type SizeStatic =
+        [<EmitConstructor>] abstract Create: ``width``: float * ``height``: float -> Size
+        abstract ``Zero``: unit -> Size
+        abstract ``Lerp``: ``start``: Size * ``end``: Size * ``amount``: float -> Size
+
+    [<Import("Size", "@babylonjs/core/Maths/math.size.js")>]
+    let Size: SizeStatic = jsNative
 
     /// @babylonjs/core/Gamepads/gamepad
     [<AllowNullLiteral>]
@@ -347,7 +625,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type StickValuesStatic =
-        [<EmitConstructor>] abstract Create: x: float * y: float -> StickValues
+        [<EmitConstructor>] abstract Create: ``x``: float * ``y``: float -> StickValues
 
     [<Import("StickValues", "@babylonjs/core/Gamepads/gamepad.js")>]
     let StickValues: StickValuesStatic = jsNative
@@ -360,18 +638,44 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type TagsStatic =
         [<EmitConstructor>] abstract Create: unit -> Tags
-        abstract ``EnableFor``: obj: obj -> unit
-        abstract ``DisableFor``: obj: obj -> unit
-        abstract ``HasTags``: obj: obj -> bool
-        abstract ``GetTags``: obj: obj * ?asString: bool -> obj
-        abstract ``AddTagsTo``: obj: obj * tagsString: string -> unit
-        abstract ``_AddTagTo``: obj: obj * tag: string -> unit
-        abstract ``RemoveTagsFrom``: obj: obj * tagsString: string -> unit
-        abstract ``_RemoveTagFrom``: obj: obj * tag: string -> unit
-        abstract ``MatchesQuery``: obj: obj * tagsQuery: string -> bool
+        abstract ``EnableFor``: ``obj``: obj -> unit
+        abstract ``DisableFor``: ``obj``: obj -> unit
+        abstract ``HasTags``: ``obj``: obj -> bool
+        abstract ``GetTags``: ``obj``: obj * ?``asString``: bool -> obj
+        abstract ``AddTagsTo``: ``obj``: obj * ``tagsString``: string -> unit
+        abstract ``_AddTagTo``: ``obj``: obj * ``tag``: string -> unit
+        abstract ``RemoveTagsFrom``: ``obj``: obj * ``tagsString``: string -> unit
+        abstract ``_RemoveTagFrom``: ``obj``: obj * ``tag``: string -> unit
+        abstract ``MatchesQuery``: ``obj``: obj * ``tagsQuery``: string -> bool
 
     [<Import("Tags", "@babylonjs/core/Misc/tags.js")>]
     let Tags: TagsStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureSampler
+    [<AllowNullLiteral>]
+    type TextureSampler =
+        abstract ``samplingMode``: float with get, set
+        abstract ``_cachedWrapU``: float option with get, set
+        abstract ``_cachedWrapV``: float option with get, set
+        abstract ``_cachedWrapR``: float option with get, set
+        abstract ``_cachedAnisotropicFilteringLevel``: float option with get, set
+        abstract ``_comparisonFunction``: float with get, set
+        abstract ``label``: string option with get, set
+        abstract ``setParameters``: ?``wrapU``: float * ?``wrapV``: float * ?``wrapR``: float * ?``anisotropicFilteringLevel``: float * ?``samplingMode``: float * ?``comparisonFunction``: float -> TextureSampler
+        abstract ``compareSampler``: ``other``: TextureSampler -> bool
+        abstract ``wrapU``: float option with get, set
+        abstract ``wrapV``: float option with get, set
+        abstract ``wrapR``: float option with get, set
+        abstract ``anisotropicFilteringLevel``: float option with get, set
+        abstract ``comparisonFunction``: float with get, set
+        abstract ``useMipMaps``: bool option with get, set
+
+    [<AllowNullLiteral>]
+    type TextureSamplerStatic =
+        [<EmitConstructor>] abstract Create: unit -> TextureSampler
+
+    [<Import("TextureSampler", "@babylonjs/core/Materials/Textures/textureSampler.js")>]
+    let TextureSampler: TextureSamplerStatic = jsNative
 
     /// @babylonjs/core/Misc/uniqueIdGenerator
     [<AllowNullLiteral>]
@@ -401,3 +705,82 @@ module SimpleClasses =
 
     [<Import("VertexDataMaterialInfo", "@babylonjs/core/Meshes/mesh.vertexData.js")>]
     let VertexDataMaterialInfo: VertexDataMaterialInfoStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.viewport
+    [<AllowNullLiteral>]
+    type Viewport =
+        abstract ``x``: float with get, set
+        abstract ``y``: float with get, set
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``toGlobal``: ``renderWidth``: float * ``renderHeight``: float -> Viewport
+        abstract ``toGlobalToRef``: ``renderWidth``: float * ``renderHeight``: float * ``ref``: Viewport -> Viewport
+        abstract ``clone``: unit -> Viewport
+
+    [<AllowNullLiteral>]
+    type ViewportStatic =
+        [<EmitConstructor>] abstract Create: ``x``: float * ``y``: float * ``width``: float * ``height``: float -> Viewport
+
+    [<Import("Viewport", "@babylonjs/core/Maths/math.viewport.js")>]
+    let Viewport: ViewportStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGL/webGL2ShaderProcessors
+    [<AllowNullLiteral>]
+    type WebGL2ShaderProcessor =
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
+        abstract ``attributeProcessor``: ``attribute``: string -> string
+        abstract ``varyingCheck``: ``varying``: string * ``_isFragment``: bool -> bool
+        abstract ``varyingProcessor``: ``varying``: string * ``isFragment``: bool -> string
+        abstract ``postProcessor``: ``code``: string * ``defines``: ResizeArray<string> * ``isFragment``: bool -> string
+
+    [<AllowNullLiteral>]
+    type WebGL2ShaderProcessorStatic =
+        [<EmitConstructor>] abstract Create: unit -> WebGL2ShaderProcessor
+
+    [<Import("WebGL2ShaderProcessor", "@babylonjs/core/Engines/WebGL/webGL2ShaderProcessors.js")>]
+    let WebGL2ShaderProcessor: WebGL2ShaderProcessorStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuTintWASM
+    [<AllowNullLiteral>]
+    type WebGPUTintWASM =
+        abstract ``initTwgsl``: ?``twgslOptions``: BabylonjsBindings.SimpleInterfaces.TwgslOptions -> JS.Promise<unit>
+        abstract ``convertSpirV2WGSL``: ``code``: JS.Uint32Array * ?``disableUniformityAnalysis``: bool -> string
+
+    [<AllowNullLiteral>]
+    type WebGPUTintWASMStatic =
+        [<EmitConstructor>] abstract Create: unit -> WebGPUTintWASM
+        abstract ``ShowWGSLShaderCode``: bool with get, set
+        abstract ``DisableUniformityAnalysis``: bool with get, set
+
+    [<Import("WebGPUTintWASM", "@babylonjs/core/Engines/WebGPU/webgpuTintWASM.js")>]
+    let WebGPUTintWASM: WebGPUTintWASMStatic = jsNative
+
+    /// @babylonjs/core/Events/keyboardEvents
+    [<AllowNullLiteral>]
+    type KeyboardInfoPre =
+        inherit KeyboardInfo
+        abstract ``type``: float with get, set
+        abstract ``event``: BabylonjsBindings.SimpleInterfaces.IKeyboardEvent with get, set
+        abstract ``skipOnKeyboardObservable``: bool with get, set
+        abstract ``skipOnPointerObservable``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type KeyboardInfoPreStatic =
+        inherit KeyboardInfoStatic
+        [<EmitConstructor>] abstract Create: ``type``: float * ``event``: BabylonjsBindings.SimpleInterfaces.IKeyboardEvent -> KeyboardInfoPre
+
+    [<Import("KeyboardInfoPre", "@babylonjs/core/Events/keyboardEvents.js")>]
+    let KeyboardInfoPre: KeyboardInfoPreStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuPerfCounter
+    [<AllowNullLiteral>]
+    type WebGPUPerfCounter =
+        abstract ``counter``: PerfCounter with get, set
+        abstract ``_addDuration``: ``currentFrameId``: float * ``duration``: float -> unit
+
+    [<AllowNullLiteral>]
+    type WebGPUPerfCounterStatic =
+        [<EmitConstructor>] abstract Create: unit -> WebGPUPerfCounter
+
+    [<Import("WebGPUPerfCounter", "@babylonjs/core/Engines/WebGPU/webgpuPerfCounter.js")>]
+    let WebGPUPerfCounter: WebGPUPerfCounterStatic = jsNative

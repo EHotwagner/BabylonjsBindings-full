@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "ff13f1361e8d29afe5d21fa472c87252cc720f84b85b4467bfa7750e5eb3d69d",
+  "proposalSha256": "2949aa0eea2809e587980ac8acdf2c6d8903dc8be03b3791516ba5e89e8e776c",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -15,6 +15,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._OcclusionDataStorage",
       "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer",
+      "name": "AbstractAudioAnalyzer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractAudioAnalyzer",
+      "memberCount": 12
     },
     {
       "package": "@babylonjs/core",
@@ -33,6 +42,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AnimationPropertiesOverride",
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationRange",
+      "name": "AnimationRange",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AnimationRange",
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -72,12 +90,30 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dataReader",
+      "name": "DataReader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DataReader",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/deepCopier",
       "name": "DeepCopier",
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DeepCopier",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/loadingScreen.pure",
+      "name": "DefaultLoadingScreen",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DefaultLoadingScreen",
+      "memberCount": 7
     },
     {
       "package": "@babylonjs/core",
@@ -90,12 +126,75 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/PerformanceViewer/dynamicFloat32Array",
+      "name": "DynamicFloat32Array",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DynamicFloat32Array",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Events/deviceInputEvents",
       "name": "EventConstants",
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EventConstants",
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/observable.pure",
+      "name": "EventState",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EventState",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.configuration",
+      "name": "ExrLoaderGlobalConfiguration",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ExrLoaderGlobalConfiguration",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure",
+      "name": "FlowGraphInteger",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphInteger",
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphLogger",
+      "name": "FlowGraphLogger",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLogger",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Collisions/intersectionInfo",
+      "name": "IntersectionInfo",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.IntersectionInfo",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/keyboardEvents",
+      "name": "KeyboardInfo",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KeyboardInfo",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",
@@ -117,11 +216,29 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/nullEngine.pure",
+      "name": "NullEngineOptions",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.NullEngineOptions",
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure",
       "name": "OnAfterEnteringVRObservableEvent",
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OnAfterEnteringVRObservableEvent",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/HighDynamicRange/panoramaToCubemap",
+      "name": "PanoramaToCubeMapTools",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PanoramaToCubeMapTools",
       "memberCount": 2
     },
     {
@@ -141,6 +258,24 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PerformanceMonitor",
       "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/physicsConstraint",
+      "name": "Physics6DoFLimit",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Physics6DoFLimit",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/physicsHelper",
+      "name": "PhysicsUpdraftEventOptions",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PhysicsUpdraftEventOptions",
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -189,6 +324,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.size",
+      "name": "Size",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Size",
+      "memberCount": 18
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Gamepads/gamepad",
       "name": "StickValues",
       "kind": "class",
@@ -207,6 +351,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureSampler",
+      "name": "TextureSampler",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.TextureSampler",
+      "memberCount": 16
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/uniqueIdGenerator",
       "name": "UniqueIdGenerator",
       "kind": "class",
@@ -222,6 +375,51 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.VertexDataMaterialInfo",
       "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.viewport",
+      "name": "Viewport",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Viewport",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGL/webGL2ShaderProcessors",
+      "name": "WebGL2ShaderProcessor",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGL2ShaderProcessor",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuTintWASM",
+      "name": "WebGPUTintWASM",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUTintWASM",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/keyboardEvents",
+      "name": "KeyboardInfoPre",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KeyboardInfoPre",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuPerfCounter",
+      "name": "WebGPUPerfCounter",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUPerfCounter",
+      "memberCount": 3
     }
   ]
 }

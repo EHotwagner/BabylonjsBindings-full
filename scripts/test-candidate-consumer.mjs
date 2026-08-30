@@ -78,6 +78,7 @@ let eased = easing.\`\`ease\`\`(3.0)
 let bits = BitArray.Create(16.0)
 bits.\`\`set\`\`(9.0, true)
 let bitWasSet = bits.\`\`get\`\`(9.0)
+let positionStride = BabylonjsBindings.SimpleFunctions.\`\`VertexBufferDeduceStride\`\`.Invoke("position")
 if isNull (mesh :> obj) || scene.meshes.Count <> 1 then failwith "clean consumer scene failed"
 if uint32 NodeRenderGraphBlockConnectionPointTypes.\`\`All\`\` <> 4294967295u then failwith "clean consumer enum failed"
 if int AudioAnalyzerFFTSizeType.\`\`N32768\`\` <> 32768 then failwith "clean consumer numeric literal union failed"
@@ -87,6 +88,7 @@ if zoomDelta <> 6.0 then failwith "clean consumer object callback failed"
 if not stageCalled then failwith "clean consumer callback alias failed"
 if eased <> 6.0 then failwith "clean consumer interface method failed"
 if not bitWasSet then failwith "clean consumer class import failed"
+if positionStride <> 3.0 then failwith "clean consumer function import failed"
 loaderRegistration |> ignore
 engine.dispose()
 printfn "Babylon candidate clean consumer passed"
