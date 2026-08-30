@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "generator": {
+    "id": "FS.GG.SDD.Artifacts",
+    "version": "1.5.0"
+  },
+  "requiredMinimumCliVersion": "1.4.0-preview.1",
+  "providerName": "fable-bindings",
+  "providerContractVersion": "1.1.0",
+  "templateRef": "fs-gg-fable-bindings",
+  "outcome": "providerFailed",
+  "producedPaths": [],
+  "mirroredPaths": [],
+  "sddOwnedPaths": [],
+  "driverPaths": [],
+  "gameSkillPaths": [],
+  "renderingSkillPaths": [],
+  "effectiveParameters": [
+    {
+      "key": "lifecycle",
+      "value": "typed-sdd"
+    },
+    {
+      "key": "npmPackage",
+      "value": "babylonjsFableBindings"
+    },
+    {
+      "key": "npmVersion",
+      "value": "r0000"
+    },
+    {
+      "key": "productName",
+      "value": "BabylonjsBindings"
+    },
+    {
+      "key": "rootNamespace",
+      "value": "BabylonjsBindings"
+    },
+    {
+      "key": "target",
+      "value": "browser"
+    }
+  ]
+}

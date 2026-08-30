@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "generator": {
+    "name": "ts2fable",
+    "version": "0.9.0-build.738",
+    "typescript": "5.1.6"
+  },
+  "source": {
+    "package": "babylonjs",
+    "version": "9.19.0",
+    "path": "babylon.module.d.ts",
+    "sha256": "8fc0a46461ab5909d3eac13032a2a17e24a86317251500302a13e2fca8d9e651"
+  },
+  "candidateSha256": "cb4ab67ffa5b902b2214b0a51c6182cf3aca8e304e85ceedc6e39d5a5e20d231",
+  "diagnostics": [
+    {
+      "message": "unsupported printType ts2fable.Syntax.FsType.None:",
+      "count": 1034
+    },
+    {
+      "message": "unsupported printType ts2fable.Syntax.FsType.This:",
+      "count": 6
+    },
+    {
+      "message": "unsupported printType ts2fable.Syntax.FsType.TODO:",
+      "count": 314
+    },
+    {
+      "message": "unsupported TypeNode kind: 159",
+      "count": 536
+    },
+    {
+      "message": "unsupported TypeNode kind: 184",
+      "count": 178
+    },
+    {
+      "message": "unsupported TypeNode kind: 190",
+      "count": 1392
+    },
+    {
+      "message": "unsupported TypeNode kind: 193",
+      "count": 890
+    },
+    {
+      "message": "unsupported TypeNode kind: 204",
+      "count": 19
+    }
+  ],
+  "status": "review-required"
+}

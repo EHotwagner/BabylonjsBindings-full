@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://fs.gg/babylonjs-bindings/coverage-and-drift.schema.json",
+  "title": "Babylon.js Fable binding coverage and drift report",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "packages",
+    "sourceDigest",
+    "maintainedSurfaceDigest",
+    "summary",
+    "exports",
+    "unsupportedConstructs",
+    "status"
+  ],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "packages": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["name", "version"],
+        "properties": {
+          "name": { "enum": ["@babylonjs/core", "@babylonjs/loaders"] },
+          "version": { "const": "9.19.0" }
+        },
+        "additionalProperties": false
+      }
+    },
+    "sourceDigest": { "$ref": "#/$defs/sha256" },
+    "maintainedSurfaceDigest": { "$ref": "#/$defs/sha256" },
+    "summary": {
+      "type": "object",
+      "required": ["total", "typed", "runtimeOnly", "blocked", "lossy"],
+      "properties": {
+        "total": { "type": "integer", "minimum": 0 },
+        "typed": { "type": "integer", "minimum": 0 },
+        "runtimeOnly": { "type": "integer", "minimum": 0 },
+        "blocked": { "type": "integer", "minimum": 0 },
+        "lossy": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    },
+    "exports": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/disposition" }
+    },
+    "unsupportedConstructs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "syntaxKind", "reason", "disposition"],
+        "properties": {
+          "path": { "type": "string", "minLength": 1 },
+          "syntaxKind": { "type": "string", "minLength": 1 },
+          "reason": { "type": "string", "minLength": 1 },
+          "disposition": { "enum": ["blocked", "lossy", "runtime-only"] }
+        },
+        "additionalProperties": false
+      }
+    },
+    "status": { "enum": ["complete", "incomplete", "drifted"] }
+  },
+  "$defs": {
+    "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "disposition": {
+      "type": "object",
+      "required": ["package", "module", "name", "kind", "disposition"],
+      "properties": {
+        "package": { "enum": ["@babylonjs/core", "@babylonjs/loaders"] },
+        "module": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["class", "interface", "type", "enum", "function", "variable", "namespace", "side-effect"] },
+        "disposition": { "enum": ["typed", "runtime-only", "blocked", "lossy"] },
+        "fsharpSymbol": { "type": "string" },
+        "reason": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "fs.gg.sdd.cli": {
+      "version": "1.5.0",
+      "commands": [
+        "fsgg-sdd"
+      ]
+    }
+  }
+}
