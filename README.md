@@ -1,5 +1,7 @@
 # BabylonjsBindings — full Fable bindings effort
 
+[![CI](https://github.com/EHotwagner/BabylonjsBindings-full/actions/workflows/ci.yml/badge.svg)](https://github.com/EHotwagner/BabylonjsBindings-full/actions/workflows/ci.yml)
+
 > **Status:** active development. This repository is building toward complete,
 > typed bindings for `@babylonjs/core@9.19.0` and
 > `@babylonjs/loaders@9.19.0`; the current NuGet package still exposes only the
@@ -43,5 +45,14 @@ Three settings keep those hashes reproducible, and all are load-bearing (see `FS
 - **`RestorePackagesPath` in `Directory.Build.props`** gives this workspace its own `.nuget/packages` folder instead of the machine-wide one. Source pinning alone is not enough: NuGet's shared package folder is keyed by id and version only, so whichever build reached it first decides which archive lives there, and a later restore validates the committed hash against *that* entry. A private folder is what makes the committed hash enforceable on any machine rather than only on machines that happen to agree. Two consequences worth knowing: packages are not shared with your other checkouts, so a cold build downloads its own copies; and `.nuget/` belongs in your ignore file — this workspace ships without one, in common with `bin/`, `obj/` and `node_modules/`.
 
 `build.sh` refuses to restore at all if the lock files are missing, and `npm run doctor` fails on the same condition, because a locked-mode restore with no lock on disk does not fail — it quietly writes a new lock from whatever the machine resolves, which defeats the entire mechanism.
+
+## Continuous integration
+
+GitHub Actions runs two independent lanes so comprehensive candidate proof does not lengthen feedback from the maintained-source build:
+
+- **Locked build and drift** runs `./build.sh`, including locked .NET/npm restores, proposal drift checks, coverage validation, and the maintained Node smoke.
+- **Full candidate and clean consumer** regenerates the review-only declaration candidate, checks its deterministic artifacts, then runs F# and Fable compilation, exact import resolution, Node and pinned Chromium smokes, and the isolated packed-package consumer.
+
+The workflow pins action revisions and tool versions, caches only lock-keyed npm/NuGet downloads, grants read-only repository access, cancels superseded runs on the same ref, and never publishes packages.
 
 `node scripts/lifecycle-evidence.mjs --expect clean --junit reports/bindings.junit.xml --handoff readiness/002-bindings-upstream-review/governance-handoff.json` turns the executable closure check into runner evidence and a narrow upstream-review verdict. `npm run test:lifecycle` first records the Governance F# public-surface receipt, then imports the report into the supported SDD lifecycle and requires observed verification, ship readiness, and a coherent doctor result. The composition acceptance routes both the SDD-emitted handoff and the upstream-review verdict through Governance: unchanged pins pass, while upstream declaration drift is a blocking review state. These commands are local acceptance only; they do not publish or activate the provider.

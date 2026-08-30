@@ -1,0 +1,129 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  DOTNET_NOLOGO: true
+  NUGET_XMLDOC_MODE: skip
+
+jobs:
+  fast:
+    name: Locked build and drift
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
+        with:
+          dotnet-version: 10.0.302
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 26.5.0
+          cache: npm
+
+      - name: Cache workspace NuGet packages
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        with:
+          path: .nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/packages.lock.json', '.config/dotnet-tools.json') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Verify pinned tools
+        shell: bash
+        run: |
+          test "$(dotnet --version)" = "10.0.302"
+          test "$(node --version)" = "v26.5.0"
+          test "$(npm --version)" = "12.0.1"
+
+      - name: Run locked build and drift gates
+        run: ./build.sh
+
+  candidate:
+    name: Full candidate and clean consumer
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+
+      - name: Set up .NET SDK
+        uses: actions/setup-dotnet@c2fa09f4bde5ebb9d1777cf28262a3eb3db3ced7 # v5.2.0
+        with:
+          dotnet-version: 10.0.302
+
+      - name: Set up Node.js
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
+        with:
+          node-version: 26.5.0
+          cache: npm
+
+      - name: Cache workspace NuGet packages
+        uses: actions/cache@9255dc7a253b0ccc959486e2bca901246202afeb # v5.0.1
+        with:
+          path: .nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/packages.lock.json', '.config/dotnet-tools.json') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Set up pinned browser
+        id: chrome
+        uses: browser-actions/setup-chrome@e574b4b3a21156ab45dd6b5f67e884fd26eed829 # v2.1.2
+        with:
+          chrome-version: 151.0.7922.173
+          install-dependencies: true
+
+      - name: Expose browser as chromium
+        env:
+          CHROME_PATH: ${{ steps.chrome.outputs.chrome-path }}
+        run: |
+          install -d "${RUNNER_TEMP}/browser-bin"
+          ln -s "${CHROME_PATH}" "${RUNNER_TEMP}/browser-bin/chromium"
+          echo "${RUNNER_TEMP}/browser-bin" >> "${GITHUB_PATH}"
+
+      - name: Verify pinned tools
+        shell: bash
+        run: |
+          test "$(dotnet --version)" = "10.0.302"
+          test "$(node --version)" = "v26.5.0"
+          test "$(npm --version)" = "12.0.1"
+          chromium --version
+
+      - name: Restore locked dependencies
+        run: |
+          npm ci --ignore-scripts
+          dotnet tool restore
+          dotnet restore generated-candidates/BabylonjsBindings.FullCandidate.fsproj --locked-mode
+          dotnet restore generated-candidates/runtime/BabylonjsBindings.CandidateRuntime.fsproj --locked-mode
+          dotnet restore generated-candidates/package/BabylonjsBindings.Candidate.fsproj --locked-mode
+
+      - name: Regenerate review candidate
+        run: npm run generate:candidate
+
+      - name: Verify deterministic candidate artifacts
+        run: |
+          git diff --exit-code -- \
+            generator-lock.json \
+            generated-candidates/BabylonBindings.generated.fs \
+            generated-candidates/BabylonGltf2Interface.generated.fs \
+            generated-candidates/BabylonLoadersBindings.generated.fs \
+            generated-candidates/candidate-diagnostics.json \
+            generated-candidates/gltf2interface-candidate-diagnostics.json \
+            generated-candidates/loaders-candidate-diagnostics.json
+
+      - name: Run compile, import, Node, Chromium, and clean-consumer gates
+        run: npm run test:candidate
