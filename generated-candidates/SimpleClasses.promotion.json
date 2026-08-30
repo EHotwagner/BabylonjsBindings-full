@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "2949aa0eea2809e587980ac8acdf2c6d8903dc8be03b3791516ba5e89e8e776c",
+  "proposalSha256": "2575456ce3e9c9d8dec5dbf4ff293846d4936d9793a2b1ef918ffa0a77ac2c59",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -32,6 +32,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractStereoAudio",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroupMask",
+      "name": "AnimationGroupMask",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AnimationGroupMask",
+      "memberCount": 7
     },
     {
       "package": "@babylonjs/core",
@@ -284,6 +293,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PhysicsVortexEventOptions",
       "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/geodesicMesh",
+      "name": "PolyhedronData",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PolyhedronData",
+      "memberCount": 6
     },
     {
       "package": "@babylonjs/core",

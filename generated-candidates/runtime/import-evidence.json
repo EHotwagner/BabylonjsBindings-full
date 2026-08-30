@@ -4,14 +4,32 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "defc5a9da98c59d18220da9a6b0873f8d673c7698ed334940db903a17272f6d9"
+    "sha256": "d8b11a24687df38b36c0f0927b68689aed09a95a624e26802b2df46dd23204c8"
   },
   "imports": [
+    {
+      "specifier": "@babylonjs/core/Animations/animationGroupMask.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Animations/animationGroupMask.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
     {
       "specifier": "@babylonjs/core/Buffers/buffer.pure.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Buffers/buffer.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Buffers/bufferUtils.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Buffers/bufferUtils.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

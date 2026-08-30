@@ -83,6 +83,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils.js",
+      "export": "AreIndices32Bits",
+      "runtimeExport": "AreIndices32Bits",
+      "moduleSha256": "87acba7ae61f7f9f605e5b4264f66b963417144db51894fcf00b2ff2cc92f886"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions.js",
       "export": "Clamp",
       "runtimeExport": "Clamp",
@@ -164,6 +171,13 @@
       "export": "ExtractAsInt",
       "runtimeExport": "ExtractAsInt",
       "moduleSha256": "ee64720d425acac869fd4da5e5dc43d9114de1f60f92912e18208d7114b5a898"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.functions.js",
+      "export": "FixFlippedFaces",
+      "runtimeExport": "FixFlippedFaces",
+      "moduleSha256": "1d7b2f69888357e6a8f62e5d98d616307aaa13dc103664e1b3079111a43b353e"
     },
     {
       "package": "@babylonjs/core",
@@ -402,6 +416,13 @@
       "export": "NormalizeRadians",
       "runtimeExport": "NormalizeRadians",
       "moduleSha256": "ee64720d425acac869fd4da5e5dc43d9114de1f60f92912e18208d7114b5a898"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/mesh.vertexData.functions.js",
+      "export": "OptimizeIndices",
+      "runtimeExport": "OptimizeIndices",
+      "moduleSha256": "d16e6f18dc3c9403fc8f31e795c2d1de7049208d67564a3e35b4e1f9d16f48ce"
     },
     {
       "package": "@babylonjs/core",

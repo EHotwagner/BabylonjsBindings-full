@@ -60,6 +60,23 @@ module SimpleClasses =
     [<Import("AbstractStereoAudio", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractStereoAudio.js")>]
     let AbstractStereoAudio: AbstractStereoAudioStatic = jsNative
 
+    /// @babylonjs/core/Animations/animationGroupMask
+    [<AllowNullLiteral>]
+    type AnimationGroupMask =
+        abstract ``mode``: BabylonjsBindings.Enums.AnimationGroupMaskMode with get, set
+        abstract ``disabled``: bool with get, set
+        abstract ``addTargetName``: ``name``: U2<string, ResizeArray<string>> -> unit
+        abstract ``removeTargetName``: ``name``: U2<string, ResizeArray<string>> -> unit
+        abstract ``hasTarget``: ``name``: string -> bool
+        abstract ``retainsTarget``: ``name``: string -> bool
+
+    [<AllowNullLiteral>]
+    type AnimationGroupMaskStatic =
+        [<EmitConstructor>] abstract Create: ?``names``: ResizeArray<string> * ?``mode``: BabylonjsBindings.Enums.AnimationGroupMaskMode -> AnimationGroupMask
+
+    [<Import("AnimationGroupMask", "@babylonjs/core/Animations/animationGroupMask.js")>]
+    let AnimationGroupMask: AnimationGroupMaskStatic = jsNative
+
     /// @babylonjs/core/Animations/animationPropertiesOverride
     [<AllowNullLiteral>]
     type AnimationPropertiesOverride =
@@ -527,6 +544,22 @@ module SimpleClasses =
 
     [<Import("PhysicsVortexEventOptions", "@babylonjs/core/Physics/physicsHelper.js")>]
     let PhysicsVortexEventOptions: PhysicsVortexEventOptionsStatic = jsNative
+
+    /// @babylonjs/core/Meshes/geodesicMesh
+    [<AllowNullLiteral>]
+    type PolyhedronData =
+        abstract ``name``: string with get, set
+        abstract ``category``: string with get, set
+        abstract ``vertex``: ResizeArray<ResizeArray<float>> with get, set
+        abstract ``face``: ResizeArray<ResizeArray<float>> with get, set
+        abstract ``edgematch``: ResizeArray<ResizeArray<U2<float, string>>> with get, set
+
+    [<AllowNullLiteral>]
+    type PolyhedronDataStatic =
+        [<EmitConstructor>] abstract Create: ``name``: string * ``category``: string * ``vertex``: ResizeArray<ResizeArray<float>> * ``face``: ResizeArray<ResizeArray<float>> -> PolyhedronData
+
+    [<Import("PolyhedronData", "@babylonjs/core/Meshes/geodesicMesh.js")>]
+    let PolyhedronData: PolyhedronDataStatic = jsNative
 
     /// @babylonjs/core/Misc/precisionDate
     [<AllowNullLiteral>]

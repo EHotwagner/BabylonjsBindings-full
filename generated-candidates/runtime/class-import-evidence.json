@@ -31,6 +31,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroupMask.js",
+      "export": "AnimationGroupMask",
+      "moduleSha256": "4cab4e4e00f877face37f38d12401b025bf826d49cfe4a465d2d92d09dbd9f49"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/animationPropertiesOverride.js",
       "export": "AnimationPropertiesOverride",
       "moduleSha256": "9aab0171aec642e514a0a2785353408bb6f32dd22d44de4a6d8477e15f9b7718"
@@ -196,6 +202,12 @@
       "module": "@babylonjs/core/Physics/physicsHelper.js",
       "export": "PhysicsVortexEventOptions",
       "moduleSha256": "fe54f2be1ef22752dae355d13feed09e14dee847d4164b505fd9ef694fa1fb7b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/geodesicMesh.js",
+      "export": "PolyhedronData",
+      "moduleSha256": "a5059445e4ecf51e198bd294338f66595500b7b7ecee5033a73bba76a4359f50"
     },
     {
       "package": "@babylonjs/core",

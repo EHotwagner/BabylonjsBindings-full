@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "49564737c7f0aa117afe6d51a053a774fdbb458687b1bd6d6469622f16f59411",
+  "proposalSha256": "6ae2cf413ac7f04b6c2f6ba53c521c11710e1eda52f4e6c07b0e65505e035b8e",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -41,6 +41,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.Behavior",
+      "typeParameterCount": 1,
       "memberCount": 5
     },
     {
@@ -446,6 +447,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrix",
+      "typeParameterCount": 1,
       "memberCount": 19
     },
     {
@@ -492,6 +494,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGeometryBufferTextureTypeAndFormat",
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/mesh.vertexData",
+      "name": "IGetSetVerticesData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGetSetVerticesData",
+      "memberCount": 6
     },
     {
       "package": "@babylonjs/loaders",
@@ -586,6 +597,15 @@
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "IGLTFTechniqueParameter",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFTechniqueParameter",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "IGLTFTechniqueStatesFunctions",
       "kind": "interface",
       "disposition": "typed",
@@ -663,6 +683,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IImageProcessingConfigurationDefines",
       "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/iInspectable",
+      "name": "IInspectableOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IInspectableOptions",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",
@@ -950,6 +979,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISmartArrayLike",
+      "typeParameterCount": 1,
       "memberCount": 2
     },
     {
@@ -1076,6 +1106,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITimerData",
+      "typeParameterCount": 1,
       "memberCount": 5
     },
     {
@@ -1140,6 +1171,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVertexBufferOptions",
       "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/mesh.vertexData",
+      "name": "IVertexDataLike",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVertexDataLike",
+      "memberCount": 15
     },
     {
       "package": "@babylonjs/core",
@@ -1229,6 +1269,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerComponentChangesValues",
+      "typeParameterCount": 1,
       "memberCount": 2
     },
     {
@@ -1409,6 +1450,7 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IBehaviorAware",
+      "typeParameterCount": 1,
       "memberCount": 3
     },
     {
@@ -1455,6 +1497,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFTechniqueStates",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/iInspectable",
+      "name": "IInspectable",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IInspectable",
+      "memberCount": 10
     },
     {
       "package": "@babylonjs/core",
@@ -1575,6 +1626,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoDecoder.types",
+      "name": "MeshData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.MeshData",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/nativeEngine.pure",
       "name": "NativeEngineOptions",
       "kind": "interface",
@@ -1608,6 +1668,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractAudioBusOptions",
       "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Debug/debugLayer.pure",
+      "name": "IExplorerAdditionalChild",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IExplorerAdditionalChild",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",
@@ -1689,6 +1758,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVector4Like",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Debug/debugLayer.pure",
+      "name": "IExplorerAdditionalNode",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IExplorerAdditionalNode",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",

@@ -40,6 +40,7 @@ let renderingGroupAction: TypeAliases.RenderingGroupStageAction = unbox (fun (gr
 renderingGroupAction.Invoke(7.0)
 let easing: IEasingFunction = createObj [ "ease" ==> (fun (gradient: float) -> gradient * gradient) ] |> unbox
 let eased = easing.``ease``(0.5)
+let inspectableOption: IInspectableOptions = createObj [ "label" ==> "quality"; "value" ==> 2.0 ] |> unbox
 let mutable loadingShown = false
 let loadingScreen: ILoadingScreen =
     createObj [
@@ -53,8 +54,12 @@ let bits = BitArray.Create(8.0)
 bits.``set``(3.0, true)
 let bitWasSet = bits.``get``(3.0)
 let curveMidpoint = BezierCurve.``Interpolate``(0.5, 0.0, 0.0, 1.0, 1.0)
+let animationMask = AnimationGroupMask.Create(names = ResizeArray [ "hero" ])
+animationMask.``addTargetName``(U2.Case1 "enemy")
 let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
+let shortIndices: TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
+let indicesNeed32Bits = SimpleFunctions.``AreIndices32Bits``.Invoke(shortIndices, 3.0)
 let epsilon = ``Epsilon``
 let phi = ``PHI``
 let shaderDescriptor = ``clearQuadVertexShaderWGSL``
@@ -77,10 +82,17 @@ if not stageCalled || renderingGroup <> 7.0 then
     failwith "Babylon callback alias invocation was not preserved"
 if eased <> 0.25 || not loadingShown then
     failwith "Babylon dependency-free interface invocation was not preserved"
+match inspectableOption.``value`` with
+| U2.Case1 value when value = 2.0 -> ()
+| _ -> failwith "Babylon interface erased-union property was not preserved"
 if not bitWasSet || curveMidpoint <= 0.0 || curveMidpoint >= 1.0 then
     failwith "Babylon dependency-free class import was not preserved"
+if not (animationMask.``hasTarget``("hero")) || not (animationMask.``hasTarget``("enemy")) then
+    failwith "Babylon erased-union class method was not preserved"
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
+if indicesNeed32Bits then
+    failwith "Babylon erased-union alias/function argument was not preserved"
 if epsilon <> 0.001 || phi < 1.618 || phi > 1.619 then
     failwith "Babylon dependency-closed variable import was not preserved"
 if shaderDescriptor.``name`` <> "clearQuadVertexShader" || shaderDescriptor.``shader``.Length = 0 then

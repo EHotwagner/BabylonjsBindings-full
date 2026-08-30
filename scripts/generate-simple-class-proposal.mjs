@@ -32,7 +32,7 @@ const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
-  .map(entry => [entry.name, entry.fsharpSymbol]));
+  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, arity: entry.typeParameterCount ?? 0 }]));
 
 const hasModifier = (node, kind) => node.modifiers?.some(modifier => modifier.kind === kind) ?? false;
 const inaccessible = node => hasModifier(node, ts.SyntaxKind.PrivateKeyword) || hasModifier(node, ts.SyntaxKind.ProtectedKeyword);
@@ -42,6 +42,11 @@ const fsharpType = (node, available, dependencies = new Set()) => {
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
+  if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies);
+  if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
+    const branches = node.types.map(branch => fsharpType(branch, available, dependencies));
+    return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
+  }
   if (ts.isArrayTypeNode(node)) {
     const element = fsharpType(node.elementType, available, dependencies);
     return element ? `ResizeArray<${element}>` : undefined;
@@ -67,7 +72,14 @@ const fsharpType = (node, available, dependencies = new Set()) => {
       dependencies.add(node.typeName.text);
       return node.typeName.text;
     }
-    if (!node.typeArguments?.length && maintainedSymbols.has(node.typeName.text)) return maintainedSymbols.get(node.typeName.text);
+    if (maintainedSymbols.has(node.typeName.text)) {
+      const target = maintainedSymbols.get(node.typeName.text);
+      const arguments_ = node.typeArguments ?? [];
+      if (arguments_.length !== target.arity) return undefined;
+      const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies));
+      if (renderedArguments.some(argument => !argument)) return undefined;
+      return target.arity === 0 ? target.fsharpSymbol : `${target.fsharpSymbol}<${renderedArguments.join(", ")}>`;
+    }
   }
   return undefined;
 };

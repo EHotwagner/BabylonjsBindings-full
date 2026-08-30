@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "3a8f711902085f5b52b17b3e9f24233d3485a44c3aa1b0d04e1bd9b7884615dd",
+  "proposalSha256": "a5985de175aad002431f721267b92a7a77c71947fff3345f7db252186cbf1cff",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -13,7 +13,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.double",
-      "shape": "number",
+      "shape": "alias",
       "memberCount": 1
     },
     {
@@ -23,7 +23,17 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.float",
-      "shape": "number",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "FloatArray",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FloatArray",
+      "shape": "alias",
       "memberCount": 1
     },
     {
@@ -33,7 +43,27 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FrameGraphTextureHandle",
-      "shape": "number",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation",
+      "name": "GetValueFn",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GetValueFn",
+      "shape": "callback",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "IndicesArray",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.IndicesArray",
+      "shape": "alias",
       "memberCount": 1
     },
     {
@@ -43,7 +73,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.int",
-      "shape": "number",
+      "shape": "alias",
       "memberCount": 1
     },
     {

@@ -12,8 +12,19 @@ module TypeAliases =
     /// @babylonjs/core/types
     type float = System.Double
 
+    /// @babylonjs/core/types
+    type FloatArray = U2<ResizeArray<System.Double>, JS.Float32Array>
+
     /// @babylonjs/core/FrameGraph/frameGraphTypes
     type FrameGraphTextureHandle = System.Double
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderAnimation
+    [<AllowNullLiteral>]
+    type GetValueFn =
+        [<Emit("$0($1...)")>] abstract Invoke: target: obj * source: JS.Float32Array * offset: System.Double * scale: System.Double -> obj
+
+    /// @babylonjs/core/types
+    type IndicesArray = U4<ResizeArray<System.Double>, JS.Int32Array, JS.Uint32Array, JS.Uint16Array>
 
     /// @babylonjs/core/types
     type int = System.Double

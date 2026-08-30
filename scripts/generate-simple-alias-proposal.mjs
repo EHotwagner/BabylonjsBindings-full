@@ -25,9 +25,22 @@ const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
+  if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
+  if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
+    const branches = node.types.map(fsharpType);
+    return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
+  }
   if (ts.isArrayTypeNode(node)) {
     const element = fsharpType(node.elementType);
     return element ? `ResizeArray<${element}>` : undefined;
+  }
+  if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0]);
+      return inner ? `ResizeArray<${inner}>` : undefined;
+    }
+    const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
+    if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
   }
   return undefined;
 };
@@ -52,9 +65,7 @@ for (const sourceFile of program.getSourceFiles()) {
     if (!packageName) continue;
     const name = exported.getName();
     let entry;
-    if (declaration.type.kind === ts.SyntaxKind.NumberKeyword) {
-      entry = { package: packageName, module, name, shape: "number", target: "System.Double" };
-    } else if (ts.isFunctionTypeNode(declaration.type)) {
+    if (!declaration.typeParameters?.length && ts.isFunctionTypeNode(declaration.type)) {
       if (declaration.type.parameters.some(parameter => parameter.dotDotDotToken)) continue;
       const returnType = fsharpType(declaration.type.type);
       const parameters = declaration.type.parameters.map(parameter => ({
@@ -64,6 +75,9 @@ for (const sourceFile of program.getSourceFiles()) {
       }));
       if (!returnType || parameters.some(parameter => !parameter.name || !parameter.type)) continue;
       entry = { package: packageName, module, name, shape: "callback", returnType, parameters };
+    } else if (!declaration.typeParameters?.length) {
+      const targetType = fsharpType(declaration.type);
+      if (targetType) entry = { package: packageName, module, name, shape: "alias", target: targetType };
     }
     if (entry) entriesByIdentity.set(`${packageName}|${module}|${name}`, entry);
   }
@@ -86,7 +100,7 @@ const lines = [
 ];
 for (const entry of entries) {
   lines.push("", `    /// ${entry.module}`);
-  if (entry.shape === "number") {
+  if (entry.shape === "alias") {
     lines.push(`    type ${entry.name} = ${entry.target}`);
   } else {
     const argumentsType = entry.parameters.length === 0

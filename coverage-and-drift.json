@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "4f9efa26afae99c16522173bcd3e764c86714c4dcd826797470bdde03af2d946",
+  "maintainedSurfaceDigest": "48bf45750edbb4a6a8a102979a790c83f5ba25577b82e7e54d7e2ed8e3388bef",
   "summary": {
     "total": 4323,
-    "typed": 1659,
+    "typed": 1675,
     "runtimeOnly": 1,
-    "blocked": 2657,
+    "blocked": 2641,
     "lossy": 6
   },
   "exports": [
@@ -588,8 +588,9 @@
       "module": "@babylonjs/core/Animations/animationGroupMask",
       "name": "AnimationGroupMask",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AnimationGroupMask"
     },
     {
       "package": "@babylonjs/core",
@@ -2124,8 +2125,9 @@
       "module": "@babylonjs/core/Buffers/bufferUtils",
       "name": "AreIndices32Bits",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AreIndices32Bits"
     },
     {
       "package": "@babylonjs/core",
@@ -3756,16 +3758,18 @@
       "module": "@babylonjs/core/Debug/debugLayer.pure",
       "name": "IExplorerAdditionalChild",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IExplorerAdditionalChild"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Debug/debugLayer.pure",
       "name": "IExplorerAdditionalNode",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IExplorerAdditionalNode"
     },
     {
       "package": "@babylonjs/core",
@@ -17736,8 +17740,9 @@
       "module": "@babylonjs/core/Maths/math.functions",
       "name": "FixFlippedFaces",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.FixFlippedFaces"
     },
     {
       "package": "@babylonjs/core",
@@ -19691,8 +19696,9 @@
       "module": "@babylonjs/core/Meshes/Compression/dracoDecoder.types",
       "name": "MeshData",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.MeshData"
     },
     {
       "package": "@babylonjs/core",
@@ -19966,8 +19972,9 @@
       "module": "@babylonjs/core/Meshes/geodesicMesh",
       "name": "PolyhedronData",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PolyhedronData"
     },
     {
       "package": "@babylonjs/core",
@@ -20241,16 +20248,18 @@
       "module": "@babylonjs/core/Meshes/mesh.vertexData",
       "name": "IGetSetVerticesData",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGetSetVerticesData"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/mesh.vertexData",
       "name": "IVertexDataLike",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IVertexDataLike"
     },
     {
       "package": "@babylonjs/core",
@@ -20274,8 +20283,9 @@
       "module": "@babylonjs/core/Meshes/mesh.vertexData.functions",
       "name": "OptimizeIndices",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.OptimizeIndices"
     },
     {
       "package": "@babylonjs/core",
@@ -23377,16 +23387,18 @@
       "module": "@babylonjs/core/Misc/iInspectable",
       "name": "IInspectable",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IInspectable"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/iInspectable",
       "name": "IInspectableOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IInspectableOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -32486,8 +32498,9 @@
       "module": "@babylonjs/core/types",
       "name": "FloatArray",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FloatArray"
     },
     {
       "package": "@babylonjs/core",
@@ -32526,8 +32539,9 @@
       "module": "@babylonjs/core/types",
       "name": "IndicesArray",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.IndicesArray"
     },
     {
       "package": "@babylonjs/core",
@@ -34582,8 +34596,9 @@
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "IGLTFTechniqueParameter",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFTechniqueParameter"
     },
     {
       "package": "@babylonjs/loaders",
@@ -35669,8 +35684,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation",
       "name": "GetValueFn",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GetValueFn"
     },
     {
       "package": "@babylonjs/loaders",

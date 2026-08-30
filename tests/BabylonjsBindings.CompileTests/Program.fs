@@ -12,8 +12,10 @@ let sizeLike: SizeLike = Unchecked.defaultof<SizeLike>
 let textureHandle: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle = 1.0
 let stageAction: BabylonjsBindings.TypeAliases.SimpleStageAction = Unchecked.defaultof<BabylonjsBindings.TypeAliases.SimpleStageAction>
 let easing: IEasingFunction = Unchecked.defaultof<IEasingFunction>
+let inspectableOptions: IInspectableOptions = Unchecked.defaultof<IInspectableOptions>
 let bitArray: BitArray = Unchecked.defaultof<BitArray>
 let bitArrayFactory: BitArrayStatic = BitArray
+let animationMaskFactory: AnimationGroupMaskStatic = AnimationGroupMask
 let strideFunction = BabylonjsBindings.SimpleFunctions.``VertexBufferDeduceStride``
 let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
@@ -27,8 +29,10 @@ sizeLike |> ignore
 textureHandle |> ignore
 stageAction |> ignore
 easing |> ignore
+inspectableOptions |> ignore
 bitArray |> ignore
 bitArrayFactory |> ignore
+animationMaskFactory |> ignore
 strideFunction |> ignore
 epsilon |> ignore
 shaderDescriptor |> ignore

@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "cc761ded9e79c494fd2c52846f6c914ffc34ec4ac132ae1fe5ff1c63f9c5fd61",
+  "proposalSha256": "4bb685b59e78ad01a79cc2dfab250c5eb48520c63319883d27a64903697aed4c",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -95,6 +95,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ApplyLut",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils",
+      "name": "AreIndices32Bits",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AreIndices32Bits",
       "overloadCount": 1
     },
     {
@@ -203,6 +212,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ExtractAsInt",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.functions",
+      "name": "FixFlippedFaces",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.FixFlippedFaces",
       "overloadCount": 1
     },
     {
@@ -510,6 +528,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.NormalizeRadians",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/mesh.vertexData.functions",
+      "name": "OptimizeIndices",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.OptimizeIndices",
       "overloadCount": 1
     },
     {

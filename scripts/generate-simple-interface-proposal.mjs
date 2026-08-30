@@ -39,6 +39,11 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
+  if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
+  if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
+    const branches = node.types.map(branch => fsharpType(branch, available, dependencies, typeParameters));
+    return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
+  }
   if (ts.isArrayTypeNode(node)) {
     const element = fsharpType(node.elementType, available, dependencies, typeParameters);
     return element ? `ResizeArray<${element}>` : undefined;
@@ -238,6 +243,7 @@ const manifest = {
     kind: "interface",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleInterfaces.${entry.name}`,
+    ...(entry.declaration.typeParameters?.length ? { typeParameterCount: entry.declaration.typeParameters.length } : {}),
     memberCount: entry.members.length
   }))
 };

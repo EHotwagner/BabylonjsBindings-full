@@ -492,6 +492,16 @@ module SimpleInterfaces =
         abstract ``textureFormat``: float with get, set
         abstract ``samplingMode``: float option with get, set
 
+    /// @babylonjs/core/Meshes/mesh.vertexData
+    [<AllowNullLiteral>]
+    type IGetSetVerticesData =
+        abstract ``isVerticesDataPresent``: ``kind``: string -> bool
+        abstract ``getVerticesData``: ``kind``: string * ?``copyWhenShared``: bool * ?``forceCopy``: bool -> BabylonjsBindings.TypeAliases.FloatArray option
+        abstract ``getIndices``: ?``copyWhenShared``: bool * ?``forceCopy``: bool -> BabylonjsBindings.TypeAliases.IndicesArray option
+        abstract ``setVerticesData``: ``kind``: string * ``data``: BabylonjsBindings.TypeAliases.FloatArray * ``updatable``: bool * ?``stride``: float -> unit
+        abstract ``updateVerticesData``: ``kind``: string * ``data``: BabylonjsBindings.TypeAliases.FloatArray * ?``updateExtends``: bool * ?``makeItUnique``: bool -> unit
+        abstract ``setIndices``: ``indices``: BabylonjsBindings.TypeAliases.IndicesArray * ``totalVertices``: float option * ?``updatable``: bool -> unit
+
     /// @babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces
     [<AllowNullLiteral>]
     type IGLTFAmbienLight =
@@ -560,6 +570,17 @@ module SimpleInterfaces =
         abstract ``fallOffExponent``: float option with get, set
         abstract ``linearAttenuation``: float option with get, set
         abstract ``quadraticAttenuation``: float option with get, set
+
+    /// @babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IGLTFTechniqueParameter =
+        abstract ``type``: float with get, set
+        abstract ``count``: float option with get, set
+        abstract ``semantic``: string option with get, set
+        abstract ``node``: string option with get, set
+        abstract ``value``: U4<float, bool, string, ResizeArray<obj>> option with get, set
+        abstract ``source``: string option with get, set
+        abstract ``babylonValue``: obj option with get, set
 
     /// @babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces
     [<AllowNullLiteral>]
@@ -635,6 +656,13 @@ module SimpleInterfaces =
         abstract ``DITHER``: bool with get, set
         abstract ``IMAGEPROCESSINGPOSTPROCESS``: bool with get, set
         abstract ``SKIPFINALCOLORCLAMP``: bool with get, set
+
+    /// @babylonjs/core/Misc/iInspectable
+    [<AllowNullLiteral>]
+    type IInspectableOptions =
+        abstract ``label``: string with get, set
+        abstract ``value``: U2<float, string> with get, set
+        abstract ``selected``: bool option with get, set
 
     /// Function-valued IInspectorContextMenuItem.action property.
     [<AllowNullLiteral>]
@@ -1119,6 +1147,25 @@ module SimpleInterfaces =
         abstract ``takeBufferOwnership``: bool option with get, set
         abstract ``label``: string option with get, set
 
+    /// @babylonjs/core/Meshes/mesh.vertexData
+    [<AllowNullLiteral>]
+    type IVertexDataLike =
+        abstract ``positions``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``normals``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``tangents``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``uvs``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``uvs2``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``uvs3``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``uvs4``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``uvs5``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``uvs6``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``colors``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``matricesIndices``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``matricesWeights``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``matricesIndicesExtra``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``matricesWeightsExtra``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
+        abstract ``indices``: BabylonjsBindings.TypeAliases.IndicesArray option option with get, set
+
     /// @babylonjs/core/Meshes/csg2
     [<AllowNullLiteral>]
     type IVertexDataRebuildOptions =
@@ -1375,6 +1422,30 @@ module SimpleInterfaces =
         abstract ``enable``: ResizeArray<float> with get, set
         abstract ``functions``: IGLTFTechniqueStatesFunctions with get, set
 
+    /// Function-valued IInspectable.callback property.
+    [<AllowNullLiteral>]
+    type IInspectableCallbackCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// Function-valued IInspectable.fileCallback property.
+    [<AllowNullLiteral>]
+    type IInspectableFileCallbackCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``file``: Browser.Types.File -> unit
+
+    /// @babylonjs/core/Misc/iInspectable
+    [<AllowNullLiteral>]
+    type IInspectable =
+        abstract ``label``: string with get, set
+        abstract ``propertyName``: string with get, set
+        abstract ``type``: BabylonjsBindings.Enums.InspectableType with get, set
+        abstract ``min``: float option with get, set
+        abstract ``max``: float option with get, set
+        abstract ``step``: float option with get, set
+        abstract ``callback``: IInspectableCallbackCallback option with get, set
+        abstract ``fileCallback``: IInspectableFileCallbackCallback option with get, set
+        abstract ``options``: ResizeArray<IInspectableOptions> option with get, set
+        abstract ``accept``: string option with get, set
+
     /// @babylonjs/core/Events/deviceInputEvents
     [<AllowNullLiteral>]
     type IKeyboardEvent =
@@ -1491,6 +1562,13 @@ module SimpleInterfaces =
         abstract ``touched``: IWebXRMotionControllerComponentChangesValues<bool> option with get, set
         abstract ``value``: IWebXRMotionControllerComponentChangesValues<float> option with get, set
 
+    /// @babylonjs/core/Meshes/Compression/dracoDecoder.types
+    [<AllowNullLiteral>]
+    type MeshData =
+        abstract ``indices``: U2<JS.Uint16Array, JS.Uint32Array> option with get, set
+        abstract ``attributes``: ResizeArray<IAttributeData> with get, set
+        abstract ``totalVertices``: float with get, set
+
     /// @babylonjs/core/Engines/nativeEngine.pure
     [<AllowNullLiteral>]
     type NativeEngineOptions =
@@ -1510,6 +1588,13 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IAbstractAudioBusOptions =
         inherit IAbstractAudioOutNodeOptions
+
+    /// @babylonjs/core/Debug/debugLayer.pure
+    [<AllowNullLiteral>]
+    type IExplorerAdditionalChild =
+        abstract ``name``: string with get, set
+        abstract ``getClassName``: unit -> string
+        abstract ``inspectableCustomProperties``: ResizeArray<IInspectable> with get, set
 
     /// @babylonjs/core/Maths/math.like
     [<AllowNullLiteral>]
@@ -1567,6 +1652,12 @@ module SimpleInterfaces =
     type IVector4Like =
         inherit IVector3Like
         abstract ``w``: BabylonjsBindings.TypeAliases.float with get, set
+
+    /// @babylonjs/core/Debug/debugLayer.pure
+    [<AllowNullLiteral>]
+    type IExplorerAdditionalNode =
+        abstract ``name``: string with get, set
+        abstract ``getContent``: unit -> ResizeArray<IExplorerAdditionalChild>
 
     /// @babylonjs/core/AudioV2/abstractAudio/mainAudioBus
     [<AllowNullLiteral>]

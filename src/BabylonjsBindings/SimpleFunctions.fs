@@ -1,4 +1,4 @@
-// MAINTAINED REVIEWED BINDING — exact Babylon.js 9.19.0 dependency-closed functions
+// REVIEWED MAINTAINED SOURCE — exact declaration, import, and runtime proof recorded in generated-candidates
 namespace BabylonjsBindings
 
 open Fable.Core
@@ -85,6 +85,14 @@ module SimpleFunctions =
 
     [<Import("ApplyLut", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.huf.js")>]
     let ``ApplyLut``: FunctionBinding_ApplyLut = jsNative
+
+    /// @babylonjs/core/Buffers/bufferUtils
+    [<AllowNullLiteral>]
+    type FunctionBinding_AreIndices32Bits =
+        [<Emit("$0($1...)")>] abstract Invoke: ``indices``: BabylonjsBindings.TypeAliases.IndicesArray * ``count``: float * ?``start``: float * ?``offset``: float -> bool
+
+    [<Import("AreIndices32Bits", "@babylonjs/core/Buffers/bufferUtils.js")>]
+    let ``AreIndices32Bits``: FunctionBinding_AreIndices32Bits = jsNative
 
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]
@@ -181,6 +189,14 @@ module SimpleFunctions =
 
     [<Import("ExtractAsInt", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``ExtractAsInt``: FunctionBinding_ExtractAsInt = jsNative
+
+    /// @babylonjs/core/Maths/math.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_FixFlippedFaces =
+        [<Emit("$0($1...)")>] abstract Invoke: ``positions``: BabylonjsBindings.TypeAliases.FloatArray * ``indices``: BabylonjsBindings.TypeAliases.IndicesArray -> unit
+
+    [<Import("FixFlippedFaces", "@babylonjs/core/Maths/math.functions.js")>]
+    let ``FixFlippedFaces``: FunctionBinding_FixFlippedFaces = jsNative
 
     /// @babylonjs/core/Misc/halfFloat
     [<AllowNullLiteral>]
@@ -453,6 +469,14 @@ module SimpleFunctions =
 
     [<Import("NormalizeRadians", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``NormalizeRadians``: FunctionBinding_NormalizeRadians = jsNative
+
+    /// @babylonjs/core/Meshes/mesh.vertexData.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_OptimizeIndices =
+        [<Emit("$0($1...)")>] abstract Invoke: ``indices``: BabylonjsBindings.TypeAliases.IndicesArray -> unit
+
+    [<Import("OptimizeIndices", "@babylonjs/core/Meshes/mesh.vertexData.functions.js")>]
+    let ``OptimizeIndices``: FunctionBinding_OptimizeIndices = jsNative
 
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]
