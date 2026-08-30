@@ -1528,18 +1528,6 @@
       "sha256": "e0ba29dd8beb6df4ba088e581da2a95f1818da0f0656a21a16e45bdeaed35797"
     },
     {
-      "path": "@babylonjs/core/Engines/Extensions/engine.texture2DArrayImageSource.d.ts",
-      "sha256": "8dd3383d8d90a1d93e0554b28503b6e8b1a9297d5f53d5bc1c760f6065858595"
-    },
-    {
-      "path": "@babylonjs/core/Engines/Extensions/engine.texture2DArrayImageSource.pure.d.ts",
-      "sha256": "4b02f3c2ee316415d945a3564c971ff393d05aa0213db51e7797329aa1d976bb"
-    },
-    {
-      "path": "@babylonjs/core/Engines/Extensions/engine.texture2DArrayImageSource.types.d.ts",
-      "sha256": "286f85873325f1ffba08ca413b1143dfba736f15e0d8a34611e74093ef4c52aa"
-    },
-    {
       "path": "@babylonjs/core/Engines/Extensions/engine.textureSelector.d.ts",
       "sha256": "17a8d3694f059274c90112ff744ce5a8496ae2fa3d6cc9d79cb798c18ca68636"
     },
@@ -1810,14 +1798,6 @@
     {
       "path": "@babylonjs/core/Engines/WebGPU/Extensions/engine.renderTargetTexture.types.d.ts",
       "sha256": "fdbac6a7f77a16274b6007039e46362cb62d0d89f55c51ff69903685b03c7878"
-    },
-    {
-      "path": "@babylonjs/core/Engines/WebGPU/Extensions/engine.texture2DArrayImageSource.d.ts",
-      "sha256": "1eec99153c8706cf9d69070fbe8c16915ef77efbfae4a93280e943a568456196"
-    },
-    {
-      "path": "@babylonjs/core/Engines/WebGPU/Extensions/engine.texture2DArrayImageSource.pure.d.ts",
-      "sha256": "08205cf6b2f14cb1fd335ff7dfad59f891f20d50825275e756bb2bd003320656"
     },
     {
       "path": "@babylonjs/core/Engines/WebGPU/Extensions/engine.videoTexture.d.ts",
@@ -11734,6 +11714,10 @@
     {
       "path": "@babylonjs/loaders/index.d.ts",
       "sha256": "b17e5f783e9dca89de5cba1ea87eedc2eb17cfd89fc6d5d7c1a1804e628ad7a5"
+    },
+    {
+      "path": "babylonjs-gltf2interface/babylon.glTF2Interface.d.ts",
+      "sha256": "c66882ddaf8ecd70aacdb6b9ab6f4a93220be059449ea3e30926acc5a7f85395"
     }
   ]
 }

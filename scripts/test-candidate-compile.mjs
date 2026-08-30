@@ -5,8 +5,12 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const candidatePath = resolve(root, "generated-candidates/BabylonBindings.generated.fs");
+const loadersCandidatePath = resolve(root, "generated-candidates/BabylonLoadersBindings.generated.fs");
+const gltfInterfaceCandidatePath = resolve(root, "generated-candidates/BabylonGltf2Interface.generated.fs");
 const reportPath = resolve(root, "generated-candidates/compile-diagnostics.json");
 const candidate = await readFile(candidatePath);
+const loadersCandidate = await readFile(loadersCandidatePath);
+const gltfInterfaceCandidate = await readFile(gltfInterfaceCandidatePath);
 const execution = spawnSync(
   "dotnet",
   ["build", "generated-candidates/BabylonjsBindings.FullCandidate.fsproj", "--no-restore"],
@@ -30,6 +34,8 @@ for (const diagnostic of diagnostics.values()) countsByCode[diagnostic.code] = (
 const report = {
   schemaVersion: 1,
   candidateSha256: createHash("sha256").update(candidate).digest("hex"),
+  loadersCandidateSha256: createHash("sha256").update(loadersCandidate).digest("hex"),
+  gltfInterfaceCandidateSha256: createHash("sha256").update(gltfInterfaceCandidate).digest("hex"),
   status: execution.status === 0 ? "pass" : "fail",
   exitCode: execution.status,
   errorCount: diagnostics.size,

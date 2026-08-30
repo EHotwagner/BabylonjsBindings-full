@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "generator": {
+    "name": "ts2fable",
+    "version": "0.9.0-build.738",
+    "typescript": "5.1.6"
+  },
+  "source": {
+    "package": "babylonjs-gltf2interface",
+    "version": "9.19.0",
+    "path": "babylon.glTF2Interface.d.ts",
+    "sha256": "c66882ddaf8ecd70aacdb6b9ab6f4a93220be059449ea3e30926acc5a7f85395"
+  },
+  "candidateSha256": "53ed8a36bfe892d1f2222e1fc2bd0c412f1a314a770be226b7d59d6b6a88ffdb",
+  "diagnostics": [
+    {
+      "message": "unsupported printType ts2fable.Syntax.FsType.TODO:",
+      "count": 1
+    },
+    {
+      "message": "unsupported TypeNode kind: 159",
+      "count": 1
+    }
+  ],
+  "status": "review-required"
+}

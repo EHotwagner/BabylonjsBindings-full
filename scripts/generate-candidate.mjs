@@ -10,6 +10,8 @@ const declarationLockPath = resolve(root, "declaration-lock.json");
 const maintainedPath = resolve(root, "src/BabylonjsBindings/Bindings.fs");
 const packageJson = JSON.parse(await readFile(resolve(root, "package.json"), "utf8"));
 const sourcePath = resolve(root, "node_modules/babylonjs/babylon.module.d.ts");
+const loadersSourcePath = resolve(root, "node_modules/babylonjs-loaders/babylonjs.loaders.module.d.ts");
+const gltfInterfaceSourcePath = resolve(root, "node_modules/babylonjs-gltf2interface/babylon.glTF2Interface.d.ts");
 const converterPath = resolve(root, "node_modules/ts2fable/dist/ts2fable.js");
 
 const sha256 = value => createHash("sha256").update(value).digest("hex");
@@ -31,9 +33,12 @@ const run = (command, args, options = {}) => new Promise((accept, reject) => {
     : reject(new Error(`${command} exited ${code}\n${stdout}\n${stderr}`)));
 });
 
-const repairCandidate = source => {
+const repairCandidate = (source, options = {}) => {
+  const moduleName = options.moduleName ?? "BabylonjsBindings.FullCandidate";
+  const localModulePrefix = options.localModulePrefix ?? "Babylonjs_";
+  const extraOpens = options.extraOpens ?? [];
   let repaired = source
-    .replace(/^module rec .*$/m, "module rec BabylonjsBindings.FullCandidate")
+    .replace(/^module rec .*$/m, `module rec ${moduleName}`)
     .replaceAll("type [<RequireQualifiedAccess>] ", "type ")
     .replace("type Error = System.Exception", "type [<AllowNullLiteral>] Error = interface end")
     .replace(/type Empty =\n\s*\n/g, "type Empty =\n        obj\n\n")
@@ -52,21 +57,72 @@ const repairCandidate = source => {
     .replaceAll("[<CompiledName(\"FlowGraphNaNBlock\")>] NaN", "[<CompiledName(\"FlowGraphNaNBlock\")>] NotANumber")
     .replace(/^\s*module BABYLON = Babylonjs_index\s*$/gm, "");
 
+  for (const [from, to] of Object.entries(options.externalModuleReplacements ?? {})) {
+    repaired = repaired.replaceAll(from, to);
+    repaired = repaired.replaceAll(`module ${to} =`, `module ${from}_augmentation =`);
+  }
+  if (moduleName === "BabylonjsBindings.FullLoadersCandidate") {
+    repaired = repaired
+      // ts2fable emits imported TypeScript aliases as non-generic `obj`
+      // declarations even when their uses retain type arguments. Preserve the
+      // generic shape and point known Babylon imports at the compiled core
+      // candidate instead of letting F# bind `Nullable` to System.Nullable.
+      .replace(/^(\s*)type Nullable = obj$/gm, "$1type Nullable<'T> = 'T")
+      .replace(/^(\s*)type Observable = obj$/gm,
+        "$1type Observable<'T> = BabylonjsBindings.FullCandidate.BABYLON.Observable<'T>")
+      .replace(/^(\s*)type IObjectAccessor = obj$/gm,
+        "$1type IObjectAccessor = BabylonjsBindings.FullCandidate.BABYLON.IObjectAccessor\n$1type IObjectAccessor<'T, 'BabylonType, 'BabylonValue> = BabylonjsBindings.FullCandidate.BABYLON.IObjectAccessor<'T, 'BabylonType, 'BabylonValue>")
+      .replace(/^(\s*)type IObjectInfo = obj$/gm,
+        "$1type IObjectInfo<'T> = BabylonjsBindings.FullCandidate.BABYLON.IObjectInfo<'T>")
+      .replace(/^(\s*)type IPathToObjectConverter = obj$/gm,
+        "$1type IPathToObjectConverter<'T> = BabylonjsBindings.FullCandidate.BABYLON.IPathToObjectConverter<'T>")
+      .replace(/^(\s*)type IDisposable = obj$/gm,
+        "$1type IDisposable = BabylonjsBindings.FullCandidate.BABYLON.IDisposable")
+      .replace(/^(\s*)type ISceneLoaderPluginAsync = obj$/gm,
+        "$1type ISceneLoaderPluginAsync = BabylonjsBindings.FullCandidate.BABYLON.ISceneLoaderPluginAsync")
+      .replace(/^(\s*)type ISceneLoaderPluginFactory = obj$/gm,
+        "$1type ISceneLoaderPluginFactory = BabylonjsBindings.FullCandidate.BABYLON.ISceneLoaderPluginFactory")
+      .replace(/^(\s*)type ISceneLoaderPlugin = obj$/gm,
+        "$1type ISceneLoaderPlugin = BabylonjsBindings.FullCandidate.BABYLON.ISceneLoaderPlugin")
+      .replace(/^(\s*)type IFlowGraphBlockConfiguration = obj$/gm,
+        "$1type IFlowGraphBlockConfiguration = BabylonjsBindings.FullCandidate.BABYLON.IFlowGraphBlockConfiguration")
+      .replace(/^(\s*)type FlowGraphBlock = obj$/gm,
+        "$1type FlowGraphBlock = BabylonjsBindings.FullCandidate.BABYLON.FlowGraphBlock")
+      .replace(/^(\s*)type GaussianSplattingMesh = obj$/gm,
+        "$1type GaussianSplattingMesh = BabylonjsBindings.FullCandidate.BABYLON.GaussianSplattingMesh")
+      .replace("module BABYLON =\n", "module BABYLON =\n    open BabylonjsBindings.FullCandidate.BABYLON\n")
+      .replace("    module GLTF2 =\n", "    module GLTF2 =\n        open BabylonjsBindings.FullGltf2InterfaceCandidate.BABYLON.GLTF2\n");
+  }
+
+  for (const namespace of extraOpens) {
+    if (!repaired.includes(`open ${namespace}`)) repaired = repaired.replace("open Fable.Core.JS", `open Fable.Core.JS\nopen ${namespace}`);
+  }
+
   repaired = repaired.replace(
-    /let \[<ImportAll\("[^"]+"\)>\] ``(babylonjs(?:\/[^`]+)?)``:/g,
+    /let \[<ImportAll\("[^"]+"\)>\] ``(babylonjs(?:-loaders)?(?:\/[^`]+)?)``:/g,
     (line, moduleName) => {
-      const suffix = moduleName === "babylonjs" || moduleName === "babylonjs/index"
-        ? "index"
-        : moduleName.slice("babylonjs/".length);
-      return line.replace(/ImportAll\("[^"]+"\)/, `ImportAll("@babylonjs/core/${suffix}.js")`);
+      const isLoaders = moduleName === "babylonjs-loaders" || moduleName.startsWith("babylonjs-loaders/");
+      const packageName = isLoaders ? "@babylonjs/loaders" : "@babylonjs/core";
+      const prefix = isLoaders ? "babylonjs-loaders" : "babylonjs";
+      const suffix = moduleName === prefix || moduleName === `${prefix}/index` ? "index" : moduleName.slice(prefix.length + 1);
+      return line.replace(/ImportAll\("[^"]+"\)/, `ImportAll("${packageName}/${suffix}.js")`);
     });
 
   const moduleNames = new Set([...repaired.matchAll(/^module ([A-Za-z_][A-Za-z0-9_]*) =$/gm)].map(match => match[1]));
-  const referencedModules = new Set([...repaired.matchAll(/\b(Babylonjs_[A-Za-z0-9_]+)\./g)].map(match => match[1]));
+  const referencedModules = new Set([...repaired.matchAll(/\b(Babylonjs_[A-Za-z0-9_]+)\b/g)].map(match => match[1]));
   for (const missing of [...referencedModules].sort()) {
+    if (!missing.startsWith(localModulePrefix)) continue;
     if (missing === "Babylonjs_index" || moduleNames.has(missing)) continue;
-    const replacement = [`${missing}_pure`, `${missing}_core`, `${missing}_types`].find(candidate => moduleNames.has(candidate));
-    if (replacement) repaired = repaired.replaceAll(`${missing}.`, `${replacement}.`);
+    const replacement = [
+      `${missing}_pure`, `${missing}_core`, `${missing}_types`,
+      missing.replace(/_index$/, "_pure"),
+      missing.replace(/_(?:index|pure)$/, "_glTFLoader_pure"),
+      missing.replace(/_(?:index|pure)$/, "_glTFLoader")
+    ].find(candidate => candidate !== missing && moduleNames.has(candidate));
+    if (replacement) {
+      repaired = repaired.replaceAll(`${missing}.`, `${replacement}.`);
+      repaired = repaired.replaceAll(`= ${missing}\n`, `= ${replacement}\n`);
+    }
   }
 
   const definitions = new Map();
@@ -102,6 +158,7 @@ const repairCandidate = source => {
   const qualifiedTypes = new Set([...repaired.matchAll(/\b((?:Babylonjs_[A-Za-z0-9_]+|BABYLON))\.([A-Za-z_][A-Za-z0-9_]*)/g)]
     .map(match => `${match[1]}.${match[2]}`));
   for (const qualified of [...qualifiedTypes].sort()) {
+    if (!qualified.startsWith(localModulePrefix)) continue;
     if (declaredTypes.has(qualified)) continue;
     const separator = qualified.lastIndexOf(".");
     const name = qualified.slice(separator + 1);
@@ -321,9 +378,43 @@ const repairCandidate = source => {
     deduplicatedMembers.push(line);
   }
   repaired = deduplicatedMembers.join("\n");
+  if (moduleName === "BabylonjsBindings.FullLoadersCandidate") {
+    // Run these after missing-import normalization as well: that pass
+    // deliberately reduces unresolved aliases to `obj`, but these imports are
+    // resolved by the separately compiled full-core candidate.
+    repaired = repaired
+      .replace(/^(\s*)type Nullable = obj$/gm, "$1type Nullable<'T> = 'T")
+      .replace(/^(\s*)type Observable = obj$/gm,
+        "$1type Observable<'T> = BabylonjsBindings.FullCandidate.BABYLON.Observable<'T>")
+      .replace(/^(\s*)type IObjectAccessor = obj$/gm,
+        "$1type IObjectAccessor = BabylonjsBindings.FullCandidate.BABYLON.IObjectAccessor\n$1type IObjectAccessor<'T, 'BabylonType, 'BabylonValue> = BabylonjsBindings.FullCandidate.BABYLON.IObjectAccessor<'T, 'BabylonType, 'BabylonValue>")
+      .replace(/^(\s*)type IObjectInfo = obj$/gm,
+        "$1type IObjectInfo<'T> = BabylonjsBindings.FullCandidate.BABYLON.IObjectInfo<'T>")
+      .replace(/^(\s*)type IPathToObjectConverter = obj$/gm,
+        "$1type IPathToObjectConverter<'T> = BabylonjsBindings.FullCandidate.BABYLON.IPathToObjectConverter<'T>")
+      .replace(/^(\s*)type IDisposable = obj$/gm,
+        "$1type IDisposable = BabylonjsBindings.FullCandidate.BABYLON.IDisposable")
+      .replace(/^(\s*)type ISceneLoaderPluginAsync = obj$/gm,
+        "$1type ISceneLoaderPluginAsync = BabylonjsBindings.FullCandidate.BABYLON.ISceneLoaderPluginAsync")
+      .replace(/^(\s*)type ISceneLoaderPluginFactory = obj$/gm,
+        "$1type ISceneLoaderPluginFactory = BabylonjsBindings.FullCandidate.BABYLON.ISceneLoaderPluginFactory")
+      .replace(/^(\s*)type ISceneLoaderPlugin = obj$/gm,
+        "$1type ISceneLoaderPlugin = BabylonjsBindings.FullCandidate.BABYLON.ISceneLoaderPlugin")
+      .replace(/^(\s*)type IFlowGraphBlockConfiguration = obj$/gm,
+        "$1type IFlowGraphBlockConfiguration = BabylonjsBindings.FullCandidate.BABYLON.IFlowGraphBlockConfiguration")
+      .replace(/^(\s*)type FlowGraphBlock = obj$/gm,
+        "$1type FlowGraphBlock = BabylonjsBindings.FullCandidate.BABYLON.FlowGraphBlock")
+      .replace(/^(\s*)type GaussianSplattingMesh = obj$/gm,
+        "$1type GaussianSplattingMesh = BabylonjsBindings.FullCandidate.BABYLON.GaussianSplattingMesh")
+      .replace(/^(\s*)type FlowGraphDataConnection = obj$/gm,
+        "$1type FlowGraphDataConnection<'T> = BabylonjsBindings.FullCandidate.BABYLON.FlowGraphDataConnection<'T>")
+      .replace(/^(\s*)type Coroutine = obj$/gm,
+        "$1type Coroutine<'T> = BabylonjsBindings.FullCandidate.BABYLON.Coroutine<'T>")
+      .replace(/ when ('[A-Za-z_][A-Za-z0-9_]*) :> FBXPropertyValue/g, "");
+  }
   if (!/^module rec /m.test(repaired)) {
     repaired = [
-      "module rec BabylonjsBindings.FullCandidate",
+      `module rec ${moduleName}`,
       "",
       "#nowarn \"3390\"",
       "",
@@ -331,6 +422,7 @@ const repairCandidate = source => {
       "open Fable.Core",
       "open Fable.Core.JS",
       "open Browser.Types",
+      ...extraOpens.filter(namespace => namespace !== "Browser.Types").map(namespace => `open ${namespace}`),
       "",
       "[<Erase>] type KeyOf<'T> = Key of string",
       repaired
@@ -364,6 +456,69 @@ try {
     if (!line.startsWith("unsupported ")) continue;
     diagnostics.set(line, (diagnostics.get(line) ?? 0) + 1);
   }
+  const gltfInterfaceSource = await readFile(gltfInterfaceSourcePath, "utf8");
+  const gltfInterfaceInputPath = resolve(tempRoot, "babylon.glTF2Interface.no-docs.d.ts");
+  const gltfInterfaceRawPath = resolve(tempRoot, "Babylon.Gltf2Interface.raw.fs");
+  await writeFile(gltfInterfaceInputPath, gltfInterfaceSource.replace(/\/\*\*[\s\S]*?\*\//g, ""));
+  const gltfInterfaceExecution = await run(process.execPath, ["--max-old-space-size=4096", converterPath, gltfInterfaceInputPath, gltfInterfaceRawPath]);
+  const gltfInterfaceCandidateBody = repairCandidate(await readFile(gltfInterfaceRawPath, "utf8"), {
+    moduleName: "BabylonjsBindings.FullGltf2InterfaceCandidate",
+    localModulePrefix: "__gltf_interface__",
+    extraOpens: ["Browser.Types", "BabylonjsBindings.FullCandidate"]
+  });
+  const gltfInterfaceSourceDigest = sha256(gltfInterfaceSource);
+  const gltfInterfaceCandidate = [
+    "// REVIEW-ONLY GENERATED GLTF2 INTERFACE CANDIDATE — NOT COMPILED INTO THE PACKAGE",
+    `// source babylonjs-gltf2interface@9.19.0 babylon.glTF2Interface.d.ts sha256: ${gltfInterfaceSourceDigest}`,
+    `// generator ts2fable@${packageJson.devDependencies.ts2fable} with typescript@5.1.6`,
+    gltfInterfaceCandidateBody
+  ].join("\n");
+  const gltfInterfaceDiagnostics = new Map();
+  const normalizedGltfInterfaceLog = `${gltfInterfaceExecution.stdout}\n${gltfInterfaceExecution.stderr}`.replaceAll(tempRoot, "<temp>");
+  for (const line of normalizedGltfInterfaceLog.split("\n").map(line => line.trim()).filter(Boolean)) {
+    if (!line.startsWith("unsupported ")) continue;
+    gltfInterfaceDiagnostics.set(line, (gltfInterfaceDiagnostics.get(line) ?? 0) + 1);
+  }
+
+  const loadersSource = await readFile(loadersSourcePath, "utf8");
+  const loadersInputPath = resolve(tempRoot, "babylonjs.loaders.module.no-docs.d.ts");
+  const loadersRawPath = resolve(tempRoot, "Babylon.Loaders.raw.fs");
+  await writeFile(loadersInputPath, loadersSource.replace(/\/\*\*[\s\S]*?\*\//g, ""));
+  const loadersExecution = await run(process.execPath, ["--max-old-space-size=12288", converterPath, loadersInputPath, loadersRawPath]);
+  let loadersCandidateBody = repairCandidate(await readFile(loadersRawPath, "utf8"), {
+    moduleName: "BabylonjsBindings.FullLoadersCandidate",
+    localModulePrefix: "Babylonjs_loaders_",
+    extraOpens: ["Browser.Types", "BabylonjsBindings.FullCandidate"],
+    externalModuleReplacements: {
+      Babylonjs_gltf2interface: "BabylonjsBindings.FullGltf2InterfaceCandidate.BABYLON.GLTF2"
+    }
+  });
+  // The ambient loader bundle declares its own BABYLON.GLTF2 loader namespace,
+  // which shadows the separate glTF schema namespace. Qualify schema symbols
+  // using the exact companion candidate while leaving GLTF2.Loader untouched.
+  const gltfSchemaTypes = [...gltfInterfaceCandidateBody.matchAll(/^ {8}type (?:\[<[^\]]+>\]\s*)*([A-Za-z_][A-Za-z0-9_]*)/gm)]
+    .map(match => match[1]);
+  for (const name of [...new Set(gltfSchemaTypes)].sort()) {
+    loadersCandidateBody = loadersCandidateBody.replace(
+      new RegExp(`(?<!BabylonjsBindings\\.FullGltf2InterfaceCandidate\\.BABYLON\\.)(?<!BABYLON\\.)\\b(?:BABYLON\\.)?GLTF2\\.${name}\\b`, "g"),
+      `BabylonjsBindings.FullGltf2InterfaceCandidate.BABYLON.GLTF2.${name}`);
+  }
+  loadersCandidateBody = loadersCandidateBody.replaceAll(
+    "BabylonjsBindings.FullGltf2InterfaceCandidate.BabylonjsBindings.FullGltf2InterfaceCandidate.BABYLON.GLTF2",
+    "BabylonjsBindings.FullGltf2InterfaceCandidate.BABYLON.GLTF2");
+  const loadersSourceDigest = sha256(loadersSource);
+  const loadersCandidate = [
+    "// REVIEW-ONLY GENERATED LOADERS CANDIDATE — NOT COMPILED INTO THE PACKAGE",
+    `// source babylonjs-loaders@9.19.0 babylonjs.loaders.module.d.ts sha256: ${loadersSourceDigest}`,
+    `// generator ts2fable@${packageJson.devDependencies.ts2fable} with typescript@5.1.6`,
+    loadersCandidateBody
+  ].join("\n");
+  const loadersDiagnostics = new Map();
+  const normalizedLoadersLog = `${loadersExecution.stdout}\n${loadersExecution.stderr}`.replaceAll(tempRoot, "<temp>");
+  for (const line of normalizedLoadersLog.split("\n").map(line => line.trim()).filter(Boolean)) {
+    if (!line.startsWith("unsupported ")) continue;
+    loadersDiagnostics.set(line, (loadersDiagnostics.get(line) ?? 0) + 1);
+  }
   const diagnosticDocument = {
     schemaVersion: 1,
     generator: { name: "ts2fable", version: packageJson.devDependencies.ts2fable, typescript: "5.1.6" },
@@ -372,9 +527,29 @@ try {
     diagnostics: [...diagnostics].sort(([left], [right]) => left.localeCompare(right)).map(([message, count]) => ({ message, count })),
     status: diagnostics.size === 0 ? "clean" : "review-required"
   };
+  const loadersDiagnosticDocument = {
+    schemaVersion: 1,
+    generator: { name: "ts2fable", version: packageJson.devDependencies.ts2fable, typescript: "5.1.6" },
+    source: { package: "babylonjs-loaders", version: "9.19.0", path: "babylonjs.loaders.module.d.ts", sha256: loadersSourceDigest },
+    candidateSha256: sha256(loadersCandidate),
+    diagnostics: [...loadersDiagnostics].sort(([left], [right]) => left.localeCompare(right)).map(([message, count]) => ({ message, count })),
+    status: loadersDiagnostics.size === 0 ? "clean" : "review-required"
+  };
+  const gltfInterfaceDiagnosticDocument = {
+    schemaVersion: 1,
+    generator: { name: "ts2fable", version: packageJson.devDependencies.ts2fable, typescript: "5.1.6" },
+    source: { package: "babylonjs-gltf2interface", version: "9.19.0", path: "babylon.glTF2Interface.d.ts", sha256: gltfInterfaceSourceDigest },
+    candidateSha256: sha256(gltfInterfaceCandidate),
+    diagnostics: [...gltfInterfaceDiagnostics].sort(([left], [right]) => left.localeCompare(right)).map(([message, count]) => ({ message, count })),
+    status: gltfInterfaceDiagnostics.size === 0 ? "clean" : "review-required"
+  };
   const generatorLock = {
     schemaVersion: 1,
     source: { package: "babylonjs", version: "9.19.0", path: "babylon.module.d.ts", sha256: sourceDigest },
+    companionSources: [
+      { package: "babylonjs-loaders", version: "9.19.0", path: "babylonjs.loaders.module.d.ts", sha256: loadersSourceDigest },
+      { package: "babylonjs-gltf2interface", version: "9.19.0", path: "babylon.glTF2Interface.d.ts", sha256: gltfInterfaceSourceDigest }
+    ],
     authoritativeDeclarationLockSha256: sha256(declarationLock),
     maintainedSurfaceSha256: sha256(maintained),
     tools: {
@@ -386,22 +561,33 @@ try {
     }
   };
   const lineCount = candidate.split("\n").length;
+  const loadersLineCount = loadersCandidate.split("\n").length;
+  const gltfInterfaceLineCount = gltfInterfaceCandidate.split("\n").length;
   const proposal = [
     "# Full Babylon.js candidate proposal",
     "",
     `- Source: \`babylonjs@9.19.0/babylon.module.d.ts\` (SHA-256 \`${sourceDigest}\`)`,
     `- Candidate: ${lineCount.toLocaleString("en-US")} lines (SHA-256 \`${sha256(candidate)}\`)`,
+    `- Loaders source: \`babylonjs-loaders@9.19.0/babylonjs.loaders.module.d.ts\` (SHA-256 \`${loadersSourceDigest}\`)`,
+    `- Loaders candidate: ${loadersLineCount.toLocaleString("en-US")} lines (SHA-256 \`${sha256(loadersCandidate)}\`)`,
+    `- glTF2 interface candidate: ${gltfInterfaceLineCount.toLocaleString("en-US")} lines (SHA-256 \`${sha256(gltfInterfaceCandidate)}\`)`,
     `- Converter: \`ts2fable@${packageJson.devDependencies.ts2fable}\` with \`typescript@5.1.6\``,
     `- Unique unsupported diagnostics: ${diagnostics.size}`,
+    `- Unique loaders unsupported diagnostics: ${loadersDiagnostics.size}`,
+    `- Unique glTF2 interface unsupported diagnostics: ${gltfInterfaceDiagnostics.size}`,
     "",
     "This is a deterministic, review-only inventory. It never overwrites `src/` or advances `declaration-lock.json`.",
     "Promotion requires a clean F# compile, modular import resolution, per-export non-lossy coverage, and runtime evidence."
   ].join("\n") + "\n";
   await writeStable(resolve(generatedRoot, "BabylonBindings.generated.fs"), candidate);
+  await writeStable(resolve(generatedRoot, "BabylonLoadersBindings.generated.fs"), loadersCandidate);
+  await writeStable(resolve(generatedRoot, "BabylonGltf2Interface.generated.fs"), gltfInterfaceCandidate);
   await writeStable(resolve(generatedRoot, "BabylonBindings.proposal.md"), proposal);
   await writeStable(resolve(generatedRoot, "candidate-diagnostics.json"), stableJson(diagnosticDocument));
+  await writeStable(resolve(generatedRoot, "loaders-candidate-diagnostics.json"), stableJson(loadersDiagnosticDocument));
+  await writeStable(resolve(generatedRoot, "gltf2interface-candidate-diagnostics.json"), stableJson(gltfInterfaceDiagnosticDocument));
   await writeStable(resolve(root, "generator-lock.json"), stableJson(generatorLock));
-  console.log(`updated review-only candidate (${lineCount} lines, ${diagnostics.size} unique unsupported diagnostics)`);
+  console.log(`updated review-only candidates (core ${lineCount} lines/${diagnostics.size} diagnostics; glTF2 ${gltfInterfaceLineCount} lines/${gltfInterfaceDiagnostics.size} diagnostics; loaders ${loadersLineCount} lines/${loadersDiagnostics.size} diagnostics)`);
 } finally {
   await rm(tempRoot, { recursive: true, force: true });
 }

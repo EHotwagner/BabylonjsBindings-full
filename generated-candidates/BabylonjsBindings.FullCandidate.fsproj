@@ -7,6 +7,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BabylonBindings.generated.fs" />
+    <Compile Include="BabylonGltf2Interface.generated.fs" />
+    <Compile Include="BabylonLoadersBindings.generated.fs" />
     <PackageReference Include="Fable.Core" />
     <PackageReference Include="Fable.Browser.Dom" />
     <PackageReference Include="Fable.Browser.WebGL" />

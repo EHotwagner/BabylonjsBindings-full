@@ -1,6 +1,8 @@
 {
   "schemaVersion": 1,
   "candidateSha256": "c6a4de040e2c567359b11f7f0fd4ceed069cdb618f4288591cc23d84a3ac9763",
+  "loadersCandidateSha256": "82cb8f78f88c70c1460c7be91be4cbaf5f4a561ecfac1ad1ed970fb7d57315ae",
+  "gltfInterfaceCandidateSha256": "53ed8a36bfe892d1f2222e1fc2bd0c412f1a314a770be226b7d59d6b6a88ffdb",
   "status": "pass",
   "exitCode": 0,
   "errorCount": 0,

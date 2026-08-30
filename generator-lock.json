@@ -6,7 +6,21 @@
     "path": "babylon.module.d.ts",
     "sha256": "8fc0a46461ab5909d3eac13032a2a17e24a86317251500302a13e2fca8d9e651"
   },
-  "authoritativeDeclarationLockSha256": "61b6189f1315e036b280bba1009e81bbce6a36e20b58f1a4fe8d643d7c4f132e",
+  "companionSources": [
+    {
+      "package": "babylonjs-loaders",
+      "version": "9.19.0",
+      "path": "babylonjs.loaders.module.d.ts",
+      "sha256": "7cd12a3b7152867f045ad440581ec8cdad0d9cb30305e3de5229b9149d5dbffb"
+    },
+    {
+      "package": "babylonjs-gltf2interface",
+      "version": "9.19.0",
+      "path": "babylon.glTF2Interface.d.ts",
+      "sha256": "c66882ddaf8ecd70aacdb6b9ab6f4a93220be059449ea3e30926acc5a7f85395"
+    }
+  ],
+  "authoritativeDeclarationLockSha256": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
   "maintainedSurfaceSha256": "991ae2bbd2e240b43b3e0eb17d34874f5ddff3a726428ae4197bca2acc9952eb",
   "tools": {
     "node": "v26.8.1",
