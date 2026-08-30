@@ -32000,8 +32000,8 @@ module SimpleClasses =
         abstract ``attach`` : ``camera``: 'C -> unit
         abstract ``detach`` : unit -> unit
         abstract ``stopAllAnimations`` : unit -> unit
-        abstract ``updateProperties``<'K> : ``properties``: JS.Map<'K, BabylonjsBindings.TypeAliases.AllowedAnimValue> -> unit
-        abstract ``animatePropertiesAsync``<'K> : ``properties``: JS.Map<'K, BabylonjsBindings.TypeAliases.AllowedAnimValue> * ?``transitionDuration``: float * ?``easingFn``: EasingFunction * ?``updateAnimation``: System.Action<string, Animation> -> JS.Promise<unit>
+        abstract ``updateProperties`` : ``properties``: JS.Map<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'C>, BabylonjsBindings.TypeAliases.AllowedAnimValue> -> unit
+        abstract ``animatePropertiesAsync`` : ``properties``: JS.Map<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'C>, BabylonjsBindings.TypeAliases.AllowedAnimValue> * ?``transitionDuration``: float * ?``easingFn``: EasingFunction * ?``updateAnimation``: System.Action<string, Animation> -> JS.Promise<unit>
         abstract ``name``: string with get
         abstract ``attachedNode``: 'C option with get
         abstract ``isInterpolating``: bool with get

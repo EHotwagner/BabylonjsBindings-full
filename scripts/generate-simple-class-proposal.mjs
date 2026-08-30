@@ -599,6 +599,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && node.typeName.text === "RegExp") return "BabylonjsBindings.SimpleInterfaces.BrowserRegExp";
     if (!node.typeArguments?.length && node.typeName.text === "WebGLQuery") return "BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
+    if (!node.typeArguments?.length && typeParameters.substitutions?.has(node.typeName.text)) return typeParameters.substitutions.get(node.typeName.text);
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
     if (available.has(node.typeName.text)) {
       const target = available.get(node.typeName.text);
@@ -824,11 +825,26 @@ const isNominalFsharpConstraint = node => {
 const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, context, ownerName) => {
   const localTypeParameters = new Set(typeParameters);
   localTypeParameters.deepImmutableSymbols = new Map(typeParameters.deepImmutableSymbols ?? []);
-  for (const parameter of node.typeParameters ?? []) localTypeParameters.add(parameter.name.text);
+  localTypeParameters.substitutions = new Map(typeParameters.substitutions ?? []);
+  for (const parameter of node.typeParameters ?? []) {
+    const constraint = parameter.constraint;
+    if (constraint
+      && ts.isTypeOperatorNode(constraint)
+      && constraint.operator === ts.SyntaxKind.KeyOfKeyword
+      && ts.isTypeReferenceNode(constraint.type)
+      && ts.isIdentifier(constraint.type.typeName)
+      && !constraint.type.typeArguments?.length
+      && localTypeParameters.has(constraint.type.typeName.text)) {
+      localTypeParameters.substitutions.set(parameter.name.text, `BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'${constraint.type.typeName.text}>`);
+    } else {
+      localTypeParameters.add(parameter.name.text);
+    }
+  }
   localTypeParameters.ownerName = typeParameters.ownerName;
   const constraints = [];
   for (const parameter of node.typeParameters ?? []) {
     if (!parameter.constraint) continue;
+    if (localTypeParameters.substitutions.has(parameter.name.text)) continue;
     if (!isNominalFsharpConstraint(parameter.constraint)) continue;
     const constraint = fsharpType(parameter.constraint, available, dependencies, localTypeParameters);
     if (!constraint) return undefined;
@@ -884,8 +900,9 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
       optional: Boolean(parameter.questionToken)
     }];
   });
-  const genericParameters = node.typeParameters?.length
-    ? `<${node.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}${constraints.length ? ` when ${constraints.join(" and ")}` : ""}>`
+  const emittedTypeParameters = (node.typeParameters ?? []).filter(parameter => !localTypeParameters.substitutions.has(parameter.name.text));
+  const genericParameters = emittedTypeParameters.length
+    ? `<${emittedTypeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}${constraints.length ? ` when ${constraints.join(" and ")}` : ""}>`
     : "";
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters, genericParameters } : undefined;
 };

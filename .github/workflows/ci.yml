@@ -124,7 +124,9 @@ jobs:
           dotnet restore generated-candidates/package/BabylonjsBindings.Candidate.fsproj --locked-mode
 
       - name: Regenerate review candidate
-        run: npm run generate:candidate
+        run: |
+          npm run generate:candidate
+          npm run generate:reviewed-simple-proposals
 
       - name: Verify deterministic candidate artifacts
         run: |
@@ -135,7 +137,18 @@ jobs:
             generated-candidates/BabylonLoadersBindings.generated.fs \
             generated-candidates/candidate-diagnostics.json \
             generated-candidates/gltf2interface-candidate-diagnostics.json \
-            generated-candidates/loaders-candidate-diagnostics.json
+            generated-candidates/loaders-candidate-diagnostics.json \
+            generated-candidates/SimpleAliases.promotion.json \
+            generated-candidates/SimpleAliases.proposal.fs \
+            generated-candidates/SimpleInterfaces.promotion.json \
+            generated-candidates/SimpleInterfaces.proposal.fs \
+            generated-candidates/SimpleClasses.promotion.json \
+            generated-candidates/SimpleClasses.proposal.fs \
+            generated-candidates/SimpleFunctions.promotion.json \
+            generated-candidates/SimpleFunctions.proposal.fs \
+            generated-candidates/SimpleVariables.promotion.json \
+            generated-candidates/SimpleVariables.proposal.fs \
+            generated-candidates/SimpleTypes.proposal.fs
 
       - name: Run compile, import, Node, Chromium, and clean-consumer gates
         run: npm run test:candidate
