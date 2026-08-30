@@ -103,6 +103,15 @@ let easingSamples =
 let stencilDefaults = StencilState.Create()
 DataStorage.``WriteJson``("babylon-bindings-proof", "stored")
 let storedValue = DataStorage.``ReadJson``("babylon-bindings-proof", "missing")
+let compressionFormats: BasisTranscodeConfigurationProperty1Object =
+    createObj [ "etc1" ==> true; "bc7" ==> false ] |> unbox
+let basisConfiguration = BasisTranscodeConfiguration.Create()
+basisConfiguration.``supportedCompressionFormats`` <- Some compressionFormats
+basisConfiguration.``loadMipmapLevels`` <- Some true
+let filesToLoad = FilesInputStore.``FilesToLoad``
+let shaderStore = ShaderStore.``GetShadersStore``()
+shaderStore.["codexInlineObjectProof"] <- "void main() {}"
+let uniformMat4Size = WebGPUShaderProcessor.``UniformSizes``.["mat4"]
 let observableA: Observable<string> = Observable.Create()
 let observableB: Observable<string> = Observable.Create()
 let mutable observedValues = ResizeArray<string>()
@@ -193,6 +202,10 @@ if easingSamples.Length <> 12 || (easingSamples |> List.exists System.Double.IsN
     failwith "Babylon inferred-literal class dependency closure was not preserved"
 if storedValue <> "stored" then
     failwith "Babylon generic static class method was not preserved"
+if basisConfiguration.``supportedCompressionFormats``.Value.``etc1`` <> Some true || basisConfiguration.``loadMipmapLevels`` <> Some true || isNull (box filesToLoad) then
+    failwith "Babylon inline object class properties were not preserved"
+if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.``GetShadersRepository``() <> "src/Shaders/" || uniformMat4Size <> 16.0 then
+    failwith "Babylon inline object class returns and static stores were not preserved"
 if observer.IsNone || not (observableA.``hasObservers``()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then
     failwith "Babylon observable callback and overload closure was not preserved"
 if not thinAnimationEnded || thinSprite.``animationStarted`` then

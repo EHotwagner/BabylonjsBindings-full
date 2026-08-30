@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "05e2b9f5d676be1079864a9869036a041a654427dfd3c59caee82c2156c8016b",
+  "proposalSha256": "5397ed4936d0ec80888d0d756c39de91a949daf375dba1d594e2f89c2cfeb645",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -96,6 +96,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BabylonFileLoaderConfiguration",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "BasisTranscodeConfiguration",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration",
+      "memberCount": 4
     },
     {
       "package": "@babylonjs/core",
@@ -258,6 +267,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FactorGradient",
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/filesInputStore",
+      "name": "FilesInputStore",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FilesInputStore",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -533,6 +551,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/shaderStore",
+      "name": "ShaderStore",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ShaderStore",
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/meshSimplification.common",
       "name": "SimplificationSettings",
       "kind": "class",
@@ -657,6 +684,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGLHardwareTexture",
       "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor",
+      "name": "WebGPUShaderProcessor",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessor",
+      "memberCount": 4
     },
     {
       "package": "@babylonjs/core",

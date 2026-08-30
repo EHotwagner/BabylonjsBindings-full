@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "9ebc01ec4707ef91eae68989029d4d2e7ed373fad46c66778a0f88bea67f5608"
+    "sha256": "2953efe4f083b06b4ff8257e582025ee2a5ab034d65ce0699a0e83fac77e5842"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,15 +13,17 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "c2e78272e69726167091a4c4c330e06e45730a8bdb294d0bce6335c0732a84dc",
+  "emittedProgramSha256": "21516236289df285549e7ced4f430be9c266801972534d0a99d4c15dfa6803fa",
   "imports": [
     "@babylonjs/core/Animations/animationEvent.js",
     "@babylonjs/core/Animations/animationGroupMask.js",
     "@babylonjs/core/Animations/easing.js",
     "@babylonjs/core/Buffers/buffer.pure.js",
     "@babylonjs/core/Buffers/bufferUtils.js",
+    "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor.js",
     "@babylonjs/core/Engines/constants.js",
     "@babylonjs/core/Engines/nullEngine.pure.js",
+    "@babylonjs/core/Engines/shaderStore.js",
     "@babylonjs/core/Events/clipboardEvents.js",
     "@babylonjs/core/Events/keyboardEvents.js",
     "@babylonjs/core/Events/pointerEvents.js",
@@ -44,9 +46,11 @@
     "@babylonjs/core/Maths/math.vector.pure.js",
     "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js",
     "@babylonjs/core/Meshes/meshSimplification.common.js",
+    "@babylonjs/core/Misc/basis.pure.js",
     "@babylonjs/core/Misc/bitArray.js",
     "@babylonjs/core/Misc/dataStorage.js",
     "@babylonjs/core/Misc/fileTools.pure.js",
+    "@babylonjs/core/Misc/filesInputStore.js",
     "@babylonjs/core/Misc/gradients.js",
     "@babylonjs/core/Misc/lazy.js",
     "@babylonjs/core/Misc/logger.js",

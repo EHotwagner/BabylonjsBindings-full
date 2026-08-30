@@ -127,6 +127,15 @@ let easingSamples =
       SineEase.Create().\`\`ease\`\`(0.5) ]
 DataStorage.\`\`WriteJson\`\`("babylon-bindings-proof", "stored")
 let storedValue = DataStorage.\`\`ReadJson\`\`("babylon-bindings-proof", "missing")
+let compressionFormats: BasisTranscodeConfigurationProperty1Object =
+    createObj [ "etc1" ==> true; "bc7" ==> false ] |> unbox
+let basisConfiguration = BasisTranscodeConfiguration.Create()
+basisConfiguration.\`\`supportedCompressionFormats\`\` <- Some compressionFormats
+basisConfiguration.\`\`loadMipmapLevels\`\` <- Some true
+let filesToLoad = FilesInputStore.\`\`FilesToLoad\`\`
+let shaderStore = ShaderStore.\`\`GetShadersStore\`\`()
+shaderStore.["codexInlineObjectProof"] <- "void main() {}"
+let uniformMat4Size = WebGPUShaderProcessor.\`\`UniformSizes\`\`.["mat4"]
 let observableA: Observable<string> = Observable.Create()
 let observableB: Observable<string> = Observable.Create()
 let mutable observedValues = ResizeArray<string>()
@@ -182,6 +191,8 @@ if ClipboardEventTypes.\`\`COPY\`\` <> 1.0 || KeyboardEventTypes.\`\`KEYDOWN\`\`
 if LightConstants.\`\`FALLOFF_PHYSICAL\`\` <> 1.0 || Logger.\`\`AllLogLevel\`\` <> 7.0 || StencilState.\`\`KEEP\`\` <> 7680.0 then failwith "clean consumer subsystem constants failed"
 if (halton.\`\`x\`\` = 0.0 && halton.\`\`y\`\` = 0.0) || easingSamples.Length <> 12 || (easingSamples |> List.exists System.Double.IsNaN) then failwith "clean consumer inferred class closure failed"
 if storedValue <> "stored" then failwith "clean consumer generic static class method failed"
+if basisConfiguration.\`\`supportedCompressionFormats\`\`.Value.\`\`etc1\`\` <> Some true || basisConfiguration.\`\`loadMipmapLevels\`\` <> Some true || isNull (box filesToLoad) then failwith "clean consumer inline object class properties failed"
+if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.\`\`GetShadersRepository\`\`() <> "src/Shaders/" || uniformMat4Size <> 16.0 then failwith "clean consumer inline object class stores failed"
 if observer.IsNone || not (observableA.\`\`hasObservers\`\`()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then failwith "clean consumer observable closure failed"
 if not thinAnimationEnded || thinSprite.\`\`animationStarted\`\` then failwith "clean consumer nullable callback class failed"
 multiObserver.\`\`dispose\`\`()

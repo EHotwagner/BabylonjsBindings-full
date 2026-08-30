@@ -73,6 +73,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure.js",
+      "export": "BasisTranscodeConfiguration",
+      "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.path.js",
       "export": "BezierCurve",
       "moduleSha256": "a81ead2c2a26fb3f440a8320f0db05e311ae851f79aff196013e6d60bcc232c1"
@@ -178,6 +184,12 @@
       "module": "@babylonjs/core/Misc/gradients.js",
       "export": "FactorGradient",
       "moduleSha256": "704f9e59cf8ca5b9bff89c06bd62590af8d94598095e49f1b057a449fdf5dc50"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/filesInputStore.js",
+      "export": "FilesInputStore",
+      "moduleSha256": "60ed97df36d141bbac15aba0e146323cbd9869f902fc7fa706bee5fcf8a0f85b"
     },
     {
       "package": "@babylonjs/core",
@@ -361,6 +373,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/shaderStore.js",
+      "export": "ShaderStore",
+      "moduleSha256": "77916baf0607b18b41cfb1b31ab99cab459d8c74940c919a56861bf2a9dd2d1d"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/meshSimplification.common.js",
       "export": "SimplificationSettings",
       "moduleSha256": "92163d39637d1107e039765269dbea02d3aae044987dfb624d8f29851d979415"
@@ -442,6 +460,12 @@
       "module": "@babylonjs/core/Engines/WebGL/webGLHardwareTexture.js",
       "export": "WebGLHardwareTexture",
       "moduleSha256": "1e7ad7342d775833cd825f4c25bb3ba20596940aa646c8003083250008273fa9"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor.js",
+      "export": "WebGPUShaderProcessor",
+      "moduleSha256": "6e293b61e99276a7a312cb363d4bd4478d662695ca340733909bd74578aacc2e"
     },
     {
       "package": "@babylonjs/core",

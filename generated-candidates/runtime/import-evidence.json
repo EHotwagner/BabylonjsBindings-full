@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "4dd8b410a17575d76fb72d0b2c95385d5ef7d6da1909da9946b154e6cf7f80c5"
+    "sha256": "4b1809a980da4654848a09e5249822f4cf6451f53a264fcce53b4937ce503ce4"
   },
   "imports": [
     {
@@ -75,6 +75,24 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Engines/nullEngine.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/shaderStore.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/shaderStore.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]
@@ -296,6 +314,15 @@
       ]
     },
     {
+      "specifier": "@babylonjs/core/Misc/basis.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/basis.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
       "specifier": "@babylonjs/core/Misc/bitArray.js",
       "package": "@babylonjs/core",
       "version": "9.19.0",
@@ -309,6 +336,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Misc/dataStorage.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/filesInputStore.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/filesInputStore.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

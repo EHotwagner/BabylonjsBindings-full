@@ -185,6 +185,30 @@ module SimpleClasses =
     [<Import("BabylonFileLoaderConfiguration", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
     let BabylonFileLoaderConfiguration: BabylonFileLoaderConfigurationStatic = jsNative
 
+    /// Inline object shape used by BasisTranscodeConfiguration.
+    [<AllowNullLiteral>]
+    type BasisTranscodeConfigurationProperty1Object =
+        abstract ``etc1``: bool option with get, set
+        abstract ``s3tc``: bool option with get, set
+        abstract ``pvrtc``: bool option with get, set
+        abstract ``etc2``: bool option with get, set
+        abstract ``astc``: bool option with get, set
+        abstract ``bc7``: bool option with get, set
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<AllowNullLiteral>]
+    type BasisTranscodeConfiguration =
+        abstract ``supportedCompressionFormats``: BasisTranscodeConfigurationProperty1Object option with get, set
+        abstract ``loadMipmapLevels``: bool option with get, set
+        abstract ``loadSingleImage``: float option with get, set
+
+    [<AllowNullLiteral>]
+    type BasisTranscodeConfigurationStatic =
+        [<EmitConstructor>] abstract Create: unit -> BasisTranscodeConfiguration
+
+    [<Import("BasisTranscodeConfiguration", "@babylonjs/core/Misc/basis.pure.js")>]
+    let BasisTranscodeConfiguration: BasisTranscodeConfigurationStatic = jsNative
+
     /// @babylonjs/core/Maths/math.path
     [<AllowNullLiteral>]
     type BezierCurve =
@@ -845,6 +869,24 @@ module SimpleClasses =
     [<Import("FactorGradient", "@babylonjs/core/Misc/gradients.js")>]
     let FactorGradient: FactorGradientStatic = jsNative
 
+    /// Inline object shape used by FilesInputStore.
+    [<AllowNullLiteral>]
+    type FilesInputStoreProperty1Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> Browser.Types.File with get, set
+
+    /// @babylonjs/core/Misc/filesInputStore
+    [<AllowNullLiteral>]
+    type FilesInputStore =
+        interface end
+
+    [<AllowNullLiteral>]
+    type FilesInputStoreStatic =
+        [<EmitConstructor>] abstract Create: unit -> FilesInputStore
+        abstract ``FilesToLoad``: FilesInputStoreProperty1Object with get, set
+
+    [<Import("FilesInputStore", "@babylonjs/core/Misc/filesInputStore.js")>]
+    let FilesInputStore: FilesInputStoreStatic = jsNative
+
     /// @babylonjs/core/FlowGraph/CustomTypes/flowGraphInteger.pure
     [<AllowNullLiteral>]
     type FlowGraphInteger =
@@ -1504,6 +1546,57 @@ module SimpleClasses =
     [<Import("ShaderCodeInliner", "@babylonjs/core/Engines/Processors/shaderCodeInliner.js")>]
     let ShaderCodeInliner: ShaderCodeInlinerStatic = jsNative
 
+    /// Inline object shape used by ShaderStore.
+    [<AllowNullLiteral>]
+    type ShaderStoreProperty2Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by ShaderStore.
+    [<AllowNullLiteral>]
+    type ShaderStoreProperty3Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by ShaderStore.
+    [<AllowNullLiteral>]
+    type ShaderStoreProperty5Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by ShaderStore.
+    [<AllowNullLiteral>]
+    type ShaderStoreProperty6Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by ShaderStore.
+    [<AllowNullLiteral>]
+    type ShaderStoreMethod8ReturnObject =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by ShaderStore.
+    [<AllowNullLiteral>]
+    type ShaderStoreMethod9ReturnObject =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// @babylonjs/core/Engines/shaderStore
+    [<AllowNullLiteral>]
+    type ShaderStore =
+        interface end
+
+    [<AllowNullLiteral>]
+    type ShaderStoreStatic =
+        [<EmitConstructor>] abstract Create: unit -> ShaderStore
+        abstract ``ShadersRepository``: string with get, set
+        abstract ``ShadersStore``: ShaderStoreProperty2Object with get, set
+        abstract ``IncludesShadersStore``: ShaderStoreProperty3Object with get, set
+        abstract ``ShadersRepositoryWGSL``: string with get, set
+        abstract ``ShadersStoreWGSL``: ShaderStoreProperty5Object with get, set
+        abstract ``IncludesShadersStoreWGSL``: ShaderStoreProperty6Object with get, set
+        abstract ``GetShadersRepository``: ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> string
+        abstract ``GetShadersStore``: ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> ShaderStoreMethod8ReturnObject
+        abstract ``GetIncludesShadersStore``: ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> ShaderStoreMethod9ReturnObject
+
+    [<Import("ShaderStore", "@babylonjs/core/Engines/shaderStore.js")>]
+    let ShaderStore: ShaderStoreStatic = jsNative
+
     /// @babylonjs/core/Meshes/meshSimplification.common
     [<AllowNullLiteral>]
     type SimplificationSettings =
@@ -1819,6 +1912,25 @@ module SimpleClasses =
 
     [<Import("WebGLHardwareTexture", "@babylonjs/core/Engines/WebGL/webGLHardwareTexture.js")>]
     let WebGLHardwareTexture: WebGLHardwareTextureStatic = jsNative
+
+    /// Inline object shape used by WebGPUShaderProcessor.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorProperty3Object =
+        [<EmitIndexer>] abstract Item: ``type``: string -> float with get, set
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessor
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessor =
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
+
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorStatic =
+        abstract ``LeftOvertUBOName``: string with get
+        abstract ``InternalsUBOName``: string with get
+        abstract ``UniformSizes``: WebGPUShaderProcessorProperty3Object with get, set
+
+    [<Import("WebGPUShaderProcessor", "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor.js")>]
+    let WebGPUShaderProcessor: WebGPUShaderProcessorStatic = jsNative
 
     /// @babylonjs/core/Engines/WebGPU/webgpuTintWASM
     [<AllowNullLiteral>]

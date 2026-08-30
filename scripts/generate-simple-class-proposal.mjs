@@ -185,7 +185,10 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
   const localTypeParameters = new Set(typeParameters);
   for (const parameter of node.typeParameters ?? []) localTypeParameters.add(parameter.name.text);
   localTypeParameters.ownerName = typeParameters.ownerName;
-  const returnType = node.type ? fsharpType(node.type, available, dependencies, localTypeParameters) : undefined;
+  let returnType = node.type ? fsharpType(node.type, available, dependencies, localTypeParameters) : undefined;
+  if (!returnType && node.type && ts.isTypeLiteralNode(node.type)) {
+    returnType = inlineObjectType(node.type, available, dependencies, localTypeParameters, inlineTypes, `${context}Return`);
+  }
   const parameters = node.parameters.map((parameter, index) => {
     let type = parameter.type ? fsharpType(parameter.type, available, dependencies, localTypeParameters) : undefined;
     const nestedProperty = parameter.type ? callbackPropertyType(parameter.type) : undefined;
@@ -250,7 +253,10 @@ const renderClass = (declaration, available, hasBase) => {
         if (!callback) return undefined;
         target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken) || callbackProperty.optional, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
       } else {
-        const type = member.type ? fsharpType(member.type, available, dependencies, typeParameters) : initializerType(member.initializer);
+        let type = member.type ? fsharpType(member.type, available, dependencies, typeParameters) : initializerType(member.initializer);
+        if (!type && member.type && ts.isTypeLiteralNode(member.type)) {
+          type = inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${declaration.name.text}Property${memberIndex + 1}`);
+        }
         if (!type) return undefined;
         target.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
       }

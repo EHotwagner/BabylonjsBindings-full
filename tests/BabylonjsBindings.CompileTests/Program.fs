@@ -30,6 +30,10 @@ let smartArrayFactory: SmartArrayStatic = SmartArray
 let smartArrayNoDuplicateFactory: SmartArrayNoDuplicateStatic = SmartArrayNoDuplicate
 let animationEventFactory: AnimationEventStatic = AnimationEvent
 let factorGradientFactory: FactorGradientStatic = FactorGradient
+let basisTranscodeConfigurationFactory: BasisTranscodeConfigurationStatic = BasisTranscodeConfiguration
+let filesInputStoreFactory: FilesInputStoreStatic = FilesInputStore
+let shaderStoreFactory: ShaderStoreStatic = ShaderStore
+let webGPUShaderProcessorFactory: WebGPUShaderProcessorStatic = WebGPUShaderProcessor
 let performanceConfiguratorFactory: PerformanceConfiguratorStatic = PerformanceConfigurator
 let simplificationSettingsFactory: SimplificationSettingsStatic = SimplificationSettings
 let stencilStateComposerFactory: StencilStateComposerStatic = StencilStateComposer
@@ -102,6 +106,10 @@ smartArrayFactory |> ignore
 smartArrayNoDuplicateFactory |> ignore
 animationEventFactory |> ignore
 factorGradientFactory |> ignore
+basisTranscodeConfigurationFactory |> ignore
+filesInputStoreFactory |> ignore
+shaderStoreFactory |> ignore
+webGPUShaderProcessorFactory |> ignore
 performanceConfiguratorFactory |> ignore
 simplificationSettingsFactory |> ignore
 stencilStateComposerFactory |> ignore

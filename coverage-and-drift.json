@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "f3d4ffde134a514d73983e533d5be736237e417dc2c2902c8ac93561c8c76384",
+  "maintainedSurfaceDigest": "03982a386431d69b98491185a5ff3b11c3edc6c5cc2bf4736a91edeca6c42cf9",
   "summary": {
     "total": 4323,
-    "typed": 1765,
+    "typed": 1769,
     "runtimeOnly": 1,
-    "blocked": 2551,
+    "blocked": 2547,
     "lossy": 6
   },
   "exports": [
@@ -5067,8 +5067,9 @@
       "module": "@babylonjs/core/Engines/shaderStore",
       "name": "ShaderStore",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ShaderStore"
     },
     {
       "package": "@babylonjs/core",
@@ -5978,8 +5979,9 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor",
       "name": "WebGPUShaderProcessor",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessor"
     },
     {
       "package": "@babylonjs/core",
@@ -22363,8 +22365,9 @@
       "module": "@babylonjs/core/Misc/basis.pure",
       "name": "BasisTranscodeConfiguration",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration"
     },
     {
       "package": "@babylonjs/core",
@@ -23123,8 +23126,9 @@
       "module": "@babylonjs/core/Misc/filesInputStore",
       "name": "FilesInputStore",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FilesInputStore"
     },
     {
       "package": "@babylonjs/core",
