@@ -19,6 +19,7 @@ const program = ts.createProgram([...lockedPaths].map(file => resolve(nodeModule
 });
 const checker = program.getTypeChecker();
 const diagnose = process.argv.includes("--diagnose");
+const bootstrapClasses = process.argv.includes("--bootstrap-classes");
 const typeFailureCounts = new Map();
 const failedAliases = new Map();
 let diagnosedAlias;
@@ -72,6 +73,38 @@ for (const entry of symbolExports) dependencyNameCounts.set(entry.name, (depende
 const maintainedSymbols = new Map(symbolExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
   .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, arity: entry.typeParameterCount ?? 0 }]));
+if (bootstrapClasses) {
+  const rawClassSymbols = new Map();
+  for (const sourceFile of program.getSourceFiles()) {
+    const lockedPath = normalize(sourceFile.fileName);
+    if (!lockedPaths.has(lockedPath) || !sourceFile.symbol) continue;
+    for (const exported of checker.getExportsOfModule(sourceFile.symbol)) {
+      let target = exported;
+      if (exported.flags & ts.SymbolFlags.Alias) {
+        try { target = checker.getAliasedSymbol(exported); } catch { continue; }
+      }
+      const declarations = target.declarations?.filter(ts.isClassDeclaration) ?? [];
+      if (declarations.length !== 1) continue;
+      const declaration = declarations[0];
+      const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
+      const packageName = module.startsWith("@babylonjs/core/")
+        ? "@babylonjs/core"
+        : module.startsWith("@babylonjs/loaders/")
+          ? "@babylonjs/loaders"
+          : undefined;
+      if (!packageName) continue;
+      const name = exported.getName();
+      rawClassSymbols.set(`${packageName}|${module}|${name}`, { name, arity: declaration.typeParameters?.length ?? 0 });
+    }
+  }
+  const classNameCounts = new Map();
+  for (const entry of rawClassSymbols.values()) classNameCounts.set(entry.name, (classNameCounts.get(entry.name) ?? 0) + 1);
+  for (const entry of rawClassSymbols.values()) {
+    if (classNameCounts.get(entry.name) === 1 && !maintainedSymbols.has(entry.name)) {
+      maintainedSymbols.set(entry.name, { fsharpSymbol: `BabylonjsBindings.SimpleClasses.${entry.name}`, arity: entry.arity });
+    }
+  }
+}
 const isAbsentType = node => node.kind === ts.SyntaxKind.UndefinedKeyword
   || (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
 const asOption = type => type.endsWith(" option") ? type : `${type} option`;
@@ -101,6 +134,7 @@ const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.NeverKeyword) return "BabylonjsBindings.SimpleClasses.Never";
+  if (node.kind === ts.SyntaxKind.ObjectKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptObject";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
@@ -146,6 +180,31 @@ const fsharpType = node => {
     }
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "Pick"
+      && node.typeArguments?.length === 2
+      && ts.isTypeReferenceNode(node.typeArguments[0])
+      && ts.isIdentifier(node.typeArguments[0].typeName)) {
+      let symbol = checker.getSymbolAtLocation(node.typeArguments[0].typeName);
+      if (symbol?.flags & ts.SymbolFlags.Alias) {
+        try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+      }
+      const declaration = symbol?.declarations?.find(ts.isTypeAliasDeclaration);
+      const keyNodes = ts.isUnionTypeNode(node.typeArguments[1]) ? node.typeArguments[1].types : [node.typeArguments[1]];
+      const keys = keyNodes.map(branch => ts.isLiteralTypeNode(branch) && ts.isStringLiteral(branch.literal) ? branch.literal.text : undefined);
+      if (declaration && ts.isTypeLiteralNode(declaration.type) && keys.length > 0 && keys.every(Boolean)) {
+        const members = typeLiteralShape(declaration.type, `${node.typeArguments[0].typeName.text}Pick`)?.filter(member => keys.includes(member.name));
+        if (members?.length === keys.length) {
+          const name = `PickObject${createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12)}`;
+          auxiliaryObjectTypes.set(name, { name, members });
+          return name;
+        }
+      }
+      recordTypeFailure(node);
+      return undefined;
+    }
+    if (node.typeName.text === "ArrayBufferLike" && !node.typeArguments?.length) {
+      return "U2<JS.ArrayBuffer, BrowserSharedArrayBuffer>";
+    }
     if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0]);
       return inner ? `ResizeArray<${inner}>` : undefined;
@@ -193,6 +252,17 @@ const fsharpType = node => {
       && !node.typeArguments[0].typeArguments?.length) return `JS.${node.typeName.text}`;
     const browserTypes = new Set(["AudioBuffer", "AudioContext", "AudioNode", "Blob", "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "ImageData", "KeyboardEvent", "OfflineAudioContext", "WebGLRenderingContext"]);
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
+    if (!node.typeArguments?.length && node.typeName.text === "WebGL2RenderingContext") return "BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext";
+    if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
+    if (!node.typeArguments?.length && node.typeName.text === "OffscreenCanvas") return "BabylonjsBindings.SimpleInterfaces.BrowserOffscreenCanvas";
+    if (!node.typeArguments?.length && node.typeName.text === "WebGLQuery") return "BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery";
+    if (!node.typeArguments?.length && node.typeName.text === "XRLayer") return "BabylonjsBindings.SimpleInterfaces.BrowserXRLayer";
+    if (!node.typeArguments?.length && node.typeName.text === "XRWebGLLayer") return "BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer";
+    if (!node.typeArguments?.length && node.typeName.text === "XRWebGLLayerInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayerInit";
+    if (!node.typeArguments?.length && node.typeName.text === "XRSessionInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRSessionInit";
+    if (!node.typeArguments?.length && node.typeName.text === "XRRenderState") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderState";
+    if (!node.typeArguments?.length && node.typeName.text === "XRRenderStateInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderStateInit";
+    if (!node.typeArguments?.length && node.typeName.text === "XRReferenceSpaceType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType";
     const maintained = maintainedSymbols.get(node.typeName.text);
     if (maintained) {
       const arguments_ = node.typeArguments ?? [];
@@ -381,6 +451,8 @@ const lines = [
   "/// Exact primitive aliases and dependency-free callbacks exported by Babylon.js 9.19.0.",
   "module TypeAliases ="
 ];
+lines.push("", "    /// Exact Symbol.toStringTag literal exposed by SharedArrayBuffer.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserSharedArrayBufferTag =", "        | [<CompiledName(\"SharedArrayBuffer\")>] SharedArrayBuffer");
+lines.push("", "    /// Exact ESNext SharedArrayBuffer instance surface used by ArrayBufferLike declarations.", "    [<AllowNullLiteral>]", "    type BrowserSharedArrayBuffer =", "        abstract byteLength: float with get", "        abstract growable: bool with get", "        abstract maxByteLength: float with get", "        abstract slice: ?beginIndex: float * ?endIndex: float -> BrowserSharedArrayBuffer", "        abstract grow: ?newByteLength: float -> unit", "        [<Emit(\"$0[Symbol.toStringTag]\")>] abstract toStringTag: BrowserSharedArrayBufferTag with get");
 const aliasReferenceText = JSON.stringify(entries);
 for (const value of [...numericLiteralValues].filter(value => aliasReferenceText.includes(`NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`)).sort((left, right) => left - right)) {
   const name = `NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`;

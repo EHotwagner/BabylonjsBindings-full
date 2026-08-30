@@ -68,6 +68,11 @@ module SimpleClasses =
     type StringLiteral33d177285f0d =
         | [<CompiledName("xr-controller-movement")>] Value
 
+    /// Exact string literal type for "stl".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral3ce85354423f =
+        | [<CompiledName("stl")>] Value
+
     /// Exact string literal type for "xr-controller-teleportation".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral4bff47d82478 =
@@ -198,10 +203,113 @@ module SimpleClasses =
     type StringLiteralfcd8fcbdec72 =
         | [<CompiledName("xr-feature-points")>] Value
 
+    /// Exact internal numeric enum required by a Babylon class signature.
+    type FrameGraphTextureNamespace =
+        | Task = 0
+        | Graph = 1
+        | External = 2
+
     /// Inline object shape used by a TypeScript utility projection.
     [<AllowNullLiteral>]
     type InlineObject6606480d34c3Object =
         abstract ``levels``: ResizeArray<InlineObject92b639d82261Object> with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type MixinBase4c05b56fabf5Object =
+        abstract ``PREPASS``: bool with get, set
+        abstract ``PREPASS_COLOR``: bool with get, set
+        abstract ``PREPASS_COLOR_INDEX``: float with get, set
+        abstract ``PREPASS_IRRADIANCE_LEGACY``: bool with get, set
+        abstract ``PREPASS_IRRADIANCE_LEGACY_INDEX``: float with get, set
+        abstract ``PREPASS_IRRADIANCE``: bool with get, set
+        abstract ``PREPASS_IRRADIANCE_INDEX``: float with get, set
+        abstract ``PREPASS_ALBEDO``: bool with get, set
+        abstract ``PREPASS_ALBEDO_INDEX``: float with get, set
+        abstract ``PREPASS_ALBEDO_SQRT``: bool with get, set
+        abstract ``PREPASS_ALBEDO_SQRT_INDEX``: float with get, set
+        abstract ``PREPASS_DEPTH``: bool with get, set
+        abstract ``PREPASS_DEPTH_INDEX``: float with get, set
+        abstract ``PREPASS_SCREENSPACE_DEPTH``: bool with get, set
+        abstract ``PREPASS_SCREENSPACE_DEPTH_INDEX``: float with get, set
+        abstract ``PREPASS_NORMALIZED_VIEW_DEPTH``: bool with get, set
+        abstract ``PREPASS_NORMALIZED_VIEW_DEPTH_INDEX``: float with get, set
+        abstract ``PREPASS_NORMAL``: bool with get, set
+        abstract ``PREPASS_NORMAL_INDEX``: float with get, set
+        abstract ``PREPASS_NORMAL_WORLDSPACE``: bool with get, set
+        abstract ``PREPASS_WORLD_NORMAL``: bool with get, set
+        abstract ``PREPASS_WORLD_NORMAL_INDEX``: float with get, set
+        abstract ``PREPASS_POSITION``: bool with get, set
+        abstract ``PREPASS_POSITION_INDEX``: float with get, set
+        abstract ``PREPASS_LOCAL_POSITION``: bool with get, set
+        abstract ``PREPASS_LOCAL_POSITION_INDEX``: float with get, set
+        abstract ``PREPASS_VELOCITY``: bool with get, set
+        abstract ``PREPASS_VELOCITY_INDEX``: float with get, set
+        abstract ``PREPASS_VELOCITY_LINEAR``: bool with get, set
+        abstract ``PREPASS_VELOCITY_LINEAR_INDEX``: float with get, set
+        abstract ``PREPASS_REFLECTIVITY``: bool with get, set
+        abstract ``PREPASS_REFLECTIVITY_INDEX``: float with get, set
+        abstract ``SCENE_MRT_COUNT``: float with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type MixinBasefa1f3fe4c9f6Object =
+        abstract ``MAINUV1``: bool with get, set
+        abstract ``MAINUV2``: bool with get, set
+        abstract ``MAINUV3``: bool with get, set
+        abstract ``MAINUV4``: bool with get, set
+        abstract ``MAINUV5``: bool with get, set
+        abstract ``MAINUV6``: bool with get, set
+        abstract ``UV1``: bool with get, set
+        abstract ``UV2``: bool with get, set
+        abstract ``UV3``: bool with get, set
+        abstract ``UV4``: bool with get, set
+        abstract ``UV5``: bool with get, set
+        abstract ``UV6``: bool with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type MixinBasea41488ce7562Object =
+        abstract ``IMAGEPROCESSING``: bool with get, set
+        abstract ``VIGNETTE``: bool with get, set
+        abstract ``VIGNETTEBLENDMODEMULTIPLY``: bool with get, set
+        abstract ``VIGNETTEBLENDMODEOPAQUE``: bool with get, set
+        abstract ``TONEMAPPING``: float with get, set
+        abstract ``CONTRAST``: bool with get, set
+        abstract ``COLORCURVES``: bool with get, set
+        abstract ``COLORGRADING``: bool with get, set
+        abstract ``COLORGRADING3D``: bool with get, set
+        abstract ``SAMPLER3DGREENDEPTH``: bool with get, set
+        abstract ``SAMPLER3DBGRMAP``: bool with get, set
+        abstract ``DITHER``: bool with get, set
+        abstract ``IMAGEPROCESSINGPOSTPROCESS``: bool with get, set
+        abstract ``SKIPFINALCOLORCLAMP``: bool with get, set
+        abstract ``EXPOSURE``: bool with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type MixinBasefdb36505594dObject =
+        abstract ``REFLECTION``: bool with get, set
+        abstract ``REFLECTIONMAP_3D``: bool with get, set
+        abstract ``REFLECTIONMAP_SPHERICAL``: bool with get, set
+        abstract ``REFLECTIONMAP_PLANAR``: bool with get, set
+        abstract ``REFLECTIONMAP_CUBIC``: bool with get, set
+        abstract ``USE_LOCAL_REFLECTIONMAP_CUBIC``: bool with get, set
+        abstract ``REFLECTIONMAP_PROJECTION``: bool with get, set
+        abstract ``REFLECTIONMAP_SKYBOX``: bool with get, set
+        abstract ``REFLECTIONMAP_EXPLICIT``: bool with get, set
+        abstract ``REFLECTIONMAP_EQUIRECTANGULAR``: bool with get, set
+        abstract ``REFLECTIONMAP_EQUIRECTANGULAR_FIXED``: bool with get, set
+        abstract ``REFLECTIONMAP_MIRROREDEQUIRECTANGULAR_FIXED``: bool with get, set
+        abstract ``INVERTCUBICMAP``: bool with get, set
+        abstract ``USESPHERICALFROMREFLECTIONMAP``: bool with get, set
+        abstract ``USEIRRADIANCEMAP``: bool with get, set
+        abstract ``USE_IRRADIANCE_DOMINANT_DIRECTION``: bool with get, set
+        abstract ``USESPHERICALINVERTEX``: bool with get, set
+        abstract ``REFLECTIONMAP_OPPOSITEZ``: bool with get, set
+        abstract ``LODINREFLECTIONALPHA``: bool with get, set
+        abstract ``GAMMAREFLECTION``: bool with get, set
+        abstract ``RGBDREFLECTION``: bool with get, set
 
     /// Inline object shape used by a TypeScript utility projection.
     [<AllowNullLiteral>]
@@ -235,6 +343,22 @@ module SimpleClasses =
 
     [<Import("_OcclusionDataStorage", "@babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure.js")>]
     let _OcclusionDataStorage: _OcclusionDataStorageStatic = jsNative
+
+    /// @babylonjs/core/Instrumentation/timeToken
+    [<AllowNullLiteral>]
+    type _TimeToken =
+        abstract ``_startTimeQuery``: BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery option with get, set
+        abstract ``_endTimeQuery``: BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery option with get, set
+        abstract ``_timeElapsedQuery``: BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery option with get, set
+        abstract ``_timeElapsedQueryEnded``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type _TimeTokenStatic =
+        inherit Constructor<_TimeToken>
+        [<EmitConstructor>] abstract Create: unit -> _TimeToken
+
+    [<Import("_TimeToken", "@babylonjs/core/Instrumentation/timeToken.js")>]
+    let _TimeToken: _TimeTokenStatic = jsNative
 
     /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer
     [<AllowNullLiteral>]
@@ -1225,6 +1349,12 @@ module SimpleClasses =
     type EncodingHelper =
         interface end
 
+    [<AllowNullLiteral>]
+    type EncodingHelperStatic =
+        inherit Constructor<EncodingHelper>
+        [<EmitConstructor>] abstract Create: unit -> EncodingHelper
+        abstract ``EncodeImageAsync``: ``pixelData``: JS.ArrayBufferView * ``width``: float * ``height``: float * ?``mimeType``: string * ?``invertY``: bool * ?``quality``: float -> JS.Promise<Browser.Types.Blob>
+
     /// @babylonjs/core/Events/deviceInputEvents
     [<AllowNullLiteral>]
     type EventConstants =
@@ -1401,6 +1531,11 @@ module SimpleClasses =
         abstract ``validate``: bool with get, set
         abstract ``useOpenPBR``: bool with get, set
         abstract ``dontUseTransmissionHelper``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type GLTFLoaderBaseOptionsStatic =
+        inherit Constructor<GLTFLoaderBaseOptions>
+        [<EmitConstructor>] abstract Create: unit -> GLTFLoaderBaseOptions
 
     /// @babylonjs/core/Misc/gradients
     [<AllowNullLiteral>]
@@ -1899,6 +2034,20 @@ module SimpleClasses =
 
     [<Import("PointerEventTypes", "@babylonjs/core/Events/pointerEvents.js")>]
     let PointerEventTypes: PointerEventTypesStatic = jsNative
+
+    /// @babylonjs/core/Events/pointerEvents
+    [<AllowNullLiteral>]
+    type PointerInfoBase =
+        abstract ``type``: float with get, set
+        abstract ``event``: BabylonjsBindings.SimpleInterfaces.IMouseEvent with get, set
+
+    [<AllowNullLiteral>]
+    type PointerInfoBaseStatic =
+        inherit Constructor<PointerInfoBase>
+        [<EmitConstructor>] abstract Create: ``type``: float * ``event``: BabylonjsBindings.SimpleInterfaces.IMouseEvent -> PointerInfoBase
+
+    [<Import("PointerInfoBase", "@babylonjs/core/Events/pointerEvents.js")>]
+    let PointerInfoBase: PointerInfoBaseStatic = jsNative
 
     /// @babylonjs/core/Meshes/geodesicMesh
     [<AllowNullLiteral>]
@@ -2532,6 +2681,22 @@ module SimpleClasses =
     [<Import("WebGPUTintWASM", "@babylonjs/core/Engines/WebGPU/webgpuTintWASM.js")>]
     let WebGPUTintWASM: WebGPUTintWASMStatic = jsNative
 
+    /// @babylonjs/core/XR/webXREnterExitUI
+    [<AllowNullLiteral>]
+    type WebXREnterExitUIButton =
+        abstract ``element``: Browser.Types.HTMLElement with get, set
+        abstract ``sessionMode``: BabylonjsBindings.SimpleInterfaces.BrowserXRSessionMode with get, set
+        abstract ``referenceSpaceType``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType with get, set
+        abstract ``update``: ``activeButton``: WebXREnterExitUIButton option -> unit
+
+    [<AllowNullLiteral>]
+    type WebXREnterExitUIButtonStatic =
+        inherit Constructor<WebXREnterExitUIButton>
+        [<EmitConstructor>] abstract Create: ``element``: Browser.Types.HTMLElement * ``sessionMode``: BabylonjsBindings.SimpleInterfaces.BrowserXRSessionMode * ``referenceSpaceType``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType -> WebXREnterExitUIButton
+
+    [<Import("WebXREnterExitUIButton", "@babylonjs/core/XR/webXREnterExitUI.js")>]
+    let WebXREnterExitUIButton: WebXREnterExitUIButtonStatic = jsNative
+
     /// @babylonjs/core/XR/webXRFeaturesManager
     [<AllowNullLiteral>]
     type WebXRFeatureName =
@@ -2939,6 +3104,12 @@ module SimpleClasses =
         abstract ``GS_DBG_SH_ORDER3``: float with get, set
         abstract ``GS_DBG_SH_ORDER4``: float with get, set
 
+    [<AllowNullLiteral>]
+    type GaussianSplattingDebugDefinesStatic =
+        inherit MaterialDefinesStatic
+        inherit Constructor<GaussianSplattingDebugDefines>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> GaussianSplattingDebugDefines
+
     /// @babylonjs/core/Materials/imageProcessingConfiguration.defines
     [<AllowNullLiteral>]
     type ImageProcessingConfigurationDefines =
@@ -3080,6 +3251,12 @@ module SimpleClasses =
         abstract ``RENDER_WITH_GIRSM``: bool with get, set
         abstract ``RSMCREATE_PROJTEXTURE``: bool with get, set
 
+    [<AllowNullLiteral>]
+    type MaterialGIRSMRenderDefinesStatic =
+        inherit MaterialDefinesStatic
+        inherit Constructor<MaterialGIRSMRenderDefines>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialGIRSMRenderDefines
+
     /// @babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure
     [<AllowNullLiteral>]
     type MaterialGreasedLineDefines =
@@ -3126,6 +3303,12 @@ module SimpleClasses =
         abstract ``RSMCREATE``: bool with get, set
         abstract ``RSMCREATE_PROJTEXTURE``: bool with get, set
         abstract ``RSMCREATE_LIGHT_IS_SPOT``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type MaterialRSMCreateDefinesStatic =
+        inherit MaterialDefinesStatic
+        inherit Constructor<MaterialRSMCreateDefines>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MaterialRSMCreateDefines
 
     /// @babylonjs/core/Materials/PBR/pbrSheenConfiguration
     [<AllowNullLiteral>]
@@ -3204,12 +3387,36 @@ module SimpleClasses =
         abstract ``DBG_MULTIPLY``: bool with get, set
         abstract ``DBG_ENABLED``: bool with get, set
 
+    [<AllowNullLiteral>]
+    type MeshDebugDefinesStatic =
+        inherit MaterialDefinesStatic
+        inherit Constructor<MeshDebugDefines>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> MeshDebugDefines
+
     /// @babylonjs/core/Engines/thinNativeEngine.pure
     [<AllowNullLiteral>]
     type NativeDataBuffer =
         inherit DataBuffer
         abstract ``nativeIndexBuffer``: BabylonjsBindings.TypeAliases.NativeData option with get, set
         abstract ``nativeVertexBuffer``: BabylonjsBindings.TypeAliases.NativeData option with get, set
+
+    [<AllowNullLiteral>]
+    type NativeDataBufferStatic =
+        inherit DataBufferStatic
+        inherit Constructor<NativeDataBuffer>
+        [<EmitConstructor>] abstract Create: unit -> NativeDataBuffer
+
+    /// @babylonjs/core/Materials/Node/nodeMaterial.pure
+    [<AllowNullLiteral>]
+    type NodeMaterialDefinesBase =
+        inherit MaterialDefines
+        inherit MixinBasefa1f3fe4c9f6Object
+
+    [<AllowNullLiteral>]
+    type NodeMaterialDefinesBaseStatic =
+        inherit MaterialDefinesStatic
+        inherit Constructor<NodeMaterialDefinesBase>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> NodeMaterialDefinesBase
 
     /// Function-valued Observer.callback property.
     [<AllowNullLiteral>]
@@ -3238,6 +3445,30 @@ module SimpleClasses =
 
     [<Import("Observer", "@babylonjs/core/Misc/observable.pure.js")>]
     let Observer: ObserverStatic = jsNative
+
+    /// @babylonjs/core/Materials/PBR/openpbrMaterial.pure
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialDefinesBase =
+        inherit MaterialDefines
+        inherit MixinBase4c05b56fabf5Object
+
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialDefinesBaseStatic =
+        inherit MaterialDefinesStatic
+        inherit Constructor<OpenPBRMaterialDefinesBase>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> OpenPBRMaterialDefinesBase
+
+    /// @babylonjs/core/Materials/PBR/pbrBaseMaterial.pure
+    [<AllowNullLiteral>]
+    type PBRMaterialDefinesBase =
+        inherit MaterialDefines
+        inherit MixinBase4c05b56fabf5Object
+
+    [<AllowNullLiteral>]
+    type PBRMaterialDefinesBaseStatic =
+        inherit MaterialDefinesStatic
+        inherit Constructor<PBRMaterialDefinesBase>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> PBRMaterialDefinesBase
 
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
@@ -3348,11 +3579,28 @@ module SimpleClasses =
     [<Import("SmartArrayNoDuplicate", "@babylonjs/core/Misc/smartArray.js")>]
     let SmartArrayNoDuplicate: SmartArrayNoDuplicateStatic = jsNative
 
+    /// @babylonjs/core/Materials/standardMaterial.pure
+    [<AllowNullLiteral>]
+    type StandardMaterialDefinesBase =
+        inherit MaterialDefines
+        inherit MixinBase4c05b56fabf5Object
+
+    [<AllowNullLiteral>]
+    type StandardMaterialDefinesBaseStatic =
+        inherit MaterialDefinesStatic
+        inherit Constructor<StandardMaterialDefinesBase>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> StandardMaterialDefinesBase
+
     /// @babylonjs/core/Misc/basis.pure
     [<AllowNullLiteral>]
     type TranscodeResult =
         abstract ``fileInfo``: BasisFileInfo with get, set
         abstract ``format``: float with get, set
+
+    [<AllowNullLiteral>]
+    type TranscodeResultStatic =
+        inherit Constructor<TranscodeResult>
+        [<EmitConstructor>] abstract Create: unit -> TranscodeResult
 
     /// @babylonjs/core/Engines/Native/validatedNativeDataStream.pure
     [<AllowNullLiteral>]
@@ -3404,6 +3652,98 @@ module SimpleClasses =
 
     [<Import("WebGPUPerfCounter", "@babylonjs/core/Engines/WebGPU/webgpuPerfCounter.js")>]
     let WebGPUPerfCounter: WebGPUPerfCounterStatic = jsNative
+
+    /// Inline object shape used by WebGPUShaderProcessorWGSL.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSLMethod17Parameter3Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessorWGSL.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSLMethod18Parameter2Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessorWGSL.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSLMethod19Parameter3Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessorWGSL.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSLMethod20Parameter3Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessorWGSL.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSLMethod22Parameter5Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> U3<float, string, bool> option with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessorWGSL.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSLMethod22Parameter6Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessorWGSL.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSLMethod22Parameter7Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by WebGPUShaderProcessorWGSL.
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSLMethod23ReturnObject =
+        abstract ``vertexCode``: string with get, set
+        abstract ``fragmentCode``: string with get, set
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessorsWGSL.pure
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSL =
+        inherit WebGPUShaderProcessor
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
+        abstract ``uniformRegexp``: BabylonjsBindings.SimpleInterfaces.BrowserRegExp with get, set
+        abstract ``textureRegexp``: BabylonjsBindings.SimpleInterfaces.BrowserRegExp with get, set
+        abstract ``noPrecision``: bool with get, set
+        abstract ``pureMode``: bool with get, set
+        abstract ``initializeShaders``: ``processingContext``: BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext option -> unit
+        abstract ``preProcessShaderCode``: ``code``: string -> string
+        abstract ``varyingCheck``: ``varying``: string -> bool
+        abstract ``varyingProcessor``: ``varying``: string * ``isFragment``: bool * ``preProcessors``: WebGPUShaderProcessorWGSLMethod17Parameter3Object -> string
+        abstract ``attributeProcessor``: ``attribute``: string * ``preProcessors``: WebGPUShaderProcessorWGSLMethod18Parameter2Object -> string
+        abstract ``uniformProcessor``: ``uniform``: string * ``isFragment``: bool * ``preProcessors``: WebGPUShaderProcessorWGSLMethod19Parameter3Object -> string
+        abstract ``textureProcessor``: ``texture``: string * ``isFragment``: bool * ``preProcessors``: WebGPUShaderProcessorWGSLMethod20Parameter3Object -> string
+        abstract ``postProcessor``: ``code``: string * ``_defines``: ResizeArray<string> * ``_isFragment``: bool * ``_processingContext``: BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext option * ``_parameters``: WebGPUShaderProcessorWGSLMethod22Parameter5Object * ``preProcessors``: WebGPUShaderProcessorWGSLMethod22Parameter6Object * ``preProcessorsFromCode``: WebGPUShaderProcessorWGSLMethod22Parameter7Object -> string
+        abstract ``finalizeShaders``: ``vertexCode``: string * ``fragmentCode``: string -> WebGPUShaderProcessorWGSLMethod23ReturnObject
+
+    [<AllowNullLiteral>]
+    type WebGPUShaderProcessorWGSLStatic =
+        inherit WebGPUShaderProcessorStatic
+
+    [<Import("WebGPUShaderProcessorWGSL", "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessorsWGSL.pure.js")>]
+    let WebGPUShaderProcessorWGSL: WebGPUShaderProcessorWGSLStatic = jsNative
+
+    /// Function-valued WebXREnterExitUIOptions.onError property.
+    [<AllowNullLiteral>]
+    type WebXREnterExitUIOptionsOnErrorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``error``: obj -> unit
+
+    /// @babylonjs/core/XR/webXREnterExitUI
+    [<AllowNullLiteral>]
+    type WebXREnterExitUIOptions =
+        abstract ``customButtons``: ResizeArray<WebXREnterExitUIButton> option with get, set
+        abstract ``referenceSpaceType``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType option with get, set
+        abstract ``renderTarget``: BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer> option with get, set
+        abstract ``sessionMode``: BabylonjsBindings.SimpleInterfaces.BrowserXRSessionMode option with get, set
+        abstract ``optionalFeatures``: ResizeArray<string> option with get, set
+        abstract ``requiredFeatures``: ResizeArray<string> option with get, set
+        abstract ``ignoreSessionGrantedEvent``: bool option with get, set
+        abstract ``onError``: WebXREnterExitUIOptionsOnErrorCallback option with get, set
+
+    [<AllowNullLiteral>]
+    type WebXREnterExitUIOptionsStatic =
+        inherit Constructor<WebXREnterExitUIOptions>
+        [<EmitConstructor>] abstract Create: unit -> WebXREnterExitUIOptions
+
+    [<Import("WebXREnterExitUIOptions", "@babylonjs/core/XR/webXREnterExitUI.js")>]
+    let WebXREnterExitUIOptions: WebXREnterExitUIOptionsStatic = jsNative
 
     /// @babylonjs/core/Misc/gradients
     [<AllowNullLiteral>]
@@ -3465,6 +3805,69 @@ module SimpleClasses =
     [<Import("GradientBlockColorStep", "@babylonjs/core/Materials/Node/Blocks/gradientBlock.pure.js")>]
     let GradientBlockColorStep: GradientBlockColorStepStatic = jsNative
 
+    /// @babylonjs/core/Materials/Node/nodeMaterial.pure
+    [<AllowNullLiteral>]
+    type NodeMaterialDefines =
+        inherit NodeMaterialDefinesBase
+        inherit MixinBasea41488ce7562Object
+        abstract ``NORMAL``: bool with get, set
+        abstract ``TANGENT``: bool with get, set
+        abstract ``VERTEXCOLOR_NME``: bool with get, set
+        abstract ``PREPASS``: bool with get, set
+        abstract ``PREPASS_NORMAL``: bool with get, set
+        abstract ``PREPASS_NORMAL_INDEX``: float with get, set
+        abstract ``PREPASS_WORLD_NORMAL``: bool with get, set
+        abstract ``PREPASS_WORLD_NORMAL_INDEX``: float with get, set
+        abstract ``PREPASS_POSITION``: bool with get, set
+        abstract ``PREPASS_POSITION_INDEX``: float with get, set
+        abstract ``PREPASS_LOCAL_POSITION``: bool with get, set
+        abstract ``PREPASS_LOCAL_POSITION_INDEX``: float with get, set
+        abstract ``PREPASS_DEPTH``: bool with get, set
+        abstract ``PREPASS_DEPTH_INDEX``: float with get, set
+        abstract ``PREPASS_SCREENSPACE_DEPTH``: bool with get, set
+        abstract ``PREPASS_SCREENSPACE_DEPTH_INDEX``: float with get, set
+        abstract ``PREPASS_REFLECTIVITY``: bool with get, set
+        abstract ``PREPASS_REFLECTIVITY_INDEX``: float with get, set
+        abstract ``PREPASS_VELOCITY``: bool with get, set
+        abstract ``PREPASS_VELOCITY_INDEX``: float with get, set
+        abstract ``PREPASS_VELOCITY_LINEAR``: bool with get, set
+        abstract ``PREPASS_VELOCITY_LINEAR_INDEX``: float with get, set
+        abstract ``SCENE_MRT_COUNT``: float with get, set
+        abstract ``NUM_BONE_INFLUENCERS``: float with get, set
+        abstract ``BonesPerMesh``: float with get, set
+        abstract ``BONETEXTURE``: bool with get, set
+        abstract ``MORPHTARGETS``: bool with get, set
+        abstract ``MORPHTARGETS_POSITION``: bool with get, set
+        abstract ``MORPHTARGETS_NORMAL``: bool with get, set
+        abstract ``MORPHTARGETS_TANGENT``: bool with get, set
+        abstract ``MORPHTARGETS_UV``: bool with get, set
+        abstract ``MORPHTARGETS_UV2``: bool with get, set
+        abstract ``MORPHTARGETS_COLOR``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASPOSITIONS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASNORMALS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASTANGENTS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASUVS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASUV2S``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASCOLORS``: bool with get, set
+        abstract ``NUM_MORPH_INFLUENCERS``: float with get, set
+        abstract ``MORPHTARGETS_TEXTURE``: bool with get, set
+        abstract ``BUMPDIRECTUV``: float with get, set
+        abstract ``CAMERA_ORTHOGRAPHIC``: bool with get, set
+        abstract ``CAMERA_PERSPECTIVE``: bool with get, set
+        abstract ``AREALIGHTSUPPORTED``: bool with get, set
+        abstract ``AREALIGHTNOROUGHTNESS``: bool with get, set
+        abstract ``POSITIONW_AS_VARYING``: bool with get, set
+        abstract ``setValue``: ``name``: string * ``value``: obj * ?``markAsUnprocessedIfDirty``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type NodeMaterialDefinesStatic =
+        inherit NodeMaterialDefinesBaseStatic
+        inherit Constructor<NodeMaterialDefines>
+        [<EmitConstructor>] abstract Create: unit -> NodeMaterialDefines
+
+    [<Import("NodeMaterialDefines", "@babylonjs/core/Materials/Node/nodeMaterial.pure.js")>]
+    let NodeMaterialDefines: NodeMaterialDefinesStatic = jsNative
+
     /// @babylonjs/core/Misc/observable.pure
     [<AllowNullLiteral>]
     type Observable<'T> =
@@ -3494,6 +3897,194 @@ module SimpleClasses =
     [<Import("Observable", "@babylonjs/core/Misc/observable.pure.js")>]
     let Observable: ObservableStatic = jsNative
 
+    /// @babylonjs/core/Materials/PBR/openpbrMaterial.pure
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialDefinesWithEnvLighting =
+        inherit OpenPBRMaterialDefinesBase
+        inherit MixinBasefdb36505594dObject
+
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialDefinesWithEnvLightingStatic =
+        inherit OpenPBRMaterialDefinesBaseStatic
+        inherit Constructor<OpenPBRMaterialDefinesWithEnvLighting>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: MaterialDefinesConstructor19Parameter1Object -> OpenPBRMaterialDefinesWithEnvLighting
+
+    /// Inline object shape used by PBRMaterialDefines.
+    [<AllowNullLiteral>]
+    type PBRMaterialDefinesConstructor150Parameter1ObjectValue1Object =
+        abstract ``type``: string with get, set
+        abstract ``default``: obj with get, set
+
+    /// Inline object shape used by PBRMaterialDefines.
+    [<AllowNullLiteral>]
+    type PBRMaterialDefinesConstructor150Parameter1Object =
+        [<EmitIndexer>] abstract Item: ``name``: string -> PBRMaterialDefinesConstructor150Parameter1ObjectValue1Object with get, set
+
+    /// @babylonjs/core/Materials/PBR/pbrBaseMaterial.pure
+    [<AllowNullLiteral>]
+    type PBRMaterialDefines =
+        inherit PBRMaterialDefinesBase
+        inherit MixinBasea41488ce7562Object
+        abstract ``PBR``: bool with get, set
+        abstract ``NUM_SAMPLES``: string with get, set
+        abstract ``REALTIME_FILTERING``: bool with get, set
+        abstract ``IBL_CDF_FILTERING``: bool with get, set
+        abstract ``ALBEDO``: bool with get, set
+        abstract ``GAMMAALBEDO``: bool with get, set
+        abstract ``ALBEDODIRECTUV``: float with get, set
+        abstract ``VERTEXCOLOR``: bool with get, set
+        abstract ``BASE_WEIGHT``: bool with get, set
+        abstract ``BASE_WEIGHTDIRECTUV``: float with get, set
+        abstract ``BASE_DIFFUSE_ROUGHNESS``: bool with get, set
+        abstract ``BASE_DIFFUSE_ROUGHNESSDIRECTUV``: float with get, set
+        abstract ``BAKED_VERTEX_ANIMATION_TEXTURE``: bool with get, set
+        abstract ``AMBIENT``: bool with get, set
+        abstract ``AMBIENTDIRECTUV``: float with get, set
+        abstract ``AMBIENTINGRAYSCALE``: bool with get, set
+        abstract ``OPACITY``: bool with get, set
+        abstract ``VERTEXALPHA``: bool with get, set
+        abstract ``OPACITYDIRECTUV``: float with get, set
+        abstract ``OPACITYRGB``: bool with get, set
+        abstract ``ALPHATEST``: bool with get, set
+        abstract ``DEPTHPREPASS``: bool with get, set
+        abstract ``ALPHABLEND``: bool with get, set
+        abstract ``ALPHAFROMALBEDO``: bool with get, set
+        abstract ``ALPHATESTVALUE``: string with get, set
+        abstract ``SPECULAROVERALPHA``: bool with get, set
+        abstract ``RADIANCEOVERALPHA``: bool with get, set
+        abstract ``ALPHAFRESNEL``: bool with get, set
+        abstract ``LINEARALPHAFRESNEL``: bool with get, set
+        abstract ``PREMULTIPLYALPHA``: bool with get, set
+        abstract ``EMISSIVE``: bool with get, set
+        abstract ``EMISSIVEDIRECTUV``: float with get, set
+        abstract ``GAMMAEMISSIVE``: bool with get, set
+        abstract ``REFLECTIVITY``: bool with get, set
+        abstract ``REFLECTIVITY_GAMMA``: bool with get, set
+        abstract ``REFLECTIVITYDIRECTUV``: float with get, set
+        abstract ``SPECULARTERM``: bool with get, set
+        abstract ``MICROSURFACEFROMREFLECTIVITYMAP``: bool with get, set
+        abstract ``MICROSURFACEAUTOMATIC``: bool with get, set
+        abstract ``LODBASEDMICROSFURACE``: bool with get, set
+        abstract ``MICROSURFACEMAP``: bool with get, set
+        abstract ``MICROSURFACEMAPDIRECTUV``: float with get, set
+        abstract ``METALLICWORKFLOW``: bool with get, set
+        abstract ``ROUGHNESSSTOREINMETALMAPALPHA``: bool with get, set
+        abstract ``ROUGHNESSSTOREINMETALMAPGREEN``: bool with get, set
+        abstract ``METALLNESSSTOREINMETALMAPBLUE``: bool with get, set
+        abstract ``AOSTOREINMETALMAPRED``: bool with get, set
+        abstract ``METALLIC_REFLECTANCE``: bool with get, set
+        abstract ``METALLIC_REFLECTANCE_GAMMA``: bool with get, set
+        abstract ``METALLIC_REFLECTANCEDIRECTUV``: float with get, set
+        abstract ``METALLIC_REFLECTANCE_USE_ALPHA_ONLY``: bool with get, set
+        abstract ``REFLECTANCE``: bool with get, set
+        abstract ``REFLECTANCE_GAMMA``: bool with get, set
+        abstract ``REFLECTANCEDIRECTUV``: float with get, set
+        abstract ``ENVIRONMENTBRDF``: bool with get, set
+        abstract ``ENVIRONMENTBRDF_RGBD``: bool with get, set
+        abstract ``NORMAL``: bool with get, set
+        abstract ``TANGENT``: bool with get, set
+        abstract ``BUMP``: bool with get, set
+        abstract ``BUMPDIRECTUV``: float with get, set
+        abstract ``OBJECTSPACE_NORMALMAP``: bool with get, set
+        abstract ``PARALLAX``: bool with get, set
+        abstract ``PARALLAX_RHS``: bool with get, set
+        abstract ``PARALLAXOCCLUSION``: bool with get, set
+        abstract ``NORMALXYSCALE``: bool with get, set
+        abstract ``LIGHTMAP``: bool with get, set
+        abstract ``LIGHTMAPDIRECTUV``: float with get, set
+        abstract ``USELIGHTMAPASSHADOWMAP``: bool with get, set
+        abstract ``GAMMALIGHTMAP``: bool with get, set
+        abstract ``RGBDLIGHTMAP``: bool with get, set
+        abstract ``REFLECTION``: bool with get, set
+        abstract ``REFLECTIONMAP_3D``: bool with get, set
+        abstract ``REFLECTIONMAP_SPHERICAL``: bool with get, set
+        abstract ``REFLECTIONMAP_PLANAR``: bool with get, set
+        abstract ``REFLECTIONMAP_CUBIC``: bool with get, set
+        abstract ``USE_LOCAL_REFLECTIONMAP_CUBIC``: bool with get, set
+        abstract ``REFLECTIONMAP_PROJECTION``: bool with get, set
+        abstract ``REFLECTIONMAP_SKYBOX``: bool with get, set
+        abstract ``REFLECTIONMAP_EXPLICIT``: bool with get, set
+        abstract ``REFLECTIONMAP_EQUIRECTANGULAR``: bool with get, set
+        abstract ``REFLECTIONMAP_EQUIRECTANGULAR_FIXED``: bool with get, set
+        abstract ``REFLECTIONMAP_MIRROREDEQUIRECTANGULAR_FIXED``: bool with get, set
+        abstract ``INVERTCUBICMAP``: bool with get, set
+        abstract ``USESPHERICALFROMREFLECTIONMAP``: bool with get, set
+        abstract ``USEIRRADIANCEMAP``: bool with get, set
+        abstract ``USE_IRRADIANCE_DOMINANT_DIRECTION``: bool with get, set
+        abstract ``USESPHERICALINVERTEX``: bool with get, set
+        abstract ``REFLECTIONMAP_OPPOSITEZ``: bool with get, set
+        abstract ``LODINREFLECTIONALPHA``: bool with get, set
+        abstract ``GAMMAREFLECTION``: bool with get, set
+        abstract ``RGBDREFLECTION``: bool with get, set
+        abstract ``LINEARSPECULARREFLECTION``: bool with get, set
+        abstract ``RADIANCEOCCLUSION``: bool with get, set
+        abstract ``HORIZONOCCLUSION``: bool with get, set
+        abstract ``INSTANCES``: bool with get, set
+        abstract ``THIN_INSTANCES``: bool with get, set
+        abstract ``INSTANCESCOLOR``: bool with get, set
+        abstract ``NUM_BONE_INFLUENCERS``: float with get, set
+        abstract ``BonesPerMesh``: float with get, set
+        abstract ``BONETEXTURE``: bool with get, set
+        abstract ``BONES_VELOCITY_ENABLED``: bool with get, set
+        abstract ``NONUNIFORMSCALING``: bool with get, set
+        abstract ``MORPHTARGETS``: bool with get, set
+        abstract ``MORPHTARGETS_POSITION``: bool with get, set
+        abstract ``MORPHTARGETS_NORMAL``: bool with get, set
+        abstract ``MORPHTARGETS_TANGENT``: bool with get, set
+        abstract ``MORPHTARGETS_UV``: bool with get, set
+        abstract ``MORPHTARGETS_UV2``: bool with get, set
+        abstract ``MORPHTARGETS_COLOR``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASPOSITIONS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASNORMALS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASTANGENTS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASUVS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASUV2S``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASCOLORS``: bool with get, set
+        abstract ``NUM_MORPH_INFLUENCERS``: float with get, set
+        abstract ``MORPHTARGETS_TEXTURE``: bool with get, set
+        abstract ``MULTIVIEW``: bool with get, set
+        abstract ``ORDER_INDEPENDENT_TRANSPARENCY``: bool with get, set
+        abstract ``ORDER_INDEPENDENT_TRANSPARENCY_16BITS``: bool with get, set
+        abstract ``USEPHYSICALLIGHTFALLOFF``: bool with get, set
+        abstract ``USEGLTFLIGHTFALLOFF``: bool with get, set
+        abstract ``TWOSIDEDLIGHTING``: bool with get, set
+        abstract ``MIRRORED``: bool with get, set
+        abstract ``SHADOWFLOAT``: bool with get, set
+        abstract ``CLIPPLANE``: bool with get, set
+        abstract ``CLIPPLANE2``: bool with get, set
+        abstract ``CLIPPLANE3``: bool with get, set
+        abstract ``CLIPPLANE4``: bool with get, set
+        abstract ``CLIPPLANE5``: bool with get, set
+        abstract ``CLIPPLANE6``: bool with get, set
+        abstract ``POINTSIZE``: bool with get, set
+        abstract ``FOG``: bool with get, set
+        abstract ``LOGARITHMICDEPTH``: bool with get, set
+        abstract ``CAMERA_ORTHOGRAPHIC``: bool with get, set
+        abstract ``CAMERA_PERSPECTIVE``: bool with get, set
+        abstract ``AREALIGHTSUPPORTED``: bool with get, set
+        abstract ``FORCENORMALFORWARD``: bool with get, set
+        abstract ``SPECULARAA``: bool with get, set
+        abstract ``UNLIT``: bool with get, set
+        abstract ``DECAL_AFTER_DETAIL``: bool with get, set
+        abstract ``TEXTURE_REPETITION_MODE``: float with get, set
+        abstract ``DEBUGMODE``: float with get, set
+        abstract ``USE_VERTEX_PULLING``: bool with get, set
+        abstract ``VERTEX_PULLING_USE_INDEX_BUFFER``: bool with get, set
+        abstract ``VERTEX_PULLING_INDEX_BUFFER_32BITS``: bool with get, set
+        abstract ``RIGHT_HANDED``: bool with get, set
+        abstract ``CLUSTLIGHT_SLICES``: float with get, set
+        abstract ``CLUSTLIGHT_BATCH``: float with get, set
+        abstract ``reset``: unit -> unit
+
+    [<AllowNullLiteral>]
+    type PBRMaterialDefinesStatic =
+        inherit PBRMaterialDefinesBaseStatic
+        inherit Constructor<PBRMaterialDefines>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: PBRMaterialDefinesConstructor150Parameter1Object -> PBRMaterialDefines
+
+    [<Import("PBRMaterialDefines", "@babylonjs/core/Materials/PBR/pbrBaseMaterial.pure.js")>]
+    let PBRMaterialDefines: PBRMaterialDefinesStatic = jsNative
+
     /// @babylonjs/core/Misc/fileTools.pure
     [<AllowNullLiteral>]
     type ReadFileError =
@@ -3509,6 +4100,147 @@ module SimpleClasses =
     [<Import("ReadFileError", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ReadFileError: ReadFileErrorStatic = jsNative
 
+    /// Inline object shape used by StandardMaterialDefines.
+    [<AllowNullLiteral>]
+    type StandardMaterialDefinesConstructor116Parameter1ObjectValue1Object =
+        abstract ``type``: string with get, set
+        abstract ``default``: obj with get, set
+
+    /// Inline object shape used by StandardMaterialDefines.
+    [<AllowNullLiteral>]
+    type StandardMaterialDefinesConstructor116Parameter1Object =
+        [<EmitIndexer>] abstract Item: ``name``: string -> StandardMaterialDefinesConstructor116Parameter1ObjectValue1Object with get, set
+
+    /// @babylonjs/core/Materials/standardMaterial.pure
+    [<AllowNullLiteral>]
+    type StandardMaterialDefines =
+        inherit StandardMaterialDefinesBase
+        inherit MixinBasea41488ce7562Object
+        abstract ``DIFFUSE``: bool with get, set
+        abstract ``DIFFUSEDIRECTUV``: float with get, set
+        abstract ``BAKED_VERTEX_ANIMATION_TEXTURE``: bool with get, set
+        abstract ``AMBIENT``: bool with get, set
+        abstract ``AMBIENTDIRECTUV``: float with get, set
+        abstract ``OPACITY``: bool with get, set
+        abstract ``OPACITYDIRECTUV``: float with get, set
+        abstract ``OPACITYRGB``: bool with get, set
+        abstract ``REFLECTION``: bool with get, set
+        abstract ``EMISSIVE``: bool with get, set
+        abstract ``EMISSIVEDIRECTUV``: float with get, set
+        abstract ``SPECULAR``: bool with get, set
+        abstract ``SPECULARDIRECTUV``: float with get, set
+        abstract ``BUMP``: bool with get, set
+        abstract ``BUMPDIRECTUV``: float with get, set
+        abstract ``PARALLAX``: bool with get, set
+        abstract ``PARALLAX_RHS``: bool with get, set
+        abstract ``PARALLAXOCCLUSION``: bool with get, set
+        abstract ``SPECULAROVERALPHA``: bool with get, set
+        abstract ``CLIPPLANE``: bool with get, set
+        abstract ``CLIPPLANE2``: bool with get, set
+        abstract ``CLIPPLANE3``: bool with get, set
+        abstract ``CLIPPLANE4``: bool with get, set
+        abstract ``CLIPPLANE5``: bool with get, set
+        abstract ``CLIPPLANE6``: bool with get, set
+        abstract ``ALPHATEST``: bool with get, set
+        abstract ``DEPTHPREPASS``: bool with get, set
+        abstract ``ALPHAFROMDIFFUSE``: bool with get, set
+        abstract ``POINTSIZE``: bool with get, set
+        abstract ``FOG``: bool with get, set
+        abstract ``SPECULARTERM``: bool with get, set
+        abstract ``DIFFUSEFRESNEL``: bool with get, set
+        abstract ``OPACITYFRESNEL``: bool with get, set
+        abstract ``REFLECTIONFRESNEL``: bool with get, set
+        abstract ``REFRACTIONFRESNEL``: bool with get, set
+        abstract ``EMISSIVEFRESNEL``: bool with get, set
+        abstract ``FRESNEL``: bool with get, set
+        abstract ``NORMAL``: bool with get, set
+        abstract ``TANGENT``: bool with get, set
+        abstract ``VERTEXCOLOR``: bool with get, set
+        abstract ``VERTEXALPHA``: bool with get, set
+        abstract ``NUM_BONE_INFLUENCERS``: float with get, set
+        abstract ``BonesPerMesh``: float with get, set
+        abstract ``BONETEXTURE``: bool with get, set
+        abstract ``BONES_VELOCITY_ENABLED``: bool with get, set
+        abstract ``INSTANCES``: bool with get, set
+        abstract ``THIN_INSTANCES``: bool with get, set
+        abstract ``INSTANCESCOLOR``: bool with get, set
+        abstract ``GLOSSINESS``: bool with get, set
+        abstract ``ROUGHNESS``: bool with get, set
+        abstract ``EMISSIVEASILLUMINATION``: bool with get, set
+        abstract ``LINKEMISSIVEWITHDIFFUSE``: bool with get, set
+        abstract ``REFLECTIONFRESNELFROMSPECULAR``: bool with get, set
+        abstract ``LIGHTMAP``: bool with get, set
+        abstract ``LIGHTMAPDIRECTUV``: float with get, set
+        abstract ``OBJECTSPACE_NORMALMAP``: bool with get, set
+        abstract ``USELIGHTMAPASSHADOWMAP``: bool with get, set
+        abstract ``REFLECTIONMAP_3D``: bool with get, set
+        abstract ``REFLECTIONMAP_SPHERICAL``: bool with get, set
+        abstract ``REFLECTIONMAP_PLANAR``: bool with get, set
+        abstract ``REFLECTIONMAP_CUBIC``: bool with get, set
+        abstract ``USE_LOCAL_REFLECTIONMAP_CUBIC``: bool with get, set
+        abstract ``USE_LOCAL_REFRACTIONMAP_CUBIC``: bool with get, set
+        abstract ``REFLECTIONMAP_PROJECTION``: bool with get, set
+        abstract ``REFLECTIONMAP_SKYBOX``: bool with get, set
+        abstract ``REFLECTIONMAP_EXPLICIT``: bool with get, set
+        abstract ``REFLECTIONMAP_EQUIRECTANGULAR``: bool with get, set
+        abstract ``REFLECTIONMAP_EQUIRECTANGULAR_FIXED``: bool with get, set
+        abstract ``REFLECTIONMAP_MIRROREDEQUIRECTANGULAR_FIXED``: bool with get, set
+        abstract ``REFLECTIONMAP_OPPOSITEZ``: bool with get, set
+        abstract ``INVERTCUBICMAP``: bool with get, set
+        abstract ``LOGARITHMICDEPTH``: bool with get, set
+        abstract ``REFRACTION``: bool with get, set
+        abstract ``REFRACTIONMAP_3D``: bool with get, set
+        abstract ``REFLECTIONOVERALPHA``: bool with get, set
+        abstract ``TWOSIDEDLIGHTING``: bool with get, set
+        abstract ``SHADOWFLOAT``: bool with get, set
+        abstract ``MORPHTARGETS``: bool with get, set
+        abstract ``MORPHTARGETS_POSITION``: bool with get, set
+        abstract ``MORPHTARGETS_NORMAL``: bool with get, set
+        abstract ``MORPHTARGETS_TANGENT``: bool with get, set
+        abstract ``MORPHTARGETS_UV``: bool with get, set
+        abstract ``MORPHTARGETS_UV2``: bool with get, set
+        abstract ``MORPHTARGETS_COLOR``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASPOSITIONS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASNORMALS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASTANGENTS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASUVS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASUV2S``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASCOLORS``: bool with get, set
+        abstract ``NUM_MORPH_INFLUENCERS``: float with get, set
+        abstract ``MORPHTARGETS_TEXTURE``: bool with get, set
+        abstract ``NONUNIFORMSCALING``: bool with get, set
+        abstract ``PREMULTIPLYALPHA``: bool with get, set
+        abstract ``ALPHATEST_AFTERALLALPHACOMPUTATIONS``: bool with get, set
+        abstract ``ALPHABLEND``: bool with get, set
+        abstract ``RGBDLIGHTMAP``: bool with get, set
+        abstract ``RGBDREFLECTION``: bool with get, set
+        abstract ``RGBDREFRACTION``: bool with get, set
+        abstract ``MULTIVIEW``: bool with get, set
+        abstract ``ORDER_INDEPENDENT_TRANSPARENCY``: bool with get, set
+        abstract ``ORDER_INDEPENDENT_TRANSPARENCY_16BITS``: bool with get, set
+        abstract ``CAMERA_ORTHOGRAPHIC``: bool with get, set
+        abstract ``CAMERA_PERSPECTIVE``: bool with get, set
+        abstract ``AREALIGHTSUPPORTED``: bool with get, set
+        abstract ``USE_VERTEX_PULLING``: bool with get, set
+        abstract ``VERTEX_PULLING_USE_INDEX_BUFFER``: bool with get, set
+        abstract ``VERTEX_PULLING_INDEX_BUFFER_32BITS``: bool with get, set
+        abstract ``RIGHT_HANDED``: bool with get, set
+        abstract ``CLUSTLIGHT_SLICES``: float with get, set
+        abstract ``CLUSTLIGHT_BATCH``: float with get, set
+        abstract ``IS_REFLECTION_LINEAR``: bool with get, set
+        abstract ``IS_REFRACTION_LINEAR``: bool with get, set
+        abstract ``DECAL_AFTER_DETAIL``: bool with get, set
+        abstract ``TEXTURE_REPETITION_MODE``: float with get, set
+
+    [<AllowNullLiteral>]
+    type StandardMaterialDefinesStatic =
+        inherit StandardMaterialDefinesBaseStatic
+        inherit Constructor<StandardMaterialDefines>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: StandardMaterialDefinesConstructor116Parameter1Object -> StandardMaterialDefines
+
+    [<Import("StandardMaterialDefines", "@babylonjs/core/Materials/standardMaterial.pure.js")>]
+    let StandardMaterialDefines: StandardMaterialDefinesStatic = jsNative
+
     /// @babylonjs/core/Maths/math.color.pure
     [<AllowNullLiteral>]
     type TmpColors =
@@ -3523,6 +4255,26 @@ module SimpleClasses =
 
     [<Import("TmpColors", "@babylonjs/core/Maths/math.color.pure.js")>]
     let TmpColors: TmpColorsStatic = jsNative
+
+    /// @babylonjs/core/Misc/timer
+    [<AllowNullLiteral>]
+    type AdvancedTimer<'T> =
+        abstract ``onEachCountObservable``: Observable<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>> with get, set
+        abstract ``onTimerAbortedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>> with get, set
+        abstract ``onTimerEndedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>> with get, set
+        abstract ``onStateChangedObservable``: Observable<BabylonjsBindings.Enums.TimerState> with get, set
+        abstract ``clearObservables``: unit -> unit
+        abstract ``start``: ?``timeToEnd``: float -> unit
+        abstract ``stop``: unit -> unit
+        abstract ``dispose``: unit -> unit
+        abstract ``breakCondition``: System.Func<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>, bool> with set
+
+    [<AllowNullLiteral>]
+    type AdvancedTimerStatic =
+        [<EmitConstructor>] abstract Create<'T>: ``options``: BabylonjsBindings.SimpleInterfaces.ITimerOptions<'T> -> AdvancedTimer<'T>
+
+    [<Import("AdvancedTimer", "@babylonjs/core/Misc/timer.js")>]
+    let AdvancedTimer: AdvancedTimerStatic = jsNative
 
     /// @babylonjs/core/Gamepads/dualShockGamepad
     [<AllowNullLiteral>]
@@ -3598,6 +4350,159 @@ module SimpleClasses =
 
     [<Import("MultiObserver", "@babylonjs/core/Misc/observable.extensions.pure.js")>]
     let MultiObserver: MultiObserverStatic = jsNative
+
+    /// Inline object shape used by OpenPBRMaterialDefines.
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialDefinesConstructor127Parameter1ObjectValue1Object =
+        abstract ``type``: string with get, set
+        abstract ``default``: obj with get, set
+
+    /// Inline object shape used by OpenPBRMaterialDefines.
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialDefinesConstructor127Parameter1Object =
+        [<EmitIndexer>] abstract Item: ``name``: string -> OpenPBRMaterialDefinesConstructor127Parameter1ObjectValue1Object with get, set
+
+    /// @babylonjs/core/Materials/PBR/openpbrMaterial.pure
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialDefines =
+        inherit OpenPBRMaterialDefinesWithEnvLighting
+        inherit MixinBasea41488ce7562Object
+        abstract ``NUM_SAMPLES``: string with get, set
+        abstract ``REALTIME_FILTERING``: bool with get, set
+        abstract ``IBL_CDF_FILTERING``: bool with get, set
+        abstract ``LIGHTCOUNT``: float with get, set
+        abstract ``VERTEXCOLOR``: bool with get, set
+        abstract ``BAKED_VERTEX_ANIMATION_TEXTURE``: bool with get, set
+        abstract ``VERTEXALPHA``: bool with get, set
+        abstract ``ALPHATEST``: bool with get, set
+        abstract ``DEPTHPREPASS``: bool with get, set
+        abstract ``ALPHABLEND``: bool with get, set
+        abstract ``ALPHA_FROM_BASE_COLOR_TEXTURE``: bool with get, set
+        abstract ``ALPHATESTVALUE``: string with get, set
+        abstract ``PREMULTIPLYALPHA``: bool with get, set
+        abstract ``REFLECTIVITY_GAMMA``: bool with get, set
+        abstract ``REFLECTIVITYDIRECTUV``: float with get, set
+        abstract ``SPECULARTERM``: bool with get, set
+        abstract ``LODBASEDMICROSFURACE``: bool with get, set
+        abstract ``SPECULAR_ROUGHNESS_FROM_METALNESS_TEXTURE_GREEN``: bool with get, set
+        abstract ``BASE_METALNESS_FROM_METALNESS_TEXTURE_BLUE``: bool with get, set
+        abstract ``AOSTOREINMETALMAPRED``: bool with get, set
+        abstract ``SPECULAR_WEIGHT_IN_ALPHA``: bool with get, set
+        abstract ``SPECULAR_WEIGHT_FROM_SPECULAR_COLOR_TEXTURE``: bool with get, set
+        abstract ``SPECULAR_ROUGHNESS_ANISOTROPY_FROM_TANGENT_TEXTURE``: bool with get, set
+        abstract ``COAT_ROUGHNESS_FROM_GREEN_CHANNEL``: bool with get, set
+        abstract ``COAT_ROUGHNESS_ANISOTROPY_FROM_TANGENT_TEXTURE``: bool with get, set
+        abstract ``USE_GLTF_STYLE_ANISOTROPY``: bool with get, set
+        abstract ``THIN_FILM_THICKNESS_FROM_THIN_FILM_TEXTURE``: bool with get, set
+        abstract ``FUZZ_ROUGHNESS_FROM_TEXTURE_ALPHA``: bool with get, set
+        abstract ``SUBSURFACE_WEIGHT_FROM_TEXTURE_ALPHA``: bool with get, set
+        abstract ``GEOMETRY_THICKNESS_FROM_GREEN_CHANNEL``: bool with get, set
+        abstract ``ENVIRONMENTBRDF``: bool with get, set
+        abstract ``ENVIRONMENTBRDF_RGBD``: bool with get, set
+        abstract ``FUZZENVIRONMENTBRDF``: bool with get, set
+        abstract ``NORMAL``: bool with get, set
+        abstract ``TANGENT``: bool with get, set
+        abstract ``OBJECTSPACE_NORMALMAP``: bool with get, set
+        abstract ``PARALLAX``: bool with get, set
+        abstract ``PARALLAX_RHS``: bool with get, set
+        abstract ``PARALLAXOCCLUSION``: bool with get, set
+        abstract ``NORMALXYSCALE``: bool with get, set
+        abstract ``ANISOTROPIC``: bool with get, set
+        abstract ``ANISOTROPIC_OPENPBR``: bool with get, set
+        abstract ``ANISOTROPIC_BASE``: bool with get, set
+        abstract ``ANISOTROPIC_COAT``: bool with get, set
+        abstract ``FUZZ_IBL_SAMPLES``: float with get, set
+        abstract ``REFRACTION_HIGH_QUALITY_BLUR``: bool with get, set
+        abstract ``FUZZ``: bool with get, set
+        abstract ``THIN_FILM``: bool with get, set
+        abstract ``IRIDESCENCE``: bool with get, set
+        abstract ``DISPERSION``: bool with get, set
+        abstract ``SCATTERING``: bool with get, set
+        abstract ``USE_IRRADIANCE_TEXTURE_FOR_SCATTERING``: bool with get, set
+        abstract ``SSS_SAMPLE_COUNT``: float with get, set
+        abstract ``USE_IRRADIANCE_TEXTURE_FOR_SCATTERING_GBUFFER``: bool with get, set
+        abstract ``TRANSMISSION_SLAB``: bool with get, set
+        abstract ``TRANSMISSION_SLAB_VOLUME``: bool with get, set
+        abstract ``SUBSURFACE_SLAB``: bool with get, set
+        abstract ``GEOMETRY_THIN_WALLED``: bool with get, set
+        abstract ``REFRACTED_BACKGROUND``: bool with get, set
+        abstract ``REFRACTED_LIGHTS``: bool with get, set
+        abstract ``REFRACTED_ENVIRONMENT``: bool with get, set
+        abstract ``REFRACTED_ENVIRONMENT_OPPOSITEZ``: bool with get, set
+        abstract ``REFRACTED_ENVIRONMENT_LOCAL_CUBE``: bool with get, set
+        abstract ``RADIANCEOCCLUSION``: bool with get, set
+        abstract ``HORIZONOCCLUSION``: bool with get, set
+        abstract ``INSTANCES``: bool with get, set
+        abstract ``THIN_INSTANCES``: bool with get, set
+        abstract ``INSTANCESCOLOR``: bool with get, set
+        abstract ``NUM_BONE_INFLUENCERS``: float with get, set
+        abstract ``BonesPerMesh``: float with get, set
+        abstract ``BONETEXTURE``: bool with get, set
+        abstract ``BONES_VELOCITY_ENABLED``: bool with get, set
+        abstract ``NONUNIFORMSCALING``: bool with get, set
+        abstract ``MORPHTARGETS``: bool with get, set
+        abstract ``MORPHTARGETS_POSITION``: bool with get, set
+        abstract ``MORPHTARGETS_NORMAL``: bool with get, set
+        abstract ``MORPHTARGETS_TANGENT``: bool with get, set
+        abstract ``MORPHTARGETS_UV``: bool with get, set
+        abstract ``MORPHTARGETS_UV2``: bool with get, set
+        abstract ``MORPHTARGETS_COLOR``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASPOSITIONS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASNORMALS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASTANGENTS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASUVS``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASUV2S``: bool with get, set
+        abstract ``MORPHTARGETTEXTURE_HASCOLORS``: bool with get, set
+        abstract ``NUM_MORPH_INFLUENCERS``: float with get, set
+        abstract ``MORPHTARGETS_TEXTURE``: bool with get, set
+        abstract ``USEPHYSICALLIGHTFALLOFF``: bool with get, set
+        abstract ``USEGLTFLIGHTFALLOFF``: bool with get, set
+        abstract ``TWOSIDEDLIGHTING``: bool with get, set
+        abstract ``MIRRORED``: bool with get, set
+        abstract ``SHADOWFLOAT``: bool with get, set
+        abstract ``CLIPPLANE``: bool with get, set
+        abstract ``CLIPPLANE2``: bool with get, set
+        abstract ``CLIPPLANE3``: bool with get, set
+        abstract ``CLIPPLANE4``: bool with get, set
+        abstract ``CLIPPLANE5``: bool with get, set
+        abstract ``CLIPPLANE6``: bool with get, set
+        abstract ``POINTSIZE``: bool with get, set
+        abstract ``FOG``: bool with get, set
+        abstract ``LOGARITHMICDEPTH``: bool with get, set
+        abstract ``CAMERA_ORTHOGRAPHIC``: bool with get, set
+        abstract ``CAMERA_PERSPECTIVE``: bool with get, set
+        abstract ``AREALIGHTSUPPORTED``: bool with get, set
+        abstract ``FORCENORMALFORWARD``: bool with get, set
+        abstract ``SPECULARAA``: bool with get, set
+        abstract ``UNLIT``: bool with get, set
+        abstract ``DECAL_AFTER_DETAIL``: bool with get, set
+        abstract ``TEXTURE_REPETITION_MODE``: float with get, set
+        abstract ``DEBUGMODE``: float with get, set
+        abstract ``USE_VERTEX_PULLING``: bool with get, set
+        abstract ``VERTEX_PULLING_USE_INDEX_BUFFER``: bool with get, set
+        abstract ``VERTEX_PULLING_INDEX_BUFFER_32BITS``: bool with get, set
+        abstract ``RIGHT_HANDED``: bool with get, set
+        abstract ``CLUSTLIGHT_SLICES``: float with get, set
+        abstract ``CLUSTLIGHT_BATCH``: float with get, set
+        abstract ``BRDF_V_HEIGHT_CORRELATED``: bool with get, set
+        abstract ``MS_BRDF_ENERGY_CONSERVATION``: bool with get, set
+        abstract ``SPHERICAL_HARMONICS``: bool with get, set
+        abstract ``SPECULAR_GLOSSINESS_ENERGY_CONSERVATION``: bool with get, set
+        abstract ``MIX_IBL_RADIANCE_WITH_IRRADIANCE``: bool with get, set
+        abstract ``LEGACY_SPECULAR_ENERGY_CONSERVATION``: bool with get, set
+        abstract ``BASE_DIFFUSE_MODEL``: float with get, set
+        abstract ``DIELECTRIC_SPECULAR_MODEL``: float with get, set
+        abstract ``CONDUCTOR_SPECULAR_MODEL``: float with get, set
+        abstract ``reset``: unit -> unit
+
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialDefinesStatic =
+        inherit OpenPBRMaterialDefinesWithEnvLightingStatic
+        inherit Constructor<OpenPBRMaterialDefines>
+        [<EmitConstructor>] abstract Create: ?``externalProperties``: OpenPBRMaterialDefinesConstructor127Parameter1Object -> OpenPBRMaterialDefines
+
+    [<Import("OpenPBRMaterialDefines", "@babylonjs/core/Materials/PBR/openpbrMaterial.pure.js")>]
+    let OpenPBRMaterialDefines: OpenPBRMaterialDefinesStatic = jsNative
 
     /// @babylonjs/core/XR/motionController/webXRControllerComponent
     [<AllowNullLiteral>]

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "f2a7c9adbcc5bd735ea5fd263f2a4f6f98b109133cbf65409fdd158c43ad7db9",
+  "proposalSha256": "6f99a450066df839ff68fde1896ff325da86fa6490140edd48ef41d512408708",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -43,6 +43,16 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ComputeBindingMapping",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "DataArray",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.DataArray",
       "shape": "alias",
       "memberCount": 1
     },
@@ -170,6 +180,16 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
+      "name": "ImageSource",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ImageSource",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
       "name": "IndicesArray",
       "kind": "type",
       "disposition": "typed",
@@ -184,6 +204,16 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.int",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginCreated",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginCreated",
       "shape": "alias",
       "memberCount": 1
     },
@@ -280,6 +310,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure",
+      "name": "OcclusionQuery",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.OcclusionQuery",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/sceneComponent",
       "name": "RenderingGroupStageAction",
       "kind": "type",
@@ -335,6 +375,16 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.TextureSize",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "WebGLContext",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebGLContext",
       "shape": "alias",
       "memberCount": 1
     },

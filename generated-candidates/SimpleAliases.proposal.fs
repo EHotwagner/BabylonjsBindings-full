@@ -6,6 +6,21 @@ open Fable.Core
 /// Exact primitive aliases and dependency-free callbacks exported by Babylon.js 9.19.0.
 module TypeAliases =
 
+    /// Exact Symbol.toStringTag literal exposed by SharedArrayBuffer.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserSharedArrayBufferTag =
+        | [<CompiledName("SharedArrayBuffer")>] SharedArrayBuffer
+
+    /// Exact ESNext SharedArrayBuffer instance surface used by ArrayBufferLike declarations.
+    [<AllowNullLiteral>]
+    type BrowserSharedArrayBuffer =
+        abstract byteLength: float with get
+        abstract growable: bool with get
+        abstract maxByteLength: float with get
+        abstract slice: ?beginIndex: float * ?endIndex: float -> BrowserSharedArrayBuffer
+        abstract grow: ?newByteLength: float -> unit
+        [<Emit("$0[Symbol.toStringTag]")>] abstract toStringTag: BrowserSharedArrayBufferTag with get
+
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObjectde9f6c1b6b0f =
@@ -109,6 +124,9 @@ module TypeAliases =
     /// @babylonjs/core/Engines/Extensions/engine.computeShader.pure
     type ComputeBindingMapping = AliasObject1818ddef00ab
 
+    /// @babylonjs/core/types
+    type DataArray = U3<ResizeArray<System.Double>, U2<JS.ArrayBuffer, BrowserSharedArrayBuffer>, JS.ArrayBufferView>
+
     /// @babylonjs/core/Meshes/Compression/dracoDecoder.types
     type DecoderMessage = U3<BabylonjsBindings.SimpleInterfaces.IDecodeMeshDoneMessage, BabylonjsBindings.SimpleInterfaces.IIndicesMessage, BabylonjsBindings.SimpleInterfaces.IAttributeMessage>
 
@@ -154,10 +172,16 @@ module TypeAliases =
     type IFresnelParametersCreationOptions = AliasObject1508f3d151ec
 
     /// @babylonjs/core/types
+    type ImageSource = U6<BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap, Browser.Types.ImageData, Browser.Types.HTMLImageElement, Browser.Types.HTMLCanvasElement, Browser.Types.HTMLVideoElement, BabylonjsBindings.SimpleInterfaces.BrowserOffscreenCanvas>
+
+    /// @babylonjs/core/types
     type IndicesArray = U4<ResizeArray<System.Double>, JS.Int32Array, JS.Uint32Array, JS.Uint16Array>
 
     /// @babylonjs/core/types
     type int = System.Double
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginCreated = BabylonjsBindings.SimpleInterfaces.JavaScriptObject
 
     /// @babylonjs/core/Materials/materialPluginEvent
     type MaterialPluginGetDefineNames = AliasObject680fbaa03d9c
@@ -186,6 +210,9 @@ module TypeAliases =
     /// @babylonjs/core/types
     type Nullable<'T> = 'T option
 
+    /// @babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure
+    type OcclusionQuery = U2<BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery, System.Double>
+
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderingGroupStageAction =
@@ -212,6 +239,9 @@ module TypeAliases =
 
     /// @babylonjs/core/Materials/Textures/textureCreationOptions
     type TextureSize = U2<System.Double, AliasObjectde9f6c1b6b0f>
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    type WebGLContext = U2<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext>
 
     /// @babylonjs/core/XR/features/WebXRBodyTracking.pure
     type XRBodyMeshRigMapping = AliasObject4d81806d37f7

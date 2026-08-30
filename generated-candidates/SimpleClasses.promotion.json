@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "ef1dfc91970c1d8e9e2c60ae156d49ce7210417c50cedd86628b4fe87e300f39",
+  "proposalSha256": "57ab10db0d645ecf2aae75ff6cb61966b4a5b49a12b3a5ae49f2571977233919",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -14,6 +14,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._OcclusionDataStorage",
       "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Instrumentation/timeToken",
+      "name": "_TimeToken",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._TimeToken",
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -560,6 +569,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/pointerEvents",
+      "name": "PointerInfoBase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PointerInfoBase",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/geodesicMesh",
       "name": "PolyhedronData",
       "kind": "class",
@@ -785,6 +803,15 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUTintWASM",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXREnterExitUI",
+      "name": "WebXREnterExitUIButton",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXREnterExitUIButton",
       "memberCount": 5
     },
     {
@@ -1098,6 +1125,24 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessorsWGSL.pure",
+      "name": "WebGPUShaderProcessorWGSL",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessorWGSL",
+      "memberCount": 14
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXREnterExitUI",
+      "name": "WebXREnterExitUIOptions",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXREnterExitUIOptions",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/gradients",
       "name": "Color3Gradient",
       "kind": "class",
@@ -1126,6 +1171,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
+      "name": "NodeMaterialDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.NodeMaterialDefines",
+      "memberCount": 49
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/observable.pure",
       "name": "Observable",
       "kind": "class",
@@ -1133,6 +1187,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Observable",
       "typeParameterCount": 1,
       "memberCount": 19
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrBaseMaterial.pure",
+      "name": "PBRMaterialDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PBRMaterialDefines",
+      "memberCount": 151
     },
     {
       "package": "@babylonjs/core",
@@ -1145,12 +1208,31 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/standardMaterial.pure",
+      "name": "StandardMaterialDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StandardMaterialDefines",
+      "memberCount": 116
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.color.pure",
       "name": "TmpColors",
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.TmpColors",
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/timer",
+      "name": "AdvancedTimer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AdvancedTimer",
+      "typeParameterCount": 1,
+      "memberCount": 10
     },
     {
       "package": "@babylonjs/core",
@@ -1179,6 +1261,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MultiObserver",
       "typeParameterCount": 1,
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/openpbrMaterial.pure",
+      "name": "OpenPBRMaterialDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefines",
+      "memberCount": 128
     },
     {
       "package": "@babylonjs/core",
