@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "8c24737e7cea45f4961d4f1acea127d8498ec58debb8952fd4e974716c7c95b9"
+    "sha256": "748754f9716a0bf9209985192ff1d15363bf35bb1bc113526e65c4670dc143c0"
   },
   "imports": [
     {
@@ -291,6 +291,15 @@
       "package": "@babylonjs/core",
       "version": "9.19.0",
       "resolvedPath": "node_modules/@babylonjs/core/Maths/math.vector.pure.js",
+      "emittedBy": [
+        "generated-candidates/runtime/dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
       "emittedBy": [
         "generated-candidates/runtime/dist/Program.js"
       ]

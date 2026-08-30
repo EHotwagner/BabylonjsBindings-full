@@ -55,6 +55,9 @@ open BabylonjsBindings.SimpleVariables
 [<Emit("$0")>]
 let asString (value: 'T) : string = jsNative
 
+[<Emit("$0[$1]")>]
+let tupleItem (value: 'T) (index: int) : float = jsNative
+
 [<ImportAll("@babylonjs/loaders/glTF/index.js")>]
 let loaderRegistration: obj = jsNative
 
@@ -137,6 +140,15 @@ let innerError = System.Exception("inner failure")
 let runtimeError = RuntimeError.Create("runtime failure", ErrorCodesType.\`\`SceneLoaderError\`\`, innerError)
 let proofFile: Browser.Types.File = createObj [ "name" ==> "proof.babylon" ] |> unbox
 let readFileError = ReadFileError.Create("read failure", proofFile)
+let matrixValues = (0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
+let matrixLike: IMatrixLike = createObj [ "asArray" ==> (fun () -> matrixValues); "updateFlag" ==> -1.0 ] |> unbox
+BabylonjsBindings.SimpleFunctions.\`\`IdentityMatrixToRef\`\`.Invoke(matrixLike)
+let identityDiagonal = tupleItem matrixValues 0, tupleItem matrixValues 5, tupleItem matrixValues 10, tupleItem matrixValues 15
+BabylonjsBindings.SimpleFunctions.\`\`TranslationMatrixToRef\`\`.Invoke(2.0, 3.0, 4.0, matrixLike)
+let translation = tupleItem matrixValues 12, tupleItem matrixValues 13, tupleItem matrixValues 14
+BabylonjsBindings.SimpleFunctions.\`\`ScalingMatrixToRef\`\`.Invoke(5.0, 6.0, 7.0, matrixLike)
+let scaling = tupleItem matrixValues 0, tupleItem matrixValues 5, tupleItem matrixValues 10
+BabylonjsBindings.SimpleFunctions.\`\`MarkAsDirty\`\`.Invoke(matrixLike)
 let filesToLoad = FilesInputStore.\`\`FilesToLoad\`\`
 let shaderStore = ShaderStore.\`\`GetShadersStore\`\`()
 shaderStore.["codexInlineObjectProof"] <- "void main() {}"
@@ -200,6 +212,7 @@ if basisConfiguration.\`\`supportedCompressionFormats\`\`.Value.\`\`etc1\`\` <> 
 if abortError.name <> "AbortError" || abortError.message <> "binding aborted" || abortError.stack.IsNone || abortError.cause.IsSome then failwith "clean consumer JavaScript Error inheritance failed"
 if runtimeError.name <> "RuntimeError" || runtimeError.\`\`errorCode\`\` <> ErrorCodesType.\`\`SceneLoaderError\`\` || runtimeError.\`\`innerError\`\`.IsNone || BabylonjsBindings.SimpleVariables.\`\`ErrorCodes\`\`.\`\`ReadFileError\`\` <> ErrorCodesType.\`\`ReadFileError\`\` then failwith "clean consumer runtime error code closure failed"
 if readFileError.name <> "ReadFileError" || readFileError.\`\`errorCode\`\` <> ErrorCodesType.\`\`ReadFileError\`\` || not (obj.ReferenceEquals(readFileError.\`\`file\`\`, proofFile)) then failwith "clean consumer read-file error inheritance failed"
+if identityDiagonal <> (1.0, 1.0, 1.0, 1.0) || translation <> (2.0, 3.0, 4.0) || scaling <> (5.0, 6.0, 7.0) || matrixLike.\`\`updateFlag\`\` < 0.0 then failwith "clean consumer fixed matrix tuple functions failed"
 if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.\`\`GetShadersRepository\`\`() <> "src/Shaders/" || uniformMat4Size <> 16.0 then failwith "clean consumer inline object class stores failed"
 if observer.IsNone || not (observableA.\`\`hasObservers\`\`()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then failwith "clean consumer observable closure failed"
 if not thinAnimationEnded || thinSprite.\`\`animationStarted\`\` then failwith "clean consumer nullable callback class failed"

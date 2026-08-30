@@ -746,6 +746,12 @@ module SimpleInterfaces =
         abstract ``useVertexPulling``: bool with get, set
         abstract ``reset``: unit -> unit
 
+    /// @babylonjs/core/Maths/math.like
+    [<AllowNullLiteral>]
+    type IMatrixLike =
+        abstract ``asArray``: unit -> (float * float * float * float * float * float * float * float * float * float * float * float * float * float * float * float)
+        abstract ``updateFlag``: BabylonjsBindings.TypeAliases.int with get, set
+
     /// @babylonjs/core/Meshes/meshUVSpaceRenderer.pure
     [<AllowNullLiteral>]
     type IMeshUVSpaceRendererOptions =

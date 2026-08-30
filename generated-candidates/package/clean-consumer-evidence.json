@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "86aa2e11259a7926611efe6cfdb455e2ca45d67c49592934c9e16e529d46c18a"
+    "sha256": "dec6154c043f61839dff5f50a95d4cf17a989f40110b983f5b507f5e0c53e9a0"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,7 +13,7 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "2644089ba1cd14d1c361342240b699ced7167aff8346b9e2713bbf55c9fdd279",
+  "emittedProgramSha256": "9ebf2a4928d6591fac7db65fd73baf39aeb0c446445b068dad4268018aed76ae",
   "imports": [
     "@babylonjs/core/Animations/animationEvent.js",
     "@babylonjs/core/Animations/animationGroupMask.js",
@@ -41,6 +41,7 @@
     "@babylonjs/core/Materials/material.detailMapConfiguration.js",
     "@babylonjs/core/Materials/materialDefines.js",
     "@babylonjs/core/Materials/materialHelper.functions.js",
+    "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
     "@babylonjs/core/Maths/halton2DSequence.js",
     "@babylonjs/core/Maths/math.constants.js",
     "@babylonjs/core/Maths/math.vector.pure.js",

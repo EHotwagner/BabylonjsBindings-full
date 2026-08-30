@@ -300,6 +300,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "IdentityMatrixToRef",
+      "runtimeExport": "IdentityMatrixToRef",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions.js",
       "export": "ILog2",
       "runtimeExport": "ILog2",
@@ -402,6 +409,13 @@
       "export": "MakeRelative",
       "runtimeExport": "MakeRelative",
       "moduleSha256": "e790fdf6937acb977e49e6145847d69b2226036cd742c633b76a583bdcdf1480"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "MarkAsDirty",
+      "runtimeExport": "MarkAsDirty",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
     },
     {
       "package": "@babylonjs/core",
@@ -5298,6 +5312,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "ScalingMatrixToRef",
+      "runtimeExport": "ScalingMatrixToRef",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Compat/compatibilityOptions.js",
       "export": "setOpenGLOrientationForUV",
       "runtimeExport": "setOpenGLOrientationForUV",
@@ -5323,6 +5344,13 @@
       "export": "ToHex",
       "runtimeExport": "ToHex",
       "moduleSha256": "ee64720d425acac869fd4da5e5dc43d9114de1f60f92912e18208d7114b5a898"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "export": "TranslationMatrixToRef",
+      "runtimeExport": "TranslationMatrixToRef",
+      "moduleSha256": "2fdcc4b493fc920136b1f9923ad6e8860be3e9644de0889c0e0ad7a13df44f60"
     },
     {
       "package": "@babylonjs/core",

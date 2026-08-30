@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "98302fc8d0a64bf41e81e758c69a78ab3affdd282f0d27f67418a776f4670af9",
+  "proposalSha256": "a2d2ec6c9cc775ef2edc2ef4597720056dedd526680579fe6cdbad2c082b82ba",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -773,6 +773,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterialContext",
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.like",
+      "name": "IMatrixLike",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMatrixLike",
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",

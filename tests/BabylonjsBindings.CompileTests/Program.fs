@@ -18,6 +18,7 @@ let nullableLabel: BabylonjsBindings.TypeAliases.Nullable<string> = None
 let easing: IEasingFunction = Unchecked.defaultof<IEasingFunction>
 let inspectableOptions: IInspectableOptions = Unchecked.defaultof<IInspectableOptions>
 let computePipelineContext: IComputePipelineContext = Unchecked.defaultof<IComputePipelineContext>
+let matrixLike: IMatrixLike = Unchecked.defaultof<IMatrixLike>
 let mipmap: IMipmap = Unchecked.defaultof<IMipmap>
 let simplificationInterface: ISimplificationSettings = Unchecked.defaultof<ISimplificationSettings>
 let decodedData: IDecodedData = Unchecked.defaultof<IDecodedData>
@@ -68,6 +69,10 @@ let genericPadFactory: GenericPadStatic = GenericPad
 let multiObserverFactory: MultiObserverStatic = MultiObserver
 let xbox360PadFactory: Xbox360PadStatic = Xbox360Pad
 let prepareAttributesForInstances = BabylonjsBindings.SimpleFunctions.``PrepareAttributesForInstances``
+let identityMatrixToRef: BabylonjsBindings.SimpleFunctions.FunctionBinding_IdentityMatrixToRef = BabylonjsBindings.SimpleFunctions.``IdentityMatrixToRef``
+let markAsDirty: BabylonjsBindings.SimpleFunctions.FunctionBinding_MarkAsDirty = BabylonjsBindings.SimpleFunctions.``MarkAsDirty``
+let scalingMatrixToRef: BabylonjsBindings.SimpleFunctions.FunctionBinding_ScalingMatrixToRef = BabylonjsBindings.SimpleFunctions.``ScalingMatrixToRef``
+let translationMatrixToRef: BabylonjsBindings.SimpleFunctions.FunctionBinding_TranslationMatrixToRef = BabylonjsBindings.SimpleFunctions.``TranslationMatrixToRef``
 let materialDefinesFactory: MaterialDefinesStatic = MaterialDefines
 let decalMapDefinesFactory: DecalMapDefinesStatic = DecalMapDefines
 let imageProcessingDefinesFactory: ImageProcessingConfigurationDefinesStatic = ImageProcessingConfigurationDefines
@@ -101,6 +106,7 @@ nullableLabel |> ignore
 easing |> ignore
 inspectableOptions |> ignore
 computePipelineContext |> ignore
+matrixLike |> ignore
 mipmap |> ignore
 simplificationInterface |> ignore
 decodedData |> ignore
@@ -151,6 +157,10 @@ genericPadFactory |> ignore
 multiObserverFactory |> ignore
 xbox360PadFactory |> ignore
 prepareAttributesForInstances |> ignore
+identityMatrixToRef |> ignore
+markAsDirty |> ignore
+scalingMatrixToRef |> ignore
+translationMatrixToRef |> ignore
 materialDefinesFactory |> ignore
 decalMapDefinesFactory |> ignore
 imageProcessingDefinesFactory |> ignore

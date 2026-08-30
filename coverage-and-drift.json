@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "f1ec8435cc9338c80c3fedb31225ae9d09890a63631f34865621511092b5f033",
+  "maintainedSurfaceDigest": "8cd2ea2bafedd80ab1da48187c592d124e0dc99af28f183f21fdc969246f26b8",
   "summary": {
     "total": 4323,
-    "typed": 1775,
+    "typed": 1780,
     "runtimeOnly": 1,
-    "blocked": 2541,
+    "blocked": 2536,
     "lossy": 6
   },
   "exports": [
@@ -17889,8 +17889,9 @@
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IMatrixLike",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMatrixLike"
     },
     {
       "package": "@babylonjs/core",
@@ -18607,8 +18608,9 @@
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "IdentityMatrixToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.IdentityMatrixToRef"
     },
     {
       "package": "@babylonjs/core",
@@ -18631,8 +18633,9 @@
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "MarkAsDirty",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MarkAsDirty"
     },
     {
       "package": "@babylonjs/core",
@@ -18664,16 +18667,18 @@
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "ScalingMatrixToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ScalingMatrixToRef"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
       "name": "TranslationMatrixToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.TranslationMatrixToRef"
     },
     {
       "package": "@babylonjs/core",

@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "044a79c615c589d0bb78a24629d31d361c640793e4df60d281ccc58716df8e15",
+  "proposalSha256": "deffee3c35e53bb1b65233ddd3798f5b3cb11244ab8f3c7c91580a5d694af1f9",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -378,6 +378,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "IdentityMatrixToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.IdentityMatrixToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions",
       "name": "ILog2",
       "kind": "function",
@@ -510,6 +519,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MakeRelative",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "MarkAsDirty",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.MarkAsDirty",
       "overloadCount": 1
     },
     {
@@ -6805,6 +6823,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "ScalingMatrixToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ScalingMatrixToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Compat/compatibilityOptions",
       "name": "setOpenGLOrientationForUV",
       "kind": "function",
@@ -6837,6 +6864,15 @@
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ToHex",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions",
+      "name": "TranslationMatrixToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.TranslationMatrixToRef",
       "overloadCount": 1
     },
     {

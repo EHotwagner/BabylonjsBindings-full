@@ -61,6 +61,16 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "Tuple" && node.typeArguments?.length === 2) {
+      const element = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      const lengthNode = node.typeArguments[1];
+      const length = ts.isLiteralTypeNode(lengthNode) && ts.isNumericLiteral(lengthNode.literal)
+        ? Number(lengthNode.literal.text)
+        : undefined;
+      return element && Number.isInteger(length) && length >= 2 && length <= 32
+        ? `(${Array.from({ length }, () => element).join(" * ")})`
+        : undefined;
+    }
     if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `ResizeArray<${inner}>` : undefined;

@@ -334,6 +334,14 @@ module SimpleFunctions =
     [<Import("HighestCommonFactor", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``HighestCommonFactor``: FunctionBinding_HighestCommonFactor = jsNative
 
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_IdentityMatrixToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``result``: BabylonjsBindings.SimpleInterfaces.IMatrixLike -> unit
+
+    [<Import("IdentityMatrixToRef", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``IdentityMatrixToRef``: FunctionBinding_IdentityMatrixToRef = jsNative
+
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]
     type FunctionBinding_ILog2 =
@@ -453,6 +461,14 @@ module SimpleFunctions =
 
     [<Import("MakeRelative", "@babylonjs/core/SmartAssets/smartAssetSerializer.js")>]
     let ``MakeRelative``: FunctionBinding_MakeRelative = jsNative
+
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_MarkAsDirty =
+        [<Emit("$0($1...)")>] abstract Invoke: ``matrix``: BabylonjsBindings.SimpleInterfaces.IMatrixLike -> unit
+
+    [<Import("MarkAsDirty", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``MarkAsDirty``: FunctionBinding_MarkAsDirty = jsNative
 
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]
@@ -6046,6 +6062,14 @@ module SimpleFunctions =
     [<Import("RGBE_ReadPixels", "@babylonjs/core/Misc/HighDynamicRange/hdr.js")>]
     let ``RGBE_ReadPixels``: FunctionBinding_RGBE_ReadPixels = jsNative
 
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_ScalingMatrixToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``x``: float * ``y``: float * ``z``: float * ``result``: BabylonjsBindings.SimpleInterfaces.IMatrixLike -> unit
+
+    [<Import("ScalingMatrixToRef", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``ScalingMatrixToRef``: FunctionBinding_ScalingMatrixToRef = jsNative
+
     /// @babylonjs/core/Compat/compatibilityOptions
     [<AllowNullLiteral>]
     type FunctionBinding_setOpenGLOrientationForUV =
@@ -6077,6 +6101,14 @@ module SimpleFunctions =
 
     [<Import("ToHex", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``ToHex``: FunctionBinding_ToHex = jsNative
+
+    /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_TranslationMatrixToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``x``: float * ``y``: float * ``z``: float * ``result``: BabylonjsBindings.SimpleInterfaces.IMatrixLike -> unit
+
+    [<Import("TranslationMatrixToRef", "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js")>]
+    let ``TranslationMatrixToRef``: FunctionBinding_TranslationMatrixToRef = jsNative
 
     /// @babylonjs/core/Materials/Textures/HTML/htmlInCanvasPolyfill
     [<AllowNullLiteral>]
