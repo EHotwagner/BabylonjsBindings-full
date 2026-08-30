@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "2b819f945c4e403757932fd2a563af955bf04d45ab4c21df0c4e2b24e7d756e1",
+  "proposalSha256": "ae82f7dfb5b3d56d3da76f539b665d6f11ae8938e6b6e496717a739fd4d287b0",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -51,6 +51,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.Enums.AssetTaskState",
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer",
+      "name": "AudioAnalyzerFFTSizeType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AudioAnalyzerFFTSizeType",
+      "memberCount": 11
     },
     {
       "package": "@babylonjs/core",

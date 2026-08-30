@@ -1,0 +1,145 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "declarationLock": "declaration-lock.json",
+    "packageVersion": "9.19.0"
+  },
+  "proposalSha256": "08e0eff364e6616a886291ded84e10da1e5c789d055ab664c544f7f2b2e135b7",
+  "exports": [
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/BVH/bvhLoadingOptions",
+      "name": "BVHLoadingOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.BVHLoadingOptions",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
+      "name": "ComputeBindingLocation",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.ComputeBindingLocation",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
+      "name": "FrameGraphTextureOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.FrameGraphTextureOptions",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/goldbergBuilder",
+      "name": "GoldbergVertexDataOption",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.GoldbergVertexDataOption",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Compute/computeEffect",
+      "name": "IComputeShaderPath",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.IComputeShaderPath",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/fresnelParameters.pure",
+      "name": "IFresnelParametersSerialized",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.IFresnelParametersSerialized",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/inputMapper",
+      "name": "InputModifiers",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.InputModifiers",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.pure",
+      "name": "IShaderPath",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.IShaderPath",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Passes/renderPass",
+      "name": "LayerAndFaceIndex",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.LayerAndFaceIndex",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginDisposed",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.MaterialPluginDisposed",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginHasRenderTargetTextures",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.MaterialPluginHasRenderTargetTextures",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
+      "name": "NativeFrameStats",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.NativeFrameStats",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Cameras/interpolatingBehavior",
+      "name": "SizeLike",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.SizeLike",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/inputMapper",
+      "name": "TouchConditions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.TouchConditions",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerMovement.pure",
+      "name": "WebXRControllerMovementState",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.WebXRControllerMovementState",
+      "memberCount": 4
+    }
+  ]
+}

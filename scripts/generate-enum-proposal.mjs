@@ -28,7 +28,7 @@ for (const sourceFile of program.getSourceFiles()) {
     if (exported.flags & ts.SymbolFlags.Alias) {
       try { target = checker.getAliasedSymbol(exported); } catch { /* unresolved aliases are not enum proposals */ }
     }
-    const declaration = target.declarations?.find(ts.isEnumDeclaration);
+    const declaration = target.declarations?.find(node => ts.isEnumDeclaration(node) || ts.isTypeAliasDeclaration(node));
     if (!declaration) continue;
     const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
     const packageName = module.startsWith("@babylonjs/core/")
@@ -37,13 +37,23 @@ for (const sourceFile of program.getSourceFiles()) {
         ? "@babylonjs/loaders"
         : undefined;
     if (!packageName) continue;
-    const members = declaration.members.map(member => ({
-      name: member.name.getText(),
-      value: checker.getConstantValue(member)
-    }));
+    let kind;
+    let members;
+    if (ts.isEnumDeclaration(declaration)) {
+      kind = "enum";
+      members = declaration.members.map(member => ({
+        name: member.name.getText(),
+        value: checker.getConstantValue(member)
+      }));
+    } else {
+      const nodes = ts.isUnionTypeNode(declaration.type) ? declaration.type.types : [declaration.type];
+      if (!nodes.every(node => ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal))) continue;
+      kind = "type";
+      members = nodes.map(node => ({ name: `N${node.literal.text}`, value: Number(node.literal.text) }));
+    }
     if (!members.every(member => typeof member.value === "number" && Number.isInteger(member.value))) continue;
     const name = exported.getName();
-    enums.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, members });
+    enums.set(`${packageName}|${module}|${name}`, { package: packageName, module, name, kind, members });
   }
 }
 
@@ -57,7 +67,7 @@ const lines = [
   "// REVIEWED-PROMOTION PROPOSAL — move to maintained source only after enum review, compile, and runtime proof",
   "namespace BabylonjsBindings",
   "",
-  "/// Exact numeric enums exported by @babylonjs/core and @babylonjs/loaders 9.19.0.",
+  "/// Exact numeric enums and integer-literal unions exported by @babylonjs/core and @babylonjs/loaders 9.19.0.",
   "module Enums ="
 ];
 for (const entry of entries) {
@@ -77,7 +87,7 @@ const manifest = {
     package: entry.package,
     module: entry.module,
     name: entry.name,
-    kind: "enum",
+    kind: entry.kind,
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.Enums.${entry.name}`,
     memberCount: entry.members.length
@@ -94,4 +104,4 @@ if (check) {
   await writeFile(proposalPath, proposal);
   await writeFile(manifestPath, renderedManifest);
 }
-console.log(`generated reviewed-promotion proposal for ${entries.length} exact numeric enums (${sha256(proposal)})`);
+console.log(`generated reviewed-promotion proposal for ${entries.length} exact numeric enums/unions (${sha256(proposal)})`);

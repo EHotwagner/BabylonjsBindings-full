@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "7854269e7526389781d1304fb7423f025616927589cc4de7b7d019c0bd71ca44",
+  "maintainedSurfaceDigest": "bd5dcc541580f2694d5ea6c429a005e9273c8ccfbc2f2bd2ba9f46c7fb159576",
   "summary": {
     "total": 4323,
-    "typed": 213,
+    "typed": 229,
     "runtimeOnly": 1,
-    "blocked": 4103,
+    "blocked": 4087,
     "lossy": 6
   },
   "exports": [
@@ -586,7 +586,7 @@
       "name": "AnimationGroupMaskMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.AnimationGroupMaskMode"
     },
     {
@@ -595,7 +595,7 @@
       "name": "AnimationKeyInterpolation",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.AnimationKeyInterpolation"
     },
     {
@@ -940,7 +940,7 @@
       "name": "AudioNodeType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.AudioNodeType"
     },
     {
@@ -1438,8 +1438,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer",
       "name": "AudioAnalyzerFFTSizeType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AudioAnalyzerFFTSizeType"
     },
     {
       "package": "@babylonjs/core",
@@ -1576,7 +1577,7 @@
       "name": "SoundState",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.SoundState"
     },
     {
@@ -1585,7 +1586,7 @@
       "name": "SpatialAudioAttachmentType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.SpatialAudioAttachmentType"
     },
     {
@@ -1825,8 +1826,9 @@
       "module": "@babylonjs/core/Behaviors/Cameras/interpolatingBehavior",
       "name": "SizeLike",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.SizeLike"
     },
     {
       "package": "@babylonjs/core",
@@ -1874,7 +1876,7 @@
       "name": "HandConstraintOrientation",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.HandConstraintOrientation"
     },
     {
@@ -1883,7 +1885,7 @@
       "name": "HandConstraintVisibility",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.HandConstraintVisibility"
     },
     {
@@ -1892,7 +1894,7 @@
       "name": "HandConstraintZone",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.HandConstraintZone"
     },
     {
@@ -2533,8 +2535,9 @@
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "InputModifiers",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.InputModifiers"
     },
     {
       "package": "@babylonjs/core",
@@ -2590,8 +2593,9 @@
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "TouchConditions",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.TouchConditions"
     },
     {
       "package": "@babylonjs/core",
@@ -3207,7 +3211,7 @@
       "name": "GPUMultiPickReadbackStrategy",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GPUMultiPickReadbackStrategy"
     },
     {
@@ -3311,8 +3315,9 @@
       "module": "@babylonjs/core/Compute/computeEffect",
       "name": "IComputeShaderPath",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.IComputeShaderPath"
     },
     {
       "package": "@babylonjs/core",
@@ -3640,7 +3645,7 @@
       "name": "DebugLayerTab",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DebugLayerTab"
     },
     {
@@ -3826,7 +3831,7 @@
       "name": "PropertyTypeForEdition",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PropertyTypeForEdition"
     },
     {
@@ -3835,7 +3840,7 @@
       "name": "DeviceType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DeviceType"
     },
     {
@@ -3844,7 +3849,7 @@
       "name": "DualSenseInput",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DualSenseInput"
     },
     {
@@ -3853,7 +3858,7 @@
       "name": "DualShockInput",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DualShockInput"
     },
     {
@@ -3862,7 +3867,7 @@
       "name": "NativePointerInput",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NativePointerInput"
     },
     {
@@ -3871,7 +3876,7 @@
       "name": "PointerInput",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PointerInput"
     },
     {
@@ -3880,7 +3885,7 @@
       "name": "SwitchInput",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.SwitchInput"
     },
     {
@@ -3889,7 +3894,7 @@
       "name": "XboxInput",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.XboxInput"
     },
     {
@@ -4345,8 +4350,9 @@
       "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
       "name": "ComputeBindingLocation",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.ComputeBindingLocation"
     },
     {
       "package": "@babylonjs/core",
@@ -4362,7 +4368,7 @@
       "name": "ComputeBindingType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ComputeBindingType"
     },
     {
@@ -4691,8 +4697,9 @@
       "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
       "name": "NativeFrameStats",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.NativeFrameStats"
     },
     {
       "package": "@babylonjs/core",
@@ -4716,7 +4723,7 @@
       "name": "NativeTraceLevel",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NativeTraceLevel"
     },
     {
@@ -5332,7 +5339,7 @@
       "name": "BufferUsage",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.BufferUsage"
     },
     {
@@ -5359,7 +5366,7 @@
       "name": "ColorWrite",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ColorWrite"
     },
     {
@@ -5467,7 +5474,7 @@
       "name": "MapMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.MapMode"
     },
     {
@@ -5539,7 +5546,7 @@
       "name": "ShaderStage",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ShaderStage"
     },
     {
@@ -5611,7 +5618,7 @@
       "name": "TextureUsage",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.TextureUsage"
     },
     {
@@ -5879,7 +5886,7 @@
       "name": "DeviceInputEventType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DeviceInputEventType"
     },
     {
@@ -7552,7 +7559,7 @@
       "name": "EasingFunctionType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.EasingFunctionType"
     },
     {
@@ -8226,7 +8233,7 @@
       "name": "FlowGraphState",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.FlowGraphState"
     },
     {
@@ -8324,7 +8331,7 @@
       "name": "FlowGraphConnectionType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.FlowGraphConnectionType"
     },
     {
@@ -8784,7 +8791,7 @@
       "name": "FlowGraphValidationSeverity",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.FlowGraphValidationSeverity"
     },
     {
@@ -9072,8 +9079,9 @@
       "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
       "name": "FrameGraphTextureOptions",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.FrameGraphTextureOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -9953,7 +9961,7 @@
       "name": "NodeRenderGraphBlockConnectionPointTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeRenderGraphBlockConnectionPointTypes"
     },
     {
@@ -9970,7 +9978,7 @@
       "name": "NodeRenderGraphConnectionPointCompatibilityStates",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeRenderGraphConnectionPointCompatibilityStates"
     },
     {
@@ -9979,7 +9987,7 @@
       "name": "NodeRenderGraphConnectionPointDirection",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeRenderGraphConnectionPointDirection"
     },
     {
@@ -10011,8 +10019,9 @@
       "module": "@babylonjs/core/FrameGraph/Passes/renderPass",
       "name": "LayerAndFaceIndex",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.LayerAndFaceIndex"
     },
     {
       "package": "@babylonjs/core",
@@ -10389,7 +10398,7 @@
       "name": "DualShockButton",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DualShockButton"
     },
     {
@@ -10398,7 +10407,7 @@
       "name": "DualShockDpad",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DualShockDpad"
     },
     {
@@ -10471,7 +10480,7 @@
       "name": "Xbox360Button",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.Xbox360Button"
     },
     {
@@ -10480,7 +10489,7 @@
       "name": "Xbox360Dpad",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.Xbox360Dpad"
     },
     {
@@ -10537,7 +10546,7 @@
       "name": "DragOperation",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DragOperation"
     },
     {
@@ -10578,7 +10587,7 @@
       "name": "GizmoAnchorPoint",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GizmoAnchorPoint"
     },
     {
@@ -10595,7 +10604,7 @@
       "name": "GizmoCoordinatesMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GizmoCoordinatesMode"
     },
     {
@@ -11741,7 +11750,7 @@
       "name": "SceneLoaderAnimationGroupLoadingMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.SceneLoaderAnimationGroupLoadingMode"
     },
     {
@@ -11933,8 +11942,9 @@
       "module": "@babylonjs/core/Materials/effect.pure",
       "name": "IShaderPath",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.IShaderPath"
     },
     {
       "package": "@babylonjs/core",
@@ -12069,8 +12079,9 @@
       "module": "@babylonjs/core/Materials/fresnelParameters.pure",
       "name": "IFresnelParametersSerialized",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.IFresnelParametersSerialized"
     },
     {
       "package": "@babylonjs/core",
@@ -12190,7 +12201,7 @@
       "name": "GreasedLineMeshColorDistributionType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshColorDistributionType"
     },
     {
@@ -12199,7 +12210,7 @@
       "name": "GreasedLineMeshColorMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshColorMode"
     },
     {
@@ -12208,7 +12219,7 @@
       "name": "GreasedLineMeshMaterialType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshMaterialType"
     },
     {
@@ -12737,7 +12748,7 @@
       "name": "GeometryRenderingTextureClearType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GeometryRenderingTextureClearType"
     },
     {
@@ -12785,8 +12796,9 @@
       "module": "@babylonjs/core/Materials/materialPluginEvent",
       "name": "MaterialPluginDisposed",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.MaterialPluginDisposed"
     },
     {
       "package": "@babylonjs/core",
@@ -12794,7 +12806,7 @@
       "name": "MaterialPluginEvent",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.MaterialPluginEvent"
     },
     {
@@ -12842,8 +12854,9 @@
       "module": "@babylonjs/core/Materials/materialPluginEvent",
       "name": "MaterialPluginHasRenderTargetTextures",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.MaterialPluginHasRenderTargetTextures"
     },
     {
       "package": "@babylonjs/core",
@@ -13003,7 +13016,7 @@
       "name": "MeshDebugMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.MeshDebugMode"
     },
     {
@@ -13204,7 +13217,7 @@
       "name": "ConditionalBlockConditions",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ConditionalBlockConditions"
     },
     {
@@ -13245,7 +13258,7 @@
       "name": "CurveBlockTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.CurveBlockTypes"
     },
     {
@@ -13638,7 +13651,7 @@
       "name": "FragmentOutputBlockColorSpace",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.FragmentOutputBlockColorSpace"
     },
     {
@@ -13927,7 +13940,7 @@
       "name": "AnimatedInputBlockTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.AnimatedInputBlockTypes"
     },
     {
@@ -14104,7 +14117,7 @@
       "name": "MeshAttributeExistsBlockTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.MeshAttributeExistsBlockTypes"
     },
     {
@@ -14761,7 +14774,7 @@
       "name": "TrigonometryBlockOperations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.TrigonometryBlockOperations"
     },
     {
@@ -14946,7 +14959,7 @@
       "name": "WaveBlockKind",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.WaveBlockKind"
     },
     {
@@ -14971,7 +14984,7 @@
       "name": "NodeMaterialBlockConnectionPointMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialBlockConnectionPointMode"
     },
     {
@@ -14980,7 +14993,7 @@
       "name": "NodeMaterialBlockConnectionPointTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialBlockConnectionPointTypes"
     },
     {
@@ -14989,7 +15002,7 @@
       "name": "NodeMaterialBlockTargets",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialBlockTargets"
     },
     {
@@ -14998,7 +15011,7 @@
       "name": "NodeMaterialModes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialModes"
     },
     {
@@ -15007,7 +15020,7 @@
       "name": "NodeMaterialSystemValues",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialSystemValues"
     },
     {
@@ -15120,7 +15133,7 @@
       "name": "NodeMaterialConnectionPointCompatibilityStates",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialConnectionPointCompatibilityStates"
     },
     {
@@ -15129,7 +15142,7 @@
       "name": "NodeMaterialConnectionPointDirection",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialConnectionPointDirection"
     },
     {
@@ -15418,7 +15431,7 @@
       "name": "ShaderLanguage",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ShaderLanguage"
     },
     {
@@ -15851,7 +15864,7 @@
       "name": "InternalTextureSource",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.InternalTextureSource"
     },
     {
@@ -15860,7 +15873,7 @@
       "name": "EngineFormat",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.EngineFormat"
     },
     {
@@ -15925,7 +15938,7 @@
       "name": "SourceTextureFormat",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.SourceTextureFormat"
     },
     {
@@ -15934,7 +15947,7 @@
       "name": "TranscodeTarget",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.TranscodeTarget"
     },
     {
@@ -16055,7 +16068,7 @@
       "name": "EXROutputType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.EXROutputType"
     },
     {
@@ -16064,7 +16077,7 @@
       "name": "CompressionCodes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.CompressionCodes"
     },
     {
@@ -16841,7 +16854,7 @@
       "name": "ChannelMask",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ChannelMask"
     },
     {
@@ -16930,7 +16943,7 @@
       "name": "TextureChannel",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.TextureChannel"
     },
     {
@@ -16939,7 +16952,7 @@
       "name": "TextureColorSpace",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.TextureColorSpace"
     },
     {
@@ -17060,7 +17073,7 @@
       "name": "Coordinate",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.Coordinate"
     },
     {
@@ -17069,7 +17082,7 @@
       "name": "Space",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.Space"
     },
     {
@@ -17350,7 +17363,7 @@
       "name": "Orientation",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.Orientation"
     },
     {
@@ -18279,8 +18292,9 @@
       "module": "@babylonjs/core/Meshes/Builders/goldbergBuilder",
       "name": "GoldbergVertexDataOption",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.GoldbergVertexDataOption"
     },
     {
       "package": "@babylonjs/core",
@@ -18344,7 +18358,7 @@
       "name": "GreasedLineMeshColorDistribution",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshColorDistribution"
     },
     {
@@ -18353,7 +18367,7 @@
       "name": "GreasedLineMeshWidthDistribution",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshWidthDistribution"
     },
     {
@@ -19388,7 +19402,7 @@
       "name": "GreasedLineRibbonAutoDirectionMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineRibbonAutoDirectionMode"
     },
     {
@@ -19397,7 +19411,7 @@
       "name": "GreasedLineRibbonFacesMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineRibbonFacesMode"
     },
     {
@@ -19414,7 +19428,7 @@
       "name": "GreasedLineRibbonPointsMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineRibbonPointsMode"
     },
     {
@@ -19704,7 +19718,7 @@
       "name": "SimplificationType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.SimplificationType"
     },
     {
@@ -19785,7 +19799,7 @@
       "name": "BooleanGeometryOperations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.BooleanGeometryOperations"
     },
     {
@@ -19858,7 +19872,7 @@
       "name": "ConditionBlockTests",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ConditionBlockTests"
     },
     {
@@ -19899,7 +19913,7 @@
       "name": "ExtrudeGeometryCap",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ExtrudeGeometryCap"
     },
     {
@@ -19988,7 +20002,7 @@
       "name": "GeometryCurveBlockTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GeometryCurveBlockTypes"
     },
     {
@@ -20061,7 +20075,7 @@
       "name": "GeometryEaseBlockTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GeometryEaseBlockTypes"
     },
     {
@@ -20358,7 +20372,7 @@
       "name": "GeometryTrigonometryBlockOperations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GeometryTrigonometryBlockOperations"
     },
     {
@@ -20503,7 +20517,7 @@
       "name": "MappingTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.MappingTypes"
     },
     {
@@ -20544,7 +20558,7 @@
       "name": "MathBlockOperations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.MathBlockOperations"
     },
     {
@@ -20729,7 +20743,7 @@
       "name": "RandomBlockLocks",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.RandomBlockLocks"
     },
     {
@@ -20746,7 +20760,7 @@
       "name": "Aggregations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.Aggregations"
     },
     {
@@ -21171,7 +21185,7 @@
       "name": "NodeGeometryBlockConnectionPointTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryBlockConnectionPointTypes"
     },
     {
@@ -21180,7 +21194,7 @@
       "name": "NodeGeometryContextualSources",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryContextualSources"
     },
     {
@@ -21237,7 +21251,7 @@
       "name": "NodeGeometryConnectionPointCompatibilityStates",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryConnectionPointCompatibilityStates"
     },
     {
@@ -21246,7 +21260,7 @@
       "name": "NodeGeometryConnectionPointDirection",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryConnectionPointDirection"
     },
     {
@@ -21415,7 +21429,7 @@
       "name": "AssetTaskState",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.AssetTaskState"
     },
     {
@@ -21632,7 +21646,7 @@
       "name": "ConversionMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ConversionMode"
     },
     {
@@ -22617,7 +22631,7 @@
       "name": "InspectableType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.InspectableType"
     },
     {
@@ -23331,7 +23345,7 @@
       "name": "DepthTextureType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DepthTextureType"
     },
     {
@@ -23388,7 +23402,7 @@
       "name": "TimerState",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.TimerState"
     },
     {
@@ -23509,7 +23523,7 @@
       "name": "JoystickAxis",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.JoystickAxis"
     },
     {
@@ -23894,7 +23908,7 @@
       "name": "ParticleConditionBlockTests",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ParticleConditionBlockTests"
     },
     {
@@ -24135,7 +24149,7 @@
       "name": "ParticleFloatToIntBlockOperations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ParticleFloatToIntBlockOperations"
     },
     {
@@ -24224,7 +24238,7 @@
       "name": "ParticleLocalVariableBlockScope",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ParticleLocalVariableBlockScope"
     },
     {
@@ -24249,7 +24263,7 @@
       "name": "ParticleMathBlockOperations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ParticleMathBlockOperations"
     },
     {
@@ -24290,7 +24304,7 @@
       "name": "ParticleNumberMathBlockOperations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ParticleNumberMathBlockOperations"
     },
     {
@@ -24315,7 +24329,7 @@
       "name": "ParticleRandomBlockLocks",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ParticleRandomBlockLocks"
     },
     {
@@ -24396,7 +24410,7 @@
       "name": "ParticleTrigonometryBlockOperations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ParticleTrigonometryBlockOperations"
     },
     {
@@ -24437,7 +24451,7 @@
       "name": "ParticleVectorMathBlockOperations",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ParticleVectorMathBlockOperations"
     },
     {
@@ -24758,7 +24772,7 @@
       "name": "NodeParticleBlockConnectionPointTypes",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleBlockConnectionPointTypes"
     },
     {
@@ -24767,7 +24781,7 @@
       "name": "NodeParticleContextualSources",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleContextualSources"
     },
     {
@@ -24776,7 +24790,7 @@
       "name": "NodeParticleSystemSources",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleSystemSources"
     },
     {
@@ -24801,7 +24815,7 @@
       "name": "NodeParticleConnectionPointCompatibilityStates",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleConnectionPointCompatibilityStates"
     },
     {
@@ -24810,7 +24824,7 @@
       "name": "NodeParticleConnectionPointDirection",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleConnectionPointDirection"
     },
     {
@@ -24899,7 +24913,7 @@
       "name": "PointColor",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PointColor"
     },
     {
@@ -25004,7 +25018,7 @@
       "name": "SubEmitterType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.SubEmitterType"
     },
     {
@@ -25125,7 +25139,7 @@
       "name": "PhysicsRadialImpulseFalloff",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsRadialImpulseFalloff"
     },
     {
@@ -25150,7 +25164,7 @@
       "name": "PhysicsUpdraftMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsUpdraftMode"
     },
     {
@@ -25407,7 +25421,7 @@
       "name": "CharacterSupportedState",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.CharacterSupportedState"
     },
     {
@@ -25472,7 +25486,7 @@
       "name": "PhysicsActivationControl",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsActivationControl"
     },
     {
@@ -25481,7 +25495,7 @@
       "name": "PhysicsConstraintAxis",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintAxis"
     },
     {
@@ -25490,7 +25504,7 @@
       "name": "PhysicsConstraintAxisLimitMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintAxisLimitMode"
     },
     {
@@ -25499,7 +25513,7 @@
       "name": "PhysicsConstraintMotorType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintMotorType"
     },
     {
@@ -25516,7 +25530,7 @@
       "name": "PhysicsConstraintType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintType"
     },
     {
@@ -25542,7 +25556,7 @@
       "name": "PhysicsMotionType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsMotionType"
     },
     {
@@ -25551,7 +25565,7 @@
       "name": "PhysicsPrestepType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsPrestepType"
     },
     {
@@ -25568,7 +25582,7 @@
       "name": "PhysicsShapeType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsShapeType"
     },
     {
@@ -25713,7 +25727,7 @@
       "name": "PhysicsMaterialCombineMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsMaterialCombineMode"
     },
     {
@@ -26010,7 +26024,7 @@
       "name": "DepthOfFieldEffectBlurLevel",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.DepthOfFieldEffectBlurLevel"
     },
     {
@@ -26579,7 +26593,7 @@
       "name": "ThinDepthOfFieldEffectBlurLevel",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ThinDepthOfFieldEffectBlurLevel"
     },
     {
@@ -26756,7 +26770,7 @@
       "name": "TonemappingOperator",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.TonemappingOperator"
     },
     {
@@ -27005,7 +27019,7 @@
       "name": "FluidRenderingDebug",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.FluidRenderingDebug"
     },
     {
@@ -27351,7 +27365,7 @@
       "name": "ScenePerformancePriority",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ScenePerformancePriority"
     },
     {
@@ -30928,7 +30942,7 @@
       "name": "SpriteMapFrameRotationDirection",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.SpriteMapFrameRotationDirection"
     },
     {
@@ -31570,8 +31584,9 @@
       "module": "@babylonjs/core/XR/features/WebXRControllerMovement.pure",
       "name": "WebXRControllerMovementState",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.WebXRControllerMovementState"
     },
     {
       "package": "@babylonjs/core",
@@ -32015,7 +32030,7 @@
       "name": "WebXRNearControllerMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.WebXRNearControllerMode"
     },
     {
@@ -32571,7 +32586,7 @@
       "name": "WebXRGraphicsBindingType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.WebXRGraphicsBindingType"
     },
     {
@@ -32710,7 +32725,7 @@
       "name": "WebXRState",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.WebXRState"
     },
     {
@@ -32719,7 +32734,7 @@
       "name": "WebXRTrackingState",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.WebXRTrackingState"
     },
     {
@@ -32783,8 +32798,9 @@
       "module": "@babylonjs/loaders/BVH/bvhLoadingOptions",
       "name": "BVHLoadingOptions",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive-property object alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.ObjectTypes.BVHLoadingOptions"
     },
     {
       "package": "@babylonjs/loaders",
@@ -32873,7 +32889,7 @@
       "name": "EBlendingFunction",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.EBlendingFunction"
     },
     {
@@ -32882,7 +32898,7 @@
       "name": "EComponentType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.EComponentType"
     },
     {
@@ -32891,7 +32907,7 @@
       "name": "ECullingType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ECullingType"
     },
     {
@@ -32900,7 +32916,7 @@
       "name": "EParameterType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.EParameterType"
     },
     {
@@ -32909,7 +32925,7 @@
       "name": "EShaderType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.EShaderType"
     },
     {
@@ -32918,7 +32934,7 @@
       "name": "ETextureFilterType",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ETextureFilterType"
     },
     {
@@ -32927,7 +32943,7 @@
       "name": "ETextureFormat",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ETextureFormat"
     },
     {
@@ -32936,7 +32952,7 @@
       "name": "ETextureWrapMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.ETextureWrapMode"
     },
     {
@@ -34585,7 +34601,7 @@
       "name": "GLTFLoaderAnimationStartMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GLTFLoaderAnimationStartMode"
     },
     {
@@ -34594,7 +34610,7 @@
       "name": "GLTFLoaderCoordinateSystemMode",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GLTFLoaderCoordinateSystemMode"
     },
     {
@@ -34627,7 +34643,7 @@
       "name": "GLTFLoaderState",
       "kind": "enum",
       "disposition": "typed",
-      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
       "fsharpSymbol": "BabylonjsBindings.Enums.GLTFLoaderState"
     },
     {

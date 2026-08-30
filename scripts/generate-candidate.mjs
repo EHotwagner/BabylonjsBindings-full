@@ -10,7 +10,8 @@ const declarationLockPath = resolve(root, "declaration-lock.json");
 const maintainedPaths = [
   "src/BabylonjsBindings/Bindings.fs",
   "src/BabylonjsBindings/Enums.fs",
-  "src/BabylonjsBindings/StringEnums.fs"
+  "src/BabylonjsBindings/StringEnums.fs",
+  "src/BabylonjsBindings/ObjectTypes.fs"
 ];
 const packageJson = JSON.parse(await readFile(resolve(root, "package.json"), "utf8"));
 const sourcePath = resolve(root, "node_modules/babylonjs/babylon.module.d.ts");

@@ -1,7 +1,7 @@
 // REVIEWED-PROMOTION PROPOSAL — move to maintained source only after enum review, compile, and runtime proof
 namespace BabylonjsBindings
 
-/// Exact numeric enums exported by @babylonjs/core and @babylonjs/loaders 9.19.0.
+/// Exact numeric enums and integer-literal unions exported by @babylonjs/core and @babylonjs/loaders 9.19.0.
 module Enums =
 
     /// @babylonjs/core/Meshes/Node/Blocks/Set/aggregatorBlock.pure
@@ -33,6 +33,20 @@ module Enums =
         | ``RUNNING`` = 1
         | ``DONE`` = 2
         | ``ERROR`` = 3
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractAudioAnalyzer
+    type AudioAnalyzerFFTSizeType =
+        | ``N32`` = 32
+        | ``N64`` = 64
+        | ``N128`` = 128
+        | ``N256`` = 256
+        | ``N512`` = 512
+        | ``N1024`` = 1024
+        | ``N2048`` = 2048
+        | ``N4096`` = 4096
+        | ``N8192`` = 8192
+        | ``N16384`` = 16384
+        | ``N32768`` = 32768
 
     /// @babylonjs/core/AudioV2/abstractAudio/abstractAudioNode
     type AudioNodeType =

@@ -4,7 +4,7 @@
   "fable": "5.13.0",
   "emittedProgram": {
     "path": "generated-candidates/runtime/dist/Program.js",
-    "sha256": "e9da64c3cf9c622f99cbb2f51e69357a77b2afde795414da7d82777798cea830"
+    "sha256": "9b8fe6e26b90cb21fe2509ef5f537707d77b23e64c14b18a550c738d8f48be2a"
   },
   "imports": [
     {

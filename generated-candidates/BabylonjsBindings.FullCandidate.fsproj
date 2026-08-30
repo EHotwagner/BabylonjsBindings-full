@@ -8,6 +8,7 @@
   <ItemGroup>
     <Compile Include="CoreEnums.proposal.fs" />
     <Compile Include="StringEnums.proposal.fs" />
+    <Compile Include="SimpleObjectTypes.proposal.fs" />
     <Compile Include="BabylonBindings.generated.fs" />
     <Compile Include="BabylonGltf2Interface.generated.fs" />
     <Compile Include="BabylonLoadersBindings.generated.fs" />

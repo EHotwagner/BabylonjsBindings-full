@@ -47,6 +47,8 @@
     "check:enum-proposal": "node --max-old-space-size=8192 scripts/generate-enum-proposal.mjs --check",
     "generate:string-enum-proposal": "node --max-old-space-size=8192 scripts/generate-string-enum-proposal.mjs",
     "check:string-enum-proposal": "node --max-old-space-size=8192 scripts/generate-string-enum-proposal.mjs --check",
+    "generate:simple-object-proposal": "node --max-old-space-size=8192 scripts/generate-simple-object-proposal.mjs",
+    "check:simple-object-proposal": "node --max-old-space-size=8192 scripts/generate-simple-object-proposal.mjs --check",
     "test:browser": "chromium --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --dump-dom http://127.0.0.1:4173/runtime/browser/",
     "test:lifecycle": "bash scripts/run-sdd-lifecycle.sh reports/bindings.junit.xml",
     "doctor": "node scripts/doctor.mjs"

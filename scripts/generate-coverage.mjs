@@ -14,13 +14,19 @@ const promotionFamilies = [
     maintainedPath: "src/BabylonjsBindings/Enums.fs",
     manifestPath: "src/BabylonjsBindings/coverage-manifest.json",
     proposalPath: "generated-candidates/CoreEnums.proposal.fs",
-    description: "numeric enum"
+    description: "numeric enum or integer-literal union"
   },
   {
     maintainedPath: "src/BabylonjsBindings/StringEnums.fs",
     manifestPath: "src/BabylonjsBindings/string-coverage-manifest.json",
     proposalPath: "generated-candidates/StringEnums.proposal.fs",
     description: "string enum or literal union"
+  },
+  {
+    maintainedPath: "src/BabylonjsBindings/ObjectTypes.fs",
+    manifestPath: "src/BabylonjsBindings/object-type-coverage-manifest.json",
+    proposalPath: "generated-candidates/SimpleObjectTypes.proposal.fs",
+    description: "primitive-property object alias"
   }
 ];
 const schemaPath = resolve(root, "work/001-full-babylonjs-bindings/contracts/coverage-and-drift.schema.json");
@@ -38,7 +44,7 @@ const promotions = await Promise.all(promotionFamilies.map(async family => {
     throw new Error(`${family.description} coverage manifest has an unsupported schema or is not reviewed`);
   }
   if (maintainedSource.split("\n").slice(1).join("\n") !== proposalSource.split("\n").slice(1).join("\n")) {
-    throw new Error(`maintained ${family.description}s drifted from the reviewed exact-declaration proposal`);
+    throw new Error(`maintained ${family.description} bindings drifted from the reviewed exact-declaration proposal`);
   }
   return { ...family, maintainedSource, manifest };
 }));
