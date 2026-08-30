@@ -10,13 +10,8 @@ const valueAfter = flag => {
 const root = resolve(valueAfter("--declarations-root") ?? resolve(import.meta.dirname, "..", "node_modules"));
 const lockPath = resolve(valueAfter("--lock") ?? resolve(import.meta.dirname, "..", "declaration-lock.json"));
 const entryPoints = valueAfter("--entry") ? [valueAfter("--entry")] : [
-  "@babylonjs/core/Engines/nullEngine.d.ts",
-  "@babylonjs/core/scene.d.ts",
-  "@babylonjs/core/Maths/math.vector.d.ts",
-  "@babylonjs/core/Cameras/freeCamera.d.ts",
-  "@babylonjs/core/Lights/hemisphericLight.d.ts",
-  "@babylonjs/core/Meshes/meshBuilder.d.ts",
-  "@babylonjs/loaders/glTF/index.d.ts"
+  "@babylonjs/core/index.d.ts",
+  "@babylonjs/loaders/index.d.ts"
 ];
 
 const declarationPath = (from, specifier) => {

@@ -1,10 +1,9 @@
 // REVIEW-ONLY GENERATED CANDIDATE — NOT COMPILED INTO THE PACKAGE
 // source babylonjs@9.19.0 babylon.module.d.ts sha256: 8fc0a46461ab5909d3eac13032a2a17e24a86317251500302a13e2fca8d9e651
 // generator ts2fable@0.9.0-build.738 with typescript@5.1.6
-// ts2fable 0.9.0-build.738
 module rec BabylonjsBindings.FullCandidate
 
-#nowarn "3390" // disable warnings for invalid XML comments
+#nowarn "3390"
 
 open System
 open Fable.Core
@@ -14,7 +13,7 @@ open Browser.Types
 [<Erase>] type KeyOf<'T> = Key of string
 type Array<'T> = System.Collections.Generic.IList<'T>
 type ArrayLike<'T> = System.Collections.Generic.IList<'T>
-type Error = System.Exception
+type [<AllowNullLiteral>] Error = interface end
 type Function = System.Action
 type PromiseLike<'T> = Fable.Core.JS.Promise<'T>
 type ReadonlyArray<'T> = System.Collections.Generic.IReadOnlyList<'T>
@@ -22,19 +21,134 @@ type ReadonlyMap<'K, 'V> = Map<'K, 'V>
 type ReadonlySet<'T> = Set<'T>
 type RegExp = System.Text.RegularExpressions.Regex
 type Symbol = obj
+type Animation = Babylonjs_Animations_animation_pure.Animation
 type ArrayBufferLike = obj
-type InstanceType<'T> = obj
+type [<AllowNullLiteral>] InstanceType<'T> = interface end
 type Record<'K, 'V> = Map<'K, 'V>
-type IteratorResult<'T, 'TReturn> = Fable.Core.JS.IteratorResult<'T>
-type Exclude<'T, 'U> = obj
+type [<AllowNullLiteral>] IteratorResult<'T, 'TReturn> =
+    abstract done': bool option
+    abstract value: U2<'T, 'TReturn>
+type [<AllowNullLiteral>] Exclude<'T, 'U> = interface end
+type [<AllowNullLiteral>] Required<'T> = interface end
+type [<AllowNullLiteral>] ConstructorParameters<'T> = interface end
+type [<AllowNullLiteral>] ReturnType<'T> = interface end
+type [<AllowNullLiteral>] Omit<'T, 'K> = interface end
+type [<AllowNullLiteral>] Iterable<'T> = interface end
+type [<AllowNullLiteral>] IterableIterator<'T> = inherit Iterable<'T>
+type [<AllowNullLiteral>] Generator<'TYield, 'TReturn, 'TNext> = inherit IterableIterator<'TYield>
+type [<AllowNullLiteral>] ClassAccessorDecoratorContext<'TThis, 'TValue> = interface end
+type [<AllowNullLiteral>] ClassAccessorDecoratorResult<'TThis, 'TValue> = interface end
+type [<AllowNullLiteral>] ClassAccessorDecoratorTarget<'TThis, 'TValue> = interface end
+type [<AllowNullLiteral>] ClassMethodDecoratorContext<'TThis, 'TValue> = interface end
 type WebGLQuery = obj
 type AudioBuffer = obj
+type GLenum = float
+type GLuint = float
+type GLint = float
+type GLsizei = float
+type GLboolean = bool
+type DOMHighResTimeStamp = float
+type GPUTextureFormat = string
+type GPUTextureViewDimension = string
+type GPUStorageTextureAccess = string
+type GPUFeatureName = string
+type GPUBufferUsageFlags = float
+type GPUTextureUsageFlags = float
+type GPUPowerPreference = string
+type GPUAutoLayoutMode = string
+type GPUBufferBindingType = string
+type GPUTextureSampleType = string
+type GPUSamplerBindingType = string
+type GPUCompareFunction = string
+type BodyInit = obj
+type BufferSource = obj
+type ImageBitmapSource = obj
+type XMLHttpRequestBodyInit = obj
+type ReferrerPolicy = string
+type XMLHttpRequestResponseType = string
+type BigUint64Array = obj
+type IArguments = obj
 type ImageBitmapRenderingContext = obj
 [<AllowNullLiteral>]
 type ImageBitmap =
     abstract width: float
     abstract height: float
     abstract close: unit -> unit
+type [<AllowNullLiteral>] AbortSignal = interface end
+type [<AllowNullLiteral>] AudioBufferSourceNode = interface end
+type [<AllowNullLiteral>] AudioContext = interface end
+type [<AllowNullLiteral>] AudioDestinationNode = interface end
+type [<AllowNullLiteral>] AudioNode = interface end
+type [<AllowNullLiteral>] AudioParam = interface end
+type [<AllowNullLiteral>] DecoratorMetadataObject = interface end
+type [<AllowNullLiteral>] DistanceModelType = interface end
+type [<AllowNullLiteral>] DOMMatrix = interface end
+type [<AllowNullLiteral>] DOMPointInit = interface end
+type [<AllowNullLiteral>] DOMPointReadOnly = interface end
+type [<AllowNullLiteral>] DOMRect = interface end
+type [<AllowNullLiteral>] EventListenerOptions = interface end
+type [<AllowNullLiteral>] EventListenerOrEventListenerObject = interface end
+type [<AllowNullLiteral>] GainNode = interface end
+type [<AllowNullLiteral>] GPUBindGroup = interface end
+type [<AllowNullLiteral>] GPUBindGroupEntry = interface end
+type [<AllowNullLiteral>] GPUBindGroupLayout = interface end
+type [<AllowNullLiteral>] GPUBindGroupLayoutEntry = interface end
+type [<AllowNullLiteral>] GPUBuffer = interface end
+type [<AllowNullLiteral>] GPUCommandEncoder = interface end
+type [<AllowNullLiteral>] GPUComputePipeline = interface end
+type [<AllowNullLiteral>] GPUCopyExternalImageDestInfo = interface end
+type [<AllowNullLiteral>] GPUDevice = interface end
+type [<AllowNullLiteral>] GPUDeviceDescriptor = interface end
+type [<AllowNullLiteral>] GPUPipelineLayout = interface end
+type [<AllowNullLiteral>] GPUProgrammableStage = interface end
+type [<AllowNullLiteral>] GPUQuerySet = interface end
+type [<AllowNullLiteral>] GPURenderBundle = interface end
+type [<AllowNullLiteral>] GPURenderBundleEncoder = interface end
+type [<AllowNullLiteral>] GPURenderPassDescriptor = interface end
+type [<AllowNullLiteral>] GPURenderPassEncoder = interface end
+type [<AllowNullLiteral>] GPURenderPipeline = interface end
+type [<AllowNullLiteral>] GPURenderPipelineDescriptor = interface end
+type [<AllowNullLiteral>] GPUSampler = interface end
+type [<AllowNullLiteral>] GPUTextureView = interface end
+type [<AllowNullLiteral>] ImageBitmapOptions = interface end
+type [<AllowNullLiteral>] MediaStream = interface end
+type [<AllowNullLiteral>] MediaStreamTrack = interface end
+type [<AllowNullLiteral>] MediaTrackConstraints = interface end
+type [<AllowNullLiteral>] PannerNode = interface end
+type [<AllowNullLiteral>] PanningModelType = interface end
+type [<AllowNullLiteral>] PointerEventInit = interface end
+type [<AllowNullLiteral>] MediaStreamAudioDestinationNode = interface end
+type [<AllowNullLiteral>] OfflineAudioContext = interface end
+type [<AllowNullLiteral>] GPUComputePassDescriptor = interface end
+type [<AllowNullLiteral>] Response = interface end
+type [<AllowNullLiteral>] StereoPannerNode = interface end
+type [<AllowNullLiteral>] URL = interface end
+type [<AllowNullLiteral>] VideoFrame = interface end
+type [<AllowNullLiteral>] WebGLTransformFeedback = interface end
+type [<AllowNullLiteral>] WebGLVertexArrayObject = interface end
+type [<AllowNullLiteral>] Worker = interface end
+type [<AllowNullLiteral>] XMLHttpRequest = interface end
+type [<AllowNullLiteral>] XMLHttpRequestEventMap = interface end
+type [<AllowNullLiteral>] CanvasCompositing = interface end
+type [<AllowNullLiteral>] CanvasDrawImage = interface end
+type [<AllowNullLiteral>] CanvasDrawPath = interface end
+type [<AllowNullLiteral>] CanvasFillStrokeStyles = interface end
+type [<AllowNullLiteral>] CanvasFilters = interface end
+type [<AllowNullLiteral>] CanvasImageData = interface end
+type [<AllowNullLiteral>] CanvasImageSmoothing = interface end
+type [<AllowNullLiteral>] CanvasPath = interface end
+type [<AllowNullLiteral>] CanvasPathDrawingStyles = interface end
+type [<AllowNullLiteral>] CanvasRect = interface end
+type [<AllowNullLiteral>] CanvasShadowStyles = interface end
+type [<AllowNullLiteral>] CanvasState = interface end
+type [<AllowNullLiteral>] CanvasText = interface end
+type [<AllowNullLiteral>] CanvasTextDrawingStyles = interface end
+type [<AllowNullLiteral>] CanvasTransform = interface end
+type [<AllowNullLiteral>] WebGL2RenderingContextBase = interface end
+type [<AllowNullLiteral>] OVR_multiview2 = interface end
+type [<AllowNullLiteral>] EXT_texture_filter_anisotropic = interface end
+type [<AllowNullLiteral>] WEBGL_compressed_texture_s3tc = interface end
+type [<AllowNullLiteral>] WEBGL_compressed_texture_s3tc_srgb = interface end
 
 let [<ImportAll("@babylonjs/core/types.js")>] ``babylonjs/types``: Babylonjs_types.IExports = jsNative
 let [<ImportAll("@babylonjs/core/sceneComponent.js")>] ``babylonjs/sceneComponent``: Babylonjs_sceneComponent.IExports = jsNative
@@ -2165,38 +2279,28 @@ module Babylonjs_types =
     type Empty =
         obj
 
-    type Shift<'T> =
-        obj
+    type [<AllowNullLiteral>] Shift<'T> = interface end
 
-    type First<'T> =
-        obj
+    type [<AllowNullLiteral>] First<'T> = interface end
 
-    type Unshift<'T, 'A> =
-        obj
+    type [<AllowNullLiteral>] Unshift<'T, 'A> = interface end
 
-    type Pop<'T> =
-        obj
+    type [<AllowNullLiteral>] Pop<'T> = interface end
 
-    type Last<'T> =
-        obj
+    type [<AllowNullLiteral>] Last<'T> = interface end
 
-    type Push<'T, 'A> =
-        obj
+    type [<AllowNullLiteral>] Push<'T, 'A> = interface end
 
-    type Concat<'A, 'B> =
-        obj
+    type [<AllowNullLiteral>] Concat<'A, 'B> = interface end
 
-    type Remove<'A, 'B> =
-        obj
+    type [<AllowNullLiteral>] Remove<'A, 'B> = interface end
 
-    type Length<'T> =
-        obj
+    type [<AllowNullLiteral>] Length<'T> = interface end
 
     type _FromLength<'N> =
         _FromLength<'N, Empty>
 
-    type _FromLength<'N, 'R> =
-        obj
+    type [<AllowNullLiteral>] _FromLength<'N, 'R> = interface end
 
     type FromLength<'N> =
         _FromLength<'N>
@@ -2216,29 +2320,23 @@ module Babylonjs_types =
     type Member<'T> =
         Member<'T, obj>
 
-    type Member<'T, 'D> =
-        obj
+    type [<AllowNullLiteral>] Member<'T, 'D> = interface end
 
     type FlattenArray<'A> =
         FlattenArray<'A, obj>
 
-    type FlattenArray<'A, 'D> =
-        obj
+    type [<AllowNullLiteral>] FlattenArray<'A, 'D> = interface end
 
-    type IsTuple<'T> =
-        obj
+    type [<AllowNullLiteral>] IsTuple<'T> = interface end
 
-    type FlattenTuple<'A> =
-        obj
+    type [<AllowNullLiteral>] FlattenTuple<'A> = interface end
 
-    type Flatten<'A> =
-        obj
+    type [<AllowNullLiteral>] Flatten<'A> = interface end
 
     type _Tuple<'T, 'N> =
         _Tuple<'T, 'N, Empty>
 
-    type _Tuple<'T, 'N, 'R> =
-        obj
+    type [<AllowNullLiteral>] _Tuple<'T, 'N, 'R> = interface end
 
     type Tuple<'T, 'N> =
         _Tuple<'T, 'N>
@@ -2258,11 +2356,9 @@ module Babylonjs_types =
     type Primitive =
         U5<bool, string, float, Function, Element> option
 
-    type Immutable<'T> =
-        obj
+    type [<AllowNullLiteral>] Immutable<'T> = interface end
 
-    type DeepImmutable<'T> =
-        obj
+    type [<AllowNullLiteral>] DeepImmutable<'T> = interface end
 
     type [<AllowNullLiteral>] NonNullableFields<'T> =
         interface end
@@ -2557,7 +2653,7 @@ module Babylonjs_scene_pure =
         abstract defaultCameraLayerMask: float option with get, set
         abstract defaultRenderableLayerMask: float option with get, set
 
-    type [<RequireQualifiedAccess>] ScenePerformancePriority =
+    type ScenePerformancePriority =
         | BackwardCompatible = 0
         | Intermediate = 1
         | Aggressive = 2
@@ -3553,13 +3649,13 @@ module Babylonjs_XR_webXRTypes =
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type IDisposable = Babylonjs_scene_pure.IDisposable
 
-    type [<RequireQualifiedAccess>] WebXRState =
+    type WebXRState =
         | ENTERING_XR = 0
         | EXITING_XR = 1
         | IN_XR = 2
         | NOT_IN_XR = 3
 
-    type [<RequireQualifiedAccess>] WebXRTrackingState =
+    type WebXRTrackingState =
         | NOT_TRACKING = 0
         | TRACKING_LOST = 1
         | TRACKING = 2
@@ -3582,6 +3678,8 @@ module Babylonjs_XR_webXRSessionManager =
     type IDisposable = Babylonjs_scene_pure.IDisposable
     type Scene = Babylonjs_scene_pure.Scene
     type RenderTargetTexture = Babylonjs_Materials_Textures_renderTargetTexture_pure.RenderTargetTexture
+    type WebXRRenderTarget = Babylonjs_XR_webXRTypes.WebXRRenderTarget
+    type WebXRRenderTarget<'TContext> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext>
     type WebXRRenderTarget<'TContext, 'TLayer when 'TLayer :> XRLayer> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext, 'TLayer>
     type WebXRManagedOutputCanvasOptions = Babylonjs_XR_webXRManagedOutputCanvas.WebXRManagedOutputCanvasOptions
     type IWebXRRenderTargetTextureProvider = Babylonjs_XR_webXRRenderTargetTextureProvider.IWebXRRenderTargetTextureProvider
@@ -3685,6 +3783,8 @@ module Babylonjs_XR_webXRRenderTargetTextureProvider =
 module Babylonjs_XR_webXRManagedOutputCanvas =
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type AbstractEngine = Babylonjs_Engines_abstractEngine_pure.AbstractEngine
+    type WebXRRenderTarget = Babylonjs_XR_webXRTypes.WebXRRenderTarget
+    type WebXRRenderTarget<'TContext> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext>
     type WebXRRenderTarget<'TContext, 'TLayer when 'TLayer :> XRLayer> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext, 'TLayer>
     type WebXRSessionManager = Babylonjs_XR_webXRSessionManager.WebXRSessionManager
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
@@ -3832,7 +3932,7 @@ module Babylonjs_XR_webXRGraphicsBinding =
         abstract WebXRWebGLGraphicsBinding: WebXRWebGLGraphicsBindingStatic
         abstract WebXRWebGPUGraphicsBinding: WebXRWebGPUGraphicsBindingStatic
 
-    type [<RequireQualifiedAccess>] WebXRGraphicsBindingType =
+    type WebXRGraphicsBindingType =
         | WebGL = 0
         | WebGPU = 1
 
@@ -4000,14 +4100,11 @@ module Babylonjs_XR_webXRFeaturesManager =
         abstract ``[WebXRFeatureName.WALKING_LOCOMOTION]``: IWebXRWalkingLocomotionOptions with get, set
         abstract ``[WebXRFeatureName.BODY_TRACKING]``: IWebXRBodyTrackingOptions with get, set
 
-    type Expand<'T> =
-        obj
+    type [<AllowNullLiteral>] Expand<'T> = interface end
 
-    type ResolveWebXRFeature<'T when 'T :> WebXRFeatureNameType> =
-        obj
+    type [<AllowNullLiteral>] ResolveWebXRFeature<'T> = interface end
 
-    type ResolveWebXRFeatureOptions<'T when 'T :> WebXRFeatureNameType> =
-        obj
+    type [<AllowNullLiteral>] ResolveWebXRFeatureOptions<'T> = interface end
 
     type [<AllowNullLiteral>] WebXRFeatureConstructor =
         [<Emit("$0($1...)")>] abstract Invoke: xrSessionManager: WebXRSessionManager * ?options: obj -> (unit -> IWebXRFeature)
@@ -4018,8 +4115,8 @@ module Babylonjs_XR_webXRFeaturesManager =
         abstract detachFeature: featureName: string -> unit
         abstract disableFeature: featureName: U2<string, {| Name: string |}> -> bool
         abstract dispose: unit -> unit
-        abstract enableFeature: featureName: U2<'T, {| Name: 'T |}> * ?version: U2<float, string> * ?moduleOptions: ResolveWebXRFeatureOptions<'T> * ?attachIfPossible: bool * ?required: bool -> ResolveWebXRFeature<'T> when 'T :> WebXRFeatureNameType
-        abstract getEnabledFeature: featureName: 'T -> ResolveWebXRFeature<'T> when 'T :> WebXRFeatureNameType
+        abstract enableFeature: featureName: U2<'T, {| Name: 'T |}> * ?version: U2<float, string> * ?moduleOptions: ResolveWebXRFeatureOptions<'T> * ?attachIfPossible: bool * ?required: bool -> ResolveWebXRFeature<'T>
+        abstract getEnabledFeature: featureName: 'T -> ResolveWebXRFeature<'T>
         abstract getEnabledFeatures: unit -> ResizeArray<string>
         abstract _extendXRSessionInitObject: xrSessionInit: XRSessionInit -> Promise<XRSessionInit>
 
@@ -4038,6 +4135,8 @@ module Babylonjs_XR_webXRExperienceHelper =
     type Scene = Babylonjs_scene_pure.Scene
     type WebXRSessionManager = Babylonjs_XR_webXRSessionManager.WebXRSessionManager
     type WebXRCamera = Babylonjs_XR_webXRCamera.WebXRCamera
+    type WebXRRenderTarget = Babylonjs_XR_webXRTypes.WebXRRenderTarget
+    type WebXRRenderTarget<'TContext> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext>
     type WebXRRenderTarget<'TContext, 'TLayer when 'TLayer :> XRLayer> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext, 'TLayer>
     type WebXRState = Babylonjs_XR_webXRTypes.WebXRState
     type WebXRFeaturesManager = Babylonjs_XR_webXRFeaturesManager.WebXRFeaturesManager
@@ -4072,6 +4171,8 @@ module Babylonjs_XR_webXREnterExitUI =
     type IDisposable = Babylonjs_scene_pure.IDisposable
     type Scene = Babylonjs_scene_pure.Scene
     type WebXRExperienceHelper = Babylonjs_XR_webXRExperienceHelper.WebXRExperienceHelper
+    type WebXRRenderTarget = Babylonjs_XR_webXRTypes.WebXRRenderTarget
+    type WebXRRenderTarget<'TContext> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext>
     type WebXRRenderTarget<'TContext, 'TLayer when 'TLayer :> XRLayer> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext, 'TLayer>
 
     type [<AllowNullLiteral>] IExports =
@@ -4122,6 +4223,8 @@ module Babylonjs_XR_webXRDefaultExperience =
     type WebXRControllerPointerSelection = Babylonjs_XR_features_WebXRControllerPointerSelection_pure.WebXRControllerPointerSelection
     type IWebXRNearInteractionOptions = Babylonjs_XR_features_WebXRNearInteraction_pure.IWebXRNearInteractionOptions
     type WebXRNearInteraction = Babylonjs_XR_features_WebXRNearInteraction_pure.WebXRNearInteraction
+    type WebXRRenderTarget = Babylonjs_XR_webXRTypes.WebXRRenderTarget
+    type WebXRRenderTarget<'TContext> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext>
     type WebXRRenderTarget<'TContext, 'TLayer when 'TLayer :> XRLayer> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext, 'TLayer>
     type WebXREnterExitUIOptions = Babylonjs_XR_webXREnterExitUI.WebXREnterExitUIOptions
     type WebXREnterExitUI = Babylonjs_XR_webXREnterExitUI.WebXREnterExitUI
@@ -4210,6 +4313,8 @@ module Babylonjs_XR_native_nativeXRRenderTarget =
     type WebXRLayerWrapper = Babylonjs_XR_webXRLayerWrapper.WebXRLayerWrapper
     type WebXRWebGLRenderTargetTextureProvider = Babylonjs_XR_webXRWebGLRenderTargetTextureProvider.WebXRWebGLRenderTargetTextureProvider
     type WebXRSessionManager = Babylonjs_XR_webXRSessionManager.WebXRSessionManager
+    type WebXRRenderTarget = Babylonjs_XR_webXRTypes.WebXRRenderTarget
+    type WebXRRenderTarget<'TContext> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext>
     type WebXRRenderTarget<'TContext, 'TLayer when 'TLayer :> XRLayer> = Babylonjs_XR_webXRTypes.WebXRRenderTarget<'TContext, 'TLayer>
 
     type [<AllowNullLiteral>] IExports =
@@ -4860,7 +4965,7 @@ module Babylonjs_XR_features_WebXRNearInteraction_pure =
         abstract WebXRNearInteractionPickMeshWithSphere: mesh: AbstractMesh * sphere: BoundingSphere * ?skipBoundingInfo: bool -> PickingInfo
         abstract RegisterWebXRNearInteraction: unit -> unit
 
-    type [<RequireQualifiedAccess>] WebXRNearControllerMode =
+    type WebXRNearControllerMode =
         | DISABLED = 0
         | CENTERED_ON_CONTROLLER = 1
         | CENTERED_IN_FRONT = 2
@@ -6292,6 +6397,7 @@ module Babylonjs_Sprites_thinSprite =
 
 module Babylonjs_Sprites_spriteSceneComponent_types =
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
+    type IReadonlyObservable = Babylonjs_Misc_observable_pure.IReadonlyObservable
     type IReadonlyObservable<'T> = Babylonjs_Misc_observable_pure.IReadonlyObservable<'T>
     type Ray = Babylonjs_Culling_ray_core.Ray
     type PickingInfo = Babylonjs_Collisions_pickingInfo.PickingInfo
@@ -6413,7 +6519,7 @@ module Babylonjs_Sprites_spriteMap_pure =
     type [<AllowNullLiteral>] IExports =
         abstract SpriteMap: SpriteMapStatic
 
-    type [<RequireQualifiedAccess>] SpriteMapFrameRotationDirection =
+    type SpriteMapFrameRotationDirection =
         | CCW = 0
         | CW = 1
 
@@ -11145,7 +11251,7 @@ module Babylonjs_Rendering_fluidRenderer_fluidRenderingTargetRenderer =
     type [<AllowNullLiteral>] IExports =
         abstract FluidRenderingTargetRenderer: FluidRenderingTargetRendererStatic
 
-    type [<RequireQualifiedAccess>] FluidRenderingDebug =
+    type FluidRenderingDebug =
         | DepthTexture = 0
         | DepthBlurredTexture = 1
         | ThicknessTexture = 2
@@ -11973,7 +12079,7 @@ module Babylonjs_PostProcesses_thinTonemapPostProcess =
     type [<AllowNullLiteral>] IExports =
         abstract ThinTonemapPostProcess: ThinTonemapPostProcessStatic
 
-    type [<RequireQualifiedAccess>] TonemappingOperator =
+    type TonemappingOperator =
         | Hable = 0
         | Reinhard = 1
         | HejiDawson = 2
@@ -12494,7 +12600,7 @@ module Babylonjs_PostProcesses_thinDepthOfFieldEffect =
     type [<AllowNullLiteral>] IExports =
         abstract ThinDepthOfFieldEffect: ThinDepthOfFieldEffectStatic
 
-    type [<RequireQualifiedAccess>] ThinDepthOfFieldEffectBlurLevel =
+    type ThinDepthOfFieldEffectBlurLevel =
         | Low = 0
         | Medium = 1
         | High = 2
@@ -13342,7 +13448,7 @@ module Babylonjs_PostProcesses_depthOfFieldEffect =
     type [<AllowNullLiteral>] IExports =
         abstract DepthOfFieldEffect: DepthOfFieldEffectStatic
 
-    type [<RequireQualifiedAccess>] DepthOfFieldEffectBlurLevel =
+    type DepthOfFieldEffectBlurLevel =
         | Low = 0
         | Medium = 1
         | High = 2
@@ -13642,6 +13748,7 @@ module Babylonjs_PostProcesses_RenderPipeline_postProcessRenderPipelineManagerSc
 
 module Babylonjs_PostProcesses_RenderPipeline_postProcessRenderPipelineManager =
     type Camera = Babylonjs_Cameras_camera_pure.Camera
+    type IReadonlyObservable = Babylonjs_Misc_observable_pure.IReadonlyObservable
     type IReadonlyObservable<'T> = Babylonjs_Misc_observable_pure.IReadonlyObservable<'T>
     type PostProcessRenderPipeline = BABYLON.PostProcessRenderPipeline
 
@@ -14516,11 +14623,11 @@ module Babylonjs_Physics_physicsHelper =
     type [<AllowNullLiteral>] PhysicsVortexEventOptionsStatic =
         [<EmitConstructor>] abstract Create: unit -> PhysicsVortexEventOptions
 
-    type [<RequireQualifiedAccess>] PhysicsRadialImpulseFalloff =
+    type PhysicsRadialImpulseFalloff =
         | Constant = 0
         | Linear = 1
 
-    type [<RequireQualifiedAccess>] PhysicsUpdraftMode =
+    type PhysicsUpdraftMode =
         | Center = 0
         | Perpendicular = 1
 
@@ -14787,7 +14894,7 @@ module Babylonjs_Physics_v2_physicsShape =
 
 module Babylonjs_Physics_v2_physicsMaterial =
 
-    type [<RequireQualifiedAccess>] PhysicsMaterialCombineMode =
+    type PhysicsMaterialCombineMode =
         | GEOMETRIC_MEAN = 0
         | MINIMUM = 1
         | MAXIMUM = 2
@@ -15118,7 +15225,7 @@ module Babylonjs_Physics_v2_characterController =
         abstract impulse: Vector3 with get, set
         abstract impulsePosition: Vector3 with get, set
 
-    type [<RequireQualifiedAccess>] CharacterSupportedState =
+    type CharacterSupportedState =
         | UNSUPPORTED = 0
         | SLIDING = 1
         | SUPPORTED = 2
@@ -15149,7 +15256,7 @@ module Babylonjs_Physics_v2_characterController =
         abstract dynamicFriction: float with get, set
         abstract priority: float with get, set
 
-    type [<RequireQualifiedAccess>] SurfaceConstraintInteractionStatus =
+    type SurfaceConstraintInteractionStatus =
         | OK = 0
         | FAILURE_3D = 1
         | FAILURE_2D = 2
@@ -15268,12 +15375,12 @@ module Babylonjs_Physics_v2_IPhysicsEnginePlugin =
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
     type GroundMesh = Babylonjs_Meshes_groundMesh_pure.GroundMesh
 
-    type [<RequireQualifiedAccess>] PhysicsConstraintAxisLimitMode =
+    type PhysicsConstraintAxisLimitMode =
         | FREE = 0
         | LIMITED = 1
         | LOCKED = 2
 
-    type [<RequireQualifiedAccess>] PhysicsConstraintAxis =
+    type PhysicsConstraintAxis =
         | LINEAR_X = 0
         | LINEAR_Y = 1
         | LINEAR_Z = 2
@@ -15282,7 +15389,7 @@ module Babylonjs_Physics_v2_IPhysicsEnginePlugin =
         | ANGULAR_Z = 5
         | LINEAR_DISTANCE = 6
 
-    type [<RequireQualifiedAccess>] PhysicsConstraintType =
+    type PhysicsConstraintType =
         | BALL_AND_SOCKET = 1
         | DISTANCE = 2
         | HINGE = 3
@@ -15291,7 +15398,7 @@ module Babylonjs_Physics_v2_IPhysicsEnginePlugin =
         | PRISMATIC = 6
         | SIX_DOF = 7
 
-    type [<RequireQualifiedAccess>] PhysicsShapeType =
+    type PhysicsShapeType =
         | SPHERE = 0
         | CAPSULE = 1
         | CYLINDER = 2
@@ -15301,7 +15408,7 @@ module Babylonjs_Physics_v2_IPhysicsEnginePlugin =
         | MESH = 6
         | HEIGHTFIELD = 7
 
-    type [<RequireQualifiedAccess>] PhysicsConstraintMotorType =
+    type PhysicsConstraintMotorType =
         | NONE = 0
         | VELOCITY = 1
         | POSITION = 2
@@ -15359,17 +15466,17 @@ module Babylonjs_Physics_v2_IPhysicsEnginePlugin =
         abstract inertia: Vector3 option with get, set
         abstract inertiaOrientation: Quaternion option with get, set
 
-    type [<RequireQualifiedAccess>] PhysicsMotionType =
+    type PhysicsMotionType =
         | STATIC = 0
         | ANIMATED = 1
         | DYNAMIC = 2
 
-    type [<RequireQualifiedAccess>] PhysicsPrestepType =
+    type PhysicsPrestepType =
         | DISABLED = 0
         | TELEPORT = 1
         | ACTION = 2
 
-    type [<RequireQualifiedAccess>] PhysicsActivationControl =
+    type PhysicsActivationControl =
         | SIMULATION_CONTROLLED = 0
         | ALWAYS_ACTIVE = 1
         | ALWAYS_INACTIVE = 2
@@ -16462,7 +16569,7 @@ module Babylonjs_Particles_subEmitter =
     type [<AllowNullLiteral>] IExports =
         abstract SubEmitter: SubEmitterStatic
 
-    type [<RequireQualifiedAccess>] SubEmitterType =
+    type SubEmitterType =
         | ATTACHED = 0
         | END = 1
 
@@ -16760,7 +16867,7 @@ module Babylonjs_Particles_pointsCloudSystem =
     type [<AllowNullLiteral>] IExports =
         abstract PointsCloudSystem: PointsCloudSystemStatic
 
-    type [<RequireQualifiedAccess>] PointColor =
+    type PointColor =
         | Color = 2
         | UV = 1
         | Random = 0
@@ -17820,12 +17927,12 @@ module Babylonjs_Particles_Node_nodeParticleBlockConnectionPoint =
     type [<AllowNullLiteral>] IExports =
         abstract NodeParticleConnectionPoint: NodeParticleConnectionPointStatic
 
-    type [<RequireQualifiedAccess>] NodeParticleConnectionPointCompatibilityStates =
+    type NodeParticleConnectionPointCompatibilityStates =
         | Compatible = 0
         | TypeIncompatible = 1
         | HierarchyIssue = 2
 
-    type [<RequireQualifiedAccess>] NodeParticleConnectionPointDirection =
+    type NodeParticleConnectionPointDirection =
         | Input = 0
         | Output = 1
 
@@ -17930,7 +18037,7 @@ module Babylonjs_Particles_Node_nodeParticleBlock =
 
 module Babylonjs_Particles_Node_Enums_nodeParticleSystemSources =
 
-    type [<RequireQualifiedAccess>] NodeParticleSystemSources =
+    type NodeParticleSystemSources =
         | None = 0
         | Time = 1
         | Delta = 2
@@ -17939,7 +18046,7 @@ module Babylonjs_Particles_Node_Enums_nodeParticleSystemSources =
 
 module Babylonjs_Particles_Node_Enums_nodeParticleContextualSources =
 
-    type [<RequireQualifiedAccess>] NodeParticleContextualSources =
+    type NodeParticleContextualSources =
         | None = 0
         | Position = 1
         | Direction = 2
@@ -17964,7 +18071,7 @@ module Babylonjs_Particles_Node_Enums_nodeParticleContextualSources =
 
 module Babylonjs_Particles_Node_Enums_nodeParticleBlockConnectionPointTypes =
 
-    type [<RequireQualifiedAccess>] NodeParticleBlockConnectionPointTypes =
+    type NodeParticleBlockConnectionPointTypes =
         | Int = 1
         | Float = 2
         | Vector2 = 4
@@ -18044,7 +18151,7 @@ module Babylonjs_Particles_Node_Blocks_particleVectorMathBlock_pure =
         abstract ParticleVectorMathBlock: ParticleVectorMathBlockStatic
         abstract RegisterParticleVectorMathBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ParticleVectorMathBlockOperations =
+    type ParticleVectorMathBlockOperations =
         | Dot = 0
         | Distance = 1
 
@@ -18089,7 +18196,7 @@ module Babylonjs_Particles_Node_Blocks_particleTrigonometryBlock_pure =
         abstract ParticleTrigonometryBlock: ParticleTrigonometryBlockStatic
         abstract RegisterParticleTrigonometryBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ParticleTrigonometryBlockOperations =
+    type ParticleTrigonometryBlockOperations =
         | Cos = 0
         | Sin = 1
         | Abs = 2
@@ -18207,7 +18314,7 @@ module Babylonjs_Particles_Node_Blocks_particleRandomBlock_pure =
         abstract ParticleRandomBlock: ParticleRandomBlockStatic
         abstract RegisterParticleRandomBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ParticleRandomBlockLocks =
+    type ParticleRandomBlockLocks =
         | None = 0
         | PerParticle = 1
         | PerSystem = 2
@@ -18236,7 +18343,7 @@ module Babylonjs_Particles_Node_Blocks_particleNumberMathBlock_pure =
         abstract ParticleNumberMathBlock: ParticleNumberMathBlockStatic
         abstract RegisterParticleNumberMathBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ParticleNumberMathBlockOperations =
+    type ParticleNumberMathBlockOperations =
         | Modulo = 0
         | Pow = 1
 
@@ -18285,7 +18392,7 @@ module Babylonjs_Particles_Node_Blocks_particleMathBlock_pure =
         abstract ParticleMathBlock: ParticleMathBlockStatic
         abstract RegisterParticleMathBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ParticleMathBlockOperations =
+    type ParticleMathBlockOperations =
         | Add = 0
         | Subtract = 1
         | Multiply = 2
@@ -18317,7 +18424,7 @@ module Babylonjs_Particles_Node_Blocks_particleLocalVariableBlock_pure =
         abstract ParticleLocalVariableBlock: ParticleLocalVariableBlockStatic
         abstract RegisterParticleLocalVariableBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ParticleLocalVariableBlockScope =
+    type ParticleLocalVariableBlockScope =
         | Particle = 0
         | Loop = 1
 
@@ -18443,7 +18550,7 @@ module Babylonjs_Particles_Node_Blocks_particleFloatToIntBlock_pure =
         abstract ParticleFloatToIntBlock: ParticleFloatToIntBlockStatic
         abstract RegisterParticleFloatToIntBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ParticleFloatToIntBlockOperations =
+    type ParticleFloatToIntBlockOperations =
         | Round = 0
         | Ceil = 1
         | Floor = 2
@@ -19238,7 +19345,7 @@ module Babylonjs_Particles_Node_Blocks_Conditions_particleConditionBlock_pure =
         abstract ParticleConditionBlock: ParticleConditionBlockStatic
         abstract RegisterParticleConditionBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ParticleConditionBlockTests =
+    type ParticleConditionBlockTests =
         | Equal = 0
         | NotEqual = 1
         | LessThan = 2
@@ -20018,7 +20125,7 @@ module Babylonjs_Misc_virtualJoystick =
     type [<AllowNullLiteral>] IExports =
         abstract VirtualJoystick: VirtualJoystickStatic
 
-    type [<RequireQualifiedAccess>] JoystickAxis =
+    type JoystickAxis =
         | X = 0
         | Y = 1
         | Z = 2
@@ -20326,7 +20433,7 @@ module Babylonjs_Misc_timer =
         abstract completeRate: float with get, set
         abstract payload: 'T with get, set
 
-    type [<RequireQualifiedAccess>] TimerState =
+    type TimerState =
         | INIT = 0
         | STARTED = 1
         | ENDED = 2
@@ -20362,7 +20469,7 @@ module Babylonjs_Misc_thinMinMaxReducer =
         abstract ThinMinMaxReducerPostProcess: ThinMinMaxReducerPostProcessStatic
         abstract ThinMinMaxReducer: ThinMinMaxReducerStatic
 
-    type [<RequireQualifiedAccess>] DepthTextureType =
+    type DepthTextureType =
         | NormalizedViewDepth = 0
         | ViewDepth = 1
         | ScreenDepth = 2
@@ -21234,7 +21341,7 @@ module Babylonjs_Misc_instantiationTools =
 
 module Babylonjs_Misc_iInspectable =
 
-    type [<RequireQualifiedAccess>] InspectableType =
+    type InspectableType =
         | Checkbox = 0
         | Slider = 1
         | Vector3 = 2
@@ -21322,7 +21429,7 @@ module Babylonjs_Misc_greasedLineTools =
         abstract DisposeEmptyColorsTexture: unit -> unit
         abstract BooleanToNumber: ?bool: bool -> GreasedLineToolsStaticBooleanToNumber
 
-    type [<RequireQualifiedAccess>] GreasedLineToolsStaticBooleanToNumber =
+    type GreasedLineToolsStaticBooleanToNumber =
         | N0 = 0
         | N1 = 1
 
@@ -21442,7 +21549,7 @@ module Babylonjs_Misc_fileTools_pure =
         abstract DecodeBase64UrlToBinary: uri: string -> ArrayBuffer
         abstract DecodeBase64UrlToString: string -> string
         abstract FileTools: IExportsFileTools with get, set
-        abstract _injectLTSFileTools: (string -> ArrayBuffer) -> (string -> string) -> IExports_injectLTSFileTools -> (string -> bool) -> (unit -> bool) -> (U2<string, File> -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) -> (U4<string, ArrayBuffer, ArrayBufferView, Blob> -> (U2<HTMLImageElement, ImageBitmap> -> unit) -> ((string) option -> (obj) option -> unit) -> Nullable<IOfflineProvider> -> (string) option -> (ImageBitmapOptions) option -> Nullable<HTMLImageElement>) -> (File -> (obj option -> unit) -> ((ProgressEvent<EventTarget> -> obj option)) option -> (bool) option -> ((ReadFileError -> unit)) option -> IFileRequest) -> (string -> (U2<string, ArrayBuffer> -> (WebRequest) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (IOfflineProvider) option -> (bool) option -> ((RequestFileError -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) -> (U2<string, ResizeArray<string>> -> {| crossOrigin: string option |} -> unit) -> unit
+        abstract _injectLTSFileTools: (string -> ArrayBuffer) -> (string -> string) -> IExports_injectLTSFileTools -> (string -> bool) -> (unit -> bool) -> (U2<string, File> -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) -> (U4<string, ArrayBuffer, ArrayBufferView, Blob> -> (U2<HTMLImageElement, ImageBitmap> -> unit) -> ((string) option -> (obj) option -> unit) -> Nullable<IOfflineProvider> -> (string) option -> (ImageBitmapOptions) option -> Nullable<HTMLImageElement>) -> (File -> (obj option -> unit) -> ((ProgressEvent -> obj option)) option -> (bool) option -> ((ReadFileError -> unit)) option -> IFileRequest) -> (string -> (U2<string, ArrayBuffer> -> (WebRequest) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> ((RequestFileError -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) -> (U2<string, ResizeArray<string>> -> {| crossOrigin: string option |} -> unit) -> unit
         abstract RegisterFileTools: unit -> unit
 
     type [<AllowNullLiteral>] LoadFileError =
@@ -21485,10 +21592,10 @@ module Babylonjs_Misc_fileTools_pure =
         abstract PreprocessUrl: obj option with get, set
         abstract IsBase64DataUrl: (string -> bool) with get, set
         abstract IsFileURL: (unit -> bool) with get, set
-        abstract LoadFile: (U2<string, File> -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) with get, set
+        abstract LoadFile: (U2<string, File> -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) with get, set
         abstract LoadImage: (U4<string, ArrayBuffer, Blob, ArrayBufferView> -> (U2<HTMLImageElement, ImageBitmap> -> unit) -> ((string) option -> (obj) option -> unit) -> Nullable<IOfflineProvider> -> (string) option -> (ImageBitmapOptions) option -> Nullable<HTMLImageElement>) with get, set
-        abstract ReadFile: (File -> (obj option -> unit) -> ((ProgressEvent<EventTarget> -> obj option)) option -> (bool) option -> ((ReadFileError -> unit)) option -> IFileRequest) with get, set
-        abstract RequestFile: (string -> (U2<string, ArrayBuffer> -> (WebRequest) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (IOfflineProvider) option -> (bool) option -> ((RequestFileError -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) with get, set
+        abstract ReadFile: (File -> (obj option -> unit) -> ((ProgressEvent -> obj option)) option -> (bool) option -> ((ReadFileError -> unit)) option -> IFileRequest) with get, set
+        abstract RequestFile: (string -> (U2<string, ArrayBuffer> -> (WebRequest) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> ((RequestFileError -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) with get, set
         abstract SetCorsBehavior: (U2<string, ResizeArray<string>> -> {| crossOrigin: string option |} -> unit) with get, set
 
     type [<AllowNullLiteral>] IExports_injectLTSFileTools =
@@ -21736,7 +21843,7 @@ module Babylonjs_Misc_deepCopier =
 
 module Babylonjs_Misc_decorators_serializationUtilities =
 
-    type [<RequireQualifiedAccess>] SerializedFieldType =
+    type SerializedFieldType =
         | VALUE = 0
         | TEXTURE = 1
         | COLOR3 = 2
@@ -21830,7 +21937,7 @@ module Babylonjs_Misc_decorators =
     module NativeOverride =
 
         type [<AllowNullLiteral>] IExports =
-            abstract filter: ('T -> (('This -> 'Args -> 'Return) -> ClassMethodDecoratorContext<'This, ('This -> 'Args -> 'Return)> -> ('This -> 'Args -> 'Return))) with get, set
+            abstract filter: obj with get, set
 
 module Babylonjs_Misc_dds_pure =
     type SphericalPolynomial = Babylonjs_Maths_sphericalPolynomial_pure.SphericalPolynomial
@@ -21960,7 +22067,7 @@ module Babylonjs_Misc_copyTextureToTexture =
     type [<AllowNullLiteral>] IExports =
         abstract CopyTextureToTexture: CopyTextureToTextureStatic
 
-    type [<RequireQualifiedAccess>] ConversionMode =
+    type ConversionMode =
         | None = 0
         | ToLinearSpace = 1
         | ToGammaSpace = 2
@@ -22123,7 +22230,7 @@ module Babylonjs_Misc_assetsManager =
         abstract EquiRectangularCubeTextureAssetTask: EquiRectangularCubeTextureAssetTaskStatic
         abstract AssetsManager: AssetsManagerStatic
 
-    type [<RequireQualifiedAccess>] AssetTaskState =
+    type AssetTaskState =
         | INIT = 0
         | RUNNING = 1
         | DONE = 2
@@ -23080,7 +23187,7 @@ module Babylonjs_Meshes_meshSimplification_common =
     type [<AllowNullLiteral>] SimplificationSettingsStatic =
         [<EmitConstructor>] abstract Create: quality: float * distance: float * ?optimizeMesh: bool -> SimplificationSettings
 
-    type [<RequireQualifiedAccess>] SimplificationType =
+    type SimplificationType =
         | QUADRATIC = 0
 
 module Babylonjs_Meshes_meshLODLevel =
@@ -25005,12 +25112,12 @@ module Babylonjs_Meshes_Node_nodeGeometryBlockConnectionPoint =
     type [<AllowNullLiteral>] IExports =
         abstract NodeGeometryConnectionPoint: NodeGeometryConnectionPointStatic
 
-    type [<RequireQualifiedAccess>] NodeGeometryConnectionPointCompatibilityStates =
+    type NodeGeometryConnectionPointCompatibilityStates =
         | Compatible = 0
         | TypeIncompatible = 1
         | HierarchyIssue = 2
 
-    type [<RequireQualifiedAccess>] NodeGeometryConnectionPointDirection =
+    type NodeGeometryConnectionPointDirection =
         | Input = 0
         | Output = 1
 
@@ -25205,7 +25312,7 @@ module Babylonjs_Meshes_Node_Interfaces_nodeGeometryExecutionContext =
 
 module Babylonjs_Meshes_Node_Enums_nodeGeometryContextualSources =
 
-    type [<RequireQualifiedAccess>] NodeGeometryContextualSources =
+    type NodeGeometryContextualSources =
         | None = 0
         | Positions = 1
         | Normals = 2
@@ -25228,7 +25335,7 @@ module Babylonjs_Meshes_Node_Enums_nodeGeometryContextualSources =
 
 module Babylonjs_Meshes_Node_Enums_nodeGeometryConnectionPointTypes =
 
-    type [<RequireQualifiedAccess>] NodeGeometryBlockConnectionPointTypes =
+    type NodeGeometryBlockConnectionPointTypes =
         | Int = 1
         | Float = 2
         | Vector2 = 4
@@ -25309,7 +25416,7 @@ module Babylonjs_Meshes_Node_Blocks_randomBlock_pure =
         abstract RandomBlock: RandomBlockStatic
         abstract RegisterRandomBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] RandomBlockLocks =
+    type RandomBlockLocks =
         | None = 0
         | LoopID = 1
         | InstanceID = 2
@@ -25427,7 +25534,7 @@ module Babylonjs_Meshes_Node_Blocks_mathBlock_pure =
         abstract MathBlock: MathBlockStatic
         abstract RegisterMathBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] MathBlockOperations =
+    type MathBlockOperations =
         | Add = 0
         | Subtract = 1
         | Multiply = 2
@@ -25459,7 +25566,7 @@ module Babylonjs_Meshes_Node_Blocks_mappingBlock_pure =
         abstract MappingBlock: MappingBlockStatic
         abstract RegisterMappingBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] MappingTypes =
+    type MappingTypes =
         | Spherical = 0
         | Cylindrical = 1
         | Cubic = 2
@@ -25532,7 +25639,7 @@ module Babylonjs_Meshes_Node_Blocks_geometryTrigonometryBlock_pure =
         abstract GeometryTrigonometryBlock: GeometryTrigonometryBlockStatic
         abstract RegisterGeometryTrigonometryBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] GeometryTrigonometryBlockOperations =
+    type GeometryTrigonometryBlockOperations =
         | Cos = 0
         | Sin = 1
         | Abs = 2
@@ -25953,7 +26060,7 @@ module Babylonjs_Meshes_Node_Blocks_geometryEaseBlock_pure =
         abstract GeometryEaseBlock: GeometryEaseBlockStatic
         abstract RegisterGeometryEaseBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] GeometryEaseBlockTypes =
+    type GeometryEaseBlockTypes =
         | EaseInSine = 0
         | EaseOutSine = 1
         | EaseInOutSine = 2
@@ -26061,7 +26168,7 @@ module Babylonjs_Meshes_Node_Blocks_geometryCurveBlock_pure =
         abstract GeometryCurveBlock: GeometryCurveBlockStatic
         abstract RegisterGeometryCurveBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] GeometryCurveBlockTypes =
+    type GeometryCurveBlockTypes =
         | EaseInSine = 0
         | EaseOutSine = 1
         | EaseInOutSine = 2
@@ -26206,7 +26313,7 @@ module Babylonjs_Meshes_Node_Blocks_extrudeGeometryBlock_pure =
         abstract ExtrudeGeometryBlock: ExtrudeGeometryBlockStatic
         abstract RegisterExtrudeGeometryBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ExtrudeGeometryCap =
+    type ExtrudeGeometryCap =
         | NoCap = 0
         | CapStart = 1
         | CapEnd = 2
@@ -26258,7 +26365,7 @@ module Babylonjs_Meshes_Node_Blocks_conditionBlock_pure =
         abstract ConditionBlock: ConditionBlockStatic
         abstract RegisterConditionBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ConditionBlockTests =
+    type ConditionBlockTests =
         | Equal = 0
         | NotEqual = 1
         | LessThan = 2
@@ -26358,7 +26465,7 @@ module Babylonjs_Meshes_Node_Blocks_booleanGeometryBlock_pure =
         abstract BooleanGeometryBlock: BooleanGeometryBlockStatic
         abstract RegisterBooleanGeometryBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] BooleanGeometryOperations =
+    type BooleanGeometryOperations =
         | Intersect = 0
         | Subtract = 1
         | Union = 2
@@ -27072,7 +27179,7 @@ module Babylonjs_Meshes_Node_Blocks_Set_aggregatorBlock_pure =
         abstract AggregatorBlock: AggregatorBlockStatic
         abstract RegisterAggregatorBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] Aggregations =
+    type Aggregations =
         | Max = 0
         | Min = 1
         | Sum = 2
@@ -27526,16 +27633,16 @@ module Babylonjs_Meshes_GreasedLine_greasedLineBaseMesh =
     type [<AllowNullLiteral>] IExports =
         abstract GreasedLineBaseMesh: GreasedLineBaseMeshStatic
 
-    type [<RequireQualifiedAccess>] GreasedLineRibbonPointsMode =
+    type GreasedLineRibbonPointsMode =
         | POINTS_MODE_POINTS = 0
         | POINTS_MODE_PATHS = 1
 
-    type [<RequireQualifiedAccess>] GreasedLineRibbonFacesMode =
+    type GreasedLineRibbonFacesMode =
         | FACES_MODE_SINGLE_SIDED = 0
         | FACES_MODE_SINGLE_SIDED_NO_BACKFACE_CULLING = 1
         | FACES_MODE_DOUBLE_SIDED = 2
 
-    type [<RequireQualifiedAccess>] GreasedLineRibbonAutoDirectionMode =
+    type GreasedLineRibbonAutoDirectionMode =
         | AUTO_DIRECTIONS_FROM_FIRST_SEGMENT = 0
         | AUTO_DIRECTIONS_FROM_ALL_SEGMENTS = 1
         | AUTO_DIRECTIONS_ENHANCED = 2
@@ -27722,7 +27829,7 @@ module Babylonjs_Meshes_GaussianSplatting_gaussianSplattingMeshBase_pure =
         abstract _gl: obj option with get, set
         abstract isWebGPU: bool option with get, set
 
-    type [<RequireQualifiedAccess>] PLYType =
+    type PLYType =
         | FLOAT = 0
         | INT = 1
         | UINT = 2
@@ -27730,7 +27837,7 @@ module Babylonjs_Meshes_GaussianSplatting_gaussianSplattingMeshBase_pure =
         | UCHAR = 4
         | UNDEFINED = 5
 
-    type [<RequireQualifiedAccess>] PLYValue =
+    type PLYValue =
         | MIN_X = 0
         | MIN_Y = 1
         | MIN_Z = 2
@@ -27975,7 +28082,7 @@ module Babylonjs_Meshes_GaussianSplatting_gaussianSplattingMeshBase_pure =
         abstract ConvertPLYToSplatAsync: data: ArrayBuffer -> Promise<ArrayBuffer>
         abstract ConvertPLYWithSHToSplatAsync: data: ArrayBuffer -> Promise<obj>
 
-    type [<RequireQualifiedAccess>] ISogPackInternalVersion =
+    type ISogPackInternalVersion =
         | N1 = 1
         | N2 = 2
 
@@ -28388,8 +28495,7 @@ module Babylonjs_Meshes_Compression_dracoCompression =
     type [<AllowNullLiteral>] IDracoCompressionConfiguration =
         abstract decoder: IDracoCodecConfiguration with get, set
 
-    type [<AllowNullLiteral>] IDracoCompressionOptions =
-        inherit obj
+    type [<AllowNullLiteral>] IDracoCompressionOptions = interface end
 
     type [<AllowNullLiteral>] DracoCompression =
         abstract dispose: unit -> unit
@@ -29255,7 +29361,7 @@ module Babylonjs_Meshes_Builders_greasedLineBuilder =
         abstract CompleteGreasedLineWidthTable: pointCount: float * widths: ResizeArray<float> * widthsDistribution: GreasedLineMeshWidthDistribution * ?defaultWidthUpper: float * ?defaultWidthLower: float -> ResizeArray<float>
         abstract CompleteGreasedLineColorTable: pointCount: float * colors: ResizeArray<Color3> * colorDistribution: GreasedLineMeshColorDistribution * defaultColor: Color3 -> ResizeArray<Color3>
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshColorDistribution =
+    type GreasedLineMeshColorDistribution =
         | COLOR_DISTRIBUTION_NONE = 0
         | COLOR_DISTRIBUTION_REPEAT = 1
         | COLOR_DISTRIBUTION_EVEN = 2
@@ -29263,7 +29369,7 @@ module Babylonjs_Meshes_Builders_greasedLineBuilder =
         | COLOR_DISTRIBUTION_END = 4
         | COLOR_DISTRIBUTION_START_END = 5
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshWidthDistribution =
+    type GreasedLineMeshWidthDistribution =
         | WIDTH_DISTRIBUTION_NONE = 0
         | WIDTH_DISTRIBUTION_REPEAT = 1
         | WIDTH_DISTRIBUTION_EVEN = 2
@@ -29514,25 +29620,22 @@ module Babylonjs_Maths_tensor =
     type [<AllowNullLiteral>] IExports =
         abstract Tensor: TensorStaticStatic
 
-    type Dimension<'T> =
-        obj
+    type [<AllowNullLiteral>] Dimension<'T> = interface end
 
-    type TensorValue =
-        U2<ResizeArray<float>, ResizeArray<TensorValue>>
+    type [<Erase>] TensorValue =
+        | TensorScalars of ResizeArray<float>
+        | NestedTensorValues of ResizeArray<TensorValue>
 
     type ValueOfTensor =
         ValueOfTensor<obj>
 
-    type ValueOfTensor<'T> =
-        obj
+    type [<AllowNullLiteral>] ValueOfTensor<'T> = interface end
 
-    type TensorNumberArray<'V when 'V :> TensorValue> =
-        obj
+    type [<AllowNullLiteral>] TensorNumberArray<'V> = interface end
 
-    type TensorLike<'T> =
-        obj
+    type [<AllowNullLiteral>] TensorLike<'T> = interface end
 
-    type [<AllowNullLiteral>] Tensor<'V, 'I when 'V :> TensorValue> =
+    type [<AllowNullLiteral>] Tensor<'V, 'I> =
         abstract dimension: obj
         abstract rank: float
         abstract getClassName: unit -> string
@@ -29545,20 +29648,20 @@ module Babylonjs_Maths_tensor =
         abstract set: [<ParamArray>] values: TensorNumberArray<'V> -> Tensor<'V, 'I>
         abstract setAll: value: float -> Tensor<'V, 'I>
         abstract add: other: DeepImmutable<'I> -> Tensor<'V, 'I>
-        abstract addToRef: other: DeepImmutable<'I> * result: 'R -> 'R when 'R :> 'I
+        abstract addToRef: other: DeepImmutable<'I> * result: 'I -> 'I
         abstract addInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract addInPlaceFromFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
         abstract subtract: other: DeepImmutable<'I> -> Tensor<'V, 'I>
-        abstract subtractToRef: other: DeepImmutable<'I> * result: 'R -> 'R when 'R :> 'I
+        abstract subtractToRef: other: DeepImmutable<'I> * result: 'I -> 'I
         abstract subtractInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract subtractFromFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
-        abstract subtractFromFloatsToRef: [<ParamArray>] args: obj * 'R -> 'R when 'R :> 'I
+        abstract subtractFromFloatsToRef: [<ParamArray>] args: obj * 'I -> 'I
         abstract multiply: other: DeepImmutable<'I> -> Tensor<'V, 'I>
-        abstract multiplyToRef: other: DeepImmutable<'I> * result: 'R -> 'R when 'R :> 'I
+        abstract multiplyToRef: other: DeepImmutable<'I> * result: 'I -> 'I
         abstract multiplyInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract multiplyByFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
         abstract divide: other: DeepImmutable<'I> -> Tensor<'V, 'I>
-        abstract divideToRef: other: DeepImmutable<'I> * result: 'R -> 'R when 'R :> 'I
+        abstract divideToRef: other: DeepImmutable<'I> * result: 'I -> 'I
         abstract divideInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract minimizeInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract minimizeInPlaceFromFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
@@ -29566,21 +29669,21 @@ module Babylonjs_Maths_tensor =
         abstract maximizeInPlaceFromFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
         abstract negate: unit -> Tensor<'V, 'I>
         abstract negateInPlace: unit -> Tensor<'V, 'I>
-        abstract negateToRef: result: 'R -> 'R when 'R :> 'I
+        abstract negateToRef: result: 'I -> 'I
         abstract scaleInPlace: scale: float -> Tensor<'V, 'I>
         abstract scale: scale: float -> Tensor<'V, 'I>
-        abstract scaleToRef: scale: float * result: 'R -> 'R when 'R :> 'I
-        abstract scaleAndAddToRef: scale: float * result: 'R -> 'R when 'R :> 'I
+        abstract scaleToRef: scale: float * result: 'I -> 'I
+        abstract scaleAndAddToRef: scale: float * result: 'I -> 'I
         abstract equals: other: DeepImmutable<'I> -> bool
         abstract equalsWithEpsilon: other: DeepImmutable<'I> * ?epsilon: float -> bool
         abstract equalsToFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> bool
         abstract floor: unit -> Tensor<'V, 'I>
-        abstract floorToRef: result: 'R -> 'R when 'R :> 'I
+        abstract floorToRef: result: 'I -> 'I
         abstract fract: unit -> Tensor<'V, 'I>
-        abstract fractToRef: result: 'R -> 'R when 'R :> 'I
+        abstract fractToRef: result: 'I -> 'I
         abstract clone: unit -> Tensor<'V, 'I>
 
-    type TensorStatic<'T when 'T :> Tensor<ResizeArray<obj option>, _I>> =
+    type TensorStatic<'T when 'T :> Tensor<ResizeArray<obj option>, TensorLike<'T>>> =
         TensorStatic<'T, TensorLike<'T>>
 
     type [<AllowNullLiteral>] TensorStatic<'T, '_I when 'T :> Tensor<ResizeArray<obj option>, '_I>> =
@@ -29709,8 +29812,9 @@ module Babylonjs_Maths_math_vector_pure =
     type Plane = Babylonjs_Maths_math_plane.Plane
     type TransformNode = Babylonjs_Meshes_transformNode_pure.TransformNode
     type Dimension<'T> = Babylonjs_Maths_tensor.Dimension<'T>
-    type Tensor<'V, 'I when 'V :> TensorValue> = Babylonjs_Maths_tensor.Tensor<'V, 'I>
+    type Tensor<'V, 'I> = Babylonjs_Maths_tensor.Tensor<'V, 'I>
     type TensorLike<'T> = Babylonjs_Maths_tensor.TensorLike<'T>
+    type TensorStatic<'T when 'T :> Tensor<ResizeArray<obj option>, TensorLike<'T>>> = Babylonjs_Maths_tensor.TensorStatic<'T>
     type TensorStatic<'T, '_I when 'T :> Tensor<ResizeArray<obj option>, '_I>> = Babylonjs_Maths_tensor.TensorStatic<'T, '_I>
     type IVector2Like = Babylonjs_Maths_math_like.IVector2Like
     type IVector3Like = Babylonjs_Maths_math_like.IVector3Like
@@ -29738,9 +29842,9 @@ module Babylonjs_Maths_math_vector_pure =
         abstract normalize: unit -> Vector<'N, 'I>
         abstract normalizeFromLength: len: float -> Vector<'N, 'I>
         abstract normalizeToNew: unit -> Vector<'N, 'I>
-        abstract normalizeToRef: reference: 'T -> 'T when 'T :> 'I
+        abstract normalizeToRef: reference: 'I -> 'I
 
-    type VectorStatic<'T when 'T :> Vector<ResizeArray<obj option>, _I>> =
+    type VectorStatic<'T when 'T :> Vector<ResizeArray<obj option>, TensorLike<'T>>> =
         VectorStatic<'T, TensorLike<'T>>
 
     type [<AllowNullLiteral>] VectorStatic<'T, '_I when 'T :> Vector<ResizeArray<obj option>, '_I>> =
@@ -30645,7 +30749,7 @@ module Babylonjs_Maths_math_path =
         abstract Path3D: Path3DStatic
         abstract Curve3: Curve3Static
 
-    type [<RequireQualifiedAccess>] Orientation =
+    type Orientation =
         | CW = 0
         | CCW = 1
 
@@ -30884,7 +30988,7 @@ module Babylonjs_Maths_math_color_pure =
     type Tuple<'T, 'N> = Babylonjs_types.Tuple<'T, 'N>
     type IColor3Like = Babylonjs_Maths_math_like.IColor3Like
     type IColor4Like = Babylonjs_Maths_math_like.IColor4Like
-    type Tensor<'V, 'I when 'V :> TensorValue> = Babylonjs_Maths_tensor.Tensor<'V, 'I>
+    type Tensor<'V, 'I> = Babylonjs_Maths_tensor.Tensor<'V, 'I>
 
     type [<AllowNullLiteral>] IExports =
         abstract Color3: Color3Static
@@ -31076,7 +31180,7 @@ module Babylonjs_Maths_math_axis =
     type [<AllowNullLiteral>] IExports =
         abstract Axis: AxisStatic
 
-    type [<RequireQualifiedAccess>] Space =
+    type Space =
         | LOCAL = 0
         | WORLD = 1
         | BONE = 2
@@ -31090,7 +31194,7 @@ module Babylonjs_Maths_math_axis =
         abstract Y: Vector3 with get, set
         abstract Z: Vector3 with get, set
 
-    type [<RequireQualifiedAccess>] Coordinate =
+    type Coordinate =
         | X = 0
         | Y = 1
         | Z = 2
@@ -31172,8 +31276,7 @@ module Babylonjs_Materials_uv_defines =
     type UVDefinesMixinConstructor =
         UVDefinesMixinConstructor<obj>
 
-    type UVDefinesMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] UVDefinesMixinConstructor<'T> = interface end
 
 module Babylonjs_Materials_uniformBufferEffectCommonAccessor =
     type IColor3Like = Babylonjs_Maths_math_like.IColor3Like
@@ -31295,6 +31398,12 @@ module Babylonjs_Materials_uniformBuffer =
         [<EmitConstructor>] abstract Create: engine: AbstractEngine * ?data: ResizeArray<float> * ?dynamic: bool * ?name: string * ?forceNoUniformBuffer: bool * ?trackUBOsInFrame: bool -> UniformBuffer
 
 module Babylonjs_Materials_standardMaterial_pure =
+    type [<AllowNullLiteral>] StandardMaterialBase_base = interface end
+
+    type [<AllowNullLiteral>] StandardMaterialDefinesBase_base = interface end
+
+    type [<AllowNullLiteral>] StandardMaterialDefines_base = interface end
+
     type SmartArray<'T> = Babylonjs_Misc_smartArray.SmartArray<'T>
     type IAnimatable = Babylonjs_Animations_animatable_interface.IAnimatable
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
@@ -31735,7 +31844,7 @@ module Babylonjs_Materials_shaderMaterial_pure =
 
 module Babylonjs_Materials_shaderLanguage =
 
-    type [<RequireQualifiedAccess>] ShaderLanguage =
+    type ShaderLanguage =
         | GLSL = 0
         | WGSL = 1
 
@@ -31777,8 +31886,7 @@ module Babylonjs_Materials_prepass_defines =
     type PrepassDefinesMixinConstructor =
         PrepassDefinesMixinConstructor<obj>
 
-    type PrepassDefinesMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] PrepassDefinesMixinConstructor<'T> = interface end
 
 module Babylonjs_Materials_prePassConfiguration =
     type Matrix = Babylonjs_Maths_math_vector_pure.Matrix
@@ -31869,7 +31977,7 @@ module Babylonjs_Materials_meshDebugPluginMaterial_pure =
         abstract MeshDebugPluginMaterial: MeshDebugPluginMaterialStatic
         abstract RegisterMeshDebugPluginMaterial: unit -> unit
 
-    type [<RequireQualifiedAccess>] MeshDebugMode =
+    type MeshDebugMode =
         | NONE = 0
         | TRIANGLES = 1
         | VERTICES = 2
@@ -32131,7 +32239,7 @@ module Babylonjs_Materials_materialPluginEvent =
     type [<AllowNullLiteral>] MaterialPluginHardBindForSubMesh =
         abstract subMesh: SubMesh with get, set
 
-    type [<RequireQualifiedAccess>] MaterialPluginEvent =
+    type MaterialPluginEvent =
         | Created = 1
         | Disposed = 2
         | GetDefineNames = 4
@@ -32270,7 +32378,7 @@ module Babylonjs_Materials_materialHelper_geometryrendering =
     type [<AllowNullLiteral>] IExports =
         abstract MaterialHelperGeometryRendering: MaterialHelperGeometryRenderingStatic
 
-    type [<RequireQualifiedAccess>] GeometryRenderingTextureClearType =
+    type GeometryRenderingTextureClearType =
         | Zero = 0
         | One = 1
         | MaxViewZ = 2
@@ -33008,8 +33116,7 @@ module Babylonjs_Materials_imageProcessingConfiguration_defines =
     type ImageProcessingDefinesMixinConstructor =
         ImageProcessingDefinesMixinConstructor<obj>
 
-    type ImageProcessingDefinesMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] ImageProcessingDefinesMixinConstructor<'T> = interface end
 
     type [<AllowNullLiteral>] ImageProcessingConfigurationDefines =
         inherit MaterialDefines
@@ -33046,8 +33153,7 @@ module Babylonjs_Materials_imageProcessing =
     type ImageProcessingMixinConstructor =
         ImageProcessingMixinConstructor<obj>
 
-    type ImageProcessingMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] ImageProcessingMixinConstructor<'T> = interface end
 
 module Babylonjs_Materials_iEffectFallbacks =
     type Effect = Babylonjs_Materials_effect_pure.Effect
@@ -33133,8 +33239,7 @@ module Babylonjs_Materials_environmentLighting_defines =
     type EnvironmentLightingDefinesMixinConstructor =
         EnvironmentLightingDefinesMixinConstructor<obj>
 
-    type EnvironmentLightingDefinesMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] EnvironmentLightingDefinesMixinConstructor<'T> = interface end
 
 module Babylonjs_Materials_effectRenderer_pure =
     type NonNullableFields<'T> = Babylonjs_types.NonNullableFields<'T>
@@ -33734,11 +33839,11 @@ module Babylonjs_Materials_Textures_textureProcessor =
         abstract ExtractMaxChannelAsync: name: string * input: ITextureProcessOperand * scene: Scene * ?includeAlpha: bool * ?outputColorSpace: TextureColorSpace * ?outputChannelMask: ChannelMask -> Promise<ITextureProcessOperand>
         abstract ExtractChannelAsync: name: string * input: ITextureProcessOperand * channel: TextureChannel * scene: Scene * ?outputColorSpace: TextureColorSpace * ?outputChannelMask: ChannelMask -> Promise<ITextureProcessOperand>
 
-    type [<RequireQualifiedAccess>] TextureColorSpace =
+    type TextureColorSpace =
         | Linear = 0
         | SRGB = 1
 
-    type [<RequireQualifiedAccess>] ChannelMask =
+    type ChannelMask =
         | R = 1
         | G = 2
         | B = 4
@@ -33746,7 +33851,7 @@ module Babylonjs_Materials_Textures_textureProcessor =
         | RGB = 7
         | RGBA = 15
 
-    type [<RequireQualifiedAccess>] TextureChannel =
+    type TextureChannel =
         | RGBA = 0
         | R = 1
         | G = 2
@@ -34352,12 +34457,12 @@ module Babylonjs_Materials_Textures_mirrorTexture_pure =
 
 module Babylonjs_Materials_Textures_ktx2decoderTypes =
 
-    type [<RequireQualifiedAccess>] SourceTextureFormat =
+    type SourceTextureFormat =
         | ETC1S = 0
         | UASTC4x4 = 1
         | RGBA32 = 2
 
-    type [<RequireQualifiedAccess>] TranscodeTarget =
+    type TranscodeTarget =
         | ASTC_4X4_RGBA = 0
         | ASTC_4x4_RGBA = 0
         | BC7_RGBA = 1
@@ -34371,7 +34476,7 @@ module Babylonjs_Materials_Textures_ktx2decoderTypes =
         | R8 = 9
         | RG8 = 10
 
-    type [<RequireQualifiedAccess>] EngineFormat =
+    type EngineFormat =
         | COMPRESSED_RGBA_BPTC_UNORM_EXT = 36492
         | COMPRESSED_RGBA_ASTC_4X4_KHR = 37808
         | COMPRESSED_RGB_S3TC_DXT1_EXT = 33776
@@ -34451,7 +34556,7 @@ module Babylonjs_Materials_Textures_internalTexture =
     type [<AllowNullLiteral>] IExports =
         abstract InternalTexture: InternalTextureStatic
 
-    type [<RequireQualifiedAccess>] InternalTextureSource =
+    type InternalTextureSource =
         | Unknown = 0
         | Url = 1
         | Temp = 2
@@ -35453,7 +35558,7 @@ module Babylonjs_Materials_Textures_Loaders_EXR_exrLoader_core =
         abstract Predictor: source: Uint8Array -> unit
         abstract InterleaveScalar: source: Uint8Array * out: Uint8Array -> unit
 
-    type [<RequireQualifiedAccess>] CompressionCodes =
+    type CompressionCodes =
         | NO_COMPRESSION = 0
         | RLE_COMPRESSION = 1
         | ZIPS_COMPRESSION = 2
@@ -35486,7 +35591,7 @@ module Babylonjs_Materials_Textures_Loaders_EXR_exrLoader_configuration =
     type [<AllowNullLiteral>] IExports =
         abstract ExrLoaderGlobalConfiguration: ExrLoaderGlobalConfigurationStatic
 
-    type [<RequireQualifiedAccess>] EXROutputType =
+    type EXROutputType =
         | Float = 0
         | HalfFloat = 1
 
@@ -36165,6 +36270,12 @@ module Babylonjs_Materials_PBR_pbrBaseSimpleMaterial =
         [<EmitConstructor>] abstract Create: name: string * ?scene: Scene -> PBRBaseSimpleMaterial
 
 module Babylonjs_Materials_PBR_pbrBaseMaterial_pure =
+    type [<AllowNullLiteral>] PBRBaseMaterialBase_base = interface end
+
+    type [<AllowNullLiteral>] PBRMaterialDefinesBase_base = interface end
+
+    type [<AllowNullLiteral>] PBRMaterialDefines_base = interface end
+
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type Scene = Babylonjs_scene_pure.Scene
     type Matrix = Babylonjs_Maths_math_vector_pure.Matrix
@@ -36609,6 +36720,14 @@ module Babylonjs_Materials_PBR_pbrAnisotropicConfiguration =
         [<EmitConstructor>] abstract Create: material: PBRBaseMaterial * ?addToPluginList: bool -> PBRAnisotropicConfiguration
 
 module Babylonjs_Materials_PBR_openpbrMaterial_pure =
+    type [<AllowNullLiteral>] OpenPBRMaterialBase_base = interface end
+
+    type [<AllowNullLiteral>] OpenPBRMaterialDefinesBase_base = interface end
+
+    type [<AllowNullLiteral>] OpenPBRMaterialDefinesWithEnvLighting_base = interface end
+
+    type [<AllowNullLiteral>] OpenPBRMaterialDefines_base = interface end
+
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type Scene = Babylonjs_scene_pure.Scene
     type Color3 = Babylonjs_Maths_math_color_pure.Color3
@@ -37227,13 +37346,13 @@ module Babylonjs_Materials_Node_nodeMaterialBlockConnectionPoint =
     type [<AllowNullLiteral>] IExports =
         abstract NodeMaterialConnectionPoint: NodeMaterialConnectionPointStatic
 
-    type [<RequireQualifiedAccess>] NodeMaterialConnectionPointCompatibilityStates =
+    type NodeMaterialConnectionPointCompatibilityStates =
         | Compatible = 0
         | TypeIncompatible = 1
         | TargetIncompatible = 2
         | HierarchyIssue = 3
 
-    type [<RequireQualifiedAccess>] NodeMaterialConnectionPointDirection =
+    type NodeMaterialConnectionPointDirection =
         | Input = 0
         | Output = 1
 
@@ -37422,6 +37541,12 @@ module Babylonjs_Materials_Node_nodeMaterial_types =
                 abstract CreateDefault: NodeMaterialCreateDefaultType with get, set
 
 module Babylonjs_Materials_Node_nodeMaterial_pure =
+    type [<AllowNullLiteral>] NodeMaterialBase_base = interface end
+
+    type [<AllowNullLiteral>] NodeMaterialDefinesBase_base = interface end
+
+    type [<AllowNullLiteral>] NodeMaterialDefines_base = interface end
+
     type NodeMaterialBlock = Babylonjs_Materials_Node_nodeMaterialBlock.NodeMaterialBlock
     type PushMaterial = Babylonjs_Materials_pushMaterial.PushMaterial
     type Scene = Babylonjs_scene_pure.Scene
@@ -37642,7 +37767,7 @@ module Babylonjs_Materials_Node_Optimizers_nodeMaterialOptimizer =
 
 module Babylonjs_Materials_Node_Enums_nodeMaterialSystemValues =
 
-    type [<RequireQualifiedAccess>] NodeMaterialSystemValues =
+    type NodeMaterialSystemValues =
         | World = 1
         | View = 2
         | Projection = 3
@@ -37659,7 +37784,7 @@ module Babylonjs_Materials_Node_Enums_nodeMaterialSystemValues =
 
 module Babylonjs_Materials_Node_Enums_nodeMaterialModes =
 
-    type [<RequireQualifiedAccess>] NodeMaterialModes =
+    type NodeMaterialModes =
         | Material = 0
         | PostProcess = 1
         | Particle = 2
@@ -37669,7 +37794,7 @@ module Babylonjs_Materials_Node_Enums_nodeMaterialModes =
 
 module Babylonjs_Materials_Node_Enums_nodeMaterialBlockTargets =
 
-    type [<RequireQualifiedAccess>] NodeMaterialBlockTargets =
+    type NodeMaterialBlockTargets =
         | Vertex = 1
         | Fragment = 2
         | Neutral = 4
@@ -37677,7 +37802,7 @@ module Babylonjs_Materials_Node_Enums_nodeMaterialBlockTargets =
 
 module Babylonjs_Materials_Node_Enums_nodeMaterialBlockConnectionPointTypes =
 
-    type [<RequireQualifiedAccess>] NodeMaterialBlockConnectionPointTypes =
+    type NodeMaterialBlockConnectionPointTypes =
         | Float = 1
         | Int = 2
         | Vector2 = 4
@@ -37693,7 +37818,7 @@ module Babylonjs_Materials_Node_Enums_nodeMaterialBlockConnectionPointTypes =
 
 module Babylonjs_Materials_Node_Enums_nodeMaterialBlockConnectionPointMode =
 
-    type [<RequireQualifiedAccess>] NodeMaterialBlockConnectionPointMode =
+    type NodeMaterialBlockConnectionPointMode =
         | Uniform = 0
         | Attribute = 1
         | Varying = 2
@@ -37736,7 +37861,7 @@ module Babylonjs_Materials_Node_Blocks_waveBlock_pure =
         abstract WaveBlock: WaveBlockStatic
         abstract RegisterWaveBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] WaveBlockKind =
+    type WaveBlockKind =
         | SawTooth = 0
         | Square = 1
         | Triangle = 2
@@ -37883,7 +38008,7 @@ module Babylonjs_Materials_Node_Blocks_trigonometryBlock_pure =
         abstract TrigonometryBlock: TrigonometryBlockStatic
         abstract RegisterTrigonometryBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] TrigonometryBlockOperations =
+    type TrigonometryBlockOperations =
         | Cos = 0
         | Sin = 1
         | Abs = 2
@@ -38524,7 +38649,7 @@ module Babylonjs_Materials_Node_Blocks_meshAttributeExistsBlock_pure =
         abstract MeshAttributeExistsBlock: MeshAttributeExistsBlockStatic
         abstract RegisterMeshAttributeExistsBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] MeshAttributeExistsBlockTypes =
+    type MeshAttributeExistsBlockTypes =
         | None = 0
         | Normal = 1
         | Tangent = 2
@@ -38941,7 +39066,7 @@ module Babylonjs_Materials_Node_Blocks_curveBlock_pure =
         abstract CurveBlock: CurveBlockStatic
         abstract RegisterCurveBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] CurveBlockTypes =
+    type CurveBlockTypes =
         | EaseInSine = 0
         | EaseOutSine = 1
         | EaseInOutSine = 2
@@ -39015,7 +39140,7 @@ module Babylonjs_Materials_Node_Blocks_conditionalBlock_pure =
         abstract ConditionalBlock: ConditionalBlockStatic
         abstract RegisterConditionalBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] ConditionalBlockConditions =
+    type ConditionalBlockConditions =
         | Equal = 0
         | NotEqual = 1
         | LessThan = 2
@@ -40045,7 +40170,7 @@ module Babylonjs_Materials_Node_Blocks_Input_inputBlock_pure =
 
 module Babylonjs_Materials_Node_Blocks_Input_animatedInputBlockTypes =
 
-    type [<RequireQualifiedAccess>] AnimatedInputBlockTypes =
+    type AnimatedInputBlockTypes =
         | None = 0
         | Time = 1
         | RealTime = 2
@@ -40410,7 +40535,7 @@ module Babylonjs_Materials_Node_Blocks_Fragment_fragmentOutputBlock_pure =
         abstract FragmentOutputBlock: FragmentOutputBlockStatic
         abstract RegisterFragmentOutputBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] FragmentOutputBlockColorSpace =
+    type FragmentOutputBlockColorSpace =
         | NoColorSpace = 0
         | Gamma = 1
         | Linear = 2
@@ -41184,17 +41309,17 @@ module Babylonjs_Materials_GreasedLine_greasedLineMaterialInterfaces =
         abstract setColors: colors: Nullable<ResizeArray<Color3>> * ``lazy``: bool * ?forceNewTexture: bool -> unit
         abstract updateLazy: unit -> unit
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshMaterialType =
+    type GreasedLineMeshMaterialType =
         | MATERIAL_TYPE_STANDARD = 0
         | MATERIAL_TYPE_PBR = 1
         | MATERIAL_TYPE_SIMPLE = 2
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshColorMode =
+    type GreasedLineMeshColorMode =
         | COLOR_MODE_SET = 0
         | COLOR_MODE_ADD = 1
         | COLOR_MODE_MULTIPLY = 2
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshColorDistributionType =
+    type GreasedLineMeshColorDistributionType =
         | COLOR_DISTRIBUTION_TYPE_SEGMENT = 0
         | COLOR_DISTRIBUTION_TYPE_LINE = 1
 
@@ -41443,6 +41568,8 @@ module Babylonjs_Materials_GaussianSplatting_gaussianSplattingDebugMaterialPlugi
         [<EmitIndexer>] abstract Item: pointName: string -> string with get, set
 
 module Babylonjs_Materials_Background_backgroundMaterial_pure =
+    type [<AllowNullLiteral>] BackgroundMaterialBase_base = interface end
+
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type int = Babylonjs_types.int
     type float = obj
@@ -41634,7 +41761,7 @@ module Babylonjs_Loading_sceneLoader =
         abstract loadAsync: scene: Scene * data: obj * rootUrl: string * ?onProgress: (ISceneLoaderProgressEvent -> unit) * ?fileName: string -> Promise<unit>
         abstract loadAssetContainerAsync: scene: Scene * data: obj * rootUrl: string * ?onProgress: (ISceneLoaderProgressEvent -> unit) * ?fileName: string -> Promise<AssetContainer>
 
-    type [<RequireQualifiedAccess>] SceneLoaderAnimationGroupLoadingMode =
+    type SceneLoaderAnimationGroupLoadingMode =
         | Clean = 0
         | Stop = 1
         | Sync = 2
@@ -43560,7 +43687,7 @@ module Babylonjs_Inputs_pointerPickingConfiguration =
 module Babylonjs_Helpers_videoDome =
     type Scene = Babylonjs_scene_pure.Scene
     type VideoTexture = Babylonjs_Materials_Textures_videoTexture_pure.VideoTexture
-    type TextureDome<'T when 'T :> Texture> = Babylonjs_Helpers_textureDome.TextureDome<'T>
+    type TextureDome<'T> = Babylonjs_Helpers_textureDome.TextureDome<'T>
 
     type [<AllowNullLiteral>] IExports =
         abstract VideoDome: VideoDomeStatic
@@ -43590,7 +43717,7 @@ module Babylonjs_Helpers_textureDome =
     type [<AllowNullLiteral>] IExports =
         abstract TextureDome: TextureDomeStatic
 
-    type [<AllowNullLiteral>] TextureDome<'T when 'T :> Texture> =
+    type [<AllowNullLiteral>] TextureDome<'T> =
         inherit TransformNode
         abstract onError: Nullable<((string) option -> (obj) option -> unit)> with get, set
         abstract _useDirectMapping: bool with get, set
@@ -43662,7 +43789,7 @@ module Babylonjs_Helpers_sceneHelpers_pure =
 module Babylonjs_Helpers_photoDome =
     type Scene = Babylonjs_scene_pure.Scene
     type Texture = Babylonjs_Materials_Textures_texture_pure.Texture
-    type TextureDome<'T when 'T :> Texture> = Babylonjs_Helpers_textureDome.TextureDome<'T>
+    type TextureDome<'T> = Babylonjs_Helpers_textureDome.TextureDome<'T>
 
     type [<AllowNullLiteral>] IExports =
         abstract PhotoDome: PhotoDomeStatic
@@ -44315,11 +44442,11 @@ module Babylonjs_Gizmos_gizmo =
         abstract active: bool with get, set
         abstract dragBehavior: PointerDragBehavior with get, set
 
-    type [<RequireQualifiedAccess>] GizmoAnchorPoint =
+    type GizmoAnchorPoint =
         | Origin = 0
         | Pivot = 1
 
-    type [<RequireQualifiedAccess>] GizmoCoordinatesMode =
+    type GizmoCoordinatesMode =
         | World = 0
         | Local = 1
 
@@ -44477,7 +44604,7 @@ module Babylonjs_Gizmos_boundingBoxGizmo =
         abstract scalingSnapDistance: float with get, set
         abstract rotationSnapDistance: float with get, set
 
-    type [<RequireQualifiedAccess>] DragOperation =
+    type DragOperation =
         | Rotation = 0
         | Scaling = 1
 
@@ -44677,7 +44804,7 @@ module Babylonjs_Gamepads_xboxGamepad =
     type [<AllowNullLiteral>] IExports =
         abstract Xbox360Pad: Xbox360PadStatic
 
-    type [<RequireQualifiedAccess>] Xbox360Button =
+    type Xbox360Button =
         | A = 0
         | B = 1
         | X = 2
@@ -44689,7 +44816,7 @@ module Babylonjs_Gamepads_xboxGamepad =
         | LeftStick = 10
         | RightStick = 11
 
-    type [<RequireQualifiedAccess>] Xbox360Dpad =
+    type Xbox360Dpad =
         | Up = 12
         | Down = 13
         | Left = 14
@@ -44853,7 +44980,7 @@ module Babylonjs_Gamepads_dualShockGamepad =
     type [<AllowNullLiteral>] IExports =
         abstract DualShockPad: DualShockPadStatic
 
-    type [<RequireQualifiedAccess>] DualShockButton =
+    type DualShockButton =
         | Cross = 0
         | Circle = 1
         | Square = 2
@@ -44865,7 +44992,7 @@ module Babylonjs_Gamepads_dualShockGamepad =
         | LeftStick = 10
         | RightStick = 11
 
-    type [<RequireQualifiedAccess>] DualShockDpad =
+    type DualShockDpad =
         | Up = 12
         | Down = 13
         | Left = 14
@@ -45002,7 +45129,7 @@ module Babylonjs_FrameGraph_frameGraphTextureManager =
         abstract aliasHandle: FrameGraphTextureHandle option with get, set
         abstract historyTexture: bool option with get, set
 
-    type [<RequireQualifiedAccess>] FrameGraphTextureNamespace =
+    type FrameGraphTextureNamespace =
         | Task = 0
         | Graph = 1
         | External = 2
@@ -45216,7 +45343,7 @@ module Babylonjs_FrameGraph_frameGraph =
     type IDisposable = Babylonjs_scene_pure.IDisposable
     type Camera = Babylonjs_Cameras_camera_pure.Camera
     type FrameGraphObjectRendererTask = BABYLON.FrameGraphObjectRendererTask
-    type FrameGraphPass<'T when 'T :> FrameGraphContext> = Babylonjs_FrameGraph_Passes_pass.FrameGraphPass<'T>
+    type FrameGraphPass<'T> = Babylonjs_FrameGraph_Passes_pass.FrameGraphPass<'T>
     type FrameGraphRenderPass = Babylonjs_FrameGraph_Passes_renderPass.FrameGraphRenderPass
     type FrameGraphObjectListPass = Babylonjs_FrameGraph_Passes_objectListPass.FrameGraphObjectListPass
     type FrameGraphContext = Babylonjs_FrameGraph_frameGraphContext.FrameGraphContext
@@ -46595,7 +46722,7 @@ module Babylonjs_FrameGraph_Tasks_Misc_lightingVolumeTask =
 module Babylonjs_FrameGraph_Tasks_Misc_executeTask =
     type FrameGraph = BABYLON.FrameGraph
     type FrameGraphContext = BABYLON.FrameGraphContext
-    type FrameGraphPass<'T when 'T :> FrameGraphContext> = BABYLON.FrameGraphPass<'T>
+    type FrameGraphPass<'T> = BABYLON.FrameGraphPass<'T>
     type FrameGraphTask = Babylonjs_FrameGraph_frameGraphTask.FrameGraphTask
 
     type [<AllowNullLiteral>] IExports =
@@ -46640,7 +46767,7 @@ module Babylonjs_FrameGraph_Tasks_Misc_computeShaderTask =
     type ExternalTexture = BABYLON.ExternalTexture
     type FrameGraph = BABYLON.FrameGraph
     type FrameGraphContext = BABYLON.FrameGraphContext
-    type FrameGraphPass<'T when 'T :> FrameGraphContext> = BABYLON.FrameGraphPass<'T>
+    type FrameGraphPass<'T> = BABYLON.FrameGraphPass<'T>
     type IComputeShaderOptions = Babylonjs_Compute_computeShader_pure.IComputeShaderOptions
     type IComputeShaderPath = BABYLON.IComputeShaderPath
     type InternalTexture = BABYLON.InternalTexture
@@ -46825,7 +46952,7 @@ module Babylonjs_FrameGraph_Passes_renderPass =
     type FrameGraphTextureHandle = BABYLON.FrameGraphTextureHandle
     type FrameGraphTask = BABYLON.FrameGraphTask
     type FrameGraphRenderTarget = BABYLON.FrameGraphRenderTarget
-    type FrameGraphPass<'T when 'T :> FrameGraphContext> = Babylonjs_FrameGraph_Passes_pass.FrameGraphPass<'T>
+    type FrameGraphPass<'T> = Babylonjs_FrameGraph_Passes_pass.FrameGraphPass<'T>
 
     type [<AllowNullLiteral>] IExports =
         abstract FrameGraphRenderPass: FrameGraphRenderPassStatic
@@ -46870,7 +46997,7 @@ module Babylonjs_FrameGraph_Passes_pass =
     type [<AllowNullLiteral>] IExports =
         abstract FrameGraphPass: FrameGraphPassStatic
 
-    type [<AllowNullLiteral>] FrameGraphPass<'T when 'T :> FrameGraphContext> =
+    type [<AllowNullLiteral>] FrameGraphPass<'T> =
         inherit IFrameGraphPass
         abstract name: string with get, set
         abstract _parentTask: FrameGraphTask
@@ -46893,7 +47020,7 @@ module Babylonjs_FrameGraph_Passes_objectListPass =
     type FrameGraphContext = BABYLON.FrameGraphContext
     type FrameGraphObjectList = BABYLON.FrameGraphObjectList
     type FrameGraphTask = BABYLON.FrameGraphTask
-    type FrameGraphPass<'T when 'T :> FrameGraphContext> = Babylonjs_FrameGraph_Passes_pass.FrameGraphPass<'T>
+    type FrameGraphPass<'T> = Babylonjs_FrameGraph_Passes_pass.FrameGraphPass<'T>
 
     type [<AllowNullLiteral>] IExports =
         abstract FrameGraphObjectListPass: FrameGraphObjectListPassStatic
@@ -47161,7 +47288,7 @@ module Babylonjs_FrameGraph_Node_Types_nodeRenderGraphTypes =
         abstract autoConfigure: bool option with get, set
         abstract autoFillExternalInputs: bool option with get, set
 
-    type [<RequireQualifiedAccess>] NodeRenderGraphBlockConnectionPointTypes =
+    type NodeRenderGraphBlockConnectionPointTypes =
         | Texture = 1
         | TextureBackBuffer = 2
         | TextureBackBufferDepthStencilAttachment = 4
@@ -47193,12 +47320,12 @@ module Babylonjs_FrameGraph_Node_Types_nodeRenderGraphTypes =
         | Object = -2147483648
         | All = -1
 
-    type [<RequireQualifiedAccess>] NodeRenderGraphConnectionPointCompatibilityStates =
+    type NodeRenderGraphConnectionPointCompatibilityStates =
         | Compatible = 0
         | TypeIncompatible = 1
         | HierarchyIssue = 2
 
-    type [<RequireQualifiedAccess>] NodeRenderGraphConnectionPointDirection =
+    type NodeRenderGraphConnectionPointDirection =
         | Input = 0
         | Output = 1
 
@@ -47316,7 +47443,7 @@ module Babylonjs_FrameGraph_Node_Blocks_inputBlock_pure =
         abstract ``type``: NodeRenderGraphBlockConnectionPointTypes
         abstract setDefaultValue: unit -> unit
         abstract value: Nullable<NodeRenderGraphValueType> with get, set
-        abstract getTypedValue: unit -> 'T when 'T :> NodeRenderGraphValueType
+        abstract getTypedValue: unit -> 'T
         abstract getInternalTextureFromValue: unit -> Nullable<InternalTexture>
         abstract getClassName: unit -> string
         abstract output: NodeRenderGraphConnectionPoint
@@ -48973,7 +49100,7 @@ module Babylonjs_FlowGraph_flowGraphValidator =
         abstract ValidateFlowGraph: flowGraph: FlowGraph -> IFlowGraphValidationResult
         abstract ValidateFlowGraphWithBlockList: flowGraph: FlowGraph * allKnownBlocks: ResizeArray<FlowGraphBlock> -> IFlowGraphValidationResult
 
-    type [<RequireQualifiedAccess>] FlowGraphValidationSeverity =
+    type FlowGraphValidationSeverity =
         | Error = 0
         | Warning = 1
 
@@ -48992,7 +49119,7 @@ module Babylonjs_FlowGraph_flowGraphValidator =
 
 module Babylonjs_FlowGraph_flowGraphSignalConnection_pure =
     type FlowGraphExecutionBlock = Babylonjs_FlowGraph_flowGraphExecutionBlock.FlowGraphExecutionBlock
-    type FlowGraphConnection<'BlockT, 'ConnectedToT when 'ConnectedToT :> IConnectable> = Babylonjs_FlowGraph_flowGraphConnection.FlowGraphConnection<'BlockT, 'ConnectedToT>
+    type FlowGraphConnection<'BlockT, 'ConnectedToT> = Babylonjs_FlowGraph_flowGraphConnection.FlowGraphConnection<'BlockT, 'ConnectedToT>
     type FlowGraphContext = Babylonjs_FlowGraph_flowGraphContext.FlowGraphContext
 
     type [<AllowNullLiteral>] IExports =
@@ -49095,12 +49222,16 @@ module Babylonjs_FlowGraph_flowGraphRichTypes_pure =
         [<EmitConstructor>] abstract Create: typeName: string * defaultValue: 'T * ?animationType: float -> RichType<'T>
 
 module Babylonjs_FlowGraph_flowGraphPathConverterComponent =
+    type IObjectInfo<'T> = Babylonjs_ObjectModel_objectModelInterfaces.IObjectInfo<'T>
     type IObjectInfo<'T, 'O> = Babylonjs_ObjectModel_objectModelInterfaces.IObjectInfo<'T, 'O>
     type IPathToObjectConverter<'T> = Babylonjs_ObjectModel_objectModelInterfaces.IPathToObjectConverter<'T>
     type FlowGraphBlock = Babylonjs_FlowGraph_flowGraphBlock.FlowGraphBlock
     type FlowGraphContext = Babylonjs_FlowGraph_flowGraphContext.FlowGraphContext
     type FlowGraphDataConnection<'T> = Babylonjs_FlowGraph_flowGraphDataConnection_pure.FlowGraphDataConnection<'T>
     type FlowGraphInteger = Babylonjs_FlowGraph_CustomTypes_flowGraphInteger_pure.FlowGraphInteger
+    type IObjectAccessor = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor
+    type IObjectAccessor<'GLTFTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType>
+    type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType>
     type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType>
 
     type [<AllowNullLiteral>] IExports =
@@ -49118,7 +49249,11 @@ module Babylonjs_FlowGraph_flowGraphPathConverterComponent =
 module Babylonjs_FlowGraph_flowGraphPathConverter =
     type FlowGraphContext = Babylonjs_FlowGraph_flowGraphContext.FlowGraphContext
     type IPathToObjectConverter<'T> = Babylonjs_ObjectModel_objectModelInterfaces.IPathToObjectConverter<'T>
+    type IObjectInfo<'T> = Babylonjs_ObjectModel_objectModelInterfaces.IObjectInfo<'T>
     type IObjectInfo<'T, 'O> = Babylonjs_ObjectModel_objectModelInterfaces.IObjectInfo<'T, 'O>
+    type IObjectAccessor = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor
+    type IObjectAccessor<'GLTFTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType>
+    type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType>
     type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType>
 
     type [<AllowNullLiteral>] IExports =
@@ -49145,7 +49280,7 @@ module Babylonjs_FlowGraph_flowGraphParser =
     type ISerializedFlowGraph = Babylonjs_FlowGraph_typeDefinitions.ISerializedFlowGraph
     type ISerializedFlowGraphBlock = Babylonjs_FlowGraph_typeDefinitions.ISerializedFlowGraphBlock
     type ISerializedFlowGraphContext = Babylonjs_FlowGraph_typeDefinitions.ISerializedFlowGraphContext
-    type FlowGraphConnection<'BlockT, 'ConnectedToT when 'ConnectedToT :> IConnectable> = Babylonjs_FlowGraph_flowGraphConnection.FlowGraphConnection<'BlockT, 'ConnectedToT>
+    type FlowGraphConnection<'BlockT, 'ConnectedToT> = Babylonjs_FlowGraph_flowGraphConnection.FlowGraphConnection<'BlockT, 'ConnectedToT>
 
     type [<AllowNullLiteral>] IExports =
         abstract GetDataOutConnectionByUniqueId: blocks: ResizeArray<FlowGraphBlock> * uniqueId: string -> FlowGraphDataConnection<obj option>
@@ -49295,7 +49430,7 @@ module Babylonjs_FlowGraph_flowGraphEventBlock =
 module Babylonjs_FlowGraph_flowGraphDataConnection_pure =
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type FlowGraphBlock = Babylonjs_FlowGraph_flowGraphBlock.FlowGraphBlock
-    type FlowGraphConnection<'BlockT, 'ConnectedToT when 'ConnectedToT :> IConnectable> = Babylonjs_FlowGraph_flowGraphConnection.FlowGraphConnection<'BlockT, 'ConnectedToT>
+    type FlowGraphConnection<'BlockT, 'ConnectedToT> = Babylonjs_FlowGraph_flowGraphConnection.FlowGraphConnection<'BlockT, 'ConnectedToT>
     type FlowGraphConnectionType = Babylonjs_FlowGraph_flowGraphConnection.FlowGraphConnectionType
     type FlowGraphContext = Babylonjs_FlowGraph_flowGraphContext.FlowGraphContext
     type RichType<'T> = Babylonjs_FlowGraph_flowGraphRichTypes_pure.RichType<'T>
@@ -49327,11 +49462,15 @@ module Babylonjs_FlowGraph_flowGraphDataConnection_pure =
         [<EmitConstructor>] abstract Create: name: string * connectionType: FlowGraphConnectionType * ownerBlock: FlowGraphBlock * richType: RichType<'T> * ?_defaultValue: 'T * ?_optional: bool -> FlowGraphDataConnection<'T>
 
 module Babylonjs_FlowGraph_flowGraphCoordinator =
+    type IReadonlyObservable = Babylonjs_Misc_observable_pure.IReadonlyObservable
     type IReadonlyObservable<'T> = Babylonjs_Misc_observable_pure.IReadonlyObservable<'T>
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
     type Scene = Babylonjs_scene_pure.Scene
     type FlowGraph = Babylonjs_FlowGraph_flowGraph.FlowGraph
     type IPathToObjectConverter<'T> = Babylonjs_ObjectModel_objectModelInterfaces.IPathToObjectConverter<'T>
+    type IObjectAccessor = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor
+    type IObjectAccessor<'GLTFTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType>
+    type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType>
     type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType>
     type IAssetContainer = Babylonjs_IAssetContainer.IAssetContainer
 
@@ -49414,7 +49553,7 @@ module Babylonjs_FlowGraph_flowGraphContext =
         abstract enableLogging: bool with get, set
         abstract hasVariable: name: string -> bool
         abstract setVariable: name: string * value: obj option -> unit
-        abstract getAsset: ``type``: 'T * index: float -> Nullable<AssetType<'T>> when 'T :> FlowGraphAssetType
+        abstract getAsset: ``type``: 'T * index: float -> Nullable<AssetType<'T>>
         abstract getVariable: name: string -> obj option
         abstract userVariables: FlowGraphContextUserVariables
         abstract setVariableType: name: string * typeName: string -> unit
@@ -49464,7 +49603,7 @@ module Babylonjs_FlowGraph_flowGraphConnection =
     type [<AllowNullLiteral>] IExports =
         abstract FlowGraphConnection: FlowGraphConnectionStatic
 
-    type [<RequireQualifiedAccess>] FlowGraphConnectionType =
+    type FlowGraphConnectionType =
         | Input = 0
         | Output = 1
 
@@ -49475,7 +49614,7 @@ module Babylonjs_FlowGraph_flowGraphConnection =
         abstract _connectionType: FlowGraphConnectionType with get, set
         abstract connectTo: point: IConnectable -> unit
 
-    type [<AllowNullLiteral>] FlowGraphConnection<'BlockT, 'ConnectedToT when 'ConnectedToT :> IConnectable> =
+    type [<AllowNullLiteral>] FlowGraphConnection<'BlockT, 'ConnectedToT> =
         inherit IConnectable
         abstract _ownerBlock: 'BlockT with get, set
         abstract _connectedPoint: Array<'ConnectedToT> with get, set
@@ -49502,6 +49641,9 @@ module Babylonjs_FlowGraph_flowGraphBlock =
     type FlowGraphDataConnection<'T> = Babylonjs_FlowGraph_flowGraphDataConnection_pure.FlowGraphDataConnection<'T>
     type RichType<'T> = Babylonjs_FlowGraph_flowGraphRichTypes_pure.RichType<'T>
     type ISerializedFlowGraphBlock = Babylonjs_FlowGraph_typeDefinitions.ISerializedFlowGraphBlock
+    type IObjectAccessor = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor
+    type IObjectAccessor<'GLTFTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType>
+    type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType>
     type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType>
     type Scene = Babylonjs_scene_pure.Scene
     type IPathToObjectConverter<'T> = Babylonjs_ObjectModel_objectModelInterfaces.IPathToObjectConverter<'T>
@@ -49587,8 +49729,7 @@ module Babylonjs_FlowGraph_flowGraphAssetsContext =
         | [<CompiledName("Camera")>] Camera
         | [<CompiledName("Light")>] Light
 
-    type AssetType<'T> =
-        obj
+    type [<AllowNullLiteral>] AssetType<'T> = interface end
 
 module Babylonjs_FlowGraph_flowGraph =
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
@@ -49597,6 +49738,9 @@ module Babylonjs_FlowGraph_flowGraph =
     type FlowGraphContext = Babylonjs_FlowGraph_flowGraphContext.FlowGraphContext
     type FlowGraphBlock = Babylonjs_FlowGraph_flowGraphBlock.FlowGraphBlock
     type FlowGraphCoordinator = Babylonjs_FlowGraph_flowGraphCoordinator.FlowGraphCoordinator
+    type IObjectAccessor = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor
+    type IObjectAccessor<'GLTFTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType>
+    type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType>
     type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType>
     type IPathToObjectConverter<'T> = Babylonjs_ObjectModel_objectModelInterfaces.IPathToObjectConverter<'T>
     type IAssetContainer = Babylonjs_IAssetContainer.IAssetContainer
@@ -49611,7 +49755,7 @@ module Babylonjs_FlowGraph_flowGraph =
         abstract editorURL: string option with get, set
         abstract flowGraphEditorConfig: {| hostScene: Scene option; hostElement: HTMLElement option; attachToLiveScene: bool option |} option with get, set
 
-    type [<RequireQualifiedAccess>] FlowGraphState =
+    type FlowGraphState =
         | Stopped = 0
         | Started = 1
         | Paused = 2
@@ -49788,7 +49932,7 @@ module Babylonjs_FlowGraph_Blocks_flowGraphBlockNames =
         | [<CompiledName("FlowGraphEBlock")>] E
         | [<CompiledName("FlowGraphPIBlock")>] PI
         | [<CompiledName("FlowGraphInfBlock")>] Inf
-        | [<CompiledName("FlowGraphNaNBlock")>] NaN
+        | [<CompiledName("FlowGraphNaNBlock")>] NotANumber
         | [<CompiledName("FlowGraphRandomBlock")>] Random
         | [<CompiledName("FlowGraphAddBlock")>] Add
         | [<CompiledName("FlowGraphSubtractBlock")>] Subtract
@@ -49985,11 +50129,11 @@ module Babylonjs_FlowGraph_Blocks_Execution_flowGraphSetPropertyBlock_pure =
         abstract FlowGraphSetPropertyBlock: FlowGraphSetPropertyBlockStatic
         abstract RegisterFlowGraphSetPropertyBlock: unit -> unit
 
-    type [<AllowNullLiteral>] IFlowGraphSetPropertyBlockConfiguration<'O when 'O :> FlowGraphAssetType> =
+    type [<AllowNullLiteral>] IFlowGraphSetPropertyBlockConfiguration<'O> =
         abstract propertyName: string option with get, set
         abstract target: AssetType<'O> option with get, set
 
-    type [<AllowNullLiteral>] FlowGraphSetPropertyBlock<'P, 'O when 'O :> FlowGraphAssetType> =
+    type [<AllowNullLiteral>] FlowGraphSetPropertyBlock<'P, 'O> =
         inherit FlowGraphExecutionBlockWithOutSignal
         abstract config: IFlowGraphSetPropertyBlockConfiguration<'O> with get, set
         abstract value: FlowGraphDataConnection<'P>
@@ -50243,7 +50387,7 @@ module Babylonjs_FlowGraph_Blocks_Execution_ControlFlow_flowGraphSwitchBlock_pur
         inherit IFlowGraphBlockConfiguration
         abstract cases: ResizeArray<'T> with get, set
 
-    type [<AllowNullLiteral>] FlowGraphSwitchBlock<'T when 'T :> FlowGraphNumber> =
+    type [<AllowNullLiteral>] FlowGraphSwitchBlock<'T> =
         inherit FlowGraphExecutionBlock
         abstract config: IFlowGraphSwitchBlockConfiguration<'T> with get, set
         abstract case: FlowGraphDataConnection<'T>
@@ -50727,7 +50871,7 @@ module Babylonjs_FlowGraph_Blocks_Execution_Animation_flowGraphEasingBlock_pure 
         abstract FlowGraphEasingBlock: FlowGraphEasingBlockStatic
         abstract RegisterFlowGraphEasingBlock: unit -> unit
 
-    type [<RequireQualifiedAccess>] EasingFunctionType =
+    type EasingFunctionType =
         | CircleEase = 0
         | BackEase = 1
         | BounceEase = 2
@@ -51357,13 +51501,13 @@ module Babylonjs_FlowGraph_Blocks_Data_flowGraphGetPropertyBlock_pure =
         abstract FlowGraphGetPropertyBlock: FlowGraphGetPropertyBlockStatic
         abstract RegisterFlowGraphGetPropertyBlock: unit -> unit
 
-    type [<AllowNullLiteral>] IFlowGraphGetPropertyBlockConfiguration<'O when 'O :> FlowGraphAssetType> =
+    type [<AllowNullLiteral>] IFlowGraphGetPropertyBlockConfiguration<'O> =
         inherit IFlowGraphBlockConfiguration
         abstract propertyName: string option with get, set
         abstract object: AssetType<'O> option with get, set
         abstract resetToDefaultWhenUndefined: bool option with get, set
 
-    type [<AllowNullLiteral>] FlowGraphGetPropertyBlock<'P, 'O when 'O :> FlowGraphAssetType> =
+    type [<AllowNullLiteral>] FlowGraphGetPropertyBlock<'P, 'O> =
         inherit FlowGraphCachedOperationBlock<'P>
         abstract config: IFlowGraphGetPropertyBlockConfiguration<'O> with get, set
         abstract object: FlowGraphDataConnection<AssetType<'O>>
@@ -51396,7 +51540,7 @@ module Babylonjs_FlowGraph_Blocks_Data_flowGraphGetAssetBlock_pure =
         abstract index: U2<float, FlowGraphInteger> option with get, set
         abstract useIndexAsUniqueId: bool option with get, set
 
-    type [<AllowNullLiteral>] FlowGraphGetAssetBlock<'T when 'T :> FlowGraphAssetType> =
+    type [<AllowNullLiteral>] FlowGraphGetAssetBlock<'T> =
         inherit FlowGraphBlock
         abstract config: IFlowGraphGetAssetBlockConfiguration<'T> with get, set
         abstract value: FlowGraphDataConnection<Nullable<AssetType<'T>>>
@@ -51749,6 +51893,9 @@ module Babylonjs_FlowGraph_Blocks_Data_Transformers_flowGraphJsonPointerParserBl
     type FlowGraphContext = Babylonjs_FlowGraph_flowGraphContext.FlowGraphContext
     type FlowGraphDataConnection<'T> = Babylonjs_FlowGraph_flowGraphDataConnection_pure.FlowGraphDataConnection<'T>
     type FlowGraphPathConverterComponent = Babylonjs_FlowGraph_flowGraphPathConverterComponent.FlowGraphPathConverterComponent
+    type IObjectAccessor = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor
+    type IObjectAccessor<'GLTFTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType>
+    type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType>
     type IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType> = Babylonjs_FlowGraph_typeDefinitions.IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, 'BabylonValueType>
     type IPathToObjectConverter<'T> = Babylonjs_ObjectModel_objectModelInterfaces.IPathToObjectConverter<'T>
     type Animation = Babylonjs_Animations_animation_pure.Animation
@@ -51765,7 +51912,7 @@ module Babylonjs_FlowGraph_Blocks_Data_Transformers_flowGraphJsonPointerParserBl
         abstract pathConverter: IPathToObjectConverter<IObjectAccessor> with get, set
         abstract outputValue: bool option with get, set
 
-    type [<AllowNullLiteral>] FlowGraphJsonPointerParserBlock<'P, 'O when 'O :> FlowGraphAssetType> =
+    type [<AllowNullLiteral>] FlowGraphJsonPointerParserBlock<'P, 'O> =
         inherit FlowGraphCachedOperationBlock<'P>
         abstract config: IFlowGraphJsonPointerParserBlockConfiguration with get, set
         abstract object: FlowGraphDataConnection<'O>
@@ -52792,7 +52939,7 @@ module Babylonjs_Events_deviceInputEvents =
     type [<AllowNullLiteral>] IExports =
         abstract EventConstants: EventConstantsStatic
 
-    type [<RequireQualifiedAccess>] DeviceInputEventType =
+    type DeviceInputEventType =
         | PointerMove = 0
         | PointerDown = 1
         | PointerUp = 2
@@ -53464,7 +53611,7 @@ module Babylonjs_Engines_thinNativeEngine_pure =
         abstract _uploadArrayBufferViewToTexture: texture: InternalTexture * imageData: ArrayBufferView * ?faceIndex: float * ?lod: float -> unit
         abstract getFontOffset: font: string -> {| ascent: float; height: float; descent: float |}
         abstract flushFramebuffer: unit -> unit
-        abstract _readTexturePixels: texture: InternalTexture * width: float * height: float * ?faceIndex: float * ?level: float * ?buffer: Nullable<ArrayBufferView<ArrayBuffer>> * ?_flushRenderer: bool * ?_noDataConversion: bool * ?x: float * ?y: float -> Promise<ArrayBufferView>
+        abstract _readTexturePixels: texture: InternalTexture * width: float * height: float * ?faceIndex: float * ?level: float * ?buffer: Nullable<ArrayBufferView> * ?_flushRenderer: bool * ?_noDataConversion: bool * ?x: float * ?y: float -> Promise<ArrayBufferView>
         abstract startTimeQuery: unit -> Nullable<_TimeToken>
         abstract endTimeQuery: token: _TimeToken -> int
 
@@ -55395,7 +55542,7 @@ module Babylonjs_Engines_abstractEngine_functions =
     type [<AllowNullLiteral>] IExports =
         abstract EngineFunctionContext: {| loadFile: (string -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent -> unit)) option -> (Nullable<IOfflineProvider>) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> IFileRequest) option; loadImage: (U4<string, ArrayBuffer, ArrayBufferView, Blob> -> (U2<HTMLImageElement, ImageBitmap> -> unit) -> ((string) option -> (obj) option -> unit) -> Nullable<IOfflineProvider> -> (string) option -> (ImageBitmapOptions) option -> (Nullable<AbstractEngine>) option -> Nullable<HTMLImageElement>) option |}
         abstract _ConcatenateShader: source: string * defines: Nullable<string> * ?shaderVersion: string -> string
-        abstract _LoadFile: url: string * onSuccess: (U2<string, ArrayBuffer> -> (string) option -> unit) * ?onProgress: (obj option -> unit) * ?offlineProvider: Nullable<IOfflineProvider> * ?useArrayBuffer: bool * ?onError: ((IWebRequest) option -> (obj) option -> unit) * ?injectedLoadFile: (string -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (Nullable<IOfflineProvider>) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> IFileRequest) -> IFileRequest
+        abstract _LoadFile: url: string * onSuccess: (U2<string, ArrayBuffer> -> (string) option -> unit) * ?onProgress: (obj option -> unit) * ?offlineProvider: Nullable<IOfflineProvider> * ?useArrayBuffer: bool * ?onError: ((IWebRequest) option -> (obj) option -> unit) * ?injectedLoadFile: (string -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent -> unit)) option -> (Nullable<IOfflineProvider>) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> IFileRequest) -> IFileRequest
         abstract getHostDocument: ?renderingCanvas: Nullable<HTMLCanvasElement> -> Nullable<Document>
         abstract _GetGlobalDefines: ?defines: _GetGlobalDefinesDefines * ?isNDCHalfZRange: bool * ?useReverseDepthBuffer: bool * ?useExactSrgbConversions: bool -> string option
         abstract allocateAndCopyTypedBuffer: ``type``: float * sizeOrDstBuffer: U2<float, ArrayBufferLike> * ?sizeInBytes: bool * ?copyBuffer: ArrayBuffer -> ArrayBufferView
@@ -55799,7 +55946,7 @@ module Babylonjs_Engines_WebGPU_webgpuTextureHelper =
         abstract GetDepthFormatOnly: format: GPUTextureFormat -> GPUTextureFormat
         abstract GetSample: sampleCount: float -> WebGPUTextureHelperStaticGetSample
 
-    type [<RequireQualifiedAccess>] WebGPUTextureHelperStaticGetSample =
+    type WebGPUTextureHelperStaticGetSample =
         | N1 = 1
         | N4 = 4
 
@@ -56853,7 +57000,7 @@ module Babylonjs_Engines_WebGPU_webgpuConstants =
         | Pending
         | Mapped
 
-    type [<RequireQualifiedAccess>] BufferUsage =
+    type BufferUsage =
         | MapRead = 1
         | MapWrite = 2
         | CopySrc = 4
@@ -56865,7 +57012,7 @@ module Babylonjs_Engines_WebGPU_webgpuConstants =
         | Indirect = 256
         | QueryResolve = 512
 
-    type [<RequireQualifiedAccess>] MapMode =
+    type MapMode =
         | Read = 1
         | Write = 2
 
@@ -56874,7 +57021,7 @@ module Babylonjs_Engines_WebGPU_webgpuConstants =
         | [<CompiledName("2d")>] E2d
         | [<CompiledName("3d")>] E3d
 
-    type [<RequireQualifiedAccess>] TextureUsage =
+    type TextureUsage =
         | CopySrc = 1
         | CopyDst = 2
         | TextureBinding = 4
@@ -57021,7 +57168,7 @@ module Babylonjs_Engines_WebGPU_webgpuConstants =
         | [<CompiledName("greater-equal")>] GreaterEqual
         | Always
 
-    type [<RequireQualifiedAccess>] ShaderStage =
+    type ShaderStage =
         | Vertex = 1
         | Fragment = 2
         | Compute = 4
@@ -57076,7 +57223,7 @@ module Babylonjs_Engines_WebGPU_webgpuConstants =
         | Front
         | Back
 
-    type [<RequireQualifiedAccess>] ColorWrite =
+    type ColorWrite =
         | Red = 1
         | Green = 2
         | Blue = 4
@@ -59113,7 +59260,7 @@ module Babylonjs_Engines_Native_nativeInterfaces =
     type [<AllowNullLiteral>] INativeDataStreamConstructorStatic =
         [<EmitConstructor>] abstract Create: requestFlushCallback: (unit -> unit) -> INativeDataStreamConstructor
 
-    type [<RequireQualifiedAccess>] NativeTraceLevel =
+    type NativeTraceLevel =
         | Mark = 1
         | Log = 2
 
@@ -59601,7 +59748,7 @@ module Babylonjs_Engines_Extensions_engine_computeShader_pure =
         abstract numErrors: float with get, set
         abstract messages: ResizeArray<ComputeCompilationMessagesMessages> with get, set
 
-    type [<RequireQualifiedAccess>] ComputeBindingType =
+    type ComputeBindingType =
         | Texture = 0
         | StorageTexture = 1
         | UniformBuffer = 2
@@ -60016,15 +60163,14 @@ module Babylonjs_DeviceInput_internalDeviceSourceManager_pure =
     type DeviceType = Babylonjs_DeviceInput_InputDevices_deviceEnums.DeviceType
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
     type IDeviceInputSystem = Babylonjs_DeviceInput_inputInterfaces.IDeviceInputSystem
-    type DeviceSource<'T when 'T :> DeviceType> = Babylonjs_DeviceInput_InputDevices_deviceSource.DeviceSource<'T>
+    type DeviceSource<'T> = Babylonjs_DeviceInput_InputDevices_deviceSource.DeviceSource<'T>
     type IUIEvent = Babylonjs_Events_deviceInputEvents.IUIEvent
     type AbstractEngine = Babylonjs_Engines_abstractEngine_pure.AbstractEngine
 
     type [<AllowNullLiteral>] IExports =
         abstract InternalDeviceSourceManager: InternalDeviceSourceManagerStatic
 
-    type Distribute<'T> =
-        obj
+    type [<AllowNullLiteral>] Distribute<'T> = interface end
 
     type DeviceSourceType =
         Distribute<DeviceType>
@@ -60080,14 +60226,13 @@ module Babylonjs_DeviceInput_InputDevices_deviceTypes =
     type SwitchInput = Babylonjs_DeviceInput_InputDevices_deviceEnums.SwitchInput
     type DualSenseInput = Babylonjs_DeviceInput_InputDevices_deviceEnums.DualSenseInput
 
-    type DeviceInput<'T when 'T :> DeviceType> =
-        obj
+    type [<AllowNullLiteral>] DeviceInput<'T> = interface end
 
 module Babylonjs_DeviceInput_InputDevices_deviceSourceManager =
     type DeviceType = Babylonjs_DeviceInput_InputDevices_deviceEnums.DeviceType
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
-    type DeviceSource<'T when 'T :> DeviceType> = Babylonjs_DeviceInput_InputDevices_deviceSource.DeviceSource<'T>
+    type DeviceSource<'T> = Babylonjs_DeviceInput_InputDevices_deviceSource.DeviceSource<'T>
     type IObservableManager = Babylonjs_DeviceInput_internalDeviceSourceManager_pure.IObservableManager
     type DeviceSourceType = Babylonjs_DeviceInput_internalDeviceSourceManager_pure.DeviceSourceType
     type IDisposable = Babylonjs_scene_pure.IDisposable
@@ -60102,12 +60247,12 @@ module Babylonjs_DeviceInput_InputDevices_deviceSourceManager =
         inherit IObservableManager
         abstract onDeviceConnectedObservable: Observable<DeviceSourceType>
         abstract onDeviceDisconnectedObservable: Observable<DeviceSourceType>
-        abstract getDeviceSource: deviceType: 'T * ?deviceSlot: float -> Nullable<DeviceSource<'T>> when 'T :> DeviceType
-        abstract getDeviceSources: deviceType: 'T -> ResizeArray<DeviceSource<'T>> when 'T :> DeviceType
+        abstract getDeviceSource: deviceType: 'T * ?deviceSlot: float -> Nullable<DeviceSource<'T>>
+        abstract getDeviceSources: deviceType: 'T -> ResizeArray<DeviceSource<'T>>
         abstract dispose: unit -> unit
         abstract _addDevice: deviceSource: DeviceSourceType -> unit
         abstract _removeDevice: deviceType: DeviceType * deviceSlot: float -> unit
-        abstract _onInputChanged: deviceType: 'T * deviceSlot: float * eventData: IUIEvent -> unit when 'T :> DeviceType
+        abstract _onInputChanged: deviceType: 'T * deviceSlot: float * eventData: IUIEvent -> unit
 
     type [<AllowNullLiteral>] DeviceSourceManagerStatic =
         [<EmitConstructor>] abstract Create: engine: AbstractEngine -> DeviceSourceManager
@@ -60115,7 +60260,7 @@ module Babylonjs_DeviceInput_InputDevices_deviceSourceManager =
 module Babylonjs_DeviceInput_InputDevices_deviceSource =
     type DeviceType = Babylonjs_DeviceInput_InputDevices_deviceEnums.DeviceType
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
-    type DeviceInput<'T when 'T :> DeviceType> = Babylonjs_DeviceInput_InputDevices_deviceTypes.DeviceInput<'T>
+    type DeviceInput<'T> = Babylonjs_DeviceInput_InputDevices_deviceTypes.DeviceInput<'T>
     type IDeviceInputSystem = Babylonjs_DeviceInput_inputInterfaces.IDeviceInputSystem
     type IKeyboardEvent = Babylonjs_Events_deviceInputEvents.IKeyboardEvent
     type IPointerEvent = Babylonjs_Events_deviceInputEvents.IPointerEvent
@@ -60124,10 +60269,9 @@ module Babylonjs_DeviceInput_InputDevices_deviceSource =
     type [<AllowNullLiteral>] IExports =
         abstract DeviceSource: DeviceSourceStatic
 
-    type DeviceSourceEvent<'T when 'T :> DeviceType> =
-        obj
+    type [<AllowNullLiteral>] DeviceSourceEvent<'T> = interface end
 
-    type [<AllowNullLiteral>] DeviceSource<'T when 'T :> DeviceType> =
+    type [<AllowNullLiteral>] DeviceSource<'T> =
         abstract deviceType: 'T
         abstract deviceSlot: float
         abstract onInputChangedObservable: Observable<DeviceSourceEvent<'T>>
@@ -60138,7 +60282,7 @@ module Babylonjs_DeviceInput_InputDevices_deviceSource =
 
 module Babylonjs_DeviceInput_InputDevices_deviceEnums =
 
-    type [<RequireQualifiedAccess>] DeviceType =
+    type DeviceType =
         | Generic = 0
         | Keyboard = 1
         | Mouse = 2
@@ -60148,7 +60292,7 @@ module Babylonjs_DeviceInput_InputDevices_deviceEnums =
         | Switch = 6
         | DualSense = 7
 
-    type [<RequireQualifiedAccess>] PointerInput =
+    type PointerInput =
         | Horizontal = 0
         | Vertical = 1
         | LeftClick = 2
@@ -60161,7 +60305,7 @@ module Babylonjs_DeviceInput_InputDevices_deviceEnums =
         | MouseWheelZ = 9
         | Move = 12
 
-    type [<RequireQualifiedAccess>] NativePointerInput =
+    type NativePointerInput =
         | Horizontal = 0
         | Vertical = 1
         | LeftClick = 2
@@ -60175,7 +60319,7 @@ module Babylonjs_DeviceInput_InputDevices_deviceEnums =
         | DeltaHorizontal = 10
         | DeltaVertical = 11
 
-    type [<RequireQualifiedAccess>] DualShockInput =
+    type DualShockInput =
         | Cross = 0
         | Circle = 1
         | Square = 2
@@ -60199,7 +60343,7 @@ module Babylonjs_DeviceInput_InputDevices_deviceEnums =
         | RStickXAxis = 20
         | RStickYAxis = 21
 
-    type [<RequireQualifiedAccess>] DualSenseInput =
+    type DualSenseInput =
         | Cross = 0
         | Circle = 1
         | Square = 2
@@ -60223,7 +60367,7 @@ module Babylonjs_DeviceInput_InputDevices_deviceEnums =
         | RStickXAxis = 20
         | RStickYAxis = 21
 
-    type [<RequireQualifiedAccess>] XboxInput =
+    type XboxInput =
         | A = 0
         | B = 1
         | X = 2
@@ -60246,7 +60390,7 @@ module Babylonjs_DeviceInput_InputDevices_deviceEnums =
         | RStickXAxis = 19
         | RStickYAxis = 20
 
-    type [<RequireQualifiedAccess>] SwitchInput =
+    type SwitchInput =
         | B = 0
         | A = 1
         | Y = 2
@@ -60278,7 +60422,7 @@ module Babylonjs_Decorators_nodeDecorator =
         abstract editableInPropertyPage: displayName: string * ?propertyType: PropertyTypeForEdition * ?groupName: string * ?options: IEditablePropertyOption -> (obj -> {| name: U2<string, Symbol>; metadata: DecoratorMetadataObject |} -> unit)
         abstract GetEditableProperties: target: obj option -> ResizeArray<IPropertyDescriptionForEdition>
 
-    type [<RequireQualifiedAccess>] PropertyTypeForEdition =
+    type PropertyTypeForEdition =
         | Boolean = 0
         | Float = 1
         | Int = 2
@@ -60528,7 +60672,7 @@ module Babylonjs_Debug_debugLayer_pure =
         abstract contextMenuOverride: ResizeArray<IInspectorContextMenuType> option with get, set
         abstract skipDefaultFontLoading: bool option with get, set
 
-    type [<RequireQualifiedAccess>] DebugLayerTab =
+    type DebugLayerTab =
         | Properties = 0
         | Debug = 1
         | Statistics = 2
@@ -61239,7 +61383,7 @@ module Babylonjs_Collisions_gpuPicker =
         abstract pickedPoints: ResizeArray<Nullable<Vector3>> option with get, set
         abstract normals: ResizeArray<Nullable<Vector3>> option with get, set
 
-    type [<RequireQualifiedAccess>] GPUMultiPickReadbackStrategy =
+    type GPUMultiPickReadbackStrategy =
         | Auto = 0
         | Rectangle = 1
         | Individual = 2
@@ -61381,8 +61525,9 @@ module Babylonjs_Cameras_targetCameraMovement =
     type CameraMovement = Babylonjs_Cameras_cameraMovement.CameraMovement
     type Scene = Babylonjs_scene_pure.Scene
     type Vector3 = Babylonjs_Maths_math_vector_pure.Vector3
-    type InterpolatingBehavior<'C when 'C :> Camera> = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior<'C>
-    type InputMapper<'THandlers when 'THandlers :> Record<string, obj>> = Babylonjs_Cameras_inputMapper.InputMapper<'THandlers>
+    type InterpolatingBehavior = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior
+    type InterpolatingBehavior<'C> = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior<'C>
+    type InputMapper<'THandlers> = Babylonjs_Cameras_inputMapper.InputMapper<'THandlers>
 
     type [<AllowNullLiteral>] IExports =
         abstract TargetCameraMovement: TargetCameraMovementStatic
@@ -61541,7 +61686,7 @@ module Babylonjs_Cameras_inputMapper =
     type [<AllowNullLiteral>] InteractionName<'THandlers> =
         interface end
 
-    type [<AllowNullLiteral>] InputMapper<'THandlers when 'THandlers :> Record<string, obj>> =
+    type [<AllowNullLiteral>] InputMapper<'THandlers> =
         abstract inputMap: ResizeArray<InputMapEntry<InteractionName<'THandlers>>> with get, set
         abstract handlers: 'THandlers
         [<Emit("$0.resolveInteraction('pointer',$1)")>] abstract resolveInteraction_pointer: ?currentConditions: InputConditions -> PointerInputMapEntry<InteractionName<'THandlers>> option
@@ -61575,9 +61720,10 @@ module Babylonjs_Cameras_geospatialCameraMovement =
     type Scene = Babylonjs_scene_pure.Scene
     type PickingInfo = Babylonjs_Collisions_pickingInfo.PickingInfo
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
-    type InterpolatingBehavior<'C when 'C :> Camera> = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior<'C>
+    type InterpolatingBehavior = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior
+    type InterpolatingBehavior<'C> = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior<'C>
     type GeospatialCamera = Babylonjs_Cameras_geospatialCamera_pure.GeospatialCamera
-    type InputMapper<'THandlers when 'THandlers :> Record<string, obj>> = Babylonjs_Cameras_inputMapper.InputMapper<'THandlers>
+    type InputMapper<'THandlers> = Babylonjs_Cameras_inputMapper.InputMapper<'THandlers>
 
     type [<AllowNullLiteral>] IExports =
         abstract GeospatialCameraMovement: GeospatialCameraMovementStatic
@@ -61617,7 +61763,7 @@ module Babylonjs_Cameras_geospatialCameraMovement =
         [<EmitConstructor>] abstract Create: scene: Scene * limits: GeospatialLimits * cameraPosition: Vector3 * _cameraCenter: Vector3 * _cameraLookAt: Vector3 * ?pickPredicate: MeshPredicate * ?behavior: InterpolatingBehavior<GeospatialCamera> -> GeospatialCameraMovement
 
 module Babylonjs_Cameras_geospatialCameraInputsManager =
-    type CameraInputsManager<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
+    type CameraInputsManager<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
     type GeospatialCamera = Babylonjs_Cameras_geospatialCamera_pure.GeospatialCamera
 
     type [<AllowNullLiteral>] IExports =
@@ -61702,7 +61848,7 @@ module Babylonjs_Cameras_gamepadCamera_pure =
 
 module Babylonjs_Cameras_freeCameraInputsManager_pure =
     type FreeCamera = Babylonjs_Cameras_freeCamera_pure.FreeCamera
-    type CameraInputsManager<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
+    type CameraInputsManager<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
     type FreeCameraMouseInput = Babylonjs_Cameras_Inputs_freeCameraMouseInput.FreeCameraMouseInput
     type FreeCameraMouseWheelInput = Babylonjs_Cameras_Inputs_freeCameraMouseWheelInput.FreeCameraMouseWheelInput
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
@@ -61775,7 +61921,7 @@ module Babylonjs_Cameras_freeCamera_pure =
         [<EmitConstructor>] abstract Create: name: string * position: Vector3 * ?scene: Scene * ?setActiveOnSceneIfNoneActive: bool -> FreeCamera
 
 module Babylonjs_Cameras_followCameraInputsManager =
-    type CameraInputsManager<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
+    type CameraInputsManager<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
     type FollowCamera = Babylonjs_Cameras_followCamera_pure.FollowCamera
 
     type [<AllowNullLiteral>] IExports =
@@ -61841,7 +61987,7 @@ module Babylonjs_Cameras_followCamera_pure =
 
 module Babylonjs_Cameras_flyCameraInputsManager =
     type FlyCamera = Babylonjs_Cameras_flyCamera_pure.FlyCamera
-    type CameraInputsManager<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
+    type CameraInputsManager<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
 
     type [<AllowNullLiteral>] IExports =
         abstract FlyCameraInputsManager: FlyCameraInputsManagerStatic
@@ -61932,7 +62078,8 @@ module Babylonjs_Cameras_deviceOrientationCamera_pure =
 module Babylonjs_Cameras_cameraMovement =
     type Scene = Babylonjs_scene_pure.Scene
     type Vector3 = Babylonjs_Maths_math_vector_pure.Vector3
-    type InterpolatingBehavior<'C when 'C :> Camera> = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior<'C>
+    type InterpolatingBehavior = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior
+    type InterpolatingBehavior<'C> = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior<'C>
 
     type [<AllowNullLiteral>] IExports =
         abstract CameraMovement: CameraMovementStatic
@@ -61979,7 +62126,7 @@ module Babylonjs_Cameras_cameraInputsManager =
         abstract CameraInputTypes: IExportsCameraInputTypes with get, set
         abstract CameraInputsManager: CameraInputsManagerStatic
 
-    type [<AllowNullLiteral>] ICameraInput<'Tcamera when 'Tcamera :> Camera> =
+    type [<AllowNullLiteral>] ICameraInput<'Tcamera> =
         abstract camera: Nullable<'Tcamera> with get, set
         abstract getClassName: unit -> string
         abstract getSimpleName: unit -> string
@@ -61987,11 +62134,11 @@ module Babylonjs_Cameras_cameraInputsManager =
         abstract detachControl: unit -> unit
         abstract checkInputs: (unit -> unit) option with get, set
 
-    type [<AllowNullLiteral>] CameraInputsMap<'Tcamera when 'Tcamera :> Camera> =
+    type [<AllowNullLiteral>] CameraInputsMap<'Tcamera> =
         [<EmitIndexer>] abstract Item: name: string -> ICameraInput<'Tcamera> with get, set
         [<EmitIndexer>] abstract Item: idx: float -> ICameraInput<'Tcamera> with get, set
 
-    type [<AllowNullLiteral>] CameraInputsManager<'Tcamera when 'Tcamera :> Camera> =
+    type [<AllowNullLiteral>] CameraInputsManager<'Tcamera> =
         abstract attached: CameraInputsMap<'Tcamera> with get, set
         abstract attachedToElement: bool with get, set
         abstract noPreventDefault: bool with get, set
@@ -62033,7 +62180,7 @@ module Babylonjs_Cameras_camera_pure =
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
     type DeepImmutable<'T> = Babylonjs_types.DeepImmutable<'T>
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
-    type CameraInputsManager<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
+    type CameraInputsManager<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
     type Scene = Babylonjs_scene_pure.Scene
     type Matrix = Babylonjs_Maths_math_vector_pure.Matrix
     type Vector3 = Babylonjs_Maths_math_vector_pure.Vector3
@@ -62193,9 +62340,10 @@ module Babylonjs_Cameras_arcRotateCameraMovement =
     type CameraMovement = Babylonjs_Cameras_cameraMovement.CameraMovement
     type Scene = Babylonjs_scene_pure.Scene
     type Vector3 = Babylonjs_Maths_math_vector_pure.Vector3
-    type InterpolatingBehavior<'C when 'C :> Camera> = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior<'C>
+    type InterpolatingBehavior = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior
+    type InterpolatingBehavior<'C> = Babylonjs_Behaviors_Cameras_interpolatingBehavior.InterpolatingBehavior<'C>
     type ArcRotateCamera = Babylonjs_Cameras_arcRotateCamera_pure.ArcRotateCamera
-    type InputMapper<'THandlers when 'THandlers :> Record<string, obj>> = Babylonjs_Cameras_inputMapper.InputMapper<'THandlers>
+    type InputMapper<'THandlers> = Babylonjs_Cameras_inputMapper.InputMapper<'THandlers>
 
     type [<AllowNullLiteral>] IExports =
         abstract ArcRotateCameraMovement: ArcRotateCameraMovementStatic
@@ -62217,7 +62365,7 @@ module Babylonjs_Cameras_arcRotateCameraMovement =
 
 module Babylonjs_Cameras_arcRotateCameraInputsManager_pure =
     type ArcRotateCamera = Babylonjs_Cameras_arcRotateCamera_pure.ArcRotateCamera
-    type CameraInputsManager<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
+    type CameraInputsManager<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.CameraInputsManager<'Tcamera>
 
     type [<AllowNullLiteral>] IExports =
         abstract ArcRotateCameraInputsManager: ArcRotateCameraInputsManagerStatic
@@ -62821,7 +62969,7 @@ module Babylonjs_Cameras_Inputs_geospatialCameraMouseWheelInput =
 
 module Babylonjs_Cameras_Inputs_geospatialCameraKeyboardInput =
     type GeospatialCamera = Babylonjs_Cameras_geospatialCamera_pure.GeospatialCamera
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
 
     type [<AllowNullLiteral>] IExports =
         abstract GeospatialCameraKeyboardInput: GeospatialCameraKeyboardInputStatic
@@ -62856,7 +63004,7 @@ module Babylonjs_Cameras_Inputs_freeCameraVirtualJoystickInput_types =
 
 module Babylonjs_Cameras_Inputs_freeCameraVirtualJoystickInput_pure =
     type VirtualJoystick = Babylonjs_Misc_virtualJoystick.VirtualJoystick
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type FreeCamera = Babylonjs_Cameras_freeCamera_pure.FreeCamera
 
     type [<AllowNullLiteral>] IExports =
@@ -62878,7 +63026,7 @@ module Babylonjs_Cameras_Inputs_freeCameraVirtualJoystickInput_pure =
         [<EmitConstructor>] abstract Create: unit -> FreeCameraVirtualJoystickInput
 
 module Babylonjs_Cameras_Inputs_freeCameraTouchInput =
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type FreeCamera = Babylonjs_Cameras_freeCamera_pure.FreeCamera
 
     type [<AllowNullLiteral>] IExports =
@@ -62929,7 +63077,7 @@ module Babylonjs_Cameras_Inputs_freeCameraMouseWheelInput =
 
 module Babylonjs_Cameras_Inputs_freeCameraMouseInput =
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type FreeCamera = Babylonjs_Cameras_freeCamera_pure.FreeCamera
 
     type [<AllowNullLiteral>] IExports =
@@ -62953,7 +63101,7 @@ module Babylonjs_Cameras_Inputs_freeCameraMouseInput =
         [<EmitConstructor>] abstract Create: ?touchEnabled: bool -> FreeCameraMouseInput
 
 module Babylonjs_Cameras_Inputs_freeCameraKeyboardMoveInput =
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type FreeCamera = Babylonjs_Cameras_freeCamera_pure.FreeCamera
 
     type [<AllowNullLiteral>] IExports =
@@ -62985,7 +63133,7 @@ module Babylonjs_Cameras_Inputs_freeCameraKeyboardMoveInput =
 
 module Babylonjs_Cameras_Inputs_freeCameraGamepadInput =
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type FreeCamera = Babylonjs_Cameras_freeCamera_pure.FreeCamera
     type Gamepad = Babylonjs_Gamepads_gamepad.Gamepad
 
@@ -63020,7 +63168,7 @@ module Babylonjs_Cameras_Inputs_freeCameraDeviceOrientationInput_types =
             abstract addDeviceOrientation: ?smoothFactor: float -> FreeCameraInputsManager
 
 module Babylonjs_Cameras_Inputs_freeCameraDeviceOrientationInput_pure =
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type FreeCamera = Babylonjs_Cameras_freeCamera_pure.FreeCamera
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
 
@@ -63078,7 +63226,7 @@ module Babylonjs_Cameras_Inputs_followCameraPointersInput =
 
 module Babylonjs_Cameras_Inputs_followCameraMouseWheelInput =
     type FollowCamera = Babylonjs_Cameras_followCamera_pure.FollowCamera
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
 
     type [<AllowNullLiteral>] IExports =
         abstract FollowCameraMouseWheelInput: FollowCameraMouseWheelInputStatic
@@ -63100,7 +63248,7 @@ module Babylonjs_Cameras_Inputs_followCameraMouseWheelInput =
         [<EmitConstructor>] abstract Create: unit -> FollowCameraMouseWheelInput
 
 module Babylonjs_Cameras_Inputs_followCameraKeyboardMoveInput =
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type FollowCamera = Babylonjs_Cameras_followCamera_pure.FollowCamera
 
     type [<AllowNullLiteral>] IExports =
@@ -63137,7 +63285,7 @@ module Babylonjs_Cameras_Inputs_followCameraKeyboardMoveInput =
         [<EmitConstructor>] abstract Create: unit -> FollowCameraKeyboardMoveInput
 
 module Babylonjs_Cameras_Inputs_flyCameraMouseInput =
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type FlyCamera = Babylonjs_Cameras_flyCamera_pure.FlyCamera
 
     type [<AllowNullLiteral>] IExports =
@@ -63162,7 +63310,7 @@ module Babylonjs_Cameras_Inputs_flyCameraMouseInput =
         [<EmitConstructor>] abstract Create: unit -> FlyCameraMouseInput
 
 module Babylonjs_Cameras_Inputs_flyCameraKeyboardInput =
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type FlyCamera = Babylonjs_Cameras_flyCamera_pure.FlyCamera
 
     type [<AllowNullLiteral>] IExports =
@@ -63196,7 +63344,7 @@ module Babylonjs_Cameras_Inputs_arcRotateCameraVRDeviceOrientationInput_types =
 
 module Babylonjs_Cameras_Inputs_arcRotateCameraVRDeviceOrientationInput_pure =
     type ArcRotateCamera = Babylonjs_Cameras_arcRotateCamera_pure.ArcRotateCamera
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
 
     type [<AllowNullLiteral>] IExports =
         abstract ArcRotateCameraVRDeviceOrientationInput: ArcRotateCameraVRDeviceOrientationInputStatic
@@ -63255,7 +63403,7 @@ module Babylonjs_Cameras_Inputs_arcRotateCameraPointersInput =
 module Babylonjs_Cameras_Inputs_arcRotateCameraMouseWheelInput =
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type ArcRotateCamera = Babylonjs_Cameras_arcRotateCamera_pure.ArcRotateCamera
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type IWheelEvent = Babylonjs_Events_deviceInputEvents.IWheelEvent
 
     type [<AllowNullLiteral>] IExports =
@@ -63280,7 +63428,7 @@ module Babylonjs_Cameras_Inputs_arcRotateCameraMouseWheelInput =
 
 module Babylonjs_Cameras_Inputs_arcRotateCameraKeyboardMoveInput =
     type ArcRotateCamera = Babylonjs_Cameras_arcRotateCamera_pure.ArcRotateCamera
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
 
     type [<AllowNullLiteral>] IExports =
         abstract ArcRotateCameraKeyboardMoveInput: ArcRotateCameraKeyboardMoveInputStatic
@@ -63311,7 +63459,7 @@ module Babylonjs_Cameras_Inputs_arcRotateCameraKeyboardMoveInput =
 module Babylonjs_Cameras_Inputs_arcRotateCameraGamepadInput =
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type ArcRotateCamera = Babylonjs_Cameras_arcRotateCamera_pure.ArcRotateCamera
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type Gamepad = Babylonjs_Gamepads_gamepad.Gamepad
 
     type [<AllowNullLiteral>] IExports =
@@ -63336,7 +63484,7 @@ module Babylonjs_Cameras_Inputs_arcRotateCameraGamepadInput =
 module Babylonjs_Cameras_Inputs_BaseCameraPointersInput =
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
     type Camera = Babylonjs_Cameras_camera_pure.Camera
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
     type PointerTouch = Babylonjs_Events_pointerEvents.PointerTouch
     type IPointerEvent = Babylonjs_Events_deviceInputEvents.IPointerEvent
 
@@ -63370,7 +63518,7 @@ module Babylonjs_Cameras_Inputs_BaseCameraPointersInput =
 module Babylonjs_Cameras_Inputs_BaseCameraMouseWheelInput =
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
     type Camera = Babylonjs_Cameras_camera_pure.Camera
-    type ICameraInput<'Tcamera when 'Tcamera :> Camera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
+    type ICameraInput<'Tcamera> = Babylonjs_Cameras_cameraInputsManager.ICameraInput<'Tcamera>
 
     type [<AllowNullLiteral>] IExports =
         abstract BaseCameraMouseWheelInput: BaseCameraMouseWheelInputStatic
@@ -63433,6 +63581,7 @@ module Babylonjs_Buffers_bufferUtils =
     type FloatArray = Babylonjs_types.FloatArray
     type IndicesArray = Babylonjs_types.IndicesArray
     type TypedArray = Babylonjs_types.TypedArray
+    type TypedArrayConstructor = Babylonjs_types.TypedArrayConstructor
     type TypedArrayConstructor<'T when 'T :> TypedArray> = Babylonjs_types.TypedArrayConstructor<'T>
 
     type [<AllowNullLiteral>] IExports =
@@ -64084,17 +64233,17 @@ module Babylonjs_Behaviors_Meshes_handConstraintBehavior =
     type [<AllowNullLiteral>] IExports =
         abstract HandConstraintBehavior: HandConstraintBehaviorStatic
 
-    type [<RequireQualifiedAccess>] HandConstraintZone =
+    type HandConstraintZone =
         | ABOVE_FINGER_TIPS = 0
         | RADIAL_SIDE = 1
         | ULNAR_SIDE = 2
         | BELOW_WRIST = 3
 
-    type [<RequireQualifiedAccess>] HandConstraintOrientation =
+    type HandConstraintOrientation =
         | LOOK_AT_CAMERA = 0
         | HAND_ROTATION = 1
 
-    type [<RequireQualifiedAccess>] HandConstraintVisibility =
+    type HandConstraintVisibility =
         | ALWAYS_VISIBLE = 0
         | PALM_UP = 1
         | GAZE_FOCUS = 2
@@ -64295,7 +64444,7 @@ module Babylonjs_Behaviors_Cameras_interpolatingBehavior =
     type InterpolatingBehavior =
         InterpolatingBehavior<Camera>
 
-    type [<AllowNullLiteral>] InterpolatingBehavior<'C when 'C :> Camera> =
+    type [<AllowNullLiteral>] InterpolatingBehavior<'C> =
         inherit Behavior<'C>
         abstract name: string
         abstract easingFunction: EasingFunction with get, set
@@ -64498,14 +64647,14 @@ module Babylonjs_BakedVertexAnimation_bakedVertexAnimationManager =
 
 module Babylonjs_AudioV2_spatialAudioAttachmentType =
 
-    type [<RequireQualifiedAccess>] SpatialAudioAttachmentType =
+    type SpatialAudioAttachmentType =
         | Position = 1
         | Rotation = 2
         | PositionAndRotation = 3
 
 module Babylonjs_AudioV2_soundState =
 
-    type [<RequireQualifiedAccess>] SoundState =
+    type SoundState =
         | Stopping = 0
         | Stopped = 1
         | Starting = 2
@@ -65380,6 +65529,7 @@ module Babylonjs_AudioV2_abstractAudio_mainAudioBus =
 module Babylonjs_AudioV2_abstractAudio_audioEngineV2 =
     type IDisposable = Babylonjs_scene_pure.IDisposable
     type Nullable<'T> = Babylonjs_types.Nullable<'T>
+    type IReadonlyObservable = Babylonjs_Misc_observable_pure.IReadonlyObservable
     type IReadonlyObservable<'T> = Babylonjs_Misc_observable_pure.IReadonlyObservable<'T>
     type Observable<'T> = Babylonjs_Misc_observable_pure.Observable<'T>
     type IAudioParameterRampOptions = Babylonjs_AudioV2_audioParameter.IAudioParameterRampOptions
@@ -65670,7 +65820,7 @@ module Babylonjs_AudioV2_abstractAudio_abstractAudioNode =
         abstract AbstractAudioNode: AbstractAudioNodeStatic
         abstract AbstractNamedAudioNode: AbstractNamedAudioNodeStatic
 
-    type [<RequireQualifiedAccess>] AudioNodeType =
+    type AudioNodeType =
         | HAS_INPUTS = 1
         | HAS_OUTPUTS = 2
         | HAS_INPUTS_AND_OUTPUTS = 3
@@ -65959,7 +66109,7 @@ module Babylonjs_AudioV2_abstractAudio_subProperties_abstractAudioAnalyzer =
         abstract _HasAudioAnalyzerOptions: options: obj -> bool
         abstract AbstractAudioAnalyzer: AbstractAudioAnalyzerStatic
 
-    type [<RequireQualifiedAccess>] AudioAnalyzerFFTSizeType =
+    type AudioAnalyzerFFTSizeType =
         | N32 = 32
         | N64 = 64
         | N128 = 128
@@ -66750,7 +66900,7 @@ module Babylonjs_Animations_animationKey =
         abstract lockedTangent: bool option with get, set
         abstract easingFunction: IEasingFunction option with get, set
 
-    type [<RequireQualifiedAccess>] AnimationKeyInterpolation =
+    type AnimationKeyInterpolation =
         | NONE = 0
         | STEP = 1
 
@@ -66759,7 +66909,7 @@ module Babylonjs_Animations_animationGroupMask =
     type [<AllowNullLiteral>] IExports =
         abstract AnimationGroupMask: AnimationGroupMaskStatic
 
-    type [<RequireQualifiedAccess>] AnimationGroupMaskMode =
+    type AnimationGroupMaskMode =
         | Include = 0
         | Exclude = 1
 
@@ -67622,6 +67772,34 @@ module Babylonjs_Actions_abstractActionManager =
         [<EmitIndexer>] abstract Item: key: string -> float with get, set
 
 module BABYLON =
+    type [<AllowNullLiteral>] BackgroundMaterialBase_base = interface end
+
+    type [<AllowNullLiteral>] NodeMaterialBase_base = interface end
+
+    type [<AllowNullLiteral>] NodeMaterialDefinesBase_base = interface end
+
+    type [<AllowNullLiteral>] NodeMaterialDefines_base = interface end
+
+    type [<AllowNullLiteral>] OpenPBRMaterialBase_base = interface end
+
+    type [<AllowNullLiteral>] OpenPBRMaterialDefinesBase_base = interface end
+
+    type [<AllowNullLiteral>] OpenPBRMaterialDefinesWithEnvLighting_base = interface end
+
+    type [<AllowNullLiteral>] OpenPBRMaterialDefines_base = interface end
+
+    type [<AllowNullLiteral>] PBRBaseMaterialBase_base = interface end
+
+    type [<AllowNullLiteral>] PBRMaterialDefinesBase_base = interface end
+
+    type [<AllowNullLiteral>] PBRMaterialDefines_base = interface end
+
+    type [<AllowNullLiteral>] StandardMaterialBase_base = interface end
+
+    type [<AllowNullLiteral>] StandardMaterialDefinesBase_base = interface end
+
+    type [<AllowNullLiteral>] StandardMaterialDefines_base = interface end
+
     let [<Import("WebXRNearInteraction","babylon.module.no-docs/BABYLON")>] webXRNearInteraction: WebXRNearInteraction.IExports = jsNative
     let [<Import("ReflectionProbe","babylon.module.no-docs/BABYLON")>] reflectionProbe: ReflectionProbe.IExports = jsNative
     let [<Import("TAARenderingPipeline","babylon.module.no-docs/BABYLON")>] tAARenderingPipeline: TAARenderingPipeline.IExports = jsNative
@@ -69033,7 +69211,7 @@ module BABYLON =
         abstract DecodeBase64UrlToBinary: uri: string -> ArrayBuffer
         abstract DecodeBase64UrlToString: string -> string
         abstract FileTools: IExportsFileTools with get, set
-        abstract _injectLTSFileTools: (string -> ArrayBuffer) -> (string -> string) -> IExports_injectLTSFileTools -> (string -> bool) -> (unit -> bool) -> (U2<string, File> -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) -> (U4<string, ArrayBuffer, ArrayBufferView, Blob> -> (U2<HTMLImageElement, ImageBitmap> -> unit) -> ((string) option -> (obj) option -> unit) -> Nullable<IOfflineProvider> -> (string) option -> (ImageBitmapOptions) option -> Nullable<HTMLImageElement>) -> (File -> (obj option -> unit) -> ((ProgressEvent<EventTarget> -> obj option)) option -> (bool) option -> ((ReadFileError -> unit)) option -> IFileRequest) -> (string -> (U2<string, ArrayBuffer> -> (WebRequest) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (IOfflineProvider) option -> (bool) option -> ((RequestFileError -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) -> (U2<string, ResizeArray<string>> -> {| crossOrigin: string option |} -> unit) -> unit
+        abstract _injectLTSFileTools: (string -> ArrayBuffer) -> (string -> string) -> IExports_injectLTSFileTools -> (string -> bool) -> (unit -> bool) -> (U2<string, File> -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) -> (U4<string, ArrayBuffer, ArrayBufferView, Blob> -> (U2<HTMLImageElement, ImageBitmap> -> unit) -> ((string) option -> (obj) option -> unit) -> Nullable<IOfflineProvider> -> (string) option -> (ImageBitmapOptions) option -> Nullable<HTMLImageElement>) -> (File -> (obj option -> unit) -> ((ProgressEvent -> obj option)) option -> (bool) option -> ((ReadFileError -> unit)) option -> IFileRequest) -> (string -> (U2<string, ArrayBuffer> -> (WebRequest) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> ((RequestFileError -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) -> (U2<string, ResizeArray<string>> -> {| crossOrigin: string option |} -> unit) -> unit
         abstract RegisterFileTools: unit -> unit
         abstract BaseError: BaseErrorStatic
         abstract ErrorCodes: IExportsErrorCodes with get, set
@@ -70884,7 +71062,7 @@ module BABYLON =
         abstract QueueNewFrame: func: (unit -> unit) * ?requester: obj -> float
         abstract EngineFunctionContext: {| loadFile: (string -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> IFileRequest) option; loadImage: (U4<string, ArrayBuffer, ArrayBufferView, Blob> -> (U2<HTMLImageElement, ImageBitmap> -> unit) -> ((string) option -> (obj) option -> unit) -> Nullable<IOfflineProvider> -> (string) option -> (ImageBitmapOptions) option -> (AbstractEngine) option -> Nullable<HTMLImageElement>) option |} with get, set
         abstract _ConcatenateShader: source: string * defines: Nullable<string> * ?shaderVersion: string -> string
-        abstract _LoadFile: url: string * onSuccess: (U2<string, ArrayBuffer> -> (string) option -> unit) * ?onProgress: (obj option -> unit) * ?offlineProvider: IOfflineProvider * ?useArrayBuffer: bool * ?onError: ((IWebRequest) option -> (obj) option -> unit) * ?injectedLoadFile: (string -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> IFileRequest) -> IFileRequest
+        abstract _LoadFile: url: string * onSuccess: (U2<string, ArrayBuffer> -> (string) option -> unit) * ?onProgress: (obj option -> unit) * ?offlineProvider: IOfflineProvider * ?useArrayBuffer: bool * ?onError: ((IWebRequest) option -> (obj) option -> unit) * ?injectedLoadFile: (string -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> IFileRequest) -> IFileRequest
         abstract getHostDocument: ?renderingCanvas: HTMLCanvasElement -> Nullable<Document>
         abstract _GetGlobalDefines: ?defines: _GetGlobalDefinesDefines * ?isNDCHalfZRange: bool * ?useReverseDepthBuffer: bool * ?useExactSrgbConversions: bool -> string option
         abstract allocateAndCopyTypedBuffer: ``type``: float * sizeOrDstBuffer: U2<float, ArrayBufferLike> * ?sizeInBytes: bool * ?copyBuffer: ArrayBuffer -> ArrayBufferView
@@ -71256,7 +71434,7 @@ module BABYLON =
         abstract StreamingSound: StreamingSoundStatic
         abstract _SoundInstance: _StaticSoundInstanceStatic
         abstract SoundBuffer: StaticSoundBufferStatic
-        abstract Sound: StaticSoundStatic
+        [<Emit("$0.Sound")>] abstract StaticSound: StaticSoundStatic
         abstract _MainAudioOut: _MainAudioOutStatic
         abstract MainAudioBus: MainAudioBusStatic
         abstract OnAudioEngineV2CreatedObservable: Observable<AudioEngineV2> with get, set
@@ -71991,38 +72169,28 @@ module BABYLON =
     type Empty =
         obj
 
-    type Shift<'T> =
-        obj
+    type [<AllowNullLiteral>] Shift<'T> = interface end
 
-    type First<'T> =
-        obj
+    type [<AllowNullLiteral>] First<'T> = interface end
 
-    type Unshift<'T, 'A> =
-        obj
+    type [<AllowNullLiteral>] Unshift<'T, 'A> = interface end
 
-    type Pop<'T> =
-        obj
+    type [<AllowNullLiteral>] Pop<'T> = interface end
 
-    type Last<'T> =
-        obj
+    type [<AllowNullLiteral>] Last<'T> = interface end
 
-    type Push<'T, 'A> =
-        obj
+    type [<AllowNullLiteral>] Push<'T, 'A> = interface end
 
-    type Concat<'A, 'B> =
-        obj
+    type [<AllowNullLiteral>] Concat<'A, 'B> = interface end
 
-    type Remove<'A, 'B> =
-        obj
+    type [<AllowNullLiteral>] Remove<'A, 'B> = interface end
 
-    type Length<'T> =
-        obj
+    type [<AllowNullLiteral>] Length<'T> = interface end
 
     type _FromLength<'N> =
         _FromLength<'N, Empty>
 
-    type _FromLength<'N, 'R> =
-        obj
+    type [<AllowNullLiteral>] _FromLength<'N, 'R> = interface end
 
     type FromLength<'N> =
         _FromLength<'N>
@@ -72042,29 +72210,23 @@ module BABYLON =
     type Member<'T> =
         Member<'T, obj>
 
-    type Member<'T, 'D> =
-        obj
+    type [<AllowNullLiteral>] Member<'T, 'D> = interface end
 
     type FlattenArray<'A> =
         FlattenArray<'A, obj>
 
-    type FlattenArray<'A, 'D> =
-        obj
+    type [<AllowNullLiteral>] FlattenArray<'A, 'D> = interface end
 
-    type IsTuple<'T> =
-        obj
+    type [<AllowNullLiteral>] IsTuple<'T> = interface end
 
-    type FlattenTuple<'A> =
-        obj
+    type [<AllowNullLiteral>] FlattenTuple<'A> = interface end
 
-    type Flatten<'A> =
-        obj
+    type [<AllowNullLiteral>] Flatten<'A> = interface end
 
     type _Tuple<'T, 'N> =
         _Tuple<'T, 'N, Empty>
 
-    type _Tuple<'T, 'N, 'R> =
-        obj
+    type [<AllowNullLiteral>] _Tuple<'T, 'N, 'R> = interface end
 
     type Tuple<'T, 'N> =
         _Tuple<'T, 'N>
@@ -72084,11 +72246,9 @@ module BABYLON =
     type Primitive =
         U5<bool, string, float, Function, Element> option
 
-    type Immutable<'T> =
-        obj
+    type [<AllowNullLiteral>] Immutable<'T> = interface end
 
-    type DeepImmutable<'T> =
-        obj
+    type [<AllowNullLiteral>] DeepImmutable<'T> = interface end
 
     type [<AllowNullLiteral>] NonNullableFields<'T> =
         interface end
@@ -72271,7 +72431,7 @@ module BABYLON =
         abstract defaultCameraLayerMask: float option with get, set
         abstract defaultRenderableLayerMask: float option with get, set
 
-    type [<RequireQualifiedAccess>] ScenePerformancePriority =
+    type ScenePerformancePriority =
         | BackwardCompatible = 0
         | Intermediate = 1
         | Aggressive = 2
@@ -73277,13 +73437,13 @@ module BABYLON =
     type [<AllowNullLiteral>] WebXRWebGLLayerRenderTargetTextureProviderStatic =
         [<EmitConstructor>] abstract Create: scene: Scene * layerWrapper: WebXRWebGLLayerWrapper -> WebXRWebGLLayerRenderTargetTextureProvider
 
-    type [<RequireQualifiedAccess>] WebXRState =
+    type WebXRState =
         | ENTERING_XR = 0
         | EXITING_XR = 1
         | IN_XR = 2
         | NOT_IN_XR = 3
 
-    type [<RequireQualifiedAccess>] WebXRTrackingState =
+    type WebXRTrackingState =
         | NOT_TRACKING = 0
         | TRACKING_LOST = 1
         | TRACKING = 2
@@ -73472,7 +73632,7 @@ module BABYLON =
     type [<AllowNullLiteral>] WebXRInputStatic =
         [<EmitConstructor>] abstract Create: xrSessionManager: WebXRSessionManager * xrCamera: WebXRCamera * ?_options: IWebXRInputOptions -> WebXRInput
 
-    type [<RequireQualifiedAccess>] WebXRGraphicsBindingType =
+    type WebXRGraphicsBindingType =
         | WebGL = 0
         | WebGPU = 1
 
@@ -73590,14 +73750,11 @@ module BABYLON =
         abstract ``[WebXRFeatureName.WALKING_LOCOMOTION]``: IWebXRWalkingLocomotionOptions with get, set
         abstract ``[WebXRFeatureName.BODY_TRACKING]``: IWebXRBodyTrackingOptions with get, set
 
-    type Expand<'T> =
-        obj
+    type [<AllowNullLiteral>] Expand<'T> = interface end
 
-    type ResolveWebXRFeature<'T when 'T :> WebXRFeatureNameType> =
-        obj
+    type [<AllowNullLiteral>] ResolveWebXRFeature<'T> = interface end
 
-    type ResolveWebXRFeatureOptions<'T when 'T :> WebXRFeatureNameType> =
-        obj
+    type [<AllowNullLiteral>] ResolveWebXRFeatureOptions<'T> = interface end
 
     type [<AllowNullLiteral>] WebXRFeatureConstructor =
         [<Emit("$0($1...)")>] abstract Invoke: xrSessionManager: WebXRSessionManager * ?options: obj -> (unit -> IWebXRFeature)
@@ -73608,8 +73765,8 @@ module BABYLON =
         abstract detachFeature: featureName: string -> unit
         abstract disableFeature: featureName: U2<string, {| Name: string |}> -> bool
         abstract dispose: unit -> unit
-        abstract enableFeature: featureName: U2<'T, {| Name: 'T |}> * ?version: U2<float, string> * ?moduleOptions: ResolveWebXRFeatureOptions<'T> * ?attachIfPossible: bool * ?required: bool -> ResolveWebXRFeature<'T> when 'T :> WebXRFeatureNameType
-        abstract getEnabledFeature: featureName: 'T -> ResolveWebXRFeature<'T> when 'T :> WebXRFeatureNameType
+        abstract enableFeature: featureName: U2<'T, {| Name: 'T |}> * ?version: U2<float, string> * ?moduleOptions: ResolveWebXRFeatureOptions<'T> * ?attachIfPossible: bool * ?required: bool -> ResolveWebXRFeature<'T>
+        abstract getEnabledFeature: featureName: 'T -> ResolveWebXRFeature<'T>
         abstract getEnabledFeatures: unit -> ResizeArray<string>
         abstract _extendXRSessionInitObject: xrSessionInit: XRSessionInit -> Promise<XRSessionInit>
 
@@ -74142,7 +74299,7 @@ module BABYLON =
         type [<AllowNullLiteral>] IExports =
             abstract PickMeshWithSphere: WebXRNearInteractionPickMeshWithSphereType with get, set
 
-    type [<RequireQualifiedAccess>] WebXRNearControllerMode =
+    type WebXRNearControllerMode =
         | DISABLED = 0
         | CENTERED_ON_CONTROLLER = 1
         | CENTERED_IN_FRONT = 2
@@ -75245,7 +75402,7 @@ module BABYLON =
     type [<AllowNullLiteral>] SpritePackedManagerStatic =
         [<EmitConstructor>] abstract Create: name: string * imgUrl: string * capacity: float * scene: Scene * ?spriteJSON: string * ?epsilon: float * ?samplingMode: float * ?options: SpriteManagerOptions -> SpritePackedManager
 
-    type [<RequireQualifiedAccess>] SpriteMapFrameRotationDirection =
+    type SpriteMapFrameRotationDirection =
         | CCW = 0
         | CW = 1
 
@@ -76610,7 +76767,7 @@ module BABYLON =
     type [<AllowNullLiteral>] FluidRenderingTexturesStatic =
         [<EmitConstructor>] abstract Create: name: string * scene: Scene * width: float * height: float * blurTextureSizeX: float * blurTextureSizeY: float * ?textureType: float * ?textureFormat: float * ?blurTextureType: float * ?blurTextureFormat: float * ?useStandardBlur: bool * ?camera: Camera * ?generateDepthBuffer: bool * ?samples: float * ?shaderLanguage: ShaderLanguage -> FluidRenderingTextures
 
-    type [<RequireQualifiedAccess>] FluidRenderingDebug =
+    type FluidRenderingDebug =
         | DepthTexture = 0
         | DepthBlurredTexture = 1
         | ThicknessTexture = 2
@@ -77216,7 +77373,7 @@ module BABYLON =
         [<EmitConstructor>] abstract Create: name: string * operator: TonemappingOperator * exposureAdjustment: float * camera: U2<Nullable<Camera>, ToneMapPostProcessOptions> * ?samplingMode: float * ?engine: AbstractEngine * ?textureType: float * ?reusable: bool -> TonemapPostProcess
         abstract _Parse: parsedPostProcess: obj option * targetCamera: Camera * scene: Scene * rootUrl: string -> Nullable<TonemapPostProcess>
 
-    type [<RequireQualifiedAccess>] TonemappingOperator =
+    type TonemappingOperator =
         | Hable = 0
         | Reinhard = 1
         | HejiDawson = 2
@@ -77558,7 +77715,7 @@ module BABYLON =
         abstract Samplers: ResizeArray<string>
         [<EmitConstructor>] abstract Create: name: string * ?engine: AbstractEngine * ?options: EffectWrapperCreationOptions -> ThinDepthOfFieldMergePostProcess
 
-    type [<RequireQualifiedAccess>] ThinDepthOfFieldEffectBlurLevel =
+    type ThinDepthOfFieldEffectBlurLevel =
         | Low = 0
         | Medium = 1
         | High = 2
@@ -78719,7 +78876,7 @@ module BABYLON =
     type [<AllowNullLiteral>] DepthOfFieldMergePostProcessStatic =
         [<EmitConstructor>] abstract Create: name: string * originalFromInput: PostProcess * circleOfConfusion: PostProcess * _blurSteps: Array<PostProcess> * options: U2<float, PostProcessOptions> * camera: Nullable<Camera> * ?samplingMode: float * ?engine: AbstractEngine * ?reusable: bool * ?textureType: float * ?blockCompilation: bool -> DepthOfFieldMergePostProcess
 
-    type [<RequireQualifiedAccess>] DepthOfFieldEffectBlurLevel =
+    type DepthOfFieldEffectBlurLevel =
         | Low = 0
         | Medium = 1
         | High = 2
@@ -79519,11 +79676,11 @@ module BABYLON =
     type [<AllowNullLiteral>] PhysicsVortexEventOptionsStatic =
         [<EmitConstructor>] abstract Create: unit -> PhysicsVortexEventOptions
 
-    type [<RequireQualifiedAccess>] PhysicsRadialImpulseFalloff =
+    type PhysicsRadialImpulseFalloff =
         | Constant = 0
         | Linear = 1
 
-    type [<RequireQualifiedAccess>] PhysicsUpdraftMode =
+    type PhysicsUpdraftMode =
         | Center = 0
         | Perpendicular = 1
 
@@ -79706,7 +79863,7 @@ module BABYLON =
     type [<AllowNullLiteral>] PhysicsShapeGroundMeshStatic =
         [<EmitConstructor>] abstract Create: groundMesh: GroundMesh * scene: Scene -> PhysicsShapeGroundMesh
 
-    type [<RequireQualifiedAccess>] PhysicsMaterialCombineMode =
+    type PhysicsMaterialCombineMode =
         | GEOMETRIC_MEAN = 0
         | MINIMUM = 1
         | MAXIMUM = 2
@@ -80052,7 +80209,7 @@ module BABYLON =
         abstract impulse: Vector3 with get, set
         abstract impulsePosition: Vector3 with get, set
 
-    type [<RequireQualifiedAccess>] CharacterSupportedState =
+    type CharacterSupportedState =
         | UNSUPPORTED = 0
         | SLIDING = 1
         | SUPPORTED = 2
@@ -80083,7 +80240,7 @@ module BABYLON =
         abstract dynamicFriction: float with get, set
         abstract priority: float with get, set
 
-    type [<RequireQualifiedAccess>] SurfaceConstraintInteractionStatus =
+    type SurfaceConstraintInteractionStatus =
         | OK = 0
         | FAILURE_3D = 1
         | FAILURE_2D = 2
@@ -80186,12 +80343,12 @@ module BABYLON =
     type [<AllowNullLiteral>] PhysicsCharacterControllerStatic =
         [<EmitConstructor>] abstract Create: position: Vector3 * characterShapeOptions: CharacterShapeOptions * scene: Scene -> PhysicsCharacterController
 
-    type [<RequireQualifiedAccess>] PhysicsConstraintAxisLimitMode =
+    type PhysicsConstraintAxisLimitMode =
         | FREE = 0
         | LIMITED = 1
         | LOCKED = 2
 
-    type [<RequireQualifiedAccess>] PhysicsConstraintAxis =
+    type PhysicsConstraintAxis =
         | LINEAR_X = 0
         | LINEAR_Y = 1
         | LINEAR_Z = 2
@@ -80200,7 +80357,7 @@ module BABYLON =
         | ANGULAR_Z = 5
         | LINEAR_DISTANCE = 6
 
-    type [<RequireQualifiedAccess>] PhysicsConstraintType =
+    type PhysicsConstraintType =
         | BALL_AND_SOCKET = 1
         | DISTANCE = 2
         | HINGE = 3
@@ -80209,7 +80366,7 @@ module BABYLON =
         | PRISMATIC = 6
         | SIX_DOF = 7
 
-    type [<RequireQualifiedAccess>] PhysicsShapeType =
+    type PhysicsShapeType =
         | SPHERE = 0
         | CAPSULE = 1
         | CYLINDER = 2
@@ -80219,7 +80376,7 @@ module BABYLON =
         | MESH = 6
         | HEIGHTFIELD = 7
 
-    type [<RequireQualifiedAccess>] PhysicsConstraintMotorType =
+    type PhysicsConstraintMotorType =
         | NONE = 0
         | VELOCITY = 1
         | POSITION = 2
@@ -80277,17 +80434,17 @@ module BABYLON =
         abstract inertia: Vector3 option with get, set
         abstract inertiaOrientation: Quaternion option with get, set
 
-    type [<RequireQualifiedAccess>] PhysicsMotionType =
+    type PhysicsMotionType =
         | STATIC = 0
         | ANIMATED = 1
         | DYNAMIC = 2
 
-    type [<RequireQualifiedAccess>] PhysicsPrestepType =
+    type PhysicsPrestepType =
         | DISABLED = 0
         | TELEPORT = 1
         | ACTION = 2
 
-    type [<RequireQualifiedAccess>] PhysicsActivationControl =
+    type PhysicsActivationControl =
         | SIMULATION_CONTROLLED = 0
         | ALWAYS_ACTIVE = 1
         | ALWAYS_INACTIVE = 2
@@ -81115,7 +81272,7 @@ module BABYLON =
         abstract _GetAttributeNamesOrOptions: ?isAnimationSheetEnabled: bool * ?isBillboardBased: bool * ?useRampGradients: bool -> ResizeArray<string>
         abstract _GetEffectCreationOptions: ?isAnimationSheetEnabled: bool * ?useLogarithmicDepth: bool * ?applyFog: bool -> ResizeArray<string>
 
-    type [<RequireQualifiedAccess>] SubEmitterType =
+    type SubEmitterType =
         | ATTACHED = 0
         | END = 1
 
@@ -81358,7 +81515,7 @@ module BABYLON =
     type [<AllowNullLiteral>] SolidParticleVertexStatic =
         [<EmitConstructor>] abstract Create: unit -> SolidParticleVertex
 
-    type [<RequireQualifiedAccess>] PointColor =
+    type PointColor =
         | Color = 2
         | UV = 1
         | Random = 0
@@ -82386,12 +82543,12 @@ module BABYLON =
     type [<AllowNullLiteral>] NodeParticleBuildStateStatic =
         [<EmitConstructor>] abstract Create: unit -> NodeParticleBuildState
 
-    type [<RequireQualifiedAccess>] NodeParticleConnectionPointCompatibilityStates =
+    type NodeParticleConnectionPointCompatibilityStates =
         | Compatible = 0
         | TypeIncompatible = 1
         | HierarchyIssue = 2
 
-    type [<RequireQualifiedAccess>] NodeParticleConnectionPointDirection =
+    type NodeParticleConnectionPointDirection =
         | Input = 0
         | Output = 1
 
@@ -82485,14 +82642,14 @@ module BABYLON =
     type [<AllowNullLiteral>] NodeParticleBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> NodeParticleBlock
 
-    type [<RequireQualifiedAccess>] NodeParticleSystemSources =
+    type NodeParticleSystemSources =
         | None = 0
         | Time = 1
         | Delta = 2
         | Emitter = 3
         | CameraPosition = 4
 
-    type [<RequireQualifiedAccess>] NodeParticleContextualSources =
+    type NodeParticleContextualSources =
         | None = 0
         | Position = 1
         | Direction = 2
@@ -82515,7 +82672,7 @@ module BABYLON =
         | Size = 25
         | DirectionScale = 32
 
-    type [<RequireQualifiedAccess>] NodeParticleBlockConnectionPointTypes =
+    type NodeParticleBlockConnectionPointTypes =
         | Int = 1
         | Float = 2
         | Vector2 = 4
@@ -82573,7 +82730,7 @@ module BABYLON =
     type [<AllowNullLiteral>] SystemBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> SystemBlock
 
-    type [<RequireQualifiedAccess>] ParticleVectorMathBlockOperations =
+    type ParticleVectorMathBlockOperations =
         | Dot = 0
         | Distance = 1
 
@@ -82601,7 +82758,7 @@ module BABYLON =
     type [<AllowNullLiteral>] ParticleVectorLengthBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> ParticleVectorLengthBlock
 
-    type [<RequireQualifiedAccess>] ParticleTrigonometryBlockOperations =
+    type ParticleTrigonometryBlockOperations =
         | Cos = 0
         | Sin = 1
         | Abs = 2
@@ -82684,7 +82841,7 @@ module BABYLON =
     type [<AllowNullLiteral>] ParticleSmoothStepBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> ParticleSmoothStepBlock
 
-    type [<RequireQualifiedAccess>] ParticleRandomBlockLocks =
+    type ParticleRandomBlockLocks =
         | None = 0
         | PerParticle = 1
         | PerSystem = 2
@@ -82704,7 +82861,7 @@ module BABYLON =
     type [<AllowNullLiteral>] ParticleRandomBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> ParticleRandomBlock
 
-    type [<RequireQualifiedAccess>] ParticleNumberMathBlockOperations =
+    type ParticleNumberMathBlockOperations =
         | Modulo = 0
         | Pow = 1
 
@@ -82735,7 +82892,7 @@ module BABYLON =
     type [<AllowNullLiteral>] ParticleNLerpBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> ParticleNLerpBlock
 
-    type [<RequireQualifiedAccess>] ParticleMathBlockOperations =
+    type ParticleMathBlockOperations =
         | Add = 0
         | Subtract = 1
         | Multiply = 2
@@ -82758,7 +82915,7 @@ module BABYLON =
     type [<AllowNullLiteral>] ParticleMathBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> ParticleMathBlock
 
-    type [<RequireQualifiedAccess>] ParticleLocalVariableBlockScope =
+    type ParticleLocalVariableBlockScope =
         | Particle = 0
         | Loop = 1
 
@@ -82838,7 +82995,7 @@ module BABYLON =
     type [<AllowNullLiteral>] ParticleGradientBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> ParticleGradientBlock
 
-    type [<RequireQualifiedAccess>] ParticleFloatToIntBlockOperations =
+    type ParticleFloatToIntBlockOperations =
         | Round = 0
         | Ceil = 1
         | Floor = 2
@@ -83302,7 +83459,7 @@ module BABYLON =
         abstract particle: NodeParticleConnectionPoint with get, set
         abstract output: NodeParticleConnectionPoint with get, set
 
-    type [<RequireQualifiedAccess>] ParticleConditionBlockTests =
+    type ParticleConditionBlockTests =
         | Equal = 0
         | NotEqual = 1
         | LessThan = 2
@@ -83884,7 +84041,7 @@ module BABYLON =
         abstract _CollectCustomizations: url: string * ?baseHeaders: Record<string, string> -> {| url: string; headers: Record<string, string> |}
         abstract FetchAsync: url: string * ?options: {| method: string option; headers: Record<string, string> option; body: BodyInit option |} -> Promise<Response>
 
-    type [<RequireQualifiedAccess>] JoystickAxis =
+    type JoystickAxis =
         | X = 0
         | Y = 1
         | Z = 2
@@ -84102,7 +84259,7 @@ module BABYLON =
         abstract completeRate: float with get, set
         abstract payload: 'T with get, set
 
-    type [<RequireQualifiedAccess>] TimerState =
+    type TimerState =
         | INIT = 0
         | STARTED = 1
         | ENDED = 2
@@ -84125,7 +84282,7 @@ module BABYLON =
     type [<AllowNullLiteral>] AdvancedTimerStatic =
         [<EmitConstructor>] abstract Create: options: ITimerOptions<'T> -> AdvancedTimer<'T>
 
-    type [<RequireQualifiedAccess>] DepthTextureType =
+    type DepthTextureType =
         | NormalizedViewDepth = 0
         | ViewDepth = 1
         | ScreenDepth = 2
@@ -84687,7 +84844,7 @@ module BABYLON =
         abstract RegisteredExternalClasses: ToolsStaticRegisteredExternalClasses with get, set
         abstract Instantiate: className: string -> obj option
 
-    type [<RequireQualifiedAccess>] InspectableType =
+    type InspectableType =
         | Checkbox = 0
         | Slider = 1
         | Vector3 = 2
@@ -84949,7 +85106,7 @@ module BABYLON =
         [<EmitConstructor>] abstract Create: unit -> DeepCopier
         abstract DeepCopy: source: obj option * destination: obj option * ?doNotCopyList: ResizeArray<string> * ?mustCopyList: ResizeArray<string> * ?shallowCopyValues: bool -> unit
 
-    type [<RequireQualifiedAccess>] SerializedFieldType =
+    type SerializedFieldType =
         | VALUE = 0
         | TEXTURE = 1
         | COLOR3 = 2
@@ -84999,7 +85156,7 @@ module BABYLON =
     module NativeOverride =
 
         type [<AllowNullLiteral>] IExports =
-            abstract filter: ('T -> (('This -> 'Args -> 'Return) -> ClassMethodDecoratorContext<'This, ('This -> 'Args -> 'Return)> -> ('This -> 'Args -> 'Return))) with get, set
+            abstract filter: obj with get, set
 
     type [<AllowNullLiteral>] DDSInfo =
         abstract width: float with get, set
@@ -85074,7 +85231,7 @@ module BABYLON =
     type [<AllowNullLiteral>] CoroutineScheduler<'T> =
         [<Emit("$0($1...)")>] abstract Invoke: coroutine: AsyncCoroutine<'T> * onStep: (CoroutineStep<'T> -> unit) * onError: (obj option -> unit) -> unit
 
-    type [<RequireQualifiedAccess>] ConversionMode =
+    type ConversionMode =
         | None = 0
         | ToLinearSpace = 1
         | ToGammaSpace = 2
@@ -85129,7 +85286,7 @@ module BABYLON =
         [<EmitConstructor>] abstract Create: unit -> AsyncLock
         abstract LockAsync: func: (unit -> U2<'T, Promise<'T>>) * locks: ResizeArray<AsyncLock> * ?signal: AbortSignal -> Promise<'T>
 
-    type [<RequireQualifiedAccess>] AssetTaskState =
+    type AssetTaskState =
         | INIT = 0
         | RUNNING = 1
         | DONE = 2
@@ -85710,7 +85867,7 @@ module BABYLON =
     type [<AllowNullLiteral>] SimplificationSettingsStatic =
         [<EmitConstructor>] abstract Create: quality: float * distance: float * ?optimizeMesh: bool -> SimplificationSettings
 
-    type [<RequireQualifiedAccess>] SimplificationType =
+    type SimplificationType =
         | QUADRATIC = 0
 
     type [<AllowNullLiteral>] MeshLODLevel =
@@ -86655,12 +86812,12 @@ module BABYLON =
     type [<AllowNullLiteral>] NodeGeometryBuildStateStatic =
         [<EmitConstructor>] abstract Create: unit -> NodeGeometryBuildState
 
-    type [<RequireQualifiedAccess>] NodeGeometryConnectionPointCompatibilityStates =
+    type NodeGeometryConnectionPointCompatibilityStates =
         | Compatible = 0
         | TypeIncompatible = 1
         | HierarchyIssue = 2
 
-    type [<RequireQualifiedAccess>] NodeGeometryConnectionPointDirection =
+    type NodeGeometryConnectionPointDirection =
         | Input = 0
         | Output = 1
 
@@ -86821,7 +86978,7 @@ module BABYLON =
         abstract getOverrideNormalsContextualValue: unit -> obj option
         abstract getOverrideUVs1ContextualValue: unit -> obj option
 
-    type [<RequireQualifiedAccess>] NodeGeometryContextualSources =
+    type NodeGeometryContextualSources =
         | None = 0
         | Positions = 1
         | Normals = 2
@@ -86842,7 +86999,7 @@ module BABYLON =
         | LatticeID = 17
         | LatticeControl = 18
 
-    type [<RequireQualifiedAccess>] NodeGeometryBlockConnectionPointTypes =
+    type NodeGeometryBlockConnectionPointTypes =
         | Int = 1
         | Float = 2
         | Vector2 = 4
@@ -86898,7 +87055,7 @@ module BABYLON =
     type [<AllowNullLiteral>] SubdivideBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> SubdivideBlock
 
-    type [<RequireQualifiedAccess>] RandomBlockLocks =
+    type RandomBlockLocks =
         | None = 0
         | LoopID = 1
         | InstanceID = 2
@@ -86973,7 +87130,7 @@ module BABYLON =
     type [<AllowNullLiteral>] MatrixComposeBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> MatrixComposeBlock
 
-    type [<RequireQualifiedAccess>] MathBlockOperations =
+    type MathBlockOperations =
         | Add = 0
         | Subtract = 1
         | Multiply = 2
@@ -86997,7 +87154,7 @@ module BABYLON =
     type [<AllowNullLiteral>] MathBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> MathBlock
 
-    type [<RequireQualifiedAccess>] MappingTypes =
+    type MappingTypes =
         | Spherical = 0
         | Cylindrical = 1
         | Cubic = 2
@@ -87045,7 +87202,7 @@ module BABYLON =
     type [<AllowNullLiteral>] IntFloatConverterBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> IntFloatConverterBlock
 
-    type [<RequireQualifiedAccess>] GeometryTrigonometryBlockOperations =
+    type GeometryTrigonometryBlockOperations =
         | Cos = 0
         | Sin = 1
         | Abs = 2
@@ -87308,7 +87465,7 @@ module BABYLON =
     type [<AllowNullLiteral>] GeometryElbowBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> GeometryElbowBlock
 
-    type [<RequireQualifiedAccess>] GeometryEaseBlockTypes =
+    type GeometryEaseBlockTypes =
         | EaseInSine = 0
         | EaseOutSine = 1
         | EaseInOutSine = 2
@@ -87384,7 +87541,7 @@ module BABYLON =
     type [<AllowNullLiteral>] GeometryDesaturateBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> GeometryDesaturateBlock
 
-    type [<RequireQualifiedAccess>] GeometryCurveBlockTypes =
+    type GeometryCurveBlockTypes =
         | EaseInSine = 0
         | EaseOutSine = 1
         | EaseInOutSine = 2
@@ -87487,7 +87644,7 @@ module BABYLON =
     type [<AllowNullLiteral>] GeometryArcTan2BlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> GeometryArcTan2Block
 
-    type [<RequireQualifiedAccess>] ExtrudeGeometryCap =
+    type ExtrudeGeometryCap =
         | NoCap = 0
         | CapStart = 1
         | CapEnd = 2
@@ -87521,7 +87678,7 @@ module BABYLON =
     type [<AllowNullLiteral>] DebugBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> DebugBlock
 
-    type [<RequireQualifiedAccess>] ConditionBlockTests =
+    type ConditionBlockTests =
         | Equal = 0
         | NotEqual = 1
         | LessThan = 2
@@ -87586,7 +87743,7 @@ module BABYLON =
     type [<AllowNullLiteral>] BoundingBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> BoundingBlock
 
-    type [<RequireQualifiedAccess>] BooleanGeometryOperations =
+    type BooleanGeometryOperations =
         | Intersect = 0
         | Subtract = 1
         | Union = 2
@@ -88051,7 +88208,7 @@ module BABYLON =
     type [<AllowNullLiteral>] LatticeBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> LatticeBlock
 
-    type [<RequireQualifiedAccess>] Aggregations =
+    type Aggregations =
         | Max = 0
         | Min = 1
         | Sum = 2
@@ -88331,16 +88488,16 @@ module BABYLON =
         [<EmitConstructor>] abstract Create: name: string * scene: Scene * _options: GreasedLineMeshOptions -> GreasedLineMesh
         abstract Parse: parsedMesh: obj option * scene: Scene -> Mesh
 
-    type [<RequireQualifiedAccess>] GreasedLineRibbonPointsMode =
+    type GreasedLineRibbonPointsMode =
         | POINTS_MODE_POINTS = 0
         | POINTS_MODE_PATHS = 1
 
-    type [<RequireQualifiedAccess>] GreasedLineRibbonFacesMode =
+    type GreasedLineRibbonFacesMode =
         | FACES_MODE_SINGLE_SIDED = 0
         | FACES_MODE_SINGLE_SIDED_NO_BACKFACE_CULLING = 1
         | FACES_MODE_DOUBLE_SIDED = 2
 
-    type [<RequireQualifiedAccess>] GreasedLineRibbonAutoDirectionMode =
+    type GreasedLineRibbonAutoDirectionMode =
         | AUTO_DIRECTIONS_FROM_FIRST_SEGMENT = 0
         | AUTO_DIRECTIONS_FROM_ALL_SEGMENTS = 1
         | AUTO_DIRECTIONS_ENHANCED = 2
@@ -88478,7 +88635,7 @@ module BABYLON =
         abstract _gl: obj option with get, set
         abstract isWebGPU: bool option with get, set
 
-    type [<RequireQualifiedAccess>] PLYType =
+    type PLYType =
         | FLOAT = 0
         | INT = 1
         | UINT = 2
@@ -88486,7 +88643,7 @@ module BABYLON =
         | UCHAR = 4
         | UNDEFINED = 5
 
-    type [<RequireQualifiedAccess>] PLYValue =
+    type PLYValue =
         | MIN_X = 0
         | MIN_Y = 1
         | MIN_Z = 2
@@ -89037,8 +89194,7 @@ module BABYLON =
     type [<AllowNullLiteral>] IDracoCompressionConfiguration =
         abstract decoder: IDracoCodecConfiguration with get, set
 
-    type [<AllowNullLiteral>] IDracoCompressionOptions =
-        inherit obj
+    type [<AllowNullLiteral>] IDracoCompressionOptions = interface end
 
     type [<AllowNullLiteral>] DracoCompression =
         abstract dispose: unit -> unit
@@ -89233,7 +89389,7 @@ module BABYLON =
     type [<AllowNullLiteral>] ShapePathStatic =
         [<EmitConstructor>] abstract Create: resolution: float -> ShapePath
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshColorDistribution =
+    type GreasedLineMeshColorDistribution =
         | COLOR_DISTRIBUTION_NONE = 0
         | COLOR_DISTRIBUTION_REPEAT = 1
         | COLOR_DISTRIBUTION_EVEN = 2
@@ -89241,7 +89397,7 @@ module BABYLON =
         | COLOR_DISTRIBUTION_END = 4
         | COLOR_DISTRIBUTION_START_END = 5
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshWidthDistribution =
+    type GreasedLineMeshWidthDistribution =
         | WIDTH_DISTRIBUTION_NONE = 0
         | WIDTH_DISTRIBUTION_REPEAT = 1
         | WIDTH_DISTRIBUTION_EVEN = 2
@@ -89281,25 +89437,22 @@ module BABYLON =
         abstract bottomCapSubdivisions: float option with get, set
         abstract updatable: bool option with get, set
 
-    type Dimension<'T> =
-        obj
+    type [<AllowNullLiteral>] Dimension<'T> = interface end
 
-    type TensorValue =
-        U2<ResizeArray<float>, ResizeArray<TensorValue>>
+    type [<Erase>] TensorValue =
+        | TensorScalars of ResizeArray<float>
+        | NestedTensorValues of ResizeArray<TensorValue>
 
     type ValueOfTensor =
         ValueOfTensor<obj>
 
-    type ValueOfTensor<'T> =
-        obj
+    type [<AllowNullLiteral>] ValueOfTensor<'T> = interface end
 
-    type TensorNumberArray<'V when 'V :> TensorValue> =
-        obj
+    type [<AllowNullLiteral>] TensorNumberArray<'V> = interface end
 
-    type TensorLike<'T> =
-        obj
+    type [<AllowNullLiteral>] TensorLike<'T> = interface end
 
-    type [<AllowNullLiteral>] Tensor<'V, 'I when 'V :> TensorValue> =
+    type [<AllowNullLiteral>] Tensor<'V, 'I> =
         abstract dimension: obj
         abstract rank: float
         abstract getClassName: unit -> string
@@ -89312,20 +89465,20 @@ module BABYLON =
         abstract set: [<ParamArray>] values: TensorNumberArray<'V> -> Tensor<'V, 'I>
         abstract setAll: value: float -> Tensor<'V, 'I>
         abstract add: other: DeepImmutable<'I> -> Tensor<'V, 'I>
-        abstract addToRef: other: DeepImmutable<'I> * result: 'R -> 'R when 'R :> 'I
+        abstract addToRef: other: DeepImmutable<'I> * result: 'I -> 'I
         abstract addInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract addInPlaceFromFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
         abstract subtract: other: DeepImmutable<'I> -> Tensor<'V, 'I>
-        abstract subtractToRef: other: DeepImmutable<'I> * result: 'R -> 'R when 'R :> 'I
+        abstract subtractToRef: other: DeepImmutable<'I> * result: 'I -> 'I
         abstract subtractInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract subtractFromFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
-        abstract subtractFromFloatsToRef: [<ParamArray>] args: obj * 'R -> 'R when 'R :> 'I
+        abstract subtractFromFloatsToRef: [<ParamArray>] args: obj * 'I -> 'I
         abstract multiply: other: DeepImmutable<'I> -> Tensor<'V, 'I>
-        abstract multiplyToRef: other: DeepImmutable<'I> * result: 'R -> 'R when 'R :> 'I
+        abstract multiplyToRef: other: DeepImmutable<'I> * result: 'I -> 'I
         abstract multiplyInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract multiplyByFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
         abstract divide: other: DeepImmutable<'I> -> Tensor<'V, 'I>
-        abstract divideToRef: other: DeepImmutable<'I> * result: 'R -> 'R when 'R :> 'I
+        abstract divideToRef: other: DeepImmutable<'I> * result: 'I -> 'I
         abstract divideInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract minimizeInPlace: other: DeepImmutable<'I> -> Tensor<'V, 'I>
         abstract minimizeInPlaceFromFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
@@ -89333,21 +89486,21 @@ module BABYLON =
         abstract maximizeInPlaceFromFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> Tensor<'V, 'I>
         abstract negate: unit -> Tensor<'V, 'I>
         abstract negateInPlace: unit -> Tensor<'V, 'I>
-        abstract negateToRef: result: 'R -> 'R when 'R :> 'I
+        abstract negateToRef: result: 'I -> 'I
         abstract scaleInPlace: scale: float -> Tensor<'V, 'I>
         abstract scale: scale: float -> Tensor<'V, 'I>
-        abstract scaleToRef: scale: float * result: 'R -> 'R when 'R :> 'I
-        abstract scaleAndAddToRef: scale: float * result: 'R -> 'R when 'R :> 'I
+        abstract scaleToRef: scale: float * result: 'I -> 'I
+        abstract scaleAndAddToRef: scale: float * result: 'I -> 'I
         abstract equals: other: DeepImmutable<'I> -> bool
         abstract equalsWithEpsilon: other: DeepImmutable<'I> * ?epsilon: float -> bool
         abstract equalsToFloats: [<ParamArray>] floats: TensorNumberArray<'V> -> bool
         abstract floor: unit -> Tensor<'V, 'I>
-        abstract floorToRef: result: 'R -> 'R when 'R :> 'I
+        abstract floorToRef: result: 'I -> 'I
         abstract fract: unit -> Tensor<'V, 'I>
-        abstract fractToRef: result: 'R -> 'R when 'R :> 'I
+        abstract fractToRef: result: 'I -> 'I
         abstract clone: unit -> Tensor<'V, 'I>
 
-    type TensorStatic<'T when 'T :> Tensor<ResizeArray<obj option>, _I>> =
+    type TensorStatic<'T when 'T :> Tensor<ResizeArray<obj option>, TensorLike<'T>>> =
         TensorStatic<'T, TensorLike<'T>>
 
     type [<AllowNullLiteral>] TensorStatic<'T, '_I when 'T :> Tensor<ResizeArray<obj option>, '_I>> =
@@ -89453,9 +89606,9 @@ module BABYLON =
         abstract normalize: unit -> Vector<'N, 'I>
         abstract normalizeFromLength: len: float -> Vector<'N, 'I>
         abstract normalizeToNew: unit -> Vector<'N, 'I>
-        abstract normalizeToRef: reference: 'T -> 'T when 'T :> 'I
+        abstract normalizeToRef: reference: 'I -> 'I
 
-    type VectorStatic<'T when 'T :> Vector<ResizeArray<obj option>, _I>> =
+    type VectorStatic<'T when 'T :> Vector<ResizeArray<obj option>, TensorLike<'T>>> =
         VectorStatic<'T, TensorLike<'T>>
 
     type [<AllowNullLiteral>] VectorStatic<'T, '_I when 'T :> Vector<ResizeArray<obj option>, '_I>> =
@@ -90234,7 +90387,7 @@ module BABYLON =
         abstract FromPositionAndNormalToRef: origin: DeepImmutable<Vector3> * normal: DeepImmutable<Vector3> * result: 'T -> 'T when 'T :> Plane
         abstract SignedDistanceToPlaneFromPositionAndNormal: origin: DeepImmutable<Vector3> * normal: DeepImmutable<Vector3> * point: DeepImmutable<Vector3> -> float
 
-    type [<RequireQualifiedAccess>] Orientation =
+    type Orientation =
         | CW = 0
         | CCW = 1
 
@@ -90590,7 +90743,7 @@ module BABYLON =
         abstract Color3: ResizeArray<Color3> with get, set
         abstract Color4: ResizeArray<Color4> with get, set
 
-    type [<RequireQualifiedAccess>] Space =
+    type Space =
         | LOCAL = 0
         | WORLD = 1
         | BONE = 2
@@ -90604,7 +90757,7 @@ module BABYLON =
         abstract Y: Vector3 with get, set
         abstract Z: Vector3 with get, set
 
-    type [<RequireQualifiedAccess>] Coordinate =
+    type Coordinate =
         | X = 0
         | Y = 1
         | Z = 2
@@ -90643,8 +90796,7 @@ module BABYLON =
     type UVDefinesMixinConstructor =
         UVDefinesMixinConstructor<obj>
 
-    type UVDefinesMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] UVDefinesMixinConstructor<'T> = interface end
 
     type [<AllowNullLiteral>] UniformBufferEffectCommonAccessor =
         abstract setMatrix3x3: (string -> Float32Array -> unit) with get, set
@@ -91081,7 +91233,7 @@ module BABYLON =
         abstract SnippetUrl: string with get, set
         [<EmitConstructor>] abstract Create: name: string * scene: Scene * shaderPath: U2<IShaderPath, string> * ?options: obj * ?storeEffectOnSubMeshes: bool -> ShaderMaterial
 
-    type [<RequireQualifiedAccess>] ShaderLanguage =
+    type ShaderLanguage =
         | GLSL = 0
         | WGSL = 1
 
@@ -91105,8 +91257,7 @@ module BABYLON =
     type PrepassDefinesMixinConstructor =
         PrepassDefinesMixinConstructor<obj>
 
-    type PrepassDefinesMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] PrepassDefinesMixinConstructor<'T> = interface end
 
     type [<AllowNullLiteral>] PrePassConfiguration =
         abstract previousWorldMatrices: PrePassConfigurationPreviousWorldMatrices with get, set
@@ -91145,7 +91296,7 @@ module BABYLON =
     type [<AllowNullLiteral>] MultiMaterialStatic =
         [<EmitConstructor>] abstract Create: name: string * ?scene: Scene -> MultiMaterial
 
-    type [<RequireQualifiedAccess>] MeshDebugMode =
+    type MeshDebugMode =
         | NONE = 0
         | TRIANGLES = 1
         | VERTICES = 2
@@ -91570,7 +91721,7 @@ module BABYLON =
     type [<AllowNullLiteral>] MaterialPluginHardBindForSubMesh =
         abstract subMesh: SubMesh with get, set
 
-    type [<RequireQualifiedAccess>] MaterialPluginEvent =
+    type MaterialPluginEvent =
         | Created = 1
         | Disposed = 2
         | GetDefineNames = 4
@@ -91668,7 +91819,7 @@ module BABYLON =
     type [<AllowNullLiteral>] MaterialPluginBaseStaticDefines =
         [<EmitIndexer>] abstract Item: key: string -> obj option with get, set
 
-    type [<RequireQualifiedAccess>] GeometryRenderingTextureClearType =
+    type GeometryRenderingTextureClearType =
         | Zero = 0
         | One = 1
         | MaxViewZ = 2
@@ -92016,8 +92167,7 @@ module BABYLON =
     type ImageProcessingDefinesMixinConstructor =
         ImageProcessingDefinesMixinConstructor<obj>
 
-    type ImageProcessingDefinesMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] ImageProcessingDefinesMixinConstructor<'T> = interface end
 
     type [<AllowNullLiteral>] ImageProcessingConfigurationDefines =
         inherit MaterialDefines
@@ -92044,8 +92194,7 @@ module BABYLON =
     type ImageProcessingMixinConstructor =
         ImageProcessingMixinConstructor<obj>
 
-    type ImageProcessingMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] ImageProcessingMixinConstructor<'T> = interface end
 
     type [<AllowNullLiteral>] IEffectFallbacks =
         abstract reduce: currentDefines: string * effect: Effect -> string
@@ -92090,8 +92239,7 @@ module BABYLON =
     type EnvironmentLightingDefinesMixinConstructor =
         EnvironmentLightingDefinesMixinConstructor<obj>
 
-    type EnvironmentLightingDefinesMixinConstructor<'T> =
-        obj
+    type [<AllowNullLiteral>] EnvironmentLightingDefinesMixinConstructor<'T> = interface end
 
     type [<AllowNullLiteral>] IEffectRendererOptions =
         abstract positions: ResizeArray<float> option with get, set
@@ -92377,11 +92525,11 @@ module BABYLON =
     type [<AllowNullLiteral>] TextureSamplerStatic =
         [<EmitConstructor>] abstract Create: unit -> TextureSampler
 
-    type [<RequireQualifiedAccess>] TextureColorSpace =
+    type TextureColorSpace =
         | Linear = 0
         | SRGB = 1
 
-    type [<RequireQualifiedAccess>] ChannelMask =
+    type ChannelMask =
         | R = 1
         | G = 2
         | B = 4
@@ -92389,7 +92537,7 @@ module BABYLON =
         | RGB = 7
         | RGBA = 15
 
-    type [<RequireQualifiedAccess>] TextureChannel =
+    type TextureChannel =
         | RGBA = 0
         | R = 1
         | G = 2
@@ -92728,12 +92876,12 @@ module BABYLON =
     type [<AllowNullLiteral>] MirrorTextureStatic =
         [<EmitConstructor>] abstract Create: name: string * size: U3<float, {| width: float; height: float |}, {| ratio: float |}> * ?scene: Scene * ?generateMipMaps: bool * ?``type``: float * ?samplingMode: float * ?generateDepthBuffer: bool -> MirrorTexture
 
-    type [<RequireQualifiedAccess>] SourceTextureFormat =
+    type SourceTextureFormat =
         | ETC1S = 0
         | UASTC4x4 = 1
         | RGBA32 = 2
 
-    type [<RequireQualifiedAccess>] TranscodeTarget =
+    type TranscodeTarget =
         | ASTC_4X4_RGBA = 0
         | ASTC_4x4_RGBA = 0
         | BC7_RGBA = 1
@@ -92747,7 +92895,7 @@ module BABYLON =
         | R8 = 9
         | RG8 = 10
 
-    type [<RequireQualifiedAccess>] EngineFormat =
+    type EngineFormat =
         | COMPRESSED_RGBA_BPTC_UNORM_EXT = 36492
         | COMPRESSED_RGBA_ASTC_4X4_KHR = 37808
         | COMPRESSED_RGB_S3TC_DXT1_EXT = 33776
@@ -92811,7 +92959,7 @@ module BABYLON =
         abstract bypassTranscoders: ResizeArray<string> option with get, set
         abstract transcodeFormatDecisionTree: IDecisionTree option with get, set
 
-    type [<RequireQualifiedAccess>] InternalTextureSource =
+    type InternalTextureSource =
         | Unknown = 0
         | Url = 1
         | Temp = 2
@@ -93463,7 +93611,7 @@ module BABYLON =
         abstract linearSpace: bool with get, set
         abstract textureType: float with get, set
 
-    type [<RequireQualifiedAccess>] CompressionCodes =
+    type CompressionCodes =
         | NO_COMPRESSION = 0
         | RLE_COMPRESSION = 1
         | ZIPS_COMPRESSION = 2
@@ -93474,7 +93622,7 @@ module BABYLON =
     type [<AllowNullLiteral>] DataCursor =
         abstract value: float with get, set
 
-    type [<RequireQualifiedAccess>] EXROutputType =
+    type EXROutputType =
         | Float = 0
         | HalfFloat = 1
 
@@ -94961,13 +95109,13 @@ module BABYLON =
     type [<AllowNullLiteral>] NodeMaterialBuildStateStatic =
         [<EmitConstructor>] abstract Create: unit -> NodeMaterialBuildState
 
-    type [<RequireQualifiedAccess>] NodeMaterialConnectionPointCompatibilityStates =
+    type NodeMaterialConnectionPointCompatibilityStates =
         | Compatible = 0
         | TypeIncompatible = 1
         | TargetIncompatible = 2
         | HierarchyIssue = 3
 
-    type [<RequireQualifiedAccess>] NodeMaterialConnectionPointDirection =
+    type NodeMaterialConnectionPointDirection =
         | Input = 0
         | Output = 1
 
@@ -95287,7 +95435,7 @@ module BABYLON =
     type [<AllowNullLiteral>] NodeMaterialOptimizerStatic =
         [<EmitConstructor>] abstract Create: unit -> NodeMaterialOptimizer
 
-    type [<RequireQualifiedAccess>] NodeMaterialSystemValues =
+    type NodeMaterialSystemValues =
         | World = 1
         | View = 2
         | Projection = 3
@@ -95302,7 +95450,7 @@ module BABYLON =
         | ProjectionInverse = 12
         | CameraForward = 13
 
-    type [<RequireQualifiedAccess>] NodeMaterialModes =
+    type NodeMaterialModes =
         | Material = 0
         | PostProcess = 1
         | Particle = 2
@@ -95310,13 +95458,13 @@ module BABYLON =
         | GaussianSplatting = 4
         | SFE = 5
 
-    type [<RequireQualifiedAccess>] NodeMaterialBlockTargets =
+    type NodeMaterialBlockTargets =
         | Vertex = 1
         | Fragment = 2
         | Neutral = 4
         | VertexAndFragment = 3
 
-    type [<RequireQualifiedAccess>] NodeMaterialBlockConnectionPointTypes =
+    type NodeMaterialBlockConnectionPointTypes =
         | Float = 1
         | Int = 2
         | Vector2 = 4
@@ -95330,7 +95478,7 @@ module BABYLON =
         | BasedOnInput = 2048
         | All = 4095
 
-    type [<RequireQualifiedAccess>] NodeMaterialBlockConnectionPointMode =
+    type NodeMaterialBlockConnectionPointMode =
         | Uniform = 0
         | Attribute = 1
         | Varying = 2
@@ -95353,7 +95501,7 @@ module BABYLON =
     type [<AllowNullLiteral>] WorleyNoise3DBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> WorleyNoise3DBlock
 
-    type [<RequireQualifiedAccess>] WaveBlockKind =
+    type WaveBlockKind =
         | SawTooth = 0
         | Square = 1
         | Triangle = 2
@@ -95446,7 +95594,7 @@ module BABYLON =
     type [<AllowNullLiteral>] VectorMergerBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> VectorMergerBlock
 
-    type [<RequireQualifiedAccess>] TrigonometryBlockOperations =
+    type TrigonometryBlockOperations =
         | Cos = 0
         | Sin = 1
         | Abs = 2
@@ -95823,7 +95971,7 @@ module BABYLON =
     type [<AllowNullLiteral>] MinBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> MinBlock
 
-    type [<RequireQualifiedAccess>] MeshAttributeExistsBlockTypes =
+    type MeshAttributeExistsBlockTypes =
         | None = 0
         | Normal = 1
         | Tangent = 2
@@ -96070,7 +96218,7 @@ module BABYLON =
     type [<AllowNullLiteral>] CustomBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> CustomBlock
 
-    type [<RequireQualifiedAccess>] CurveBlockTypes =
+    type CurveBlockTypes =
         | EaseInSine = 0
         | EaseOutSine = 1
         | EaseInOutSine = 2
@@ -96124,7 +96272,7 @@ module BABYLON =
     type [<AllowNullLiteral>] CrossBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> CrossBlock
 
-    type [<RequireQualifiedAccess>] ConditionalBlockConditions =
+    type ConditionalBlockConditions =
         | Equal = 0
         | NotEqual = 1
         | LessThan = 2
@@ -96783,7 +96931,7 @@ module BABYLON =
     type [<AllowNullLiteral>] InputBlockStatic =
         [<EmitConstructor>] abstract Create: name: string * ?target: NodeMaterialBlockTargets * ?``type``: NodeMaterialBlockConnectionPointTypes -> InputBlock
 
-    type [<RequireQualifiedAccess>] AnimatedInputBlockTypes =
+    type AnimatedInputBlockTypes =
         | None = 0
         | Time = 1
         | RealTime = 2
@@ -96997,7 +97145,7 @@ module BABYLON =
     type [<AllowNullLiteral>] FrontFacingBlockStatic =
         [<EmitConstructor>] abstract Create: name: string -> FrontFacingBlock
 
-    type [<RequireQualifiedAccess>] FragmentOutputBlockColorSpace =
+    type FragmentOutputBlockColorSpace =
         | NoColorSpace = 0
         | Gamma = 1
         | Linear = 2
@@ -97512,17 +97660,17 @@ module BABYLON =
         abstract setColors: colors: Nullable<ResizeArray<Color3>> * ``lazy``: bool * ?forceNewTexture: bool -> unit
         abstract updateLazy: unit -> unit
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshMaterialType =
+    type GreasedLineMeshMaterialType =
         | MATERIAL_TYPE_STANDARD = 0
         | MATERIAL_TYPE_PBR = 1
         | MATERIAL_TYPE_SIMPLE = 2
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshColorMode =
+    type GreasedLineMeshColorMode =
         | COLOR_MODE_SET = 0
         | COLOR_MODE_ADD = 1
         | COLOR_MODE_MULTIPLY = 2
 
-    type [<RequireQualifiedAccess>] GreasedLineMeshColorDistributionType =
+    type GreasedLineMeshColorDistributionType =
         | COLOR_DISTRIBUTION_TYPE_SEGMENT = 0
         | COLOR_DISTRIBUTION_TYPE_LINE = 1
 
@@ -97838,7 +97986,7 @@ module BABYLON =
         abstract loadAsync: scene: Scene * data: obj * rootUrl: string * ?onProgress: (ISceneLoaderProgressEvent -> unit) * ?fileName: string -> Promise<unit>
         abstract loadAssetContainerAsync: scene: Scene * data: obj * rootUrl: string * ?onProgress: (ISceneLoaderProgressEvent -> unit) * ?fileName: string -> Promise<AssetContainer>
 
-    type [<RequireQualifiedAccess>] SceneLoaderAnimationGroupLoadingMode =
+    type SceneLoaderAnimationGroupLoadingMode =
         | Clean = 0
         | Stop = 1
         | Sync = 2
@@ -99220,7 +99368,7 @@ module BABYLON =
         abstract generateMipMaps: bool option with get, set
         abstract mesh: Mesh option with get, set
 
-    type [<AllowNullLiteral>] TextureDome<'T when 'T :> Texture> =
+    type [<AllowNullLiteral>] TextureDome<'T> =
         inherit TransformNode
         abstract onError: Nullable<((string) option -> (obj) option -> unit)> with get, set
         abstract _useDirectMapping: bool with get, set
@@ -99709,11 +99857,11 @@ module BABYLON =
         abstract active: bool with get, set
         abstract dragBehavior: PointerDragBehavior with get, set
 
-    type [<RequireQualifiedAccess>] GizmoAnchorPoint =
+    type GizmoAnchorPoint =
         | Origin = 0
         | Pivot = 1
 
-    type [<RequireQualifiedAccess>] GizmoCoordinatesMode =
+    type GizmoCoordinatesMode =
         | World = 0
         | Local = 1
 
@@ -99835,7 +99983,7 @@ module BABYLON =
         abstract scalingSnapDistance: float with get, set
         abstract rotationSnapDistance: float with get, set
 
-    type [<RequireQualifiedAccess>] DragOperation =
+    type DragOperation =
         | Rotation = 0
         | Scaling = 1
 
@@ -99987,7 +100135,7 @@ module BABYLON =
         abstract _CreateArrowInstance: scene: Scene * arrow: TransformNode -> TransformNode
         [<EmitConstructor>] abstract Create: dragAxis: Vector3 * ?color: Color3 * ?gizmoLayer: UtilityLayerRenderer * ?parent: PositionGizmo * ?thickness: float * ?hoverColor: Color3 * ?disableColor: Color3 -> AxisDragGizmo
 
-    type [<RequireQualifiedAccess>] Xbox360Button =
+    type Xbox360Button =
         | A = 0
         | B = 1
         | X = 2
@@ -99999,7 +100147,7 @@ module BABYLON =
         | LeftStick = 10
         | RightStick = 11
 
-    type [<RequireQualifiedAccess>] Xbox360Dpad =
+    type Xbox360Dpad =
         | Up = 12
         | Down = 13
         | Left = 14
@@ -100140,7 +100288,7 @@ module BABYLON =
     type [<AllowNullLiteral>] GenericPadStatic =
         [<EmitConstructor>] abstract Create: id: string * index: float * browserGamepad: obj option -> GenericPad
 
-    type [<RequireQualifiedAccess>] DualShockButton =
+    type DualShockButton =
         | Cross = 0
         | Circle = 1
         | Square = 2
@@ -100152,7 +100300,7 @@ module BABYLON =
         | LeftStick = 10
         | RightStick = 11
 
-    type [<RequireQualifiedAccess>] DualShockDpad =
+    type DualShockDpad =
         | Up = 12
         | Down = 13
         | Left = 14
@@ -100249,7 +100397,7 @@ module BABYLON =
         abstract aliasHandle: FrameGraphTextureHandle option with get, set
         abstract historyTexture: bool option with get, set
 
-    type [<RequireQualifiedAccess>] FrameGraphTextureNamespace =
+    type FrameGraphTextureNamespace =
         | Task = 0
         | Graph = 1
         | External = 2
@@ -101398,7 +101546,7 @@ module BABYLON =
         abstract IsRenderPass: pass: IFrameGraphPass -> bool
         [<EmitConstructor>] abstract Create: name: string * parentTask: FrameGraphTask * context: FrameGraphRenderContext * engine: AbstractEngine -> FrameGraphRenderPass
 
-    type [<AllowNullLiteral>] FrameGraphPass<'T when 'T :> FrameGraphContext> =
+    type [<AllowNullLiteral>] FrameGraphPass<'T> =
         inherit IFrameGraphPass
         abstract name: string with get, set
         abstract _parentTask: FrameGraphTask
@@ -101604,7 +101752,7 @@ module BABYLON =
         abstract autoConfigure: bool option with get, set
         abstract autoFillExternalInputs: bool option with get, set
 
-    type [<RequireQualifiedAccess>] NodeRenderGraphBlockConnectionPointTypes =
+    type NodeRenderGraphBlockConnectionPointTypes =
         | Texture = 1
         | TextureBackBuffer = 2
         | TextureBackBufferDepthStencilAttachment = 4
@@ -101636,12 +101784,12 @@ module BABYLON =
         | Object = -2147483648
         | All = -1
 
-    type [<RequireQualifiedAccess>] NodeRenderGraphConnectionPointCompatibilityStates =
+    type NodeRenderGraphConnectionPointCompatibilityStates =
         | Compatible = 0
         | TypeIncompatible = 1
         | HierarchyIssue = 2
 
-    type [<RequireQualifiedAccess>] NodeRenderGraphConnectionPointDirection =
+    type NodeRenderGraphConnectionPointDirection =
         | Input = 0
         | Output = 1
 
@@ -101706,7 +101854,7 @@ module BABYLON =
         abstract ``type``: NodeRenderGraphBlockConnectionPointTypes
         abstract setDefaultValue: unit -> unit
         abstract value: Nullable<NodeRenderGraphValueType> with get, set
-        abstract getTypedValue: unit -> 'T when 'T :> NodeRenderGraphValueType
+        abstract getTypedValue: unit -> 'T
         abstract getInternalTextureFromValue: unit -> Nullable<InternalTexture>
         abstract getClassName: unit -> string
         abstract output: NodeRenderGraphConnectionPoint
@@ -102788,7 +102936,7 @@ module BABYLON =
         abstract allBlocks: ResizeArray<ISerializedFlowGraphBlock> with get, set
         abstract rightHanded: bool option with get, set
 
-    type [<RequireQualifiedAccess>] FlowGraphValidationSeverity =
+    type FlowGraphValidationSeverity =
         | Error = 0
         | Warning = 1
 
@@ -102815,7 +102963,7 @@ module BABYLON =
         abstract _activateSignal: context: FlowGraphContext -> unit
 
     type [<AllowNullLiteral>] FlowGraphSignalConnectionStatic =
-        [<EmitConstructor>] abstract Create: name: string * _connectionType: FlowGraphConnectionType * _ownerBlock: BlockT -> FlowGraphSignalConnection
+        [<EmitConstructor>] abstract Create: name: string * _connectionType: FlowGraphConnectionType * _ownerBlock: FlowGraphExecutionBlock -> FlowGraphSignalConnection
 
     type [<AllowNullLiteral>] IFlowGraphEventTrigger =
         abstract ``type``: FlowGraphEventType with get, set
@@ -103075,7 +103223,7 @@ module BABYLON =
     type [<AllowNullLiteral>] FlowGraphContextStatic =
         [<EmitConstructor>] abstract Create: ``params``: IFlowGraphContextConfiguration -> FlowGraphContext
 
-    type [<RequireQualifiedAccess>] FlowGraphConnectionType =
+    type FlowGraphConnectionType =
         | Input = 0
         | Output = 1
 
@@ -103086,7 +103234,7 @@ module BABYLON =
         abstract _connectionType: FlowGraphConnectionType with get, set
         abstract connectTo: point: IConnectable -> unit
 
-    type [<AllowNullLiteral>] FlowGraphConnection<'BlockT, 'ConnectedToT when 'ConnectedToT :> IConnectable> =
+    type [<AllowNullLiteral>] FlowGraphConnection<'BlockT, 'ConnectedToT> =
         inherit IConnectable
         abstract _ownerBlock: 'BlockT with get, set
         abstract _connectedPoint: Array<'ConnectedToT> with get, set
@@ -103159,14 +103307,13 @@ module BABYLON =
         | [<CompiledName("Camera")>] Camera
         | [<CompiledName("Light")>] Light
 
-    type AssetType<'T> =
-        obj
+    type [<AllowNullLiteral>] AssetType<'T> = interface end
 
     type [<AllowNullLiteral>] IFlowGraphEditorLaunchOptions =
         abstract editorURL: string option with get, set
         abstract flowGraphEditorConfig: {| hostScene: Scene option; hostElement: HTMLElement option; attachToLiveScene: bool option |} option with get, set
 
-    type [<RequireQualifiedAccess>] FlowGraphState =
+    type FlowGraphState =
         | Stopped = 0
         | Started = 1
         | Paused = 2
@@ -103327,7 +103474,7 @@ module BABYLON =
         | [<CompiledName("FlowGraphEBlock")>] E
         | [<CompiledName("FlowGraphPIBlock")>] PI
         | [<CompiledName("FlowGraphInfBlock")>] Inf
-        | [<CompiledName("FlowGraphNaNBlock")>] NaN
+        | [<CompiledName("FlowGraphNaNBlock")>] NotANumber
         | [<CompiledName("FlowGraphRandomBlock")>] Random
         | [<CompiledName("FlowGraphAddBlock")>] Add
         | [<CompiledName("FlowGraphSubtractBlock")>] Subtract
@@ -103619,7 +103766,7 @@ module BABYLON =
         inherit IFlowGraphBlockConfiguration
         abstract cases: ResizeArray<'T> with get, set
 
-    type [<AllowNullLiteral>] FlowGraphSwitchBlock<'T when 'T :> FlowGraphNumber> =
+    type [<AllowNullLiteral>] FlowGraphSwitchBlock<'T> =
         inherit FlowGraphExecutionBlock
         abstract config: IFlowGraphSwitchBlockConfiguration<'T> with get, set
         abstract case: FlowGraphDataConnection<'T>
@@ -103882,7 +104029,7 @@ module BABYLON =
     type [<AllowNullLiteral>] FlowGraphInterpolationBlockStatic =
         [<EmitConstructor>] abstract Create: ?config: IFlowGraphInterpolationBlockConfiguration -> FlowGraphInterpolationBlock<'T>
 
-    type [<RequireQualifiedAccess>] EasingFunctionType =
+    type EasingFunctionType =
         | CircleEase = 0
         | BackEase = 1
         | BounceEase = 2
@@ -105271,7 +105418,7 @@ module BABYLON =
     type [<AllowNullLiteral>] KeyboardInfoPreStatic =
         [<EmitConstructor>] abstract Create: ``type``: float * ``event``: IKeyboardEvent -> KeyboardInfoPre
 
-    type [<RequireQualifiedAccess>] DeviceInputEventType =
+    type DeviceInputEventType =
         | PointerMove = 0
         | PointerDown = 1
         | PointerUp = 2
@@ -105818,7 +105965,7 @@ module BABYLON =
         abstract _uploadArrayBufferViewToTexture: texture: InternalTexture * imageData: ArrayBufferView * ?faceIndex: float * ?lod: float -> unit
         abstract getFontOffset: font: string -> {| ascent: float; height: float; descent: float |}
         abstract flushFramebuffer: unit -> unit
-        abstract _readTexturePixels: texture: InternalTexture * width: float * height: float * ?faceIndex: float * ?level: float * ?buffer: ArrayBufferView<ArrayBuffer> * ?_flushRenderer: bool * ?_noDataConversion: bool * ?x: float * ?y: float -> Promise<ArrayBufferView>
+        abstract _readTexturePixels: texture: InternalTexture * width: float * height: float * ?faceIndex: float * ?level: float * ?buffer: ArrayBufferView * ?_flushRenderer: bool * ?_noDataConversion: bool * ?x: float * ?y: float -> Promise<ArrayBufferView>
         abstract startTimeQuery: unit -> Nullable<_TimeToken>
         abstract endTimeQuery: token: _TimeToken -> int
         abstract createCubeTexture: rootUrl: string * scene: Nullable<Scene> * files: Nullable<ResizeArray<string>> * ?noMipmap: bool * ?onLoad: ((obj) option -> unit) * ?onError: ((string) option -> (obj) option -> unit) * ?format: float * ?forcedExtension: obj * ?createPolynomials: bool * ?lodScale: float * ?lodOffset: float * ?fallback: InternalTexture * ?loaderOptions: obj * ?useSRGBBuffer: bool * ?buffer: ArrayBufferView -> InternalTexture
@@ -108296,7 +108443,7 @@ module BABYLON =
         | Pending
         | Mapped
 
-    type [<RequireQualifiedAccess>] BufferUsage =
+    type BufferUsage =
         | MapRead = 1
         | MapWrite = 2
         | CopySrc = 4
@@ -108308,7 +108455,7 @@ module BABYLON =
         | Indirect = 256
         | QueryResolve = 512
 
-    type [<RequireQualifiedAccess>] MapMode =
+    type MapMode =
         | Read = 1
         | Write = 2
 
@@ -108317,7 +108464,7 @@ module BABYLON =
         | [<CompiledName("2d")>] E2d
         | [<CompiledName("3d")>] E3d
 
-    type [<RequireQualifiedAccess>] TextureUsage =
+    type TextureUsage =
         | CopySrc = 1
         | CopyDst = 2
         | TextureBinding = 4
@@ -108464,7 +108611,7 @@ module BABYLON =
         | [<CompiledName("greater-equal")>] GreaterEqual
         | Always
 
-    type [<RequireQualifiedAccess>] ShaderStage =
+    type ShaderStage =
         | Vertex = 1
         | Fragment = 2
         | Compute = 4
@@ -108519,7 +108666,7 @@ module BABYLON =
         | Front
         | Back
 
-    type [<RequireQualifiedAccess>] ColorWrite =
+    type ColorWrite =
         | Red = 1
         | Green = 2
         | Blue = 4
@@ -109996,7 +110143,7 @@ module BABYLON =
     type [<AllowNullLiteral>] INativeDataStreamConstructorStatic =
         [<EmitConstructor>] abstract Create: requestFlushCallback: (unit -> unit) -> INativeDataStreamConstructor
 
-    type [<RequireQualifiedAccess>] NativeTraceLevel =
+    type NativeTraceLevel =
         | Mark = 1
         | Log = 2
 
@@ -110210,7 +110357,7 @@ module BABYLON =
         abstract numErrors: float with get, set
         abstract messages: ResizeArray<ComputeCompilationMessagesMessages> with get, set
 
-    type [<RequireQualifiedAccess>] ComputeBindingType =
+    type ComputeBindingType =
         | Texture = 0
         | StorageTexture = 1
         | UniformBuffer = 2
@@ -110272,8 +110419,7 @@ module BABYLON =
     type [<AllowNullLiteral>] NativeDeviceInputSystemStatic =
         [<EmitConstructor>] abstract Create: onDeviceConnected: (DeviceType -> float -> unit) * onDeviceDisconnected: (DeviceType -> float -> unit) * onInputChanged: (DeviceType -> float -> IUIEvent -> unit) -> NativeDeviceInputSystem
 
-    type Distribute<'T> =
-        obj
+    type [<AllowNullLiteral>] Distribute<'T> = interface end
 
     type DeviceSourceType =
         Distribute<DeviceType>
@@ -110308,8 +110454,7 @@ module BABYLON =
         [<EmitConstructor>] abstract Create: unit -> DeviceEventFactory
         abstract CreateDeviceEvent: deviceType: DeviceType * deviceSlot: float * inputIndex: float * currentState: Nullable<float> * deviceInputSystem: IDeviceInputSystem * ?elementToAttachTo: obj * ?pointerId: float -> IUIEvent
 
-    type DeviceInput<'T> =
-        obj
+    type [<AllowNullLiteral>] DeviceInput<'T> = interface end
 
     type [<AllowNullLiteral>] DeviceSourceManager =
         inherit IDisposable
@@ -110326,8 +110471,7 @@ module BABYLON =
     type [<AllowNullLiteral>] DeviceSourceManagerStatic =
         [<EmitConstructor>] abstract Create: engine: AbstractEngine -> DeviceSourceManager
 
-    type DeviceSourceEvent<'T> =
-        obj
+    type [<AllowNullLiteral>] DeviceSourceEvent<'T> = interface end
 
     type [<AllowNullLiteral>] DeviceSource<'T> =
         abstract deviceType: 'T
@@ -110338,7 +110482,7 @@ module BABYLON =
     type [<AllowNullLiteral>] DeviceSourceStatic =
         [<EmitConstructor>] abstract Create: deviceInputSystem: IDeviceInputSystem * deviceType: 'T * ?deviceSlot: float -> DeviceSource<'T>
 
-    type [<RequireQualifiedAccess>] DeviceType =
+    type DeviceType =
         | Generic = 0
         | Keyboard = 1
         | Mouse = 2
@@ -110348,7 +110492,7 @@ module BABYLON =
         | Switch = 6
         | DualSense = 7
 
-    type [<RequireQualifiedAccess>] PointerInput =
+    type PointerInput =
         | Horizontal = 0
         | Vertical = 1
         | LeftClick = 2
@@ -110361,7 +110505,7 @@ module BABYLON =
         | MouseWheelZ = 9
         | Move = 12
 
-    type [<RequireQualifiedAccess>] NativePointerInput =
+    type NativePointerInput =
         | Horizontal = 0
         | Vertical = 1
         | LeftClick = 2
@@ -110375,7 +110519,7 @@ module BABYLON =
         | DeltaHorizontal = 10
         | DeltaVertical = 11
 
-    type [<RequireQualifiedAccess>] DualShockInput =
+    type DualShockInput =
         | Cross = 0
         | Circle = 1
         | Square = 2
@@ -110399,7 +110543,7 @@ module BABYLON =
         | RStickXAxis = 20
         | RStickYAxis = 21
 
-    type [<RequireQualifiedAccess>] DualSenseInput =
+    type DualSenseInput =
         | Cross = 0
         | Circle = 1
         | Square = 2
@@ -110423,7 +110567,7 @@ module BABYLON =
         | RStickXAxis = 20
         | RStickYAxis = 21
 
-    type [<RequireQualifiedAccess>] XboxInput =
+    type XboxInput =
         | A = 0
         | B = 1
         | X = 2
@@ -110446,7 +110590,7 @@ module BABYLON =
         | RStickXAxis = 19
         | RStickYAxis = 20
 
-    type [<RequireQualifiedAccess>] SwitchInput =
+    type SwitchInput =
         | B = 0
         | A = 1
         | Y = 2
@@ -110470,7 +110614,7 @@ module BABYLON =
         | RStickXAxis = 20
         | RStickYAxis = 21
 
-    type [<RequireQualifiedAccess>] PropertyTypeForEdition =
+    type PropertyTypeForEdition =
         | Boolean = 0
         | Float = 1
         | Int = 2
@@ -110678,7 +110822,7 @@ module BABYLON =
         abstract contextMenuOverride: ResizeArray<IInspectorContextMenuType> option with get, set
         abstract skipDefaultFontLoading: bool option with get, set
 
-    type [<RequireQualifiedAccess>] DebugLayerTab =
+    type DebugLayerTab =
         | Properties = 0
         | Debug = 1
         | Statistics = 2
@@ -111104,7 +111248,7 @@ module BABYLON =
         abstract pickedPoints: ResizeArray<Nullable<Vector3>> option with get, set
         abstract normals: ResizeArray<Nullable<Vector3>> option with get, set
 
-    type [<RequireQualifiedAccess>] GPUMultiPickReadbackStrategy =
+    type GPUMultiPickReadbackStrategy =
         | Auto = 0
         | Rectangle = 1
         | Individual = 2
@@ -111329,7 +111473,7 @@ module BABYLON =
     type [<AllowNullLiteral>] InteractionName<'THandlers> =
         interface end
 
-    type [<AllowNullLiteral>] InputMapper<'THandlers when 'THandlers :> Record<string, obj>> =
+    type [<AllowNullLiteral>] InputMapper<'THandlers> =
         abstract inputMap: ResizeArray<InputMapEntry<InteractionName<'THandlers>>> with get, set
         abstract handlers: 'THandlers
         [<Emit("$0.resolveInteraction('pointer',$1)")>] abstract resolveInteraction_pointer: ?currentConditions: InputConditions -> PointerInputMapEntry<InteractionName<'THandlers>> option
@@ -111610,7 +111754,7 @@ module BABYLON =
     type [<AllowNullLiteral>] CameraMovementStatic =
         [<EmitConstructor>] abstract Create: scene: Scene * _cameraPosition: Vector3 * ?_behavior: InterpolatingBehavior -> CameraMovement
 
-    type [<AllowNullLiteral>] ICameraInput<'Tcamera when 'Tcamera :> Camera> =
+    type [<AllowNullLiteral>] ICameraInput<'Tcamera> =
         abstract camera: Nullable<'Tcamera> with get, set
         abstract getClassName: unit -> string
         abstract getSimpleName: unit -> string
@@ -111618,11 +111762,11 @@ module BABYLON =
         abstract detachControl: unit -> unit
         abstract checkInputs: (unit -> unit) option with get, set
 
-    type [<AllowNullLiteral>] CameraInputsMap<'Tcamera when 'Tcamera :> Camera> =
+    type [<AllowNullLiteral>] CameraInputsMap<'Tcamera> =
         [<EmitIndexer>] abstract Item: name: string -> ICameraInput<'Tcamera> with get, set
         [<EmitIndexer>] abstract Item: idx: float -> ICameraInput<'Tcamera> with get, set
 
-    type [<AllowNullLiteral>] CameraInputsManager<'Tcamera when 'Tcamera :> Camera> =
+    type [<AllowNullLiteral>] CameraInputsManager<'Tcamera> =
         abstract attached: CameraInputsMap<'Tcamera> with get, set
         abstract attachedToElement: bool with get, set
         abstract noPreventDefault: bool with get, set
@@ -112899,17 +113043,17 @@ module BABYLON =
     type [<AllowNullLiteral>] MultiPointerScaleBehaviorStatic =
         [<EmitConstructor>] abstract Create: unit -> MultiPointerScaleBehavior
 
-    type [<RequireQualifiedAccess>] HandConstraintZone =
+    type HandConstraintZone =
         | ABOVE_FINGER_TIPS = 0
         | RADIAL_SIDE = 1
         | ULNAR_SIDE = 2
         | BELOW_WRIST = 3
 
-    type [<RequireQualifiedAccess>] HandConstraintOrientation =
+    type HandConstraintOrientation =
         | LOOK_AT_CAMERA = 0
         | HAND_ROTATION = 1
 
-    type [<RequireQualifiedAccess>] HandConstraintVisibility =
+    type HandConstraintVisibility =
         | ALWAYS_VISIBLE = 0
         | PALM_UP = 1
         | GAZE_FOCUS = 2
@@ -113051,7 +113195,7 @@ module BABYLON =
     type InterpolatingBehavior =
         InterpolatingBehavior<Camera>
 
-    type [<AllowNullLiteral>] InterpolatingBehavior<'C when 'C :> Camera> =
+    type [<AllowNullLiteral>] InterpolatingBehavior<'C> =
         inherit Behavior<'C>
         abstract name: string
         abstract easingFunction: EasingFunction with get, set
@@ -113195,12 +113339,12 @@ module BABYLON =
     type [<AllowNullLiteral>] BakedVertexAnimationManagerStatic =
         [<EmitConstructor>] abstract Create: ?scene: Scene -> BakedVertexAnimationManager
 
-    type [<RequireQualifiedAccess>] SpatialAudioAttachmentType =
+    type SpatialAudioAttachmentType =
         | Position = 1
         | Rotation = 2
         | PositionAndRotation = 3
 
-    type [<RequireQualifiedAccess>] SoundState =
+    type SoundState =
         | Stopping = 0
         | Stopped = 1
         | Starting = 2
@@ -113936,7 +114080,7 @@ module BABYLON =
     type [<AllowNullLiteral>] AbstractAudioOutNodeStatic =
         [<EmitConstructor>] abstract Create: name: string * engine: AudioEngineV2 * nodeType: AudioNodeType -> AbstractAudioOutNode
 
-    type [<RequireQualifiedAccess>] AudioNodeType =
+    type AudioNodeType =
         | HAS_INPUTS = 1
         | HAS_OUTPUTS = 2
         | HAS_INPUTS_AND_OUTPUTS = 3
@@ -114115,7 +114259,7 @@ module BABYLON =
     type [<AllowNullLiteral>] AbstractSpatialAudioStatic =
         [<EmitConstructor>] abstract Create: unit -> AbstractSpatialAudio
 
-    type [<RequireQualifiedAccess>] AudioAnalyzerFFTSizeType =
+    type AudioAnalyzerFFTSizeType =
         | N32 = 32
         | N64 = 64
         | N128 = 128
@@ -114660,11 +114804,11 @@ module BABYLON =
         abstract lockedTangent: bool option with get, set
         abstract easingFunction: IEasingFunction option with get, set
 
-    type [<RequireQualifiedAccess>] AnimationKeyInterpolation =
+    type AnimationKeyInterpolation =
         | NONE = 0
         | STEP = 1
 
-    type [<RequireQualifiedAccess>] AnimationGroupMaskMode =
+    type AnimationGroupMaskMode =
         | Include = 0
         | Exclude = 1
 
@@ -115331,10 +115475,10 @@ module BABYLON =
         abstract PreprocessUrl: obj option with get, set
         abstract IsBase64DataUrl: (string -> bool) with get, set
         abstract IsFileURL: (unit -> bool) with get, set
-        abstract LoadFile: (U2<string, File> -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) with get, set
+        abstract LoadFile: (U2<string, File> -> (U2<string, ArrayBuffer> -> (string) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> (((WebRequest) option -> (LoadFileError) option -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) with get, set
         abstract LoadImage: (U4<string, ArrayBuffer, Blob, ArrayBufferView> -> (U2<HTMLImageElement, ImageBitmap> -> unit) -> ((string) option -> (obj) option -> unit) -> Nullable<IOfflineProvider> -> (string) option -> (ImageBitmapOptions) option -> Nullable<HTMLImageElement>) with get, set
-        abstract ReadFile: (File -> (obj option -> unit) -> ((ProgressEvent<EventTarget> -> obj option)) option -> (bool) option -> ((ReadFileError -> unit)) option -> IFileRequest) with get, set
-        abstract RequestFile: (string -> (U2<string, ArrayBuffer> -> (WebRequest) option -> unit) -> ((ProgressEvent<EventTarget> -> unit)) option -> (IOfflineProvider) option -> (bool) option -> ((RequestFileError -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) with get, set
+        abstract ReadFile: (File -> (obj option -> unit) -> ((ProgressEvent -> obj option)) option -> (bool) option -> ((ReadFileError -> unit)) option -> IFileRequest) with get, set
+        abstract RequestFile: (string -> (U2<string, ArrayBuffer> -> (WebRequest) option -> unit) -> ((ProgressEvent -> unit)) option -> (IOfflineProvider) option -> (bool) option -> ((RequestFileError -> unit)) option -> ((WebRequest -> unit)) option -> IFileRequest) with get, set
         abstract SetCorsBehavior: (U2<string, ResizeArray<string>> -> {| crossOrigin: string option |} -> unit) with get, set
 
     type [<AllowNullLiteral>] IExports_injectLTSFileTools =
@@ -115668,7 +115812,7 @@ module BABYLON =
         abstract wasmMSCTranscoder: Nullable<string> with get, set
         abstract wasmZSTDDecoder: Nullable<string> with get, set
 
-    type [<RequireQualifiedAccess>] GreasedLineToolsStaticBooleanToNumber =
+    type GreasedLineToolsStaticBooleanToNumber =
         | N0 = 0
         | N1 = 1
 
@@ -115692,7 +115836,7 @@ module BABYLON =
     type [<AllowNullLiteral>] IMeshDataCache_vertexData =
         [<EmitIndexer>] abstract Item: kind: string -> Float32Array with get, set
 
-    type [<RequireQualifiedAccess>] ISogPackInternalVersion =
+    type ISogPackInternalVersion =
         | N1 = 1
         | N2 = 2
 
@@ -115825,7 +115969,7 @@ module BABYLON =
     type [<AllowNullLiteral>] IPipelineContextVertexBufferKindToType =
         [<EmitIndexer>] abstract Item: kind: string -> float with get, set
 
-    type [<RequireQualifiedAccess>] WebGPUTextureHelperStaticGetSample =
+    type WebGPUTextureHelperStaticGetSample =
         | N1 = 1
         | N4 = 4
 
@@ -115900,7 +116044,6 @@ module BABYLON =
 
 type [<AllowNullLiteral>] XRGPUSubImage =
     inherit XRSubImage
-    inherit XRGPUSubImage
     abstract colorTexture: GPUTexture
     abstract depthStencilTexture: GPUTexture option
     abstract motionVectorTexture: GPUTexture option
@@ -115988,7 +116131,6 @@ type [<AllowNullLiteral>] XRFrustum =
     abstract farDistance: float with get, set
 
 type [<AllowNullLiteral>] XRPlane =
-    inherit XRPlane
     abstract parentSceneObject: XRSceneObject option with get, set
     abstract orientation: XRPlaneOrientation with get, set
     abstract planeSpace: XRSpace with get, set
@@ -116025,7 +116167,6 @@ type [<AllowNullLiteral>] XRGeometryDetectorOptions =
 
 type [<AllowNullLiteral>] XRSession =
     inherit EventTarget
-    inherit XRSession
     abstract trySetFeaturePointCloudEnabled: enabled: bool -> bool
     abstract trySetPreferredPlaneDetectorOptions: preferredOptions: XRGeometryDetectorOptions -> bool
     abstract trySetMeshDetectorEnabled: enabled: bool -> bool
@@ -116070,7 +116211,6 @@ type [<AllowNullLiteral>] XRSession =
     abstract enabledFeatures: ResizeArray<string> with get, set
 
 type [<AllowNullLiteral>] XRFrame =
-    inherit XRFrame
     abstract featurePointCloud: Array<float> option with get, set
     abstract session: XRSession
     abstract predictedDisplayTime: DOMHighResTimeStamp option
@@ -116082,7 +116222,6 @@ type [<AllowNullLiteral>] XRFrame =
     abstract getHitTestResults: hitTestSource: XRHitTestSource -> ResizeArray<XRHitTestResult>
     abstract getHitTestResultsForTransientInput: hitTestSource: XRTransientInputHitTestSource -> ResizeArray<XRTransientInputHitTestResult>
     abstract fillPoses: spaces: ResizeArray<XRSpace> * baseSpace: XRSpace * transforms: Float32Array -> bool
-    abstract trackedAnchors: XRAnchorSet option with get, set
     abstract worldInformation: XRWorldInformation option with get, set
     abstract detectedPlanes: XRPlaneSet option with get, set
     abstract getJointPose: joint: XRJointSpace * baseSpace: XRSpace -> XRJointPose
@@ -116160,7 +116299,6 @@ type [<AllowNullLiteral>] XRSystemEventMap =
 
 type [<AllowNullLiteral>] XRSystem =
     inherit EventTarget
-    inherit XRSystem
     abstract requestSession: mode: XRSessionMode * ?options: XRSessionInit -> Promise<XRSession>
     abstract isSessionSupported: mode: XRSessionMode -> Promise<bool>
     abstract ondevicechange: XRSystemDeviceChangeEventHandler option with get, set
@@ -116171,7 +116309,6 @@ type [<AllowNullLiteral>] XRSystem =
     abstract onsessiongranted: XRSystemSessionGrantedEventHandler option with get, set
 
 type [<AllowNullLiteral>] XRViewport =
-    inherit XRViewport
     abstract x: float
     abstract y: float
     abstract width: float
@@ -116179,7 +116316,6 @@ type [<AllowNullLiteral>] XRViewport =
 
 type [<AllowNullLiteral>] XRSpace =
     inherit EventTarget
-    inherit XRSpace
 
 type [<AllowNullLiteral>] XRRenderStateInit =
     abstract baseLayer: XRWebGLLayer option with get, set
@@ -116189,7 +116325,6 @@ type [<AllowNullLiteral>] XRRenderStateInit =
     abstract layers: ResizeArray<XRLayer> option with get, set
 
 type [<AllowNullLiteral>] XRRenderState =
-    inherit XRRenderState
     abstract baseLayer: XRWebGLLayer option
     abstract depthFar: float
     abstract depthNear: float
@@ -116203,7 +116338,6 @@ type [<AllowNullLiteral>] XRReferenceSpaceEventInit =
 
 type [<AllowNullLiteral>] XRReferenceSpaceEvent =
     inherit Event
-    inherit XRReferenceSpaceEvent
     abstract ``type``: string
     abstract referenceSpace: XRReferenceSpace
     abstract transform: XRRigidTransform option
@@ -116219,7 +116353,6 @@ type [<AllowNullLiteral>] XRReferenceSpaceEventMap =
 
 type [<AllowNullLiteral>] XRReferenceSpace =
     inherit XRSpace
-    inherit XRReferenceSpace
     abstract getOffsetReferenceSpace: originOffset: XRRigidTransform -> XRReferenceSpace
     abstract onreset: XRReferenceSpaceEventHandler with get, set
     abstract addEventListener: ``type``: KeyOf<XRReferenceSpaceEventMap> * listener: (XRReferenceSpace -> obj -> obj option) * ?options: U2<bool, AddEventListenerOptions> -> unit
@@ -116229,11 +116362,9 @@ type [<AllowNullLiteral>] XRReferenceSpace =
 
 type [<AllowNullLiteral>] XRBoundedReferenceSpace =
     inherit XRReferenceSpace
-    inherit XRBoundedReferenceSpace
     abstract boundsGeometry: ResizeArray<DOMPointReadOnly>
 
 type [<AllowNullLiteral>] XRInputSource =
-    inherit XRInputSource
     abstract handedness: XRHandedness
     abstract targetRayMode: XRTargetRayMode
     abstract targetRaySpace: XRSpace
@@ -116243,7 +116374,6 @@ type [<AllowNullLiteral>] XRInputSource =
     abstract hand: XRHand option
 
 type [<AllowNullLiteral>] XRInputSourceArray =
-    inherit XRInputSourceArray
     abstract ``[Symbol.iterator]``: unit -> IterableIterator<XRInputSource>
     [<EmitIndexer>] abstract Item: n: float -> XRInputSource with get, set
     abstract length: float with get, set
@@ -116253,7 +116383,6 @@ type [<AllowNullLiteral>] XRInputSourceArray =
     abstract forEach: callbackfn: (XRInputSource -> float -> ResizeArray<XRInputSource> -> unit) * ?thisArg: obj -> unit
 
 type [<AllowNullLiteral>] XRPose =
-    inherit XRPose
     abstract transform: XRRigidTransform
     abstract emulatedPosition: bool
     abstract linearVelocity: DOMPointReadOnly option
@@ -116339,7 +116468,6 @@ type [<AllowNullLiteral>] XRSessionEventMap =
 
 type [<AllowNullLiteral>] XRViewerPose =
     inherit XRPose
-    inherit XRViewerPose
     abstract views: ReadonlyArray<XRView>
 
 type [<AllowNullLiteral>] XRRigidTransform =
@@ -116352,7 +116480,6 @@ type [<AllowNullLiteral>] XRRigidTransformStatic =
     [<EmitConstructor>] abstract Create: ?position: DOMPointInit * ?direction: DOMPointInit -> XRRigidTransform
 
 type [<AllowNullLiteral>] XRView =
-    inherit XRView
     abstract eye: XREye
     abstract projectionMatrix: Float32Array
     abstract transform: XRRigidTransform
@@ -116372,7 +116499,6 @@ type XRAnchorSet =
     Set<XRAnchor>
 
 type [<AllowNullLiteral>] XRAnchor =
-    inherit XRAnchor
     abstract anchorSpace: XRSpace with get, set
     abstract delete: unit -> unit
 
@@ -116395,16 +116521,13 @@ type [<AllowNullLiteral>] XRTransientInputHitTestResult =
     abstract prototype: XRTransientInputHitTestResult with get, set
 
 type [<AllowNullLiteral>] XRHitTestResult =
-    inherit XRHitTestResult
     abstract getPose: baseSpace: XRSpace -> XRPose option
     abstract createAnchor: (XRRigidTransform -> Promise<XRAnchor> option) option with get, set
 
 type [<AllowNullLiteral>] XRHitTestSource =
-    inherit XRHitTestSource
     abstract cancel: unit -> unit
 
 type [<AllowNullLiteral>] XRTransientInputHitTestSource =
-    inherit XRTransientInputHitTestSource
     abstract cancel: unit -> unit
 
 type [<AllowNullLiteral>] XRHitTestOptionsInit =
@@ -116456,17 +116579,14 @@ type [<StringEnum>] [<RequireQualifiedAccess>] XRHandJoint =
 
 type [<AllowNullLiteral>] XRJointSpace =
     inherit XRSpace
-    inherit XRJointSpace
     abstract jointName: XRHandJoint
 
 type [<AllowNullLiteral>] XRJointPose =
     inherit XRPose
-    inherit XRJointPose
     abstract radius: float option
 
 type [<AllowNullLiteral>] XRHand =
     inherit Map<XRHandJoint, XRJointSpace>
-    inherit XRHand
     abstract WRIST: float
     abstract THUMB_METACARPAL: float
     abstract THUMB_PHALANX_PROXIMAL: float
@@ -116495,7 +116615,6 @@ type [<AllowNullLiteral>] XRHand =
 
 type [<AllowNullLiteral>] XRLayer =
     inherit EventTarget
-    inherit XRLayer
 
 type [<AllowNullLiteral>] XRWebGLLayerInit =
     abstract antialias: bool option with get, set
@@ -116532,7 +116651,6 @@ type [<AllowNullLiteral>] XRCompositionLayerEventMap =
 
 type [<AllowNullLiteral>] XRCompositionLayer =
     inherit XRLayer
-    inherit XRCompositionLayer
     abstract layout: XRLayerLayout
     abstract blendTextureSourceAlpha: bool with get, set
     abstract chromaticAberrationCorrection: bool option with get, set
@@ -116566,7 +116684,6 @@ type [<AllowNullLiteral>] XRProjectionLayerInit =
 
 type [<AllowNullLiteral>] XRProjectionLayer =
     inherit XRCompositionLayer
-    inherit XRProjectionLayer
     abstract textureWidth: float
     abstract textureHeight: float
     abstract textureArrayLength: float
@@ -116606,7 +116723,6 @@ type [<AllowNullLiteral>] XRMediaCylinderLayerInit =
 
 type [<AllowNullLiteral>] XRCylinderLayer =
     inherit XRCompositionLayer
-    inherit XRCylinderLayer
     abstract transform: XRRigidTransform with get, set
     abstract radius: float with get, set
     abstract centralAngle: float with get, set
@@ -116627,7 +116743,6 @@ type [<AllowNullLiteral>] XRMediaQuadLayerInit =
 
 type [<AllowNullLiteral>] XRQuadLayer =
     inherit XRCompositionLayer
-    inherit XRQuadLayer
     abstract transform: XRRigidTransform with get, set
     abstract width: float with get, set
     abstract height: float with get, set
@@ -116651,7 +116766,6 @@ type [<AllowNullLiteral>] XRMediaEquirectLayerInit =
 
 type [<AllowNullLiteral>] XREquirectLayer =
     inherit XRCompositionLayer
-    inherit XREquirectLayer
     abstract transform: XRRigidTransform with get, set
     abstract radius: float with get, set
     abstract centralHorizontalAngle: float with get, set
@@ -116664,16 +116778,13 @@ type [<AllowNullLiteral>] XRCubeLayerInit =
 
 type [<AllowNullLiteral>] XRCubeLayer =
     inherit XRCompositionLayer
-    inherit XRCubeLayer
     abstract orientation: DOMPointReadOnly with get, set
 
 type [<AllowNullLiteral>] XRSubImage =
-    inherit XRSubImage
     abstract viewport: XRViewport
 
 type [<AllowNullLiteral>] XRWebGLSubImage =
     inherit XRSubImage
-    inherit XRWebGLSubImage
     abstract colorTexture: WebGLTexture
     abstract depthStencilTexture: WebGLTexture option
     abstract motionVectorTexture: WebGLTexture option
@@ -116711,7 +116822,7 @@ type [<AllowNullLiteral>] XRMediaBinding =
 type [<AllowNullLiteral>] XRMediaBindingStatic =
     [<EmitConstructor>] abstract Create: sesion: XRSession -> XRMediaBinding
 
-type [<RequireQualifiedAccess>] XOVR_multiview2 =
+type XOVR_multiview2 =
     | FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR = 38448
     | FRAMEBUFFER_ATTACHMENT_TEXTURE_BASE_VIEW_INDEX_OVR = 38450
     | MAX_VIEWS_OVR = 38449
@@ -116730,7 +116841,6 @@ type [<AllowNullLiteral>] XRSystemSessionGrantedEventHandler =
 
 type [<AllowNullLiteral>] OCULUS_multiview =
     inherit OVR_multiview2
-    inherit OCULUS_multiview
     abstract framebufferTextureMultisampleMultiviewOVR: target: GLenum * attachment: GLenum * texture: WebGLTexture option * level: GLint * samples: GLsizei * baseViewIndex: GLint * numViews: GLsizei -> unit
 
 type [<AllowNullLiteral>] GlobalEventHandlersEventMap =

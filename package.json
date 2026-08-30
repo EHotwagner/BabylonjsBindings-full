@@ -3,7 +3,10 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "engines": { "node": "26.5.0", "npm": "12.0.1" },
+  "engines": {
+    "node": "26.5.0",
+    "npm": "12.0.1"
+  },
   "dependencies": {
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
@@ -11,17 +14,23 @@
   "devDependencies": {
     "@glutinum/cli": "0.13.0",
     "babylonjs": "9.19.0",
+    "babylonjs-loaders": "9.19.0",
     "ts2fable": "0.9.0-build.738",
     "typescript": "5.9.3"
   },
   "overrides": {
-    "@glutinum/cli": { "typescript": "5.2.2" },
-    "ts2fable": { "typescript": "5.1.6" }
+    "@glutinum/cli": {
+      "typescript": "5.2.2"
+    },
+    "ts2fable": {
+      "typescript": "5.1.6"
+    }
   },
   "scripts": {
     "build": "bash build.sh",
     "lock:declarations": "node scripts/lock-declarations.mjs --write",
     "check:drift": "node scripts/lock-declarations.mjs --check",
+    "test:candidate-compile": "node scripts/test-candidate-compile.mjs",
     "test:runtime": "node runtime/node/smoke.mjs",
     "generate:candidate": "node --max-old-space-size=12288 scripts/generate-candidate.mjs",
     "test:browser": "chromium --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --dump-dom http://127.0.0.1:4173/runtime/browser/",

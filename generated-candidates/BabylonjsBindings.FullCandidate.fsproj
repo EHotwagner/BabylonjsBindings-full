@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <OtherFlags>--maxerrors:5000</OtherFlags>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="BabylonBindings.generated.fs" />
+    <PackageReference Include="Fable.Core" />
+    <PackageReference Include="Fable.Browser.Dom" />
+    <PackageReference Include="Fable.Browser.WebGL" />
+  </ItemGroup>
+</Project>

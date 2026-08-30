@@ -3,13 +3,8 @@
   "package": "@babylonjs/core@9.19.0",
   "companionPackage": "@babylonjs/loaders@9.19.0",
   "entryPoints": [
-    "@babylonjs/core/Engines/nullEngine.d.ts",
-    "@babylonjs/core/scene.d.ts",
-    "@babylonjs/core/Maths/math.vector.d.ts",
-    "@babylonjs/core/Cameras/freeCamera.d.ts",
-    "@babylonjs/core/Lights/hemisphericLight.d.ts",
-    "@babylonjs/core/Meshes/meshBuilder.d.ts",
-    "@babylonjs/loaders/glTF/index.d.ts"
+    "@babylonjs/core/index.d.ts",
+    "@babylonjs/loaders/index.d.ts"
   ],
   "files": [
     {
@@ -10977,6 +10972,138 @@
       "sha256": "ea0260c681ef8bd657638af5aaa588ccf4ec46c3605c3115924d310911e65579"
     },
     {
+      "path": "@babylonjs/loaders/BVH/bvhFileLoader.d.ts",
+      "sha256": "902defc5faa779a83164be519b3f5020f45761e75ef63594ebffd123ccba8302"
+    },
+    {
+      "path": "@babylonjs/loaders/BVH/bvhFileLoader.metadata.d.ts",
+      "sha256": "ca5be787efaf3daffdb8fc2acc86d6d8b58f1a0f0ea6c9fcae06f9a11c4609f5"
+    },
+    {
+      "path": "@babylonjs/loaders/BVH/bvhFileLoader.pure.d.ts",
+      "sha256": "842278395cebeaf6784f72b4313f6bca5ec33e1be4cc279e6970166bb9881f45"
+    },
+    {
+      "path": "@babylonjs/loaders/BVH/bvhFileLoader.types.d.ts",
+      "sha256": "6a1ce89712592392552ae0d3e45581df560db1bd8b52dab805c2ed5056bf0630"
+    },
+    {
+      "path": "@babylonjs/loaders/BVH/bvhLoader.d.ts",
+      "sha256": "dd0dcd0430f37460598d9fcf0a948b5c15e765bb44705baf4ccaf49a8b00f1d9"
+    },
+    {
+      "path": "@babylonjs/loaders/BVH/bvhLoadingOptions.d.ts",
+      "sha256": "1a5e6572fcb6c375f84c8fad45fbc6ed5729f8dee7e97ef4372b32a09c55f437"
+    },
+    {
+      "path": "@babylonjs/loaders/BVH/index.d.ts",
+      "sha256": "6631c4eb1cb5c4a72acf71a186ce537bb3a3e94509936277f4c437c4a4456065"
+    },
+    {
+      "path": "@babylonjs/loaders/FBX/fbxFileLoader.d.ts",
+      "sha256": "94e4be5dd34a858d8a2906880a83fad2bdb0119aefff9ac8d87c94acb8d0b5bf"
+    },
+    {
+      "path": "@babylonjs/loaders/FBX/fbxFileLoader.metadata.d.ts",
+      "sha256": "92b590d4564fc99552fdd188df269900d47c23c69e9c1a32af445b0444f0c419"
+    },
+    {
+      "path": "@babylonjs/loaders/FBX/fbxFileLoader.pure.d.ts",
+      "sha256": "7e5d4437ad75df17c873d1df76f19597849e5c7d1f0dad89508768fdc858d467"
+    },
+    {
+      "path": "@babylonjs/loaders/FBX/fbxFileLoader.types.d.ts",
+      "sha256": "62f915fc690c3dc79554a74d3021741c145670d6a27a5542177d4d86f281916f"
+    },
+    {
+      "path": "@babylonjs/loaders/FBX/index.d.ts",
+      "sha256": "c607d9f4b18b60535f85a0118ec8da766da79962a88484a0451a1ec8901d4845"
+    },
+    {
+      "path": "@babylonjs/loaders/OBJ/index.d.ts",
+      "sha256": "c6675eb8e173e74eb8348bdf1aab903766a4ad285303a898f2779cec3b763906"
+    },
+    {
+      "path": "@babylonjs/loaders/OBJ/mtlFileLoader.d.ts",
+      "sha256": "f13dd292afdd84ef7a9edce82b2a8e99e09dcec1fa7015777fee23a1d7bbdf13"
+    },
+    {
+      "path": "@babylonjs/loaders/OBJ/objFileLoader.d.ts",
+      "sha256": "9dc9f42407a390828cce3e2912687b76cba8951b125ecb0d8c058a4e4e954cb0"
+    },
+    {
+      "path": "@babylonjs/loaders/OBJ/objFileLoader.metadata.d.ts",
+      "sha256": "0a5595bd31913e60a68c77efd0f9d56c9af2e7616408238c70d14cd052d9fad2"
+    },
+    {
+      "path": "@babylonjs/loaders/OBJ/objFileLoader.pure.d.ts",
+      "sha256": "77e3aaeadab9dfc23ee6049f32385eae188dfe75c925b047afc670bd7b05185b"
+    },
+    {
+      "path": "@babylonjs/loaders/OBJ/objFileLoader.types.d.ts",
+      "sha256": "4d11ae4963742584ea7c7d97996b727a31d4946bc8ea09d336d15959985ec39e"
+    },
+    {
+      "path": "@babylonjs/loaders/OBJ/objLoadingOptions.d.ts",
+      "sha256": "2150d9dfd93e7218c70eef5584d82ed0bff95db04e7c2963de03eec7741c1abd"
+    },
+    {
+      "path": "@babylonjs/loaders/OBJ/solidParser.d.ts",
+      "sha256": "091828245847862a4a978381cd5a11a59f1ddc7fa2b693f2d03f5cf6bd4408fe"
+    },
+    {
+      "path": "@babylonjs/loaders/SPLAT/gaussianSplattingStream.d.ts",
+      "sha256": "cdf401721f93088b825402c05e30251c42a68991376c0bd5c7590b33725f0e80"
+    },
+    {
+      "path": "@babylonjs/loaders/SPLAT/index.d.ts",
+      "sha256": "1ffa59badf61ad548456f5d6fbd49cc39284827ca003dce1ad44a9ba0e2db74e"
+    },
+    {
+      "path": "@babylonjs/loaders/SPLAT/splatFileLoader.d.ts",
+      "sha256": "ff2d19ad7e031405c9e2d2cd490aa3a5dd47a933bc997aa3d54884f6e0273118"
+    },
+    {
+      "path": "@babylonjs/loaders/SPLAT/splatFileLoader.metadata.d.ts",
+      "sha256": "2660b5eb34f35e9ce4f3c9d9bee9e9c201cf7d4b87143c644774875a15a8c19a"
+    },
+    {
+      "path": "@babylonjs/loaders/SPLAT/splatFileLoader.pure.d.ts",
+      "sha256": "5d555ccfbbca3a0c21ed676ff9f6395df9740d02fbc5ecb147f3ad8cf2ff2ab2"
+    },
+    {
+      "path": "@babylonjs/loaders/SPLAT/splatFileLoader.types.d.ts",
+      "sha256": "380b377e70014fd3ea0327c0ade4d7467a0d94e565ee0e5cf0ef19c55143721b"
+    },
+    {
+      "path": "@babylonjs/loaders/SPLAT/splatLoadingOptions.d.ts",
+      "sha256": "0904732aaafd0b6ecf7b3c23b466c01e6bafbbec983903863c3bf3e1dab76899"
+    },
+    {
+      "path": "@babylonjs/loaders/STL/index.d.ts",
+      "sha256": "21d08d179e514105fa4da60511be4c334f9a4b309e0b7c0ac877dbd667762e06"
+    },
+    {
+      "path": "@babylonjs/loaders/STL/stlFileLoader.d.ts",
+      "sha256": "c6f028dac27d8aa7c73db80584657697ec990ba73a56b86dae8f8b580bdda826"
+    },
+    {
+      "path": "@babylonjs/loaders/STL/stlFileLoader.metadata.d.ts",
+      "sha256": "823a41f21666c1e9bb904d311fcdc168a3bbf8d6448d8087642b2818df9d41fa"
+    },
+    {
+      "path": "@babylonjs/loaders/STL/stlFileLoader.pure.d.ts",
+      "sha256": "c58b1616375b3de8845ee0341598c0273e925a8405cf48c1e4ec3595277e5692"
+    },
+    {
+      "path": "@babylonjs/loaders/STL/stlFileLoader.types.d.ts",
+      "sha256": "3139f01a96521975a7d6db400b7571208b13644924e5d8bb765e4cc32e8187e8"
+    },
+    {
+      "path": "@babylonjs/loaders/dynamic.d.ts",
+      "sha256": "3a3e0ff396004fb66f630ef55c99ccfa58b018c39cf38353f9373e9ba6bdf320"
+    },
+    {
       "path": "@babylonjs/loaders/glTF/1.0/glTFBinaryExtension.d.ts",
       "sha256": "ddea3eaf8723f33346e0c8a3b18b5e1ef108ad9ed13dc3ee9e279b080f79fbb0"
     },
@@ -11603,6 +11730,10 @@
     {
       "path": "@babylonjs/loaders/glTF/index.d.ts",
       "sha256": "0375047e30cbb75adda59d841e38bb7f6bd22f385de5e44bacee4f5b95af465f"
+    },
+    {
+      "path": "@babylonjs/loaders/index.d.ts",
+      "sha256": "b17e5f783e9dca89de5cba1ea87eedc2eb17cfd89fc6d5d7c1a1804e628ad7a5"
     }
   ]
 }

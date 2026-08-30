@@ -4,8 +4,10 @@
 > typed bindings for `@babylonjs/core@9.19.0` and
 > `@babylonjs/loaders@9.19.0`; the current NuGet package still exposes only the
 > reviewed modular slice. The 117,000-line full declaration conversion under
-> `generated-candidates/` is review-only and is not represented as complete
-> until it compiles cleanly and passes coverage, import, and runtime evidence.
+> `generated-candidates/` is review-only. The full core candidate now compiles
+> cleanly, but it still has recorded unsupported/lossy conversions and is not
+> represented as complete until loaders, per-export coverage, imports, and
+> runtime evidence also pass.
 
 Source repository: https://github.com/EHotwagner/BabylonjsBindings-full
 

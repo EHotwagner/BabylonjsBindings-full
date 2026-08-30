@@ -6,7 +6,7 @@
     "path": "babylon.module.d.ts",
     "sha256": "8fc0a46461ab5909d3eac13032a2a17e24a86317251500302a13e2fca8d9e651"
   },
-  "authoritativeDeclarationLockSha256": "3171be522100b5cd9be0d9c58b22de86afd6401979ea01549795dd879885e7e4",
+  "authoritativeDeclarationLockSha256": "61b6189f1315e036b280bba1009e81bbce6a36e20b58f1a4fe8d643d7c4f132e",
   "maintainedSurfaceSha256": "991ae2bbd2e240b43b3e0eb17d34874f5ddff3a726428ae4197bca2acc9952eb",
   "tools": {
     "node": "v26.8.1",
