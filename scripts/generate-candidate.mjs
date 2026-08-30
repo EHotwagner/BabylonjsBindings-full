@@ -7,7 +7,10 @@ import { spawn } from "node:child_process";
 const root = resolve(import.meta.dirname, "..");
 const generatedRoot = resolve(root, "generated-candidates");
 const declarationLockPath = resolve(root, "declaration-lock.json");
-const maintainedPath = resolve(root, "src/BabylonjsBindings/Bindings.fs");
+const maintainedPaths = [
+  "src/BabylonjsBindings/Bindings.fs",
+  "src/BabylonjsBindings/Enums.fs"
+];
 const packageJson = JSON.parse(await readFile(resolve(root, "package.json"), "utf8"));
 const sourcePath = resolve(root, "node_modules/babylonjs/babylon.module.d.ts");
 const loadersSourcePath = resolve(root, "node_modules/babylonjs-loaders/babylonjs.loaders.module.d.ts");
@@ -434,7 +437,11 @@ const repairCandidate = (source, options = {}) => {
 const tempRoot = await mkdtemp(resolve(tmpdir(), "babylon-bindings-candidate-"));
 try {
   const declarationLock = await readFile(declarationLockPath);
-  const maintained = await readFile(maintainedPath);
+  const maintainedSources = await Promise.all(maintainedPaths.map(async path => ({
+    path,
+    content: await readFile(resolve(root, path), "utf8")
+  })));
+  const maintainedSnapshot = maintainedSources.map(source => `${source.path}\0${source.content}`).join("\0");
   const source = await readFile(sourcePath, "utf8");
   const stripped = source.replace(/\/\*\*[\s\S]*?\*\//g, "");
   const inputPath = resolve(tempRoot, "babylon.module.no-docs.d.ts");
@@ -551,7 +558,8 @@ try {
       { package: "babylonjs-gltf2interface", version: "9.19.0", path: "babylon.glTF2Interface.d.ts", sha256: gltfInterfaceSourceDigest }
     ],
     authoritativeDeclarationLockSha256: sha256(declarationLock),
-    maintainedSurfaceSha256: sha256(maintained),
+    maintainedSurfaceSha256: sha256(maintainedSnapshot),
+    maintainedSources: maintainedSources.map(source => ({ path: source.path, sha256: sha256(source.content) })),
     tools: {
       node: process.version,
       ts2fable: packageJson.devDependencies.ts2fable,

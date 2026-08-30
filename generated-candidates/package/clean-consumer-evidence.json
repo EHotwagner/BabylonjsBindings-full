@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "package": {
+    "id": "BabylonjsBindings.Candidate",
+    "version": "0.0.0-candidate.1",
+    "sha256": "64b27238d661ca18ec4340dc1d593b025170977459df6dbae828a2540c801cb2"
+  },
+  "toolchain": {
+    "fable": "5.13.0",
+    "node": "v26.8.1"
+  },
+  "npm": {
+    "@babylonjs/core": "9.19.0",
+    "@babylonjs/loaders": "9.19.0"
+  },
+  "emittedProgramSha256": "42302bdfe45585ec5939b13e5cf85d6aea2a5eecdca058dd70e08d507e3a59ea",
+  "imports": [
+    "@babylonjs/core/Engines/nullEngine.pure.js",
+    "@babylonjs/core/Maths/math.vector.pure.js",
+    "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js",
+    "@babylonjs/core/scene.pure.js",
+    "@babylonjs/loaders/glTF/index.js"
+  ],
+  "projectReference": false,
+  "status": "pass"
+}

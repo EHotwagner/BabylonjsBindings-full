@@ -9,6 +9,9 @@ const nodeModules = resolve(root, "node_modules");
 const reportPath = resolve(root, "coverage-and-drift.json");
 const lockPath = resolve(root, "declaration-lock.json");
 const maintainedPath = resolve(root, "src/BabylonjsBindings/Bindings.fs");
+const maintainedEnumsPath = resolve(root, "src/BabylonjsBindings/Enums.fs");
+const maintainedManifestPath = resolve(root, "src/BabylonjsBindings/coverage-manifest.json");
+const enumProposalPath = resolve(root, "generated-candidates/CoreEnums.proposal.fs");
 const schemaPath = resolve(root, "work/001-full-babylonjs-bindings/contracts/coverage-and-drift.schema.json");
 const check = process.argv.includes("--check");
 const requireComplete = process.argv.includes("--require-complete");
@@ -16,6 +19,15 @@ const sha256 = value => createHash("sha256").update(value).digest("hex");
 
 const lockText = await readFile(lockPath, "utf8");
 const maintainedText = await readFile(maintainedPath, "utf8");
+const maintainedEnumsText = await readFile(maintainedEnumsPath, "utf8");
+const enumProposalText = await readFile(enumProposalPath, "utf8");
+const maintainedManifest = JSON.parse(await readFile(maintainedManifestPath, "utf8"));
+if (maintainedManifest.schemaVersion !== 1 || maintainedManifest.reviewStatus !== "maintained") {
+  throw new Error("maintained coverage manifest has an unsupported schema or is not reviewed");
+}
+if (maintainedEnumsText.split("\n").slice(1).join("\n") !== enumProposalText.split("\n").slice(1).join("\n")) {
+  throw new Error("maintained numeric enums drifted from the reviewed exact-declaration proposal");
+}
 const lock = JSON.parse(lockText);
 const lockedPaths = new Set(lock.files.map(file => file.path));
 const absolutePaths = [...lockedPaths].map(file => resolve(nodeModules, file));
@@ -88,6 +100,18 @@ for (const sourceFile of program.getSourceFiles()) {
 }
 
 const exports = [...exportsByIdentity.values()];
+const exportIndex = new Map(exports.map(item => [`${item.package}|${item.module}|${item.name}`, item]));
+for (const reviewed of maintainedManifest.exports) {
+  const identity = `${reviewed.package}|${reviewed.module}|${reviewed.name}`;
+  const item = exportIndex.get(identity);
+  if (!item) throw new Error(`reviewed maintained export is absent from the locked inventory: ${identity}`);
+  if (item.kind !== reviewed.kind || reviewed.disposition !== "typed") {
+    throw new Error(`reviewed maintained export no longer has its expected kind/disposition: ${identity}`);
+  }
+  item.disposition = "typed";
+  item.fsharpSymbol = reviewed.fsharpSymbol;
+  item.reason = "Reviewed maintained numeric enum with every upstream member and value preserved exactly.";
+}
 exports.push({
   package: "@babylonjs/loaders",
   module: "@babylonjs/loaders/glTF/index",
@@ -136,7 +160,7 @@ const report = {
     { name: "@babylonjs/loaders", version: "9.19.0" }
   ],
   sourceDigest: sha256(lockText),
-  maintainedSurfaceDigest: sha256(maintainedText),
+  maintainedSurfaceDigest: sha256(`${maintainedText}\n${maintainedEnumsText}\n${JSON.stringify(maintainedManifest)}`),
   summary,
   exports,
   unsupportedConstructs,

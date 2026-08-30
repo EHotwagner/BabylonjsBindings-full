@@ -6,7 +6,15 @@
       "version": "1.5.0",
       "commands": [
         "fsgg-sdd"
-      ]
+      ],
+      "rollForward": false
+    },
+    "fable": {
+      "version": "5.13.0",
+      "commands": [
+        "fable"
+      ],
+      "rollForward": false
     }
   }
 }

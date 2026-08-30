@@ -20,6 +20,8 @@ drift, and clean-consumer evidence before release.
 
 `npm run coverage:generate` inventories every reachable module export in the locked core/loaders declaration graph and assigns a typed, runtime-only, blocked, or lossy disposition. `npm run coverage:check` validates the report schema and input digests; `npm run coverage:require-complete` is the release gate and intentionally fails while any blocked, lossy, or unsupported entry remains. A compile-clean generated candidate does not count as typed maintained coverage.
 
+The first reviewed maintained slice contains 148 exact numeric enums in `BabylonjsBindings.Enums`; its proposal and per-export promotion manifest are regenerated from the declaration lock and checked for drift. `npm run test:candidate` independently Fable-compiles the full review candidate, resolves emitted imports, executes Node and Chromium smokes, packs a local-only candidate package, and consumes that package from a clean temporary project. These proofs authorize incremental review; they do not make blocked or lossy exports complete.
+
 ## Package locking
 
 `./build.sh` (also `npm run build`) is this workspace's .NET entrypoint: it asserts the lockfiles, restores in locked mode, builds, then runs the pinned npm install, doctor, drift and Node runtime lanes.

@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "991ae2bbd2e240b43b3e0eb17d34874f5ddff3a726428ae4197bca2acc9952eb",
+  "maintainedSurfaceDigest": "e12e45963ef78131ef87aedda76eec3d2711f834add9c656657ca80dd2dae506",
   "summary": {
     "total": 4323,
-    "typed": 0,
+    "typed": 148,
     "runtimeOnly": 1,
-    "blocked": 4316,
+    "blocked": 4168,
     "lossy": 6
   },
   "exports": [
@@ -585,16 +585,18 @@
       "module": "@babylonjs/core/Animations/animationGroupMask",
       "name": "AnimationGroupMaskMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AnimationGroupMaskMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/animationKey",
       "name": "AnimationKeyInterpolation",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AnimationKeyInterpolation"
     },
     {
       "package": "@babylonjs/core",
@@ -937,8 +939,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioNode",
       "name": "AudioNodeType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AudioNodeType"
     },
     {
       "package": "@babylonjs/core",
@@ -1569,16 +1572,18 @@
       "module": "@babylonjs/core/AudioV2/soundState",
       "name": "SoundState",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SoundState"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/spatialAudioAttachmentType",
       "name": "SpatialAudioAttachmentType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SpatialAudioAttachmentType"
     },
     {
       "package": "@babylonjs/core",
@@ -1865,24 +1870,27 @@
       "module": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior",
       "name": "HandConstraintOrientation",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.HandConstraintOrientation"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior",
       "name": "HandConstraintVisibility",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.HandConstraintVisibility"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior",
       "name": "HandConstraintZone",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.HandConstraintZone"
     },
     {
       "package": "@babylonjs/core",
@@ -3194,8 +3202,9 @@
       "module": "@babylonjs/core/Collisions/gpuPicker",
       "name": "GPUMultiPickReadbackStrategy",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GPUMultiPickReadbackStrategy"
     },
     {
       "package": "@babylonjs/core",
@@ -3626,8 +3635,9 @@
       "module": "@babylonjs/core/Debug/debugLayer.pure",
       "name": "DebugLayerTab",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DebugLayerTab"
     },
     {
       "package": "@babylonjs/core",
@@ -3810,64 +3820,72 @@
       "module": "@babylonjs/core/Decorators/nodeDecorator",
       "name": "PropertyTypeForEdition",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PropertyTypeForEdition"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
       "name": "DeviceType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DeviceType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
       "name": "DualSenseInput",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DualSenseInput"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
       "name": "DualShockInput",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DualShockInput"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
       "name": "NativePointerInput",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NativePointerInput"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
       "name": "PointerInput",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PointerInput"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
       "name": "SwitchInput",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SwitchInput"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
       "name": "XboxInput",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.XboxInput"
     },
     {
       "package": "@babylonjs/core",
@@ -4338,8 +4356,9 @@
       "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
       "name": "ComputeBindingType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ComputeBindingType"
     },
     {
       "package": "@babylonjs/core",
@@ -4690,8 +4709,9 @@
       "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
       "name": "NativeTraceLevel",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NativeTraceLevel"
     },
     {
       "package": "@babylonjs/core",
@@ -5299,8 +5319,9 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "BufferUsage",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.BufferUsage"
     },
     {
       "package": "@babylonjs/core",
@@ -5323,8 +5344,9 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "ColorWrite",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ColorWrite"
     },
     {
       "package": "@babylonjs/core",
@@ -5419,8 +5441,9 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "MapMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MapMode"
     },
     {
       "package": "@babylonjs/core",
@@ -5483,8 +5506,9 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "ShaderStage",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ShaderStage"
     },
     {
       "package": "@babylonjs/core",
@@ -5547,8 +5571,9 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
       "name": "TextureUsage",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TextureUsage"
     },
     {
       "package": "@babylonjs/core",
@@ -5811,8 +5836,9 @@
       "module": "@babylonjs/core/Events/deviceInputEvents",
       "name": "DeviceInputEventType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DeviceInputEventType"
     },
     {
       "package": "@babylonjs/core",
@@ -7483,8 +7509,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphEasingBlock.pure",
       "name": "EasingFunctionType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EasingFunctionType"
     },
     {
       "package": "@babylonjs/core",
@@ -8155,8 +8182,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraph",
       "name": "FlowGraphState",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FlowGraphState"
     },
     {
       "package": "@babylonjs/core",
@@ -8251,8 +8279,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphConnection",
       "name": "FlowGraphConnectionType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FlowGraphConnectionType"
     },
     {
       "package": "@babylonjs/core",
@@ -8707,8 +8736,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
       "name": "FlowGraphValidationSeverity",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FlowGraphValidationSeverity"
     },
     {
       "package": "@babylonjs/core",
@@ -9875,8 +9905,9 @@
       "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
       "name": "NodeRenderGraphBlockConnectionPointTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeRenderGraphBlockConnectionPointTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -9891,16 +9922,18 @@
       "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
       "name": "NodeRenderGraphConnectionPointCompatibilityStates",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeRenderGraphConnectionPointCompatibilityStates"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
       "name": "NodeRenderGraphConnectionPointDirection",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeRenderGraphConnectionPointDirection"
     },
     {
       "package": "@babylonjs/core",
@@ -10307,16 +10340,18 @@
       "module": "@babylonjs/core/Gamepads/dualShockGamepad",
       "name": "DualShockButton",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DualShockButton"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Gamepads/dualShockGamepad",
       "name": "DualShockDpad",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DualShockDpad"
     },
     {
       "package": "@babylonjs/core",
@@ -10387,16 +10422,18 @@
       "module": "@babylonjs/core/Gamepads/xboxGamepad",
       "name": "Xbox360Button",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Xbox360Button"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Gamepads/xboxGamepad",
       "name": "Xbox360Dpad",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Xbox360Dpad"
     },
     {
       "package": "@babylonjs/core",
@@ -10451,8 +10488,9 @@
       "module": "@babylonjs/core/Gizmos/boundingBoxGizmo",
       "name": "DragOperation",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DragOperation"
     },
     {
       "package": "@babylonjs/core",
@@ -10491,8 +10529,9 @@
       "module": "@babylonjs/core/Gizmos/gizmo",
       "name": "GizmoAnchorPoint",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GizmoAnchorPoint"
     },
     {
       "package": "@babylonjs/core",
@@ -10507,8 +10546,9 @@
       "module": "@babylonjs/core/Gizmos/gizmo",
       "name": "GizmoCoordinatesMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GizmoCoordinatesMode"
     },
     {
       "package": "@babylonjs/core",
@@ -11652,8 +11692,9 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "SceneLoaderAnimationGroupLoadingMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SceneLoaderAnimationGroupLoadingMode"
     },
     {
       "package": "@babylonjs/core",
@@ -12100,24 +12141,27 @@
       "module": "@babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces",
       "name": "GreasedLineMeshColorDistributionType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshColorDistributionType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces",
       "name": "GreasedLineMeshColorMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshColorMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces",
       "name": "GreasedLineMeshMaterialType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshMaterialType"
     },
     {
       "package": "@babylonjs/core",
@@ -12644,8 +12688,9 @@
       "module": "@babylonjs/core/Materials/materialHelper.geometryrendering",
       "name": "GeometryRenderingTextureClearType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GeometryRenderingTextureClearType"
     },
     {
       "package": "@babylonjs/core",
@@ -12700,8 +12745,9 @@
       "module": "@babylonjs/core/Materials/materialPluginEvent",
       "name": "MaterialPluginEvent",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MaterialPluginEvent"
     },
     {
       "package": "@babylonjs/core",
@@ -12908,8 +12954,9 @@
       "module": "@babylonjs/core/Materials/meshDebugPluginMaterial.pure",
       "name": "MeshDebugMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MeshDebugMode"
     },
     {
       "package": "@babylonjs/core",
@@ -13108,8 +13155,9 @@
       "module": "@babylonjs/core/Materials/Node/Blocks/conditionalBlock.pure",
       "name": "ConditionalBlockConditions",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ConditionalBlockConditions"
     },
     {
       "package": "@babylonjs/core",
@@ -13148,8 +13196,9 @@
       "module": "@babylonjs/core/Materials/Node/Blocks/curveBlock.pure",
       "name": "CurveBlockTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.CurveBlockTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -13540,8 +13589,9 @@
       "module": "@babylonjs/core/Materials/Node/Blocks/Fragment/fragmentOutputBlock.pure",
       "name": "FragmentOutputBlockColorSpace",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FragmentOutputBlockColorSpace"
     },
     {
       "package": "@babylonjs/core",
@@ -13828,8 +13878,9 @@
       "module": "@babylonjs/core/Materials/Node/Blocks/Input/animatedInputBlockTypes",
       "name": "AnimatedInputBlockTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AnimatedInputBlockTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -14004,8 +14055,9 @@
       "module": "@babylonjs/core/Materials/Node/Blocks/meshAttributeExistsBlock.pure",
       "name": "MeshAttributeExistsBlockTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MeshAttributeExistsBlockTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -14660,8 +14712,9 @@
       "module": "@babylonjs/core/Materials/Node/Blocks/trigonometryBlock.pure",
       "name": "TrigonometryBlockOperations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TrigonometryBlockOperations"
     },
     {
       "package": "@babylonjs/core",
@@ -14844,8 +14897,9 @@
       "module": "@babylonjs/core/Materials/Node/Blocks/waveBlock.pure",
       "name": "WaveBlockKind",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WaveBlockKind"
     },
     {
       "package": "@babylonjs/core",
@@ -14868,40 +14922,45 @@
       "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockConnectionPointMode",
       "name": "NodeMaterialBlockConnectionPointMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialBlockConnectionPointMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockConnectionPointTypes",
       "name": "NodeMaterialBlockConnectionPointTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialBlockConnectionPointTypes"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockTargets",
       "name": "NodeMaterialBlockTargets",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialBlockTargets"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialModes",
       "name": "NodeMaterialModes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialModes"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialSystemValues",
       "name": "NodeMaterialSystemValues",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialSystemValues"
     },
     {
       "package": "@babylonjs/core",
@@ -15012,16 +15071,18 @@
       "module": "@babylonjs/core/Materials/Node/nodeMaterialBlockConnectionPoint",
       "name": "NodeMaterialConnectionPointCompatibilityStates",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialConnectionPointCompatibilityStates"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Node/nodeMaterialBlockConnectionPoint",
       "name": "NodeMaterialConnectionPointDirection",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialConnectionPointDirection"
     },
     {
       "package": "@babylonjs/core",
@@ -15308,8 +15369,9 @@
       "module": "@babylonjs/core/Materials/shaderLanguage",
       "name": "ShaderLanguage",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ShaderLanguage"
     },
     {
       "package": "@babylonjs/core",
@@ -15740,16 +15802,18 @@
       "module": "@babylonjs/core/Materials/Textures/internalTexture",
       "name": "InternalTextureSource",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.InternalTextureSource"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
       "name": "EngineFormat",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EngineFormat"
     },
     {
       "package": "@babylonjs/core",
@@ -15812,16 +15876,18 @@
       "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
       "name": "SourceTextureFormat",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SourceTextureFormat"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
       "name": "TranscodeTarget",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TranscodeTarget"
     },
     {
       "package": "@babylonjs/core",
@@ -15940,16 +16006,18 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.configuration",
       "name": "EXROutputType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EXROutputType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
       "name": "CompressionCodes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.CompressionCodes"
     },
     {
       "package": "@babylonjs/core",
@@ -16724,8 +16792,9 @@
       "module": "@babylonjs/core/Materials/Textures/textureProcessor",
       "name": "ChannelMask",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ChannelMask"
     },
     {
       "package": "@babylonjs/core",
@@ -16812,16 +16881,18 @@
       "module": "@babylonjs/core/Materials/Textures/textureProcessor",
       "name": "TextureChannel",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TextureChannel"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/textureProcessor",
       "name": "TextureColorSpace",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TextureColorSpace"
     },
     {
       "package": "@babylonjs/core",
@@ -16940,16 +17011,18 @@
       "module": "@babylonjs/core/Maths/math.axis",
       "name": "Coordinate",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Coordinate"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.axis",
       "name": "Space",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Space"
     },
     {
       "package": "@babylonjs/core",
@@ -17228,8 +17301,9 @@
       "module": "@babylonjs/core/Maths/math.path",
       "name": "Orientation",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Orientation"
     },
     {
       "package": "@babylonjs/core",
@@ -18221,16 +18295,18 @@
       "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder",
       "name": "GreasedLineMeshColorDistribution",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshColorDistribution"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder",
       "name": "GreasedLineMeshWidthDistribution",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshWidthDistribution"
     },
     {
       "package": "@babylonjs/core",
@@ -19261,16 +19337,18 @@
       "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
       "name": "GreasedLineRibbonAutoDirectionMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineRibbonAutoDirectionMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
       "name": "GreasedLineRibbonFacesMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineRibbonFacesMode"
     },
     {
       "package": "@babylonjs/core",
@@ -19285,8 +19363,9 @@
       "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
       "name": "GreasedLineRibbonPointsMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineRibbonPointsMode"
     },
     {
       "package": "@babylonjs/core",
@@ -19574,8 +19653,9 @@
       "module": "@babylonjs/core/Meshes/meshSimplification.common",
       "name": "SimplificationType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SimplificationType"
     },
     {
       "package": "@babylonjs/core",
@@ -19654,8 +19734,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/booleanGeometryBlock.pure",
       "name": "BooleanGeometryOperations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.BooleanGeometryOperations"
     },
     {
       "package": "@babylonjs/core",
@@ -19726,8 +19807,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/conditionBlock.pure",
       "name": "ConditionBlockTests",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ConditionBlockTests"
     },
     {
       "package": "@babylonjs/core",
@@ -19766,8 +19848,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/extrudeGeometryBlock.pure",
       "name": "ExtrudeGeometryCap",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ExtrudeGeometryCap"
     },
     {
       "package": "@babylonjs/core",
@@ -19854,8 +19937,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/geometryCurveBlock.pure",
       "name": "GeometryCurveBlockTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GeometryCurveBlockTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -19926,8 +20010,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/geometryEaseBlock.pure",
       "name": "GeometryEaseBlockTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GeometryEaseBlockTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -20222,8 +20307,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/geometryTrigonometryBlock.pure",
       "name": "GeometryTrigonometryBlockOperations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GeometryTrigonometryBlockOperations"
     },
     {
       "package": "@babylonjs/core",
@@ -20366,8 +20452,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/mappingBlock.pure",
       "name": "MappingTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MappingTypes"
     },
     {
       "package": "@babylonjs/core",
@@ -20406,8 +20493,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/mathBlock.pure",
       "name": "MathBlockOperations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MathBlockOperations"
     },
     {
       "package": "@babylonjs/core",
@@ -20590,8 +20678,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/randomBlock.pure",
       "name": "RandomBlockLocks",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.RandomBlockLocks"
     },
     {
       "package": "@babylonjs/core",
@@ -20606,8 +20695,9 @@
       "module": "@babylonjs/core/Meshes/Node/Blocks/Set/aggregatorBlock.pure",
       "name": "Aggregations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Aggregations"
     },
     {
       "package": "@babylonjs/core",
@@ -21030,16 +21120,18 @@
       "module": "@babylonjs/core/Meshes/Node/Enums/nodeGeometryConnectionPointTypes",
       "name": "NodeGeometryBlockConnectionPointTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryBlockConnectionPointTypes"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Node/Enums/nodeGeometryContextualSources",
       "name": "NodeGeometryContextualSources",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryContextualSources"
     },
     {
       "package": "@babylonjs/core",
@@ -21094,16 +21186,18 @@
       "module": "@babylonjs/core/Meshes/Node/nodeGeometryBlockConnectionPoint",
       "name": "NodeGeometryConnectionPointCompatibilityStates",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryConnectionPointCompatibilityStates"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Node/nodeGeometryBlockConnectionPoint",
       "name": "NodeGeometryConnectionPointDirection",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryConnectionPointDirection"
     },
     {
       "package": "@babylonjs/core",
@@ -21270,8 +21364,9 @@
       "module": "@babylonjs/core/Misc/assetsManager",
       "name": "AssetTaskState",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AssetTaskState"
     },
     {
       "package": "@babylonjs/core",
@@ -21486,8 +21581,9 @@
       "module": "@babylonjs/core/Misc/copyTextureToTexture",
       "name": "ConversionMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ConversionMode"
     },
     {
       "package": "@babylonjs/core",
@@ -22470,8 +22566,9 @@
       "module": "@babylonjs/core/Misc/iInspectable",
       "name": "InspectableType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.InspectableType"
     },
     {
       "package": "@babylonjs/core",
@@ -23182,8 +23279,9 @@
       "module": "@babylonjs/core/Misc/thinMinMaxReducer",
       "name": "DepthTextureType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DepthTextureType"
     },
     {
       "package": "@babylonjs/core",
@@ -23238,8 +23336,9 @@
       "module": "@babylonjs/core/Misc/timer",
       "name": "TimerState",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TimerState"
     },
     {
       "package": "@babylonjs/core",
@@ -23358,8 +23457,9 @@
       "module": "@babylonjs/core/Misc/virtualJoystick",
       "name": "JoystickAxis",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.JoystickAxis"
     },
     {
       "package": "@babylonjs/core",
@@ -23742,8 +23842,9 @@
       "module": "@babylonjs/core/Particles/Node/Blocks/Conditions/particleConditionBlock.pure",
       "name": "ParticleConditionBlockTests",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleConditionBlockTests"
     },
     {
       "package": "@babylonjs/core",
@@ -23982,8 +24083,9 @@
       "module": "@babylonjs/core/Particles/Node/Blocks/particleFloatToIntBlock.pure",
       "name": "ParticleFloatToIntBlockOperations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleFloatToIntBlockOperations"
     },
     {
       "package": "@babylonjs/core",
@@ -24070,8 +24172,9 @@
       "module": "@babylonjs/core/Particles/Node/Blocks/particleLocalVariableBlock.pure",
       "name": "ParticleLocalVariableBlockScope",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleLocalVariableBlockScope"
     },
     {
       "package": "@babylonjs/core",
@@ -24094,8 +24197,9 @@
       "module": "@babylonjs/core/Particles/Node/Blocks/particleMathBlock.pure",
       "name": "ParticleMathBlockOperations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleMathBlockOperations"
     },
     {
       "package": "@babylonjs/core",
@@ -24134,8 +24238,9 @@
       "module": "@babylonjs/core/Particles/Node/Blocks/particleNumberMathBlock.pure",
       "name": "ParticleNumberMathBlockOperations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleNumberMathBlockOperations"
     },
     {
       "package": "@babylonjs/core",
@@ -24158,8 +24263,9 @@
       "module": "@babylonjs/core/Particles/Node/Blocks/particleRandomBlock.pure",
       "name": "ParticleRandomBlockLocks",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleRandomBlockLocks"
     },
     {
       "package": "@babylonjs/core",
@@ -24238,8 +24344,9 @@
       "module": "@babylonjs/core/Particles/Node/Blocks/particleTrigonometryBlock.pure",
       "name": "ParticleTrigonometryBlockOperations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleTrigonometryBlockOperations"
     },
     {
       "package": "@babylonjs/core",
@@ -24278,8 +24385,9 @@
       "module": "@babylonjs/core/Particles/Node/Blocks/particleVectorMathBlock.pure",
       "name": "ParticleVectorMathBlockOperations",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleVectorMathBlockOperations"
     },
     {
       "package": "@babylonjs/core",
@@ -24598,24 +24706,27 @@
       "module": "@babylonjs/core/Particles/Node/Enums/nodeParticleBlockConnectionPointTypes",
       "name": "NodeParticleBlockConnectionPointTypes",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleBlockConnectionPointTypes"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Particles/Node/Enums/nodeParticleContextualSources",
       "name": "NodeParticleContextualSources",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleContextualSources"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Particles/Node/Enums/nodeParticleSystemSources",
       "name": "NodeParticleSystemSources",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleSystemSources"
     },
     {
       "package": "@babylonjs/core",
@@ -24638,16 +24749,18 @@
       "module": "@babylonjs/core/Particles/Node/nodeParticleBlockConnectionPoint",
       "name": "NodeParticleConnectionPointCompatibilityStates",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleConnectionPointCompatibilityStates"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Particles/Node/nodeParticleBlockConnectionPoint",
       "name": "NodeParticleConnectionPointDirection",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleConnectionPointDirection"
     },
     {
       "package": "@babylonjs/core",
@@ -24734,8 +24847,9 @@
       "module": "@babylonjs/core/Particles/pointsCloudSystem",
       "name": "PointColor",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PointColor"
     },
     {
       "package": "@babylonjs/core",
@@ -24838,8 +24952,9 @@
       "module": "@babylonjs/core/Particles/subEmitter",
       "name": "SubEmitterType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SubEmitterType"
     },
     {
       "package": "@babylonjs/core",
@@ -24958,8 +25073,9 @@
       "module": "@babylonjs/core/Physics/physicsHelper",
       "name": "PhysicsRadialImpulseFalloff",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsRadialImpulseFalloff"
     },
     {
       "package": "@babylonjs/core",
@@ -24982,8 +25098,9 @@
       "module": "@babylonjs/core/Physics/physicsHelper",
       "name": "PhysicsUpdraftMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsUpdraftMode"
     },
     {
       "package": "@babylonjs/core",
@@ -25238,8 +25355,9 @@
       "module": "@babylonjs/core/Physics/v2/characterController",
       "name": "CharacterSupportedState",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.CharacterSupportedState"
     },
     {
       "package": "@babylonjs/core",
@@ -25302,32 +25420,36 @@
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "PhysicsActivationControl",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsActivationControl"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "PhysicsConstraintAxis",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintAxis"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "PhysicsConstraintAxisLimitMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintAxisLimitMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "PhysicsConstraintMotorType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintMotorType"
     },
     {
       "package": "@babylonjs/core",
@@ -25342,8 +25464,9 @@
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "PhysicsConstraintType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintType"
     },
     {
       "package": "@babylonjs/core",
@@ -25366,16 +25489,18 @@
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "PhysicsMotionType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsMotionType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "PhysicsPrestepType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsPrestepType"
     },
     {
       "package": "@babylonjs/core",
@@ -25390,8 +25515,9 @@
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "PhysicsShapeType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsShapeType"
     },
     {
       "package": "@babylonjs/core",
@@ -25534,8 +25660,9 @@
       "module": "@babylonjs/core/Physics/v2/physicsMaterial",
       "name": "PhysicsMaterialCombineMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsMaterialCombineMode"
     },
     {
       "package": "@babylonjs/core",
@@ -25830,8 +25957,9 @@
       "module": "@babylonjs/core/PostProcesses/depthOfFieldEffect",
       "name": "DepthOfFieldEffectBlurLevel",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DepthOfFieldEffectBlurLevel"
     },
     {
       "package": "@babylonjs/core",
@@ -26398,8 +26526,9 @@
       "module": "@babylonjs/core/PostProcesses/thinDepthOfFieldEffect",
       "name": "ThinDepthOfFieldEffectBlurLevel",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ThinDepthOfFieldEffectBlurLevel"
     },
     {
       "package": "@babylonjs/core",
@@ -26574,8 +26703,9 @@
       "module": "@babylonjs/core/PostProcesses/thinTonemapPostProcess",
       "name": "TonemappingOperator",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TonemappingOperator"
     },
     {
       "package": "@babylonjs/core",
@@ -26822,8 +26952,9 @@
       "module": "@babylonjs/core/Rendering/fluidRenderer/fluidRenderingTargetRenderer",
       "name": "FluidRenderingDebug",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FluidRenderingDebug"
     },
     {
       "package": "@babylonjs/core",
@@ -27167,8 +27298,9 @@
       "module": "@babylonjs/core/scene.pure",
       "name": "ScenePerformancePriority",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ScenePerformancePriority"
     },
     {
       "package": "@babylonjs/core",
@@ -30743,8 +30875,9 @@
       "module": "@babylonjs/core/Sprites/spriteMap.pure",
       "name": "SpriteMapFrameRotationDirection",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SpriteMapFrameRotationDirection"
     },
     {
       "package": "@babylonjs/core",
@@ -31823,8 +31956,9 @@
       "module": "@babylonjs/core/XR/features/WebXRNearInteraction.pure",
       "name": "WebXRNearControllerMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WebXRNearControllerMode"
     },
     {
       "package": "@babylonjs/core",
@@ -32375,8 +32509,9 @@
       "module": "@babylonjs/core/XR/webXRGraphicsBinding",
       "name": "WebXRGraphicsBindingType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WebXRGraphicsBindingType"
     },
     {
       "package": "@babylonjs/core",
@@ -32511,16 +32646,18 @@
       "module": "@babylonjs/core/XR/webXRTypes",
       "name": "WebXRState",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WebXRState"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRTypes",
       "name": "WebXRTrackingState",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WebXRTrackingState"
     },
     {
       "package": "@babylonjs/core",
@@ -32671,64 +32808,72 @@
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "EBlendingFunction",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EBlendingFunction"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "EComponentType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EComponentType"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "ECullingType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ECullingType"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "EParameterType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EParameterType"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "EShaderType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EShaderType"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "ETextureFilterType",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ETextureFilterType"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "ETextureFormat",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ETextureFormat"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
       "name": "ETextureWrapMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ETextureWrapMode"
     },
     {
       "package": "@babylonjs/loaders",
@@ -34375,16 +34520,18 @@
       "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
       "name": "GLTFLoaderAnimationStartMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GLTFLoaderAnimationStartMode"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
       "name": "GLTFLoaderCoordinateSystemMode",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GLTFLoaderCoordinateSystemMode"
     },
     {
       "package": "@babylonjs/loaders",
@@ -34415,8 +34562,9 @@
       "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
       "name": "GLTFLoaderState",
       "kind": "enum",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GLTFLoaderState"
     },
     {
       "package": "@babylonjs/loaders",

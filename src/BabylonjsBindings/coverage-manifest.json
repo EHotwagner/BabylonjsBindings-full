@@ -1,0 +1,1343 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "maintained",
+  "source": {
+    "declarationLock": "declaration-lock.json",
+    "packageVersion": "9.19.0"
+  },
+  "proposalSha256": "2b819f945c4e403757932fd2a563af955bf04d45ab4c21df0c4e2b24e7d756e1",
+  "exports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/Set/aggregatorBlock.pure",
+      "name": "Aggregations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Aggregations",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/Input/animatedInputBlockTypes",
+      "name": "AnimatedInputBlockTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AnimatedInputBlockTypes",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationGroupMask",
+      "name": "AnimationGroupMaskMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AnimationGroupMaskMode",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animationKey",
+      "name": "AnimationKeyInterpolation",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AnimationKeyInterpolation",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/assetsManager",
+      "name": "AssetTaskState",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AssetTaskState",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioNode",
+      "name": "AudioNodeType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.AudioNodeType",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/booleanGeometryBlock.pure",
+      "name": "BooleanGeometryOperations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.BooleanGeometryOperations",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
+      "name": "BufferUsage",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.BufferUsage",
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "ChannelMask",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ChannelMask",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/characterController",
+      "name": "CharacterSupportedState",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.CharacterSupportedState",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
+      "name": "ColorWrite",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ColorWrite",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "CompressionCodes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.CompressionCodes",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Extensions/engine.computeShader.pure",
+      "name": "ComputeBindingType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ComputeBindingType",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/conditionalBlock.pure",
+      "name": "ConditionalBlockConditions",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ConditionalBlockConditions",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/conditionBlock.pure",
+      "name": "ConditionBlockTests",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ConditionBlockTests",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/copyTextureToTexture",
+      "name": "ConversionMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ConversionMode",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.axis",
+      "name": "Coordinate",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Coordinate",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/curveBlock.pure",
+      "name": "CurveBlockTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.CurveBlockTypes",
+      "memberCount": 27
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Debug/debugLayer.pure",
+      "name": "DebugLayerTab",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DebugLayerTab",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/depthOfFieldEffect",
+      "name": "DepthOfFieldEffectBlurLevel",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DepthOfFieldEffectBlurLevel",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/thinMinMaxReducer",
+      "name": "DepthTextureType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DepthTextureType",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/deviceInputEvents",
+      "name": "DeviceInputEventType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DeviceInputEventType",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
+      "name": "DeviceType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DeviceType",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gizmos/boundingBoxGizmo",
+      "name": "DragOperation",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DragOperation",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
+      "name": "DualSenseInput",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DualSenseInput",
+      "memberCount": 22
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/dualShockGamepad",
+      "name": "DualShockButton",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DualShockButton",
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/dualShockGamepad",
+      "name": "DualShockDpad",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DualShockDpad",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
+      "name": "DualShockInput",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.DualShockInput",
+      "memberCount": 22
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphEasingBlock.pure",
+      "name": "EasingFunctionType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EasingFunctionType",
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "EBlendingFunction",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EBlendingFunction",
+      "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "EComponentType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EComponentType",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "ECullingType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ECullingType",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
+      "name": "EngineFormat",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EngineFormat",
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "EParameterType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EParameterType",
+      "memberCount": 21
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "EShaderType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EShaderType",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "ETextureFilterType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ETextureFilterType",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "ETextureFormat",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ETextureFormat",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces",
+      "name": "ETextureWrapMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ETextureWrapMode",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.configuration",
+      "name": "EXROutputType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.EXROutputType",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/extrudeGeometryBlock.pure",
+      "name": "ExtrudeGeometryCap",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ExtrudeGeometryCap",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphConnection",
+      "name": "FlowGraphConnectionType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FlowGraphConnectionType",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraph",
+      "name": "FlowGraphState",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FlowGraphState",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
+      "name": "FlowGraphValidationSeverity",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FlowGraphValidationSeverity",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Rendering/fluidRenderer/fluidRenderingTargetRenderer",
+      "name": "FluidRenderingDebug",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FluidRenderingDebug",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/Fragment/fragmentOutputBlock.pure",
+      "name": "FragmentOutputBlockColorSpace",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.FragmentOutputBlockColorSpace",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/geometryCurveBlock.pure",
+      "name": "GeometryCurveBlockTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GeometryCurveBlockTypes",
+      "memberCount": 27
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/geometryEaseBlock.pure",
+      "name": "GeometryEaseBlockTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GeometryEaseBlockTypes",
+      "memberCount": 27
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.geometryrendering",
+      "name": "GeometryRenderingTextureClearType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GeometryRenderingTextureClearType",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/geometryTrigonometryBlock.pure",
+      "name": "GeometryTrigonometryBlockOperations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GeometryTrigonometryBlockOperations",
+      "memberCount": 21
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gizmos/gizmo",
+      "name": "GizmoAnchorPoint",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GizmoAnchorPoint",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gizmos/gizmo",
+      "name": "GizmoCoordinatesMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GizmoCoordinatesMode",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+      "name": "GLTFLoaderAnimationStartMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GLTFLoaderAnimationStartMode",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+      "name": "GLTFLoaderCoordinateSystemMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GLTFLoaderCoordinateSystemMode",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+      "name": "GLTFLoaderState",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GLTFLoaderState",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Collisions/gpuPicker",
+      "name": "GPUMultiPickReadbackStrategy",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GPUMultiPickReadbackStrategy",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder",
+      "name": "GreasedLineMeshColorDistribution",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshColorDistribution",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces",
+      "name": "GreasedLineMeshColorDistributionType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshColorDistributionType",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces",
+      "name": "GreasedLineMeshColorMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshColorMode",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces",
+      "name": "GreasedLineMeshMaterialType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshMaterialType",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/greasedLineBuilder",
+      "name": "GreasedLineMeshWidthDistribution",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineMeshWidthDistribution",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
+      "name": "GreasedLineRibbonAutoDirectionMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineRibbonAutoDirectionMode",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
+      "name": "GreasedLineRibbonFacesMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineRibbonFacesMode",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
+      "name": "GreasedLineRibbonPointsMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.GreasedLineRibbonPointsMode",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior",
+      "name": "HandConstraintOrientation",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.HandConstraintOrientation",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior",
+      "name": "HandConstraintVisibility",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.HandConstraintVisibility",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior",
+      "name": "HandConstraintZone",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.HandConstraintZone",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/iInspectable",
+      "name": "InspectableType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.InspectableType",
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/internalTexture",
+      "name": "InternalTextureSource",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.InternalTextureSource",
+      "memberCount": 16
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/virtualJoystick",
+      "name": "JoystickAxis",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.JoystickAxis",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
+      "name": "MapMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MapMode",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/mappingBlock.pure",
+      "name": "MappingTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MappingTypes",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginEvent",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MaterialPluginEvent",
+      "memberCount": 14
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/mathBlock.pure",
+      "name": "MathBlockOperations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MathBlockOperations",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/meshAttributeExistsBlock.pure",
+      "name": "MeshAttributeExistsBlockTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MeshAttributeExistsBlockTypes",
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/meshDebugPluginMaterial.pure",
+      "name": "MeshDebugMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.MeshDebugMode",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
+      "name": "NativePointerInput",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NativePointerInput",
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
+      "name": "NativeTraceLevel",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NativeTraceLevel",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Enums/nodeGeometryConnectionPointTypes",
+      "name": "NodeGeometryBlockConnectionPointTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryBlockConnectionPointTypes",
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/nodeGeometryBlockConnectionPoint",
+      "name": "NodeGeometryConnectionPointCompatibilityStates",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryConnectionPointCompatibilityStates",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/nodeGeometryBlockConnectionPoint",
+      "name": "NodeGeometryConnectionPointDirection",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryConnectionPointDirection",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Enums/nodeGeometryContextualSources",
+      "name": "NodeGeometryContextualSources",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeGeometryContextualSources",
+      "memberCount": 19
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockConnectionPointMode",
+      "name": "NodeMaterialBlockConnectionPointMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialBlockConnectionPointMode",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockConnectionPointTypes",
+      "name": "NodeMaterialBlockConnectionPointTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialBlockConnectionPointTypes",
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialBlockTargets",
+      "name": "NodeMaterialBlockTargets",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialBlockTargets",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterialBlockConnectionPoint",
+      "name": "NodeMaterialConnectionPointCompatibilityStates",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialConnectionPointCompatibilityStates",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterialBlockConnectionPoint",
+      "name": "NodeMaterialConnectionPointDirection",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialConnectionPointDirection",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialModes",
+      "name": "NodeMaterialModes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialModes",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Enums/nodeMaterialSystemValues",
+      "name": "NodeMaterialSystemValues",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeMaterialSystemValues",
+      "memberCount": 13
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Enums/nodeParticleBlockConnectionPointTypes",
+      "name": "NodeParticleBlockConnectionPointTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleBlockConnectionPointTypes",
+      "memberCount": 17
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/nodeParticleBlockConnectionPoint",
+      "name": "NodeParticleConnectionPointCompatibilityStates",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleConnectionPointCompatibilityStates",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/nodeParticleBlockConnectionPoint",
+      "name": "NodeParticleConnectionPointDirection",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleConnectionPointDirection",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Enums/nodeParticleContextualSources",
+      "name": "NodeParticleContextualSources",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleContextualSources",
+      "memberCount": 21
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Enums/nodeParticleSystemSources",
+      "name": "NodeParticleSystemSources",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeParticleSystemSources",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
+      "name": "NodeRenderGraphBlockConnectionPointTypes",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeRenderGraphBlockConnectionPointTypes",
+      "memberCount": 30
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
+      "name": "NodeRenderGraphConnectionPointCompatibilityStates",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeRenderGraphConnectionPointCompatibilityStates",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
+      "name": "NodeRenderGraphConnectionPointDirection",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.NodeRenderGraphConnectionPointDirection",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.path",
+      "name": "Orientation",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Orientation",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Blocks/Conditions/particleConditionBlock.pure",
+      "name": "ParticleConditionBlockTests",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleConditionBlockTests",
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Blocks/particleFloatToIntBlock.pure",
+      "name": "ParticleFloatToIntBlockOperations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleFloatToIntBlockOperations",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Blocks/particleLocalVariableBlock.pure",
+      "name": "ParticleLocalVariableBlockScope",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleLocalVariableBlockScope",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Blocks/particleMathBlock.pure",
+      "name": "ParticleMathBlockOperations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleMathBlockOperations",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Blocks/particleNumberMathBlock.pure",
+      "name": "ParticleNumberMathBlockOperations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleNumberMathBlockOperations",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Blocks/particleRandomBlock.pure",
+      "name": "ParticleRandomBlockLocks",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleRandomBlockLocks",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Blocks/particleTrigonometryBlock.pure",
+      "name": "ParticleTrigonometryBlockOperations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleTrigonometryBlockOperations",
+      "memberCount": 21
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Node/Blocks/particleVectorMathBlock.pure",
+      "name": "ParticleVectorMathBlockOperations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ParticleVectorMathBlockOperations",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsActivationControl",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsActivationControl",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsConstraintAxis",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintAxis",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsConstraintAxisLimitMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintAxisLimitMode",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsConstraintMotorType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintMotorType",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsConstraintType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsConstraintType",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/physicsMaterial",
+      "name": "PhysicsMaterialCombineMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsMaterialCombineMode",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsMotionType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsMotionType",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsPrestepType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsPrestepType",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/physicsHelper",
+      "name": "PhysicsRadialImpulseFalloff",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsRadialImpulseFalloff",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsShapeType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsShapeType",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/physicsHelper",
+      "name": "PhysicsUpdraftMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PhysicsUpdraftMode",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/pointsCloudSystem",
+      "name": "PointColor",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PointColor",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
+      "name": "PointerInput",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PointerInput",
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Decorators/nodeDecorator",
+      "name": "PropertyTypeForEdition",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.PropertyTypeForEdition",
+      "memberCount": 14
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Blocks/randomBlock.pure",
+      "name": "RandomBlockLocks",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.RandomBlockLocks",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "SceneLoaderAnimationGroupLoadingMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SceneLoaderAnimationGroupLoadingMode",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/scene.pure",
+      "name": "ScenePerformancePriority",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ScenePerformancePriority",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/shaderLanguage",
+      "name": "ShaderLanguage",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ShaderLanguage",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
+      "name": "ShaderStage",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ShaderStage",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/meshSimplification.common",
+      "name": "SimplificationType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SimplificationType",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/soundState",
+      "name": "SoundState",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SoundState",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
+      "name": "SourceTextureFormat",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SourceTextureFormat",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.axis",
+      "name": "Space",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Space",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/spatialAudioAttachmentType",
+      "name": "SpatialAudioAttachmentType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SpatialAudioAttachmentType",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Sprites/spriteMap.pure",
+      "name": "SpriteMapFrameRotationDirection",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SpriteMapFrameRotationDirection",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/subEmitter",
+      "name": "SubEmitterType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SubEmitterType",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
+      "name": "SwitchInput",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.SwitchInput",
+      "memberCount": 22
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "TextureChannel",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TextureChannel",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureProcessor",
+      "name": "TextureColorSpace",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TextureColorSpace",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuConstants",
+      "name": "TextureUsage",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TextureUsage",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/thinDepthOfFieldEffect",
+      "name": "ThinDepthOfFieldEffectBlurLevel",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ThinDepthOfFieldEffectBlurLevel",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/timer",
+      "name": "TimerState",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TimerState",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/thinTonemapPostProcess",
+      "name": "TonemappingOperator",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TonemappingOperator",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
+      "name": "TranscodeTarget",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TranscodeTarget",
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/trigonometryBlock.pure",
+      "name": "TrigonometryBlockOperations",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.TrigonometryBlockOperations",
+      "memberCount": 19
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/Blocks/waveBlock.pure",
+      "name": "WaveBlockKind",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WaveBlockKind",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRGraphicsBinding",
+      "name": "WebXRGraphicsBindingType",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WebXRGraphicsBindingType",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRNearInteraction.pure",
+      "name": "WebXRNearControllerMode",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WebXRNearControllerMode",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRTypes",
+      "name": "WebXRState",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WebXRState",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRTypes",
+      "name": "WebXRTrackingState",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.WebXRTrackingState",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/xboxGamepad",
+      "name": "Xbox360Button",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Xbox360Button",
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/xboxGamepad",
+      "name": "Xbox360Dpad",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.Xbox360Dpad",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceEnums",
+      "name": "XboxInput",
+      "kind": "enum",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.XboxInput",
+      "memberCount": 21
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>BabylonjsBindings.Candidate</PackageId>
+    <Version>0.0.0-candidate.1</Version>
+    <IsPackable>true</IsPackable>
+    <FablePackageType>library</FablePackageType>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <Description>Local-only review package for the full Babylon.js binding candidate.</Description>
+    <PackageTags>fable-javascript;babylon;bindings</PackageTags>
+    <RepositoryUrl>https://github.com/EHotwagner/BabylonjsBindings-full</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <OtherFlags>--maxerrors:5000</OtherFlags>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="_packageSources/CoreEnums.proposal.fs" />
+    <Compile Include="_packageSources/BabylonBindings.generated.fs" />
+    <Compile Include="_packageSources/BabylonGltf2Interface.generated.fs" />
+    <Compile Include="_packageSources/BabylonLoadersBindings.generated.fs" />
+    <PackageReference Include="Fable.Core" />
+    <PackageReference Include="Fable.Package.SDK" />
+    <PackageReference Include="Fable.Browser.Dom" />
+    <PackageReference Include="Fable.Browser.WebGL" />
+  </ItemGroup>
+  <Target Name="PrepareCandidatePackageSources" BeforeTargets="CoreCompile;Pack">
+    <MakeDir Directories="_packageSources" />
+    <Copy SourceFiles="../CoreEnums.proposal.fs" DestinationFiles="_packageSources/CoreEnums.proposal.fs" />
+    <Copy SourceFiles="../BabylonBindings.generated.fs" DestinationFiles="_packageSources/BabylonBindings.generated.fs" />
+    <Copy SourceFiles="../BabylonGltf2Interface.generated.fs" DestinationFiles="_packageSources/BabylonGltf2Interface.generated.fs" />
+    <Copy SourceFiles="../BabylonLoadersBindings.generated.fs" DestinationFiles="_packageSources/BabylonLoadersBindings.generated.fs" />
+  </Target>
+</Project>

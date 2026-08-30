@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Babylon full candidate browser smoke</title>
+<script type="importmap">
+{
+  "imports": {
+    "@babylonjs/core/": "/node_modules/@babylonjs/core/",
+    "@babylonjs/loaders/": "/node_modules/@babylonjs/loaders/"
+  }
+}
+</script>
+<output>running</output>
+<script type="module">
+const output = document.querySelector("output");
+try {
+  await import("../dist/Program.js");
+  output.textContent = "Babylon full candidate browser smoke passed";
+} catch (error) {
+  output.textContent = `Babylon full candidate browser smoke failed: ${error?.stack ?? error}`;
+}
+</script>

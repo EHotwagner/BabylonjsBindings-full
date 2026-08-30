@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "target": "generated-candidate",
+  "browser": "Chromium 151.0.7922.173 Arch Linux",
+  "page": {
+    "path": "generated-candidates/runtime/browser/index.html",
+    "sha256": "eea76ef0abcf113f5998fc53bd1cad3bc497aade03fa9278a14f29e9e09ff68c"
+  },
+  "emittedProgramSha256": "0cb7bc99ea11cb0891d8e3d92c55457e1354375a50436d1daf6c8eefb0514dec",
+  "status": "pass"
+}
