@@ -44,6 +44,9 @@ jobs:
           key: nuget-${{ runner.os }}-${{ hashFiles('**/packages.lock.json', '.config/dotnet-tools.json') }}
           restore-keys: nuget-${{ runner.os }}-
 
+      - name: Set up pinned npm
+        run: npm install --global npm@12.0.1 --ignore-scripts
+
       - name: Verify pinned tools
         shell: bash
         run: |
@@ -80,11 +83,14 @@ jobs:
           key: nuget-${{ runner.os }}-${{ hashFiles('**/packages.lock.json', '.config/dotnet-tools.json') }}
           restore-keys: nuget-${{ runner.os }}-
 
+      - name: Set up pinned npm
+        run: npm install --global npm@12.0.1 --ignore-scripts
+
       - name: Set up pinned browser
         id: chrome
         uses: browser-actions/setup-chrome@e574b4b3a21156ab45dd6b5f67e884fd26eed829 # v2.1.2
         with:
-          chrome-version: 151.0.7922.173
+          chrome-version: 152.0.7977.64
           install-dependencies: true
 
       - name: Expose browser as chromium
