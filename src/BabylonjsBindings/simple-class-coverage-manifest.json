@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "7d140e42093ae4c2ef4499c580adb25b41922014b78d0fdd608a372d8505bc56",
+  "proposalSha256": "adc8c3f845c6504238e3822c28103f99002c0a5f7a693888705997bb1a5bc772",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -159,6 +159,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DataReader",
       "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dataStorage",
+      "name": "DataStorage",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DataStorage",
+      "memberCount": 9
     },
     {
       "package": "@babylonjs/core",
@@ -588,6 +597,15 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Sprites/thinSprite",
+      "name": "ThinSprite",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ThinSprite",
+      "memberCount": 23
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/uniqueIdGenerator",
       "name": "UniqueIdGenerator",
       "kind": "class",
@@ -723,6 +741,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/observable.pure",
+      "name": "Observer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Observer",
+      "typeParameterCount": 1,
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing",
       "name": "PowerEase",
       "kind": "class",
@@ -793,6 +821,53 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUPerfCounter",
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/observable.pure",
+      "name": "Observable",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Observable",
+      "typeParameterCount": 1,
+      "memberCount": 19
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/dualShockGamepad",
+      "name": "DualShockPad",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DualShockPad",
+      "memberCount": 29
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/gamepad",
+      "name": "GenericPad",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GenericPad",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/observable.extensions.pure",
+      "name": "MultiObserver",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MultiObserver",
+      "typeParameterCount": 1,
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/xboxGamepad",
+      "name": "Xbox360Pad",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Xbox360Pad",
+      "memberCount": 29
     }
   ]
 }

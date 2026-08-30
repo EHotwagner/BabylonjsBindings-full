@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "328fca9de60a9de699cb344837458722e07605e2dbae9864fe85bedbe155362b"
+    "sha256": "285866cd75c5fa5b24d469ccdec65e60cf994d15ed598c5e0851c0c98afb01eb"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,7 +13,7 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "d9ac51319971225439047838716b736aa870b61441b04cc8f0c01ce0b7b5dd2c",
+  "emittedProgramSha256": "9e5cf0ed083dcc4c41c1c02ddabcb99762399c1812b0709fb4c9a442c9069c0d",
   "imports": [
     "@babylonjs/core/Animations/animationEvent.js",
     "@babylonjs/core/Animations/animationGroupMask.js",
@@ -33,13 +33,17 @@
     "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js",
     "@babylonjs/core/Meshes/meshSimplification.common.js",
     "@babylonjs/core/Misc/bitArray.js",
+    "@babylonjs/core/Misc/dataStorage.js",
     "@babylonjs/core/Misc/fileTools.pure.js",
     "@babylonjs/core/Misc/gradients.js",
     "@babylonjs/core/Misc/lazy.js",
     "@babylonjs/core/Misc/logger.js",
+    "@babylonjs/core/Misc/observable.extensions.pure.js",
+    "@babylonjs/core/Misc/observable.pure.js",
     "@babylonjs/core/Misc/smartArray.js",
     "@babylonjs/core/Misc/stringTools.js",
     "@babylonjs/core/ShadersWGSL/clearQuad.vertex.js",
+    "@babylonjs/core/Sprites/thinSprite.js",
     "@babylonjs/core/States/alphaCullingState.js",
     "@babylonjs/core/States/stencilState.js",
     "@babylonjs/core/States/stencilStateComposer.js",

@@ -6,6 +6,7 @@ import ts from "typescript";
 const root = resolve(import.meta.dirname, "..");
 const nodeModules = resolve(root, "node_modules");
 const check = process.argv.includes("--check");
+const diagnose = process.argv.includes("--diagnose");
 const lock = JSON.parse(await readFile(resolve(root, "declaration-lock.json"), "utf8"));
 const lockedPaths = new Set(lock.files.map(file => file.path));
 const normalize = file => relative(nodeModules, file).split(sep).join("/");
@@ -46,7 +47,15 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
+  if (node.kind === ts.SyntaxKind.ThisType && typeParameters.ownerName) return typeParameters.ownerName;
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
+  if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
+    if (ts.isArrayTypeNode(node.type)) {
+      const element = fsharpType(node.type.elementType, available, dependencies, typeParameters);
+      return element ? `System.Collections.Generic.IReadOnlyList<${element}>` : undefined;
+    }
+    return fsharpType(node.type, available, dependencies, typeParameters);
+  }
   if (ts.isUnionTypeNode(node) && node.types.length === 2 && node.types.filter(isAbsentType).length === 1) {
     const inner = fsharpType(node.types.find(branch => !isAbsentType(branch)), available, dependencies, typeParameters);
     return inner ? asOption(inner) : undefined;
@@ -64,9 +73,14 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "Error" && !node.typeArguments?.length) return "System.Exception";
     if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `ResizeArray<${inner}>` : undefined;
+    }
+    if (node.typeName.text === "ReadonlyArray" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      return inner ? `System.Collections.Generic.IReadOnlyList<${inner}>` : undefined;
     }
     if (node.typeName.text === "Promise" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
@@ -123,19 +137,43 @@ const initializerType = node => {
   if (ts.isPrefixUnaryExpression(node) && (node.operator === ts.SyntaxKind.PlusToken || node.operator === ts.SyntaxKind.MinusToken) && ts.isNumericLiteral(node.operand)) return "float";
   return undefined;
 };
+const functionType = node => ts.isFunctionTypeNode(node)
+  ? node
+  : ts.isParenthesizedTypeNode(node) && ts.isFunctionTypeNode(node.type)
+    ? node.type
+    : undefined;
+const callbackPropertyType = node => {
+  const direct = functionType(node);
+  if (direct) return { node: direct, optional: false };
+  if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName) && node.typeName.text === "Nullable" && node.typeArguments?.length === 1 && functionType(node.typeArguments[0])) {
+    return { node: functionType(node.typeArguments[0]), optional: true };
+  }
+  if (ts.isUnionTypeNode(node) && node.types.length === 2) {
+    const absent = node.types.find(isAbsentType);
+    const callback = node.types.map(functionType).find(Boolean);
+    if (absent && callback) return { node: callback, optional: true };
+  }
+  return undefined;
+};
 const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, context, ownerName) => {
   if (node.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
-  const returnType = node.type ? fsharpType(node.type, available, dependencies, typeParameters) : undefined;
+  if (node.typeParameters?.some(parameter => parameter.constraint)) return undefined;
+  const localTypeParameters = new Set(typeParameters);
+  for (const parameter of node.typeParameters ?? []) localTypeParameters.add(parameter.name.text);
+  localTypeParameters.ownerName = typeParameters.ownerName;
+  const returnType = node.type ? fsharpType(node.type, available, dependencies, localTypeParameters) : undefined;
   const parameters = node.parameters.map((parameter, index) => {
-    let type = parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined;
-    if (!type && parameter.type && ts.isFunctionTypeNode(parameter.type)) {
-      const nested = directCallbackShape(parameter.type, available, dependencies, typeParameters);
+    let type = parameter.type ? fsharpType(parameter.type, available, dependencies, localTypeParameters) : undefined;
+    const nestedProperty = parameter.type ? callbackPropertyType(parameter.type) : undefined;
+    if (!type && nestedProperty) {
+      const nested = directCallbackShape(nestedProperty.node, available, dependencies, localTypeParameters);
       const usesOwner = nested && [nested.returnType, ...nested.parameters.map(item => item.type)].some(type => new RegExp(`(^|[^A-Za-z0-9_])${ownerName}([^A-Za-z0-9_]|$)`).test(type));
       if (nested && !usesOwner) {
         const name = `${context}Parameter${index + 1}Callback`;
-        const genericParameters = typeParameters.size ? `<${[...typeParameters].map(value => `'${value}`).join(", ")}>` : "";
+        const genericParameters = localTypeParameters.size ? `<${[...localTypeParameters].map(value => `'${value}`).join(", ")}>` : "";
         nestedCallbacks.push({ name, genericParameters, callback: nested });
         type = `${name}${genericParameters}`;
+        if (nestedProperty.optional) type = asOption(type);
       }
     }
     return {
@@ -144,16 +182,27 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
       optional: Boolean(parameter.questionToken)
     };
   });
-  return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
+  const genericParameters = node.typeParameters?.length
+    ? `<${node.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}>`
+    : "";
+  return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters, genericParameters } : undefined;
 };
 const renderClass = (declaration, available, hasBase) => {
   const dependencies = new Set();
   const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
+  typeParameters.ownerName = declaration.name.text;
   const nestedCallbacks = [];
   const instanceMembers = [];
   const staticMembers = [];
   const constructors = [];
   const accessors = new Map();
+  const methodCounts = new Map();
+  const renderedMethodNames = new Set();
+  const failedOverloadNames = new Set();
+  for (const member of declaration.members) {
+    if (inaccessible(member) || !ts.isMethodDeclaration(member) || (!ts.isIdentifier(member.name) && !ts.isStringLiteral(member.name))) continue;
+    methodCounts.set(member.name.text, (methodCounts.get(member.name.text) ?? 0) + 1);
+  }
   const constructorDeclarations = declaration.members.filter(ts.isConstructorDeclaration);
   for (const [memberIndex, member] of declaration.members.entries()) {
     if (inaccessible(member)) continue;
@@ -167,10 +216,11 @@ const renderClass = (declaration, available, hasBase) => {
         // Optional readonly is representable; the branch merely documents that
         // both flags participate independently below.
       }
-      if (member.type && ts.isFunctionTypeNode(member.type)) {
-        const callback = callbackShape(member.type, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Property${memberIndex + 1}`, declaration.name.text);
+      const callbackProperty = member.type ? callbackPropertyType(member.type) : undefined;
+      if (callbackProperty) {
+        const callback = callbackShape(callbackProperty.node, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Property${memberIndex + 1}`, declaration.name.text);
         if (!callback) return undefined;
-        target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken), readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
+        target.push({ kind: "callbackProperty", name: member.name.text, optional: Boolean(member.questionToken) || callbackProperty.optional, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword), callback });
       } else {
         const type = member.type ? fsharpType(member.type, available, dependencies, typeParameters) : initializerType(member.initializer);
         if (!type) return undefined;
@@ -179,8 +229,20 @@ const renderClass = (declaration, available, hasBase) => {
     } else if (ts.isMethodDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       if (member.questionToken) return undefined;
       const callback = callbackShape(member, available, dependencies, typeParameters, nestedCallbacks, `${declaration.name.text}Method${memberIndex + 1}`, declaration.name.text);
-      if (!callback) return undefined;
+      if (!callback) {
+        if ((methodCounts.get(member.name.text) ?? 0) > 1) {
+          failedOverloadNames.add(member.name.text);
+          continue;
+        }
+        return undefined;
+      }
+      if ((methodCounts.get(member.name.text) ?? 0) > 1) {
+        for (let index = target.length - 1; index >= 0; index -= 1) {
+          if (target[index].kind === "method" && target[index].name === member.name.text) target.splice(index, 1);
+        }
+      }
       target.push({ kind: "method", name: member.name.text, callback });
+      renderedMethodNames.add(member.name.text);
     } else if ((ts.isGetAccessorDeclaration(member) || ts.isSetAccessorDeclaration(member)) && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       const key = `${hasModifier(member, ts.SyntaxKind.StaticKeyword) ? "static" : "instance"}|${member.name.text}`;
       const accessor = accessors.get(key) ?? { kind: "accessor", name: member.name.text, static: hasModifier(member, ts.SyntaxKind.StaticKeyword), canGet: false, canSet: false };
@@ -201,6 +263,7 @@ const renderClass = (declaration, available, hasBase) => {
       return undefined;
     }
   }
+  if ([...failedOverloadNames].some(name => !renderedMethodNames.has(name))) return undefined;
   for (const accessor of accessors.values()) (accessor.static ? staticMembers : instanceMembers).push(accessor);
   if (constructorDeclarations.length === 0 && !hasBase && !hasModifier(declaration, ts.SyntaxKind.AbstractKeyword)) {
     constructors.push({ parameters: [], returnType: "unit" });
@@ -282,6 +345,30 @@ while (true) {
   rank += 1;
 }
 const entries = [...selected.values()].sort((left, right) => left.rank - right.rank || left.name.localeCompare(right.name));
+if (diagnose) {
+  const optimistic = new Map([...declarations.values()]
+    .filter(entry => nameCounts.get(entry.name) === 1)
+    .map(entry => [entry.name, { arity: entry.arity }]));
+  const shapeReady = [];
+  const missingCounts = new Map();
+  const singleMissing = [];
+  for (const [identity, entry] of declarations) {
+    if (selected.has(identity) || nameCounts.get(entry.name) !== 1) continue;
+    const base = renderBase(entry.declaration, optimistic);
+    const rendered = base !== null ? renderClass(entry.declaration, optimistic, Boolean(base)) : undefined;
+    if (rendered) {
+      shapeReady.push(entry.name);
+      const missing = [...new Set([...(base && !available.has(base.name) ? [base.name] : []), ...rendered.dependencies.filter(name => !available.has(name))])];
+      for (const name of missing) missingCounts.set(name, (missingCounts.get(name) ?? 0) + 1);
+      if (missing.length === 1) singleMissing.push(`${entry.name} <- ${missing[0]}`);
+    }
+  }
+  console.log(`diagnostic: ${shapeReady.length} additional classes have renderable member shapes but unresolved dependency cycles`);
+  console.log("top unresolved class dependencies:");
+  console.log([...missingCounts].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 40).map(([name, count]) => `${name} ${count}`).join("\n"));
+  console.log("single unresolved dependency:");
+  console.log(singleMissing.sort().slice(0, 200).join("\n"));
+}
 const pascal = value => value.replace(/(^|[^A-Za-z0-9]+)([A-Za-z0-9])/g, (_, __, character) => character.toUpperCase());
 const callbackArguments = callback => callback.parameters.length === 0
   ? "unit"
@@ -295,7 +382,7 @@ const renderMember = member => {
   if (member.kind === "property") return `abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`;
   if (member.kind === "accessor") return `abstract \`\`${member.name}\`\`: ${member.type} with ${member.canGet ? "get" : ""}${member.canGet && member.canSet ? ", " : ""}${member.canSet ? "set" : ""}`;
   if (member.kind === "callbackProperty") return `abstract \`\`${member.name}\`\`: ${member.helperName}${member.optional ? " option" : ""} with get${member.readonly ? "" : ", set"}`;
-  return `abstract \`\`${member.name}\`\`: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`;
+  return `abstract \`\`${member.name}\`\`${member.callback.genericParameters}: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`;
 };
 const lines = [
   "// REVIEWED-PROMOTION PROPOSAL — move to maintained source only after class review, compile, import, and runtime proof",
@@ -308,7 +395,9 @@ const lines = [
 ];
 for (const entry of entries) {
   const genericParameters = entry.arity ? `<${entry.declaration.typeParameters.map(parameter => `'${parameter.name.text}`).join(", ")}>` : "";
-  for (const nested of entry.nestedCallbacks) {
+  const retainedCallbacks = [...entry.constructors, ...entry.instanceMembers.map(member => member.callback), ...entry.staticMembers.map(member => member.callback)].filter(Boolean);
+  const usedNestedCallbacks = entry.nestedCallbacks.filter(nested => retainedCallbacks.some(callback => callback.parameters.some(parameter => parameter.type.includes(nested.name))));
+  for (const nested of usedNestedCallbacks) {
     lines.push("", `    /// Uncurried function-valued argument used by ${entry.name}.`, `    type ${nested.name}${nested.genericParameters} = ${delegateType(nested.callback)}`);
   }
   for (const member of [...entry.instanceMembers, ...entry.staticMembers].filter(member => member.kind === "callbackProperty")) {

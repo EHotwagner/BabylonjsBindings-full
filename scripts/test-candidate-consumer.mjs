@@ -125,6 +125,25 @@ let easingSamples =
       QuarticEase.Create().\`\`ease\`\`(0.5)
       QuinticEase.Create().\`\`ease\`\`(0.5)
       SineEase.Create().\`\`ease\`\`(0.5) ]
+DataStorage.\`\`WriteJson\`\`("babylon-bindings-proof", "stored")
+let storedValue = DataStorage.\`\`ReadJson\`\`("babylon-bindings-proof", "missing")
+let observableA: Observable<string> = Observable.Create()
+let observableB: Observable<string> = Observable.Create()
+let mutable observedValues = ResizeArray<string>()
+let observableCallback: ObservableMethod13Parameter1Callback<string> =
+    System.Action<string, EventState>(fun value _ -> observedValues.Add(value))
+let observer = observableA.\`\`add\`\`(callback = observableCallback)
+let multiCallback: MultiObserverMethod4Parameter2Callback<string> =
+    System.Action<string, EventState>(fun value _ -> observedValues.Add($"multi:{value}"))
+let multiObserver = MultiObserver.\`\`Watch\`\`(ResizeArray [ observableA; observableB ], multiCallback)
+observableA.\`\`notifyObservers\`\`("first") |> ignore
+observableB.\`\`notifyObservers\`\`("second") |> ignore
+let thinSprite = ThinSprite.Create()
+let mutable thinAnimationEnded = false
+let thinAnimationEnd: ThinSpriteMethod29Parameter5Callback = System.Action(fun () -> thinAnimationEnded <- true)
+thinSprite.\`\`playAnimation\`\`(0.0, 1.0, false, 1.0, Some thinAnimationEnd)
+thinSprite.\`\`_animate\`\`(2.0)
+thinSprite.\`\`_animate\`\`(2.0)
 let positionStride = BabylonjsBindings.SimpleFunctions.\`\`VertexBufferDeduceStride\`\`.Invoke("position")
 let shortIndices: BabylonjsBindings.TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
 let indicesNeed32Bits = BabylonjsBindings.SimpleFunctions.\`\`AreIndices32Bits\`\`.Invoke(shortIndices, 3.0)
@@ -162,6 +181,10 @@ if Constants.\`\`AUTOSAMPLERSUFFIX\`\` <> "Sampler" || Constants.\`\`ALPHA_ADD\`
 if ClipboardEventTypes.\`\`COPY\`\` <> 1.0 || KeyboardEventTypes.\`\`KEYDOWN\`\` <> 1.0 || PointerEventTypes.\`\`POINTERDOUBLETAP\`\` <> 64.0 then failwith "clean consumer event constants failed"
 if LightConstants.\`\`FALLOFF_PHYSICAL\`\` <> 1.0 || Logger.\`\`AllLogLevel\`\` <> 7.0 || StencilState.\`\`KEEP\`\` <> 7680.0 then failwith "clean consumer subsystem constants failed"
 if (halton.\`\`x\`\` = 0.0 && halton.\`\`y\`\` = 0.0) || easingSamples.Length <> 12 || (easingSamples |> List.exists System.Double.IsNaN) then failwith "clean consumer inferred class closure failed"
+if storedValue <> "stored" then failwith "clean consumer generic static class method failed"
+if observer.IsNone || not (observableA.\`\`hasObservers\`\`()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then failwith "clean consumer observable closure failed"
+if not thinAnimationEnded || thinSprite.\`\`animationStarted\`\` then failwith "clean consumer nullable callback class failed"
+multiObserver.\`\`dispose\`\`()
 if positionStride <> 3.0 then failwith "clean consumer function import failed"
 if indicesNeed32Bits then failwith "clean consumer union alias/function failed"
 if epsilon <> 0.001 then failwith "clean consumer variable import failed"

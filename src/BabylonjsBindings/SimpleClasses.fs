@@ -662,6 +662,26 @@ module SimpleClasses =
     [<Import("DataReader", "@babylonjs/core/Misc/dataReader.js")>]
     let DataReader: DataReaderStatic = jsNative
 
+    /// @babylonjs/core/Misc/dataStorage
+    [<AllowNullLiteral>]
+    type DataStorage =
+        interface end
+
+    [<AllowNullLiteral>]
+    type DataStorageStatic =
+        [<EmitConstructor>] abstract Create: unit -> DataStorage
+        abstract ``ReadString``: ``key``: string * ``defaultValue``: string -> string
+        abstract ``WriteString``: ``key``: string * ``value``: string -> unit
+        abstract ``ReadBoolean``: ``key``: string * ``defaultValue``: bool -> bool
+        abstract ``WriteBoolean``: ``key``: string * ``value``: bool -> unit
+        abstract ``ReadNumber``: ``key``: string * ``defaultValue``: float -> float
+        abstract ``WriteNumber``: ``key``: string * ``value``: float -> unit
+        abstract ``ReadJson``<'T>: ``key``: string * ``defaultValue``: 'T -> 'T
+        abstract ``WriteJson``<'T>: ``key``: string * ``value``: 'T -> unit
+
+    [<Import("DataStorage", "@babylonjs/core/Misc/dataStorage.js")>]
+    let DataStorage: DataStorageStatic = jsNative
+
     /// @babylonjs/core/Misc/deepCopier
     [<AllowNullLiteral>]
     type DeepCopier =
@@ -1628,6 +1648,42 @@ module SimpleClasses =
     [<Import("TextureSampler", "@babylonjs/core/Materials/Textures/textureSampler.js")>]
     let TextureSampler: TextureSamplerStatic = jsNative
 
+    /// Uncurried function-valued argument used by ThinSprite.
+    type ThinSpriteMethod29Parameter5Callback = System.Action
+
+    /// @babylonjs/core/Sprites/thinSprite
+    [<AllowNullLiteral>]
+    type ThinSprite =
+        abstract ``cellIndex``: float with get, set
+        abstract ``cellRef``: string with get, set
+        abstract ``position``: BabylonjsBindings.SimpleInterfaces.IVector3Like with get, set
+        abstract ``color``: BabylonjsBindings.SimpleInterfaces.IColor4Like with get, set
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``angle``: float with get, set
+        abstract ``invertU``: bool with get, set
+        abstract ``invertV``: bool with get, set
+        abstract ``isVisible``: bool with get, set
+        abstract ``_xOffset``: float with get, set
+        abstract ``_yOffset``: float with get, set
+        abstract ``_xSize``: float with get, set
+        abstract ``_ySize``: float with get, set
+        abstract ``playAnimation``: ``from``: float * ``to``: float * ``loop``: bool * ``delay``: float * ``onAnimationEnd``: ThinSpriteMethod29Parameter5Callback option -> unit
+        abstract ``stopAnimation``: unit -> unit
+        abstract ``_animate``: ``deltaTime``: float -> unit
+        abstract ``animationStarted``: bool with get
+        abstract ``fromIndex``: float with get
+        abstract ``toIndex``: float with get
+        abstract ``loopAnimation``: bool with get
+        abstract ``delay``: float with get
+
+    [<AllowNullLiteral>]
+    type ThinSpriteStatic =
+        [<EmitConstructor>] abstract Create: unit -> ThinSprite
+
+    [<Import("ThinSprite", "@babylonjs/core/Sprites/thinSprite.js")>]
+    let ThinSprite: ThinSpriteStatic = jsNative
+
     /// @babylonjs/core/Misc/uniqueIdGenerator
     [<AllowNullLiteral>]
     type UniqueIdGenerator =
@@ -1885,6 +1941,37 @@ module SimpleClasses =
     [<Import("KeyboardInfoPre", "@babylonjs/core/Events/keyboardEvents.js")>]
     let KeyboardInfoPre: KeyboardInfoPreStatic = jsNative
 
+    /// Uncurried function-valued argument used by Observer.
+    type ObserverConstructor7Parameter1Callback<'T> = System.Action<'T, EventState>
+
+    /// Function-valued Observer.callback property.
+    [<AllowNullLiteral>]
+    type ObserverCallbackCallback<'T> =
+        [<Emit("$0($1...)")>] abstract Invoke: ``eventData``: 'T * ``eventState``: EventState -> unit
+
+    /// Function-valued Observer._remove property.
+    [<AllowNullLiteral>]
+    type ObserverRemoveCallback<'T> =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``defer``: bool -> unit
+
+    /// @babylonjs/core/Misc/observable.pure
+    [<AllowNullLiteral>]
+    type Observer<'T> =
+        abstract ``callback``: ObserverCallbackCallback<'T> with get, set
+        abstract ``mask``: float with get, set
+        abstract ``scope``: obj with get, set
+        abstract ``_willBeUnregistered``: bool with get, set
+        abstract ``unregisterOnNextCall``: bool with get, set
+        abstract ``_remove``: ObserverRemoveCallback<'T> option with get, set
+        abstract ``remove``: ?``defer``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ObserverStatic =
+        [<EmitConstructor>] abstract Create<'T>: ``callback``: ObserverConstructor7Parameter1Callback<'T> * ``mask``: float * ?``scope``: obj -> Observer<'T>
+
+    [<Import("Observer", "@babylonjs/core/Misc/observable.pure.js")>]
+    let Observer: ObserverStatic = jsNative
+
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
     type PowerEase =
@@ -1999,3 +2086,203 @@ module SimpleClasses =
 
     [<Import("WebGPUPerfCounter", "@babylonjs/core/Engines/WebGPU/webgpuPerfCounter.js")>]
     let WebGPUPerfCounter: WebGPUPerfCounterStatic = jsNative
+
+    /// Uncurried function-valued argument used by Observable.
+    type ObservableConstructor10Parameter1Callback<'T> = System.Action<Observer<'T>>
+
+    /// Uncurried function-valued argument used by Observable.
+    type ObservableMethod13Parameter1Callback<'T> = System.Action<'T, EventState>
+
+    /// Uncurried function-valued argument used by Observable.
+    type ObservableMethod16Parameter1Callback<'T> = System.Action<'T, EventState>
+
+    /// Uncurried function-valued argument used by Observable.
+    type ObservableMethod18Parameter1Callback<'T> = System.Action<'T, EventState>
+
+    /// @babylonjs/core/Misc/observable.pure
+    [<AllowNullLiteral>]
+    type Observable<'T> =
+        abstract ``notifyIfTriggered``: bool with get, set
+        abstract ``_eventState``: EventState with get, set
+        abstract ``add``: ?``callback``: ObservableMethod13Parameter1Callback<'T> * ?``mask``: float * ?``insertFirst``: bool * ?``scope``: obj * ?``unregisterOnFirstCall``: bool -> Observer<'T> option
+        abstract ``addOnce``: ?``callback``: ObservableMethod16Parameter1Callback<'T> -> Observer<'T> option
+        abstract ``remove``: ``observer``: Observer<'T> option -> bool
+        abstract ``removeCallback``: ``callback``: ObservableMethod18Parameter1Callback<'T> * ?``scope``: obj -> bool
+        abstract ``_deferUnregister``: ``observer``: Observer<'T> -> unit
+        abstract ``makeObserverTopPriority``: ``observer``: Observer<'T> -> unit
+        abstract ``makeObserverBottomPriority``: ``observer``: Observer<'T> -> unit
+        abstract ``notifyObservers``: ``eventData``: 'T * ?``mask``: float * ?``target``: obj * ?``currentTarget``: obj * ?``userInfo``: obj -> bool
+        abstract ``notifyObserver``: ``observer``: Observer<'T> * ``eventData``: 'T * ?``mask``: float -> unit
+        abstract ``hasObservers``: unit -> bool
+        abstract ``clear``: unit -> unit
+        abstract ``cleanLastNotifiedState``: unit -> unit
+        abstract ``clone``: unit -> Observable<'T>
+        abstract ``hasSpecificMask``: ?``mask``: float -> bool
+        abstract ``observers``: ResizeArray<Observer<'T>> with get
+
+    [<AllowNullLiteral>]
+    type ObservableStatic =
+        [<EmitConstructor>] abstract Create<'T>: ?``onObserverAdded``: ObservableConstructor10Parameter1Callback<'T> * ?``notifyIfTriggered``: bool -> Observable<'T>
+        abstract ``FromPromise``<'T, 'E>: ``promise``: JS.Promise<'T> * ?``onErrorObservable``: Observable<'E> -> Observable<'T>
+
+    [<Import("Observable", "@babylonjs/core/Misc/observable.pure.js")>]
+    let Observable: ObservableStatic = jsNative
+
+    /// Uncurried function-valued argument used by DualShockPad.
+    type DualShockPadMethod28Parameter1Callback = System.Action<float>
+
+    /// Uncurried function-valued argument used by DualShockPad.
+    type DualShockPadMethod29Parameter1Callback = System.Action<float>
+
+    /// Uncurried function-valued argument used by DualShockPad.
+    type DualShockPadMethod34Parameter1Callback = System.Action<BabylonjsBindings.Enums.DualShockButton>
+
+    /// Uncurried function-valued argument used by DualShockPad.
+    type DualShockPadMethod35Parameter1Callback = System.Action<BabylonjsBindings.Enums.DualShockButton>
+
+    /// Uncurried function-valued argument used by DualShockPad.
+    type DualShockPadMethod36Parameter1Callback = System.Action<BabylonjsBindings.Enums.DualShockDpad>
+
+    /// Uncurried function-valued argument used by DualShockPad.
+    type DualShockPadMethod37Parameter1Callback = System.Action<BabylonjsBindings.Enums.DualShockDpad>
+
+    /// @babylonjs/core/Gamepads/dualShockGamepad
+    [<AllowNullLiteral>]
+    type DualShockPad =
+        inherit Gamepad
+        abstract ``onButtonDownObservable``: Observable<BabylonjsBindings.Enums.DualShockButton> with get, set
+        abstract ``onButtonUpObservable``: Observable<BabylonjsBindings.Enums.DualShockButton> with get, set
+        abstract ``onPadDownObservable``: Observable<BabylonjsBindings.Enums.DualShockDpad> with get, set
+        abstract ``onPadUpObservable``: Observable<BabylonjsBindings.Enums.DualShockDpad> with get, set
+        abstract ``onlefttriggerchanged``: ``callback``: DualShockPadMethod28Parameter1Callback -> unit
+        abstract ``onrighttriggerchanged``: ``callback``: DualShockPadMethod29Parameter1Callback -> unit
+        abstract ``onbuttondown``: ``callback``: DualShockPadMethod34Parameter1Callback -> unit
+        abstract ``onbuttonup``: ``callback``: DualShockPadMethod35Parameter1Callback -> unit
+        abstract ``ondpaddown``: ``callback``: DualShockPadMethod36Parameter1Callback -> unit
+        abstract ``ondpadup``: ``callback``: DualShockPadMethod37Parameter1Callback -> unit
+        abstract ``update``: unit -> unit
+        abstract ``dispose``: unit -> unit
+        abstract ``leftTrigger``: float with get, set
+        abstract ``rightTrigger``: float with get, set
+        abstract ``buttonCross``: float with get, set
+        abstract ``buttonCircle``: float with get, set
+        abstract ``buttonSquare``: float with get, set
+        abstract ``buttonTriangle``: float with get, set
+        abstract ``buttonOptions``: float with get, set
+        abstract ``buttonShare``: float with get, set
+        abstract ``buttonL1``: float with get, set
+        abstract ``buttonR1``: float with get, set
+        abstract ``buttonLeftStick``: float with get, set
+        abstract ``buttonRightStick``: float with get, set
+        abstract ``dPadUp``: float with get, set
+        abstract ``dPadDown``: float with get, set
+        abstract ``dPadLeft``: float with get, set
+        abstract ``dPadRight``: float with get, set
+
+    [<AllowNullLiteral>]
+    type DualShockPadStatic =
+        inherit GamepadStatic
+        [<EmitConstructor>] abstract Create: ``id``: string * ``index``: float * ``gamepad``: obj -> DualShockPad
+
+    [<Import("DualShockPad", "@babylonjs/core/Gamepads/dualShockGamepad.js")>]
+    let DualShockPad: DualShockPadStatic = jsNative
+
+    /// Uncurried function-valued argument used by GenericPad.
+    type GenericPadMethod6Parameter1Callback = System.Action<float>
+
+    /// Uncurried function-valued argument used by GenericPad.
+    type GenericPadMethod7Parameter1Callback = System.Action<float>
+
+    /// @babylonjs/core/Gamepads/gamepad
+    [<AllowNullLiteral>]
+    type GenericPad =
+        inherit Gamepad
+        abstract ``onButtonDownObservable``: Observable<float> with get, set
+        abstract ``onButtonUpObservable``: Observable<float> with get, set
+        abstract ``onbuttondown``: ``callback``: GenericPadMethod6Parameter1Callback -> unit
+        abstract ``onbuttonup``: ``callback``: GenericPadMethod7Parameter1Callback -> unit
+        abstract ``update``: unit -> unit
+        abstract ``dispose``: unit -> unit
+
+    [<AllowNullLiteral>]
+    type GenericPadStatic =
+        inherit GamepadStatic
+        [<EmitConstructor>] abstract Create: ``id``: string * ``index``: float * ``browserGamepad``: obj -> GenericPad
+
+    [<Import("GenericPad", "@babylonjs/core/Gamepads/gamepad.js")>]
+    let GenericPad: GenericPadStatic = jsNative
+
+    /// Uncurried function-valued argument used by MultiObserver.
+    type MultiObserverMethod4Parameter2Callback<'T> = System.Action<'T, EventState>
+
+    /// @babylonjs/core/Misc/observable.extensions.pure
+    [<AllowNullLiteral>]
+    type MultiObserver<'T> =
+        abstract ``dispose``: unit -> unit
+
+    [<AllowNullLiteral>]
+    type MultiObserverStatic =
+        [<EmitConstructor>] abstract Create<'T>: unit -> MultiObserver<'T>
+        abstract ``Watch``<'T>: ``observables``: ResizeArray<Observable<'T>> * ``callback``: MultiObserverMethod4Parameter2Callback<'T> * ?``mask``: float * ?``scope``: obj -> MultiObserver<'T>
+
+    [<Import("MultiObserver", "@babylonjs/core/Misc/observable.extensions.pure.js")>]
+    let MultiObserver: MultiObserverStatic = jsNative
+
+    /// Uncurried function-valued argument used by Xbox360Pad.
+    type Xbox360PadMethod29Parameter1Callback = System.Action<float>
+
+    /// Uncurried function-valued argument used by Xbox360Pad.
+    type Xbox360PadMethod30Parameter1Callback = System.Action<float>
+
+    /// Uncurried function-valued argument used by Xbox360Pad.
+    type Xbox360PadMethod35Parameter1Callback = System.Action<BabylonjsBindings.Enums.Xbox360Button>
+
+    /// Uncurried function-valued argument used by Xbox360Pad.
+    type Xbox360PadMethod36Parameter1Callback = System.Action<BabylonjsBindings.Enums.Xbox360Button>
+
+    /// Uncurried function-valued argument used by Xbox360Pad.
+    type Xbox360PadMethod37Parameter1Callback = System.Action<BabylonjsBindings.Enums.Xbox360Dpad>
+
+    /// Uncurried function-valued argument used by Xbox360Pad.
+    type Xbox360PadMethod38Parameter1Callback = System.Action<BabylonjsBindings.Enums.Xbox360Dpad>
+
+    /// @babylonjs/core/Gamepads/xboxGamepad
+    [<AllowNullLiteral>]
+    type Xbox360Pad =
+        inherit Gamepad
+        abstract ``onButtonDownObservable``: Observable<BabylonjsBindings.Enums.Xbox360Button> with get, set
+        abstract ``onButtonUpObservable``: Observable<BabylonjsBindings.Enums.Xbox360Button> with get, set
+        abstract ``onPadDownObservable``: Observable<BabylonjsBindings.Enums.Xbox360Dpad> with get, set
+        abstract ``onPadUpObservable``: Observable<BabylonjsBindings.Enums.Xbox360Dpad> with get, set
+        abstract ``onlefttriggerchanged``: ``callback``: Xbox360PadMethod29Parameter1Callback -> unit
+        abstract ``onrighttriggerchanged``: ``callback``: Xbox360PadMethod30Parameter1Callback -> unit
+        abstract ``onbuttondown``: ``callback``: Xbox360PadMethod35Parameter1Callback -> unit
+        abstract ``onbuttonup``: ``callback``: Xbox360PadMethod36Parameter1Callback -> unit
+        abstract ``ondpaddown``: ``callback``: Xbox360PadMethod37Parameter1Callback -> unit
+        abstract ``ondpadup``: ``callback``: Xbox360PadMethod38Parameter1Callback -> unit
+        abstract ``update``: unit -> unit
+        abstract ``dispose``: unit -> unit
+        abstract ``leftTrigger``: float with get, set
+        abstract ``rightTrigger``: float with get, set
+        abstract ``buttonA``: float with get, set
+        abstract ``buttonB``: float with get, set
+        abstract ``buttonX``: float with get, set
+        abstract ``buttonY``: float with get, set
+        abstract ``buttonStart``: float with get, set
+        abstract ``buttonBack``: float with get, set
+        abstract ``buttonLB``: float with get, set
+        abstract ``buttonRB``: float with get, set
+        abstract ``buttonLeftStick``: float with get, set
+        abstract ``buttonRightStick``: float with get, set
+        abstract ``dPadUp``: float with get, set
+        abstract ``dPadDown``: float with get, set
+        abstract ``dPadLeft``: float with get, set
+        abstract ``dPadRight``: float with get, set
+
+    [<AllowNullLiteral>]
+    type Xbox360PadStatic =
+        inherit GamepadStatic
+        [<EmitConstructor>] abstract Create: ``id``: string * ``index``: float * ``gamepad``: obj * ?``xboxOne``: bool -> Xbox360Pad
+
+    [<Import("Xbox360Pad", "@babylonjs/core/Gamepads/xboxGamepad.js")>]
+    let Xbox360Pad: Xbox360PadStatic = jsNative

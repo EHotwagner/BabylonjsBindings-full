@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "5faa272763e8934e44a765bc6473054589829f9bc4497193c575a7be518a8969",
+  "maintainedSurfaceDigest": "f234592f25882e6c9c91486f46b0c5ff14903adea090980204c9cdfa585ec9d2",
   "summary": {
     "total": 4323,
-    "typed": 1745,
+    "typed": 1753,
     "runtimeOnly": 1,
-    "blocked": 2571,
+    "blocked": 2563,
     "lossy": 6
   },
   "exports": [
@@ -10780,8 +10780,9 @@
       "module": "@babylonjs/core/Gamepads/dualShockGamepad",
       "name": "DualShockPad",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DualShockPad"
     },
     {
       "package": "@babylonjs/core",
@@ -10806,8 +10807,9 @@
       "module": "@babylonjs/core/Gamepads/gamepad",
       "name": "GenericPad",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GenericPad"
     },
     {
       "package": "@babylonjs/core",
@@ -10865,8 +10867,9 @@
       "module": "@babylonjs/core/Gamepads/xboxGamepad",
       "name": "Xbox360Pad",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Xbox360Pad"
     },
     {
       "package": "@babylonjs/core",
@@ -22602,8 +22605,9 @@
       "module": "@babylonjs/core/Misc/dataStorage",
       "name": "DataStorage",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DataStorage"
     },
     {
       "package": "@babylonjs/core",
@@ -23633,8 +23637,9 @@
       "module": "@babylonjs/core/Misc/observable.extensions.pure",
       "name": "MultiObserver",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MultiObserver"
     },
     {
       "package": "@babylonjs/core",
@@ -23676,16 +23681,18 @@
       "module": "@babylonjs/core/Misc/observable.pure",
       "name": "Observable",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Observable"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/observable.pure",
       "name": "Observer",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Observer"
     },
     {
       "package": "@babylonjs/core",
@@ -32390,8 +32397,9 @@
       "module": "@babylonjs/core/Sprites/thinSprite",
       "name": "ThinSprite",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ThinSprite"
     },
     {
       "package": "@babylonjs/core",

@@ -101,6 +101,25 @@ let easingSamples =
       QuinticEase.Create().``ease``(0.5)
       SineEase.Create().``ease``(0.5) ]
 let stencilDefaults = StencilState.Create()
+DataStorage.``WriteJson``("babylon-bindings-proof", "stored")
+let storedValue = DataStorage.``ReadJson``("babylon-bindings-proof", "missing")
+let observableA: Observable<string> = Observable.Create()
+let observableB: Observable<string> = Observable.Create()
+let mutable observedValues = ResizeArray<string>()
+let observableCallback: ObservableMethod13Parameter1Callback<string> =
+    System.Action<string, EventState>(fun value _ -> observedValues.Add(value))
+let observer = observableA.``add``(callback = observableCallback)
+let multiCallback: MultiObserverMethod4Parameter2Callback<string> =
+    System.Action<string, EventState>(fun value _ -> observedValues.Add($"multi:{value}"))
+let multiObserver = MultiObserver.``Watch``(ResizeArray [ observableA; observableB ], multiCallback)
+observableA.``notifyObservers``("first") |> ignore
+observableB.``notifyObservers``("second") |> ignore
+let thinSprite = ThinSprite.Create()
+let mutable thinAnimationEnded = false
+let thinAnimationEnd: ThinSpriteMethod29Parameter5Callback = System.Action(fun () -> thinAnimationEnded <- true)
+thinSprite.``playAnimation``(0.0, 1.0, false, 1.0, Some thinAnimationEnd)
+thinSprite.``_animate``(2.0)
+thinSprite.``_animate``(2.0)
 let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
 let shortIndices: TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
@@ -172,6 +191,13 @@ if halton.``x`` = 0.0 && halton.``y`` = 0.0 then
     failwith "Babylon inferred readonly instance state was not preserved"
 if easingSamples.Length <> 12 || (easingSamples |> List.exists System.Double.IsNaN) || stencilDefaults.``func`` <> StencilState.``ALWAYS`` then
     failwith "Babylon inferred-literal class dependency closure was not preserved"
+if storedValue <> "stored" then
+    failwith "Babylon generic static class method was not preserved"
+if observer.IsNone || not (observableA.``hasObservers``()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then
+    failwith "Babylon observable callback and overload closure was not preserved"
+if not thinAnimationEnded || thinSprite.``animationStarted`` then
+    failwith "Babylon nullable callback class method was not preserved"
+multiObserver.``dispose``()
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
 if indicesNeed32Bits then

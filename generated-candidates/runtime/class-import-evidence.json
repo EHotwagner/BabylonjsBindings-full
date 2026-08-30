@@ -115,6 +115,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dataStorage.js",
+      "export": "DataStorage",
+      "moduleSha256": "51c584d083ed5c4c15896a081679de101ad0cf14af0d6b7bbfc0e77cbdf580d6"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/deepCopier.js",
       "export": "DeepCopier",
       "moduleSha256": "004763a82c74649eedd83a83d43409213dc6de1bc0f8ec2b552521ba82c126b5"
@@ -397,6 +403,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Sprites/thinSprite.js",
+      "export": "ThinSprite",
+      "moduleSha256": "824ec8dcb356df46fdf2b560e26f27988d519e3d9a2021cfcc2e0979acf86420"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/uniqueIdGenerator.js",
       "export": "UniqueIdGenerator",
       "moduleSha256": "931b4e2f8cb051950466bd76c5d6e42825f75dc5402096a3918d29bacf7926f6"
@@ -487,6 +499,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/observable.pure.js",
+      "export": "Observer",
+      "moduleSha256": "a708a7f9d2f5ff92d454323a38ceaa72f68c9fe46a19faef4bdb7c2d54f618e0"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing.js",
       "export": "PowerEase",
       "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
@@ -532,6 +550,36 @@
       "module": "@babylonjs/core/Engines/WebGPU/webgpuPerfCounter.js",
       "export": "WebGPUPerfCounter",
       "moduleSha256": "1c7a32cbafcbd6e12f965282c811fb76fade7b93bffad9247ea7475a6d95b29d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/observable.pure.js",
+      "export": "Observable",
+      "moduleSha256": "a708a7f9d2f5ff92d454323a38ceaa72f68c9fe46a19faef4bdb7c2d54f618e0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/dualShockGamepad.js",
+      "export": "DualShockPad",
+      "moduleSha256": "1812d97558ffa4d955720c5e566f0cca859c08abef31e8eae3a8b66f8e1aeaf4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/gamepad.js",
+      "export": "GenericPad",
+      "moduleSha256": "26b3e161808a56c713216792829a5a7a365912a1b0ef92fb9e76217fbe9309ca"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/observable.extensions.pure.js",
+      "export": "MultiObserver",
+      "moduleSha256": "31478edc7a7e0ccc21765ddbfcca985eabc6a96f1d0279885757797d35f8081c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gamepads/xboxGamepad.js",
+      "export": "Xbox360Pad",
+      "moduleSha256": "ff80f84ce986e21a8e216d319ffcdb1138b855467a5e64e72410afaca1f52c2f"
     }
   ],
   "status": "pass"

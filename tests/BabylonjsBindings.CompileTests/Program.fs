@@ -49,6 +49,14 @@ let quarticEaseFactory: QuarticEaseStatic = QuarticEase
 let quinticEaseFactory: QuinticEaseStatic = QuinticEase
 let sineEaseFactory: SineEaseStatic = SineEase
 let stencilStateFactory: StencilStateStatic = StencilState
+let dataStorageFactory: DataStorageStatic = DataStorage
+let thinSpriteFactory: ThinSpriteStatic = ThinSprite
+let observerFactory: ObserverStatic = Observer
+let observableFactory: ObservableStatic = Observable
+let dualShockPadFactory: DualShockPadStatic = DualShockPad
+let genericPadFactory: GenericPadStatic = GenericPad
+let multiObserverFactory: MultiObserverStatic = MultiObserver
+let xbox360PadFactory: Xbox360PadStatic = Xbox360Pad
 let strideFunction = BabylonjsBindings.SimpleFunctions.``VertexBufferDeduceStride``
 let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
@@ -101,6 +109,14 @@ quarticEaseFactory |> ignore
 quinticEaseFactory |> ignore
 sineEaseFactory |> ignore
 stencilStateFactory |> ignore
+dataStorageFactory |> ignore
+thinSpriteFactory |> ignore
+observerFactory |> ignore
+observableFactory |> ignore
+dualShockPadFactory |> ignore
+genericPadFactory |> ignore
+multiObserverFactory |> ignore
+xbox360PadFactory |> ignore
 strideFunction |> ignore
 epsilon |> ignore
 shaderDescriptor |> ignore
