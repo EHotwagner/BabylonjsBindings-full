@@ -43,6 +43,12 @@ renderingGroupAction.Invoke(7.0)
 let easing: IEasingFunction = createObj [ "ease" ==> (fun (gradient: float) -> gradient * gradient) ] |> unbox
 let eased = easing.``ease``(0.5)
 let inspectableOption: IInspectableOptions = createObj [ "label" ==> "quality"; "value" ==> 2.0 ] |> unbox
+let computePipelineContext: IComputePipelineContext =
+    createObj [ "isAsync" ==> false; "isReady" ==> true; "_name" ==> "compute"; "_getComputeShaderCode" ==> (fun () -> "shader"); "dispose" ==> (fun () -> ()) ] |> unbox
+let mipmap: IMipmap = createObj [ "data" ==> JS.Constructors.Uint8Array.Create(4); "width" ==> 2.0; "height" ==> 2.0; "layerIndex" ==> 0.0 ] |> unbox
+let decodedData: IDecodedData =
+    createObj [ "width" ==> 2.0; "height" ==> 2.0; "transcodedFormat" ==> 1.0; "mipmaps" ==> ResizeArray [ mipmap ]; "layerCount" ==> 1.0; "isInGammaSpace" ==> false; "hasAlpha" ==> true; "transcoderName" ==> "proof" ] |> unbox
+let vertexDataLike: IVertexDataLike = createObj [ "positions" ==> ResizeArray [ 0.0; 1.0; 2.0 ] ] |> unbox
 let mutable loadingShown = false
 let loadingScreen: ILoadingScreen =
     createObj [
@@ -120,6 +126,10 @@ if eased <> 0.25 || not loadingShown then
 match inspectableOption.``value`` with
 | U2.Case1 value when value = 2.0 -> ()
 | _ -> failwith "Babylon interface erased-union property was not preserved"
+if computePipelineContext.``_name`` <> Some "compute" || computePipelineContext.``_getComputeShaderCode``() <> Some "shader" then
+    failwith "Babylon undefined-union interface was not preserved"
+if decodedData.``mipmaps``[0].``data``.Value.length <> 4 || decodedData.``errors``.IsSome || vertexDataLike.``normals``.IsSome then
+    failwith "Babylon optional interface dependency closure was not preserved"
 if not bitWasSet || curveMidpoint <= 0.0 || curveMidpoint >= 1.0 then
     failwith "Babylon dependency-free class import was not preserved"
 if not (animationMask.``hasTarget``("hero")) || not (animationMask.``hasTarget``("enemy")) then

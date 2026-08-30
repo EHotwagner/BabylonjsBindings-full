@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "f24fef0b2be6db8ee39204389c861e8162c3e1e9df6cd8ad7882e3a202d03af6",
+  "maintainedSurfaceDigest": "902cfda7835d8dbd24ca3e8d8bda953996e7137103136acd956f806a1a67720b",
   "summary": {
     "total": 4323,
-    "typed": 1719,
+    "typed": 1723,
     "runtimeOnly": 1,
-    "blocked": 2597,
+    "blocked": 2593,
     "lossy": 6
   },
   "exports": [
@@ -3471,8 +3471,9 @@
       "module": "@babylonjs/core/Compute/IComputePipelineContext",
       "name": "IComputePipelineContext",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IComputePipelineContext"
     },
     {
       "package": "@babylonjs/core",
@@ -16439,8 +16440,9 @@
       "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
       "name": "IDecodedData",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDecodedData"
     },
     {
       "package": "@babylonjs/core",
@@ -16464,8 +16466,9 @@
       "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
       "name": "IMipmap",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMipmap"
     },
     {
       "package": "@babylonjs/core",
@@ -20376,8 +20379,9 @@
       "module": "@babylonjs/core/Meshes/meshSimplification.common",
       "name": "ISimplificationSettings",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISimplificationSettings"
     },
     {
       "package": "@babylonjs/core",

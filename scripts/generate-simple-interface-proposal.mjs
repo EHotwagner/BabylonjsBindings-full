@@ -33,6 +33,10 @@ const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
   .map(entry => [entry.name, entry.fsharpSymbol]));
 
+const isAbsentType = node => node.kind === ts.SyntaxKind.UndefinedKeyword
+  || (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
+const asOption = type => type.endsWith(" option") ? type : `${type} option`;
+const asOptionalParameterType = type => type.endsWith(" option") ? type.slice(0, -" option".length) : type;
 const fsharpType = (node, available, dependencies = new Set(), typeParameters = new Set()) => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
@@ -40,6 +44,10 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
+  if (ts.isUnionTypeNode(node) && node.types.length === 2 && node.types.filter(isAbsentType).length === 1) {
+    const inner = fsharpType(node.types.find(branch => !isAbsentType(branch)), available, dependencies, typeParameters);
+    return inner ? asOption(inner) : undefined;
+  }
   if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
     const branches = node.types.map(branch => fsharpType(branch, available, dependencies, typeParameters));
     return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
@@ -63,7 +71,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     }
     if (node.typeName.text === "Nullable" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
-      return inner ? `${inner} option` : undefined;
+      return inner ? asOption(inner) : undefined;
     }
     const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
@@ -91,11 +99,14 @@ const callbackShape = (node, available, dependencies, typeParameters) => {
   if (node.typeParameters?.length) return undefined;
   if (node.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
   const returnType = fsharpType(node.type, available, dependencies, typeParameters);
-  const parameters = node.parameters.map(parameter => ({
-    name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
-    type: parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined,
-    optional: Boolean(parameter.questionToken)
-  }));
+  const parameters = node.parameters.map(parameter => {
+    const type = parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined;
+    return {
+      name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
+      type: parameter.questionToken && type ? asOptionalParameterType(type) : type,
+      optional: Boolean(parameter.questionToken)
+    };
+  });
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
 };
 const renderMembers = (declaration, available) => {
@@ -112,7 +123,7 @@ const renderMembers = (declaration, available) => {
       } else {
         const type = fsharpType(member.type, available, dependencies, typeParameters);
         if (!type) return undefined;
-        members.push({ kind: "property", name: member.name.text, type: member.questionToken ? `${type} option` : type, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false });
+        members.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(type) : type, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false });
       }
     } else if (ts.isMethodSignature(member)) {
       if (member.questionToken) return undefined;

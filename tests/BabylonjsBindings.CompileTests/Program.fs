@@ -16,6 +16,10 @@ let stageAction: BabylonjsBindings.TypeAliases.SimpleStageAction = Unchecked.def
 let nullableLabel: BabylonjsBindings.TypeAliases.Nullable<string> = None
 let easing: IEasingFunction = Unchecked.defaultof<IEasingFunction>
 let inspectableOptions: IInspectableOptions = Unchecked.defaultof<IInspectableOptions>
+let computePipelineContext: IComputePipelineContext = Unchecked.defaultof<IComputePipelineContext>
+let mipmap: IMipmap = Unchecked.defaultof<IMipmap>
+let simplificationInterface: ISimplificationSettings = Unchecked.defaultof<ISimplificationSettings>
+let decodedData: IDecodedData = Unchecked.defaultof<IDecodedData>
 let bitArray: BitArray = Unchecked.defaultof<BitArray>
 let bitArrayFactory: BitArrayStatic = BitArray
 let animationMaskFactory: AnimationGroupMaskStatic = AnimationGroupMask
@@ -49,6 +53,10 @@ stageAction |> ignore
 nullableLabel |> ignore
 easing |> ignore
 inspectableOptions |> ignore
+computePipelineContext |> ignore
+mipmap |> ignore
+simplificationInterface |> ignore
+decodedData |> ignore
 bitArray |> ignore
 bitArrayFactory |> ignore
 animationMaskFactory |> ignore

@@ -79,6 +79,11 @@ let absentLabel: BabylonjsBindings.TypeAliases.Nullable<string> = None
 let easing: IEasingFunction = createObj [ "ease" ==> (fun (gradient: float) -> gradient * 2.0) ] |> unbox
 let eased = easing.\`\`ease\`\`(3.0)
 let inspectableOption: IInspectableOptions = createObj [ "label" ==> "quality"; "value" ==> 2.0 ] |> unbox
+let computePipelineContext: IComputePipelineContext =
+    createObj [ "isAsync" ==> false; "isReady" ==> true; "_name" ==> "compute"; "_getComputeShaderCode" ==> (fun () -> "shader"); "dispose" ==> (fun () -> ()) ] |> unbox
+let mipmap: IMipmap = createObj [ "data" ==> JS.Constructors.Uint8Array.Create(4); "width" ==> 2.0; "height" ==> 2.0; "layerIndex" ==> 0.0 ] |> unbox
+let decodedData: IDecodedData =
+    createObj [ "width" ==> 2.0; "height" ==> 2.0; "transcodedFormat" ==> 1.0; "mipmaps" ==> ResizeArray [ mipmap ]; "layerCount" ==> 1.0; "isInGammaSpace" ==> false; "hasAlpha" ==> true; "transcoderName" ==> "proof" ] |> unbox
 let bits = BitArray.Create(16.0)
 bits.\`\`set\`\`(9.0, true)
 let bitWasSet = bits.\`\`get\`\`(9.0)
@@ -128,6 +133,8 @@ if eased <> 6.0 then failwith "clean consumer interface method failed"
 match inspectableOption.\`\`value\`\` with
 | U2.Case1 value when value = 2.0 -> ()
 | _ -> failwith "clean consumer interface erased union failed"
+if computePipelineContext.\`\`_name\`\` <> Some "compute" || computePipelineContext.\`\`_getComputeShaderCode\`\`() <> Some "shader" then failwith "clean consumer undefined-union interface failed"
+if decodedData.\`\`mipmaps\`\`[0].\`\`data\`\`.Value.length <> 4 || decodedData.\`\`errors\`\`.IsSome then failwith "clean consumer optional interface closure failed"
 if not bitWasSet then failwith "clean consumer class import failed"
 if not (animationMask.\`\`hasTarget\`\`("hero")) || not (animationMask.\`\`hasTarget\`\`("enemy")) then failwith "clean consumer union class method failed"
 if not alphaState.\`\`alphaBlend\`\` then failwith "clean consumer WebGL state class failed"

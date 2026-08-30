@@ -257,6 +257,15 @@ module SimpleInterfaces =
     type IComputeContext =
         abstract ``clear``: unit -> unit
 
+    /// @babylonjs/core/Compute/IComputePipelineContext
+    [<AllowNullLiteral>]
+    type IComputePipelineContext =
+        abstract ``isAsync``: bool with get, set
+        abstract ``isReady``: bool with get, set
+        abstract ``_name``: string option with get, set
+        abstract ``_getComputeShaderCode``: unit -> string option
+        abstract ``dispose``: unit -> unit
+
     /// @babylonjs/core/FlowGraph/flowGraphConnection
     [<AllowNullLiteral>]
     type IConnectable =
@@ -328,7 +337,7 @@ module SimpleInterfaces =
     /// @babylonjs/core/Materials/material.pure
     [<AllowNullLiteral>]
     type ICustomShaderNameResolveOptions =
-        abstract ``processFinalCode``: BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction option option with get, set
+        abstract ``processFinalCode``: BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction option with get, set
 
     /// @babylonjs/core/Lights/Shadows/shadowGenerator
     [<AllowNullLiteral>]
@@ -747,6 +756,14 @@ module SimpleInterfaces =
         abstract ``optimizeUVAllocation``: bool option with get, set
         abstract ``uvEdgeBlending``: bool option with get, set
 
+    /// @babylonjs/core/Materials/Textures/ktx2decoderTypes
+    [<AllowNullLiteral>]
+    type IMipmap =
+        abstract ``data``: JS.Uint8Array option with get, set
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``layerIndex``: float with get, set
+
     /// @babylonjs/core/Physics/v1/physicsJoint
     [<AllowNullLiteral>]
     type IMotorEnabledJoint =
@@ -961,6 +978,13 @@ module SimpleInterfaces =
         abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage option with get, set
         abstract ``extraInitializationsAsync``: IShaderMaterialOptionsExtraInitializationsAsyncCallback option with get, set
 
+    /// @babylonjs/core/Meshes/meshSimplification.common
+    [<AllowNullLiteral>]
+    type ISimplificationSettings =
+        abstract ``quality``: float with get, set
+        abstract ``distance``: float with get, set
+        abstract ``optimizeMesh``: bool option with get, set
+
     /// @babylonjs/core/Maths/math.size
     [<AllowNullLiteral>]
     type ISize =
@@ -1157,20 +1181,20 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IVertexDataLike =
         abstract ``positions``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
-        abstract ``normals``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``tangents``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``uvs``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``uvs2``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``uvs3``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``uvs4``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``uvs5``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``uvs6``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``colors``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``matricesIndices``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``matricesWeights``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``matricesIndicesExtra``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``matricesWeightsExtra``: BabylonjsBindings.TypeAliases.FloatArray option option with get, set
-        abstract ``indices``: BabylonjsBindings.TypeAliases.IndicesArray option option with get, set
+        abstract ``normals``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``tangents``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``uvs``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``uvs2``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``uvs3``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``uvs4``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``uvs5``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``uvs6``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``colors``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``matricesIndices``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``matricesWeights``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``matricesIndicesExtra``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``matricesWeightsExtra``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
+        abstract ``indices``: BabylonjsBindings.TypeAliases.IndicesArray option with get, set
 
     /// @babylonjs/core/Meshes/csg2
     [<AllowNullLiteral>]
@@ -1397,6 +1421,19 @@ module SimpleInterfaces =
     type IColor4Like =
         inherit IColor3Like
         abstract ``a``: BabylonjsBindings.TypeAliases.float with get, set
+
+    /// @babylonjs/core/Materials/Textures/ktx2decoderTypes
+    [<AllowNullLiteral>]
+    type IDecodedData =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``transcodedFormat``: float with get, set
+        abstract ``mipmaps``: ResizeArray<IMipmap> with get, set
+        abstract ``layerCount``: float with get, set
+        abstract ``isInGammaSpace``: bool with get, set
+        abstract ``hasAlpha``: bool with get, set
+        abstract ``transcoderName``: string with get, set
+        abstract ``errors``: string option with get, set
 
     /// @babylonjs/core/DeviceInput/inputInterfaces
     [<AllowNullLiteral>]
