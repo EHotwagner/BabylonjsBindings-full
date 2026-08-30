@@ -68,6 +68,10 @@ smartValues.``push``(2.0)
 smartValues.``push``(1.0)
 let smartComparer: SmartArrayMethod7Parameter1Callback<float> = System.Func<float, float, float>(fun left right -> left - right)
 smartValues.``sort``(smartComparer)
+let duplicateEntry = createObj [ "name" ==> "single" ]
+let uniqueValues: SmartArrayNoDuplicate<obj> = SmartArrayNoDuplicate.Create(4.0)
+let firstUniquePush = uniqueValues.``pushNoDuplicate``(duplicateEntry)
+let secondUniquePush = uniqueValues.``pushNoDuplicate``(duplicateEntry)
 let positionStride = SimpleFunctions.``VertexBufferDeduceStride``.Invoke("position")
 let absoluteUrl = SimpleFunctions.``IsAbsoluteOrSpecialUrl``.Invoke("https://example.test/asset.glb")
 let shortIndices: TypeAliases.IndicesArray = U4.Case1 (ResizeArray [ 0.0; 1.0; 2.0 ])
@@ -119,6 +123,8 @@ if customRichType.``typeName`` <> "custom-string" || customRichType.``defaultVal
     failwith "Babylon generic runtime class was not preserved"
 if lazyValue.``value`` <> "lazy-value" || smartValues.``data``[0] <> 1.0 then
     failwith "Babylon nested-callback generic class was not preserved"
+if not firstUniquePush || secondUniquePush || uniqueValues.``length`` <> 1.0 then
+    failwith "Babylon inherited generic class was not preserved"
 if positionStride <> 3.0 || not absoluteUrl then
     failwith "Babylon dependency-closed function import was not preserved"
 if indicesNeed32Bits then

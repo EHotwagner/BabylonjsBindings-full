@@ -1017,6 +1017,23 @@ module SimpleClasses =
     [<Import("KeyboardInfoPre", "@babylonjs/core/Events/keyboardEvents.js")>]
     let KeyboardInfoPre: KeyboardInfoPreStatic = jsNative
 
+    /// @babylonjs/core/Misc/smartArray
+    [<AllowNullLiteral>]
+    type SmartArrayNoDuplicate<'T> =
+        inherit SmartArray<'T>
+        abstract ``push``: ``value``: 'T -> unit
+        abstract ``pushNoDuplicate``: ``value``: 'T -> bool
+        abstract ``reset``: unit -> unit
+        abstract ``concatWithNoDuplicate``: ``array``: obj -> unit
+
+    [<AllowNullLiteral>]
+    type SmartArrayNoDuplicateStatic =
+        inherit SmartArrayStatic
+        [<EmitConstructor>] abstract Create<'T>: ``capacity``: float -> SmartArrayNoDuplicate<'T>
+
+    [<Import("SmartArrayNoDuplicate", "@babylonjs/core/Misc/smartArray.js")>]
+    let SmartArrayNoDuplicate: SmartArrayNoDuplicateStatic = jsNative
+
     /// @babylonjs/core/Meshes/WebGL/webGLDataBuffer
     [<AllowNullLiteral>]
     type WebGLDataBuffer =

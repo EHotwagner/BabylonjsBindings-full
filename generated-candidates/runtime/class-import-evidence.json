@@ -349,6 +349,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/smartArray.js",
+      "export": "SmartArrayNoDuplicate",
+      "moduleSha256": "bd024818d86bbce6dc630ee9322cba6b5dda30ef7281293b0503b5b804e97967"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/WebGL/webGLDataBuffer.js",
       "export": "WebGLDataBuffer",
       "moduleSha256": "3a0f1c81a75bdc9daa99f4346b199b87e591b0d7628781c0ef1bd5a7d4487d0c"

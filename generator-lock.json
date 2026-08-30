@@ -21,7 +21,7 @@
     }
   ],
   "authoritativeDeclarationLockSha256": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceSha256": "28ffd56b07a7c540ebc6b52958a743c0247dbe7ada6995d7be27041d30821969",
+  "maintainedSurfaceSha256": "0ae7cb11267ad81de4a5702bd73cef5931a3c29dbe7513098e3156c6edf343d4",
   "maintainedSources": [
     {
       "path": "src/BabylonjsBindings/Bindings.fs",
@@ -49,7 +49,7 @@
     },
     {
       "path": "src/BabylonjsBindings/SimpleClasses.fs",
-      "sha256": "52b1804a14ce57775557b3876b2f8cfeced02f53341135fbee1d8c6a78321605"
+      "sha256": "45cb4fd81d007376fff85be9ee8651da015a59660e67ac16419e51954c48ef35"
     },
     {
       "path": "src/BabylonjsBindings/SimpleFunctions.fs",

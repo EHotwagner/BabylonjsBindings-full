@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "53a6a24236aa26b4e93d069c0d4cfa2e6f733b7cc2aa6deb9b2682445075a993",
+  "proposalSha256": "59b31262c48500208374200ccf38ccebb5d4c11a82ed81abb8dfb05e2c0f1eec",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -511,6 +511,16 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KeyboardInfoPre",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/smartArray",
+      "name": "SmartArrayNoDuplicate",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SmartArrayNoDuplicate",
+      "typeParameterCount": 1,
       "memberCount": 5
     },
     {

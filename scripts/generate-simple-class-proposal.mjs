@@ -196,9 +196,19 @@ const renderBase = (declaration, available) => {
     .filter(clause => clause.token === ts.SyntaxKind.ExtendsKeyword)
     .flatMap(clause => [...clause.types]);
   if (extendsTypes.length === 0) return undefined;
-  if (extendsTypes.length !== 1 || extendsTypes[0].typeArguments?.length || !ts.isIdentifier(extendsTypes[0].expression)) return null;
+  if (extendsTypes.length !== 1 || !ts.isIdentifier(extendsTypes[0].expression)) return null;
   const name = extendsTypes[0].expression.text;
-  return available.has(name) ? name : null;
+  const target = available.get(name);
+  if (!target) return null;
+  const arguments_ = extendsTypes[0].typeArguments ?? [];
+  if (arguments_.length !== target.arity) return null;
+  const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
+  const renderedArguments = arguments_.map(argument => fsharpType(argument, available, new Set(), typeParameters));
+  if (renderedArguments.some(argument => !argument)) return null;
+  return {
+    name,
+    rendered: target.arity === 0 ? name : `${name}<${renderedArguments.join(", ")}>`
+  };
 };
 
 const declarations = new Map();
@@ -214,7 +224,6 @@ for (const sourceFile of program.getSourceFiles()) {
     if (classDeclarations.length !== 1) continue;
     const declaration = classDeclarations[0];
     if (declaration.typeParameters?.some(parameter => parameter.constraint || parameter.default)) continue;
-    if (declaration.typeParameters?.length && declaration.heritageClauses?.some(clause => clause.token === ts.SyntaxKind.ExtendsKeyword && clause.types.length > 0)) continue;
     const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
     const packageName = module.startsWith("@babylonjs/core/")
       ? "@babylonjs/core"
@@ -244,7 +253,7 @@ while (true) {
     const rendered = renderClass(entry.declaration, renderAvailable, Boolean(base));
     if (!rendered) continue;
     if (base && entry.declaration.members.every(member => !ts.isConstructorDeclaration(member))) {
-      rendered.constructors = selectedByName.get(base).constructors.map(constructor => ({ ...constructor }));
+      rendered.constructors = selectedByName.get(base.name).constructors.map(constructor => ({ ...constructor }));
     }
     additions.push([identity, { ...entry, ...rendered, base, rank }]);
   }
@@ -292,11 +301,11 @@ for (const entry of entries) {
     lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName}${genericParameters} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
   }
   lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name}${genericParameters} =`);
-  if (entry.base) lines.push(`        inherit ${entry.base}`);
+  if (entry.base) lines.push(`        inherit ${entry.base.rendered}`);
   if (entry.instanceMembers.length === 0 && !entry.base) lines.push("        interface end");
   else for (const member of entry.instanceMembers) lines.push(`        ${renderMember(member)}`);
   lines.push("", "    [<AllowNullLiteral>]", `    type ${entry.name}Static =`);
-  if (entry.base) lines.push(`        inherit ${entry.base}Static`);
+  if (entry.base) lines.push(`        inherit ${entry.base.name}Static`);
   if (entry.constructors.length === 0 && entry.staticMembers.length === 0 && !entry.base) lines.push("        interface end");
   for (const constructor of entry.constructors) lines.push(`        [<EmitConstructor>] abstract Create${genericParameters}: ${callbackArguments(constructor)} -> ${entry.name}${genericParameters}`);
   for (const member of entry.staticMembers) lines.push(`        ${renderMember(member)}`);
