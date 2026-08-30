@@ -974,6 +974,21 @@ module SimpleVariables =
     [<Import("equirectangularPanoramaPixelShader", "@babylonjs/core/Shaders/equirectangularPanorama.fragment.js")>]
     let ``equirectangularPanoramaPixelShader``: VariableShape_equirectangularPanoramaPixelShader = jsNative
 
+    /// Inline object shape of ErrorCodes.
+    [<AllowNullLiteral>]
+    type VariableShape_ErrorCodes =
+        abstract ``MeshInvalidPositionsError``: BabylonjsBindings.Enums.ErrorCodesType with get
+        abstract ``UnsupportedTextureError``: BabylonjsBindings.Enums.ErrorCodesType with get
+        abstract ``GLTFLoaderUnexpectedMagicError``: BabylonjsBindings.Enums.ErrorCodesType with get
+        abstract ``SceneLoaderError``: BabylonjsBindings.Enums.ErrorCodesType with get
+        abstract ``LoadFileError``: BabylonjsBindings.Enums.ErrorCodesType with get
+        abstract ``RequestFileError``: BabylonjsBindings.Enums.ErrorCodesType with get
+        abstract ``ReadFileError``: BabylonjsBindings.Enums.ErrorCodesType with get
+
+    /// @babylonjs/core/Misc/error
+    [<Import("ErrorCodes", "@babylonjs/core/Misc/error.js")>]
+    let ``ErrorCodes``: VariableShape_ErrorCodes = jsNative
+
     /// Inline object shape of extractHighlightsPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_extractHighlightsPixelShader =

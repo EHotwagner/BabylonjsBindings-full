@@ -2459,6 +2459,21 @@ module SimpleClasses =
     [<Import("QuinticEase", "@babylonjs/core/Animations/easing.js")>]
     let QuinticEase: QuinticEaseStatic = jsNative
 
+    /// @babylonjs/core/Misc/error
+    [<AllowNullLiteral>]
+    type RuntimeError =
+        inherit BaseError
+        abstract ``errorCode``: BabylonjsBindings.Enums.ErrorCodesType with get, set
+        abstract ``innerError``: System.Exception option with get, set
+
+    [<AllowNullLiteral>]
+    type RuntimeErrorStatic =
+        inherit BaseErrorStatic
+        [<EmitConstructor>] abstract Create: ``message``: string * ``errorCode``: BabylonjsBindings.Enums.ErrorCodesType * ?``innerError``: System.Exception -> RuntimeError
+
+    [<Import("RuntimeError", "@babylonjs/core/Misc/error.js")>]
+    let RuntimeError: RuntimeErrorStatic = jsNative
+
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
     type SineEase =
@@ -2557,6 +2572,20 @@ module SimpleClasses =
 
     [<Import("Observable", "@babylonjs/core/Misc/observable.pure.js")>]
     let Observable: ObservableStatic = jsNative
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<AllowNullLiteral>]
+    type ReadFileError =
+        inherit RuntimeError
+        abstract ``file``: Browser.Types.File with get, set
+
+    [<AllowNullLiteral>]
+    type ReadFileErrorStatic =
+        inherit RuntimeErrorStatic
+        [<EmitConstructor>] abstract Create: ``message``: string * ``file``: Browser.Types.File -> ReadFileError
+
+    [<Import("ReadFileError", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ReadFileError: ReadFileErrorStatic = jsNative
 
     /// Uncurried function-valued argument used by DualShockPad.
     type DualShockPadMethod28Parameter1Callback = System.Action<float>

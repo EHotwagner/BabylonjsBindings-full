@@ -568,7 +568,7 @@ try {
     maintainedSurfaceSha256: sha256(maintainedSnapshot),
     maintainedSources: maintainedSources.map(source => ({ path: source.path, sha256: sha256(source.content) })),
     tools: {
-      node: process.version,
+      node: `v${packageJson.engines.node}`,
       ts2fable: packageJson.devDependencies.ts2fable,
       ts2fableTypescript: "5.1.6",
       glutinum: packageJson.devDependencies["@glutinum/cli"],

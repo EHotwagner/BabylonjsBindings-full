@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "398f8e52ae923e3acb4bac76296cd8f3028b7665ce5da8eab1cdc9e94e9b209c",
+  "maintainedSurfaceDigest": "f1ec8435cc9338c80c3fedb31225ae9d09890a63631f34865621511092b5f033",
   "summary": {
     "total": 4323,
-    "typed": 1771,
+    "typed": 1775,
     "runtimeOnly": 1,
-    "blocked": 2545,
+    "blocked": 2541,
     "lossy": 6
   },
   "exports": [
@@ -23088,24 +23088,27 @@
       "module": "@babylonjs/core/Misc/error",
       "name": "ErrorCodes",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ErrorCodes"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/error",
       "name": "ErrorCodesType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained numeric enum or integer-literal union with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ErrorCodesType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/error",
       "name": "RuntimeError",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RuntimeError"
     },
     {
       "package": "@babylonjs/core",
@@ -23245,8 +23248,9 @@
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "ReadFileError",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ReadFileError"
     },
     {
       "package": "@babylonjs/core",

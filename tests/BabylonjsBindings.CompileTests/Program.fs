@@ -7,6 +7,7 @@ open BabylonjsBindings.SimpleClasses
 let shaderLanguage: ShaderLanguage = ShaderLanguage.``WGSL``
 let loaderState: GLTFLoaderState = GLTFLoaderState.``READY``
 let fftSize: AudioAnalyzerFFTSizeType = AudioAnalyzerFFTSizeType.``N32768``
+let errorCode: ErrorCodesType = ErrorCodesType.``SceneLoaderError``
 let powerPreference: PowerPreference = PowerPreference.``HighPerformance``
 let arcRotateInteraction: ArcRotateInteraction = ArcRotateInteraction.``Pan``
 let sizeLike: SizeLike = Unchecked.defaultof<SizeLike>
@@ -34,6 +35,8 @@ let basisTranscodeConfigurationFactory: BasisTranscodeConfigurationStatic = Basi
 let javascriptError: JavaScriptError = Unchecked.defaultof<JavaScriptError>
 let baseErrorFactory: BaseErrorStatic = BaseError
 let abortErrorFactory: AbortErrorStatic = AbortError
+let runtimeErrorFactory: RuntimeErrorStatic = RuntimeError
+let readFileErrorFactory: ReadFileErrorStatic = ReadFileError
 let filesInputStoreFactory: FilesInputStoreStatic = FilesInputStore
 let shaderStoreFactory: ShaderStoreStatic = ShaderStore
 let webGPUShaderProcessorFactory: WebGPUShaderProcessorStatic = WebGPUShaderProcessor
@@ -81,11 +84,13 @@ let epsilon = BabylonjsBindings.SimpleVariables.``Epsilon``
 let shaderDescriptor = BabylonjsBindings.SimpleVariables.``clearQuadVertexShaderWGSL``
 let padNumber = BabylonjsBindings.SimpleVariables.``PadNumber``
 let testBase64DataUrl = BabylonjsBindings.SimpleVariables.``TestBase64DataUrl``
+let errorCodes: BabylonjsBindings.SimpleVariables.VariableShape_ErrorCodes = BabylonjsBindings.SimpleVariables.``ErrorCodes``
 let engine = nullEngine ()
 let scene = scene engine
 let _ = box "compile-smoke" scene
 initialiseLoader ()
 if int shaderLanguage <> 1 || int loaderState <> 1 || int fftSize <> 32768 then failwith "maintained enum values drifted"
+errorCode |> ignore
 powerPreference |> ignore
 arcRotateInteraction |> ignore
 sizeLike |> ignore
@@ -113,6 +118,8 @@ basisTranscodeConfigurationFactory |> ignore
 javascriptError |> ignore
 baseErrorFactory |> ignore
 abortErrorFactory |> ignore
+runtimeErrorFactory |> ignore
+readFileErrorFactory |> ignore
 filesInputStoreFactory |> ignore
 shaderStoreFactory |> ignore
 webGPUShaderProcessorFactory |> ignore
@@ -160,4 +167,5 @@ epsilon |> ignore
 shaderDescriptor |> ignore
 padNumber |> ignore
 testBase64DataUrl |> ignore
+errorCodes |> ignore
 printfn "curated Babylon binding compile smoke passed"

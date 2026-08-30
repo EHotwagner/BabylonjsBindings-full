@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "503bd6bb05b5adac768d7611ad75470d7def1fd907de37e9b1e45da91aa1d67a",
+  "proposalSha256": "2e06f2f820ed334f3743969a8b60fa5078aad65514b9dcebf04cb07504220a26",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1027,6 +1027,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.equirectangularPanoramaPixelShader",
       "fsharpType": "VariableShape_equirectangularPanoramaPixelShader",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/error",
+      "name": "ErrorCodes",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ErrorCodes",
+      "fsharpType": "VariableShape_ErrorCodes",
+      "memberCount": 7
     },
     {
       "package": "@babylonjs/core",

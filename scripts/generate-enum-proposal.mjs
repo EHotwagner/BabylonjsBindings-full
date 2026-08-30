@@ -19,6 +19,41 @@ const program = ts.createProgram([...lockedPaths].map(file => resolve(nodeModule
 });
 const checker = program.getTypeChecker();
 const enums = new Map();
+const numericLiteralValue = node => {
+  if (!ts.isLiteralTypeNode(node)) return undefined;
+  if (ts.isNumericLiteral(node.literal)) return Number(node.literal.text);
+  if (ts.isPrefixUnaryExpression(node.literal) && ts.isNumericLiteral(node.literal.operand)) {
+    const value = Number(node.literal.operand.text);
+    if (node.literal.operator === ts.SyntaxKind.MinusToken) return -value;
+    if (node.literal.operator === ts.SyntaxKind.PlusToken) return value;
+  }
+  return undefined;
+};
+const indexedConstObjectMembers = node => {
+  if (!ts.isIndexedAccessTypeNode(node)) return undefined;
+  const objectType = ts.isParenthesizedTypeNode(node.objectType) ? node.objectType.type : node.objectType;
+  if (!ts.isTypeQueryNode(objectType)
+    || !ts.isTypeOperatorNode(node.indexType)
+    || node.indexType.operator !== ts.SyntaxKind.KeyOfKeyword
+    || !ts.isTypeQueryNode(node.indexType.type)
+    || objectType.exprName.getText() !== node.indexType.type.exprName.getText()) return undefined;
+  let symbol = checker.getSymbolAtLocation(objectType.exprName);
+  if (!symbol) return undefined;
+  if (symbol.flags & ts.SymbolFlags.Alias) {
+    try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+  }
+  const declarations = symbol.declarations?.filter(ts.isVariableDeclaration) ?? [];
+  if (declarations.length !== 1 || !declarations[0].type || !ts.isTypeLiteralNode(declarations[0].type)) return undefined;
+  const members = declarations[0].type.members.map(member => {
+    if (!ts.isPropertySignature(member)
+      || !member.type
+      || (!ts.isIdentifier(member.name) && !ts.isStringLiteral(member.name))
+      || !member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword)) return undefined;
+    const value = numericLiteralValue(member.type);
+    return value === undefined ? undefined : { name: member.name.text, value };
+  });
+  return members.length > 0 && members.every(Boolean) ? members : undefined;
+};
 
 for (const sourceFile of program.getSourceFiles()) {
   const lockedPath = normalize(sourceFile.fileName);
@@ -46,10 +81,14 @@ for (const sourceFile of program.getSourceFiles()) {
         value: checker.getConstantValue(member)
       }));
     } else {
-      const nodes = ts.isUnionTypeNode(declaration.type) ? declaration.type.types : [declaration.type];
-      if (!nodes.every(node => ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal))) continue;
       kind = "type";
-      members = nodes.map(node => ({ name: `N${node.literal.text}`, value: Number(node.literal.text) }));
+      members = indexedConstObjectMembers(declaration.type);
+      if (!members) {
+        const nodes = ts.isUnionTypeNode(declaration.type) ? declaration.type.types : [declaration.type];
+        const values = nodes.map(numericLiteralValue);
+        if (values.some(value => value === undefined)) continue;
+        members = values.map(value => ({ name: `N${value < 0 ? "Minus" : ""}${Math.abs(value)}`, value }));
+      }
     }
     if (!members.every(member => typeof member.value === "number" && Number.isInteger(member.value))) continue;
     const name = exported.getName();

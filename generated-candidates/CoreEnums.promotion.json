@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "ae82f7dfb5b3d56d3da76f539b665d6f11ae8938e6b6e496717a739fd4d287b0",
+  "proposalSha256": "348a13a09b0a1f852c7f94df4115e09cc2096d33b579cde862c52d03faaed1dc",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -320,6 +320,15 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.Enums.EParameterType",
       "memberCount": 21
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/error",
+      "name": "ErrorCodesType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.Enums.ErrorCodesType",
+      "memberCount": 7
     },
     {
       "package": "@babylonjs/loaders",

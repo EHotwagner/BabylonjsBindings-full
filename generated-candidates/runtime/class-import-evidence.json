@@ -631,6 +631,12 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/error.js",
+      "export": "RuntimeError",
+      "moduleSha256": "99abf025cae723420dd125c25304b3e00e84ea10e3bce0bcc4878170ad73ad78"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/easing.js",
       "export": "SineEase",
       "moduleSha256": "81726def3d15781ac2ae935b442664d5a67ea8a9bbdb5b03e333175ded42ef7b"
@@ -658,6 +664,12 @@
       "module": "@babylonjs/core/Misc/observable.pure.js",
       "export": "Observable",
       "moduleSha256": "a708a7f9d2f5ff92d454323a38ceaa72f68c9fe46a19faef4bdb7c2d54f618e0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "ReadFileError",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
     },
     {
       "package": "@babylonjs/core",

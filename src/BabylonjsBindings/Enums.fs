@@ -381,6 +381,16 @@ module Enums =
         | ``FLOAT_MAT4`` = 35676
         | ``SAMPLER_2D`` = 35678
 
+    /// @babylonjs/core/Misc/error
+    type ErrorCodesType =
+        | ``MeshInvalidPositionsError`` = 0
+        | ``UnsupportedTextureError`` = 1000
+        | ``GLTFLoaderUnexpectedMagicError`` = 2000
+        | ``SceneLoaderError`` = 3000
+        | ``LoadFileError`` = 4000
+        | ``RequestFileError`` = 4001
+        | ``ReadFileError`` = 4002
+
     /// @babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces
     type EShaderType =
         | ``FRAGMENT`` = 35632

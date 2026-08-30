@@ -133,6 +133,10 @@ let basisConfiguration = BasisTranscodeConfiguration.Create()
 basisConfiguration.\`\`supportedCompressionFormats\`\` <- Some compressionFormats
 basisConfiguration.\`\`loadMipmapLevels\`\` <- Some true
 let abortError: BaseError = AbortError.Create("binding aborted") :> BaseError
+let innerError = System.Exception("inner failure")
+let runtimeError = RuntimeError.Create("runtime failure", ErrorCodesType.\`\`SceneLoaderError\`\`, innerError)
+let proofFile: Browser.Types.File = createObj [ "name" ==> "proof.babylon" ] |> unbox
+let readFileError = ReadFileError.Create("read failure", proofFile)
 let filesToLoad = FilesInputStore.\`\`FilesToLoad\`\`
 let shaderStore = ShaderStore.\`\`GetShadersStore\`\`()
 shaderStore.["codexInlineObjectProof"] <- "void main() {}"
@@ -194,6 +198,8 @@ if (halton.\`\`x\`\` = 0.0 && halton.\`\`y\`\` = 0.0) || easingSamples.Length <>
 if storedValue <> "stored" then failwith "clean consumer generic static class method failed"
 if basisConfiguration.\`\`supportedCompressionFormats\`\`.Value.\`\`etc1\`\` <> Some true || basisConfiguration.\`\`loadMipmapLevels\`\` <> Some true || isNull (box filesToLoad) then failwith "clean consumer inline object class properties failed"
 if abortError.name <> "AbortError" || abortError.message <> "binding aborted" || abortError.stack.IsNone || abortError.cause.IsSome then failwith "clean consumer JavaScript Error inheritance failed"
+if runtimeError.name <> "RuntimeError" || runtimeError.\`\`errorCode\`\` <> ErrorCodesType.\`\`SceneLoaderError\`\` || runtimeError.\`\`innerError\`\`.IsNone || BabylonjsBindings.SimpleVariables.\`\`ErrorCodes\`\`.\`\`ReadFileError\`\` <> ErrorCodesType.\`\`ReadFileError\`\` then failwith "clean consumer runtime error code closure failed"
+if readFileError.name <> "ReadFileError" || readFileError.\`\`errorCode\`\` <> ErrorCodesType.\`\`ReadFileError\`\` || not (obj.ReferenceEquals(readFileError.\`\`file\`\`, proofFile)) then failwith "clean consumer read-file error inheritance failed"
 if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.\`\`GetShadersRepository\`\`() <> "src/Shaders/" || uniformMat4Size <> 16.0 then failwith "clean consumer inline object class stores failed"
 if observer.IsNone || not (observableA.\`\`hasObservers\`\`()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then failwith "clean consumer observable closure failed"
 if not thinAnimationEnded || thinSprite.\`\`animationStarted\`\` then failwith "clean consumer nullable callback class failed"

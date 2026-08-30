@@ -109,6 +109,10 @@ let basisConfiguration = BasisTranscodeConfiguration.Create()
 basisConfiguration.``supportedCompressionFormats`` <- Some compressionFormats
 basisConfiguration.``loadMipmapLevels`` <- Some true
 let abortError: BaseError = AbortError.Create("binding aborted") :> BaseError
+let innerError = System.Exception("inner failure")
+let runtimeError = RuntimeError.Create("runtime failure", ErrorCodesType.``SceneLoaderError``, innerError)
+let proofFile: Browser.Types.File = createObj [ "name" ==> "proof.babylon" ] |> unbox
+let readFileError = ReadFileError.Create("read failure", proofFile)
 let filesToLoad = FilesInputStore.``FilesToLoad``
 let shaderStore = ShaderStore.``GetShadersStore``()
 shaderStore.["codexInlineObjectProof"] <- "void main() {}"
@@ -207,6 +211,10 @@ if basisConfiguration.``supportedCompressionFormats``.Value.``etc1`` <> Some tru
     failwith "Babylon inline object class properties were not preserved"
 if abortError.name <> "AbortError" || abortError.message <> "binding aborted" || abortError.stack.IsNone || abortError.cause.IsSome then
     failwith "Babylon JavaScript Error inheritance was not preserved"
+if runtimeError.name <> "RuntimeError" || runtimeError.``errorCode`` <> ErrorCodesType.``SceneLoaderError`` || runtimeError.``innerError``.IsNone || SimpleVariables.``ErrorCodes``.``ReadFileError`` <> ErrorCodesType.``ReadFileError`` then
+    failwith "Babylon runtime error code closure was not preserved"
+if readFileError.name <> "ReadFileError" || readFileError.``errorCode`` <> ErrorCodesType.``ReadFileError`` || not (obj.ReferenceEquals(readFileError.``file``, proofFile)) then
+    failwith "Babylon read-file error inheritance was not preserved"
 if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.``GetShadersRepository``() <> "src/Shaders/" || uniformMat4Size <> 16.0 then
     failwith "Babylon inline object class returns and static stores were not preserved"
 if observer.IsNone || not (observableA.``hasObservers``()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then

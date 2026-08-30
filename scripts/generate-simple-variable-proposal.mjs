@@ -106,12 +106,15 @@ const functionShape = (node, exportName) => {
   }));
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters, inlineShapes } : undefined;
 };
-const typeLiteralShape = node => {
+const typeLiteralShape = (node, numericLiteralType) => {
   if (!ts.isTypeLiteralNode(node) || node.members.length === 0) return undefined;
   const members = [];
   for (const member of node.members) {
     if (!ts.isPropertySignature(member) || !member.type || (!ts.isIdentifier(member.name) && !ts.isStringLiteral(member.name))) return undefined;
-    const type = fsharpType(member.type);
+    let type = fsharpType(member.type);
+    if (!type && numericLiteralType && ts.isLiteralTypeNode(member.type) && (ts.isNumericLiteral(member.type.literal) || (ts.isPrefixUnaryExpression(member.type.literal) && ts.isNumericLiteral(member.type.literal.operand)))) {
+      type = numericLiteralType;
+    }
     if (!type) return undefined;
     members.push({
       name: member.name.text,
@@ -121,6 +124,36 @@ const typeLiteralShape = node => {
   }
   return members;
 };
+
+const indexedConstObjectName = node => {
+  if (!ts.isIndexedAccessTypeNode(node)) return undefined;
+  const objectType = ts.isParenthesizedTypeNode(node.objectType) ? node.objectType.type : node.objectType;
+  if (!ts.isTypeQueryNode(objectType)
+    || !ts.isIdentifier(objectType.exprName)
+    || !ts.isTypeOperatorNode(node.indexType)
+    || node.indexType.operator !== ts.SyntaxKind.KeyOfKeyword
+    || !ts.isTypeQueryNode(node.indexType.type)
+    || objectType.exprName.getText() !== node.indexType.type.exprName.getText()) return undefined;
+  return objectType.exprName.text;
+};
+const indexedConstEnumTypes = new Map();
+for (const sourceFile of program.getSourceFiles()) {
+  const lockedPath = normalize(sourceFile.fileName);
+  if (!lockedPaths.has(lockedPath) || !sourceFile.symbol) continue;
+  for (const exported of checker.getExportsOfModule(sourceFile.symbol)) {
+    let target = exported;
+    if (exported.flags & ts.SymbolFlags.Alias) {
+      try { target = checker.getAliasedSymbol(exported); } catch { continue; }
+    }
+    const declaration = target.declarations?.find(ts.isTypeAliasDeclaration);
+    const objectName = declaration ? indexedConstObjectName(declaration.type) : undefined;
+    const maintained = maintainedSymbols.get(exported.getName());
+    if (objectName && maintained?.arity === 0) {
+      const declarationModule = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
+      indexedConstEnumTypes.set(`${declarationModule}|${objectName}`, maintained.fsharpSymbol);
+    }
+  }
+}
 
 const variables = new Map();
 for (const sourceFile of program.getSourceFiles()) {
@@ -136,11 +169,11 @@ for (const sourceFile of program.getSourceFiles()) {
     if (variableDeclarations.length !== 1 || declarations.some(declaration => !ts.isVariableDeclaration(declaration))) continue;
     const declaration = variableDeclarations[0];
     if (!declaration.type || !ts.isIdentifier(declaration.name)) continue;
-    const shape = typeLiteralShape(declaration.type);
+    const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
+    const shape = typeLiteralShape(declaration.type, indexedConstEnumTypes.get(`${module}|${exported.getName()}`));
     const callable = functionShape(declaration.type, exported.getName());
     const type = fsharpType(declaration.type);
     if (!type && !shape && !callable) continue;
-    const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
     const packageName = module.startsWith("@babylonjs/core/")
       ? "@babylonjs/core"
       : module.startsWith("@babylonjs/loaders/")

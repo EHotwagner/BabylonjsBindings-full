@@ -734,6 +734,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/error.js",
+      "export": "ErrorCodes",
+      "runtimeExport": "ErrorCodes",
+      "moduleSha256": "99abf025cae723420dd125c25304b3e00e84ea10e3bce0bcc4878170ad73ad78"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/extractHighlights.fragment.js",
       "export": "extractHighlightsPixelShader",
       "runtimeExport": "extractHighlightsPixelShader",
