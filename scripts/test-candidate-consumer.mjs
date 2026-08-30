@@ -58,6 +58,16 @@ let asString (value: 'T) : string = jsNative
 [<Emit("$0[$1]")>]
 let tupleItem (value: 'T) (index: int) : float = jsNative
 
+[<AllowNullLiteral>]
+type TaggedVector =
+    inherit IVector3Like
+    abstract \`\`tag\`\`: string with get, set
+
+[<AllowNullLiteral>]
+type TaggedLatLon =
+    inherit ILatLonLike
+    abstract \`\`tag\`\`: string with get, set
+
 [<ImportAll("@babylonjs/loaders/glTF/index.js")>]
 let loaderRegistration: obj = jsNative
 
@@ -156,6 +166,11 @@ let vectorA: IVector3Like = createObj [ "x" ==> 1.0; "y" ==> 2.0; "z" ==> 2.0 ] 
 let vectorB: IVector3Like = createObj [ "x" ==> 4.0; "y" ==> 6.0; "z" ==> 2.0 ] |> unbox
 let readonlyDistance = BabylonjsBindings.SimpleFunctions.\`\`Vector3Distance\`\`.Invoke(vectorA :> DeepImmutableIVector3Like, vectorB :> DeepImmutableIVector3Like)
 let readonlyDot = BabylonjsBindings.SimpleFunctions.\`\`Vector3Dot\`\`.Invoke(vectorA :> DeepImmutableIVector3Like, vectorB :> DeepImmutableIVector3Like)
+let genericVector: TaggedVector = createObj [ "x" ==> 0.0; "y" ==> 0.0; "z" ==> 0.0; "tag" ==> "preserved" ] |> unbox
+let genericVectorResult = BabylonjsBindings.SimpleFunctions.\`\`Vector3ScaleToRef\`\`.Invoke(vectorA :> DeepImmutableIVector3Like, 2.0, genericVector)
+let genericLatLon: TaggedLatLon = createObj [ "lat" ==> 0.0; "lon" ==> 0.0; "tag" ==> "coordinates" ] |> unbox
+let genericLatLonResult = BabylonjsBindings.SimpleFunctions.\`\`LatLonFromDegreesToRef\`\`.Invoke(90.0, 180.0, genericLatLon)
+let genericNormalResult = BabylonjsBindings.SimpleFunctions.\`\`LatLonToNormalToRef\`\`.Invoke(genericLatLon :> DeepImmutableILatLonLike, genericVector)
 let wgs84 = BabylonjsBindings.SimpleVariables.\`\`Wgs84Ellipsoid\`\`
 let filesToLoad = FilesInputStore.\`\`FilesToLoad\`\`
 let shaderStore = ShaderStore.\`\`GetShadersStore\`\`()
@@ -222,6 +237,7 @@ if runtimeError.name <> "RuntimeError" || runtimeError.\`\`errorCode\`\` <> Erro
 if readFileError.name <> "ReadFileError" || readFileError.\`\`errorCode\`\` <> ErrorCodesType.\`\`ReadFileError\`\` || not (obj.ReferenceEquals(readFileError.\`\`file\`\`, proofFile)) then failwith "clean consumer read-file error inheritance failed"
 if identityDiagonal <> (1.0, 1.0, 1.0, 1.0) || translation <> (2.0, 3.0, 4.0) || scaling <> (5.0, 6.0, 7.0) || matrixLike.\`\`updateFlag\`\` < 0.0 then failwith "clean consumer fixed matrix tuple functions failed"
 if copiedMatrix[0] <> 5.0 || copiedMatrix[5] <> 6.0 || copiedMatrix[10] <> 7.0 || readonlyDistance <> 5.0 || readonlyDot <> 20.0 || wgs84.\`\`semiMajorAxis\`\` <> 6378137.0 then failwith "clean consumer readonly projection closure failed"
+if genericVectorResult.\`\`tag\`\` <> "preserved" || genericLatLonResult.\`\`tag\`\` <> "coordinates" || not (obj.ReferenceEquals(genericNormalResult, genericVector)) || abs (genericNormalResult.\`\`z\`\` - 1.0) > 0.0000001 then failwith "clean consumer constrained generic closure failed"
 if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.\`\`GetShadersRepository\`\`() <> "src/Shaders/" || uniformMat4Size <> 16.0 then failwith "clean consumer inline object class stores failed"
 if observer.IsNone || not (observableA.\`\`hasObservers\`\`()) || observedValues.Count <> 3 || observedValues[0] <> "first" || observedValues[1] <> "multi:first" || observedValues[2] <> "multi:second" then failwith "clean consumer observable closure failed"
 if not thinAnimationEnded || thinSprite.\`\`animationStarted\`\` then failwith "clean consumer nullable callback class failed"

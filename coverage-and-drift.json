@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "7c5569b562730af15b6fbe4cee1e567f1a59ef5ccb8e60cf6fe4cc0b50445ecb",
+  "maintainedSurfaceDigest": "0ae38b100666aef7ead7ecb7c0a5961bfc336d331a0f0386e318ed9b14c213bc",
   "summary": {
     "total": 4323,
-    "typed": 1798,
+    "typed": 1807,
     "runtimeOnly": 1,
-    "blocked": 2518,
+    "blocked": 2509,
     "lossy": 6
   },
   "exports": [
@@ -17840,16 +17840,18 @@
       "module": "@babylonjs/core/Maths/math.geospatial.functions",
       "name": "LatLonFromDegreesToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LatLonFromDegreesToRef"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.geospatial.functions",
       "name": "LatLonToNormalToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LatLonToNormalToRef"
     },
     {
       "package": "@babylonjs/core",
@@ -18296,8 +18298,9 @@
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3CopyToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3CopyToRef"
     },
     {
       "package": "@babylonjs/core",
@@ -18331,8 +18334,9 @@
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3FromFloatsToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3FromFloatsToRef"
     },
     {
       "package": "@babylonjs/core",
@@ -18357,32 +18361,36 @@
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3LerpToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3LerpToRef"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3NormalizeToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3NormalizeToRef"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3ScaleInPlace",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3ScaleInPlace"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3ScaleToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3ScaleToRef"
     },
     {
       "package": "@babylonjs/core",
@@ -18398,8 +18406,9 @@
       "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3SubtractToRef",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3SubtractToRef"
     },
     {
       "package": "@babylonjs/core",

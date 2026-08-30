@@ -470,6 +470,22 @@ module SimpleFunctions =
     [<Import("workerFunction", "@babylonjs/core/Misc/khronosTextureContainer2Worker.js")>]
     let ``KTX2WorkerFunction``: FunctionBinding_KTX2WorkerFunction = jsNative
 
+    /// @babylonjs/core/Maths/math.geospatial.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_LatLonFromDegreesToRef =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.ILatLonLike>: ``lat``: float * ``lon``: float * ``result``: 'T -> 'T
+
+    [<Import("LatLonFromDegreesToRef", "@babylonjs/core/Maths/math.geospatial.functions.js")>]
+    let ``LatLonFromDegreesToRef``: FunctionBinding_LatLonFromDegreesToRef = jsNative
+
+    /// @babylonjs/core/Maths/math.geospatial.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_LatLonToNormalToRef =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IVector3Like>: ``latLon``: BabylonjsBindings.SimpleInterfaces.DeepImmutableILatLonLike * ``result``: 'T -> 'T
+
+    [<Import("LatLonToNormalToRef", "@babylonjs/core/Maths/math.geospatial.functions.js")>]
+    let ``LatLonToNormalToRef``: FunctionBinding_LatLonToNormalToRef = jsNative
+
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]
     type FunctionBinding_Lerp =
@@ -6216,6 +6232,14 @@ module SimpleFunctions =
 
     /// @babylonjs/core/Maths/math.vector.functions
     [<AllowNullLiteral>]
+    type FunctionBinding_Vector3CopyToRef =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IVector3Like>: ``source``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``result``: 'T -> 'T
+
+    [<Import("Vector3CopyToRef", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3CopyToRef``: FunctionBinding_Vector3CopyToRef = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
     type FunctionBinding_Vector3Distance =
         [<Emit("$0($1...)")>] abstract Invoke: ``a``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``b``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like -> float
 
@@ -6240,6 +6264,14 @@ module SimpleFunctions =
 
     /// @babylonjs/core/Maths/math.vector.functions
     [<AllowNullLiteral>]
+    type FunctionBinding_Vector3FromFloatsToRef =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IVector3Like>: ``x``: float * ``y``: float * ``z``: float * ``result``: 'T -> 'T
+
+    [<Import("Vector3FromFloatsToRef", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3FromFloatsToRef``: FunctionBinding_Vector3FromFloatsToRef = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
     type FunctionBinding_Vector3Length =
         [<Emit("$0($1...)")>] abstract Invoke: ``vector``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like -> float
 
@@ -6256,11 +6288,51 @@ module SimpleFunctions =
 
     /// @babylonjs/core/Maths/math.vector.functions
     [<AllowNullLiteral>]
+    type FunctionBinding_Vector3LerpToRef =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IVector3Like>: ``start``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``end``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``amount``: float * ``result``: 'T -> 'T
+
+    [<Import("Vector3LerpToRef", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3LerpToRef``: FunctionBinding_Vector3LerpToRef = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3NormalizeToRef =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IVector3Like>: ``vector``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``result``: 'T -> 'T
+
+    [<Import("Vector3NormalizeToRef", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3NormalizeToRef``: FunctionBinding_Vector3NormalizeToRef = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3ScaleInPlace =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IVector3Like>: ``vector``: 'T * ``scale``: float -> 'T
+
+    [<Import("Vector3ScaleInPlace", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3ScaleInPlace``: FunctionBinding_Vector3ScaleInPlace = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3ScaleToRef =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IVector3Like>: ``a``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``scale``: float * ``result``: 'T -> 'T
+
+    [<Import("Vector3ScaleToRef", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3ScaleToRef``: FunctionBinding_Vector3ScaleToRef = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
     type FunctionBinding_Vector3SignedDistanceToPlaneFromPositionAndNormal =
         [<Emit("$0($1...)")>] abstract Invoke: ``origin``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``normal``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``point``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like -> float
 
     [<Import("Vector3SignedDistanceToPlaneFromPositionAndNormal", "@babylonjs/core/Maths/math.vector.functions.js")>]
     let ``Vector3SignedDistanceToPlaneFromPositionAndNormal``: FunctionBinding_Vector3SignedDistanceToPlaneFromPositionAndNormal = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_Vector3SubtractToRef =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IVector3Like>: ``a``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``b``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIVector3Like * ``result``: 'T -> 'T
+
+    [<Import("Vector3SubtractToRef", "@babylonjs/core/Maths/math.vector.functions.js")>]
+    let ``Vector3SubtractToRef``: FunctionBinding_Vector3SubtractToRef = jsNative
 
     /// @babylonjs/core/Maths/math.vector.functions
     [<AllowNullLiteral>]

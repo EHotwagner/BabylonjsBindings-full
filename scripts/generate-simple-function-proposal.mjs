@@ -41,26 +41,27 @@ const browserTypes = new Set([
   "ImageData", "WebGLUniformLocation", "WebGLRenderingContext",
   "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
 ]);
-const fsharpType = node => {
+const fsharpType = (node, typeParameters = new Map()) => {
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "float";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
-  if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
+  if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, typeParameters);
   if (ts.isUnionTypeNode(node) && node.types.length >= 2 && node.types.length <= 9) {
-    const branches = node.types.map(fsharpType);
+    const branches = node.types.map(branch => fsharpType(branch, typeParameters));
     return branches.every(Boolean) ? `U${branches.length}<${branches.join(", ")}>` : undefined;
   }
   if (ts.isArrayTypeNode(node)) {
-    const element = fsharpType(node.elementType);
+    const element = fsharpType(node.elementType, typeParameters);
     return element ? `ResizeArray<${element}>` : undefined;
   }
   if (ts.isTupleTypeNode(node) && node.elements.length >= 2) {
-    const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type) : !ts.isNamedTupleMember(element) ? fsharpType(element) : undefined);
+    const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type, typeParameters) : !ts.isNamedTupleMember(element) ? fsharpType(element, typeParameters) : undefined);
     return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
     if (node.typeName.text === "DeepImmutable"
       && node.typeArguments?.length === 1
       && ts.isTypeReferenceNode(node.typeArguments[0])
@@ -69,15 +70,15 @@ const fsharpType = node => {
       return maintainedSymbols.get(node.typeArguments[0].typeName.text)?.deepImmutableSymbol;
     }
     if (node.typeName.text === "Array" && node.typeArguments?.length === 1) {
-      const inner = fsharpType(node.typeArguments[0]);
+      const inner = fsharpType(node.typeArguments[0], typeParameters);
       return inner ? `ResizeArray<${inner}>` : undefined;
     }
     if (node.typeName.text === "Promise" && node.typeArguments?.length === 1) {
-      const inner = fsharpType(node.typeArguments[0]);
+      const inner = fsharpType(node.typeArguments[0], typeParameters);
       return inner ? `JS.Promise<${inner}>` : undefined;
     }
     if (node.typeName.text === "Nullable" && node.typeArguments?.length === 1) {
-      const inner = fsharpType(node.typeArguments[0]);
+      const inner = fsharpType(node.typeArguments[0], typeParameters);
       return inner ? `${inner} option` : undefined;
     }
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
@@ -86,7 +87,7 @@ const fsharpType = node => {
       const target = maintainedSymbols.get(node.typeName.text);
       const arguments_ = node.typeArguments ?? [];
       if (arguments_.length !== target.arity) return undefined;
-      const renderedArguments = arguments_.map(fsharpType);
+      const renderedArguments = arguments_.map(argument => fsharpType(argument, typeParameters));
       if (renderedArguments.some(argument => !argument)) return undefined;
       return target.arity === 0 ? target.fsharpSymbol : `${target.fsharpSymbol}<${renderedArguments.join(", ")}>`;
     }
@@ -94,14 +95,27 @@ const fsharpType = node => {
   return undefined;
 };
 const signature = declaration => {
-  if (declaration.typeParameters?.length || !declaration.type || declaration.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
-  const returnType = fsharpType(declaration.type);
+  if (!declaration.type || declaration.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
+  const typeParameters = new Map();
+  for (const parameter of declaration.typeParameters ?? []) {
+    if (parameter.default
+      || !parameter.constraint
+      || !ts.isTypeReferenceNode(parameter.constraint)
+      || !ts.isIdentifier(parameter.constraint.typeName)
+      || parameter.constraint.typeArguments?.length
+      || !maintainedSymbols.has(parameter.constraint.typeName.text)) return undefined;
+    typeParameters.set(parameter.name.text, maintainedSymbols.get(parameter.constraint.typeName.text).fsharpSymbol);
+  }
+  const returnType = fsharpType(declaration.type, typeParameters);
   const parameters = declaration.parameters.map(parameter => ({
     name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
-    type: parameter.type ? fsharpType(parameter.type) : undefined,
+    type: parameter.type ? fsharpType(parameter.type, typeParameters) : undefined,
     optional: Boolean(parameter.questionToken)
   }));
-  return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters } : undefined;
+  const genericParameters = typeParameters.size
+    ? `<${[...typeParameters.keys()].map(name => `'${name}`).join(", ")} when ${[...typeParameters].map(([name, constraint]) => `'${name} :> ${constraint}`).join(" and ")}>`
+    : "";
+  return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters, genericParameters } : undefined;
 };
 
 const functions = new Map();
@@ -152,7 +166,7 @@ const lines = [
 for (const entry of entries) {
   const bindingType = safeName(entry.name);
   lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${bindingType} =`);
-  for (const overload of entry.signatures) lines.push(`        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(overload)} -> ${overload.returnType}`);
+  for (const overload of entry.signatures) lines.push(`        [<Emit("$0($1...)")>] abstract Invoke${overload.genericParameters}: ${callbackArguments(overload)} -> ${overload.returnType}`);
   lines.push("", `    [<Import("${entry.runtimeExport}", "${entry.module}.js")>]`, `    let \`\`${entry.name}\`\`: ${bindingType} = jsNative`);
 }
 const proposal = `${lines.join("\n")}\n`;

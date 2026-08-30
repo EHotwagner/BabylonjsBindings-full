@@ -5,7 +5,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "cd049c304e253f294335033699ce65d2d3ec2ad822f7f0a49fa714f28f088691",
+  "proposalSha256": "27b29c4aa159b18b51468c99f624e267f987771a30d24a73d4f6e78860462911",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -528,6 +528,24 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.KTX2WorkerFunction",
       "runtimeExport": "workerFunction",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions",
+      "name": "LatLonFromDegreesToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LatLonFromDegreesToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions",
+      "name": "LatLonToNormalToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LatLonToNormalToRef",
       "overloadCount": 1
     },
     {
@@ -6995,6 +7013,15 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3CopyToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3CopyToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3Distance",
       "kind": "function",
       "disposition": "typed",
@@ -7022,6 +7049,15 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3FromFloatsToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3FromFloatsToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3Length",
       "kind": "function",
       "disposition": "typed",
@@ -7040,10 +7076,55 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3LerpToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3LerpToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3NormalizeToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3NormalizeToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3ScaleInPlace",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3ScaleInPlace",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3ScaleToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3ScaleToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
       "name": "Vector3SignedDistanceToPlaneFromPositionAndNormal",
       "kind": "function",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3SignedDistanceToPlaneFromPositionAndNormal",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions",
+      "name": "Vector3SubtractToRef",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.Vector3SubtractToRef",
       "overloadCount": 1
     },
     {

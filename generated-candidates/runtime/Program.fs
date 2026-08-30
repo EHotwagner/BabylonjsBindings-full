@@ -16,6 +16,16 @@ let private asString (value: 'T) : string = jsNative
 [<Emit("$0[$1]")>]
 let private tupleItem (value: 'T) (index: int) : float = jsNative
 
+[<AllowNullLiteral>]
+type TaggedVector =
+    inherit IVector3Like
+    abstract ``tag``: string with get, set
+
+[<AllowNullLiteral>]
+type TaggedLatLon =
+    inherit ILatLonLike
+    abstract ``tag``: string with get, set
+
 [<ImportAll("@babylonjs/loaders/glTF/index.js")>]
 let loaderRegistration: obj = jsNative
 
@@ -154,6 +164,17 @@ let planeDistance = BabylonjsBindings.SimpleFunctions.``Vector3SignedDistanceToP
 let vector3Text = BabylonjsBindings.SimpleFunctions.``Vector3ToFixed``.Invoke(vectorA :> DeepImmutableIVector3Like, 1.0)
 let vector4Dot = BabylonjsBindings.SimpleFunctions.``Vector4Dot``.Invoke(vector4A :> DeepImmutableIVector4Like, vector4B :> DeepImmutableIVector4Like)
 let vector4Text = BabylonjsBindings.SimpleFunctions.``Vector4ToFixed``.Invoke(vector4A :> DeepImmutableIVector4Like, 1.0)
+let genericVector: TaggedVector = createObj [ "x" ==> 0.0; "y" ==> 0.0; "z" ==> 0.0; "tag" ==> "preserved" ] |> unbox
+let fromFloatsResult = BabylonjsBindings.SimpleFunctions.``Vector3FromFloatsToRef``.Invoke(1.0, 2.0, 3.0, genericVector)
+let scaleToRefResult = BabylonjsBindings.SimpleFunctions.``Vector3ScaleToRef``.Invoke(vectorA :> DeepImmutableIVector3Like, 2.0, genericVector)
+let copyToRefResult = BabylonjsBindings.SimpleFunctions.``Vector3CopyToRef``.Invoke(vectorB :> DeepImmutableIVector3Like, genericVector)
+let subtractToRefResult = BabylonjsBindings.SimpleFunctions.``Vector3SubtractToRef``.Invoke(vectorB :> DeepImmutableIVector3Like, vectorA :> DeepImmutableIVector3Like, genericVector)
+let lerpToRefResult = BabylonjsBindings.SimpleFunctions.``Vector3LerpToRef``.Invoke(vectorA :> DeepImmutableIVector3Like, vectorB :> DeepImmutableIVector3Like, 0.5, genericVector)
+let normalizeToRefResult = BabylonjsBindings.SimpleFunctions.``Vector3NormalizeToRef``.Invoke(vectorA :> DeepImmutableIVector3Like, genericVector)
+let scaleInPlaceResult = BabylonjsBindings.SimpleFunctions.``Vector3ScaleInPlace``.Invoke(genericVector, 2.0)
+let genericLatLon: TaggedLatLon = createObj [ "lat" ==> 0.0; "lon" ==> 0.0; "tag" ==> "coordinates" ] |> unbox
+let degreesResult = BabylonjsBindings.SimpleFunctions.``LatLonFromDegreesToRef``.Invoke(90.0, 180.0, genericLatLon)
+let normalResult = BabylonjsBindings.SimpleFunctions.``LatLonToNormalToRef``.Invoke(genericLatLon :> DeepImmutableILatLonLike, genericVector)
 let wgs84 = SimpleVariables.``Wgs84Ellipsoid``
 let floatingOriginResult = BabylonjsBindings.SimpleFunctions.``GetFullOffsetViewProjectionToRef``.Invoke(vectorA, inverseTarget :> DeepImmutableIMatrixLike, inverseTarget :> DeepImmutableIMatrixLike, targetMatrix)
 let filesToLoad = FilesInputStore.``FilesToLoad``
@@ -264,6 +285,10 @@ if copiedMatrix[0] <> 5.0 || copiedMatrix[5] <> 6.0 || copiedMatrix[10] <> 7.0 |
     failwith "Babylon readonly matrix function closure was not preserved"
 if vector2Text <> "{X: 1.0 Y: 2.0}" || vector3Dot <> 20.0 || vector3Length <> 3.0 || vector3LengthSquared <> 9.0 || vector3Distance <> 5.0 || vector3DistanceSquared <> 25.0 || planeDistance <> 11.0 || vector3Text <> "{X: 1.0 Y: 2.0 Z: 2.0}" || vector4Dot <> 40.0 || vector4Text <> "{X: 1.0 Y: 2.0 Z: 3.0 W: 4.0}" then
     failwith "Babylon readonly vector function closure was not preserved"
+if fromFloatsResult.``tag`` <> "preserved" || not (obj.ReferenceEquals(fromFloatsResult, scaleToRefResult)) || not (obj.ReferenceEquals(fromFloatsResult, copyToRefResult)) || not (obj.ReferenceEquals(fromFloatsResult, subtractToRefResult)) || not (obj.ReferenceEquals(fromFloatsResult, lerpToRefResult)) || not (obj.ReferenceEquals(fromFloatsResult, normalizeToRefResult)) || not (obj.ReferenceEquals(fromFloatsResult, scaleInPlaceResult)) then
+    failwith "Babylon constrained generic vector identity was not preserved"
+if degreesResult.``tag`` <> "coordinates" || abs (degreesResult.``lat`` - System.Math.PI / 2.0) > 0.0000001 || abs (degreesResult.``lon`` - System.Math.PI) > 0.0000001 || not (obj.ReferenceEquals(normalResult, genericVector)) || abs (normalResult.``z`` - 1.0) > 0.0000001 then
+    failwith "Babylon constrained generic geospatial identity was not preserved"
 if wgs84.``semiMajorAxis`` <> 6378137.0 || wgs84.``semiMinorAxis`` >= wgs84.``semiMajorAxis`` || not (obj.ReferenceEquals(floatingOriginResult, targetMatrix)) then
     failwith "Babylon readonly geospatial and floating-origin closure was not preserved"
 if shaderStore.["codexInlineObjectProof"] <> "void main() {}" || ShaderStore.``GetShadersRepository``() <> "src/Shaders/" || uniformMat4Size <> 16.0 then

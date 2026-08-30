@@ -419,6 +419,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions.js",
+      "export": "LatLonFromDegreesToRef",
+      "runtimeExport": "LatLonFromDegreesToRef",
+      "moduleSha256": "c651ac38d8ca45a396e96f1930e20375fd69684d610edbeb2a90bad080a4a922"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions.js",
+      "export": "LatLonToNormalToRef",
+      "runtimeExport": "LatLonToNormalToRef",
+      "moduleSha256": "c651ac38d8ca45a396e96f1930e20375fd69684d610edbeb2a90bad080a4a922"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions.js",
       "export": "Lerp",
       "runtimeExport": "Lerp",
@@ -5446,6 +5460,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3CopyToRef",
+      "runtimeExport": "Vector3CopyToRef",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
       "export": "Vector3Distance",
       "runtimeExport": "Vector3Distance",
       "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
@@ -5467,6 +5488,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3FromFloatsToRef",
+      "runtimeExport": "Vector3FromFloatsToRef",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
       "export": "Vector3Length",
       "runtimeExport": "Vector3Length",
       "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
@@ -5481,8 +5509,43 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3LerpToRef",
+      "runtimeExport": "Vector3LerpToRef",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3NormalizeToRef",
+      "runtimeExport": "Vector3NormalizeToRef",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3ScaleInPlace",
+      "runtimeExport": "Vector3ScaleInPlace",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3ScaleToRef",
+      "runtimeExport": "Vector3ScaleToRef",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
       "export": "Vector3SignedDistanceToPlaneFromPositionAndNormal",
       "runtimeExport": "Vector3SignedDistanceToPlaneFromPositionAndNormal",
+      "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.functions.js",
+      "export": "Vector3SubtractToRef",
+      "runtimeExport": "Vector3SubtractToRef",
       "moduleSha256": "1c0aedc329443cdd6a138f6bf4f3c8c5f0c83aafd73e520f4f44cc6de04ebbfb"
     },
     {

@@ -86,6 +86,15 @@ let vector3Distance = BabylonjsBindings.SimpleFunctions.``Vector3Distance``
 let vector3Dot = BabylonjsBindings.SimpleFunctions.``Vector3Dot``
 let vector4Dot = BabylonjsBindings.SimpleFunctions.``Vector4Dot``
 let fullOffsetViewProjection = BabylonjsBindings.SimpleFunctions.``GetFullOffsetViewProjectionToRef``
+let latLonFromDegreesToRef = BabylonjsBindings.SimpleFunctions.``LatLonFromDegreesToRef``
+let latLonToNormalToRef = BabylonjsBindings.SimpleFunctions.``LatLonToNormalToRef``
+let vector3CopyToRef = BabylonjsBindings.SimpleFunctions.``Vector3CopyToRef``
+let vector3FromFloatsToRef = BabylonjsBindings.SimpleFunctions.``Vector3FromFloatsToRef``
+let vector3LerpToRef = BabylonjsBindings.SimpleFunctions.``Vector3LerpToRef``
+let vector3NormalizeToRef = BabylonjsBindings.SimpleFunctions.``Vector3NormalizeToRef``
+let vector3ScaleInPlace = BabylonjsBindings.SimpleFunctions.``Vector3ScaleInPlace``
+let vector3ScaleToRef = BabylonjsBindings.SimpleFunctions.``Vector3ScaleToRef``
+let vector3SubtractToRef = BabylonjsBindings.SimpleFunctions.``Vector3SubtractToRef``
 let materialDefinesFactory: MaterialDefinesStatic = MaterialDefines
 let decalMapDefinesFactory: DecalMapDefinesStatic = DecalMapDefines
 let imageProcessingDefinesFactory: ImageProcessingConfigurationDefinesStatic = ImageProcessingConfigurationDefines
@@ -188,6 +197,15 @@ vector3Distance |> ignore
 vector3Dot |> ignore
 vector4Dot |> ignore
 fullOffsetViewProjection |> ignore
+latLonFromDegreesToRef |> ignore
+latLonToNormalToRef |> ignore
+vector3CopyToRef |> ignore
+vector3FromFloatsToRef |> ignore
+vector3LerpToRef |> ignore
+vector3NormalizeToRef |> ignore
+vector3ScaleInPlace |> ignore
+vector3ScaleToRef |> ignore
+vector3SubtractToRef |> ignore
 materialDefinesFactory |> ignore
 decalMapDefinesFactory |> ignore
 imageProcessingDefinesFactory |> ignore
