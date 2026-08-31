@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "maintained",
+  "proposalSha256": "0fe9a40b7271317fe9ac4bd90c53b7119e7cbc926b988873c71d832dfafc7a90",
+  "exports": [
+    { "package": "@babylonjs/core", "module": "@babylonjs/core/Misc/coroutine", "name": "makeAsyncFunction", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.makeAsyncFunction" },
+    { "package": "@babylonjs/core", "module": "@babylonjs/core/Misc/coroutine", "name": "makeSyncFunction", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.makeSyncFunction" },
+    { "package": "@babylonjs/core", "module": "@babylonjs/core/Misc/decorators", "name": "addAccessorsForMaterialProperty", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.addAccessorsForMaterialProperty" },
+    { "package": "@babylonjs/core", "module": "@babylonjs/core/Misc/decorators", "name": "expandToProperty", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.expandToProperty" },
+    { "package": "@babylonjs/core", "module": "@babylonjs/core/Misc/decorators", "name": "nativeOverride", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.nativeOverride" },
+    { "package": "@babylonjs/core", "module": "@babylonjs/core/Materials/imageProcessing", "name": "ImageProcessingMixin", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.ImageProcessingMixin" },
+    { "package": "@babylonjs/core", "module": "@babylonjs/core/Materials/imageProcessingConfiguration.defines", "name": "ImageProcessingDefinesMixin", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.ImageProcessingDefinesMixin" },
+    { "package": "@babylonjs/core", "module": "@babylonjs/core/Materials/uv.defines", "name": "UVDefinesMixin", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.UVDefinesMixin" }
+  ]
+}

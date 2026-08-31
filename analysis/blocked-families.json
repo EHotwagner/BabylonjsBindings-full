@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "source": "coverage-and-drift.json",
-  "expectedTypedTotal": 4279,
-  "blockedExportCount": 43,
+  "expectedTypedTotal": 4287,
+  "blockedExportCount": 35,
   "familyCount": 11,
   "families": [
     {
@@ -245,34 +245,9 @@
     {
       "id": "material-mixins",
       "label": "Material mixins",
-      "count": 3,
-      "expectedCount": 3,
-      "exports": [
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Materials/imageProcessing|ImageProcessingMixin",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Materials/imageProcessing",
-          "name": "ImageProcessingMixin",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Materials/imageProcessingConfiguration.defines|ImageProcessingDefinesMixin",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Materials/imageProcessingConfiguration.defines",
-          "name": "ImageProcessingDefinesMixin",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Materials/uv.defines|UVDefinesMixin",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Materials/uv.defines",
-          "name": "UVDefinesMixin",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        }
-      ]
+      "count": 0,
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "math-vector-tensor",
@@ -341,50 +316,9 @@
     {
       "id": "misc-higher-order-functions",
       "label": "Miscellaneous higher-order functions",
-      "count": 5,
-      "expectedCount": 5,
-      "exports": [
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Misc/coroutine|makeAsyncFunction",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Misc/coroutine",
-          "name": "makeAsyncFunction",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Misc/coroutine|makeSyncFunction",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Misc/coroutine",
-          "name": "makeSyncFunction",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Misc/decorators|addAccessorsForMaterialProperty",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Misc/decorators",
-          "name": "addAccessorsForMaterialProperty",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Misc/decorators|expandToProperty",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Misc/decorators",
-          "name": "expandToProperty",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Misc/decorators|nativeOverride",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Misc/decorators",
-          "name": "nativeOverride",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        }
-      ]
+      "count": 0,
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "physics",

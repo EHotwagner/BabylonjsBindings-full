@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "declarationLock": {
+    "path": "declaration-lock.json",
+    "sha256": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
+    "fileCount": 2928,
+    "allFileDigestsVerified": true
+  },
+  "proposedPolicy": {
+    "minimumArity": 0,
+    "maximumArity": 8
+  },
+  "adoptedPolicy": {
+    "minimumArity": 0,
+    "maximumArity": 10
+  },
+  "verdict": "adopted",
+  "observed": {
+    "maximumFixedCallbackArity": 10,
+    "maximumFixedCallableDeclarationArity": 17,
+    "callbacksExceedingProposal": [
+      {
+        "arity": 10,
+        "path": "@babylonjs/core/Misc/fileTools.pure.d.ts",
+        "line": 191,
+        "declaration": "(DecodeBase64UrlToBinary: (uri: string) => ArrayBuffer, DecodeBase64UrlToString: (uri: string) => string, FileToolsOptions: { DefaultRetryStrategy: any; BaseUrl: any; CorsBehavior: any; PreprocessUrl: any; CleanUrl: any; }, IsBase64DataUrl: (uri: string) => boolean, IsFileURL: () => boolean, LoadFile: (fileOrUrl: string | File, onSuccess: (data: string | ArrayBuffer, responseURL?: string) => void, onProgress?: (ev: ProgressEvent<EventTarget>) => void, offlineProvider?: IOfflineProvider, useArray"
+      },
+      {
+        "arity": 10,
+        "path": "@babylonjs/core/Misc/greasedLineTools.d.ts",
+        "line": 44,
+        "declaration": "(p1: Vector3, p2: Vector3, p3: Vector3, points: Vector3[][], indiceIndex: number, vertexIndex: number, mesh: AbstractMesh, meshIndex: number, vertices: FloatArray, indices: IndicesArray) => Vector3[][]"
+      },
+      {
+        "arity": 9,
+        "path": "@babylonjs/core/Engines/abstractEngine.pure.d.ts",
+        "line": 157,
+        "declaration": "(texture: InternalTexture, extension: string, scene: Nullable<ISceneLike>, img: HTMLImageElement | ImageBitmap | { width: number; height: number; }, invertY: boolean, noMipmap: boolean, isCompressed: boolean, processFunction: PrepareTextureProcessFunction, samplingMode: number) => void"
+      },
+      {
+        "arity": 9,
+        "path": "@babylonjs/core/Misc/screenshotTools.pure.d.ts",
+        "line": 94,
+        "declaration": "(width: number, height: number, data: ArrayBufferView, successCallback?: (data: string | ArrayBuffer) => void, mimeType?: string, fileName?: string, invertY?: boolean, toArrayBuffer?: boolean, quality?: number) => void"
+      },
+      {
+        "arity": 9,
+        "path": "@babylonjs/core/Misc/screenshotTools.pure.d.ts",
+        "line": 120,
+        "declaration": "(width: number, height: number, data: ArrayBufferView, successCallback?: (data: string | ArrayBuffer) => void, mimeType?: string, fileName?: string, invertY?: boolean, toArrayBuffer?: boolean, quality?: number) => void"
+      },
+      {
+        "arity": 9,
+        "path": "@babylonjs/core/Misc/screenshotTools.pure.d.ts",
+        "line": 148,
+        "declaration": "(width: number, height: number, data: ArrayBufferView, successCallback?: (data: string | ArrayBuffer) => void, mimeType?: string, fileName?: string, invertY?: boolean, toArrayBuffer?: boolean, quality?: number) => void"
+      }
+    ],
+    "highestFixedCallableDeclarations": [
+      {
+        "arity": 17,
+        "path": "@babylonjs/core/Maths/math.vector.pure.d.ts",
+        "line": 3822,
+        "declaration": "static FromValuesToRef(initialM11: number, initialM12: number, initialM13: number, initialM14: number, initialM21: number, initialM22: number, initialM23: number, initialM24: number, initialM31: number, initialM32: number, initialM33: number, initialM34: number, initialM41: number, initialM42: number, initialM43: number, initialM44: number, result: Matrix): void;"
+      }
+    ]
+  }
+}

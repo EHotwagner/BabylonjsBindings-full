@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "source": "Babylon.js 9.19.0 digest-verified 2,928-file declaration closure",
+  "arityPolicy": {
+    "provisional": { "minimum": 0, "maximum": 8, "disposition": "superseded" },
+    "adopted": { "minimum": 0, "maximum": 10 },
+    "maximumFixedCallbackArity": 10,
+    "maximumFixedCallableDeclarationArityContext": 17,
+    "evidence": "reports/m3-callable-arity-scan.json"
+  },
+  "decorators": {
+    "accessorCorrelation": ["ClassAccessorDecoratorTarget", "ClassAccessorDecoratorContext", "ClassAccessorDecoratorResult"],
+    "methodCorrelation": ["explicit-this", "heterogeneous-args", "return"],
+    "nativeOverrideFilterCallable": true
+  },
+  "mixinSpecializations": {
+    "ImageProcessingMixin": ["PushMaterial"],
+    "ImageProcessingDefinesMixin": ["MaterialDefines", "PBRMaterialDefinesBase", "StandardMaterialDefinesBase", "OpenPBRMaterialDefinesWithEnvLighting", "NodeMaterialDefinesBase"],
+    "UVDefinesMixin": ["MaterialDefines"]
+  },
+  "rejected": ["ParamArray<obj>", "U2<Base,Mixin>", "unconstrained obj result"],
+  "exportsClosed": 8
+}

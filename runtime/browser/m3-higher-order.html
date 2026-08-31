@@ -1,0 +1,19 @@
+<!doctype html><meta charset="utf-8"><title>M3 higher-order runtime smoke</title><script type="importmap">{"imports":{"@babylonjs/core/":"/node_modules/@babylonjs/core/","@babylonjs/loaders/":"/node_modules/@babylonjs/loaders/"}}</script><output>running</output><script type="module">
+await import("../m3-dist/Program.js");
+const { makeSyncFunction } = await import("../../node_modules/@babylonjs/core/Misc/coroutine.js");
+const { expandToProperty, nativeOverride } = await import("../../node_modules/@babylonjs/core/Misc/decorators.js");
+const { UVDefinesMixin } = await import("../../node_modules/@babylonjs/core/Materials/uv.defines.js");
+const { MaterialDefines } = await import("../../node_modules/@babylonjs/core/Materials/materialDefines.js");
+const args = [1,2,3,4,5,6,7,8,9,10];
+if (makeSyncFunction(function* (...xs) { yield; return xs.length; })(...args) !== 10) throw new Error("Chromium arity boundary failed");
+const context = { name: "value", static: false, private: false, metadata: {}, access: {}, addInitializer() {} };
+const target = { _value: 1, dirty: 0, markDirty() { this.dirty++; } };
+const accessor = expandToProperty("markDirty")(undefined, context);
+accessor.set.call(target, 4);
+if (accessor.get.call(target) !== 4 || target.dirty !== 1) throw new Error("Chromium decorator this failed");
+const wrapper = nativeOverride.filter((...xs) => xs.length === 10)(function (...xs) { return this.bias + xs.length; }, { ...context, name: "method" });
+if (wrapper.call({ bias: 2 }, ...args) !== 12 || typeof nativeOverride.filter !== "function") throw new Error("Chromium callable filter failed");
+const Mixed = UVDefinesMixin(MaterialDefines); const mixed = new Mixed(); mixed.UV6 = true; mixed.markAsProcessed();
+if (!mixed.UV6 || mixed._isDirty) throw new Error("Chromium both-member mixin failed");
+document.querySelector("output").textContent = "M3 higher-order runtime smoke passed";
+</script>

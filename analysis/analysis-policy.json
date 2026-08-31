@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "expectedCoverage": {
     "total": 4323,
-    "typed": 4279,
+    "typed": 4287,
     "runtimeOnly": 1,
-    "blocked": 43,
+    "blocked": 35,
     "lossy": 0
   },
   "families": [
@@ -35,8 +35,8 @@
     {
       "id": "material-mixins",
       "label": "Material mixins",
-      "expectedCount": 3,
-      "exports": ["@babylonjs/core|@babylonjs/core/Materials/imageProcessing|ImageProcessingMixin", "@babylonjs/core|@babylonjs/core/Materials/imageProcessingConfiguration.defines|ImageProcessingDefinesMixin", "@babylonjs/core|@babylonjs/core/Materials/uv.defines|UVDefinesMixin"]
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "math-vector-tensor",
@@ -47,8 +47,8 @@
     {
       "id": "misc-higher-order-functions",
       "label": "Miscellaneous higher-order functions",
-      "expectedCount": 5,
-      "exports": ["@babylonjs/core|@babylonjs/core/Misc/coroutine|makeAsyncFunction", "@babylonjs/core|@babylonjs/core/Misc/coroutine|makeSyncFunction", "@babylonjs/core|@babylonjs/core/Misc/decorators|addAccessorsForMaterialProperty", "@babylonjs/core|@babylonjs/core/Misc/decorators|expandToProperty", "@babylonjs/core|@babylonjs/core/Misc/decorators|nativeOverride"]
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "physics",
