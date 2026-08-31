@@ -825,3 +825,34 @@ module TypeAliases =
     [<AllowNullLiteral>]
     type PrepareTextureFunction =
         [<Emit("$0($1...)")>] abstract Invoke: texture: BabylonjsBindings.SimpleClasses.InternalTexture * extension: string * scene: BabylonjsBindings.SimpleInterfaces.ISceneLike option * img: U3<Browser.Types.HTMLImageElement, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap, AliasObject38742680c103> * invertY: bool * noMipmap: bool * isCompressed: bool * processFunction: BabylonjsBindings.TypeAliases.PrepareTextureProcessFunction * samplingMode: System.Double -> unit
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileParser.function
+    [<AllowNullLiteral>]
+    type BabylonFileParser =
+        [<Emit("$0($1...)")>] abstract Invoke: parsedData: obj * scene: BabylonjsBindings.SimpleClasses.Scene * container: BabylonjsBindings.SimpleClasses.AssetContainer * rootUrl: string -> unit
+
+    /// @babylonjs/core/Materials/Textures/textureMerger
+    type ChannelInput = U2<BabylonjsBindings.SimpleInterfaces.ITextureChannelInput, BabylonjsBindings.SimpleInterfaces.IConstantChannelInput>
+
+    /// @babylonjs/core/PostProcesses/circleOfConfusionPostProcess.pure
+    [<AllowNullLiteral>]
+    type CircleOfConfusionPostProcessOptions =
+        inherit BabylonjsBindings.SimpleInterfaces.ThinCircleOfConfusionPostProcessOptions
+        inherit BabylonjsBindings.TypeAliases.PostProcessOptions
+
+    /// @babylonjs/core/FlowGraph/utils
+    type FlowGraphMathOperationType = U4<BabylonjsBindings.TypeAliases.FlowGraphNumber, BabylonjsBindings.TypeAliases.FlowGraphVector, BabylonjsBindings.TypeAliases.FlowGraphMatrix, bool>
+
+    /// @babylonjs/core/FlowGraph/utils
+    type FlowGraphMatrix = U3<BabylonjsBindings.SimpleClasses.Matrix, BabylonjsBindings.SimpleClasses.FlowGraphMatrix2D, BabylonjsBindings.SimpleClasses.FlowGraphMatrix3D>
+
+    /// @babylonjs/core/Materials/materialPluginManager.pure
+    [<AllowNullLiteral>]
+    type PluginMaterialFactory =
+        [<Emit("$0($1...)")>] abstract Invoke: material: BabylonjsBindings.SimpleClasses.Material -> BabylonjsBindings.SimpleClasses.MaterialPluginBase option
+
+    /// @babylonjs/core/PostProcesses/tonemapPostProcess.pure
+    [<AllowNullLiteral>]
+    type ToneMapPostProcessOptions =
+        inherit BabylonjsBindings.SimpleInterfaces.ThinTonemapPostProcessOptions
+        inherit BabylonjsBindings.TypeAliases.PostProcessOptions

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "10eb0aff27916c4a045a1bda8f719416f38317d9b8142cb15da585e116530bd9",
+  "proposalSha256": "b0c83805eccbf18fb80b24ba9b08b0248bb2a2edc82a5078c1c52a3d48d4993c",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1041,6 +1041,100 @@
       ],
       "shape": "callback",
       "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileParser.function",
+      "name": "BabylonFileParser",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.BabylonFileParser",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AssetContainer",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "shape": "callback",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureMerger",
+      "name": "ChannelInput",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ChannelInput",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IConstantChannelInput",
+        "BabylonjsBindings.SimpleInterfaces.ITextureChannelInput"
+      ],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/circleOfConfusionPostProcess.pure",
+      "name": "CircleOfConfusionPostProcessOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CircleOfConfusionPostProcessOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ThinCircleOfConfusionPostProcessOptions"
+      ],
+      "shape": "intersectionAlias",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "FlowGraphMathOperationType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "FlowGraphMatrix",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphMatrix",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphMatrix2D",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMatrix3D",
+        "BabylonjsBindings.SimpleClasses.Matrix"
+      ],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginManager.pure",
+      "name": "PluginMaterialFactory",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PluginMaterialFactory",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Material",
+        "BabylonjsBindings.SimpleClasses.MaterialPluginBase"
+      ],
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/tonemapPostProcess.pure",
+      "name": "ToneMapPostProcessOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ToneMapPostProcessOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ThinTonemapPostProcessOptions"
+      ],
+      "shape": "intersectionAlias",
+      "memberCount": 2
     }
   ],
   "reviewStatus": "maintained"

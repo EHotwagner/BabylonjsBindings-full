@@ -6000,3 +6000,1143 @@ module SimpleInterfaces =
         abstract ``extendedCreatePipelineOptions``: PartialICreateAndPreparePipelineContextOptions option with get, set
         abstract ``waitForIsReady``: bool option with get, set
         abstract ``disableParallelCompilation``: bool option with get, set
+
+    /// Distinct ambient WebXR input-source handle.
+    [<AllowNullLiteral>]
+    type BrowserXRInputSource =
+        interface end
+
+    /// Distinct ambient WebXR view handle.
+    [<AllowNullLiteral>]
+    type BrowserXRView =
+        interface end
+
+    /// Exact WebXR eye literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserXREye =
+        | [<CompiledName("left")>] Left
+        | [<CompiledName("none")>] None
+        | [<CompiledName("right")>] Right
+
+    /// Exact string literal type for "equalpower".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral4c471054ce25 =
+        | [<CompiledName("equalpower")>] Value
+
+    /// Exact string literal type for "HRTF".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralaa280ec1bd96 =
+        | [<CompiledName("HRTF")>] Value
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectf1b2bf97a74bObject =
+        abstract ``skyBox``: bool option with get, set
+        abstract ``ground``: bool option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectd4819b480ee2Object =
+        abstract ``hostScene``: BabylonjsBindings.SimpleClasses.Scene option with get, set
+        abstract ``hostElement``: Browser.Types.HTMLElement option with get, set
+        abstract ``attachToLiveScene``: bool option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject41a2570c8837Object =
+        abstract ``rebuild``: bool option with get, set
+        abstract ``update``: bool option with get, set
+        abstract ``activatePreviewCommand``: bool option with get, set
+        abstract ``callback``: System.Func<BabylonjsBindings.SimpleClasses.Scene option, obj, U2<bool, unit> option> option with get, set
+        abstract ``onValidation``: System.Func<obj, string, bool> option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject92311f1edd4fObject =
+        abstract ``min``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``max``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject3620a0f42da7Object =
+        abstract ``min``: float with get, set
+        abstract ``max``: float with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectc76a33138ea4Object =
+        abstract ``backgroundColor``: BabylonjsBindings.SimpleClasses.Color4 option with get, set
+        abstract ``hostScene``: BabylonjsBindings.SimpleClasses.Scene option with get, set
+        abstract ``hostMesh``: BabylonjsBindings.SimpleClasses.Mesh option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectf897d083ff3aObject =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleClasses.VertexBuffer with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject188c62dea3f2Object =
+        abstract ``babylonAnimatable``: IAnimatable with get, set
+        abstract ``babylonAnimation``: BabylonjsBindings.SimpleClasses.Animation with get, set
+
+    /// @babylonjs/core/Physics/v2/characterController
+    [<AllowNullLiteral>]
+    type CharacterShapeOptions =
+        abstract ``shape``: BabylonjsBindings.SimpleClasses.PhysicsShape option with get, set
+        abstract ``capsuleHeight``: float option with get, set
+        abstract ``capsuleRadius``: float option with get, set
+
+    /// @babylonjs/core/Physics/v2/characterController
+    [<AllowNullLiteral>]
+    type CharacterSurfaceInfo =
+        abstract ``isSurfaceDynamic``: bool with get, set
+        abstract ``supportedState``: BabylonjsBindings.Enums.CharacterSupportedState with get, set
+        abstract ``averageSurfaceNormal``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``averageSurfaceVelocity``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``averageAngularSurfaceVelocity``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+
+    /// @babylonjs/core/Misc/dds.pure
+    [<AllowNullLiteral>]
+    type DDSInfo =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``mipmapCount``: float with get, set
+        abstract ``isFourCC``: bool with get, set
+        abstract ``isRGB``: bool with get, set
+        abstract ``isLuminance``: bool with get, set
+        abstract ``isCube``: bool with get, set
+        abstract ``isCompressed``: bool with get, set
+        abstract ``dxgiFormat``: float with get, set
+        abstract ``textureType``: float with get, set
+        abstract ``sphericalPolynomial``: BabylonjsBindings.SimpleClasses.SphericalPolynomial option with get, set
+
+    /// Function-valued EquiRectangularCaptureOptions.meshesFilter property.
+    [<AllowNullLiteral>]
+    type EquiRectangularCaptureOptionsMeshesFilterCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh -> bool
+
+    /// @babylonjs/core/Misc/equirectangularCapture.pure
+    [<AllowNullLiteral>]
+    type EquiRectangularCaptureOptions =
+        abstract ``size``: float with get, set
+        abstract ``meshesFilter``: EquiRectangularCaptureOptionsMeshesFilterCallback option with get, set
+        abstract ``filename``: string option with get, set
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``probe``: BabylonjsBindings.SimpleClasses.ReflectionProbe option with get, set
+
+    /// @babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces
+    [<AllowNullLiteral>]
+    type GreasedLineMaterialOptions =
+        abstract ``forceGLSL``: bool option with get, set
+        abstract ``width``: float option with get, set
+        abstract ``sizeAttenuation``: bool option with get, set
+        abstract ``materialType``: BabylonjsBindings.Enums.GreasedLineMeshMaterialType option with get, set
+        abstract ``color``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``colorMode``: BabylonjsBindings.Enums.GreasedLineMeshColorMode option with get, set
+        abstract ``colors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color3> option with get, set
+        abstract ``useColors``: bool option with get, set
+        abstract ``colorsSampling``: float option with get, set
+        abstract ``colorDistributionType``: BabylonjsBindings.Enums.GreasedLineMeshColorDistributionType option with get, set
+        abstract ``useDash``: bool option with get, set
+        abstract ``dashCount``: float option with get, set
+        abstract ``dashOffset``: float option with get, set
+        abstract ``dashRatio``: float option with get, set
+        abstract ``visibility``: float option with get, set
+        abstract ``resolution``: BabylonjsBindings.SimpleClasses.Vector2 option with get, set
+        abstract ``cameraFacing``: bool option with get, set
+        abstract ``colorsTexture``: BabylonjsBindings.SimpleClasses.RawTexture option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoader.pure
+    [<AllowNullLiteral>]
+    type IAnimationTargetInfo =
+        abstract ``target``: obj with get, set
+        abstract ``properties``: ResizeArray<BabylonjsBindings.SimpleClasses.AnimationPropertyInfo> with get, set
+
+    /// @babylonjs/core/Misc/assetsManager
+    [<AllowNullLiteral>]
+    type IAssetsProgressEvent =
+        abstract ``remainingCount``: float with get, set
+        abstract ``totalCount``: float with get, set
+        abstract ``task``: BabylonjsBindings.SimpleClasses.AbstractAssetTask with get, set
+
+    /// @babylonjs/core/Debug/ISkeletonViewer
+    [<AllowNullLiteral>]
+    type IBoneWeightShaderOptions =
+        abstract ``skeleton``: BabylonjsBindings.SimpleClasses.Skeleton with get, set
+        abstract ``colorBase``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``colorZero``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``colorQuarter``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``colorHalf``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``colorFull``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``targetBoneIndex``: float option with get, set
+
+    /// @babylonjs/core/Culling/Helper/IBoundingInfoHelperPlatform
+    [<AllowNullLiteral>]
+    type IBoundingInfoHelperPlatform =
+        abstract ``processAsync``: ``mesh``: U2<BabylonjsBindings.SimpleClasses.AbstractMesh, ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh>> -> JS.Promise<unit>
+        abstract ``registerMeshListAsync``: ``mesh``: U2<BabylonjsBindings.SimpleClasses.AbstractMesh, ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh>> -> JS.Promise<unit>
+        abstract ``processMeshList``: unit -> unit
+        abstract ``fetchResultsForMeshListAsync``: unit -> JS.Promise<unit>
+        abstract ``dispose``: unit -> unit
+
+    /// @babylonjs/core/Physics/v2/characterController
+    [<AllowNullLiteral>]
+    type ICharacterControllerCollisionEvent =
+        abstract ``collider``: BabylonjsBindings.SimpleClasses.PhysicsBody with get, set
+        abstract ``colliderIndex``: float with get, set
+        abstract ``impulse``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``impulsePosition``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+
+    /// @babylonjs/core/Layers/effectLayer
+    [<AllowNullLiteral>]
+    type IEffectLayerOptions =
+        abstract ``mainTextureRatio``: float with get, set
+        abstract ``mainTextureFixedSize``: float option with get, set
+        abstract ``alphaBlendingMode``: float with get, set
+        abstract ``camera``: BabylonjsBindings.SimpleClasses.Camera option with get, set
+        abstract ``renderingGroupId``: float with get, set
+        abstract ``mainTextureType``: float with get, set
+        abstract ``mainTextureFormat``: float with get, set
+        abstract ``generateStencilBuffer``: bool with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IEffectLayerOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIEffectLayerOptions =
+        abstract ``mainTextureRatio``: float option with get, set
+        abstract ``mainTextureFixedSize``: float option with get, set
+        abstract ``alphaBlendingMode``: float option with get, set
+        abstract ``camera``: BabylonjsBindings.SimpleClasses.Camera option with get, set
+        abstract ``renderingGroupId``: float option with get, set
+        abstract ``mainTextureType``: float option with get, set
+        abstract ``mainTextureFormat``: float option with get, set
+        abstract ``generateStencilBuffer``: bool option with get, set
+
+    /// @babylonjs/core/Helpers/environmentHelper
+    [<AllowNullLiteral>]
+    type IEnvironmentHelperOptions =
+        abstract ``createGround``: bool with get, set
+        abstract ``groundSize``: float with get, set
+        abstract ``groundTexture``: U2<string, BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+        abstract ``groundColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``groundOpacity``: float with get, set
+        abstract ``enableGroundShadow``: bool with get, set
+        abstract ``groundShadowLevel``: float with get, set
+        abstract ``enableGroundMirror``: bool with get, set
+        abstract ``groundMirrorSizeRatio``: float with get, set
+        abstract ``groundMirrorBlurKernel``: float with get, set
+        abstract ``groundMirrorAmount``: float with get, set
+        abstract ``groundMirrorFresnelWeight``: float with get, set
+        abstract ``groundMirrorFallOffDistance``: float with get, set
+        abstract ``groundMirrorTextureType``: float with get, set
+        abstract ``groundYBias``: float with get, set
+        abstract ``createSkybox``: bool with get, set
+        abstract ``skyboxSize``: float with get, set
+        abstract ``skyboxTexture``: U2<string, BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+        abstract ``skyboxColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``backgroundYRotation``: float with get, set
+        abstract ``sizeAuto``: bool with get, set
+        abstract ``rootPosition``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``setupImageProcessing``: bool with get, set
+        abstract ``environmentTexture``: U2<string, BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+        abstract ``cameraExposure``: float with get, set
+        abstract ``cameraContrast``: float with get, set
+        abstract ``toneMappingEnabled``: bool with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IEnvironmentHelperOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIEnvironmentHelperOptions =
+        abstract ``createGround``: bool option with get, set
+        abstract ``groundSize``: float option with get, set
+        abstract ``groundTexture``: U2<string, BabylonjsBindings.SimpleClasses.BaseTexture> option with get, set
+        abstract ``groundColor``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``groundOpacity``: float option with get, set
+        abstract ``enableGroundShadow``: bool option with get, set
+        abstract ``groundShadowLevel``: float option with get, set
+        abstract ``enableGroundMirror``: bool option with get, set
+        abstract ``groundMirrorSizeRatio``: float option with get, set
+        abstract ``groundMirrorBlurKernel``: float option with get, set
+        abstract ``groundMirrorAmount``: float option with get, set
+        abstract ``groundMirrorFresnelWeight``: float option with get, set
+        abstract ``groundMirrorFallOffDistance``: float option with get, set
+        abstract ``groundMirrorTextureType``: float option with get, set
+        abstract ``groundYBias``: float option with get, set
+        abstract ``createSkybox``: bool option with get, set
+        abstract ``skyboxSize``: float option with get, set
+        abstract ``skyboxTexture``: U2<string, BabylonjsBindings.SimpleClasses.BaseTexture> option with get, set
+        abstract ``skyboxColor``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``backgroundYRotation``: float option with get, set
+        abstract ``sizeAuto``: bool option with get, set
+        abstract ``rootPosition``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``setupImageProcessing``: bool option with get, set
+        abstract ``environmentTexture``: U2<string, BabylonjsBindings.SimpleClasses.BaseTexture> option with get, set
+        abstract ``cameraExposure``: float option with get, set
+        abstract ``cameraContrast``: float option with get, set
+        abstract ``toneMappingEnabled``: bool option with get, set
+
+    /// @babylonjs/core/FlowGraph/flowGraphCoordinator
+    [<AllowNullLiteral>]
+    type IFlowGraphCoordinatorConfiguration =
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene with get, set
+
+    /// @babylonjs/core/FlowGraph/flowGraph
+    [<AllowNullLiteral>]
+    type IFlowGraphEditorLaunchOptions =
+        abstract ``editorURL``: string option with get, set
+        abstract ``flowGraphEditorConfig``: InlineObjectd4819b480ee2Object option with get, set
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOutEventBlock.pure
+    [<AllowNullLiteral>]
+    type IFlowGraphPointerOutEventPayload =
+        abstract ``pointerId``: float with get, set
+        abstract ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh with get, set
+        abstract ``over``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOverEventBlock.pure
+    [<AllowNullLiteral>]
+    type IFlowGraphPointerOverEventPayload =
+        abstract ``pointerId``: float with get, set
+        abstract ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh with get, set
+        abstract ``out``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+
+    /// @babylonjs/core/Materials/GaussianSplatting/gaussianSplattingDebugMaterialPlugin.pure
+    [<AllowNullLiteral>]
+    type IGaussianSplattingDebugOptions =
+        abstract ``clippingBox``: InlineObject92311f1edd4fObject option with get, set
+        abstract ``opacityCulling``: InlineObject3620a0f42da7Object option with get, set
+        abstract ``sizeCulling``: InlineObject3620a0f42da7Object option with get, set
+        abstract ``opacityScale``: float with get, set
+        abstract ``opacitySaturate``: bool with get, set
+        abstract ``shDc``: bool with get, set
+        abstract ``shOrder1``: bool with get, set
+        abstract ``shOrder2``: bool with get, set
+        abstract ``shOrder3``: bool with get, set
+        abstract ``shOrder4``: bool with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IGaussianSplattingDebugOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIGaussianSplattingDebugOptions =
+        abstract ``clippingBox``: InlineObject92311f1edd4fObject option with get, set
+        abstract ``opacityCulling``: InlineObject3620a0f42da7Object option with get, set
+        abstract ``sizeCulling``: InlineObject3620a0f42da7Object option with get, set
+        abstract ``opacityScale``: float option with get, set
+        abstract ``opacitySaturate``: bool option with get, set
+        abstract ``shDc``: bool option with get, set
+        abstract ``shOrder1``: bool option with get, set
+        abstract ``shOrder2``: bool option with get, set
+        abstract ``shOrder3``: bool option with get, set
+        abstract ``shOrder4``: bool option with get, set
+
+    /// @babylonjs/core/Collisions/gpuPicker
+    [<AllowNullLiteral>]
+    type IGPUMultiPickingInfo =
+        abstract ``meshes``: ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh option> with get, set
+        abstract ``thinInstanceIndexes``: ResizeArray<float> option with get, set
+        abstract ``pickedPoints``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3 option> option with get, set
+        abstract ``normals``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3 option> option with get, set
+
+    /// Function-valued IGPUParticleSystemPlatform.contextLost property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformContextLostCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// Function-valued IGPUParticleSystemPlatform.isUpdateBufferCreated property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformIsUpdateBufferCreatedCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> bool
+
+    /// Function-valued IGPUParticleSystemPlatform.isUpdateBufferReady property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformIsUpdateBufferReadyCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> bool
+
+    /// Function-valued IGPUParticleSystemPlatform.createUpdateBuffer property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformCreateUpdateBufferCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``defines``: string -> BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor
+
+    /// Function-valued IGPUParticleSystemPlatform.createVertexBuffers property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformCreateVertexBuffersCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``updateBuffer``: BabylonjsBindings.SimpleClasses.Buffer * ``renderVertexBuffers``: InlineObjectf897d083ff3aObject -> unit
+
+    /// Function-valued IGPUParticleSystemPlatform.createParticleBuffer property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformCreateParticleBufferCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: ResizeArray<float> -> U2<BabylonjsBindings.TypeAliases.DataArray, BabylonjsBindings.SimpleClasses.DataBuffer>
+
+    /// Function-valued IGPUParticleSystemPlatform.bindDrawBuffers property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformBindDrawBuffersCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``index``: float * ``effect``: BabylonjsBindings.SimpleClasses.Effect * ``indexBuffer``: BabylonjsBindings.SimpleClasses.DataBuffer option -> unit
+
+    /// Function-valued IGPUParticleSystemPlatform.preUpdateParticleBuffer property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformPreUpdateParticleBufferCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// Function-valued IGPUParticleSystemPlatform.updateParticleBuffer property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformUpdateParticleBufferCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``index``: float * ``targetBuffer``: BabylonjsBindings.SimpleClasses.Buffer * ``currentActiveCount``: float -> unit
+
+    /// Function-valued IGPUParticleSystemPlatform.releaseBuffers property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformReleaseBuffersCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// Function-valued IGPUParticleSystemPlatform.releaseVertexBuffers property.
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatformReleaseVertexBuffersCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/Particles/IGPUParticleSystemPlatform
+    [<AllowNullLiteral>]
+    type IGPUParticleSystemPlatform =
+        abstract ``alignDataInBuffer``: bool with get, set
+        abstract ``contextLost``: IGPUParticleSystemPlatformContextLostCallback with get, set
+        abstract ``isUpdateBufferCreated``: IGPUParticleSystemPlatformIsUpdateBufferCreatedCallback with get, set
+        abstract ``isUpdateBufferReady``: IGPUParticleSystemPlatformIsUpdateBufferReadyCallback with get, set
+        abstract ``createUpdateBuffer``: IGPUParticleSystemPlatformCreateUpdateBufferCallback with get, set
+        abstract ``createVertexBuffers``: IGPUParticleSystemPlatformCreateVertexBuffersCallback with get, set
+        abstract ``createParticleBuffer``: IGPUParticleSystemPlatformCreateParticleBufferCallback with get, set
+        abstract ``bindDrawBuffers``: IGPUParticleSystemPlatformBindDrawBuffersCallback with get, set
+        abstract ``preUpdateParticleBuffer``: IGPUParticleSystemPlatformPreUpdateParticleBufferCallback with get, set
+        abstract ``updateParticleBuffer``: IGPUParticleSystemPlatformUpdateParticleBufferCallback with get, set
+        abstract ``releaseBuffers``: IGPUParticleSystemPlatformReleaseBuffersCallback with get, set
+        abstract ``releaseVertexBuffers``: IGPUParticleSystemPlatformReleaseVertexBuffersCallback with get, set
+
+    /// @babylonjs/core/Collisions/gpuPicker
+    [<AllowNullLiteral>]
+    type IGPUPickingInfo =
+        abstract ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh with get, set
+        abstract ``thinInstanceIndex``: float option with get, set
+        abstract ``pickedPoint``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``normal``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+
+    /// @babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces
+    [<AllowNullLiteral>]
+    type IGreasedLineMaterial =
+        abstract ``visibility``: float with get, set
+        abstract ``width``: float with get, set
+        abstract ``useDash``: bool with get, set
+        abstract ``dashCount``: float with get, set
+        abstract ``dashOffset``: float with get, set
+        abstract ``dashRatio``: float with get, set
+        abstract ``useColors``: bool with get, set
+        abstract ``colorMode``: BabylonjsBindings.Enums.GreasedLineMeshColorMode with get, set
+        abstract ``colors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color3> option with get, set
+        abstract ``sizeAttenuation``: bool with get, set
+        abstract ``color``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``colorsDistributionType``: BabylonjsBindings.Enums.GreasedLineMeshColorDistributionType with get, set
+        abstract ``resolution``: BabylonjsBindings.SimpleClasses.Vector2 with get, set
+        abstract ``colorsTexture``: BabylonjsBindings.SimpleClasses.RawTexture option with get, set
+        abstract ``setColor``: ``value``: BabylonjsBindings.SimpleClasses.Color3 option * ?``doNotMarkDirty``: bool -> unit
+        abstract ``setColors``: ``colors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color3> option * ``lazy``: bool * ?``forceNewTexture``: bool -> unit
+        abstract ``updateLazy``: unit -> unit
+
+    /// @babylonjs/core/Materials/Textures/Filtering/hdrFiltering
+    [<AllowNullLiteral>]
+    type IHDRFilteringOptions =
+        abstract ``hdrScale``: float option with get, set
+        abstract ``quality``: float option with get, set
+
+    /// @babylonjs/core/Materials/Textures/htmlElementTexture.pure
+    [<AllowNullLiteral>]
+    type IHtmlElementTextureOptions =
+        abstract ``generateMipMaps``: bool option with get, set
+        abstract ``samplingMode``: float option with get, set
+        abstract ``format``: float option with get, set
+        abstract ``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine option with get, set
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene option with get, set
+
+    /// @babylonjs/core/Materials/Textures/HTML/htmlTexture
+    [<AllowNullLiteral>]
+    type IHtmlTextureOptions =
+        abstract ``width``: float option with get, set
+        abstract ``height``: float option with get, set
+        abstract ``generateMipMaps``: bool option with get, set
+        abstract ``samplingMode``: float option with get, set
+        abstract ``format``: float option with get, set
+        abstract ``autoUpdate``: bool option with get, set
+        abstract ``useSvgFallback``: bool option with get, set
+        abstract ``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine option with get, set
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene option with get, set
+
+    /// @babylonjs/core/Meshes/lattice
+    [<AllowNullLiteral>]
+    type ILatticeOptions =
+        abstract ``resolutionX``: float with get, set
+        abstract ``resolutionY``: float with get, set
+        abstract ``resolutionZ``: float with get, set
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``size``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``autoAdaptToMesh``: BabylonjsBindings.SimpleClasses.Mesh option with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<ILatticeOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialILatticeOptions =
+        abstract ``resolutionX``: float option with get, set
+        abstract ``resolutionY``: float option with get, set
+        abstract ``resolutionZ``: float option with get, set
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``size``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``autoAdaptToMesh``: BabylonjsBindings.SimpleClasses.Mesh option with get, set
+
+    /// @babylonjs/core/Meshes/csg2
+    [<AllowNullLiteral>]
+    type IMeshRebuildOptions =
+        abstract ``rebuildNormals``: bool option with get, set
+        abstract ``centerMesh``: bool option with get, set
+        abstract ``materialToUse``: BabylonjsBindings.SimpleClasses.Material option with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IMeshRebuildOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIMeshRebuildOptions =
+        abstract ``rebuildNormals``: bool option with get, set
+        abstract ``centerMesh``: bool option with get, set
+        abstract ``materialToUse``: BabylonjsBindings.SimpleClasses.Material option with get, set
+
+    /// @babylonjs/core/XR/motionController/webXRAbstractMotionController
+    [<AllowNullLiteral>]
+    type IMotionControllerButtonMeshMap =
+        abstract ``pressedMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh with get, set
+        abstract ``unpressedMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh with get, set
+        abstract ``valueMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh with get, set
+
+    /// @babylonjs/core/XR/motionController/webXRAbstractMotionController
+    [<AllowNullLiteral>]
+    type IMotionControllerMeshMap =
+        abstract ``maxMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+        abstract ``minMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+        abstract ``valueMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativeCamera =
+        abstract ``createVideo``: ``constraints``: BrowserMediaTrackConstraints -> obj
+        abstract ``updateVideoTexture``: ``texture``: BabylonjsBindings.SimpleClasses.InternalTexture option * ``video``: Browser.Types.HTMLVideoElement * ``invertY``: bool -> unit
+
+    /// @babylonjs/core/Meshes/Node/nodeGeometry
+    [<AllowNullLiteral>]
+    type INodeGeometryEditorOptions =
+        abstract ``editorURL``: string option with get, set
+        abstract ``nodeGeometryEditorConfig``: InlineObjectc76a33138ea4Object option with get, set
+
+    /// @babylonjs/core/Culling/Octrees/octreeBlock
+    [<AllowNullLiteral>]
+    type IOctreeContainer<'T> =
+        abstract ``blocks``: ResizeArray<BabylonjsBindings.SimpleClasses.OctreeBlock<'T>> with get, set
+
+    /// @babylonjs/core/Physics/physicsShapeCastQuery
+    [<AllowNullLiteral>]
+    type IPhysicsShapeCastQuery =
+        abstract ``shape``: BabylonjsBindings.SimpleClasses.PhysicsShape with get, set
+        abstract ``rotation``: BabylonjsBindings.SimpleClasses.Quaternion with get, set
+        abstract ``startPosition``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``endPosition``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``shouldHitTriggers``: bool with get, set
+        abstract ``ignoreBody``: BabylonjsBindings.SimpleClasses.PhysicsBody option with get, set
+
+    /// @babylonjs/core/Physics/physicsShapeProximityCastQuery
+    [<AllowNullLiteral>]
+    type IPhysicsShapeProximityCastQuery =
+        abstract ``shape``: BabylonjsBindings.SimpleClasses.PhysicsShape with get, set
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``rotation``: BabylonjsBindings.SimpleClasses.Quaternion with get, set
+        abstract ``maxDistance``: float with get, set
+        abstract ``shouldHitTriggers``: bool with get, set
+        abstract ``ignoreBody``: BabylonjsBindings.SimpleClasses.PhysicsBody option with get, set
+
+    /// Function-valued IPickingCustomization.internalPickerForMesh property.
+    [<AllowNullLiteral>]
+    type IPickingCustomizationInternalPickerForMeshCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pickingInfo``: BabylonjsBindings.SimpleClasses.PickingInfo option * ``rayFunction``: System.Func<BabylonjsBindings.SimpleClasses.Matrix, bool, BabylonjsBindings.SimpleClasses.Ray> * ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh * ``world``: BabylonjsBindings.SimpleClasses.Matrix * ?``fastCheck``: bool * ?``onlyBoundingInfo``: bool * ?``trianglePredicate``: BabylonjsBindings.TypeAliases.TrianglePickingPredicate * ?``skipBoundingInfo``: bool -> BabylonjsBindings.SimpleClasses.PickingInfo
+
+    /// @babylonjs/core/Culling/ray.core
+    [<AllowNullLiteral>]
+    type IPickingCustomization =
+        abstract ``internalPickerForMesh``: IPickingCustomizationInternalPickerForMeshCallback option with get, set
+
+    /// @babylonjs/core/Physics/physicsRaycastResult
+    [<AllowNullLiteral>]
+    type IRaycastQuery =
+        abstract ``membership``: float option with get, set
+        abstract ``collideWith``: float option with get, set
+        abstract ``shouldHitTriggers``: bool option with get, set
+        abstract ``ignoreBody``: BabylonjsBindings.SimpleClasses.PhysicsBody option with get, set
+
+    /// @babylonjs/core/Rendering/geometryBufferRenderer.pure
+    [<AllowNullLiteral>]
+    type ISavedTransformationMatrix =
+        abstract ``world``: BabylonjsBindings.SimpleClasses.Matrix with get, set
+        abstract ``viewProjection``: BabylonjsBindings.SimpleClasses.Matrix with get, set
+
+    /// @babylonjs/core/Particles/Node/Blocks/Emitters/IShapeBlock
+    [<AllowNullLiteral>]
+    type IShapeBlock =
+        abstract ``particle``: BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint with get, set
+        abstract ``output``: BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint with get, set
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener
+    [<AllowNullLiteral>]
+    type ISpatialAudioListenerOptions =
+        abstract ``listenerAutoUpdate``: bool with get, set
+        abstract ``listenerEnabled``: bool with get, set
+        abstract ``listenerMinUpdateTime``: float with get, set
+        abstract ``listenerPosition``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``listenerRotation``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``listenerRotationQuaternion``: BabylonjsBindings.SimpleClasses.Quaternion with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<ISpatialAudioListenerOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialISpatialAudioListenerOptions =
+        abstract ``listenerAutoUpdate``: bool option with get, set
+        abstract ``listenerEnabled``: bool option with get, set
+        abstract ``listenerMinUpdateTime``: float option with get, set
+        abstract ``listenerPosition``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``listenerRotation``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``listenerRotationQuaternion``: BabylonjsBindings.SimpleClasses.Quaternion option with get, set
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio
+    [<AllowNullLiteral>]
+    type ISpatialAudioOptions =
+        abstract ``spatialAutoUpdate``: bool with get, set
+        abstract ``spatialConeInnerAngle``: float with get, set
+        abstract ``spatialConeOuterAngle``: float with get, set
+        abstract ``spatialConeOuterVolume``: float with get, set
+        abstract ``spatialDistanceModel``: U3<StringLiteral7f2fe580edb3, StringLiteral7705accd2694, StringLiterald075063d475b> with get, set
+        abstract ``spatialEnabled``: bool with get, set
+        abstract ``spatialMaxDistance``: float with get, set
+        abstract ``spatialMinUpdateTime``: float with get, set
+        abstract ``spatialOrientation``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``spatialPanningEnabled``: bool with get, set
+        abstract ``spatialPanningModel``: U2<StringLiteral4c471054ce25, StringLiteralaa280ec1bd96> with get, set
+        abstract ``spatialPosition``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``spatialMinDistance``: float with get, set
+        abstract ``spatialRolloffFactor``: float with get, set
+        abstract ``spatialRotation``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``spatialRotationQuaternion``: BabylonjsBindings.SimpleClasses.Quaternion with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<ISpatialAudioOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialISpatialAudioOptions =
+        abstract ``spatialAutoUpdate``: bool option with get, set
+        abstract ``spatialConeInnerAngle``: float option with get, set
+        abstract ``spatialConeOuterAngle``: float option with get, set
+        abstract ``spatialConeOuterVolume``: float option with get, set
+        abstract ``spatialDistanceModel``: U3<StringLiteral7f2fe580edb3, StringLiteral7705accd2694, StringLiterald075063d475b> option with get, set
+        abstract ``spatialEnabled``: bool option with get, set
+        abstract ``spatialMaxDistance``: float option with get, set
+        abstract ``spatialMinUpdateTime``: float option with get, set
+        abstract ``spatialOrientation``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``spatialPanningEnabled``: bool option with get, set
+        abstract ``spatialPanningModel``: U2<StringLiteral4c471054ce25, StringLiteralaa280ec1bd96> option with get, set
+        abstract ``spatialPosition``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``spatialMinDistance``: float option with get, set
+        abstract ``spatialRolloffFactor``: float option with get, set
+        abstract ``spatialRotation``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``spatialRotationQuaternion``: BabylonjsBindings.SimpleClasses.Quaternion option with get, set
+
+    /// @babylonjs/core/Sprites/spriteMap.pure
+    [<AllowNullLiteral>]
+    type ISpriteMapOptions =
+        abstract ``stageSize``: BabylonjsBindings.SimpleClasses.Vector2 option with get, set
+        abstract ``outputSize``: BabylonjsBindings.SimpleClasses.Vector2 option with get, set
+        abstract ``outputPosition``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``outputRotation``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``layerCount``: float option with get, set
+        abstract ``maxAnimationFrames``: float option with get, set
+        abstract ``baseTile``: float option with get, set
+        abstract ``flipU``: bool option with get, set
+        abstract ``colorMultiply``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``frameRotationDirection``: BabylonjsBindings.Enums.SpriteMapFrameRotationDirection option with get, set
+
+    /// @babylonjs/core/Misc/assetsManager
+    [<AllowNullLiteral>]
+    type ITextureAssetTask<'Tex when 'Tex :> BabylonjsBindings.SimpleClasses.BaseTexture> =
+        abstract ``texture``: 'Tex with get, set
+
+    /// @babylonjs/core/Materials/Textures/textureMerger
+    [<AllowNullLiteral>]
+    type ITextureChannelInput =
+        abstract ``texture``: BabylonjsBindings.SimpleClasses.BaseTexture with get, set
+        abstract ``sourceChannel``: float with get, set
+
+    /// @babylonjs/core/Materials/Textures/Packer/frame
+    [<AllowNullLiteral>]
+    type ITexturePackerFrame =
+        abstract ``id``: float with get, set
+        abstract ``scale``: BabylonjsBindings.SimpleClasses.Vector2 with get, set
+        abstract ``offset``: BabylonjsBindings.SimpleClasses.Vector2 with get, set
+
+    /// Function-valued ITextureProcessOperand.dispose property.
+    [<AllowNullLiteral>]
+    type ITextureProcessOperandDisposeCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type ITextureProcessOperand =
+        abstract ``texture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``factor``: BabylonjsBindings.SimpleClasses.Color4 option with get, set
+        abstract ``channel``: BabylonjsBindings.Enums.TextureChannel option with get, set
+        abstract ``colorSpace``: BabylonjsBindings.Enums.TextureColorSpace option with get, set
+        abstract ``dispose``: ITextureProcessOperandDisposeCallback option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRAnchorSystem.pure
+    [<AllowNullLiteral>]
+    type IWebXRAnchorSystemOptions =
+        abstract ``worldParentNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+        abstract ``doNotRemoveAnchorsOnSessionEnded``: bool option with get, set
+        abstract ``clearAnchorsOnSessionInit``: bool option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRBackgroundRemover.pure
+    [<AllowNullLiteral>]
+    type IWebXRBackgroundRemoverOptions =
+        abstract ``backgroundMeshes``: ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh> option with get, set
+        abstract ``environmentHelperRemovalFlags``: InlineObjectf1b2bf97a74bObject option with get, set
+        abstract ``ignoreEnvironmentHelper``: bool option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRFeaturePointSystem.pure
+    [<AllowNullLiteral>]
+    type IWebXRFeaturePoint =
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``confidenceValue``: float with get, set
+
+    /// @babylonjs/core/XR/features/WebXRHitTestLegacy
+    [<AllowNullLiteral>]
+    type IWebXRLegacyHitTestOptions =
+        abstract ``testOnPointerDownOnly``: bool option with get, set
+        abstract ``worldParentNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRLightEstimation.pure
+    [<AllowNullLiteral>]
+    type IWebXRLightEstimation =
+        abstract ``lightIntensity``: float with get, set
+        abstract ``lightColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``lightDirection``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``sphericalHarmonics``: BabylonjsBindings.SimpleClasses.SphericalHarmonics with get, set
+
+    /// @babylonjs/core/Physics/v2/physicsAggregate
+    [<AllowNullLiteral>]
+    type PhysicsAggregateParameters =
+        abstract ``mass``: float with get, set
+        abstract ``friction``: float option with get, set
+        abstract ``restitution``: float option with get, set
+        abstract ``radius``: float option with get, set
+        abstract ``pointA``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``pointB``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``extents``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``rotation``: BabylonjsBindings.SimpleClasses.Quaternion option with get, set
+        abstract ``center``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``mesh``: BabylonjsBindings.SimpleClasses.Mesh option with get, set
+        abstract ``startAsleep``: bool option with get, set
+        abstract ``isTriggerShape``: bool option with get, set
+
+    /// @babylonjs/core/Physics/physicsHelper
+    [<AllowNullLiteral>]
+    type PhysicsGravitationalFieldEventData =
+        abstract ``sphere``: BabylonjsBindings.SimpleClasses.Mesh with get, set
+
+    /// @babylonjs/core/Physics/physicsHelper
+    [<AllowNullLiteral>]
+    type PhysicsHitData =
+        abstract ``force``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``contactPoint``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``distanceFromOrigin``: float with get, set
+        abstract ``instanceIndex``: float option with get, set
+
+    /// @babylonjs/core/Physics/physicsHelper
+    [<AllowNullLiteral>]
+    type PhysicsRadialExplosionEventData =
+        abstract ``sphere``: BabylonjsBindings.SimpleClasses.Mesh with get, set
+
+    /// @babylonjs/core/Physics/physicsHelper
+    [<AllowNullLiteral>]
+    type PhysicsUpdraftEventData =
+        abstract ``cylinder``: BabylonjsBindings.SimpleClasses.Mesh option with get, set
+
+    /// @babylonjs/core/Physics/physicsHelper
+    [<AllowNullLiteral>]
+    type PhysicsVortexEventData =
+        abstract ``cylinder``: BabylonjsBindings.SimpleClasses.Mesh with get, set
+
+    /// @babylonjs/core/Gizmos/positionGizmo
+    [<AllowNullLiteral>]
+    type PositionGizmoOptions =
+        abstract ``additionalTransformNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+
+    /// @babylonjs/core/Gizmos/scaleGizmo
+    [<AllowNullLiteral>]
+    type ScaleGizmoOptions =
+        abstract ``additionalTransformNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+
+    /// @babylonjs/core/Cameras/VR/vrExperienceHelper.pure
+    [<AllowNullLiteral>]
+    type VRExperienceHelperOptions =
+        abstract ``createDeviceOrientationCamera``: bool option with get, set
+        abstract ``createFallbackVRDeviceOrientationFreeCamera``: bool option with get, set
+        abstract ``laserToggle``: bool option with get, set
+        abstract ``floorMeshes``: ResizeArray<BabylonjsBindings.SimpleClasses.Mesh> option with get, set
+        abstract ``vrDeviceOrientationCameraMetrics``: BabylonjsBindings.SimpleClasses.VRCameraMetrics option with get, set
+        abstract ``useXR``: bool option with get, set
+
+    /// @babylonjs/core/Cameras/VR/vrExperienceHelper.pure
+    [<AllowNullLiteral>]
+    type VRTeleportationOptions =
+        abstract ``floorMeshName``: string option with get, set
+        abstract ``floorMeshes``: ResizeArray<BabylonjsBindings.SimpleClasses.Mesh> option with get, set
+        abstract ``teleportationMode``: float option with get, set
+        abstract ``teleportationTime``: float option with get, set
+        abstract ``teleportationSpeed``: float option with get, set
+        abstract ``easingFunction``: BabylonjsBindings.SimpleClasses.EasingFunction option with get, set
+
+    /// @babylonjs/core/Physics/v1/physicsJoint
+    [<AllowNullLiteral>]
+    type DistanceJointData =
+        inherit PhysicsJointData
+        abstract ``maxDistance``: float with get, set
+
+    /// @babylonjs/core/Navigation/INavigationEngine
+    [<AllowNullLiteral>]
+    type ICrowd =
+        abstract ``addAgent``: ``pos``: BabylonjsBindings.SimpleClasses.Vector3 * ``parameters``: IAgentParameters * ``transform``: BabylonjsBindings.SimpleClasses.TransformNode -> float
+        abstract ``getAgentPosition``: ``index``: float -> BabylonjsBindings.SimpleClasses.Vector3
+        abstract ``getAgentPositionToRef``: ``index``: float * ``result``: BabylonjsBindings.SimpleClasses.Vector3 -> unit
+        abstract ``getAgentVelocity``: ``index``: float -> BabylonjsBindings.SimpleClasses.Vector3
+        abstract ``getAgentVelocityToRef``: ``index``: float * ``result``: BabylonjsBindings.SimpleClasses.Vector3 -> unit
+        abstract ``getAgentNextTargetPath``: ``index``: float -> BabylonjsBindings.SimpleClasses.Vector3
+        abstract ``getAgentState``: ``index``: float -> float
+        abstract ``overOffmeshConnection``: ``index``: float -> bool
+        abstract ``getAgentNextTargetPathToRef``: ``index``: float * ``result``: BabylonjsBindings.SimpleClasses.Vector3 -> unit
+        abstract ``removeAgent``: ``index``: float -> unit
+        abstract ``getAgents``: unit -> ResizeArray<float>
+        abstract ``update``: ``deltaTime``: float -> unit
+        abstract ``agentGoto``: ``index``: float * ``destination``: BabylonjsBindings.SimpleClasses.Vector3 -> unit
+        abstract ``agentTeleport``: ``index``: float * ``destination``: BabylonjsBindings.SimpleClasses.Vector3 -> unit
+        abstract ``updateAgentParameters``: ``index``: float * ``parameters``: IAgentParameters -> unit
+        abstract ``setDefaultQueryExtent``: ``extent``: BabylonjsBindings.SimpleClasses.Vector3 -> unit
+        abstract ``getDefaultQueryExtent``: unit -> BabylonjsBindings.SimpleClasses.Vector3
+        abstract ``getDefaultQueryExtentToRef``: ``result``: BabylonjsBindings.SimpleClasses.Vector3 -> unit
+        abstract ``getCorners``: ``index``: float -> ResizeArray<BabylonjsBindings.SimpleClasses.Vector3>
+        abstract ``dispose``: unit -> unit
+
+    /// @babylonjs/core/Materials/Textures/dynamicTexture.pure
+    [<AllowNullLiteral>]
+    type IDynamicTextureOptions =
+        inherit ITextureCreationOptions
+        abstract ``width``: float option with get, set
+        abstract ``height``: float option with get, set
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene option with get, set
+
+    /// @babylonjs/core/Decorators/nodeDecorator
+    [<AllowNullLiteral>]
+    type IEditablePropertyOption =
+        abstract ``embedded``: bool option with get, set
+        abstract ``min``: float option with get, set
+        abstract ``max``: float option with get, set
+        abstract ``notifiers``: InlineObject41a2570c8837Object option with get, set
+        abstract ``options``: ResizeArray<IEditablePropertyListOption> option with get, set
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphMeshPickEventBlock.pure
+    [<AllowNullLiteral>]
+    type IFlowGraphMeshPickEventBlockConfiguration =
+        inherit IFlowGraphBlockConfiguration
+        abstract ``stopPropagation``: bool option with get, set
+        abstract ``targetMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOutEventBlock.pure
+    [<AllowNullLiteral>]
+    type IFlowGraphPointerOutEventBlockConfiguration =
+        inherit IFlowGraphBlockConfiguration
+        abstract ``stopPropagation``: bool option with get, set
+        abstract ``targetMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOverEventBlock.pure
+    [<AllowNullLiteral>]
+    type IFlowGraphPointerOverEventBlockConfiguration =
+        inherit IFlowGraphBlockConfiguration
+        abstract ``stopPropagation``: bool option with get, set
+        abstract ``targetMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+
+    /// @babylonjs/core/Gizmos/gizmo
+    [<AllowNullLiteral>]
+    type IGizmo =
+        inherit IDisposable
+        abstract ``isHovered``: bool with get
+        abstract ``_rootMesh``: BabylonjsBindings.SimpleClasses.Mesh with get, set
+        abstract ``scaleRatio``: float with get, set
+        abstract ``attachedMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+        abstract ``attachedNode``: BabylonjsBindings.SimpleClasses.Node option with get, set
+        abstract ``updateGizmoRotationToMatchAttachedMesh``: bool with get, set
+        abstract ``gizmoLayer``: BabylonjsBindings.SimpleClasses.UtilityLayerRenderer with get, set
+        abstract ``updateGizmoPositionToMatchAttachedMesh``: bool with get, set
+        abstract ``anchorPoint``: BabylonjsBindings.Enums.GizmoAnchorPoint with get, set
+        abstract ``coordinatesMode``: BabylonjsBindings.Enums.GizmoCoordinatesMode with get, set
+        abstract ``updateScale``: bool with get, set
+        abstract ``customRotationQuaternion``: BabylonjsBindings.SimpleClasses.Quaternion option with get, set
+        abstract ``setCustomMesh``: ``mesh``: BabylonjsBindings.SimpleClasses.Mesh -> unit
+        abstract ``additionalTransformNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+
+    /// Function-valued IInterpolationPropertyInfo.getValue property.
+    [<AllowNullLiteral>]
+    type IInterpolationPropertyInfoGetValueCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``target``: obj * ``source``: JS.Float32Array * ``offset``: float * ``scale``: float -> obj
+
+    /// Function-valued IInterpolationPropertyInfo.getStride property.
+    [<AllowNullLiteral>]
+    type IInterpolationPropertyInfoGetStrideCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``target``: obj -> float
+
+    /// @babylonjs/core/FlowGraph/typeDefinitions
+    [<AllowNullLiteral>]
+    type IInterpolationPropertyInfo =
+        abstract ``type``: float with get, set
+        abstract ``name``: string with get, set
+        abstract ``getValue``: IInterpolationPropertyInfoGetValueCallback with get, set
+        abstract ``getStride``: IInterpolationPropertyInfoGetStrideCallback with get, set
+        abstract ``buildAnimations``: ``target``: obj * ``name``: string * ``fps``: float * ``keys``: ResizeArray<obj> -> ResizeArray<InlineObject188c62dea3f2Object>
+
+    /// Function-valued ISimplificationTask.successCallback property.
+    [<AllowNullLiteral>]
+    type ISimplificationTaskSuccessCallbackCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/Meshes/meshSimplification
+    [<AllowNullLiteral>]
+    type ISimplificationTask =
+        abstract ``settings``: ResizeArray<ISimplificationSettings> with get, set
+        abstract ``simplificationType``: BabylonjsBindings.Enums.SimplificationType with get, set
+        abstract ``mesh``: BabylonjsBindings.SimpleClasses.Mesh with get, set
+        abstract ``successCallback``: ISimplificationTaskSuccessCallbackCallback option with get, set
+        abstract ``parallelProcessing``: bool with get, set
+
+    /// @babylonjs/core/Meshes/meshSimplification
+    [<AllowNullLiteral>]
+    type ISimplifier =
+        abstract ``simplify``: ``settings``: ISimplificationSettings * ``successCallback``: System.Action<BabylonjsBindings.SimpleClasses.Mesh> * ?``errorCallback``: System.Action -> unit
+
+    /// @babylonjs/core/Debug/ISkeletonViewer
+    [<AllowNullLiteral>]
+    type ISkeletonMapShaderOptions =
+        abstract ``skeleton``: BabylonjsBindings.SimpleClasses.Skeleton with get, set
+        abstract ``colorMap``: ResizeArray<ISkeletonMapShaderColorMapKnot> option with get, set
+
+    /// @babylonjs/core/Layers/thinGlowLayer
+    [<AllowNullLiteral>]
+    type IThinGlowLayerOptions =
+        inherit IThinEffectLayerOptions
+        abstract ``blurKernelSize``: float option with get, set
+        abstract ``ldrMerge``: bool option with get, set
+        abstract ``excludeByDefault``: bool option with get, set
+
+    /// Exact required-property projection used by Required<IThinGlowLayerOptions> signatures.
+    [<AllowNullLiteral>]
+    type RequiredIThinGlowLayerOptions =
+        inherit RequiredIThinEffectLayerOptions
+        abstract ``blurKernelSize``: float with get, set
+        abstract ``ldrMerge``: bool with get, set
+        abstract ``excludeByDefault``: bool with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IThinGlowLayerOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIThinGlowLayerOptions =
+        inherit PartialIThinEffectLayerOptions
+        abstract ``blurKernelSize``: float option with get, set
+        abstract ``ldrMerge``: bool option with get, set
+        abstract ``excludeByDefault``: bool option with get, set
+
+    /// @babylonjs/core/Layers/thinHighlightLayer
+    [<AllowNullLiteral>]
+    type IThinHighlightLayerOptions =
+        inherit IThinEffectLayerOptions
+        abstract ``blurTextureSizeRatio``: float option with get, set
+        abstract ``blurVerticalSize``: float option with get, set
+        abstract ``blurHorizontalSize``: float option with get, set
+        abstract ``isStroke``: bool option with get, set
+        abstract ``forceGLSL``: bool option with get, set
+
+    /// Exact required-property projection used by Required<IThinHighlightLayerOptions> signatures.
+    [<AllowNullLiteral>]
+    type RequiredIThinHighlightLayerOptions =
+        inherit RequiredIThinEffectLayerOptions
+        abstract ``blurTextureSizeRatio``: float with get, set
+        abstract ``blurVerticalSize``: float with get, set
+        abstract ``blurHorizontalSize``: float with get, set
+        abstract ``isStroke``: bool with get, set
+        abstract ``forceGLSL``: bool with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IThinHighlightLayerOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIThinHighlightLayerOptions =
+        inherit PartialIThinEffectLayerOptions
+        abstract ``blurTextureSizeRatio``: float option with get, set
+        abstract ``blurVerticalSize``: float option with get, set
+        abstract ``blurHorizontalSize``: float option with get, set
+        abstract ``isStroke``: bool option with get, set
+        abstract ``forceGLSL``: bool option with get, set
+
+    /// @babylonjs/core/Layers/thinSelectionOutlineLayer
+    [<AllowNullLiteral>]
+    type IThinSelectionOutlineLayerOptions =
+        inherit IThinEffectLayerOptions
+        abstract ``forceGLSL``: bool option with get, set
+        abstract ``storeCameraSpaceZ``: bool option with get, set
+        abstract ``outlineMethod``: float option with get, set
+        abstract ``useDepthOcclusion``: bool option with get, set
+
+    /// Exact required-property projection used by Required<IThinSelectionOutlineLayerOptions> signatures.
+    [<AllowNullLiteral>]
+    type RequiredIThinSelectionOutlineLayerOptions =
+        inherit RequiredIThinEffectLayerOptions
+        abstract ``forceGLSL``: bool with get, set
+        abstract ``storeCameraSpaceZ``: bool with get, set
+        abstract ``outlineMethod``: float with get, set
+        abstract ``useDepthOcclusion``: bool with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IThinSelectionOutlineLayerOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIThinSelectionOutlineLayerOptions =
+        inherit PartialIThinEffectLayerOptions
+        abstract ``forceGLSL``: bool option with get, set
+        abstract ``storeCameraSpaceZ``: bool option with get, set
+        abstract ``outlineMethod``: float option with get, set
+        abstract ``useDepthOcclusion``: bool option with get, set
+
+    /// @babylonjs/core/XR/webXRRenderTargetTextureProvider
+    [<AllowNullLiteral>]
+    type IWebXRRenderTargetTextureProvider =
+        inherit IDisposable
+        abstract ``trySetViewportForView``: ``viewport``: BabylonjsBindings.SimpleClasses.Viewport * ``view``: BrowserXRView -> bool
+        abstract ``getRenderTargetTextureForEye``: ``eye``: BrowserXREye -> BabylonjsBindings.SimpleClasses.RenderTargetTexture option
+        abstract ``getRenderTargetTextureForView``: ``view``: BrowserXRView -> BabylonjsBindings.SimpleClasses.RenderTargetTexture option
+
+    /// @babylonjs/core/Gizmos/rotationGizmo
+    [<AllowNullLiteral>]
+    type RotationGizmoOptions =
+        abstract ``updateScale``: bool option with get, set
+        abstract ``xOptions``: PlaneRotationGizmoOptions option with get, set
+        abstract ``yOptions``: PlaneRotationGizmoOptions option with get, set
+        abstract ``zOptions``: PlaneRotationGizmoOptions option with get, set
+        abstract ``additionalTransformNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+
+    /// Function-valued SpringJointData.forceApplicationCallback property.
+    [<AllowNullLiteral>]
+    type SpringJointDataForceApplicationCallbackCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/Physics/v1/physicsJoint
+    [<AllowNullLiteral>]
+    type SpringJointData =
+        inherit PhysicsJointData
+        abstract ``length``: float with get, set
+        abstract ``stiffness``: float with get, set
+        abstract ``damping``: float with get, set
+        abstract ``forceApplicationCallback``: SpringJointDataForceApplicationCallbackCallback with get, set
+
+    /// @babylonjs/core/PostProcesses/thinCircleOfConfusionPostProcess
+    [<AllowNullLiteral>]
+    type ThinCircleOfConfusionPostProcessOptions =
+        inherit EffectWrapperCreationOptions
+        abstract ``depthNotNormalized``: bool option with get, set
+
+    /// @babylonjs/core/PostProcesses/thinImageProcessingPostProcess
+    [<AllowNullLiteral>]
+    type ThinImageProcessingPostProcessOptions =
+        inherit EffectWrapperCreationOptions
+        abstract ``imageProcessingConfiguration``: BabylonjsBindings.SimpleClasses.ImageProcessingConfiguration option with get, set
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene option with get, set
+
+    /// Exact required non-null projection used by Required<NonNullableFields<ThinImageProcessingPostProcessOptions>> signatures.
+    [<AllowNullLiteral>]
+    type RequiredNonNullableThinImageProcessingPostProcessOptions =
+        inherit RequiredNonNullableEffectWrapperCreationOptions
+        abstract ``imageProcessingConfiguration``: BabylonjsBindings.SimpleClasses.ImageProcessingConfiguration with get, set
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene with get, set
+
+    /// @babylonjs/core/PostProcesses/thinTonemapPostProcess
+    [<AllowNullLiteral>]
+    type ThinTonemapPostProcessOptions =
+        inherit EffectWrapperCreationOptions
+        abstract ``operator``: BabylonjsBindings.Enums.TonemappingOperator option with get, set
+        abstract ``exposureAdjustment``: float option with get, set
+
+    /// @babylonjs/core/Materials/Textures/Procedurals/customProceduralTexture
+    [<AllowNullLiteral>]
+    type ICustomProceduralTextureCreationOptions =
+        inherit IProceduralTextureCreationOptions
+        abstract ``skipJson``: bool option with get, set
+
+    /// @babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IGLTFNode =
+        inherit IGLTFChildRootProperty
+        abstract ``camera``: string option with get, set
+        abstract ``children``: ResizeArray<string> with get, set
+        abstract ``skin``: string option with get, set
+        abstract ``jointName``: string option with get, set
+        abstract ``light``: string option with get, set
+        abstract ``matrix``: ResizeArray<float> with get, set
+        abstract ``mesh``: string option with get, set
+        abstract ``meshes``: ResizeArray<string> option with get, set
+        abstract ``rotation``: ResizeArray<float> option with get, set
+        abstract ``scale``: ResizeArray<float> option with get, set
+        abstract ``translation``: ResizeArray<float> option with get, set
+        abstract ``babylonNode``: BabylonjsBindings.SimpleClasses.Node option with get, set
+
+    /// @babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IGLTFSkins =
+        inherit IGLTFChildRootProperty
+        abstract ``bindShapeMatrix``: ResizeArray<float> with get, set
+        abstract ``inverseBindMatrices``: string with get, set
+        abstract ``jointNames``: ResizeArray<string> with get, set
+        abstract ``babylonSkeleton``: BabylonjsBindings.SimpleClasses.Skeleton option with get, set
+
+    /// @babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IGLTFTexture =
+        inherit IGLTFChildRootProperty
+        abstract ``sampler``: string with get, set
+        abstract ``source``: string with get, set
+        abstract ``format``: BabylonjsBindings.Enums.ETextureFormat option with get, set
+        abstract ``internalFormat``: BabylonjsBindings.Enums.ETextureFormat option with get, set
+        abstract ``target``: float option with get, set
+        abstract ``type``: float option with get, set
+        abstract ``babylonTexture``: BabylonjsBindings.SimpleClasses.Texture option with get, set
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type ISceneLoaderAsyncResult =
+        abstract ``meshes``: ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh> with get
+        abstract ``particleSystems``: ResizeArray<IParticleSystem> with get
+        abstract ``skeletons``: ResizeArray<BabylonjsBindings.SimpleClasses.Skeleton> with get
+        abstract ``animationGroups``: ResizeArray<BabylonjsBindings.SimpleClasses.AnimationGroup> with get
+        abstract ``transformNodes``: ResizeArray<BabylonjsBindings.SimpleClasses.TransformNode> with get
+        abstract ``geometries``: ResizeArray<BabylonjsBindings.SimpleClasses.Geometry> with get
+        abstract ``lights``: ResizeArray<BabylonjsBindings.SimpleClasses.Light> with get
+        abstract ``spriteManagers``: ResizeArray<ISpriteManager> with get
+
+    /// Function-valued ISceneLoaderPluginBase.loadFile property.
+    [<AllowNullLiteral>]
+    type ISceneLoaderPluginBaseLoadFileCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``fileOrUrl``: U3<Browser.Types.File, string, JS.ArrayBufferView> * ``rootUrl``: string * ``onSuccess``: System.Action<obj, string option> * ?``onProgress``: System.Action<ISceneLoaderProgressEvent> * ?``useArrayBuffer``: bool * ?``onError``: System.Action<BabylonjsBindings.SimpleClasses.WebRequest option, BabylonjsBindings.SimpleClasses.LoadFileError option> * ?``name``: string -> IFileRequest option
+
+    /// Function-valued ISceneLoaderPluginBase.directLoad property.
+    [<AllowNullLiteral>]
+    type ISceneLoaderPluginBaseDirectLoadCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``data``: string -> U2<obj, JS.Promise<obj>>
+
+    /// Function-valued ISceneLoaderPluginBase.rewriteRootURL property.
+    [<AllowNullLiteral>]
+    type ISceneLoaderPluginBaseRewriteRootURLCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``rootUrl``: string * ?``responseURL``: string -> string
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type ISceneLoaderPluginBase =
+        inherit ISceneLoaderPluginMetadata
+        abstract ``loadFile``: ISceneLoaderPluginBaseLoadFileCallback option with get, set
+        abstract ``directLoad``: ISceneLoaderPluginBaseDirectLoadCallback option with get, set
+        abstract ``rewriteRootURL``: ISceneLoaderPluginBaseRewriteRootURLCallback option with get, set

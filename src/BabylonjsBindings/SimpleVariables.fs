@@ -4605,3 +4605,216 @@ module SimpleVariables =
     /// @babylonjs/core/Misc/fileTools.pure
     [<Import("FileToolsOptions", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ``FileToolsOptions``: VariableShape_FileToolsOptions = jsNative
+
+    /// Inline object shape of BoxBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_BoxBuilder =
+        abstract ``CreateBox``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateBox with get, set
+
+    /// @babylonjs/core/Meshes/Builders/boxBuilder.pure
+    [<Import("BoxBuilder", "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js")>]
+    let ``BoxBuilder``: VariableShape_BoxBuilder = jsNative
+
+    /// Inline object shape of BRDFTextureTools.
+    [<AllowNullLiteral>]
+    type VariableShape_BRDFTextureTools =
+        abstract ``GetEnvironmentBRDFTexture``: System.Func<BabylonjsBindings.SimpleClasses.Scene, BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+        abstract ``GetEnvironmentFuzzBRDFTexture``: System.Func<BabylonjsBindings.SimpleClasses.Scene, BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+        abstract ``GetOpenPBREnvironmentBRDFTexture``: System.Func<BabylonjsBindings.SimpleClasses.Scene, BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+
+    /// @babylonjs/core/Misc/brdfTextureTools
+    [<Import("BRDFTextureTools", "@babylonjs/core/Misc/brdfTextureTools.js")>]
+    let ``BRDFTextureTools``: VariableShape_BRDFTextureTools = jsNative
+
+    /// Inline object shape of CapsuleBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_CapsuleBuilder =
+        abstract ``CreateCapsule``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCapsule with get, set
+
+    /// @babylonjs/core/Meshes/Builders/capsuleBuilder.pure
+    [<Import("CapsuleBuilder", "@babylonjs/core/Meshes/Builders/capsuleBuilder.pure.js")>]
+    let ``CapsuleBuilder``: VariableShape_CapsuleBuilder = jsNative
+
+    /// Inline object shape of CylinderBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_CylinderBuilder =
+        abstract ``CreateCylinder``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCylinder with get, set
+
+    /// @babylonjs/core/Meshes/Builders/cylinderBuilder.pure
+    [<Import("CylinderBuilder", "@babylonjs/core/Meshes/Builders/cylinderBuilder.pure.js")>]
+    let ``CylinderBuilder``: VariableShape_CylinderBuilder = jsNative
+
+    /// Inline object shape of DecalBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_DecalBuilder =
+        abstract ``CreateDecal``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDecal with get, set
+
+    /// @babylonjs/core/Meshes/Builders/decalBuilder.pure
+    [<Import("DecalBuilder", "@babylonjs/core/Meshes/Builders/decalBuilder.pure.js")>]
+    let ``DecalBuilder``: VariableShape_DecalBuilder = jsNative
+
+    /// Inline object shape of DiscBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_DiscBuilder =
+        abstract ``CreateDisc``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDisc with get, set
+
+    /// @babylonjs/core/Meshes/Builders/discBuilder.pure
+    [<Import("DiscBuilder", "@babylonjs/core/Meshes/Builders/discBuilder.pure.js")>]
+    let ``DiscBuilder``: VariableShape_DiscBuilder = jsNative
+
+    /// Callable shape of FindMaterial.
+    [<AllowNullLiteral>]
+    type VariableFunction_FindMaterial =
+        [<Emit("$0($1...)")>] abstract Invoke: ``materialId``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.Material option
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("FindMaterial", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``FindMaterial``: VariableFunction_FindMaterial = jsNative
+
+    /// Inline object shape of FloatingOriginCurrentScene.
+    [<AllowNullLiteral>]
+    type VariableShape_FloatingOriginCurrentScene =
+        abstract ``getScene``: System.Func<BabylonjsBindings.SimpleClasses.Scene option> with get, set
+        abstract ``eyeAtCamera``: bool with get, set
+
+    /// @babylonjs/core/Materials/floatingOriginMatrixOverrides
+    [<Import("FloatingOriginCurrentScene", "@babylonjs/core/Materials/floatingOriginMatrixOverrides.js")>]
+    let ``FloatingOriginCurrentScene``: VariableShape_FloatingOriginCurrentScene = jsNative
+
+    /// Callable shape of GetEnvironmentBRDFTexture.
+    [<AllowNullLiteral>]
+    type VariableFunction_GetEnvironmentBRDFTexture =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.BaseTexture
+
+    /// @babylonjs/core/Misc/brdfTextureTools
+    [<Import("GetEnvironmentBRDFTexture", "@babylonjs/core/Misc/brdfTextureTools.js")>]
+    let ``GetEnvironmentBRDFTexture``: VariableFunction_GetEnvironmentBRDFTexture = jsNative
+
+    /// Callable shape of GetEnvironmentFuzzBRDFTexture.
+    [<AllowNullLiteral>]
+    type VariableFunction_GetEnvironmentFuzzBRDFTexture =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.BaseTexture
+
+    /// @babylonjs/core/Misc/brdfTextureTools
+    [<Import("GetEnvironmentFuzzBRDFTexture", "@babylonjs/core/Misc/brdfTextureTools.js")>]
+    let ``GetEnvironmentFuzzBRDFTexture``: VariableFunction_GetEnvironmentFuzzBRDFTexture = jsNative
+
+    /// Callable shape of GetInternalFormatFromBasisFormat.
+    [<AllowNullLiteral>]
+    type VariableFunction_GetInternalFormatFromBasisFormat =
+        [<Emit("$0($1...)")>] abstract Invoke: ``basisFormat``: float * ``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine -> float
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<Import("GetInternalFormatFromBasisFormat", "@babylonjs/core/Misc/basis.pure.js")>]
+    let ``GetInternalFormatFromBasisFormat``: VariableFunction_GetInternalFormatFromBasisFormat = jsNative
+
+    /// Callable shape of GetOpenPBREnvironmentBRDFTexture.
+    [<AllowNullLiteral>]
+    type VariableFunction_GetOpenPBREnvironmentBRDFTexture =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.BaseTexture
+
+    /// @babylonjs/core/Misc/brdfTextureTools
+    [<Import("GetOpenPBREnvironmentBRDFTexture", "@babylonjs/core/Misc/brdfTextureTools.js")>]
+    let ``GetOpenPBREnvironmentBRDFTexture``: VariableFunction_GetOpenPBREnvironmentBRDFTexture = jsNative
+
+    /// Inline object shape of HemisphereBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_HemisphereBuilder =
+        abstract ``CreateHemisphere``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateHemisphere with get, set
+
+    /// @babylonjs/core/Meshes/Builders/hemisphereBuilder.pure
+    [<Import("HemisphereBuilder", "@babylonjs/core/Meshes/Builders/hemisphereBuilder.pure.js")>]
+    let ``HemisphereBuilder``: VariableShape_HemisphereBuilder = jsNative
+
+    /// Inline object shape of IcoSphereBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_IcoSphereBuilder =
+        abstract ``CreateIcoSphere``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateIcoSphere with get, set
+
+    /// @babylonjs/core/Meshes/Builders/icoSphereBuilder.pure
+    [<Import("IcoSphereBuilder", "@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure.js")>]
+    let ``IcoSphereBuilder``: VariableShape_IcoSphereBuilder = jsNative
+
+    /// Inline object shape of LatheBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_LatheBuilder =
+        abstract ``CreateLathe``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLathe with get, set
+
+    /// @babylonjs/core/Meshes/Builders/latheBuilder.pure
+    [<Import("LatheBuilder", "@babylonjs/core/Meshes/Builders/latheBuilder.pure.js")>]
+    let ``LatheBuilder``: VariableShape_LatheBuilder = jsNative
+
+    /// Inline object shape of LinesBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_LinesBuilder =
+        abstract ``CreateDashedLines``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDashedLines with get, set
+        abstract ``CreateLineSystem``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLineSystem with get, set
+        abstract ``CreateLines``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLines with get, set
+
+    /// @babylonjs/core/Meshes/Builders/linesBuilder.pure
+    [<Import("LinesBuilder", "@babylonjs/core/Meshes/Builders/linesBuilder.pure.js")>]
+    let ``LinesBuilder``: VariableShape_LinesBuilder = jsNative
+
+    /// Callable shape of LoadDetailLevels.
+    [<AllowNullLiteral>]
+    type VariableFunction_LoadDetailLevels =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh -> unit
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("LoadDetailLevels", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``LoadDetailLevels``: VariableFunction_LoadDetailLevels = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeMatrix", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeMatrix``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Matrix> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeMatrix2D", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeMatrix2D``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.FlowGraphMatrix2D> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeMatrix3D", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeMatrix3D``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.FlowGraphMatrix3D> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeQuaternion", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeQuaternion``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Quaternion> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeVector2", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeVector2``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Vector2> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeVector3", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeVector3``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Vector3> = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphRichTypes.pure
+    [<Import("RichTypeVector4", "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js")>]
+    let ``RichTypeVector4``: BabylonjsBindings.SimpleClasses.RichType<BabylonjsBindings.SimpleClasses.Vector4> = jsNative
+
+    /// Inline object shape of TempMaterialIndexContainer.
+    [<AllowNullLiteral>]
+    type VariableShape_TempMaterialIndexContainer =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleClasses.Material with get, set
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("TempMaterialIndexContainer", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``TempMaterialIndexContainer``: VariableShape_TempMaterialIndexContainer = jsNative
+
+    /// Inline object shape of TempMorphTargetManagerIndexContainer.
+    [<AllowNullLiteral>]
+    type VariableShape_TempMorphTargetManagerIndexContainer =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleClasses.MorphTargetManager with get, set
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("TempMorphTargetManagerIndexContainer", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``TempMorphTargetManagerIndexContainer``: VariableShape_TempMorphTargetManagerIndexContainer = jsNative
+
+    /// Inline object shape of TempSkeletonIndexContainer.
+    [<AllowNullLiteral>]
+    type VariableShape_TempSkeletonIndexContainer =
+        [<EmitIndexer>] abstract Item: ``key``: float -> BabylonjsBindings.SimpleClasses.Skeleton with get, set
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("TempSkeletonIndexContainer", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``TempSkeletonIndexContainer``: VariableShape_TempSkeletonIndexContainer = jsNative
