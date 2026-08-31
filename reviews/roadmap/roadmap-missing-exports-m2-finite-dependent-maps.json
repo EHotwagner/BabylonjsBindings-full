@@ -12,10 +12,11 @@
     "roadmap-evidence"
   ],
   "initial_verdict": "changes-required",
-  "repair_rounds": 1,
+  "repair_rounds": 2,
   "reviewed_commits": [
     "d5f16acf705797523d5c7ee16ad0a589d8dcc082",
-    "12cf9070ea8067007757afb7d4cea7a134c86f5e"
+    "12cf9070ea8067007757afb7d4cea7a134c86f5e",
+    "30513aa439f16a1212de9ce4c7f49992f0f7f0dd"
   ],
   "findings": [
     {
@@ -28,11 +29,14 @@
         "src/BabylonjsBindings/m2-finite-dependent-map-coverage-manifest.json classifies both aliases as typed, and coverage-and-drift.json:36303-36321 describes them as reviewed finite dependent-map projections, despite the missing mapping semantics.",
         "tests/BabylonjsBindings.CompileTests/Program.fs:135-164 tests manager overloads but contains no direct positive or negative use of either Resolve alias, so the incorrect aliases remain green."
       ],
-      "disposition": "follow-up",
+      "disposition": "resolved",
       "resolution_evidence": [
         "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must replace or accurately specialize both aliases and add direct compile-time correlation tests before they can remain typed.",
         "Round-1 repair 12cf9070ea8067007757afb7d4cea7a134c86f5e adds 22 result and 22 option singleton aliases plus a negative singleton test, but src/BabylonjsBindings/M2FiniteDependentMaps.fs:350-354 still exposes the coverage-manifest symbols ResolveWebXRFeature and ResolveWebXRFeatureOptions as non-generic broad U8 unions. Unlike the locked conditional aliases at node_modules/@babylonjs/core/XR/webXRFeaturesManager.d.ts:287-293, those named exports accept no feature discriminator and therefore cannot preserve feature-to-result/options correlation.",
-        "scripts/generate-m2-finite-dependent-maps.mjs:84-89 checks only the newly added singleton alias text, while src/BabylonjsBindings/m2-finite-dependent-map-coverage-manifest.json:157-172 continues to classify the broad base aliases as the typed upstream exports. tests/negative/xr-resolve-mismatch/Program.fs tests ResolveWebXRFeatureAnchorSystem, not ResolveWebXRFeature itself."
+        "scripts/generate-m2-finite-dependent-maps.mjs:84-89 checks only the newly added singleton alias text, while src/BabylonjsBindings/m2-finite-dependent-map-coverage-manifest.json:157-172 continues to classify the broad base aliases as the typed upstream exports. tests/negative/xr-resolve-mismatch/Program.fs tests ResolveWebXRFeatureAnchorSystem, not ResolveWebXRFeature itself.",
+        "Resolved at 30513aa439f16a1212de9ce4c7f49992f0f7f0dd: src/BabylonjsBindings/M2FiniteDependentMaps.fs:359-407 replaces the broad coverage-named unions with finite Resolve overload interfaces containing all 22 discriminator-to-result and discriminator-to-options rows, while retaining the 44 named singleton views.",
+        "tests/BabylonjsBindings.CompileTests/Program.fs:166-167 directly compiles a result and an options call through the coverage-named resolver interfaces; tests/negative/xr-resolve-mismatch/Program.fs directly rejects a wrong result assignment through ResolveWebXRFeature.",
+        "scripts/generate-m2-finite-dependent-maps.mjs:91-98 ties every locked WebXR declaration row to both maintained resolver overloads and singleton aliases; independent `npm run test:m2:trx` passed the manifest check, positive .NET/Fable compile, and all negative fixtures at the repaired head."
       ]
     },
     {
@@ -45,12 +49,15 @@
         "FR-004 in work/004-m2-finite-dependent-maps/spec.md:68 requires the six downstream XR/VR classes to retain exact members. Yet WebXRExperienceHelper omits enterXRAsync and spectator methods present at node_modules/@babylonjs/core/XR/webXRExperienceHelper.d.ts:76-101; WebXRDefaultExperience omits renderTarget present at node_modules/@babylonjs/core/XR/webXRDefaultExperience.d.ts:105-133; and HandConstraintBehavior omits handedness, lerpTime, name, enable, disable, and init present at node_modules/@babylonjs/core/Behaviors/Meshes/handConstraintBehavior.d.ts:105-136.",
         "The maintained M2 manifest generator at scripts/generate-m2-finite-dependent-maps.mjs:78-83 validates only token presence and overload counts, not locked public-member equality, so coverage can advance to 4,279 while these class shapes remain partial."
       ],
-      "disposition": "follow-up",
+      "disposition": "resolved",
       "resolution_evidence": [
         "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must reconcile every one of the 27 promoted exports against its locked public declaration, expose required runtime/static surfaces, and add a declaration-linked structural check before the coverage promotion is truthful.",
         "Round-1 repair 12cf9070ea8067007757afb7d4cea7a134c86f5e adds the cited DeviceSource/FlowGraph constructors, FlowGraph members, and downstream XR/VR members, but exactness remains false for promoted FlowGraph shapes. In particular, locked node_modules/@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure.d.ts:10-19 declares IFlowGraphSetPropertyBlockConfiguration without a base interface, while src/BabylonjsBindings/M2FiniteDependentMaps.fs:207-211 adds IFlowGraphBlockConfiguration (and its open string indexer) as a base.",
         "The locked property-block types use discriminator O and AssetType<O> at node_modules/@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure.d.ts:10-49 and node_modules/@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure.d.ts:10-51, whereas src/BabylonjsBindings/M2FiniteDependentMaps.fs:183-226 substitutes an unconstrained asset type directly. This does not preserve the discriminator-to-asset relationship required by FR-003.",
-        "The added generator assertions at scripts/generate-m2-finite-dependent-maps.mjs:84-92 check singleton text and six runtime-import names only; they still do not compare locked public member/signature structures, so the exact-typed coverage claim can remain green with these observable mismatches."
+        "The added generator assertions at scripts/generate-m2-finite-dependent-maps.mjs:84-92 check singleton text and six runtime-import names only; they still do not compare locked public member/signature structures, so the exact-typed coverage claim can remain green with these observable mismatches.",
+        "Resolved at 30513aa439f16a1212de9ce4c7f49992f0f7f0dd: src/BabylonjsBindings/M2FiniteDependentMaps.fs:183-238 removes the unauthorized set-configuration base, carries discriminator and resolved asset parameters together, and exposes six exact constructor overloads for both get-property and set-property blocks; FlowGraphCachedOperationBlock now receives the locked property output type rather than an extra option layer.",
+        "scripts/generate-m2-finite-dependent-maps.mjs:65-69 reads the locked get/set property declarations and asserts AssetType<O> plus the absence of a set-configuration base; lines 99-106 then require every one of the six maintained discriminator/asset constructor signatures and reject the unauthorized base in maintained source.",
+        "tests/BabylonjsBindings.CompileTests/Program.fs:130-131 compiles the repaired Mesh and Material specializations, and tests/negative/flow-block-mismatch/Program.fs rejects a Mesh-discriminator configuration assigned to an Animation specialization. Independent `npm run test:m2:trx` passed the declaration-linked check, maintained/Fable builds, eight negative fixtures, exact imports, Node, Chromium, clean packed Chromium consumer, coverage, drift, and analysis gates."
       ]
     },
     {
@@ -89,12 +96,9 @@
     }
   ],
   "confirmation": {
-    "reviewed_commit": "12cf9070ea8067007757afb7d4cea7a134c86f5e",
-    "verdict": "changes-required",
-    "unresolved_blocker_major": [
-      "M2-001",
-      "M2-002"
-    ]
+    "reviewed_commit": "30513aa439f16a1212de9ce4c7f49992f0f7f0dd",
+    "verdict": "pass",
+    "unresolved_blocker_major": []
   },
   "human_escalation": null,
   "game_functionality": false,
