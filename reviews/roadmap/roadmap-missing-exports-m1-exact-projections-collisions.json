@@ -1,0 +1,75 @@
+{
+  "schema_version": 3,
+  "cycle_id": "roadmap-missing-exports-m1-exact-projections-collisions",
+  "milestone": "M1 — exact existing projections and collisions",
+  "critic": "fresh-m1-independent-critic-20260831",
+  "initial_reviewed_commit": "77ce6b04809cecc76b196bf275efc055490cd23a",
+  "scope": [
+    "requirements",
+    "diff",
+    "tests",
+    "architecture",
+    "roadmap-evidence"
+  ],
+  "initial_verdict": "changes-required",
+  "repair_rounds": 1,
+  "reviewed_commits": [
+    "77ce6b04809cecc76b196bf275efc055490cd23a",
+    "bc671210a3d7067a94752681403f1db45b7ff6e4"
+  ],
+  "findings": [
+    {
+      "id": "M1-001",
+      "severity": "major",
+      "summary": "Defaulted generic forms and the one-argument glTF specialization were absent from the maintained public surface.",
+      "evidence": [
+        "Locked declarations: node_modules/@babylonjs/core/Cameras/inputMapper.d.ts:52-129, node_modules/@babylonjs/core/types.d.ts:183-193, and node_modules/@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.d.ts:40-43 declare the defaulted generic forms.",
+        "Initial head 77ce6b04809cecc76b196bf275efc055490cd23a: src/BabylonjsBindings/SimpleInterfaces.fs exposed only arity-one camera/typed-array aliases and arity-zero/arity-two IGLTFObjectModelTreeNodesObject aliases."
+      ],
+      "disposition": "resolved",
+      "resolution_evidence": [
+        "Repaired head bc671210a3d7067a94752681403f1db45b7ff6e4: src/BabylonjsBindings/SimpleInterfaces.fs:4623-4633 adds all five string-default camera aliases, lines 8852-8853 add the TypedArrayConstructor default, and lines 10589-10590 add the one- and zero-argument glTF node-tree specializations.",
+        "PATH=/home/developer/.dotnet:$PATH bash build.sh passed at bc671210a3d7067a94752681403f1db45b7ff6e4 with zero build warnings/errors; compile fixtures cover every added arity in tests/BabylonjsBindings.CompileTests/Program.fs:113-121,134-136."
+      ]
+    },
+    {
+      "id": "M1-002",
+      "severity": "major",
+      "summary": "The initial evidence claimed locked-declaration structural-digest equality without a declaration-linked structural manifest or check.",
+      "evidence": [
+        "Initial head 77ce6b04809cecc76b196bf275efc055490cd23a: scripts/check-m1-exact-projections.mjs:1-56 read coverage and maintained source snippets but did not read declaration-lock.json or record structural digests.",
+        "work/003-m1-exact-projections-collisions/spec.md:57 and plan.md:24,29,49 require structural-digest equality and a deterministic exact-projection manifest."
+      ],
+      "disposition": "resolved",
+      "resolution_evidence": [
+        "Repaired head bc671210a3d7067a94752681403f1db45b7ff6e4 adds analysis/m1-exact-projection-manifest.json with eight reviewed semantic shapes, locked declaration/support snippets, and matching structural digests.",
+        "npm run check:m1-exact-projections passed at bc671210a3d7067a94752681403f1db45b7ff6e4 and reported exactExistingProjections=8, lockedDeclarationsVerified=8, structuralDigestMatches=8; scripts/check-m1-exact-projections.mjs:33-49 verifies full declaration-file SHA-256 values against declaration-lock.json and each reviewed semantic-shape digest."
+      ]
+    },
+    {
+      "id": "M1-003",
+      "severity": "major",
+      "summary": "Initial typed-array evidence did not compile or structurally validate every maintained constructor-to-return overload.",
+      "evidence": [
+        "Initial head 77ce6b04809cecc76b196bf275efc055490cd23a: tests/BabylonjsBindings.CompileTests/Program.fs compiled only Int8, Float32, and BigInt64 calls; runtime/node/smoke.mjs exercised Babylon JavaScript imports directly; scripts/check-m1-exact-projections.mjs only counted eleven method names.",
+        "work/003-m1-exact-projections-collisions/spec.md:59,69 requires constructor-to-return correlation for every locked typed-array alternative."
+      ],
+      "disposition": "resolved",
+      "resolution_evidence": [
+        "Repaired head bc671210a3d7067a94752681403f1db45b7ff6e4: tests/BabylonjsBindings.CompileTests/Program.fs:122-132 compiles exact calls for all eleven alternatives.",
+        "scripts/check-m1-exact-projections.mjs:65-75 now asserts each concrete constructor parameter and return-type pair; npm run check:m1-exact-projections reported all eleven named correlations, and dotnet fable tests/BabylonjsBindings.CompileTests/BabylonjsBindings.CompileTests.fsproj --outDir /tmp/m1-critic-fable-dist-20260831 --noCache passed at the repaired head."
+      ]
+    }
+  ],
+  "confirmation": {
+    "reviewed_commit": "bc671210a3d7067a94752681403f1db45b7ff6e4",
+    "verdict": "pass",
+    "unresolved_blocker_major": []
+  },
+  "human_escalation": null,
+  "game_functionality": false,
+  "player_journeys": [],
+  "uncovered_functionality": [],
+  "entry_point_not_test_ownable": false,
+  "entry_point_not_test_ownable_reason": null
+}

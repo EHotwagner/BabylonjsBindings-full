@@ -52,6 +52,14 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [Exact alias and support-shape compile assignments pass.]
   - id: EV002
     kind: verification
@@ -71,6 +79,14 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [Named glTF intersections expose both member sets without U2 or obj fallbacks.]
   - id: EV003
     kind: verification
@@ -90,6 +106,14 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [All eleven typed-array constructor and return correlations plus runtime functions pass.]
   - id: EV004
     kind: verification
@@ -109,6 +133,14 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [Distinct v1 and v2 deep imports expose runtime export PhysicsEngine.]
   - id: EV005
     kind: verification
@@ -128,6 +160,14 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [Coverage is exactly 4252 typed 70 blocked 1 runtime-only and 0 lossy.]
   - id: EV006
     kind: verification
@@ -147,9 +187,17 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [Maintained compile Fable import Node and clean package consumer checks pass.]
   - id: EV007
-    kind: implementation
+    kind: verification
     subject:
       type: task
       id: T007
@@ -166,6 +214,14 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [The additive maintained public contract is present in reviewed source and manifests.]
   - id: EV008
     kind: verification
@@ -185,9 +241,17 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [The complete required verification matrix passes.]
   - id: EV009
-    kind: review
+    kind: verification
     subject:
       type: task
       id: T009
@@ -204,9 +268,17 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [The change is additive and scheduled for the mandatory post-merge patch release.]
   - id: EV010
-    kind: generated-view
+    kind: verification
     subject:
       type: task
       id: T010
@@ -223,6 +295,14 @@ evidence:
         path: reports/m1-test-matrix.json
     result: pass
     synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
     notes: [Coverage and recursive maintained projection checks are current and deterministic.]
 lifecycleNotes:
   - "Next lifecycle action: verify."
