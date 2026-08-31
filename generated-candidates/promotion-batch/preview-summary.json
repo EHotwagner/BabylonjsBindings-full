@@ -3,24 +3,24 @@
   "batchSize": 400,
   "categories": {
     "alias": {
-      "selectedExports": 1,
-      "selectedChunks": 1
+      "selectedExports": 7,
+      "selectedChunks": 7
     },
     "interface": {
-      "selectedExports": 0,
-      "selectedChunks": 2
+      "selectedExports": 84,
+      "selectedChunks": 134
     },
     "class": {
-      "selectedExports": 324,
-      "selectedChunks": 1043
+      "selectedExports": 154,
+      "selectedChunks": 525
     },
     "function": {
-      "selectedExports": 75,
-      "selectedChunks": 171
+      "selectedExports": 124,
+      "selectedChunks": 273
     },
     "variable": {
-      "selectedExports": 0,
-      "selectedChunks": 0
+      "selectedExports": 27,
+      "selectedChunks": 47
     }
   }
 }

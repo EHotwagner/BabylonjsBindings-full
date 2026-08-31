@@ -6794,3 +6794,863 @@ module SimpleFunctions =
 
     [<Import("VertexBufferGetFloatData", "@babylonjs/core/Buffers/buffer.pure.js")>]
     let ``VertexBufferGetFloatData``: FunctionBinding_VertexBufferGetFloatData = jsNative
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject5a70f99fb156 =
+        abstract ``segments``: float option with get, set
+        abstract ``diameter``: float option with get, set
+        abstract ``sideOrientation``: float option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject029dbaa31b1f =
+        abstract ``m``: float option with get, set
+        abstract ``n``: float option with get, set
+        abstract ``size``: float option with get, set
+        abstract ``sizeX``: float option with get, set
+        abstract ``sizeY``: float option with get, set
+        abstract ``sizeZ``: float option with get, set
+        abstract ``faceUV``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector4> option with get, set
+        abstract ``faceColors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color4> option with get, set
+        abstract ``flat``: bool option with get, set
+        abstract ``updatable``: bool option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject36edd74b7156 =
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``normal``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``size``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``angle``: float option with get, set
+        abstract ``captureUVS``: bool option with get, set
+        abstract ``cullBackFaces``: bool option with get, set
+        abstract ``localMode``: bool option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject2fbc4c4d8792 =
+        abstract ``radius``: float option with get, set
+        abstract ``radiusX``: float option with get, set
+        abstract ``radiusY``: float option with get, set
+        abstract ``radiusZ``: float option with get, set
+        abstract ``flat``: bool option with get, set
+        abstract ``subdivisions``: float option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``updatable``: bool option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObjectcaccb8b55c1c =
+        abstract ``radius``: float option with get, set
+        abstract ``radiusX``: float option with get, set
+        abstract ``radiusY``: float option with get, set
+        abstract ``radiusZ``: float option with get, set
+        abstract ``flat``: bool option with get, set
+        abstract ``subdivisions``: float option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject4d5f5d599acf =
+        abstract ``width``: float option with get, set
+        abstract ``height``: float option with get, set
+        abstract ``subdivisions``: float option with get, set
+        abstract ``subdivisionsX``: float option with get, set
+        abstract ``subdivisionsY``: float option with get, set
+        abstract ``updatable``: bool option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject8a290422a0a1 =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``subdivisions``: float with get, set
+        abstract ``minHeight``: float with get, set
+        abstract ``maxHeight``: float with get, set
+        abstract ``colorFilter``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``buffer``: JS.Uint8Array with get, set
+        abstract ``bufferWidth``: float with get, set
+        abstract ``bufferHeight``: float with get, set
+        abstract ``alphaFilter``: float with get, set
+        abstract ``heightBuffer``: JS.Float32Array option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject1bef03141615 =
+        abstract ``size``: float option with get, set
+        abstract ``width``: float option with get, set
+        abstract ``height``: float option with get, set
+        abstract ``subdivisions``: float option with get, set
+        abstract ``subdivisionsX``: float option with get, set
+        abstract ``subdivisionsY``: float option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject6559ded43400 =
+        abstract ``shape``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``radius``: float option with get, set
+        abstract ``tessellation``: float option with get, set
+        abstract ``clip``: float option with get, set
+        abstract ``arc``: float option with get, set
+        abstract ``closed``: bool option with get, set
+        abstract ``updatable``: bool option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``cap``: float option with get, set
+        abstract ``invertUV``: bool option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject96930aa8f7f3 =
+        abstract ``height``: float option with get, set
+        abstract ``diameterTop``: float option with get, set
+        abstract ``diameterBottom``: float option with get, set
+        abstract ``diameter``: float option with get, set
+        abstract ``tessellation``: float option with get, set
+        abstract ``subdivisions``: float option with get, set
+        abstract ``arc``: float option with get, set
+        abstract ``faceColors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color4> option with get, set
+        abstract ``faceUV``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector4> option with get, set
+        abstract ``updatable``: bool option with get, set
+        abstract ``hasRings``: bool option with get, set
+        abstract ``enclose``: bool option with get, set
+        abstract ``cap``: float option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject8fab1a13729f =
+        abstract ``height``: float option with get, set
+        abstract ``diameterTop``: float option with get, set
+        abstract ``diameterBottom``: float option with get, set
+        abstract ``diameter``: float option with get, set
+        abstract ``tessellation``: float option with get, set
+        abstract ``subdivisions``: float option with get, set
+        abstract ``arc``: float option with get, set
+        abstract ``faceColors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color4> option with get, set
+        abstract ``faceUV``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector4> option with get, set
+        abstract ``hasRings``: bool option with get, set
+        abstract ``enclose``: bool option with get, set
+        abstract ``cap``: float option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObjectbf22c1ef7eb0 =
+        abstract ``size``: float option with get, set
+        abstract ``width``: float option with get, set
+        abstract ``height``: float option with get, set
+        abstract ``depth``: float option with get, set
+        abstract ``faceUV``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector4> option with get, set
+        abstract ``faceColors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color4> option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``wrap``: bool option with get, set
+        abstract ``topBaseAt``: float option with get, set
+        abstract ``bottomBaseAt``: float option with get, set
+        abstract ``updatable``: bool option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject14717b24e5d3 =
+        abstract ``size``: float option with get, set
+        abstract ``width``: float option with get, set
+        abstract ``height``: float option with get, set
+        abstract ``depth``: float option with get, set
+        abstract ``faceUV``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector4> option with get, set
+        abstract ``faceColors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color4> option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``wrap``: bool option with get, set
+        abstract ``topBaseAt``: float option with get, set
+        abstract ``bottomBaseAt``: float option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject8e7c653fb98e =
+        abstract ``radius``: float option with get, set
+        abstract ``tessellation``: float option with get, set
+        abstract ``arc``: float option with get, set
+        abstract ``updatable``: bool option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject5fee21ae3c23 =
+        abstract ``radius``: float option with get, set
+        abstract ``tessellation``: float option with get, set
+        abstract ``arc``: float option with get, set
+        abstract ``sideOrientation``: float option with get, set
+        abstract ``frontUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+        abstract ``backUVs``: BabylonjsBindings.SimpleClasses.Vector4 option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject9451621a062c =
+        abstract ``minimum``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``maximum``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject3e8c2fe26aed =
+        abstract ``points``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``dashSize``: float option with get, set
+        abstract ``gapSize``: float option with get, set
+        abstract ``dashNb``: float option with get, set
+        abstract ``updatable``: bool option with get, set
+        abstract ``instance``: BabylonjsBindings.SimpleClasses.LinesMesh option with get, set
+        abstract ``useVertexAlpha``: bool option with get, set
+        abstract ``material``: BabylonjsBindings.SimpleClasses.Material option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject34562330571c =
+        abstract ``points``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``updatable``: bool option with get, set
+        abstract ``instance``: BabylonjsBindings.SimpleClasses.LinesMesh option with get, set
+        abstract ``colors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color4> option with get, set
+        abstract ``useVertexAlpha``: bool option with get, set
+        abstract ``material``: BabylonjsBindings.SimpleClasses.Material option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject82a22c7dc681 =
+        abstract ``lines``: ResizeArray<ResizeArray<BabylonjsBindings.SimpleClasses.Vector3>> with get, set
+        abstract ``updatable``: bool option with get, set
+        abstract ``instance``: BabylonjsBindings.SimpleClasses.LinesMesh option with get, set
+        abstract ``colors``: ResizeArray<ResizeArray<BabylonjsBindings.SimpleClasses.Color4>> option with get, set
+        abstract ``useVertexAlpha``: bool option with get, set
+        abstract ``material``: BabylonjsBindings.SimpleClasses.Material option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject86adbb2a4654 =
+        abstract ``points``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``dashSize``: float option with get, set
+        abstract ``gapSize``: float option with get, set
+        abstract ``dashNb``: float option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObjectcd71b9b6bd32 =
+        abstract ``lines``: ResizeArray<ResizeArray<BabylonjsBindings.SimpleClasses.Vector3>> with get, set
+        abstract ``colors``: ResizeArray<ResizeArray<BabylonjsBindings.SimpleClasses.Color4>> option with get, set
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileParser.function
+    [<AllowNullLiteral>]
+    type FunctionBinding_AddIndividualParser =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``parser``: BabylonjsBindings.TypeAliases.IndividualBabylonFileParser -> unit
+
+    [<Import("AddIndividualParser", "@babylonjs/core/Loading/Plugins/babylonFileParser.function.js")>]
+    let ``AddIndividualParser``: FunctionBinding_AddIndividualParser = jsNative
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AddSmartAssetManagerCreatedObserver =
+        [<Emit("$0($1...)")>] abstract Invoke: ``callback``: System.Action<BabylonjsBindings.TypeAliases.SmartAssetManager> -> BabylonjsBindings.SimpleClasses.Observer<BabylonjsBindings.TypeAliases.SmartAssetManager>
+
+    [<Import("AddSmartAssetManagerCreatedObserver", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
+    let ``AddSmartAssetManagerCreatedObserver``: FunctionBinding_AddSmartAssetManagerCreatedObserver = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationAppendSerializedAnimations =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: BabylonjsBindings.SimpleInterfaces.IAnimatable * ``destination``: obj -> unit
+
+    [<Import("AnimationAppendSerializedAnimations", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationAppendSerializedAnimations``: FunctionBinding_AnimationAppendSerializedAnimations = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationCreateAndStartAnimation =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``target``: obj * ``targetProperty``: string * ``framePerSecond``: float * ``totalFrame``: float * ``from``: obj * ``to``: obj * ?``loopMode``: float * ?``easingFunction``: BabylonjsBindings.SimpleClasses.EasingFunction * ?``onAnimationEnd``: System.Action * ?``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.Animatable option
+
+    [<Import("AnimationCreateAndStartAnimation", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationCreateAndStartAnimation``: FunctionBinding_AnimationCreateAndStartAnimation = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationCreateAndStartHierarchyAnimation =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``node``: BabylonjsBindings.SimpleClasses.Node * ``directDescendantsOnly``: bool * ``targetProperty``: string * ``framePerSecond``: float * ``totalFrame``: float * ``from``: obj * ``to``: obj * ?``loopMode``: float * ?``easingFunction``: BabylonjsBindings.SimpleClasses.EasingFunction * ?``onAnimationEnd``: System.Action -> ResizeArray<BabylonjsBindings.SimpleClasses.Animatable> option
+
+    [<Import("AnimationCreateAndStartHierarchyAnimation", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationCreateAndStartHierarchyAnimation``: FunctionBinding_AnimationCreateAndStartHierarchyAnimation = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationCreateAnimation =
+        [<Emit("$0($1...)")>] abstract Invoke: ``property``: string * ``animationType``: float * ``framePerSecond``: float * ``easingFunction``: BabylonjsBindings.SimpleClasses.EasingFunction -> BabylonjsBindings.SimpleClasses.Animation
+
+    [<Import("AnimationCreateAnimation", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationCreateAnimation``: FunctionBinding_AnimationCreateAnimation = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationCreateMergeAndStartAnimation =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``node``: BabylonjsBindings.SimpleClasses.Node * ``targetProperty``: string * ``framePerSecond``: float * ``totalFrame``: float * ``from``: obj * ``to``: obj * ?``loopMode``: float * ?``easingFunction``: BabylonjsBindings.SimpleClasses.EasingFunction * ?``onAnimationEnd``: System.Action -> BabylonjsBindings.SimpleClasses.Animatable option
+
+    [<Import("AnimationCreateMergeAndStartAnimation", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationCreateMergeAndStartAnimation``: FunctionBinding_AnimationCreateMergeAndStartAnimation = jsNative
+
+    /// @babylonjs/core/Animations/animationGroup.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationGroupClipFrames =
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceAnimationGroup``: BabylonjsBindings.SimpleClasses.AnimationGroup * ``fromFrame``: float * ``toFrame``: float * ?``name``: string * ?``dontCloneAnimations``: bool -> BabylonjsBindings.SimpleClasses.AnimationGroup
+
+    [<Import("AnimationGroupClipFrames", "@babylonjs/core/Animations/animationGroup.pure.js")>]
+    let ``AnimationGroupClipFrames``: FunctionBinding_AnimationGroupClipFrames = jsNative
+
+    /// @babylonjs/core/Animations/animationGroup.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationGroupClipFramesInPlace =
+        [<Emit("$0($1...)")>] abstract Invoke: ``animationGroup``: BabylonjsBindings.SimpleClasses.AnimationGroup * ``fromFrame``: float * ``toFrame``: float * ?``dontCloneAnimations``: bool -> BabylonjsBindings.SimpleClasses.AnimationGroup
+
+    [<Import("AnimationGroupClipFramesInPlace", "@babylonjs/core/Animations/animationGroup.pure.js")>]
+    let ``AnimationGroupClipFramesInPlace``: FunctionBinding_AnimationGroupClipFramesInPlace = jsNative
+
+    /// @babylonjs/core/Animations/animationGroup.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationGroupClipInPlace =
+        [<Emit("$0($1...)")>] abstract Invoke: ``animationGroup``: BabylonjsBindings.SimpleClasses.AnimationGroup * ``start``: float * ``end``: float * ?``dontCloneAnimations``: bool * ?``useFrame``: bool -> BabylonjsBindings.SimpleClasses.AnimationGroup
+
+    [<Import("AnimationGroupClipInPlace", "@babylonjs/core/Animations/animationGroup.pure.js")>]
+    let ``AnimationGroupClipInPlace``: FunctionBinding_AnimationGroupClipInPlace = jsNative
+
+    /// @babylonjs/core/Animations/animationGroup.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationGroupClipKeys =
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceAnimationGroup``: BabylonjsBindings.SimpleClasses.AnimationGroup * ``fromKey``: float * ``toKey``: float * ?``name``: string * ?``dontCloneAnimations``: bool -> BabylonjsBindings.SimpleClasses.AnimationGroup
+
+    [<Import("AnimationGroupClipKeys", "@babylonjs/core/Animations/animationGroup.pure.js")>]
+    let ``AnimationGroupClipKeys``: FunctionBinding_AnimationGroupClipKeys = jsNative
+
+    /// @babylonjs/core/Animations/animationGroup.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationGroupClipKeysInPlace =
+        [<Emit("$0($1...)")>] abstract Invoke: ``animationGroup``: BabylonjsBindings.SimpleClasses.AnimationGroup * ``fromKey``: float * ``toKey``: float * ?``dontCloneAnimations``: bool -> BabylonjsBindings.SimpleClasses.AnimationGroup
+
+    [<Import("AnimationGroupClipKeysInPlace", "@babylonjs/core/Animations/animationGroup.pure.js")>]
+    let ``AnimationGroupClipKeysInPlace``: FunctionBinding_AnimationGroupClipKeysInPlace = jsNative
+
+    /// @babylonjs/core/Animations/animationGroup.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationGroupMakeAnimationAdditive =
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceAnimationGroup``: BabylonjsBindings.SimpleClasses.AnimationGroup * ``referenceFrame``: float * ?``range``: string * ?``cloneOriginal``: bool * ?``clonedName``: string -> BabylonjsBindings.SimpleClasses.AnimationGroup
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceAnimationGroup``: BabylonjsBindings.SimpleClasses.AnimationGroup * ?``options``: BabylonjsBindings.SimpleInterfaces.IMakeAnimationGroupAdditiveOptions -> BabylonjsBindings.SimpleClasses.AnimationGroup
+
+    [<Import("AnimationGroupMakeAnimationAdditive", "@babylonjs/core/Animations/animationGroup.pure.js")>]
+    let ``AnimationGroupMakeAnimationAdditive``: FunctionBinding_AnimationGroupMakeAnimationAdditive = jsNative
+
+    /// @babylonjs/core/Animations/animationGroup.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationGroupMergeAnimationGroups =
+        [<Emit("$0($1...)")>] abstract Invoke: ``animationGroups``: ResizeArray<BabylonjsBindings.SimpleClasses.AnimationGroup> * ?``disposeSource``: bool * ?``normalize``: bool * ?``weight``: float -> BabylonjsBindings.SimpleClasses.AnimationGroup option
+
+    [<Import("AnimationGroupMergeAnimationGroups", "@babylonjs/core/Animations/animationGroup.pure.js")>]
+    let ``AnimationGroupMergeAnimationGroups``: FunctionBinding_AnimationGroupMergeAnimationGroups = jsNative
+
+    /// @babylonjs/core/Animations/animationGroup.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationGroupParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``parsedAnimationGroup``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``targetLookup``: System.Func<obj, obj> -> BabylonjsBindings.SimpleClasses.AnimationGroup
+
+    [<Import("AnimationGroupParse", "@babylonjs/core/Animations/animationGroup.pure.js")>]
+    let ``AnimationGroupParse``: FunctionBinding_AnimationGroupParse = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationMakeAnimationAdditive =
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceAnimation``: BabylonjsBindings.SimpleClasses.Animation * ?``referenceFrame``: float * ?``range``: string * ?``cloneOriginal``: bool * ?``clonedName``: string -> BabylonjsBindings.SimpleClasses.Animation
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceAnimation``: BabylonjsBindings.SimpleClasses.Animation * ?``options``: BabylonjsBindings.SimpleInterfaces.IMakeAnimationAdditiveOptions -> BabylonjsBindings.SimpleClasses.Animation
+
+    [<Import("AnimationMakeAnimationAdditive", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationMakeAnimationAdditive``: FunctionBinding_AnimationMakeAnimationAdditive = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``parsedAnimation``: obj -> BabylonjsBindings.SimpleClasses.Animation
+
+    [<Import("AnimationParse", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationParse``: FunctionBinding_AnimationParse = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationParseFromFileAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string option * ``url``: string -> JS.Promise<U2<BabylonjsBindings.SimpleClasses.Animation, ResizeArray<BabylonjsBindings.SimpleClasses.Animation>>>
+
+    [<Import("AnimationParseFromFileAsync", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationParseFromFileAsync``: FunctionBinding_AnimationParseFromFileAsync = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AnimationTransitionTo =
+        [<Emit("$0($1...)")>] abstract Invoke: ``property``: string * ``targetValue``: obj * ``host``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``frameRate``: float * ``transition``: BabylonjsBindings.SimpleClasses.Animation * ``duration``: float * ?``onAnimationEnd``: System.Action option * ?``stopCurrent``: bool * ?``customKeys``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IAnimationKey> -> BabylonjsBindings.SimpleClasses.Animatable option
+
+    [<Import("AnimationTransitionTo", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationTransitionTo``: FunctionBinding_AnimationTransitionTo = jsNative
+
+    /// @babylonjs/core/Misc/textureTools
+    [<AllowNullLiteral>]
+    type FunctionBinding_ApplyPostProcess =
+        [<Emit("$0($1...)")>] abstract Invoke: ``postProcessName``: string * ``internalTexture``: BabylonjsBindings.SimpleClasses.InternalTexture * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``type``: float * ?``samplingMode``: float * ?``format``: float * ?``width``: float * ?``height``: float -> JS.Promise<BabylonjsBindings.SimpleClasses.InternalTexture>
+
+    [<Import("ApplyPostProcess", "@babylonjs/core/Misc/textureTools.js")>]
+    let ``ApplyPostProcess``: FunctionBinding_ApplyPostProcess = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_AreLightsTexturesReady =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh * ``maxSimultaneousLights``: float * ?``disableLighting``: bool -> bool
+
+    [<Import("AreLightsTexturesReady", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``AreLightsTexturesReady``: FunctionBinding_AreLightsTexturesReady = jsNative
+
+    /// @babylonjs/core/Materials/clipPlaneMaterialHelper
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindClipPlane =
+        [<Emit("$0($1...)")>] abstract Invoke: ``effect``: BabylonjsBindings.SimpleClasses.Effect * ``primaryHolder``: BabylonjsBindings.SimpleInterfaces.IClipPlanesHolder * ``secondaryHolder``: BabylonjsBindings.SimpleInterfaces.IClipPlanesHolder -> unit
+
+    [<Import("BindClipPlane", "@babylonjs/core/Materials/clipPlaneMaterialHelper.js")>]
+    let ``BindClipPlane``: FunctionBinding_BindClipPlane = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindFogParameters =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh * ?``effect``: BabylonjsBindings.SimpleClasses.Effect * ?``linearSpace``: bool -> unit
+
+    [<Import("BindFogParameters", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindFogParameters``: FunctionBinding_BindFogParameters = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindIBLParameters =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``defines``: obj * ``ubo``: BabylonjsBindings.SimpleClasses.UniformBuffer * ``reflectionColor``: BabylonjsBindings.SimpleClasses.Color3 * ?``reflectionTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option * ?``realTimeFiltering``: bool * ?``supportTextureInfo``: bool * ?``supportLocalProjection``: bool * ?``usePBR``: bool * ?``supportSH``: bool * ?``useColor``: bool * ?``reflectionBlur``: float -> unit
+
+    [<Import("BindIBLParameters", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindIBLParameters``: FunctionBinding_BindIBLParameters = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindIBLSamplers =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``defines``: obj * ``ubo``: BabylonjsBindings.SimpleClasses.UniformBuffer * ?``reflectionTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option * ?``realTimeFiltering``: bool -> unit
+
+    [<Import("BindIBLSamplers", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindIBLSamplers``: FunctionBinding_BindIBLSamplers = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindLight =
+        [<Emit("$0($1...)")>] abstract Invoke: ``light``: BabylonjsBindings.SimpleClasses.Light * ``lightIndex``: float * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``effect``: BabylonjsBindings.SimpleClasses.Effect * ``useSpecular``: bool * ?``receiveShadows``: bool -> unit
+
+    [<Import("BindLight", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindLight``: FunctionBinding_BindLight = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindLightProperties =
+        [<Emit("$0($1...)")>] abstract Invoke: ``light``: BabylonjsBindings.SimpleClasses.Light * ``effect``: BabylonjsBindings.SimpleClasses.Effect * ``lightIndex``: float -> unit
+
+    [<Import("BindLightProperties", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindLightProperties``: FunctionBinding_BindLightProperties = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindLights =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh * ``effect``: BabylonjsBindings.SimpleClasses.Effect * ``defines``: obj * ?``maxSimultaneousLights``: float -> unit
+
+    [<Import("BindLights", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindLights``: FunctionBinding_BindLights = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindLogDepth =
+        [<Emit("$0($1...)")>] abstract Invoke: ``defines``: obj * ``effect``: BabylonjsBindings.SimpleClasses.Effect * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> unit
+
+    [<Import("BindLogDepth", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindLogDepth``: FunctionBinding_BindLogDepth = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindMorphTargetParameters =
+        [<Emit("$0($1...)")>] abstract Invoke: ``abstractMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh * ``effect``: BabylonjsBindings.SimpleClasses.Effect -> unit
+
+    [<Import("BindMorphTargetParameters", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindMorphTargetParameters``: FunctionBinding_BindMorphTargetParameters = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindSceneUniformBuffer =
+        [<Emit("$0($1...)")>] abstract Invoke: ``effect``: BabylonjsBindings.SimpleClasses.Effect * ``sceneUbo``: BabylonjsBindings.SimpleClasses.UniformBuffer -> unit
+
+    [<Import("BindSceneUniformBuffer", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindSceneUniformBuffer``: FunctionBinding_BindSceneUniformBuffer = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindTextureMatrix =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.SimpleClasses.BaseTexture * ``uniformBuffer``: BabylonjsBindings.SimpleClasses.UniformBuffer * ``key``: string -> unit
+
+    [<Import("BindTextureMatrix", "@babylonjs/core/Materials/materialHelper.functions.js")>]
+    let ``BindTextureMatrix``: FunctionBinding_BindTextureMatrix = jsNative
+
+    /// @babylonjs/core/Materials/vertexPullingHelper.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_BindVertexPullingUniforms =
+        [<Emit("$0($1...)")>] abstract Invoke: ``effect``: BabylonjsBindings.SimpleClasses.Effect * ``metadata``: JS.Map<string, BabylonjsBindings.SimpleInterfaces.IVertexPullingMetadata> -> unit
+
+    [<Import("BindVertexPullingUniforms", "@babylonjs/core/Materials/vertexPullingHelper.functions.js")>]
+    let ``BindVertexPullingUniforms``: FunctionBinding_BindVertexPullingUniforms = jsNative
+
+    /// @babylonjs/core/Cameras/camera.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CameraParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``parsedCamera``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.Camera
+
+    [<Import("CameraParse", "@babylonjs/core/Cameras/camera.pure.js")>]
+    let ``CameraParse``: FunctionBinding_CameraParse = jsNative
+
+    /// @babylonjs/core/Cameras/geospatialCameraMovement
+    [<AllowNullLiteral>]
+    type FunctionBinding_ClampCenterFromPolesInPlace =
+        [<Emit("$0($1...)")>] abstract Invoke: ``center``: BabylonjsBindings.SimpleClasses.Vector3 -> BabylonjsBindings.SimpleClasses.Vector3
+
+    [<Import("ClampCenterFromPolesInPlace", "@babylonjs/core/Cameras/geospatialCameraMovement.js")>]
+    let ``ClampCenterFromPolesInPlace``: FunctionBinding_ClampCenterFromPolesInPlace = jsNative
+
+    /// @babylonjs/core/Materials/colorCurves.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_ColorCurvesBind =
+        [<Emit("$0($1...)")>] abstract Invoke: ``colorCurves``: BabylonjsBindings.SimpleClasses.ColorCurves * ``effect``: BabylonjsBindings.SimpleClasses.Effect * ?``positiveUniform``: string * ?``neutralUniform``: string * ?``negativeUniform``: string -> unit
+
+    [<Import("ColorCurvesBind", "@babylonjs/core/Materials/colorCurves.pure.js")>]
+    let ``ColorCurvesBind``: FunctionBinding_ColorCurvesBind = jsNative
+
+    /// @babylonjs/core/Materials/colorCurves.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_ColorCurvesParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: obj -> BabylonjsBindings.SimpleClasses.ColorCurves
+
+    [<Import("ColorCurvesParse", "@babylonjs/core/Materials/colorCurves.pure.js")>]
+    let ``ColorCurvesParse``: FunctionBinding_ColorCurvesParse = jsNative
+
+    /// @babylonjs/core/Materials/Textures/colorGradingTexture.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_ColorGradingTextureParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``parsedTexture``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.ColorGradingTexture option
+
+    [<Import("ColorGradingTextureParse", "@babylonjs/core/Materials/Textures/colorGradingTexture.pure.js")>]
+    let ``ColorGradingTextureParse``: FunctionBinding_ColorGradingTextureParse = jsNative
+
+    /// @babylonjs/core/Cameras/arcRotateCamera.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_ComputeAlpha =
+        [<Emit("$0($1...)")>] abstract Invoke: ``offset``: BabylonjsBindings.SimpleClasses.Vector3 -> float
+
+    [<Import("ComputeAlpha", "@babylonjs/core/Cameras/arcRotateCamera.pure.js")>]
+    let ``ComputeAlpha``: FunctionBinding_ComputeAlpha = jsNative
+
+    /// @babylonjs/core/Cameras/geospatialCameraMovement
+    [<AllowNullLiteral>]
+    type FunctionBinding_ComputeLocalBasisToRefs =
+        [<Emit("$0($1...)")>] abstract Invoke: ``worldPos``: BabylonjsBindings.SimpleClasses.Vector3 * ``refEast``: BabylonjsBindings.SimpleClasses.Vector3 * ``refNorth``: BabylonjsBindings.SimpleClasses.Vector3 * ``refUp``: BabylonjsBindings.SimpleClasses.Vector3 * ?``useRightHandedSystem``: bool * ?``calculateUpVectorFromPointToRef``: System.Func<BabylonjsBindings.SimpleClasses.Vector3, BabylonjsBindings.SimpleClasses.Vector3, BabylonjsBindings.SimpleClasses.Vector3> -> unit
+
+    [<Import("ComputeLocalBasisToRefs", "@babylonjs/core/Cameras/geospatialCameraMovement.js")>]
+    let ``ComputeLocalBasisToRefs``: FunctionBinding_ComputeLocalBasisToRefs = jsNative
+
+    /// @babylonjs/core/Cameras/geospatialCamera.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_ComputeLookAtFromYawPitchToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``yaw``: float * ``pitch``: float * ``center``: BabylonjsBindings.SimpleClasses.Vector3 * ``useRightHandedSystem``: bool * ``result``: BabylonjsBindings.SimpleClasses.Vector3 * ?``calculateUpVectorFromPointToRef``: System.Func<BabylonjsBindings.SimpleClasses.Vector3, BabylonjsBindings.SimpleClasses.Vector3, BabylonjsBindings.SimpleClasses.Vector3> -> BabylonjsBindings.SimpleClasses.Vector3
+
+    [<Import("ComputeLookAtFromYawPitchToRef", "@babylonjs/core/Cameras/geospatialCamera.pure.js")>]
+    let ``ComputeLookAtFromYawPitchToRef``: FunctionBinding_ComputeLookAtFromYawPitchToRef = jsNative
+
+    /// @babylonjs/core/Meshes/meshUtils
+    [<AllowNullLiteral>]
+    type FunctionBinding_computeMaxExtents =
+        [<Emit("$0($1...)")>] abstract Invoke: ``meshes``: ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh> * ?``animationGroup``: BabylonjsBindings.SimpleClasses.AnimationGroup option * ?``animationStep``: float -> ResizeArray<InlineObject9451621a062c>
+
+    [<Import("computeMaxExtents", "@babylonjs/core/Meshes/meshUtils.js")>]
+    let ``computeMaxExtents``: FunctionBinding_computeMaxExtents = jsNative
+
+    /// @babylonjs/core/Compute/computeShader.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_ComputeShaderParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``rootUrl``: string -> BabylonjsBindings.SimpleClasses.ComputeShader
+
+    [<Import("ComputeShaderParse", "@babylonjs/core/Compute/computeShader.pure.js")>]
+    let ``ComputeShaderParse``: FunctionBinding_ComputeShaderParse = jsNative
+
+    /// @babylonjs/core/Cameras/geospatialCamera.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_ComputeYawPitchFromLookAtToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``lookAt``: BabylonjsBindings.SimpleClasses.Vector3 * ``center``: BabylonjsBindings.SimpleClasses.Vector3 * ``useRightHandedSystem``: bool * ``currentYaw``: float * ``result``: BabylonjsBindings.SimpleClasses.Vector2 * ?``calculateUpVectorFromPointToRef``: System.Func<BabylonjsBindings.SimpleClasses.Vector3, BabylonjsBindings.SimpleClasses.Vector3, BabylonjsBindings.SimpleClasses.Vector3> -> BabylonjsBindings.SimpleClasses.Vector2
+
+    [<Import("ComputeYawPitchFromLookAtToRef", "@babylonjs/core/Cameras/geospatialCamera.pure.js")>]
+    let ``ComputeYawPitchFromLookAtToRef``: FunctionBinding_ComputeYawPitchFromLookAtToRef = jsNative
+
+    /// @babylonjs/core/Particles/Node/nodeParticleSystemSet.helper
+    [<AllowNullLiteral>]
+    type FunctionBinding_ConvertToNodeParticleSystemSetAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``particleSystemsList``: ResizeArray<BabylonjsBindings.SimpleClasses.ParticleSystem> -> JS.Promise<BabylonjsBindings.SimpleClasses.NodeParticleSystemSet option>
+
+    [<Import("ConvertToNodeParticleSystemSetAsync", "@babylonjs/core/Particles/Node/nodeParticleSystemSet.helper.js")>]
+    let ``ConvertToNodeParticleSystemSetAsync``: FunctionBinding_ConvertToNodeParticleSystemSetAsync = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/boxBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateBox =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: InlineObjectbf22c1ef7eb0 * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.Mesh
+
+    [<Import("CreateBox", "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js")>]
+    let ``CreateBox``: FunctionBinding_CreateBox = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/boxBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateBoxVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: InlineObject14717b24e5d3 -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateBoxVertexData", "@babylonjs/core/Meshes/Builders/boxBuilder.pure.js")>]
+    let ``CreateBoxVertexData``: FunctionBinding_CreateBoxVertexData = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/capsuleBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateCapsule =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.ICreateCapsuleOptions * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.Mesh
+
+    [<Import("CreateCapsule", "@babylonjs/core/Meshes/Builders/capsuleBuilder.pure.js")>]
+    let ``CreateCapsule``: FunctionBinding_CreateCapsule = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/capsuleBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateCapsuleVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``options``: BabylonjsBindings.SimpleInterfaces.ICreateCapsuleOptions -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateCapsuleVertexData", "@babylonjs/core/Meshes/Builders/capsuleBuilder.pure.js")>]
+    let ``CreateCapsuleVertexData``: FunctionBinding_CreateCapsuleVertexData = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/cylinderBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateCylinder =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: InlineObject96930aa8f7f3 * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.Mesh
+
+    [<Import("CreateCylinder", "@babylonjs/core/Meshes/Builders/cylinderBuilder.pure.js")>]
+    let ``CreateCylinder``: FunctionBinding_CreateCylinder = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/cylinderBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateCylinderVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: InlineObject8fab1a13729f -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateCylinderVertexData", "@babylonjs/core/Meshes/Builders/cylinderBuilder.pure.js")>]
+    let ``CreateCylinderVertexData``: FunctionBinding_CreateCylinderVertexData = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/linesBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateDashedLines =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``options``: InlineObject3e8c2fe26aed * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.LinesMesh
+
+    [<Import("CreateDashedLines", "@babylonjs/core/Meshes/Builders/linesBuilder.pure.js")>]
+    let ``CreateDashedLines``: FunctionBinding_CreateDashedLines = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/linesBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateDashedLinesVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: InlineObject86adbb2a4654 -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateDashedLinesVertexData", "@babylonjs/core/Meshes/Builders/linesBuilder.pure.js")>]
+    let ``CreateDashedLinesVertexData``: FunctionBinding_CreateDashedLinesVertexData = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/decalBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateDecal =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``sourceMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh * ``options``: InlineObject36edd74b7156 -> BabylonjsBindings.SimpleClasses.Mesh
+
+    [<Import("CreateDecal", "@babylonjs/core/Meshes/Builders/decalBuilder.pure.js")>]
+    let ``CreateDecal``: FunctionBinding_CreateDecal = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/discBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateDisc =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: InlineObject8e7c653fb98e * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.Mesh
+
+    [<Import("CreateDisc", "@babylonjs/core/Meshes/Builders/discBuilder.pure.js")>]
+    let ``CreateDisc``: FunctionBinding_CreateDisc = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/discBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateDiscVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: InlineObject5fee21ae3c23 -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateDiscVertexData", "@babylonjs/core/Meshes/Builders/discBuilder.pure.js")>]
+    let ``CreateDiscVertexData``: FunctionBinding_CreateDiscVertexData = jsNative
+
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateEnvTextureAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.SimpleClasses.BaseTexture * ?``options``: BabylonjsBindings.SimpleInterfaces.CreateEnvTextureOptions -> JS.Promise<JS.ArrayBuffer>
+
+    [<Import("CreateEnvTextureAsync", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``CreateEnvTextureAsync``: FunctionBinding_CreateEnvTextureAsync = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/geodesicBuilder
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateGeodesic =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``options``: InlineObject029dbaa31b1f * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.Mesh
+
+    [<Import("CreateGeodesic", "@babylonjs/core/Meshes/Builders/geodesicBuilder.js")>]
+    let ``CreateGeodesic``: FunctionBinding_CreateGeodesic = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/goldbergBuilder
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateGoldberg =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``options``: BabylonjsBindings.TypeAliases.GoldbergCreationOption * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.GoldbergMesh
+
+    [<Import("CreateGoldberg", "@babylonjs/core/Meshes/Builders/goldbergBuilder.js")>]
+    let ``CreateGoldberg``: FunctionBinding_CreateGoldberg = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/goldbergBuilder
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateGoldbergVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: BabylonjsBindings.ObjectTypes.GoldbergVertexDataOption * ``goldbergData``: BabylonjsBindings.SimpleClasses.PolyhedronData -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateGoldbergVertexData", "@babylonjs/core/Meshes/Builders/goldbergBuilder.js")>]
+    let ``CreateGoldbergVertexData``: FunctionBinding_CreateGoldbergVertexData = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/groundBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateGround =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: InlineObject4d5f5d599acf * ?``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.GroundMesh
+
+    [<Import("CreateGround", "@babylonjs/core/Meshes/Builders/groundBuilder.pure.js")>]
+    let ``CreateGround``: FunctionBinding_CreateGround = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/groundBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateGroundFromHeightMapVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: InlineObject8a290422a0a1 -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateGroundFromHeightMapVertexData", "@babylonjs/core/Meshes/Builders/groundBuilder.pure.js")>]
+    let ``CreateGroundFromHeightMapVertexData``: FunctionBinding_CreateGroundFromHeightMapVertexData = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/groundBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateGroundVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: InlineObject1bef03141615 -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateGroundVertexData", "@babylonjs/core/Meshes/Builders/groundBuilder.pure.js")>]
+    let ``CreateGroundVertexData``: FunctionBinding_CreateGroundVertexData = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/hemisphereBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateHemisphere =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: InlineObject5a70f99fb156 * ?``scene``: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.Mesh
+
+    [<Import("CreateHemisphere", "@babylonjs/core/Meshes/Builders/hemisphereBuilder.pure.js")>]
+    let ``CreateHemisphere``: FunctionBinding_CreateHemisphere = jsNative
+
+    /// @babylonjs/core/Meshes/abstractMesh.hotSpot
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateHotSpotQueryForPickingInfo =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pickingInfo``: BabylonjsBindings.SimpleClasses.PickingInfo -> BabylonjsBindings.ObjectTypes.HotSpotQuery
+
+    [<Import("CreateHotSpotQueryForPickingInfo", "@babylonjs/core/Meshes/abstractMesh.hotSpot.js")>]
+    let ``CreateHotSpotQueryForPickingInfo``: FunctionBinding_CreateHotSpotQueryForPickingInfo = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/icoSphereBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateIcoSphere =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: InlineObject2fbc4c4d8792 * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.Mesh
+
+    [<Import("CreateIcoSphere", "@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure.js")>]
+    let ``CreateIcoSphere``: FunctionBinding_CreateIcoSphere = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/icoSphereBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateIcoSphereVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: InlineObjectcaccb8b55c1c -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateIcoSphereVertexData", "@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure.js")>]
+    let ``CreateIcoSphereVertexData``: FunctionBinding_CreateIcoSphereVertexData = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/latheBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateLathe =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``options``: InlineObject6559ded43400 * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.Mesh
+
+    [<Import("CreateLathe", "@babylonjs/core/Meshes/Builders/latheBuilder.pure.js")>]
+    let ``CreateLathe``: FunctionBinding_CreateLathe = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/linesBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateLines =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``options``: InlineObject34562330571c * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.LinesMesh
+
+    [<Import("CreateLines", "@babylonjs/core/Meshes/Builders/linesBuilder.pure.js")>]
+    let ``CreateLines``: FunctionBinding_CreateLines = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/linesBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateLineSystem =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``options``: InlineObject82a22c7dc681 * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.LinesMesh
+
+    [<Import("CreateLineSystem", "@babylonjs/core/Meshes/Builders/linesBuilder.pure.js")>]
+    let ``CreateLineSystem``: FunctionBinding_CreateLineSystem = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/linesBuilder.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateLineSystemVertexData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: InlineObjectcd71b9b6bd32 -> BabylonjsBindings.SimpleClasses.VertexData
+
+    [<Import("CreateLineSystemVertexData", "@babylonjs/core/Meshes/Builders/linesBuilder.pure.js")>]
+    let ``CreateLineSystemVertexData``: FunctionBinding_CreateLineSystemVertexData = jsNative
+
+    /// @babylonjs/core/Culling/ray.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreatePickingRay =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``x``: float * ``y``: float * ``world``: BabylonjsBindings.SimpleClasses.Matrix option * ``camera``: BabylonjsBindings.SimpleClasses.Camera option * ?``cameraViewSpace``: bool -> BabylonjsBindings.SimpleClasses.Ray
+
+    [<Import("CreatePickingRay", "@babylonjs/core/Culling/ray.core.js")>]
+    let ``CreatePickingRay``: FunctionBinding_CreatePickingRay = jsNative
+
+    /// @babylonjs/core/Culling/ray.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreatePickingRayInCameraSpace =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``x``: float * ``y``: float * ?``camera``: BabylonjsBindings.SimpleClasses.Camera -> BabylonjsBindings.SimpleClasses.Ray
+
+    [<Import("CreatePickingRayInCameraSpace", "@babylonjs/core/Culling/ray.core.js")>]
+    let ``CreatePickingRayInCameraSpace``: FunctionBinding_CreatePickingRayInCameraSpace = jsNative
+
+    /// @babylonjs/core/Culling/ray.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreatePickingRayInCameraSpaceToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``x``: float * ``y``: float * ``result``: BabylonjsBindings.SimpleClasses.Ray * ?``camera``: BabylonjsBindings.SimpleClasses.Camera -> BabylonjsBindings.SimpleClasses.Scene
+
+    [<Import("CreatePickingRayInCameraSpaceToRef", "@babylonjs/core/Culling/ray.core.js")>]
+    let ``CreatePickingRayInCameraSpaceToRef``: FunctionBinding_CreatePickingRayInCameraSpaceToRef = jsNative
+
+    /// @babylonjs/core/Culling/ray.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreatePickingRayToRef =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``x``: float * ``y``: float * ``world``: BabylonjsBindings.SimpleClasses.Matrix option * ``result``: BabylonjsBindings.SimpleClasses.Ray * ``camera``: BabylonjsBindings.SimpleClasses.Camera option * ?``cameraViewSpace``: bool * ?``enableDistantPicking``: bool -> BabylonjsBindings.SimpleClasses.Scene
+
+    [<Import("CreatePickingRayToRef", "@babylonjs/core/Culling/ray.core.js")>]
+    let ``CreatePickingRayToRef``: FunctionBinding_CreatePickingRayToRef = jsNative

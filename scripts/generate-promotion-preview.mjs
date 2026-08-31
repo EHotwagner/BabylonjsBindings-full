@@ -51,6 +51,22 @@ for (const specification of specifications) {
 
 const pending = [];
 for (const [category, context] of contexts) for (const name of context.selectedDeclarationNames) pending.push({ category, name });
+// Maintained exports can reference proposal-only helper declarations that were
+// pulled into an earlier compile preview. Seed those references as well so the
+// promoted source remains closed even when a category has no newly selected
+// public export in the current batch.
+for (const [category, context] of contexts) {
+  const code = context.maintainedSource.split("\n").filter(line => !line.trimStart().startsWith("///")).join("\n");
+  const typeCode = code.replace(/"(?:\\.|[^"\\])*"/g, "");
+  for (const match of code.matchAll(qualifiedPattern)) {
+    const targetCategory = categoryByModule.get(match[1]);
+    if (targetCategory && !contexts.get(targetCategory).maintainedNames.has(match[2])) pending.push({ category: targetCategory, name: match[2] });
+  }
+  for (const match of typeCode.matchAll(/(?:[:<,*=>]|\binherit\s+)\s*([A-Za-z_][A-Za-z0-9_]*)/g)) {
+    const referencedName = match[1];
+    if (context.chunksByName.has(referencedName) && !context.maintainedNames.has(referencedName)) pending.push({ category, name: referencedName });
+  }
+}
 const visited = new Set();
 const unresolved = new Set();
 const missingBatchDependencies = new Set();

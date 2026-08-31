@@ -8099,6 +8099,22 @@ module SimpleInterfaces =
         abstract ``node``: IGLTFNode with get, set
         abstract ``id``: string with get, set
 
+    /// @babylonjs/core/Physics/IPhysicsEngine
+    [<AllowNullLiteral>]
+    type IPhysicsEngine =
+        abstract ``gravity``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``getPluginVersion``: unit -> float
+        abstract ``setGravity``: ``gravity``: BabylonjsBindings.SimpleClasses.Vector3 -> unit
+        abstract ``setTimeStep``: ``newTimeStep``: float -> unit
+        abstract ``getTimeStep``: unit -> float
+        abstract ``setSubTimeStep``: ``subTimeStep``: float -> unit
+        abstract ``getSubTimeStep``: unit -> float
+        abstract ``dispose``: unit -> unit
+        abstract ``getPhysicsPluginName``: unit -> string
+        abstract ``getPhysicsPlugin``: unit -> U2<IPhysicsEnginePlugin, IPhysicsEnginePluginV2> option
+        abstract ``raycast``: ``from``: BabylonjsBindings.SimpleClasses.Vector3 * ``to``: BabylonjsBindings.SimpleClasses.Vector3 * ?``query``: IRaycastQuery -> BabylonjsBindings.SimpleClasses.PhysicsRaycastResult
+        abstract ``_step``: ``delta``: float -> unit
+
     /// Function-valued IPipelineContext._handlesSpectorRebuildCallback property.
     [<AllowNullLiteral>]
     type IPipelineContextHandlesSpectorRebuildCallbackCallback =

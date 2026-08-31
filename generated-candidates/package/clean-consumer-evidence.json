@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "c1086fcbb6bba97702a3056af98a23afee28f0932c304d0dd94cf45cc8531b0a"
+    "sha256": "42a8dbcac353aaf122daecac9eaa9bf3823c407a4ae5eb18b590f1674cad4931"
   },
   "toolchain": {
     "fable": "5.13.0",

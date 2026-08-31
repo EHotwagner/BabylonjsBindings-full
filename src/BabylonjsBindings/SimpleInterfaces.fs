@@ -3107,6 +3107,11 @@ module SimpleInterfaces =
     type BrowserXRSession =
         interface end
 
+    /// Distinct ambient WebXR frame handle.
+    [<AllowNullLiteral>]
+    type BrowserXRFrame =
+        interface end
+
     /// Distinct ambient WebXR layer handle.
     [<AllowNullLiteral>]
     type BrowserXRLayer =
@@ -3116,6 +3121,11 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type BrowserXRWebGLLayer =
         inherit BrowserXRLayer
+
+    /// Distinct ambient WebXR WebGL-layer initialization surface.
+    [<AllowNullLiteral>]
+    type BrowserXRWebGLLayerInit =
+        interface end
 
     /// Distinct ambient WebXR session initialization surface.
     [<AllowNullLiteral>]

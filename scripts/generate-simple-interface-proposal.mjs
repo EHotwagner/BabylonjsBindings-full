@@ -407,6 +407,13 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       dependencies.add("WebXRRenderTarget");
       return "WebXRRenderTarget<Browser.Types.WebGLRenderingContext, BrowserXRWebGLLayer>";
     }
+    // IPhysicsEngine imports the v1 contract under a local TypeScript alias.
+    // Preserve the public target identity rather than treating that import-local
+    // spelling as a distinct Babylon export.
+    if (!node.typeArguments?.length && node.typeName.text === "IPhysicsEnginePluginV1" && available.has("IPhysicsEnginePlugin")) {
+      dependencies.add("IPhysicsEnginePlugin");
+      return "IPhysicsEnginePlugin";
+    }
     const browserExtensionTypes = new Map([
       ["AudioContext", "BrowserAudioContext"],
       ["AudioDestinationNode", "BrowserAudioDestinationNode"],

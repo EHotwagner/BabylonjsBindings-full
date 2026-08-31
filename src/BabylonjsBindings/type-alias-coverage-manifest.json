@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "6156e46e567327be799caf834489c7d7434462ad296cdd5b08972886bc4d192b",
+  "proposalSha256": "10eb0aff27916c4a045a1bda8f719416f38317d9b8142cb15da585e116530bd9",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1027,6 +1027,20 @@
       ],
       "shape": "callback",
       "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.pure",
+      "name": "PrepareTextureFunction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrepareTextureFunction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLike"
+      ],
+      "shape": "callback",
+      "memberCount": 9
     }
   ],
   "reviewStatus": "maintained"

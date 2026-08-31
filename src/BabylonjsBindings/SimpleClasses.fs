@@ -19334,3 +19334,7620 @@ module SimpleClasses =
 
     [<Import("WebGPUTimestampQuery", "@babylonjs/core/Engines/WebGPU/webgpuTimestampQuery.js")>]
     let WebGPUTimestampQuery: WebGPUTimestampQueryStatic = jsNative
+
+    /// Exact numeric literal type for 0.
+    type NumericLiteral0 =
+        | Value = 0
+
+    /// Exact string literal type for "x".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral2d711642b726 =
+        | [<CompiledName("x")>] Value
+
+    /// Exact string literal type for "w".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral50e721e49c01 =
+        | [<CompiledName("w")>] Value
+
+    /// Exact string literal type for "z".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral594e519ae499 =
+        | [<CompiledName("z")>] Value
+
+    /// Exact string literal type for "y".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiterala1fce4363854 =
+        | [<CompiledName("y")>] Value
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObjectd6480fff2d85Object =
+        abstract ``type``: float with get, set
+        abstract ``name``: string with get, set
+        abstract ``clearType``: BabylonjsBindings.Enums.GeometryRenderingTextureClearType with get, set
+        abstract ``define``: string with get, set
+        abstract ``defineIndex``: string with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject3620a0f42da7Object =
+        abstract ``min``: float with get, set
+        abstract ``max``: float with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type RecordObject799ba53d5322 =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject5a70328a1152Object =
+        abstract ``filename``: string with get, set
+        abstract ``path``: string with get, set
+        abstract ``meshes``: ResizeArray<AbstractMesh> with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObjectde9f6c1b6b0fObject =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``depth``: float option with get, set
+        abstract ``layers``: float option with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObjecte9eac13088eaObject =
+        [<EmitIndexer>] abstract Item: ``pointName``: string -> string with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject0a7e082c6f2eObject =
+        abstract ``name``: string with get, set
+        abstract ``size``: float option with get, set
+        abstract ``type``: string option with get, set
+        abstract ``arraySize``: float option with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject715b5d0ceff3Object =
+        abstract ``point1``: Vector3 with get, set
+        abstract ``point2``: Vector3 with get, set
+        abstract ``length``: float with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type PartialObjectbdfd94fbd748Object =
+        abstract ``capacity``: float option with get, set
+        abstract ``randomTextureSize``: float option with get, set
+        abstract ``emitRateControl``: bool option with get, set
+        abstract ``maxAttractors``: float option with get, set
+
+    /// @babylonjs/core/Misc/PerformanceViewer/performanceViewerCollectionStrategies
+    [<AllowNullLiteral>]
+    type PerfCollectionStrategy =
+        interface end
+
+    [<AllowNullLiteral>]
+    type PerfCollectionStrategyStatic =
+        inherit Constructor<PerfCollectionStrategy>
+        [<EmitConstructor>] abstract Create: unit -> PerfCollectionStrategy
+        abstract ``FpsStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``ThermalStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``PowerSupplyStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``PressureStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``TotalMeshesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``ActiveMeshesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``ActiveIndicesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``ActiveFacesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``ActiveBonesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``ActiveParticlesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``DrawCallsStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``TotalLightsStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``TotalVerticesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``TotalMaterialsStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``TotalTexturesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``AbsoluteFpsStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``MeshesSelectionStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``RenderTargetsStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``ParticlesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``SpritesStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``AnimationsStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``PhysicsStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``RenderStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``FrameTotalStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``InterFrameStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+        abstract ``GpuFrameTimeStrategy`` : unit -> BabylonjsBindings.TypeAliases.PerfStrategyInitialization
+
+    [<Import("PerfCollectionStrategy", "@babylonjs/core/Misc/PerformanceViewer/performanceViewerCollectionStrategies.js")>]
+    let PerfCollectionStrategy: PerfCollectionStrategyStatic = jsNative
+
+    /// @babylonjs/core/Physics/v1/physicsJoint
+    [<AllowNullLiteral>]
+    type MotorEnabledJoint =
+        inherit PhysicsJoint
+        inherit BabylonjsBindings.SimpleInterfaces.IMotorEnabledJoint
+        abstract ``setMotor`` : ?``force``: float * ?``maxForce``: float -> unit
+        abstract ``setLimit`` : ``upperLimit``: float * ?``lowerLimit``: float -> unit
+
+    [<AllowNullLiteral>]
+    type MotorEnabledJointStatic =
+        inherit PhysicsJointStatic
+        inherit Constructor<MotorEnabledJoint>
+        [<EmitConstructor>] abstract Create: ``type``: float * ``jointData``: BabylonjsBindings.SimpleInterfaces.PhysicsJointData -> MotorEnabledJoint
+
+    [<Import("MotorEnabledJoint", "@babylonjs/core/Physics/v1/physicsJoint.js")>]
+    let MotorEnabledJoint: MotorEnabledJointStatic = jsNative
+
+    /// Inline object shape used by Action.
+    [<AllowNullLiteral>]
+    type ActionProperty23ReturnObject =
+        abstract ``name``: string with get, set
+        abstract ``targetType``: string with get, set
+        abstract ``value``: string with get, set
+
+    /// Function-valued Action._SerializeValueAsString property.
+    [<AllowNullLiteral>]
+    type ActionSerializeValueAsStringCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``value``: obj -> string
+
+    /// Function-valued Action._GetTargetProperty property.
+    [<AllowNullLiteral>]
+    type ActionGetTargetPropertyCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``target``: U3<Scene, Node, Material> -> ActionProperty23ReturnObject
+
+    /// @babylonjs/core/Actions/action.pure
+    [<AllowNullLiteral>]
+    type Action =
+        inherit BabylonjsBindings.SimpleInterfaces.IAction
+        abstract ``triggerOptions``: obj with get, set
+        abstract ``trigger``: float with get, set
+        abstract ``_actionManager``: ActionManager with get, set
+        abstract ``onBeforeExecuteObservable``: Observable<Action> with get, set
+        abstract ``_prepare`` : unit -> unit
+        abstract ``getTriggerParameter`` : unit -> obj
+        abstract ``setTriggerParameter`` : ``value``: obj -> unit
+        abstract ``_evaluateConditionForCurrentFrame`` : unit -> bool
+        abstract ``_executeCurrent`` : ?``evt``: ActionEvent -> unit
+        abstract ``execute`` : ?``evt``: ActionEvent -> unit
+        abstract ``skipToNextActiveAction`` : unit -> unit
+        abstract ``then`` : ``action``: Action -> Action
+        abstract ``_getProperty`` : ``propertyPath``: string -> string
+        abstract ``_getEffectiveTarget`` : ``target``: obj * ``propertyPath``: string -> obj
+        abstract ``serialize`` : ``parent``: obj -> obj
+
+    [<AllowNullLiteral>]
+    type ActionStatic =
+        inherit Constructor<Action>
+        [<EmitConstructor>] abstract Create: ``triggerOptions``: obj * ?``condition``: Condition -> Action
+        abstract ``_SerializeValueAsString``: ActionSerializeValueAsStringCallback with get, set
+        abstract ``_GetTargetProperty``: ActionGetTargetPropertyCallback with get, set
+
+    [<Import("Action", "@babylonjs/core/Actions/action.pure.js")>]
+    let Action: ActionStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/addBlock.pure
+    [<AllowNullLiteral>]
+    type AddBlock =
+        inherit BaseMathBlock
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type AddBlockStatic =
+        inherit BaseMathBlockStatic
+        inherit Constructor<AddBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> AddBlock
+
+    [<Import("AddBlock", "@babylonjs/core/Materials/Node/Blocks/addBlock.pure.js")>]
+    let AddBlock: AddBlockStatic = jsNative
+
+    /// Function-valued AnimationAssetTask.onSuccess property.
+    [<AllowNullLiteral>]
+    type AnimationAssetTaskOnSuccessCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: AnimationAssetTask -> unit
+
+    /// Function-valued AnimationAssetTask.onError property.
+    [<AllowNullLiteral>]
+    type AnimationAssetTaskOnErrorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: AnimationAssetTask * ?``message``: string * ?``exception``: obj -> unit
+
+    /// @babylonjs/core/Misc/assetsManager
+    [<AllowNullLiteral>]
+    type AnimationAssetTask =
+        inherit AbstractAssetTask
+        abstract ``name``: string with get, set
+        abstract ``rootUrl``: string with get, set
+        abstract ``filename``: U2<string, Browser.Types.File> with get, set
+        abstract ``targetConverter``: System.Func<obj, obj> option with get, set
+        abstract ``extension``: string option with get, set
+        abstract ``loadedAnimationGroups``: ResizeArray<AnimationGroup> with get, set
+        abstract ``loadedAnimatables``: ResizeArray<Animatable> with get, set
+        abstract ``onSuccess``: AnimationAssetTaskOnSuccessCallback with get, set
+        abstract ``onError``: AnimationAssetTaskOnErrorCallback with get, set
+        abstract ``runTask`` : ``scene``: Scene * ``onSuccess``: System.Action * ``onError``: System.Action<string option, obj option> -> unit
+
+    [<AllowNullLiteral>]
+    type AnimationAssetTaskStatic =
+        inherit AbstractAssetTaskStatic
+        inherit Constructor<AnimationAssetTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``rootUrl``: string * ``filename``: U2<string, Browser.Types.File> * ?``targetConverter``: System.Func<obj, obj> * ?``extension``: string -> AnimationAssetTask
+
+    [<Import("AnimationAssetTask", "@babylonjs/core/Misc/assetsManager.js")>]
+    let AnimationAssetTask: AnimationAssetTaskStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.path
+    [<AllowNullLiteral>]
+    type Arc2 =
+        abstract ``startPoint``: Vector2 with get, set
+        abstract ``midPoint``: Vector2 with get, set
+        abstract ``endPoint``: Vector2 with get, set
+        abstract ``centerPoint``: Vector2 with get, set
+        abstract ``radius``: float with get, set
+        abstract ``angle``: Angle with get, set
+        abstract ``startAngle``: Angle with get, set
+        abstract ``orientation``: BabylonjsBindings.Enums.Orientation with get, set
+
+    [<AllowNullLiteral>]
+    type Arc2Static =
+        inherit Constructor<Arc2>
+        [<EmitConstructor>] abstract Create: ``startPoint``: Vector2 * ``midPoint``: Vector2 * ``endPoint``: Vector2 -> Arc2
+
+    [<Import("Arc2", "@babylonjs/core/Maths/math.path.js")>]
+    let Arc2: Arc2Static = jsNative
+
+    /// Function-valued BinaryFileAssetTask.onSuccess property.
+    [<AllowNullLiteral>]
+    type BinaryFileAssetTaskOnSuccessCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: BinaryFileAssetTask -> unit
+
+    /// Function-valued BinaryFileAssetTask.onError property.
+    [<AllowNullLiteral>]
+    type BinaryFileAssetTaskOnErrorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: BinaryFileAssetTask * ?``message``: string * ?``exception``: obj -> unit
+
+    /// @babylonjs/core/Misc/assetsManager
+    [<AllowNullLiteral>]
+    type BinaryFileAssetTask =
+        inherit AbstractAssetTask
+        abstract ``name``: string with get, set
+        abstract ``url``: string with get, set
+        abstract ``data``: JS.ArrayBuffer with get, set
+        abstract ``onSuccess``: BinaryFileAssetTaskOnSuccessCallback with get, set
+        abstract ``onError``: BinaryFileAssetTaskOnErrorCallback with get, set
+        abstract ``runTask`` : ``scene``: Scene * ``onSuccess``: System.Action * ``onError``: System.Action<string option, obj option> -> unit
+
+    [<AllowNullLiteral>]
+    type BinaryFileAssetTaskStatic =
+        inherit AbstractAssetTaskStatic
+        inherit Constructor<BinaryFileAssetTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``url``: string -> BinaryFileAssetTask
+
+    [<Import("BinaryFileAssetTask", "@babylonjs/core/Misc/assetsManager.js")>]
+    let BinaryFileAssetTask: BinaryFileAssetTaskStatic = jsNative
+
+    /// @babylonjs/core/Debug/boneAxesViewer
+    [<AllowNullLiteral>]
+    type BoneAxesViewer =
+        inherit AxesViewer
+        abstract ``mesh``: Mesh option with get, set
+        abstract ``bone``: Bone option with get, set
+        abstract ``pos``: Vector3 with get, set
+        abstract ``xaxis``: Vector3 with get, set
+        abstract ``yaxis``: Vector3 with get, set
+        abstract ``zaxis``: Vector3 with get, set
+        abstract ``update`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type BoneAxesViewerStatic =
+        inherit AxesViewerStatic
+        inherit Constructor<BoneAxesViewer>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene * ``bone``: Bone * ``mesh``: Mesh * ?``scaleLines``: float -> BoneAxesViewer
+
+    [<Import("BoneAxesViewer", "@babylonjs/core/Debug/boneAxesViewer.js")>]
+    let BoneAxesViewer: BoneAxesViewerStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/curveBlock.pure
+    [<AllowNullLiteral>]
+    type CurveBlock =
+        inherit NodeMaterialBlock
+        abstract ``type``: BabylonjsBindings.Enums.CurveBlockTypes with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type CurveBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<CurveBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> CurveBlock
+
+    [<Import("CurveBlock", "@babylonjs/core/Materials/Node/Blocks/curveBlock.pure.js")>]
+    let CurveBlock: CurveBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/customBlock.pure
+    [<AllowNullLiteral>]
+    type CustomBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``options``: obj with get, set
+
+    [<AllowNullLiteral>]
+    type CustomBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<CustomBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> CustomBlock
+
+    [<Import("CustomBlock", "@babylonjs/core/Materials/Node/Blocks/customBlock.pure.js")>]
+    let CustomBlock: CustomBlockStatic = jsNative
+
+    /// Function-valued CustomParticleEmitter.particlePositionGenerator property.
+    [<AllowNullLiteral>]
+    type CustomParticleEmitterParticlePositionGeneratorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``index``: float * ``particle``: Particle option * ``outPosition``: Vector3 -> unit
+
+    /// Function-valued CustomParticleEmitter.particleDestinationGenerator property.
+    [<AllowNullLiteral>]
+    type CustomParticleEmitterParticleDestinationGeneratorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``index``: float * ``particle``: Particle option * ``outDestination``: Vector3 -> unit
+
+    /// Function-valued CustomParticleEmitter.particleDirectionGenerator property.
+    [<AllowNullLiteral>]
+    type CustomParticleEmitterParticleDirectionGeneratorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``index``: float * ``particle``: Particle option * ``outDestination``: Vector3 -> unit
+
+    /// @babylonjs/core/Particles/EmitterTypes/customParticleEmitter
+    [<AllowNullLiteral>]
+    type CustomParticleEmitter =
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleEmitterType
+        abstract ``particlePositionGenerator``: CustomParticleEmitterParticlePositionGeneratorCallback with get, set
+        abstract ``particleDestinationGenerator``: CustomParticleEmitterParticleDestinationGeneratorCallback with get, set
+        abstract ``particleDirectionGenerator``: CustomParticleEmitterParticleDirectionGeneratorCallback with get, set
+        abstract ``startDirectionFunction`` : ``worldMatrix``: Matrix * ``directionToUpdate``: Vector3 * ``particle``: Particle * ``isLocal``: bool -> unit
+        abstract ``startPositionFunction`` : ``worldMatrix``: Matrix * ``positionToUpdate``: Vector3 * ``particle``: Particle * ``isLocal``: bool -> unit
+        abstract ``clone`` : unit -> CustomParticleEmitter
+        abstract ``applyToShader`` : ``uboOrEffect``: UniformBufferEffectCommonAccessor -> unit
+        abstract ``buildUniformLayout`` : ``ubo``: UniformBuffer -> unit
+        abstract ``getEffectDefines`` : unit -> string
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``parse`` : ``serializationObject``: obj -> unit
+
+    [<AllowNullLiteral>]
+    type CustomParticleEmitterStatic =
+        inherit Constructor<CustomParticleEmitter>
+        [<EmitConstructor>] abstract Create: unit -> CustomParticleEmitter
+
+    [<Import("CustomParticleEmitter", "@babylonjs/core/Particles/EmitterTypes/customParticleEmitter.js")>]
+    let CustomParticleEmitter: CustomParticleEmitterStatic = jsNative
+
+    /// @babylonjs/core/Collisions/collisionCoordinator.pure
+    [<AllowNullLiteral>]
+    type DefaultCollisionCoordinator =
+        inherit BabylonjsBindings.SimpleInterfaces.ICollisionCoordinator
+        abstract ``getNewPosition`` : ``position``: Vector3 * ``displacement``: Vector3 * ``collider``: Collider * ``maximumRetry``: float * ``excludedMesh``: AbstractMesh * ``onNewPosition``: System.Action<float, Vector3, AbstractMesh option> * ``collisionIndex``: float * ?``slideOnCollide``: bool -> Vector3
+        abstract ``createCollider`` : unit -> Collider
+        abstract ``init`` : ``scene``: Scene -> unit
+
+    [<AllowNullLiteral>]
+    type DefaultCollisionCoordinatorStatic =
+        inherit Constructor<DefaultCollisionCoordinator>
+        [<EmitConstructor>] abstract Create: unit -> DefaultCollisionCoordinator
+
+    [<Import("DefaultCollisionCoordinator", "@babylonjs/core/Collisions/collisionCoordinator.pure.js")>]
+    let DefaultCollisionCoordinator: DefaultCollisionCoordinatorStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/depthOfFieldBlurPostProcess.pure
+    [<AllowNullLiteral>]
+    type DepthOfFieldBlurPostProcess =
+        inherit BlurPostProcess
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type DepthOfFieldBlurPostProcessStatic =
+        inherit BlurPostProcessStatic
+        inherit Constructor<DepthOfFieldBlurPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``_scene``: Scene option * ``direction``: Vector2 * ``kernel``: float * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ``circleOfConfusion``: PostProcess * ?``imageToBlur``: PostProcess * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float * ?``blockCompilation``: bool * ?``textureFormat``: float -> DepthOfFieldBlurPostProcess
+
+    [<Import("DepthOfFieldBlurPostProcess", "@babylonjs/core/PostProcesses/depthOfFieldBlurPostProcess.pure.js")>]
+    let DepthOfFieldBlurPostProcess: DepthOfFieldBlurPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/depthOfFieldMergePostProcess
+    [<AllowNullLiteral>]
+    type DepthOfFieldMergePostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+        abstract ``updateEffect`` : ?``defines``: string * ?``uniforms``: ResizeArray<string> * ?``samplers``: ResizeArray<string> * ?``indexParameters``: obj * ?``onCompiled``: System.Action<Effect> * ?``onError``: System.Action<Effect, string> -> unit
+
+    [<AllowNullLiteral>]
+    type DepthOfFieldMergePostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<DepthOfFieldMergePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``originalFromInput``: PostProcess * ``circleOfConfusion``: PostProcess * ``_blurSteps``: ResizeArray<PostProcess> * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float * ?``blockCompilation``: bool -> DepthOfFieldMergePostProcess
+
+    [<Import("DepthOfFieldMergePostProcess", "@babylonjs/core/PostProcesses/depthOfFieldMergePostProcess.js")>]
+    let DepthOfFieldMergePostProcess: DepthOfFieldMergePostProcessStatic = jsNative
+
+    /// @babylonjs/core/Rendering/depthPeelingSceneComponent.pure
+    [<AllowNullLiteral>]
+    type DepthPeelingSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type DepthPeelingSceneComponentStatic =
+        inherit Constructor<DepthPeelingSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> DepthPeelingSceneComponent
+
+    [<Import("DepthPeelingSceneComponent", "@babylonjs/core/Rendering/depthPeelingSceneComponent.pure.js")>]
+    let DepthPeelingSceneComponent: DepthPeelingSceneComponentStatic = jsNative
+
+    /// Function-valued DepthRenderer._SceneComponentInitialization property.
+    [<AllowNullLiteral>]
+    type DepthRendererSceneComponentInitializationCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: Scene -> unit
+
+    /// @babylonjs/core/Rendering/depthRenderer.pure
+    [<AllowNullLiteral>]
+    type DepthRenderer =
+        abstract ``clearColor``: Color4 with get, set
+        abstract ``isPacked``: bool with get
+        abstract ``enabled``: bool with get, set
+        abstract ``forceDepthWriteTransparentMeshes``: bool with get, set
+        abstract ``useOnlyInActiveCamera``: bool with get, set
+        abstract ``reverseCulling``: bool with get, set
+        abstract ``setMaterialForRendering`` : ``mesh``: U2<AbstractMesh, ResizeArray<AbstractMesh>> * ?``material``: Material -> unit
+        abstract ``isReady`` : ``subMesh``: SubMesh * ``useInstances``: bool -> bool
+        abstract ``getDepthMap`` : unit -> RenderTargetTexture
+        abstract ``dispose`` : unit -> unit
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get
+        abstract ``alphaBlendedDepth``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type DepthRendererStatic =
+        inherit Constructor<DepthRenderer>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene * ?``type``: float * ?``camera``: Camera * ?``storeNonLinearDepth``: bool * ?``samplingMode``: float * ?``storeCameraSpaceZ``: bool * ?``name``: string * ?``existingRenderTargetTexture``: RenderTargetTexture -> DepthRenderer
+        abstract ``ForceGLSL``: bool with get, set
+        abstract ``_SceneComponentInitialization``: DepthRendererSceneComponentInitializationCallback with get, set
+
+    [<Import("DepthRenderer", "@babylonjs/core/Rendering/depthRenderer.pure.js")>]
+    let DepthRenderer: DepthRendererStatic = jsNative
+
+    /// @babylonjs/core/Rendering/depthRendererSceneComponent.pure
+    [<AllowNullLiteral>]
+    type DepthRendererSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type DepthRendererSceneComponentStatic =
+        inherit Constructor<DepthRendererSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> DepthRendererSceneComponent
+
+    [<Import("DepthRendererSceneComponent", "@babylonjs/core/Rendering/depthRendererSceneComponent.pure.js")>]
+    let DepthRendererSceneComponent: DepthRendererSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Dual/depthSourceBlock.pure
+    [<AllowNullLiteral>]
+    type DepthSourceBlock =
+        inherit ImageSourceBlock
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial -> unit
+        abstract ``isReady`` : unit -> bool
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``texture``: Texture option with get, set
+
+    [<AllowNullLiteral>]
+    type DepthSourceBlockStatic =
+        inherit ImageSourceBlockStatic
+        inherit Constructor<DepthSourceBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> DepthSourceBlock
+
+    [<Import("DepthSourceBlock", "@babylonjs/core/Materials/Node/Blocks/Dual/depthSourceBlock.pure.js")>]
+    let DepthSourceBlock: DepthSourceBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/derivativeBlock.pure
+    [<AllowNullLiteral>]
+    type DerivativeBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``dx``: NodeMaterialConnectionPoint with get
+        abstract ``dy``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type DerivativeBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<DerivativeBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> DerivativeBlock
+
+    [<Import("DerivativeBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/derivativeBlock.pure.js")>]
+    let DerivativeBlock: DerivativeBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/desaturateBlock.pure
+    [<AllowNullLiteral>]
+    type DesaturateBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``color``: NodeMaterialConnectionPoint with get
+        abstract ``level``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type DesaturateBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<DesaturateBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> DesaturateBlock
+
+    [<Import("DesaturateBlock", "@babylonjs/core/Materials/Node/Blocks/desaturateBlock.pure.js")>]
+    let DesaturateBlock: DesaturateBlockStatic = jsNative
+
+    /// @babylonjs/core/Cameras/deviceOrientationCamera.pure
+    [<AllowNullLiteral>]
+    type DeviceOrientationCamera =
+        inherit FreeCamera
+        abstract ``enableHorizontalDragging`` : ?``dragFactor``: float -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``_checkInputs`` : unit -> unit
+        abstract ``resetToCurrentRotation`` : ?``axis``: Axis -> unit
+        abstract ``disablePointerInputWhenUsingDeviceOrientation``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type DeviceOrientationCameraStatic =
+        inherit FreeCameraStatic
+        inherit Constructor<DeviceOrientationCamera>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``position``: Vector3 * ?``scene``: Scene -> DeviceOrientationCamera
+
+    [<Import("DeviceOrientationCamera", "@babylonjs/core/Cameras/deviceOrientationCamera.pure.js")>]
+    let DeviceOrientationCamera: DeviceOrientationCameraStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/discardBlock.pure
+    [<AllowNullLiteral>]
+    type DiscardBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``value``: NodeMaterialConnectionPoint with get
+        abstract ``cutoff``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type DiscardBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<DiscardBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> DiscardBlock
+
+    [<Import("DiscardBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/discardBlock.pure.js")>]
+    let DiscardBlock: DiscardBlockStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/displayPassPostProcess.pure
+    [<AllowNullLiteral>]
+    type DisplayPassPostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type DisplayPassPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<DisplayPassPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool -> DisplayPassPostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> DisplayPassPostProcess option
+
+    [<Import("DisplayPassPostProcess", "@babylonjs/core/PostProcesses/displayPassPostProcess.pure.js")>]
+    let DisplayPassPostProcess: DisplayPassPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/distanceBlock.pure
+    [<AllowNullLiteral>]
+    type DistanceBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``left``: NodeMaterialConnectionPoint with get
+        abstract ``right``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type DistanceBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<DistanceBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> DistanceBlock
+
+    [<Import("DistanceBlock", "@babylonjs/core/Materials/Node/Blocks/distanceBlock.pure.js")>]
+    let DistanceBlock: DistanceBlockStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsConstraint
+    [<AllowNullLiteral>]
+    type DistanceConstraint =
+        inherit PhysicsConstraint
+
+    [<AllowNullLiteral>]
+    type DistanceConstraintStatic =
+        inherit PhysicsConstraintStatic
+        inherit Constructor<DistanceConstraint>
+        [<EmitConstructor>] abstract Create: ``maxDistance``: float * ``scene``: Scene -> DistanceConstraint
+
+    [<Import("DistanceConstraint", "@babylonjs/core/Physics/v2/physicsConstraint.js")>]
+    let DistanceConstraint: DistanceConstraintStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/divideBlock.pure
+    [<AllowNullLiteral>]
+    type DivideBlock =
+        inherit BaseMathBlock
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type DivideBlockStatic =
+        inherit BaseMathBlockStatic
+        inherit Constructor<DivideBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> DivideBlock
+
+    [<Import("DivideBlock", "@babylonjs/core/Materials/Node/Blocks/divideBlock.pure.js")>]
+    let DivideBlock: DivideBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/dotBlock.pure
+    [<AllowNullLiteral>]
+    type DotBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``left``: NodeMaterialConnectionPoint with get
+        abstract ``right``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type DotBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<DotBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> DotBlock
+
+    [<Import("DotBlock", "@babylonjs/core/Materials/Node/Blocks/dotBlock.pure.js")>]
+    let DotBlock: DotBlockStatic = jsNative
+
+    /// Inline object shape used by DracoDecoder.
+    [<AllowNullLiteral>]
+    type DracoDecoderMethod10Parameter2Object =
+        [<EmitIndexer>] abstract Item: ``kind``: string -> float with get, set
+
+    /// Inline object shape used by DracoDecoder.
+    [<AllowNullLiteral>]
+    type DracoDecoderMethod10Parameter3Object =
+        [<EmitIndexer>] abstract Item: ``kind``: string -> bool with get, set
+
+    /// Inline object shape used by DracoDecoder.
+    [<AllowNullLiteral>]
+    type DracoDecoderMethod11Parameter4Object =
+        [<EmitIndexer>] abstract Item: ``kind``: string -> float with get, set
+
+    /// Inline object shape used by DracoDecoder.
+    [<AllowNullLiteral>]
+    type DracoDecoderMethod12Parameter4Object =
+        [<EmitIndexer>] abstract Item: ``kind``: string -> float with get, set
+
+    /// Inline object shape used by DracoDecoder.
+    [<AllowNullLiteral>]
+    type DracoDecoderMethod12Parameter5Object =
+        [<EmitIndexer>] abstract Item: ``kind``: string -> bool with get, set
+
+    /// @babylonjs/core/Meshes/Compression/dracoDecoder
+    [<AllowNullLiteral>]
+    type DracoDecoder =
+        inherit DracoCodec
+        abstract ``decodeMeshToMeshDataAsync`` : ``data``: U2<JS.ArrayBuffer, JS.ArrayBufferView> * ?``attributes``: DracoDecoderMethod10Parameter2Object * ?``gltfNormalizedOverride``: DracoDecoderMethod10Parameter3Object -> JS.Promise<BabylonjsBindings.SimpleInterfaces.MeshData>
+        abstract ``decodeMeshToGeometryAsync`` : ``name``: string * ``scene``: Scene * ``data``: U2<JS.ArrayBuffer, JS.ArrayBufferView> * ?``attributes``: DracoDecoderMethod11Parameter4Object -> JS.Promise<Geometry>
+        abstract ``_decodeMeshToGeometryForGltfAsync`` : ``name``: string * ``scene``: Scene * ``data``: U2<JS.ArrayBuffer, JS.ArrayBufferView> * ``attributes``: DracoDecoderMethod12Parameter4Object * ``gltfNormalizedOverride``: DracoDecoderMethod12Parameter5Object * ``boundingInfo``: BoundingInfo option -> JS.Promise<Geometry>
+
+    [<AllowNullLiteral>]
+    type DracoDecoderStatic =
+        inherit DracoCodecStatic
+        inherit Constructor<DracoDecoder>
+        [<EmitConstructor>] abstract Create: ?``configuration``: BabylonjsBindings.SimpleInterfaces.IDracoCodecConfiguration -> DracoDecoder
+        abstract ``DefaultConfiguration``: BabylonjsBindings.SimpleInterfaces.IDracoCodecConfiguration with get, set
+        abstract ``ResetDefault`` : ?``skipDispose``: bool -> unit
+        abstract ``DefaultAvailable``: bool with get
+        abstract ``Default``: DracoDecoder with get
+
+    [<Import("DracoDecoder", "@babylonjs/core/Meshes/Compression/dracoDecoder.js")>]
+    let DracoDecoder: DracoDecoderStatic = jsNative
+
+    /// @babylonjs/core/Layers/effectLayerSceneComponent.pure
+    [<AllowNullLiteral>]
+    type EffectLayerSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``serialize`` : ``serializationObject``: obj -> unit
+        abstract ``addFromContainer`` : ``container``: BabylonjsBindings.SimpleInterfaces.IAssetContainer -> unit
+        abstract ``removeFromContainer`` : ``container``: BabylonjsBindings.SimpleInterfaces.IAssetContainer * ?``dispose``: bool -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type EffectLayerSceneComponentStatic =
+        inherit Constructor<EffectLayerSceneComponent>
+        [<EmitConstructor>] abstract Create: ?``scene``: Scene -> EffectLayerSceneComponent
+
+    [<Import("EffectLayerSceneComponent", "@babylonjs/core/Layers/effectLayerSceneComponent.pure.js")>]
+    let EffectLayerSceneComponent: EffectLayerSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Materials/effectRenderer.pure
+    [<AllowNullLiteral>]
+    type EffectRenderer =
+        abstract ``engine``: AbstractEngine with get
+        abstract ``setViewport`` : ?``viewport``: Viewport -> unit
+        abstract ``bindBuffers`` : ``effect``: Effect -> unit
+        abstract ``applyEffectWrapper`` : ``effectWrapper``: EffectWrapper * ?``depthTest``: bool * ?``stencilTest``: bool -> unit
+        abstract ``saveStates`` : unit -> unit
+        abstract ``restoreStates`` : unit -> unit
+        abstract ``draw`` : unit -> unit
+        abstract ``render`` : ``effectWrapper``: EffectWrapper * ?``outputTexture``: U2<RenderTargetWrapper, BabylonjsBindings.SimpleInterfaces.IRenderTargetTexture> -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type EffectRendererStatic =
+        inherit Constructor<EffectRenderer>
+        [<EmitConstructor>] abstract Create: ``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.IEffectRendererOptions -> EffectRenderer
+
+    [<Import("EffectRenderer", "@babylonjs/core/Materials/effectRenderer.pure.js")>]
+    let EffectRenderer: EffectRendererStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/elbowBlock.pure
+    [<AllowNullLiteral>]
+    type ElbowBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``target``: BabylonjsBindings.Enums.NodeMaterialBlockTargets with get, set
+
+    [<AllowNullLiteral>]
+    type ElbowBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ElbowBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ElbowBlock
+
+    [<Import("ElbowBlock", "@babylonjs/core/Materials/Node/Blocks/elbowBlock.pure.js")>]
+    let ElbowBlock: ElbowBlockStatic = jsNative
+
+    /// @babylonjs/core/Engines/engineFactory
+    [<AllowNullLiteral>]
+    type EngineFactory =
+        interface end
+
+    [<AllowNullLiteral>]
+    type EngineFactoryStatic =
+        inherit Constructor<EngineFactory>
+        [<EmitConstructor>] abstract Create: unit -> EngineFactory
+        abstract ``CreateAsync`` : ``canvas``: Browser.Types.HTMLCanvasElement * ?``options``: U3<BabylonjsBindings.SimpleInterfaces.WebGPUEngineOptions, BabylonjsBindings.SimpleInterfaces.EngineOptions, NullEngineOptions> -> JS.Promise<AbstractEngine>
+
+    [<Import("EngineFactory", "@babylonjs/core/Engines/engineFactory.js")>]
+    let EngineFactory: EngineFactoryStatic = jsNative
+
+    /// @babylonjs/core/Instrumentation/engineInstrumentation
+    [<AllowNullLiteral>]
+    type EngineInstrumentation =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        abstract ``engine``: AbstractEngine with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``gpuFrameTimeCounter``: PerfCounter with get
+        abstract ``captureGPUFrameTime``: bool with get, set
+        abstract ``shaderCompilationTimeCounter``: PerfCounter with get
+        abstract ``captureShaderCompilationTime``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type EngineInstrumentationStatic =
+        inherit Constructor<EngineInstrumentation>
+        [<EmitConstructor>] abstract Create: ``engine``: AbstractEngine -> EngineInstrumentation
+
+    [<Import("EngineInstrumentation", "@babylonjs/core/Instrumentation/engineInstrumentation.js")>]
+    let EngineInstrumentation: EngineInstrumentationStatic = jsNative
+
+    /// @babylonjs/core/Engines/engineStore
+    [<AllowNullLiteral>]
+    type EngineStore =
+        interface end
+
+    [<AllowNullLiteral>]
+    type EngineStoreStatic =
+        inherit Constructor<EngineStore>
+        [<EmitConstructor>] abstract Create: unit -> EngineStore
+        abstract ``Instances``: ResizeArray<AbstractEngine> with get, set
+        abstract ``OnEnginesDisposedObservable``: Observable<AbstractEngine> with get, set
+        abstract ``_LastCreatedScene``: Scene option with get, set
+        abstract ``UseFallbackTexture``: bool with get, set
+        abstract ``FallbackTexture``: string with get, set
+        abstract ``LastCreatedEngine``: AbstractEngine option with get
+        abstract ``LastCreatedScene``: Scene option with get
+
+    [<Import("EngineStore", "@babylonjs/core/Engines/engineStore.js")>]
+    let EngineStore: EngineStoreStatic = jsNative
+
+    /// Function-valued EngineView.customResize property.
+    [<AllowNullLiteral>]
+    type EngineViewCustomResizeCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``canvas``: Browser.Types.HTMLCanvasElement -> unit
+
+    /// @babylonjs/core/Engines/AbstractEngine/abstractEngine.views.pure
+    [<AllowNullLiteral>]
+    type EngineView =
+        abstract ``id``: string with get
+        abstract ``target``: Browser.Types.HTMLCanvasElement with get, set
+        abstract ``camera``: U2<Camera, ResizeArray<Camera>> option with get, set
+        abstract ``clearBeforeCopy``: bool option with get, set
+        abstract ``enabled``: bool with get, set
+        abstract ``customResize``: EngineViewCustomResizeCallback option with get, set
+
+    [<AllowNullLiteral>]
+    type EngineViewStatic =
+        inherit Constructor<EngineView>
+        [<EmitConstructor>] abstract Create: unit -> EngineView
+
+    [<Import("EngineView", "@babylonjs/core/Engines/AbstractEngine/abstractEngine.views.pure.js")>]
+    let EngineView: EngineViewStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/envCubeTexture.pure
+    [<AllowNullLiteral>]
+    type EnvCubeTexture =
+        inherit BaseTexture
+        abstract ``url``: string with get, set
+        abstract ``boundingBoxPosition``: Vector3 with get, set
+        abstract ``onLoadObservable``: Observable<EnvCubeTexture> with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``delayLoad`` : unit -> unit
+        abstract ``getReflectionTextureMatrix`` : unit -> Matrix
+        abstract ``setReflectionTextureMatrix`` : ``value``: Matrix -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``clone`` : unit -> EnvCubeTexture
+        abstract ``isBlocking``: bool with get, set
+        abstract ``rotationY``: float with get, set
+        abstract ``boundingBoxSize``: Vector3 with get, set
+
+    [<AllowNullLiteral>]
+    type EnvCubeTextureStatic =
+        inherit BaseTextureStatic
+        inherit Constructor<EnvCubeTexture>
+        [<EmitConstructor>] abstract Create: ``url``: string * ``sceneOrEngine``: U2<Scene, AbstractEngine> * ``size``: float * ?``noMipmap``: bool * ?``generateHarmonics``: bool * ?``gammaSpace``: bool * ?``prefilterOnLoad``: bool * ?``onLoad``: System.Action * ?``onError``: System.Action<string option, obj option> * ?``supersample``: bool * ?``prefilterIrradianceOnLoad``: bool * ?``prefilterUsingCdf``: bool * ?``sphericalPolynomialTargetSize``: float -> EnvCubeTexture
+
+    [<Import("EnvCubeTexture", "@babylonjs/core/Materials/Textures/envCubeTexture.pure.js")>]
+    let EnvCubeTexture: EnvCubeTextureStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/equiRectangularCubeTexture.pure
+    [<AllowNullLiteral>]
+    type EquiRectangularCubeTexture =
+        inherit BaseTexture
+        abstract ``url``: string with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``clone`` : unit -> EquiRectangularCubeTexture
+        abstract ``delayLoad`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type EquiRectangularCubeTextureStatic =
+        inherit BaseTextureStatic
+        inherit Constructor<EquiRectangularCubeTexture>
+        [<EmitConstructor>] abstract Create: ``url``: string * ``scene``: Scene * ``size``: float * ?``noMipmap``: bool * ?``gammaSpace``: bool * ?``onLoad``: System.Action * ?``onError``: System.Action<string option, obj option> * ?``supersample``: bool * ?``sphericalPolynomialTargetSize``: float -> EquiRectangularCubeTexture
+
+    [<Import("EquiRectangularCubeTexture", "@babylonjs/core/Materials/Textures/equiRectangularCubeTexture.pure.js")>]
+    let EquiRectangularCubeTexture: EquiRectangularCubeTextureStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/extractHighlightsPostProcess.pure
+    [<AllowNullLiteral>]
+    type ExtractHighlightsPostProcess =
+        inherit PostProcess
+        abstract ``_inputPostProcess``: PostProcess option with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``threshold``: float with get, set
+        abstract ``_exposure``: float with get, set
+
+    [<AllowNullLiteral>]
+    type ExtractHighlightsPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<ExtractHighlightsPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ?``camera``: Camera * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float * ?``blockCompilation``: bool -> ExtractHighlightsPostProcess
+
+    [<Import("ExtractHighlightsPostProcess", "@babylonjs/core/PostProcesses/extractHighlightsPostProcess.pure.js")>]
+    let ExtractHighlightsPostProcess: ExtractHighlightsPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Behaviors/Meshes/fadeInOutBehavior
+    [<AllowNullLiteral>]
+    type FadeInOutBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<Mesh>
+        abstract ``fadeInDelay``: float with get, set
+        abstract ``fadeOutDelay``: float with get, set
+        abstract ``fadeInTime``: float with get, set
+        abstract ``fadeOutTime``: float with get, set
+        abstract ``init`` : unit -> unit
+        abstract ``attach`` : ``ownerNode``: Mesh -> unit
+        abstract ``detach`` : unit -> unit
+        abstract ``fadeIn`` : ?``fadeIn``: bool -> unit
+        abstract ``fadeOut`` : unit -> unit
+        abstract ``delay``: float with get, set
+        abstract ``attachedNode``: Mesh option with get
+        abstract ``name``: string with get
+
+    [<AllowNullLiteral>]
+    type FadeInOutBehaviorStatic =
+        inherit Constructor<FadeInOutBehavior>
+        [<EmitConstructor>] abstract Create: unit -> FadeInOutBehavior
+
+    [<Import("FadeInOutBehavior", "@babylonjs/core/Behaviors/Meshes/fadeInOutBehavior.js")>]
+    let FadeInOutBehavior: FadeInOutBehaviorStatic = jsNative
+
+    /// Inline object shape used by FilesInput.
+    [<AllowNullLiteral>]
+    type FilesInputAccessor3Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> Browser.Types.File with get, set
+
+    /// Function-valued FilesInput.onProcessFileCallback property.
+    [<AllowNullLiteral>]
+    type FilesInputOnProcessFileCallbackCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``file``: Browser.Types.File * ``name``: string * ``extension``: string * ``setSceneFileToLoad``: System.Action<Browser.Types.File> -> bool
+
+    /// Function-valued FilesInput.loadAsync property.
+    [<AllowNullLiteral>]
+    type FilesInputLoadAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``sceneFile``: Browser.Types.File * ``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> option -> JS.Promise<Scene>
+
+    /// @babylonjs/core/Misc/filesInput
+    [<AllowNullLiteral>]
+    type FilesInput =
+        abstract ``useAppend``: bool with get
+        abstract ``dontInjectRenderLoop``: bool with get
+        abstract ``onProcessFileCallback``: FilesInputOnProcessFileCallbackCallback with get, set
+        abstract ``displayLoadingUI``: bool with get, set
+        abstract ``loadAsync``: FilesInputLoadAsyncCallback with get, set
+        abstract ``monitorElementForDragNDrop`` : ``elementToMonitor``: Browser.Types.HTMLElement -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadFiles`` : ``event``: obj -> unit
+        abstract ``reload`` : unit -> unit
+        abstract ``filesToLoad``: ResizeArray<Browser.Types.File> with get
+
+    [<AllowNullLiteral>]
+    type FilesInputStatic =
+        inherit Constructor<FilesInput>
+        [<EmitConstructor>] abstract Create: ``engine``: AbstractEngine * ``scene``: Scene option * ``sceneLoadedCallback``: System.Action<Browser.Types.File, Scene> option * ``progressCallback``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> option * ``additionalRenderLoopLogicCallback``: System.Action option * ``textureLoadingCallback``: System.Action<float> option * ``startingProcessingFilesCallback``: System.Action<ResizeArray<Browser.Types.File> option> option * ``onReloadCallback``: System.Action<Browser.Types.File> option * ``errorCallback``: System.Action<Browser.Types.File, Scene option, string> option * ?``useAppend``: bool * ?``dontInjectRenderLoop``: bool -> FilesInput
+        abstract ``FilesToLoad``: FilesInputAccessor3Object with get
+
+    [<Import("FilesInput", "@babylonjs/core/Misc/filesInput.js")>]
+    let FilesInput: FilesInputStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/filterPostProcess.pure
+    [<AllowNullLiteral>]
+    type FilterPostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+        abstract ``kernelMatrix``: Matrix with get, set
+
+    [<AllowNullLiteral>]
+    type FilterPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<FilterPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``kernelMatrix``: Matrix * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool -> FilterPostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> FilterPostProcess option
+
+    [<Import("FilterPostProcess", "@babylonjs/core/PostProcesses/filterPostProcess.pure.js")>]
+    let FilterPostProcess: FilterPostProcessStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/CustomTypes/flowGraphMatrix
+    [<AllowNullLiteral>]
+    type FlowGraphMatrix2D =
+        inherit BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrix<Vector2>
+        abstract ``_m``: ResizeArray<float> with get, set
+        abstract ``transformVector`` : ``v``: Vector2 -> Vector2
+        abstract ``transformVectorToRef`` : ``v``: Vector2 * ``result``: Vector2 -> Vector2
+        abstract ``asArray`` : unit -> ResizeArray<float>
+        abstract ``toArray`` : ?``emptyArray``: ResizeArray<float> -> ResizeArray<float>
+        abstract ``fromArray`` : ``array``: ResizeArray<float> -> FlowGraphMatrix2D
+        abstract ``multiplyToRef`` : ``other``: FlowGraphMatrix2D * ``result``: FlowGraphMatrix2D -> FlowGraphMatrix2D
+        abstract ``multiply`` : ``other``: FlowGraphMatrix2D -> FlowGraphMatrix2D
+        abstract ``divideToRef`` : ``other``: FlowGraphMatrix2D * ``result``: FlowGraphMatrix2D -> FlowGraphMatrix2D
+        abstract ``divide`` : ``other``: FlowGraphMatrix2D -> FlowGraphMatrix2D
+        abstract ``addToRef`` : ``other``: FlowGraphMatrix2D * ``result``: FlowGraphMatrix2D -> FlowGraphMatrix2D
+        abstract ``add`` : ``other``: FlowGraphMatrix2D -> FlowGraphMatrix2D
+        abstract ``subtractToRef`` : ``other``: FlowGraphMatrix2D * ``result``: FlowGraphMatrix2D -> FlowGraphMatrix2D
+        abstract ``subtract`` : ``other``: FlowGraphMatrix2D -> FlowGraphMatrix2D
+        abstract ``transpose`` : unit -> FlowGraphMatrix2D
+        abstract ``determinant`` : unit -> float
+        abstract ``inverse`` : unit -> FlowGraphMatrix2D
+        abstract ``equals`` : ``other``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrix<Vector2> * ?``epsilon``: float -> bool
+        abstract ``getClassName`` : unit -> string
+        abstract ``toString`` : unit -> string
+        abstract ``m``: ResizeArray<float> with get
+
+    [<AllowNullLiteral>]
+    type FlowGraphMatrix2DStatic =
+        inherit Constructor<FlowGraphMatrix2D>
+        [<EmitConstructor>] abstract Create: ?``m``: ResizeArray<float> -> FlowGraphMatrix2D
+
+    [<Import("FlowGraphMatrix2D", "@babylonjs/core/FlowGraph/CustomTypes/flowGraphMatrix.js")>]
+    let FlowGraphMatrix2D: FlowGraphMatrix2DStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/CustomTypes/flowGraphMatrix
+    [<AllowNullLiteral>]
+    type FlowGraphMatrix3D =
+        inherit BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrix<Vector3>
+        abstract ``_m``: ResizeArray<float> with get, set
+        abstract ``transformVector`` : ``v``: Vector3 -> Vector3
+        abstract ``transformVectorToRef`` : ``v``: Vector3 * ``result``: Vector3 -> Vector3
+        abstract ``multiplyToRef`` : ``other``: FlowGraphMatrix3D * ``result``: FlowGraphMatrix3D -> FlowGraphMatrix3D
+        abstract ``multiply`` : ``other``: FlowGraphMatrix3D -> FlowGraphMatrix3D
+        abstract ``divideToRef`` : ``other``: FlowGraphMatrix3D * ``result``: FlowGraphMatrix3D -> FlowGraphMatrix3D
+        abstract ``divide`` : ``other``: FlowGraphMatrix3D -> FlowGraphMatrix3D
+        abstract ``addToRef`` : ``other``: FlowGraphMatrix3D * ``result``: FlowGraphMatrix3D -> FlowGraphMatrix3D
+        abstract ``add`` : ``other``: FlowGraphMatrix3D -> FlowGraphMatrix3D
+        abstract ``subtractToRef`` : ``other``: FlowGraphMatrix3D * ``result``: FlowGraphMatrix3D -> FlowGraphMatrix3D
+        abstract ``subtract`` : ``other``: FlowGraphMatrix3D -> FlowGraphMatrix3D
+        abstract ``toArray`` : ?``emptyArray``: ResizeArray<float> -> ResizeArray<float>
+        abstract ``asArray`` : unit -> ResizeArray<float>
+        abstract ``fromArray`` : ``array``: ResizeArray<float> -> FlowGraphMatrix3D
+        abstract ``transpose`` : unit -> FlowGraphMatrix3D
+        abstract ``determinant`` : unit -> float
+        abstract ``inverse`` : unit -> FlowGraphMatrix3D
+        abstract ``equals`` : ``other``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrix<Vector3> * ?``epsilon``: float -> bool
+        abstract ``getClassName`` : unit -> string
+        abstract ``toString`` : unit -> string
+        abstract ``m``: ResizeArray<float> with get
+
+    [<AllowNullLiteral>]
+    type FlowGraphMatrix3DStatic =
+        inherit Constructor<FlowGraphMatrix3D>
+        [<EmitConstructor>] abstract Create: ?``array``: ResizeArray<float> -> FlowGraphMatrix3D
+
+    [<Import("FlowGraphMatrix3D", "@babylonjs/core/FlowGraph/CustomTypes/flowGraphMatrix.js")>]
+    let FlowGraphMatrix3D: FlowGraphMatrix3DStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphSceneEventCoordinator
+    [<AllowNullLiteral>]
+    type FlowGraphSceneEventCoordinator =
+        abstract ``_scene``: Scene with get
+        abstract ``onEventTriggeredObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IFlowGraphEventTrigger> with get, set
+        abstract ``sceneReadyTriggered``: bool with get, set
+        abstract ``pressedKeys``: JS.Set<string> with get
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type FlowGraphSceneEventCoordinatorStatic =
+        inherit Constructor<FlowGraphSceneEventCoordinator>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> FlowGraphSceneEventCoordinator
+
+    [<Import("FlowGraphSceneEventCoordinator", "@babylonjs/core/FlowGraph/flowGraphSceneEventCoordinator.js")>]
+    let FlowGraphSceneEventCoordinator: FlowGraphSceneEventCoordinatorStatic = jsNative
+
+    /// @babylonjs/core/Rendering/fluidRenderer/fluidRenderer.pure
+    [<AllowNullLiteral>]
+    type FluidRendererSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type FluidRendererSceneComponentStatic =
+        inherit Constructor<FluidRendererSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> FluidRendererSceneComponent
+
+    [<Import("FluidRendererSceneComponent", "@babylonjs/core/Rendering/fluidRenderer/fluidRenderer.pure.js")>]
+    let FluidRendererSceneComponent: FluidRendererSceneComponentStatic = jsNative
+
+    /// Inline object shape used by FluidRenderingObject.
+    [<AllowNullLiteral>]
+    type FluidRenderingObjectAccessor17Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> VertexBuffer with get, set
+
+    /// @babylonjs/core/Rendering/fluidRenderer/fluidRenderingObject
+    [<AllowNullLiteral>]
+    type FluidRenderingObject =
+        abstract ``priority``: float with get, set
+        abstract ``onParticleSizeChanged``: Observable<FluidRenderingObject> with get, set
+        abstract ``particleThicknessAlpha``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``isReady`` : unit -> bool
+        abstract ``renderDepthTexture`` : unit -> unit
+        abstract ``renderThicknessTexture`` : unit -> unit
+        abstract ``renderDiffuseTexture`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``particleSize``: float with get, set
+        abstract ``useInstancing``: bool with get
+        abstract ``useVelocity``: bool with get, set
+        abstract ``vertexBuffers``: FluidRenderingObjectAccessor17Object with get
+        abstract ``indexBuffer``: DataBuffer option with get
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get
+        abstract ``numParticles``: float with get
+
+    [<AllowNullLiteral>]
+    type FluidRenderingObjectStatic =
+        inherit Constructor<FluidRenderingObject>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene * ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> FluidRenderingObject
+
+    [<Import("FluidRenderingObject", "@babylonjs/core/Rendering/fluidRenderer/fluidRenderingObject.js")>]
+    let FluidRenderingObject: FluidRenderingObjectStatic = jsNative
+
+    /// @babylonjs/core/Rendering/fluidRenderer/fluidRenderingTextures
+    [<AllowNullLiteral>]
+    type FluidRenderingTextures =
+        abstract ``enableBlur``: bool with get, set
+        abstract ``blurSizeDivisor``: float with get, set
+        abstract ``blurFilterSize``: float with get, set
+        abstract ``blurMaxFilterSize``: float with get, set
+        abstract ``blurDepthScale``: float with get, set
+        abstract ``particleSize``: float with get, set
+        abstract ``onDisposeObservable``: Observable<FluidRenderingTextures> with get, set
+        abstract ``initialize`` : unit -> unit
+        abstract ``applyBlurPostProcesses`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``blurNumIterations``: float with get, set
+        abstract ``renderTarget``: RenderTargetWrapper option with get
+        abstract ``renderTargetBlur``: RenderTargetWrapper option with get
+        abstract ``texture``: Texture option with get
+        abstract ``textureBlur``: Texture option with get
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get
+
+    [<AllowNullLiteral>]
+    type FluidRenderingTexturesStatic =
+        inherit Constructor<FluidRenderingTextures>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ``width``: float * ``height``: float * ``blurTextureSizeX``: float * ``blurTextureSizeY``: float * ?``textureType``: float * ?``textureFormat``: float * ?``blurTextureType``: float * ?``blurTextureFormat``: float * ?``useStandardBlur``: bool * ?``camera``: Camera * ?``generateDepthBuffer``: bool * ?``samples``: float * ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> FluidRenderingTextures
+
+    [<Import("FluidRenderingTextures", "@babylonjs/core/Rendering/fluidRenderer/fluidRenderingTextures.js")>]
+    let FluidRenderingTextures: FluidRenderingTexturesStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Dual/fogBlock.pure
+    [<AllowNullLiteral>]
+    type FogBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial * ?``mesh``: AbstractMesh -> unit
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh -> unit
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``view``: NodeMaterialConnectionPoint with get
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``fogColor``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type FogBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<FogBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> FogBlock
+
+    [<Import("FogBlock", "@babylonjs/core/Materials/Node/Blocks/Dual/fogBlock.pure.js")>]
+    let FogBlock: FogBlockStatic = jsNative
+
+    /// @babylonjs/core/Behaviors/Meshes/followBehavior
+    [<AllowNullLiteral>]
+    type FollowBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<TransformNode>
+        abstract ``attachedNode``: TransformNode option with get, set
+        abstract ``interpolatePose``: bool with get, set
+        abstract ``lerpTime``: float with get, set
+        abstract ``ignoreCameraPitchAndRoll``: bool with get, set
+        abstract ``pitchOffset``: float with get, set
+        abstract ``maxViewVerticalDegrees``: float with get, set
+        abstract ``maxViewHorizontalDegrees``: float with get, set
+        abstract ``orientToCameraDeadzoneDegrees``: float with get, set
+        abstract ``ignoreDistanceClamp``: bool with get, set
+        abstract ``ignoreAngleClamp``: bool with get, set
+        abstract ``verticalMaxDistance``: float with get, set
+        abstract ``defaultDistance``: float with get, set
+        abstract ``maximumDistance``: float with get, set
+        abstract ``minimumDistance``: float with get, set
+        abstract ``useFixedVerticalOffset``: bool with get, set
+        abstract ``fixedVerticalOffset``: float with get, set
+        abstract ``_enabled``: bool with get, set
+        abstract ``init`` : unit -> unit
+        abstract ``attach`` : ``ownerNode``: TransformNode * ?``followedCamera``: Camera -> unit
+        abstract ``detach`` : unit -> unit
+        abstract ``recenter`` : unit -> unit
+        abstract ``followedCamera``: Camera option with get, set
+        abstract ``name``: string with get
+
+    [<AllowNullLiteral>]
+    type FollowBehaviorStatic =
+        inherit Constructor<FollowBehavior>
+        [<EmitConstructor>] abstract Create: unit -> FollowBehavior
+
+    [<Import("FollowBehavior", "@babylonjs/core/Behaviors/Meshes/followBehavior.js")>]
+    let FollowBehavior: FollowBehaviorStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/fragCoordBlock.pure
+    [<AllowNullLiteral>]
+    type FragCoordBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``xy``: NodeMaterialConnectionPoint with get
+        abstract ``xyz``: NodeMaterialConnectionPoint with get
+        abstract ``xyzw``: NodeMaterialConnectionPoint with get
+        abstract ``x``: NodeMaterialConnectionPoint with get
+        abstract ``y``: NodeMaterialConnectionPoint with get
+        abstract ``z``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type FragCoordBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<FragCoordBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> FragCoordBlock
+
+    [<Import("FragCoordBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/fragCoordBlock.pure.js")>]
+    let FragCoordBlock: FragCoordBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/fragDepthBlock.pure
+    [<AllowNullLiteral>]
+    type FragDepthBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``depth``: NodeMaterialConnectionPoint with get
+        abstract ``worldPos``: NodeMaterialConnectionPoint with get
+        abstract ``viewProjection``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type FragDepthBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<FragDepthBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> FragDepthBlock
+
+    [<Import("FragDepthBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/fragDepthBlock.pure.js")>]
+    let FragDepthBlock: FragDepthBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/fragmentOutputBlock.pure
+    [<AllowNullLiteral>]
+    type FragmentOutputBlock =
+        inherit NodeMaterialBlock
+        abstract ``convertToGammaSpace``: bool with get, set
+        abstract ``convertToLinearSpace``: bool with get, set
+        abstract ``useLogarithmicDepth``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial -> unit
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``colorSpace``: BabylonjsBindings.Enums.FragmentOutputBlockColorSpace with get, set
+        abstract ``rgba``: NodeMaterialConnectionPoint with get
+        abstract ``rgb``: NodeMaterialConnectionPoint with get
+        abstract ``a``: NodeMaterialConnectionPoint with get
+        abstract ``additionalColor``: NodeMaterialConnectionPoint with get
+        abstract ``glow``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type FragmentOutputBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<FragmentOutputBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> FragmentOutputBlock
+
+    [<Import("FragmentOutputBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/fragmentOutputBlock.pure.js")>]
+    let FragmentOutputBlock: FragmentOutputBlockStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Tasks/Layers/baseLayerTask
+    [<AllowNullLiteral>]
+    type FrameGraphBaseLayerTask =
+        inherit FrameGraphTask
+        abstract ``targetTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+        abstract ``objectRendererTask``: FrameGraphObjectRendererTask with get, set
+        abstract ``layerTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle option with get, set
+        abstract ``outputTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``layer``: ThinEffectLayer with get
+        abstract ``isReady`` : unit -> bool
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : ?``_skipCreationOfDisabledPasses``: bool * ?``additionalComposeBindings``: System.Action<FrameGraphRenderContext, Effect> -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``name``: string with get, set
+        abstract ``objectRendererForLayer``: FrameGraphObjectRendererTask with get
+
+    [<AllowNullLiteral>]
+    type FrameGraphBaseLayerTaskStatic =
+        inherit FrameGraphTaskStatic
+        inherit Constructor<FrameGraphBaseLayerTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``scene``: Scene * ``layer``: ThinEffectLayer * ``numBlurPasses``: float * ?``_blurType``: BabylonjsBindings.StringEnums.FrameGraphBaseLayerBlurType * ?``_setRenderTargetDepth``: bool * ?``_notifyBlurObservable``: bool * ?``_setObjectList``: bool -> FrameGraphBaseLayerTask
+
+    [<Import("FrameGraphBaseLayerTask", "@babylonjs/core/FrameGraph/Tasks/Layers/baseLayerTask.js")>]
+    let FrameGraphBaseLayerTask: FrameGraphBaseLayerTaskStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Tasks/Rendering/csmShadowGeneratorTask
+    [<AllowNullLiteral>]
+    type FrameGraphCascadedShadowGeneratorTask =
+        inherit FrameGraphShadowGeneratorTask
+        abstract ``depthTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle option with get, set
+        abstract ``depthTextureType``: BabylonjsBindings.Enums.DepthTextureType with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``numCascades``: float with get, set
+        abstract ``debug``: bool with get, set
+        abstract ``stabilizeCascades``: bool with get, set
+        abstract ``lambda``: float with get, set
+        abstract ``cascadeBlendPercentage``: float with get, set
+        abstract ``depthClamp``: bool with get, set
+        abstract ``autoCalcDepthBounds``: bool with get, set
+        abstract ``autoCalcDepthBoundsRefreshRate``: float with get, set
+        abstract ``shadowMaxZ``: float with get, set
+
+    [<AllowNullLiteral>]
+    type FrameGraphCascadedShadowGeneratorTaskStatic =
+        inherit FrameGraphShadowGeneratorTaskStatic
+        inherit Constructor<FrameGraphCascadedShadowGeneratorTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph -> FrameGraphCascadedShadowGeneratorTask
+        abstract ``IsCascadedShadowGenerator`` : ``task``: FrameGraphShadowGeneratorTask -> bool
+
+    [<Import("FrameGraphCascadedShadowGeneratorTask", "@babylonjs/core/FrameGraph/Tasks/Rendering/csmShadowGeneratorTask.js")>]
+    let FrameGraphCascadedShadowGeneratorTask: FrameGraphCascadedShadowGeneratorTaskStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Tasks/Texture/clearTextureTask
+    [<AllowNullLiteral>]
+    type FrameGraphClearTextureTask =
+        inherit FrameGraphTaskMultiRenderTarget
+        abstract ``color``: Color4 with get, set
+        abstract ``clearColor``: bool with get, set
+        abstract ``convertColorToLinearSpace``: bool with get, set
+        abstract ``clearDepth``: bool with get, set
+        abstract ``clearStencil``: bool with get, set
+        abstract ``stencilValue``: float with get, set
+        abstract ``targetTexture``: U2<BabylonjsBindings.TypeAliases.FrameGraphTextureHandle, ResizeArray<BabylonjsBindings.TypeAliases.FrameGraphTextureHandle>> option with get, set
+        abstract ``depthTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle option with get, set
+        abstract ``outputTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``outputDepthTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : ?``skipCreationOfDisabledPasses``: bool -> FrameGraphRenderPass
+
+    [<AllowNullLiteral>]
+    type FrameGraphClearTextureTaskStatic =
+        inherit FrameGraphTaskMultiRenderTargetStatic
+        inherit Constructor<FrameGraphClearTextureTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph -> FrameGraphClearTextureTask
+
+    [<Import("FrameGraphClearTextureTask", "@babylonjs/core/FrameGraph/Tasks/Texture/clearTextureTask.js")>]
+    let FrameGraphClearTextureTask: FrameGraphClearTextureTaskStatic = jsNative
+
+    /// Inline object shape used by FrameGraphComputeShaderTask.
+    [<AllowNullLiteral>]
+    type FrameGraphComputeShaderTaskProperty5Object =
+        abstract ``buffer``: U2<StorageBuffer, DataBuffer> with get, set
+        abstract ``offset``: float option with get, set
+
+    /// Inline object shape used by FrameGraphComputeShaderTask.
+    [<AllowNullLiteral>]
+    type FrameGraphComputeShaderTaskMethod11Parameter2Object =
+        [<EmitIndexer>] abstract Item: ``name``: string -> float with get, set
+
+    /// Function-valued FrameGraphComputeShaderTask.execute property.
+    [<AllowNullLiteral>]
+    type FrameGraphComputeShaderTaskExecuteCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: FrameGraphContext -> unit
+
+    /// @babylonjs/core/FrameGraph/Tasks/Misc/computeShaderTask
+    [<AllowNullLiteral>]
+    type FrameGraphComputeShaderTask =
+        inherit FrameGraphTask
+        abstract ``dispatchSize``: Vector3 with get, set
+        abstract ``indirectDispatch``: FrameGraphComputeShaderTaskProperty5Object option with get, set
+        abstract ``execute``: FrameGraphComputeShaderTaskExecuteCallback option with get, set
+        abstract ``getUniformBuffer`` : ``name``: string -> UniformBuffer
+        abstract ``isReady`` : unit -> bool
+        abstract ``createUniformBuffer`` : ``name``: string * ``description``: FrameGraphComputeShaderTaskMethod11Parameter2Object * ?``autoUpdate``: bool -> UniformBuffer
+        abstract ``setTexture`` : ``name``: string * ``texture``: BaseTexture * ?``bindSampler``: bool -> unit
+        abstract ``setInternalTexture`` : ``name``: string * ``texture``: InternalTexture -> unit
+        abstract ``setStorageTexture`` : ``name``: string * ``texture``: BaseTexture -> unit
+        abstract ``setExternalTexture`` : ``name``: string * ``texture``: ExternalTexture -> unit
+        abstract ``setVideoTexture`` : ``name``: string * ``texture``: VideoTexture -> bool
+        abstract ``setUniformBuffer`` : ``name``: string * ``buffer``: U2<UniformBuffer, DataBuffer> -> unit
+        abstract ``setStorageBuffer`` : ``name``: string * ``buffer``: U2<StorageBuffer, DataBuffer> -> unit
+        abstract ``setTextureSampler`` : ``name``: string * ``sampler``: TextureSampler -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : ?``skipCreationOfDisabledPasses``: bool -> FrameGraphPass<FrameGraphContext>
+        abstract ``dispose`` : unit -> unit
+        abstract ``computeShader``: ComputeShader with get
+
+    [<AllowNullLiteral>]
+    type FrameGraphComputeShaderTaskStatic =
+        inherit FrameGraphTaskStatic
+        inherit Constructor<FrameGraphComputeShaderTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``shaderPath``: U2<BabylonjsBindings.ObjectTypes.IComputeShaderPath, string> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIComputeShaderOptions -> FrameGraphComputeShaderTask
+
+    [<Import("FrameGraphComputeShaderTask", "@babylonjs/core/FrameGraph/Tasks/Misc/computeShaderTask.js")>]
+    let FrameGraphComputeShaderTask: FrameGraphComputeShaderTaskStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Tasks/Texture/copyToTextureTask
+    [<AllowNullLiteral>]
+    type FrameGraphCopyToTextureTask =
+        inherit FrameGraphTask
+        abstract ``sourceTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+        abstract ``targetTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+        abstract ``viewport``: BabylonjsBindings.SimpleInterfaces.IViewportLike option with get, set
+        abstract ``lodLevel``: float with get, set
+        abstract ``outputTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type FrameGraphCopyToTextureTaskStatic =
+        inherit FrameGraphTaskStatic
+        inherit Constructor<FrameGraphCopyToTextureTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph -> FrameGraphCopyToTextureTask
+
+    [<Import("FrameGraphCopyToTextureTask", "@babylonjs/core/FrameGraph/Tasks/Texture/copyToTextureTask.js")>]
+    let FrameGraphCopyToTextureTask: FrameGraphCopyToTextureTaskStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Tasks/Misc/cullObjectsTask
+    [<AllowNullLiteral>]
+    type FrameGraphCullObjectsTask =
+        inherit FrameGraphTask
+        abstract ``objectList``: FrameGraphObjectList with get, set
+        abstract ``camera``: Camera with get, set
+        abstract ``outputObjectList``: FrameGraphObjectList with get
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type FrameGraphCullObjectsTaskStatic =
+        inherit FrameGraphTaskStatic
+        inherit Constructor<FrameGraphCullObjectsTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``scene``: Scene -> FrameGraphCullObjectsTask
+
+    [<Import("FrameGraphCullObjectsTask", "@babylonjs/core/FrameGraph/Tasks/Misc/cullObjectsTask.js")>]
+    let FrameGraphCullObjectsTask: FrameGraphCullObjectsTaskStatic = jsNative
+
+    /// Function-valued FrameGraphExecuteTask.func property.
+    [<AllowNullLiteral>]
+    type FrameGraphExecuteTaskFuncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: FrameGraphContext -> unit
+
+    /// Function-valued FrameGraphExecuteTask.funcDisabled property.
+    [<AllowNullLiteral>]
+    type FrameGraphExecuteTaskFuncDisabledCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: FrameGraphContext -> unit
+
+    /// Function-valued FrameGraphExecuteTask.customIsReady property.
+    [<AllowNullLiteral>]
+    type FrameGraphExecuteTaskCustomIsReadyCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> bool
+
+    /// @babylonjs/core/FrameGraph/Tasks/Misc/executeTask
+    [<AllowNullLiteral>]
+    type FrameGraphExecuteTask =
+        inherit FrameGraphTask
+        abstract ``func``: FrameGraphExecuteTaskFuncCallback with get, set
+        abstract ``funcDisabled``: FrameGraphExecuteTaskFuncDisabledCallback option with get, set
+        abstract ``customIsReady``: FrameGraphExecuteTaskCustomIsReadyCallback option with get, set
+        abstract ``isReady`` : unit -> bool
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : unit -> FrameGraphPass<FrameGraphContext>
+
+    [<AllowNullLiteral>]
+    type FrameGraphExecuteTaskStatic =
+        inherit FrameGraphTaskStatic
+        inherit Constructor<FrameGraphExecuteTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph -> FrameGraphExecuteTask
+
+    [<Import("FrameGraphExecuteTask", "@babylonjs/core/FrameGraph/Tasks/Misc/executeTask.js")>]
+    let FrameGraphExecuteTask: FrameGraphExecuteTaskStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Tasks/Texture/generateMipMapsTask
+    [<AllowNullLiteral>]
+    type FrameGraphGenerateMipMapsTask =
+        inherit FrameGraphTask
+        abstract ``targetTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+        abstract ``outputTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type FrameGraphGenerateMipMapsTaskStatic =
+        inherit FrameGraphTaskStatic
+        inherit Constructor<FrameGraphGenerateMipMapsTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph -> FrameGraphGenerateMipMapsTask
+
+    [<Import("FrameGraphGenerateMipMapsTask", "@babylonjs/core/FrameGraph/Tasks/Texture/generateMipMapsTask.js")>]
+    let FrameGraphGenerateMipMapsTask: FrameGraphGenerateMipMapsTaskStatic = jsNative
+
+    /// Inline object shape used by FrameGraphGeometryRendererTask.
+    [<AllowNullLiteral>]
+    type FrameGraphGeometryRendererTaskProperty1Object =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+
+    /// @babylonjs/core/FrameGraph/Tasks/Rendering/geometryRendererTask
+    [<AllowNullLiteral>]
+    type FrameGraphGeometryRendererTask =
+        inherit FrameGraphObjectRendererTask
+        abstract ``size``: FrameGraphGeometryRendererTaskProperty1Object with get, set
+        abstract ``sizeIsPercentage``: bool with get, set
+        abstract ``samples``: float with get, set
+        abstract ``dontRenderWhenMaterialDepthWriteIsDisabled``: bool with get, set
+        abstract ``textureDescriptions``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IFrameGraphGeometryRendererTextureDescription> with get, set
+        abstract ``geometryIrradianceTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryViewDepthTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryNormViewDepthTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryScreenDepthTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryViewNormalTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryWorldNormalTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryLocalPositionTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryWorldPositionTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryAlbedoTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryReflectivityTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryVelocityTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``geometryLinearVelocityTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``excludeSkinnedMeshFromVelocityTexture`` : ``skinnedMesh``: AbstractMesh -> unit
+        abstract ``removeExcludedSkinnedMeshFromVelocityTexture`` : ``skinnedMesh``: AbstractMesh -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : ?``skipCreationOfDisabledPasses``: bool * ?``additionalExecute``: System.Action<FrameGraphRenderContext> -> FrameGraphRenderPass
+        abstract ``dispose`` : unit -> unit
+        abstract ``reverseCulling``: bool with get, set
+        abstract ``disableDepthPrePass``: bool with get, set
+        abstract ``name``: string with get, set
+        abstract ``excludedSkinnedMeshFromVelocityTexture``: ResizeArray<AbstractMesh> with get
+
+    [<AllowNullLiteral>]
+    type FrameGraphGeometryRendererTaskStatic =
+        inherit FrameGraphObjectRendererTaskStatic
+        inherit Constructor<FrameGraphGeometryRendererTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``scene``: Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.ObjectRendererOptions * ?``existingObjectRenderer``: ObjectRenderer -> FrameGraphGeometryRendererTask
+
+    [<Import("FrameGraphGeometryRendererTask", "@babylonjs/core/FrameGraph/Tasks/Rendering/geometryRendererTask.js")>]
+    let FrameGraphGeometryRendererTask: FrameGraphGeometryRendererTaskStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Tasks/Rendering/iblShadowsRendererTask.pure
+    [<AllowNullLiteral>]
+    type FrameGraphIblShadowsRendererTask =
+        inherit FrameGraphTask
+        abstract ``outputTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``getClassName`` : unit -> string
+        abstract ``depthTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+        abstract ``normalTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+        abstract ``positionTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+        abstract ``velocityTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+        abstract ``updateVoxelization`` : unit -> unit
+        abstract ``updateSceneBounds`` : unit -> unit
+        abstract ``resetAccumulation`` : unit -> unit
+        abstract ``addShadowReceivingMaterial`` : ?``material``: U2<Material, ResizeArray<Material>> -> unit
+        abstract ``removeShadowReceivingMaterial`` : ``material``: U2<Material, ResizeArray<Material>> -> unit
+        abstract ``clearShadowReceivingMaterials`` : unit -> unit
+        abstract ``addShadowCastingMesh`` : ``mesh``: U2<Mesh, ResizeArray<Mesh>> -> unit
+        abstract ``removeShadowCastingMesh`` : ``mesh``: U2<Mesh, ResizeArray<Mesh>> -> unit
+        abstract ``clearShadowCastingMeshes`` : unit -> unit
+        abstract ``initAsync`` : unit -> JS.Promise<obj>
+        abstract ``isReady`` : unit -> bool
+        abstract ``record`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``name``: string with get, set
+        abstract ``disabled``: bool with get, set
+        abstract ``camera``: Camera with get, set
+        abstract ``objectList``: FrameGraphObjectList with get, set
+        abstract ``sampleDirections``: float with get, set
+        abstract ``coloredShadows``: bool with get, set
+        abstract ``voxelShadowOpacity``: float with get, set
+        abstract ``ssShadowOpacity``: float with get, set
+        abstract ``ssShadowSampleCount``: float with get, set
+        abstract ``ssShadowStride``: float with get, set
+        abstract ``ssShadowDistanceScale``: float with get, set
+        abstract ``ssShadowThicknessScale``: float with get, set
+        abstract ``voxelNormalBias``: float with get, set
+        abstract ``voxelDirectionBias``: float with get, set
+        abstract ``envRotation``: float with get, set
+        abstract ``shadowRemanence``: float with get, set
+        abstract ``shadowOpacity``: float with get, set
+        abstract ``resolutionExp``: float with get, set
+        abstract ``refreshRate``: float with get, set
+        abstract ``triPlanarVoxelization``: bool with get, set
+        abstract ``voxelGridSize``: float with get
+        abstract ``outputTextureReady``: bool with get
+        abstract ``onOutputTextureReadyObservable``: Observable<InternalTexture> with get
+
+    [<AllowNullLiteral>]
+    type FrameGraphIblShadowsRendererTaskStatic =
+        inherit FrameGraphTaskStatic
+        inherit Constructor<FrameGraphIblShadowsRendererTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph -> FrameGraphIblShadowsRendererTask
+
+    [<Import("FrameGraphIblShadowsRendererTask", "@babylonjs/core/FrameGraph/Tasks/Rendering/iblShadowsRendererTask.pure.js")>]
+    let FrameGraphIblShadowsRendererTask: FrameGraphIblShadowsRendererTaskStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Tasks/PostProcesses/postProcessTask
+    [<AllowNullLiteral>]
+    type FrameGraphPostProcessTask =
+        inherit FrameGraphTask
+        abstract ``sourceTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle option with get, set
+        abstract ``sourceSamplingMode``: float with get, set
+        abstract ``targetTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle option with get, set
+        abstract ``stencilState``: BabylonjsBindings.SimpleInterfaces.IStencilStateProperties option with get, set
+        abstract ``depthAttachmentTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle option with get, set
+        abstract ``depthReadOnly``: bool with get, set
+        abstract ``stencilReadOnly``: bool with get, set
+        abstract ``disableColorWrite``: bool with get, set
+        abstract ``drawBackFace``: bool with get, set
+        abstract ``depthTest``: bool with get, set
+        abstract ``viewport``: BabylonjsBindings.SimpleInterfaces.IViewportLike option with get, set
+        abstract ``outputTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``outputDepthAttachmentTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``postProcess``: EffectWrapper with get
+        abstract ``isReady`` : unit -> bool
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : ?``skipCreationOfDisabledPasses``: bool * ?``additionalExecute``: System.Action<FrameGraphRenderContext> * ?``additionalBindings``: System.Action<FrameGraphRenderContext> -> FrameGraphRenderPass
+        abstract ``dispose`` : unit -> unit
+        abstract ``alphaMode``: float with get, set
+        abstract ``drawWrapper``: DrawWrapper with get
+
+    [<AllowNullLiteral>]
+    type FrameGraphPostProcessTaskStatic =
+        inherit FrameGraphTaskStatic
+        inherit Constructor<FrameGraphPostProcessTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``postProcess``: EffectWrapper -> FrameGraphPostProcessTask
+
+    [<Import("FrameGraphPostProcessTask", "@babylonjs/core/FrameGraph/Tasks/PostProcesses/postProcessTask.js")>]
+    let FrameGraphPostProcessTask: FrameGraphPostProcessTaskStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Tasks/Rendering/utilityLayerRendererTask
+    [<AllowNullLiteral>]
+    type FrameGraphUtilityLayerRendererTask =
+        inherit FrameGraphTask
+        abstract ``targetTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+        abstract ``outputTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get
+        abstract ``layer``: UtilityLayerRenderer with get
+        abstract ``getClassName`` : unit -> string
+        abstract ``record`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``camera``: Camera with get, set
+
+    [<AllowNullLiteral>]
+    type FrameGraphUtilityLayerRendererTaskStatic =
+        inherit FrameGraphTaskStatic
+        inherit Constructor<FrameGraphUtilityLayerRendererTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``scene``: Scene * ?``handleEvents``: bool -> FrameGraphUtilityLayerRendererTask
+
+    [<Import("FrameGraphUtilityLayerRendererTask", "@babylonjs/core/FrameGraph/Tasks/Rendering/utilityLayerRendererTask.js")>]
+    let FrameGraphUtilityLayerRendererTask: FrameGraphUtilityLayerRendererTaskStatic = jsNative
+
+    /// @babylonjs/core/Cameras/Inputs/freeCameraDeviceOrientationInput.pure
+    [<AllowNullLiteral>]
+    type FreeCameraDeviceOrientationInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
+        abstract ``smoothFactor``: float with get, set
+        abstract ``_onDeviceOrientationChangedObservable``: Observable<unit> with get, set
+        abstract ``attachControl`` : unit -> unit
+        abstract ``detachControl`` : unit -> unit
+        abstract ``checkInputs`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``getSimpleName`` : unit -> string
+        abstract ``camera``: FreeCamera with get, set
+
+    [<AllowNullLiteral>]
+    type FreeCameraDeviceOrientationInputStatic =
+        inherit Constructor<FreeCameraDeviceOrientationInput>
+        [<EmitConstructor>] abstract Create: unit -> FreeCameraDeviceOrientationInput
+        abstract ``WaitForOrientationChangeAsync`` : ?``timeout``: float -> JS.Promise<unit>
+
+    [<Import("FreeCameraDeviceOrientationInput", "@babylonjs/core/Cameras/Inputs/freeCameraDeviceOrientationInput.pure.js")>]
+    let FreeCameraDeviceOrientationInput: FreeCameraDeviceOrientationInputStatic = jsNative
+
+    /// @babylonjs/core/Cameras/Inputs/freeCameraGamepadInput
+    [<AllowNullLiteral>]
+    type FreeCameraGamepadInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
+        abstract ``camera``: FreeCamera with get, set
+        abstract ``gamepad``: Gamepad option with get, set
+        abstract ``gamepadAngularSensibility``: float with get, set
+        abstract ``gamepadMoveSensibility``: float with get, set
+        abstract ``deadzoneDelta``: float with get, set
+        abstract ``attachControl`` : unit -> unit
+        abstract ``detachControl`` : unit -> unit
+        abstract ``checkInputs`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``getSimpleName`` : unit -> string
+        abstract ``invertYAxis``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type FreeCameraGamepadInputStatic =
+        inherit Constructor<FreeCameraGamepadInput>
+        [<EmitConstructor>] abstract Create: unit -> FreeCameraGamepadInput
+
+    [<Import("FreeCameraGamepadInput", "@babylonjs/core/Cameras/Inputs/freeCameraGamepadInput.js")>]
+    let FreeCameraGamepadInput: FreeCameraGamepadInputStatic = jsNative
+
+    /// @babylonjs/core/Cameras/Inputs/freeCameraKeyboardMoveInput
+    [<AllowNullLiteral>]
+    type FreeCameraKeyboardMoveInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
+        abstract ``camera``: FreeCamera with get, set
+        abstract ``keysUp``: ResizeArray<float> with get, set
+        abstract ``keysUpward``: ResizeArray<float> with get, set
+        abstract ``keysDown``: ResizeArray<float> with get, set
+        abstract ``keysDownward``: ResizeArray<float> with get, set
+        abstract ``keysLeft``: ResizeArray<float> with get, set
+        abstract ``keysRight``: ResizeArray<float> with get, set
+        abstract ``rotationSpeed``: float with get, set
+        abstract ``keysRotateLeft``: ResizeArray<float> with get, set
+        abstract ``keysRotateRight``: ResizeArray<float> with get, set
+        abstract ``keysRotateUp``: ResizeArray<float> with get, set
+        abstract ``keysRotateDown``: ResizeArray<float> with get, set
+        abstract ``attachControl`` : ?``noPreventDefault``: bool -> unit
+        abstract ``detachControl`` : unit -> unit
+        abstract ``checkInputs`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``_onLostFocus`` : unit -> unit
+        abstract ``getSimpleName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FreeCameraKeyboardMoveInputStatic =
+        inherit Constructor<FreeCameraKeyboardMoveInput>
+        [<EmitConstructor>] abstract Create: unit -> FreeCameraKeyboardMoveInput
+
+    [<Import("FreeCameraKeyboardMoveInput", "@babylonjs/core/Cameras/Inputs/freeCameraKeyboardMoveInput.js")>]
+    let FreeCameraKeyboardMoveInput: FreeCameraKeyboardMoveInputStatic = jsNative
+
+    /// @babylonjs/core/Cameras/Inputs/freeCameraTouchInput
+    [<AllowNullLiteral>]
+    type FreeCameraTouchInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
+        abstract ``allowMouse``: bool with get, set
+        abstract ``camera``: FreeCamera with get, set
+        abstract ``touchAngularSensibility``: float with get, set
+        abstract ``touchMoveSensibility``: float with get, set
+        abstract ``singleFingerRotate``: bool with get, set
+        abstract ``attachControl`` : ?``noPreventDefault``: bool -> unit
+        abstract ``detachControl`` : unit -> unit
+        abstract ``checkInputs`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``getSimpleName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FreeCameraTouchInputStatic =
+        inherit Constructor<FreeCameraTouchInput>
+        [<EmitConstructor>] abstract Create: ?``allowMouse``: bool -> FreeCameraTouchInput
+
+    [<Import("FreeCameraTouchInput", "@babylonjs/core/Cameras/Inputs/freeCameraTouchInput.js")>]
+    let FreeCameraTouchInput: FreeCameraTouchInputStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/fresnelBlock.pure
+    [<AllowNullLiteral>]
+    type FresnelBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``autoConfigure`` : ``material``: NodeMaterial -> unit
+        abstract ``worldNormal``: NodeMaterialConnectionPoint with get
+        abstract ``viewDirection``: NodeMaterialConnectionPoint with get
+        abstract ``bias``: NodeMaterialConnectionPoint with get
+        abstract ``power``: NodeMaterialConnectionPoint with get
+        abstract ``fresnel``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type FresnelBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<FresnelBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> FresnelBlock
+
+    [<Import("FresnelBlock", "@babylonjs/core/Materials/Node/Blocks/fresnelBlock.pure.js")>]
+    let FresnelBlock: FresnelBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/frontFacingBlock.pure
+    [<AllowNullLiteral>]
+    type FrontFacingBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type FrontFacingBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<FrontFacingBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> FrontFacingBlock
+
+    [<Import("FrontFacingBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/frontFacingBlock.pure.js")>]
+    let FrontFacingBlock: FrontFacingBlockStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.frustum
+    [<AllowNullLiteral>]
+    type Frustum =
+        interface end
+
+    [<AllowNullLiteral>]
+    type FrustumStatic =
+        inherit Constructor<Frustum>
+        [<EmitConstructor>] abstract Create: unit -> Frustum
+        abstract ``GetPlanes`` : ``transform``: DeepImmutableMatrix -> ResizeArray<Plane>
+        abstract ``GetNearPlaneToRef`` : ``transform``: DeepImmutableMatrix * ``frustumPlane``: Plane -> unit
+        abstract ``GetFarPlaneToRef`` : ``transform``: DeepImmutableMatrix * ``frustumPlane``: Plane -> unit
+        abstract ``GetLeftPlaneToRef`` : ``transform``: DeepImmutableMatrix * ``frustumPlane``: Plane -> unit
+        abstract ``GetRightPlaneToRef`` : ``transform``: DeepImmutableMatrix * ``frustumPlane``: Plane -> unit
+        abstract ``GetTopPlaneToRef`` : ``transform``: DeepImmutableMatrix * ``frustumPlane``: Plane -> unit
+        abstract ``GetBottomPlaneToRef`` : ``transform``: DeepImmutableMatrix * ``frustumPlane``: Plane -> unit
+        abstract ``GetPlanesToRef`` : ``transform``: DeepImmutableMatrix * ``frustumPlanes``: ResizeArray<Plane> -> unit
+        abstract ``IsPointInFrustum`` : ``point``: Vector3 * ``frustumPlanes``: ResizeArray<DeepImmutablePlane> -> bool
+
+    [<Import("Frustum", "@babylonjs/core/Maths/math.frustum.js")>]
+    let Frustum: FrustumStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/fxaaPostProcess.pure
+    [<AllowNullLiteral>]
+    type FxaaPostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FxaaPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<FxaaPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ?``camera``: Camera * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float -> FxaaPostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> FxaaPostProcess
+
+    [<Import("FxaaPostProcess", "@babylonjs/core/PostProcesses/fxaaPostProcess.pure.js")>]
+    let FxaaPostProcess: FxaaPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Gamepads/gamepadManager
+    [<AllowNullLiteral>]
+    type GamepadManager =
+        abstract ``_isMonitoring``: bool with get, set
+        abstract ``onGamepadConnectedObservable``: Observable<Gamepad> with get, set
+        abstract ``onGamepadDisconnectedObservable``: Observable<Gamepad> with get, set
+        abstract ``getGamepadByType`` : ?``type``: float -> Gamepad option
+        abstract ``dispose`` : unit -> unit
+        abstract ``_checkGamepadsStatus`` : unit -> unit
+        abstract ``gamepads``: ResizeArray<Gamepad> with get
+
+    [<AllowNullLiteral>]
+    type GamepadManagerStatic =
+        inherit Constructor<GamepadManager>
+        [<EmitConstructor>] abstract Create: ?``_scene``: Scene -> GamepadManager
+
+    [<Import("GamepadManager", "@babylonjs/core/Gamepads/gamepadManager.js")>]
+    let GamepadManager: GamepadManagerStatic = jsNative
+
+    /// @babylonjs/core/Gamepads/gamepadSceneComponent.pure
+    [<AllowNullLiteral>]
+    type GamepadSystemSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type GamepadSystemSceneComponentStatic =
+        inherit Constructor<GamepadSystemSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> GamepadSystemSceneComponent
+
+    [<Import("GamepadSystemSceneComponent", "@babylonjs/core/Gamepads/gamepadSceneComponent.pure.js")>]
+    let GamepadSystemSceneComponent: GamepadSystemSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/GaussianSplatting/gaussianBlock.pure
+    [<AllowNullLiteral>]
+    type GaussianBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``splatColor``: NodeMaterialConnectionPoint with get
+        abstract ``rgba``: NodeMaterialConnectionPoint with get
+        abstract ``rgb``: NodeMaterialConnectionPoint with get
+        abstract ``alpha``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type GaussianBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<GaussianBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> GaussianBlock
+
+    [<Import("GaussianBlock", "@babylonjs/core/Materials/Node/Blocks/GaussianSplatting/gaussianBlock.pure.js")>]
+    let GaussianBlock: GaussianBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/GaussianSplatting/gaussianSplattingBlock.pure
+    [<AllowNullLiteral>]
+    type GaussianSplattingBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial * ?``mesh``: AbstractMesh -> unit
+        abstract ``splatPosition``: NodeMaterialConnectionPoint with get
+        abstract ``splatScale``: NodeMaterialConnectionPoint with get
+        abstract ``world``: NodeMaterialConnectionPoint with get
+        abstract ``view``: NodeMaterialConnectionPoint with get
+        abstract ``projection``: NodeMaterialConnectionPoint with get
+        abstract ``splatVertex``: NodeMaterialConnectionPoint with get
+        abstract ``SH``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type GaussianSplattingBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<GaussianSplattingBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> GaussianSplattingBlock
+
+    [<Import("GaussianSplattingBlock", "@babylonjs/core/Materials/Node/Blocks/GaussianSplatting/gaussianSplattingBlock.pure.js")>]
+    let GaussianSplattingBlock: GaussianSplattingBlockStatic = jsNative
+
+    /// @babylonjs/core/Rendering/geometryBufferRendererSceneComponent.pure
+    [<AllowNullLiteral>]
+    type GeometryBufferRendererSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type GeometryBufferRendererSceneComponentStatic =
+        inherit Constructor<GeometryBufferRendererSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> GeometryBufferRendererSceneComponent
+
+    [<Import("GeometryBufferRendererSceneComponent", "@babylonjs/core/Rendering/geometryBufferRendererSceneComponent.pure.js")>]
+    let GeometryBufferRendererSceneComponent: GeometryBufferRendererSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Cameras/Limits/geospatialLimits
+    [<AllowNullLiteral>]
+    type GeospatialLimits =
+        abstract ``pitchMin``: float with get, set
+        abstract ``pitchMax``: float with get, set
+        abstract ``pitchDisabledRadiusScale``: Vector2 option with get, set
+        abstract ``yawMin``: float with get, set
+        abstract ``yawMax``: float with get, set
+        abstract ``clampZoomDistance`` : ``zoomDistance``: float * ``currentRadius``: float * ?``distanceToTarget``: float -> float
+        abstract ``getEffectivePitchMax`` : ``currentRadius``: float -> float
+        abstract ``radiusMin``: float with get, set
+        abstract ``radiusMax``: float with get, set
+        abstract ``planetRadius``: float with get, set
+
+    [<AllowNullLiteral>]
+    type GeospatialLimitsStatic =
+        inherit Constructor<GeospatialLimits>
+        [<EmitConstructor>] abstract Create: ``planetRadius``: float -> GeospatialLimits
+
+    [<Import("GeospatialLimits", "@babylonjs/core/Cameras/Limits/geospatialLimits.js")>]
+    let GeospatialLimits: GeospatialLimitsStatic = jsNative
+
+    /// @babylonjs/core/Particles/gpuParticleSystem.pure
+    [<AllowNullLiteral>]
+    type GPUParticleSystem =
+        inherit BaseParticleSystem
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
+        abstract ``layerMask``: float with get, set
+        abstract ``_randomTexture``: RawTexture with get, set
+        abstract ``_randomTexture2``: RawTexture with get, set
+        abstract ``updateInAnimate``: bool with get, set
+        abstract ``doNotSerialize``: bool with get, set
+        abstract ``onDisposeObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IParticleSystem> with get, set
+        abstract ``onStoppedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IParticleSystem> with get, set
+        abstract ``onStartedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IParticleSystem> with get, set
+        abstract ``getCapacity`` : unit -> float
+        abstract ``emitRateControl``: bool with get, set
+        abstract ``forceDepthWrite``: bool with get, set
+        abstract ``isLocal``: bool with get, set
+        abstract ``isGPU``: bool with get
+        abstract ``maxAttractors``: float with get
+        abstract ``addAttractor`` : ``attractor``: Attractor -> unit
+        abstract ``defaultProjectionMatrix``: Matrix with get, set
+        abstract ``metadata``: obj with get, set
+        abstract ``_flowMap``: Texture option with get, set
+        abstract ``flowMapStrength``: float with get, set
+        abstract ``_meshPositionTexture``: RawTexture option with get, set
+        abstract ``_meshNormalTexture``: RawTexture option with get, set
+        abstract ``_meshTriangleCount``: float with get, set
+        abstract ``_meshTextureWidth``: float with get, set
+        abstract ``isReady`` : unit -> bool
+        abstract ``isStarted`` : unit -> bool
+        abstract ``isStopped`` : unit -> bool
+        abstract ``isStopping`` : unit -> bool
+        abstract ``getActiveCount`` : unit -> float
+        abstract ``start`` : ?``delay``: float -> unit
+        abstract ``stop`` : unit -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``getCustomEffect`` : ?``blendMode``: float -> Effect option
+        abstract ``setCustomEffect`` : ``effect``: Effect option * ?``blendMode``: float -> unit
+        abstract ``_colorGradientsTexture``: RawTexture with get, set
+        abstract ``addColorGradient`` : ``gradient``: float * ``color1``: Color4 * ?``color2``: Color4 -> GPUParticleSystem
+        abstract ``forceRefreshGradients`` : unit -> unit
+        abstract ``removeColorGradient`` : ``gradient``: float -> GPUParticleSystem
+        abstract ``resetDrawCache`` : unit -> unit
+        abstract ``_angularSpeedGradientsTexture``: RawTexture with get, set
+        abstract ``_sizeGradientsTexture``: RawTexture with get, set
+        abstract ``_velocityGradientsTexture``: RawTexture with get, set
+        abstract ``_limitVelocityGradientsTexture``: RawTexture with get, set
+        abstract ``_dragGradientsTexture``: RawTexture with get, set
+        abstract ``addSizeGradient`` : ``gradient``: float * ``factor``: float * ?``factor2``: float -> GPUParticleSystem
+        abstract ``removeSizeGradient`` : ``gradient``: float -> GPUParticleSystem
+        abstract ``addAngularSpeedGradient`` : ``gradient``: float * ``factor``: float * ?``factor2``: float -> GPUParticleSystem
+        abstract ``removeAngularSpeedGradient`` : ``gradient``: float -> GPUParticleSystem
+        abstract ``addVelocityGradient`` : ``gradient``: float * ``factor``: float * ?``factor2``: float -> GPUParticleSystem
+        abstract ``removeVelocityGradient`` : ``gradient``: float -> GPUParticleSystem
+        abstract ``addLimitVelocityGradient`` : ``gradient``: float * ``factor``: float * ?``factor2``: float -> GPUParticleSystem
+        abstract ``removeLimitVelocityGradient`` : ``gradient``: float -> GPUParticleSystem
+        abstract ``addDragGradient`` : ``gradient``: float * ``factor``: float * ?``factor2``: float -> GPUParticleSystem
+        abstract ``removeDragGradient`` : ``gradient``: float -> GPUParticleSystem
+        abstract ``addStartSizeGradient`` : ``gradient``: float * ``factor``: float * ?``factor2``: float -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``removeStartSizeGradient`` : ``gradient``: float -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``addColorRemapGradient`` : unit -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``removeColorRemapGradient`` : unit -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``addAlphaRemapGradient`` : unit -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``removeAlphaRemapGradient`` : unit -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``addRampGradient`` : unit -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``removeRampGradient`` : unit -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``getRampGradients`` : unit -> ResizeArray<Color3Gradient> option
+        abstract ``addLifeTimeGradient`` : ``gradient``: float * ``factor``: float * ?``factor2``: float -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``removeLifeTimeGradient`` : ``gradient``: float -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``_recreateUpdateEffect`` : unit -> bool
+        abstract ``_getWrapper`` : ``blendMode``: float -> DrawWrapper
+        abstract ``fillDefines`` : ``defines``: ResizeArray<string> * ?``blendMode``: float * ?``fillImageProcessing``: bool -> unit
+        abstract ``fillUniformsAttributesAndSamplerNames`` : ``uniforms``: ResizeArray<string> * ``attributes``: ResizeArray<string> * ``samplers``: ResizeArray<string> -> unit
+        abstract ``animate`` : ?``preWarm``: bool -> unit
+        abstract ``_update`` : ?``emitterWM``: Matrix -> unit
+        abstract ``render`` : ?``preWarm``: bool * ?``forceUpdateOnly``: bool -> float
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : ?``disposeTexture``: bool -> unit
+        abstract ``clone`` : ``name``: string * ``newEmitter``: obj * ?``cloneTexture``: bool -> GPUParticleSystem
+        abstract ``serialize`` : ?``serializeTexture``: bool -> obj
+        abstract ``_needsInitialDirection``: bool with get
+        abstract ``maxActiveParticleCount``: float with get, set
+        abstract ``activeParticleCount``: float with get, set
+        abstract ``flowMap``: Texture option with get, set
+        abstract ``onBeforeDrawParticlesObservable``: Observable<Effect option> with get
+        abstract ``vertexShaderName``: string with get
+        abstract ``vertexBuffers``: InlineObjectf897d083ff3aObject with get
+        abstract ``indexBuffer``: DataBuffer option with get
+        abstract ``useRampGradients``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type GPUParticleSystemStatic =
+        inherit BaseParticleSystemStatic
+        inherit Constructor<GPUParticleSystem>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``options``: PartialObjectbdfd94fbd748Object * ``sceneOrEngine``: U2<Scene, AbstractEngine> * ?``customEffect``: Effect * ?``isAnimationSheetEnabled``: bool -> GPUParticleSystem
+        abstract ``_GetAttributeNamesOrOptions`` : ?``hasColorGradients``: bool * ?``isAnimationSheetEnabled``: bool * ?``isBillboardBased``: bool * ?``isBillboardStretched``: bool * ?``isBillboardStretchedLocal``: bool * ?``hasColorGradientColor2``: bool -> ResizeArray<string>
+        abstract ``_GetEffectCreationOptions`` : ?``isAnimationSheetEnabled``: bool * ?``useLogarithmicDepth``: bool * ?``applyFog``: bool -> ResizeArray<string>
+        abstract ``fromParticleSystem`` : ``source``: ParticleSystem * ``sceneOrEngine``: U2<Scene, AbstractEngine> * ?``options``: PartialObjectbdfd94fbd748Object -> GPUParticleSystem
+        abstract ``Parse`` : ``parsedParticleSystem``: obj * ``sceneOrEngine``: U2<Scene, AbstractEngine> * ``rootUrl``: string * ?``doNotStart``: bool * ?``capacity``: float -> GPUParticleSystem
+        abstract ``IsSupported``: bool with get
+
+    [<Import("GPUParticleSystem", "@babylonjs/core/Particles/gpuParticleSystem.pure.js")>]
+    let GPUParticleSystem: GPUParticleSystemStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/gradientBlock.pure
+    [<AllowNullLiteral>]
+    type GradientBlock =
+        inherit NodeMaterialBlock
+        abstract ``colorSteps``: ResizeArray<GradientBlockColorStep> with get, set
+        abstract ``onValueChangedObservable``: Observable<GradientBlock> with get, set
+        abstract ``colorStepsUpdated`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``gradient``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type GradientBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<GradientBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> GradientBlock
+
+    [<Import("GradientBlock", "@babylonjs/core/Materials/Node/Blocks/gradientBlock.pure.js")>]
+    let GradientBlock: GradientBlockStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/grainPostProcess.pure
+    [<AllowNullLiteral>]
+    type GrainPostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+        abstract ``intensity``: float with get, set
+        abstract ``animated``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type GrainPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<GrainPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float * ?``blockCompilation``: bool -> GrainPostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> GrainPostProcess
+
+    [<Import("GrainPostProcess", "@babylonjs/core/PostProcesses/grainPostProcess.pure.js")>]
+    let GrainPostProcess: GrainPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Materials/GreasedLine/greasedLineMaterialDefaults
+    [<AllowNullLiteral>]
+    type GreasedLineMaterialDefaults =
+        interface end
+
+    [<AllowNullLiteral>]
+    type GreasedLineMaterialDefaultsStatic =
+        inherit Constructor<GreasedLineMaterialDefaults>
+        [<EmitConstructor>] abstract Create: unit -> GreasedLineMaterialDefaults
+        abstract ``DEFAULT_COLOR``: Color3 with get, set
+        abstract ``DEFAULT_WIDTH_ATTENUATED``: float with get, set
+        abstract ``DEFAULT_WIDTH``: float with get, set
+        abstract ``EmptyColorsTexture``: RawTexture option with get, set
+
+    [<Import("GreasedLineMaterialDefaults", "@babylonjs/core/Materials/GreasedLine/greasedLineMaterialDefaults.js")>]
+    let GreasedLineMaterialDefaults: GreasedLineMaterialDefaultsStatic = jsNative
+
+    /// Inline object shape used by GreasedLineTools.
+    [<AllowNullLiteral>]
+    type GreasedLineToolsMethod8ReturnObject =
+        abstract ``total``: float with get, set
+        abstract ``counts``: ResizeArray<float> with get, set
+
+    /// Inline object shape used by GreasedLineTools.
+    [<AllowNullLiteral>]
+    type GreasedLineToolsMethod15ReturnObject =
+        abstract ``min``: float with get, set
+        abstract ``max``: float with get, set
+
+    /// Inline object shape used by GreasedLineTools.
+    [<AllowNullLiteral>]
+    type GreasedLineToolsMethod19ReturnObject =
+        abstract ``points``: ResizeArray<Vector3> with get, set
+        abstract ``widths``: ResizeArray<float> with get, set
+
+    /// @babylonjs/core/Misc/greasedLineTools
+    [<AllowNullLiteral>]
+    type GreasedLineTools =
+        interface end
+
+    [<AllowNullLiteral>]
+    type GreasedLineToolsStatic =
+        inherit Constructor<GreasedLineTools>
+        [<EmitConstructor>] abstract Create: unit -> GreasedLineTools
+        abstract ``ConvertPoints`` : ``points``: BabylonjsBindings.TypeAliases.GreasedLinePoints * ?``options``: BabylonjsBindings.SimpleInterfaces.GreasedLinePointsOptions -> ResizeArray<ResizeArray<float>>
+        abstract ``OmitZeroLengthPredicate`` : ``p1``: Vector3 * ``p2``: Vector3 * ``p3``: Vector3 -> ResizeArray<ResizeArray<Vector3>> option
+        abstract ``OmitDuplicatesPredicate`` : ``p1``: Vector3 * ``p2``: Vector3 * ``p3``: Vector3 * ``points``: ResizeArray<ResizeArray<Vector3>> -> ResizeArray<ResizeArray<Vector3>> option
+        abstract ``MeshesToLines`` : ``meshes``: ResizeArray<AbstractMesh> * ?``predicate``: System.Func<Vector3, Vector3, Vector3, ResizeArray<ResizeArray<Vector3>>, float, float, AbstractMesh, float, BabylonjsBindings.TypeAliases.FloatArray, BabylonjsBindings.TypeAliases.IndicesArray, ResizeArray<ResizeArray<Vector3>>> -> ResizeArray<ResizeArray<Vector3>>
+        abstract ``ToVector3Array`` : ``points``: U2<ResizeArray<float>, ResizeArray<ResizeArray<float>>> -> U2<ResizeArray<Vector3>, ResizeArray<ResizeArray<Vector3>>>
+        abstract ``ToNumberArray`` : ``points``: ResizeArray<Vector3> -> ResizeArray<float>
+        abstract ``GetPointsCountInfo`` : ``points``: ResizeArray<ResizeArray<float>> -> GreasedLineToolsMethod8ReturnObject
+        abstract ``GetLineLength`` : ``data``: U2<ResizeArray<Vector3>, ResizeArray<float>> -> float
+        abstract ``GetLineLengthArray`` : ``data``: ResizeArray<float> * ?``buf``: JS.ArrayBuffer -> JS.Float32Array
+        abstract ``SegmentizeSegmentByCount`` : ``point1``: Vector3 * ``point2``: Vector3 * ``segmentCount``: float -> ResizeArray<Vector3>
+        abstract ``SegmentizeLineBySegmentLength`` : ``what``: U3<ResizeArray<Vector3>, ResizeArray<float>, ResizeArray<InlineObject715b5d0ceff3Object>> * ``segmentLength``: float -> ResizeArray<Vector3>
+        abstract ``SegmentizeLineBySegmentCount`` : ``what``: U2<ResizeArray<Vector3>, ResizeArray<float>> * ``segmentCount``: float -> ResizeArray<Vector3>
+        abstract ``GetLineSegments`` : ``points``: ResizeArray<Vector3> -> ResizeArray<InlineObject715b5d0ceff3Object>
+        abstract ``GetMinMaxSegmentLength`` : ``points``: ResizeArray<Vector3> -> GreasedLineToolsMethod15ReturnObject
+        abstract ``GetPositionOnLineByVisibility`` : ``lineSegments``: ResizeArray<InlineObject715b5d0ceff3Object> * ``lineLength``: float * ``visbility``: float * ?``localSpace``: bool -> Vector3
+        abstract ``GetCircleLinePoints`` : ``radiusX``: float * ``segments``: float * ?``z``: float * ?``radiusY``: float * ?``segmentAngle``: float -> ResizeArray<Vector3>
+        abstract ``GetBezierLinePoints`` : ``p0``: Vector3 * ``p1``: Vector3 * ``p2``: Vector3 * ``segments``: float -> ResizeArray<float>
+        abstract ``GetArrowCap`` : ``position``: Vector3 * ``direction``: Vector3 * ``length``: float * ``widthUp``: float * ``widthDown``: float * ?``widthStartUp``: float * ?``widthStartDown``: float -> GreasedLineToolsMethod19ReturnObject
+        abstract ``GetPointsFromText`` : ``text``: string * ``size``: float * ``resolution``: float * ``fontData``: BabylonjsBindings.SimpleInterfaces.IFontData * ?``z``: float * ?``includeInner``: bool -> ResizeArray<ResizeArray<float>>
+        abstract ``Color3toRGBAUint8`` : ``colors``: ResizeArray<Color3> -> JS.Uint8Array
+        abstract ``CreateColorsTexture`` : ``name``: string * ``colors``: ResizeArray<Color3> * ``colorsSampling``: float * ``scene``: Scene -> RawTexture
+        abstract ``PrepareEmptyColorsTexture`` : ``scene``: Scene -> RawTexture
+        abstract ``DisposeEmptyColorsTexture`` : unit -> unit
+        abstract ``BooleanToNumber`` : ?``bool``: bool -> U2<NumericLiteral0, NumericLiteral1>
+
+    [<Import("GreasedLineTools", "@babylonjs/core/Misc/greasedLineTools.js")>]
+    let GreasedLineTools: GreasedLineToolsStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/heightToNormalBlock.pure
+    [<AllowNullLiteral>]
+    type HeightToNormalBlock =
+        inherit NodeMaterialBlock
+        abstract ``generateInWorldSpace``: bool with get, set
+        abstract ``automaticNormalizationNormal``: bool with get, set
+        abstract ``automaticNormalizationTangent``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``worldNormal``: NodeMaterialConnectionPoint with get
+        abstract ``worldTangent``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``xyz``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type HeightToNormalBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<HeightToNormalBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> HeightToNormalBlock
+
+    [<Import("HeightToNormalBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/heightToNormalBlock.pure.js")>]
+    let HeightToNormalBlock: HeightToNormalBlockStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/highlightsPostProcess
+    [<AllowNullLiteral>]
+    type HighlightsPostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type HighlightsPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<HighlightsPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float -> HighlightsPostProcess
+
+    [<Import("HighlightsPostProcess", "@babylonjs/core/PostProcesses/highlightsPostProcess.js")>]
+    let HighlightsPostProcess: HighlightsPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsConstraint
+    [<AllowNullLiteral>]
+    type HingeConstraint =
+        inherit PhysicsConstraint
+
+    [<AllowNullLiteral>]
+    type HingeConstraintStatic =
+        inherit PhysicsConstraintStatic
+        inherit Constructor<HingeConstraint>
+        [<EmitConstructor>] abstract Create: ``pivotA``: Vector3 * ``pivotB``: Vector3 * ``axisA``: Vector3 * ``axisB``: Vector3 * ``scene``: Scene -> HingeConstraint
+
+    [<Import("HingeConstraint", "@babylonjs/core/Physics/v2/physicsConstraint.js")>]
+    let HingeConstraint: HingeConstraintStatic = jsNative
+
+    /// Function-valued IblCdfGenerator._SceneComponentInitialization property.
+    [<AllowNullLiteral>]
+    type IblCdfGeneratorSceneComponentInitializationCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: Scene -> unit
+
+    /// @babylonjs/core/Rendering/iblCdfGenerator
+    [<AllowNullLiteral>]
+    type IblCdfGenerator =
+        abstract ``getIcdfTexture`` : unit -> Texture
+        abstract ``debugEnabled``: bool with get, set
+        abstract ``setDebugDisplayParams`` : ``x``: float * ``y``: float * ``widthScale``: float * ``heightScale``: float -> unit
+        abstract ``getDebugPassPP`` : unit -> PostProcess
+        abstract ``onGeneratedObservable``: Observable<unit> with get, set
+        abstract ``onTextureChangedObservable``: Observable<unit> with get, set
+        abstract ``isReady`` : unit -> bool option
+        abstract ``renderWhenReady`` : unit -> JS.Promise<unit>
+        abstract ``findDominantDirection`` : unit -> JS.Promise<Vector3>
+        abstract ``dispose`` : unit -> unit
+        abstract ``isSupported``: bool with get
+        abstract ``iblSource``: BaseTexture option with get, set
+        abstract ``debugPassName``: string with get
+
+    [<AllowNullLiteral>]
+    type IblCdfGeneratorStatic =
+        inherit Constructor<IblCdfGenerator>
+        [<EmitConstructor>] abstract Create: ``sceneOrEngine``: U2<Scene, AbstractEngine> option -> IblCdfGenerator
+        abstract ``_SceneComponentInitialization``: IblCdfGeneratorSceneComponentInitializationCallback with get, set
+
+    [<Import("IblCdfGenerator", "@babylonjs/core/Rendering/iblCdfGenerator.js")>]
+    let IblCdfGenerator: IblCdfGeneratorStatic = jsNative
+
+    /// @babylonjs/core/Rendering/iblCdfGeneratorSceneComponent.pure
+    [<AllowNullLiteral>]
+    type IblCdfGeneratorSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``isReady`` : unit -> bool
+
+    [<AllowNullLiteral>]
+    type IblCdfGeneratorSceneComponentStatic =
+        inherit Constructor<IblCdfGeneratorSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> IblCdfGeneratorSceneComponent
+
+    [<Import("IblCdfGeneratorSceneComponent", "@babylonjs/core/Rendering/iblCdfGeneratorSceneComponent.pure.js")>]
+    let IblCdfGeneratorSceneComponent: IblCdfGeneratorSceneComponentStatic = jsNative
+
+    /// Function-valued ImageAssetTask.onSuccess property.
+    [<AllowNullLiteral>]
+    type ImageAssetTaskOnSuccessCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: ImageAssetTask -> unit
+
+    /// Function-valued ImageAssetTask.onError property.
+    [<AllowNullLiteral>]
+    type ImageAssetTaskOnErrorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: ImageAssetTask * ?``message``: string * ?``exception``: obj -> unit
+
+    /// @babylonjs/core/Misc/assetsManager
+    [<AllowNullLiteral>]
+    type ImageAssetTask =
+        inherit AbstractAssetTask
+        abstract ``name``: string with get, set
+        abstract ``url``: string with get, set
+        abstract ``image``: Browser.Types.HTMLImageElement with get, set
+        abstract ``onSuccess``: ImageAssetTaskOnSuccessCallback with get, set
+        abstract ``onError``: ImageAssetTaskOnErrorCallback with get, set
+        abstract ``runTask`` : ``scene``: Scene * ``onSuccess``: System.Action * ``onError``: System.Action<string option, obj option> -> unit
+
+    [<AllowNullLiteral>]
+    type ImageAssetTaskStatic =
+        inherit AbstractAssetTaskStatic
+        inherit Constructor<ImageAssetTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``url``: string -> ImageAssetTask
+
+    [<Import("ImageAssetTask", "@babylonjs/core/Misc/assetsManager.js")>]
+    let ImageAssetTask: ImageAssetTaskStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/imageProcessingBlock.pure
+    [<AllowNullLiteral>]
+    type ImageProcessingBlock =
+        inherit NodeMaterialBlock
+        abstract ``convertInputToLinearSpace``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``isReady`` : ``mesh``: AbstractMesh * ``nodeMaterial``: NodeMaterial * ``defines``: NodeMaterialDefines -> bool
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial -> unit
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``color``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``rgb``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ImageProcessingBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ImageProcessingBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ImageProcessingBlock
+
+    [<Import("ImageProcessingBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/imageProcessingBlock.pure.js")>]
+    let ImageProcessingBlock: ImageProcessingBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Vertex/instancesBlock.pure
+    [<AllowNullLiteral>]
+    type InstancesBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial * ?``mesh``: AbstractMesh * ?``useInstances``: bool * ?``subMesh``: SubMesh -> unit
+        abstract ``world0``: NodeMaterialConnectionPoint with get
+        abstract ``world1``: NodeMaterialConnectionPoint with get
+        abstract ``world2``: NodeMaterialConnectionPoint with get
+        abstract ``world3``: NodeMaterialConnectionPoint with get
+        abstract ``world``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``instanceID``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type InstancesBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<InstancesBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> InstancesBlock
+
+    [<Import("InstancesBlock", "@babylonjs/core/Materials/Node/Blocks/Vertex/instancesBlock.pure.js")>]
+    let InstancesBlock: InstancesBlockStatic = jsNative
+
+    /// @babylonjs/core/assetContainer
+    [<AllowNullLiteral>]
+    type InstantiatedEntries =
+        abstract ``rootNodes``: ResizeArray<Node> with get, set
+        abstract ``skeletons``: ResizeArray<Skeleton> with get, set
+        abstract ``animationGroups``: ResizeArray<AnimationGroup> with get, set
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type InstantiatedEntriesStatic =
+        inherit Constructor<InstantiatedEntries>
+        [<EmitConstructor>] abstract Create: unit -> InstantiatedEntries
+
+    [<Import("InstantiatedEntries", "@babylonjs/core/assetContainer.js")>]
+    let InstantiatedEntries: InstantiatedEntriesStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/PBR/iridescenceBlock.pure
+    [<AllowNullLiteral>]
+    type IridescenceBlock =
+        inherit NodeMaterialBlock
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : unit -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``intensity``: NodeMaterialConnectionPoint with get
+        abstract ``indexOfRefraction``: NodeMaterialConnectionPoint with get
+        abstract ``thickness``: NodeMaterialConnectionPoint with get
+        abstract ``iridescence``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type IridescenceBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<IridescenceBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> IridescenceBlock
+        abstract ``GetCode`` : ``iridescenceBlock``: IridescenceBlock option * ``state``: NodeMaterialBuildState -> string
+
+    [<Import("IridescenceBlock", "@babylonjs/core/Materials/Node/Blocks/PBR/iridescenceBlock.pure.js")>]
+    let IridescenceBlock: IridescenceBlockStatic = jsNative
+
+    /// @babylonjs/core/assetContainer
+    [<AllowNullLiteral>]
+    type KeepAssets =
+        inherit AbstractAssetContainer
+
+    [<AllowNullLiteral>]
+    type KeepAssetsStatic =
+        inherit AbstractAssetContainerStatic
+        inherit Constructor<KeepAssets>
+        [<EmitConstructor>] abstract Create: unit -> KeepAssets
+
+    [<Import("KeepAssets", "@babylonjs/core/assetContainer.js")>]
+    let KeepAssets: KeepAssetsStatic = jsNative
+
+    /// @babylonjs/core/Misc/khronosTextureContainer
+    [<AllowNullLiteral>]
+    type KhronosTextureContainer =
+        abstract ``data``: JS.ArrayBufferView with get, set
+        abstract ``glType``: float with get, set
+        abstract ``glTypeSize``: float with get, set
+        abstract ``glFormat``: float with get, set
+        abstract ``glInternalFormat``: float with get, set
+        abstract ``glBaseInternalFormat``: float with get, set
+        abstract ``pixelWidth``: float with get, set
+        abstract ``pixelHeight``: float with get, set
+        abstract ``pixelDepth``: float with get, set
+        abstract ``numberOfArrayElements``: float with get, set
+        abstract ``numberOfFaces``: float with get, set
+        abstract ``numberOfMipmapLevels``: float with get, set
+        abstract ``bytesOfKeyValueData``: float with get, set
+        abstract ``loadType``: float with get, set
+        abstract ``isInvalid``: bool with get, set
+        abstract ``uploadLevels`` : ``texture``: InternalTexture * ``loadMipmaps``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type KhronosTextureContainerStatic =
+        inherit Constructor<KhronosTextureContainer>
+        [<EmitConstructor>] abstract Create: ``data``: JS.ArrayBufferView * ``facesExpected``: float -> KhronosTextureContainer
+        abstract ``IsValid`` : ``data``: JS.ArrayBufferView -> bool
+
+    [<Import("KhronosTextureContainer", "@babylonjs/core/Misc/khronosTextureContainer.js")>]
+    let KhronosTextureContainer: KhronosTextureContainerStatic = jsNative
+
+    /// @babylonjs/core/Layers/layerSceneComponent
+    [<AllowNullLiteral>]
+    type LayerSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``addFromContainer`` : ``container``: BabylonjsBindings.SimpleInterfaces.IAssetContainer -> unit
+        abstract ``removeFromContainer`` : ``container``: BabylonjsBindings.SimpleInterfaces.IAssetContainer * ?``dispose``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type LayerSceneComponentStatic =
+        inherit Constructor<LayerSceneComponent>
+        [<EmitConstructor>] abstract Create: ?``scene``: Scene -> LayerSceneComponent
+
+    [<Import("LayerSceneComponent", "@babylonjs/core/Layers/layerSceneComponent.js")>]
+    let LayerSceneComponent: LayerSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/lengthBlock.pure
+    [<AllowNullLiteral>]
+    type LengthBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``value``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type LengthBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<LengthBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> LengthBlock
+
+    [<Import("LengthBlock", "@babylonjs/core/Materials/Node/Blocks/lengthBlock.pure.js")>]
+    let LengthBlock: LengthBlockStatic = jsNative
+
+    /// @babylonjs/core/LensFlares/lensFlareSystemSceneComponent.pure
+    [<AllowNullLiteral>]
+    type LensFlareSystemSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``addFromContainer`` : ``container``: BabylonjsBindings.SimpleInterfaces.IAssetContainer -> unit
+        abstract ``removeFromContainer`` : ``container``: BabylonjsBindings.SimpleInterfaces.IAssetContainer * ?``dispose``: bool -> unit
+        abstract ``serialize`` : ``serializationObject``: obj -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type LensFlareSystemSceneComponentStatic =
+        inherit Constructor<LensFlareSystemSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> LensFlareSystemSceneComponent
+
+    [<Import("LensFlareSystemSceneComponent", "@babylonjs/core/LensFlares/lensFlareSystemSceneComponent.pure.js")>]
+    let LensFlareSystemSceneComponent: LensFlareSystemSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/lerpBlock.pure
+    [<AllowNullLiteral>]
+    type LerpBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``left``: NodeMaterialConnectionPoint with get
+        abstract ``right``: NodeMaterialConnectionPoint with get
+        abstract ``gradient``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type LerpBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<LerpBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> LerpBlock
+
+    [<Import("LerpBlock", "@babylonjs/core/Materials/Node/Blocks/lerpBlock.pure.js")>]
+    let LerpBlock: LerpBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Dual/lightBlock.pure
+    [<AllowNullLiteral>]
+    type LightBlock =
+        inherit NodeMaterialBlock
+        abstract ``light``: Light option with get, set
+        abstract ``generateOnlyFragmentCode``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial * ?``mesh``: AbstractMesh -> unit
+        abstract ``isReady`` : ``mesh``: AbstractMesh * ``nodeMaterial``: NodeMaterial * ``defines``: NodeMaterialDefines -> bool
+        abstract ``updateUniformsAndSamples`` : ``state``: NodeMaterialBuildState * ``nodeMaterial``: NodeMaterial * ``defines``: NodeMaterialDefines * ``uniformBuffers``: ResizeArray<string> -> unit
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``worldNormal``: NodeMaterialConnectionPoint with get
+        abstract ``cameraPosition``: NodeMaterialConnectionPoint with get
+        abstract ``glossiness``: NodeMaterialConnectionPoint with get
+        abstract ``glossPower``: NodeMaterialConnectionPoint with get
+        abstract ``diffuseColor``: NodeMaterialConnectionPoint with get
+        abstract ``specularColor``: NodeMaterialConnectionPoint with get
+        abstract ``view``: NodeMaterialConnectionPoint with get
+        abstract ``diffuseOutput``: NodeMaterialConnectionPoint with get
+        abstract ``specularOutput``: NodeMaterialConnectionPoint with get
+        abstract ``shadow``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type LightBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<LightBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> LightBlock
+
+    [<Import("LightBlock", "@babylonjs/core/Materials/Node/Blocks/Dual/lightBlock.pure.js")>]
+    let LightBlock: LightBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Vertex/lightInformationBlock.pure
+    [<AllowNullLiteral>]
+    type LightInformationBlock =
+        inherit NodeMaterialBlock
+        abstract ``light``: Light option with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``direction``: NodeMaterialConnectionPoint with get
+        abstract ``color``: NodeMaterialConnectionPoint with get
+        abstract ``intensity``: NodeMaterialConnectionPoint with get
+        abstract ``shadowBias``: NodeMaterialConnectionPoint with get
+        abstract ``shadowNormalBias``: NodeMaterialConnectionPoint with get
+        abstract ``shadowDepthScale``: NodeMaterialConnectionPoint with get
+        abstract ``shadowDepthRange``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type LightInformationBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<LightInformationBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> LightInformationBlock
+
+    [<Import("LightInformationBlock", "@babylonjs/core/Materials/Node/Blocks/Vertex/lightInformationBlock.pure.js")>]
+    let LightInformationBlock: LightInformationBlockStatic = jsNative
+
+    /// @babylonjs/core/Lights/lightingVolume.pure
+    [<AllowNullLiteral>]
+    type LightingVolume =
+        abstract ``_setComputeShaderFastMode`` : ``enabled``: bool -> unit
+        abstract ``isReady`` : unit -> bool
+        abstract ``update`` : ?``forceUpdate``: bool -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``shadowGenerator``: ShadowGenerator with get, set
+        abstract ``tesselation``: float with get, set
+        abstract ``mesh``: Mesh with get
+        abstract ``frequency``: float with get, set
+        abstract ``name``: string with get, set
+        abstract ``firstUpdate``: bool with get
+
+    [<AllowNullLiteral>]
+    type LightingVolumeStatic =
+        inherit Constructor<LightingVolume>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ?``shadowGenerator``: ShadowGenerator * ?``tesselation``: float -> LightingVolume
+
+    [<Import("LightingVolume", "@babylonjs/core/Lights/lightingVolume.pure.js")>]
+    let LightingVolume: LightingVolumeStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsConstraint
+    [<AllowNullLiteral>]
+    type LockConstraint =
+        inherit PhysicsConstraint
+
+    [<AllowNullLiteral>]
+    type LockConstraintStatic =
+        inherit PhysicsConstraintStatic
+        inherit Constructor<LockConstraint>
+        [<EmitConstructor>] abstract Create: ``pivotA``: Vector3 * ``pivotB``: Vector3 * ``axisA``: Vector3 * ``axisB``: Vector3 * ``scene``: Scene -> LockConstraint
+
+    [<Import("LockConstraint", "@babylonjs/core/Physics/v2/physicsConstraint.js")>]
+    let LockConstraint: LockConstraintStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/loopBlock.pure
+    [<AllowNullLiteral>]
+    type LoopBlock =
+        inherit NodeMaterialBlock
+        abstract ``iterations``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``iterationsInput``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``index``: NodeMaterialConnectionPoint with get
+        abstract ``loopID``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type LoopBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<LoopBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> LoopBlock
+
+    [<Import("LoopBlock", "@babylonjs/core/Materials/Node/Blocks/loopBlock.pure.js")>]
+    let LoopBlock: LoopBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/materialHelper.geometryrendering
+    [<AllowNullLiteral>]
+    type MaterialHelperGeometryRendering =
+        interface end
+
+    [<AllowNullLiteral>]
+    type MaterialHelperGeometryRenderingStatic =
+        inherit Constructor<MaterialHelperGeometryRendering>
+        [<EmitConstructor>] abstract Create: unit -> MaterialHelperGeometryRendering
+        abstract ``GeometryTextureDescriptions``: ResizeArray<InlineObjectd6480fff2d85Object> with get
+        abstract ``CreateConfiguration`` : ``renderPassId``: float -> BabylonjsBindings.TypeAliases.GeometryRenderingConfiguration
+        abstract ``DeleteConfiguration`` : ``renderPassId``: float -> unit
+        abstract ``GetConfiguration`` : ``renderPassId``: float -> BabylonjsBindings.TypeAliases.GeometryRenderingConfiguration
+        abstract ``AddUniformsAndSamplers`` : ``uniforms``: ResizeArray<string> * ``_samplers``: ResizeArray<string> -> unit
+        abstract ``MarkAsDirty`` : ``renderPassId``: float * ``meshes``: ResizeArray<AbstractMesh> -> unit
+        abstract ``PrepareDefines`` : ``renderPassId``: float * ``mesh``: AbstractMesh * ``defines``: MaterialDefines -> unit
+        abstract ``Bind`` : ``renderPassId``: float * ``effect``: Effect * ``mesh``: Mesh * ``world``: Matrix * ``material``: Material -> unit
+
+    [<Import("MaterialHelperGeometryRendering", "@babylonjs/core/Materials/materialHelper.geometryrendering.js")>]
+    let MaterialHelperGeometryRendering: MaterialHelperGeometryRenderingStatic = jsNative
+
+    /// Inline object shape used by MaterialPluginBase.
+    [<AllowNullLiteral>]
+    type MaterialPluginBaseConstructor12Parameter4Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// Inline object shape used by MaterialPluginBase.
+    [<AllowNullLiteral>]
+    type MaterialPluginBaseMethod19Parameter1ObjectValue1Object =
+        abstract ``type``: string with get, set
+        abstract ``default``: obj with get, set
+
+    /// Inline object shape used by MaterialPluginBase.
+    [<AllowNullLiteral>]
+    type MaterialPluginBaseMethod19Parameter1Object =
+        [<EmitIndexer>] abstract Item: ``name``: string -> MaterialPluginBaseMethod19Parameter1ObjectValue1Object with get, set
+
+    /// Inline object shape used by MaterialPluginBase.
+    [<AllowNullLiteral>]
+    type MaterialPluginBaseMethod31ReturnObject =
+        abstract ``ubo``: ResizeArray<InlineObject0a7e082c6f2eObject> option with get, set
+        abstract ``vertex``: string option with get, set
+        abstract ``fragment``: string option with get, set
+        abstract ``externalUniforms``: ResizeArray<string> option with get, set
+
+    /// Function-valued MaterialPluginBase.markAllDefinesAsDirty property.
+    [<AllowNullLiteral>]
+    type MaterialPluginBaseMarkAllDefinesAsDirtyCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/Materials/materialPluginBase.pure
+    [<AllowNullLiteral>]
+    type MaterialPluginBase =
+        abstract ``name``: string with get, set
+        abstract ``priority``: float with get, set
+        abstract ``resolveIncludes``: bool with get, set
+        abstract ``registerForExtraEvents``: bool with get, set
+        abstract ``doNotSerialize``: bool with get, set
+        abstract ``isCompatible`` : ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> bool
+        abstract ``markAllDefinesAsDirty``: MaterialPluginBaseMarkAllDefinesAsDirtyCallback with get
+        abstract ``getClassName`` : unit -> string
+        abstract ``isReadyForSubMesh`` : ``_defines``: MaterialDefines * ``_scene``: Scene * ``_engine``: AbstractEngine * ``_subMesh``: SubMesh -> bool
+        abstract ``hardBindForSubMesh`` : ``_uniformBuffer``: UniformBuffer * ``_scene``: Scene * ``_engine``: AbstractEngine * ``_subMesh``: SubMesh -> unit
+        abstract ``bindForSubMesh`` : ``_uniformBuffer``: UniformBuffer * ``_scene``: Scene * ``_engine``: AbstractEngine * ``_subMesh``: SubMesh -> unit
+        abstract ``dispose`` : ?``_forceDisposeTextures``: bool -> unit
+        abstract ``getCustomCode`` : ``_shaderType``: string * ?``_shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> InlineObjecte9eac13088eaObject option
+        abstract ``collectDefines`` : ``defines``: MaterialPluginBaseMethod19Parameter1Object -> unit
+        abstract ``prepareDefinesBeforeAttributes`` : ``_defines``: MaterialDefines * ``_scene``: Scene * ``_mesh``: AbstractMesh -> unit
+        abstract ``prepareDefines`` : ``_defines``: MaterialDefines * ``_scene``: Scene * ``_mesh``: AbstractMesh -> unit
+        abstract ``hasTexture`` : ``_texture``: BaseTexture -> bool
+        abstract ``hasRenderTargetTextures`` : unit -> bool
+        abstract ``fillRenderTargetTextures`` : ``_renderTargets``: SmartArray<RenderTargetTexture> -> unit
+        abstract ``getActiveTextures`` : ``_activeTextures``: ResizeArray<BaseTexture> -> unit
+        abstract ``getAnimatables`` : ``_animatables``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IAnimatable> -> unit
+        abstract ``addFallbacks`` : ``defines``: MaterialDefines * ``fallbacks``: EffectFallbacks * ``currentRank``: float -> float
+        abstract ``getSamplers`` : ``_samplers``: ResizeArray<string> -> unit
+        abstract ``getAttributes`` : ``_attributes``: ResizeArray<string> * ``_scene``: Scene * ``_mesh``: AbstractMesh -> unit
+        abstract ``getUniformBuffersNames`` : ``_ubos``: ResizeArray<string> -> unit
+        abstract ``getUniforms`` : ?``_shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage -> MaterialPluginBaseMethod31ReturnObject
+        abstract ``copyTo`` : ``plugin``: MaterialPluginBase -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``parse`` : ``source``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+
+    [<AllowNullLiteral>]
+    type MaterialPluginBaseStatic =
+        inherit Constructor<MaterialPluginBase>
+        [<EmitConstructor>] abstract Create: ``material``: Material * ``name``: string * ``priority``: float * ?``defines``: MaterialPluginBaseConstructor12Parameter4Object * ?``addToPluginList``: bool * ?``enable``: bool * ?``resolveIncludes``: bool -> MaterialPluginBase
+
+    [<Import("MaterialPluginBase", "@babylonjs/core/Materials/materialPluginBase.pure.js")>]
+    let MaterialPluginBase: MaterialPluginBaseStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/matrixBuilderBlock.pure
+    [<AllowNullLiteral>]
+    type MatrixBuilderBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : unit -> unit
+        abstract ``row0``: NodeMaterialConnectionPoint with get
+        abstract ``row1``: NodeMaterialConnectionPoint with get
+        abstract ``row2``: NodeMaterialConnectionPoint with get
+        abstract ``row3``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type MatrixBuilderBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<MatrixBuilderBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> MatrixBuilderBlock
+
+    [<Import("MatrixBuilderBlock", "@babylonjs/core/Materials/Node/Blocks/matrixBuilderBlock.pure.js")>]
+    let MatrixBuilderBlock: MatrixBuilderBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/matrixDeterminantBlock.pure
+    [<AllowNullLiteral>]
+    type MatrixDeterminantBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type MatrixDeterminantBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<MatrixDeterminantBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> MatrixDeterminantBlock
+
+    [<Import("MatrixDeterminantBlock", "@babylonjs/core/Materials/Node/Blocks/matrixDeterminantBlock.pure.js")>]
+    let MatrixDeterminantBlock: MatrixDeterminantBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/matrixSplitterBlock.pure
+    [<AllowNullLiteral>]
+    type MatrixSplitterBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``row0``: NodeMaterialConnectionPoint with get
+        abstract ``row1``: NodeMaterialConnectionPoint with get
+        abstract ``row2``: NodeMaterialConnectionPoint with get
+        abstract ``row3``: NodeMaterialConnectionPoint with get
+        abstract ``col0``: NodeMaterialConnectionPoint with get
+        abstract ``col1``: NodeMaterialConnectionPoint with get
+        abstract ``col2``: NodeMaterialConnectionPoint with get
+        abstract ``col3``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type MatrixSplitterBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<MatrixSplitterBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> MatrixSplitterBlock
+
+    [<Import("MatrixSplitterBlock", "@babylonjs/core/Materials/Node/Blocks/matrixSplitterBlock.pure.js")>]
+    let MatrixSplitterBlock: MatrixSplitterBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/matrixTransposeBlock.pure
+    [<AllowNullLiteral>]
+    type MatrixTransposeBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type MatrixTransposeBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<MatrixTransposeBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> MatrixTransposeBlock
+
+    [<Import("MatrixTransposeBlock", "@babylonjs/core/Materials/Node/Blocks/matrixTransposeBlock.pure.js")>]
+    let MatrixTransposeBlock: MatrixTransposeBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/maxBlock.pure
+    [<AllowNullLiteral>]
+    type MaxBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``left``: NodeMaterialConnectionPoint with get
+        abstract ``right``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type MaxBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<MaxBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> MaxBlock
+
+    [<Import("MaxBlock", "@babylonjs/core/Materials/Node/Blocks/maxBlock.pure.js")>]
+    let MaxBlock: MaxBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/meshAttributeExistsBlock.pure
+    [<AllowNullLiteral>]
+    type MeshAttributeExistsBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``attributeType``: BabylonjsBindings.Enums.MeshAttributeExistsBlockTypes with get, set
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``fallback``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type MeshAttributeExistsBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<MeshAttributeExistsBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> MeshAttributeExistsBlock
+
+    [<Import("MeshAttributeExistsBlock", "@babylonjs/core/Materials/Node/Blocks/meshAttributeExistsBlock.pure.js")>]
+    let MeshAttributeExistsBlock: MeshAttributeExistsBlockStatic = jsNative
+
+    /// @babylonjs/core/Misc/meshExploder
+    [<AllowNullLiteral>]
+    type MeshExploder =
+        abstract ``getClassName`` : unit -> string
+        abstract ``getMeshes`` : unit -> ResizeArray<Mesh>
+        abstract ``explode`` : ?``direction``: float -> unit
+
+    [<AllowNullLiteral>]
+    type MeshExploderStatic =
+        inherit Constructor<MeshExploder>
+        [<EmitConstructor>] abstract Create: ``meshes``: ResizeArray<Mesh> * ?``centerMesh``: Mesh -> MeshExploder
+
+    [<Import("MeshExploder", "@babylonjs/core/Misc/meshExploder.js")>]
+    let MeshExploder: MeshExploderStatic = jsNative
+
+    /// @babylonjs/core/Meshes/meshUVSpaceRenderer.pure
+    [<AllowNullLiteral>]
+    type MeshUVSpaceRenderer =
+        abstract ``clearColor``: Color4 with get, set
+        abstract ``texture``: Texture option with get, set
+        abstract ``isReady`` : unit -> bool
+        abstract ``renderTexture`` : ``texture``: BaseTexture * ``position``: Vector3 * ``normal``: Vector3 * ``size``: Vector3 * ?``angle``: float * ?``checkIsReady``: bool -> unit
+        abstract ``clear`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get
+
+    [<AllowNullLiteral>]
+    type MeshUVSpaceRendererStatic =
+        inherit Constructor<MeshUVSpaceRenderer>
+        [<EmitConstructor>] abstract Create: ``mesh``: AbstractMesh * ``scene``: Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.IMeshUVSpaceRendererOptions -> MeshUVSpaceRenderer
+
+    [<Import("MeshUVSpaceRenderer", "@babylonjs/core/Meshes/meshUVSpaceRenderer.pure.js")>]
+    let MeshUVSpaceRenderer: MeshUVSpaceRendererStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/minBlock.pure
+    [<AllowNullLiteral>]
+    type MinBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``left``: NodeMaterialConnectionPoint with get
+        abstract ``right``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type MinBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<MinBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> MinBlock
+
+    [<Import("MinBlock", "@babylonjs/core/Materials/Node/Blocks/minBlock.pure.js")>]
+    let MinBlock: MinBlockStatic = jsNative
+
+    /// @babylonjs/core/Misc/minMaxReducer.pure
+    [<AllowNullLiteral>]
+    type MinMaxReducer =
+        abstract ``setSourceTexture`` : ``sourceTexture``: RenderTargetTexture * ``depthRedux``: bool * ?``type``: float * ?``forceFullscreenViewport``: bool -> unit
+        abstract ``activate`` : unit -> unit
+        abstract ``deactivate`` : unit -> unit
+        abstract ``dispose`` : ?``disposeAll``: bool -> unit
+        abstract ``onAfterReductionPerformed``: Observable<InlineObject3620a0f42da7Object> with get
+        abstract ``sourceTexture``: RenderTargetTexture option with get
+        abstract ``refreshRate``: float with get, set
+        abstract ``activated``: bool with get
+
+    [<AllowNullLiteral>]
+    type MinMaxReducerStatic =
+        inherit Constructor<MinMaxReducer>
+        [<EmitConstructor>] abstract Create: ``camera``: Camera -> MinMaxReducer
+
+    [<Import("MinMaxReducer", "@babylonjs/core/Misc/minMaxReducer.pure.js")>]
+    let MinMaxReducer: MinMaxReducerStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/modBlock.pure
+    [<AllowNullLiteral>]
+    type ModBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``left``: NodeMaterialConnectionPoint with get
+        abstract ``right``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ModBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ModBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ModBlock
+
+    [<Import("ModBlock", "@babylonjs/core/Materials/Node/Blocks/modBlock.pure.js")>]
+    let ModBlock: ModBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Vertex/morphTargetsBlock.pure
+    [<AllowNullLiteral>]
+    type MorphTargetsBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial * ?``mesh``: AbstractMesh -> unit
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh -> unit
+        abstract ``replaceRepeatableContent`` : ``vertexShaderState``: NodeMaterialBuildState * ``defines``: NodeMaterialDefines * ?``mesh``: AbstractMesh -> unit
+        abstract ``position``: NodeMaterialConnectionPoint with get
+        abstract ``normal``: NodeMaterialConnectionPoint with get
+        abstract ``tangent``: NodeMaterialConnectionPoint with get
+        abstract ``uv``: NodeMaterialConnectionPoint with get
+        abstract ``uv2``: NodeMaterialConnectionPoint with get
+        abstract ``color``: NodeMaterialConnectionPoint with get
+        abstract ``positionOutput``: NodeMaterialConnectionPoint with get
+        abstract ``normalOutput``: NodeMaterialConnectionPoint with get
+        abstract ``tangentOutput``: NodeMaterialConnectionPoint with get
+        abstract ``uvOutput``: NodeMaterialConnectionPoint with get
+        abstract ``uv2Output``: NodeMaterialConnectionPoint with get
+        abstract ``colorOutput``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type MorphTargetsBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<MorphTargetsBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> MorphTargetsBlock
+
+    [<Import("MorphTargetsBlock", "@babylonjs/core/Materials/Node/Blocks/Vertex/morphTargetsBlock.pure.js")>]
+    let MorphTargetsBlock: MorphTargetsBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/multiplyBlock.pure
+    [<AllowNullLiteral>]
+    type MultiplyBlock =
+        inherit BaseMathBlock
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type MultiplyBlockStatic =
+        inherit BaseMathBlockStatic
+        inherit Constructor<MultiplyBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> MultiplyBlock
+
+    [<Import("MultiplyBlock", "@babylonjs/core/Materials/Node/Blocks/multiplyBlock.pure.js")>]
+    let MultiplyBlock: MultiplyBlockStatic = jsNative
+
+    /// @babylonjs/core/Behaviors/Meshes/multiPointerScaleBehavior
+    [<AllowNullLiteral>]
+    type MultiPointerScaleBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<Mesh>
+        abstract ``init`` : unit -> unit
+        abstract ``attach`` : ``ownerNode``: Mesh -> unit
+        abstract ``detach`` : unit -> unit
+        abstract ``attachedNode``: Mesh option with get
+        abstract ``name``: string with get
+
+    [<AllowNullLiteral>]
+    type MultiPointerScaleBehaviorStatic =
+        inherit Constructor<MultiPointerScaleBehavior>
+        [<EmitConstructor>] abstract Create: unit -> MultiPointerScaleBehavior
+
+    [<Import("MultiPointerScaleBehavior", "@babylonjs/core/Behaviors/Meshes/multiPointerScaleBehavior.js")>]
+    let MultiPointerScaleBehavior: MultiPointerScaleBehaviorStatic = jsNative
+
+    /// @babylonjs/core/Engines/nativeEngine.pure
+    [<AllowNullLiteral>]
+    type NativeEngine =
+        inherit Engine
+        abstract ``wrapWebGLTexture`` : unit -> InternalTexture
+        abstract ``updateWrappedWebGLTexture`` : unit -> unit
+        abstract ``_uploadImageToTexture`` : ``texture``: InternalTexture * ``image``: Browser.Types.HTMLImageElement * ?``_faceIndex``: float * ?``_lod``: float -> unit
+
+    [<AllowNullLiteral>]
+    type NativeEngineStatic =
+        inherit EngineStatic
+        inherit Constructor<NativeEngine>
+        [<EmitConstructor>] abstract Create: ?``options``: BabylonjsBindings.SimpleInterfaces.NativeEngineOptions -> NativeEngine
+
+    [<Import("NativeEngine", "@babylonjs/core/Engines/nativeEngine.pure.js")>]
+    let NativeEngine: NativeEngineStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/negateBlock.pure
+    [<AllowNullLiteral>]
+    type NegateBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``value``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NegateBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<NegateBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> NegateBlock
+
+    [<Import("NegateBlock", "@babylonjs/core/Materials/Node/Blocks/negateBlock.pure.js")>]
+    let NegateBlock: NegateBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/nLerpBlock.pure
+    [<AllowNullLiteral>]
+    type NLerpBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``left``: NodeMaterialConnectionPoint with get
+        abstract ``right``: NodeMaterialConnectionPoint with get
+        abstract ``gradient``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NLerpBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<NLerpBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> NLerpBlock
+
+    [<Import("NLerpBlock", "@babylonjs/core/Materials/Node/Blocks/nLerpBlock.pure.js")>]
+    let NLerpBlock: NLerpBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/nodeMaterialConnectionPointCustomObject
+    [<AllowNullLiteral>]
+    type NodeMaterialConnectionPointCustomObject<'T when 'T :> NodeMaterialBlock> =
+        inherit NodeMaterialConnectionPoint
+        abstract ``_blockType``: Constructor<'T> with get, set
+        abstract ``checkCompatibilityState`` : ``connectionPoint``: NodeMaterialConnectionPoint -> BabylonjsBindings.Enums.NodeMaterialConnectionPointCompatibilityStates
+        abstract ``createCustomInputBlock`` : unit -> (NodeMaterialBlock * string) option
+
+    [<AllowNullLiteral>]
+    type NodeMaterialConnectionPointCustomObjectStatic =
+        inherit NodeMaterialConnectionPointStatic
+        [<EmitConstructor>] abstract Create<'T when 'T :> NodeMaterialBlock>: ``name``: string * ``ownerBlock``: NodeMaterialBlock * ``direction``: BabylonjsBindings.Enums.NodeMaterialConnectionPointDirection * ``_blockType``: Constructor<'T> * ``_blockName``: string -> NodeMaterialConnectionPointCustomObject<'T>
+
+    [<Import("NodeMaterialConnectionPointCustomObject", "@babylonjs/core/Materials/Node/nodeMaterialConnectionPointCustomObject.js")>]
+    let NodeMaterialConnectionPointCustomObject: NodeMaterialConnectionPointCustomObjectStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/debugBlock.pure
+    [<AllowNullLiteral>]
+    type NodeMaterialDebugBlock =
+        inherit NodeMaterialBlock
+        abstract ``_forcedActive``: bool with get, set
+        abstract ``renderAlpha``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``isActive``: bool with get, set
+        abstract ``_isFinalOutputAndActive``: bool with get
+        abstract ``_hasPrecedence``: bool with get
+        abstract ``debug``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NodeMaterialDebugBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<NodeMaterialDebugBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> NodeMaterialDebugBlock
+
+    [<Import("NodeMaterialDebugBlock", "@babylonjs/core/Materials/Node/Blocks/debugBlock.pure.js")>]
+    let NodeMaterialDebugBlock: NodeMaterialDebugBlockStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Node/Blocks/Rendering/baseObjectRendererBlock
+    [<AllowNullLiteral>]
+    type NodeRenderGraphBaseObjectRendererBlock =
+        inherit NodeRenderGraphBlock
+        abstract ``_additionalConstructionParameters``: (bool * bool) with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``task``: FrameGraphObjectRendererTask with get
+        abstract ``isMainObjectRenderer``: bool with get, set
+        abstract ``depthTest``: bool with get, set
+        abstract ``depthWrite``: bool with get, set
+        abstract ``renderMeshes``: bool with get, set
+        abstract ``renderDepthOnlyMeshes``: bool with get, set
+        abstract ``renderOpaqueMeshes``: bool with get, set
+        abstract ``renderAlphaTestMeshes``: bool with get, set
+        abstract ``renderTransparentMeshes``: bool with get, set
+        abstract ``useOITForTransparentMeshes``: bool with get, set
+        abstract ``oitPassCount``: float with get, set
+        abstract ``renderParticles``: bool with get, set
+        abstract ``renderSprites``: bool with get, set
+        abstract ``forceLayerMaskCheck``: bool with get, set
+        abstract ``enableBoundingBoxRendering``: bool with get, set
+        abstract ``enableOutlineRendering``: bool with get, set
+        abstract ``disableShadows``: bool with get, set
+        abstract ``renderInLinearSpace``: bool with get, set
+        abstract ``doNotChangeAspectRatio``: bool with get, set
+        abstract ``enableClusteredLights``: bool with get, set
+        abstract ``resolveMSAAColors``: bool with get, set
+        abstract ``resolveMSAADepth``: bool with get, set
+        abstract ``target``: NodeRenderGraphConnectionPoint with get
+        abstract ``depth``: NodeRenderGraphConnectionPoint with get
+        abstract ``camera``: NodeRenderGraphConnectionPoint with get
+        abstract ``objects``: NodeRenderGraphConnectionPoint with get
+        abstract ``dependencies``: NodeRenderGraphConnectionPoint with get
+        abstract ``shadowGenerators``: NodeRenderGraphConnectionPoint with get
+        abstract ``output``: NodeRenderGraphConnectionPoint with get
+        abstract ``outputDepth``: NodeRenderGraphConnectionPoint with get
+        abstract ``objectRenderer``: NodeRenderGraphConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NodeRenderGraphBaseObjectRendererBlockStatic =
+        inherit NodeRenderGraphBlockStatic
+        inherit Constructor<NodeRenderGraphBaseObjectRendererBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``scene``: Scene * ?``doNotChangeAspectRatio``: bool * ?``enableClusteredLights``: bool -> NodeRenderGraphBaseObjectRendererBlock
+
+    [<Import("NodeRenderGraphBaseObjectRendererBlock", "@babylonjs/core/FrameGraph/Node/Blocks/Rendering/baseObjectRendererBlock.js")>]
+    let NodeRenderGraphBaseObjectRendererBlock: NodeRenderGraphBaseObjectRendererBlockStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Node/Blocks/PostProcesses/basePostProcessBlock
+    [<AllowNullLiteral>]
+    type NodeRenderGraphBasePostProcessBlock =
+        inherit NodeRenderGraphBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``sourceSamplingMode``: float with get, set
+        abstract ``alphaMode``: float with get, set
+        abstract ``source``: NodeRenderGraphConnectionPoint with get
+        abstract ``target``: NodeRenderGraphConnectionPoint with get
+        abstract ``output``: NodeRenderGraphConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NodeRenderGraphBasePostProcessBlockStatic =
+        inherit NodeRenderGraphBlockStatic
+        inherit Constructor<NodeRenderGraphBasePostProcessBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``scene``: Scene -> NodeRenderGraphBasePostProcessBlock
+
+    [<Import("NodeRenderGraphBasePostProcessBlock", "@babylonjs/core/FrameGraph/Node/Blocks/PostProcesses/basePostProcessBlock.js")>]
+    let NodeRenderGraphBasePostProcessBlock: NodeRenderGraphBasePostProcessBlockStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Node/Blocks/Rendering/baseShadowGeneratorBlock
+    [<AllowNullLiteral>]
+    type NodeRenderGraphBaseShadowGeneratorBlock =
+        inherit NodeRenderGraphBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``task``: FrameGraphShadowGeneratorTask with get
+        abstract ``mapSize``: float with get, set
+        abstract ``useFloat32TextureType``: bool with get, set
+        abstract ``useRedTextureFormat``: bool with get, set
+        abstract ``bias``: float with get, set
+        abstract ``normalBias``: float with get, set
+        abstract ``darkness``: float with get, set
+        abstract ``filter``: float with get, set
+        abstract ``filteringQuality``: float with get, set
+        abstract ``transparencyShadow``: bool with get, set
+        abstract ``enableSoftTransparentShadow``: bool with get, set
+        abstract ``useOpacityTextureForTransparentShadow``: bool with get, set
+        abstract ``light``: NodeRenderGraphConnectionPoint with get
+        abstract ``objects``: NodeRenderGraphConnectionPoint with get
+        abstract ``camera``: NodeRenderGraphConnectionPoint with get
+        abstract ``generator``: NodeRenderGraphConnectionPoint with get
+        abstract ``output``: NodeRenderGraphConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NodeRenderGraphBaseShadowGeneratorBlockStatic =
+        inherit NodeRenderGraphBlockStatic
+        inherit Constructor<NodeRenderGraphBaseShadowGeneratorBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``scene``: Scene -> NodeRenderGraphBaseShadowGeneratorBlock
+
+    [<Import("NodeRenderGraphBaseShadowGeneratorBlock", "@babylonjs/core/FrameGraph/Node/Blocks/Rendering/baseShadowGeneratorBlock.js")>]
+    let NodeRenderGraphBaseShadowGeneratorBlock: NodeRenderGraphBaseShadowGeneratorBlockStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Node/Blocks/elbowBlock.pure
+    [<AllowNullLiteral>]
+    type NodeRenderGraphElbowBlock =
+        inherit NodeRenderGraphBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeRenderGraphConnectionPoint with get
+        abstract ``output``: NodeRenderGraphConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NodeRenderGraphElbowBlockStatic =
+        inherit NodeRenderGraphBlockStatic
+        inherit Constructor<NodeRenderGraphElbowBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``scene``: Scene -> NodeRenderGraphElbowBlock
+
+    [<Import("NodeRenderGraphElbowBlock", "@babylonjs/core/FrameGraph/Node/Blocks/elbowBlock.pure.js")>]
+    let NodeRenderGraphElbowBlock: NodeRenderGraphElbowBlockStatic = jsNative
+
+    /// @babylonjs/core/FrameGraph/Node/Blocks/resourceContainerBlock.pure
+    [<AllowNullLiteral>]
+    type NodeRenderGraphResourceContainerBlock =
+        inherit NodeRenderGraphBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``resource0``: NodeRenderGraphConnectionPoint with get
+        abstract ``resource1``: NodeRenderGraphConnectionPoint with get
+        abstract ``resource2``: NodeRenderGraphConnectionPoint with get
+        abstract ``resource3``: NodeRenderGraphConnectionPoint with get
+        abstract ``resource4``: NodeRenderGraphConnectionPoint with get
+        abstract ``resource5``: NodeRenderGraphConnectionPoint with get
+        abstract ``resource6``: NodeRenderGraphConnectionPoint with get
+        abstract ``resource7``: NodeRenderGraphConnectionPoint with get
+        abstract ``output``: NodeRenderGraphConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NodeRenderGraphResourceContainerBlockStatic =
+        inherit NodeRenderGraphBlockStatic
+        inherit Constructor<NodeRenderGraphResourceContainerBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``frameGraph``: FrameGraph * ``scene``: Scene -> NodeRenderGraphResourceContainerBlock
+
+    [<Import("NodeRenderGraphResourceContainerBlock", "@babylonjs/core/FrameGraph/Node/Blocks/resourceContainerBlock.pure.js")>]
+    let NodeRenderGraphResourceContainerBlock: NodeRenderGraphResourceContainerBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Procedurals/noiseProceduralTexture.pure
+    [<AllowNullLiteral>]
+    type NoiseProceduralTexture =
+        inherit ProceduralTexture
+        abstract ``time``: float with get, set
+        abstract ``brightness``: float with get, set
+        abstract ``octaves``: float with get, set
+        abstract ``persistence``: float with get, set
+        abstract ``animationSpeedFactor``: float with get, set
+        abstract ``render`` : ?``useCameraPostProcess``: bool -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``clone`` : unit -> NoiseProceduralTexture
+
+    [<AllowNullLiteral>]
+    type NoiseProceduralTextureStatic =
+        inherit ProceduralTextureStatic
+        inherit Constructor<NoiseProceduralTexture>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``size``: float * ?``scene``: Scene * ?``fallbackTexture``: Texture * ?``generateMipMaps``: bool -> NoiseProceduralTexture
+        abstract ``Parse`` : ``parsedTexture``: obj * ``scene``: Scene -> NoiseProceduralTexture
+
+    [<Import("NoiseProceduralTexture", "@babylonjs/core/Materials/Textures/Procedurals/noiseProceduralTexture.pure.js")>]
+    let NoiseProceduralTexture: NoiseProceduralTextureStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/normalBlendBlock.pure
+    [<AllowNullLiteral>]
+    type NormalBlendBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``normalMap0``: NodeMaterialConnectionPoint with get
+        abstract ``normalMap1``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NormalBlendBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<NormalBlendBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> NormalBlendBlock
+
+    [<Import("NormalBlendBlock", "@babylonjs/core/Materials/Node/Blocks/normalBlendBlock.pure.js")>]
+    let NormalBlendBlock: NormalBlendBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/normalizeBlock.pure
+    [<AllowNullLiteral>]
+    type NormalizeBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type NormalizeBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<NormalizeBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> NormalizeBlock
+
+    [<Import("NormalizeBlock", "@babylonjs/core/Materials/Node/Blocks/normalizeBlock.pure.js")>]
+    let NormalizeBlock: NormalizeBlockStatic = jsNative
+
+    /// Inline object shape used by NullEngine.
+    [<AllowNullLiteral>]
+    type NullEngineMethod46Parameter1Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> VertexBuffer with get, set
+
+    /// @babylonjs/core/Engines/nullEngine.pure
+    [<AllowNullLiteral>]
+    type NullEngine =
+        inherit Engine
+        abstract ``isDeterministicLockStep`` : unit -> bool
+        abstract ``getLockstepMaxSteps`` : unit -> float
+        abstract ``getHardwareScalingLevel`` : unit -> float
+        abstract ``createVertexBuffer`` : ``vertices``: BabylonjsBindings.TypeAliases.FloatArray -> DataBuffer
+        abstract ``createIndexBuffer`` : ``indices``: BabylonjsBindings.TypeAliases.IndicesArray -> DataBuffer
+        abstract ``clear`` : ``color``: BabylonjsBindings.SimpleInterfaces.IColor4Like * ``backBuffer``: bool * ``depth``: bool * ?``stencil``: bool -> unit
+        abstract ``getRenderWidth`` : ?``useScreen``: bool -> float
+        abstract ``getRenderHeight`` : ?``useScreen``: bool -> float
+        abstract ``setViewport`` : ``viewport``: BabylonjsBindings.SimpleInterfaces.IViewportLike * ?``requiredWidth``: float * ?``requiredHeight``: float -> unit
+        abstract ``createUniformBuffer`` : ``elements``: BabylonjsBindings.TypeAliases.FloatArray -> DataBuffer
+        abstract ``createDynamicUniformBuffer`` : ``elements``: BabylonjsBindings.TypeAliases.FloatArray -> DataBuffer
+        abstract ``updateUniformBuffer`` : ``_uniformBuffer``: DataBuffer * ``_elements``: BabylonjsBindings.TypeAliases.FloatArray * ?``_offset``: float * ?``_count``: float -> unit
+        abstract ``bindUniformBufferBase`` : ``_buffer``: DataBuffer * ``_location``: float * ``_name``: string -> unit
+        abstract ``bindUniformBlock`` : ``_pipelineContext``: BabylonjsBindings.SimpleInterfaces.IPipelineContext * ``_blockName``: string * ``_index``: float -> unit
+        abstract ``createShaderProgram`` : ``pipelineContext``: BabylonjsBindings.SimpleInterfaces.IPipelineContext * ``vertexCode``: string * ``fragmentCode``: string * ``defines``: string * ?``context``: Browser.Types.WebGLRenderingContext -> Browser.Types.WebGLProgram
+        abstract ``getUniforms`` : ``pipelineContext``: BabylonjsBindings.SimpleInterfaces.IPipelineContext * ``uniformsNames``: ResizeArray<string> -> ResizeArray<Browser.Types.WebGLUniformLocation option>
+        abstract ``getAttributes`` : ``pipelineContext``: BabylonjsBindings.SimpleInterfaces.IPipelineContext * ``attributesNames``: ResizeArray<string> -> ResizeArray<float>
+        abstract ``bindSamplers`` : ``effect``: Effect -> unit
+        abstract ``enableEffect`` : ``effect``: U2<Effect, DrawWrapper> option -> unit
+        abstract ``setStateCullFaceType`` : ?``cullBackFaces``: bool * ?``force``: bool -> unit
+        abstract ``setState`` : ``culling``: bool * ?``zOffset``: float * ?``force``: bool * ?``reverseSide``: bool * ?``cullBackFaces``: bool * ?``stencil``: BabylonjsBindings.SimpleInterfaces.IStencilState * ?``zOffsetUnits``: float -> unit
+        abstract ``setIntArray`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: JS.Int32Array -> bool
+        abstract ``setIntArray2`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: JS.Int32Array -> bool
+        abstract ``setIntArray3`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: JS.Int32Array -> bool
+        abstract ``setIntArray4`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: JS.Int32Array -> bool
+        abstract ``setFloatArray`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: JS.Float32Array -> bool
+        abstract ``setFloatArray2`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: JS.Float32Array -> bool
+        abstract ``setFloatArray3`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: JS.Float32Array -> bool
+        abstract ``setFloatArray4`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: JS.Float32Array -> bool
+        abstract ``setArray`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: ResizeArray<float> -> bool
+        abstract ``setArray2`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: ResizeArray<float> -> bool
+        abstract ``setArray3`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: ResizeArray<float> -> bool
+        abstract ``setArray4`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``array``: ResizeArray<float> -> bool
+        abstract ``setMatrices`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``matrices``: JS.Float32Array -> bool
+        abstract ``setMatrix3x3`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``matrix``: JS.Float32Array -> bool
+        abstract ``setMatrix2x2`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``matrix``: JS.Float32Array -> bool
+        abstract ``setFloat`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``value``: float -> bool
+        abstract ``setFloat2`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``x``: float * ``y``: float -> bool
+        abstract ``setFloat3`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``x``: float * ``y``: float * ``z``: float -> bool
+        abstract ``setBool`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``bool``: float -> bool
+        abstract ``setFloat4`` : ``uniform``: Browser.Types.WebGLUniformLocation * ``x``: float * ``y``: float * ``z``: float * ``w``: float -> bool
+        abstract ``setAlphaMode`` : ``mode``: float * ?``noDepthWriteChange``: bool * ?``targetIndex``: float -> unit
+        abstract ``bindBuffers`` : ``vertexBuffers``: NullEngineMethod46Parameter1Object * ``indexBuffer``: DataBuffer * ``effect``: Effect -> unit
+        abstract ``wipeCaches`` : ?``bruteForce``: bool -> unit
+        abstract ``draw`` : ``useTriangles``: bool * ``indexStart``: float * ``indexCount``: float * ?``instancesCount``: float -> unit
+        abstract ``drawElementsType`` : ``fillMode``: float * ``indexStart``: float * ``indexCount``: float * ?``instancesCount``: float -> unit
+        abstract ``drawArraysType`` : ``fillMode``: float * ``verticesStart``: float * ``verticesCount``: float * ?``instancesCount``: float -> unit
+        abstract ``_releaseTexture`` : ``texture``: InternalTexture -> unit
+        abstract ``createTexture`` : ``urlArg``: string option * ``noMipmap``: bool * ``invertY``: bool * ``scene``: BabylonjsBindings.SimpleInterfaces.ISceneLike option * ?``samplingMode``: float * ?``onLoad``: System.Action<InternalTexture> * ?``onError``: System.Action<string, obj> * ?``buffer``: U6<string, JS.ArrayBuffer, JS.ArrayBufferView, Browser.Types.HTMLImageElement, Browser.Types.Blob, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap> * ?``fallback``: InternalTexture * ?``format``: float * ?``forcedExtension``: string * ?``mimeType``: string -> InternalTexture
+        abstract ``_createHardwareRenderTargetWrapper`` : ``isMulti``: bool * ``isCube``: bool * ``size``: U2<float, InlineObjectde9f6c1b6b0fObject> -> RenderTargetWrapper
+        abstract ``createRenderTargetTexture`` : ``size``: obj * ``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.RenderTargetCreationOptions> -> RenderTargetWrapper
+        abstract ``createMultiviewRenderTargetTexture`` : ``width``: float * ``height``: float -> RenderTargetWrapper
+        abstract ``bindMultiviewFramebuffer`` : ``multiviewTexture``: RenderTargetWrapper -> unit
+        abstract ``createRenderTargetCubeTexture`` : ``size``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.RenderTargetCreationOptions -> RenderTargetWrapper
+        abstract ``updateTextureSamplingMode`` : ``samplingMode``: float * ``texture``: InternalTexture -> unit
+        abstract ``createRawTexture`` : ``data``: JS.ArrayBufferView option * ``width``: float * ``height``: float * ``format``: float * ``generateMipMaps``: bool * ``invertY``: bool * ``samplingMode``: float * ?``compression``: string * ?``type``: float * ?``creationFlags``: float * ?``useSRGBBuffer``: bool -> InternalTexture
+        abstract ``updateRawTexture`` : ``texture``: InternalTexture option * ``data``: JS.ArrayBufferView option * ``format``: float * ``invertY``: bool * ?``compression``: string * ?``type``: float * ?``useSRGBBuffer``: bool -> unit
+        abstract ``bindFramebuffer`` : ``rtWrapper``: RenderTargetWrapper * ?``faceIndex``: float * ?``requiredWidth``: float * ?``requiredHeight``: float * ?``forceFullscreenViewport``: bool -> unit
+        abstract ``unBindFramebuffer`` : ``rtWrapper``: RenderTargetWrapper * ?``disableGenerateMipMaps``: bool * ?``onBeforeUnbind``: System.Action -> unit
+        abstract ``createDynamicVertexBuffer`` : ``vertices``: BabylonjsBindings.TypeAliases.FloatArray -> DataBuffer
+        abstract ``updateDynamicTexture`` : ``texture``: InternalTexture option * ``canvas``: Browser.Types.HTMLCanvasElement * ``invertY``: bool * ?``premulAlpha``: bool * ?``format``: float -> unit
+        abstract ``areAllEffectsReady`` : unit -> bool
+        abstract ``getError`` : unit -> float
+        abstract ``_getUnpackAlignement`` : unit -> float
+        abstract ``_unpackFlipY`` : ``value``: bool -> unit
+        abstract ``updateDynamicIndexBuffer`` : ``indexBuffer``: Browser.Types.WebGLBuffer * ``indices``: BabylonjsBindings.TypeAliases.IndicesArray * ?``offset``: float -> unit
+        abstract ``updateDynamicVertexBuffer`` : ``vertexBuffer``: Browser.Types.WebGLBuffer * ``vertices``: BabylonjsBindings.TypeAliases.FloatArray * ?``byteOffset``: float * ?``byteLength``: float -> unit
+        abstract ``_bindTextureDirectly`` : ``target``: float * ``texture``: InternalTexture -> bool
+        abstract ``_bindTexture`` : ``channel``: float * ``texture``: InternalTexture -> unit
+        abstract ``releaseEffects`` : unit -> unit
+        abstract ``displayLoadingUI`` : unit -> unit
+        abstract ``hideLoadingUI`` : unit -> unit
+        abstract ``flushFramebuffer`` : unit -> unit
+        abstract ``_uploadCompressedDataToTextureDirectly`` : ``texture``: InternalTexture * ``internalFormat``: float * ``width``: float * ``height``: float * ``data``: JS.ArrayBufferView * ?``faceIndex``: float * ?``lod``: float -> unit
+        abstract ``_uploadDataToTextureDirectly`` : ``texture``: InternalTexture * ``imageData``: JS.ArrayBufferView * ?``faceIndex``: float * ?``lod``: float -> unit
+        abstract ``_uploadArrayBufferViewToTexture`` : ``texture``: InternalTexture * ``imageData``: JS.ArrayBufferView * ?``faceIndex``: float * ?``lod``: float -> unit
+        abstract ``_uploadImageToTexture`` : ``texture``: InternalTexture * ``image``: Browser.Types.HTMLImageElement * ?``faceIndex``: float * ?``lod``: float -> unit
+        abstract ``supportsUniformBuffers``: bool with get
+        abstract ``loadingUIText``: string with set
+
+    [<AllowNullLiteral>]
+    type NullEngineStatic =
+        inherit EngineStatic
+        inherit Constructor<NullEngine>
+        [<EmitConstructor>] abstract Create: ?``options``: NullEngineOptions -> NullEngine
+
+    [<Import("NullEngine", "@babylonjs/core/Engines/nullEngine.pure.js")>]
+    let NullEngine: NullEngineStatic = jsNative
+
+    /// @babylonjs/core/Culling/Octrees/octreeSceneComponent.pure
+    [<AllowNullLiteral>]
+    type OctreeSceneComponent =
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``checksIsEnabled``: bool with get
+        abstract ``register`` : unit -> unit
+        abstract ``getActiveMeshCandidates`` : unit -> BabylonjsBindings.SimpleInterfaces.ISmartArrayLike<AbstractMesh>
+        abstract ``getActiveSubMeshCandidates`` : ``mesh``: AbstractMesh -> BabylonjsBindings.SimpleInterfaces.ISmartArrayLike<SubMesh>
+        abstract ``getIntersectingSubMeshCandidates`` : ``mesh``: AbstractMesh * ``localRay``: Ray -> BabylonjsBindings.SimpleInterfaces.ISmartArrayLike<SubMesh>
+        abstract ``getCollidingSubMeshCandidates`` : ``mesh``: AbstractMesh * ``collider``: Collider -> BabylonjsBindings.SimpleInterfaces.ISmartArrayLike<SubMesh>
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type OctreeSceneComponentStatic =
+        inherit Constructor<OctreeSceneComponent>
+        [<EmitConstructor>] abstract Create: ?``scene``: Scene -> OctreeSceneComponent
+
+    [<Import("OctreeSceneComponent", "@babylonjs/core/Culling/Octrees/octreeSceneComponent.pure.js")>]
+    let OctreeSceneComponent: OctreeSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Physics/v1/Plugins/oimoJSPlugin
+    [<AllowNullLiteral>]
+    type OimoJSPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin
+        abstract ``world``: obj with get, set
+        abstract ``name``: string with get, set
+        abstract ``BJSOIMO``: obj with get, set
+        abstract ``getPluginVersion`` : unit -> float
+        abstract ``setGravity`` : ``gravity``: Vector3 -> unit
+        abstract ``setTimeStep`` : ``timeStep``: float -> unit
+        abstract ``getTimeStep`` : unit -> float
+        abstract ``executeStep`` : ``delta``: float * ``impostors``: ResizeArray<PhysicsImpostor> -> unit
+        abstract ``applyImpulse`` : ``impostor``: PhysicsImpostor * ``force``: Vector3 * ``contactPoint``: Vector3 -> unit
+        abstract ``applyForce`` : ``impostor``: PhysicsImpostor * ``force``: Vector3 * ``contactPoint``: Vector3 -> unit
+        abstract ``generatePhysicsBody`` : ``impostor``: PhysicsImpostor -> unit
+        abstract ``removePhysicsBody`` : ``impostor``: PhysicsImpostor -> unit
+        abstract ``generateJoint`` : ``impostorJoint``: BabylonjsBindings.SimpleInterfaces.PhysicsImpostorJoint -> unit
+        abstract ``removeJoint`` : ``impostorJoint``: BabylonjsBindings.SimpleInterfaces.PhysicsImpostorJoint -> unit
+        abstract ``isSupported`` : unit -> bool
+        abstract ``setTransformationFromPhysicsBody`` : ``impostor``: PhysicsImpostor -> unit
+        abstract ``setPhysicsBodyTransformation`` : ``impostor``: PhysicsImpostor * ``newPosition``: Vector3 * ``newRotation``: Quaternion -> unit
+        abstract ``setLinearVelocity`` : ``impostor``: PhysicsImpostor * ``velocity``: Vector3 -> unit
+        abstract ``setAngularVelocity`` : ``impostor``: PhysicsImpostor * ``velocity``: Vector3 -> unit
+        abstract ``getLinearVelocity`` : ``impostor``: PhysicsImpostor -> Vector3 option
+        abstract ``getAngularVelocity`` : ``impostor``: PhysicsImpostor -> Vector3 option
+        abstract ``setBodyMass`` : ``impostor``: PhysicsImpostor * ``mass``: float -> unit
+        abstract ``getBodyMass`` : ``impostor``: PhysicsImpostor -> float
+        abstract ``getBodyFriction`` : ``impostor``: PhysicsImpostor -> float
+        abstract ``setBodyFriction`` : ``impostor``: PhysicsImpostor * ``friction``: float -> unit
+        abstract ``getBodyRestitution`` : ``impostor``: PhysicsImpostor -> float
+        abstract ``setBodyRestitution`` : ``impostor``: PhysicsImpostor * ``restitution``: float -> unit
+        abstract ``sleepBody`` : ``impostor``: PhysicsImpostor -> unit
+        abstract ``wakeUpBody`` : ``impostor``: PhysicsImpostor -> unit
+        abstract ``updateDistanceJoint`` : ``joint``: PhysicsJoint * ``maxDistance``: float * ?``minDistance``: float -> unit
+        abstract ``setMotor`` : ``joint``: BabylonjsBindings.SimpleInterfaces.IMotorEnabledJoint * ``speed``: float * ?``force``: float * ?``motorIndex``: float -> unit
+        abstract ``setLimit`` : ``joint``: BabylonjsBindings.SimpleInterfaces.IMotorEnabledJoint * ``upperLimit``: float * ?``lowerLimit``: float * ?``motorIndex``: float -> unit
+        abstract ``syncMeshWithImpostor`` : ``mesh``: AbstractMesh * ``impostor``: PhysicsImpostor -> unit
+        abstract ``getRadius`` : ``impostor``: PhysicsImpostor -> float
+        abstract ``getBoxSizeToRef`` : ``impostor``: PhysicsImpostor * ``result``: Vector3 -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``raycast`` : ``from``: Vector3 * ``to``: Vector3 -> PhysicsRaycastResult
+        abstract ``raycastToRef`` : ``from``: Vector3 * ``to``: Vector3 * ``result``: PhysicsRaycastResult -> unit
+
+    [<AllowNullLiteral>]
+    type OimoJSPluginStatic =
+        inherit Constructor<OimoJSPlugin>
+        [<EmitConstructor>] abstract Create: ?``_useDeltaForWorldStep``: bool * ?``iterations``: float * ?``oimoInjection``: obj -> OimoJSPlugin
+
+    [<Import("OimoJSPlugin", "@babylonjs/core/Physics/v1/Plugins/oimoJSPlugin.js")>]
+    let OimoJSPlugin: OimoJSPluginStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/oneMinusBlock.pure
+    [<AllowNullLiteral>]
+    type OneMinusBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type OneMinusBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<OneMinusBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> OneMinusBlock
+
+    [<Import("OneMinusBlock", "@babylonjs/core/Materials/Node/Blocks/oneMinusBlock.pure.js")>]
+    let OneMinusBlock: OneMinusBlockStatic = jsNative
+
+    /// @babylonjs/core/Cameras/Inputs/orbitCameraPointersInput
+    [<AllowNullLiteral>]
+    type OrbitCameraPointersInput =
+        inherit BaseCameraPointersInput
+        abstract ``pinchZoom``: bool with get, set
+        abstract ``multiTouchPanning``: bool with get, set
+        abstract ``multiTouchPanAndZoom``: bool with get, set
+        abstract ``onMultiTouch`` : ``_pointA``: BabylonjsBindings.SimpleInterfaces.PointerTouch option * ``_pointB``: BabylonjsBindings.SimpleInterfaces.PointerTouch option * ``previousPinchSquaredDistance``: float * ``pinchSquaredDistance``: float * ``previousMultiTouchPanPosition``: BabylonjsBindings.SimpleInterfaces.PointerTouch option * ``multiTouchPanPosition``: BabylonjsBindings.SimpleInterfaces.PointerTouch option -> unit
+        abstract ``onButtonUp`` : ``_evt``: BabylonjsBindings.SimpleInterfaces.IPointerEvent -> unit
+        abstract ``onLostFocus`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type OrbitCameraPointersInputStatic =
+        inherit BaseCameraPointersInputStatic
+
+    [<Import("OrbitCameraPointersInput", "@babylonjs/core/Cameras/Inputs/orbitCameraPointersInput.js")>]
+    let OrbitCameraPointersInput: OrbitCameraPointersInputStatic = jsNative
+
+    /// @babylonjs/core/Rendering/outlineRenderer.pure
+    [<AllowNullLiteral>]
+    type OutlineRenderer =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get, set
+        abstract ``scene``: Scene with get, set
+        abstract ``zOffset``: float with get, set
+        abstract ``zOffsetUnits``: float with get, set
+        abstract ``enabled``: bool with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``render`` : ``subMesh``: SubMesh * ``batch``: _InstancesBatch * ?``useOverlay``: bool * ?``renderPassId``: float -> unit
+        abstract ``isReady`` : ``subMesh``: SubMesh * ``useInstances``: bool * ?``renderPassId``: float -> bool
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get
+
+    [<AllowNullLiteral>]
+    type OutlineRendererStatic =
+        inherit Constructor<OutlineRenderer>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> OutlineRenderer
+
+    [<Import("OutlineRenderer", "@babylonjs/core/Rendering/outlineRenderer.pure.js")>]
+    let OutlineRenderer: OutlineRendererStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/pannerBlock.pure
+    [<AllowNullLiteral>]
+    type PannerBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``uv``: NodeMaterialConnectionPoint with get
+        abstract ``speed``: NodeMaterialConnectionPoint with get
+        abstract ``time``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type PannerBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<PannerBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> PannerBlock
+
+    [<Import("PannerBlock", "@babylonjs/core/Materials/Node/Blocks/pannerBlock.pure.js")>]
+    let PannerBlock: PannerBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Particle/particleBlendMultiplyBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleBlendMultiplyBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``color``: NodeMaterialConnectionPoint with get
+        abstract ``alphaTexture``: NodeMaterialConnectionPoint with get
+        abstract ``alphaColor``: NodeMaterialConnectionPoint with get
+        abstract ``blendColor``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleBlendMultiplyBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ParticleBlendMultiplyBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleBlendMultiplyBlock
+
+    [<Import("ParticleBlendMultiplyBlock", "@babylonjs/core/Materials/Node/Blocks/Particle/particleBlendMultiplyBlock.pure.js")>]
+    let ParticleBlendMultiplyBlock: ParticleBlendMultiplyBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleClampBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleClampBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> ParticleClampBlock option
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``minimum``: float with get, set
+        abstract ``maximum``: float with get, set
+        abstract ``value``: NodeParticleConnectionPoint with get
+        abstract ``min``: NodeParticleConnectionPoint with get
+        abstract ``max``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleClampBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleClampBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleClampBlock
+
+    [<Import("ParticleClampBlock", "@babylonjs/core/Particles/Node/Blocks/particleClampBlock.pure.js")>]
+    let ParticleClampBlock: ParticleClampBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Conditions/particleConditionBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleConditionBlock =
+        inherit NodeParticleBlock
+        abstract ``test``: BabylonjsBindings.Enums.ParticleConditionBlockTests with get, set
+        abstract ``epsilon``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : unit -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``left``: NodeParticleConnectionPoint with get
+        abstract ``right``: NodeParticleConnectionPoint with get
+        abstract ``ifTrue``: NodeParticleConnectionPoint with get
+        abstract ``ifFalse``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleConditionBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleConditionBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleConditionBlock
+
+    [<Import("ParticleConditionBlock", "@babylonjs/core/Particles/Node/Blocks/Conditions/particleConditionBlock.pure.js")>]
+    let ParticleConditionBlock: ParticleConditionBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleConverterBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleConverterBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``colorIn``: NodeParticleConnectionPoint with get
+        abstract ``xyzIn``: NodeParticleConnectionPoint with get
+        abstract ``xyIn``: NodeParticleConnectionPoint with get
+        abstract ``zwIn``: NodeParticleConnectionPoint with get
+        abstract ``xIn``: NodeParticleConnectionPoint with get
+        abstract ``yIn``: NodeParticleConnectionPoint with get
+        abstract ``zIn``: NodeParticleConnectionPoint with get
+        abstract ``wIn``: NodeParticleConnectionPoint with get
+        abstract ``colorOut``: NodeParticleConnectionPoint with get
+        abstract ``xyzOut``: NodeParticleConnectionPoint with get
+        abstract ``xyOut``: NodeParticleConnectionPoint with get
+        abstract ``zwOut``: NodeParticleConnectionPoint with get
+        abstract ``xOut``: NodeParticleConnectionPoint with get
+        abstract ``yOut``: NodeParticleConnectionPoint with get
+        abstract ``zOut``: NodeParticleConnectionPoint with get
+        abstract ``wOut``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleConverterBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleConverterBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleConverterBlock
+
+    [<Import("ParticleConverterBlock", "@babylonjs/core/Particles/Node/Blocks/particleConverterBlock.pure.js")>]
+    let ParticleConverterBlock: ParticleConverterBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleDebugBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleDebugBlock =
+        inherit NodeParticleBlock
+        abstract ``log``: ResizeArray<ResizeArray<string>> with get, set
+        abstract ``stackSize``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``onDataCollectedObservable``: Observable<ParticleDebugBlock> with get, set
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``input``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleDebugBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleDebugBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleDebugBlock
+
+    [<Import("ParticleDebugBlock", "@babylonjs/core/Particles/Node/Blocks/particleDebugBlock.pure.js")>]
+    let ParticleDebugBlock: ParticleDebugBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleElbowBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleElbowBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``input``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleElbowBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleElbowBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleElbowBlock
+
+    [<Import("ParticleElbowBlock", "@babylonjs/core/Particles/Node/Blocks/particleElbowBlock.pure.js")>]
+    let ParticleElbowBlock: ParticleElbowBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleFloatToIntBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleFloatToIntBlock =
+        inherit NodeParticleBlock
+        abstract ``operation``: BabylonjsBindings.Enums.ParticleFloatToIntBlockOperations with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``input``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleFloatToIntBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleFloatToIntBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleFloatToIntBlock
+
+    [<Import("ParticleFloatToIntBlock", "@babylonjs/core/Particles/Node/Blocks/particleFloatToIntBlock.pure.js")>]
+    let ParticleFloatToIntBlock: ParticleFloatToIntBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleGradientBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleGradientBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : unit -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``gradient``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleGradientBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleGradientBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleGradientBlock
+
+    [<Import("ParticleGradientBlock", "@babylonjs/core/Particles/Node/Blocks/particleGradientBlock.pure.js")>]
+    let ParticleGradientBlock: ParticleGradientBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleGradientValueBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleGradientValueBlock =
+        inherit NodeParticleBlock
+        abstract ``reference``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : unit -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``value``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleGradientValueBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleGradientValueBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleGradientValueBlock
+
+    [<Import("ParticleGradientValueBlock", "@babylonjs/core/Particles/Node/Blocks/particleGradientValueBlock.pure.js")>]
+    let ParticleGradientValueBlock: ParticleGradientValueBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/particleHelper
+    [<AllowNullLiteral>]
+    type ParticleHelper =
+        interface end
+
+    [<AllowNullLiteral>]
+    type ParticleHelperStatic =
+        inherit Constructor<ParticleHelper>
+        [<EmitConstructor>] abstract Create: unit -> ParticleHelper
+        abstract ``BaseAssetsUrl``: string with get, set
+        abstract ``SnippetUrl``: string with get, set
+        abstract ``CreateDefault`` : ``emitter``: U2<AbstractMesh, Vector3> option * ?``capacity``: float * ?``scene``: Scene * ?``useGPU``: bool -> BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        abstract ``CreateAsync`` : ``type``: string * ``scene``: Scene option * ?``gpu``: bool * ?``capacity``: float -> JS.Promise<ParticleSystemSet>
+        abstract ``ExportSet`` : ``systems``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IParticleSystem> -> ParticleSystemSet
+        abstract ``ParseFromFileAsync`` : ``name``: string option * ``url``: string * ``scene``: Scene * ?``gpu``: bool * ?``rootUrl``: string * ?``capacity``: float -> JS.Promise<BabylonjsBindings.SimpleInterfaces.IParticleSystem>
+        abstract ``ParseFromSnippetAsync`` : ``snippetId``: string * ``scene``: Scene * ?``gpu``: bool * ?``rootUrl``: string * ?``capacity``: float -> JS.Promise<BabylonjsBindings.SimpleInterfaces.IParticleSystem>
+        abstract ``CreateFromSnippetAsync``: System.Func<string, Scene, bool option, string option, float option, JS.Promise<BabylonjsBindings.SimpleInterfaces.IParticleSystem>> with get, set
+
+    [<Import("ParticleHelper", "@babylonjs/core/Particles/particleHelper.js")>]
+    let ParticleHelper: ParticleHelperStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleLerpBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleLerpBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : unit -> unit
+        abstract ``left``: NodeParticleConnectionPoint with get
+        abstract ``right``: NodeParticleConnectionPoint with get
+        abstract ``gradient``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleLerpBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleLerpBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleLerpBlock
+
+    [<Import("ParticleLerpBlock", "@babylonjs/core/Particles/Node/Blocks/particleLerpBlock.pure.js")>]
+    let ParticleLerpBlock: ParticleLerpBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleLocalVariableBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleLocalVariableBlock =
+        inherit NodeParticleBlock
+        abstract ``scope``: BabylonjsBindings.Enums.ParticleLocalVariableBlockScope with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``input``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleLocalVariableBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleLocalVariableBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleLocalVariableBlock
+
+    [<Import("ParticleLocalVariableBlock", "@babylonjs/core/Particles/Node/Blocks/particleLocalVariableBlock.pure.js")>]
+    let ParticleLocalVariableBlock: ParticleLocalVariableBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleMathBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleMathBlock =
+        inherit NodeParticleBlock
+        abstract ``operation``: BabylonjsBindings.Enums.ParticleMathBlockOperations with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``left``: NodeParticleConnectionPoint with get
+        abstract ``right``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleMathBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleMathBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleMathBlock
+
+    [<Import("ParticleMathBlock", "@babylonjs/core/Particles/Node/Blocks/particleMathBlock.pure.js")>]
+    let ParticleMathBlock: ParticleMathBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleNLerpBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleNLerpBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``_state``: NodeParticleBuildState -> ParticleNLerpBlock option
+        abstract ``left``: NodeParticleConnectionPoint with get
+        abstract ``right``: NodeParticleConnectionPoint with get
+        abstract ``gradient``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleNLerpBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleNLerpBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleNLerpBlock
+
+    [<Import("ParticleNLerpBlock", "@babylonjs/core/Particles/Node/Blocks/particleNLerpBlock.pure.js")>]
+    let ParticleNLerpBlock: ParticleNLerpBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleNumberMathBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleNumberMathBlock =
+        inherit NodeParticleBlock
+        abstract ``operation``: BabylonjsBindings.Enums.ParticleNumberMathBlockOperations with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``left``: NodeParticleConnectionPoint with get
+        abstract ``right``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleNumberMathBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleNumberMathBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleNumberMathBlock
+
+    [<Import("ParticleNumberMathBlock", "@babylonjs/core/Particles/Node/Blocks/particleNumberMathBlock.pure.js")>]
+    let ParticleNumberMathBlock: ParticleNumberMathBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Particle/particleRampGradientBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleRampGradientBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``color``: NodeMaterialConnectionPoint with get
+        abstract ``rampColor``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleRampGradientBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ParticleRampGradientBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleRampGradientBlock
+
+    [<Import("ParticleRampGradientBlock", "@babylonjs/core/Materials/Node/Blocks/Particle/particleRampGradientBlock.pure.js")>]
+    let ParticleRampGradientBlock: ParticleRampGradientBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleRandomBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleRandomBlock =
+        inherit NodeParticleBlock
+        abstract ``lockMode``: BabylonjsBindings.Enums.ParticleRandomBlockLocks with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : unit -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``min``: NodeParticleConnectionPoint with get
+        abstract ``max``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleRandomBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleRandomBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleRandomBlock
+
+    [<Import("ParticleRandomBlock", "@babylonjs/core/Particles/Node/Blocks/particleRandomBlock.pure.js")>]
+    let ParticleRandomBlock: ParticleRandomBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleSmoothStepBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleSmoothStepBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : unit -> ParticleSmoothStepBlock option
+        abstract ``value``: NodeParticleConnectionPoint with get
+        abstract ``edge0``: NodeParticleConnectionPoint with get
+        abstract ``edge1``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleSmoothStepBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleSmoothStepBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleSmoothStepBlock
+
+    [<Import("ParticleSmoothStepBlock", "@babylonjs/core/Particles/Node/Blocks/particleSmoothStepBlock.pure.js")>]
+    let ParticleSmoothStepBlock: ParticleSmoothStepBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleStepBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleStepBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : unit -> ParticleStepBlock option
+        abstract ``value``: NodeParticleConnectionPoint with get
+        abstract ``edge``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleStepBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleStepBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleStepBlock
+
+    [<Import("ParticleStepBlock", "@babylonjs/core/Particles/Node/Blocks/particleStepBlock.pure.js")>]
+    let ParticleStepBlock: ParticleStepBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleSourceTextureBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleTextureSourceBlock =
+        inherit NodeParticleBlock
+        abstract ``invertY``: bool with get, set
+        abstract ``serializedCachedData``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``extractTextureContentAsync`` : unit -> JS.Promise<BabylonjsBindings.SimpleInterfaces.INodeParticleTextureData option>
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``url``: string with get, set
+        abstract ``textureDataUrl``: string with get, set
+        abstract ``sourceTexture``: BaseTexture option with get, set
+        abstract ``texture``: BaseTexture option with get, set
+        abstract ``textureOutput``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleTextureSourceBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleTextureSourceBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleTextureSourceBlock
+
+    [<Import("ParticleTextureSourceBlock", "@babylonjs/core/Particles/Node/Blocks/particleSourceTextureBlock.pure.js")>]
+    let ParticleTextureSourceBlock: ParticleTextureSourceBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Triggers/particleTriggerBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleTriggerBlock =
+        inherit NodeParticleBlock
+        abstract ``limit``: float with get, set
+        abstract ``delay``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``input``: NodeParticleConnectionPoint with get
+        abstract ``condition``: NodeParticleConnectionPoint with get
+        abstract ``system``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleTriggerBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleTriggerBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleTriggerBlock
+
+    [<Import("ParticleTriggerBlock", "@babylonjs/core/Particles/Node/Blocks/Triggers/particleTriggerBlock.pure.js")>]
+    let ParticleTriggerBlock: ParticleTriggerBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleTrigonometryBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleTrigonometryBlock =
+        inherit NodeParticleBlock
+        abstract ``operation``: BabylonjsBindings.Enums.ParticleTrigonometryBlockOperations with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> ParticleTrigonometryBlock option
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``input``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleTrigonometryBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleTrigonometryBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleTrigonometryBlock
+
+    [<Import("ParticleTrigonometryBlock", "@babylonjs/core/Particles/Node/Blocks/particleTrigonometryBlock.pure.js")>]
+    let ParticleTrigonometryBlock: ParticleTrigonometryBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleVectorLengthBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleVectorLengthBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : unit -> unit
+        abstract ``input``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleVectorLengthBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleVectorLengthBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleVectorLengthBlock
+
+    [<Import("ParticleVectorLengthBlock", "@babylonjs/core/Particles/Node/Blocks/particleVectorLengthBlock.pure.js")>]
+    let ParticleVectorLengthBlock: ParticleVectorLengthBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/particleVectorMathBlock.pure
+    [<AllowNullLiteral>]
+    type ParticleVectorMathBlock =
+        inherit NodeParticleBlock
+        abstract ``operation``: BabylonjsBindings.Enums.ParticleVectorMathBlockOperations with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``left``: NodeParticleConnectionPoint with get
+        abstract ``right``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ParticleVectorMathBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<ParticleVectorMathBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ParticleVectorMathBlock
+
+    [<Import("ParticleVectorMathBlock", "@babylonjs/core/Particles/Node/Blocks/particleVectorMathBlock.pure.js")>]
+    let ParticleVectorMathBlock: ParticleVectorMathBlockStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/passPostProcess.pure
+    [<AllowNullLiteral>]
+    type PassCubePostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+        abstract ``face``: float with get, set
+
+    [<AllowNullLiteral>]
+    type PassCubePostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<PassCubePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ?``camera``: Camera * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float * ?``blockCompilation``: bool -> PassCubePostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> PassCubePostProcess
+
+    [<Import("PassCubePostProcess", "@babylonjs/core/PostProcesses/passPostProcess.pure.js")>]
+    let PassCubePostProcess: PassCubePostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/passPostProcess.pure
+    [<AllowNullLiteral>]
+    type PassPostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type PassPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<PassPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ?``camera``: Camera * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float * ?``blockCompilation``: bool -> PassPostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> PassPostProcess
+
+    [<Import("PassPostProcess", "@babylonjs/core/PostProcesses/passPostProcess.pure.js")>]
+    let PassPostProcess: PassPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.path
+    [<AllowNullLiteral>]
+    type Path2 =
+        abstract ``closed``: bool with get, set
+        abstract ``addLineTo`` : ``x``: float * ``y``: float -> Path2
+        abstract ``addArcTo`` : ``midX``: float * ``midY``: float * ``endX``: float * ``endY``: float * ?``numberOfSegments``: float -> Path2
+        abstract ``addQuadraticCurveTo`` : ``controlX``: float * ``controlY``: float * ``endX``: float * ``endY``: float * ?``numberOfSegments``: float -> Path2
+        abstract ``addBezierCurveTo`` : ``originTangentX``: float * ``originTangentY``: float * ``destinationTangentX``: float * ``destinationTangentY``: float * ``endX``: float * ``endY``: float * ?``numberOfSegments``: float -> Path2
+        abstract ``isPointInside`` : ``point``: Vector2 -> bool
+        abstract ``close`` : unit -> Path2
+        abstract ``length`` : unit -> float
+        abstract ``area`` : unit -> float
+        abstract ``getPoints`` : unit -> ResizeArray<Vector2>
+        abstract ``getPointAtLengthPosition`` : ``normalizedLengthPosition``: float -> Vector2
+
+    [<AllowNullLiteral>]
+    type Path2Static =
+        inherit Constructor<Path2>
+        [<EmitConstructor>] abstract Create: ``x``: float * ``y``: float -> Path2
+        abstract ``StartingAt`` : ``x``: float * ``y``: float -> Path2
+
+    [<Import("Path2", "@babylonjs/core/Maths/math.path.js")>]
+    let Path2: Path2Static = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/PBR/pbrMetallicRoughnessBlock.pure
+    [<AllowNullLiteral>]
+    type PBRMetallicRoughnessBlock =
+        inherit NodeMaterialBlock
+        abstract ``light``: Light option with get, set
+        abstract ``directIntensity``: float with get, set
+        abstract ``environmentIntensity``: float with get, set
+        abstract ``specularIntensity``: float with get, set
+        abstract ``lightFalloff``: float with get, set
+        abstract ``useAlphaTest``: bool with get, set
+        abstract ``alphaTestCutoff``: float with get, set
+        abstract ``useAlphaBlending``: bool with get, set
+        abstract ``useRadianceOverAlpha``: bool with get, set
+        abstract ``useSpecularOverAlpha``: bool with get, set
+        abstract ``enableSpecularAntiAliasing``: bool with get, set
+        abstract ``realTimeFiltering``: bool with get, set
+        abstract ``realTimeFilteringQuality``: float with get, set
+        abstract ``baseDiffuseModel``: float with get, set
+        abstract ``useEnergyConservation``: bool with get, set
+        abstract ``useRadianceOcclusion``: bool with get, set
+        abstract ``useHorizonOcclusion``: bool with get, set
+        abstract ``unlit``: bool with get, set
+        abstract ``forceNormalForward``: bool with get, set
+        abstract ``generateOnlyFragmentCode``: bool with get, set
+        abstract ``debugMode``: float with get, set
+        abstract ``debugLimit``: float with get, set
+        abstract ``debugFactor``: float with get, set
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial * ?``mesh``: AbstractMesh -> unit
+        abstract ``updateUniformsAndSamples`` : ``state``: NodeMaterialBuildState * ``nodeMaterial``: NodeMaterial * ``defines``: NodeMaterialDefines * ``uniformBuffers``: ResizeArray<string> -> unit
+        abstract ``isReady`` : ``mesh``: AbstractMesh * ``nodeMaterial``: NodeMaterial * ``defines``: NodeMaterialDefines -> bool
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``worldNormal``: NodeMaterialConnectionPoint with get
+        abstract ``view``: NodeMaterialConnectionPoint with get
+        abstract ``cameraPosition``: NodeMaterialConnectionPoint with get
+        abstract ``perturbedNormal``: NodeMaterialConnectionPoint with get
+        abstract ``baseColor``: NodeMaterialConnectionPoint with get
+        abstract ``metallic``: NodeMaterialConnectionPoint with get
+        abstract ``roughness``: NodeMaterialConnectionPoint with get
+        abstract ``ambientOcc``: NodeMaterialConnectionPoint with get
+        abstract ``opacity``: NodeMaterialConnectionPoint with get
+        abstract ``indexOfRefraction``: NodeMaterialConnectionPoint with get
+        abstract ``ambientColor``: NodeMaterialConnectionPoint with get
+        abstract ``reflection``: NodeMaterialConnectionPoint with get
+        abstract ``clearcoat``: NodeMaterialConnectionPoint with get
+        abstract ``sheen``: NodeMaterialConnectionPoint with get
+        abstract ``subsurface``: NodeMaterialConnectionPoint with get
+        abstract ``anisotropy``: NodeMaterialConnectionPoint with get
+        abstract ``iridescence``: NodeMaterialConnectionPoint with get
+        abstract ``ambientClr``: NodeMaterialConnectionPoint with get
+        abstract ``diffuseDir``: NodeMaterialConnectionPoint with get
+        abstract ``specularDir``: NodeMaterialConnectionPoint with get
+        abstract ``clearcoatDir``: NodeMaterialConnectionPoint with get
+        abstract ``sheenDir``: NodeMaterialConnectionPoint with get
+        abstract ``diffuseInd``: NodeMaterialConnectionPoint with get
+        abstract ``specularInd``: NodeMaterialConnectionPoint with get
+        abstract ``clearcoatInd``: NodeMaterialConnectionPoint with get
+        abstract ``sheenInd``: NodeMaterialConnectionPoint with get
+        abstract ``refraction``: NodeMaterialConnectionPoint with get
+        abstract ``lighting``: NodeMaterialConnectionPoint with get
+        abstract ``shadow``: NodeMaterialConnectionPoint with get
+        abstract ``alpha``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type PBRMetallicRoughnessBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<PBRMetallicRoughnessBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> PBRMetallicRoughnessBlock
+
+    [<Import("PBRMetallicRoughnessBlock", "@babylonjs/core/Materials/Node/Blocks/PBR/pbrMetallicRoughnessBlock.pure.js")>]
+    let PBRMetallicRoughnessBlock: PBRMetallicRoughnessBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/perturbNormalBlock.pure
+    [<AllowNullLiteral>]
+    type PerturbNormalBlock =
+        inherit NodeMaterialBlock
+        abstract ``invertX``: bool with get, set
+        abstract ``invertY``: bool with get, set
+        abstract ``useParallaxOcclusion``: bool with get, set
+        abstract ``useObjectSpaceNormalMap``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial -> unit
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh -> unit
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``worldNormal``: NodeMaterialConnectionPoint with get
+        abstract ``worldTangent``: NodeMaterialConnectionPoint with get
+        abstract ``uv``: NodeMaterialConnectionPoint with get
+        abstract ``normalMapColor``: NodeMaterialConnectionPoint with get
+        abstract ``strength``: NodeMaterialConnectionPoint with get
+        abstract ``viewDirection``: NodeMaterialConnectionPoint with get
+        abstract ``parallaxScale``: NodeMaterialConnectionPoint with get
+        abstract ``parallaxHeight``: NodeMaterialConnectionPoint with get
+        abstract ``TBN``: NodeMaterialConnectionPoint with get
+        abstract ``world``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``uvOffset``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type PerturbNormalBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<PerturbNormalBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> PerturbNormalBlock
+
+    [<Import("PerturbNormalBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/perturbNormalBlock.pure.js")>]
+    let PerturbNormalBlock: PerturbNormalBlockStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsConstraint
+    [<AllowNullLiteral>]
+    type Physics6DoFConstraint =
+        inherit PhysicsConstraint
+        abstract ``limits``: ResizeArray<Physics6DoFLimit> with get, set
+        abstract ``setAxisFriction`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis * ``friction``: float -> unit
+        abstract ``getAxisFriction`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis -> float option
+        abstract ``setAxisMode`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis * ``limitMode``: BabylonjsBindings.Enums.PhysicsConstraintAxisLimitMode -> unit
+        abstract ``getAxisMode`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis -> BabylonjsBindings.Enums.PhysicsConstraintAxisLimitMode option
+        abstract ``setAxisMinLimit`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis * ``minLimit``: float -> unit
+        abstract ``getAxisMinLimit`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis -> float option
+        abstract ``setAxisMaxLimit`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis * ``limit``: float -> unit
+        abstract ``getAxisMaxLimit`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis -> float option
+        abstract ``setAxisMotorType`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis * ``motorType``: BabylonjsBindings.Enums.PhysicsConstraintMotorType -> unit
+        abstract ``getAxisMotorType`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis -> BabylonjsBindings.Enums.PhysicsConstraintMotorType option
+        abstract ``setAxisMotorTarget`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis * ``target``: float -> unit
+        abstract ``getAxisMotorTarget`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis -> float option
+        abstract ``setAxisMotorMaxForce`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis * ``maxForce``: float -> unit
+        abstract ``getAxisMotorMaxForce`` : ``axis``: BabylonjsBindings.Enums.PhysicsConstraintAxis -> float option
+
+    [<AllowNullLiteral>]
+    type Physics6DoFConstraintStatic =
+        inherit PhysicsConstraintStatic
+        inherit Constructor<Physics6DoFConstraint>
+        [<EmitConstructor>] abstract Create: ``constraintParams``: BabylonjsBindings.SimpleInterfaces.PhysicsConstraintParameters * ``limits``: ResizeArray<Physics6DoFLimit> * ``scene``: Scene -> Physics6DoFConstraint
+
+    [<Import("Physics6DoFConstraint", "@babylonjs/core/Physics/v2/physicsConstraint.js")>]
+    let Physics6DoFConstraint: Physics6DoFConstraintStatic = jsNative
+
+    /// @babylonjs/core/Physics/joinedPhysicsEngineComponent.pure
+    [<AllowNullLiteral>]
+    type PhysicsEngineSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type PhysicsEngineSceneComponentStatic =
+        inherit Constructor<PhysicsEngineSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> PhysicsEngineSceneComponent
+
+    [<Import("PhysicsEngineSceneComponent", "@babylonjs/core/Physics/joinedPhysicsEngineComponent.pure.js")>]
+    let PhysicsEngineSceneComponent: PhysicsEngineSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsShape
+    [<AllowNullLiteral>]
+    type PhysicsShapeBox =
+        inherit PhysicsShape
+
+    [<AllowNullLiteral>]
+    type PhysicsShapeBoxStatic =
+        inherit PhysicsShapeStatic
+        inherit Constructor<PhysicsShapeBox>
+        [<EmitConstructor>] abstract Create: ``center``: Vector3 * ``rotation``: Quaternion * ``extents``: Vector3 * ``scene``: Scene -> PhysicsShapeBox
+        abstract ``FromMesh`` : ``mesh``: AbstractMesh -> PhysicsShapeBox
+
+    [<Import("PhysicsShapeBox", "@babylonjs/core/Physics/v2/physicsShape.js")>]
+    let PhysicsShapeBox: PhysicsShapeBoxStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsShape
+    [<AllowNullLiteral>]
+    type PhysicsShapeCapsule =
+        inherit PhysicsShape
+
+    [<AllowNullLiteral>]
+    type PhysicsShapeCapsuleStatic =
+        inherit PhysicsShapeStatic
+        inherit Constructor<PhysicsShapeCapsule>
+        [<EmitConstructor>] abstract Create: ``pointA``: Vector3 * ``pointB``: Vector3 * ``radius``: float * ``scene``: Scene -> PhysicsShapeCapsule
+        abstract ``FromMesh`` : ``mesh``: AbstractMesh -> PhysicsShapeCapsule
+
+    [<Import("PhysicsShapeCapsule", "@babylonjs/core/Physics/v2/physicsShape.js")>]
+    let PhysicsShapeCapsule: PhysicsShapeCapsuleStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsShape
+    [<AllowNullLiteral>]
+    type PhysicsShapeContainer =
+        inherit PhysicsShape
+
+    [<AllowNullLiteral>]
+    type PhysicsShapeContainerStatic =
+        inherit PhysicsShapeStatic
+        inherit Constructor<PhysicsShapeContainer>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> PhysicsShapeContainer
+
+    [<Import("PhysicsShapeContainer", "@babylonjs/core/Physics/v2/physicsShape.js")>]
+    let PhysicsShapeContainer: PhysicsShapeContainerStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsShape
+    [<AllowNullLiteral>]
+    type PhysicsShapeConvexHull =
+        inherit PhysicsShape
+
+    [<AllowNullLiteral>]
+    type PhysicsShapeConvexHullStatic =
+        inherit PhysicsShapeStatic
+        inherit Constructor<PhysicsShapeConvexHull>
+        [<EmitConstructor>] abstract Create: ``mesh``: Mesh * ``scene``: Scene -> PhysicsShapeConvexHull
+
+    [<Import("PhysicsShapeConvexHull", "@babylonjs/core/Physics/v2/physicsShape.js")>]
+    let PhysicsShapeConvexHull: PhysicsShapeConvexHullStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsShape
+    [<AllowNullLiteral>]
+    type PhysicsShapeCylinder =
+        inherit PhysicsShape
+
+    [<AllowNullLiteral>]
+    type PhysicsShapeCylinderStatic =
+        inherit PhysicsShapeStatic
+        inherit Constructor<PhysicsShapeCylinder>
+        [<EmitConstructor>] abstract Create: ``pointA``: Vector3 * ``pointB``: Vector3 * ``radius``: float * ``scene``: Scene -> PhysicsShapeCylinder
+        abstract ``FromMesh`` : ``mesh``: AbstractMesh -> PhysicsShapeCylinder
+
+    [<Import("PhysicsShapeCylinder", "@babylonjs/core/Physics/v2/physicsShape.js")>]
+    let PhysicsShapeCylinder: PhysicsShapeCylinderStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsShape
+    [<AllowNullLiteral>]
+    type PhysicsShapeGroundMesh =
+        inherit PhysicsShape
+
+    [<AllowNullLiteral>]
+    type PhysicsShapeGroundMeshStatic =
+        inherit PhysicsShapeStatic
+        inherit Constructor<PhysicsShapeGroundMesh>
+        [<EmitConstructor>] abstract Create: ``groundMesh``: GroundMesh * ``scene``: Scene -> PhysicsShapeGroundMesh
+
+    [<Import("PhysicsShapeGroundMesh", "@babylonjs/core/Physics/v2/physicsShape.js")>]
+    let PhysicsShapeGroundMesh: PhysicsShapeGroundMeshStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsShape
+    [<AllowNullLiteral>]
+    type PhysicsShapeHeightField =
+        inherit PhysicsShape
+
+    [<AllowNullLiteral>]
+    type PhysicsShapeHeightFieldStatic =
+        inherit PhysicsShapeStatic
+        inherit Constructor<PhysicsShapeHeightField>
+        [<EmitConstructor>] abstract Create: ``heightFieldSizeX``: float * ``heightFieldSizeZ``: float * ``numHeightFieldSamplesX``: float * ``numHeightFieldSamplesZ``: float * ``heightFieldData``: JS.Float32Array * ``scene``: Scene -> PhysicsShapeHeightField
+
+    [<Import("PhysicsShapeHeightField", "@babylonjs/core/Physics/v2/physicsShape.js")>]
+    let PhysicsShapeHeightField: PhysicsShapeHeightFieldStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsShape
+    [<AllowNullLiteral>]
+    type PhysicsShapeMesh =
+        inherit PhysicsShape
+
+    [<AllowNullLiteral>]
+    type PhysicsShapeMeshStatic =
+        inherit PhysicsShapeStatic
+        inherit Constructor<PhysicsShapeMesh>
+        [<EmitConstructor>] abstract Create: ``mesh``: Mesh * ``scene``: Scene -> PhysicsShapeMesh
+
+    [<Import("PhysicsShapeMesh", "@babylonjs/core/Physics/v2/physicsShape.js")>]
+    let PhysicsShapeMesh: PhysicsShapeMeshStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsShape
+    [<AllowNullLiteral>]
+    type PhysicsShapeSphere =
+        inherit PhysicsShape
+
+    [<AllowNullLiteral>]
+    type PhysicsShapeSphereStatic =
+        inherit PhysicsShapeStatic
+        inherit Constructor<PhysicsShapeSphere>
+        [<EmitConstructor>] abstract Create: ``center``: Vector3 * ``radius``: float * ``scene``: Scene -> PhysicsShapeSphere
+        abstract ``FromMesh`` : ``mesh``: AbstractMesh -> PhysicsShapeSphere
+
+    [<Import("PhysicsShapeSphere", "@babylonjs/core/Physics/v2/physicsShape.js")>]
+    let PhysicsShapeSphere: PhysicsShapeSphereStatic = jsNative
+
+    /// @babylonjs/core/Debug/physicsViewer.pure
+    [<AllowNullLiteral>]
+    type PhysicsViewer =
+        abstract ``showImpostor`` : ``impostor``: PhysicsImpostor * ?``targetMesh``: Mesh -> AbstractMesh option
+        abstract ``showBody`` : ``body``: PhysicsBody -> AbstractMesh option
+        abstract ``showInertia`` : ``body``: PhysicsBody -> AbstractMesh option
+        abstract ``showConstraint`` : ``constraint``: PhysicsConstraint -> AbstractMesh option
+        abstract ``hideImpostor`` : ``impostor``: PhysicsImpostor option -> unit
+        abstract ``hideBody`` : ``body``: PhysicsBody option -> bool
+        abstract ``hideInertia`` : ``body``: PhysicsBody option -> bool
+        abstract ``hideConstraint`` : ``constraint``: PhysicsConstraint option -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type PhysicsViewerStatic =
+        inherit Constructor<PhysicsViewer>
+        [<EmitConstructor>] abstract Create: ?``scene``: Scene * ?``size``: float * ?``utilityLayer``: UtilityLayerRenderer -> PhysicsViewer
+
+    [<Import("PhysicsViewer", "@babylonjs/core/Debug/physicsViewer.pure.js")>]
+    let PhysicsViewer: PhysicsViewerStatic = jsNative
+
+    /// @babylonjs/core/Misc/pivotTools
+    [<AllowNullLiteral>]
+    type PivotTools =
+        interface end
+
+    [<AllowNullLiteral>]
+    type PivotToolsStatic =
+        inherit Constructor<PivotTools>
+        [<EmitConstructor>] abstract Create: unit -> PivotTools
+        abstract ``_RemoveAndStorePivotPoint`` : ``mesh``: TransformNode -> unit
+        abstract ``_RestorePivotPoint`` : ``mesh``: TransformNode -> unit
+
+    [<Import("PivotTools", "@babylonjs/core/Misc/pivotTools.js")>]
+    let PivotTools: PivotToolsStatic = jsNative
+
+    /// Inline object shape used by PointerDragBehavior.
+    [<AllowNullLiteral>]
+    type PointerDragBehaviorAccessor37Object =
+        abstract ``dragAxis``: Vector3 option with get, set
+        abstract ``dragPlaneNormal``: Vector3 option with get, set
+
+    /// Inline object shape used by PointerDragBehavior.
+    [<AllowNullLiteral>]
+    type PointerDragBehaviorAccessor38Object =
+        abstract ``dragAxis``: Vector3 option with get, set
+        abstract ``dragPlaneNormal``: Vector3 option with get, set
+
+    /// Inline object shape used by PointerDragBehavior.
+    [<AllowNullLiteral>]
+    type PointerDragBehaviorConstructor39Parameter1Object =
+        abstract ``dragAxis``: Vector3 option with get, set
+        abstract ``dragPlaneNormal``: Vector3 option with get, set
+
+    /// Function-valued PointerDragBehavior.validateDrag property.
+    [<AllowNullLiteral>]
+    type PointerDragBehaviorValidateDragCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``target``: Vector3 -> bool
+
+    /// @babylonjs/core/Behaviors/Meshes/pointerDragBehavior
+    [<AllowNullLiteral>]
+    type PointerDragBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<AbstractMesh>
+        abstract ``attachedNode``: AbstractMesh with get, set
+        abstract ``maxDragAngle``: float with get, set
+        abstract ``dragButtons``: ResizeArray<float> with get, set
+        abstract ``_useAlternatePickedPointAboveMaxDragAngle``: bool with get, set
+        abstract ``currentDraggingPointerId``: float with get, set
+        abstract ``lastDragPosition``: Vector3 with get, set
+        abstract ``dragging``: bool with get, set
+        abstract ``dragDeltaRatio``: float with get, set
+        abstract ``updateDragPlane``: bool with get, set
+        abstract ``onDragObservable``: Observable<BabylonjsBindings.TypeAliases.DragEvent> with get, set
+        abstract ``onDragStartObservable``: Observable<BabylonjsBindings.TypeAliases.DragStartEndEvent> with get, set
+        abstract ``onDragEndObservable``: Observable<BabylonjsBindings.TypeAliases.DragStartEndEvent> with get, set
+        abstract ``onEnabledObservable``: Observable<bool> with get, set
+        abstract ``moveAttached``: bool with get, set
+        abstract ``startAndReleaseDragOnPointerEvents``: bool with get, set
+        abstract ``detachCameraControls``: bool with get, set
+        abstract ``useObjectOrientationForDragging``: bool with get, set
+        abstract ``allowOtherButtonsDuringDrag``: bool with get, set
+        abstract ``additionalTransformNode``: TransformNode option with get, set
+        abstract ``validateDrag``: PointerDragBehaviorValidateDragCallback with get, set
+        abstract ``init`` : unit -> unit
+        abstract ``attach`` : ``ownerNode``: AbstractMesh * ?``predicate``: System.Func<AbstractMesh, bool> -> unit
+        abstract ``releaseDrag`` : unit -> unit
+        abstract ``startDrag`` : ?``pointerId``: float * ?``fromRay``: Ray * ?``startPickedPoint``: Vector3 -> unit
+        abstract ``detach`` : unit -> unit
+        abstract ``currentDraggingPointerID``: float with get, set
+        abstract ``enabled``: bool with get, set
+        abstract ``options``: PointerDragBehaviorAccessor37Object with get
+        [<Emit("$0.options = $1")>] abstract ``setOptions``: value: PointerDragBehaviorAccessor38Object -> unit
+        abstract ``name``: string with get
+
+    [<AllowNullLiteral>]
+    type PointerDragBehaviorStatic =
+        inherit Constructor<PointerDragBehavior>
+        [<EmitConstructor>] abstract Create: ?``options``: PointerDragBehaviorConstructor39Parameter1Object -> PointerDragBehavior
+
+    [<Import("PointerDragBehavior", "@babylonjs/core/Behaviors/Meshes/pointerDragBehavior.js")>]
+    let PointerDragBehavior: PointerDragBehaviorStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.polar
+    [<AllowNullLiteral>]
+    type Polar =
+        abstract ``radius``: float with get, set
+        abstract ``theta``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``toString`` : unit -> string
+        abstract ``asArray`` : unit -> ResizeArray<float>
+        abstract ``addToRef`` : ``polar``: Polar * ``ref``: Polar -> Polar
+        abstract ``add`` : ``polar``: Polar -> Polar
+        abstract ``addInPlace`` : ``polar``: Polar -> Polar
+        abstract ``addInPlaceFromFloats`` : ``radius``: float * ``theta``: float -> Polar
+        abstract ``subtractToRef`` : ``polar``: Polar * ``ref``: Polar -> Polar
+        abstract ``subtract`` : ``polar``: Polar -> Polar
+        abstract ``subtractInPlace`` : ``polar``: Polar -> Polar
+        abstract ``subtractFromFloatsToRef`` : ``radius``: float * ``theta``: float * ``ref``: Polar -> Polar
+        abstract ``subtractFromFloats`` : ``radius``: float * ``theta``: float -> Polar
+        abstract ``multiplyToRef`` : ``polar``: Polar * ``ref``: Polar -> Polar
+        abstract ``multiply`` : ``polar``: Polar -> Polar
+        abstract ``multiplyInPlace`` : ``polar``: Polar -> Polar
+        abstract ``divideToRef`` : ``polar``: Polar * ``ref``: Polar -> Polar
+        abstract ``divide`` : ``polar``: Polar -> Polar
+        abstract ``divideInPlace`` : ``polar``: Polar -> Polar
+        abstract ``clone`` : unit -> Polar
+        abstract ``copyFrom`` : ``source``: Polar -> Polar
+        abstract ``copyFromFloats`` : ``radius``: float * ``theta``: float -> Polar
+        abstract ``scaleToRef`` : ``scale``: float * ``ref``: Polar -> Polar
+        abstract ``scale`` : ``scale``: float -> Polar
+        abstract ``scaleInPlace`` : ``scale``: float -> Polar
+        abstract ``set`` : ``radius``: float * ``theta``: float -> Polar
+        abstract ``setAll`` : ``value``: float -> Polar
+        abstract ``toVector2ToRef`` : ``ref``: Vector2 -> Vector2
+        abstract ``toVector2`` : unit -> Vector2
+
+    [<AllowNullLiteral>]
+    type PolarStatic =
+        inherit Constructor<Polar>
+        [<EmitConstructor>] abstract Create: ``radius``: float * ``theta``: float -> Polar
+        abstract ``FromVector2ToRef`` : ``v``: Vector2 * ``ref``: Polar -> Polar
+        abstract ``FromVector2`` : ``v``: Vector2 -> Polar
+        abstract ``FromArray`` : ``array``: ResizeArray<float> -> Polar
+
+    [<Import("Polar", "@babylonjs/core/Maths/math.polar.js")>]
+    let Polar: PolarStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.vertexFormat
+    [<AllowNullLiteral>]
+    type PositionNormalTextureVertex =
+        abstract ``position``: Vector3 with get, set
+        abstract ``normal``: Vector3 with get, set
+        abstract ``uv``: Vector2 with get, set
+        abstract ``clone`` : unit -> PositionNormalTextureVertex
+
+    [<AllowNullLiteral>]
+    type PositionNormalTextureVertexStatic =
+        inherit Constructor<PositionNormalTextureVertex>
+        [<EmitConstructor>] abstract Create: ?``position``: Vector3 * ?``normal``: Vector3 * ?``uv``: Vector2 -> PositionNormalTextureVertex
+
+    [<Import("PositionNormalTextureVertex", "@babylonjs/core/Maths/math.vertexFormat.js")>]
+    let PositionNormalTextureVertex: PositionNormalTextureVertexStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.vertexFormat
+    [<AllowNullLiteral>]
+    type PositionNormalVertex =
+        abstract ``position``: Vector3 with get, set
+        abstract ``normal``: Vector3 with get, set
+        abstract ``clone`` : unit -> PositionNormalVertex
+
+    [<AllowNullLiteral>]
+    type PositionNormalVertexStatic =
+        inherit Constructor<PositionNormalVertex>
+        [<EmitConstructor>] abstract Create: ?``position``: Vector3 * ?``normal``: Vector3 -> PositionNormalVertex
+
+    [<Import("PositionNormalVertex", "@babylonjs/core/Maths/math.vertexFormat.js")>]
+    let PositionNormalVertex: PositionNormalVertexStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/posterizeBlock.pure
+    [<AllowNullLiteral>]
+    type PosterizeBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``value``: NodeMaterialConnectionPoint with get
+        abstract ``steps``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type PosterizeBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<PosterizeBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> PosterizeBlock
+
+    [<Import("PosterizeBlock", "@babylonjs/core/Materials/Node/Blocks/posterizeBlock.pure.js")>]
+    let PosterizeBlock: PosterizeBlockStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/RenderPipeline/postProcessRenderEffect
+    [<AllowNullLiteral>]
+    type PostProcessRenderEffect =
+        abstract ``_name``: string with get, set
+        abstract ``_update`` : unit -> unit
+        abstract ``_attachCameras`` : ``cameras``: ResizeArray<Camera> -> unit
+        abstract ``_detachCameras`` : ``cameras``: ResizeArray<Camera> -> unit
+        abstract ``_enable`` : ``cameras``: ResizeArray<Camera> option -> unit
+        abstract ``_disable`` : ``cameras``: ResizeArray<Camera> option -> unit
+        abstract ``getPostProcesses`` : ?``camera``: Camera -> ResizeArray<PostProcess> option
+        abstract ``isSupported``: bool with get
+
+    [<AllowNullLiteral>]
+    type PostProcessRenderEffectStatic =
+        inherit Constructor<PostProcessRenderEffect>
+        [<EmitConstructor>] abstract Create: ``engine``: AbstractEngine * ``name``: string * ``getPostProcesses``: System.Func<U2<PostProcess, ResizeArray<PostProcess>> option> * ?``singleInstance``: bool -> PostProcessRenderEffect
+
+    [<Import("PostProcessRenderEffect", "@babylonjs/core/PostProcesses/RenderPipeline/postProcessRenderEffect.js")>]
+    let PostProcessRenderEffect: PostProcessRenderEffectStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/RenderPipeline/postProcessRenderPipelineManagerSceneComponent.pure
+    [<AllowNullLiteral>]
+    type PostProcessRenderPipelineManagerSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type PostProcessRenderPipelineManagerSceneComponentStatic =
+        inherit Constructor<PostProcessRenderPipelineManagerSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> PostProcessRenderPipelineManagerSceneComponent
+
+    [<Import("PostProcessRenderPipelineManagerSceneComponent", "@babylonjs/core/PostProcesses/RenderPipeline/postProcessRenderPipelineManagerSceneComponent.pure.js")>]
+    let PostProcessRenderPipelineManagerSceneComponent: PostProcessRenderPipelineManagerSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/powBlock.pure
+    [<AllowNullLiteral>]
+    type PowBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``value``: NodeMaterialConnectionPoint with get
+        abstract ``power``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type PowBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<PowBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> PowBlock
+
+    [<Import("PowBlock", "@babylonjs/core/Materials/Node/Blocks/powBlock.pure.js")>]
+    let PowBlock: PowBlockStatic = jsNative
+
+    /// Function-valued PredicateCondition.predicate property.
+    [<AllowNullLiteral>]
+    type PredicateConditionPredicateCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> bool
+
+    /// @babylonjs/core/Actions/condition.pure
+    [<AllowNullLiteral>]
+    type PredicateCondition =
+        inherit Condition
+        abstract ``predicate``: PredicateConditionPredicateCallback with get, set
+        abstract ``_actionManager``: ActionManager with get, set
+        abstract ``isValid`` : unit -> bool
+
+    [<AllowNullLiteral>]
+    type PredicateConditionStatic =
+        inherit ConditionStatic
+        inherit Constructor<PredicateCondition>
+        [<EmitConstructor>] abstract Create: ``actionManager``: ActionManager * ``predicate``: System.Func<bool> -> PredicateCondition
+
+    [<Import("PredicateCondition", "@babylonjs/core/Actions/condition.pure.js")>]
+    let PredicateCondition: PredicateConditionStatic = jsNative
+
+    /// Inline object shape used by PrePassConfiguration.
+    [<AllowNullLiteral>]
+    type PrePassConfigurationProperty1Object =
+        [<EmitIndexer>] abstract Item: ``index``: float -> Matrix with get, set
+
+    /// Inline object shape used by PrePassConfiguration.
+    [<AllowNullLiteral>]
+    type PrePassConfigurationProperty4Object =
+        [<EmitIndexer>] abstract Item: ``index``: float -> JS.Float32Array with get, set
+
+    /// @babylonjs/core/Materials/prePassConfiguration
+    [<AllowNullLiteral>]
+    type PrePassConfiguration =
+        abstract ``previousWorldMatrices``: PrePassConfigurationProperty1Object with get, set
+        abstract ``previousViewProjection``: Matrix with get, set
+        abstract ``currentViewProjection``: Matrix with get, set
+        abstract ``previousBones``: PrePassConfigurationProperty4Object with get, set
+        abstract ``bindForSubMesh`` : ``effect``: Effect * ``scene``: Scene * ``mesh``: Mesh * ``world``: Matrix * ``isFrozen``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type PrePassConfigurationStatic =
+        inherit Constructor<PrePassConfiguration>
+        [<EmitConstructor>] abstract Create: unit -> PrePassConfiguration
+        abstract ``AddUniforms`` : ``uniforms``: ResizeArray<string> -> unit
+        abstract ``AddSamplers`` : ``samplers``: ResizeArray<string> -> unit
+
+    [<Import("PrePassConfiguration", "@babylonjs/core/Materials/prePassConfiguration.js")>]
+    let PrePassConfiguration: PrePassConfigurationStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/prePassOutputBlock.pure
+    [<AllowNullLiteral>]
+    type PrePassOutputBlock =
+        inherit NodeMaterialBlock
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``viewDepth``: NodeMaterialConnectionPoint with get
+        abstract ``screenDepth``: NodeMaterialConnectionPoint with get
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``localPosition``: NodeMaterialConnectionPoint with get
+        abstract ``viewNormal``: NodeMaterialConnectionPoint with get
+        abstract ``worldNormal``: NodeMaterialConnectionPoint with get
+        abstract ``reflectivity``: NodeMaterialConnectionPoint with get
+        abstract ``velocity``: NodeMaterialConnectionPoint with get
+        abstract ``velocityLinear``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type PrePassOutputBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<PrePassOutputBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> PrePassOutputBlock
+
+    [<Import("PrePassOutputBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/prePassOutputBlock.pure.js")>]
+    let PrePassOutputBlock: PrePassOutputBlockStatic = jsNative
+
+    /// @babylonjs/core/Rendering/prePassRendererSceneComponent.pure
+    [<AllowNullLiteral>]
+    type PrePassRendererSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type PrePassRendererSceneComponentStatic =
+        inherit Constructor<PrePassRendererSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> PrePassRendererSceneComponent
+
+    [<Import("PrePassRendererSceneComponent", "@babylonjs/core/Rendering/prePassRendererSceneComponent.pure.js")>]
+    let PrePassRendererSceneComponent: PrePassRendererSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsConstraint
+    [<AllowNullLiteral>]
+    type PrismaticConstraint =
+        inherit PhysicsConstraint
+
+    [<AllowNullLiteral>]
+    type PrismaticConstraintStatic =
+        inherit PhysicsConstraintStatic
+        inherit Constructor<PrismaticConstraint>
+        [<EmitConstructor>] abstract Create: ``pivotA``: Vector3 * ``pivotB``: Vector3 * ``axisA``: Vector3 * ``axisB``: Vector3 * ``scene``: Scene -> PrismaticConstraint
+
+    [<Import("PrismaticConstraint", "@babylonjs/core/Physics/v2/physicsConstraint.js")>]
+    let PrismaticConstraint: PrismaticConstraintStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Procedurals/proceduralTextureSceneComponent
+    [<AllowNullLiteral>]
+    type ProceduralTextureSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type ProceduralTextureSceneComponentStatic =
+        inherit Constructor<ProceduralTextureSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> ProceduralTextureSceneComponent
+
+    [<Import("ProceduralTextureSceneComponent", "@babylonjs/core/Materials/Textures/Procedurals/proceduralTextureSceneComponent.js")>]
+    let ProceduralTextureSceneComponent: ProceduralTextureSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Physics/proximityCastResult
+    [<AllowNullLiteral>]
+    type ProximityCastResult =
+        inherit CastingResult
+        abstract ``setHitDistance`` : ``distance``: float -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``hitDistance``: float with get
+
+    [<AllowNullLiteral>]
+    type ProximityCastResultStatic =
+        inherit CastingResultStatic
+        inherit Constructor<ProximityCastResult>
+        [<EmitConstructor>] abstract Create: unit -> ProximityCastResult
+
+    [<Import("ProximityCastResult", "@babylonjs/core/Physics/proximityCastResult.js")>]
+    let ProximityCastResult: ProximityCastResultStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/ragdoll
+    [<AllowNullLiteral>]
+    type RagdollBoneProperties =
+        abstract ``width``: float option with get, set
+        abstract ``depth``: float option with get, set
+        abstract ``height``: float option with get, set
+        abstract ``size``: float option with get, set
+        abstract ``joint``: U2<float, BabylonjsBindings.Enums.PhysicsConstraintType> option with get, set
+        abstract ``rotationAxis``: Vector3 option with get, set
+        abstract ``min``: float option with get, set
+        abstract ``max``: float option with get, set
+        abstract ``boxOffset``: float option with get, set
+        abstract ``boneOffsetAxis``: Vector3 option with get, set
+
+    [<AllowNullLiteral>]
+    type RagdollBonePropertiesStatic =
+        inherit Constructor<RagdollBoneProperties>
+        [<EmitConstructor>] abstract Create: unit -> RagdollBoneProperties
+
+    [<Import("RagdollBoneProperties", "@babylonjs/core/Physics/v2/ragdoll.js")>]
+    let RagdollBoneProperties: RagdollBonePropertiesStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/randomNumberBlock.pure
+    [<AllowNullLiteral>]
+    type RandomNumberBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``seed``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type RandomNumberBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<RandomNumberBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> RandomNumberBlock
+
+    [<Import("RandomNumberBlock", "@babylonjs/core/Materials/Node/Blocks/randomNumberBlock.pure.js")>]
+    let RandomNumberBlock: RandomNumberBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/rawCubeTexture
+    [<AllowNullLiteral>]
+    type RawCubeTexture =
+        inherit CubeTexture
+        abstract ``update`` : ``data``: ResizeArray<JS.ArrayBufferView> * ``format``: float * ``type``: float * ``invertY``: bool * ?``compression``: string -> unit
+        abstract ``updateRGBDAsync`` : ``data``: ResizeArray<ResizeArray<JS.ArrayBufferView>> * ?``sphericalPolynomial``: SphericalPolynomial * ?``lodScale``: float * ?``lodOffset``: float -> JS.Promise<unit>
+        abstract ``clone`` : unit -> CubeTexture
+
+    [<AllowNullLiteral>]
+    type RawCubeTextureStatic =
+        inherit CubeTextureStatic
+        inherit Constructor<RawCubeTexture>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene * ``data``: ResizeArray<JS.ArrayBufferView> option * ``size``: float * ?``format``: float * ?``type``: float * ?``generateMipMaps``: bool * ?``invertY``: bool * ?``samplingMode``: float * ?``compression``: string -> RawCubeTexture
+
+    [<Import("RawCubeTexture", "@babylonjs/core/Materials/Textures/rawCubeTexture.js")>]
+    let RawCubeTexture: RawCubeTextureStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/rawTexture3D
+    [<AllowNullLiteral>]
+    type RawTexture3D =
+        inherit Texture
+        abstract ``format``: float with get, set
+        abstract ``update`` : ``data``: JS.ArrayBufferView -> unit
+        abstract ``width``: float with get
+        abstract ``height``: float with get
+        abstract ``depth``: float with get
+
+    [<AllowNullLiteral>]
+    type RawTexture3DStatic =
+        inherit TextureStatic
+        inherit Constructor<RawTexture3D>
+        [<EmitConstructor>] abstract Create: ``data``: JS.ArrayBufferView option * ``width``: float * ``height``: float * ``depth``: float * ``format``: float * ``scene``: Scene * ?``generateMipMaps``: bool * ?``invertY``: bool * ?``samplingMode``: float * ?``textureType``: float * ?``creationFlags``: float -> RawTexture3D
+
+    [<Import("RawTexture3D", "@babylonjs/core/Materials/Textures/rawTexture3D.js")>]
+    let RawTexture3D: RawTexture3DStatic = jsNative
+
+    /// @babylonjs/core/Debug/rayHelper
+    [<AllowNullLiteral>]
+    type RayHelper =
+        abstract ``ray``: Ray option with get, set
+        abstract ``show`` : ``scene``: Scene * ?``color``: Color3 -> unit
+        abstract ``hide`` : unit -> unit
+        abstract ``attachToMesh`` : ``mesh``: AbstractMesh * ?``meshSpaceDirection``: Vector3 * ?``meshSpaceOrigin``: Vector3 * ?``length``: float -> unit
+        abstract ``detachFromMesh`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type RayHelperStatic =
+        inherit Constructor<RayHelper>
+        [<EmitConstructor>] abstract Create: ``ray``: Ray -> RayHelper
+        abstract ``CreateAndShow`` : ``ray``: Ray * ``scene``: Scene * ``color``: Color3 -> RayHelper
+
+    [<Import("RayHelper", "@babylonjs/core/Debug/rayHelper.js")>]
+    let RayHelper: RayHelperStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/reciprocalBlock.pure
+    [<AllowNullLiteral>]
+    type ReciprocalBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ReciprocalBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ReciprocalBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ReciprocalBlock
+
+    [<Import("ReciprocalBlock", "@babylonjs/core/Materials/Node/Blocks/reciprocalBlock.pure.js")>]
+    let ReciprocalBlock: ReciprocalBlockStatic = jsNative
+
+    /// @babylonjs/core/Lights/rectAreaLight.pure
+    [<AllowNullLiteral>]
+    type RectAreaLight =
+        inherit AreaLight
+        abstract ``getClassName`` : unit -> string
+        abstract ``getTypeID`` : unit -> float
+        abstract ``serialize`` : unit -> obj
+        abstract ``transferToEffect`` : ``effect``: Effect * ``lightIndex``: string -> RectAreaLight
+        abstract ``transferTexturesToEffect`` : ``effect``: Effect * ``lightIndex``: string -> Light
+        abstract ``transferToNodeMaterialEffect`` : ``effect``: Effect * ``lightDataUniformName``: string -> RectAreaLight
+        abstract ``prepareLightSpecificDefines`` : ``defines``: obj * ``lightIndex``: float -> unit
+        abstract ``emissionTexture``: BaseTexture option with get, set
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+
+    [<AllowNullLiteral>]
+    type RectAreaLightStatic =
+        inherit AreaLightStatic
+        inherit Constructor<RectAreaLight>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``position``: Vector3 * ``width``: float * ``height``: float * ?``scene``: Scene * ?``dontAddToScene``: bool -> RectAreaLight
+
+    [<Import("RectAreaLight", "@babylonjs/core/Lights/rectAreaLight.pure.js")>]
+    let RectAreaLight: RectAreaLightStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/reflectBlock.pure
+    [<AllowNullLiteral>]
+    type ReflectBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``incident``: NodeMaterialConnectionPoint with get
+        abstract ``normal``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ReflectBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ReflectBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ReflectBlock
+
+    [<Import("ReflectBlock", "@babylonjs/core/Materials/Node/Blocks/reflectBlock.pure.js")>]
+    let ReflectBlock: ReflectBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/PBR/reflectionBlock.pure
+    [<AllowNullLiteral>]
+    type ReflectionBlock =
+        inherit ReflectionTextureBaseBlock
+        abstract ``_defineLODReflectionAlpha``: string with get, set
+        abstract ``_defineLinearSpecularReflection``: string with get, set
+        abstract ``_vReflectionMicrosurfaceInfosName``: string with get, set
+        abstract ``_vReflectionInfosName``: string with get, set
+        abstract ``_vReflectionFilteringInfoName``: string with get, set
+        abstract ``worldPositionConnectionPoint``: NodeMaterialConnectionPoint with get, set
+        abstract ``worldNormalConnectionPoint``: NodeMaterialConnectionPoint with get, set
+        abstract ``cameraPositionConnectionPoint``: NodeMaterialConnectionPoint with get, set
+        abstract ``viewConnectionPoint``: NodeMaterialConnectionPoint with get, set
+        abstract ``useSphericalHarmonics``: bool with get, set
+        abstract ``forceIrradianceInFragment``: bool with get, set
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines -> unit
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh * ?``subMesh``: SubMesh -> unit
+        abstract ``handleVertexSide`` : ``state``: NodeMaterialBuildState -> string
+        abstract ``getCode`` : ``state``: NodeMaterialBuildState * ``normalVarName``: string -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``position``: NodeMaterialConnectionPoint with get
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``worldNormal``: NodeMaterialConnectionPoint with get
+        abstract ``world``: NodeMaterialConnectionPoint with get
+        abstract ``cameraPosition``: NodeMaterialConnectionPoint with get
+        abstract ``view``: NodeMaterialConnectionPoint with get
+        abstract ``color``: NodeMaterialConnectionPoint with get
+        abstract ``reflection``: NodeMaterialConnectionPoint with get
+        abstract ``hasTexture``: bool with get
+        abstract ``reflectionColor``: string with get
+
+    [<AllowNullLiteral>]
+    type ReflectionBlockStatic =
+        inherit ReflectionTextureBaseBlockStatic
+        inherit Constructor<ReflectionBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ReflectionBlock
+
+    [<Import("ReflectionBlock", "@babylonjs/core/Materials/Node/Blocks/PBR/reflectionBlock.pure.js")>]
+    let ReflectionBlock: ReflectionBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Dual/reflectionTextureBlock.pure
+    [<AllowNullLiteral>]
+    type ReflectionTextureBlock =
+        inherit ReflectionTextureBaseBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``position``: NodeMaterialConnectionPoint with get
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``worldNormal``: NodeMaterialConnectionPoint with get
+        abstract ``world``: NodeMaterialConnectionPoint with get
+        abstract ``cameraPosition``: NodeMaterialConnectionPoint with get
+        abstract ``view``: NodeMaterialConnectionPoint with get
+        abstract ``rgb``: NodeMaterialConnectionPoint with get
+        abstract ``rgba``: NodeMaterialConnectionPoint with get
+        abstract ``r``: NodeMaterialConnectionPoint with get
+        abstract ``g``: NodeMaterialConnectionPoint with get
+        abstract ``b``: NodeMaterialConnectionPoint with get
+        abstract ``a``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ReflectionTextureBlockStatic =
+        inherit ReflectionTextureBaseBlockStatic
+        inherit Constructor<ReflectionTextureBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ReflectionTextureBlock
+
+    [<Import("ReflectionTextureBlock", "@babylonjs/core/Materials/Node/Blocks/Dual/reflectionTextureBlock.pure.js")>]
+    let ReflectionTextureBlock: ReflectionTextureBlockStatic = jsNative
+
+    /// @babylonjs/core/Misc/reflector
+    [<AllowNullLiteral>]
+    type Reflector =
+        abstract ``close`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type ReflectorStatic =
+        inherit Constructor<Reflector>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene * ``hostname``: string * ``port``: float -> Reflector
+
+    [<Import("Reflector", "@babylonjs/core/Misc/reflector.js")>]
+    let Reflector: ReflectorStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/refractBlock.pure
+    [<AllowNullLiteral>]
+    type RefractBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``incident``: NodeMaterialConnectionPoint with get
+        abstract ``normal``: NodeMaterialConnectionPoint with get
+        abstract ``ior``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type RefractBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<RefractBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> RefractBlock
+
+    [<Import("RefractBlock", "@babylonjs/core/Materials/Node/Blocks/refractBlock.pure.js")>]
+    let RefractBlock: RefractBlockStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/refractionPostProcess.pure
+    [<AllowNullLiteral>]
+    type RefractionPostProcess =
+        inherit PostProcess
+        abstract ``color``: Color3 with get, set
+        abstract ``depth``: float with get, set
+        abstract ``colorLevel``: float with get, set
+        abstract ``refractionTextureUrl``: string with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``dispose`` : ``camera``: Camera -> unit
+        abstract ``refractionTexture``: Texture with get, set
+
+    [<AllowNullLiteral>]
+    type RefractionPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<RefractionPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``refractionTextureUrl``: string * ``color``: Color3 * ``depth``: float * ``colorLevel``: float * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool -> RefractionPostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> RefractionPostProcess
+
+    [<Import("RefractionPostProcess", "@babylonjs/core/PostProcesses/refractionPostProcess.pure.js")>]
+    let RefractionPostProcess: RefractionPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/refractionTexture
+    [<AllowNullLiteral>]
+    type RefractionTexture =
+        inherit RenderTargetTexture
+        abstract ``refractionPlane``: Plane with get, set
+        abstract ``depth``: float with get, set
+        abstract ``clone`` : unit -> RefractionTexture
+        abstract ``serialize`` : unit -> obj
+
+    [<AllowNullLiteral>]
+    type RefractionTextureStatic =
+        inherit RenderTargetTextureStatic
+        inherit Constructor<RefractionTexture>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``size``: float * ?``scene``: Scene * ?``generateMipMaps``: bool -> RefractionTexture
+
+    [<Import("RefractionTexture", "@babylonjs/core/Materials/Textures/refractionTexture.js")>]
+    let RefractionTexture: RefractionTextureStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/remapBlock.pure
+    [<AllowNullLiteral>]
+    type RemapBlock =
+        inherit NodeMaterialBlock
+        abstract ``sourceRange``: Vector2 with get, set
+        abstract ``targetRange``: Vector2 with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``sourceMin``: NodeMaterialConnectionPoint with get
+        abstract ``sourceMax``: NodeMaterialConnectionPoint with get
+        abstract ``targetMin``: NodeMaterialConnectionPoint with get
+        abstract ``targetMax``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type RemapBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<RemapBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> RemapBlock
+
+    [<Import("RemapBlock", "@babylonjs/core/Materials/Node/Blocks/remapBlock.pure.js")>]
+    let RemapBlock: RemapBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/replaceColorBlock.pure
+    [<AllowNullLiteral>]
+    type ReplaceColorBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``value``: NodeMaterialConnectionPoint with get
+        abstract ``reference``: NodeMaterialConnectionPoint with get
+        abstract ``distance``: NodeMaterialConnectionPoint with get
+        abstract ``replacement``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ReplaceColorBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ReplaceColorBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ReplaceColorBlock
+
+    [<Import("ReplaceColorBlock", "@babylonjs/core/Materials/Node/Blocks/replaceColorBlock.pure.js")>]
+    let ReplaceColorBlock: ReplaceColorBlockStatic = jsNative
+
+    /// @babylonjs/core/Misc/rgbdTextureTools
+    [<AllowNullLiteral>]
+    type RGBDTextureTools =
+        interface end
+
+    [<AllowNullLiteral>]
+    type RGBDTextureToolsStatic =
+        inherit Constructor<RGBDTextureTools>
+        [<EmitConstructor>] abstract Create: unit -> RGBDTextureTools
+        abstract ``ExpandRGBDTexture`` : ``texture``: Texture -> unit
+        abstract ``EncodeTextureToRGBD`` : ``internalTexture``: InternalTexture * ``scene``: Scene * ?``outputTextureType``: float -> JS.Promise<InternalTexture>
+
+    [<Import("RGBDTextureTools", "@babylonjs/core/Misc/rgbdTextureTools.js")>]
+    let RGBDTextureTools: RGBDTextureToolsStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/rotate2dBlock.pure
+    [<AllowNullLiteral>]
+    type Rotate2dBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : unit -> unit
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``angle``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type Rotate2dBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<Rotate2dBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> Rotate2dBlock
+
+    [<Import("Rotate2dBlock", "@babylonjs/core/Materials/Node/Blocks/rotate2dBlock.pure.js")>]
+    let Rotate2dBlock: Rotate2dBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/scaleBlock.pure
+    [<AllowNullLiteral>]
+    type ScaleBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``factor``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ScaleBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ScaleBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ScaleBlock
+
+    [<Import("ScaleBlock", "@babylonjs/core/Materials/Node/Blocks/scaleBlock.pure.js")>]
+    let ScaleBlock: ScaleBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Dual/sceneDepthBlock.pure
+    [<AllowNullLiteral>]
+    type SceneDepthBlock =
+        inherit NodeMaterialBlock
+        abstract ``useNonLinearDepth``: bool with get, set
+        abstract ``storeCameraSpaceZ``: bool with get, set
+        abstract ``force32itsFloat``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``uv``: NodeMaterialConnectionPoint with get
+        abstract ``depth``: NodeMaterialConnectionPoint with get
+        abstract ``target``: NodeMaterialBlockTargetsSubset68ef1f64 with get
+
+    [<AllowNullLiteral>]
+    type SceneDepthBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<SceneDepthBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> SceneDepthBlock
+
+    [<Import("SceneDepthBlock", "@babylonjs/core/Materials/Node/Blocks/Dual/sceneDepthBlock.pure.js")>]
+    let SceneDepthBlock: SceneDepthBlockStatic = jsNative
+
+    /// @babylonjs/core/Instrumentation/sceneInstrumentation
+    [<AllowNullLiteral>]
+    type SceneInstrumentation =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        abstract ``scene``: Scene with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``activeMeshesEvaluationTimeCounter``: PerfCounter with get
+        abstract ``captureActiveMeshesEvaluationTime``: bool with get, set
+        abstract ``renderTargetsRenderTimeCounter``: PerfCounter with get
+        abstract ``captureRenderTargetsRenderTime``: bool with get, set
+        abstract ``particlesRenderTimeCounter``: PerfCounter with get
+        abstract ``captureParticlesRenderTime``: bool with get, set
+        abstract ``spritesRenderTimeCounter``: PerfCounter with get
+        abstract ``captureSpritesRenderTime``: bool with get, set
+        abstract ``physicsTimeCounter``: PerfCounter with get
+        abstract ``capturePhysicsTime``: bool with get, set
+        abstract ``animationsTimeCounter``: PerfCounter with get
+        abstract ``captureAnimationsTime``: bool with get, set
+        abstract ``frameTimeCounter``: PerfCounter with get
+        abstract ``captureFrameTime``: bool with get, set
+        abstract ``interFrameTimeCounter``: PerfCounter with get
+        abstract ``captureInterFrameTime``: bool with get, set
+        abstract ``renderTimeCounter``: PerfCounter with get
+        abstract ``captureRenderTime``: bool with get, set
+        abstract ``cameraRenderTimeCounter``: PerfCounter with get
+        abstract ``captureCameraRenderTime``: bool with get, set
+        abstract ``drawCallsCounter``: PerfCounter with get
+
+    [<AllowNullLiteral>]
+    type SceneInstrumentationStatic =
+        inherit Constructor<SceneInstrumentation>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> SceneInstrumentation
+
+    [<Import("SceneInstrumentation", "@babylonjs/core/Instrumentation/sceneInstrumentation.js")>]
+    let SceneInstrumentation: SceneInstrumentationStatic = jsNative
+
+    /// @babylonjs/core/Misc/sceneRecorder
+    [<AllowNullLiteral>]
+    type SceneRecorder =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        abstract ``track`` : ``scene``: Scene -> unit
+        abstract ``getDelta`` : unit -> obj
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type SceneRecorderStatic =
+        inherit Constructor<SceneRecorder>
+        [<EmitConstructor>] abstract Create: unit -> SceneRecorder
+        abstract ``ApplyDelta`` : ``deltaJSON``: U2<obj, string> * ``scene``: Scene -> unit
+
+    [<Import("SceneRecorder", "@babylonjs/core/Misc/sceneRecorder.js")>]
+    let SceneRecorder: SceneRecorderStatic = jsNative
+
+    /// @babylonjs/core/Misc/sceneSerializer
+    [<AllowNullLiteral>]
+    type SceneSerializer =
+        interface end
+
+    [<AllowNullLiteral>]
+    type SceneSerializerStatic =
+        inherit Constructor<SceneSerializer>
+        [<EmitConstructor>] abstract Create: unit -> SceneSerializer
+        abstract ``ClearCache`` : unit -> unit
+        abstract ``Serialize`` : ``scene``: Scene -> obj
+        abstract ``SerializeAsync`` : ``scene``: Scene -> JS.Promise<obj>
+        abstract ``SerializeMesh`` : ``toSerialize``: obj * ?``withParents``: bool * ?``withChildren``: bool -> obj
+
+    [<Import("SceneSerializer", "@babylonjs/core/Misc/sceneSerializer.js")>]
+    let SceneSerializer: SceneSerializerStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/screenSizeBlock.pure
+    [<AllowNullLiteral>]
+    type ScreenSizeBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``bind`` : ``effect``: Effect -> unit
+        abstract ``associatedVariableName``: string with get
+        abstract ``xy``: NodeMaterialConnectionPoint with get
+        abstract ``x``: NodeMaterialConnectionPoint with get
+        abstract ``y``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ScreenSizeBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ScreenSizeBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ScreenSizeBlock
+
+    [<Import("ScreenSizeBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/screenSizeBlock.pure.js")>]
+    let ScreenSizeBlock: ScreenSizeBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/screenSpaceBlock.pure
+    [<AllowNullLiteral>]
+    type ScreenSpaceBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``vector``: NodeMaterialConnectionPoint with get
+        abstract ``worldViewProjection``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``x``: NodeMaterialConnectionPoint with get
+        abstract ``y``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ScreenSpaceBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ScreenSpaceBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ScreenSpaceBlock
+
+    [<Import("ScreenSpaceBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/screenSpaceBlock.pure.js")>]
+    let ScreenSpaceBlock: ScreenSpaceBlockStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/screenSpaceCurvaturePostProcess.pure
+    [<AllowNullLiteral>]
+    type ScreenSpaceCurvaturePostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+        abstract ``ridge``: float with get, set
+        abstract ``valley``: float with get, set
+
+    [<AllowNullLiteral>]
+    type ScreenSpaceCurvaturePostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<ScreenSpaceCurvaturePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float * ?``blockCompilation``: bool -> ScreenSpaceCurvaturePostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> ScreenSpaceCurvaturePostProcess
+        abstract ``IsSupported``: bool with get
+
+    [<Import("ScreenSpaceCurvaturePostProcess", "@babylonjs/core/PostProcesses/screenSpaceCurvaturePostProcess.pure.js")>]
+    let ScreenSpaceCurvaturePostProcess: ScreenSpaceCurvaturePostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/screenSpaceReflectionPostProcess.pure
+    [<AllowNullLiteral>]
+    type ScreenSpaceReflectionPostProcess =
+        inherit PostProcess
+        abstract ``threshold``: float with get, set
+        abstract ``strength``: float with get, set
+        abstract ``reflectionSpecularFalloffExponent``: float with get, set
+        abstract ``step``: float with get, set
+        abstract ``roughnessFactor``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``enableSmoothReflections``: bool with get, set
+        abstract ``reflectionSamples``: float with get, set
+        abstract ``smoothSteps``: float with get, set
+
+    [<AllowNullLiteral>]
+    type ScreenSpaceReflectionPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<ScreenSpaceReflectionPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float * ?``blockCompilation``: bool * ?``forceGeometryBuffer``: bool -> ScreenSpaceReflectionPostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> ScreenSpaceReflectionPostProcess
+
+    [<Import("ScreenSpaceReflectionPostProcess", "@babylonjs/core/PostProcesses/screenSpaceReflectionPostProcess.pure.js")>]
+    let ScreenSpaceReflectionPostProcess: ScreenSpaceReflectionPostProcessStatic = jsNative
+
+    /// Function-valued SerializationHelper._ImageProcessingConfigurationParser property.
+    [<AllowNullLiteral>]
+    type SerializationHelperImageProcessingConfigurationParserCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceProperty``: obj -> ImageProcessingConfiguration
+
+    /// Function-valued SerializationHelper._FresnelParametersParser property.
+    [<AllowNullLiteral>]
+    type SerializationHelperFresnelParametersParserCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceProperty``: obj -> FresnelParameters
+
+    /// Function-valued SerializationHelper._ColorCurvesParser property.
+    [<AllowNullLiteral>]
+    type SerializationHelperColorCurvesParserCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceProperty``: obj -> ColorCurves
+
+    /// Function-valued SerializationHelper._TextureParser property.
+    [<AllowNullLiteral>]
+    type SerializationHelperTextureParserCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``sourceProperty``: obj * ``scene``: Scene * ``rootUrl``: string -> BaseTexture option
+
+    /// @babylonjs/core/Misc/decorators.serialization
+    [<AllowNullLiteral>]
+    type SerializationHelper =
+        interface end
+
+    [<AllowNullLiteral>]
+    type SerializationHelperStatic =
+        inherit Constructor<SerializationHelper>
+        [<EmitConstructor>] abstract Create: unit -> SerializationHelper
+        abstract ``AllowLoadingUniqueId``: bool with get, set
+        abstract ``_ImageProcessingConfigurationParser``: SerializationHelperImageProcessingConfigurationParserCallback with get, set
+        abstract ``_FresnelParametersParser``: SerializationHelperFresnelParametersParserCallback with get, set
+        abstract ``_ColorCurvesParser``: SerializationHelperColorCurvesParserCallback with get, set
+        abstract ``_TextureParser``: SerializationHelperTextureParserCallback with get, set
+        abstract ``AppendSerializedAnimations`` : ``source``: BabylonjsBindings.SimpleInterfaces.IAnimatable * ``destination``: obj -> unit
+        abstract ``Serialize``<'T> : ``entity``: 'T * ?``serializationObject``: obj -> obj
+        abstract ``ParseProperties`` : ``source``: obj * ``destination``: obj * ``scene``: Scene option * ``rootUrl``: string option -> unit
+        abstract ``Parse``<'T> : ``creationFunction``: System.Func<'T> * ``source``: obj * ``scene``: Scene option * ?``rootUrl``: string -> 'T
+        abstract ``Clone``<'T> : ``creationFunction``: System.Func<'T> * ``source``: 'T * ?``options``: BabylonjsBindings.SimpleInterfaces.ICopySourceOptions -> 'T
+        abstract ``Instanciate``<'T> : ``creationFunction``: System.Func<'T> * ``source``: 'T -> 'T
+
+    [<Import("SerializationHelper", "@babylonjs/core/Misc/decorators.serialization.js")>]
+    let SerializationHelper: SerializationHelperStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Emitters/setupSpriteSheetBlock.pure
+    [<AllowNullLiteral>]
+    type SetupSpriteSheetBlock =
+        inherit NodeParticleBlock
+        abstract ``start``: float with get, set
+        abstract ``end``: float with get, set
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+        abstract ``spriteCellChangeSpeed``: float with get, set
+        abstract ``loop``: bool with get, set
+        abstract ``randomStartCell``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type SetupSpriteSheetBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<SetupSpriteSheetBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> SetupSpriteSheetBlock
+
+    [<Import("SetupSpriteSheetBlock", "@babylonjs/core/Particles/Node/Blocks/Emitters/setupSpriteSheetBlock.pure.js")>]
+    let SetupSpriteSheetBlock: SetupSpriteSheetBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/shaderMaterial.pure
+    [<AllowNullLiteral>]
+    type ShaderMaterial =
+        inherit PushMaterial
+        abstract ``_materialHelperNeedsPreviousMatrices``: bool with get, set
+        abstract ``snippetId``: string with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``needAlphaBlending`` : unit -> bool
+        abstract ``needAlphaTesting`` : unit -> bool
+        abstract ``setTexture`` : ``name``: string * ``texture``: BaseTexture -> ShaderMaterial
+        abstract ``setInternalTexture`` : ``name``: string * ``texture``: InternalTexture -> ShaderMaterial
+        abstract ``removeTexture`` : ``name``: string -> unit
+        abstract ``setTextureArray`` : ``name``: string * ``textures``: ResizeArray<BaseTexture> -> ShaderMaterial
+        abstract ``setExternalTexture`` : ``name``: string * ``texture``: ExternalTexture -> ShaderMaterial
+        abstract ``setFloat`` : ``name``: string * ``value``: float -> ShaderMaterial
+        abstract ``setInt`` : ``name``: string * ``value``: float -> ShaderMaterial
+        abstract ``setUInt`` : ``name``: string * ``value``: float -> ShaderMaterial
+        abstract ``setFloats`` : ``name``: string * ``value``: ResizeArray<float> -> ShaderMaterial
+        abstract ``setColor3`` : ``name``: string * ``value``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> ShaderMaterial
+        abstract ``setColor3Array`` : ``name``: string * ``value``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IColor3Like> -> ShaderMaterial
+        abstract ``setColor4`` : ``name``: string * ``value``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> ShaderMaterial
+        abstract ``setColor4Array`` : ``name``: string * ``value``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IColor4Like> -> ShaderMaterial
+        abstract ``setVector2`` : ``name``: string * ``value``: BabylonjsBindings.SimpleInterfaces.IVector2Like -> ShaderMaterial
+        abstract ``setVector3`` : ``name``: string * ``value``: BabylonjsBindings.SimpleInterfaces.IVector3Like -> ShaderMaterial
+        abstract ``setVector4`` : ``name``: string * ``value``: BabylonjsBindings.SimpleInterfaces.IVector4Like -> ShaderMaterial
+        abstract ``setQuaternion`` : ``name``: string * ``value``: Quaternion -> ShaderMaterial
+        abstract ``setQuaternionArray`` : ``name``: string * ``value``: ResizeArray<Quaternion> -> ShaderMaterial
+        abstract ``setMatrix`` : ``name``: string * ``value``: Matrix -> ShaderMaterial
+        abstract ``setMatrices`` : ``name``: string * ``value``: ResizeArray<Matrix> -> ShaderMaterial
+        abstract ``setMatrix3x3`` : ``name``: string * ``value``: U2<JS.Float32Array, ResizeArray<float>> -> ShaderMaterial
+        abstract ``setMatrix2x2`` : ``name``: string * ``value``: U2<JS.Float32Array, ResizeArray<float>> -> ShaderMaterial
+        abstract ``setArray2`` : ``name``: string * ``value``: ResizeArray<float> -> ShaderMaterial
+        abstract ``setArray3`` : ``name``: string * ``value``: ResizeArray<float> -> ShaderMaterial
+        abstract ``setArray4`` : ``name``: string * ``value``: ResizeArray<float> -> ShaderMaterial
+        abstract ``setUniformBuffer`` : ``name``: string * ``buffer``: UniformBuffer -> ShaderMaterial
+        abstract ``setTextureSampler`` : ``name``: string * ``sampler``: TextureSampler -> ShaderMaterial
+        abstract ``setStorageBuffer`` : ``name``: string * ``buffer``: StorageBuffer -> ShaderMaterial
+        abstract ``setDefine`` : ``define``: string * ``value``: U2<bool, string> -> ShaderMaterial
+        abstract ``isReadyForSubMesh`` : ``mesh``: AbstractMesh * ``subMesh``: SubMesh * ?``useInstances``: bool -> bool
+        abstract ``isReady`` : ?``mesh``: AbstractMesh * ?``useInstances``: bool * ?``subMesh``: SubMesh -> bool
+        abstract ``bindOnlyWorldMatrix`` : ``world``: Matrix * ?``effectOverride``: Effect -> unit
+        abstract ``bindForSubMesh`` : ``world``: Matrix * ``mesh``: Mesh * ``subMesh``: SubMesh -> unit
+        abstract ``bind`` : ``world``: Matrix * ?``mesh``: AbstractMesh * ?``effectOverride``: Effect * ?``subMesh``: SubMesh -> unit
+        abstract ``getActiveTextures`` : unit -> ResizeArray<BaseTexture>
+        abstract ``hasTexture`` : ``texture``: BaseTexture -> bool
+        abstract ``clone`` : ``name``: string -> ShaderMaterial
+        abstract ``dispose`` : ?``forceDisposeEffect``: bool * ?``forceDisposeTextures``: bool * ?``notBoundToMesh``: bool -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``shaderPath``: U2<BabylonjsBindings.ObjectTypes.IShaderPath, string> with get, set
+        abstract ``options``: BabylonjsBindings.SimpleInterfaces.IShaderMaterialOptions with get
+        abstract ``isMultiview``: bool with get
+
+    [<AllowNullLiteral>]
+    type ShaderMaterialStatic =
+        inherit PushMaterialStatic
+        inherit Constructor<ShaderMaterial>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ``shaderPath``: U2<BabylonjsBindings.ObjectTypes.IShaderPath, string> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIShaderMaterialOptions * ?``storeEffectOnSubMeshes``: bool -> ShaderMaterial
+        abstract ``SnippetUrl``: string with get, set
+
+    [<Import("ShaderMaterial", "@babylonjs/core/Materials/shaderMaterial.pure.js")>]
+    let ShaderMaterial: ShaderMaterialStatic = jsNative
+
+    /// @babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent.pure
+    [<AllowNullLiteral>]
+    type ShadowGeneratorSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``serialize`` : ``serializationObject``: obj -> unit
+        abstract ``addFromContainer`` : ``container``: BabylonjsBindings.SimpleInterfaces.IAssetContainer -> unit
+        abstract ``removeFromContainer`` : ``container``: BabylonjsBindings.SimpleInterfaces.IAssetContainer * ?``dispose``: bool -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type ShadowGeneratorSceneComponentStatic =
+        inherit Constructor<ShadowGeneratorSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> ShadowGeneratorSceneComponent
+
+    [<Import("ShadowGeneratorSceneComponent", "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent.pure.js")>]
+    let ShadowGeneratorSceneComponent: ShadowGeneratorSceneComponentStatic = jsNative
+
+    /// Function-valued ShadowLight.customProjectionMatrixBuilder property.
+    [<AllowNullLiteral>]
+    type ShadowLightCustomProjectionMatrixBuilderCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``viewMatrix``: Matrix * ``renderList``: ResizeArray<AbstractMesh> * ``result``: Matrix -> unit
+
+    /// @babylonjs/core/Lights/shadowLight
+    [<AllowNullLiteral>]
+    type ShadowLight =
+        inherit Light
+        inherit BabylonjsBindings.SimpleInterfaces.IShadowLight
+        abstract ``customProjectionMatrixBuilder``: ShadowLightCustomProjectionMatrixBuilderCallback with get, set
+        abstract ``transformedPosition``: Vector3 with get, set
+        abstract ``transformedDirection``: Vector3 with get, set
+        abstract ``computeTransformedInformation`` : unit -> bool
+        abstract ``getDepthScale`` : unit -> float
+        abstract ``getShadowDirection`` : ?``faceIndex``: float -> Vector3
+        abstract ``getAbsolutePosition`` : unit -> Vector3
+        abstract ``setDirectionToTarget`` : ``target``: Vector3 -> Vector3
+        abstract ``getRotation`` : unit -> Vector3
+        abstract ``needCube`` : unit -> bool
+        abstract ``needProjectionMatrixCompute`` : unit -> bool
+        abstract ``forceProjectionMatrixCompute`` : unit -> unit
+        abstract ``_initCache`` : unit -> unit
+        abstract ``_isSynchronized`` : unit -> bool
+        abstract ``computeWorldMatrix`` : ?``force``: bool -> Matrix
+        abstract ``getDepthMinZ`` : ``activeCamera``: Camera option -> float
+        abstract ``getDepthMaxZ`` : ``activeCamera``: Camera option -> float
+        abstract ``setShadowProjectionMatrix`` : ``matrix``: Matrix * ``viewMatrix``: Matrix * ``renderList``: ResizeArray<AbstractMesh> -> BabylonjsBindings.SimpleInterfaces.IShadowLight
+        abstract ``getViewMatrix`` : ?``faceIndex``: float -> Matrix option
+        abstract ``getProjectionMatrix`` : ?``viewMatrix``: Matrix * ?``renderList``: ResizeArray<AbstractMesh> -> Matrix option
+        abstract ``position``: Vector3 with get, set
+        abstract ``direction``: Vector3 with get, set
+        abstract ``shadowMinZ``: float with get, set
+        abstract ``shadowMaxZ``: float with get, set
+
+    [<AllowNullLiteral>]
+    type ShadowLightStatic =
+        inherit LightStatic
+        inherit Constructor<ShadowLight>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``scene``: Scene * ?``dontAddToScene``: bool -> ShadowLight
+
+    [<Import("ShadowLight", "@babylonjs/core/Lights/shadowLight.js")>]
+    let ShadowLight: ShadowLightStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/shadowMapBlock.pure
+    [<AllowNullLiteral>]
+    type ShadowMapBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``viewProjection``: NodeMaterialConnectionPoint with get
+        abstract ``worldNormal``: NodeMaterialConnectionPoint with get
+        abstract ``depth``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ShadowMapBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ShadowMapBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ShadowMapBlock
+
+    [<Import("ShadowMapBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/shadowMapBlock.pure.js")>]
+    let ShadowMapBlock: ShadowMapBlockStatic = jsNative
+
+    /// @babylonjs/core/Physics/shapeCastResult
+    [<AllowNullLiteral>]
+    type ShapeCastResult =
+        inherit CastingResult
+        abstract ``setHitFraction`` : ``fraction``: float -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``hitFraction``: float with get
+
+    [<AllowNullLiteral>]
+    type ShapeCastResultStatic =
+        inherit CastingResultStatic
+        inherit Constructor<ShapeCastResult>
+        [<EmitConstructor>] abstract Create: unit -> ShapeCastResult
+
+    [<Import("ShapeCastResult", "@babylonjs/core/Physics/shapeCastResult.js")>]
+    let ShapeCastResult: ShapeCastResultStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/sharpenPostProcess.pure
+    [<AllowNullLiteral>]
+    type SharpenPostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+        abstract ``colorAmount``: float with get, set
+        abstract ``edgeAmount``: float with get, set
+
+    [<AllowNullLiteral>]
+    type SharpenPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<SharpenPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ``camera``: Camera option * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float * ?``blockCompilation``: bool -> SharpenPostProcess
+        abstract ``_Parse`` : ``parsedPostProcess``: obj * ``targetCamera``: Camera * ``scene``: Scene * ``rootUrl``: string -> SharpenPostProcess
+
+    [<Import("SharpenPostProcess", "@babylonjs/core/PostProcesses/sharpenPostProcess.pure.js")>]
+    let SharpenPostProcess: SharpenPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/simplexPerlin3DBlock.pure
+    [<AllowNullLiteral>]
+    type SimplexPerlin3DBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``seed``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type SimplexPerlin3DBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<SimplexPerlin3DBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> SimplexPerlin3DBlock
+
+    [<Import("SimplexPerlin3DBlock", "@babylonjs/core/Materials/Node/Blocks/simplexPerlin3DBlock.pure.js")>]
+    let SimplexPerlin3DBlock: SimplexPerlin3DBlockStatic = jsNative
+
+    /// @babylonjs/core/Meshes/meshSimplificationSceneComponent.pure
+    [<AllowNullLiteral>]
+    type SimplicationQueueSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type SimplicationQueueSceneComponentStatic =
+        inherit Constructor<SimplicationQueueSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> SimplicationQueueSceneComponent
+
+    [<Import("SimplicationQueueSceneComponent", "@babylonjs/core/Meshes/meshSimplificationSceneComponent.pure.js")>]
+    let SimplicationQueueSceneComponent: SimplicationQueueSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Behaviors/Meshes/sixDofDragBehavior
+    [<AllowNullLiteral>]
+    type SixDofDragBehavior =
+        inherit BaseSixDofDragBehavior
+        abstract ``onPositionChangedObservable``: Observable<InlineObjectc31efb1d2319Object> with get, set
+        abstract ``dragDeltaRatio``: float with get, set
+        abstract ``rotateDraggedObject``: bool with get, set
+        abstract ``rotateAroundYOnly``: bool with get, set
+        abstract ``rotateWithMotionController``: bool with get, set
+        abstract ``disableMovement``: bool with get, set
+        abstract ``faceCameraOnDragStart``: bool with get, set
+        abstract ``attach`` : ``ownerNode``: Mesh -> unit
+        abstract ``detach`` : unit -> unit
+        abstract ``name``: string with get
+
+    [<AllowNullLiteral>]
+    type SixDofDragBehaviorStatic =
+        inherit BaseSixDofDragBehaviorStatic
+        inherit Constructor<SixDofDragBehavior>
+        [<EmitConstructor>] abstract Create: unit -> SixDofDragBehavior
+
+    [<Import("SixDofDragBehavior", "@babylonjs/core/Behaviors/Meshes/sixDofDragBehavior.js")>]
+    let SixDofDragBehavior: SixDofDragBehaviorStatic = jsNative
+
+    /// @babylonjs/core/Physics/v2/physicsConstraint
+    [<AllowNullLiteral>]
+    type SliderConstraint =
+        inherit PhysicsConstraint
+
+    [<AllowNullLiteral>]
+    type SliderConstraintStatic =
+        inherit PhysicsConstraintStatic
+        inherit Constructor<SliderConstraint>
+        [<EmitConstructor>] abstract Create: ``pivotA``: Vector3 * ``pivotB``: Vector3 * ``axisA``: Vector3 * ``axisB``: Vector3 * ``scene``: Scene -> SliderConstraint
+
+    [<Import("SliderConstraint", "@babylonjs/core/Physics/v2/physicsConstraint.js")>]
+    let SliderConstraint: SliderConstraintStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Dual/smartFilterTextureBlock.pure
+    [<AllowNullLiteral>]
+    type SmartFilterTextureBlock =
+        inherit CurrentScreenBlock
+        abstract ``isMainInput``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``_postBuildBlock`` : unit -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``samplerName``: string with get
+        abstract ``texture``: BaseTexture option with get, set
+        abstract ``source``: NodeMaterialConnectionPoint with get
+        abstract ``hasImageSource``: bool with get
+
+    [<AllowNullLiteral>]
+    type SmartFilterTextureBlockStatic =
+        inherit CurrentScreenBlockStatic
+        inherit Constructor<SmartFilterTextureBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> SmartFilterTextureBlock
+
+    [<Import("SmartFilterTextureBlock", "@babylonjs/core/Materials/Node/Blocks/Dual/smartFilterTextureBlock.pure.js")>]
+    let SmartFilterTextureBlock: SmartFilterTextureBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/smoothStepBlock.pure
+    [<AllowNullLiteral>]
+    type SmoothStepBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``value``: NodeMaterialConnectionPoint with get
+        abstract ``edge0``: NodeMaterialConnectionPoint with get
+        abstract ``edge1``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type SmoothStepBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<SmoothStepBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> SmoothStepBlock
+
+    [<Import("SmoothStepBlock", "@babylonjs/core/Materials/Node/Blocks/smoothStepBlock.pure.js")>]
+    let SmoothStepBlock: SmoothStepBlockStatic = jsNative
+
+    /// @babylonjs/core/Audio/soundTrack
+    [<AllowNullLiteral>]
+    type SoundTrack =
+        abstract ``id``: float with get, set
+        abstract ``soundCollection``: ResizeArray<Sound> with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``addSound`` : ``sound``: Sound -> unit
+        abstract ``removeSound`` : ``sound``: Sound -> unit
+        abstract ``setVolume`` : ``newVolume``: float -> unit
+        abstract ``switchPanningModelToHRTF`` : unit -> unit
+        abstract ``switchPanningModelToEqualPower`` : unit -> unit
+        abstract ``connectToAnalyser`` : ``analyser``: Analyser -> unit
+
+    [<AllowNullLiteral>]
+    type SoundTrackStatic =
+        inherit Constructor<SoundTrack>
+        [<EmitConstructor>] abstract Create: ?``scene``: Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.ISoundTrackOptions -> SoundTrack
+
+    [<Import("SoundTrack", "@babylonjs/core/Audio/soundTrack.js")>]
+    let SoundTrack: SoundTrackStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.polar
+    [<AllowNullLiteral>]
+    type Spherical =
+        abstract ``radius``: float with get, set
+        abstract ``theta``: float with get, set
+        abstract ``phi``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``toString`` : unit -> string
+        abstract ``asArray`` : unit -> ResizeArray<float>
+        abstract ``addToRef`` : ``spherical``: Spherical * ``ref``: Spherical -> Spherical
+        abstract ``add`` : ``spherical``: Spherical -> Spherical
+        abstract ``addInPlace`` : ``spherical``: Spherical -> Spherical
+        abstract ``addInPlaceFromFloats`` : ``radius``: float * ``theta``: float * ``phi``: float -> Spherical
+        abstract ``subtractToRef`` : ``spherical``: Spherical * ``ref``: Spherical -> Spherical
+        abstract ``subtract`` : ``spherical``: Spherical -> Spherical
+        abstract ``subtractInPlace`` : ``spherical``: Spherical -> Spherical
+        abstract ``subtractFromFloatsToRef`` : ``radius``: float * ``theta``: float * ``phi``: float * ``ref``: Spherical -> Spherical
+        abstract ``subtractFromFloats`` : ``radius``: float * ``theta``: float * ``phi``: float -> Spherical
+        abstract ``multiplyToRef`` : ``spherical``: Spherical * ``ref``: Spherical -> Spherical
+        abstract ``multiply`` : ``spherical``: Spherical -> Spherical
+        abstract ``multiplyInPlace`` : ``spherical``: Spherical -> Spherical
+        abstract ``divideToRef`` : ``spherical``: Spherical * ``ref``: Spherical -> Spherical
+        abstract ``divide`` : ``spherical``: Spherical -> Spherical
+        abstract ``divideInPlace`` : ``spherical``: Spherical -> Spherical
+        abstract ``clone`` : unit -> Spherical
+        abstract ``copyFrom`` : ``source``: Spherical -> Spherical
+        abstract ``copyFromFloats`` : ``radius``: float * ``theta``: float * ``phi``: float -> Spherical
+        abstract ``scaleToRef`` : ``scale``: float * ``ref``: Spherical -> Spherical
+        abstract ``scale`` : ``scale``: float -> Spherical
+        abstract ``scaleInPlace`` : ``scale``: float -> Spherical
+        abstract ``set`` : ``radius``: float * ``theta``: float * ``phi``: float -> Spherical
+        abstract ``setAll`` : ``value``: float -> Spherical
+        abstract ``toVector3ToRef`` : ``ref``: Vector3 -> Vector3
+        abstract ``toVector3`` : unit -> Vector3
+
+    [<AllowNullLiteral>]
+    type SphericalStatic =
+        inherit Constructor<Spherical>
+        [<EmitConstructor>] abstract Create: ``radius``: float * ``theta``: float * ``phi``: float -> Spherical
+        abstract ``FromVector3ToRef`` : ``vector``: DeepImmutableVector3 * ``ref``: Spherical -> Spherical
+        abstract ``FromVector3`` : ``vector``: DeepImmutableVector3 -> Spherical
+        abstract ``FromArray`` : ``array``: ResizeArray<float> -> Spherical
+
+    [<Import("Spherical", "@babylonjs/core/Maths/math.polar.js")>]
+    let Spherical: SphericalStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/GaussianSplatting/splatReaderBlock.pure
+    [<AllowNullLiteral>]
+    type SplatReaderBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``bind`` : ``effect``: Effect * ``nodeMaterial``: NodeMaterial * ?``mesh``: Mesh -> unit
+        abstract ``splatIndex``: NodeMaterialConnectionPoint with get
+        abstract ``splatPosition``: NodeMaterialConnectionPoint with get
+        abstract ``splatColor``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type SplatReaderBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<SplatReaderBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> SplatReaderBlock
+
+    [<Import("SplatReaderBlock", "@babylonjs/core/Materials/Node/Blocks/GaussianSplatting/splatReaderBlock.pure.js")>]
+    let SplatReaderBlock: SplatReaderBlockStatic = jsNative
+
+    /// @babylonjs/core/Sprites/spritePackedManager
+    [<AllowNullLiteral>]
+    type SpritePackedManager =
+        inherit SpriteManager
+        abstract ``name``: string with get, set
+
+    [<AllowNullLiteral>]
+    type SpritePackedManagerStatic =
+        inherit SpriteManagerStatic
+        inherit Constructor<SpritePackedManager>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``imgUrl``: string * ``capacity``: float * ``scene``: Scene * ?``spriteJSON``: string * ?``epsilon``: float * ?``samplingMode``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.SpriteManagerOptions -> SpritePackedManager
+
+    [<Import("SpritePackedManager", "@babylonjs/core/Sprites/spritePackedManager.js")>]
+    let SpritePackedManager: SpritePackedManagerStatic = jsNative
+
+    /// @babylonjs/core/Sprites/spriteSceneComponent.pure
+    [<AllowNullLiteral>]
+    type SpriteSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type SpriteSceneComponentStatic =
+        inherit Constructor<SpriteSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> SpriteSceneComponent
+
+    [<Import("SpriteSceneComponent", "@babylonjs/core/Sprites/spriteSceneComponent.pure.js")>]
+    let SpriteSceneComponent: SpriteSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Actions/condition.pure
+    [<AllowNullLiteral>]
+    type StateCondition =
+        inherit Condition
+        abstract ``value``: string with get, set
+        abstract ``_actionManager``: ActionManager with get, set
+        abstract ``isValid`` : unit -> bool
+        abstract ``serialize`` : unit -> obj
+
+    [<AllowNullLiteral>]
+    type StateConditionStatic =
+        inherit ConditionStatic
+        inherit Constructor<StateCondition>
+        [<EmitConstructor>] abstract Create: ``actionManager``: ActionManager * ``target``: obj * ``value``: string -> StateCondition
+
+    [<Import("StateCondition", "@babylonjs/core/Actions/condition.pure.js")>]
+    let StateCondition: StateConditionStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/stepBlock.pure
+    [<AllowNullLiteral>]
+    type StepBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``value``: NodeMaterialConnectionPoint with get
+        abstract ``edge``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type StepBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<StepBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> StepBlock
+
+    [<Import("StepBlock", "@babylonjs/core/Materials/Node/Blocks/stepBlock.pure.js")>]
+    let StepBlock: StepBlockStatic = jsNative
+
+    /// @babylonjs/core/Cameras/Stereoscopic/stereoscopicFreeCamera.pure
+    [<AllowNullLiteral>]
+    type StereoscopicFreeCamera =
+        inherit FreeCamera
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type StereoscopicFreeCameraStatic =
+        inherit FreeCameraStatic
+        inherit Constructor<StereoscopicFreeCamera>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``position``: Vector3 * ``interaxialDistance``: float * ``isStereoscopicSideBySide``: bool * ?``scene``: Scene -> StereoscopicFreeCamera
+
+    [<Import("StereoscopicFreeCamera", "@babylonjs/core/Cameras/Stereoscopic/stereoscopicFreeCamera.pure.js")>]
+    let StereoscopicFreeCamera: StereoscopicFreeCameraStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/stereoscopicInterlacePostProcess.pure
+    [<AllowNullLiteral>]
+    type StereoscopicInterlacePostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type StereoscopicInterlacePostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<StereoscopicInterlacePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``rigCameras``: ResizeArray<Camera> * ``isStereoscopicHoriz``: bool * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool -> StereoscopicInterlacePostProcess
+
+    [<Import("StereoscopicInterlacePostProcess", "@babylonjs/core/PostProcesses/stereoscopicInterlacePostProcess.pure.js")>]
+    let StereoscopicInterlacePostProcess: StereoscopicInterlacePostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/stereoscopicInterlacePostProcess.pure
+    [<AllowNullLiteral>]
+    type StereoscopicInterlacePostProcessI =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type StereoscopicInterlacePostProcessIStatic =
+        inherit PostProcessStatic
+        inherit Constructor<StereoscopicInterlacePostProcessI>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``rigCameras``: ResizeArray<Camera> * ``isStereoscopicHoriz``: bool * ``isStereoscopicInterlaced``: bool * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool -> StereoscopicInterlacePostProcessI
+
+    [<Import("StereoscopicInterlacePostProcessI", "@babylonjs/core/PostProcesses/stereoscopicInterlacePostProcess.pure.js")>]
+    let StereoscopicInterlacePostProcessI: StereoscopicInterlacePostProcessIStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/storageReadBlock.pure
+    [<AllowNullLiteral>]
+    type StorageReadBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``loopID``: NodeMaterialConnectionPoint with get
+        abstract ``value``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type StorageReadBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<StorageReadBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> StorageReadBlock
+
+    [<Import("StorageReadBlock", "@babylonjs/core/Materials/Node/Blocks/storageReadBlock.pure.js")>]
+    let StorageReadBlock: StorageReadBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/storageWriteBlock.pure
+    [<AllowNullLiteral>]
+    type StorageWriteBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``isConnectedInFragmentShader`` : unit -> bool
+        abstract ``loopID``: NodeMaterialConnectionPoint with get
+        abstract ``value``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type StorageWriteBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<StorageWriteBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> StorageWriteBlock
+
+    [<Import("StorageWriteBlock", "@babylonjs/core/Materials/Node/Blocks/storageWriteBlock.pure.js")>]
+    let StorageWriteBlock: StorageWriteBlockStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/subSurfaceScatteringPostProcess.pure
+    [<AllowNullLiteral>]
+    type SubSurfaceScatteringPostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type SubSurfaceScatteringPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<SubSurfaceScatteringPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ``options``: U2<float, BabylonjsBindings.TypeAliases.PostProcessOptions> * ?``camera``: Camera * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``textureType``: float -> SubSurfaceScatteringPostProcess
+
+    [<Import("SubSurfaceScatteringPostProcess", "@babylonjs/core/PostProcesses/subSurfaceScatteringPostProcess.pure.js")>]
+    let SubSurfaceScatteringPostProcess: SubSurfaceScatteringPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Rendering/subSurfaceSceneComponent.pure
+    [<AllowNullLiteral>]
+    type SubSurfaceSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent
+        abstract ``name``: string with get
+        abstract ``scene``: Scene with get, set
+        abstract ``register`` : unit -> unit
+        abstract ``serialize`` : ``serializationObject``: obj -> unit
+        abstract ``addFromContainer`` : unit -> unit
+        abstract ``removeFromContainer`` : unit -> unit
+        abstract ``rebuild`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type SubSurfaceSceneComponentStatic =
+        inherit Constructor<SubSurfaceSceneComponent>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene -> SubSurfaceSceneComponent
+
+    [<Import("SubSurfaceSceneComponent", "@babylonjs/core/Rendering/subSurfaceSceneComponent.pure.js")>]
+    let SubSurfaceSceneComponent: SubSurfaceSceneComponentStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/subtractBlock.pure
+    [<AllowNullLiteral>]
+    type SubtractBlock =
+        inherit BaseMathBlock
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type SubtractBlockStatic =
+        inherit BaseMathBlockStatic
+        inherit Constructor<SubtractBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> SubtractBlock
+
+    [<Import("SubtractBlock", "@babylonjs/core/Materials/Node/Blocks/subtractBlock.pure.js")>]
+    let SubtractBlock: SubtractBlockStatic = jsNative
+
+    /// @babylonjs/core/Behaviors/Meshes/surfaceMagnetismBehavior
+    [<AllowNullLiteral>]
+    type SurfaceMagnetismBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<Mesh>
+        abstract ``hitNormalOffset``: float with get, set
+        abstract ``meshes``: ResizeArray<AbstractMesh> with get, set
+        abstract ``init`` : unit -> unit
+        abstract ``interpolatePose``: bool with get, set
+        abstract ``lerpTime``: float with get, set
+        abstract ``keepOrientationVertical``: bool with get, set
+        abstract ``enabled``: bool with get, set
+        abstract ``maxStickingDistance``: float with get, set
+        abstract ``attach`` : ``target``: Mesh * ?``scene``: Scene -> unit
+        abstract ``detach`` : unit -> unit
+        abstract ``updateAttachPoint`` : unit -> unit
+        abstract ``findAndUpdateTarget`` : ``pickInfo``: PickingInfo -> bool
+        abstract ``name``: string with get
+        abstract ``attachedNode``: Mesh option with get
+
+    [<AllowNullLiteral>]
+    type SurfaceMagnetismBehaviorStatic =
+        inherit Constructor<SurfaceMagnetismBehavior>
+        [<EmitConstructor>] abstract Create: unit -> SurfaceMagnetismBehavior
+
+    [<Import("SurfaceMagnetismBehavior", "@babylonjs/core/Behaviors/Meshes/surfaceMagnetismBehavior.js")>]
+    let SurfaceMagnetismBehavior: SurfaceMagnetismBehaviorStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/TBNBlock.pure
+    [<AllowNullLiteral>]
+    type TBNBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial * ?``mesh``: AbstractMesh -> unit
+        abstract ``normal``: NodeMaterialConnectionPoint with get
+        abstract ``tangent``: NodeMaterialConnectionPoint with get
+        abstract ``world``: NodeMaterialConnectionPoint with get
+        abstract ``TBN``: NodeMaterialConnectionPoint with get
+        abstract ``row0``: NodeMaterialConnectionPoint with get
+        abstract ``row1``: NodeMaterialConnectionPoint with get
+        abstract ``row2``: NodeMaterialConnectionPoint with get
+        abstract ``target``: BabylonjsBindings.Enums.NodeMaterialBlockTargets with get, set
+
+    [<AllowNullLiteral>]
+    type TBNBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<TBNBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> TBNBlock
+
+    [<Import("TBNBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/TBNBlock.pure.js")>]
+    let TBNBlock: TBNBlockStatic = jsNative
+
+    /// Function-valued TextFileAssetTask.onSuccess property.
+    [<AllowNullLiteral>]
+    type TextFileAssetTaskOnSuccessCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: TextFileAssetTask -> unit
+
+    /// Function-valued TextFileAssetTask.onError property.
+    [<AllowNullLiteral>]
+    type TextFileAssetTaskOnErrorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: TextFileAssetTask * ?``message``: string * ?``exception``: obj -> unit
+
+    /// @babylonjs/core/Misc/assetsManager
+    [<AllowNullLiteral>]
+    type TextFileAssetTask =
+        inherit AbstractAssetTask
+        abstract ``name``: string with get, set
+        abstract ``url``: string with get, set
+        abstract ``text``: string with get, set
+        abstract ``onSuccess``: TextFileAssetTaskOnSuccessCallback with get, set
+        abstract ``onError``: TextFileAssetTaskOnErrorCallback with get, set
+        abstract ``runTask`` : ``scene``: Scene * ``onSuccess``: System.Action * ``onError``: System.Action<string option, obj option> -> unit
+
+    [<AllowNullLiteral>]
+    type TextFileAssetTaskStatic =
+        inherit AbstractAssetTaskStatic
+        inherit Constructor<TextFileAssetTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``url``: string -> TextFileAssetTask
+
+    [<Import("TextFileAssetTask", "@babylonjs/core/Misc/assetsManager.js")>]
+    let TextFileAssetTask: TextFileAssetTaskStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinAnaglyphPostProcess
+    [<AllowNullLiteral>]
+    type ThinAnaglyphPostProcess =
+        inherit EffectWrapper
+
+    [<AllowNullLiteral>]
+    type ThinAnaglyphPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinAnaglyphPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinAnaglyphPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinAnaglyphPostProcess", "@babylonjs/core/PostProcesses/thinAnaglyphPostProcess.js")>]
+    let ThinAnaglyphPostProcess: ThinAnaglyphPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinBlackAndWhitePostProcess
+    [<AllowNullLiteral>]
+    type ThinBlackAndWhitePostProcess =
+        inherit EffectWrapper
+        abstract ``degree``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinBlackAndWhitePostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinBlackAndWhitePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinBlackAndWhitePostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinBlackAndWhitePostProcess", "@babylonjs/core/PostProcesses/thinBlackAndWhitePostProcess.js")>]
+    let ThinBlackAndWhitePostProcess: ThinBlackAndWhitePostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinBloomMergePostProcess
+    [<AllowNullLiteral>]
+    type ThinBloomMergePostProcess =
+        inherit EffectWrapper
+        abstract ``weight``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinBloomMergePostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinBloomMergePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinBloomMergePostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinBloomMergePostProcess", "@babylonjs/core/PostProcesses/thinBloomMergePostProcess.js")>]
+    let ThinBloomMergePostProcess: ThinBloomMergePostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinBlurPostProcess
+    [<AllowNullLiteral>]
+    type ThinBlurPostProcess =
+        inherit EffectWrapper
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``direction``: Vector2 with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+        abstract ``_updateParameters`` : ?``onCompiled``: System.Action<Effect> * ?``onError``: System.Action<Effect, string> -> unit
+        abstract ``kernel``: float with get, set
+        abstract ``packedFloat``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type ThinBlurPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinBlurPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``direction``: Vector2 * ?``kernel``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinBlurPostProcess
+        abstract ``VertexUrl``: string with get
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinBlurPostProcess", "@babylonjs/core/PostProcesses/thinBlurPostProcess.js")>]
+    let ThinBlurPostProcess: ThinBlurPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinChromaticAberrationPostProcess
+    [<AllowNullLiteral>]
+    type ThinChromaticAberrationPostProcess =
+        inherit EffectWrapper
+        abstract ``aberrationAmount``: float with get, set
+        abstract ``radialIntensity``: float with get, set
+        abstract ``direction``: Vector2 with get, set
+        abstract ``centerPosition``: Vector2 with get, set
+        abstract ``screenWidth``: float with get, set
+        abstract ``screenHeight``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinChromaticAberrationPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinChromaticAberrationPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinChromaticAberrationPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinChromaticAberrationPostProcess", "@babylonjs/core/PostProcesses/thinChromaticAberrationPostProcess.js")>]
+    let ThinChromaticAberrationPostProcess: ThinChromaticAberrationPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinColorCorrectionPostProcess
+    [<AllowNullLiteral>]
+    type ThinColorCorrectionPostProcess =
+        inherit EffectWrapper
+        abstract ``colorTableUrl``: string with get
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinColorCorrectionPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinColorCorrectionPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene option * ``colorTableUrl``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinColorCorrectionPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinColorCorrectionPostProcess", "@babylonjs/core/PostProcesses/thinColorCorrectionPostProcess.js")>]
+    let ThinColorCorrectionPostProcess: ThinColorCorrectionPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinConvolutionPostProcess
+    [<AllowNullLiteral>]
+    type ThinConvolutionPostProcess =
+        inherit EffectWrapper
+        abstract ``kernel``: ResizeArray<float> with get, set
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinConvolutionPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinConvolutionPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``engine``: AbstractEngine option * ``kernel``: ResizeArray<float> * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinConvolutionPostProcess
+        abstract ``EdgeDetect0Kernel``: ResizeArray<float> with get, set
+        abstract ``EdgeDetect1Kernel``: ResizeArray<float> with get, set
+        abstract ``EdgeDetect2Kernel``: ResizeArray<float> with get, set
+        abstract ``SharpenKernel``: ResizeArray<float> with get, set
+        abstract ``EmbossKernel``: ResizeArray<float> with get, set
+        abstract ``GaussianKernel``: ResizeArray<float> with get, set
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinConvolutionPostProcess", "@babylonjs/core/PostProcesses/thinConvolutionPostProcess.js")>]
+    let ThinConvolutionPostProcess: ThinConvolutionPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinCustomPostProcess
+    [<AllowNullLiteral>]
+    type ThinCustomPostProcess =
+        inherit EffectWrapper
+        abstract ``onBindObservable``: Observable<Effect> with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinCustomPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinCustomPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinCustomPostProcess
+
+    [<Import("ThinCustomPostProcess", "@babylonjs/core/PostProcesses/thinCustomPostProcess.js")>]
+    let ThinCustomPostProcess: ThinCustomPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinDepthOfFieldMergePostProcess
+    [<AllowNullLiteral>]
+    type ThinDepthOfFieldMergePostProcess =
+        inherit EffectWrapper
+
+    [<AllowNullLiteral>]
+    type ThinDepthOfFieldMergePostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinDepthOfFieldMergePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinDepthOfFieldMergePostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinDepthOfFieldMergePostProcess", "@babylonjs/core/PostProcesses/thinDepthOfFieldMergePostProcess.js")>]
+    let ThinDepthOfFieldMergePostProcess: ThinDepthOfFieldMergePostProcessStatic = jsNative
+
+    /// @babylonjs/core/Rendering/thinDepthPeelingRenderer.pure
+    [<AllowNullLiteral>]
+    type ThinDepthPeelingRenderer =
+        abstract ``addExcludedMesh`` : ``mesh``: AbstractMesh -> unit
+        abstract ``removeExcludedMesh`` : ``mesh``: AbstractMesh -> unit
+        abstract ``setPrePassRenderer`` : ``_prePassRenderer``: PrePassRenderer -> unit
+        abstract ``bind`` : ``effect``: Effect -> unit
+        abstract ``isReady`` : unit -> bool
+        abstract ``render`` : ``transparentSubMeshes``: SmartArray<SubMesh> -> SmartArray<SubMesh>
+        abstract ``dispose`` : unit -> unit
+        abstract ``passCount``: float with get, set
+        abstract ``useRenderPasses``: bool with get, set
+        abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get
+        abstract ``blendOutput``: RenderTargetWrapper option with get, set
+
+    [<AllowNullLiteral>]
+    type ThinDepthPeelingRendererStatic =
+        inherit Constructor<ThinDepthPeelingRenderer>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene * ?``passCount``: float -> ThinDepthPeelingRenderer
+
+    [<Import("ThinDepthPeelingRenderer", "@babylonjs/core/Rendering/thinDepthPeelingRenderer.pure.js")>]
+    let ThinDepthPeelingRenderer: ThinDepthPeelingRendererStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinExtractHighlightsPostProcess
+    [<AllowNullLiteral>]
+    type ThinExtractHighlightsPostProcess =
+        inherit EffectWrapper
+        abstract ``threshold``: float with get, set
+        abstract ``_exposure``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinExtractHighlightsPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinExtractHighlightsPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinExtractHighlightsPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinExtractHighlightsPostProcess", "@babylonjs/core/PostProcesses/thinExtractHighlightsPostProcess.js")>]
+    let ThinExtractHighlightsPostProcess: ThinExtractHighlightsPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinFilterPostProcess
+    [<AllowNullLiteral>]
+    type ThinFilterPostProcess =
+        inherit EffectWrapper
+        abstract ``kernelMatrix``: Matrix with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinFilterPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinFilterPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinFilterPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinFilterPostProcess", "@babylonjs/core/PostProcesses/thinFilterPostProcess.js")>]
+    let ThinFilterPostProcess: ThinFilterPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinFXAAPostProcess
+    [<AllowNullLiteral>]
+    type ThinFXAAPostProcess =
+        inherit EffectWrapper
+        abstract ``texelSize``: Vector2 with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinFXAAPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinFXAAPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinFXAAPostProcess
+        abstract ``VertexUrl``: string with get
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinFXAAPostProcess", "@babylonjs/core/PostProcesses/thinFXAAPostProcess.js")>]
+    let ThinFXAAPostProcess: ThinFXAAPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Layers/thinEffectLayer
+    [<AllowNullLiteral>]
+    type ThinGlowBlurPostProcess =
+        inherit EffectWrapper
+        abstract ``direction``: Vector2 with get, set
+        abstract ``kernel``: float with get, set
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``bind`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type ThinGlowBlurPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinGlowBlurPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``engine``: AbstractEngine option * ``direction``: Vector2 * ``kernel``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinGlowBlurPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinGlowBlurPostProcess", "@babylonjs/core/Layers/thinEffectLayer.js")>]
+    let ThinGlowBlurPostProcess: ThinGlowBlurPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinGrainPostProcess
+    [<AllowNullLiteral>]
+    type ThinGrainPostProcess =
+        inherit EffectWrapper
+        abstract ``intensity``: float with get, set
+        abstract ``animated``: bool with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinGrainPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinGrainPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinGrainPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinGrainPostProcess", "@babylonjs/core/PostProcesses/thinGrainPostProcess.js")>]
+    let ThinGrainPostProcess: ThinGrainPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Misc/thinMinMaxReducer
+    [<AllowNullLiteral>]
+    type ThinMinMaxReducerPostProcess =
+        inherit EffectWrapper
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinMinMaxReducerPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinMinMaxReducerPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``defines``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinMinMaxReducerPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinMinMaxReducerPostProcess", "@babylonjs/core/Misc/thinMinMaxReducer.js")>]
+    let ThinMinMaxReducerPostProcess: ThinMinMaxReducerPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinMotionBlurPostProcess
+    [<AllowNullLiteral>]
+    type ThinMotionBlurPostProcess =
+        inherit EffectWrapper
+        abstract ``motionStrength``: float with get, set
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+        abstract ``motionBlurSamples``: float with get, set
+        abstract ``isObjectBased``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type ThinMotionBlurPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinMotionBlurPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinMotionBlurPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+        abstract ``Defines``: string with get
+
+    [<Import("ThinMotionBlurPostProcess", "@babylonjs/core/PostProcesses/thinMotionBlurPostProcess.js")>]
+    let ThinMotionBlurPostProcess: ThinMotionBlurPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinPassPostProcess
+    [<AllowNullLiteral>]
+    type ThinPassCubePostProcess =
+        inherit EffectWrapper
+        abstract ``face``: float with get, set
+
+    [<AllowNullLiteral>]
+    type ThinPassCubePostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinPassCubePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinPassCubePostProcess
+        abstract ``FragmentUrl``: string with get
+
+    [<Import("ThinPassCubePostProcess", "@babylonjs/core/PostProcesses/thinPassPostProcess.js")>]
+    let ThinPassCubePostProcess: ThinPassCubePostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinPassPostProcess
+    [<AllowNullLiteral>]
+    type ThinPassPostProcess =
+        inherit EffectWrapper
+
+    [<AllowNullLiteral>]
+    type ThinPassPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinPassPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinPassPostProcess
+        abstract ``FragmentUrl``: string with get
+
+    [<Import("ThinPassPostProcess", "@babylonjs/core/PostProcesses/thinPassPostProcess.js")>]
+    let ThinPassPostProcess: ThinPassPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/thinRenderTargetTexture
+    [<AllowNullLiteral>]
+    type ThinRenderTargetTexture =
+        inherit ThinTexture
+        inherit BabylonjsBindings.SimpleInterfaces.IRenderTargetTexture
+        abstract ``resize`` : ``size``: BabylonjsBindings.TypeAliases.TextureSize -> unit
+        abstract ``getInternalTexture`` : unit -> InternalTexture option
+        abstract ``getClassName`` : unit -> string
+        abstract ``dispose`` : ?``disposeOnlyFramebuffers``: bool -> unit
+        abstract ``renderTarget``: RenderTargetWrapper option with get
+
+    [<AllowNullLiteral>]
+    type ThinRenderTargetTextureStatic =
+        inherit ThinTextureStatic
+        inherit Constructor<ThinRenderTargetTexture>
+        [<EmitConstructor>] abstract Create: ``engine``: AbstractEngine * ``size``: BabylonjsBindings.TypeAliases.TextureSize * ``options``: BabylonjsBindings.SimpleInterfaces.RenderTargetCreationOptions -> ThinRenderTargetTexture
+
+    [<Import("ThinRenderTargetTexture", "@babylonjs/core/Materials/Textures/thinRenderTargetTexture.js")>]
+    let ThinRenderTargetTexture: ThinRenderTargetTextureStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinScreenSpaceCurvaturePostProcess
+    [<AllowNullLiteral>]
+    type ThinScreenSpaceCurvaturePostProcess =
+        inherit EffectWrapper
+        abstract ``ridge``: float with get, set
+        abstract ``valley``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinScreenSpaceCurvaturePostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinScreenSpaceCurvaturePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinScreenSpaceCurvaturePostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinScreenSpaceCurvaturePostProcess", "@babylonjs/core/PostProcesses/thinScreenSpaceCurvaturePostProcess.js")>]
+    let ThinScreenSpaceCurvaturePostProcess: ThinScreenSpaceCurvaturePostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinSharpenPostProcess
+    [<AllowNullLiteral>]
+    type ThinSharpenPostProcess =
+        inherit EffectWrapper
+        abstract ``colorAmount``: float with get, set
+        abstract ``edgeAmount``: float with get, set
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinSharpenPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinSharpenPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinSharpenPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+
+    [<Import("ThinSharpenPostProcess", "@babylonjs/core/PostProcesses/thinSharpenPostProcess.js")>]
+    let ThinSharpenPostProcess: ThinSharpenPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinSSAO2BlurPostProcess
+    [<AllowNullLiteral>]
+    type ThinSSAO2BlurPostProcess =
+        inherit EffectWrapper
+        abstract ``textureSize``: float with get, set
+        abstract ``bilateralSamples``: float with get, set
+        abstract ``bilateralSoften``: float with get, set
+        abstract ``bilateralTolerance``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+        abstract ``bypassBlur``: bool with get, set
+        abstract ``expensiveBlur``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type ThinSSAO2BlurPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinSSAO2BlurPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``engine``: AbstractEngine option * ``isHorizontal``: bool * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinSSAO2BlurPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinSSAO2BlurPostProcess", "@babylonjs/core/PostProcesses/thinSSAO2BlurPostProcess.js")>]
+    let ThinSSAO2BlurPostProcess: ThinSSAO2BlurPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinSSAO2CombinePostProcess
+    [<AllowNullLiteral>]
+    type ThinSSAO2CombinePostProcess =
+        inherit EffectWrapper
+        abstract ``camera``: Camera option with get, set
+        abstract ``useViewportInCombineStage``: bool with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinSSAO2CombinePostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinSSAO2CombinePostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinSSAO2CombinePostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinSSAO2CombinePostProcess", "@babylonjs/core/PostProcesses/thinSSAO2CombinePostProcess.js")>]
+    let ThinSSAO2CombinePostProcess: ThinSSAO2CombinePostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinSSAO2PostProcess
+    [<AllowNullLiteral>]
+    type ThinSSAO2PostProcess =
+        inherit EffectWrapper
+        abstract ``camera``: Camera option with get, set
+        abstract ``totalStrength``: float with get, set
+        abstract ``radius``: float with get, set
+        abstract ``maxZ``: float with get, set
+        abstract ``minZAspect``: float with get, set
+        abstract ``base``: float with get, set
+        abstract ``updateEffect`` : unit -> unit
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``samples``: float with get, set
+        abstract ``normalsInWorldSpace``: bool with get, set
+        abstract ``epsilon``: float with get, set
+
+    [<AllowNullLiteral>]
+    type ThinSSAO2PostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinSSAO2PostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinSSAO2PostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinSSAO2PostProcess", "@babylonjs/core/PostProcesses/thinSSAO2PostProcess.js")>]
+    let ThinSSAO2PostProcess: ThinSSAO2PostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinSSRBlurCombinerPostProcess
+    [<AllowNullLiteral>]
+    type ThinSSRBlurCombinerPostProcess =
+        inherit EffectWrapper
+        abstract ``strength``: float with get, set
+        abstract ``reflectionSpecularFalloffExponent``: float with get, set
+        abstract ``camera``: Camera option with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+        abstract ``useFresnel``: bool with get, set
+        abstract ``useScreenspaceDepth``: bool with get, set
+        abstract ``inputTextureColorIsInGammaSpace``: bool with get, set
+        abstract ``generateOutputInGammaSpace``: bool with get, set
+        abstract ``debug``: bool with get, set
+        abstract ``reflectivityThreshold``: float with get, set
+        abstract ``normalsAreInWorldSpace``: bool with get, set
+        abstract ``normalsAreUnsigned``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type ThinSSRBlurCombinerPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinSSRBlurCombinerPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinSSRBlurCombinerPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinSSRBlurCombinerPostProcess", "@babylonjs/core/PostProcesses/thinSSRBlurCombinerPostProcess.js")>]
+    let ThinSSRBlurCombinerPostProcess: ThinSSRBlurCombinerPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinSSRBlurPostProcess
+    [<AllowNullLiteral>]
+    type ThinSSRBlurPostProcess =
+        inherit EffectWrapper
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``direction``: Vector2 with get, set
+        abstract ``blurStrength``: float with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+
+    [<AllowNullLiteral>]
+    type ThinSSRBlurPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinSSRBlurPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ?``engine``: AbstractEngine * ?``direction``: Vector2 * ?``blurStrength``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinSSRBlurPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinSSRBlurPostProcess", "@babylonjs/core/PostProcesses/thinSSRBlurPostProcess.js")>]
+    let ThinSSRBlurPostProcess: ThinSSRBlurPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinSSRPostProcess
+    [<AllowNullLiteral>]
+    type ThinSSRPostProcess =
+        inherit EffectWrapper
+        abstract ``isSSRSupported``: bool with get, set
+        abstract ``maxDistance``: float with get, set
+        abstract ``step``: float with get, set
+        abstract ``thickness``: float with get, set
+        abstract ``strength``: float with get, set
+        abstract ``reflectionSpecularFalloffExponent``: float with get, set
+        abstract ``maxSteps``: float with get, set
+        abstract ``roughnessFactor``: float with get, set
+        abstract ``selfCollisionNumSkip``: float with get, set
+        abstract ``camera``: Camera option with get, set
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+        abstract ``reflectivityThreshold``: float with get, set
+        abstract ``useBlur``: bool with get, set
+        abstract ``enableSmoothReflections``: bool with get, set
+        abstract ``environmentTexture``: CubeTexture option with get, set
+        abstract ``environmentTextureIsProbe``: bool with get, set
+        abstract ``attenuateScreenBorders``: bool with get, set
+        abstract ``attenuateIntersectionDistance``: bool with get, set
+        abstract ``attenuateIntersectionIterations``: bool with get, set
+        abstract ``attenuateFacingCamera``: bool with get, set
+        abstract ``attenuateBackfaceReflection``: bool with get, set
+        abstract ``clipToFrustum``: bool with get, set
+        abstract ``useFresnel``: bool with get, set
+        abstract ``enableAutomaticThicknessComputation``: bool with get, set
+        abstract ``inputTextureColorIsInGammaSpace``: bool with get, set
+        abstract ``generateOutputInGammaSpace``: bool with get, set
+        abstract ``debug``: bool with get, set
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``useScreenspaceDepth``: bool with get, set
+        abstract ``normalsAreInWorldSpace``: bool with get, set
+        abstract ``normalsAreUnsigned``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type ThinSSRPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinSSRPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinSSRPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinSSRPostProcess", "@babylonjs/core/PostProcesses/thinSSRPostProcess.js")>]
+    let ThinSSRPostProcess: ThinSSRPostProcessStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/thinTAAPostProcess
+    [<AllowNullLiteral>]
+    type ThinTAAPostProcess =
+        inherit EffectWrapper
+        abstract ``factor``: float with get, set
+        abstract ``camera``: Camera option with get, set
+        abstract ``disableOnCameraMove``: bool with get, set
+        abstract ``_reset`` : unit -> unit
+        abstract ``_updateJitter`` : unit -> unit
+        abstract ``bind`` : ?``noDefaultBindings``: bool -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``samples``: float with get, set
+        abstract ``disabled``: bool with get, set
+        abstract ``textureWidth``: float with get, set
+        abstract ``textureHeight``: float with get, set
+        abstract ``reprojectHistory``: bool with get, set
+        abstract ``clampHistory``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type ThinTAAPostProcessStatic =
+        inherit EffectWrapperStatic
+        inherit Constructor<ThinTAAPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``scene``: Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions -> ThinTAAPostProcess
+        abstract ``FragmentUrl``: string with get
+        abstract ``Uniforms``: ResizeArray<string> with get
+        abstract ``Samplers``: ResizeArray<string> with get
+
+    [<Import("ThinTAAPostProcess", "@babylonjs/core/PostProcesses/thinTAAPostProcess.js")>]
+    let ThinTAAPostProcess: ThinTAAPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Maths/math.vector.pure
+    [<AllowNullLiteral>]
+    type TmpVectors =
+        interface end
+
+    [<AllowNullLiteral>]
+    type TmpVectorsStatic =
+        inherit Constructor<TmpVectors>
+        [<EmitConstructor>] abstract Create: unit -> TmpVectors
+        abstract ``Vector2``: (Vector2 * Vector2 * Vector2) with get, set
+        abstract ``Vector3``: (Vector3 * Vector3 * Vector3 * Vector3 * Vector3 * Vector3 * Vector3 * Vector3 * Vector3 * Vector3 * Vector3 * Vector3 * Vector3) with get, set
+        abstract ``Vector4``: (Vector4 * Vector4 * Vector4) with get, set
+        abstract ``Quaternion``: (Quaternion * Quaternion * Quaternion) with get, set
+        abstract ``Matrix``: (Matrix * Matrix * Matrix * Matrix * Matrix * Matrix * Matrix * Matrix) with get, set
+
+    [<Import("TmpVectors", "@babylonjs/core/Maths/math.vector.pure.js")>]
+    let TmpVectors: TmpVectorsStatic = jsNative
+
+    /// @babylonjs/core/Cameras/touchCamera.pure
+    [<AllowNullLiteral>]
+    type TouchCamera =
+        inherit FreeCamera
+        abstract ``getClassName`` : unit -> string
+        abstract ``_setupInputs`` : unit -> unit
+        abstract ``touchAngularSensibility``: float with get, set
+        abstract ``touchMoveSensibility``: float with get, set
+
+    [<AllowNullLiteral>]
+    type TouchCameraStatic =
+        inherit FreeCameraStatic
+        inherit Constructor<TouchCamera>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``position``: Vector3 * ?``scene``: Scene -> TouchCamera
+
+    [<Import("TouchCamera", "@babylonjs/core/Cameras/touchCamera.pure.js")>]
+    let TouchCamera: TouchCameraStatic = jsNative
+
+    /// @babylonjs/core/Meshes/trailMesh.pure
+    [<AllowNullLiteral>]
+    type TrailMesh =
+        inherit Mesh
+        abstract ``diameter``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``start`` : unit -> unit
+        abstract ``stop`` : unit -> unit
+        abstract ``update`` : unit -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``clone`` : ``name``: string option * ``newGenerator``: TransformNode -> TrailMesh
+        abstract ``serialize`` : ``serializationObject``: obj -> unit
+
+    [<AllowNullLiteral>]
+    type TrailMeshStatic =
+        inherit MeshStatic
+        inherit Constructor<TrailMesh>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``generator``: TransformNode * ?``scene``: Scene * ?``diameter``: float * ?``length``: float * ?``autoStart``: bool -> TrailMesh
+        [<EmitConstructor>] abstract Create: ``name``: string * ``generator``: TransformNode * ?``scene``: Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.ITrailMeshOptions -> TrailMesh
+        abstract ``Parse`` : ``parsedMesh``: obj * ``scene``: Scene -> TrailMesh
+
+    [<Import("TrailMesh", "@babylonjs/core/Meshes/trailMesh.pure.js")>]
+    let TrailMesh: TrailMeshStatic = jsNative
+
+    /// @babylonjs/core/Misc/trajectoryClassifier
+    [<AllowNullLiteral>]
+    type Trajectory =
+        abstract ``serialize`` : unit -> string
+        abstract ``getLength`` : unit -> float
+        abstract ``add`` : ``point``: DeepImmutableVector3 -> unit
+        abstract ``resampleAtTargetResolution`` : ``targetResolution``: float -> Trajectory
+        abstract ``tokenize`` : ``tokens``: System.Collections.Generic.IReadOnlyList<DeepImmutableVector3> -> ResizeArray<float>
+
+    [<AllowNullLiteral>]
+    type TrajectoryStatic =
+        inherit Constructor<Trajectory>
+        [<EmitConstructor>] abstract Create: ?``segmentLength``: float -> Trajectory
+        abstract ``Deserialize`` : ``json``: string -> Trajectory
+
+    [<Import("Trajectory", "@babylonjs/core/Misc/trajectoryClassifier.js")>]
+    let Trajectory: TrajectoryStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/transformBlock.pure
+    [<AllowNullLiteral>]
+    type TransformBlock =
+        inherit NodeMaterialBlock
+        abstract ``complementW``: float with get, set
+        abstract ``complementZ``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``initialize`` : ``state``: NodeMaterialBuildState -> unit
+        abstract ``prepareDefines`` : ``defines``: NodeMaterialDefines * ``nodeMaterial``: NodeMaterial * ?``mesh``: AbstractMesh -> unit
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``transformAsDirection``: bool with get, set
+        abstract ``vector``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``xyz``: NodeMaterialConnectionPoint with get
+        abstract ``transform``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type TransformBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<TransformBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> TransformBlock
+
+    [<Import("TransformBlock", "@babylonjs/core/Materials/Node/Blocks/transformBlock.pure.js")>]
+    let TransformBlock: TransformBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/trigonometryBlock.pure
+    [<AllowNullLiteral>]
+    type TrigonometryBlock =
+        inherit NodeMaterialBlock
+        abstract ``operation``: BabylonjsBindings.Enums.TrigonometryBlockOperations with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type TrigonometryBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<TrigonometryBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> TrigonometryBlock
+
+    [<Import("TrigonometryBlock", "@babylonjs/core/Materials/Node/Blocks/trigonometryBlock.pure.js")>]
+    let TrigonometryBlock: TrigonometryBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Fragment/twirlBlock.pure
+    [<AllowNullLiteral>]
+    type TwirlBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : unit -> unit
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``strength``: NodeMaterialConnectionPoint with get
+        abstract ``center``: NodeMaterialConnectionPoint with get
+        abstract ``offset``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``x``: NodeMaterialConnectionPoint with get
+        abstract ``y``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type TwirlBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<TwirlBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> TwirlBlock
+
+    [<Import("TwirlBlock", "@babylonjs/core/Materials/Node/Blocks/Fragment/twirlBlock.pure.js")>]
+    let TwirlBlock: TwirlBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateAgeBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateAgeBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``age``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateAgeBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateAgeBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateAgeBlock
+
+    [<Import("UpdateAgeBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateAgeBlock.pure.js")>]
+    let UpdateAgeBlock: UpdateAgeBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateAngleBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateAngleBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``angle``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateAngleBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateAngleBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateAngleBlock
+
+    [<Import("UpdateAngleBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateAngleBlock.pure.js")>]
+    let UpdateAngleBlock: UpdateAngleBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateAttractorBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateAttractorBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``attractor``: NodeParticleConnectionPoint with get
+        abstract ``strength``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateAttractorBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateAttractorBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateAttractorBlock
+
+    [<Import("UpdateAttractorBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateAttractorBlock.pure.js")>]
+    let UpdateAttractorBlock: UpdateAttractorBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateColorBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateColorBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``color``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateColorBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateColorBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateColorBlock
+
+    [<Import("UpdateColorBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateColorBlock.pure.js")>]
+    let UpdateColorBlock: UpdateColorBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateDirectionBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateDirectionBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``direction``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateDirectionBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateDirectionBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateDirectionBlock
+
+    [<Import("UpdateDirectionBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateDirectionBlock.pure.js")>]
+    let UpdateDirectionBlock: UpdateDirectionBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateFlowMapBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateFlowMapBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``flowMap``: NodeParticleConnectionPoint with get
+        abstract ``strength``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateFlowMapBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateFlowMapBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateFlowMapBlock
+
+    [<Import("UpdateFlowMapBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateFlowMapBlock.pure.js")>]
+    let UpdateFlowMapBlock: UpdateFlowMapBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateNoiseBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateNoiseBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``noiseTexture``: NodeParticleConnectionPoint with get
+        abstract ``strength``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateNoiseBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateNoiseBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateNoiseBlock
+
+    [<Import("UpdateNoiseBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateNoiseBlock.pure.js")>]
+    let UpdateNoiseBlock: UpdateNoiseBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updatePositionBlock.pure
+    [<AllowNullLiteral>]
+    type UpdatePositionBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``position``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdatePositionBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdatePositionBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdatePositionBlock
+
+    [<Import("UpdatePositionBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updatePositionBlock.pure.js")>]
+    let UpdatePositionBlock: UpdatePositionBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateScaleBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateScaleBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``scale``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateScaleBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateScaleBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateScaleBlock
+
+    [<Import("UpdateScaleBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateScaleBlock.pure.js")>]
+    let UpdateScaleBlock: UpdateScaleBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateSizeBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateSizeBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``size``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateSizeBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateSizeBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateSizeBlock
+
+    [<Import("UpdateSizeBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateSizeBlock.pure.js")>]
+    let UpdateSizeBlock: UpdateSizeBlockStatic = jsNative
+
+    /// @babylonjs/core/Particles/Node/Blocks/Update/updateSpriteCellIndexBlock.pure
+    [<AllowNullLiteral>]
+    type UpdateSpriteCellIndexBlock =
+        inherit NodeParticleBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
+        abstract ``particle``: NodeParticleConnectionPoint with get
+        abstract ``cellIndex``: NodeParticleConnectionPoint with get
+        abstract ``output``: NodeParticleConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type UpdateSpriteCellIndexBlockStatic =
+        inherit NodeParticleBlockStatic
+        inherit Constructor<UpdateSpriteCellIndexBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> UpdateSpriteCellIndexBlock
+
+    [<Import("UpdateSpriteCellIndexBlock", "@babylonjs/core/Particles/Node/Blocks/Update/updateSpriteCellIndexBlock.pure.js")>]
+    let UpdateSpriteCellIndexBlock: UpdateSpriteCellIndexBlockStatic = jsNative
+
+    /// @babylonjs/core/Actions/condition.pure
+    [<AllowNullLiteral>]
+    type ValueCondition =
+        inherit Condition
+        abstract ``propertyPath``: string with get, set
+        abstract ``value``: obj with get, set
+        abstract ``operator``: float with get, set
+        abstract ``_actionManager``: ActionManager with get, set
+        abstract ``isValid`` : unit -> bool
+        abstract ``serialize`` : unit -> obj
+
+    [<AllowNullLiteral>]
+    type ValueConditionStatic =
+        inherit ConditionStatic
+        inherit Constructor<ValueCondition>
+        [<EmitConstructor>] abstract Create: ``actionManager``: ActionManager * ``target``: obj * ``propertyPath``: string * ``value``: obj * ?``operator``: float -> ValueCondition
+        abstract ``GetOperatorName`` : ``operator``: float -> string
+        abstract ``IsEqual``: float with get
+        abstract ``IsDifferent``: float with get
+        abstract ``IsGreater``: float with get
+        abstract ``IsLesser``: float with get
+
+    [<Import("ValueCondition", "@babylonjs/core/Actions/condition.pure.js")>]
+    let ValueCondition: ValueConditionStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/vectorMergerBlock.pure
+    [<AllowNullLiteral>]
+    type VectorMergerBlock =
+        inherit NodeMaterialBlock
+        abstract ``xSwizzle``: U4<StringLiteral2d711642b726, StringLiterala1fce4363854, StringLiteral594e519ae499, StringLiteral50e721e49c01> with get, set
+        abstract ``ySwizzle``: U4<StringLiteral2d711642b726, StringLiterala1fce4363854, StringLiteral594e519ae499, StringLiteral50e721e49c01> with get, set
+        abstract ``zSwizzle``: U4<StringLiteral2d711642b726, StringLiterala1fce4363854, StringLiteral594e519ae499, StringLiteral50e721e49c01> with get, set
+        abstract ``wSwizzle``: U4<StringLiteral2d711642b726, StringLiterala1fce4363854, StringLiteral594e519ae499, StringLiteral50e721e49c01> with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``xyzwIn``: NodeMaterialConnectionPoint with get
+        abstract ``xyzIn``: NodeMaterialConnectionPoint with get
+        abstract ``xyIn``: NodeMaterialConnectionPoint with get
+        abstract ``zwIn``: NodeMaterialConnectionPoint with get
+        abstract ``x``: NodeMaterialConnectionPoint with get
+        abstract ``y``: NodeMaterialConnectionPoint with get
+        abstract ``z``: NodeMaterialConnectionPoint with get
+        abstract ``w``: NodeMaterialConnectionPoint with get
+        abstract ``xyzw``: NodeMaterialConnectionPoint with get
+        abstract ``xyzOut``: NodeMaterialConnectionPoint with get
+        abstract ``xyOut``: NodeMaterialConnectionPoint with get
+        abstract ``zwOut``: NodeMaterialConnectionPoint with get
+        abstract ``xy``: NodeMaterialConnectionPoint with get
+        abstract ``xyz``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type VectorMergerBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<VectorMergerBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> VectorMergerBlock
+
+    [<Import("VectorMergerBlock", "@babylonjs/core/Materials/Node/Blocks/vectorMergerBlock.pure.js")>]
+    let VectorMergerBlock: VectorMergerBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/vectorSplitterBlock.pure
+    [<AllowNullLiteral>]
+    type VectorSplitterBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``xyzw``: NodeMaterialConnectionPoint with get
+        abstract ``xyzIn``: NodeMaterialConnectionPoint with get
+        abstract ``xyIn``: NodeMaterialConnectionPoint with get
+        abstract ``xyzOut``: NodeMaterialConnectionPoint with get
+        abstract ``xyOut``: NodeMaterialConnectionPoint with get
+        abstract ``zw``: NodeMaterialConnectionPoint with get
+        abstract ``x``: NodeMaterialConnectionPoint with get
+        abstract ``y``: NodeMaterialConnectionPoint with get
+        abstract ``z``: NodeMaterialConnectionPoint with get
+        abstract ``w``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type VectorSplitterBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<VectorSplitterBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> VectorSplitterBlock
+
+    [<Import("VectorSplitterBlock", "@babylonjs/core/Materials/Node/Blocks/vectorSplitterBlock.pure.js")>]
+    let VectorSplitterBlock: VectorSplitterBlockStatic = jsNative
+
+    /// @babylonjs/core/BakedVertexAnimation/vertexAnimationBaker
+    [<AllowNullLiteral>]
+    type VertexAnimationBaker =
+        abstract ``bakeVertexDataSync`` : ``ranges``: ResizeArray<AnimationRange> * ``halfFloat``: bool -> U2<JS.Float32Array, JS.Uint16Array>
+        abstract ``bakeVertexData`` : ``ranges``: ResizeArray<AnimationRange> -> JS.Promise<JS.Float32Array>
+        abstract ``textureFromBakedVertexData`` : ``vertexData``: U2<JS.Float32Array, JS.Uint16Array> -> RawTexture
+        abstract ``serializeBakedVertexDataToObject`` : ``vertexData``: JS.Float32Array -> RecordObject799ba53d5322
+        abstract ``loadBakedVertexDataFromObject`` : ``data``: RecordObject799ba53d5322 -> JS.Float32Array
+        abstract ``serializeBakedVertexDataToJSON`` : ``vertexData``: JS.Float32Array -> string
+        abstract ``loadBakedVertexDataFromJSON`` : ``json``: string -> JS.Float32Array
+
+    [<AllowNullLiteral>]
+    type VertexAnimationBakerStatic =
+        inherit Constructor<VertexAnimationBaker>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene * ``meshOrSkeleton``: U2<Mesh, Skeleton> -> VertexAnimationBaker
+
+    [<Import("VertexAnimationBaker", "@babylonjs/core/BakedVertexAnimation/vertexAnimationBaker.js")>]
+    let VertexAnimationBaker: VertexAnimationBakerStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/Vertex/vertexOutputBlock.pure
+    [<AllowNullLiteral>]
+    type VertexOutputBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``vector``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type VertexOutputBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<VertexOutputBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> VertexOutputBlock
+
+    [<Import("VertexOutputBlock", "@babylonjs/core/Materials/Node/Blocks/Vertex/vertexOutputBlock.pure.js")>]
+    let VertexOutputBlock: VertexOutputBlockStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/viewDirectionBlock.pure
+    [<AllowNullLiteral>]
+    type ViewDirectionBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``autoConfigure`` : ``material``: NodeMaterial * ?``additionalFilteringInfo``: System.Func<NodeMaterialBlock, bool> -> unit
+        abstract ``worldPosition``: NodeMaterialConnectionPoint with get
+        abstract ``cameraPosition``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type ViewDirectionBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<ViewDirectionBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> ViewDirectionBlock
+
+    [<Import("ViewDirectionBlock", "@babylonjs/core/Materials/Node/Blocks/viewDirectionBlock.pure.js")>]
+    let ViewDirectionBlock: ViewDirectionBlockStatic = jsNative
+
+    /// @babylonjs/core/Cameras/virtualJoysticksCamera.pure
+    [<AllowNullLiteral>]
+    type VirtualJoysticksCamera =
+        inherit FreeCamera
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type VirtualJoysticksCameraStatic =
+        inherit FreeCameraStatic
+        inherit Constructor<VirtualJoysticksCamera>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``position``: Vector3 * ?``scene``: Scene -> VirtualJoysticksCamera
+
+    [<Import("VirtualJoysticksCamera", "@babylonjs/core/Cameras/virtualJoysticksCamera.pure.js")>]
+    let VirtualJoysticksCamera: VirtualJoysticksCameraStatic = jsNative
+
+    /// Inline object shape used by VolumetricLightScatteringPostProcess.
+    [<AllowNullLiteral>]
+    type VolumetricLightScatteringPostProcessProperty4Object =
+        abstract ``position``: Vector3 with get, set
+
+    /// @babylonjs/core/PostProcesses/volumetricLightScatteringPostProcess.pure
+    [<AllowNullLiteral>]
+    type VolumetricLightScatteringPostProcess =
+        inherit PostProcess
+        abstract ``attachedNode``: VolumetricLightScatteringPostProcessProperty4Object with get, set
+        abstract ``customMeshPosition``: Vector3 with get, set
+        abstract ``useCustomMeshPosition``: bool with get, set
+        abstract ``invert``: bool with get, set
+        abstract ``mesh``: Mesh with get, set
+        abstract ``excludedMeshes``: ResizeArray<AbstractMesh> with get, set
+        abstract ``includedMeshes``: ResizeArray<AbstractMesh> with get, set
+        abstract ``exposure``: float with get, set
+        abstract ``decay``: float with get, set
+        abstract ``weight``: float with get, set
+        abstract ``density``: float with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``setCustomMeshPosition`` : ``position``: Vector3 -> unit
+        abstract ``getCustomMeshPosition`` : unit -> Vector3
+        abstract ``dispose`` : ``camera``: Camera -> unit
+        abstract ``getPass`` : unit -> RenderTargetTexture
+        abstract ``useDiffuseColor``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type VolumetricLightScatteringPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<VolumetricLightScatteringPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``ratio``: obj * ``camera``: Camera option * ?``mesh``: Mesh * ?``samples``: float * ?``samplingMode``: float * ?``engine``: AbstractEngine * ?``reusable``: bool * ?``scene``: Scene -> VolumetricLightScatteringPostProcess
+        abstract ``CreateDefaultMesh`` : ``name``: string * ``scene``: Scene -> Mesh
+
+    [<Import("VolumetricLightScatteringPostProcess", "@babylonjs/core/PostProcesses/volumetricLightScatteringPostProcess.pure.js")>]
+    let VolumetricLightScatteringPostProcess: VolumetricLightScatteringPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/voronoiNoiseBlock.pure
+    [<AllowNullLiteral>]
+    type VoronoiNoiseBlock =
+        inherit NodeMaterialBlock
+        abstract ``getClassName`` : unit -> string
+        abstract ``seed``: NodeMaterialConnectionPoint with get
+        abstract ``offset``: NodeMaterialConnectionPoint with get
+        abstract ``density``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``cells``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type VoronoiNoiseBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<VoronoiNoiseBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> VoronoiNoiseBlock
+
+    [<Import("VoronoiNoiseBlock", "@babylonjs/core/Materials/Node/Blocks/voronoiNoiseBlock.pure.js")>]
+    let VoronoiNoiseBlock: VoronoiNoiseBlockStatic = jsNative
+
+    /// @babylonjs/core/Cameras/VR/vrCameraMetrics
+    [<AllowNullLiteral>]
+    type VRCameraMetrics =
+        abstract ``hResolution``: float with get, set
+        abstract ``vResolution``: float with get, set
+        abstract ``hScreenSize``: float with get, set
+        abstract ``vScreenSize``: float with get, set
+        abstract ``vScreenCenter``: float with get, set
+        abstract ``eyeToScreenDistance``: float with get, set
+        abstract ``lensSeparationDistance``: float with get, set
+        abstract ``interpupillaryDistance``: float with get, set
+        abstract ``distortionK``: ResizeArray<float> with get, set
+        abstract ``chromaAbCorrection``: ResizeArray<float> with get, set
+        abstract ``postProcessScaleFactor``: float with get, set
+        abstract ``lensCenterOffset``: float with get, set
+        abstract ``compensateDistortion``: bool with get, set
+        abstract ``multiviewEnabled``: bool with get, set
+        abstract ``aspectRatio``: float with get
+        abstract ``aspectRatioFov``: float with get
+        abstract ``leftHMatrix``: Matrix with get
+        abstract ``rightHMatrix``: Matrix with get
+        abstract ``leftPreViewMatrix``: Matrix with get
+        abstract ``rightPreViewMatrix``: Matrix with get
+
+    [<AllowNullLiteral>]
+    type VRCameraMetricsStatic =
+        inherit Constructor<VRCameraMetrics>
+        [<EmitConstructor>] abstract Create: unit -> VRCameraMetrics
+        abstract ``GetDefault`` : unit -> VRCameraMetrics
+
+    [<Import("VRCameraMetrics", "@babylonjs/core/Cameras/VR/vrCameraMetrics.js")>]
+    let VRCameraMetrics: VRCameraMetricsStatic = jsNative
+
+    /// @babylonjs/core/PostProcesses/vrMultiviewToSingleviewPostProcess.pure
+    [<AllowNullLiteral>]
+    type VRMultiviewToSingleviewPostProcess =
+        inherit PostProcess
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type VRMultiviewToSingleviewPostProcessStatic =
+        inherit PostProcessStatic
+        inherit Constructor<VRMultiviewToSingleviewPostProcess>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``camera``: Camera option * ``scaleFactor``: float -> VRMultiviewToSingleviewPostProcess
+
+    [<Import("VRMultiviewToSingleviewPostProcess", "@babylonjs/core/PostProcesses/vrMultiviewToSingleviewPostProcess.pure.js")>]
+    let VRMultiviewToSingleviewPostProcess: VRMultiviewToSingleviewPostProcessStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/waveBlock.pure
+    [<AllowNullLiteral>]
+    type WaveBlock =
+        inherit NodeMaterialBlock
+        abstract ``kind``: BabylonjsBindings.Enums.WaveBlockKind with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``input``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type WaveBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<WaveBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> WaveBlock
+
+    [<Import("WaveBlock", "@babylonjs/core/Materials/Node/Blocks/waveBlock.pure.js")>]
+    let WaveBlock: WaveBlockStatic = jsNative
+
+    /// Inline object shape used by WebGPUCacheBindGroups.
+    [<AllowNullLiteral>]
+    type WebGPUCacheBindGroupsAccessor13Object =
+        abstract ``totalCreated``: float with get, set
+        abstract ``lastFrameCreated``: float with get, set
+        abstract ``lookupLastFrame``: float with get, set
+        abstract ``noLookupLastFrame``: float with get, set
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuCacheBindGroups
+    [<AllowNullLiteral>]
+    type WebGPUCacheBindGroups =
+        abstract ``disabled``: bool with get, set
+        abstract ``endFrame`` : unit -> unit
+        abstract ``getBindGroups`` : ``webgpuPipelineContext``: WebGPUPipelineContext * ``drawContext``: WebGPUDrawContext * ``materialContext``: WebGPUMaterialContext -> ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserGPUBindGroup>
+
+    [<AllowNullLiteral>]
+    type WebGPUCacheBindGroupsStatic =
+        inherit Constructor<WebGPUCacheBindGroups>
+        [<EmitConstructor>] abstract Create: ``device``: BabylonjsBindings.SimpleInterfaces.BrowserGPUDevice * ``cacheSampler``: WebGPUCacheSampler * ``engine``: WebGPUEngine -> WebGPUCacheBindGroups
+        abstract ``NumBindGroupsCreatedTotal``: float with get, set
+        abstract ``NumBindGroupsCreatedLastFrame``: float with get, set
+        abstract ``NumBindGroupsLookupLastFrame``: float with get, set
+        abstract ``NumBindGroupsNoLookupLastFrame``: float with get, set
+        abstract ``ResetCache`` : unit -> unit
+        abstract ``Statistics``: WebGPUCacheBindGroupsAccessor13Object with get
+
+    [<Import("WebGPUCacheBindGroups", "@babylonjs/core/Engines/WebGPU/webgpuCacheBindGroups.js")>]
+    let WebGPUCacheBindGroups: WebGPUCacheBindGroupsStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuTimestampQuery
+    [<AllowNullLiteral>]
+    type WebGPUDurationMeasure =
+        abstract ``start`` : ``encoder``: BabylonjsBindings.SimpleInterfaces.BrowserGPUCommandEncoder -> unit
+        abstract ``stop`` : ``encoder``: BabylonjsBindings.SimpleInterfaces.BrowserGPUCommandEncoder -> JS.Promise<float option>
+        abstract ``startPass`` : ``descriptor``: U2<BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassDescriptor, BabylonjsBindings.SimpleInterfaces.BrowserGPUComputePassDescriptor> * ``index``: float -> unit
+        abstract ``stopPass`` : ``index``: float -> JS.Promise<float option>
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type WebGPUDurationMeasureStatic =
+        inherit Constructor<WebGPUDurationMeasure>
+        [<EmitConstructor>] abstract Create: ``engine``: WebGPUEngine * ``device``: BabylonjsBindings.SimpleInterfaces.BrowserGPUDevice * ``bufferManager``: WebGPUBufferManager * ?``count``: float * ?``querySetLabel``: string -> WebGPUDurationMeasure
+
+    [<Import("WebGPUDurationMeasure", "@babylonjs/core/Engines/WebGPU/webgpuTimestampQuery.js")>]
+    let WebGPUDurationMeasure: WebGPUDurationMeasureStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuRenderTargetWrapper
+    [<AllowNullLiteral>]
+    type WebGPURenderTargetWrapper =
+        inherit RenderTargetWrapper
+        abstract ``_defaultAttachments``: ResizeArray<float> with get, set
+        abstract ``gpuTimeInFrame``: WebGPUPerfCounter option with get
+
+    [<AllowNullLiteral>]
+    type WebGPURenderTargetWrapperStatic =
+        inherit RenderTargetWrapperStatic
+        inherit Constructor<WebGPURenderTargetWrapper>
+        [<EmitConstructor>] abstract Create: ``isMulti``: bool * ``isCube``: bool * ``size``: BabylonjsBindings.TypeAliases.TextureSize * ``engine``: ThinWebGPUEngine * ?``label``: string -> WebGPURenderTargetWrapper
+
+    [<Import("WebGPURenderTargetWrapper", "@babylonjs/core/Engines/WebGPU/webgpuRenderTargetWrapper.js")>]
+    let WebGPURenderTargetWrapper: WebGPURenderTargetWrapperStatic = jsNative
+
+    /// @babylonjs/core/Engines/WebGPU/webgpuSnapshotRendering
+    [<AllowNullLiteral>]
+    type WebGPUSnapshotRendering =
+        abstract ``showDebugLogs``: bool with get, set
+        abstract ``endRenderPass`` : ``currentRenderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> bool
+        abstract ``endFrame`` : unit -> unit
+        abstract ``reset`` : unit -> unit
+        abstract ``enabled``: bool with get, set
+        abstract ``play``: bool with get
+        abstract ``record``: bool with get
+        abstract ``mode``: float with get, set
+
+    [<AllowNullLiteral>]
+    type WebGPUSnapshotRenderingStatic =
+        inherit Constructor<WebGPUSnapshotRendering>
+        [<EmitConstructor>] abstract Create: ``engine``: WebGPUEngine * ``renderingMode``: float * ``bundleList``: WebGPUBundleList -> WebGPUSnapshotRendering
+
+    [<Import("WebGPUSnapshotRendering", "@babylonjs/core/Engines/WebGPU/webgpuSnapshotRendering.js")>]
+    let WebGPUSnapshotRendering: WebGPUSnapshotRenderingStatic = jsNative
+
+    /// Inline object shape used by WebXRAbstractMotionController.
+    [<AllowNullLiteral>]
+    type WebXRAbstractMotionControllerProperty9Object =
+        [<EmitIndexer>] abstract Item: ``id``: string -> WebXRControllerComponent with get, set
+
+    /// @babylonjs/core/XR/motionController/webXRAbstractMotionController
+    [<AllowNullLiteral>]
+    type WebXRAbstractMotionController =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        abstract ``gamepadObject``: BabylonjsBindings.SimpleInterfaces.IMinimalMotionControllerObject with get, set
+        abstract ``handedness``: BabylonjsBindings.StringEnums.MotionControllerHandedness with get, set
+        abstract ``_doNotLoadControllerMesh``: bool with get, set
+        abstract ``components``: WebXRAbstractMotionControllerProperty9Object with get
+        abstract ``disableAnimation``: bool with get, set
+        abstract ``onModelLoadedObservable``: Observable<WebXRAbstractMotionController> with get, set
+        abstract ``profileId``: string with get, set
+        abstract ``rootMesh``: AbstractMesh option with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``getAllComponentsOfType`` : ``type``: BabylonjsBindings.StringEnums.MotionControllerComponentType -> ResizeArray<WebXRControllerComponent>
+        abstract ``getComponent`` : ``id``: string -> WebXRControllerComponent
+        abstract ``getComponentIds`` : unit -> ResizeArray<string>
+        abstract ``getComponentOfType`` : ``type``: BabylonjsBindings.StringEnums.MotionControllerComponentType -> WebXRControllerComponent option
+        abstract ``getMainComponent`` : unit -> WebXRControllerComponent
+        abstract ``loadModel`` : unit -> JS.Promise<bool>
+        abstract ``updateFromXRFrame`` : ``xrFrame``: BabylonjsBindings.SimpleInterfaces.BrowserXRFrame -> unit
+        abstract ``pulse`` : ``value``: float * ``duration``: float * ?``hapticActuatorIndex``: float -> JS.Promise<bool>
+        abstract ``handness``: BabylonjsBindings.StringEnums.MotionControllerHandedness with get
+
+    [<AllowNullLiteral>]
+    type WebXRAbstractMotionControllerStatic =
+        inherit Constructor<WebXRAbstractMotionController>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene * ``layout``: BabylonjsBindings.SimpleInterfaces.IMotionControllerLayout * ``gamepadObject``: BabylonjsBindings.SimpleInterfaces.IMinimalMotionControllerObject * ``handedness``: BabylonjsBindings.StringEnums.MotionControllerHandedness * ?``_doNotLoadControllerMesh``: bool * ?``_controllerCache``: ResizeArray<InlineObject5a70328a1152Object> -> WebXRAbstractMotionController
+
+    [<Import("WebXRAbstractMotionController", "@babylonjs/core/XR/motionController/webXRAbstractMotionController.js")>]
+    let WebXRAbstractMotionController: WebXRAbstractMotionControllerStatic = jsNative
+
+    /// @babylonjs/core/XR/webXRManagedOutputCanvas
+    [<AllowNullLiteral>]
+    type WebXRManagedOutputCanvasOptions =
+        abstract ``canvasElement``: Browser.Types.HTMLCanvasElement option with get, set
+        abstract ``canvasOptions``: BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayerInit option with get, set
+        abstract ``newCanvasCssStyle``: string option with get, set
+
+    [<AllowNullLiteral>]
+    type WebXRManagedOutputCanvasOptionsStatic =
+        inherit Constructor<WebXRManagedOutputCanvasOptions>
+        [<EmitConstructor>] abstract Create: unit -> WebXRManagedOutputCanvasOptions
+        abstract ``GetDefaults`` : ?``engine``: AbstractEngine -> WebXRManagedOutputCanvasOptions
+
+    [<Import("WebXRManagedOutputCanvasOptions", "@babylonjs/core/XR/webXRManagedOutputCanvas.js")>]
+    let WebXRManagedOutputCanvasOptions: WebXRManagedOutputCanvasOptionsStatic = jsNative
+
+    /// @babylonjs/core/Audio/weightedsound
+    [<AllowNullLiteral>]
+    type WeightedSound =
+        abstract ``loop``: bool with get, set
+        abstract ``isPlaying``: bool with get, set
+        abstract ``isPaused``: bool with get, set
+        abstract ``pause`` : unit -> unit
+        abstract ``stop`` : unit -> unit
+        abstract ``play`` : ?``startOffset``: float -> unit
+        abstract ``directionalConeInnerAngle``: float with get, set
+        abstract ``directionalConeOuterAngle``: float with get, set
+        abstract ``volume``: float with get, set
+
+    [<AllowNullLiteral>]
+    type WeightedSoundStatic =
+        inherit Constructor<WeightedSound>
+        [<EmitConstructor>] abstract Create: ``loop``: bool * ``sounds``: ResizeArray<Sound> * ``weights``: ResizeArray<float> -> WeightedSound
+
+    [<Import("WeightedSound", "@babylonjs/core/Audio/weightedsound.js")>]
+    let WeightedSound: WeightedSoundStatic = jsNative
+
+    /// @babylonjs/core/Materials/Node/Blocks/worleyNoise3DBlock.pure
+    [<AllowNullLiteral>]
+    type WorleyNoise3DBlock =
+        inherit NodeMaterialBlock
+        abstract ``manhattanDistance``: bool with get, set
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : unit -> obj
+        abstract ``_deserialize`` : ``serializationObject``: obj * ``scene``: Scene * ``rootUrl``: string -> unit
+        abstract ``seed``: NodeMaterialConnectionPoint with get
+        abstract ``jitter``: NodeMaterialConnectionPoint with get
+        abstract ``output``: NodeMaterialConnectionPoint with get
+        abstract ``x``: NodeMaterialConnectionPoint with get
+        abstract ``y``: NodeMaterialConnectionPoint with get
+
+    [<AllowNullLiteral>]
+    type WorleyNoise3DBlockStatic =
+        inherit NodeMaterialBlockStatic
+        inherit Constructor<WorleyNoise3DBlock>
+        [<EmitConstructor>] abstract Create: ``name``: string -> WorleyNoise3DBlock
+
+    [<Import("WorleyNoise3DBlock", "@babylonjs/core/Materials/Node/Blocks/worleyNoise3DBlock.pure.js")>]
+    let WorleyNoise3DBlock: WorleyNoise3DBlockStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRSpaceWarp.pure
+    [<AllowNullLiteral>]
+    type XRSpaceWarpRenderTarget =
+        inherit RenderTargetTexture
+        abstract ``render`` : ?``useCameraPostProcess``: bool * ?``dumpForDebug``: bool -> unit
+        abstract ``_bindFrameBuffer`` : unit -> unit
+        abstract ``getViewCount`` : unit -> float
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type XRSpaceWarpRenderTargetStatic =
+        inherit RenderTargetTextureStatic
+        inherit Constructor<XRSpaceWarpRenderTarget>
+        [<EmitConstructor>] abstract Create: ``motionVectorTexture``: Browser.Types.WebGLTexture * ``depthStencilTexture``: Browser.Types.WebGLTexture * ?``scene``: Scene * ?``size``: U3<float, InlineObject38742680c103Object, InlineObjecte000fd4b6300Object> -> XRSpaceWarpRenderTarget
+
+    [<Import("XRSpaceWarpRenderTarget", "@babylonjs/core/XR/features/WebXRSpaceWarp.pure.js")>]
+    let XRSpaceWarpRenderTarget: XRSpaceWarpRenderTargetStatic = jsNative

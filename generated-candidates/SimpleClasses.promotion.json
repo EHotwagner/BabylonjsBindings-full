@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "1a07e801a2724355eaab10b2054afec820171dc79db1843e1bc0d9da65782289",
+  "proposalSha256": "53e6cfdc245b19ef1a115e63a8173d1d35d4194d4e133f3c28a319b8498a8bfd",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -15692,13 +15692,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.NativeXRRenderTarget",
-      "fidelityIssues": [
-        "unprojected implements WebXRRenderTarget"
-      ],
+      "fidelityIssues": [],
       "genericDefaults": [],
       "structuralImplements": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.WebXRSessionManager"
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget"
       ],
       "memberCount": 5
     },
@@ -18583,15 +18582,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PhysicsEngineV2",
-      "fidelityIssues": [
-        "unprojected implements IPhysicsEngine"
-      ],
+      "fidelityIssues": [],
       "genericDefaults": [],
       "structuralImplements": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.PhysicsBody",
         "BabylonjsBindings.SimpleClasses.PhysicsRaycastResult",
         "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IPhysicsEngine",
         "BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePluginV2",
         "BabylonjsBindings.SimpleInterfaces.IRaycastQuery"
       ],
@@ -25444,15 +25442,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRManagedOutputCanvas",
-      "fidelityIssues": [
-        "unprojected implements WebXRRenderTarget"
-      ],
+      "fidelityIssues": [],
       "genericDefaults": [],
       "structuralImplements": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.WebXRManagedOutputCanvasOptions",
-        "BabylonjsBindings.SimpleClasses.WebXRSessionManager"
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget"
       ],
       "memberCount": 6
     },

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "f4b23f6983ea813a82e229aaec2d377096f53109393d1474422b9107ec53e200",
+  "proposalSha256": "a98311b45b2c3b1422b32976e1dd38af854c95ae2ede20bc8fab7ac82f0d8364",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5889,6 +5889,19 @@
         "BabylonjsBindings.SimpleClasses.Bone"
       ],
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/IPhysicsEngine",
+      "name": "IPhysicsEngine",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPhysicsEngine",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.PhysicsRaycastResult",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 12
     },
     {
       "package": "@babylonjs/core",

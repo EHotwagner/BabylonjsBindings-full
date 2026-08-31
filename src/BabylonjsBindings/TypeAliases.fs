@@ -820,3 +820,8 @@ module TypeAliases =
     [<AllowNullLiteral>]
     type TrianglePickingPredicate =
         [<Emit("$0($1...)")>] abstract Invoke: p0: BabylonjsBindings.SimpleClasses.Vector3 * p1: BabylonjsBindings.SimpleClasses.Vector3 * p2: BabylonjsBindings.SimpleClasses.Vector3 * ray: BabylonjsBindings.SimpleClasses.Ray * i0: System.Double * i1: System.Double * i2: System.Double -> bool
+
+    /// @babylonjs/core/Engines/abstractEngine.pure
+    [<AllowNullLiteral>]
+    type PrepareTextureFunction =
+        [<Emit("$0($1...)")>] abstract Invoke: texture: BabylonjsBindings.SimpleClasses.InternalTexture * extension: string * scene: BabylonjsBindings.SimpleInterfaces.ISceneLike option * img: U3<Browser.Types.HTMLImageElement, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap, AliasObject38742680c103> * invertY: bool * noMipmap: bool * isCompressed: bool * processFunction: BabylonjsBindings.TypeAliases.PrepareTextureProcessFunction * samplingMode: System.Double -> unit

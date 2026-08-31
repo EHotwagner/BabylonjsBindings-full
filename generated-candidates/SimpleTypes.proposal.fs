@@ -8982,6 +8982,22 @@ module SimpleInterfaces =
         abstract ``node``: IGLTFNode with get, set
         abstract ``id``: string with get, set
 
+    /// @babylonjs/core/Physics/IPhysicsEngine
+    [<AllowNullLiteral>]
+    type IPhysicsEngine =
+        abstract ``gravity``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``getPluginVersion``: unit -> float
+        abstract ``setGravity``: ``gravity``: BabylonjsBindings.SimpleClasses.Vector3 -> unit
+        abstract ``setTimeStep``: ``newTimeStep``: float -> unit
+        abstract ``getTimeStep``: unit -> float
+        abstract ``setSubTimeStep``: ``subTimeStep``: float -> unit
+        abstract ``getSubTimeStep``: unit -> float
+        abstract ``dispose``: unit -> unit
+        abstract ``getPhysicsPluginName``: unit -> string
+        abstract ``getPhysicsPlugin``: unit -> U2<IPhysicsEnginePlugin, IPhysicsEnginePluginV2> option
+        abstract ``raycast``: ``from``: BabylonjsBindings.SimpleClasses.Vector3 * ``to``: BabylonjsBindings.SimpleClasses.Vector3 * ?``query``: IRaycastQuery -> BabylonjsBindings.SimpleClasses.PhysicsRaycastResult
+        abstract ``_step``: ``delta``: float -> unit
+
     /// Function-valued IPipelineContext._handlesSpectorRebuildCallback property.
     [<AllowNullLiteral>]
     type IPipelineContextHandlesSpectorRebuildCallbackCallback =
@@ -34959,6 +34975,7 @@ module SimpleClasses =
     /// @babylonjs/core/XR/native/nativeXRRenderTarget
     [<AllowNullLiteral>]
     type NativeXRRenderTarget =
+        inherit BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer>
         abstract ``canvasContext``: Browser.Types.WebGLRenderingContext with get, set
         abstract ``xrLayer``: BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer option with get, set
         abstract ``initializeXRLayerAsync`` : ``xrSession``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession -> JS.Promise<BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer>
@@ -40101,6 +40118,7 @@ module SimpleClasses =
     /// @babylonjs/core/Physics/v2/physicsEngine
     [<AllowNullLiteral>]
     type PhysicsEngineV2 =
+        inherit BabylonjsBindings.SimpleInterfaces.IPhysicsEngine
         abstract ``gravity``: Vector3 with get, set
         abstract ``getPluginVersion`` : unit -> float
         abstract ``setGravity`` : ``gravity``: Vector3 -> unit
@@ -52516,6 +52534,7 @@ module SimpleClasses =
     /// @babylonjs/core/XR/webXRManagedOutputCanvas
     [<AllowNullLiteral>]
     type WebXRManagedOutputCanvas =
+        inherit BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer>
         abstract ``canvasContext``: BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext with get, set
         abstract ``xrLayer``: BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer option with get, set
         abstract ``onXRLayerInitObservable``: Observable<BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer> with get, set

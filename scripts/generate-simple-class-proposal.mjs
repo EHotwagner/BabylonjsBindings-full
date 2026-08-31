@@ -1307,6 +1307,13 @@ const renderImplements = (declaration, available) => {
   for (const heritage of (declaration.heritageClauses ?? []).filter(clause => clause.token === ts.SyntaxKind.ImplementsKeyword).flatMap(clause => clause.types)) {
     if (!ts.isIdentifier(heritage.expression)) continue;
     const target = maintainedSymbols.get(heritage.expression.text);
+    if (target && heritage.expression.text === "WebXRRenderTarget" && target.arity === 2 && !heritage.typeArguments?.length) {
+      rendered.push({
+        source: "WebXRRenderTarget",
+        rendered: `${target.fsharpSymbol}<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLLayer>`
+      });
+      continue;
+    }
     if (!target || target.arity !== (heritage.typeArguments?.length ?? 0)) continue;
     const dependencies = new Set();
     const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));

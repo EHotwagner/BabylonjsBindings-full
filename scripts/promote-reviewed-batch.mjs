@@ -23,9 +23,10 @@ for (const specification of specifications) {
   const maintainedManifest = JSON.parse(await readFile(maintainedManifestPath, "utf8"));
   const candidateManifest = JSON.parse(await readFile(resolve(root, `generated-candidates/${specification.candidateName}.promotion.json`), "utf8"));
   const candidateSource = await readFile(resolve(root, `generated-candidates/${specification.candidateName}.proposal.fs`), "utf8");
+  const maintainedSource = await readFile(resolve(root, `src/BabylonjsBindings/${specification.maintainedFile}`), "utf8");
   const previewSource = await readFile(resolve(root, `generated-candidates/promotion-batch/${specification.maintainedFile}`), "utf8");
   const selectedEntries = batch.selected.filter(entry => entry.category === specification.category && !entry.supportOnly);
-  if (selectedEntries.length === 0) continue;
+  if (selectedEntries.length === 0 && previewSource === maintainedSource) continue;
   const selectedIdentities = new Set(selectedEntries.filter(entry => !entry.projectionOnly).map(identity));
   const projectionIdentities = new Set(selectedEntries.filter(entry => entry.projectionOnly).map(identity));
   const maintainedIdentities = new Set(maintainedManifest.exports.map(identity));
