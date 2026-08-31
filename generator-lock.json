@@ -21,7 +21,7 @@
     }
   ],
   "authoritativeDeclarationLockSha256": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceSha256": "9804526df044ee29933e2cdf5763175c270ea1aa118d38523fa21d703aa16e09",
+  "maintainedSurfaceSha256": "372c8e3475642edb316a016b411a5137f9e30d0e52883512ed79bdfb85dc7551",
   "maintainedSources": [
     {
       "path": "src/BabylonjsBindings/Bindings.fs",
@@ -41,27 +41,27 @@
     },
     {
       "path": "src/BabylonjsBindings/TypeAliases.fs",
-      "sha256": "fb8eb42e5e51c8779208e1247fa3037fd8ba4d98d8dd19765edf1b1ec32ce9dc"
+      "sha256": "d48ec8bab95f0d9fae67491ae75c3c1a8a3091873b075358b6dbadeef59609d2"
     },
     {
       "path": "src/BabylonjsBindings/SimpleInterfaces.fs",
-      "sha256": "cb39cfc9861d785eda960834aa3e8401c18185c3a3c7ca088ec11104472e648c"
+      "sha256": "d7c695ddf62a173fc74efc453bf214106f6295f7ace886c1f863478cb21aa9bd"
     },
     {
       "path": "src/BabylonjsBindings/SimpleClasses.fs",
-      "sha256": "59c2961ea5ca40d724b5adbbe9cd8403ae371ab85a8e1186c60c3b31ee7eb96d"
+      "sha256": "2721864c9a77e4c2ef0464dff46ba834a551da3c964f25681d10ecfcfa1a2a92"
     },
     {
       "path": "src/BabylonjsBindings/SimpleTypes.fs",
-      "sha256": "b4111f3e152f0fb3b16cc095664c8cf218a6f5c96fe046582fcb7ea1087cdc7e"
+      "sha256": "6ce04a064ac4d0b6b32817a8f295e26b1669fd049c9dc707362d75bdeb5619c3"
     },
     {
       "path": "src/BabylonjsBindings/SimpleFunctions.fs",
-      "sha256": "72f978569914422488b5a2408407409fb39d1fb91142e82241859a6002f053f0"
+      "sha256": "3d18554c827959e61ecab5b45fbd106e6f6ef8122d8462fe2cc21cee0db5d1b3"
     },
     {
       "path": "src/BabylonjsBindings/SimpleVariables.fs",
-      "sha256": "7b7f1fa79d582031364a78a58fc16bd88570a0aac6ded23d0376236b0e1102a2"
+      "sha256": "7cc3b3566a8274c4efbdef0c0c9dbb1a71635515b6dc9439d817a7f6e470e332"
     }
   ],
   "tools": {

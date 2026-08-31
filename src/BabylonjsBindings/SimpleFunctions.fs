@@ -8973,3 +8973,243 @@ module SimpleFunctions =
 
     [<Import("WhenTextureReadyAsync", "@babylonjs/core/Misc/textureTools.js")>]
     let ``WhenTextureReadyAsync``: FunctionBinding_WhenTextureReadyAsync = jsNative
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileParser.function
+    [<AllowNullLiteral>]
+    type FunctionBinding_AddParser =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``parser``: BabylonjsBindings.TypeAliases.BabylonFileParser -> unit
+
+    [<Import("AddParser", "@babylonjs/core/Loading/Plugins/babylonFileParser.function.js")>]
+    let ``AddParser``: FunctionBinding_AddParser = jsNative
+
+    /// @babylonjs/core/Misc/equirectangularCapture.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_captureEquirectangularFromScene =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``options``: BabylonjsBindings.SimpleInterfaces.EquiRectangularCaptureOptions -> JS.Promise<JS.ArrayBufferView option>
+
+    [<Import("captureEquirectangularFromScene", "@babylonjs/core/Misc/equirectangularCapture.pure.js")>]
+    let ``captureEquirectangularFromScene``: FunctionBinding_captureEquirectangularFromScene = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateFactorOperand =
+        [<Emit("$0($1...)")>] abstract Invoke: ``factor``: BabylonjsBindings.SimpleClasses.Color4 -> BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand
+
+    [<Import("CreateFactorOperand", "@babylonjs/core/Materials/Textures/textureProcessor.js")>]
+    let ``CreateFactorOperand``: FunctionBinding_CreateFactorOperand = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/greasedLineBuilder
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateGreasedLine =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``options``: BabylonjsBindings.SimpleInterfaces.GreasedLineMeshBuilderOptions * ?``materialOptions``: BabylonjsBindings.SimpleInterfaces.GreasedLineMaterialBuilderOptions option * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> U3<BabylonjsBindings.SimpleClasses.GreasedLineBaseMesh, BabylonjsBindings.SimpleClasses.GreasedLineMesh, BabylonjsBindings.SimpleClasses.GreasedLineRibbonMesh>
+
+    [<Import("CreateGreasedLine", "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js")>]
+    let ``CreateGreasedLine``: FunctionBinding_CreateGreasedLine = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/greasedLineBuilder
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateGreasedLineMaterial =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``options``: BabylonjsBindings.SimpleInterfaces.GreasedLineMaterialOptions * ``scene``: BabylonjsBindings.SimpleClasses.Scene option -> U3<BabylonjsBindings.SimpleClasses.StandardMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, BabylonjsBindings.SimpleClasses.GreasedLineSimpleMaterial>
+
+    [<Import("CreateGreasedLineMaterial", "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js")>]
+    let ``CreateGreasedLineMaterial``: FunctionBinding_CreateGreasedLineMaterial = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureMerger
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateRGBAConfiguration =
+        [<Emit("$0($1...)")>] abstract Invoke: ``red``: BabylonjsBindings.TypeAliases.ChannelInput * ?``green``: BabylonjsBindings.TypeAliases.ChannelInput * ?``blue``: BabylonjsBindings.TypeAliases.ChannelInput * ?``alpha``: BabylonjsBindings.TypeAliases.ChannelInput -> BabylonjsBindings.SimpleInterfaces.ITextureMergeConfiguration
+
+    [<Import("CreateRGBAConfiguration", "@babylonjs/core/Materials/Textures/textureMerger.js")>]
+    let ``CreateRGBAConfiguration``: FunctionBinding_CreateRGBAConfiguration = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureMerger
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateTextureInput =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.SimpleClasses.BaseTexture * ``sourceChannel``: float -> BabylonjsBindings.SimpleInterfaces.ITextureChannelInput
+
+    [<Import("CreateTextureInput", "@babylonjs/core/Materials/Textures/textureMerger.js")>]
+    let ``CreateTextureInput``: FunctionBinding_CreateTextureInput = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateTextureOperand =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.SimpleClasses.BaseTexture option * ?``channel``: BabylonjsBindings.Enums.TextureChannel * ?``colorSpace``: BabylonjsBindings.Enums.TextureColorSpace -> BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand
+
+    [<Import("CreateTextureOperand", "@babylonjs/core/Materials/Textures/textureProcessor.js")>]
+    let ``CreateTextureOperand``: FunctionBinding_CreateTextureOperand = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateTextureWithFactorOperand =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.SimpleClasses.BaseTexture option * ``factor``: BabylonjsBindings.SimpleClasses.Color4 * ?``channel``: BabylonjsBindings.Enums.TextureChannel * ?``colorSpace``: BabylonjsBindings.Enums.TextureColorSpace -> BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand
+
+    [<Import("CreateTextureWithFactorOperand", "@babylonjs/core/Materials/Textures/textureProcessor.js")>]
+    let ``CreateTextureWithFactorOperand``: FunctionBinding_CreateTextureWithFactorOperand = jsNative
+
+    /// @babylonjs/core/PostProcesses/RenderPipeline/Pipelines/defaultRenderingPipeline.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_DefaultRenderingPipelineParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``rootUrl``: string -> BabylonjsBindings.SimpleClasses.DefaultRenderingPipeline
+
+    [<Import("DefaultRenderingPipelineParse", "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/defaultRenderingPipeline.pure.js")>]
+    let ``DefaultRenderingPipelineParse``: FunctionBinding_DefaultRenderingPipelineParse = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type FunctionBinding_ExtractChannelAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``input``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``channel``: BabylonjsBindings.Enums.TextureChannel * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``outputColorSpace``: BabylonjsBindings.Enums.TextureColorSpace * ?``outputChannelMask``: BabylonjsBindings.Enums.ChannelMask -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand>
+
+    [<Import("ExtractChannelAsync", "@babylonjs/core/Materials/Textures/textureProcessor.js")>]
+    let ``ExtractChannelAsync``: FunctionBinding_ExtractChannelAsync = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type FunctionBinding_ExtractMaxChannelAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``input``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``includeAlpha``: bool * ?``outputColorSpace``: BabylonjsBindings.Enums.TextureColorSpace * ?``outputChannelMask``: BabylonjsBindings.Enums.ChannelMask -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand>
+
+    [<Import("ExtractMaxChannelAsync", "@babylonjs/core/Materials/Textures/textureProcessor.js")>]
+    let ``ExtractMaxChannelAsync``: FunctionBinding_ExtractMaxChannelAsync = jsNative
+
+    /// @babylonjs/core/Decorators/nodeDecorator
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetEditableProperties =
+        [<Emit("$0($1...)")>] abstract Invoke: ``target``: obj -> ResizeArray<BabylonjsBindings.SimpleInterfaces.IPropertyDescriptionForEdition>
+
+    [<Import("GetEditableProperties", "@babylonjs/core/Decorators/nodeDecorator.js")>]
+    let ``GetEditableProperties``: FunctionBinding_GetEditableProperties = jsNative
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileParser.function
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetParser =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string -> BabylonjsBindings.TypeAliases.BabylonFileParser option
+
+    [<Import("GetParser", "@babylonjs/core/Loading/Plugins/babylonFileParser.function.js")>]
+    let ``GetParser``: FunctionBinding_GetParser = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type FunctionBinding_InvertTextureAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``input``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``channels``: BabylonjsBindings.Enums.ChannelMask * ?``outputColorSpace``: BabylonjsBindings.Enums.TextureColorSpace * ?``outputChannelMask``: BabylonjsBindings.Enums.ChannelMask -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand>
+
+    [<Import("InvertTextureAsync", "@babylonjs/core/Materials/Textures/textureProcessor.js")>]
+    let ``InvertTextureAsync``: FunctionBinding_InvertTextureAsync = jsNative
+
+    /// @babylonjs/core/FlowGraph/utils
+    [<AllowNullLiteral>]
+    type FunctionBinding_isNumeric =
+        [<Emit("$0($1...)")>] abstract Invoke: ``a``: BabylonjsBindings.TypeAliases.FlowGraphMathOperationType * ?``validIfNaN``: bool -> bool
+
+    [<Import("isNumeric", "@babylonjs/core/FlowGraph/utils.js")>]
+    let ``isNumeric``: FunctionBinding_isNumeric = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type FunctionBinding_LerpTexturesAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``a``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``b``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``t``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``outputColorSpace``: BabylonjsBindings.Enums.TextureColorSpace * ?``outputChannelMask``: BabylonjsBindings.Enums.ChannelMask -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand>
+
+    [<Import("LerpTexturesAsync", "@babylonjs/core/Materials/Textures/textureProcessor.js")>]
+    let ``LerpTexturesAsync``: FunctionBinding_LerpTexturesAsync = jsNative
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_LoadAllSmartAssetsAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene -> JS.Promise<ResizeArray<BabylonjsBindings.SimpleClasses.AssetContainer>>
+
+    [<Import("LoadAllSmartAssetsAsync", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
+    let ``LoadAllSmartAssetsAsync``: FunctionBinding_LoadAllSmartAssetsAsync = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type FunctionBinding_MaxTexturesAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``a``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``b``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``outputColorSpace``: BabylonjsBindings.Enums.TextureColorSpace * ?``outputChannelMask``: BabylonjsBindings.Enums.ChannelMask -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand>
+
+    [<Import("MaxTexturesAsync", "@babylonjs/core/Materials/Textures/textureProcessor.js")>]
+    let ``MaxTexturesAsync``: FunctionBinding_MaxTexturesAsync = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureMerger
+    [<AllowNullLiteral>]
+    type FunctionBinding_MergeTexturesAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``config``: BabylonjsBindings.SimpleInterfaces.ITextureMergeConfiguration * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> JS.Promise<BabylonjsBindings.SimpleClasses.ProceduralTexture>
+
+    [<Import("MergeTexturesAsync", "@babylonjs/core/Materials/Textures/textureMerger.js")>]
+    let ``MergeTexturesAsync``: FunctionBinding_MergeTexturesAsync = jsNative
+
+    /// @babylonjs/core/Materials/Textures/textureProcessor
+    [<AllowNullLiteral>]
+    type FunctionBinding_MultiplyTexturesAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``a``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``b``: BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``outputColorSpace``: BabylonjsBindings.Enums.TextureColorSpace * ?``outputChannelMask``: BabylonjsBindings.Enums.ChannelMask -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ITextureProcessOperand>
+
+    [<Import("MultiplyTexturesAsync", "@babylonjs/core/Materials/Textures/textureProcessor.js")>]
+    let ``MultiplyTexturesAsync``: FunctionBinding_MultiplyTexturesAsync = jsNative
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileParser.function
+    [<AllowNullLiteral>]
+    type FunctionBinding_Parse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``jsonData``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``container``: BabylonjsBindings.SimpleClasses.AssetContainer * ``rootUrl``: string -> unit
+
+    [<Import("Parse", "@babylonjs/core/Loading/Plugins/babylonFileParser.function.js")>]
+    let ``Parse``: FunctionBinding_Parse = jsNative
+
+    /// @babylonjs/loaders/BVH/bvhLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_ReadBvh =
+        [<Emit("$0($1...)")>] abstract Invoke: ``text``: string * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``assetContainer``: BabylonjsBindings.SimpleClasses.AssetContainer option * ``loadingOptions``: BabylonjsBindings.ObjectTypes.BVHLoadingOptions -> BabylonjsBindings.SimpleClasses.Skeleton
+
+    [<Import("ReadBvh", "@babylonjs/loaders/BVH/bvhLoader.js")>]
+    let ``ReadBvh``: FunctionBinding_ReadBvh = jsNative
+
+    /// @babylonjs/core/Materials/materialPluginManager.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_RegisterMaterialPlugin =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pluginName``: string * ``factory``: BabylonjsBindings.TypeAliases.PluginMaterialFactory -> unit
+
+    [<Import("RegisterMaterialPlugin", "@babylonjs/core/Materials/materialPluginManager.pure.js")>]
+    let ``RegisterMaterialPlugin``: FunctionBinding_RegisterMaterialPlugin = jsNative
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_ReloadSmartAssetAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``key``: string -> JS.Promise<U2<BabylonjsBindings.SimpleClasses.AssetContainer, BabylonjsBindings.SimpleClasses.BaseTexture>>
+
+    [<Import("ReloadSmartAssetAsync", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
+    let ``ReloadSmartAssetAsync``: FunctionBinding_ReloadSmartAssetAsync = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
+    [<AllowNullLiteral>]
+    type FunctionBinding_SetInterpolationForKey =
+        [<Emit("$0($1...)")>] abstract Invoke: ``key``: string * ?``interpolation``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IInterpolationPropertyInfo> -> unit
+
+    [<Import("SetInterpolationForKey", "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.js")>]
+    let ``SetInterpolationForKey``: FunctionBinding_SetInterpolationForKey = jsNative
+
+    /// @babylonjs/core/PostProcesses/RenderPipeline/Pipelines/ssao2RenderingPipeline.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_SSAO2RenderingPipelineParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``rootUrl``: string -> BabylonjsBindings.SimpleClasses.SSAO2RenderingPipeline
+
+    [<Import("SSAO2RenderingPipelineParse", "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/ssao2RenderingPipeline.pure.js")>]
+    let ``SSAO2RenderingPipelineParse``: FunctionBinding_SSAO2RenderingPipelineParse = jsNative
+
+    /// @babylonjs/core/PostProcesses/RenderPipeline/Pipelines/ssrRenderingPipeline.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_SSRRenderingPipelineParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``rootUrl``: string -> BabylonjsBindings.SimpleClasses.SSRRenderingPipeline
+
+    [<Import("SSRRenderingPipelineParse", "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/ssrRenderingPipeline.pure.js")>]
+    let ``SSRRenderingPipelineParse``: FunctionBinding_SSRRenderingPipelineParse = jsNative
+
+    /// @babylonjs/core/PostProcesses/RenderPipeline/Pipelines/standardRenderingPipeline.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_StandardRenderingPipelineParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``rootUrl``: string -> BabylonjsBindings.SimpleClasses.StandardRenderingPipeline
+
+    [<Import("StandardRenderingPipelineParse", "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/standardRenderingPipeline.pure.js")>]
+    let ``StandardRenderingPipelineParse``: FunctionBinding_StandardRenderingPipelineParse = jsNative
+
+    /// @babylonjs/core/PostProcesses/RenderPipeline/Pipelines/taaRenderingPipeline.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_TAARenderingPipelineParse =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: obj * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``rootUrl``: string -> BabylonjsBindings.SimpleClasses.TAARenderingPipeline
+
+    [<Import("TAARenderingPipelineParse", "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/taaRenderingPipeline.pure.js")>]
+    let ``TAARenderingPipelineParse``: FunctionBinding_TAARenderingPipelineParse = jsNative

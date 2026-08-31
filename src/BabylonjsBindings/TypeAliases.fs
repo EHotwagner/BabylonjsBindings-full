@@ -856,3 +856,24 @@ module TypeAliases =
     type ToneMapPostProcessOptions =
         inherit BabylonjsBindings.SimpleInterfaces.ThinTonemapPostProcessOptions
         inherit BabylonjsBindings.TypeAliases.PostProcessOptions
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject21cda25aa7be =
+        abstract ``keepInRam``: bool option with get, set
+        abstract ``flipY``: bool option with get, set
+        abstract ``deflateURL``: string option with get, set
+        abstract ``fflate``: obj option with get, set
+        abstract ``disableAutoCameraLimits``: bool option with get, set
+        abstract ``gaussianSplattingMesh``: BabylonjsBindings.SimpleClasses.GaussianSplattingMesh option with get, set
+        abstract ``needsRotationScaleTextures``: bool option with get, set
+        abstract ``useSogTextures``: bool option with get, set
+        abstract ``spzLibraryUrl``: string option with get, set
+
+    /// @babylonjs/loaders/SPLAT/splatLoadingOptions
+    type SPLATLoadingOptions = AliasObject21cda25aa7be
+
+    /// @babylonjs/core/XR/webXRFeaturesManager
+    [<AllowNullLiteral>]
+    type WebXRFeatureConstructor =
+        [<Emit("$0($1...)")>] abstract Invoke: xrSessionManager: BabylonjsBindings.SimpleClasses.WebXRSessionManager * ?options: obj -> System.Func<BabylonjsBindings.SimpleInterfaces.IWebXRFeature>

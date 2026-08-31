@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "b0c83805eccbf18fb80b24ba9b08b0248bb2a2edc82a5078c1c52a3d48d4993c",
+  "proposalSha256": "e9956c31662c64c8abef17d0d5f16e95840c3687fd47b64f4f59d027b06213d6",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1134,6 +1134,31 @@
         "BabylonjsBindings.SimpleInterfaces.ThinTonemapPostProcessOptions"
       ],
       "shape": "intersectionAlias",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/SPLAT/splatLoadingOptions",
+      "name": "SPLATLoadingOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.SPLATLoadingOptions",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "WebXRFeatureConstructor",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebXRFeatureConstructor",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRFeature"
+      ],
+      "shape": "callback",
       "memberCount": 2
     }
   ],

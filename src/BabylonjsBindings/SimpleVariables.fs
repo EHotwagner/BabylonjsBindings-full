@@ -4818,3 +4818,136 @@ module SimpleVariables =
     /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
     [<Import("TempSkeletonIndexContainer", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
     let ``TempSkeletonIndexContainer``: VariableShape_TempSkeletonIndexContainer = jsNative
+
+    /// Inline object shape of CopyTools.
+    [<AllowNullLiteral>]
+    type VariableShape_CopyTools =
+        abstract ``GenerateBase64StringFromPixelData``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GenerateBase64StringFromPixelData with get, set
+        abstract ``GenerateBase64StringFromTexture``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GenerateBase64StringFromTexture with get, set
+        abstract ``GenerateBase64StringFromTextureAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GenerateBase64StringFromTextureAsync with get, set
+
+    /// @babylonjs/core/Misc/copyTools
+    [<Import("CopyTools", "@babylonjs/core/Misc/copyTools.js")>]
+    let ``CopyTools``: VariableShape_CopyTools = jsNative
+
+    /// Inline object shape of DumpTools.
+    [<AllowNullLiteral>]
+    type VariableShape_DumpTools =
+        abstract ``DumpData``: BabylonjsBindings.SimpleFunctions.FunctionBinding_DumpData with get, set
+        abstract ``DumpDataAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_DumpDataAsync with get, set
+        abstract ``DumpFramebuffer``: BabylonjsBindings.SimpleFunctions.FunctionBinding_DumpFramebuffer with get, set
+        abstract ``Dispose``: BabylonjsBindings.SimpleFunctions.FunctionBinding_Dispose with get, set
+
+    /// @babylonjs/core/Misc/dumpTools.pure
+    [<Import("DumpTools", "@babylonjs/core/Misc/dumpTools.pure.js")>]
+    let ``DumpTools``: VariableShape_DumpTools = jsNative
+
+    /// Inline object shape of FrameGraphUtils.
+    [<AllowNullLiteral>]
+    type VariableShape_FrameGraphUtils =
+        abstract ``FindMainCamera``: BabylonjsBindings.SimpleFunctions.FunctionBinding_FindMainCamera with get, set
+        abstract ``FindMainObjectRenderer``: BabylonjsBindings.SimpleFunctions.FunctionBinding_FindMainObjectRenderer with get, set
+        abstract ``CreateUtilityLayerRenderer``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateUtilityLayerRenderer with get, set
+
+    /// @babylonjs/core/FrameGraph/frameGraphUtils
+    [<Import("FrameGraphUtils", "@babylonjs/core/FrameGraph/frameGraphUtils.js")>]
+    let ``FrameGraphUtils``: VariableShape_FrameGraphUtils = jsNative
+
+    /// @babylonjs/core/Culling/ray.core
+    [<Import("PickingCustomization", "@babylonjs/core/Culling/ray.core.js")>]
+    let ``PickingCustomization``: BabylonjsBindings.SimpleInterfaces.IPickingCustomization = jsNative
+
+    /// Inline object shape of PlaneBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_PlaneBuilder =
+        abstract ``CreatePlane``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePlane with get, set
+
+    /// @babylonjs/core/Meshes/Builders/planeBuilder.pure
+    [<Import("PlaneBuilder", "@babylonjs/core/Meshes/Builders/planeBuilder.pure.js")>]
+    let ``PlaneBuilder``: VariableShape_PlaneBuilder = jsNative
+
+    /// Inline object shape of PolygonBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_PolygonBuilder =
+        abstract ``ExtrudePolygon``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtrudePolygon with get, set
+        abstract ``CreatePolygon``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolygon with get, set
+
+    /// @babylonjs/core/Meshes/Builders/polygonBuilder.pure
+    [<Import("PolygonBuilder", "@babylonjs/core/Meshes/Builders/polygonBuilder.pure.js")>]
+    let ``PolygonBuilder``: VariableShape_PolygonBuilder = jsNative
+
+    /// Inline object shape of PolyhedronBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_PolyhedronBuilder =
+        abstract ``CreatePolyhedron``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolyhedron with get, set
+
+    /// @babylonjs/core/Meshes/Builders/polyhedronBuilder.pure
+    [<Import("PolyhedronBuilder", "@babylonjs/core/Meshes/Builders/polyhedronBuilder.pure.js")>]
+    let ``PolyhedronBuilder``: VariableShape_PolyhedronBuilder = jsNative
+
+    /// Inline object shape of RibbonBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_RibbonBuilder =
+        abstract ``CreateRibbon``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateRibbon with get, set
+
+    /// @babylonjs/core/Meshes/Builders/ribbonBuilder.pure
+    [<Import("RibbonBuilder", "@babylonjs/core/Meshes/Builders/ribbonBuilder.pure.js")>]
+    let ``RibbonBuilder``: VariableShape_RibbonBuilder = jsNative
+
+    /// Inline object shape of SphereBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_SphereBuilder =
+        abstract ``CreateSphere``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSphere with get, set
+
+    /// @babylonjs/core/Meshes/Builders/sphereBuilder.pure
+    [<Import("SphereBuilder", "@babylonjs/core/Meshes/Builders/sphereBuilder.pure.js")>]
+    let ``SphereBuilder``: VariableShape_SphereBuilder = jsNative
+
+    /// Inline object shape of TextureTools.
+    [<AllowNullLiteral>]
+    type VariableShape_TextureTools =
+        abstract ``CreateResizedCopy``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateResizedCopy with get, set
+        abstract ``ApplyPostProcess``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ApplyPostProcess with get, set
+        abstract ``ToHalfFloat``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ToHalfFloat with get, set
+        abstract ``FromHalfFloat``: BabylonjsBindings.SimpleFunctions.FunctionBinding_FromHalfFloat with get, set
+        abstract ``GetTextureDataAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetTextureDataAsync with get, set
+
+    /// @babylonjs/core/Misc/textureTools
+    [<Import("TextureTools", "@babylonjs/core/Misc/textureTools.js")>]
+    let ``TextureTools``: VariableShape_TextureTools = jsNative
+
+    /// Inline object shape of TiledBoxBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_TiledBoxBuilder =
+        abstract ``CreateTiledBox``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledBox with get, set
+
+    /// @babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure
+    [<Import("TiledBoxBuilder", "@babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure.js")>]
+    let ``TiledBoxBuilder``: VariableShape_TiledBoxBuilder = jsNative
+
+    /// Inline object shape of TiledPlaneBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_TiledPlaneBuilder =
+        abstract ``CreateTiledPlane``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledPlane with get, set
+
+    /// @babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure
+    [<Import("TiledPlaneBuilder", "@babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure.js")>]
+    let ``TiledPlaneBuilder``: VariableShape_TiledPlaneBuilder = jsNative
+
+    /// Inline object shape of TorusBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_TorusBuilder =
+        abstract ``CreateTorus``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorus with get, set
+
+    /// @babylonjs/core/Meshes/Builders/torusBuilder.pure
+    [<Import("TorusBuilder", "@babylonjs/core/Meshes/Builders/torusBuilder.pure.js")>]
+    let ``TorusBuilder``: VariableShape_TorusBuilder = jsNative
+
+    /// Inline object shape of TorusKnotBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_TorusKnotBuilder =
+        abstract ``CreateTorusKnot``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorusKnot with get, set
+
+    /// @babylonjs/core/Meshes/Builders/torusKnotBuilder.pure
+    [<Import("TorusKnotBuilder", "@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure.js")>]
+    let ``TorusKnotBuilder``: VariableShape_TorusKnotBuilder = jsNative

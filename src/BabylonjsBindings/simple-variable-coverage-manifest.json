@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "81674f627fdd01e100c0309d89983a81e3d0a05c30e6798d936ae6f90b4bf2d1",
+  "proposalSha256": "e1449dba9973e48a298c191d32ced90778d8f8bac54fb140c6f0b683a3046fc4",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5069,6 +5069,161 @@
         "BabylonjsBindings.SimpleClasses.Skeleton"
       ],
       "fsharpType": "VariableShape_TempSkeletonIndexContainer",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/copyTools",
+      "name": "CopyTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.CopyTools",
+      "dependencies": [],
+      "fsharpType": "VariableShape_CopyTools",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dumpTools.pure",
+      "name": "DumpTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DumpTools",
+      "dependencies": [],
+      "fsharpType": "VariableShape_DumpTools",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphUtils",
+      "name": "FrameGraphUtils",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FrameGraphUtils",
+      "dependencies": [],
+      "fsharpType": "VariableShape_FrameGraphUtils",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "PickingCustomization",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PickingCustomization",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IPickingCustomization"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleInterfaces.IPickingCustomization"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/planeBuilder.pure",
+      "name": "PlaneBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PlaneBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_PlaneBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/polygonBuilder.pure",
+      "name": "PolygonBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PolygonBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_PolygonBuilder",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/polyhedronBuilder.pure",
+      "name": "PolyhedronBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.PolyhedronBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_PolyhedronBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/ribbonBuilder.pure",
+      "name": "RibbonBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RibbonBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_RibbonBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/sphereBuilder.pure",
+      "name": "SphereBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SphereBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_SphereBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/textureTools",
+      "name": "TextureTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TextureTools",
+      "dependencies": [],
+      "fsharpType": "VariableShape_TextureTools",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure",
+      "name": "TiledBoxBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TiledBoxBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_TiledBoxBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tiledPlaneBuilder.pure",
+      "name": "TiledPlaneBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TiledPlaneBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_TiledPlaneBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/torusBuilder.pure",
+      "name": "TorusBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TorusBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_TorusBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure",
+      "name": "TorusKnotBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TorusKnotBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_TorusKnotBuilder",
       "memberCount": 1
     }
   ],
