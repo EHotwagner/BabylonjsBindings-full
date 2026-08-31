@@ -373,7 +373,7 @@ if not base64DataUrl.``match`` || base64DataUrl.``type`` <> "text/plain" then
     failwith "Babylon callable variable inline result was not preserved"
 if stringRichType.``typeName`` <> "string" || lookedUpStringRichType.``typeName`` <> "string" then
     failwith "Babylon generic class dependency closure was not preserved"
-if generatedGuid.Length = 0 || bvhLoaderMetadata.``name`` <> "bvh" || bvhLoaderMetadata.``extensions``.``.bvh``.``isBinary`` || gltfMagicBase64Encoded.Length = 0 || maxHalfFloat <> 65504.0 || int8Size <> 1.0 then
+if generatedGuid.Length = 0 || bvhLoaderMetadata.``name`` <> "bvh" || unbox<bool> bvhLoaderMetadata.``extensions``.``.bvh``.``isBinary`` || gltfMagicBase64Encoded.Length = 0 || maxHalfFloat <> 65504.0 || int8Size <> 1.0 then
     failwith "Babylon native helper and loader metadata batch was not preserved"
 nodeHasWindow |> ignore
 

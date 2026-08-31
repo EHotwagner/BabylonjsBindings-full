@@ -298,7 +298,7 @@ if shaderDescriptor.\`\`name\`\` <> "clearQuadVertexShader" || shaderDescriptor.
 if paddedNumber <> "007" then failwith "clean consumer callable variable failed"
 if not base64DataUrl.\`\`match\`\` || base64DataUrl.\`\`type\`\` <> "text/plain" then failwith "clean consumer callable variable result failed"
 if stringRichType.\`\`typeName\`\` <> "string" then failwith "clean consumer generic class variable failed"
-if generatedGuid.Length = 0 || bvhLoaderMetadata.\`\`name\`\` <> "bvh" || bvhLoaderMetadata.\`\`extensions\`\`.\`\`.bvh\`\`.\`\`isBinary\`\` || gltfMagicBase64Encoded.Length = 0 || maxHalfFloat <> 65504.0 || int8Size <> 1.0 then failwith "clean consumer native helper and loader metadata batch failed"
+if generatedGuid.Length = 0 || bvhLoaderMetadata.\`\`name\`\` <> "bvh" || unbox<bool> bvhLoaderMetadata.\`\`extensions\`\`.\`\`.bvh\`\`.\`\`isBinary\`\` || gltfMagicBase64Encoded.Length = 0 || maxHalfFloat <> 65504.0 || int8Size <> 1.0 then failwith "clean consumer native helper and loader metadata batch failed"
 loaderRegistration |> ignore
 engine.dispose()
 printfn "Babylon candidate clean consumer passed"

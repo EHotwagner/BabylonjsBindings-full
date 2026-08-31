@@ -100,6 +100,7 @@ const ambientHandleTypes = new Map([
 const numericLiteralValues = new Set();
 const stringLiteralTypes = new Map();
 const inlineTypesByName = new Map();
+const resolvingInternalAliases = new Set();
 const fsharpString = value => `"${value.replaceAll("\\", "\\\\").replaceAll("\"", "\\\"").replaceAll("\n", "\\n").replaceAll("\r", "\\r")}"`;
 const stringLiteralType = value => {
   const name = `StringLiteral${createHash("sha256").update(value).digest("hex").slice(0, 12)}`;
@@ -128,7 +129,8 @@ const fsharpType = (node, typeParameters = new Map()) => {
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
-  if (ts.isLiteralTypeNode(node) && (node.literal.kind === ts.SyntaxKind.TrueKeyword || node.literal.kind === ts.SyntaxKind.FalseKeyword)) return "bool";
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.TrueKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserTrue";
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.FalseKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserFalse";
   if (ts.isTypePredicateNode(node)) return "bool";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, typeParameters);
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
@@ -194,9 +196,61 @@ const fsharpType = (node, typeParameters = new Map()) => {
     if (target?.arity === 0) return target.fsharpSymbol;
   }
   if (ts.isTypeQueryNode(node) && ts.isIdentifier(node.exprName)) {
-    return maintainedSymbols.get(node.exprName.text)?.staticSymbol;
+    const staticSymbol = maintainedSymbols.get(node.exprName.text)?.staticSymbol;
+    if (staticSymbol) return staticSymbol;
+    let symbol = checker.getSymbolAtLocation(node.exprName);
+    if (symbol?.flags & ts.SymbolFlags.Alias) {
+      try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+    }
+    const aliases = symbol?.declarations?.filter(ts.isTypeAliasDeclaration) ?? [];
+    if (aliases.length === 1) return fsharpType(aliases[0].type, typeParameters);
+    const declarations = symbol?.declarations?.filter(declaration => ts.isFunctionDeclaration(declaration)
+      || ts.isMethodDeclaration(declaration)
+      || ts.isMethodSignature(declaration)) ?? [];
+    if (declarations.length !== 1) return undefined;
+    const callable = declarations[0];
+    if (!callable.type
+      || callable.typeParameters?.length
+      || callable.parameters.some(parameter => parameter.dotDotDotToken || (ts.isIdentifier(parameter.name) && parameter.name.text === "this"))) return undefined;
+    const parameterTypes = callable.parameters.map(parameter => {
+      const rendered = parameter.type ? fsharpType(parameter.type, typeParameters) : undefined;
+      return parameter.questionToken && rendered ? asOption(rendered) : rendered;
+    });
+    const returnType = fsharpType(callable.type, typeParameters);
+    if (!returnType || parameterTypes.some(parameter => !parameter)) return undefined;
+    if (returnType === "unit") return parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`;
+    return `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "Pick"
+      && node.typeArguments?.length === 2
+      && ts.isTypeReferenceNode(node.typeArguments[0])
+      && ts.isIdentifier(node.typeArguments[0].typeName)) {
+      let symbol = checker.getSymbolAtLocation(node.typeArguments[0].typeName);
+      if (symbol?.flags & ts.SymbolFlags.Alias) {
+        try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+      }
+      const source = symbol?.declarations?.find(ts.isInterfaceDeclaration);
+      const keyNodes = ts.isUnionTypeNode(node.typeArguments[1]) ? node.typeArguments[1].types : [node.typeArguments[1]];
+      const keys = keyNodes.map(branch => ts.isLiteralTypeNode(branch) && ts.isStringLiteral(branch.literal) ? branch.literal.text : undefined);
+      if (source && keys.length > 0 && keys.every(Boolean)) {
+        const picked = source.members.filter(member => ts.isPropertySignature(member)
+          && member.type
+          && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))
+          && keys.includes(member.name.text));
+        if (picked.length === keys.length) {
+          const members = picked.map(member => {
+            const rendered = fsharpType(member.type, typeParameters);
+            return rendered ? { kind: "property", name: member.name.text, type: member.questionToken ? asOption(rendered) : rendered, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false } : undefined;
+          });
+          if (members.every(Boolean)) {
+            const name = `InlineObject${createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12)}`;
+            inlineTypesByName.set(name, { name, genericParameters: "", members });
+            return name;
+          }
+        }
+      }
+    }
     if (node.typeName.text === "TypedArrayConstructor" && node.typeArguments?.length === 1) {
       const element = fsharpType(node.typeArguments[0], typeParameters);
       return element ? `BabylonjsBindings.SimpleInterfaces.BrowserTypedArrayConstructor<${element}>` : undefined;
@@ -206,6 +260,19 @@ const fsharpType = (node, typeParameters = new Map()) => {
     if (!node.typeArguments?.length && node.typeName.text === "DecoratorMetadataObject") return "BabylonjsBindings.SimpleInterfaces.BrowserDecoratorMetadataObject";
     if (node.typeName.text === "ProgressEvent" && (node.typeArguments?.length ?? 0) <= 1) return "Browser.Types.ProgressEvent";
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
+    if (node.typeName.text === "DeepImmutable"
+      && node.typeArguments?.length === 1
+      && ts.isTypeReferenceNode(node.typeArguments[0])
+      && ts.isIdentifier(node.typeArguments[0].typeName)
+      && node.typeArguments[0].typeName.text === "Pick") {
+      const projected = fsharpType(node.typeArguments[0], typeParameters);
+      const source = projected ? inlineTypesByName.get(projected) : undefined;
+      if (source) {
+        const name = `DeepImmutableInlineObject${createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12)}`;
+        inlineTypesByName.set(name, { ...source, name, members: source.members.map(member => ({ ...member, readonly: true })) });
+        return name;
+      }
+    }
     if (node.typeName.text === "DeepImmutable"
       && node.typeArguments?.length === 1
       && ts.isTypeReferenceNode(node.typeArguments[0])
@@ -279,6 +346,19 @@ const fsharpType = (node, typeParameters = new Map()) => {
       const renderedArguments = arguments_.map(argument => fsharpType(argument, typeParameters));
       if (renderedArguments.some(argument => !argument)) return undefined;
       return target.arity === 0 ? target.fsharpSymbol : `${target.fsharpSymbol}<${renderedArguments.join(", ")}>`;
+    }
+    if (!node.typeArguments?.length) {
+      let symbol = checker.getSymbolAtLocation(node.typeName);
+      if (symbol?.flags & ts.SymbolFlags.Alias) {
+        try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+      }
+      const declaration = symbol?.declarations?.find(ts.isTypeAliasDeclaration);
+      if (declaration && !declaration.typeParameters?.length && !resolvingInternalAliases.has(declaration)) {
+        resolvingInternalAliases.add(declaration);
+        const rendered = fsharpType(declaration.type, typeParameters);
+        resolvingInternalAliases.delete(declaration);
+        if (rendered) return rendered;
+      }
     }
   }
   recordTypeFailure(node);

@@ -10252,3 +10252,168 @@ module SimpleFunctions =
 
     [<Import("SerializeSmartAssetManagerMap", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
     let ``SerializeSmartAssetManagerMap``: FunctionBinding_SerializeSmartAssetManagerMap = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseBlockAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``serializationObject``: BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphBlock * ``parseOptions``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockParseOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.FlowGraphBlock>
+
+    [<Import("ParseBlockAsync", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``ParseBlockAsync``: FunctionBinding_ParseBlockAsync = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseCoordinatorAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``serializedObject``: obj * ``options``: BabylonjsBindings.SimpleInterfaces.IFlowGraphCoordinatorParseOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.FlowGraphCoordinator>
+
+    [<Import("ParseCoordinatorAsync", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``ParseCoordinatorAsync``: FunctionBinding_ParseCoordinatorAsync = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseFlowGraph =
+        [<Emit("$0($1...)")>] abstract Invoke: ``serializationObject``: BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraph * ``options``: BabylonjsBindings.SimpleInterfaces.IFlowGraphParseOptions * ``resolvedClasses``: ResizeArray<BabylonjsBindings.SimpleClasses.FlowGraphBlockStatic> -> BabylonjsBindings.SimpleClasses.FlowGraph
+
+    [<Import("ParseFlowGraph", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``ParseFlowGraph``: FunctionBinding_ParseFlowGraph = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseFlowGraphAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``serializationObject``: BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraph * ``options``: BabylonjsBindings.SimpleInterfaces.IFlowGraphParseOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.FlowGraph>
+
+    [<Import("ParseFlowGraphAsync", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``ParseFlowGraphAsync``: FunctionBinding_ParseFlowGraphAsync = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseFlowGraphBlockWithClassType =
+        [<Emit("$0($1...)")>] abstract Invoke: ``serializationObject``: BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphBlock * ``parseOptions``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockParseOptions * ``classType``: BabylonjsBindings.SimpleClasses.FlowGraphBlockStatic -> BabylonjsBindings.SimpleClasses.FlowGraphBlock
+
+    [<Import("ParseFlowGraphBlockWithClassType", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``ParseFlowGraphBlockWithClassType``: FunctionBinding_ParseFlowGraphBlockWithClassType = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseFlowGraphCoordinatorFromSnippetAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``snippetId``: string * ``options``: BabylonjsBindings.SimpleInterfaces.IFlowGraphCoordinatorParseOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.FlowGraphCoordinator>
+
+    [<Import("ParseFlowGraphCoordinatorFromSnippetAsync", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``ParseFlowGraphCoordinatorFromSnippetAsync``: FunctionBinding_ParseFlowGraphCoordinatorFromSnippetAsync = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseFlowGraphFromSnippetAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``snippetId``: string * ``options``: BabylonjsBindings.SimpleInterfaces.IFlowGraphParseOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.FlowGraph>
+
+    [<Import("ParseFlowGraphFromSnippetAsync", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``ParseFlowGraphFromSnippetAsync``: FunctionBinding_ParseFlowGraphFromSnippetAsync = jsNative
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding__createShaderProgram =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pipelineContext``: BabylonjsBindings.SimpleClasses.WebGLPipelineContext * ``vertexShader``: Browser.Types.WebGLShader * ``fragmentShader``: Browser.Types.WebGLShader * ``context``: BabylonjsBindings.TypeAliases.WebGLContext * ?``_transformFeedbackVaryings``: ResizeArray<string> option * ?``validateShaderPrograms``: bool -> Browser.Types.WebGLProgram
+
+    [<Import("_createShaderProgram", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``_createShaderProgram``: FunctionBinding__createShaderProgram = jsNative
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding__finalizePipelineContext =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pipelineContext``: BabylonjsBindings.SimpleClasses.WebGLPipelineContext * ``gl``: BabylonjsBindings.TypeAliases.WebGLContext * ?``validateShaderPrograms``: bool -> unit
+
+    [<Import("_finalizePipelineContext", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``_finalizePipelineContext``: FunctionBinding__finalizePipelineContext = jsNative
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_getStateObject =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: BabylonjsBindings.TypeAliases.WebGLContext -> BabylonjsBindings.SimpleInterfaces.IThinEngineStateObject
+
+    [<Import("getStateObject", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``getStateObject``: FunctionBinding_getStateObject = jsNative
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding__preparePipelineContext =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pipelineContext``: BabylonjsBindings.SimpleInterfaces.IPipelineContext * ``vertexSourceCode``: string * ``fragmentSourceCode``: string * ``createAsRaw``: bool * ``_rawVertexSourceCode``: string * ``_rawFragmentSourceCode``: string * ``rebuildRebind``: obj * ``defines``: string option * ``transformFeedbackVaryings``: ResizeArray<string> option * ``_key``: string option * ``onReady``: System.Action * ?``createRawShaderProgramInjection``: System.Func<BabylonjsBindings.SimpleInterfaces.IPipelineContext, string, string, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, System.Func<BabylonjsBindings.SimpleClasses.WebGLPipelineContext, Browser.Types.WebGLShader, Browser.Types.WebGLShader, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, bool option, Browser.Types.WebGLProgram> option, Browser.Types.WebGLProgram> * ?``createShaderProgramInjection``: System.Func<BabylonjsBindings.SimpleInterfaces.IPipelineContext, string, string, string option, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, System.Func<BabylonjsBindings.SimpleClasses.WebGLPipelineContext, Browser.Types.WebGLShader, Browser.Types.WebGLShader, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, bool option, Browser.Types.WebGLProgram> option, Browser.Types.WebGLProgram> -> unit
+
+    [<Import("_preparePipelineContext", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``_preparePipelineContext``: FunctionBinding__preparePipelineContext = jsNative
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_createRawShaderProgram =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pipelineContext``: BabylonjsBindings.SimpleInterfaces.IPipelineContext * ``vertexCode``: string * ``fragmentCode``: string * ``context``: BabylonjsBindings.TypeAliases.WebGLContext * ``transformFeedbackVaryings``: ResizeArray<string> option * ?``_createShaderProgramInjection``: System.Func<BabylonjsBindings.SimpleClasses.WebGLPipelineContext, Browser.Types.WebGLShader, Browser.Types.WebGLShader, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, bool option, Browser.Types.WebGLProgram> -> Browser.Types.WebGLProgram
+
+    [<Import("createRawShaderProgram", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``createRawShaderProgram``: FunctionBinding_createRawShaderProgram = jsNative
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_createShaderProgram =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pipelineContext``: BabylonjsBindings.SimpleInterfaces.IPipelineContext * ``vertexCode``: string * ``fragmentCode``: string * ``defines``: string option * ``context``: BabylonjsBindings.TypeAliases.WebGLContext * ?``transformFeedbackVaryings``: ResizeArray<string> option * ?``_createShaderProgramInjection``: System.Func<BabylonjsBindings.SimpleClasses.WebGLPipelineContext, Browser.Types.WebGLShader, Browser.Types.WebGLShader, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, bool option, Browser.Types.WebGLProgram> -> Browser.Types.WebGLProgram
+
+    [<Import("createShaderProgram", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``createShaderProgram``: FunctionBinding_createShaderProgram = jsNative
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_LoadSmartAssetAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``key``: string * ?``url``: string * ?``options``: BabylonjsBindings.TypeAliases.SmartAssetLoadOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.AssetContainer>
+
+    [<Import("LoadSmartAssetAsync", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
+    let ``LoadSmartAssetAsync``: FunctionBinding_LoadSmartAssetAsync = jsNative
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_LoadSmartAssetTextureAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``key``: string * ?``url``: string * ?``options``: BabylonjsBindings.TypeAliases.SmartAssetLoadOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.BaseTexture>
+
+    [<Import("LoadSmartAssetTextureAsync", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
+    let ``LoadSmartAssetTextureAsync``: FunctionBinding_LoadSmartAssetTextureAsync = jsNative
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject0b0b499b89e1 =
+        abstract ``type``: string option with get
+        abstract ``extension``: string option with get
+        abstract ``metadata``: BabylonjsBindings.SimpleInterfaces.BrowserRecord<string, obj> option with get
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_RegisterSmartAsset =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``key``: string * ``url``: string * ?``options``: InlineObject0b0b499b89e1 -> unit
+
+    [<Import("RegisterSmartAsset", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
+    let ``RegisterSmartAsset``: FunctionBinding_RegisterSmartAsset = jsNative
+
+    /// @babylonjs/core/Engines/thinNativeEngine.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_AcquireNativeObjectAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> JS.Promise<BabylonjsBindings.SimpleInterfaces.INative>
+
+    [<Import("AcquireNativeObjectAsync", "@babylonjs/core/Engines/thinNativeEngine.pure.js")>]
+    let ``AcquireNativeObjectAsync``: FunctionBinding_AcquireNativeObjectAsync = jsNative
+
+    /// @babylonjs/core/Animations/animation.optimizations
+    [<AllowNullLiteral>]
+    type FunctionBinding_OptimizeAnimations =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``options``: BabylonjsBindings.TypeAliases.PartialAnimationOptimization -> unit
+
+    [<Import("OptimizeAnimations", "@babylonjs/core/Animations/animation.optimizations.js")>]
+    let ``OptimizeAnimations``: FunctionBinding_OptimizeAnimations = jsNative
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type DeepImmutableInlineObject9ce608a19b60 =
+        abstract ``semiMajorAxis``: float with get
+        abstract ``firstEccentricitySquared``: float with get
+
+    /// @babylonjs/core/Maths/math.geospatial.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_EcefFromLatLonAltToRef =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> BabylonjsBindings.SimpleInterfaces.IVector3Like>: ``latLonAlt``: BabylonjsBindings.SimpleInterfaces.DeepImmutableILatLonAltLike * ``ellipsoid``: DeepImmutableInlineObject9ce608a19b60 * ``result``: 'T -> 'T
+
+    [<Import("EcefFromLatLonAltToRef", "@babylonjs/core/Maths/math.geospatial.functions.js")>]
+    let ``EcefFromLatLonAltToRef``: FunctionBinding_EcefFromLatLonAltToRef = jsNative

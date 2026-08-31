@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "2c42a7d1c9fec2ed3eeb341ea70beb8e9b60c9e2bc942299d10ce83570b29708",
+  "proposalSha256": "f127be6ac3c0556eaa16cdebd6827d56e01be59b906f49735258a5cc29ce6fad",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -139,6 +139,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [],
+      "partialSymbol": "BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration",
       "memberCount": 4
     },
     {
@@ -1297,10 +1302,13 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXREnterExitUIOptions",
       "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.WebXREnterExitUIButton",
         "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget"
       ],
+      "partialSymbol": "BabylonjsBindings.SimpleClasses.WebXREnterExitUIOptions",
       "memberCount": 9
     },
     {
@@ -10677,6 +10685,7 @@
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Vector3"
       ],
+      "partialSymbol": "BabylonjsBindings.SimpleClasses.RagdollBoneProperties",
       "memberCount": 11
     },
     {
@@ -12835,6 +12844,7 @@
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine"
       ],
+      "partialSymbol": "BabylonjsBindings.SimpleClasses.WebXRManagedOutputCanvasOptions",
       "memberCount": 5
     },
     {
@@ -25310,6 +25320,224 @@
         "BabylonjsBindings.SimpleInterfaces.MeshData"
       ],
       "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Debug/debugLayer.pure",
+      "name": "DebugLayer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DebugLayer",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IInspectorOptions"
+      ],
+      "memberCount": 14
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGL/webGLPipelineContext",
+      "name": "WebGLPipelineContext",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGLPipelineContext",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.SimpleClasses.ThinEngine",
+        "BabylonjsBindings.SimpleInterfaces.IColor3Like",
+        "BabylonjsBindings.SimpleInterfaces.IColor4Like",
+        "BabylonjsBindings.SimpleInterfaces.IMatrixLike",
+        "BabylonjsBindings.SimpleInterfaces.IPipelineContext",
+        "BabylonjsBindings.SimpleInterfaces.IQuaternionLike",
+        "BabylonjsBindings.SimpleInterfaces.IVector2Like",
+        "BabylonjsBindings.SimpleInterfaces.IVector3Like",
+        "BabylonjsBindings.SimpleInterfaces.IVector4Like"
+      ],
+      "memberCount": 61
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tools.pure",
+      "name": "Tools",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Tools",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.ReadFileError",
+        "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
+        "BabylonjsBindings.SimpleClasses.WebRequest",
+        "BabylonjsBindings.SimpleInterfaces.IColor4Like",
+        "BabylonjsBindings.SimpleInterfaces.IFileRequest",
+        "BabylonjsBindings.SimpleInterfaces.IOfflineProvider",
+        "BabylonjsBindings.SimpleInterfaces.IScreenshotSize"
+      ],
+      "memberCount": 95
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphPathConverter",
+      "name": "FlowGraphPathConverter",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPathConverter",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleInterfaces.IObjectAccessor",
+        "BabylonjsBindings.SimpleInterfaces.IObjectInfo",
+        "BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphPathConverterComponent",
+      "name": "FlowGraphPathConverterComponent",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPathConverterComponent",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphInteger",
+        "BabylonjsBindings.SimpleInterfaces.IObjectAccessor",
+        "BabylonjsBindings.SimpleInterfaces.IObjectInfo",
+        "BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHitTestLegacy",
+      "name": "WebXRHitTestLegacy",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRHitTestLegacy",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRHitTestFeature",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRLegacyHitResult",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRLegacyHitTestOptions"
+      ],
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/Inputs/arcRotateCameraMouseWheelInput",
+      "name": "ArcRotateCameraMouseWheelInput",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ArcRotateCameraMouseWheelInput",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.ArcRotateCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput",
+        "BabylonjsBindings.SimpleInterfaces.IWheelEvent"
+      ],
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
+      "name": "WebXRBodyTracking",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRBodyTracking",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleClasses.WebXRTrackedBody",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRBodyTrackingOptions",
+        "BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping"
+      ],
+      "memberCount": 17
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
+      "name": "WebXRTrackedBody",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRTrackedBody",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Node",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
+        "BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping"
+      ],
+      "memberCount": 19
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/native/nativeXRFrame.pure",
+      "name": "NativeXRFrame",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.NativeXRFrame",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [],
+      "memberCount": 17
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRDefaultExperience",
+      "name": "WebXRDefaultExperienceOptions",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRDefaultExperienceOptions",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.WebXRManagedOutputCanvasOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRControllerPointerSelectionOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRHandTrackingOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRInputOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRNearInteractionOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRTeleportationOptions"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleClasses.WebXRDefaultExperienceOptions",
+      "memberCount": 18
     }
   ],
   "reviewStatus": "maintained"

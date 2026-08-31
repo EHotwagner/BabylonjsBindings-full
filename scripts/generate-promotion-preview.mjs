@@ -31,6 +31,7 @@ for (const specification of specifications) {
   const manifestEntries = [...manifest.exports, ...(manifest.supportTypes ?? [])];
   const manifestBySymbol = new Map(manifestEntries.map(entry => [entry.fsharpSymbol, entry]));
   const candidateChunks = chunks(candidateSource);
+  const maintainedChunks = chunks(maintainedSource);
   const chunksByName = new Map();
   for (const chunk of candidateChunks) {
     for (const name of chunk.names) {
@@ -39,12 +40,14 @@ for (const specification of specifications) {
       chunksByName.set(name, values);
     }
   }
-  const selectedEntries = batch.selected.filter(entry => entry.category === specification.category).map(entry => manifestBySymbol.get(entry.fsharpSymbol)).filter(Boolean);
+  const selectedBatchEntries = batch.selected.filter(entry => entry.category === specification.category);
+  const selectedEntries = selectedBatchEntries.map(entry => manifestBySymbol.get(entry.fsharpSymbol)).filter(Boolean);
   contexts.set(specification.category, {
-    specification, maintainedSource, candidateChunks, chunksByName,
-    maintainedNames: new Set(chunks(maintainedSource).flatMap(chunk => chunk.names)),
+    specification, maintainedSource, maintainedChunks, candidateChunks, chunksByName,
+    maintainedNames: new Set(maintainedChunks.flatMap(chunk => chunk.names)),
     exportDeclarationNames: new Set(manifestEntries.flatMap(entry => declarationNames(entry, specification.category))),
     selectedDeclarationNames: new Set(selectedEntries.flatMap(entry => declarationNames(entry, specification.category))),
+    projectedDeclarationNames: new Set(selectedBatchEntries.filter(entry => entry.projectionOnly).map(entry => symbolName(entry.fsharpSymbol))),
     selectedEntries, selectedChunkIndices: new Set()
   });
 }
@@ -108,9 +111,12 @@ const outputs = new Map();
 const previewSummary = {};
 for (const [category, context] of contexts) {
   const additions = context.candidateChunks.filter(chunk => context.selectedChunkIndices.has(chunk.index)).map(chunk => chunk.text);
+  const maintained = context.maintainedChunks
+    .filter(chunk => !chunk.names.some(name => context.projectedDeclarationNames.has(name)))
+    .map(chunk => chunk.text);
   outputs.set(context.specification.maintainedFile, additions.length === 0
     ? context.maintainedSource
-    : `${context.maintainedSource.trimEnd()}\n\n${additions.join("\n\n")}\n`);
+    : `${maintained.join("\n\n")}\n\n${additions.join("\n\n")}\n`);
   previewSummary[category] = { selectedExports: context.selectedEntries.filter(entry => !entry.kind.endsWith("-support")).length, selectedChunks: additions.length };
 }
 

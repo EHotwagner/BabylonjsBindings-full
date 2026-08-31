@@ -77,6 +77,12 @@ for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dep
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
   .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, requiredNonNullableSymbol: entry.requiredNonNullableSymbol, requiredSymbol: entry.requiredSymbol, arity: entry.typeParameterCount ?? 0 }]));
+const maintainedClassExports = JSON.parse(await readFile(resolve(root, "src/BabylonjsBindings/simple-class-coverage-manifest.json"), "utf8")).exports;
+const maintainedClassNameCounts = new Map();
+for (const entry of maintainedClassExports) maintainedClassNameCounts.set(entry.name, (maintainedClassNameCounts.get(entry.name) ?? 0) + 1);
+const maintainedClassProjections = new Map(maintainedClassExports
+  .filter(entry => maintainedClassNameCounts.get(entry.name) === 1)
+  .map(entry => [entry.name, entry]));
 
 const hasModifier = (node, kind) => node.modifiers?.some(modifier => modifier.kind === kind) ?? false;
 const inaccessible = node => hasModifier(node, ts.SyntaxKind.PrivateKeyword) || hasModifier(node, ts.SyntaxKind.ProtectedKeyword);
@@ -141,7 +147,8 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptNull";
-  if (ts.isLiteralTypeNode(node) && (node.literal.kind === ts.SyntaxKind.TrueKeyword || node.literal.kind === ts.SyntaxKind.FalseKeyword)) return "bool";
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.TrueKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserTrue";
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.FalseKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserFalse";
   if (ts.isTypePredicateNode(node)) return "bool";
   if (node.kind === ts.SyntaxKind.ThisType && typeParameters.ownerName) return typeParameters.ownerName;
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
@@ -270,6 +277,35 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     recordTypeFailure(node);
     return undefined;
   }
+  if (ts.isTypeQueryNode(node) && ts.isIdentifier(node.exprName)) {
+    const target = available.get(node.exprName.text) ?? maintainedSymbols.get(node.exprName.text);
+    if (target?.staticSymbol) {
+      if (available.has(node.exprName.text)) dependencies.add(node.exprName.text);
+      return target.staticSymbol;
+    }
+    let symbol = checker.getSymbolAtLocation(node.exprName);
+    if (symbol?.flags & ts.SymbolFlags.Alias) {
+      try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+    }
+    const aliases = symbol?.declarations?.filter(ts.isTypeAliasDeclaration) ?? [];
+    if (aliases.length === 1) return fsharpType(aliases[0].type, available, dependencies, typeParameters);
+    const declarations = symbol?.declarations?.filter(declaration => ts.isFunctionDeclaration(declaration)
+      || ts.isMethodDeclaration(declaration)
+      || ts.isMethodSignature(declaration)) ?? [];
+    if (declarations.length !== 1) return undefined;
+    const callable = declarations[0];
+    if (!callable.type
+      || callable.typeParameters?.length
+      || callable.parameters.some(parameter => parameter.dotDotDotToken || (ts.isIdentifier(parameter.name) && parameter.name.text === "this"))) return undefined;
+    const parameterTypes = callable.parameters.map(parameter => {
+      const rendered = parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined;
+      return parameter.questionToken && rendered ? asOption(rendered) : rendered;
+    });
+    const returnType = fsharpType(callable.type, available, dependencies, typeParameters);
+    if (!returnType || parameterTypes.some(parameter => !parameter)) return undefined;
+    if (returnType === "unit") return parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`;
+    return `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
+  }
   if (ts.isIndexedAccessTypeNode(node)
     && ts.isTypeReferenceNode(node.objectType)
     && ts.isIdentifier(node.objectType.typeName)
@@ -303,6 +339,25 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     return intersectionObjectType(node, available, dependencies, typeParameters, utilityInlineTypes);
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (!node.typeArguments?.length && node.typeName.text === "ReferrerPolicy") return "BabylonjsBindings.SimpleInterfaces.BrowserReferrerPolicy";
+    if (!node.typeArguments?.length && node.typeName.text === "IArguments") return "BabylonjsBindings.SimpleInterfaces.BrowserArguments";
+    if (node.typeName.text === "IObjectAccessor" && (node.typeArguments?.length ?? 0) < 3) {
+      const target = available.get("IObjectAccessor") ?? maintainedSymbols.get("IObjectAccessor");
+      if (target) {
+        const rendered = (node.typeArguments ?? []).map(argument => fsharpType(argument, available, dependencies, typeParameters));
+        if (rendered.some(argument => !argument)) return undefined;
+        if (available.has("IObjectAccessor")) dependencies.add("IObjectAccessor");
+        return `${available.has("IObjectAccessor") ? "IObjectAccessor" : target.fsharpSymbol}<${[...rendered, ...Array.from({ length: 3 - rendered.length }, () => "obj")].join(", ")}>`;
+      }
+    }
+    if (node.typeName.text === "IObjectInfo" && node.typeArguments?.length === 1) {
+      const target = available.get("IObjectInfo") ?? maintainedSymbols.get("IObjectInfo");
+      const rendered = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      if (target && rendered) {
+        if (available.has("IObjectInfo")) dependencies.add("IObjectInfo");
+        return `${available.has("IObjectInfo") ? "IObjectInfo" : target.fsharpSymbol}<${rendered}, obj>`;
+      }
+    }
     if (!node.typeArguments?.length && node.typeName.text === "SerializableContext") return "BabylonjsBindings.SimpleInterfaces.BrowserSerializableContext";
     if (!node.typeArguments?.length && node.typeName.text === "DecoratorMetadataObject") return "BabylonjsBindings.SimpleInterfaces.BrowserDecoratorMetadataObject";
     if (!node.typeArguments?.length && node.typeName.text === "Function") return "System.Delegate";
@@ -374,8 +429,17 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && inner.typeName.text === "XRProjectionLayerInit" && !inner.typeArguments?.length) {
         return "BabylonjsBindings.SimpleInterfaces.BrowserXRProjectionLayerInit";
       }
+      if (ts.isTypeReferenceNode(inner)
+        && ts.isIdentifier(inner.typeName)
+        && inner.typeName.text === "Record"
+        && inner.typeArguments?.length === 2) {
+        const key = fsharpType(inner.typeArguments[0], available, dependencies, typeParameters);
+        const value = fsharpType(inner.typeArguments[1], available, dependencies, typeParameters);
+        return key && value ? `BabylonjsBindings.SimpleInterfaces.BrowserRecord<${key}, ${asOption(value)}>` : undefined;
+      }
       if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && !inner.typeArguments?.length) {
-        const partial = maintainedSymbols.get(inner.typeName.text)?.partialSymbol;
+        const partial = maintainedSymbols.get(inner.typeName.text)?.partialSymbol
+          ?? maintainedClassProjections.get(inner.typeName.text)?.partialSymbol;
         if (partial) return partial;
       }
       if (ts.isTypeLiteralNode(inner)) {
@@ -515,7 +579,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       && ["ArrayBuffer", "ArrayBufferLike"].includes(node.typeArguments[0].typeName.text)
       && !node.typeArguments[0].typeArguments?.length) return `JS.${node.typeName.text}`;
     const browserTypes = new Set([
-      "AudioBuffer", "AudioBufferSourceNode", "AudioContext", "AudioDestinationNode", "AudioNode", "Blob", "Document", "Element", "Event", "File", "GainNode", "HTMLElement", "HTMLCanvasElement", "HTMLDivElement", "HTMLImageElement", "HTMLMediaElement", "HTMLVideoElement", "KeyboardEvent", "MediaStreamAudioDestinationNode", "MediaTrackConstraints", "OfflineAudioContext", "PointerEvent", "PointerEventInit", "ProgressEvent", "Window", "XMLHttpRequest",
+      "AudioBuffer", "AudioBufferSourceNode", "AudioContext", "AudioDestinationNode", "AudioNode", "Blob", "Document", "Element", "Event", "File", "FocusEvent", "GainNode", "HTMLElement", "HTMLButtonElement", "HTMLCanvasElement", "HTMLDivElement", "HTMLImageElement", "HTMLMediaElement", "HTMLVideoElement", "KeyboardEvent", "MediaStreamAudioDestinationNode", "MediaTrackConstraints", "OfflineAudioContext", "PointerEvent", "PointerEventInit", "ProgressEvent", "Window", "XMLHttpRequest",
       "ImageData", "WebGLUniformLocation", "WebGL2RenderingContext", "WebGLRenderingContext",
       "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer", "WebGLVertexArrayObject",
     ]);
@@ -532,6 +596,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && node.typeName.text === "XRSession") return "BabylonjsBindings.SimpleInterfaces.BrowserXRSession";
     if (!node.typeArguments?.length && node.typeName.text === "XRViewerPose") return "BabylonjsBindings.SimpleInterfaces.BrowserXRViewerPose";
     if (!node.typeArguments?.length && node.typeName.text === "XRInputSource") return "BabylonjsBindings.SimpleInterfaces.BrowserXRInputSource";
+    if (!node.typeArguments?.length && node.typeName.text === "XRInputSourceEvent") return "BabylonjsBindings.SimpleInterfaces.BrowserXRInputSourceEvent";
     if (!node.typeArguments?.length && node.typeName.text === "XRPose") return "BabylonjsBindings.SimpleInterfaces.BrowserXRPose";
     if (!node.typeArguments?.length && node.typeName.text === "XRView") return "BabylonjsBindings.SimpleInterfaces.BrowserXRView";
     if (!node.typeArguments?.length && node.typeName.text === "XRSessionMode") return "BabylonjsBindings.SimpleInterfaces.BrowserXRSessionMode";
@@ -611,6 +676,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ,["MediaTrackConstraints", "BrowserMediaTrackConstraints"]
       ,["PointerEventInit", "BrowserPointerEventInit"]
       ,["WebGLVertexArrayObject", "BrowserWebGLVertexArrayObject"]
+      ,["WebGLTransformFeedback", "BrowserWebGLTransformFeedback"]
       ,["Worker", "BrowserWorker"]
     ]);
     if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
@@ -1346,6 +1412,10 @@ const renderImplements = (declaration, available) => {
   const rendered = [];
   for (const heritage of (declaration.heritageClauses ?? []).filter(clause => clause.token === ts.SyntaxKind.ImplementsKeyword).flatMap(clause => clause.types)) {
     if (!ts.isIdentifier(heritage.expression)) continue;
+    if (heritage.expression.text === "XRFrame" && !heritage.typeArguments?.length) {
+      rendered.push({ source: "XRFrame", rendered: "BabylonjsBindings.SimpleInterfaces.BrowserXRFrame" });
+      continue;
+    }
     const target = maintainedSymbols.get(heritage.expression.text);
     if (target && heritage.expression.text === "WebXRRenderTarget" && target.arity === 2 && !heritage.typeArguments?.length) {
       rendered.push({
@@ -1562,6 +1632,8 @@ if (diagnose) {
   collectTypeFailures = false;
   console.log("top unresolved class member types:");
   console.log([...typeFailureCounts].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 80).map(([type, count]) => `${count} ${type}`).join("\n"));
+  console.log("unresolved member types by class:");
+  console.log([...typeFailuresByClass].sort(([left], [right]) => left.localeCompare(right)).map(([name, failures]) => `${name}: ${[...failures].join(" | ")}`).join("\n"));
   console.log(`diagnostic: ${shapeReady.length} additional classes have renderable member shapes but unresolved dependency cycles`);
   console.log("top unresolved class dependencies:");
   console.log([...missingCounts].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 40).map(([name, count]) => `${name} ${count}`).join("\n"));
@@ -1795,6 +1867,15 @@ for (const entry of entries) {
   lines.push("", `    [<Import("${entry.runtimeExport}", "${entry.module}.js")>]`, `    let ${entry.name}: ${entry.name}Static = jsNative`);
 }
 const proposal = `${lines.join("\n")}\n`;
+const hasIdentityPartialProjection = entry => {
+  if ((entry.declaration.heritageClauses ?? []).some(clause => clause.token === ts.SyntaxKind.ExtendsKeyword)) return false;
+  const publicInstanceMembers = entry.declaration.members.filter(member =>
+    !inaccessible(member)
+    && !hasModifier(member, ts.SyntaxKind.StaticKeyword)
+    && !ts.isConstructorDeclaration(member));
+  return publicInstanceMembers.length > 0
+    && publicInstanceMembers.every(member => ts.isPropertyDeclaration(member) && Boolean(member.questionToken));
+};
 const manifest = {
   schemaVersion: 1,
   source: { declarationLock: "declaration-lock.json", packageVersion: "9.19.0" },
@@ -1830,6 +1911,7 @@ const manifest = {
     ),
     ...(entry.arity ? { typeParameterCount: entry.arity } : {}),
     ...(projectedClassNames.has(entry.name) ? { deepImmutableSymbol: `BabylonjsBindings.SimpleClasses.DeepImmutable${entry.name}` } : {}),
+    ...(hasIdentityPartialProjection(entry) ? { partialSymbol: `BabylonjsBindings.SimpleClasses.${entry.name}` } : {}),
     memberCount: entry.instanceMembers.length + entry.staticMembers.length + entry.constructors.length
   })),
   supportTypes: entries.filter(entry => entry.supportOnly).map(entry => ({

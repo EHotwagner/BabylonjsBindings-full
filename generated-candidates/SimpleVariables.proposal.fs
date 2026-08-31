@@ -547,7 +547,7 @@ module SimpleVariables =
     /// Nested inline object shape used by BVHFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_BVHFileLoaderMetadataProperty2ObjectProperty1Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserFalse with get
 
     /// Nested inline object shape used by BVHFileLoaderMetadata.
     [<AllowNullLiteral>]
@@ -1276,7 +1276,7 @@ module SimpleVariables =
     /// Nested inline object shape used by FBXFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_FBXFileLoaderMetadataProperty2ObjectProperty1Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
 
     /// Nested inline object shape used by FBXFileLoaderMetadata.
     [<AllowNullLiteral>]
@@ -1990,13 +1990,13 @@ module SimpleVariables =
     /// Nested inline object shape used by GLTFFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_GLTFFileLoaderMetadataProperty2ObjectProperty1Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserFalse with get
         abstract ``mimeType``: string with get
 
     /// Nested inline object shape used by GLTFFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_GLTFFileLoaderMetadataProperty2ObjectProperty2Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
         abstract ``mimeType``: string with get
 
     /// Nested inline object shape used by GLTFFileLoaderMetadata.
@@ -4813,27 +4813,27 @@ module SimpleVariables =
     /// Nested inline object shape used by SPLATFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty1Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
 
     /// Nested inline object shape used by SPLATFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty2Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
 
     /// Nested inline object shape used by SPLATFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty3Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
 
     /// Nested inline object shape used by SPLATFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty4Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserFalse with get
 
     /// Nested inline object shape used by SPLATFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_SPLATFileLoaderMetadataProperty2ObjectProperty5Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
 
     /// Nested inline object shape used by SPLATFileLoaderMetadata.
     [<AllowNullLiteral>]
@@ -4996,7 +4996,7 @@ module SimpleVariables =
     /// Nested inline object shape used by STLFileLoaderMetadata.
     [<AllowNullLiteral>]
     type VariableShape_STLFileLoaderMetadataProperty2ObjectProperty1Object =
-        abstract ``isBinary``: bool with get
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
 
     /// Nested inline object shape used by STLFileLoaderMetadata.
     [<AllowNullLiteral>]

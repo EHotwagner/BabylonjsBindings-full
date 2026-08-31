@@ -1708,6 +1708,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/Inputs/arcRotateCameraMouseWheelInput.js",
+      "export": "ArcRotateCameraMouseWheelInput",
+      "runtimeExport": "ArcRotateCameraMouseWheelInput",
+      "moduleSha256": "d3664c71480257a304c3f8f3aeb05fd17e8404baf7a3e0c9f4a8061a4f559e5a"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Cameras/arcRotateCameraMovement.js",
       "export": "ArcRotateCameraMovement",
       "runtimeExport": "ArcRotateCameraMovement",
@@ -2517,6 +2524,13 @@
       "export": "DebugBlock",
       "runtimeExport": "DebugBlock",
       "moduleSha256": "b45cec65474097e96dfbcca55b55113ea2373c8dc3bdf762ed809155aa2174ed"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Debug/debugLayer.pure.js",
+      "export": "DebugLayer",
+      "runtimeExport": "DebugLayer",
+      "moduleSha256": "d6348f294b6ba7828282f416728e84fee35f4e47b62fb0788908de83ef6e836b"
     },
     {
       "package": "@babylonjs/core",
@@ -3584,6 +3598,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure.js",
+      "export": "FlowGraphJsonPointerParserBlock",
+      "runtimeExport": "FlowGraphJsonPointerParserBlock",
+      "moduleSha256": "a14736bb407645e25fd7cbbe6710176be8066283d2182da4e6bd232f1b674dc1"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyboardEventBlock.js",
       "export": "FlowGraphKeyboardEventBlock",
       "runtimeExport": "FlowGraphKeyboardEventBlock",
@@ -3763,6 +3784,20 @@
       "export": "FlowGraphOneBitsCounterBlock",
       "runtimeExport": "FlowGraphOneBitsCounterBlock",
       "moduleSha256": "1c3af5adb4e463259076191fcf14106e07852faf7a039477d36a2cc71e73b2f5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphPathConverter.js",
+      "export": "FlowGraphPathConverter",
+      "runtimeExport": "FlowGraphPathConverter",
+      "moduleSha256": "aa17822f56736485dd5e5b4a0ea9af817f71945d54947cdece0adf081f6eaac5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphPathConverterComponent.js",
+      "export": "FlowGraphPathConverterComponent",
+      "runtimeExport": "FlowGraphPathConverterComponent",
+      "moduleSha256": "70b9ceac042bc2e7fed696cf37a21ce5d855daac8b43639bc0de3e8ad8aa3292"
     },
     {
       "package": "@babylonjs/core",
@@ -9079,6 +9114,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tools.pure.js",
+      "export": "Tools",
+      "runtimeExport": "Tools",
+      "moduleSha256": "d56734e8eb028a023411a97cd3eb0f4a072224b40a748b198ced9dfae6f3ab0a"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Node/Blocks/Sources/torusBlock.pure.js",
       "export": "TorusBlock",
       "runtimeExport": "TorusBlock",
@@ -9457,6 +9499,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGL/webGLPipelineContext.js",
+      "export": "WebGLPipelineContext",
+      "runtimeExport": "WebGLPipelineContext",
+      "moduleSha256": "6e10e02a6c465bc5b0739158c3c6cfd903c5b0cbd4edf7827cfc6ed3a2071c29"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/WebGPU/webgpuBufferManager.js",
       "export": "WebGPUBufferManager",
       "runtimeExport": "WebGPUBufferManager",
@@ -9590,6 +9639,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js",
+      "export": "WebXRBodyTracking",
+      "runtimeExport": "WebXRBodyTracking",
+      "moduleSha256": "7e22d965ac1e6e2a7c106727e73dc8716eb5be0072f689bb0bfbcda919b28dc0"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRCamera.js",
       "export": "WebXRCamera",
       "runtimeExport": "WebXRCamera",
@@ -9622,6 +9678,13 @@
       "export": "WebXRControllerPointerSelection",
       "runtimeExport": "WebXRControllerPointerSelection",
       "moduleSha256": "c419d3adda77b30aba8db27a8fd44f6f1913963ce72dcc7853ac565c687a5d2d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRDefaultExperience.js",
+      "export": "WebXRDefaultExperienceOptions",
+      "runtimeExport": "WebXRDefaultExperienceOptions",
+      "moduleSha256": "4015620dfc0b7f0b8f6aa7099a1fb7731e3fd9580d995a25d21fe1ea7da2b34b"
     },
     {
       "package": "@babylonjs/core",
@@ -9685,6 +9748,13 @@
       "export": "WebXRHitTest",
       "runtimeExport": "WebXRHitTest",
       "moduleSha256": "358820645041463b16b5157140fa60b985c7c345acb2a5b6660d106012af001b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHitTestLegacy.js",
+      "export": "WebXRHitTestLegacy",
+      "runtimeExport": "WebXRHitTestLegacy",
+      "moduleSha256": "1ad446efe3b7ac97f51a6ab237e4bc1e4e8f0e7e12587c114995c34f782a22d0"
     },
     {
       "package": "@babylonjs/core",
@@ -9853,6 +9923,13 @@
       "export": "WebXRSpaceWarpRenderTargetTextureProvider",
       "runtimeExport": "WebXRSpaceWarpRenderTargetTextureProvider",
       "moduleSha256": "1c8fd227b72b10c0b362dd9a498ba87e1b615d4361bf2206ddeb34bed5a42627"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js",
+      "export": "WebXRTrackedBody",
+      "runtimeExport": "WebXRTrackedBody",
+      "moduleSha256": "7e22d965ac1e6e2a7c106727e73dc8716eb5be0072f689bb0bfbcda919b28dc0"
     },
     {
       "package": "@babylonjs/core",

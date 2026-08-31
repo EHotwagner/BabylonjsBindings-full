@@ -8,23 +8,23 @@
   "actualSize": 0,
   "maintainedBaseline": {
     "alias": {
-      "maintained": 109,
-      "candidate": 109,
+      "maintained": 110,
+      "candidate": 110,
       "delta": 0
     },
     "interface": {
-      "maintained": 540,
-      "candidate": 540,
+      "maintained": 550,
+      "candidate": 550,
       "delta": 0
     },
     "class": {
-      "maintained": 1411,
-      "candidate": 1413,
+      "maintained": 1422,
+      "candidate": 1424,
       "delta": 2
     },
     "function": {
-      "maintained": 1189,
-      "candidate": 1189,
+      "maintained": 1208,
+      "candidate": 1208,
       "delta": 0
     },
     "variable": {
@@ -44,11 +44,11 @@
     "smallestClosureAboveCeiling": null,
     "mostCommonFidelityBlockers": [
       {
-        "symbol": "BabylonjsBindings.SimpleClasses.FlowGraphSwitchBlock",
+        "symbol": "BabylonjsBindings.SimpleClasses.FlowGraphJsonPointerParserBlock",
         "blockedRoots": 1
       },
       {
-        "symbol": "BabylonjsBindings.SimpleClasses.NativeXRFrame",
+        "symbol": "BabylonjsBindings.SimpleClasses.FlowGraphSwitchBlock",
         "blockedRoots": 1
       }
     ]

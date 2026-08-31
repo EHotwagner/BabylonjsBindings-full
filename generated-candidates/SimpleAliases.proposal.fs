@@ -192,13 +192,24 @@ module TypeAliases =
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObject38fb0477dfc1 =
-        abstract ``mergeRuntimeAnimations``: bool with get, set
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserFalse with get, set
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObjectc2a40b3b5670 =
-        abstract ``mergeRuntimeAnimations``: bool with get, set
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get, set
         abstract ``mergeKeyFrames``: bool with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type PartialAliasObject38fb0477dfc1 =
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserFalse option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type PartialAliasObjectc2a40b3b5670 =
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserTrue option with get, set
+        abstract ``mergeKeyFrames``: bool option with get, set
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
@@ -441,6 +452,13 @@ module TypeAliases =
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
+    type PickObject0b0b499b89e1 =
+        abstract ``type``: string option with get
+        abstract ``extension``: string option with get
+        abstract ``metadata``: AliasObject00831351dc53 option with get
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
     type AliasObject5e89a90967c6 =
         abstract ``optimizeWithUV``: bool with get, set
         abstract ``UVScaling``: BabylonjsBindings.SimpleClasses.Vector2 with get, set
@@ -495,6 +513,11 @@ module TypeAliases =
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
+    type AliasObject00831351dc53 =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
     type AliasObjectaa4e4b93b6db =
         abstract ``type``: string with get, set
         abstract ``default``: obj with get, set
@@ -504,6 +527,7 @@ module TypeAliases =
 
     /// @babylonjs/core/Animations/animation.optimizations
     type AnimationOptimization = U2<AliasObject38fb0477dfc1, AliasObjectc2a40b3b5670>
+    type PartialAnimationOptimization = U2<PartialAliasObject38fb0477dfc1, PartialAliasObjectc2a40b3b5670>
 
     /// @babylonjs/core/Misc/coroutine
     type AsyncCoroutine<'T> = BabylonjsBindings.SimpleInterfaces.BrowserGenerator<U2<unit, JS.Promise<unit>>, 'T, unit>
@@ -878,6 +902,12 @@ module TypeAliases =
     type SimpleStageAction =
         inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    [<AllowNullLiteral>]
+    type SmartAssetLoadOptions =
+        inherit PickObject0b0b499b89e1
+        abstract ``reloadSource``: System.Func<JS.Promise<Browser.Types.File>> option with get
 
     /// @babylonjs/core/SmartAssets/smartAssetManager.pure
     type SmartAssetManager = AliasObjectcd9be493dba9

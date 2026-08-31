@@ -29,6 +29,7 @@ const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const maintainedSymbols = new Set();
 const maintainedIdentities = new Set();
+const maintainedEntriesByIdentity = new Map();
 const candidateNodes = [];
 const summary = {};
 for (const category of categories) {
@@ -36,6 +37,7 @@ for (const category of categories) {
   const candidate = JSON.parse(await readFile(resolve(root, `generated-candidates/${category.candidate}.promotion.json`), "utf8"));
   for (const entry of maintained.exports) {
     maintainedIdentities.add(identity(entry));
+    maintainedEntriesByIdentity.set(identity(entry), entry);
     for (const symbol of ownedSymbolFields({ ...entry, category: category.name })) maintainedSymbols.add(symbol);
   }
   for (const entry of candidate.exports) candidateNodes.push({ ...entry, category: category.name, supportOnly: false });
@@ -108,7 +110,10 @@ const inferredDependencies = node => {
 for (const node of candidateNodes) node.dependencies = inferredDependencies(node);
 
 const hasMaintainedIdentity = node => !node.supportOnly && maintainedIdentities.has(identity(node));
-const isMaintained = node => hasMaintainedIdentity(node) && ownedSymbolFields(node).every(symbol => maintainedSymbols.has(symbol));
+const projectionFields = ["deepImmutableSymbol", "partialSymbol", "requiredNonNullableSymbol", "requiredSymbol"];
+const isMaintained = node => hasMaintainedIdentity(node)
+  && ownedSymbolFields(node).every(symbol => maintainedSymbols.has(symbol))
+  && projectionFields.every(field => !node[field] || maintainedEntriesByIdentity.get(identity(node))?.[field] === node[field]);
 const closureCache = new Map();
 const closureFor = rootNode => {
   if (closureCache.has(rootNode.fsharpSymbol)) return closureCache.get(rootNode.fsharpSymbol);

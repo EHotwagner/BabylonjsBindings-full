@@ -22,12 +22,12 @@ module TypeAliases =
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObject38fb0477dfc1 =
-        abstract ``mergeRuntimeAnimations``: bool with get, set
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserFalse with get, set
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObjectc2a40b3b5670 =
-        abstract ``mergeRuntimeAnimations``: bool with get, set
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get, set
         abstract ``mergeKeyFrames``: bool with get, set
 
     /// Exact nested object used by a Babylon type alias.
@@ -104,9 +104,6 @@ module TypeAliases =
 
     /// @babylonjs/core/Behaviors/Cameras/interpolatingBehavior
     type AllowedAnimValue = U8<System.Double, BabylonjsBindings.SimpleInterfaces.IVector2Like, BabylonjsBindings.SimpleInterfaces.IVector3Like, BabylonjsBindings.SimpleInterfaces.IQuaternionLike, BabylonjsBindings.SimpleInterfaces.IMatrixLike, BabylonjsBindings.SimpleInterfaces.IColor3Like, BabylonjsBindings.SimpleInterfaces.IColor4Like, BabylonjsBindings.ObjectTypes.SizeLike> option
-
-    /// @babylonjs/core/Animations/animation.optimizations
-    type AnimationOptimization = U2<AliasObject38fb0477dfc1, AliasObjectc2a40b3b5670>
 
     /// @babylonjs/core/Engines/Extensions/engine.computeShader.pure
     type ComputeBindingList = AliasObject6d99c3efc0a5
@@ -927,3 +924,36 @@ module TypeAliases =
 
     /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
     type EncoderMessage = U2<BabylonjsBindings.SimpleInterfaces.IEncodeSuccessMessage, BabylonjsBindings.SimpleInterfaces.IEncodeErrorMessage>
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type PickObject0b0b499b89e1 =
+        abstract ``type``: string option with get
+        abstract ``extension``: string option with get
+        abstract ``metadata``: AliasObject00831351dc53 option with get
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject00831351dc53 =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    [<AllowNullLiteral>]
+    type SmartAssetLoadOptions =
+        inherit PickObject0b0b499b89e1
+        abstract ``reloadSource``: System.Func<JS.Promise<Browser.Types.File>> option with get
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type PartialAliasObject38fb0477dfc1 =
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserFalse option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type PartialAliasObjectc2a40b3b5670 =
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserTrue option with get, set
+        abstract ``mergeKeyFrames``: bool option with get, set
+
+    /// @babylonjs/core/Animations/animation.optimizations
+    type AnimationOptimization = U2<AliasObject38fb0477dfc1, AliasObjectc2a40b3b5670>
+    type PartialAnimationOptimization = U2<PartialAliasObject38fb0477dfc1, PartialAliasObjectc2a40b3b5670>

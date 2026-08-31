@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "18d584be98249b0c143b2deef075eecf34e2301ac5046037cda2be8a8d328136",
+  "proposalSha256": "41d5aa256ec8e7aeaca60d1a606446867b405c17ab92f5c4a3c5d10a5843caa7",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -23,6 +23,8 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.AnimationOptimization",
+      "dependencies": [],
+      "partialSymbol": "BabylonjsBindings.TypeAliases.PartialAnimationOptimization",
       "shape": "alias",
       "memberCount": 1
     },
@@ -1298,6 +1300,17 @@
       ],
       "shape": "alias",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "SmartAssetLoadOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.SmartAssetLoadOptions",
+      "dependencies": [],
+      "shape": "intersectionAlias",
+      "memberCount": 2
     }
   ],
   "reviewStatus": "maintained"

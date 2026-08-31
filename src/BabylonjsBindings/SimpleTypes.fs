@@ -22,12 +22,12 @@ module TypeAliases =
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObject38fb0477dfc1 =
-        abstract ``mergeRuntimeAnimations``: bool with get, set
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserFalse with get, set
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObjectc2a40b3b5670 =
-        abstract ``mergeRuntimeAnimations``: bool with get, set
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get, set
         abstract ``mergeKeyFrames``: bool with get, set
 
     /// Exact nested object used by a Babylon type alias.
@@ -104,9 +104,6 @@ module TypeAliases =
 
     /// @babylonjs/core/Behaviors/Cameras/interpolatingBehavior
     type AllowedAnimValue = U8<System.Double, BabylonjsBindings.SimpleInterfaces.IVector2Like, BabylonjsBindings.SimpleInterfaces.IVector3Like, BabylonjsBindings.SimpleInterfaces.IQuaternionLike, BabylonjsBindings.SimpleInterfaces.IMatrixLike, BabylonjsBindings.SimpleInterfaces.IColor3Like, BabylonjsBindings.SimpleInterfaces.IColor4Like, BabylonjsBindings.ObjectTypes.SizeLike> option
-
-    /// @babylonjs/core/Animations/animation.optimizations
-    type AnimationOptimization = U2<AliasObject38fb0477dfc1, AliasObjectc2a40b3b5670>
 
     /// @babylonjs/core/Engines/Extensions/engine.computeShader.pure
     type ComputeBindingList = AliasObject6d99c3efc0a5
@@ -927,6 +924,39 @@ module TypeAliases =
 
     /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
     type EncoderMessage = U2<BabylonjsBindings.SimpleInterfaces.IEncodeSuccessMessage, BabylonjsBindings.SimpleInterfaces.IEncodeErrorMessage>
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type PickObject0b0b499b89e1 =
+        abstract ``type``: string option with get
+        abstract ``extension``: string option with get
+        abstract ``metadata``: AliasObject00831351dc53 option with get
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject00831351dc53 =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    [<AllowNullLiteral>]
+    type SmartAssetLoadOptions =
+        inherit PickObject0b0b499b89e1
+        abstract ``reloadSource``: System.Func<JS.Promise<Browser.Types.File>> option with get
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type PartialAliasObject38fb0477dfc1 =
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserFalse option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type PartialAliasObjectc2a40b3b5670 =
+        abstract ``mergeRuntimeAnimations``: BabylonjsBindings.SimpleInterfaces.BrowserTrue option with get, set
+        abstract ``mergeKeyFrames``: bool option with get, set
+
+    /// @babylonjs/core/Animations/animation.optimizations
+    type AnimationOptimization = U2<AliasObject38fb0477dfc1, AliasObjectc2a40b3b5670>
+    type PartialAnimationOptimization = U2<PartialAliasObject38fb0477dfc1, PartialAliasObjectc2a40b3b5670>
 
 /// Exact dependency-closed interfaces exported by Babylon.js 9.19.0.
 module SimpleInterfaces =
@@ -9875,6 +9905,602 @@ module SimpleInterfaces =
         abstract ``numWorkers``: float option with get, set
         abstract ``workerPool``: BabylonjsBindings.SimpleClasses.WorkerPool option with get, set
         abstract ``wasmBinary``: JS.ArrayBuffer option with get, set
+
+    /// Function-valued INativeEngine.setRenderResetCallback property.
+    [<AllowNullLiteral>]
+    type INativeEngineSetRenderResetCallbackCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``callback``: System.Action -> unit
+
+    /// Function-valued INativeEngine.setDeviceLostCallback property.
+    [<AllowNullLiteral>]
+    type INativeEngineSetDeviceLostCallbackCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``callback``: System.Action -> unit
+
+    /// Function-valued INativeEngine.updateTextureData property.
+    [<AllowNullLiteral>]
+    type INativeEngineUpdateTextureDataCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture * ``data``: JS.ArrayBufferView * ``xOffset``: float * ``yOffset``: float * ``width``: float * ``height``: float * ``faceIndex``: float * ``lod``: float * ``invertY``: bool -> unit
+
+    /// Function-valued INativeEngine.getTextureLayerCount property.
+    [<AllowNullLiteral>]
+    type INativeEngineGetTextureLayerCountCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture -> float
+
+    /// Function-valued INativeEngine.createMultiFrameBuffer property.
+    [<AllowNullLiteral>]
+    type INativeEngineCreateMultiFrameBufferCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``textures``: ResizeArray<BabylonjsBindings.TypeAliases.NativeTexture> * ``width``: float * ``height``: float * ``generateStencilBuffer``: bool * ``generateDepthBuffer``: bool * ``samples``: float -> BabylonjsBindings.TypeAliases.NativeFramebuffer
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativeEngine =
+        abstract ``dispose``: unit -> unit
+        abstract ``requestAnimationFrame``: ``callback``: System.Action -> unit
+        abstract ``setRenderResetCallback``: INativeEngineSetRenderResetCallbackCallback option with get, set
+        abstract ``setDeviceLostCallback``: INativeEngineSetDeviceLostCallbackCallback option with get, set
+        abstract ``createVertexArray``: unit -> BabylonjsBindings.TypeAliases.NativeData
+        abstract ``createIndexBuffer``: ``dataBuffer``: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> * ``dataByteOffset``: float * ``dataByteLength``: float * ``is32Bits``: bool * ``dynamic``: bool -> BabylonjsBindings.TypeAliases.NativeData
+        abstract ``recordIndexBuffer``: ``vertexArray``: BabylonjsBindings.TypeAliases.NativeData * ``indexBuffer``: BabylonjsBindings.TypeAliases.NativeData -> unit
+        abstract ``updateDynamicIndexBuffer``: ``indexBuffer``: BabylonjsBindings.TypeAliases.NativeData * ``data``: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> * ``dataByteOffset``: float * ``dataByteLength``: float * ``startIndex``: float -> unit
+        abstract ``createVertexBuffer``: ``dataBuffer``: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> * ``dataByteOffset``: float * ``dataByteLength``: float * ``dynamic``: bool -> BabylonjsBindings.TypeAliases.NativeData
+        abstract ``recordVertexBuffer``: ``vertexArray``: BabylonjsBindings.TypeAliases.NativeData * ``vertexBuffer``: BabylonjsBindings.TypeAliases.NativeData * ``location``: float * ``byteOffset``: float * ``byteStride``: float * ``numElements``: float * ``type``: float * ``normalized``: bool * ``instanceDivisor``: float -> unit
+        abstract ``updateDynamicVertexBuffer``: ``vertexBuffer``: BabylonjsBindings.TypeAliases.NativeData * ``dataBuffer``: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> * ``dataByteOffset``: float * ``dataByteLength``: float * ?``vertexByteOffset``: float -> unit
+        abstract ``createProgram``: ``vertexShader``: string * ``fragmentShader``: string -> BabylonjsBindings.TypeAliases.NativeProgram
+        abstract ``createProgramAsync``: ``vertexShader``: string * ``fragmentShader``: string * ``onSuccess``: System.Action * ``onError``: System.Action<System.Exception> -> BabylonjsBindings.TypeAliases.NativeProgram
+        abstract ``getUniforms``: ``shaderProgram``: BabylonjsBindings.TypeAliases.NativeProgram * ``uniformsNames``: ResizeArray<string> -> ResizeArray<Browser.Types.WebGLUniformLocation>
+        abstract ``getAttributes``: ``shaderProgram``: BabylonjsBindings.TypeAliases.NativeProgram * ``attributeNames``: ResizeArray<string> -> ResizeArray<float>
+        abstract ``createTexture``: unit -> BabylonjsBindings.TypeAliases.NativeTexture
+        abstract ``initializeTexture``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture * ``width``: float * ``height``: float * ``hasMips``: bool * ``format``: float * ``renderTarget``: bool * ``srgb``: bool * ``samples``: float * ?``isCube``: bool -> unit
+        abstract ``loadTexture``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture * ``data``: JS.ArrayBufferView * ``generateMips``: bool * ``invertY``: bool * ``srgb``: bool * ``onSuccess``: System.Action * ``onError``: System.Action -> unit
+        abstract ``loadRawTexture``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture * ``data``: JS.ArrayBufferView * ``width``: float * ``height``: float * ``format``: float * ``generateMips``: bool * ``invertY``: bool -> unit
+        abstract ``updateTextureData``: INativeEngineUpdateTextureDataCallback option with get, set
+        abstract ``loadRawTexture2DArray``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture * ``data``: JS.ArrayBufferView option * ``width``: float * ``height``: float * ``depth``: float * ``format``: float * ``generateMipMaps``: bool * ``invertY``: bool -> unit
+        abstract ``loadCubeTexture``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture * ``data``: ResizeArray<JS.ArrayBufferView> * ``generateMips``: bool * ``invertY``: bool * ``srgb``: bool * ``onSuccess``: System.Action * ``onError``: System.Action -> unit
+        abstract ``loadCubeTextureWithMips``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture * ``data``: ResizeArray<ResizeArray<JS.ArrayBufferView>> * ``invertY``: bool * ``srgb``: bool * ``onSuccess``: System.Action * ``onError``: System.Action -> unit
+        abstract ``getTextureWidth``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture -> float
+        abstract ``getTextureHeight``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture -> float
+        abstract ``getTextureLayerCount``: INativeEngineGetTextureLayerCountCallback option with get, set
+        abstract ``deleteTexture``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture -> unit
+        abstract ``readTexture``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture * ``mipLevel``: float * ``x``: float * ``y``: float * ``width``: float * ``height``: float * ``buffer``: JS.ArrayBuffer option * ``bufferOffset``: float * ``bufferLength``: float -> JS.Promise<JS.ArrayBuffer>
+        abstract ``createImageBitmap``: ``data``: U2<JS.ArrayBuffer, IImage> -> BrowserImageBitmap
+        abstract ``resizeImageBitmap``: ``image``: BrowserImageBitmap * ``bufferWidth``: float * ``bufferHeight``: float -> JS.Uint8Array
+        abstract ``createFrameBuffer``: ``texture``: BabylonjsBindings.TypeAliases.NativeTexture option * ``width``: float * ``height``: float * ``generateStencilBuffer``: bool * ``generateDepthBuffer``: bool * ``samples``: float * ?``layer``: float -> BabylonjsBindings.TypeAliases.NativeFramebuffer
+        abstract ``createMultiFrameBuffer``: INativeEngineCreateMultiFrameBufferCallback option with get, set
+        abstract ``getRenderWidth``: unit -> float
+        abstract ``getRenderHeight``: unit -> float
+        abstract ``setHardwareScalingLevel``: ``level``: float -> unit
+        abstract ``setViewPort``: ``x``: float * ``y``: float * ``width``: float * ``height``: float -> unit
+        abstract ``setCommandDataStream``: ``dataStream``: BabylonjsBindings.SimpleClasses.NativeDataStream -> unit
+        abstract ``submitCommands``: unit -> unit
+        abstract ``populateFrameStats``: ``stats``: BabylonjsBindings.ObjectTypes.NativeFrameStats -> unit
+
+    /// @babylonjs/core/XR/features/WebXRBodyTracking.pure
+    [<AllowNullLiteral>]
+    type IWebXRBodyTrackingOptions =
+        abstract ``bodyMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh option with get, set
+        abstract ``rigMapping``: BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping option with get, set
+        abstract ``jointScaleFactor``: float option with get, set
+        abstract ``preserveBindPoseBonePositions``: bool option with get, set
+        abstract ``useBoneOrientationOffsets``: bool option with get, set
+        abstract ``jointLocalRotationOffset``: BabylonjsBindings.SimpleClasses.Quaternion option with get, set
+        abstract ``aimChildOverrides``: BrowserRecord<BabylonjsBindings.StringEnums.WebXRBodyJoint, BabylonjsBindings.StringEnums.WebXRBodyJoint option> option with get, set
+        abstract ``isMixamoModel``: bool option with get, set
+
+    /// @babylonjs/core/Debug/debugLayer.pure
+    [<AllowNullLiteral>]
+    type IInspectorOptions =
+        abstract ``overlay``: bool option with get, set
+        abstract ``globalRoot``: Browser.Types.HTMLElement option with get, set
+        abstract ``showExplorer``: bool option with get, set
+        abstract ``showInspector``: bool option with get, set
+        abstract ``embedMode``: bool option with get, set
+        abstract ``handleResize``: bool option with get, set
+        abstract ``enablePopup``: bool option with get, set
+        abstract ``enableClose``: bool option with get, set
+        abstract ``explorerExtensibility``: ResizeArray<IExplorerExtensibilityGroup> option with get, set
+        abstract ``additionalNodes``: ResizeArray<IExplorerAdditionalNode> option with get, set
+        abstract ``inspectorURL``: string option with get, set
+        abstract ``initialTab``: BabylonjsBindings.Enums.DebugLayerTab option with get, set
+        abstract ``gizmoCamera``: BabylonjsBindings.SimpleClasses.Camera option with get, set
+        abstract ``contextMenu``: BrowserRecord<BabylonjsBindings.StringEnums.IInspectorContextMenuType, ResizeArray<IInspectorContextMenuItem> option> option with get, set
+        abstract ``contextMenuOverride``: ResizeArray<BabylonjsBindings.StringEnums.IInspectorContextMenuType> option with get, set
+        abstract ``skipDefaultFontLoading``: bool option with get, set
+
+    /// Function-valued IFlowGraphBlockParseOptions.valueParseFunction property.
+    [<AllowNullLiteral>]
+    type IFlowGraphBlockParseOptionsValueParseFunctionCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``key``: string * ``serializationObject``: obj * ``assetsContainer``: IAssetContainer * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> obj
+
+    /// @babylonjs/core/FlowGraph/flowGraphBlock
+    [<AllowNullLiteral>]
+    type IFlowGraphBlockParseOptions =
+        abstract ``valueParseFunction``: IFlowGraphBlockParseOptionsValueParseFunctionCallback option with get, set
+        abstract ``assetsContainer``: IAssetContainer option with get, set
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene with get, set
+        abstract ``pathConverter``: IPathToObjectConverter<IObjectAccessor<obj, obj, obj>> option with get, set
+
+    /// Function-valued IFlowGraphCoordinatorParseOptions.valueParseFunction property.
+    [<AllowNullLiteral>]
+    type IFlowGraphCoordinatorParseOptionsValueParseFunctionCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``key``: string * ``serializationObject``: obj * ``assetsContainer``: IAssetContainer * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> obj
+
+    /// @babylonjs/core/FlowGraph/flowGraphCoordinator
+    [<AllowNullLiteral>]
+    type IFlowGraphCoordinatorParseOptions =
+        abstract ``valueParseFunction``: IFlowGraphCoordinatorParseOptionsValueParseFunctionCallback option with get, set
+        abstract ``pathConverter``: IPathToObjectConverter<IObjectAccessor<obj, obj, obj>> option with get, set
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene with get, set
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure
+    [<AllowNullLiteral>]
+    type IFlowGraphJsonPointerParserBlockConfiguration =
+        inherit IFlowGraphBlockConfiguration
+        abstract ``jsonPointer``: string with get, set
+        abstract ``pathConverter``: IPathToObjectConverter<IObjectAccessor<obj, obj, obj>> with get, set
+        abstract ``outputValue``: bool option with get, set
+
+    /// Function-valued IFlowGraphParseOptions.valueParseFunction property.
+    [<AllowNullLiteral>]
+    type IFlowGraphParseOptionsValueParseFunctionCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``key``: string * ``serializationObject``: obj * ``assetsContainer``: IAssetContainer * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> obj
+
+    /// @babylonjs/core/FlowGraph/flowGraph
+    [<AllowNullLiteral>]
+    type IFlowGraphParseOptions =
+        abstract ``valueParseFunction``: IFlowGraphParseOptionsValueParseFunctionCallback option with get, set
+        abstract ``coordinator``: BabylonjsBindings.SimpleClasses.FlowGraphCoordinator with get, set
+        abstract ``pathConverter``: IPathToObjectConverter<IObjectAccessor<obj, obj, obj>> option with get, set
+
+    /// Distinct ambient WebGL transform-feedback object handle.
+    [<AllowNullLiteral>]
+    type BrowserWebGLTransformFeedback =
+        interface end
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject4583f044ad0cObject =
+        [<EmitIndexer>] abstract Item: ``name``: string -> IPipelineContext with get, set
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type IThinEngineStateObject =
+        abstract ``_contextWasLost``: bool option with get, set
+        abstract ``validateShaderPrograms``: bool option with get, set
+        abstract ``_webGLVersion``: float with get, set
+        abstract ``parallelShaderCompile``: InlineObject350439cd372aObject option with get, set
+        abstract ``disableParallelShaderCompile``: bool option with get, set
+        abstract ``_context``: BabylonjsBindings.TypeAliases.WebGLContext option with get, set
+        abstract ``_createShaderProgramInjection``: System.Func<BabylonjsBindings.SimpleClasses.WebGLPipelineContext, Browser.Types.WebGLShader, Browser.Types.WebGLShader, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, bool option, Browser.Types.WebGLProgram> option with get, set
+        abstract ``createRawShaderProgramInjection``: System.Func<IPipelineContext, string, string, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, System.Func<BabylonjsBindings.SimpleClasses.WebGLPipelineContext, Browser.Types.WebGLShader, Browser.Types.WebGLShader, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, bool option, Browser.Types.WebGLProgram> option, Browser.Types.WebGLProgram> option with get, set
+        abstract ``createShaderProgramInjection``: System.Func<IPipelineContext, string, string, string option, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, System.Func<BabylonjsBindings.SimpleClasses.WebGLPipelineContext, Browser.Types.WebGLShader, Browser.Types.WebGLShader, BabylonjsBindings.TypeAliases.WebGLContext, ResizeArray<string> option, bool option, Browser.Types.WebGLProgram> option, Browser.Types.WebGLProgram> option with get, set
+        abstract ``loadFileInjection``: System.Func<string, System.Action<U2<string, JS.ArrayBuffer>, string option>, System.Action<obj> option, IOfflineProvider option, bool option, System.Action<IWebRequest option, obj option> option, System.Func<string, System.Action<U2<string, JS.ArrayBuffer>, string option>, System.Action<Browser.Types.ProgressEvent> option, IOfflineProvider option, bool option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest option, BabylonjsBindings.SimpleClasses.LoadFileError option> option, IFileRequest> option, IFileRequest> option with get, set
+        abstract ``cachedPipelines``: InlineObject4583f044ad0cObject with get, set
+
+    /// Exact Fetch referrer-policy literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserReferrerPolicy =
+        | [<CompiledName("")>] Default
+        | [<CompiledName("no-referrer")>] NoReferrer
+        | [<CompiledName("no-referrer-when-downgrade")>] NoReferrerWhenDowngrade
+        | [<CompiledName("origin")>] Origin
+        | [<CompiledName("origin-when-cross-origin")>] OriginWhenCrossOrigin
+        | [<CompiledName("same-origin")>] SameOrigin
+        | [<CompiledName("strict-origin")>] StrictOrigin
+        | [<CompiledName("strict-origin-when-cross-origin")>] StrictOriginWhenCrossOrigin
+        | [<CompiledName("unsafe-url")>] UnsafeUrl
+
+    /// Exact ECMAScript function-arguments object surface.
+    [<AllowNullLiteral>]
+    type BrowserArguments =
+        [<EmitIndexer>] abstract Item: index: float -> obj with get, set
+        abstract length: float with get
+        abstract callee: System.Delegate with get
+
+    /// Distinct ambient WebXR input-source event handle.
+    [<AllowNullLiteral>]
+    type BrowserXRInputSourceEvent =
+        interface end
+
+    /// Distinct ambient WebXR ray handle.
+    [<AllowNullLiteral>]
+    type BrowserXRRay =
+        interface end
+
+    /// Exact numeric enum subset projected from a TypeScript declaration.
+    type PointerInputSubsetbd14c9a442 =
+        | MouseWheelX = 7
+        | MouseWheelY = 8
+        | MouseWheelZ = 9
+
+    /// @babylonjs/core/Events/deviceInputEvents
+    [<AllowNullLiteral>]
+    type IWheelEvent =
+        inherit IMouseEvent
+        abstract ``inputIndex``: PointerInputSubsetbd14c9a442 with get, set
+        abstract ``deltaMode``: float with get, set
+        abstract ``deltaX``: float with get, set
+        abstract ``deltaY``: float with get, set
+        abstract ``deltaZ``: float with get, set
+        abstract ``wheelDelta``: float option with get, set
+
+    /// Exact JavaScript constructor surface for XMLHttpRequest.
+    [<AllowNullLiteral>]
+    type BrowserXMLHttpRequestStatic =
+        [<EmitConstructor>] abstract Create: unit -> BrowserXMLHttpRequest
+
+    /// Nominal erased representation of the TypeScript `true` singleton.
+    [<Erase>]
+    type BrowserTrue = private BrowserTrue of bool
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativeEngineInfo =
+        abstract ``version``: string with get, set
+        abstract ``nonFloatVertexBuffers``: BrowserTrue with get, set
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativeCameraConstructor =
+        abstract ``prototype``: INativeCamera with get, set
+        [<EmitConstructor>] abstract Create: unit -> INativeCamera
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativeDataStreamConstructor =
+        abstract ``prototype``: INativeDataStream with get, set
+        [<EmitConstructor>] abstract Create: ``requestFlushCallback``: System.Action -> INativeDataStream
+        abstract ``VALIDATION_ENABLED``: bool with get
+        abstract ``VALIDATION_UINT_32``: float with get
+        abstract ``VALIDATION_INT_32``: float with get
+        abstract ``VALIDATION_FLOAT_32``: float with get
+        abstract ``VALIDATION_UINT_32_ARRAY``: float with get
+        abstract ``VALIDATION_INT_32_ARRAY``: float with get
+        abstract ``VALIDATION_FLOAT_32_ARRAY``: float with get
+        abstract ``VALIDATION_NATIVE_DATA``: float with get
+        abstract ``VALIDATION_BOOLEAN``: float with get
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativeImageConstructor =
+        abstract ``prototype``: IImage with get, set
+        [<EmitConstructor>] abstract Create: unit -> IImage
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type IDeviceInputSystemConstructor =
+        abstract ``prototype``: IDeviceInputSystem with get, set
+        [<EmitConstructor>] abstract Create: ``onDeviceConnected``: System.Action<BabylonjsBindings.Enums.DeviceType, float> * ``onDeviceDisconnected``: System.Action<BabylonjsBindings.Enums.DeviceType, float> * ``onInputChanged``: System.Action<BabylonjsBindings.Enums.DeviceType, float, float, float> -> IDeviceInputSystem
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativeEngineConstructor =
+        abstract ``prototype``: INativeEngine with get, set
+        [<EmitConstructor>] abstract Create: ``info``: INativeEngineInfo -> INativeEngine
+        abstract ``PROTOCOL_VERSION``: float with get
+        abstract ``CAPS_LIMITS_MAX_TEXTURE_SIZE``: float with get
+        abstract ``CAPS_LIMITS_MAX_TEXTURE_LAYERS``: float with get
+        abstract ``TEXTURE_NEAREST_NEAREST``: float with get
+        abstract ``TEXTURE_LINEAR_LINEAR``: float with get
+        abstract ``TEXTURE_LINEAR_LINEAR_MIPLINEAR``: float with get
+        abstract ``TEXTURE_NEAREST_NEAREST_MIPNEAREST``: float with get
+        abstract ``TEXTURE_NEAREST_LINEAR_MIPNEAREST``: float with get
+        abstract ``TEXTURE_NEAREST_LINEAR_MIPLINEAR``: float with get
+        abstract ``TEXTURE_NEAREST_LINEAR``: float with get
+        abstract ``TEXTURE_NEAREST_NEAREST_MIPLINEAR``: float with get
+        abstract ``TEXTURE_LINEAR_NEAREST_MIPNEAREST``: float with get
+        abstract ``TEXTURE_LINEAR_NEAREST_MIPLINEAR``: float with get
+        abstract ``TEXTURE_LINEAR_LINEAR_MIPNEAREST``: float with get
+        abstract ``TEXTURE_LINEAR_NEAREST``: float with get
+        abstract ``DEPTH_TEST_LESS``: float with get
+        abstract ``DEPTH_TEST_LEQUAL``: float with get
+        abstract ``DEPTH_TEST_EQUAL``: float with get
+        abstract ``DEPTH_TEST_GEQUAL``: float with get
+        abstract ``DEPTH_TEST_GREATER``: float with get
+        abstract ``DEPTH_TEST_NOTEQUAL``: float with get
+        abstract ``DEPTH_TEST_NEVER``: float with get
+        abstract ``DEPTH_TEST_ALWAYS``: float with get
+        abstract ``ADDRESS_MODE_WRAP``: float with get
+        abstract ``ADDRESS_MODE_MIRROR``: float with get
+        abstract ``ADDRESS_MODE_CLAMP``: float with get
+        abstract ``ADDRESS_MODE_BORDER``: float with get
+        abstract ``ADDRESS_MODE_MIRROR_ONCE``: float with get
+        abstract ``TEXTURE_FORMAT_BC1``: float with get
+        abstract ``TEXTURE_FORMAT_BC2``: float with get
+        abstract ``TEXTURE_FORMAT_BC3``: float with get
+        abstract ``TEXTURE_FORMAT_BC4``: float with get
+        abstract ``TEXTURE_FORMAT_BC5``: float with get
+        abstract ``TEXTURE_FORMAT_BC6H``: float with get
+        abstract ``TEXTURE_FORMAT_BC7``: float with get
+        abstract ``TEXTURE_FORMAT_ETC1``: float with get
+        abstract ``TEXTURE_FORMAT_ETC2``: float with get
+        abstract ``TEXTURE_FORMAT_ETC2A``: float with get
+        abstract ``TEXTURE_FORMAT_ETC2A1``: float with get
+        abstract ``TEXTURE_FORMAT_PTC12``: float with get
+        abstract ``TEXTURE_FORMAT_PTC14``: float with get
+        abstract ``TEXTURE_FORMAT_PTC12A``: float with get
+        abstract ``TEXTURE_FORMAT_PTC14A``: float with get
+        abstract ``TEXTURE_FORMAT_PTC22``: float with get
+        abstract ``TEXTURE_FORMAT_PTC24``: float with get
+        abstract ``TEXTURE_FORMAT_ATC``: float with get
+        abstract ``TEXTURE_FORMAT_ATCE``: float with get
+        abstract ``TEXTURE_FORMAT_ATCI``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC4x4``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC5x4``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC5x5``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC6x5``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC6x6``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC8x5``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC8x6``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC8x8``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC10x5``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC10x6``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC10x8``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC10x10``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC12x10``: float with get
+        abstract ``TEXTURE_FORMAT_ASTC12x12``: float with get
+        abstract ``TEXTURE_FORMAT_R1``: float with get
+        abstract ``TEXTURE_FORMAT_A8``: float with get
+        abstract ``TEXTURE_FORMAT_R8``: float with get
+        abstract ``TEXTURE_FORMAT_R8I``: float with get
+        abstract ``TEXTURE_FORMAT_R8U``: float with get
+        abstract ``TEXTURE_FORMAT_R8S``: float with get
+        abstract ``TEXTURE_FORMAT_R16``: float with get
+        abstract ``TEXTURE_FORMAT_R16I``: float with get
+        abstract ``TEXTURE_FORMAT_R16U``: float with get
+        abstract ``TEXTURE_FORMAT_R16F``: float with get
+        abstract ``TEXTURE_FORMAT_R16S``: float with get
+        abstract ``TEXTURE_FORMAT_R32I``: float with get
+        abstract ``TEXTURE_FORMAT_R32U``: float with get
+        abstract ``TEXTURE_FORMAT_R32F``: float with get
+        abstract ``TEXTURE_FORMAT_RG8``: float with get
+        abstract ``TEXTURE_FORMAT_RG8I``: float with get
+        abstract ``TEXTURE_FORMAT_RG8U``: float with get
+        abstract ``TEXTURE_FORMAT_RG8S``: float with get
+        abstract ``TEXTURE_FORMAT_RG16``: float with get
+        abstract ``TEXTURE_FORMAT_RG16I``: float with get
+        abstract ``TEXTURE_FORMAT_RG16U``: float with get
+        abstract ``TEXTURE_FORMAT_RG16F``: float with get
+        abstract ``TEXTURE_FORMAT_RG16S``: float with get
+        abstract ``TEXTURE_FORMAT_RG32I``: float with get
+        abstract ``TEXTURE_FORMAT_RG32U``: float with get
+        abstract ``TEXTURE_FORMAT_RG32F``: float with get
+        abstract ``TEXTURE_FORMAT_RGB8``: float with get
+        abstract ``TEXTURE_FORMAT_RGB8I``: float with get
+        abstract ``TEXTURE_FORMAT_RGB8U``: float with get
+        abstract ``TEXTURE_FORMAT_RGB8S``: float with get
+        abstract ``TEXTURE_FORMAT_RGB9E5F``: float with get
+        abstract ``TEXTURE_FORMAT_BGRA8``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA8``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA8I``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA8U``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA8S``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA16``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA16I``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA16U``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA16F``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA16S``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA32I``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA32U``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA32F``: float with get
+        abstract ``TEXTURE_FORMAT_B5G6R5``: float with get
+        abstract ``TEXTURE_FORMAT_R5G6B5``: float with get
+        abstract ``TEXTURE_FORMAT_BGRA4``: float with get
+        abstract ``TEXTURE_FORMAT_RGBA4``: float with get
+        abstract ``TEXTURE_FORMAT_BGR5A1``: float with get
+        abstract ``TEXTURE_FORMAT_RGB5A1``: float with get
+        abstract ``TEXTURE_FORMAT_RGB10A2``: float with get
+        abstract ``TEXTURE_FORMAT_RG11B10F``: float with get
+        abstract ``TEXTURE_FORMAT_D16``: float with get
+        abstract ``TEXTURE_FORMAT_D24``: float with get
+        abstract ``TEXTURE_FORMAT_D24S8``: float with get
+        abstract ``TEXTURE_FORMAT_D32``: float with get
+        abstract ``TEXTURE_FORMAT_D16F``: float with get
+        abstract ``TEXTURE_FORMAT_D24F``: float with get
+        abstract ``TEXTURE_FORMAT_D32F``: float with get
+        abstract ``TEXTURE_FORMAT_D0S8``: float with get
+        abstract ``ATTRIB_TYPE_INT8``: float with get
+        abstract ``ATTRIB_TYPE_UINT8``: float with get
+        abstract ``ATTRIB_TYPE_INT16``: float with get
+        abstract ``ATTRIB_TYPE_UINT16``: float with get
+        abstract ``ATTRIB_TYPE_FLOAT``: float with get
+        abstract ``ALPHA_DISABLE``: float with get
+        abstract ``ALPHA_ADD``: float with get
+        abstract ``ALPHA_COMBINE``: float with get
+        abstract ``ALPHA_SUBTRACT``: float with get
+        abstract ``ALPHA_MULTIPLY``: float with get
+        abstract ``ALPHA_MAXIMIZED``: float with get
+        abstract ``ALPHA_ONEONE``: float with get
+        abstract ``ALPHA_ONEONE_ONEONE``: float option with get
+        abstract ``ALPHA_LAYER_ACCUMULATE``: float option with get
+        abstract ``ALPHA_PREMULTIPLIED``: float with get
+        abstract ``ALPHA_PREMULTIPLIED_PORTERDUFF``: float with get
+        abstract ``ALPHA_INTERPOLATE``: float with get
+        abstract ``ALPHA_SCREENMODE``: float with get
+        abstract ``ALPHA_REPLACE_COLOR``: float option with get
+        abstract ``STENCIL_TEST_LESS``: float with get
+        abstract ``STENCIL_TEST_LEQUAL``: float with get
+        abstract ``STENCIL_TEST_EQUAL``: float with get
+        abstract ``STENCIL_TEST_GEQUAL``: float with get
+        abstract ``STENCIL_TEST_GREATER``: float with get
+        abstract ``STENCIL_TEST_NOTEQUAL``: float with get
+        abstract ``STENCIL_TEST_NEVER``: float with get
+        abstract ``STENCIL_TEST_ALWAYS``: float with get
+        abstract ``STENCIL_OP_FAIL_S_ZERO``: float with get
+        abstract ``STENCIL_OP_FAIL_S_KEEP``: float with get
+        abstract ``STENCIL_OP_FAIL_S_REPLACE``: float with get
+        abstract ``STENCIL_OP_FAIL_S_INCR``: float with get
+        abstract ``STENCIL_OP_FAIL_S_INCRSAT``: float with get
+        abstract ``STENCIL_OP_FAIL_S_DECR``: float with get
+        abstract ``STENCIL_OP_FAIL_S_DECRSAT``: float with get
+        abstract ``STENCIL_OP_FAIL_S_INVERT``: float with get
+        abstract ``STENCIL_OP_FAIL_Z_ZERO``: float with get
+        abstract ``STENCIL_OP_FAIL_Z_KEEP``: float with get
+        abstract ``STENCIL_OP_FAIL_Z_REPLACE``: float with get
+        abstract ``STENCIL_OP_FAIL_Z_INCR``: float with get
+        abstract ``STENCIL_OP_FAIL_Z_INCRSAT``: float with get
+        abstract ``STENCIL_OP_FAIL_Z_DECR``: float with get
+        abstract ``STENCIL_OP_FAIL_Z_DECRSAT``: float with get
+        abstract ``STENCIL_OP_FAIL_Z_INVERT``: float with get
+        abstract ``STENCIL_OP_PASS_Z_ZERO``: float with get
+        abstract ``STENCIL_OP_PASS_Z_KEEP``: float with get
+        abstract ``STENCIL_OP_PASS_Z_REPLACE``: float with get
+        abstract ``STENCIL_OP_PASS_Z_INCR``: float with get
+        abstract ``STENCIL_OP_PASS_Z_INCRSAT``: float with get
+        abstract ``STENCIL_OP_PASS_Z_DECR``: float with get
+        abstract ``STENCIL_OP_PASS_Z_DECRSAT``: float with get
+        abstract ``STENCIL_OP_PASS_Z_INVERT``: float with get
+        abstract ``COMMAND_DELETEVERTEXARRAY``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_DELETEINDEXBUFFER``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_DELETEVERTEXBUFFER``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETPROGRAM``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETMATRIX``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETMATRIX3X3``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETMATRIX2X2``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETMATRICES``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETINT``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETINTARRAY``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETINTARRAY2``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETINTARRAY3``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETINTARRAY4``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETFLOATARRAY``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETFLOATARRAY2``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETFLOATARRAY3``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETFLOATARRAY4``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETTEXTURESAMPLING``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETTEXTUREWRAPMODE``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETTEXTUREANISOTROPICLEVEL``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETTEXTURE``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_UNSETTEXTURE``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_DISCARDALLTEXTURES``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_BINDVERTEXARRAY``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETSTATE``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_DELETEPROGRAM``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETZOFFSET``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETZOFFSETUNITS``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETDEPTHTEST``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETDEPTHWRITE``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETCOLORWRITE``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETBLENDMODE``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETFLOAT``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETFLOAT2``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETFLOAT3``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETFLOAT4``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_BINDFRAMEBUFFER``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_UNBINDFRAMEBUFFER``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_DELETEFRAMEBUFFER``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_DRAWINDEXED``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_DRAWINDEXEDINSTANCED``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_DRAW``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_DRAWINSTANCED``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_CLEAR``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETSTENCIL``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETVIEWPORT``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_SETSCISSOR``: BabylonjsBindings.TypeAliases.NativeData with get
+        abstract ``COMMAND_COPYTEXTURE``: BabylonjsBindings.TypeAliases.NativeData with get
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativePath2DConstructor =
+        abstract ``prototype``: IPath2D with get, set
+        [<EmitConstructor>] abstract Create: ?``d``: string -> IPath2D
+
+    /// Function-valued INative.enablePerformanceLogging property.
+    [<AllowNullLiteral>]
+    type INativeEnablePerformanceLoggingCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``level``: BabylonjsBindings.Enums.NativeTraceLevel -> unit
+
+    /// Function-valued INative.disablePerformanceLogging property.
+    [<AllowNullLiteral>]
+    type INativeDisablePerformanceLoggingCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// Function-valued INative.startPerformanceCounter property.
+    [<AllowNullLiteral>]
+    type INativeStartPerformanceCounterCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``counter``: string -> obj
+
+    /// Function-valued INative.endPerformanceCounter property.
+    [<AllowNullLiteral>]
+    type INativeEndPerformanceCounterCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``counter``: obj -> unit
+
+    /// Function-valued INative.sortSplats property.
+    [<AllowNullLiteral>]
+    type INativeSortSplatsCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``modelViewMatrix``: BabylonjsBindings.SimpleClasses.Matrix * ``splatPositions``: JS.Float32Array * ``splatIndex``: JS.Float32Array * ``useRightHandedSystem``: bool -> unit
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INative =
+        abstract ``Engine``: INativeEngineConstructor with get, set
+        abstract ``NativeDataStream``: INativeDataStreamConstructor with get, set
+        abstract ``Camera``: INativeCameraConstructor option with get, set
+        abstract ``Canvas``: INativeCanvasConstructor option with get, set
+        abstract ``Image``: INativeImageConstructor option with get, set
+        abstract ``Path2D``: INativePath2DConstructor option with get, set
+        abstract ``XMLHttpRequest``: BrowserXMLHttpRequestStatic option with get, set
+        abstract ``DeviceInputSystem``: IDeviceInputSystemConstructor option with get, set
+        abstract ``enablePerformanceLogging``: INativeEnablePerformanceLoggingCallback option with get, set
+        abstract ``disablePerformanceLogging``: INativeDisablePerformanceLoggingCallback option with get, set
+        abstract ``startPerformanceCounter``: INativeStartPerformanceCounterCallback option with get, set
+        abstract ``endPerformanceCounter``: INativeEndPerformanceCounterCallback option with get, set
+        abstract ``sortSplats``: INativeSortSplatsCallback option with get, set
+
+    /// @babylonjs/core/Engines/Native/nativeInterfaces
+    [<AllowNullLiteral>]
+    type INativeCanvasConstructor =
+        abstract ``prototype``: ICanvas with get, set
+        [<EmitConstructor>] abstract Create: unit -> ICanvas
+        abstract ``loadTTFAsync``: ``fontName``: string * ``buffer``: JS.ArrayBuffer -> unit
+
+    /// Nominal erased representation of the TypeScript `false` singleton.
+    [<Erase>]
+    type BrowserFalse = private BrowserFalse of bool
+
+    /// Distinct ambient WebXR space handle.
+    [<AllowNullLiteral>]
+    type BrowserXRSpace =
+        interface end
+
+    /// Distinct ambient WebXR hit-test source handle.
+    [<AllowNullLiteral>]
+    type BrowserXRHitTestSource =
+        interface end
+
+    /// Distinct ambient WebXR anchor set handle.
+    [<AllowNullLiteral>]
+    type BrowserXRAnchorSet =
+        interface end
+
+    /// Distinct ambient WebXR world information handle.
+    [<AllowNullLiteral>]
+    type BrowserXRWorldInformation =
+        interface end
+
+    /// Distinct ambient WebXR plane set handle.
+    [<AllowNullLiteral>]
+    type BrowserXRPlaneSet =
+        interface end
+
+    /// Distinct ambient WebXR joint space handle.
+    [<AllowNullLiteral>]
+    type BrowserXRJointSpace =
+        interface end
+
+    /// Distinct ambient WebXR joint pose handle.
+    [<AllowNullLiteral>]
+    type BrowserXRJointPose =
+        interface end
+
+    /// Distinct ambient WebXR CPU depth information handle.
+    [<AllowNullLiteral>]
+    type BrowserXRCPUDepthInformation =
+        interface end
+
+    /// Distinct ambient native WebXR frame implementation handle.
+    [<AllowNullLiteral>]
+    type BrowserNativeXRFrame =
+        interface end
 
 /// Exact dependency-closed runtime classes exported by Babylon.js 9.19.0.
 module SimpleClasses =
@@ -53744,3 +54370,531 @@ module SimpleClasses =
 
     [<Import("DracoCompression", "@babylonjs/core/Meshes/Compression/dracoCompression.js")>]
     let DracoCompression: DracoCompressionStatic = jsNative
+
+    /// @babylonjs/core/Debug/debugLayer.pure
+    [<AllowNullLiteral>]
+    type DebugLayer =
+        abstract ``select`` : ``entity``: obj * ?``lineContainerTitles``: U2<string, ResizeArray<string>> -> unit
+        abstract ``isVisible`` : unit -> bool
+        abstract ``hide`` : unit -> unit
+        abstract ``setAsActiveScene`` : unit -> unit
+        abstract ``popupSceneExplorer`` : unit -> unit
+        abstract ``popupInspector`` : unit -> unit
+        abstract ``popupEmbed`` : unit -> unit
+        abstract ``show`` : ?``config``: BabylonjsBindings.SimpleInterfaces.IInspectorOptions -> JS.Promise<DebugLayer>
+        abstract ``onPropertyChangedObservable``: obj with get
+        abstract ``onSelectionChangedObservable``: obj with get
+        abstract ``openedPanes``: obj with get
+
+    [<AllowNullLiteral>]
+    type DebugLayerStatic =
+        inherit Constructor<DebugLayer>
+        [<EmitConstructor>] abstract Create: ?``scene``: Scene -> DebugLayer
+        abstract ``InspectorURL``: string with get, set
+        abstract ``Config``: BabylonjsBindings.SimpleInterfaces.IInspectorOptions with get, set
+
+    [<Import("DebugLayer", "@babylonjs/core/Debug/debugLayer.pure.js")>]
+    let DebugLayer: DebugLayerStatic = jsNative
+
+    /// Inline object shape used by WebGLPipelineContext.
+    [<AllowNullLiteral>]
+    type WebGLPipelineContextMethod20Parameter2Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> float with get, set
+
+    /// Inline object shape used by WebGLPipelineContext.
+    [<AllowNullLiteral>]
+    type WebGLPipelineContextMethod20Parameter4Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> Browser.Types.WebGLUniformLocation option with get, set
+
+    /// Inline object shape used by WebGLPipelineContext.
+    [<AllowNullLiteral>]
+    type WebGLPipelineContextMethod20Parameter6Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> float with get, set
+
+    /// Function-valued WebGLPipelineContext.onCompiled property.
+    [<AllowNullLiteral>]
+    type WebGLPipelineContextOnCompiledCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// @babylonjs/core/Engines/WebGL/webGLPipelineContext
+    [<AllowNullLiteral>]
+    type WebGLPipelineContext =
+        inherit BabylonjsBindings.SimpleInterfaces.IPipelineContext
+        abstract ``engine``: ThinEngine with get, set
+        abstract ``program``: Browser.Types.WebGLProgram option with get, set
+        abstract ``context``: Browser.Types.WebGLRenderingContext option with get, set
+        abstract ``vertexShader``: Browser.Types.WebGLShader option with get, set
+        abstract ``fragmentShader``: Browser.Types.WebGLShader option with get, set
+        abstract ``isParallelCompiled``: bool with get, set
+        abstract ``onCompiled``: WebGLPipelineContextOnCompiledCallback option with get, set
+        abstract ``transformFeedback``: BabylonjsBindings.SimpleInterfaces.BrowserWebGLTransformFeedback option with get, set
+        abstract ``vertexCompilationError``: string option with get, set
+        abstract ``fragmentCompilationError``: string option with get, set
+        abstract ``programLinkError``: string option with get, set
+        abstract ``programValidationError``: string option with get, set
+        abstract ``_isDisposed``: bool with get, set
+        abstract ``_handlesSpectorRebuildCallback`` : ``onCompiled``: System.Action<Browser.Types.WebGLProgram> -> unit
+        abstract ``setEngine`` : ``engine``: AbstractEngine -> unit
+        abstract ``_fillEffectInformation`` : ``effect``: Effect * ``uniformBuffersNames``: WebGLPipelineContextMethod20Parameter2Object * ``uniformsNames``: ResizeArray<string> * ``uniforms``: WebGLPipelineContextMethod20Parameter4Object * ``samplerList``: ResizeArray<string> * ``samplers``: WebGLPipelineContextMethod20Parameter6Object * ``attributesNames``: ResizeArray<string> * ``attributes``: ResizeArray<float> -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``_cacheMatrix`` : ``uniformName``: string * ``matrix``: BabylonjsBindings.SimpleInterfaces.IMatrixLike -> bool
+        abstract ``_cacheFloat2`` : ``uniformName``: string * ``x``: float * ``y``: float -> bool
+        abstract ``_cacheFloat3`` : ``uniformName``: string * ``x``: float * ``y``: float * ``z``: float -> bool
+        abstract ``_cacheFloat4`` : ``uniformName``: string * ``x``: float * ``y``: float * ``z``: float * ``w``: float -> bool
+        abstract ``setInt`` : ``uniformName``: string * ``value``: float -> unit
+        abstract ``setInt2`` : ``uniformName``: string * ``x``: float * ``y``: float -> unit
+        abstract ``setInt3`` : ``uniformName``: string * ``x``: float * ``y``: float * ``z``: float -> unit
+        abstract ``setInt4`` : ``uniformName``: string * ``x``: float * ``y``: float * ``z``: float * ``w``: float -> unit
+        abstract ``setIntArray`` : ``uniformName``: string * ``array``: JS.Int32Array -> unit
+        abstract ``setIntArray2`` : ``uniformName``: string * ``array``: JS.Int32Array -> unit
+        abstract ``setIntArray3`` : ``uniformName``: string * ``array``: JS.Int32Array -> unit
+        abstract ``setIntArray4`` : ``uniformName``: string * ``array``: JS.Int32Array -> unit
+        abstract ``setUInt`` : ``uniformName``: string * ``value``: float -> unit
+        abstract ``setUInt2`` : ``uniformName``: string * ``x``: float * ``y``: float -> unit
+        abstract ``setUInt3`` : ``uniformName``: string * ``x``: float * ``y``: float * ``z``: float -> unit
+        abstract ``setUInt4`` : ``uniformName``: string * ``x``: float * ``y``: float * ``z``: float * ``w``: float -> unit
+        abstract ``setUIntArray`` : ``uniformName``: string * ``array``: JS.Uint32Array -> unit
+        abstract ``setUIntArray2`` : ``uniformName``: string * ``array``: JS.Uint32Array -> unit
+        abstract ``setUIntArray3`` : ``uniformName``: string * ``array``: JS.Uint32Array -> unit
+        abstract ``setUIntArray4`` : ``uniformName``: string * ``array``: JS.Uint32Array -> unit
+        abstract ``setArray`` : ``uniformName``: string * ``array``: ResizeArray<float> -> unit
+        abstract ``setArray2`` : ``uniformName``: string * ``array``: ResizeArray<float> -> unit
+        abstract ``setArray3`` : ``uniformName``: string * ``array``: ResizeArray<float> -> unit
+        abstract ``setArray4`` : ``uniformName``: string * ``array``: ResizeArray<float> -> unit
+        abstract ``setMatrices`` : ``uniformName``: string * ``matrices``: JS.Float32Array -> unit
+        abstract ``setMatrix`` : ``uniformName``: string * ``matrix``: BabylonjsBindings.SimpleInterfaces.IMatrixLike -> unit
+        abstract ``setMatrix3x3`` : ``uniformName``: string * ``matrix``: JS.Float32Array -> unit
+        abstract ``setMatrix2x2`` : ``uniformName``: string * ``matrix``: JS.Float32Array -> unit
+        abstract ``setFloat`` : ``uniformName``: string * ``value``: float -> unit
+        abstract ``setVector2`` : ``uniformName``: string * ``vector2``: BabylonjsBindings.SimpleInterfaces.IVector2Like -> unit
+        abstract ``setFloat2`` : ``uniformName``: string * ``x``: float * ``y``: float -> unit
+        abstract ``setVector3`` : ``uniformName``: string * ``vector3``: BabylonjsBindings.SimpleInterfaces.IVector3Like -> unit
+        abstract ``setFloat3`` : ``uniformName``: string * ``x``: float * ``y``: float * ``z``: float -> unit
+        abstract ``setVector4`` : ``uniformName``: string * ``vector4``: BabylonjsBindings.SimpleInterfaces.IVector4Like -> unit
+        abstract ``setQuaternion`` : ``uniformName``: string * ``quaternion``: BabylonjsBindings.SimpleInterfaces.IQuaternionLike -> unit
+        abstract ``setFloat4`` : ``uniformName``: string * ``x``: float * ``y``: float * ``z``: float * ``w``: float -> unit
+        abstract ``setColor3`` : ``uniformName``: string * ``color3``: BabylonjsBindings.SimpleInterfaces.IColor3Like -> unit
+        abstract ``setColor4`` : ``uniformName``: string * ``color3``: BabylonjsBindings.SimpleInterfaces.IColor3Like * ``alpha``: float -> unit
+        abstract ``setDirectColor4`` : ``uniformName``: string * ``color4``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> unit
+        abstract ``_getVertexShaderCode`` : unit -> string option
+        abstract ``_getFragmentShaderCode`` : unit -> string option
+        abstract ``isAsync``: bool with get
+        abstract ``isReady``: bool with get
+
+    [<AllowNullLiteral>]
+    type WebGLPipelineContextStatic =
+        inherit Constructor<WebGLPipelineContext>
+        [<EmitConstructor>] abstract Create: unit -> WebGLPipelineContext
+
+    [<Import("WebGLPipelineContext", "@babylonjs/core/Engines/WebGL/webGLPipelineContext.js")>]
+    let WebGLPipelineContext: WebGLPipelineContextStatic = jsNative
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject13866b9d6794Object =
+        abstract ``name``: string with get, set
+        abstract ``handler``: System.Func<Browser.Types.FocusEvent, obj> option with get, set
+
+    /// Inline object shape used by Tools.
+    [<AllowNullLiteral>]
+    type ToolsProperty13Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Inline object shape used by Tools.
+    [<AllowNullLiteral>]
+    type ToolsAccessor20Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleInterfaces.JavaScriptObject with get, set
+
+    /// Inline object shape used by Tools.
+    [<AllowNullLiteral>]
+    type ToolsAccessor21Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> BabylonjsBindings.SimpleInterfaces.JavaScriptObject with get, set
+
+    /// Inline object shape used by Tools.
+    [<AllowNullLiteral>]
+    type ToolsMethod38Parameter2Object =
+        abstract ``crossOrigin``: string option with get, set
+
+    /// Inline object shape used by Tools.
+    [<AllowNullLiteral>]
+    type ToolsMethod39Parameter2Object =
+        abstract ``referrerPolicy``: string option with get, set
+
+    /// Function-valued Tools.LoadScript property.
+    [<AllowNullLiteral>]
+    type ToolsLoadScriptCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scriptUrl``: string * ?``onSuccess``: System.Action * ?``onError``: System.Action<string option, obj option> * ?``scriptId``: string * ?``useModule``: bool -> unit
+
+    /// Function-valued Tools.GetAbsoluteUrl property.
+    [<AllowNullLiteral>]
+    type ToolsGetAbsoluteUrlCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``url``: string -> string
+
+    /// Function-valued Tools.OnNewCacheEntry property.
+    [<AllowNullLiteral>]
+    type ToolsOnNewCacheEntryCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``entry``: string -> unit
+
+    /// Function-valued Tools.StartPerformanceCounter property.
+    [<AllowNullLiteral>]
+    type ToolsStartPerformanceCounterCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``counterName``: string * ?``condition``: bool -> unit
+
+    /// Function-valued Tools.EndPerformanceCounter property.
+    [<AllowNullLiteral>]
+    type ToolsEndPerformanceCounterCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``counterName``: string * ?``condition``: bool -> unit
+
+    /// @babylonjs/core/Misc/tools.pure
+    [<AllowNullLiteral>]
+    type Tools =
+        interface end
+
+    [<AllowNullLiteral>]
+    type ToolsStatic =
+        inherit Constructor<Tools>
+        [<EmitConstructor>] abstract Create: unit -> Tools
+        abstract ``IsAbsoluteUrl`` : ``url``: string -> bool
+        abstract ``AssetBaseUrl``: string with get, set
+        abstract ``UseCustomRequestHeaders``: bool with get, set
+        abstract ``CustomRequestHeaders``: ToolsProperty13Object with get, set
+        abstract ``FetchToRef`` : ``u``: float * ``v``: float * ``width``: float * ``height``: float * ``pixels``: JS.Uint8Array * ``color``: BabylonjsBindings.SimpleInterfaces.IColor4Like -> unit
+        abstract ``Mix`` : ``a``: float * ``b``: float * ``alpha``: float -> float
+        abstract ``Instantiate`` : ``className``: string -> obj
+        abstract ``SetImmediate`` : ``action``: System.Action -> unit
+        abstract ``IsExponentOfTwo`` : ``value``: float -> bool
+        abstract ``FloatRound`` : ``value``: float -> float
+        abstract ``GetFilename`` : ``path``: string -> string
+        abstract ``GetFolderPath`` : ``uri``: string * ?``returnUnchangedIfNoSlash``: bool -> string
+        abstract ``GetDOMTextContent``: System.Func<Browser.Types.HTMLElement, string> with get, set
+        abstract ``ToDegrees`` : ``angle``: float -> float
+        abstract ``ToRadians`` : ``angle``: float -> float
+        abstract ``SmoothAngleChange`` : ``previousAngle``: float * ``newAngle``: float * ?``smoothFactor``: float -> float
+        abstract ``MakeArray`` : ``obj``: obj * ?``allowsNullUndefined``: bool -> ResizeArray<obj> option
+        abstract ``GetPointerPrefix`` : ``engine``: AbstractEngine -> string
+        abstract ``SetCorsBehavior`` : ``url``: U2<string, ResizeArray<string>> * ``element``: ToolsMethod38Parameter2Object -> unit
+        abstract ``SetReferrerPolicyBehavior`` : ``referrerPolicy``: BabylonjsBindings.SimpleInterfaces.BrowserReferrerPolicy option * ``element``: ToolsMethod39Parameter2Object -> unit
+        abstract ``LoadImage`` : ``input``: U3<string, JS.ArrayBuffer, Browser.Types.Blob> * ``onLoad``: System.Action<U2<Browser.Types.HTMLImageElement, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap>> * ``onError``: System.Action<string option, obj option> * ``offlineProvider``: BabylonjsBindings.SimpleInterfaces.IOfflineProvider option * ?``mimeType``: string * ?``imageBitmapOptions``: BabylonjsBindings.SimpleInterfaces.BrowserImageBitmapOptions -> Browser.Types.HTMLImageElement option
+        abstract ``LoadFile`` : ``url``: string * ``onSuccess``: System.Action<U2<string, JS.ArrayBuffer>, string option> * ?``onProgress``: System.Action<obj> * ?``offlineProvider``: BabylonjsBindings.SimpleInterfaces.IOfflineProvider * ?``useArrayBuffer``: bool * ?``onError``: System.Action<WebRequest option, obj option> -> BabylonjsBindings.SimpleInterfaces.IFileRequest
+        abstract ``LoadFileAsync`` : ``url``: string * ?``useArrayBuffer``: bool -> JS.Promise<string>
+        abstract ``_DefaultCdnUrl``: string with get
+        abstract ``_CdnVersion``: string with get, set
+        abstract ``_DefaultAssetsUrl``: string with get
+        abstract ``GetAssetUrl`` : ``url``: string -> string
+        abstract ``GetBabylonScriptURL`` : ``scriptUrl``: string option * ?``forceAbsoluteUrl``: bool -> string
+        abstract ``LoadBabylonScript`` : ``scriptUrl``: string * ``onSuccess``: System.Action * ?``onError``: System.Action<string option, obj option> * ?``scriptId``: string -> unit
+        abstract ``LoadBabylonScriptAsync`` : ``scriptUrl``: string -> JS.Promise<unit>
+        abstract ``LoadScript``: ToolsLoadScriptCallback with get, set
+        abstract ``LoadScriptAsync`` : ``scriptUrl``: string * ?``scriptId``: string -> JS.Promise<unit>
+        abstract ``ReadFileAsDataURL`` : ``fileToLoad``: Browser.Types.Blob * ``callback``: System.Action<obj> * ``progressCallback``: System.Func<Browser.Types.ProgressEvent, obj> -> BabylonjsBindings.SimpleInterfaces.IFileRequest
+        abstract ``ReadFile`` : ``file``: Browser.Types.File * ``onSuccess``: System.Action<obj> * ?``onProgress``: System.Func<Browser.Types.ProgressEvent, obj> * ?``useArrayBuffer``: bool * ?``onError``: System.Action<ReadFileError> -> BabylonjsBindings.SimpleInterfaces.IFileRequest
+        abstract ``FileAsURL`` : ``content``: string -> string
+        abstract ``Format`` : ``value``: float * ?``decimals``: float -> string
+        abstract ``DeepCopy`` : ``source``: obj * ``destination``: obj * ?``doNotCopyList``: ResizeArray<string> * ?``mustCopyList``: ResizeArray<string> -> unit
+        abstract ``IsEmpty`` : ``obj``: obj -> bool
+        abstract ``RegisterTopRootEvents`` : ``windowElement``: Browser.Types.Window * ``events``: ResizeArray<InlineObject13866b9d6794Object> -> unit
+        abstract ``UnregisterTopRootEvents`` : ``windowElement``: Browser.Types.Window * ``events``: ResizeArray<InlineObject13866b9d6794Object> -> unit
+        abstract ``DumpFramebuffer`` : ``width``: float * ``height``: float * ``engine``: AbstractEngine * ?``successCallback``: System.Action<string> * ?``mimeType``: string * ?``fileName``: string * ?``quality``: float -> JS.Promise<unit>
+        abstract ``DumpData`` : ``width``: float * ``height``: float * ``data``: JS.ArrayBufferView * ?``successCallback``: System.Action<U2<string, JS.ArrayBuffer>> * ?``mimeType``: string * ?``fileName``: string * ?``invertY``: bool * ?``toArrayBuffer``: bool * ?``quality``: float -> unit
+        abstract ``DumpDataAsync`` : ``width``: float * ``height``: float * ``data``: JS.ArrayBufferView * ?``mimeType``: string * ?``fileName``: string * ?``invertY``: bool * ?``toArrayBuffer``: bool * ?``quality``: float -> JS.Promise<U2<string, JS.ArrayBuffer>>
+        abstract ``ToBlob`` : ``canvas``: U2<Browser.Types.HTMLCanvasElement, BabylonjsBindings.SimpleInterfaces.BrowserOffscreenCanvas> * ``successCallback``: System.Action<Browser.Types.Blob option> * ?``mimeType``: string * ?``quality``: float -> unit
+        abstract ``DownloadBlob`` : ``blob``: Browser.Types.Blob * ?``fileName``: string -> unit
+        abstract ``EncodeScreenshotCanvasData`` : ``canvas``: U2<Browser.Types.HTMLCanvasElement, BabylonjsBindings.SimpleInterfaces.BrowserOffscreenCanvas> * ?``successCallback``: System.Action<string> * ?``mimeType``: string * ?``fileName``: string * ?``quality``: float -> unit
+        abstract ``Download`` : ``blob``: Browser.Types.Blob * ``fileName``: string -> unit
+        abstract ``BackCompatCameraNoPreventDefault`` : ``args``: BabylonjsBindings.SimpleInterfaces.BrowserArguments -> bool
+        abstract ``CreateScreenshot`` : ``engine``: AbstractEngine * ``camera``: Camera * ``size``: U2<BabylonjsBindings.SimpleInterfaces.IScreenshotSize, float> * ?``successCallback``: System.Action<string> * ?``mimeType``: string * ?``forceDownload``: bool * ?``quality``: float -> unit
+        abstract ``CreateScreenshotAsync`` : ``engine``: AbstractEngine * ``camera``: Camera * ``size``: U2<BabylonjsBindings.SimpleInterfaces.IScreenshotSize, float> * ?``mimeType``: string * ?``quality``: float -> JS.Promise<string>
+        abstract ``CreateScreenshotUsingRenderTarget`` : ``engine``: AbstractEngine * ``camera``: Camera * ``size``: U2<BabylonjsBindings.SimpleInterfaces.IScreenshotSize, float> * ?``successCallback``: System.Action<string> * ?``mimeType``: string * ?``samples``: float * ?``antialiasing``: bool * ?``fileName``: string * ?``renderSprites``: bool * ?``enableStencilBuffer``: bool * ?``useLayerMask``: bool * ?``quality``: float * ?``customizeTexture``: System.Action<RenderTargetTexture> -> unit
+        abstract ``CreateScreenshotUsingRenderTargetAsync`` : ``engine``: AbstractEngine * ``camera``: Camera * ``size``: U2<BabylonjsBindings.SimpleInterfaces.IScreenshotSize, float> * ?``mimeType``: string * ?``samples``: float * ?``antialiasing``: bool * ?``fileName``: string * ?``renderSprites``: bool * ?``enableStencilBuffer``: bool * ?``useLayerMask``: bool * ?``quality``: float * ?``customizeTexture``: System.Action<RenderTargetTexture> -> JS.Promise<string>
+        abstract ``RandomId`` : unit -> string
+        abstract ``IsBase64`` : ``uri``: string -> bool
+        abstract ``DecodeBase64`` : ``uri``: string -> JS.ArrayBuffer
+        abstract ``GetAbsoluteUrl``: ToolsGetAbsoluteUrlCallback with get, set
+        abstract ``NoneLogLevel``: float with get
+        abstract ``MessageLogLevel``: float with get
+        abstract ``WarningLogLevel``: float with get
+        abstract ``ErrorLogLevel``: float with get
+        abstract ``AllLogLevel``: float with get
+        abstract ``OnNewCacheEntry``: ToolsOnNewCacheEntryCallback with get, set
+        abstract ``Log`` : ``message``: string -> unit
+        abstract ``Warn`` : ``message``: string -> unit
+        abstract ``Error`` : ``message``: string -> unit
+        abstract ``ClearLogCache`` : unit -> unit
+        abstract ``IsWindowObjectExist``: System.Func<bool> with get, set
+        abstract ``PerformanceNoneLogLevel``: float with get
+        abstract ``PerformanceUserMarkLogLevel``: float with get
+        abstract ``PerformanceConsoleLogLevel``: float with get
+        abstract ``StartPerformanceCounter``: ToolsStartPerformanceCounterCallback with get, set
+        abstract ``EndPerformanceCounter``: ToolsEndPerformanceCounterCallback with get, set
+        abstract ``GetClassName`` : ``object``: obj * ?``isType``: bool -> string
+        abstract ``First``<'T> : ``array``: ResizeArray<'T> * ``predicate``: System.Func<'T, bool> -> 'T option
+        abstract ``getFullClassName`` : ``object``: obj * ?``isType``: bool -> string option
+        abstract ``DelayAsync`` : ``delay``: float -> JS.Promise<unit>
+        abstract ``IsSafari`` : unit -> bool
+        abstract ``BaseUrl``: string with get, set
+        abstract ``CleanUrl``: System.Func<string, string> with get, set
+        abstract ``ScriptBaseUrl``: string with get, set
+        abstract ``CDNBaseUrl``: string with set
+        abstract ``ScriptPreprocessUrl``: System.Func<string, string> with get, set
+        abstract ``DefaultRetryStrategy``: System.Func<string, WebRequest, float, float> with get, set
+        abstract ``CorsBehavior``: U2<string, System.Func<U2<string, ResizeArray<string>>, string>> with get, set
+        abstract ``UseFallbackTexture``: bool with get, set
+        abstract ``RegisteredExternalClasses``: ToolsAccessor20Object with get
+        [<Emit("$0.RegisteredExternalClasses = $1")>] abstract ``setRegisteredExternalClasses``: value: ToolsAccessor21Object -> unit
+        abstract ``fallbackTexture``: string with get, set
+        abstract ``PreprocessUrl``: System.Func<string, string> with get, set
+        abstract ``errorsCount``: float with get
+        abstract ``LogCache``: string with get
+        abstract ``LogLevels``: float with set
+        abstract ``PerformanceLogLevel``: float with set
+        abstract ``Now``: float with get
+
+    [<Import("Tools", "@babylonjs/core/Misc/tools.pure.js")>]
+    let Tools: ToolsStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphPathConverter
+    [<AllowNullLiteral>]
+    type FlowGraphPathConverter =
+        inherit BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter<BabylonjsBindings.SimpleInterfaces.IObjectAccessor<obj, obj, obj>>
+        abstract ``convert`` : ``path``: string -> BabylonjsBindings.SimpleInterfaces.IObjectInfo<BabylonjsBindings.SimpleInterfaces.IObjectAccessor<obj, obj, obj>, obj>
+
+    [<AllowNullLiteral>]
+    type FlowGraphPathConverterStatic =
+        inherit Constructor<FlowGraphPathConverter>
+        [<EmitConstructor>] abstract Create: ``_context``: FlowGraphContext * ?``_separator``: string -> FlowGraphPathConverter
+
+    [<Import("FlowGraphPathConverter", "@babylonjs/core/FlowGraph/flowGraphPathConverter.js")>]
+    let FlowGraphPathConverter: FlowGraphPathConverterStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphPathConverterComponent
+    [<AllowNullLiteral>]
+    type FlowGraphPathConverterComponent =
+        abstract ``path``: string with get, set
+        abstract ``ownerBlock``: FlowGraphBlock with get, set
+        abstract ``templatedInputs``: ResizeArray<FlowGraphDataConnection<FlowGraphInteger>> with get
+        abstract ``getAccessor`` : ``pathConverter``: BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter<BabylonjsBindings.SimpleInterfaces.IObjectAccessor<obj, obj, obj>> * ``context``: FlowGraphContext -> BabylonjsBindings.SimpleInterfaces.IObjectInfo<BabylonjsBindings.SimpleInterfaces.IObjectAccessor<obj, obj, obj>, obj>
+
+    [<AllowNullLiteral>]
+    type FlowGraphPathConverterComponentStatic =
+        inherit Constructor<FlowGraphPathConverterComponent>
+        [<EmitConstructor>] abstract Create: ``path``: string * ``ownerBlock``: FlowGraphBlock -> FlowGraphPathConverterComponent
+
+    [<Import("FlowGraphPathConverterComponent", "@babylonjs/core/FlowGraph/flowGraphPathConverterComponent.js")>]
+    let FlowGraphPathConverterComponent: FlowGraphPathConverterComponentStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRHitTestLegacy
+    [<AllowNullLiteral>]
+    type WebXRHitTestLegacy =
+        inherit WebXRAbstractFeature
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRHitTestFeature<BabylonjsBindings.SimpleInterfaces.IWebXRLegacyHitResult>
+        abstract ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRLegacyHitTestOptions with get
+        abstract ``lastNativeXRHitResults``: ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserXRHitResult> with get, set
+        abstract ``onHitTestResultObservable``: Observable<ResizeArray<BabylonjsBindings.SimpleInterfaces.IWebXRLegacyHitResult>> with get, set
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type WebXRHitTestLegacyStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRHitTestLegacy>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ?``options``: BabylonjsBindings.SimpleInterfaces.IWebXRLegacyHitTestOptions -> WebXRHitTestLegacy
+        abstract ``Name``: StringLiteral038540c29087 with get
+        abstract ``Version``: float with get
+        abstract ``XRHitTestWithRay`` : ``xrSession``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession * ``xrRay``: BabylonjsBindings.SimpleInterfaces.BrowserXRRay * ``referenceSpace``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpace * ?``filter``: System.Func<BabylonjsBindings.SimpleInterfaces.BrowserXRHitResult, bool> -> JS.Promise<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserXRHitResult>>
+        abstract ``XRHitTestWithSelectEvent`` : ``event``: BabylonjsBindings.SimpleInterfaces.BrowserXRInputSourceEvent * ``referenceSpace``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpace -> JS.Promise<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserXRHitResult>>
+
+    [<Import("WebXRHitTestLegacy", "@babylonjs/core/XR/features/WebXRHitTestLegacy.js")>]
+    let WebXRHitTestLegacy: WebXRHitTestLegacyStatic = jsNative
+
+    /// Function-valued ArcRotateCameraMouseWheelInput.customComputeDeltaFromMouseWheel property.
+    [<AllowNullLiteral>]
+    type ArcRotateCameraMouseWheelInputCustomComputeDeltaFromMouseWheelCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``wheelDelta``: float * ``input``: ArcRotateCameraMouseWheelInput * ``event``: BabylonjsBindings.SimpleInterfaces.IWheelEvent -> float
+
+    /// @babylonjs/core/Cameras/Inputs/arcRotateCameraMouseWheelInput
+    [<AllowNullLiteral>]
+    type ArcRotateCameraMouseWheelInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<ArcRotateCamera>
+        abstract ``camera``: ArcRotateCamera with get, set
+        abstract ``wheelPrecision``: float with get, set
+        abstract ``zoomToMouseLocation``: bool with get, set
+        abstract ``wheelDeltaPercentage``: float with get, set
+        abstract ``customComputeDeltaFromMouseWheel``: ArcRotateCameraMouseWheelInputCustomComputeDeltaFromMouseWheelCallback option with get, set
+        abstract ``attachControl`` : ?``noPreventDefault``: bool -> unit
+        abstract ``detachControl`` : unit -> unit
+        abstract ``checkInputs`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``getSimpleName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type ArcRotateCameraMouseWheelInputStatic =
+        inherit Constructor<ArcRotateCameraMouseWheelInput>
+        [<EmitConstructor>] abstract Create: unit -> ArcRotateCameraMouseWheelInput
+
+    [<Import("ArcRotateCameraMouseWheelInput", "@babylonjs/core/Cameras/Inputs/arcRotateCameraMouseWheelInput.js")>]
+    let ArcRotateCameraMouseWheelInput: ArcRotateCameraMouseWheelInputStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRBodyTracking.pure
+    [<AllowNullLiteral>]
+    type WebXRBodyTracking =
+        inherit WebXRAbstractFeature
+        abstract ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRBodyTrackingOptions with get
+        abstract ``onBodyTrackingStartedObservable``: Observable<WebXRTrackedBody> with get
+        abstract ``onBodyTrackingEndedObservable``: Observable<unit> with get
+        abstract ``onBodyTrackingFrameUpdateObservable``: Observable<WebXRTrackedBody> with get
+        abstract ``onBodyMeshSetObservable``: Observable<WebXRTrackedBody> with get
+        abstract ``_lastFrameDebugInfo``: string with get, set
+        abstract ``setBodyMesh`` : ``bodyMesh``: AbstractMesh * ?``rigMapping``: BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping -> unit
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``dispose`` : unit -> unit
+        abstract ``snapshotFrameToClipboardAsync`` : unit -> JS.Promise<unit>
+        abstract ``trackedBody``: WebXRTrackedBody option with get
+        abstract ``isTracking``: bool with get
+
+    [<AllowNullLiteral>]
+    type WebXRBodyTrackingStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRBodyTracking>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ?``options``: BabylonjsBindings.SimpleInterfaces.IWebXRBodyTrackingOptions -> WebXRBodyTracking
+        abstract ``Name``: StringLiteralfa28fe3971d3 with get
+        abstract ``Version``: float with get
+        abstract ``AllBodyJoints``: System.Collections.Generic.IReadOnlyList<BabylonjsBindings.StringEnums.WebXRBodyJoint> with get
+
+    [<Import("WebXRBodyTracking", "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js")>]
+    let WebXRBodyTracking: WebXRBodyTrackingStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRBodyTracking.pure
+    [<AllowNullLiteral>]
+    type WebXRTrackedBody =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        abstract ``onBodyMeshSetObservable``: Observable<WebXRTrackedBody> with get
+        abstract ``autoCaptureBindOnFirstFrame``: bool with get, set
+        abstract ``jointLocalRotationOffset``: Quaternion option with get, set
+        abstract ``_directSkinWrite``: bool with get, set
+        abstract ``_lastDebugInfo``: string with get, set
+        abstract ``getJointTransform`` : ``jointName``: BabylonjsBindings.StringEnums.WebXRBodyJoint -> TransformNode option
+        abstract ``getBodyPartTransforms`` : ``part``: BabylonjsBindings.StringEnums.BodyPart * ?``result``: ResizeArray<TransformNode> -> ResizeArray<TransformNode>
+        abstract ``setBodyMesh`` : ``bodyMesh``: AbstractMesh * ?``rigMapping``: BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping -> unit
+        abstract ``updateFromXRFrame`` : ``xrFrame``: BabylonjsBindings.SimpleInterfaces.BrowserXRFrame * ``referenceSpace``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpace * ``xrCameraParent``: Node option -> bool
+        abstract ``replayRawJointMatrices`` : ``rawMatrices``: U2<JS.Float32Array, ResizeArray<float>> * ?``isAlreadyLhs``: bool -> unit
+        abstract ``captureTrackedBind`` : unit -> unit
+        abstract ``clearTrackedBind`` : unit -> unit
+        abstract ``snapshotFrame`` : unit -> string
+        abstract ``snapshotFrameToClipboardAsync`` : unit -> JS.Promise<unit>
+        abstract ``dispose`` : ?``disposeMesh``: bool -> unit
+        abstract ``bodyMesh``: AbstractMesh option with get
+        abstract ``jointScaleFactor``: float with get, set
+        abstract ``jointTransforms``: System.Collections.Generic.IReadOnlyList<TransformNode> with get
+
+    [<AllowNullLiteral>]
+    type WebXRTrackedBodyStatic =
+        inherit Constructor<WebXRTrackedBody>
+        [<EmitConstructor>] abstract Create: ``scene``: Scene * ?``bodyMesh``: AbstractMesh * ?``rigMapping``: BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping * ?``jointScaleFactor``: float * ?``preserveBindPoseBonePositions``: bool * ?``useBoneOrientationOffsets``: bool * ?``aimChildOverrides``: BabylonjsBindings.SimpleInterfaces.BrowserRecord<BabylonjsBindings.StringEnums.WebXRBodyJoint, BabylonjsBindings.StringEnums.WebXRBodyJoint option> * ?``jointLocalRotationOffset``: Quaternion -> WebXRTrackedBody
+
+    [<Import("WebXRTrackedBody", "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js")>]
+    let WebXRTrackedBody: WebXRTrackedBodyStatic = jsNative
+
+    /// Function-valued NativeXRFrame.fillPoses property.
+    [<AllowNullLiteral>]
+    type NativeXRFrameFillPosesCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``spaces``: ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserXRSpace> * ``baseSpace``: BabylonjsBindings.SimpleInterfaces.BrowserXRSpace * ``transforms``: JS.Float32Array -> bool
+
+    /// Function-valued NativeXRFrame.getViewerPose property.
+    [<AllowNullLiteral>]
+    type NativeXRFrameGetViewerPoseCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``referenceSpace``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpace -> BabylonjsBindings.SimpleInterfaces.BrowserXRViewerPose option
+
+    /// Function-valued NativeXRFrame.getHitTestResults property.
+    [<AllowNullLiteral>]
+    type NativeXRFrameGetHitTestResultsCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``hitTestSource``: BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestSource -> ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestResult>
+
+    /// Function-valued NativeXRFrame.getHitTestResultsForTransientInput property.
+    [<AllowNullLiteral>]
+    type NativeXRFrameGetHitTestResultsForTransientInputCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> Never
+
+    /// Function-valued NativeXRFrame.createAnchor property.
+    [<AllowNullLiteral>]
+    type NativeXRFrameCreateAnchorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pose``: BabylonjsBindings.SimpleInterfaces.BrowserXRRigidTransform * ``space``: BabylonjsBindings.SimpleInterfaces.BrowserXRSpace -> JS.Promise<BabylonjsBindings.SimpleInterfaces.BrowserXRAnchor>
+
+    /// Function-valued NativeXRFrame.getJointPose property.
+    [<AllowNullLiteral>]
+    type NativeXRFrameGetJointPoseCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``joint``: BabylonjsBindings.SimpleInterfaces.BrowserXRJointSpace * ``baseSpace``: BabylonjsBindings.SimpleInterfaces.BrowserXRSpace -> BabylonjsBindings.SimpleInterfaces.BrowserXRJointPose
+
+    /// Function-valued NativeXRFrame.fillJointRadii property.
+    [<AllowNullLiteral>]
+    type NativeXRFrameFillJointRadiiCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``jointSpaces``: ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserXRJointSpace> * ``radii``: JS.Float32Array -> bool
+
+    /// Function-valued NativeXRFrame.getLightEstimate property.
+    [<AllowNullLiteral>]
+    type NativeXRFrameGetLightEstimateCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> Never
+
+    /// Function-valued NativeXRFrame.getImageTrackingResults property.
+    [<AllowNullLiteral>]
+    type NativeXRFrameGetImageTrackingResultsCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserXRImageTrackingResult>
+
+    /// @babylonjs/core/XR/native/nativeXRFrame.pure
+    [<AllowNullLiteral>]
+    type NativeXRFrame =
+        inherit BabylonjsBindings.SimpleInterfaces.BrowserXRFrame
+        abstract ``getPose`` : ``space``: BabylonjsBindings.SimpleInterfaces.BrowserXRSpace * ``baseSpace``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpace -> BabylonjsBindings.SimpleInterfaces.BrowserXRPose option
+        abstract ``fillPoses``: NativeXRFrameFillPosesCallback with get
+        abstract ``getViewerPose``: NativeXRFrameGetViewerPoseCallback with get
+        abstract ``getHitTestResults``: NativeXRFrameGetHitTestResultsCallback with get
+        abstract ``getHitTestResultsForTransientInput``: NativeXRFrameGetHitTestResultsForTransientInputCallback with get
+        abstract ``createAnchor``: NativeXRFrameCreateAnchorCallback with get
+        abstract ``getJointPose``: NativeXRFrameGetJointPoseCallback with get
+        abstract ``fillJointRadii``: NativeXRFrameFillJointRadiiCallback with get
+        abstract ``getLightEstimate``: NativeXRFrameGetLightEstimateCallback with get
+        abstract ``getImageTrackingResults``: NativeXRFrameGetImageTrackingResultsCallback with get
+        abstract ``getDepthInformation`` : ``view``: BabylonjsBindings.SimpleInterfaces.BrowserXRView -> BabylonjsBindings.SimpleInterfaces.BrowserXRCPUDepthInformation option
+        abstract ``session``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession with get
+        abstract ``trackedAnchors``: BabylonjsBindings.SimpleInterfaces.BrowserXRAnchorSet option with get
+        abstract ``worldInformation``: BabylonjsBindings.SimpleInterfaces.BrowserXRWorldInformation option with get
+        abstract ``detectedPlanes``: BabylonjsBindings.SimpleInterfaces.BrowserXRPlaneSet option with get
+        abstract ``featurePointCloud``: ResizeArray<float> option with get
+
+    [<AllowNullLiteral>]
+    type NativeXRFrameStatic =
+        inherit Constructor<NativeXRFrame>
+        [<EmitConstructor>] abstract Create: ``_nativeImpl``: BabylonjsBindings.SimpleInterfaces.BrowserNativeXRFrame -> NativeXRFrame
+
+    [<Import("NativeXRFrame", "@babylonjs/core/XR/native/nativeXRFrame.pure.js")>]
+    let NativeXRFrame: NativeXRFrameStatic = jsNative
+
+    /// @babylonjs/core/XR/webXRDefaultExperience
+    [<AllowNullLiteral>]
+    type WebXRDefaultExperienceOptions =
+        abstract ``disableDefaultUI``: bool option with get, set
+        abstract ``disablePointerSelection``: bool option with get, set
+        abstract ``disableTeleportation``: bool option with get, set
+        abstract ``disableNearInteraction``: bool option with get, set
+        abstract ``disableHandTracking``: bool option with get, set
+        abstract ``floorMeshes``: ResizeArray<AbstractMesh> option with get, set
+        abstract ``ignoreNativeCameraTransformation``: bool option with get, set
+        abstract ``inputOptions``: BabylonjsBindings.SimpleInterfaces.PartialIWebXRInputOptions option with get, set
+        abstract ``pointerSelectionOptions``: BabylonjsBindings.SimpleInterfaces.PartialIWebXRControllerPointerSelectionOptions option with get, set
+        abstract ``nearInteractionOptions``: BabylonjsBindings.SimpleInterfaces.PartialIWebXRNearInteractionOptions option with get, set
+        abstract ``handSupportOptions``: BabylonjsBindings.SimpleInterfaces.PartialIWebXRHandTrackingOptions option with get, set
+        abstract ``teleportationOptions``: BabylonjsBindings.SimpleInterfaces.PartialIWebXRTeleportationOptions option with get, set
+        abstract ``outputCanvasOptions``: WebXRManagedOutputCanvasOptions option with get, set
+        abstract ``uiOptions``: BabylonjsBindings.SimpleClasses.WebXREnterExitUIOptions option with get, set
+        abstract ``useStablePlugins``: bool option with get, set
+        abstract ``renderingGroupId``: float option with get, set
+        abstract ``optionalFeatures``: U2<bool, ResizeArray<string>> option with get, set
+
+    [<AllowNullLiteral>]
+    type WebXRDefaultExperienceOptionsStatic =
+        inherit Constructor<WebXRDefaultExperienceOptions>
+        [<EmitConstructor>] abstract Create: unit -> WebXRDefaultExperienceOptions
+
+    [<Import("WebXRDefaultExperienceOptions", "@babylonjs/core/XR/webXRDefaultExperience.js")>]
+    let WebXRDefaultExperienceOptions: WebXRDefaultExperienceOptionsStatic = jsNative

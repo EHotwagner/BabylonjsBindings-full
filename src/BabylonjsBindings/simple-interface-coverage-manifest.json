@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "1e8a7dd857594e9638171bff47c311a8aa2a3c29d3481460edc0e8a5aa06523c",
+  "proposalSha256": "596d1bc5f1cf4ab8a89555154ed29ccac9f1b213b5d787549f28651d9897b7ca",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5935,6 +5935,143 @@
         "BabylonjsBindings.SimpleClasses.WorkerPool"
       ],
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
+      "name": "INativeEngine",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INativeEngine",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.NativeDataStream",
+        "BabylonjsBindings.TypeAliases.NativeData",
+        "BabylonjsBindings.TypeAliases.NativeFramebuffer",
+        "BabylonjsBindings.TypeAliases.NativeProgram",
+        "BabylonjsBindings.TypeAliases.NativeTexture"
+      ],
+      "memberCount": 39
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
+      "name": "IWebXRBodyTrackingOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRBodyTrackingOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Debug/debugLayer.pure",
+      "name": "IInspectorOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IInspectorOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
+      "memberCount": 16
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphBlock",
+      "name": "IFlowGraphBlockParseOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockParseOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphCoordinator",
+      "name": "IFlowGraphCoordinatorParseOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphCoordinatorParseOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure",
+      "name": "IFlowGraphJsonPointerParserBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphJsonPointerParserBlockConfiguration",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraph",
+      "name": "IFlowGraphParseOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphParseOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphCoordinator",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "IThinEngineStateObject",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IThinEngineStateObject",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.LoadFileError",
+        "BabylonjsBindings.SimpleClasses.WebGLPipelineContext",
+        "BabylonjsBindings.SimpleClasses.WebRequest",
+        "BabylonjsBindings.TypeAliases.WebGLContext"
+      ],
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/deviceInputEvents",
+      "name": "IWheelEvent",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWheelEvent",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IMouseEvent"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Native/nativeInterfaces",
+      "name": "INative",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INative",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleInterfaces.IDeviceInputSystemConstructor",
+        "BabylonjsBindings.SimpleInterfaces.INativeCameraConstructor",
+        "BabylonjsBindings.SimpleInterfaces.INativeCanvasConstructor",
+        "BabylonjsBindings.SimpleInterfaces.INativeDataStreamConstructor",
+        "BabylonjsBindings.SimpleInterfaces.INativeEngineConstructor",
+        "BabylonjsBindings.SimpleInterfaces.INativeImageConstructor",
+        "BabylonjsBindings.SimpleInterfaces.INativePath2DConstructor"
+      ],
+      "memberCount": 13
     }
   ],
   "reviewStatus": "maintained"

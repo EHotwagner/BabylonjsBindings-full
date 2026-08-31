@@ -100,6 +100,27 @@ const excludedEnumType = node => {
   excludedEnumTypes.set(name, members);
   return name;
 };
+const enumMemberUnionType = node => {
+  if (!ts.isUnionTypeNode(node) || node.types.length < 2) return undefined;
+  const references = node.types.map(branch => ts.isTypeReferenceNode(branch) && ts.isQualifiedName(branch.typeName) ? branch.typeName : undefined);
+  if (references.some(reference => !reference)) return undefined;
+  const enumName = references[0].left.getText();
+  if (!references.every(reference => reference.left.getText() === enumName)) return undefined;
+  let symbol = checker.getSymbolAtLocation(references[0].left);
+  if (symbol?.flags & ts.SymbolFlags.Alias) {
+    try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+  }
+  const declaration = symbol?.declarations?.find(ts.isEnumDeclaration);
+  if (!declaration) return undefined;
+  const selectedNames = new Set(references.map(reference => reference.right.text));
+  const members = declaration.members
+    .filter(member => (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name)) && selectedNames.has(member.name.text))
+    .map(member => ({ name: member.name.text, value: checker.getConstantValue(member) }));
+  if (members.length !== selectedNames.size || members.some(member => typeof member.value !== "number")) return undefined;
+  const name = `${enumName}Subset${createHash("sha256").update([...selectedNames].sort().join("|")).digest("hex").slice(0, 10)}`;
+  excludedEnumTypes.set(name, members);
+  return name;
+};
 const recordTypeFailure = node => {
   if (!collectTypeFailures) return;
   const text = node.getText().replace(/\s+/g, " ");
@@ -252,6 +273,8 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.TrueKeyword) return "BrowserTrue";
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.FalseKeyword) return "BrowserFalse";
   if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword) return "JavaScriptNull";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
@@ -267,6 +290,8 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     return asOption(branches.length === 1 ? branches[0] : erasedUnionType(branches));
   }
   if (ts.isUnionTypeNode(node) && node.types.length >= 2) {
+    const enumSubset = enumMemberUnionType(node);
+    if (enumSubset) return enumSubset;
     const branches = node.types.map(branch => fsharpType(branch, available, dependencies, typeParameters));
     return branches.every(Boolean) ? erasedUnionType(branches) : undefined;
   }
@@ -322,12 +347,37 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     return inlineObjectType(node, available, dependencies, typeParameters, utilityInlineTypes, `InlineObject${digest}`);
   }
   if (ts.isTypeQueryNode(node) && ts.isIdentifier(node.exprName)) {
+    if (node.exprName.text === "XMLHttpRequest") return "BrowserXMLHttpRequestStatic";
     if (bootstrapClassSymbols.has(node.exprName.text)) return `${bootstrapClassSymbols.get(node.exprName.text).fsharpSymbol}Static`;
     if (maintainedClassStaticSymbols.get(node.exprName.text)) return maintainedClassStaticSymbols.get(node.exprName.text);
     if (maintainedSymbols.get(node.exprName.text)?.staticSymbol) return maintainedSymbols.get(node.exprName.text).staticSymbol;
+    let symbol = checker.getSymbolAtLocation(node.exprName);
+    if (symbol?.flags & ts.SymbolFlags.Alias) {
+      try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+    }
+    const aliases = symbol?.declarations?.filter(ts.isTypeAliasDeclaration) ?? [];
+    if (aliases.length === 1) return fsharpType(aliases[0].type, available, dependencies, typeParameters);
+    const declarations = symbol?.declarations?.filter(declaration => ts.isFunctionDeclaration(declaration)
+      || ts.isMethodDeclaration(declaration)
+      || ts.isMethodSignature(declaration)) ?? [];
+    if (declarations.length === 1) {
+      const callable = declarations[0];
+      if (!callable.type
+        || callable.typeParameters?.length
+        || callable.parameters.some(parameter => parameter.dotDotDotToken || (ts.isIdentifier(parameter.name) && parameter.name.text === "this"))) return undefined;
+      const parameterTypes = callable.parameters.map(parameter => {
+        const rendered = parameter.type ? fsharpType(parameter.type, available, dependencies, typeParameters) : undefined;
+        return parameter.questionToken && rendered ? asOption(rendered) : rendered;
+      });
+      const returnType = fsharpType(callable.type, available, dependencies, typeParameters);
+      if (!returnType || parameterTypes.some(parameter => !parameter)) return undefined;
+      if (returnType === "unit") return parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`;
+      return `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
+    }
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (!node.typeArguments?.length && node.typeName.text === "IEXTLightsImageBased_LightImageBased") return "GLTFExtLightsImageBasedLightImageBased";
+    if (node.typeName.text === "ProgressEvent" && (node.typeArguments?.length ?? 0) <= 1) return "Browser.Types.ProgressEvent";
     const excludedEnum = excludedEnumType(node);
     if (excludedEnum) return excludedEnum;
     if (node.typeName.text === "Immutable" && node.typeArguments?.length === 1) {
@@ -362,6 +412,14 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       }
       if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && inner.typeName.text === "XRProjectionLayerInit" && !inner.typeArguments?.length) {
         return "BrowserXRProjectionLayerInit";
+      }
+      if (ts.isTypeReferenceNode(inner)
+        && ts.isIdentifier(inner.typeName)
+        && inner.typeName.text === "Record"
+        && inner.typeArguments?.length === 2) {
+        const key = fsharpType(inner.typeArguments[0], available, dependencies, typeParameters);
+        const value = fsharpType(inner.typeArguments[1], available, dependencies, typeParameters);
+        return key && value ? `BrowserRecord<${key}, ${asOption(value)}>` : undefined;
       }
       if (ts.isTypeLiteralNode(inner)) {
         const digest = createHash("sha256").update(inner.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12);
@@ -506,6 +564,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ["MediaStreamTrack", "BrowserMediaStreamTrack"],
       ["PointerEventInit", "BrowserPointerEventInit"],
       ["WebGLVertexArrayObject", "BrowserWebGLVertexArrayObject"],
+      ["WebGLTransformFeedback", "BrowserWebGLTransformFeedback"],
       ["Worker", "BrowserWorker"],
       ["RegExp", "BrowserRegExp"],
       ["XMLHttpRequest", "BrowserXMLHttpRequest"],
@@ -563,6 +622,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     ]);
     if (!node.typeArguments?.length && browserExtensionTypes.has(node.typeName.text)) return browserExtensionTypes.get(node.typeName.text);
     if (!node.typeArguments?.length && node.typeName.text === "GPUBufferUsageFlags") return "float";
+    if (!node.typeArguments?.length && node.typeName.text === "Error") return "System.Exception";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
     if (node.typeName.text === "IObjectInfo" && node.typeArguments?.length === 1 && available.has("IObjectInfo")) {
@@ -570,6 +630,12 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       if (!rendered) return undefined;
       dependencies.add("IObjectInfo");
       return `IObjectInfo<${rendered}, obj>`;
+    }
+    if (node.typeName.text === "IObjectAccessor" && (node.typeArguments?.length ?? 0) < 3 && available.has("IObjectAccessor")) {
+      const rendered = (node.typeArguments ?? []).map(argument => fsharpType(argument, available, dependencies, typeParameters));
+      if (rendered.some(argument => !argument)) return undefined;
+      dependencies.add("IObjectAccessor");
+      return `IObjectAccessor<${[...rendered, ...Array.from({ length: 3 - rendered.length }, () => "obj")].join(", ")}>`;
     }
     if (!node.typeArguments?.length && node.typeName.text === "AcceptedRole") {
       let symbol = checker.getSymbolAtLocation(node.typeName);
@@ -757,6 +823,13 @@ const renderMembers = (declaration, available) => {
         return undefined;
       }
       members.push({ kind: "method", name: member.name.text, callback });
+    } else if (ts.isConstructSignatureDeclaration(member)) {
+      const callback = callbackShape(member, available, dependencies, typeParameters);
+      if (!callback) {
+        recordTypeFailure(member);
+        return undefined;
+      }
+      members.push({ kind: "constructor", callback });
     } else if (ts.isIndexSignatureDeclaration(member)
       && member.parameters.length === 1
       && member.parameters[0].type
@@ -969,6 +1042,8 @@ if (diagnose) {
   collectTypeFailures = false;
   console.log("top unresolved interface member types:");
   console.log([...typeFailureCounts].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 80).map(([type, count]) => `${count} ${type}`).join("\n"));
+  console.log("unresolved member types by interface:");
+  console.log([...typeFailuresByInterface].sort(([left], [right]) => left.localeCompare(right)).map(([name, failures]) => `${name}: ${[...failures].join(" | ")}`).join("\n"));
   console.log(`diagnostic: ${shapeReady} additional interfaces have renderable shapes with unresolved dependencies`);
   console.log("top unresolved interface dependencies:");
   console.log([...missingCounts].sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 40).map(([name, count]) => `${name} ${count}`).join("\n"));
@@ -1043,6 +1118,7 @@ lines.push("", "    /// Distinct ambient MediaStream handle.", "    [<AllowNullL
 lines.push("", "    /// Distinct ambient MediaStreamTrack handle.", "    [<AllowNullLiteral>]", "    type BrowserMediaStreamTrack =", "        interface end");
 lines.push("", "    /// Distinct ambient AbortSignal handle.", "    [<AllowNullLiteral>]", "    type BrowserAbortSignal =", "        interface end");
 lines.push("", "    /// Ambient XMLHttpRequest handle used by Babylon request modifiers.", "    [<AllowNullLiteral>]", "    type BrowserXMLHttpRequest =", "        abstract setRequestHeader: name: string * value: string -> unit");
+lines.push("", "    /// Exact JavaScript constructor surface for XMLHttpRequest.", "    [<AllowNullLiteral>]", "    type BrowserXMLHttpRequestStatic =", "        [<EmitConstructor>] abstract Create: unit -> BrowserXMLHttpRequest");
 lines.push("", "    /// Distinct ambient URL handle.", "    [<AllowNullLiteral>]", "    type BrowserURL =", "        interface end");
 lines.push("", "    /// Exact structural DOMRect surface.", "    [<AllowNullLiteral>]", "    type BrowserDOMRect =", "        abstract x: float with get, set", "        abstract y: float with get, set", "        abstract width: float with get, set", "        abstract height: float with get, set", "        abstract top: float with get", "        abstract right: float with get", "        abstract bottom: float with get", "        abstract left: float with get", "        abstract toJSON: unit -> obj");
 lines.push("", "    /// Distinct ambient FormData handle.", "    [<AllowNullLiteral>]", "    type BrowserFormData =", "        interface end");
@@ -1068,6 +1144,7 @@ lines.push("", "    /// Exact WebXR session-mode literals.", "    [<StringEnum; 
 lines.push("", "    /// Exact WebXR eye literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserXREye =", "        | [<CompiledName(\"left\")>] Left", "        | [<CompiledName(\"none\")>] None", "        | [<CompiledName(\"right\")>] Right");
 lines.push("", "    /// Exact WebGPU power-preference literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserGPUPowerPreference =", "        | [<CompiledName(\"high-performance\")>] HighPerformance", "        | [<CompiledName(\"low-power\")>] LowPower");
 lines.push("", "    /// Exact XMLHttpRequest response-type literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserXMLHttpRequestResponseType =", "        | [<CompiledName(\"\")>] Default", "        | [<CompiledName(\"arraybuffer\")>] ArrayBuffer", "        | [<CompiledName(\"blob\")>] Blob", "        | [<CompiledName(\"document\")>] Document", "        | [<CompiledName(\"json\")>] Json", "        | [<CompiledName(\"text\")>] Text");
+lines.push("", "    /// Exact Fetch referrer-policy literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserReferrerPolicy =", "        | [<CompiledName(\"\")>] Default", "        | [<CompiledName(\"no-referrer\")>] NoReferrer", "        | [<CompiledName(\"no-referrer-when-downgrade\")>] NoReferrerWhenDowngrade", "        | [<CompiledName(\"origin\")>] Origin", "        | [<CompiledName(\"origin-when-cross-origin\")>] OriginWhenCrossOrigin", "        | [<CompiledName(\"same-origin\")>] SameOrigin", "        | [<CompiledName(\"strict-origin\")>] StrictOrigin", "        | [<CompiledName(\"strict-origin-when-cross-origin\")>] StrictOriginWhenCrossOrigin", "        | [<CompiledName(\"unsafe-url\")>] UnsafeUrl");
 lines.push("", "    /// Exact browser image color-space conversion literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserColorSpaceConversion =", "        | [<CompiledName(\"default\")>] Default", "        | [<CompiledName(\"none\")>] None");
 lines.push("", "    /// Exact browser image orientation literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserImageOrientation =", "        | [<CompiledName(\"flipY\")>] FlipY", "        | [<CompiledName(\"from-image\")>] FromImage", "        | [<CompiledName(\"none\")>] None");
 lines.push("", "    /// Exact browser premultiplied-alpha literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserPremultiplyAlpha =", "        | [<CompiledName(\"default\")>] Default", "        | [<CompiledName(\"none\")>] None", "        | [<CompiledName(\"premultiply\")>] Premultiply");
@@ -1077,7 +1154,10 @@ lines.push("", "    /// Exact experimental HTML-in-Canvas transferable image sur
 lines.push("", "    /// Exact source rectangle and sizing configuration for WebGL element-image copies.", "    [<AllowNullLiteral>]", "    type BrowserWebGLCopyElementImageConfig =", "        abstract sx: float option with get, set", "        abstract sy: float option with get, set", "        abstract swidth: float option with get, set", "        abstract sheight: float option with get, set", "        abstract width: float option with get, set", "        abstract height: float option with get, set");
 lines.push("", "    /// Structural non-primitive JavaScript object surface used by TypeScript `object` declarations.", "    [<AllowNullLiteral>]", "    type JavaScriptObject =", "        interface end");
 lines.push("", "    /// Erased nominal representation of the JavaScript `symbol` primitive.", "    [<Erase>]", "    type BrowserSymbol =", "        | BrowserSymbol of obj");
+lines.push("", "    /// Nominal erased representation of the TypeScript `true` singleton.", "    [<Erase>]", "    type BrowserTrue = private BrowserTrue of bool", "", "    /// The only constructible value of the TypeScript `true` singleton.", "    [<Emit(\"true\")>]", "    let BrowserTrueValue: BrowserTrue = jsNative");
+lines.push("", "    /// Nominal erased representation of the TypeScript `false` singleton.", "    [<Erase>]", "    type BrowserFalse = private BrowserFalse of bool", "", "    /// The only constructible value of the TypeScript `false` singleton.", "    [<Emit(\"false\")>]", "    let BrowserFalseValue: BrowserFalse = jsNative");
 lines.push("", "    /// Exact ECMAScript property-key union.", "    type BrowserPropertyKey = U3<string, float, BrowserSymbol>");
+lines.push("", "    /// Exact ECMAScript function-arguments object surface.", "    [<AllowNullLiteral>]", "    type BrowserArguments =", "        [<EmitIndexer>] abstract Item: index: float -> obj with get, set", "        abstract length: float with get", "        abstract callee: System.Delegate with get");
 lines.push("", "    /// Exact structural projection of a TypeScript Record.", "    [<AllowNullLiteral>]", "    type BrowserRecord<'TKey, 'TValue> =", "        [<EmitIndexer>] abstract Item: key: 'TKey -> 'TValue with get, set");
 lines.push("", "    /// Exact TC39 decorator metadata object.", "    [<AllowNullLiteral>]", "    type BrowserDecoratorMetadataObject =", "        [<EmitIndexer>] abstract Item: key: BrowserPropertyKey -> obj with get, set");
 lines.push("", "    /// Exact serialization-decorator context used by Babylon.", "    [<AllowNullLiteral>]", "    type BrowserSerializableContext =", "        abstract name: U2<string, BrowserSymbol> with get, set", "        abstract metadata: BrowserDecoratorMetadataObject option with get, set");
@@ -1096,7 +1176,7 @@ for (const value of [...numericLiteralValues].sort((left, right) => left - right
   lines.push("", `    /// Exact numeric literal type for ${value}.`, `    type ${name} =`, `        | Value = ${value}`);
 }
 for (const [name, members] of [...excludedEnumTypes].sort(([left], [right]) => left.localeCompare(right))) {
-  lines.push("", "    /// Exact numeric enum subset projected from a TypeScript Exclude utility.", `    type ${name} =`);
+  lines.push("", "    /// Exact numeric enum subset projected from a TypeScript declaration.", `    type ${name} =`);
   for (const member of members) lines.push(`        | ${member.name} = ${member.value}`);
 }
 lines.push("", "    /// Exact opaque WebGLQuery handle.", "    [<AllowNullLiteral>]", "    type BrowserWebGLQuery =", "        interface end");
@@ -1141,7 +1221,7 @@ for (const [name, description, values] of [
   ["BrowserGPUTextureViewDimension", "texture-view dimension", ["1d", "2d", "2d-array", "cube", "cube-array", "3d"]]
 ]) lines.push("", `    /// Exact WebGPU ${description} literals.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, ...values.map(value => `        | [<CompiledName(${fsharpString(value)})>] ${value.split(/[^A-Za-z0-9]+/).map(part => `${/^[0-9]/.test(part) ? "D" : ""}${part[0].toUpperCase()}${part.slice(1)}`).join("")}`));
 lines.push("", "    /// Exact WebGPU GPUBuffer instance surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserGPUBuffer =", "        abstract label: string with get, set", "        abstract size: float with get", "        abstract usage: float with get", "        abstract mapState: BrowserGPUBufferMapState with get", "        abstract mapAsync: mode: float * ?offset: float * ?size: float -> JS.Promise<unit>", "        abstract getMappedRange: ?offset: float * ?size: float -> JS.ArrayBuffer", "        abstract unmap: unit -> unit", "        abstract destroy: unit -> unit");
-for (const [name, description] of [["BrowserGPUDevice", "WebGPU device"], ["BrowserGPURenderPassEncoder", "WebGPU render-pass encoder"], ["BrowserGPURenderPipeline", "WebGPU render pipeline"], ["BrowserGPUQuerySet", "WebGPU query set"], ["BrowserGPUCommandEncoder", "WebGPU command encoder"], ["BrowserGPURenderBundle", "WebGPU render bundle"], ["BrowserGPUTexture", "WebGPU texture"], ["BrowserGPUSampler", "WebGPU sampler"], ["BrowserGPUBindGroup", "WebGPU bind group"], ["BrowserGPUPipelineLayout", "WebGPU pipeline layout"], ["BrowserGPUBindGroupLayout", "WebGPU bind-group layout"], ["BrowserGPUShaderModule", "WebGPU shader module"], ["BrowserGPUComputePipeline", "WebGPU compute pipeline"], ["BrowserGPUCommandBuffer", "WebGPU command buffer"], ["BrowserGPUTextureView", "WebGPU texture view"], ["BrowserGPUAdapter", "WebGPU adapter"], ["BrowserGPUCanvasContext", "WebGPU canvas context"], ["BrowserGPUExternalTexture", "WebGPU external texture"], ["BrowserGPURenderBundleEncoder", "WebGPU render-bundle encoder"], ["BrowserGPURenderPassDescriptor", "WebGPU render-pass descriptor"], ["BrowserGPURenderPipelineDescriptor", "WebGPU render-pipeline descriptor"], ["BrowserGPUProgrammableStage", "WebGPU programmable-stage descriptor"], ["BrowserGPUBindGroupLayoutEntry", "WebGPU bind-group-layout entry"], ["BrowserGPUBindGroupEntry", "WebGPU bind-group entry"], ["BrowserGPUComputePassDescriptor", "WebGPU compute-pass descriptor"], ["BrowserGPUTextureViewDescriptor", "WebGPU texture-view descriptor"], ["BrowserXRWebGLBinding", "WebXR WebGL binding"], ["BrowserXRCompositionLayer", "WebXR composition-layer"], ["BrowserXRAnchor", "WebXR anchor"], ["BrowserXRHitTestResult", "WebXR hit-test result"], ["BrowserXRHitResult", "legacy WebXR hit result"], ["BrowserXRMesh", "WebXR mesh"], ["BrowserXRPlane", "WebXR plane"], ["BrowserXRImageTrackingResult", "WebXR image-tracking result"], ["BrowserAudioBuffer", "Web Audio buffer"], ["BrowserAudioNode", "Web Audio node"], ["BrowserGainNode", "Web Audio gain node"], ["BrowserOfflineAudioContext", "offline Web Audio context"], ["BrowserAudioBufferSourceNode", "Web Audio buffer-source node"], ["BrowserMediaTrackConstraints", "media-track constraints"], ["BrowserPointerEventInit", "pointer-event initializer"], ["BrowserWebGLVertexArrayObject", "WebGL vertex-array object"], ["BrowserWorker", "Web Worker"]]) {
+for (const [name, description] of [["BrowserGPUDevice", "WebGPU device"], ["BrowserGPURenderPassEncoder", "WebGPU render-pass encoder"], ["BrowserGPURenderPipeline", "WebGPU render pipeline"], ["BrowserGPUQuerySet", "WebGPU query set"], ["BrowserGPUCommandEncoder", "WebGPU command encoder"], ["BrowserGPURenderBundle", "WebGPU render bundle"], ["BrowserGPUTexture", "WebGPU texture"], ["BrowserGPUSampler", "WebGPU sampler"], ["BrowserGPUBindGroup", "WebGPU bind group"], ["BrowserGPUPipelineLayout", "WebGPU pipeline layout"], ["BrowserGPUBindGroupLayout", "WebGPU bind-group layout"], ["BrowserGPUShaderModule", "WebGPU shader module"], ["BrowserGPUComputePipeline", "WebGPU compute pipeline"], ["BrowserGPUCommandBuffer", "WebGPU command buffer"], ["BrowserGPUTextureView", "WebGPU texture view"], ["BrowserGPUAdapter", "WebGPU adapter"], ["BrowserGPUCanvasContext", "WebGPU canvas context"], ["BrowserGPUExternalTexture", "WebGPU external texture"], ["BrowserGPURenderBundleEncoder", "WebGPU render-bundle encoder"], ["BrowserGPURenderPassDescriptor", "WebGPU render-pass descriptor"], ["BrowserGPURenderPipelineDescriptor", "WebGPU render-pipeline descriptor"], ["BrowserGPUProgrammableStage", "WebGPU programmable-stage descriptor"], ["BrowserGPUBindGroupLayoutEntry", "WebGPU bind-group-layout entry"], ["BrowserGPUBindGroupEntry", "WebGPU bind-group entry"], ["BrowserGPUComputePassDescriptor", "WebGPU compute-pass descriptor"], ["BrowserGPUTextureViewDescriptor", "WebGPU texture-view descriptor"], ["BrowserXRWebGLBinding", "WebXR WebGL binding"], ["BrowserXRCompositionLayer", "WebXR composition-layer"], ["BrowserXRAnchor", "WebXR anchor"], ["BrowserXRHitTestResult", "WebXR hit-test result"], ["BrowserXRHitResult", "legacy WebXR hit result"], ["BrowserXRInputSourceEvent", "WebXR input-source event"], ["BrowserXRMesh", "WebXR mesh"], ["BrowserXRPlane", "WebXR plane"], ["BrowserXRImageTrackingResult", "WebXR image-tracking result"], ["BrowserAudioBuffer", "Web Audio buffer"], ["BrowserAudioNode", "Web Audio node"], ["BrowserGainNode", "Web Audio gain node"], ["BrowserOfflineAudioContext", "offline Web Audio context"], ["BrowserAudioBufferSourceNode", "Web Audio buffer-source node"], ["BrowserMediaTrackConstraints", "media-track constraints"], ["BrowserPointerEventInit", "pointer-event initializer"], ["BrowserWebGLVertexArrayObject", "WebGL vertex-array object"], ["BrowserWebGLTransformFeedback", "WebGL transform-feedback object"], ["BrowserWorker", "Web Worker"]]) {
   lines.push("", `    /// Distinct ambient ${description} handle.`, "    [<AllowNullLiteral>]", `    type ${name} =`, "        interface end");
 }
 for (const [name, description] of [["BrowserXRRigidTransform", "WebXR rigid transform"], ["BrowserXRSpace", "WebXR space"], ["BrowserXRRay", "WebXR ray"], ["BrowserXRHitTestSource", "WebXR hit-test source"], ["BrowserXRAnchorSet", "WebXR anchor set"], ["BrowserXRWorldInformation", "WebXR world information"], ["BrowserXRPlaneSet", "WebXR plane set"], ["BrowserXRJointSpace", "WebXR joint space"], ["BrowserXRJointPose", "WebXR joint pose"], ["BrowserXRCPUDepthInformation", "WebXR CPU depth information"], ["BrowserNativeXRFrame", "native WebXR frame implementation"]]) {
@@ -1230,6 +1310,8 @@ for (const entry of entries) {
       lines.push(`        abstract \`\`${member.name}\`\`: ${member.helperName}${member.optional ? " option" : ""} with get${member.readonly ? "" : ", set"}`);
     } else if (member.kind === "indexer") {
       lines.push(`        [<EmitIndexer>] abstract Item: \`\`${member.name}\`\`: ${member.keyType} -> ${member.valueType} with get${member.readonly ? "" : ", set"}`);
+    } else if (member.kind === "constructor") {
+      lines.push(`        [<EmitConstructor>] abstract Create${member.callback.genericParameters}: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
     } else {
       lines.push(`        abstract \`\`${member.name}\`\`${member.callback.genericParameters}: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
     }

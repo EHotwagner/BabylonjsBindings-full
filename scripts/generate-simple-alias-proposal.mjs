@@ -117,6 +117,7 @@ const erasedUnionType = branches => {
 const numericLiteralValues = new Set();
 const stringLiteralTypes = new Map();
 const localEnumTypes = new Map();
+const resolvingInternalAliases = new Set();
 const fsharpString = value => `"${value.replaceAll("\\", "\\\\").replaceAll("\"", "\\\"").replaceAll("\n", "\\n").replaceAll("\r", "\\r")}"`;
 const numericLiteralType = value => {
   const numeric = Number(value);
@@ -142,8 +143,33 @@ const fsharpType = node => {
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptNull";
-  if (ts.isLiteralTypeNode(node) && (node.literal.kind === ts.SyntaxKind.TrueKeyword || node.literal.kind === ts.SyntaxKind.FalseKeyword)) return "bool";
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.TrueKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserTrue";
+  if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.FalseKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserFalse";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
+  if (ts.isTypeOperatorNode(node)
+    && node.operator === ts.SyntaxKind.KeyOfKeyword
+    && ts.isTypeReferenceNode(node.type)
+    && ts.isIdentifier(node.type.typeName)
+    && !node.type.typeArguments?.length) {
+    let symbol = checker.getSymbolAtLocation(node.type.typeName);
+    if (symbol?.flags & ts.SymbolFlags.Alias) {
+      try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+    }
+    const declaration = symbol?.declarations?.find(ts.isTypeAliasDeclaration);
+    if (declaration && ts.isTypeLiteralNode(declaration.type)) {
+      const names = declaration.type.members.map(member =>
+        (ts.isPropertySignature(member) || ts.isMethodSignature(member))
+          && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))
+          ? member.name.text
+          : undefined);
+      if (names.length > 0 && names.every(Boolean)) {
+        const branches = names.map(stringLiteralType);
+        return branches.length === 1 ? branches[0] : erasedUnionType(branches);
+      }
+    }
+    recordTypeFailure(node);
+    return undefined;
+  }
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
     if (ts.isArrayTypeNode(node.type)) {
       const element = fsharpType(node.type.elementType);
@@ -200,12 +226,24 @@ const fsharpType = node => {
       if (symbol?.flags & ts.SymbolFlags.Alias) {
         try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
       }
-      const declaration = symbol?.declarations?.find(ts.isTypeAliasDeclaration);
+      const declaration = symbol?.declarations?.find(candidate => ts.isTypeAliasDeclaration(candidate) || ts.isInterfaceDeclaration(candidate));
       const keyNodes = ts.isUnionTypeNode(node.typeArguments[1]) ? node.typeArguments[1].types : [node.typeArguments[1]];
       const keys = keyNodes.map(branch => ts.isLiteralTypeNode(branch) && ts.isStringLiteral(branch.literal) ? branch.literal.text : undefined);
-      if (declaration && ts.isTypeLiteralNode(declaration.type) && keys.length > 0 && keys.every(Boolean)) {
-        const members = typeLiteralShape(declaration.type, `${node.typeArguments[0].typeName.text}Pick`)?.filter(member => keys.includes(member.name));
-        if (members?.length === keys.length) {
+      if (declaration && keys.length > 0 && keys.every(Boolean)) {
+        const members = ts.isTypeAliasDeclaration(declaration) && ts.isTypeLiteralNode(declaration.type)
+          ? typeLiteralShape(declaration.type, `${node.typeArguments[0].typeName.text}Pick`)?.filter(member => keys.includes(member.name))
+          : ts.isInterfaceDeclaration(declaration)
+            ? declaration.members
+              .filter(member => ts.isPropertySignature(member)
+                && member.type
+                && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))
+                && keys.includes(member.name.text))
+              .map(member => {
+                const rendered = fsharpType(member.type);
+                return rendered ? { kind: "property", name: member.name.text, type: member.questionToken ? asOption(rendered) : rendered, readonly: member.modifiers?.some(modifier => modifier.kind === ts.SyntaxKind.ReadonlyKeyword) ?? false } : undefined;
+              })
+            : undefined;
+        if (members?.length === keys.length && members.every(Boolean)) {
           const name = `PickObject${createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12)}`;
           auxiliaryObjectTypes.set(name, { name, members });
           return name;
@@ -403,6 +441,19 @@ const fsharpType = node => {
       return maintained.arity === 0 ? maintained.fsharpSymbol : `${maintained.fsharpSymbol}<${renderedArguments.join(", ")}>`;
     }
     if (!node.typeArguments?.length && node.typeName.text === diagnosedAlias) return `BabylonjsBindings.TypeAliases.${diagnosedAlias}`;
+    if (!node.typeArguments?.length) {
+      let symbol = checker.getSymbolAtLocation(node.typeName);
+      if (symbol?.flags & ts.SymbolFlags.Alias) {
+        try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+      }
+      const declaration = symbol?.declarations?.find(ts.isTypeAliasDeclaration);
+      if (declaration && !declaration.typeParameters?.length && !resolvingInternalAliases.has(declaration)) {
+        resolvingInternalAliases.add(declaration);
+        const rendered = fsharpType(declaration.type);
+        resolvingInternalAliases.delete(declaration);
+        if (rendered) return rendered;
+      }
+    }
   }
   recordTypeFailure(node);
   return undefined;
@@ -589,6 +640,22 @@ for (const sourceFile of program.getSourceFiles()) {
         }
       }
     }
+    if (entry
+      && name === "AnimationOptimization"
+      && ts.isUnionTypeNode(declaration.type)
+      && declaration.type.types.every(ts.isTypeLiteralNode)) {
+      const partialBranches = declaration.type.types.map(branch => {
+        const members = typeLiteralShape(branch, `${name}Partial`);
+        if (!members) return undefined;
+        const partialMembers = members.map(member => member.kind === "property"
+          ? { ...member, type: asOption(member.type) }
+          : { ...member, valueType: asOption(member.valueType) });
+        const partialName = `PartialAliasObject${createHash("sha256").update(branch.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12)}`;
+        auxiliaryObjectTypes.set(partialName, { name: partialName, members: partialMembers });
+        return partialName;
+      });
+      if (partialBranches.every(Boolean)) entry.partialTarget = erasedUnionType(partialBranches);
+    }
     const identity = `${packageName}|${module}|${name}`;
     if (entry && !maintainedIdentities.has(identity)) entriesByIdentity.set(identity, entry);
   }
@@ -656,6 +723,7 @@ for (const entry of entries) {
     const generic = entry.shape === "genericAlias" ? `<'${entry.typeParameter}>` : "";
     lines.push(`    type ${entry.name}${generic} = ${entry.target}`);
     if (entry.deepImmutableTarget) lines.push(`    type DeepImmutable${entry.name} = ${entry.deepImmutableTarget}`);
+    if (entry.partialTarget) lines.push(`    type Partial${entry.name} = ${entry.partialTarget}`);
   } else if (entry.shape === "coroutine") {
     lines.push("    [<AllowNullLiteral>]", `    type ${entry.name}<'${entry.typeParameter}> =`, `        abstract next: ?value: unit -> CoroutineInternalResult<'${entry.typeParameter}>`, `        [<Emit(\"$0.return === undefined ? undefined : $0.return($1)\")>] abstract tryReturn: ?value: '${entry.typeParameter} -> CoroutineInternalResult<'${entry.typeParameter}> option`, `        [<Emit(\"$0.throw === undefined ? undefined : $0.throw($1)\")>] abstract tryThrow: ?error: obj -> CoroutineInternalResult<'${entry.typeParameter}> option`, `        [<Emit(\"$0[Symbol.iterator]()\")>] abstract GetIterator: unit -> ${entry.name}<'${entry.typeParameter}>`);
   } else if (entry.shape === "callback") {
@@ -698,6 +766,7 @@ const manifest = {
     fsharpSymbol: `BabylonjsBindings.TypeAliases.${entry.name}`,
     dependencies: referencedPromotionSymbols(entry, promotionSymbolIndex, `BabylonjsBindings.TypeAliases.${entry.name}`),
     ...(entry.deepImmutableTarget ? { deepImmutableSymbol: `BabylonjsBindings.TypeAliases.DeepImmutable${entry.name}` } : {}),
+    ...(entry.partialTarget ? { partialSymbol: `BabylonjsBindings.TypeAliases.Partial${entry.name}` } : {}),
     shape: entry.shape,
     ...(["genericAlias", "coroutine"].includes(entry.shape) ? { typeParameterCount: 1 } : {}),
     memberCount: entry.shape === "callback" ? entry.parameters.length : entry.shape === "recursiveUnionAlias" ? entry.branches.length : entry.shape === "objectAlias" ? entry.members.length : entry.shape === "intersectionAlias" ? entry.bases.length + entry.members.length : 1

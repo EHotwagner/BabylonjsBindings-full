@@ -85,8 +85,22 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/thinEngine.functions.js",
+      "export": "_createShaderProgram",
+      "runtimeExport": "_createShaderProgram",
+      "moduleSha256": "f0deb5cf140dad9e145c9530ae8dbe963889211c653df140aeb058a888a838a7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions.js",
       "export": "_executeWhenRenderingStateIsCompiled",
       "runtimeExport": "_executeWhenRenderingStateIsCompiled",
+      "moduleSha256": "f0deb5cf140dad9e145c9530ae8dbe963889211c653df140aeb058a888a838a7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions.js",
+      "export": "_finalizePipelineContext",
+      "runtimeExport": "_finalizePipelineContext",
       "moduleSha256": "f0deb5cf140dad9e145c9530ae8dbe963889211c653df140aeb058a888a838a7"
     },
     {
@@ -196,6 +210,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions.js",
+      "export": "_preparePipelineContext",
+      "runtimeExport": "_preparePipelineContext",
+      "moduleSha256": "f0deb5cf140dad9e145c9530ae8dbe963889211c653df140aeb058a888a838a7"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/effect.functions.js",
       "export": "_ProcessShaderCode",
       "runtimeExport": "_ProcessShaderCode",
@@ -249,6 +270,13 @@
       "export": "_UpdateRGBDAsync",
       "runtimeExport": "_UpdateRGBDAsync",
       "moduleSha256": "c380f244a4900d0c4d3838ee1fc50e16674719a342d84adfe3f098364bb66dc4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinNativeEngine.pure.js",
+      "export": "AcquireNativeObjectAsync",
+      "runtimeExport": "AcquireNativeObjectAsync",
+      "moduleSha256": "7a248efb34a43e168fa88e1cbea7e7bad088cae4001d4f7673141d5a38a8741d"
     },
     {
       "package": "@babylonjs/core",
@@ -1127,6 +1155,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions.js",
+      "export": "createRawShaderProgram",
+      "runtimeExport": "createRawShaderProgram",
+      "moduleSha256": "f0deb5cf140dad9e145c9530ae8dbe963889211c653df140aeb058a888a838a7"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/textureTools.js",
       "export": "CreateResizedCopy",
       "runtimeExport": "CreateResizedCopy",
@@ -1201,6 +1236,13 @@
       "export": "CreateSegmentedBoxVertexData",
       "runtimeExport": "CreateSegmentedBoxVertexData",
       "moduleSha256": "48b384536b3f72628390f59582de26b5c1d8d8f5b86311f34f68517b143ec2db"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions.js",
+      "export": "createShaderProgram",
+      "runtimeExport": "createShaderProgram",
+      "moduleSha256": "f0deb5cf140dad9e145c9530ae8dbe963889211c653df140aeb058a888a838a7"
     },
     {
       "package": "@babylonjs/core",
@@ -1502,6 +1544,13 @@
       "export": "DumpFramebuffer",
       "runtimeExport": "DumpFramebuffer",
       "moduleSha256": "d14deb6fd221e4ceedaa90d41b08c5a88d9348e1769d5ab4c55074b7f157311a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions.js",
+      "export": "EcefFromLatLonAltToRef",
+      "runtimeExport": "EcefFromLatLonAltToRef",
+      "moduleSha256": "c651ac38d8ca45a396e96f1930e20375fd69684d610edbeb2a90bad080a4a922"
     },
     {
       "package": "@babylonjs/core",
@@ -1911,6 +1960,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions.js",
+      "export": "getStateObject",
+      "runtimeExport": "getStateObject",
+      "moduleSha256": "f0deb5cf140dad9e145c9530ae8dbe963889211c653df140aeb058a888a838a7"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/textureTools.js",
       "export": "GetTextureDataAsync",
       "runtimeExport": "GetTextureDataAsync",
@@ -2220,8 +2276,22 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure.js",
+      "export": "LoadSmartAssetAsync",
+      "runtimeExport": "LoadSmartAssetAsync",
+      "moduleSha256": "6730448969362566827cb765fe409bddc6b1d320d4de75ca1a210e22a98febbe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure.js",
       "export": "LoadSmartAssetMapAsync",
       "runtimeExport": "LoadSmartAssetMapAsync",
+      "moduleSha256": "6730448969362566827cb765fe409bddc6b1d320d4de75ca1a210e22a98febbe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure.js",
+      "export": "LoadSmartAssetTextureAsync",
+      "runtimeExport": "LoadSmartAssetTextureAsync",
       "moduleSha256": "6730448969362566827cb765fe409bddc6b1d320d4de75ca1a210e22a98febbe"
     },
     {
@@ -2380,6 +2450,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.optimizations.js",
+      "export": "OptimizeAnimations",
+      "runtimeExport": "OptimizeAnimations",
+      "moduleSha256": "189e3bf2deab82dce4c0671804a27d53d7a3f51ab37fb5e6eef71a5da0d3f1e8"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/mesh.vertexData.functions.js",
       "export": "OptimizeIndices",
       "runtimeExport": "OptimizeIndices",
@@ -2408,6 +2485,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser.js",
+      "export": "ParseBlockAsync",
+      "runtimeExport": "ParseBlockAsync",
+      "moduleSha256": "f48e690f96e84d99c51a7ab06f954fd53bd478509c559b9cba74742d9023b2fb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser.js",
+      "export": "ParseCoordinatorAsync",
+      "runtimeExport": "ParseCoordinatorAsync",
+      "moduleSha256": "f48e690f96e84d99c51a7ab06f954fd53bd478509c559b9cba74742d9023b2fb"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js",
       "export": "ParseFloat16",
       "runtimeExport": "ParseFloat16",
@@ -2423,8 +2514,43 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphParser.js",
+      "export": "ParseFlowGraph",
+      "runtimeExport": "ParseFlowGraph",
+      "moduleSha256": "f48e690f96e84d99c51a7ab06f954fd53bd478509c559b9cba74742d9023b2fb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser.js",
+      "export": "ParseFlowGraphAsync",
+      "runtimeExport": "ParseFlowGraphAsync",
+      "moduleSha256": "f48e690f96e84d99c51a7ab06f954fd53bd478509c559b9cba74742d9023b2fb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser.js",
+      "export": "ParseFlowGraphBlockWithClassType",
+      "runtimeExport": "ParseFlowGraphBlockWithClassType",
+      "moduleSha256": "f48e690f96e84d99c51a7ab06f954fd53bd478509c559b9cba74742d9023b2fb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser.js",
       "export": "ParseFlowGraphContext",
       "runtimeExport": "ParseFlowGraphContext",
+      "moduleSha256": "f48e690f96e84d99c51a7ab06f954fd53bd478509c559b9cba74742d9023b2fb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser.js",
+      "export": "ParseFlowGraphCoordinatorFromSnippetAsync",
+      "runtimeExport": "ParseFlowGraphCoordinatorFromSnippetAsync",
+      "moduleSha256": "f48e690f96e84d99c51a7ab06f954fd53bd478509c559b9cba74742d9023b2fb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser.js",
+      "export": "ParseFlowGraphFromSnippetAsync",
+      "runtimeExport": "ParseFlowGraphFromSnippetAsync",
       "moduleSha256": "f48e690f96e84d99c51a7ab06f954fd53bd478509c559b9cba74742d9023b2fb"
     },
     {
@@ -6801,6 +6927,13 @@
       "export": "RegisterSimplexPerlin3DBlock",
       "runtimeExport": "RegisterSimplexPerlin3DBlock",
       "moduleSha256": "c98d57c3c0fbe4518f47002ae483b35ed3038b7ec40e9cd446738b03bee4f54c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure.js",
+      "export": "RegisterSmartAsset",
+      "runtimeExport": "RegisterSmartAsset",
+      "moduleSha256": "6730448969362566827cb765fe409bddc6b1d320d4de75ca1a210e22a98febbe"
     },
     {
       "package": "@babylonjs/core",
