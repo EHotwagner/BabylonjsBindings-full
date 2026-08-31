@@ -5,8 +5,8 @@ import { spawnSync } from "node:child_process";
 const root = resolve(import.meta.dirname, "..");
 const output = resolve(root, process.argv[2] ?? "reports/m1-exact-projections.trx");
 const fableOutput = resolve(root, "artifacts/m1-fable-dist");
-const dotnet = "/home/developer/.dotnet/dotnet";
-const environment = { ...process.env, PATH: `/home/developer/.dotnet:/home/developer/.dotnet/tools:${process.env.PATH}` };
+const dotnet = "dotnet";
+const environment = { ...process.env };
 delete environment.npm_config_allow_scripts;
 delete environment.NPM_CONFIG_ALLOW_SCRIPTS;
 

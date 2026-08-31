@@ -6,7 +6,7 @@ import { spawn } from "node:child_process";
 const root = resolve(import.meta.dirname, "..");
 const packageDirectory = resolve(root, "artifacts/m1-package");
 const run = (command, args, cwd = root) => new Promise((accept, reject) => {
-  const environment = { ...process.env, PATH: `/home/developer/.dotnet:/home/developer/.dotnet/tools:${process.env.PATH}` };
+  const environment = { ...process.env };
   delete environment.npm_config_allow_scripts;
   delete environment.NPM_CONFIG_ALLOW_SCRIPTS;
   const child = spawn(command, args, { cwd, env: environment });
