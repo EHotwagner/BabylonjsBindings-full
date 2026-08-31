@@ -12,10 +12,11 @@
     "roadmap-evidence"
   ],
   "initial_verdict": "changes-required",
-  "repair_rounds": 1,
+  "repair_rounds": 2,
   "reviewed_commits": [
     "2fc89ce400965cbadb281d69ce2aee677b422b99",
-    "528315802c35e77d413c3bb59be43f6daa0e1e99"
+    "528315802c35e77d413c3bb59be43f6daa0e1e99",
+    "da89a968e7d13dca3e7622d023c02946813beba7"
   ],
   "findings": [
     {
@@ -33,7 +34,8 @@
       "resolution_evidence": [
         "scripts/analysis-infrastructure-lib.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 keys uniqueness by declarationIdentity plus normalized typeScriptExpression and rejects non-increasing canonical key order.",
         "scripts/test-analysis-infrastructure.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 adds passing coverage for two ordered Tuple instantiations and negative coverage for out-of-order and duplicate normalized instantiations.",
-        "Confirmation rerun: node --test scripts/test-analysis-infrastructure.mjs passed all 8 tests, including the repaired registry cases."
+        "Confirmation rerun: node --test scripts/test-analysis-infrastructure.mjs passed all 8 tests, including the repaired registry cases.",
+        "Round-2 confirmation at da89a968e7d13dca3e7622d023c02946813beba7 reran npm run analysis:test and again passed all 8 tests, including ordered multi-instantiation, duplicate-instantiation, and ordering coverage."
       ]
     },
     {
@@ -51,7 +53,8 @@
       "resolution_evidence": [
         "analysis/analysis-policy.json at 528315802c35e77d413c3bb59be43f6daa0e1e99 lists all family members by exact package|module|export identity, including separate Physics v1 and v2 identities.",
         "scripts/analysis-infrastructure-lib.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 matches identityOf(item), reports duplicate policy identities, and reports duplicate blocked identities.",
-        "scripts/test-analysis-infrastructure.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 adds wrong-module substitution and duplicate policy/blocked identity fixtures; the confirmation rerun passed both."
+        "scripts/test-analysis-infrastructure.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 adds wrong-module substitution and duplicate policy/blocked identity fixtures; the confirmation rerun passed both.",
+        "Round-2 confirmation at da89a968e7d13dca3e7622d023c02946813beba7 reran npm run analysis:test and again passed the wrong-module substitution and duplicate policy/blocked identity fixtures."
       ]
     },
     {
@@ -72,12 +75,15 @@
         "scripts/run-analysis-tests.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 now includes 8 checks covering fixtures, double generation, report currency, coverage, locked restore, maintained build, runtime smoke, and protected-path diff.",
         "origin/main resolved to b92fbe1191fc83aaf04f8121bca29ee5ea05a98c during confirmation, so the aggregate protected-path comparison targets the requested exact base in this worktree.",
         "Confirmation independently passed the focused tests, double-generation comparison, analysis check, coverage check, locked restore and solution build with SDK 10.0.302, Node runtime smoke, and git diff --quiet b92fbe1191fc83aaf04f8121bca29ee5ea05a98c over src/BabylonjsBindings, coverage-and-drift.json, declaration-lock.json, and package-lock.json.",
-        "reports/m0-analysis.trx at the repaired head has SHA-256 72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b and records 8 passed checks; work/002-m0-analysis-infrastructure/evidence.yml references that exact digest and count."
+        "reports/m0-analysis.trx at the repaired head has SHA-256 72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b and records 8 passed checks; work/002-m0-analysis-infrastructure/evidence.yml references that exact digest and count.",
+        "At da89a968e7d13dca3e7622d023c02946813beba7, build.sh invokes only npm run analysis:test, npm run analysis:determinism, and npm run analysis:check; rg confirms origin/main and the no-maintained-API comparison remain confined to scripts/run-analysis-tests.mjs, so later roadmap milestones can update analysis policy and reports without inheriting M0's zero-API-diff assertion.",
+        "Round-2 confirmation passed npm run analysis:test, npm run analysis:determinism, npm run analysis:check, coverage regeneration check, locked restore, maintained solution build, and Node runtime smoke at da89a968e7d13dca3e7622d023c02946813beba7.",
+        "Round-2 confirmation resolved origin/main to b92fbe1191fc83aaf04f8121bca29ee5ea05a98c, verified git diff --quiet b92fbe1191fc83aaf04f8121bca29ee5ea05a98c..da89a968e7d13dca3e7622d023c02946813beba7 over src/BabylonjsBindings, coverage-and-drift.json, declaration-lock.json, and package-lock.json, and rechecked the unchanged receipt SHA-256 72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b with its 8-pass evidence binding."
       ]
     }
   ],
   "confirmation": {
-    "reviewed_commit": "528315802c35e77d413c3bb59be43f6daa0e1e99",
+    "reviewed_commit": "da89a968e7d13dca3e7622d023c02946813beba7",
     "verdict": "pass",
     "unresolved_blocker_major": []
   },
