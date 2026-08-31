@@ -12,9 +12,10 @@
     "roadmap-evidence"
   ],
   "initial_verdict": "changes-required",
-  "repair_rounds": 0,
+  "repair_rounds": 1,
   "reviewed_commits": [
-    "56ad2b69c4237defe86749b379f9cd61a1d51d06"
+    "56ad2b69c4237defe86749b379f9cd61a1d51d06",
+    "cc1ed476f3799449df0fc08072200cca1c96a575"
   ],
   "findings": [
     {
@@ -27,9 +28,12 @@
         "reports/m3-test-matrix.json:67-69 records only the unparameterized command as pass and does not record the consumed package identity or version, while work/005-m3-higher-order-runtime-apis/evidence.yml:226-251 marks FR-008 pass from the aggregate TRX. Verification: nl -ba reports/m3-test-matrix.json | sed -n '60,71p'; nl -ba work/005-m3-higher-order-runtime-apis/evidence.yml | sed -n '226,251p'.",
         "The typed specification defines EV007 as the 0.1.4 clean-consumer obligation, but tasks.yml/evidence.yml use EV007 for FR-007 coverage and invent EV008 for FR-008, so the authored evidence graph does not bind the package acceptance requirement to its declared obligation. Verification: readiness/005-m3-higher-order-runtime-apis/specification.normalized.json evidenceObligations EV007 and requirements FR-008; work/005-m3-higher-order-runtime-apis/tasks.yml:90-110; work/005-m3-higher-order-runtime-apis/evidence.yml:199-251."
       ],
-      "disposition": "follow-up",
+      "disposition": "resolved",
       "resolution_evidence": [
-        "Required repair: run and record the clean external consumer against an actual 0.1.4 package, persist the exact package/version result in the receipt, and repair the Typed SDD obligation references so FR-008 points to the declared EV007. Verification: unresolved at initial reviewed commit 56ad2b69c4237defe86749b379f9cd61a1d51d06; repair confirmation not yet performed."
+        "Required repair: run and record the clean external consumer against an actual 0.1.4 package, persist the exact package/version result in the receipt, and repair the Typed SDD obligation references so FR-008 points to its declared package obligation. Verification: unresolved at initial reviewed commit 56ad2b69c4237defe86749b379f9cd61a1d51d06.",
+        "Resolved at cc1ed476f3799449df0fc08072200cca1c96a575: scripts/test-m3-clean-consumer.mjs defaults and enforces candidate package version 0.1.4, computes the package SHA-256, and writes reports/m3-clean-consumer.json; scripts/run-m3-tests.mjs embeds that receipt in reports/m3-test-matrix.json. Verification: scripts/test-m3-clean-consumer.mjs:8-11,72-77; scripts/run-m3-tests.mjs:44-57; reports/m3-clean-consumer.json.",
+        "The recorded package is BabylonjsBindings.0.1.4.nupkg with SHA-256 5e3b782aac4ac562f7b5b2705231150222c7a2e3bb2124f827a3883ec64d49fd, its nuspec version is 0.1.4, and its packed fable/M3HigherOrderRuntimeApis.fs bytes match repaired maintained source. Verification: sha256sum artifacts/m3-package/BabylonjsBindings.0.1.4.nupkg; unzip -p artifacts/m3-package/BabylonjsBindings.0.1.4.nupkg BabylonjsBindings.nuspec; unzip -p artifacts/m3-package/BabylonjsBindings.0.1.4.nupkg fable/M3HigherOrderRuntimeApis.fs | sha256sum; sha256sum src/BabylonjsBindings/M3HigherOrderRuntimeApis.fs at cc1ed476f3799449df0fc08072200cca1c96a575.",
+        "The Typed SDD authority now declares aggregate EV006, coverage EV007, and package-consumer EV008, while FR-008, T008, and evidence EV008 consistently reference the package obligation. Verification: work/005-m3-higher-order-runtime-apis/specification.fsx:43-57,188-197; work/005-m3-higher-order-runtime-apis/tasks.yml:90-110; work/005-m3-higher-order-runtime-apis/evidence.yml:199-251; readiness/005-m3-higher-order-runtime-apis/specification.normalized.json at cc1ed476f3799449df0fc08072200cca1c96a575."
       ]
     },
     {
@@ -42,9 +46,12 @@
         "runtime/node/m3-smoke.mjs:14-22 and runtime/browser/m3-higher-order.html:6-13 call the upstream decorators only with omitted keys, and scripts/check-m3-emitted-imports.mjs:19-24 checks imports, this calls, and coroutine calls but has no null/undefined assertion. Verification: nl -ba runtime/node/m3-smoke.mjs | sed -n '14,22p'; nl -ba runtime/browser/m3-higher-order.html; nl -ba scripts/check-m3-emitted-imports.mjs | sed -n '16,25p'.",
         "The aggregate M3 receipt nevertheless marks the emitted-call, Node, Chromium, and FR-003 evidence lanes passing. Verification: reports/m3-test-matrix.json:47-69 and work/005-m3-higher-order-runtime-apis/evidence.yml entries for FR-003."
       ],
-      "disposition": "follow-up",
+      "disposition": "resolved",
       "resolution_evidence": [
-        "Required repair: add F# calls and emitted-JavaScript assertions for both an explicitly null source key and an omitted/undefined key for both decorator factories, then execute behavior that distinguishes the chosen explicit key from the default computed key. Verification: unresolved at initial reviewed commit 56ad2b69c4237defe86749b379f9cd61a1d51d06; repair confirmation not yet performed."
+        "Required repair: add F# calls and emitted-JavaScript assertions for both an explicitly null source key and an omitted/undefined key for both decorator factories, then execute behavior that distinguishes the chosen explicit key from the default computed key. Verification: unresolved at initial reviewed commit 56ad2b69c4237defe86749b379f9cd61a1d51d06.",
+        "Resolved at cc1ed476f3799449df0fc08072200cca1c96a575: AccessorDecoratorFactory now exposes separate omitted, named-string, and explicit-null calls; the F# positive matrix uses omitted and explicit-null forms for both factories. Verification: src/BabylonjsBindings/M3HigherOrderRuntimeApis.fs:203-210; tests/BabylonjsBindings.CompileTests/Program.fs:291-296.",
+        "The regenerated Fable output contains expandToProperty(\"markDirty\"), expandToProperty(\"markDirty\", null), addAccessorsForMaterialProperty(\"markDirty\"), and addAccessorsForMaterialProperty(\"markDirty\", null), and the emitted-import checker requires all four. Verification: runtime/m3-dist/Program.js:711-716; scripts/check-m3-emitted-imports.mjs:22-28; independent npm run test:m3-imports passed at cc1ed476f3799449df0fc08072200cca1c96a575.",
+        "Node executes omitted, named, and null behavior for both decorator factories, while Chromium executes named and null expandToProperty behavior; both independent checks passed. Verification: runtime/node/m3-smoke.mjs:14-35; runtime/browser/m3-higher-order.html:8-18; npm run test:m3-node and npm run test:m3-browser at cc1ed476f3799449df0fc08072200cca1c96a575, Chromium 151.0.7922.173 Arch Linux."
       ]
     },
     {
@@ -58,20 +65,20 @@
         "The positive compile matrix checks only the PBR image-defines specialization, and the direct Node/Chromium runtime smokes construct only ImageProcessingDefinesMixin(MaterialDefines); Standard, OpenPBR, Node, and the background use are not compiled/executed as claimed. Verification: tests/BabylonjsBindings.CompileTests/Program.fs:303-308; runtime/node/m3-smoke.mjs:32-41; runtime/browser/m3-higher-order.html:13-16.",
         "Independent direct runtime checks still pass because they cover the narrower cases: npm run test:m3-node reported 'M3 Node smoke passed' and npm run test:m3-browser reported Chromium 151.0.7922.173 pass. Verification: commands executed in /home/developer/projects/BabylonjsBindings-full-m3 at exact HEAD 56ad2b69c4237defe86749b379f9cd61a1d51d06."
       ],
-      "disposition": "follow-up",
+      "disposition": "resolved",
       "resolution_evidence": [
-        "Required repair: reconcile the manifest and maintained specialization policy with all five actual locked ImageProcessingDefinesMixin uses, explicitly handling the private BackgroundMaterialDefinesBase without substituting a different base identity, and add positive compile/runtime coverage for every supported specialization. Verification: unresolved at initial reviewed commit 56ad2b69c4237defe86749b379f9cd61a1d51d06; repair confirmation not yet performed."
+        "Required repair: reconcile the manifest and maintained specialization policy with all five actual locked ImageProcessingDefinesMixin uses, explicitly handling the private BackgroundMaterialDefinesBase without substituting a different base identity, and add positive compile/runtime coverage for every supported specialization. Verification: unresolved at initial reviewed commit 56ad2b69c4237defe86749b379f9cd61a1d51d06.",
+        "Resolved at cc1ed476f3799449df0fc08072200cca1c96a575: analysis/m3-higher-order-runtime-manifest.json names the actual five locked ImageProcessingDefinesMixin bases, replacing the incorrect MaterialDefines substitution with BackgroundMaterialDefinesBase. Verification: analysis/m3-higher-order-runtime-manifest.json:16-20 and rg -n 'ImageProcessingDefinesMixin\\(' node_modules/@babylonjs/core -g '*.pure.js'.",
+        "The maintained binding adds a named private-background base/result/static specialization and retains PBR, Standard, OpenPBR-with-environment-lighting, and Node specializations; the positive matrix compiles both-member access and constructor correlation for all five. Verification: src/BabylonjsBindings/M3HigherOrderRuntimeApis.fs:367-427; tests/BabylonjsBindings.CompileTests/Program.fs:305-317.",
+        "The Node proof constructs ImageProcessingDefinesMixin results over five identity-preserving MaterialDefines subclasses and checks inherited base state plus added mixin state for each; the independent run passed and reported five defines bases. Verification: runtime/node/m3-smoke.mjs:44-56; npm run test:m3-node at cc1ed476f3799449df0fc08072200cca1c96a575.",
+        "The reviewed projection, exact coverage, and declaration-lock checks all passed after the repair: eight M3 exports remain typed at 4,287 typed / 35 blocked / one runtime-only / zero lossy over 2,928 locked declaration files. Verification: npm run check:m3-reviewed-projection; npm run coverage:check; npm run check:drift at cc1ed476f3799449df0fc08072200cca1c96a575."
       ]
     }
   ],
   "confirmation": {
-    "reviewed_commit": "56ad2b69c4237defe86749b379f9cd61a1d51d06",
-    "verdict": "changes-required",
-    "unresolved_blocker_major": [
-      "M3-001",
-      "M3-002",
-      "M3-003"
-    ]
+    "reviewed_commit": "cc1ed476f3799449df0fc08072200cca1c96a575",
+    "verdict": "pass",
+    "unresolved_blocker_major": []
   },
   "human_escalation": null,
   "game_functionality": false,
