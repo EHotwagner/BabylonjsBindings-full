@@ -1,0 +1,8 @@
+{
+  "auditSchema": 1,
+  "report": "feedback/2026-08-31-BabylonjsBindings-full-m1-exact-projections-collisions.md",
+  "reportSha256": "40826b6a24cb6ce879d9f663496903a501bb25296faca6d37853c42d6b2aa057",
+  "criticMode": "fresh-context-subagent",
+  "criticPromptVersion": "actionability-v1",
+  "findings": []
+}
