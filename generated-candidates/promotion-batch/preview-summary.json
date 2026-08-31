@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "batchSize": 59,
+  "categories": {
+    "alias": {
+      "selectedExports": 7,
+      "selectedChunks": 15
+    },
+    "interface": {
+      "selectedExports": 27,
+      "selectedChunks": 157
+    },
+    "class": {
+      "selectedExports": 11,
+      "selectedChunks": 59
+    },
+    "function": {
+      "selectedExports": 8,
+      "selectedChunks": 16
+    },
+    "variable": {
+      "selectedExports": 0,
+      "selectedChunks": 0
+    }
+  }
+}

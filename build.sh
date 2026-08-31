@@ -20,7 +20,7 @@ set -euo pipefail
 # The paths below carry the template's own project name; `dotnet new` rewrites it to
 # the product's name on the way out, exactly as it does in `scripts/lifecycle-evidence.mjs`.
 missing=()
-for locked in src/BabylonjsBindings tests/BabylonjsBindings.CompileTests; do
+for locked in src/BabylonjsBindings tests/BabylonjsBindings.CompileTests generated-candidates/promotion-batch; do
   [[ -f "$locked/packages.lock.json" ]] || missing+=("$locked/packages.lock.json")
 done
 if (( ${#missing[@]} > 0 )); then
@@ -54,5 +54,7 @@ npm run check:simple-types-proposal
 npm run check:simple-types-maintained
 npm run check:simple-function-proposal
 npm run check:simple-variable-proposal
+npm run check:promotion-batch
+npm run test:promotion-preview
 npm run coverage:check
 npm run test:runtime

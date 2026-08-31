@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
 import ts from "typescript";
+import { loadPromotionSymbolIndex, referencedPromotionSymbols } from "./promotion-dependencies.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const nodeModules = resolve(root, "node_modules");
@@ -334,6 +335,11 @@ diagnosedVariable = undefined;
 const nameCounts = new Map();
 for (const entry of variables.values()) nameCounts.set(entry.name, (nameCounts.get(entry.name) ?? 0) + 1);
 const entries = [...variables.values()].filter(entry => nameCounts.get(entry.name) === 1).sort((left, right) => left.name.localeCompare(right.name));
+const promotionSymbolIndex = await loadPromotionSymbolIndex(root, [
+  "generated-candidates/SimpleAliases.promotion.json",
+  "generated-candidates/SimpleInterfaces.promotion.json",
+  "generated-candidates/SimpleClasses.promotion.json"
+]);
 const lines = [
   "// REVIEWED-PROMOTION PROPOSAL — move to maintained source only after variable review, compile, import, and runtime proof",
   "namespace BabylonjsBindings",
@@ -384,6 +390,7 @@ const manifest = {
     kind: "variable",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleVariables.${entry.name}`,
+    dependencies: referencedPromotionSymbols(entry, promotionSymbolIndex, `BabylonjsBindings.SimpleVariables.${entry.name}`),
     ...(entry.runtimeExport !== entry.name ? { runtimeExport: entry.runtimeExport } : {}),
     fsharpType: entry.type,
     ...(entry.shape ? { memberCount: entry.shape.length } : {}),

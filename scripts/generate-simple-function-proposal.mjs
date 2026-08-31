@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
 import ts from "typescript";
+import { loadPromotionSymbolIndex, referencedPromotionSymbols } from "./promotion-dependencies.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const nodeModules = resolve(root, "node_modules");
@@ -282,6 +283,11 @@ diagnosedFunction = undefined;
 const nameCounts = new Map();
 for (const entry of functions.values()) nameCounts.set(entry.name, (nameCounts.get(entry.name) ?? 0) + 1);
 const entries = [...functions.values()].filter(entry => nameCounts.get(entry.name) === 1).sort((left, right) => left.name.localeCompare(right.name));
+const promotionSymbolIndex = await loadPromotionSymbolIndex(root, [
+  "generated-candidates/SimpleAliases.promotion.json",
+  "generated-candidates/SimpleInterfaces.promotion.json",
+  "generated-candidates/SimpleClasses.promotion.json"
+]);
 const callbackArguments = callback => callback.parameters.length === 0
   ? "unit"
   : callback.parameters.map(parameter => `${parameter.optional ? "?" : ""}\`\`${parameter.name}\`\`: ${parameter.type}`).join(" * ");
@@ -336,6 +342,7 @@ const manifest = {
     kind: "function",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleFunctions.${entry.name}`,
+    dependencies: referencedPromotionSymbols(entry, promotionSymbolIndex, `BabylonjsBindings.SimpleFunctions.${entry.name}`),
     fsharpType: `BabylonjsBindings.SimpleFunctions.${safeName(entry.name)}`,
     ...(entry.runtimeExport !== entry.name ? { runtimeExport: entry.runtimeExport } : {}),
     overloadCount: entry.signatures.length

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <OtherFlags>--maxerrors:5000</OtherFlags>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/BabylonjsBindings/Enums.fs" />
+    <Compile Include="../../src/BabylonjsBindings/StringEnums.fs" />
+    <Compile Include="../../src/BabylonjsBindings/ObjectTypes.fs" />
+    <Compile Include="SimpleTypes.fs" />
+    <Compile Include="SimpleFunctions.fs" />
+    <Compile Include="SimpleVariables.fs" />
+    <Compile Include="../../src/BabylonjsBindings/Bindings.fs" />
+    <PackageReference Include="Fable.Core" />
+    <PackageReference Include="Fable.Browser.Dom" />
+    <PackageReference Include="Fable.Browser.WebGL" />
+  </ItemGroup>
+</Project>

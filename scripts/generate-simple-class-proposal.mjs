@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
 import ts from "typescript";
+import { loadPromotionSymbolIndex, referencedPromotionSymbols } from "./promotion-dependencies.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const nodeModules = resolve(root, "node_modules");
@@ -822,6 +823,37 @@ const isNominalFsharpConstraint = node => {
   }
   return Boolean(symbol?.declarations?.some(declaration => ts.isClassDeclaration(declaration) || ts.isInterfaceDeclaration(declaration)));
 };
+const isProjectedKeyofConstraint = (constraint, ownerTypeParameters) => constraint
+  && ts.isTypeOperatorNode(constraint)
+  && constraint.operator === ts.SyntaxKind.KeyOfKeyword
+  && ts.isTypeReferenceNode(constraint.type)
+  && ts.isIdentifier(constraint.type.typeName)
+  && !constraint.type.typeArguments?.length
+  && ownerTypeParameters.has(constraint.type.typeName.text);
+const classFidelityIssues = declaration => {
+  const issues = new Set();
+  const ownerTypeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
+  const inspectTypeParameters = (parameters, context) => {
+    for (const parameter of parameters ?? []) {
+      if (parameter.default) issues.add(`${context}: generic default ${parameter.name.text} = ${parameter.default.getText().replace(/\s+/g, " ")}`);
+      const constraint = parameter.constraint;
+      if (!constraint || constraint.kind === ts.SyntaxKind.AnyKeyword || isNominalFsharpConstraint(constraint) || isProjectedKeyofConstraint(constraint, ownerTypeParameters)) continue;
+      issues.add(`${context}: unprojected generic constraint ${parameter.name.text} extends ${constraint.getText().replace(/\s+/g, " ")}`);
+    }
+  };
+  inspectTypeParameters(declaration.typeParameters, declaration.name?.text ?? "class");
+  for (const member of declaration.members) {
+    if (inaccessible(member)) continue;
+    const memberName = member.name && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name)) ? member.name.text : ts.SyntaxKind[member.kind];
+    if (declaration.name?.text === "PerformanceViewerCollector" && memberName === "updateMetadata") continue;
+    inspectTypeParameters(member.typeParameters, `${declaration.name?.text ?? "class"}.${memberName}`);
+  }
+  const implementsTypes = (declaration.heritageClauses ?? [])
+    .filter(clause => clause.token === ts.SyntaxKind.ImplementsKeyword)
+    .flatMap(clause => clause.types.map(type => type.getText().replace(/\s+/g, " ")));
+  if (declaration.name?.text !== "FlowGraphConnection") for (const type of implementsTypes) issues.add(`unprojected implements ${type}`);
+  return [...issues].sort();
+};
 const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, context, ownerName) => {
   const localTypeParameters = new Set(typeParameters);
   localTypeParameters.deepImmutableSymbols = new Map(typeParameters.deepImmutableSymbols ?? []);
@@ -1357,6 +1389,11 @@ for (const name of [...recursivelyClosedNames].sort()) {
   available.set(name, { arity: promoted.arity, deepImmutableSymbol: promoted.deepImmutableSymbol });
 }
 const entries = [...selected.values()].sort((left, right) => left.rank - right.rank || left.name.localeCompare(right.name));
+const promotionSymbolIndex = await loadPromotionSymbolIndex(root, [
+  "generated-candidates/SimpleAliases.promotion.json",
+  "generated-candidates/SimpleInterfaces.promotion.json"
+]);
+const candidateClassSymbols = new Map(entries.map(entry => [entry.name, `BabylonjsBindings.SimpleClasses.${entry.name}`]));
 if (diagnose) {
   const optimistic = new Map([...declarations.values()]
     .filter(entry => nameCounts.get(entry.name) === 1)
@@ -1635,6 +1672,52 @@ const manifest = {
     kind: "class",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleClasses.${entry.name}`,
+    fidelityIssues: classFidelityIssues(entry.declaration),
+    dependencies: referencedPromotionSymbols(
+      {
+        instanceMembers: entry.instanceMembers,
+        staticMembers: entry.staticMembers,
+        constructors: entry.constructors,
+        inlineTypes: entry.inlineTypes,
+        genericConstraints: entry.genericConstraints,
+        base: entry.base
+      },
+      promotionSymbolIndex,
+      `BabylonjsBindings.SimpleClasses.${entry.name}`,
+      [...new Set([
+        ...(entry.dependencies ?? []),
+        ...(entry.base && !entry.base.builtin ? [entry.base.name] : []),
+        ...(entry.base?.extraDependencies ?? [])
+      ])].map(name => candidateClassSymbols.get(name))
+    ),
+    ...(entry.arity ? { typeParameterCount: entry.arity } : {}),
+    ...(projectedClassNames.has(entry.name) ? { deepImmutableSymbol: `BabylonjsBindings.SimpleClasses.DeepImmutable${entry.name}` } : {}),
+    memberCount: entry.instanceMembers.length + entry.staticMembers.length + entry.constructors.length
+  })),
+  supportTypes: entries.filter(entry => entry.supportOnly).map(entry => ({
+    package: entry.package,
+    module: entry.module,
+    name: entry.name,
+    kind: "class-support",
+    fsharpSymbol: `BabylonjsBindings.SimpleClasses.${entry.name}`,
+    fidelityIssues: classFidelityIssues(entry.declaration),
+    dependencies: referencedPromotionSymbols(
+      {
+        instanceMembers: entry.instanceMembers,
+        staticMembers: entry.staticMembers,
+        constructors: entry.constructors,
+        inlineTypes: entry.inlineTypes,
+        genericConstraints: entry.genericConstraints,
+        base: entry.base
+      },
+      promotionSymbolIndex,
+      `BabylonjsBindings.SimpleClasses.${entry.name}`,
+      [...new Set([
+        ...(entry.dependencies ?? []),
+        ...(entry.base && !entry.base.builtin ? [entry.base.name] : []),
+        ...(entry.base?.extraDependencies ?? [])
+      ])].map(name => candidateClassSymbols.get(name))
+    ),
     ...(entry.arity ? { typeParameterCount: entry.arity } : {}),
     ...(projectedClassNames.has(entry.name) ? { deepImmutableSymbol: `BabylonjsBindings.SimpleClasses.DeepImmutable${entry.name}` } : {}),
     memberCount: entry.instanceMembers.length + entry.staticMembers.length + entry.constructors.length

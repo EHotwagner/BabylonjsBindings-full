@@ -13,6 +13,14 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.AllowedAnimValue",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IColor3Like",
+        "BabylonjsBindings.SimpleInterfaces.IColor4Like",
+        "BabylonjsBindings.SimpleInterfaces.IMatrixLike",
+        "BabylonjsBindings.SimpleInterfaces.IQuaternionLike",
+        "BabylonjsBindings.SimpleInterfaces.IVector2Like",
+        "BabylonjsBindings.SimpleInterfaces.IVector3Like"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -23,6 +31,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.AnimationOptimization",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -33,6 +42,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.BabylonFileParser",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AssetContainer",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
       "shape": "callback",
       "memberCount": 4
     },
@@ -43,6 +56,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.CameraStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
       "shape": "callback",
       "memberCount": 1
     },
@@ -53,6 +69,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.CameraStageFrameBufferAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
       "shape": "callback",
       "memberCount": 1
     },
@@ -63,6 +82,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ChannelInput",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IConstantChannelInput",
+        "BabylonjsBindings.SimpleInterfaces.ITextureChannelInput"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -73,6 +96,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.CircleOfConfusionPostProcessOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ThinCircleOfConfusionPostProcessOptions"
+      ],
       "shape": "intersectionAlias",
       "memberCount": 2
     },
@@ -83,6 +109,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.CodeExecutionFunction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext"
+      ],
       "shape": "callback",
       "memberCount": 2
     },
@@ -93,6 +122,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ComputeBindingList",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -103,6 +133,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ComputeBindingMapping",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -113,6 +144,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ConstrainedBodyPair",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -123,6 +155,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.Coroutine",
+      "dependencies": [],
       "shape": "coroutine",
       "typeParameterCount": 1,
       "memberCount": 1
@@ -134,6 +167,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.DataArray",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -144,6 +178,11 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.DecoderMessage",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IAttributeMessage",
+        "BabylonjsBindings.SimpleInterfaces.IDecodeMeshDoneMessage",
+        "BabylonjsBindings.SimpleInterfaces.IIndicesMessage"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -154,6 +193,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.double",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -164,6 +204,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.DragEvent",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -174,6 +215,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.DragStartEndEvent",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -184,6 +226,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.EffectWrapperCustomShaderCodeProcessing",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -194,6 +237,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.Empty",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -204,6 +248,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.EvaluateSubMeshStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.SubMesh"
+      ],
       "shape": "callback",
       "memberCount": 2
     },
@@ -214,6 +262,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.float",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -224,6 +273,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FloatArray",
+      "dependencies": [],
       "deepImmutableSymbol": "BabylonjsBindings.TypeAliases.DeepImmutableFloatArray",
       "shape": "alias",
       "memberCount": 1
@@ -235,6 +285,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -245,6 +296,11 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphMatrix",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphMatrix2D",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMatrix3D",
+        "BabylonjsBindings.SimpleClasses.Matrix"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -255,6 +311,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphNumber",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphInteger"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -265,6 +324,12 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphVector",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector2",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleClasses.Vector4"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -275,6 +340,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FrameGraphTextureCreationOptions",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -285,6 +351,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FrameGraphTextureDescription",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -295,6 +362,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.FrameGraphTextureHandle",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -305,6 +373,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.GeometryRenderingConfiguration",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -315,6 +384,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.GeospatialCameraOptions",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -325,6 +395,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.GetValueFn",
+      "dependencies": [],
       "shape": "callback",
       "memberCount": 4
     },
@@ -335,6 +406,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.GoldbergCreationOption",
+      "dependencies": [],
       "shape": "intersectionAlias",
       "memberCount": 4
     },
@@ -345,6 +417,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.GoldbergData",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -355,6 +428,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.GreasedLinePoints",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -365,6 +441,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.GreasedLineRibbonOptions",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -375,6 +452,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.IFresnelParametersCreationOptions",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -385,6 +463,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ILTCTextures",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -395,6 +474,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ImageSource",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -405,6 +485,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.IndicesArray",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -415,6 +496,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.IndividualBabylonFileParser",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
       "shape": "callback",
       "memberCount": 3
     },
@@ -425,6 +509,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.int",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -435,6 +520,11 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.InternalSpriteAugmentedScene",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISpriteManager"
+      ],
       "shape": "intersectionAlias",
       "memberCount": 3
     },
@@ -445,6 +535,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.IObstacle",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -455,6 +546,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginBindForSubMesh",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -465,6 +557,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginCreated",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -475,6 +568,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginFillRenderTargetTextures",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -485,6 +579,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginGetActiveTextures",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -495,6 +590,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginGetAnimatables",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -505,6 +601,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginGetDefineNames",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -515,6 +612,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginHardBindForSubMesh",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -525,6 +623,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginHasTexture",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -535,6 +634,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginIsReadyForSubMesh",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -545,6 +645,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginPrepareDefines",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -555,6 +656,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginPrepareEffect",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -565,6 +667,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginPrepareUniformBuffer",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -575,6 +678,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MeshPredicate",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh"
+      ],
       "shape": "callback",
       "memberCount": 2
     },
@@ -585,6 +691,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MeshStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh"
+      ],
       "shape": "callback",
       "memberCount": 2
     },
@@ -595,6 +704,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeData",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -605,6 +715,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeFramebuffer",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -615,6 +726,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeProgram",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -625,6 +737,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeTexture",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -635,6 +748,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeUniform",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -645,6 +759,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NativeVertexArrayObject",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -655,6 +770,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeConstructor",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Node",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
       "shape": "callback",
       "memberCount": 3
     },
@@ -665,6 +784,17 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeMaterialTextureBlocks",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BiPlanarBlock",
+        "BabylonjsBindings.SimpleClasses.CurrentScreenBlock",
+        "BabylonjsBindings.SimpleClasses.ImageSourceBlock",
+        "BabylonjsBindings.SimpleClasses.ParticleTextureBlock",
+        "BabylonjsBindings.SimpleClasses.PrePassTextureBlock",
+        "BabylonjsBindings.SimpleClasses.ReflectionTextureBaseBlock",
+        "BabylonjsBindings.SimpleClasses.RefractionBlock",
+        "BabylonjsBindings.SimpleClasses.TextureBlock",
+        "BabylonjsBindings.SimpleClasses.TriPlanarBlock"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -675,6 +805,13 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeRenderGraphBlockConnectionPointValueType",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.FrameGraphObjectList",
+        "BabylonjsBindings.SimpleClasses.FrameGraphObjectRendererTask",
+        "BabylonjsBindings.SimpleClasses.FrameGraphShadowGeneratorTask",
+        "BabylonjsBindings.SimpleInterfaces.IShadowLight"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -685,6 +822,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeRenderGraphInputCreationOptions",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -695,6 +833,12 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeRenderGraphValueType",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.FrameGraphObjectList",
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IShadowLight"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -705,6 +849,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.Nullable",
+      "dependencies": [],
       "shape": "genericAlias",
       "typeParameterCount": 1,
       "memberCount": 1
@@ -716,6 +861,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.OBJLoadingOptions",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -726,6 +872,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.OcclusionQuery",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -736,6 +883,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PerfStrategyInitialization",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IPerfViewerCollectionStrategy"
+      ],
       "shape": "callback",
       "memberCount": 1
     },
@@ -746,6 +897,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PluginMaterialFactory",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Material",
+        "BabylonjsBindings.SimpleClasses.MaterialPluginBase"
+      ],
       "shape": "callback",
       "memberCount": 1
     },
@@ -756,6 +911,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PlyProperty",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -766,6 +922,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PointerMoveStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.PickingInfo"
+      ],
       "shape": "callback",
       "memberCount": 5
     },
@@ -776,6 +935,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PointerUpDownStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.PickingInfo",
+        "BabylonjsBindings.SimpleInterfaces.IPointerEvent"
+      ],
       "shape": "callback",
       "memberCount": 5
     },
@@ -786,6 +949,12 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PostProcessOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.EffectWrapper",
+        "BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions"
+      ],
       "shape": "intersectionAlias",
       "memberCount": 11
     },
@@ -796,6 +965,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PreActiveMeshStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh"
+      ],
       "shape": "callback",
       "memberCount": 1
     },
@@ -806,6 +978,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrepareTextureFunction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLike"
+      ],
       "shape": "callback",
       "memberCount": 9
     },
@@ -816,6 +992,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrepareTextureProcessFunction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture"
+      ],
       "shape": "callback",
       "memberCount": 6
     },
@@ -826,6 +1005,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrimaryAudioBus",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioBus",
+        "BabylonjsBindings.SimpleClasses.MainAudioBus"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -836,6 +1019,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderingGroupStageAction",
+      "dependencies": [],
       "shape": "callback",
       "memberCount": 1
     },
@@ -846,6 +1030,11 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderingMeshStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleClasses.SubMesh"
+      ],
       "shape": "callback",
       "memberCount": 4
     },
@@ -856,6 +1045,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderTargetsStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
+        "BabylonjsBindings.SimpleClasses.SmartArrayNoDuplicate"
+      ],
       "shape": "callback",
       "memberCount": 1
     },
@@ -866,6 +1059,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderTargetStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.RenderTargetTexture"
+      ],
       "shape": "callback",
       "memberCount": 3
     },
@@ -876,6 +1072,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderTargetTextureSize",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -886,6 +1083,16 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.SceneLoaderSuccessCallback",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.Geometry",
+        "BabylonjsBindings.SimpleClasses.Light",
+        "BabylonjsBindings.SimpleClasses.Skeleton",
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.IParticleSystem",
+        "BabylonjsBindings.SimpleInterfaces.ISpriteManager"
+      ],
       "shape": "callback",
       "memberCount": 8
     },
@@ -896,6 +1103,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction",
+      "dependencies": [],
       "shape": "callback",
       "memberCount": 3
     },
@@ -906,6 +1114,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.SimpleStageAction",
+      "dependencies": [],
       "shape": "callback",
       "memberCount": 0
     },
@@ -916,6 +1125,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.SmartAssetManager",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -926,6 +1136,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.SPLATLoadingOptions",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -936,6 +1147,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.TensorValue",
+      "dependencies": [],
       "shape": "recursiveUnionAlias",
       "memberCount": 2
     },
@@ -946,6 +1158,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.TextureSize",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -956,6 +1169,9 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.ToneMapPostProcessOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ThinTonemapPostProcessOptions"
+      ],
       "shape": "intersectionAlias",
       "memberCount": 2
     },
@@ -966,6 +1182,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.TrianglePickingPredicate",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Ray",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
       "shape": "callback",
       "memberCount": 7
     },
@@ -976,6 +1196,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebGLContext",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -986,6 +1207,10 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebXRFeatureConstructor",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRFeature"
+      ],
       "shape": "callback",
       "memberCount": 2
     },
@@ -996,6 +1221,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     },
@@ -1006,6 +1232,7 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.XRHandMeshRigMapping",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     }

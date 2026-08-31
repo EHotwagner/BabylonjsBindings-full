@@ -1,0 +1,787 @@
+{
+  "schemaVersion": 1,
+  "source": {
+    "declarationLock": "declaration-lock.json",
+    "packageVersion": "9.19.0"
+  },
+  "targetSize": 200,
+  "actualSize": 59,
+  "maintainedBaseline": {
+    "alias": {
+      "maintained": 35,
+      "candidate": 100,
+      "delta": 65
+    },
+    "interface": {
+      "maintained": 292,
+      "candidate": 515,
+      "delta": 223
+    },
+    "class": {
+      "maintained": 131,
+      "candidate": 1396,
+      "delta": 1265
+    },
+    "function": {
+      "maintained": 833,
+      "candidate": 1104,
+      "delta": 271
+    },
+    "variable": {
+      "maintained": 476,
+      "candidate": 523,
+      "delta": 47
+    }
+  },
+  "selectedRootCount": 53,
+  "selectedRoots": [
+    "BabylonjsBindings.TypeAliases.Coroutine",
+    "BabylonjsBindings.TypeAliases.DataArray",
+    "BabylonjsBindings.TypeAliases.ImageSource",
+    "BabylonjsBindings.TypeAliases.MaterialPluginCreated",
+    "BabylonjsBindings.TypeAliases.OcclusionQuery",
+    "BabylonjsBindings.TypeAliases.PlyProperty",
+    "BabylonjsBindings.TypeAliases.WebGLContext",
+    "BabylonjsBindings.SimpleClasses.WebGPUCacheSampler",
+    "BabylonjsBindings.SimpleClasses.WebGPUDataBuffer",
+    "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessorWGSL",
+    "BabylonjsBindings.SimpleClasses.WebXREnterExitUIButton",
+    "BabylonjsBindings.SimpleInterfaces.EngineCapabilities",
+    "BabylonjsBindings.SimpleInterfaces.IAccessibilityTag",
+    "BabylonjsBindings.SimpleInterfaces.IAudioEngineOptions",
+    "BabylonjsBindings.SimpleInterfaces.ICustomAnimationFrameRequester",
+    "BabylonjsBindings.SimpleInterfaces.IDrawContext",
+    "BabylonjsBindings.SimpleInterfaces.IImage",
+    "BabylonjsBindings.SimpleInterfaces.IMouseEvent",
+    "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext",
+    "BabylonjsBindings.SimpleInterfaces.IObjectInfo",
+    "BabylonjsBindings.SimpleInterfaces.IReadonlyObservable",
+    "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginMetadata",
+    "BabylonjsBindings.SimpleInterfaces.IShaderProcessor",
+    "BabylonjsBindings.SimpleInterfaces.IWebGPURenderPipelineStageDescriptor",
+    "BabylonjsBindings.SimpleInterfaces.IWebXRFeature",
+    "BabylonjsBindings.SimpleInterfaces.WebGPUSamplerDescription",
+    "BabylonjsBindings.SimpleInterfaces.WebGPUTextureDescription",
+    "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget",
+    "BabylonjsBindings.SimpleClasses.PBRMaterialDefines",
+    "BabylonjsBindings.SimpleClasses.PointerInfoBase",
+    "BabylonjsBindings.SimpleClasses.StandardMaterialDefines",
+    "BabylonjsBindings.SimpleClasses.WebGPUBundleList",
+    "BabylonjsBindings.SimpleFunctions.CopyFloatData",
+    "BabylonjsBindings.SimpleFunctions.deleteStateObject",
+    "BabylonjsBindings.SimpleFunctions.EnumerateFloatValues",
+    "BabylonjsBindings.SimpleFunctions.GetFloatData",
+    "BabylonjsBindings.SimpleFunctions.VertexBufferForEach",
+    "BabylonjsBindings.SimpleFunctions.VertexBufferGetDataType",
+    "BabylonjsBindings.SimpleFunctions.VertexBufferGetFloatData",
+    "BabylonjsBindings.SimpleInterfaces.AbstractEngineOptions",
+    "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureIrradianceTextureInfoV1",
+    "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureSpecularInfoV1",
+    "BabylonjsBindings.SimpleInterfaces.ICanvas",
+    "BabylonjsBindings.SimpleInterfaces.ICanvasRenderingContext",
+    "BabylonjsBindings.SimpleInterfaces.IPointerEvent",
+    "BabylonjsBindings.SimpleInterfaces.PLYHeader",
+    "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefines",
+    "BabylonjsBindings.SimpleClasses.WebXREnterExitUIOptions",
+    "BabylonjsBindings.SimpleInterfaces.EngineOptions",
+    "BabylonjsBindings.SimpleInterfaces.WebGPUEngineOptions",
+    "BabylonjsBindings.SimpleClasses._TimeToken",
+    "BabylonjsBindings.SimpleFunctions._setProgram",
+    "BabylonjsBindings.SimpleInterfaces._IProcessingOptions"
+  ],
+  "selected": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/coroutine",
+      "name": "Coroutine",
+      "category": "alias",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.Coroutine",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "DataArray",
+      "category": "alias",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.DataArray",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.float"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "ImageSource",
+      "category": "alias",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ImageSource",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginCreated",
+      "category": "alias",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginCreated",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure",
+      "name": "OcclusionQuery",
+      "category": "alias",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.OcclusionQuery",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure",
+      "name": "PlyProperty",
+      "category": "alias",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PlyProperty",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "WebGLContext",
+      "category": "alias",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebGLContext",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Instrumentation/timeToken",
+      "name": "_TimeToken",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._TimeToken",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/openpbrMaterial.pure",
+      "name": "OpenPBRMaterialDefines",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefines",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.MaterialDefines",
+        "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefinesBase",
+        "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefinesWithEnvLighting"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/openpbrMaterial.pure",
+      "name": "OpenPBRMaterialDefinesBase",
+      "category": "class",
+      "supportOnly": true,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefinesBase",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.MaterialDefines"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/openpbrMaterial.pure",
+      "name": "OpenPBRMaterialDefinesWithEnvLighting",
+      "category": "class",
+      "supportOnly": true,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefinesWithEnvLighting",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.MaterialDefines",
+        "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefinesBase"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrBaseMaterial.pure",
+      "name": "PBRMaterialDefines",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PBRMaterialDefines",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.MaterialDefines",
+        "BabylonjsBindings.SimpleClasses.PBRMaterialDefinesBase"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrBaseMaterial.pure",
+      "name": "PBRMaterialDefinesBase",
+      "category": "class",
+      "supportOnly": true,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PBRMaterialDefinesBase",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.MaterialDefines"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/pointerEvents",
+      "name": "PointerInfoBase",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PointerInfoBase",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IMouseEvent"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/standardMaterial.pure",
+      "name": "StandardMaterialDefines",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StandardMaterialDefines",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.MaterialDefines",
+        "BabylonjsBindings.SimpleClasses.StandardMaterialDefinesBase"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/standardMaterial.pure",
+      "name": "StandardMaterialDefinesBase",
+      "category": "class",
+      "supportOnly": true,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StandardMaterialDefinesBase",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.MaterialDefines"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "WebGPUBundleList",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUBundleList",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuCacheSampler",
+      "name": "WebGPUCacheSampler",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUCacheSampler",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.TextureSampler"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/WebGPU/webgpuDataBuffer",
+      "name": "WebGPUDataBuffer",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUDataBuffer",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.DataBuffer"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessorsWGSL.pure",
+      "name": "WebGPUShaderProcessorWGSL",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessorWGSL",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessor",
+        "BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXREnterExitUI",
+      "name": "WebXREnterExitUIButton",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXREnterExitUIButton",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXREnterExitUI",
+      "name": "WebXREnterExitUIOptions",
+      "category": "class",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXREnterExitUIOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebXREnterExitUIButton",
+        "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "_setProgram",
+      "category": "function",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._setProgram",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.WebGLContext"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils",
+      "name": "CopyFloatData",
+      "category": "function",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CopyFloatData",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "deleteStateObject",
+      "category": "function",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.deleteStateObject",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.WebGLContext"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils",
+      "name": "EnumerateFloatValues",
+      "category": "function",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.EnumerateFloatValues",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils",
+      "name": "GetFloatData",
+      "category": "function",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetFloatData",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray",
+        "BabylonjsBindings.TypeAliases.FloatArray"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/buffer.pure",
+      "name": "VertexBufferForEach",
+      "category": "function",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.VertexBufferForEach",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/buffer.pure",
+      "name": "VertexBufferGetDataType",
+      "category": "function",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.VertexBufferGetDataType",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/buffer.pure",
+      "name": "VertexBufferGetFloatData",
+      "category": "function",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.VertexBufferGetFloatData",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray",
+        "BabylonjsBindings.TypeAliases.FloatArray"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Processors/shaderProcessingOptions",
+      "name": "_IProcessingOptions",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces._IProcessingOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IShaderProcessor",
+        "BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext",
+        "BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.pure",
+      "name": "AbstractEngineOptions",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.AbstractEngineOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IAudioEngineOptions"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "BufferImageData",
+      "category": "interface",
+      "supportOnly": true,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.BufferImageData",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/engineCapabilities",
+      "name": "EngineCapabilities",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.EngineCapabilities",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.pure",
+      "name": "EngineOptions",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.EngineOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.AbstractEngineOptions"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "EnvironmentTextureIrradianceTextureInfoV1",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureIrradianceTextureInfoV1",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.BufferImageData"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "EnvironmentTextureSpecularInfoV1",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureSpecularInfoV1",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.BufferImageData"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/IAccessibilityTag",
+      "name": "IAccessibilityTag",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAccessibilityTag",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Audio/Interfaces/IAudioEngineOptions",
+      "name": "IAudioEngineOptions",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAudioEngineOptions",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/ICanvas",
+      "name": "ICanvas",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICanvas",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ICanvasRenderingContext"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/ICanvas",
+      "name": "ICanvasRenderingContext",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICanvasRenderingContext",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.DOMMatrix",
+        "BabylonjsBindings.SimpleInterfaces.ICanvas",
+        "BabylonjsBindings.SimpleInterfaces.ICanvasGradient",
+        "BabylonjsBindings.SimpleInterfaces.IPath2D",
+        "BabylonjsBindings.SimpleInterfaces.ITextMetrics"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/customAnimationFrameRequester",
+      "name": "ICustomAnimationFrameRequester",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICustomAnimationFrameRequester",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/IDrawContext",
+      "name": "IDrawContext",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDrawContext",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/ICanvas",
+      "name": "IImage",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IImage",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/deviceInputEvents",
+      "name": "IMouseEvent",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMouseEvent",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IUIEvent"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Node/Interfaces/nodeGeometryExecutionContext",
+      "name": "INodeGeometryExecutionContext",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ObjectModel/objectModelInterfaces",
+      "name": "IObjectInfo",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IObjectInfo",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/deviceInputEvents",
+      "name": "IPointerEvent",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPointerEvent",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IMouseEvent"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/observable.pure",
+      "name": "IReadonlyObservable",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IReadonlyObservable",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.EventState",
+        "BabylonjsBindings.SimpleInterfaces.IObserver"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ISceneLoaderPluginMetadata",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginMetadata",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginExtensions"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/Processors/iShaderProcessor",
+      "name": "IShaderProcessor",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IShaderProcessor",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "IWebGPURenderItem",
+      "category": "interface",
+      "supportOnly": true,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuPipelineContext",
+      "name": "IWebGPURenderPipelineStageDescriptor",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebGPURenderPipelineStageDescriptor",
+      "dependencies": [],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "IWebXRFeature",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRFeature",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure",
+      "name": "PLYHeader",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PLYHeader",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.PlyProperty"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/webgpuEngine.pure",
+      "name": "WebGPUEngineOptions",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebGPUEngineOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.AbstractEngineOptions",
+        "BabylonjsBindings.SimpleInterfaces.GlslangOptions",
+        "BabylonjsBindings.SimpleInterfaces.TwgslOptions"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext",
+      "name": "WebGPUSamplerDescription",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebGPUSamplerDescription",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.WebGPUBindingInfo"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext",
+      "name": "WebGPUTextureDescription",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebGPUTextureDescription",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.WebGPUBindingInfo"
+      ],
+      "fidelityIssues": []
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRTypes",
+      "name": "WebXRRenderTarget",
+      "category": "interface",
+      "supportOnly": false,
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
+      ],
+      "fidelityIssues": []
+    }
+  ],
+  "validation": {
+    "dependencyClosed": true,
+    "unresolvedDependencies": []
+  }
+}

@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
 import ts from "typescript";
+import { loadPromotionSymbolIndex, referencedPromotionSymbols } from "./promotion-dependencies.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const nodeModules = resolve(root, "node_modules");
@@ -539,6 +540,10 @@ const allEntries = [...entriesByIdentity.values()];
 const aliasNameCounts = new Map();
 for (const entry of allEntries) aliasNameCounts.set(entry.name, (aliasNameCounts.get(entry.name) ?? 0) + 1);
 const entries = allEntries.filter(entry => aliasNameCounts.get(entry.name) === 1).sort((left, right) => left.name.localeCompare(right.name));
+const promotionSymbolIndex = await loadPromotionSymbolIndex(root, [
+  "generated-candidates/SimpleInterfaces.promotion.json",
+  "generated-candidates/SimpleClasses.promotion.json"
+]);
 const lines = [
   "// REVIEWED-PROMOTION PROPOSAL — move to maintained source only after alias review, compile, and runtime proof",
   "namespace BabylonjsBindings",
@@ -627,6 +632,7 @@ const manifest = {
     kind: "type",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.TypeAliases.${entry.name}`,
+    dependencies: referencedPromotionSymbols(entry, promotionSymbolIndex, `BabylonjsBindings.TypeAliases.${entry.name}`),
     ...(entry.deepImmutableTarget ? { deepImmutableSymbol: `BabylonjsBindings.TypeAliases.DeepImmutable${entry.name}` } : {}),
     shape: entry.shape,
     ...(["genericAlias", "coroutine"].includes(entry.shape) ? { typeParameterCount: 1 } : {}),

@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { relative, resolve, sep } from "node:path";
 import ts from "typescript";
+import { loadPromotionSymbolIndex, referencedPromotionSymbols } from "./promotion-dependencies.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const nodeModules = resolve(root, "node_modules");
@@ -833,6 +834,12 @@ for (const [identity, entry] of recursiveCandidates) {
   available.set(entry.name, { arity: entry.declaration.typeParameters?.length ?? 0, ...(deepImmutableInterfaceNames.has(entry.name) ? { deepImmutableSymbol: `DeepImmutable${entry.name}` } : {}), ...(partialInterfaceNames.has(entry.name) ? { partialSymbol: `Partial${entry.name}` } : {}) });
 }
 const entries = [...selected.values()].sort((left, right) => left.rank - right.rank || left.name.localeCompare(right.name));
+const promotionSymbolIndex = await loadPromotionSymbolIndex(root, [
+  "generated-candidates/SimpleAliases.promotion.json",
+  "generated-candidates/SimpleClasses.promotion.json"
+]);
+const candidateInterfaceSymbols = new Map(entries.map(entry => [entry.name, `BabylonjsBindings.SimpleInterfaces.${entry.name}`]));
+for (const [symbol, canonical] of [...candidateInterfaceSymbols].map(([name, symbol]) => [symbol, symbol])) promotionSymbolIndex.set(symbol, canonical);
 if (diagnose) {
   const optimistic = new Map([...declarations.values()]
     .filter(entry => nameCounts.get(entry.name) === 1)
@@ -1159,6 +1166,17 @@ const manifest = {
     kind: "interface",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleInterfaces.${entry.name}`,
+    dependencies: referencedPromotionSymbols(
+      {
+        members: entry.members,
+        inlineTypes: entry.inlineTypes,
+        genericConstraints: entry.genericConstraints,
+        bases: entry.bases
+      },
+      promotionSymbolIndex,
+      `BabylonjsBindings.SimpleInterfaces.${entry.name}`,
+      (entry.dependencies ?? []).map(name => candidateInterfaceSymbols.get(name) ?? bootstrapClassSymbols.get(name)?.fsharpSymbol)
+    ),
     ...(projectedNames.has(entry.name) ? { deepImmutableSymbol: `BabylonjsBindings.SimpleInterfaces.DeepImmutable${entry.name}` } : {}),
     ...(partialProjectedNames.has(entry.name) ? { partialSymbol: `BabylonjsBindings.SimpleInterfaces.Partial${entry.name}` } : {}),
     ...(requiredNonNullableProjectedNames.has(entry.name) ? { requiredNonNullableSymbol: `BabylonjsBindings.SimpleInterfaces.RequiredNonNullable${entry.name}` } : {}),
@@ -1172,6 +1190,17 @@ const manifest = {
     name: entry.name,
     kind: "interface-support",
     fsharpSymbol: `BabylonjsBindings.SimpleInterfaces.${entry.name}`,
+    dependencies: referencedPromotionSymbols(
+      {
+        members: entry.members,
+        inlineTypes: entry.inlineTypes,
+        genericConstraints: entry.genericConstraints,
+        bases: entry.bases
+      },
+      promotionSymbolIndex,
+      `BabylonjsBindings.SimpleInterfaces.${entry.name}`,
+      (entry.dependencies ?? []).map(name => candidateInterfaceSymbols.get(name) ?? bootstrapClassSymbols.get(name)?.fsharpSymbol)
+    ),
     ...(projectedNames.has(entry.name) ? { deepImmutableSymbol: `BabylonjsBindings.SimpleInterfaces.DeepImmutable${entry.name}` } : {}),
     ...(partialProjectedNames.has(entry.name) ? { partialSymbol: `BabylonjsBindings.SimpleInterfaces.Partial${entry.name}` } : {}),
     ...(requiredNonNullableProjectedNames.has(entry.name) ? { requiredNonNullableSymbol: `BabylonjsBindings.SimpleInterfaces.RequiredNonNullable${entry.name}` } : {}),
