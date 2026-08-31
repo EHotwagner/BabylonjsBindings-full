@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "0cc2cef6766894029deda96ce406cc4a6b537f207844c362024bdd362bb4cb7f",
+  "proposalSha256": "5b872f546d5a125ded41cde949a983d53999ba3283400e497831919674fd4797",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -26959,7 +26959,10 @@
         "BabylonjsBindings.TypeAliases.SceneLoaderSuccessCallback"
       ],
       "memberCount": 24
-    }
+    },
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Physics/v1/physicsEngine","name":"PhysicsEngine","kind":"class","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleClasses.PhysicsEngineV1","fidelityIssues":[],"genericDefaults":[],"structuralImplements":[],"dependencies":["BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin","BabylonjsBindings.SimpleClasses.PhysicsImpostor","BabylonjsBindings.SimpleClasses.PhysicsJoint"],"memberCount":21,"runtimeExport":"PhysicsEngine","runtimeModule":"@babylonjs/core/Physics/v1/physicsEngine.js"},
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Physics/v2/physicsEngine","name":"PhysicsEngine","kind":"class","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleClasses.PhysicsEngineV2","fidelityIssues":[],"genericDefaults":[],"structuralImplements":[],"dependencies":["BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePluginV2","BabylonjsBindings.SimpleClasses.PhysicsBody"],"memberCount":22,"runtimeExport":"PhysicsEngine","runtimeModule":"@babylonjs/core/Physics/v2/physicsEngine.js"},
+    {"package":"@babylonjs/loaders","module":"@babylonjs/loaders/glTF/glTFFileLoader.pure","name":"GLTFLoaderOptions","kind":"class","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleClasses.GLTFLoaderOptions","fidelityIssues":[],"genericDefaults":[],"structuralImplements":[],"dependencies":["BabylonjsBindings.SimpleClasses.GLTFLoaderBaseOptions"],"memberCount":18,"typeOnly":true}
   ],
   "reviewStatus": "maintained"
 }

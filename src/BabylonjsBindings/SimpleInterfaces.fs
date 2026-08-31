@@ -4620,6 +4620,19 @@ module SimpleInterfaces =
     /// Exact discriminated union of Babylon input-map entries.
     type BrowserInputMapEntry<'TInteraction> = U4<BrowserPointerInputMapEntry<'TInteraction>, BrowserWheelInputMapEntry<'TInteraction>, BrowserTouchInputMapEntry<'TInteraction>, BrowserKeyboardInputMapEntry<'TInteraction>>
 
+    /// @babylonjs/core/Cameras/inputMapper — exact exported aliases over reviewed support projections.
+    type PointerInputMapEntry<'TInteraction> = BrowserPointerInputMapEntry<'TInteraction>
+    type WheelInputMapEntry<'TInteraction> = BrowserWheelInputMapEntry<'TInteraction>
+    type TouchInputMapEntry<'TInteraction> = BrowserTouchInputMapEntry<'TInteraction>
+    type KeyboardInputMapEntry<'TInteraction> = BrowserKeyboardInputMapEntry<'TInteraction>
+    type InputMapEntry<'TInteraction> = BrowserInputMapEntry<'TInteraction>
+    type InteractionName<'THandlers> = JavaScriptKeyOf<'THandlers>
+    type PointerInputMapEntry = PointerInputMapEntry<string>
+    type WheelInputMapEntry = WheelInputMapEntry<string>
+    type TouchInputMapEntry = TouchInputMapEntry<string>
+    type KeyboardInputMapEntry = KeyboardInputMapEntry<string>
+    type InputMapEntry = InputMapEntry<string>
+
     /// Distinct ambient WebGPU render pipeline handle.
     [<AllowNullLiteral>]
     type BrowserGPURenderPipeline =
@@ -8835,6 +8848,10 @@ module SimpleInterfaces =
         [<Emit("new $0($1...)")>] abstract Create: buffer: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> * ?byteOffset: float * ?length: float -> 'T
         abstract BYTES_PER_ELEMENT: float with get
 
+    /// @babylonjs/core/types — exact exported alias over the reviewed constructor support projection.
+    type TypedArrayConstructor<'T> = BrowserTypedArrayConstructor<'T>
+    type TypedArrayConstructor = TypedArrayConstructor<BabylonjsBindings.TypeAliases.TypedArray>
+
     /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
     [<AllowNullLiteral>]
     type IDracoAttributeData =
@@ -10528,6 +10545,75 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type IGLTFObjectModelTreeCamerasObject =
         abstract ``__array__``: InlineObject478d8a76ee46Object with get, set
+
+    /// Named exact intersections for the glTF node object-model tree.
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeNodeWeightsArray<'GLTFTargetType, 'BabylonTargetType> =
+        inherit IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, float>
+        abstract ``__target__``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeNodeWeights<'GLTFTargetType, 'BabylonTargetType> =
+        inherit IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, ResizeArray<float>>
+        abstract ``length``: IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, float> with get, set
+        abstract ``__array__``: IGLTFObjectModelTreeNodeWeightsArray<'GLTFTargetType, 'BabylonTargetType> with get, set
+
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeNodeExtLightsIes =
+        abstract ``multiplier``: IObjectAccessor<INode, BabylonjsBindings.SimpleClasses.Light, float> with get, set
+        abstract ``color``: IObjectAccessor<INode, BabylonjsBindings.SimpleClasses.Light, BabylonjsBindings.SimpleClasses.Color3> with get, set
+
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeNodeVisibility =
+        abstract ``visible``: IObjectAccessor<INode, BabylonjsBindings.SimpleClasses.Mesh, bool> with get, set
+
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeNodeExtensions =
+        abstract ``EXT_lights_ies``: IGLTFObjectModelTreeNodeExtLightsIes option with get, set
+        abstract ``KHR_node_visibility``: IGLTFObjectModelTreeNodeVisibility option with get, set
+
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeNodeArray<'GLTFTargetType, 'BabylonTargetType> =
+        abstract ``__target__``: bool with get, set
+        abstract ``translation``: IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``rotation``: IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, BabylonjsBindings.SimpleClasses.Quaternion> with get, set
+        abstract ``scale``: IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``matrix``: IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, BabylonjsBindings.SimpleClasses.Matrix> with get, set
+        abstract ``globalMatrix``: IObjectAccessor<'GLTFTargetType, 'BabylonTargetType, BabylonjsBindings.SimpleClasses.Matrix> with get, set
+        abstract ``weights``: IGLTFObjectModelTreeNodeWeights<'GLTFTargetType, 'BabylonTargetType> with get, set
+        abstract ``extensions``: IGLTFObjectModelTreeNodeExtensions with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeNodesObject<'GLTFTargetType, 'BabylonTargetType> =
+        abstract ``length``: IObjectAccessor<ResizeArray<'GLTFTargetType>, ResizeArray<'BabylonTargetType>, float> with get, set
+        abstract ``__array__``: IGLTFObjectModelTreeNodeArray<'GLTFTargetType, 'BabylonTargetType> with get, set
+
+    type IGLTFObjectModelTreeNodesObject<'GLTFTargetType> = IGLTFObjectModelTreeNodesObject<'GLTFTargetType, BabylonjsBindings.SimpleClasses.TransformNode>
+    type IGLTFObjectModelTreeNodesObject = IGLTFObjectModelTreeNodesObject<INode, BabylonjsBindings.SimpleClasses.TransformNode>
+
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeEmptyArray = interface end
+
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeAnimationsObject =
+        abstract ``length``: IObjectAccessor<ResizeArray<IAnimation>, ResizeArray<BabylonjsBindings.SimpleClasses.AnimationGroup>, float> with get, set
+        abstract ``__array__``: IGLTFObjectModelTreeEmptyArray with get, set
+
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeMeshesCollectionObject =
+        abstract ``length``: IObjectAccessor<ResizeArray<IMesh>, ResizeArray<BabylonjsBindings.SimpleClasses.Mesh option>, float> with get, set
+        abstract ``__array__``: IGLTFObjectModelTreeEmptyArray with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTree =
+        abstract ``cameras``: IGLTFObjectModelTreeCamerasObject with get, set
+        abstract ``nodes``: IGLTFObjectModelTreeNodesObject with get, set
+        abstract ``materials``: IGLTFObjectModelTreeMaterialsObject with get, set
+        abstract ``extensions``: IGLTFObjectModelTreeExtensionsObject with get, set
+        abstract ``animations``: IGLTFObjectModelTreeAnimationsObject with get, set
+        abstract ``meshes``: IGLTFObjectModelTreeMeshesCollectionObject with get, set
 
     /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
     [<AllowNullLiteral>]

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "3b5b7a5911c1229ed9e55a77c2fead8343da8959a0ff3ef7030454b4e0ec9208",
+  "proposalSha256": "79785a94b52aa8341161fcdd83968fe525e2fa1a29f09d4902e38111e037e1b3",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -6711,7 +6711,10 @@
         "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginMetadata"
       ],
       "memberCount": 1
-    }
+    },
+    {"package":"@babylonjs/core","module":"@babylonjs/core/types","name":"TypedArrayConstructor","kind":"interface","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor","fidelityIssues":[],"dependencies":["BabylonjsBindings.SimpleInterfaces.BrowserTypedArrayConstructor"],"memberCount":4},
+    {"package":"@babylonjs/loaders","module":"@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping","name":"IGLTFObjectModelTreeNodesObject","kind":"interface","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeNodesObject","fidelityIssues":[],"dependencies":["BabylonjsBindings.SimpleInterfaces.IObjectAccessor","BabylonjsBindings.SimpleInterfaces.INode","BabylonjsBindings.SimpleClasses.TransformNode"],"memberCount":2},
+    {"package":"@babylonjs/loaders","module":"@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping","name":"IGLTFObjectModelTree","kind":"interface","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTree","fidelityIssues":[],"dependencies":["BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeNodesObject","BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeCamerasObject","BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeMaterialsObject","BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeExtensionsObject"],"memberCount":6}
   ],
   "reviewStatus": "maintained"
 }

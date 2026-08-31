@@ -1369,7 +1369,13 @@
       ],
       "shape": "callback",
       "memberCount": 1
-    }
+    },
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Cameras/inputMapper","name":"InputMapEntry","kind":"type","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleInterfaces.InputMapEntry","dependencies":["BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry"],"shape":"alias","memberCount":1},
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Cameras/inputMapper","name":"InteractionName","kind":"type","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleInterfaces.InteractionName","dependencies":["BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf"],"shape":"alias","memberCount":1},
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Cameras/inputMapper","name":"KeyboardInputMapEntry","kind":"type","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleInterfaces.KeyboardInputMapEntry","dependencies":["BabylonjsBindings.SimpleInterfaces.BrowserKeyboardInputMapEntry"],"shape":"alias","memberCount":5},
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Cameras/inputMapper","name":"PointerInputMapEntry","kind":"type","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleInterfaces.PointerInputMapEntry","dependencies":["BabylonjsBindings.SimpleInterfaces.BrowserPointerInputMapEntry"],"shape":"alias","memberCount":7},
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Cameras/inputMapper","name":"TouchInputMapEntry","kind":"type","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleInterfaces.TouchInputMapEntry","dependencies":["BabylonjsBindings.SimpleInterfaces.BrowserTouchInputMapEntry"],"shape":"alias","memberCount":7},
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Cameras/inputMapper","name":"WheelInputMapEntry","kind":"type","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleInterfaces.WheelInputMapEntry","dependencies":["BabylonjsBindings.SimpleInterfaces.BrowserWheelInputMapEntry"],"shape":"alias","memberCount":4}
   ],
   "reviewStatus": "maintained"
 }

@@ -8,22 +8,22 @@
   "actualSize": 0,
   "maintainedBaseline": {
     "alias": {
-      "maintained": 115,
+      "maintained": 121,
       "candidate": 115,
       "delta": 0
     },
     "interface": {
-      "maintained": 598,
+      "maintained": 601,
       "candidate": 598,
       "delta": 0
     },
     "class": {
-      "maintained": 1495,
+      "maintained": 1498,
       "candidate": 1497,
       "delta": 2
     },
     "function": {
-      "maintained": 1233,
+      "maintained": 1236,
       "candidate": 1232,
       "delta": 0
     },

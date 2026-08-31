@@ -1,0 +1,308 @@
+schemaVersion: 1
+workId: 003-m1-exact-projections-collisions
+stage: evidence
+status: evidenceReady
+sourceSpec: work/003-m1-exact-projections-collisions/spec.md
+sourceClarifications: work/003-m1-exact-projections-collisions/clarifications.md
+sourceChecklist: work/003-m1-exact-projections-collisions/checklist.md
+sourcePlan: work/003-m1-exact-projections-collisions/plan.md
+sourceTasks: work/003-m1-exact-projections-collisions/tasks.yml
+sourceAnalysis: readiness/003-m1-exact-projections-collisions/analysis.json
+sourceSnapshots:
+  - label: analysis
+    path: readiness/003-m1-exact-projections-collisions/analysis.json
+    digest: 018e95f591d92e9649ea725e1c722608f39c70b39d33c6ea60d4411471156b6f
+    schemaVersion: 1
+  - label: checklist
+    path: work/003-m1-exact-projections-collisions/checklist.md
+    digest: 66ade24a9c46c63fe09fb29cf3124bf92c7c79bb4105c23479b902d13657d8f0
+    schemaVersion: 1
+  - label: clarifications
+    path: work/003-m1-exact-projections-collisions/clarifications.md
+    digest: 21cdb7e204d81acda1d36e5faa1d63e9edd5225533e89820cb29c886bcef72fe
+    schemaVersion: 1
+  - label: plan
+    path: work/003-m1-exact-projections-collisions/plan.md
+    digest: 65c2bd001bad0d264e070b007e737b660614bd244312b541786441ac89b3b320
+    schemaVersion: 1
+  - label: spec
+    path: work/003-m1-exact-projections-collisions/spec.md
+    digest: 067cc23aa414e37db79119ac27c1037beb27720328ba129f4c54b1f61279fe19
+    schemaVersion: 1
+  - label: tasks
+    path: work/003-m1-exact-projections-collisions/tasks.yml
+    digest: 1cb4ff9636022938f8bd9498da685c875fae60313c65d8165f8713ad10fc559d
+    schemaVersion: 1
+evidence:
+  - id: EV001
+    kind: verification
+    subject:
+      type: task
+      id: T001
+    taskRefs: [T001]
+    requirementRefs: [FR-001]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-001]
+    obligationRefs: [EV001]
+    artifacts: [reports/m1-test-matrix.json, scripts/check-m1-exact-projections.mjs, tests/BabylonjsBindings.CompileTests/Program.fs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [Exact alias and support-shape compile assignments pass.]
+  - id: EV002
+    kind: verification
+    subject:
+      type: task
+      id: T002
+    taskRefs: [T002]
+    requirementRefs: [FR-002]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-002]
+    obligationRefs: [EV002]
+    artifacts: [reports/m1-test-matrix.json, src/BabylonjsBindings/SimpleInterfaces.fs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [Named glTF intersections expose both member sets without U2 or obj fallbacks.]
+  - id: EV003
+    kind: verification
+    subject:
+      type: task
+      id: T003
+    taskRefs: [T003]
+    requirementRefs: [FR-003]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-003]
+    obligationRefs: [EV003]
+    artifacts: [reports/m1-test-matrix.json, runtime/node/smoke.mjs, src/BabylonjsBindings/SimpleFunctions.fs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [All eleven typed-array constructor and return correlations plus runtime functions pass.]
+  - id: EV004
+    kind: verification
+    subject:
+      type: task
+      id: T004
+    taskRefs: [T004]
+    requirementRefs: [FR-004]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-004]
+    obligationRefs: [EV004]
+    artifacts: [reports/m1-test-matrix.json, runtime/node/smoke.mjs, src/BabylonjsBindings/SimpleClasses.fs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [Distinct v1 and v2 deep imports expose runtime export PhysicsEngine.]
+  - id: EV005
+    kind: verification
+    subject:
+      type: task
+      id: T005
+    taskRefs: [T005]
+    requirementRefs: [FR-005]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-005]
+    obligationRefs: [EV005]
+    artifacts: [coverage-and-drift.json, reports/m1-test-matrix.json]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [Coverage is exactly 4252 typed 70 blocked 1 runtime-only and 0 lossy.]
+  - id: EV006
+    kind: verification
+    subject:
+      type: task
+      id: T006
+    taskRefs: [T006]
+    requirementRefs: [FR-006]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-006]
+    obligationRefs: [EV006]
+    artifacts: [reports/m1-test-matrix.json, scripts/test-m1-clean-consumer.mjs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [Maintained compile Fable import Node and clean package consumer checks pass.]
+  - id: EV007
+    kind: verification
+    subject:
+      type: task
+      id: T007
+    taskRefs: [T007]
+    requirementRefs: []
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-001, PD-002, PD-003, PD-004, PD-005]
+    obligationRefs: [EV007]
+    artifacts: [src/BabylonjsBindings/SimpleClasses.fs, src/BabylonjsBindings/SimpleFunctions.fs, src/BabylonjsBindings/SimpleInterfaces.fs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [The additive maintained public contract is present in reviewed source and manifests.]
+  - id: EV008
+    kind: verification
+    subject:
+      type: task
+      id: T008
+    taskRefs: [T008]
+    requirementRefs: []
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-001, PD-002, PD-003, PD-004, PD-005, PD-006]
+    obligationRefs: [EV008]
+    artifacts: [reports/m1-test-matrix.json]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [The complete required verification matrix passes.]
+  - id: EV009
+    kind: verification
+    subject:
+      type: task
+      id: T009
+    taskRefs: [T009]
+    requirementRefs: []
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: []
+    obligationRefs: [EV009]
+    artifacts: [reports/m1-test-matrix.json, work/003-m1-exact-projections-collisions/plan.md]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [The change is additive and scheduled for the mandatory post-merge patch release.]
+  - id: EV010
+    kind: verification
+    subject:
+      type: task
+      id: T010
+    taskRefs: [T010]
+    requirementRefs: []
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-005]
+    obligationRefs: [EV010]
+    artifacts: [coverage-and-drift.json, reports/m1-test-matrix.json]
+    sourceRefs:
+      - kind: verification
+        path: reports/m1-test-matrix.json
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m1-exact-projections.trx
+      digest: "sha256:f06b2496c86707fc8dbb94d32570dbd3034b7806f69dfdee2a892d6894215d6e"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 12
+      failed: 0
+      skipped: 0
+    notes: [Coverage and recursive maintained projection checks are current and deterministic.]
+lifecycleNotes:
+  - "Next lifecycle action: verify."

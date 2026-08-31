@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "source": { "declarationLock": "declaration-lock.json", "packageVersion": "9.19.0" },
+  "projections": [
+    {
+      "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|PointerInputMapEntry",
+      "semanticShape": ["generic:TInteraction extends string = string", "source:pointer", "interaction:TInteraction", "sensitivity?:number", "sensitivityX?:number", "sensitivityY?:number", "button?:number", "modifiers?:{ctrl?:boolean,shift?:boolean,alt?:boolean}"],
+      "declaration": { "path": "node_modules/@babylonjs/core/Cameras/inputMapper.d.ts", "snippets": ["source: \"pointer\";", "interaction: TInteraction;", "button?: number;", "modifiers?: InputModifiers;"] },
+      "support": { "path": "src/BabylonjsBindings/SimpleInterfaces.fs", "snippets": ["type BrowserPointerInputMapEntry<'TInteraction> =", "abstract source: BrowserPointerInputSource", "abstract interaction: 'TInteraction", "abstract button: float option", "abstract modifiers: BrowserInputModifiers option"] },
+      "declarationStructuralDigest": "086043d6f656a08c9757bb6fc508532c7c989675acfb2b8bf60cbeced9a28acb", "supportStructuralDigest": "086043d6f656a08c9757bb6fc508532c7c989675acfb2b8bf60cbeced9a28acb"
+    },
+    {
+      "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|WheelInputMapEntry",
+      "semanticShape": ["generic:TInteraction extends string = string", "source:wheel", "interaction:TInteraction", "sensitivity?:number", "modifiers?:{ctrl?:boolean,shift?:boolean,alt?:boolean}"],
+      "declaration": { "path": "node_modules/@babylonjs/core/Cameras/inputMapper.d.ts", "snippets": ["source: \"wheel\";", "interaction: TInteraction;", "sensitivity?: number;", "modifiers?: InputModifiers;"] },
+      "support": { "path": "src/BabylonjsBindings/SimpleInterfaces.fs", "snippets": ["type BrowserWheelInputMapEntry<'TInteraction> =", "abstract source: BrowserWheelInputSource", "abstract interaction: 'TInteraction", "abstract sensitivity: float option", "abstract modifiers: BrowserInputModifiers option"] },
+      "declarationStructuralDigest": "6873acbad47caba333a9016cff7751b88bf73c419c9c04a0cb1ff77667d4ec82", "supportStructuralDigest": "6873acbad47caba333a9016cff7751b88bf73c419c9c04a0cb1ff77667d4ec82"
+    },
+    {
+      "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|TouchInputMapEntry",
+      "semanticShape": ["generic:TInteraction extends string = string", "source:touch", "interaction:TInteraction", "sensitivity?:number", "sensitivityX?:number", "sensitivityY?:number", "touchCount?:number"],
+      "declaration": { "path": "node_modules/@babylonjs/core/Cameras/inputMapper.d.ts", "snippets": ["source: \"touch\";", "interaction: TInteraction;", "touchCount?: number;"] },
+      "support": { "path": "src/BabylonjsBindings/SimpleInterfaces.fs", "snippets": ["type BrowserTouchInputMapEntry<'TInteraction> =", "abstract source: BrowserTouchInputSource", "abstract interaction: 'TInteraction", "abstract touchCount: float option"] },
+      "declarationStructuralDigest": "56a36c97aeab5a9dbdc46c82977bfe1c3c5992bd7a4bd09f5c4e86ca80fb03b5", "supportStructuralDigest": "56a36c97aeab5a9dbdc46c82977bfe1c3c5992bd7a4bd09f5c4e86ca80fb03b5"
+    },
+    {
+      "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|KeyboardInputMapEntry",
+      "semanticShape": ["generic:TInteraction extends string = string", "source:keyboard", "interaction:TInteraction", "sensitivity?:number", "key?:number|number[]", "modifiers?:{ctrl?:boolean,shift?:boolean,alt?:boolean}"],
+      "declaration": { "path": "node_modules/@babylonjs/core/Cameras/inputMapper.d.ts", "snippets": ["source: \"keyboard\";", "interaction: TInteraction;", "key?: number | number[];", "modifiers?: InputModifiers;"] },
+      "support": { "path": "src/BabylonjsBindings/SimpleInterfaces.fs", "snippets": ["type BrowserKeyboardInputMapEntry<'TInteraction> =", "abstract source: BrowserKeyboardInputSource", "abstract interaction: 'TInteraction", "abstract key: U2<float, ResizeArray<float>> option", "abstract modifiers: BrowserInputModifiers option"] },
+      "declarationStructuralDigest": "43fc990490dfb0762c8f24d4fd694ad8592f18565bd8ddc80ac539171c69974c", "supportStructuralDigest": "43fc990490dfb0762c8f24d4fd694ad8592f18565bd8ddc80ac539171c69974c"
+    },
+    {
+      "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|InputMapEntry",
+      "semanticShape": ["generic:TInteraction extends string = string", "PointerInputMapEntry<TInteraction>", "WheelInputMapEntry<TInteraction>", "TouchInputMapEntry<TInteraction>", "KeyboardInputMapEntry<TInteraction>"],
+      "declaration": { "path": "node_modules/@babylonjs/core/Cameras/inputMapper.d.ts", "snippets": ["PointerInputMapEntry<TInteraction> | WheelInputMapEntry<TInteraction> | TouchInputMapEntry<TInteraction> | KeyboardInputMapEntry<TInteraction>"] },
+      "support": { "path": "src/BabylonjsBindings/SimpleInterfaces.fs", "snippets": ["type BrowserInputMapEntry<'TInteraction> = U4<BrowserPointerInputMapEntry<'TInteraction>, BrowserWheelInputMapEntry<'TInteraction>, BrowserTouchInputMapEntry<'TInteraction>, BrowserKeyboardInputMapEntry<'TInteraction>>"] },
+      "declarationStructuralDigest": "6253082ddbc3b680dc309e229ef9abc7e2379d2c78b67b9a118e19d237e88b72", "supportStructuralDigest": "6253082ddbc3b680dc309e229ef9abc7e2379d2c78b67b9a118e19d237e88b72"
+    },
+    {
+      "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|InteractionName",
+      "semanticShape": ["keyof:THandlers", "intersect:string"],
+      "declaration": { "path": "node_modules/@babylonjs/core/Cameras/inputMapper.d.ts", "snippets": ["export type InteractionName<THandlers> = keyof THandlers & string;"] },
+      "support": { "path": "src/BabylonjsBindings/SimpleInterfaces.fs", "snippets": ["type InteractionName<'THandlers> = JavaScriptKeyOf<'THandlers>"] },
+      "declarationStructuralDigest": "cbb119ddb4b03c8d62fd1b79f26f5fb5d4423ffede819e59bb526a4faebb2516", "supportStructuralDigest": "cbb119ddb4b03c8d62fd1b79f26f5fb5d4423ffede819e59bb526a4faebb2516"
+    },
+    {
+      "identity": "@babylonjs/core|@babylonjs/core/types|TypedArrayConstructor",
+      "semanticShape": ["generic:T extends TypedArray = TypedArray", "new(length:number):T", "new(elements:Iterable<number>):T", "new(buffer:ArrayBufferLike,byteOffset?:number,length?:number):T", "readonly:BYTES_PER_ELEMENT:number"],
+      "declaration": { "path": "node_modules/@babylonjs/core/types.d.ts", "snippets": ["new (length: number): T;", "new (elements: Iterable<number>): T;", "new (buffer: ArrayBufferLike, byteOffset?: number, length?: number): T;", "readonly BYTES_PER_ELEMENT: number;"] },
+      "support": { "path": "src/BabylonjsBindings/SimpleInterfaces.fs", "snippets": ["type BrowserTypedArrayConstructor<'T> =", "abstract Create: length: float -> 'T", "abstract Create: elements: BrowserIterable<float> -> 'T", "abstract Create: buffer: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer>", "abstract BYTES_PER_ELEMENT: float with get"] },
+      "declarationStructuralDigest": "03258c0bc19a774982756a933cff67cf7a2938fad2801ce05ba2c9b18fd9f0b1", "supportStructuralDigest": "03258c0bc19a774982756a933cff67cf7a2938fad2801ce05ba2c9b18fd9f0b1"
+    },
+    {
+      "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/glTFFileLoader.pure|GLTFLoaderOptions",
+      "semanticShape": ["inherits:GLTFLoaderBaseOptions", "onParsed?", "capturePerformanceCounters", "customRootNode?", "extensionOptions", "loggingEnabled", "onCameraLoaded?", "onMaterialLoaded?", "onMeshLoaded?", "onSkinLoaded?", "onTextureLoaded?", "onValidated?", "preprocessUrlAsync"],
+      "declaration": { "path": "node_modules/@babylonjs/loaders/glTF/glTFFileLoader.pure.d.ts", "snippets": ["class GLTFLoaderOptions extends GLTFLoaderBaseOptions", "abstract onParsed?", "abstract capturePerformanceCounters: boolean;", "customRootNode?: Nullable<TransformNode>;", "extensionOptions:", "abstract loggingEnabled: boolean;", "abstract onCameraLoaded?", "abstract onMaterialLoaded?", "abstract onMeshLoaded?", "abstract onSkinLoaded?", "abstract onTextureLoaded?", "abstract onValidated?", "preprocessUrlAsync: (url: string) => Promise<string>;"] },
+      "support": { "path": "src/BabylonjsBindings/SimpleClasses.fs", "snippets": ["type GLTFLoaderOptions =", "inherit GLTFLoaderBaseOptions", "abstract ``onParsed``:", "abstract ``capturePerformanceCounters``:", "abstract ``customRootNode``:", "abstract ``extensionOptions``:", "abstract ``loggingEnabled``:", "abstract ``onCameraLoaded``:", "abstract ``onMaterialLoaded``:", "abstract ``onMeshLoaded``:", "abstract ``onSkinLoaded``:", "abstract ``onTextureLoaded``:", "abstract ``onValidated``:", "abstract ``preprocessUrlAsync``:"] },
+      "declarationStructuralDigest": "428258d10cca1fbdcccb94cdf057824967ca2c06a7965dbd37ff085b9b5c382a", "supportStructuralDigest": "428258d10cca1fbdcccb94cdf057824967ca2c06a7965dbd37ff085b9b5c382a"
+    }
+  ]
+}

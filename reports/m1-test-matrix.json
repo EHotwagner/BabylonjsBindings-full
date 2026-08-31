@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "workId": "003-m1-exact-projections-collisions",
+  "result": "pass",
+  "coverage": { "total": 4323, "typed": 4252, "runtimeOnly": 1, "blocked": 70, "lossy": 0 },
+  "commands": [
+    { "command": "npm run check:m1-exact-projections", "result": "pass", "lockedDeclarationsVerified": 8, "structuralDigestMatches": 8, "typedArrayCorrelations": 11 },
+    { "command": "PATH=/home/developer/.dotnet:$PATH bash build.sh", "result": "pass", "warnings": 0, "errors": 0 },
+    { "command": "dotnet fable tests/BabylonjsBindings.CompileTests/BabylonjsBindings.CompileTests.fsproj --outDir /tmp/m1-fable-dist-20260831-01 --noCache", "result": "pass" },
+    { "command": "rg -n 'bufferUtils|deepMerger|objectModelMapping|Physics/v[12]/physicsEngine|GLTFLoaderOptions' /tmp/m1-fable-dist-20260831-01 -g '*.js'", "result": "pass", "runtimeImports": 5, "typeOnlyLoaderImports": 0 },
+    { "command": "npm run test:runtime", "result": "pass", "typedArrayCases": 11, "physicsCollisionModules": 2 },
+    { "command": "npm run test:m1-clean-consumer", "result": "pass", "packageVersion": "0.1.1", "fable": "5.13.0" },
+    { "command": "npm run coverage:check", "result": "pass" },
+    { "command": "npm run check:drift", "result": "pass" },
+    { "command": "npm run analysis:determinism && npm run analysis:check", "result": "pass", "typed": 4252, "blocked": 70 }
+  ]
+}
