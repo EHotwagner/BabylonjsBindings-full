@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "expectedCoverage": {
+    "total": 4323,
+    "typed": 4237,
+    "runtimeOnly": 1,
+    "blocked": 85,
+    "lossy": 0
+  },
+  "families": [
+    {
+      "id": "camera-input-mapper",
+      "label": "Camera input mapper",
+      "expectedCount": 6,
+      "exports": ["InputMapEntry", "InteractionName", "KeyboardInputMapEntry", "PointerInputMapEntry", "TouchInputMapEntry", "WheelInputMapEntry"]
+    },
+    {
+      "id": "core-utility-types",
+      "label": "Core utility types",
+      "expectedCount": 27,
+      "exports": ["Add", "Concat", "Constructor", "Decrement", "DeepImmutable", "DeepImmutableObject", "First", "Flatten", "FlattenArray", "FlattenTuple", "FromLength", "Immutable", "Increment", "IsTuple", "Last", "Length", "Member", "NonNullableFields", "Pop", "Push", "Remove", "Shift", "Subtract", "Tuple", "TypedArrayConstructor", "Unshift", "WritableObject"]
+    },
+    {
+      "id": "device-input",
+      "label": "Device input",
+      "expectedCount": 7,
+      "exports": ["DeviceInput", "DeviceSourceEvent", "DeviceSourceType", "IObservableManager", "DeviceSource", "DeviceSourceManager", "InternalDeviceSourceManager"]
+    },
+    {
+      "id": "flow-graph",
+      "label": "FlowGraph",
+      "expectedCount": 9,
+      "exports": ["AssetType", "GetFlowGraphAssetWithType", "FlowGraphGetAssetBlock", "FlowGraphGetPropertyBlock", "IFlowGraphGetPropertyBlockConfiguration", "FlowGraphJsonPointerParserBlock", "FlowGraphSwitchBlock", "FlowGraphSetPropertyBlock", "IFlowGraphSetPropertyBlockConfiguration"]
+    },
+    {
+      "id": "material-mixins",
+      "label": "Material mixins",
+      "expectedCount": 3,
+      "exports": ["ImageProcessingMixin", "ImageProcessingDefinesMixin", "UVDefinesMixin"]
+    },
+    {
+      "id": "math-vector-tensor",
+      "label": "Math/vector/tensor",
+      "expectedCount": 7,
+      "exports": ["Dimension", "Tensor", "TensorLike", "TensorStatic", "ValueOfTensor", "Vector", "VectorStatic"]
+    },
+    {
+      "id": "misc-higher-order-functions",
+      "label": "Miscellaneous higher-order functions",
+      "expectedCount": 6,
+      "exports": ["makeAsyncFunction", "makeSyncFunction", "addAccessorsForMaterialProperty", "expandToProperty", "nativeOverride", "deepMerge"]
+    },
+    {
+      "id": "physics",
+      "label": "Physics",
+      "expectedCount": 2,
+      "exports": ["PhysicsEngine"]
+    },
+    {
+      "id": "typed-array-factory",
+      "label": "Typed-array factory",
+      "expectedCount": 1,
+      "exports": ["CreateAlignedTypedArray"]
+    },
+    {
+      "id": "xr-vr",
+      "label": "XR and VR",
+      "expectedCount": 11,
+      "exports": ["WebXRFeatureNameType", "IWebXRFeatureNameTypeMap", "IWebXRFeatureNameOptionsMap", "ResolveWebXRFeature", "ResolveWebXRFeatureOptions", "WebXRFeaturesManager", "WebXRExperienceHelper", "WebXREnterExitUI", "WebXRDefaultExperience", "VRExperienceHelper", "HandConstraintBehavior"]
+    },
+    {
+      "id": "gltf-loaders",
+      "label": "glTF loaders",
+      "expectedCount": 6,
+      "exports": ["GLTF1", "GLTF2", "GetMappingForKey", "IGLTFObjectModelTree", "IGLTFObjectModelTreeNodesObject", "GLTFLoaderOptions"]
+    }
+  ]
+}
