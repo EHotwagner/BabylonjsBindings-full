@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "expectedCoverage": {
     "total": 4323,
-    "typed": 4287,
+    "typed": 4322,
     "runtimeOnly": 1,
-    "blocked": 35,
+    "blocked": 0,
     "lossy": 0
   },
   "families": [
@@ -17,8 +17,8 @@
     {
       "id": "core-utility-types",
       "label": "Core utility types",
-      "expectedCount": 26,
-      "exports": ["@babylonjs/core|@babylonjs/core/types|Add", "@babylonjs/core|@babylonjs/core/types|Concat", "@babylonjs/core|@babylonjs/core/types|Constructor", "@babylonjs/core|@babylonjs/core/types|Decrement", "@babylonjs/core|@babylonjs/core/types|DeepImmutable", "@babylonjs/core|@babylonjs/core/types|DeepImmutableObject", "@babylonjs/core|@babylonjs/core/types|First", "@babylonjs/core|@babylonjs/core/types|Flatten", "@babylonjs/core|@babylonjs/core/types|FlattenArray", "@babylonjs/core|@babylonjs/core/types|FlattenTuple", "@babylonjs/core|@babylonjs/core/types|FromLength", "@babylonjs/core|@babylonjs/core/types|Immutable", "@babylonjs/core|@babylonjs/core/types|Increment", "@babylonjs/core|@babylonjs/core/types|IsTuple", "@babylonjs/core|@babylonjs/core/types|Last", "@babylonjs/core|@babylonjs/core/types|Length", "@babylonjs/core|@babylonjs/core/types|Member", "@babylonjs/core|@babylonjs/core/types|NonNullableFields", "@babylonjs/core|@babylonjs/core/types|Pop", "@babylonjs/core|@babylonjs/core/types|Push", "@babylonjs/core|@babylonjs/core/types|Remove", "@babylonjs/core|@babylonjs/core/types|Shift", "@babylonjs/core|@babylonjs/core/types|Subtract", "@babylonjs/core|@babylonjs/core/types|Tuple", "@babylonjs/core|@babylonjs/core/types|Unshift", "@babylonjs/core|@babylonjs/core/types|WritableObject"]
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "device-input",
@@ -41,8 +41,8 @@
     {
       "id": "math-vector-tensor",
       "label": "Math/vector/tensor",
-      "expectedCount": 7,
-      "exports": ["@babylonjs/core|@babylonjs/core/Maths/math.vector.pure|Vector", "@babylonjs/core|@babylonjs/core/Maths/math.vector.pure|VectorStatic", "@babylonjs/core|@babylonjs/core/Maths/tensor|Dimension", "@babylonjs/core|@babylonjs/core/Maths/tensor|Tensor", "@babylonjs/core|@babylonjs/core/Maths/tensor|TensorLike", "@babylonjs/core|@babylonjs/core/Maths/tensor|TensorStatic", "@babylonjs/core|@babylonjs/core/Maths/tensor|ValueOfTensor"]
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "misc-higher-order-functions",
@@ -71,8 +71,8 @@
     {
       "id": "gltf-loaders",
       "label": "glTF loaders",
-      "expectedCount": 2,
-      "exports": ["@babylonjs/loaders|@babylonjs/loaders/glTF/1.0/index|GLTF1", "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/index|GLTF2"]
+      "expectedCount": 0,
+      "exports": []
     }
   ]
 }

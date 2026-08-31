@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "result": "pass",
+  "mode": "headless",
+  "chromium": "Chromium 152.0.7977.64 Arch Linux",
+  "url": "http://127.0.0.1:35811/examples/VillageStarter/",
+  "scene": {
+    "status": "ready",
+    "message": "Village ready — drag to orbit, scroll to zoom",
+    "canvas": {
+      "width": 1280,
+      "height": 657
+    },
+    "meshCount": 53,
+    "hasVillage": true,
+    "hasCar": true,
+    "hasDude": true,
+    "hasHitBox": true,
+    "hitBoxAlpha": 0,
+    "camera": "ArcRotateCamera",
+    "activeAnimations": 6,
+    "activeAnimationTargets": [
+      "car",
+      "wheelRB",
+      "wheelRF",
+      "wheelLB",
+      "wheelLF",
+      "Skeleton0"
+    ],
+    "carAnimations": 1,
+    "wheelCount": 4,
+    "skeletonCount": 1
+  },
+  "screenshot": "reports/village-starter.png"
+}

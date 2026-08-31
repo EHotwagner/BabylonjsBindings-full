@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Babylon.js Village Starter — Fable bindings</title>
+    <style>
+      :root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+      * { box-sizing: border-box; }
+      html, body, #renderCanvas { width: 100%; height: 100%; margin: 0; overflow: hidden; }
+      body { background: #9ed5ef; }
+      #renderCanvas { display: block; touch-action: none; outline: none; }
+      .panel {
+        position: fixed; z-index: 2; top: 1rem; left: 1rem; max-width: min(28rem, calc(100vw - 2rem));
+        padding: .9rem 1rem; border: 1px solid rgba(255,255,255,.38); border-radius: .85rem;
+        background: rgba(25, 33, 43, .76); box-shadow: 0 .7rem 2rem rgba(0,0,0,.22); backdrop-filter: blur(12px);
+      }
+      h1 { margin: 0 0 .3rem; font-size: 1rem; letter-spacing: .02em; }
+      p { margin: 0; color: #d9e8f2; font-size: .86rem; line-height: 1.45; }
+      #status { color: #fff; }
+      body[data-scene-status="ready"] #status::before { content: "● "; color: #66e39a; }
+      body[data-scene-status="loading"] #status::before { content: "● "; color: #ffd166; }
+      body[data-scene-status="failed"] #status::before { content: "● "; color: #ff6b6b; }
+    </style>
+    <script type="importmap">
+      {"imports":{"@babylonjs/core/":"/node_modules/@babylonjs/core/","@babylonjs/loaders/":"/node_modules/@babylonjs/loaders/"}}
+    </script>
+  </head>
+  <body data-scene-status="booting">
+    <div class="panel">
+      <h1>Village Starter · Chapter 4</h1>
+      <p id="status">Starting Babylon.js…</p>
+    </div>
+    <canvas id="renderCanvas" aria-label="Animated Babylon.js village"></canvas>
+    <script type="module" src="./dist/Program.js"></script>
+  </body>
+</html>

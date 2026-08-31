@@ -1,5 +1,29 @@
 <Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup><TargetFramework>netstandard2.1</TargetFramework><PackageId>BabylonjsBindings</PackageId><Version>0.1.4</Version><GeneratePackageOnBuild>true</GeneratePackageOnBuild><FablePackageType>library</FablePackageType><PackageTags>fable-javascript;babylon;bindings</PackageTags><PackageReadmeFile>README.md</PackageReadmeFile><RepositoryUrl>https://github.com/EHotwagner/BabylonjsBindings-full</RepositoryUrl><RepositoryType>git</RepositoryType><RestorePackagesWithLockFile>true</RestorePackagesWithLockFile></PropertyGroup>
-  <ItemGroup><Compile Include="Enums.fs" /><Compile Include="StringEnums.fs" /><Compile Include="ObjectTypes.fs" /><Compile Include="SimpleTypes.fs" /><Compile Include="M2FiniteDependentMaps.fs" /><Compile Include="M3HigherOrderRuntimeApis.fs" /><Compile Include="SimpleFunctions.fs" /><Compile Include="SimpleVariables.fs" /><Compile Include="Bindings.fs" /></ItemGroup>
-  <ItemGroup><PackageReference Include="Fable.Core" /><PackageReference Include="Fable.Package.SDK" /><PackageReference Include="Fable.Browser.Dom" /><PackageReference Include="Fable.Browser.WebGL" /><None Include="README.md" Pack="true" PackagePath="\" /></ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <PackageId>BabylonjsBindings</PackageId>
+    <Version>0.2.0</Version>
+    <Authors>EHotwagner</Authors>
+    <Description>Versioned Fable bindings for @babylonjs/core and @babylonjs/loaders 9.19.0.</Description>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <FablePackageType>binding</FablePackageType>
+    <PackageTags>fable-javascript;babylonjs;bindings</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageProjectUrl>https://github.com/EHotwagner/BabylonjsBindings-full</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/EHotwagner/BabylonjsBindings-full</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <NpmDependencies>
+      <NpmPackage Name="@babylonjs/core" Version="9.19.0" ResolutionStrategy="Min" />
+      <NpmPackage Name="@babylonjs/loaders" Version="9.19.0" ResolutionStrategy="Min" />
+    </NpmDependencies>
+  </PropertyGroup>
+  <ItemGroup><Compile Include="Enums.fs" /><Compile Include="StringEnums.fs" /><Compile Include="ObjectTypes.fs" /><Compile Include="SimpleTypes.fs" /><Compile Include="M4TypeFunctionCore.fs" /><Compile Include="M2FiniteDependentMaps.fs" /><Compile Include="M3HigherOrderRuntimeApis.fs" /><Compile Include="SimpleFunctions.fs" /><Compile Include="SimpleVariables.fs" /><Compile Include="M5GltfNamespaces.fs" /><Compile Include="Bindings.fs" /></ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" />
+    <PackageReference Include="Fable.Package.SDK" PrivateAssets="all" IncludeAssets="runtime; build; native; contentfiles; analyzers; buildtransitive" />
+    <PackageReference Include="Fable.Browser.Dom" />
+    <PackageReference Include="Fable.Browser.WebGL" />
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 </Project>

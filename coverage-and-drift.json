@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "6c3ae22e485fff4a778bfd6f5c4caa1804a7fd8081819fc5d49dc222f8f695f5",
+  "maintainedSurfaceDigest": "d424d02344984ca58c0da4c39f6b31351554a5ee4f736df4bedb33a0693084f2",
   "summary": {
     "total": 4323,
-    "typed": 4287,
+    "typed": 4322,
     "runtimeOnly": 1,
-    "blocked": 35,
+    "blocked": 0,
     "lossy": 0
   },
   "exports": [
@@ -19861,8 +19861,9 @@
       "module": "@babylonjs/core/Maths/math.vector.pure",
       "name": "Vector",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Vector"
     },
     {
       "package": "@babylonjs/core",
@@ -19896,8 +19897,9 @@
       "module": "@babylonjs/core/Maths/math.vector.pure",
       "name": "VectorStatic",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.VectorStatic"
     },
     {
       "package": "@babylonjs/core",
@@ -19949,32 +19951,36 @@
       "module": "@babylonjs/core/Maths/tensor",
       "name": "Dimension",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Dimension"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/tensor",
       "name": "Tensor",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Tensor"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/tensor",
       "name": "TensorLike",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.TensorLike"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/tensor",
       "name": "TensorStatic",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.TensorStatic"
     },
     {
       "package": "@babylonjs/core",
@@ -19990,8 +19996,9 @@
       "module": "@babylonjs/core/Maths/tensor",
       "name": "ValueOfTensor",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.ValueOfTensor"
     },
     {
       "package": "@babylonjs/core",
@@ -34695,24 +34702,27 @@
       "module": "@babylonjs/core/types",
       "name": "Add",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Add"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Concat",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Concat"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Constructor",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Constructor"
     },
     {
       "package": "@babylonjs/core",
@@ -34728,24 +34738,27 @@
       "module": "@babylonjs/core/types",
       "name": "Decrement",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Decrement"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "DeepImmutable",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.DeepImmutable"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "DeepImmutableObject",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.DeepImmutableObject"
     },
     {
       "package": "@babylonjs/core",
@@ -34770,32 +34783,36 @@
       "module": "@babylonjs/core/types",
       "name": "First",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.First"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Flatten",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Flatten"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "FlattenArray",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.FlattenArray"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "FlattenTuple",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.FlattenTuple"
     },
     {
       "package": "@babylonjs/core",
@@ -34820,8 +34837,9 @@
       "module": "@babylonjs/core/types",
       "name": "FromLength",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.FromLength"
     },
     {
       "package": "@babylonjs/core",
@@ -34837,16 +34855,18 @@
       "module": "@babylonjs/core/types",
       "name": "Immutable",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Immutable"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Increment",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Increment"
     },
     {
       "package": "@babylonjs/core",
@@ -34871,40 +34891,45 @@
       "module": "@babylonjs/core/types",
       "name": "IsTuple",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.IsTuple"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Last",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Last"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Length",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Length"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Member",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Member"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "NonNullableFields",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.NonNullableFields"
     },
     {
       "package": "@babylonjs/core",
@@ -34920,48 +34945,54 @@
       "module": "@babylonjs/core/types",
       "name": "Pop",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Pop"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Push",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Push"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Remove",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Remove"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Shift",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Shift"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Subtract",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Subtract"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "Tuple",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Tuple"
     },
     {
       "package": "@babylonjs/core",
@@ -34995,16 +35026,18 @@
       "module": "@babylonjs/core/types",
       "name": "Unshift",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Unshift"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "WritableObject",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained closed-world type-function and fixed-shape tensor projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.WritableObject"
     },
     {
       "package": "@babylonjs/core",
@@ -37135,8 +37168,9 @@
       "module": "@babylonjs/loaders/glTF/1.0/index",
       "name": "GLTF1",
       "kind": "namespace",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained glTF declaration and runtime namespace facade with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.GltfNamespaces.GLTF1"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38565,8 +38599,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/index",
       "name": "GLTF2",
       "kind": "namespace",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained glTF declaration and runtime namespace facade with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.GltfNamespaces.GLTF2"
     },
     {
       "package": "@babylonjs/loaders",
@@ -39006,5 +39041,5 @@
       "coverageImpact": "excluded-from-typed"
     }
   ],
-  "status": "incomplete"
+  "status": "complete"
 }

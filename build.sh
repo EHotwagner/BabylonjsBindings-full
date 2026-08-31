@@ -20,7 +20,7 @@ set -euo pipefail
 # The paths below carry the template's own project name; `dotnet new` rewrites it to
 # the product's name on the way out, exactly as it does in `scripts/lifecycle-evidence.mjs`.
 missing=()
-for locked in src/BabylonjsBindings tests/BabylonjsBindings.CompileTests generated-candidates/promotion-batch; do
+for locked in src/BabylonjsBindings tests/BabylonjsBindings.CompileTests tests/BabylonjsBindings.CrossRuntimeTests examples/VillageStarter generated-candidates/promotion-batch; do
   [[ -f "$locked/packages.lock.json" ]] || missing+=("$locked/packages.lock.json")
 done
 if (( ${#missing[@]} > 0 )); then
@@ -55,8 +55,10 @@ npm run check:simple-types-maintained
 npm run check:simple-function-proposal
 npm run check:simple-variable-proposal
 npm run check:promotion-batch
+npm run check:m4-type-core
+npm run check:m5-gltf-namespaces
 npm run test:promotion-preview
-npm run coverage:check
+npm run coverage:require-complete
 npm run test:runtime
 # Keep the maintained build on the reusable analysis gates. The M0-only TRX
 # receipt additionally compares this milestone with its base branch, so it is
@@ -64,3 +66,4 @@ npm run test:runtime
 npm run analysis:test
 npm run analysis:determinism
 npm run analysis:check
+npm run test:bindings:inventory

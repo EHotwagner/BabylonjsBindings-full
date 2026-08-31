@@ -2,14 +2,9 @@
 
 [![CI](https://github.com/EHotwagner/BabylonjsBindings-full/actions/workflows/ci.yml/badge.svg)](https://github.com/EHotwagner/BabylonjsBindings-full/actions/workflows/ci.yml)
 
-> **Status:** active development. This repository is building toward complete,
-> typed bindings for `@babylonjs/core@9.19.0` and
-> `@babylonjs/loaders@9.19.0`; the current NuGet package still exposes only the
-> reviewed modular slice. The 117,000-line full declaration conversion under
-> `generated-candidates/` is review-only. The full core candidate now compiles
-> cleanly, but it still has recorded unsupported/lossy conversions and is not
-> represented as complete until loaders, per-export coverage, imports, and
-> runtime evidence also pass.
+> **Status:** complete for the locked Babylon.js 9.19.0 declaration closure.
+> Package 0.2.0 classifies all 4,323 exports: 4,322 typed, one intentional
+> loader-registration side effect, zero blocked, and zero lossy.
 
 Source repository: https://github.com/EHotwagner/BabylonjsBindings-full
 
@@ -20,9 +15,9 @@ drift, and clean-consumer evidence before release.
 
 `npm run generate:candidate` writes only tracked `generated-candidates/`; it never overwrites maintained source or advances the declaration lock. `npm run check:drift` follows every selected relative declaration import/export and fails on changed transitive hashes. Unsupported TypeScript constructs must be recorded in `coverage-and-drift.json`, never silently exposed as `obj`. Product skills are supplied by the Templates-owned `fable-bindings` skill manifest rather than copied into this provider template. Local proof precedes publication and any registry/wizard activation.
 
-`npm run coverage:generate` inventories every reachable module export in the locked core/loaders declaration graph and assigns a typed, runtime-only, blocked, or lossy disposition. `npm run coverage:check` validates the report schema and input digests; `npm run coverage:require-complete` is the release gate and intentionally fails while any blocked, lossy, or unsupported entry remains. A compile-clean generated candidate does not count as typed maintained coverage.
+`npm run coverage:generate` inventories every reachable module export in the locked core/loaders declaration graph and assigns a typed, runtime-only, blocked, or lossy disposition. `npm run coverage:check` validates the report schema and input digests; `npm run coverage:require-complete` fails while any modular export is blocked or lossy. Legacy `ts2fable` monolithic-bundle diagnostics remain visible as comparison evidence but are not modular export gaps. A compile-clean generated candidate does not count as typed maintained coverage.
 
-The reviewed maintained surface now contains 148 exact numeric enums and two integer-valued type unions in `BabylonjsBindings.Enums`, 69 exact string enums and resolved string-literal unions in `BabylonjsBindings.StringEnums`, 24 complete dependency-closed object aliases in `BabylonjsBindings.ObjectTypes`, 115 primitive/array/callback/generic/structural aliases in `BabylonjsBindings.TypeAliases`, 598 dependency-closed interfaces plus exact readonly projections and partial views in `BabylonjsBindings.SimpleInterfaces`, 1,495 dependency-closed runtime classes in `BabylonjsBindings.SimpleClasses`, 1,233 dependency-closed runtime functions in `BabylonjsBindings.SimpleFunctions`, and 553 dependency-closed runtime variables/constants in `BabylonjsBindings.SimpleVariables` (4,237 of 4,323 locked exports). Module-qualified collision identities keep the glTF 1.0, glTF 2.0, KTX, core, and material-variant declarations distinct, while the exact pinned `babylonjs-gltf2interface` support closure supplies inherited loader shapes without counting companion-only types as Babylon export coverage. Exact structural projections preserve the open SceneLoader/glTF option maps, the inherited `Partial<Readonly<GLTFLoaderOptions>>` constructor input, the readonly intersection returned by `GetRegisteredSceneLoaderPluginMetadata`, and the readonly glTF extension registry map without replacing mapped members with `obj`. Two additional generated FlowGraph classes remain excluded because their disjunctive TypeScript generic constraints require curated F# projections. Mutually recursive alias/interface/class dependencies are compiled through the generated `SimpleTypes.fs` build projection while their reviewed source fragments remain independently auditable. `npm run generate:reviewed-simple-proposals` performs the reproducible bootstrap-and-prune pass for that reciprocal closure, and the individual proposal checks then enforce drift-free output. `npm run test:candidate` regenerates the locked review candidate before independently Fable-compiling it, resolving emitted imports, executing Node and Chromium smokes, dynamically verifying all candidate class/function/variable exports, packing a local-only candidate package, and consuming that package from a clean temporary project. These proofs authorize incremental review; they do not make blocked or lossy exports complete.
+The maintained surface combines reviewed simple projections, finite dependent maps, arity-indexed higher-order APIs, a 155-use closed-world type-function registry with seven fixed tensor/vector shapes, and checker-derived glTF namespace facades. Module-qualified identities keep colliding declarations distinct. GLTF1/GLTF2 expose all 51/158 declaration names and runtime namespace interfaces for the exact 14/114 JavaScript keys. Mutually recursive aliases, interfaces, and classes compile through the derived `SimpleTypes.fs` projection while their reviewed fragments remain independently auditable. `npm run test:m6-release` runs the complete drift, .NET, Fable, emitted-import, Node, Chromium, coverage, package, and isolated-consumer matrix.
 
 ## Package locking
 

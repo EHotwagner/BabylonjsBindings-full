@@ -7,6 +7,7 @@ open BabylonjsBindings.SimpleInterfaces
 open BabylonjsBindings.SimpleClasses
 open BabylonjsBindings.FiniteDependentMaps
 open BabylonjsBindings.HigherOrderRuntimeApis
+open BabylonjsBindings.TypeFunctionCore
 let shaderLanguage: ShaderLanguage = ShaderLanguage.``WGSL``
 let loaderState: GLTFLoaderState = GLTFLoaderState.``READY``
 let fftSize: AudioAnalyzerFFTSizeType = AudioAnalyzerFFTSizeType.``N32768``
@@ -316,6 +317,26 @@ let m3StandardImageDefinesSpecialization (baseCtor: StandardMaterialDefinesBaseS
 let m3OpenPBRImageDefinesSpecialization (baseCtor: OpenPBRMaterialDefinesWithEnvLightingStatic) : ImageProcessingDefinesOpenPBRMaterialDefinesWithEnvLightingStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
 let m3NodeImageDefinesSpecialization (baseCtor: NodeMaterialDefinesBaseStatic) : ImageProcessingDefinesNodeMaterialDefinesBaseStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
 let m3UVSpecialization (baseCtor: MaterialDefinesStatic) : UVDefinesMaterialDefinesStatic = UVDefinesMixin.Invoke(baseCtor)
+
+let m4Vector2Shape (value: Vector2Projection) : FloatTuple2 = value.asArray()
+let m4Vector3Shape (value: Vector3Projection) : FloatTuple3 = value.asArray()
+let m4Vector4Shape (value: Vector4Projection) : FloatTuple4 = value.asArray()
+let m4QuaternionShape (value: QuaternionProjection) : FloatTuple4 = value.asArray()
+let m4Color3Shape (value: Color3Projection) : FloatTuple3 = value.asArray()
+let m4Color4Shape (value: Color4Projection) : FloatTuple4 = value.asArray()
+let m4MatrixShape (value: MatrixProjection) : FloatTuple16 = value.asArray()
+let m4SetVector2 (value: Vector2Projection) = value.set(1.0, 2.0)
+let m4SetMatrix (value: MatrixProjection) = value.set(1., 2., 3., 4., 5., 6., 7., 8., 9., 10., 11., 12., 13., 14., 15., 16.)
+let m4TupleWitness: Tuple<float, N3, FloatTuple3> = Unchecked.defaultof<_>
+let m4ImmutableWitness: DeepImmutable<IVector3Like, DeepImmutableIVector3Like> = Unchecked.defaultof<_>
+
+let m5Gltf1Accessor: BabylonjsBindings.GltfNamespaces.GLTF1.IGLTFAccessor = Unchecked.defaultof<_>
+let m5Gltf2Accessor: BabylonjsBindings.GltfNamespaces.GLTF2.IAccessor = Unchecked.defaultof<_>
+let m5RegisterGltf2 = BabylonjsBindings.GltfNamespaces.GLTF2.RegisterGLTF2Loader
+let m5Gltf1Runtime: BabylonjsBindings.GltfNamespaces.GLTF1.RuntimeNamespace = BabylonjsBindings.GltfNamespaces.GLTF1.runtime
+let m5Gltf2Runtime: BabylonjsBindings.GltfNamespaces.GLTF2.RuntimeNamespace = BabylonjsBindings.GltfNamespaces.GLTF2.runtime
+let m5Gltf1Constructor = m5Gltf1Runtime.GLTFLoader
+let m5Gltf2Constructor = m5Gltf2Runtime.GLTFLoader
 
 let engine = nullEngine ()
 let scene = scene engine

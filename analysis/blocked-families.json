@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "source": "coverage-and-drift.json",
-  "expectedTypedTotal": 4287,
-  "blockedExportCount": 35,
+  "expectedTypedTotal": 4322,
+  "blockedExportCount": 0,
   "familyCount": 11,
   "families": [
     {
@@ -15,218 +15,9 @@
     {
       "id": "core-utility-types",
       "label": "Core utility types",
-      "count": 26,
-      "expectedCount": 26,
-      "exports": [
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Add",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Add",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Concat",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Concat",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Constructor",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Constructor",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Decrement",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Decrement",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|DeepImmutable",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "DeepImmutable",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|DeepImmutableObject",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "DeepImmutableObject",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|First",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "First",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Flatten",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Flatten",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|FlattenArray",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "FlattenArray",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|FlattenTuple",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "FlattenTuple",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|FromLength",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "FromLength",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Immutable",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Immutable",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Increment",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Increment",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|IsTuple",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "IsTuple",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Last",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Last",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Length",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Length",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Member",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Member",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|NonNullableFields",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "NonNullableFields",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Pop",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Pop",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Push",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Push",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Remove",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Remove",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Shift",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Shift",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Subtract",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Subtract",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Tuple",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Tuple",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|Unshift",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "Unshift",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|WritableObject",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "WritableObject",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        }
-      ]
+      "count": 0,
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "device-input",
@@ -252,66 +43,9 @@
     {
       "id": "math-vector-tensor",
       "label": "Math/vector/tensor",
-      "count": 7,
-      "expectedCount": 7,
-      "exports": [
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Maths/math.vector.pure|Vector",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Maths/math.vector.pure",
-          "name": "Vector",
-          "kind": "interface",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Maths/math.vector.pure|VectorStatic",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Maths/math.vector.pure",
-          "name": "VectorStatic",
-          "kind": "interface",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|Dimension",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Maths/tensor",
-          "name": "Dimension",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|Tensor",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Maths/tensor",
-          "name": "Tensor",
-          "kind": "interface",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|TensorLike",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Maths/tensor",
-          "name": "TensorLike",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|TensorStatic",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Maths/tensor",
-          "name": "TensorStatic",
-          "kind": "interface",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|ValueOfTensor",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Maths/tensor",
-          "name": "ValueOfTensor",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        }
-      ]
+      "count": 0,
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "misc-higher-order-functions",
@@ -344,26 +78,9 @@
     {
       "id": "gltf-loaders",
       "label": "glTF loaders",
-      "count": 2,
-      "expectedCount": 2,
-      "exports": [
-        {
-          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/1.0/index|GLTF1",
-          "package": "@babylonjs/loaders",
-          "module": "@babylonjs/loaders/glTF/1.0/index",
-          "name": "GLTF1",
-          "kind": "namespace",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/index|GLTF2",
-          "package": "@babylonjs/loaders",
-          "module": "@babylonjs/loaders/glTF/2.0/index",
-          "name": "GLTF2",
-          "kind": "namespace",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        }
-      ]
+      "count": 0,
+      "expectedCount": 0,
+      "exports": []
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "result": "pass",
+  "package": "/home/developer/projects/BabylonjsBindings-full/artifacts/release-package/BabylonjsBindings.0.2.0.nupkg",
+  "packageVersion": "0.2.0",
+  "packageSha256": "28fc0e4d7e219eea2981a91886be38009854d413bdc33b1866a0a529817ecc34",
+  "fable": "5.13.0",
+  "packageShape": {
+    "fablePackageType": "binding",
+    "sourcePayload": false,
+    "sdkDependency": false
+  },
+  "npm": {
+    "core": "9.19.0",
+    "loaders": "9.19.0"
+  },
+  "node": "pass",
+  "exactGltfImport": true,
+  "isolatedNugetCache": true
+}

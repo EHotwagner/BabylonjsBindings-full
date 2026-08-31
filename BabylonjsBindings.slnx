@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="src/BabylonjsBindings/BabylonjsBindings.fsproj" />
   <Project Path="tests/BabylonjsBindings.CompileTests/BabylonjsBindings.CompileTests.fsproj" />
+  <Project Path="tests/BabylonjsBindings.CrossRuntimeTests/BabylonjsBindings.CrossRuntimeTests.fsproj" />
+  <Project Path="examples/VillageStarter/VillageStarter.fsproj" />
 </Solution>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuite name="BabylonjsBindings comprehensive bindings" tests="26" failures="0" time="152.780">
+  <testcase classname="BabylonjsBindings.Comprehensive" name="toolchain and lock doctor" time="0.104"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="declaration closure drift" time="0.523"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="typed export and runtime import inventory" time="1.040"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="locked .NET restore" time="0.700"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="maintained .NET compile suite" time="20.480"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="shared .NET and emitted JavaScript fixture" time="18.638"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="M2 dependent-map negative fixtures" time="17.573"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="M3 higher-order negative fixtures" time="6.245"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="M4 fixed-shape negative fixture" time="2.059"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="full maintained Fable emission" time="17.963"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="all emitted modular imports resolve" time="0.049"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="fixed-shape and namespace emitted calls" time="0.021"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="Fable-emitted Node execution" time="0.239"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="base Babylon Node smoke" time="0.252"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="finite-map Node smoke" time="0.191"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="higher-order Node smoke" time="0.088"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="glTF namespace Node smoke" time="0.220"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="M2 browser fixture emission" time="19.099"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="M3 browser fixture emission" time="17.965"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="deterministic WebXR Chromium smoke" time="1.266"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="higher-order Chromium smoke" time="1.298"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="analysis unit tests" time="0.177"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="analysis deterministic and current" time="0.296"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="analysis generated views current" time="0.164"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="complete export coverage gate" time="1.192"></testcase>
+  <testcase classname="BabylonjsBindings.Comprehensive" name="isolated packed NuGet/npm consumer" time="24.937"></testcase>
+</testsuite>
