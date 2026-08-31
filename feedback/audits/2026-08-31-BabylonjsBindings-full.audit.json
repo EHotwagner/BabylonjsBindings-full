@@ -1,0 +1,25 @@
+{
+  "auditSchema": 1,
+  "report": "feedback/2026-08-31-BabylonjsBindings-full.md",
+  "reportSha256": "afe7a78d8411f2d8c28fdf7f1e080dc92dd193212dbbd7b47f419919e6b77b15",
+  "criticMode": "fresh-context-subagent",
+  "criticPromptVersion": "actionability-v1",
+  "findings": [
+    {
+      "id": "§4.1",
+      "status": "duplicate",
+      "missingFacts": [],
+      "checkedEvidence": [
+        {
+          "locator": "command:test -d docs/examples/lifecycle-artifacts",
+          "result": "verified"
+        },
+        {
+          "locator": "issue:FS-GG/FS.GG.SDD#539",
+          "result": "verified"
+        }
+      ],
+      "confidenceLimits": []
+    }
+  ]
+}
