@@ -335,6 +335,13 @@
       "moduleSha256": "7005f57c26c5b34ef3ef7f051b1b3036ebb58014e88eafbdd924f1a29c45cb12"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFValidation.js",
+      "export": "GLTFValidation",
+      "runtimeExport": "GLTFValidation",
+      "moduleSha256": "9b1e0d1636408fd471073cf97d0e1d5a23d7e15c3db9fb68810960902490736e"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/gradients.js",
       "export": "GradientHelper",
@@ -2162,6 +2169,13 @@
       "moduleSha256": "2ab7b005f08bd38ce0a4b159f089e09d51a6e80b88e3887d15a3b083a53b86de"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/BVH/bvhFileLoader.pure.js",
+      "export": "BVHFileLoader",
+      "runtimeExport": "BVHFileLoader",
+      "moduleSha256": "9bcc48f6cd581d2503a2e9fa7544a26f1f31ce356e0a0b7162b7aba5d52e179a"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Cameras/camera.pure.js",
       "export": "Camera",
@@ -2946,6 +2960,55 @@
       "moduleSha256": "67803209ea186650d31f1e70c2254c3994335c2cf82067b448fb946dba8eddbc"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_area.pure.js",
+      "export": "EXT_lights_area",
+      "runtimeExport": "EXT_lights_area",
+      "moduleSha256": "bddb9e2c3d35b71e57b83c7c7cf2b971465ed6392af43802eebc6c4e2b0022f3"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.pure.js",
+      "export": "EXT_lights_ies",
+      "runtimeExport": "EXT_lights_ies",
+      "moduleSha256": "e7231c425e5ab50355f182e382452fec5902e17fe8b722cb3c80fba7c0dac90f"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_image_based.pure.js",
+      "export": "EXT_lights_image_based",
+      "runtimeExport": "EXT_lights_image_based",
+      "moduleSha256": "5321a0d11abf5607d19035fb92070f9963c91cb0d8549db09e8def6171cf9d94"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.pure.js",
+      "export": "EXT_mesh_gpu_instancing",
+      "runtimeExport": "EXT_mesh_gpu_instancing",
+      "moduleSha256": "8abfeb1b6dd64bdb2ba61dd0e223b8d62620bbc50111a0cc21c9a125aae0c1a7"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.pure.js",
+      "export": "EXT_meshopt_compression",
+      "runtimeExport": "EXT_meshopt_compression",
+      "moduleSha256": "186cc20dc194d7d3836d01dcf825a0bb1df140c6f86163fe36eb3ad682073579"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.pure.js",
+      "export": "EXT_texture_avif",
+      "runtimeExport": "EXT_texture_avif",
+      "moduleSha256": "40c292572eeac9e191c9159dfbed411e3d86c312b4c7c4788c48b1b95f8f6297"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.pure.js",
+      "export": "EXT_texture_webp",
+      "runtimeExport": "EXT_texture_webp",
+      "moduleSha256": "1c90083e8d99bd68b4b8d5ebf95de0523576243efef9299cd0dae46fc09ec308"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/externalTexture.js",
       "export": "ExternalTexture",
@@ -2960,6 +3023,13 @@
       "moduleSha256": "52daae421b674a78ac1843709801cf0301a800dfc5fbddb803d2ffc276b65907"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.pure.js",
+      "export": "ExtrasAsMetadata",
+      "runtimeExport": "ExtrasAsMetadata",
+      "moduleSha256": "43b79c99a86adf6b6a2685a3507a17ea209f5781ca3580949830a570aae334e2"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Node/Blocks/extrudeGeometryBlock.pure.js",
       "export": "ExtrudeGeometryBlock",
@@ -2972,6 +3042,13 @@
       "export": "FadeInOutBehavior",
       "runtimeExport": "FadeInOutBehavior",
       "moduleSha256": "56dda777a6aecf118fd5d7a93630389b104bf1a2dbf377cad52e4b649cf2d967"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/FBX/fbxFileLoader.pure.js",
+      "export": "FBXFileLoader",
+      "runtimeExport": "FBXFileLoader",
+      "moduleSha256": "6b737c85bede77ae7b62394edda3f90d6954f06d44dcf277ba5518b971aa50dc"
     },
     {
       "package": "@babylonjs/core",
@@ -5320,10 +5397,24 @@
     },
     {
       "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js",
+      "export": "GLTFLoader",
+      "runtimeExport": "GLTFLoader",
+      "moduleSha256": "63b7799ac402265fd81f3c443496e08ca0bc6e167fd1bd374dcaebb62ecb1d91"
+    },
+    {
+      "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFBinaryExtension.js",
       "export": "GLTFBinaryExtension",
       "runtimeExport": "GLTFBinaryExtension",
       "moduleSha256": "4003e0cc459c63e5f99bd97fd621880f9715e7bf7d31f5dea412ace1d8ede388"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure.js",
+      "export": "GLTFFileLoader",
+      "runtimeExport": "GLTFFileLoader",
+      "moduleSha256": "db5bb4f5e81545fb23109579bbb1699b8ec90ff796487a54dcad22452b9392ef"
     },
     {
       "package": "@babylonjs/loaders",
@@ -5767,6 +5858,216 @@
       "moduleSha256": "f28bc3bc4fbb7f6f209b5087a1952de20a303b6e52ceed47c34da3df7e57f464"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.pure.js",
+      "export": "KHR_animation_pointer",
+      "runtimeExport": "KHR_animation_pointer",
+      "moduleSha256": "fca7d32291670a19d75d8b3dc5298044692239116b47d923367c69c52322b56e"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.pure.js",
+      "export": "KHR_draco_mesh_compression",
+      "runtimeExport": "KHR_draco_mesh_compression",
+      "moduleSha256": "e1800dc276ce98cfdd492e25c7f6b40026f5774d2106f2ac0c6100cbd02607e2"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_gaussian_splatting.pure.js",
+      "export": "KHR_gaussian_splatting",
+      "runtimeExport": "KHR_gaussian_splatting",
+      "moduleSha256": "becb3302e93bd53168ed3f77d35bc771afdfa630b6048f2db4cc9e7fe305d4ce"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure.js",
+      "export": "KHR_interactivity",
+      "runtimeExport": "KHR_interactivity",
+      "moduleSha256": "c9998867231928944cc04f8282304b9d03225509f0ed0306eed552dedde0560b"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_lights_punctual.pure.js",
+      "export": "KHR_lights",
+      "runtimeExport": "KHR_lights",
+      "moduleSha256": "751ceb85dd8a3c06d42b4a55f488793a02d1c62cbbbc9f28a036bb751caade39"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.pure.js",
+      "export": "KHR_materials_anisotropy",
+      "runtimeExport": "KHR_materials_anisotropy",
+      "moduleSha256": "84a3afacad533890d1345e5504e2f72835f5b7ee430e084fae482da0e417fab1"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.pure.js",
+      "export": "KHR_materials_clearcoat",
+      "runtimeExport": "KHR_materials_clearcoat",
+      "moduleSha256": "4560cecc925877832a46b1eb8a328ef6ecab0af57337effa9e1ceca312bcedf3"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.pure.js",
+      "export": "KHR_materials_coat",
+      "runtimeExport": "KHR_materials_coat",
+      "moduleSha256": "928b86e9e1b147037979abadc939b2170adf09f49eb1f1e8b418bd6f7ba522e9"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.pure.js",
+      "export": "KHR_materials_diffuse_roughness",
+      "runtimeExport": "KHR_materials_diffuse_roughness",
+      "moduleSha256": "362aece538a1224e67034ec6997fcc6d31ae3c0ff41cdd7daa328a171d6303a6"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.pure.js",
+      "export": "KHR_materials_diffuse_transmission",
+      "runtimeExport": "KHR_materials_diffuse_transmission",
+      "moduleSha256": "ff3bf2def0e34d95025f158cc9373caf11b1ddde89eba221f1a3584febcbcea3"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.pure.js",
+      "export": "KHR_materials_dispersion",
+      "runtimeExport": "KHR_materials_dispersion",
+      "moduleSha256": "302e656115034a1610609c47423637579ff24640b6c9c69628deb0d66fda3941"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.pure.js",
+      "export": "KHR_materials_emissive_strength",
+      "runtimeExport": "KHR_materials_emissive_strength",
+      "moduleSha256": "1f1042b68e84517880010f3817e3e89ad855e472b0ebe7cc1fc755a276ad99a5"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.pure.js",
+      "export": "KHR_materials_fuzz",
+      "runtimeExport": "KHR_materials_fuzz",
+      "moduleSha256": "e9038783c310126878a9ce714e0c735b05952772387b538cfa51e0bf4a56617d"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.pure.js",
+      "export": "KHR_materials_ior",
+      "runtimeExport": "KHR_materials_ior",
+      "moduleSha256": "020f3afc11cf55ee7c6ad8ef06288d2c3d052cdd51b4f62edd542908b5cee3dc"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.pure.js",
+      "export": "KHR_materials_iridescence",
+      "runtimeExport": "KHR_materials_iridescence",
+      "moduleSha256": "7ac187d4a3b80505d76eac1061e66ac8d240e57241810be3b1caeb6ecbb70cf1"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.pure.js",
+      "export": "KHR_materials_pbrSpecularGlossiness",
+      "runtimeExport": "KHR_materials_pbrSpecularGlossiness",
+      "moduleSha256": "17b445d25966fc2a9b0dafe13c943e2c253c2ade7d592abda2457d326998466d"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.pure.js",
+      "export": "KHR_materials_sheen",
+      "runtimeExport": "KHR_materials_sheen",
+      "moduleSha256": "3ac6401778996eac31abdf167f93e7ce67e430ce2be8762ae0c29d5dc2683b08"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.pure.js",
+      "export": "KHR_materials_specular",
+      "runtimeExport": "KHR_materials_specular",
+      "moduleSha256": "6be6b09e97924b7c64686eb670d1a7d3452777a680b065947575d76c805cea57"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.pure.js",
+      "export": "KHR_materials_transmission",
+      "runtimeExport": "KHR_materials_transmission",
+      "moduleSha256": "ee90193324964004c07b3aa936fd3921e3f1a40f763fff5886f8f25a3d153192"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.pure.js",
+      "export": "KHR_materials_unlit",
+      "runtimeExport": "KHR_materials_unlit",
+      "moduleSha256": "110570cef33432c299c36884361ccb9f61a5d45e257b32aa5d6e07185fea5333"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure.js",
+      "export": "KHR_materials_variants",
+      "runtimeExport": "KHR_materials_variants",
+      "moduleSha256": "e7cf078a019d84cc06ab043aab3fb97040295b4056d7aa9bd2127b326b48bf56"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.pure.js",
+      "export": "KHR_materials_volume",
+      "runtimeExport": "KHR_materials_volume",
+      "moduleSha256": "f0ac82f27f06572c577ec56bb50c084a7539c6b89a9c6f1f643ad49e07580507"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.pure.js",
+      "export": "KHR_materials_volume_scatter",
+      "runtimeExport": "KHR_materials_volume_scatter",
+      "moduleSha256": "0170abe681e635b349ad09edad6f131dda09860279892c95c9840af99d561ce9"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.pure.js",
+      "export": "KHR_mesh_quantization",
+      "runtimeExport": "KHR_mesh_quantization",
+      "moduleSha256": "629ce7861a93831c513592e39c5387d763a8661c582a949d37282a1bbbf3c995"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.pure.js",
+      "export": "KHR_node_hoverability",
+      "runtimeExport": "KHR_node_hoverability",
+      "moduleSha256": "f945dd1b6479773c2d0f26b44568de921d956fe9716833d2148b1fbea5cd2737"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.pure.js",
+      "export": "KHR_node_selectability",
+      "runtimeExport": "KHR_node_selectability",
+      "moduleSha256": "457c2a1176204ba250602dc3a24618c0fff7e1fda188796c947f150dc3b18375"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.pure.js",
+      "export": "KHR_node_visibility",
+      "runtimeExport": "KHR_node_visibility",
+      "moduleSha256": "6f7c901277f8e39241077375e3c1c005bcac021497ecfcd9905ce33292d6eda6"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.pure.js",
+      "export": "KHR_texture_basisu",
+      "runtimeExport": "KHR_texture_basisu",
+      "moduleSha256": "a53bdd4ca99541e2ff214c7d6a33b0f3a1831206bb06c9809341369c50319035"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.pure.js",
+      "export": "KHR_texture_transform",
+      "runtimeExport": "KHR_texture_transform",
+      "moduleSha256": "2f448111fcdaab2e6e08d4d3ac014b4f24764e20d7c0ddd857eadc6a44a634a3"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.pure.js",
+      "export": "KHR_xmp_json_ld",
+      "runtimeExport": "KHR_xmp_json_ld",
+      "moduleSha256": "97e779dc1989676f19c9e7360544c2b03d69f80ec988ed0cd13811fd696680ca"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/khronosTextureContainer.js",
       "export": "KhronosTextureContainer",
@@ -6185,6 +6486,34 @@
       "export": "MotionBlurPostProcess",
       "runtimeExport": "MotionBlurPostProcess",
       "moduleSha256": "fe987786455bc6433c8426608573d28a077f086638caed5c247e48355104c552"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_audio_emitter.pure.js",
+      "export": "MSFT_audio_emitter",
+      "runtimeExport": "MSFT_audio_emitter",
+      "moduleSha256": "a4806e0d1050f13a6a2791043313eee164d059372b3a9ae298ac67249cc0e8e5"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.pure.js",
+      "export": "MSFT_lod",
+      "runtimeExport": "MSFT_lod",
+      "moduleSha256": "87f73488253c4e9b0ae4b39c0514ed89ecb9fbb37cab3d98aa524c933b0942a2"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.pure.js",
+      "export": "MSFT_minecraftMesh",
+      "runtimeExport": "MSFT_minecraftMesh",
+      "moduleSha256": "339ae999a3d191b7d5701b94e645ca4bf8370807949b2fd86e2b717b87db06e8"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.pure.js",
+      "export": "MSFT_sRGBFactors",
+      "runtimeExport": "MSFT_sRGBFactors",
+      "moduleSha256": "cc307701314bdf51ea0dd6ecc54c7dd2c456e9152c37922b618694b41ae331d7"
     },
     {
       "package": "@babylonjs/loaders",
@@ -6838,6 +7167,13 @@
       "moduleSha256": "827786a3cddfa642b44dd1d5453f2fd4eeed04d4a70378fa20508d8048627a1e"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/OBJ/objFileLoader.pure.js",
+      "export": "OBJFileLoader",
+      "runtimeExport": "OBJFileLoader",
+      "moduleSha256": "52ce965e2289a1ce5c6918f93367492cc1b1f3139ad968a5b8b5ce2921d70bd9"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Occlusion/occlusionMaterial.pure.js",
       "export": "OcclusionMaterial",
@@ -6885,6 +7221,13 @@
       "export": "OpenPBRMaterial",
       "runtimeExport": "OpenPBRMaterial",
       "moduleSha256": "b7e53b4d2e6ee23de7c9b3a4ee6a05a5a61d0789159798c90632086a87a1c395"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/openpbrMaterialLoadingAdapter.js",
+      "export": "OpenPBRMaterialLoadingAdapter",
+      "runtimeExport": "OpenPBRMaterialLoadingAdapter",
+      "moduleSha256": "0c0a7a8a4305da061b99aabf0d12629909a515ef6613b3b98226d5468186d39d"
     },
     {
       "package": "@babylonjs/core",
@@ -7214,6 +7557,13 @@
       "export": "PBRMaterial",
       "runtimeExport": "PBRMaterial",
       "moduleSha256": "90873f4d77045aec85c42a193c26780184a3f718b611361686bb7e9d8d31afa9"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/pbrMaterialLoadingAdapter.js",
+      "export": "PBRMaterialLoadingAdapter",
+      "runtimeExport": "PBRMaterialLoadingAdapter",
+      "moduleSha256": "17fcadda4d9756bed238b708fc9e4db21710e095e0ff60992aca6ca72148b341"
     },
     {
       "package": "@babylonjs/core",
@@ -8455,6 +8805,13 @@
       "moduleSha256": "ad56a76f96b36d39380f826c57183c8d6e627a72c9fc968a18bb398c34f20901"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/SPLAT/splatFileLoader.pure.js",
+      "export": "SPLATFileLoader",
+      "runtimeExport": "SPLATFileLoader",
+      "moduleSha256": "41417f4e13408f7bd1c953ac752c3e99dcc89bff99ada6a636e0de73ada146bd"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Node/Blocks/GaussianSplatting/splatReaderBlock.pure.js",
       "export": "SplatReaderBlock",
@@ -9279,6 +9636,13 @@
       "export": "TranslationBlock",
       "runtimeExport": "TranslationBlock",
       "moduleSha256": "338ba639a8d76ef99c898378b19e4db2b704dca32de22bcc67c17a4cc021d8f2"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper.js",
+      "export": "TransmissionHelper",
+      "runtimeExport": "TransmissionHelper",
+      "moduleSha256": "aad579ae5b26e9a56443fc5f2a624afa221ecdf2225ff0a4c86514b33810d63b"
     },
     {
       "package": "@babylonjs/core",

@@ -44803,3 +44803,1524 @@ module SimpleClasses =
 
     [<Import("GLTFLoader", "@babylonjs/loaders/glTF/1.0/glTFLoader.js")>]
     let GLTF1Loader: GLTF1LoaderStatic = jsNative
+
+    /// Exact string literal type for "gltf".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral0fd5280528a0 =
+        | [<CompiledName("gltf")>] Value
+
+    /// Exact string literal type for "model/gltf+json".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral43080a00fdad =
+        | [<CompiledName("model/gltf+json")>] Value
+
+    /// Exact string literal type for ".obj".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral7010dfd29260 =
+        | [<CompiledName(".obj")>] Value
+
+    /// Exact string literal type for "obj".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral772a5fb04f9b =
+        | [<CompiledName("obj")>] Value
+
+    /// Exact string literal type for "model/gltf-binary".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral9cb4584618a5 =
+        | [<CompiledName("model/gltf-binary")>] Value
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type PartialReadonlya2ac93741b62Object =
+        abstract ``loopMode``: float option with get
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type PartialReadonly67071e43be9fObject =
+        abstract ``optimizeWithUV``: bool option with get
+        abstract ``UVScaling``: Vector2 option with get
+        abstract ``invertY``: bool option with get
+        abstract ``invertTextureY``: bool option with get
+        abstract ``importVertexColors``: bool option with get
+        abstract ``computeNormals``: bool option with get
+        abstract ``optimizeNormals``: bool option with get
+        abstract ``skipMaterials``: bool option with get
+        abstract ``materialLoadingFailsSilently``: bool option with get
+        abstract ``useLegacyBehavior``: bool option with get
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type PartialReadonly73d7a87a44d1Object =
+        abstract ``keepInRam``: bool option with get
+        abstract ``flipY``: bool option with get
+        abstract ``deflateURL``: string option with get
+        abstract ``fflate``: obj option with get
+        abstract ``disableAutoCameraLimits``: bool option with get
+        abstract ``gaussianSplattingMesh``: GaussianSplattingMesh option with get
+        abstract ``needsRotationScaleTextures``: bool option with get
+        abstract ``useSogTextures``: bool option with get
+        abstract ``spzLibraryUrl``: string option with get
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type GLTFLoaderExtensionOptionBag =
+        inherit BabylonjsBindings.SimpleInterfaces.BrowserRecord<string, obj>
+        abstract ``enabled``: bool option with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type PartialReadonlyGLTFLoaderOptionsObject =
+        abstract ``alwaysComputeBoundingBox``: bool option with get
+        abstract ``alwaysComputeSkeletonRootNode``: bool option with get
+        abstract ``animationStartMode``: BabylonjsBindings.Enums.GLTFLoaderAnimationStartMode option with get
+        abstract ``compileMaterials``: bool option with get
+        abstract ``compileShadowGenerators``: bool option with get
+        abstract ``coordinateSystemMode``: BabylonjsBindings.Enums.GLTFLoaderCoordinateSystemMode option with get
+        abstract ``createInstances``: bool option with get
+        abstract ``loadAllMaterials``: bool option with get
+        abstract ``loadMorphTargets``: bool option with get
+        abstract ``useMaxMorphTargetInfluencers``: bool option with get
+        abstract ``loadNodeAnimations``: bool option with get
+        abstract ``loadOnlyMaterials``: bool option with get
+        abstract ``loadSkins``: bool option with get
+        abstract ``skipMaterials``: bool option with get
+        abstract ``targetFps``: float option with get
+        abstract ``transparencyAsCoverage``: bool option with get
+        abstract ``useClipPlane``: bool option with get
+        abstract ``useGltfTextureNames``: bool option with get
+        abstract ``useRangeRequests``: bool option with get
+        abstract ``useSRGBBuffers``: bool option with get
+        abstract ``validate``: bool option with get
+        abstract ``useOpenPBR``: bool option with get
+        abstract ``dontUseTransmissionHelper``: bool option with get
+        abstract ``onParsed``: System.Action<BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData> option with get
+        abstract ``capturePerformanceCounters``: bool option with get
+        abstract ``customRootNode``: TransformNode option with get
+        abstract ``extensionOptions``: BabylonjsBindings.SimpleInterfaces.BrowserRecord<string, GLTFLoaderExtensionOptionBag option> option with get
+        abstract ``loggingEnabled``: bool option with get
+        abstract ``onCameraLoaded``: System.Action<Camera> option with get
+        abstract ``onMaterialLoaded``: System.Action<Material> option with get
+        abstract ``onMeshLoaded``: System.Action<AbstractMesh> option with get
+        abstract ``onSkinLoaded``: System.Action<TransformNode, TransformNode> option with get
+        abstract ``onTextureLoaded``: System.Action<BaseTexture> option with get
+        abstract ``onValidated``: System.Action<BabylonjsBindings.SimpleInterfaces.GLTF2IGLTFValidationResults> option with get
+        abstract ``preprocessUrlAsync``: System.Func<string, JS.Promise<string>> option with get
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObjecte65bb8a0318fObject =
+        abstract ``node``: TransformNode with get, set
+        abstract ``skinnedNode``: TransformNode with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type Readonly81a5386a2417Object =
+        abstract ``materialClass``: MaterialStatic option with get, set
+        abstract ``adapterClass``: TypedConstructor6f9103ad3aa4 option with get, set
+
+    /// Exact typed JavaScript constructor object used by a Babylon signature.
+    [<AllowNullLiteral>]
+    type TypedConstructor6f9103ad3aa4 =
+        [<EmitConstructor>] abstract Create: ``material``: Material -> BabylonjsBindings.SimpleInterfaces.IMaterialLoadingAdapter
+
+    /// @babylonjs/loaders/glTF/glTFValidation
+    [<AllowNullLiteral>]
+    type GLTFValidation =
+        interface end
+
+    [<AllowNullLiteral>]
+    type GLTFValidationStatic =
+        inherit Constructor<GLTFValidation>
+        [<EmitConstructor>] abstract Create: unit -> GLTFValidation
+        abstract ``Configuration``: BabylonjsBindings.SimpleInterfaces.IGLTFValidationConfiguration with get, set
+        abstract ``_LastResults``: BabylonjsBindings.SimpleInterfaces.GLTF2IGLTFValidationResults option with get, set
+        abstract ``ValidateAsync`` : ``data``: U2<string, JS.Uint8Array> * ``rootUrl``: string * ``fileName``: string * ``getExternalResource``: System.Func<string, JS.Promise<JS.Uint8Array>> -> JS.Promise<BabylonjsBindings.SimpleInterfaces.GLTF2IGLTFValidationResults>
+
+    [<Import("GLTFValidation", "@babylonjs/loaders/glTF/glTFValidation.js")>]
+    let GLTFValidation: GLTFValidationStatic = jsNative
+
+    /// Inline object shape used by BVHFileLoader.
+    [<AllowNullLiteral>]
+    type BVHFileLoaderProperty2ObjectProperty1Object =
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserFalse with get
+
+    /// Inline object shape used by BVHFileLoader.
+    [<AllowNullLiteral>]
+    type BVHFileLoaderProperty2Object =
+        abstract ``.bvh``: BVHFileLoaderProperty2ObjectProperty1Object with get
+
+    /// @babylonjs/loaders/BVH/bvhFileLoader.pure
+    [<AllowNullLiteral>]
+    type BVHFileLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory
+        abstract ``name``: StringLiteral793acfa0f18b with get
+        abstract ``extensions``: BVHFileLoaderProperty2Object with get
+        abstract ``createPlugin`` : ``options``: BabylonjsBindings.SimpleInterfaces.SceneLoaderPluginOptions -> BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        abstract ``canDirectLoad`` : ``data``: string -> bool
+        abstract ``isBvhHeader`` : ``text``: string -> bool
+        abstract ``isNotBvhHeader`` : ``text``: string -> bool
+        abstract ``importMeshAsync`` : ``_meshesNames``: U2<string, System.Collections.Generic.IReadOnlyList<string>> option * ``scene``: Scene * ``data``: obj -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+        abstract ``loadAsync`` : ``scene``: Scene * ``data``: obj -> JS.Promise<unit>
+        abstract ``loadAssetContainerAsync`` : ``scene``: Scene * ``data``: obj -> JS.Promise<AssetContainer>
+
+    [<AllowNullLiteral>]
+    type BVHFileLoaderStatic =
+        inherit Constructor<BVHFileLoader>
+        [<EmitConstructor>] abstract Create: ?``loadingOptions``: PartialReadonlya2ac93741b62Object -> BVHFileLoader
+
+    [<Import("BVHFileLoader", "@babylonjs/loaders/BVH/bvhFileLoader.pure.js")>]
+    let BVHFileLoader: BVHFileLoaderStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_area.pure
+    [<AllowNullLiteral>]
+    type EXT_lights_area =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``onLoading`` : unit -> unit
+        abstract ``loadNodeAsync`` : ``context``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``assign``: System.Action<TransformNode> -> JS.Promise<TransformNode> option
+
+    [<AllowNullLiteral>]
+    type EXT_lights_areaStatic =
+        inherit Constructor<EXT_lights_area>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> EXT_lights_area
+
+    [<Import("EXT_lights_area", "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_area.pure.js")>]
+    let EXT_lights_area: EXT_lights_areaStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.pure
+    [<AllowNullLiteral>]
+    type EXT_lights_ies =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``onLoading`` : unit -> unit
+        abstract ``loadNodeAsync`` : ``context``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``assign``: System.Action<TransformNode> -> JS.Promise<TransformNode> option
+
+    [<AllowNullLiteral>]
+    type EXT_lights_iesStatic =
+        inherit Constructor<EXT_lights_ies>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> EXT_lights_ies
+
+    [<Import("EXT_lights_ies", "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.pure.js")>]
+    let EXT_lights_ies: EXT_lights_iesStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_image_based.pure
+    [<AllowNullLiteral>]
+    type EXT_lights_image_based =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``onLoading`` : unit -> unit
+        abstract ``loadSceneAsync`` : ``context``: string * ``scene``: BabylonjsBindings.SimpleInterfaces.IScene -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type EXT_lights_image_basedStatic =
+        inherit Constructor<EXT_lights_image_based>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> EXT_lights_image_based
+
+    [<Import("EXT_lights_image_based", "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_image_based.pure.js")>]
+    let EXT_lights_image_based: EXT_lights_image_basedStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.pure
+    [<AllowNullLiteral>]
+    type EXT_mesh_gpu_instancing =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadNodeAsync`` : ``context``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``assign``: System.Action<TransformNode> -> JS.Promise<TransformNode> option
+
+    [<AllowNullLiteral>]
+    type EXT_mesh_gpu_instancingStatic =
+        inherit Constructor<EXT_mesh_gpu_instancing>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> EXT_mesh_gpu_instancing
+
+    [<Import("EXT_mesh_gpu_instancing", "@babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.pure.js")>]
+    let EXT_mesh_gpu_instancing: EXT_mesh_gpu_instancingStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.pure
+    [<AllowNullLiteral>]
+    type EXT_meshopt_compression =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadBufferViewAsync`` : ``context``: string * ``bufferView``: BabylonjsBindings.SimpleInterfaces.IBufferView -> JS.Promise<JS.ArrayBufferView> option
+
+    [<AllowNullLiteral>]
+    type EXT_meshopt_compressionStatic =
+        inherit Constructor<EXT_meshopt_compression>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> EXT_meshopt_compression
+
+    [<Import("EXT_meshopt_compression", "@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.pure.js")>]
+    let EXT_meshopt_compression: EXT_meshopt_compressionStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.pure
+    [<AllowNullLiteral>]
+    type EXT_texture_avif =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``_loadTextureAsync`` : ``context``: string * ``texture``: BabylonjsBindings.SimpleInterfaces.ITexture * ``assign``: System.Action<BaseTexture> -> JS.Promise<BaseTexture> option
+
+    [<AllowNullLiteral>]
+    type EXT_texture_avifStatic =
+        inherit Constructor<EXT_texture_avif>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> EXT_texture_avif
+
+    [<Import("EXT_texture_avif", "@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.pure.js")>]
+    let EXT_texture_avif: EXT_texture_avifStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.pure
+    [<AllowNullLiteral>]
+    type EXT_texture_webp =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``_loadTextureAsync`` : ``context``: string * ``texture``: BabylonjsBindings.SimpleInterfaces.ITexture * ``assign``: System.Action<BaseTexture> -> JS.Promise<BaseTexture> option
+
+    [<AllowNullLiteral>]
+    type EXT_texture_webpStatic =
+        inherit Constructor<EXT_texture_webp>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> EXT_texture_webp
+
+    [<Import("EXT_texture_webp", "@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.pure.js")>]
+    let EXT_texture_webp: EXT_texture_webpStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.pure
+    [<AllowNullLiteral>]
+    type ExtrasAsMetadata =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadNodeAsync`` : ``context``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``assign``: System.Action<TransformNode> -> JS.Promise<TransformNode> option
+        abstract ``loadCameraAsync`` : ``context``: string * ``camera``: BabylonjsBindings.SimpleInterfaces.ICamera * ``assign``: System.Action<Camera> -> JS.Promise<Camera> option
+        abstract ``createMaterial`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonDrawMode``: float -> Material option
+        abstract ``loadAnimationAsync`` : ``context``: string * ``animation``: BabylonjsBindings.SimpleInterfaces.IAnimation -> JS.Promise<AnimationGroup> option
+
+    [<AllowNullLiteral>]
+    type ExtrasAsMetadataStatic =
+        inherit Constructor<ExtrasAsMetadata>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> ExtrasAsMetadata
+
+    [<Import("ExtrasAsMetadata", "@babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.pure.js")>]
+    let ExtrasAsMetadata: ExtrasAsMetadataStatic = jsNative
+
+    /// Inline object shape used by FBXFileLoader.
+    [<AllowNullLiteral>]
+    type FBXFileLoaderProperty2ObjectProperty1Object =
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
+
+    /// Inline object shape used by FBXFileLoader.
+    [<AllowNullLiteral>]
+    type FBXFileLoaderProperty2Object =
+        abstract ``.fbx``: FBXFileLoaderProperty2ObjectProperty1Object with get
+
+    /// @babylonjs/loaders/FBX/fbxFileLoader.pure
+    [<AllowNullLiteral>]
+    type FBXFileLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory
+        abstract ``name``: StringLiteral932153c31e61 with get
+        abstract ``extensions``: FBXFileLoaderProperty2Object with get
+        abstract ``createPlugin`` : ``options``: BabylonjsBindings.SimpleInterfaces.SceneLoaderPluginOptions -> BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        abstract ``importMeshAsync`` : ``meshesNames``: U2<string, System.Collections.Generic.IReadOnlyList<string>> option * ``scene``: Scene * ``data``: obj * ``rootUrl``: string * ?``_onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``_fileName``: string -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+        abstract ``loadAsync`` : ``scene``: Scene * ``data``: obj * ``rootUrl``: string * ?``_onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``_fileName``: string -> JS.Promise<unit>
+        abstract ``loadAssetContainerAsync`` : ``scene``: Scene * ``data``: obj * ``rootUrl``: string * ?``_onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``_fileName``: string -> JS.Promise<AssetContainer>
+
+    [<AllowNullLiteral>]
+    type FBXFileLoaderStatic =
+        inherit Constructor<FBXFileLoader>
+        [<EmitConstructor>] abstract Create: ?``options``: BabylonjsBindings.SimpleInterfaces.FBXFileLoaderOptions -> FBXFileLoader
+
+    [<Import("FBXFileLoader", "@babylonjs/loaders/FBX/fbxFileLoader.pure.js")>]
+    let FBXFileLoader: FBXFileLoaderStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoader.pure
+    [<AllowNullLiteral>]
+    type GLTF2Loader =
+        inherit BabylonjsBindings.SimpleInterfaces.IGLTFLoader
+        abstract ``_completePromises``: ResizeArray<JS.Promise<obj>> with get
+        abstract ``_assetContainer``: AssetContainer option with get, set
+        abstract ``_babylonLights``: ResizeArray<Light> with get, set
+        abstract ``_disableInstancedMesh``: float with get, set
+        abstract ``_allMaterialsDirtyRequired``: bool with get, set
+        abstract ``_skipStartAnimationStep``: bool with get, set
+        abstract ``_disposed``: bool with get, set
+        abstract ``_pbrMaterialImpls``: JS.Map<string, Readonly81a5386a2417Object> with get
+        abstract ``isMatchingMaterialType`` : ``material``: Material option -> bool
+        abstract ``_getOrCreateMaterialAdapter`` : ``material``: Material -> BabylonjsBindings.SimpleInterfaces.IMaterialLoadingAdapter
+        abstract ``dispose`` : unit -> unit
+        abstract ``importMeshAsync`` : ``meshesNames``: U2<string, System.Collections.Generic.IReadOnlyList<string>> option * ``scene``: Scene * ``container``: AssetContainer option * ``data``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData * ``rootUrl``: string * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``fileName``: string -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+        abstract ``loadAsync`` : ``scene``: Scene * ``data``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData * ``rootUrl``: string * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``fileName``: string -> JS.Promise<unit>
+        abstract ``loadSceneAsync`` : ``context``: string * ``scene``: BabylonjsBindings.SimpleInterfaces.IScene -> JS.Promise<unit>
+        abstract ``loadNodeAsync`` : ``context``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ?``assign``: System.Action<TransformNode> -> JS.Promise<TransformNode>
+        abstract ``_loadMeshPrimitiveAsync`` : ``context``: string * ``name``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``mesh``: BabylonjsBindings.SimpleInterfaces.IMesh * ``primitive``: BabylonjsBindings.SimpleInterfaces.IMeshPrimitive * ``assign``: System.Action<AbstractMesh> -> JS.Promise<AbstractMesh>
+        abstract ``loadCameraAsync`` : ``context``: string * ``camera``: BabylonjsBindings.SimpleInterfaces.ICamera * ?``assign``: System.Action<Camera> -> JS.Promise<Camera>
+        abstract ``loadAnimationAsync`` : ``context``: string * ``animation``: BabylonjsBindings.SimpleInterfaces.IAnimation -> JS.Promise<AnimationGroup>
+        abstract ``_loadAnimationChannelAsync`` : ``context``: string * ``animationContext``: string * ``animation``: BabylonjsBindings.SimpleInterfaces.IAnimation * ``channel``: BabylonjsBindings.SimpleInterfaces.IAnimationChannel * ``onLoad``: System.Action<BabylonjsBindings.SimpleInterfaces.IAnimatable, Animation> -> JS.Promise<unit>
+        abstract ``_loadAnimationChannelFromTargetInfoAsync`` : ``context``: string * ``animationContext``: string * ``animation``: BabylonjsBindings.SimpleInterfaces.IAnimation * ``channel``: BabylonjsBindings.SimpleInterfaces.IAnimationChannel * ``targetInfo``: BabylonjsBindings.SimpleInterfaces.IObjectInfo<ResizeArray<BabylonjsBindings.SimpleInterfaces.IInterpolationPropertyInfo>, obj> * ``onLoad``: System.Action<BabylonjsBindings.SimpleInterfaces.IAnimatable, Animation> -> JS.Promise<unit>
+        abstract ``loadBufferAsync`` : ``context``: string * ``buffer``: BabylonjsBindings.SimpleInterfaces.IBuffer * ``byteOffset``: float * ``byteLength``: float -> JS.Promise<JS.ArrayBufferView>
+        abstract ``loadBufferViewAsync`` : ``context``: string * ``bufferView``: BabylonjsBindings.SimpleInterfaces.IBufferView -> JS.Promise<JS.ArrayBufferView>
+        abstract ``_loadFloatAccessorAsync`` : ``context``: string * ``accessor``: BabylonjsBindings.SimpleInterfaces.IAccessor -> JS.Promise<JS.Float32Array>
+        abstract ``_loadIndicesAccessorAsync`` : ``context``: string * ``accessor``: BabylonjsBindings.SimpleInterfaces.IAccessor -> JS.Promise<BabylonjsBindings.TypeAliases.IndicesArray>
+        abstract ``_loadVertexBufferViewAsync`` : ``bufferView``: BabylonjsBindings.SimpleInterfaces.IBufferView -> JS.Promise<Buffer>
+        abstract ``_loadVertexAccessorAsync`` : ``context``: string * ``accessor``: BabylonjsBindings.SimpleInterfaces.IAccessor * ``kind``: string -> JS.Promise<VertexBuffer>
+        abstract ``_loadMaterialAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMesh``: Mesh option * ``babylonDrawMode``: float * ?``assign``: System.Action<Material> -> JS.Promise<Material>
+        abstract ``createMaterial`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonDrawMode``: float -> Material
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit>
+        abstract ``loadMaterialBasePropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit>
+        abstract ``loadMaterialAlphaProperties`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> unit
+        abstract ``loadTextureInfoAsync`` : ``context``: string * ``textureInfo``: BabylonjsBindings.SimpleInterfaces.ITextureInfo * ?``assign``: System.Action<BaseTexture> -> JS.Promise<BaseTexture>
+        abstract ``_loadTextureAsync`` : ``context``: string * ``texture``: BabylonjsBindings.SimpleInterfaces.ITexture * ?``assign``: System.Action<BaseTexture> -> JS.Promise<BaseTexture>
+        abstract ``_createTextureAsync`` : ``context``: string * ``sampler``: BabylonjsBindings.SimpleInterfaces.ISampler * ``image``: BabylonjsBindings.SimpleInterfaces.GLTFImage * ?``assign``: System.Action<BaseTexture> * ?``textureLoaderOptions``: obj * ?``useSRGBBuffer``: bool -> JS.Promise<BaseTexture>
+        abstract ``loadImageAsync`` : ``context``: string * ``image``: BabylonjsBindings.SimpleInterfaces.GLTFImage -> JS.Promise<JS.ArrayBufferView>
+        abstract ``loadUriAsync`` : ``context``: string * ``property``: BabylonjsBindings.SimpleInterfaces.GLTF2IProperty * ``uri``: string -> JS.Promise<JS.ArrayBufferView>
+        abstract ``isExtensionUsed`` : ``name``: string -> bool
+        abstract ``logOpen`` : ``message``: string -> unit
+        abstract ``logClose`` : unit -> unit
+        abstract ``log`` : ``message``: string -> unit
+        abstract ``startPerformanceCounter`` : ``counterName``: string -> unit
+        abstract ``endPerformanceCounter`` : ``counterName``: string -> unit
+        abstract ``gltf``: BabylonjsBindings.SimpleInterfaces.IGLTF with get
+        abstract ``bin``: BabylonjsBindings.SimpleInterfaces.IDataBuffer option with get
+        abstract ``parent``: GLTFFileLoader with get
+        abstract ``babylonScene``: Scene with get
+        abstract ``rootBabylonMesh``: TransformNode option with get
+        abstract ``rootUrl``: string option with get
+
+    [<AllowNullLiteral>]
+    type GLTF2LoaderStatic =
+        inherit Constructor<GLTF2Loader>
+        [<EmitConstructor>] abstract Create: ``parent``: GLTFFileLoader -> GLTF2Loader
+        abstract ``DefaultSampler``: BabylonjsBindings.SimpleInterfaces.ISampler with get
+        abstract ``RegisterExtension`` : ``name``: string * ``factory``: System.Func<GLTF2Loader, U2<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension, JS.Promise<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension>>> -> unit
+        abstract ``UnregisterExtension`` : ``name``: string -> bool
+        abstract ``AddPointerMetadata`` : ``babylonObject``: BabylonjsBindings.SimpleInterfaces.IWithMetadata * ``pointer``: string -> unit
+        abstract ``_GetDrawMode`` : ``context``: string * ``mode``: float option -> float
+        abstract ``LoadExtensionAsync``<'TExtension, 'TResult> : ``context``: string * ``property``: BabylonjsBindings.SimpleInterfaces.GLTF2IProperty * ``extensionName``: string * ``actionAsync``: System.Func<string, 'TExtension, JS.Promise<'TResult> option> -> JS.Promise<'TResult> option
+        abstract ``LoadExtraAsync``<'TExtra, 'TResult> : ``context``: string * ``property``: BabylonjsBindings.SimpleInterfaces.GLTF2IProperty * ``extensionName``: string * ``actionAsync``: System.Func<string, 'TExtra, JS.Promise<'TResult> option> -> JS.Promise<'TResult> option
+
+    [<Import("GLTFLoader", "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js")>]
+    let GLTF2Loader: GLTF2LoaderStatic = jsNative
+
+    /// Inline object shape used by GLTFFileLoader.
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderProperty48ObjectProperty1Object =
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserFalse with get
+        abstract ``mimeType``: StringLiteral43080a00fdad with get
+
+    /// Inline object shape used by GLTFFileLoader.
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderProperty48ObjectProperty2Object =
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
+        abstract ``mimeType``: StringLiteral9cb4584618a5 with get
+
+    /// Inline object shape used by GLTFFileLoader.
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderProperty48Object =
+        abstract ``.gltf``: GLTFFileLoaderProperty48ObjectProperty1Object with get
+        abstract ``.glb``: GLTFFileLoaderProperty48ObjectProperty2Object with get
+
+    /// Function-valued GLTFFileLoader.rewriteRootURL property.
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderRewriteRootURLCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``rootUrl``: string * ?``responseURL``: string -> string
+
+    /// Function-valued GLTFFileLoader._log property.
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderLogCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``message``: string -> unit
+
+    /// Function-valued GLTFFileLoader._startPerformanceCounter property.
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderStartPerformanceCounterCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``counterName``: string -> unit
+
+    /// Function-valued GLTFFileLoader._endPerformanceCounter property.
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderEndPerformanceCounterCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``counterName``: string -> unit
+
+    /// Function-valued GLTFFileLoader._CreateGLTF1Loader property.
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderCreateGLTF1LoaderCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``parent``: GLTFFileLoader -> BabylonjsBindings.SimpleInterfaces.IGLTFLoader
+
+    /// Function-valued GLTFFileLoader._CreateGLTF2Loader property.
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderCreateGLTF2LoaderCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``parent``: GLTFFileLoader -> BabylonjsBindings.SimpleInterfaces.IGLTFLoader
+
+    /// @babylonjs/loaders/glTF/glTFFileLoader.pure
+    [<AllowNullLiteral>]
+    type GLTFFileLoader =
+        inherit GLTFLoaderOptions
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory
+        abstract ``onParsedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData> with get, set
+        abstract ``onMeshLoadedObservable``: Observable<AbstractMesh> with get
+        abstract ``onSkinLoadedObservable``: Observable<InlineObjecte65bb8a0318fObject> with get
+        abstract ``onTextureLoadedObservable``: Observable<BaseTexture> with get
+        abstract ``onMaterialLoadedObservable``: Observable<Material> with get
+        abstract ``onCameraLoadedObservable``: Observable<Camera> with get
+        abstract ``onCompleteObservable``: Observable<unit> with get
+        abstract ``onErrorObservable``: Observable<obj> with get
+        abstract ``onDisposeObservable``: Observable<unit> with get
+        abstract ``onExtensionLoadedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.GLTFFileLoaderExtension> with get
+        abstract ``onValidatedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.GLTF2IGLTFValidationResults> with get
+        abstract ``name``: StringLiteral0fd5280528a0 with get
+        abstract ``extensions``: GLTFFileLoaderProperty48Object with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadFile`` : ``scene``: Scene * ``fileOrUrl``: U3<Browser.Types.File, string, JS.ArrayBufferView> * ``rootUrl``: string * ``onSuccess``: System.Action<obj, string option> * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``useArrayBuffer``: bool * ?``onError``: System.Action<WebRequest option, LoadFileError option> * ?``name``: string -> BabylonjsBindings.SimpleInterfaces.IFileRequest option
+        abstract ``importMeshAsync`` : ``meshesNames``: U2<string, System.Collections.Generic.IReadOnlyList<string>> option * ``scene``: Scene * ``data``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData * ``rootUrl``: string * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``fileName``: string -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+        abstract ``loadAsync`` : ``scene``: Scene * ``data``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData * ``rootUrl``: string * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``fileName``: string -> JS.Promise<unit>
+        abstract ``loadAssetContainerAsync`` : ``scene``: Scene * ``data``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData * ``rootUrl``: string * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``fileName``: string -> JS.Promise<AssetContainer>
+        abstract ``canDirectLoad`` : ``data``: string -> bool
+        abstract ``directLoad`` : ``scene``: Scene * ``data``: string -> JS.Promise<BabylonjsBindings.SimpleInterfaces.JavaScriptObject>
+        abstract ``rewriteRootURL``: GLTFFileLoaderRewriteRootURLCallback option with get, set
+        abstract ``createPlugin`` : ``options``: BabylonjsBindings.SimpleInterfaces.SceneLoaderPluginOptions -> BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        abstract ``onLoaderStateChangedObservable``: Observable<BabylonjsBindings.Enums.GLTFLoaderState option> with get, set
+        abstract ``whenCompleteAsync`` : unit -> JS.Promise<unit>
+        abstract ``_setState`` : ``state``: BabylonjsBindings.Enums.GLTFLoaderState -> unit
+        abstract ``_loadFile`` : ``scene``: Scene * ``fileOrUrl``: U2<Browser.Types.File, string> * ``onSuccess``: System.Action<U2<string, JS.ArrayBuffer>> * ?``useArrayBuffer``: bool * ?``onError``: System.Action<WebRequest option> * ?``onOpened``: System.Action<WebRequest> -> BabylonjsBindings.SimpleInterfaces.IFileRequest
+        abstract ``_log``: GLTFFileLoaderLogCallback with get, set
+        abstract ``_logOpen`` : ``message``: string -> unit
+        abstract ``_logClose`` : unit -> unit
+        abstract ``_startPerformanceCounter``: GLTFFileLoaderStartPerformanceCounterCallback with get, set
+        abstract ``_endPerformanceCounter``: GLTFFileLoaderEndPerformanceCounterCallback with get, set
+        abstract ``onParsed``: System.Action<BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData> option with set
+        abstract ``onMeshLoaded``: System.Action<AbstractMesh> option with set
+        abstract ``onSkinLoaded``: System.Action<TransformNode, TransformNode> option with set
+        abstract ``onTextureLoaded``: System.Action<BaseTexture> option with set
+        abstract ``onMaterialLoaded``: System.Action<Material> option with set
+        abstract ``onCameraLoaded``: System.Action<Camera> option with set
+        abstract ``onComplete``: System.Action with set
+        abstract ``onError``: System.Action<obj> with set
+        abstract ``onDispose``: System.Action with set
+        abstract ``onExtensionLoaded``: System.Action<BabylonjsBindings.SimpleInterfaces.GLTFFileLoaderExtension> with set
+        abstract ``loggingEnabled``: bool with get, set
+        abstract ``capturePerformanceCounters``: bool with get, set
+        abstract ``onValidated``: System.Action<BabylonjsBindings.SimpleInterfaces.GLTF2IGLTFValidationResults> with set
+        abstract ``loaderState``: BabylonjsBindings.Enums.GLTFLoaderState option with get
+
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderStatic =
+        inherit GLTFLoaderOptionsStatic
+        inherit Constructor<GLTFFileLoader>
+        [<EmitConstructor>] abstract Create: ?``options``: PartialReadonlyGLTFLoaderOptionsObject -> GLTFFileLoader
+        abstract ``_CreateGLTF1Loader``: GLTFFileLoaderCreateGLTF1LoaderCallback with get, set
+        abstract ``_CreateGLTF2Loader``: GLTFFileLoaderCreateGLTF2LoaderCallback with get, set
+        abstract ``IncrementalLoading``: bool with get, set
+        abstract ``HomogeneousCoordinates``: bool with get, set
+
+    [<Import("GLTFFileLoader", "@babylonjs/loaders/glTF/glTFFileLoader.pure.js")>]
+    let GLTFFileLoader: GLTFFileLoaderStatic = jsNative
+
+    /// Function-valued GLTFLoaderOptions.onParsed property.
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptionsOnParsedCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``loaderData``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData -> unit
+
+    /// Function-valued GLTFLoaderOptions.onCameraLoaded property.
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptionsOnCameraLoadedCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``camera``: Camera -> unit
+
+    /// Function-valued GLTFLoaderOptions.onMaterialLoaded property.
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptionsOnMaterialLoadedCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``material``: Material -> unit
+
+    /// Function-valued GLTFLoaderOptions.onMeshLoaded property.
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptionsOnMeshLoadedCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``mesh``: AbstractMesh -> unit
+
+    /// Function-valued GLTFLoaderOptions.onSkinLoaded property.
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptionsOnSkinLoadedCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``node``: TransformNode * ``skinnedNode``: TransformNode -> unit
+
+    /// Function-valued GLTFLoaderOptions.onTextureLoaded property.
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptionsOnTextureLoadedCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BaseTexture -> unit
+
+    /// Function-valued GLTFLoaderOptions.onValidated property.
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptionsOnValidatedCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``results``: BabylonjsBindings.SimpleInterfaces.GLTF2IGLTFValidationResults -> unit
+
+    /// Function-valued GLTFLoaderOptions.preprocessUrlAsync property.
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptionsPreprocessUrlAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``url``: string -> JS.Promise<string>
+
+    /// @babylonjs/loaders/glTF/glTFFileLoader.pure
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptions =
+        inherit GLTFLoaderBaseOptions
+        abstract ``onParsed``: GLTFLoaderOptionsOnParsedCallback option with get, set
+        abstract ``capturePerformanceCounters``: bool with get, set
+        abstract ``customRootNode``: TransformNode option with get, set
+        abstract ``extensionOptions``: BabylonjsBindings.SimpleInterfaces.BrowserRecord<string, GLTFLoaderExtensionOptionBag option> with get, set
+        abstract ``loggingEnabled``: bool with get, set
+        abstract ``onCameraLoaded``: GLTFLoaderOptionsOnCameraLoadedCallback option with get, set
+        abstract ``onMaterialLoaded``: GLTFLoaderOptionsOnMaterialLoadedCallback option with get, set
+        abstract ``onMeshLoaded``: GLTFLoaderOptionsOnMeshLoadedCallback option with get, set
+        abstract ``onSkinLoaded``: GLTFLoaderOptionsOnSkinLoadedCallback option with get, set
+        abstract ``onTextureLoaded``: GLTFLoaderOptionsOnTextureLoadedCallback option with get, set
+        abstract ``onValidated``: GLTFLoaderOptionsOnValidatedCallback option with get, set
+        abstract ``preprocessUrlAsync``: GLTFLoaderOptionsPreprocessUrlAsyncCallback with get, set
+
+    [<AllowNullLiteral>]
+    type GLTFLoaderOptionsStatic =
+        inherit GLTFLoaderBaseOptionsStatic
+        inherit Constructor<GLTFLoaderOptions>
+        [<EmitConstructor>] abstract Create: unit -> GLTFLoaderOptions
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.pure
+    [<AllowNullLiteral>]
+    type KHR_animation_pointer =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``_loadAnimationChannelAsync`` : ``context``: string * ``animationContext``: string * ``animation``: BabylonjsBindings.SimpleInterfaces.IAnimation * ``channel``: BabylonjsBindings.SimpleInterfaces.IAnimationChannel * ``onLoad``: System.Action<BabylonjsBindings.SimpleInterfaces.IAnimatable, Animation> -> JS.Promise<unit> option
+        abstract ``enabled``: bool with get
+
+    [<AllowNullLiteral>]
+    type KHR_animation_pointerStatic =
+        inherit Constructor<KHR_animation_pointer>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_animation_pointer
+
+    [<Import("KHR_animation_pointer", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.pure.js")>]
+    let KHR_animation_pointer: KHR_animation_pointerStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.pure
+    [<AllowNullLiteral>]
+    type KHR_draco_mesh_compression =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``dracoDecoder``: DracoDecoder option with get, set
+        abstract ``enabled``: bool with get, set
+        abstract ``useNormalizedFlagFromAccessor``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``_loadVertexDataAsync`` : ``context``: string * ``primitive``: BabylonjsBindings.SimpleInterfaces.IMeshPrimitive * ``babylonMesh``: Mesh -> JS.Promise<Geometry> option
+
+    [<AllowNullLiteral>]
+    type KHR_draco_mesh_compressionStatic =
+        inherit Constructor<KHR_draco_mesh_compression>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_draco_mesh_compression
+
+    [<Import("KHR_draco_mesh_compression", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.pure.js")>]
+    let KHR_draco_mesh_compression: KHR_draco_mesh_compressionStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_gaussian_splatting.pure
+    [<AllowNullLiteral>]
+    type KHR_gaussian_splatting =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``_loadMeshPrimitiveAsync`` : ``context``: string * ``name``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``mesh``: BabylonjsBindings.SimpleInterfaces.IMesh * ``primitive``: BabylonjsBindings.SimpleInterfaces.IMeshPrimitive * ``assign``: System.Action<AbstractMesh> -> JS.Promise<AbstractMesh> option
+
+    [<AllowNullLiteral>]
+    type KHR_gaussian_splattingStatic =
+        inherit Constructor<KHR_gaussian_splatting>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_gaussian_splatting
+
+    [<Import("KHR_gaussian_splatting", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_gaussian_splatting.pure.js")>]
+    let KHR_gaussian_splatting: KHR_gaussian_splattingStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure
+    [<AllowNullLiteral>]
+    type KHR_interactivity =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``onReady`` : unit -> JS.Promise<unit>
+
+    [<AllowNullLiteral>]
+    type KHR_interactivityStatic =
+        inherit Constructor<KHR_interactivity>
+        [<EmitConstructor>] abstract Create: ``_loader``: GLTF2Loader -> KHR_interactivity
+
+    [<Import("KHR_interactivity", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure.js")>]
+    let KHR_interactivity: KHR_interactivityStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_lights_punctual.pure
+    [<AllowNullLiteral>]
+    type KHR_lights =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``onLoading`` : unit -> unit
+        abstract ``loadNodeAsync`` : ``context``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``assign``: System.Action<TransformNode> -> JS.Promise<TransformNode> option
+
+    [<AllowNullLiteral>]
+    type KHR_lightsStatic =
+        inherit Constructor<KHR_lights>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_lights
+
+    [<Import("KHR_lights", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_lights_punctual.pure.js")>]
+    let KHR_lights: KHR_lightsStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_anisotropy =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_anisotropyStatic =
+        inherit Constructor<KHR_materials_anisotropy>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_anisotropy
+
+    [<Import("KHR_materials_anisotropy", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.pure.js")>]
+    let KHR_materials_anisotropy: KHR_materials_anisotropyStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_clearcoat =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_clearcoatStatic =
+        inherit Constructor<KHR_materials_clearcoat>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_clearcoat
+
+    [<Import("KHR_materials_clearcoat", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.pure.js")>]
+    let KHR_materials_clearcoat: KHR_materials_clearcoatStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_coat =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_coatStatic =
+        inherit Constructor<KHR_materials_coat>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_coat
+
+    [<Import("KHR_materials_coat", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.pure.js")>]
+    let KHR_materials_coat: KHR_materials_coatStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_diffuse_roughness =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_diffuse_roughnessStatic =
+        inherit Constructor<KHR_materials_diffuse_roughness>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_diffuse_roughness
+
+    [<Import("KHR_materials_diffuse_roughness", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.pure.js")>]
+    let KHR_materials_diffuse_roughness: KHR_materials_diffuse_roughnessStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_diffuse_transmission =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_diffuse_transmissionStatic =
+        inherit Constructor<KHR_materials_diffuse_transmission>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_diffuse_transmission
+
+    [<Import("KHR_materials_diffuse_transmission", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.pure.js")>]
+    let KHR_materials_diffuse_transmission: KHR_materials_diffuse_transmissionStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_dispersion =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_dispersionStatic =
+        inherit Constructor<KHR_materials_dispersion>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_dispersion
+
+    [<Import("KHR_materials_dispersion", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.pure.js")>]
+    let KHR_materials_dispersion: KHR_materials_dispersionStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_emissive_strength =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_emissive_strengthStatic =
+        inherit Constructor<KHR_materials_emissive_strength>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_emissive_strength
+
+    [<Import("KHR_materials_emissive_strength", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.pure.js")>]
+    let KHR_materials_emissive_strength: KHR_materials_emissive_strengthStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_fuzz =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_fuzzStatic =
+        inherit Constructor<KHR_materials_fuzz>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_fuzz
+
+    [<Import("KHR_materials_fuzz", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.pure.js")>]
+    let KHR_materials_fuzz: KHR_materials_fuzzStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_ior =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_iorStatic =
+        inherit Constructor<KHR_materials_ior>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_ior
+
+    [<Import("KHR_materials_ior", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.pure.js")>]
+    let KHR_materials_ior: KHR_materials_iorStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_iridescence =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_iridescenceStatic =
+        inherit Constructor<KHR_materials_iridescence>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_iridescence
+
+    [<Import("KHR_materials_iridescence", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.pure.js")>]
+    let KHR_materials_iridescence: KHR_materials_iridescenceStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_pbrSpecularGlossiness =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_pbrSpecularGlossinessStatic =
+        inherit Constructor<KHR_materials_pbrSpecularGlossiness>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_pbrSpecularGlossiness
+
+    [<Import("KHR_materials_pbrSpecularGlossiness", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.pure.js")>]
+    let KHR_materials_pbrSpecularGlossiness: KHR_materials_pbrSpecularGlossinessStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_sheen =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_sheenStatic =
+        inherit Constructor<KHR_materials_sheen>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_sheen
+
+    [<Import("KHR_materials_sheen", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.pure.js")>]
+    let KHR_materials_sheen: KHR_materials_sheenStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_specular =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_specularStatic =
+        inherit Constructor<KHR_materials_specular>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_specular
+
+    [<Import("KHR_materials_specular", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.pure.js")>]
+    let KHR_materials_specular: KHR_materials_specularStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_transmission =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_transmissionStatic =
+        inherit Constructor<KHR_materials_transmission>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_transmission
+
+    [<Import("KHR_materials_transmission", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.pure.js")>]
+    let KHR_materials_transmission: KHR_materials_transmissionStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_unlit =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_unlitStatic =
+        inherit Constructor<KHR_materials_unlit>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_unlit
+
+    [<Import("KHR_materials_unlit", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.pure.js")>]
+    let KHR_materials_unlit: KHR_materials_unlitStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_variants =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``getAvailableVariants`` : ``rootNode``: TransformNode -> ResizeArray<string>
+        abstract ``selectVariant`` : ``rootNode``: TransformNode * ``variantName``: U2<string, ResizeArray<string>> -> unit
+        abstract ``reset`` : ``rootNode``: TransformNode -> unit
+        abstract ``getLastSelectedVariant`` : ``rootNode``: TransformNode -> U2<string, ResizeArray<string>> option
+        abstract ``onLoading`` : unit -> unit
+        abstract ``onReady`` : unit -> unit
+        abstract ``_loadMeshPrimitiveAsync`` : ``context``: string * ``name``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``mesh``: BabylonjsBindings.SimpleInterfaces.IMesh * ``primitive``: BabylonjsBindings.SimpleInterfaces.IMeshPrimitive * ``assign``: System.Action<AbstractMesh> -> JS.Promise<AbstractMesh> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_variantsStatic =
+        inherit Constructor<KHR_materials_variants>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_variants
+        abstract ``GetAvailableVariants`` : ``rootNode``: TransformNode -> ResizeArray<string>
+        abstract ``SelectVariant`` : ``rootNode``: TransformNode * ``variantName``: U2<string, ResizeArray<string>> -> unit
+        abstract ``Reset`` : ``rootNode``: TransformNode -> unit
+        abstract ``GetLastSelectedVariant`` : ``rootNode``: TransformNode -> U2<string, ResizeArray<string>> option
+
+    [<Import("KHR_materials_variants", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure.js")>]
+    let KHR_materials_variants: KHR_materials_variantsStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_volume =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_volumeStatic =
+        inherit Constructor<KHR_materials_volume>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_volume
+
+    [<Import("KHR_materials_volume", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.pure.js")>]
+    let KHR_materials_volume: KHR_materials_volumeStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.pure
+    [<AllowNullLiteral>]
+    type KHR_materials_volume_scatter =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type KHR_materials_volume_scatterStatic =
+        inherit Constructor<KHR_materials_volume_scatter>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_materials_volume_scatter
+
+    [<Import("KHR_materials_volume_scatter", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.pure.js")>]
+    let KHR_materials_volume_scatter: KHR_materials_volume_scatterStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.pure
+    [<AllowNullLiteral>]
+    type KHR_mesh_quantization =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type KHR_mesh_quantizationStatic =
+        inherit Constructor<KHR_mesh_quantization>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_mesh_quantization
+
+    [<Import("KHR_mesh_quantization", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.pure.js")>]
+    let KHR_mesh_quantization: KHR_mesh_quantizationStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.pure
+    [<AllowNullLiteral>]
+    type KHR_node_hoverability =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``onReady`` : unit -> JS.Promise<unit>
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type KHR_node_hoverabilityStatic =
+        inherit Constructor<KHR_node_hoverability>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_node_hoverability
+
+    [<Import("KHR_node_hoverability", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.pure.js")>]
+    let KHR_node_hoverability: KHR_node_hoverabilityStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.pure
+    [<AllowNullLiteral>]
+    type KHR_node_selectability =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``onReady`` : unit -> JS.Promise<unit>
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type KHR_node_selectabilityStatic =
+        inherit Constructor<KHR_node_selectability>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_node_selectability
+
+    [<Import("KHR_node_selectability", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.pure.js")>]
+    let KHR_node_selectability: KHR_node_selectabilityStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.pure
+    [<AllowNullLiteral>]
+    type KHR_node_visibility =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``onReady`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type KHR_node_visibilityStatic =
+        inherit Constructor<KHR_node_visibility>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_node_visibility
+
+    [<Import("KHR_node_visibility", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.pure.js")>]
+    let KHR_node_visibility: KHR_node_visibilityStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.pure
+    [<AllowNullLiteral>]
+    type KHR_texture_basisu =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``_loadTextureAsync`` : ``context``: string * ``texture``: BabylonjsBindings.SimpleInterfaces.ITexture * ``assign``: System.Action<BaseTexture> -> JS.Promise<BaseTexture> option
+
+    [<AllowNullLiteral>]
+    type KHR_texture_basisuStatic =
+        inherit Constructor<KHR_texture_basisu>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_texture_basisu
+
+    [<Import("KHR_texture_basisu", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.pure.js")>]
+    let KHR_texture_basisu: KHR_texture_basisuStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.pure
+    [<AllowNullLiteral>]
+    type KHR_texture_transform =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadTextureInfoAsync`` : ``context``: string * ``textureInfo``: BabylonjsBindings.SimpleInterfaces.ITextureInfo * ``assign``: System.Action<BaseTexture> -> JS.Promise<BaseTexture> option
+
+    [<AllowNullLiteral>]
+    type KHR_texture_transformStatic =
+        inherit Constructor<KHR_texture_transform>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_texture_transform
+
+    [<Import("KHR_texture_transform", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.pure.js")>]
+    let KHR_texture_transform: KHR_texture_transformStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.pure
+    [<AllowNullLiteral>]
+    type KHR_xmp_json_ld =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``onLoading`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type KHR_xmp_json_ldStatic =
+        inherit Constructor<KHR_xmp_json_ld>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> KHR_xmp_json_ld
+
+    [<Import("KHR_xmp_json_ld", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.pure.js")>]
+    let KHR_xmp_json_ld: KHR_xmp_json_ldStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/MSFT_audio_emitter.pure
+    [<AllowNullLiteral>]
+    type MSFT_audio_emitter =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``onLoading`` : unit -> unit
+        abstract ``loadSceneAsync`` : ``context``: string * ``scene``: BabylonjsBindings.SimpleInterfaces.IScene -> JS.Promise<unit> option
+        abstract ``loadNodeAsync`` : ``context``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``assign``: System.Action<TransformNode> -> JS.Promise<TransformNode> option
+        abstract ``loadAnimationAsync`` : ``context``: string * ``animation``: BabylonjsBindings.SimpleInterfaces.IAnimation -> JS.Promise<AnimationGroup> option
+
+    [<AllowNullLiteral>]
+    type MSFT_audio_emitterStatic =
+        inherit Constructor<MSFT_audio_emitter>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> MSFT_audio_emitter
+
+    [<Import("MSFT_audio_emitter", "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_audio_emitter.pure.js")>]
+    let MSFT_audio_emitter: MSFT_audio_emitterStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.pure
+    [<AllowNullLiteral>]
+    type MSFT_lod =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float with get, set
+        abstract ``maxLODsToLoad``: float with get, set
+        abstract ``onNodeLODsLoadedObservable``: Observable<float> with get, set
+        abstract ``onMaterialLODsLoadedObservable``: Observable<float> with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``onReady`` : unit -> unit
+        abstract ``loadSceneAsync`` : ``context``: string * ``scene``: BabylonjsBindings.SimpleInterfaces.IScene -> JS.Promise<unit> option
+        abstract ``loadNodeAsync`` : ``context``: string * ``node``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``assign``: System.Action<TransformNode> -> JS.Promise<TransformNode> option
+        abstract ``_loadMaterialAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMesh``: Mesh option * ``babylonDrawMode``: float * ``assign``: System.Action<Material> -> JS.Promise<Material> option
+        abstract ``_loadUriAsync`` : ``context``: string * ``property``: BabylonjsBindings.SimpleInterfaces.GLTF2IProperty * ``uri``: string -> JS.Promise<JS.ArrayBufferView> option
+        abstract ``loadBufferAsync`` : ``context``: string * ``buffer``: BabylonjsBindings.SimpleInterfaces.IBuffer * ``byteOffset``: float * ``byteLength``: float -> JS.Promise<JS.ArrayBufferView> option
+
+    [<AllowNullLiteral>]
+    type MSFT_lodStatic =
+        inherit Constructor<MSFT_lod>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> MSFT_lod
+
+    [<Import("MSFT_lod", "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.pure.js")>]
+    let MSFT_lod: MSFT_lodStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.pure
+    [<AllowNullLiteral>]
+    type MSFT_minecraftMesh =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type MSFT_minecraftMeshStatic =
+        inherit Constructor<MSFT_minecraftMesh>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> MSFT_minecraftMesh
+
+    [<Import("MSFT_minecraftMesh", "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.pure.js")>]
+    let MSFT_minecraftMesh: MSFT_minecraftMeshStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.pure
+    [<AllowNullLiteral>]
+    type MSFT_sRGBFactors =
+        inherit BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``loadMaterialPropertiesAsync`` : ``context``: string * ``material``: BabylonjsBindings.SimpleInterfaces.IMaterial * ``babylonMaterial``: Material -> JS.Promise<unit> option
+
+    [<AllowNullLiteral>]
+    type MSFT_sRGBFactorsStatic =
+        inherit Constructor<MSFT_sRGBFactors>
+        [<EmitConstructor>] abstract Create: ``loader``: GLTF2Loader -> MSFT_sRGBFactors
+
+    [<Import("MSFT_sRGBFactors", "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.pure.js")>]
+    let MSFT_sRGBFactors: MSFT_sRGBFactorsStatic = jsNative
+
+    /// @babylonjs/loaders/OBJ/objFileLoader.pure
+    [<AllowNullLiteral>]
+    type OBJFileLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory
+        abstract ``name``: StringLiteral772a5fb04f9b with get
+        abstract ``extensions``: StringLiteral7010dfd29260 with get
+        abstract ``createPlugin`` : ``options``: BabylonjsBindings.SimpleInterfaces.SceneLoaderPluginOptions -> U2<BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin>
+        abstract ``canDirectLoad`` : unit -> bool
+        abstract ``importMeshAsync`` : ``meshesNames``: obj * ``scene``: Scene * ``data``: obj * ``rootUrl``: string -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+        abstract ``loadAsync`` : ``scene``: Scene * ``data``: string * ``rootUrl``: string -> JS.Promise<unit>
+        abstract ``loadAssetContainerAsync`` : ``scene``: Scene * ``data``: string * ``rootUrl``: string -> JS.Promise<AssetContainer>
+
+    [<AllowNullLiteral>]
+    type OBJFileLoaderStatic =
+        inherit Constructor<OBJFileLoader>
+        [<EmitConstructor>] abstract Create: ?``loadingOptions``: PartialReadonly67071e43be9fObject -> OBJFileLoader
+        abstract ``OPTIMIZE_WITH_UV``: bool with get, set
+        abstract ``INVERT_Y``: bool with get, set
+        abstract ``IMPORT_VERTEX_COLORS``: bool with get, set
+        abstract ``COMPUTE_NORMALS``: bool with get, set
+        abstract ``OPTIMIZE_NORMALS``: bool with get, set
+        abstract ``UV_SCALING``: Vector2 with get, set
+        abstract ``SKIP_MATERIALS``: bool with get, set
+        abstract ``MATERIAL_LOADING_FAILS_SILENTLY``: bool with get, set
+        abstract ``USE_LEGACY_BEHAVIOR``: bool with get, set
+        abstract ``INVERT_TEXTURE_Y``: bool with get, set
+
+    [<Import("OBJFileLoader", "@babylonjs/loaders/OBJ/objFileLoader.pure.js")>]
+    let OBJFileLoader: OBJFileLoaderStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/openpbrMaterialLoadingAdapter
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialLoadingAdapter =
+        inherit BabylonjsBindings.SimpleInterfaces.IMaterialLoadingAdapter
+        abstract ``enableSpecularEdgeColor`` : ?``_enableEdgeColor``: bool -> unit
+        abstract ``configureSpecularGlossiness`` : unit -> unit
+        abstract ``configureCoat`` : unit -> unit
+        abstract ``configureTransmission`` : unit -> unit
+        abstract ``configureVolume`` : unit -> unit
+        abstract ``configureSubsurface`` : unit -> unit
+        abstract ``isTranslucent`` : unit -> bool
+        abstract ``configureFuzz`` : unit -> unit
+        abstract ``configureGltfStyleAnisotropy`` : ?``useGltfStyle``: bool -> unit
+        abstract ``setNormalMapInversions`` : ``invertX``: bool * ``invertY``: bool -> unit
+        abstract ``finalizeAsync`` : ``loader``: GLTF2Loader -> JS.Promise<unit>
+        abstract ``material``: OpenPBRMaterial with get
+        abstract ``isUnlit``: bool with get, set
+        abstract ``backFaceCulling``: bool with get, set
+        abstract ``twoSidedLighting``: bool with get, set
+        abstract ``alphaCutOff``: float with get, set
+        abstract ``useAlphaFromBaseColorTexture``: bool with get, set
+        abstract ``transparencyAsAlphaCoverage``: bool with get, set
+        abstract ``baseColor``: Color3 with get, set
+        abstract ``baseColorTexture``: BaseTexture option with get, set
+        abstract ``baseDiffuseRoughness``: float with get, set
+        abstract ``baseDiffuseRoughnessTexture``: BaseTexture option with get, set
+        abstract ``baseMetalness``: float with get, set
+        abstract ``baseMetalnessTexture``: BaseTexture option with get, set
+        abstract ``useRoughnessFromMetallicTextureGreen``: bool with set
+        abstract ``useMetallicFromMetallicTextureBlue``: bool with set
+        abstract ``specularWeight``: float with get, set
+        abstract ``specularWeightTexture``: BaseTexture option with get, set
+        abstract ``specularColor``: Color3 with get, set
+        abstract ``specularColorTexture``: BaseTexture option with get, set
+        abstract ``specularRoughness``: float with get, set
+        abstract ``specularRoughnessTexture``: BaseTexture option with get, set
+        abstract ``specularIor``: float with get, set
+        abstract ``glossiness``: float with get, set
+        abstract ``emissionColor``: Color3 with get, set
+        abstract ``emissionLuminance``: float with get, set
+        abstract ``emissionColorTexture``: BaseTexture option with get, set
+        abstract ``ambientOcclusionTexture``: BaseTexture option with get, set
+        abstract ``ambientOcclusionTextureStrength``: float with get, set
+        abstract ``coatWeight``: float with get, set
+        abstract ``coatWeightTexture``: BaseTexture option with get, set
+        abstract ``coatColor``: Color3 with get, set
+        abstract ``coatColorTexture``: BaseTexture option with set
+        abstract ``coatRoughness``: float with get, set
+        abstract ``coatRoughnessTexture``: BaseTexture option with get, set
+        abstract ``coatIor``: float with get, set
+        abstract ``coatDarkening``: float with get, set
+        abstract ``coatDarkeningTexture``: BaseTexture option with set
+        abstract ``coatRoughnessAnisotropy``: float with get, set
+        abstract ``geometryCoatTangentAngle``: float with set
+        abstract ``geometryCoatTangentTexture``: BaseTexture option with get, set
+        abstract ``transmissionWeight``: float with get, set
+        abstract ``transmissionWeightTexture``: BaseTexture option with get, set
+        abstract ``transmissionScatter``: Color3 with get, set
+        abstract ``transmissionScatterTexture``: BaseTexture option with get, set
+        abstract ``transmissionScatterAnisotropy``: float with set
+        abstract ``transmissionDispersionAbbeNumber``: float with set
+        abstract ``transmissionDispersionScale``: float with set
+        abstract ``transmissionDepth``: float with get, set
+        abstract ``transmissionColor``: Color3 with get, set
+        abstract ``refractionBackgroundTexture``: BaseTexture option with get, set
+        abstract ``geometryThinWalled``: bool with get, set
+        abstract ``volumeThicknessTexture``: BaseTexture option with set
+        abstract ``volumeThickness``: float with set
+        abstract ``subsurfaceWeight``: float with get, set
+        abstract ``subsurfaceWeightTexture``: BaseTexture option with get, set
+        abstract ``subsurfaceColor``: Color3 with set
+        abstract ``subsurfaceColorTexture``: BaseTexture option with set
+        abstract ``diffuseTransmissionTint``: Color3 with get, set
+        abstract ``diffuseTransmissionTintTexture``: BaseTexture option with set
+        abstract ``subsurfaceRadius``: float with get, set
+        abstract ``subsurfaceRadiusScale``: Color3 with get, set
+        abstract ``subsurfaceScatterAnisotropy``: float with set
+        abstract ``fuzzWeight``: float with set
+        abstract ``fuzzWeightTexture``: BaseTexture option with set
+        abstract ``fuzzColor``: Color3 with set
+        abstract ``fuzzColorTexture``: BaseTexture option with set
+        abstract ``fuzzRoughness``: float with set
+        abstract ``fuzzRoughnessTexture``: BaseTexture option with set
+        abstract ``specularRoughnessAnisotropy``: float with get, set
+        abstract ``geometryTangentAngle``: float with set
+        abstract ``geometryTangentTexture``: BaseTexture option with get, set
+        abstract ``thinFilmWeight``: float with set
+        abstract ``thinFilmIor``: float with set
+        abstract ``thinFilmThicknessMinimum``: float with set
+        abstract ``thinFilmThicknessMaximum``: float with set
+        abstract ``thinFilmWeightTexture``: BaseTexture option with set
+        abstract ``thinFilmThicknessTexture``: BaseTexture option with set
+        abstract ``unlit``: bool with set
+        abstract ``geometryOpacity``: float with get, set
+        abstract ``geometryNormalTexture``: BaseTexture option with get, set
+        abstract ``geometryCoatNormalTexture``: BaseTexture option with get, set
+        abstract ``geometryCoatNormalTextureScale``: float with set
+
+    [<AllowNullLiteral>]
+    type OpenPBRMaterialLoadingAdapterStatic =
+        inherit Constructor<OpenPBRMaterialLoadingAdapter>
+        [<EmitConstructor>] abstract Create: ``material``: Material -> OpenPBRMaterialLoadingAdapter
+
+    [<Import("OpenPBRMaterialLoadingAdapter", "@babylonjs/loaders/glTF/2.0/openpbrMaterialLoadingAdapter.js")>]
+    let OpenPBRMaterialLoadingAdapter: OpenPBRMaterialLoadingAdapterStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/pbrMaterialLoadingAdapter
+    [<AllowNullLiteral>]
+    type PBRMaterialLoadingAdapter =
+        inherit BabylonjsBindings.SimpleInterfaces.IMaterialLoadingAdapter
+        abstract ``finalizeAsync`` : ``_loader``: GLTF2Loader -> JS.Promise<unit>
+        abstract ``enableSpecularEdgeColor`` : ?``enableEdgeColor``: bool -> unit
+        abstract ``configureSpecularGlossiness`` : unit -> unit
+        abstract ``configureCoat`` : unit -> unit
+        abstract ``configureTransmission`` : unit -> unit
+        abstract ``configureVolume`` : unit -> unit
+        abstract ``configureSubsurface`` : unit -> unit
+        abstract ``isTranslucent`` : unit -> bool
+        abstract ``configureFuzz`` : unit -> unit
+        abstract ``configureGltfStyleAnisotropy`` : ?``useGltfStyle``: bool -> unit
+        abstract ``setNormalMapInversions`` : ``invertX``: bool * ``invertY``: bool -> unit
+        abstract ``material``: PBRMaterial with get
+        abstract ``isUnlit``: bool with get, set
+        abstract ``backFaceCulling``: bool with get, set
+        abstract ``twoSidedLighting``: bool with get, set
+        abstract ``alphaCutOff``: float with get, set
+        abstract ``useAlphaFromBaseColorTexture``: bool with get, set
+        abstract ``transparencyAsAlphaCoverage``: bool with get, set
+        abstract ``baseColor``: Color3 with get, set
+        abstract ``baseColorTexture``: BaseTexture option with get, set
+        abstract ``baseDiffuseRoughness``: float with get, set
+        abstract ``baseDiffuseRoughnessTexture``: BaseTexture option with get, set
+        abstract ``baseMetalness``: float with get, set
+        abstract ``baseMetalnessTexture``: BaseTexture option with get, set
+        abstract ``useRoughnessFromMetallicTextureGreen``: bool with set
+        abstract ``useMetallicFromMetallicTextureBlue``: bool with set
+        abstract ``specularWeight``: float with get, set
+        abstract ``specularWeightTexture``: BaseTexture option with get, set
+        abstract ``specularColor``: Color3 with get, set
+        abstract ``specularColorTexture``: BaseTexture option with get, set
+        abstract ``specularRoughness``: float with get, set
+        abstract ``specularRoughnessTexture``: BaseTexture option with get, set
+        abstract ``specularIor``: float with get, set
+        abstract ``glossiness``: float with get, set
+        abstract ``emissionColor``: Color3 with get, set
+        abstract ``emissionLuminance``: float with get, set
+        abstract ``emissionColorTexture``: BaseTexture option with get, set
+        abstract ``ambientOcclusionTexture``: BaseTexture option with get, set
+        abstract ``ambientOcclusionTextureStrength``: float with get, set
+        abstract ``coatWeight``: float with get, set
+        abstract ``coatWeightTexture``: BaseTexture option with get, set
+        abstract ``coatColor``: Color3 with set
+        abstract ``coatColorTexture``: BaseTexture option with set
+        abstract ``coatRoughness``: float with get, set
+        abstract ``coatRoughnessTexture``: BaseTexture option with get, set
+        abstract ``coatIor``: float with set
+        abstract ``coatDarkening``: float with set
+        abstract ``coatDarkeningTexture``: BaseTexture option with set
+        abstract ``coatRoughnessAnisotropy``: float with get, set
+        abstract ``geometryCoatTangentAngle``: float with set
+        abstract ``geometryCoatTangentTexture``: BaseTexture option with get, set
+        abstract ``transmissionWeight``: float with get, set
+        abstract ``transmissionWeightTexture``: BaseTexture option with set
+        abstract ``transmissionDepth``: float with get, set
+        abstract ``transmissionColor``: Color3 with get, set
+        abstract ``transmissionScatter``: Color3 with get, set
+        abstract ``transmissionScatterTexture``: BaseTexture option with set
+        abstract ``transmissionScatterAnisotropy``: float with set
+        abstract ``transmissionDispersionAbbeNumber``: float with set
+        abstract ``transmissionDispersionScale``: float with set
+        abstract ``refractionBackgroundTexture``: BaseTexture option with get, set
+        abstract ``geometryThinWalled``: bool with get, set
+        abstract ``volumeThicknessTexture``: BaseTexture option with set
+        abstract ``volumeThickness``: float with set
+        abstract ``subsurfaceWeight``: float with get, set
+        abstract ``subsurfaceWeightTexture``: BaseTexture option with set
+        abstract ``subsurfaceColor``: Color3 with set
+        abstract ``subsurfaceColorTexture``: BaseTexture option with set
+        abstract ``diffuseTransmissionTint``: Color3 with get, set
+        abstract ``diffuseTransmissionTintTexture``: BaseTexture option with set
+        abstract ``subsurfaceRadius``: float with get, set
+        abstract ``subsurfaceRadiusScale``: Color3 with get, set
+        abstract ``subsurfaceScatterAnisotropy``: float with set
+        abstract ``fuzzWeight``: float with set
+        abstract ``fuzzWeightTexture``: BaseTexture option with set
+        abstract ``fuzzColor``: Color3 with set
+        abstract ``fuzzColorTexture``: BaseTexture option with set
+        abstract ``fuzzRoughness``: float with set
+        abstract ``fuzzRoughnessTexture``: BaseTexture option with set
+        abstract ``specularRoughnessAnisotropy``: float with get, set
+        abstract ``geometryTangentAngle``: float with set
+        abstract ``geometryTangentTexture``: BaseTexture option with get, set
+        abstract ``thinFilmWeight``: float with set
+        abstract ``thinFilmIor``: float with set
+        abstract ``thinFilmThicknessMinimum``: float with set
+        abstract ``thinFilmThicknessMaximum``: float with set
+        abstract ``thinFilmWeightTexture``: BaseTexture option with set
+        abstract ``thinFilmThicknessTexture``: BaseTexture option with set
+        abstract ``unlit``: bool with set
+        abstract ``geometryOpacity``: float with get, set
+        abstract ``geometryNormalTexture``: BaseTexture option with get, set
+        abstract ``geometryCoatNormalTexture``: BaseTexture option with get, set
+        abstract ``geometryCoatNormalTextureScale``: float with set
+
+    [<AllowNullLiteral>]
+    type PBRMaterialLoadingAdapterStatic =
+        inherit Constructor<PBRMaterialLoadingAdapter>
+        [<EmitConstructor>] abstract Create: ``material``: Material -> PBRMaterialLoadingAdapter
+
+    [<Import("PBRMaterialLoadingAdapter", "@babylonjs/loaders/glTF/2.0/pbrMaterialLoadingAdapter.js")>]
+    let PBRMaterialLoadingAdapter: PBRMaterialLoadingAdapterStatic = jsNative
+
+    /// Inline object shape used by SPLATFileLoader.
+    [<AllowNullLiteral>]
+    type SPLATFileLoaderProperty4ObjectProperty1Object =
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
+
+    /// Inline object shape used by SPLATFileLoader.
+    [<AllowNullLiteral>]
+    type SPLATFileLoaderProperty4ObjectProperty2Object =
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
+
+    /// Inline object shape used by SPLATFileLoader.
+    [<AllowNullLiteral>]
+    type SPLATFileLoaderProperty4ObjectProperty3Object =
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
+
+    /// Inline object shape used by SPLATFileLoader.
+    [<AllowNullLiteral>]
+    type SPLATFileLoaderProperty4ObjectProperty4Object =
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserFalse with get
+
+    /// Inline object shape used by SPLATFileLoader.
+    [<AllowNullLiteral>]
+    type SPLATFileLoaderProperty4ObjectProperty5Object =
+        abstract ``isBinary``: BabylonjsBindings.SimpleInterfaces.BrowserTrue with get
+
+    /// Inline object shape used by SPLATFileLoader.
+    [<AllowNullLiteral>]
+    type SPLATFileLoaderProperty4Object =
+        abstract ``.splat``: SPLATFileLoaderProperty4ObjectProperty1Object with get
+        abstract ``.ply``: SPLATFileLoaderProperty4ObjectProperty2Object with get
+        abstract ``.spz``: SPLATFileLoaderProperty4ObjectProperty3Object with get
+        abstract ``.json``: SPLATFileLoaderProperty4ObjectProperty4Object with get
+        abstract ``.sog``: SPLATFileLoaderProperty4ObjectProperty5Object with get
+
+    /// @babylonjs/loaders/SPLAT/splatFileLoader.pure
+    [<AllowNullLiteral>]
+    type SPLATFileLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory
+        abstract ``name``: StringLiteral7cb4bd2c12a4 with get
+        abstract ``extensions``: SPLATFileLoaderProperty4Object with get
+        abstract ``createPlugin`` : ``options``: BabylonjsBindings.SimpleInterfaces.SceneLoaderPluginOptions -> BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        abstract ``importMeshAsync`` : ``meshesNames``: obj * ``scene``: Scene * ``data``: obj * ``rootUrl``: string * ?``_onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``_fileName``: string -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+        abstract ``loadAssetContainerAsync`` : ``scene``: Scene * ``data``: string * ``rootUrl``: string -> JS.Promise<AssetContainer>
+        abstract ``loadAsync`` : ``scene``: Scene * ``data``: string * ``rootUrl``: string -> JS.Promise<unit>
+
+    [<AllowNullLiteral>]
+    type SPLATFileLoaderStatic =
+        inherit Constructor<SPLATFileLoader>
+        [<EmitConstructor>] abstract Create: ?``loadingOptions``: PartialReadonly73d7a87a44d1Object -> SPLATFileLoader
+
+    [<Import("SPLATFileLoader", "@babylonjs/loaders/SPLAT/splatFileLoader.pure.js")>]
+    let SPLATFileLoader: SPLATFileLoaderStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper
+    [<AllowNullLiteral>]
+    type TransmissionHelper =
+        abstract ``onErrorObservable``: Observable<InlineObject598eaa333b94Object> with get, set
+        abstract ``addMaterialImpl`` : ``impl``: BabylonjsBindings.SimpleInterfaces.ITransmissionHelperMaterialImpl -> unit
+        abstract ``updateOptions`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialITransmissionHelperOptions -> unit
+        abstract ``getOpaqueTarget`` : unit -> Texture option
+        abstract ``_isRenderTargetValid`` : unit -> bool
+        abstract ``_setupRenderTargets`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type TransmissionHelperStatic =
+        inherit Constructor<TransmissionHelper>
+        [<EmitConstructor>] abstract Create: ``options``: BabylonjsBindings.SimpleInterfaces.PartialITransmissionHelperOptions * ``scene``: Scene -> TransmissionHelper
+
+    [<Import("TransmissionHelper", "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper.js")>]
+    let TransmissionHelper: TransmissionHelperStatic = jsNative

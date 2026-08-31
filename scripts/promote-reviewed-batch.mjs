@@ -47,4 +47,31 @@ for (const specification of specifications) {
   promotedExports += additions.length;
 }
 
+// The package compiles aliases, interfaces, and classes through one recursive
+// namespace projection. Keep that derived build input synchronized with the
+// reviewed fragments in the same atomic promotion operation.
+const moduleBody = (source, moduleName) => {
+  const lines = source.split("\n");
+  const moduleIndex = lines.findIndex(line => line === `module ${moduleName} =`);
+  if (moduleIndex < 1) throw new Error(`maintained source does not contain ${moduleName}`);
+  const documentationIndex = lines[moduleIndex - 1].startsWith("/// ") ? moduleIndex - 1 : moduleIndex;
+  return lines.slice(documentationIndex).join("\n").trimEnd();
+};
+const maintainedAliases = moduleBody(await readFile(resolve(root, "src/BabylonjsBindings/TypeAliases.fs"), "utf8"), "TypeAliases");
+const maintainedInterfaces = moduleBody(await readFile(resolve(root, "src/BabylonjsBindings/SimpleInterfaces.fs"), "utf8"), "SimpleInterfaces");
+const maintainedClasses = moduleBody(await readFile(resolve(root, "src/BabylonjsBindings/SimpleClasses.fs"), "utf8"), "SimpleClasses");
+await writeFile(resolve(root, "src/BabylonjsBindings/SimpleTypes.fs"), [
+  "// DERIVED BUILD PROJECTION — authoritative reviewed fragments are TypeAliases.fs, SimpleInterfaces.fs, and SimpleClasses.fs",
+  "namespace rec BabylonjsBindings",
+  "",
+  "open Fable.Core",
+  "",
+  maintainedAliases,
+  "",
+  maintainedInterfaces,
+  "",
+  maintainedClasses,
+  ""
+].join("\n"));
+
 console.log(`promoted ${promotedExports} reviewed Babylon exports from the dependency-closed batch`);

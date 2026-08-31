@@ -490,6 +490,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "appendSceneAsync",
+      "runtimeExport": "appendSceneAsync",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "AppendSceneAsync",
+      "runtimeExport": "AppendSceneAsync",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker.js",
       "export": "applyConfig",
       "runtimeExport": "applyConfig",
@@ -1588,6 +1602,13 @@
       "moduleSha256": "792b8a1eec9fcf93a98f0461c3cb1e7ed405e04e3ec239858adf24cdac228e83"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper.js",
+      "export": "ensureTransmissionHelper",
+      "runtimeExport": "ensureTransmissionHelper",
+      "moduleSha256": "aad579ae5b26e9a56443fc5f2a624afa221ecdf2225ff0a4c86514b33810d63b"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Buffers/bufferUtils.js",
       "export": "EnumerateFloatValues",
@@ -2128,6 +2149,27 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "importAnimationsAsync",
+      "runtimeExport": "importAnimationsAsync",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "ImportAnimationsAsync",
+      "runtimeExport": "ImportAnimationsAsync",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "ImportMeshAsync",
+      "runtimeExport": "ImportMeshAsync",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/csg2.js",
       "export": "InitializeCSG2Async",
       "runtimeExport": "InitializeCSG2Async",
@@ -2324,6 +2366,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "loadAssetContainerAsync",
+      "runtimeExport": "loadAssetContainerAsync",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "LoadAssetContainerAsync",
+      "runtimeExport": "LoadAssetContainerAsync",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js",
       "export": "LoadAssetContainerFromSerializedScene",
       "runtimeExport": "LoadAssetContainerFromSerializedScene",
@@ -2349,6 +2405,20 @@
       "export": "LoadImageToTexture2DArrayLayerAsync",
       "runtimeExport": "LoadImageToTexture2DArrayLayerAsync",
       "moduleSha256": "204484cd8e73ea6ae95620e8d434aa201c2b5928c7f954702d2a7af37ba26d31"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "loadSceneAsync",
+      "runtimeExport": "loadSceneAsync",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "LoadSceneAsync",
+      "runtimeExport": "LoadSceneAsync",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
     },
     {
       "package": "@babylonjs/core",
@@ -5236,6 +5306,13 @@
     },
     {
       "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry.js",
+      "export": "registerGLTFExtension",
+      "runtimeExport": "registerGLTFExtension",
+      "moduleSha256": "f778900ea427da5bc53ab56fe7a5e3bcf413f75ced2ecca459f6e5bd63e401d7"
+    },
+    {
+      "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure.js",
       "export": "RegisterGLTFFileLoader",
       "runtimeExport": "RegisterGLTFFileLoader",
@@ -6836,6 +6913,20 @@
       "export": "RegisterSceneHelpers",
       "runtimeExport": "RegisterSceneHelpers",
       "moduleSha256": "7b472a3365951c85d2c01067d49018822cc54828d5c4e5fe9e891511beb1cd6c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "registerSceneLoaderPlugin",
+      "runtimeExport": "registerSceneLoaderPlugin",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "RegisterSceneLoaderPlugin",
+      "runtimeExport": "RegisterSceneLoaderPlugin",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
     },
     {
       "package": "@babylonjs/core",

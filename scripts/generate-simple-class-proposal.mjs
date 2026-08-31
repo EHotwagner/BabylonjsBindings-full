@@ -151,6 +151,12 @@ const numericLiteralType = value => {
   numericLiteralValues.add(numeric);
   return `NumericLiteral${numeric < 0 ? `Negative${Math.abs(numeric)}` : numeric}`;
 };
+const isGLTFLoaderExtensionOptionsMap = node => ts.isMappedTypeNode(node)
+  && ts.isTypeOperatorNode(node.typeParameter.constraint)
+  && node.typeParameter.constraint.operator === ts.SyntaxKind.KeyOfKeyword
+  && ts.isTypeReferenceNode(node.typeParameter.constraint.type)
+  && ts.isIdentifier(node.typeParameter.constraint.type.typeName)
+  && node.typeParameter.constraint.type.typeName.text === "GLTFLoaderExtensionOptions";
 const enumMemberUnionType = node => {
   if (!ts.isUnionTypeNode(node) || node.types.length < 2) return undefined;
   const references = node.types.map(branch => ts.isTypeReferenceNode(branch) && ts.isQualifiedName(branch.typeName) ? branch.typeName : undefined);
@@ -242,6 +248,18 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (ts.isTupleTypeNode(node) && node.elements.length >= 1) {
     const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type, available, dependencies, typeParameters) : !ts.isNamedTupleMember(element) ? fsharpType(element, available, dependencies, typeParameters) : undefined);
     return elements.every(Boolean) ? node.elements.length === 1 ? `ReadonlyTuple1<${elements[0]}>` : `(${elements.join(" * ")})` : undefined;
+  }
+  if (isGLTFLoaderExtensionOptionsMap(node)) {
+    const optionBagName = "GLTFLoaderExtensionOptionBag";
+    if (!utilityInlineTypes.some(inline => inline.name === optionBagName)) {
+      utilityInlineTypes.push({
+        name: optionBagName,
+        genericParameters: "",
+        bases: ["BabylonjsBindings.SimpleInterfaces.BrowserRecord<string, obj>"],
+        members: [{ kind: "property", name: "enabled", type: "bool option", readonly: false }]
+      });
+    }
+    return `BabylonjsBindings.SimpleInterfaces.BrowserRecord<string, ${optionBagName} option>`;
   }
   if (ts.isMappedTypeNode(node) && node.typeParameter.constraint && node.type) {
     const keyType = fsharpType(node.typeParameter.constraint, available, dependencies, typeParameters);
@@ -397,6 +415,16 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (ts.isIntersectionTypeNode(node)) {
     return intersectionObjectType(node, available, dependencies, typeParameters, utilityInlineTypes);
   }
+  if (ts.isTypeReferenceNode(node) && ts.isQualifiedName(node.typeName)) {
+    const target = maintainedTargetForIdentifier(node.typeName.right);
+    const arguments_ = node.typeArguments ?? [];
+    if (target && referenceMatchesTargetModule(node.typeName.right, target) && arguments_.length === target.arity) {
+      const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies, typeParameters));
+      if (renderedArguments.every(Boolean)) {
+        return target.arity === 0 ? target.fsharpSymbol : `${target.fsharpSymbol}<${renderedArguments.join(", ")}>`;
+      }
+    }
+  }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (!node.typeArguments?.length && node.typeName.text === "ReferrerPolicy") return "BabylonjsBindings.SimpleInterfaces.BrowserReferrerPolicy";
     if (!node.typeArguments?.length && node.typeName.text === "PressureSource") return "BabylonjsBindings.SimpleInterfaces.BrowserPressureSource";
@@ -504,6 +532,11 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
           && declaration.type.members.every(member => ts.isPropertySignature(member))) {
           const digest = createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12);
           const projection = inlineObjectType(declaration.type, available, dependencies, typeParameters, utilityInlineTypes, `PartialReadonly${digest}`, true, true);
+          if (projection) return projection;
+        }
+        const classDeclaration = symbol?.declarations?.find(ts.isClassDeclaration);
+        if (classDeclaration) {
+          const projection = partialReadonlyClassType(classDeclaration, available, dependencies, typeParameters);
           if (projection) return projection;
         }
       }
@@ -1002,6 +1035,67 @@ const inlineObjectType = (node, available, dependencies, typeParameters, inlineT
     }
   }
   inlineTypes.push({ name, genericParameters, members });
+  return `${name}${genericParameters}`;
+};
+const partialReadonlyClassType = (declaration, available, dependencies, typeParameters) => {
+  if (!declaration.name) return undefined;
+  const name = `PartialReadonly${declaration.name.text}Object`;
+  const existing = utilityInlineTypes.find(inline => inline.name === name);
+  if (existing) return `${name}${existing.genericParameters}`;
+
+  const declarations = [];
+  const collect = current => {
+    const extendsTypes = (current.heritageClauses ?? [])
+      .filter(clause => clause.token === ts.SyntaxKind.ExtendsKeyword)
+      .flatMap(clause => [...clause.types]);
+    if (extendsTypes.length > 1) return false;
+    if (extendsTypes.length === 1) {
+      const baseType = extendsTypes[0];
+      if (!ts.isIdentifier(baseType.expression) || baseType.typeArguments?.length) return false;
+      let symbol = checker.getSymbolAtLocation(baseType.expression);
+      if (symbol?.flags & ts.SymbolFlags.Alias) {
+        try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+      }
+      const baseDeclaration = symbol?.declarations?.find(ts.isClassDeclaration);
+      if (!baseDeclaration || !collect(baseDeclaration)) return false;
+    }
+    declarations.push(current);
+    return true;
+  };
+  if (!collect(declaration)) return undefined;
+
+  const membersByName = new Map();
+  for (const current of declarations) {
+    const accessors = new Map();
+    for (const member of current.members) {
+      if (inaccessible(member) || hasModifier(member, ts.SyntaxKind.StaticKeyword) || ts.isConstructorDeclaration(member)) continue;
+      if (ts.isPropertyDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
+        const rendered = fsharpType(member.type, available, dependencies, typeParameters);
+        if (!rendered) return undefined;
+        membersByName.set(member.name.text, { kind: "property", name: member.name.text, type: asOption(rendered), readonly: true });
+        continue;
+      }
+      if ((ts.isGetAccessorDeclaration(member) || ts.isSetAccessorDeclaration(member))
+        && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
+        const accessor = accessors.get(member.name.text) ?? {};
+        if (ts.isGetAccessorDeclaration(member) && member.type) accessor.getter = member.type;
+        if (ts.isSetAccessorDeclaration(member) && member.parameters.length === 1 && member.parameters[0].type) accessor.setter = member.parameters[0].type;
+        accessors.set(member.name.text, accessor);
+        continue;
+      }
+      recordTypeFailure(member);
+      return undefined;
+    }
+    for (const [memberName, accessor] of accessors) {
+      const getterType = accessor.getter ? fsharpType(accessor.getter, available, dependencies, typeParameters) : undefined;
+      const setterType = accessor.setter ? fsharpType(accessor.setter, available, dependencies, typeParameters) : undefined;
+      const rendered = getterType ?? setterType;
+      if (!rendered || (getterType && setterType && getterType !== setterType)) return undefined;
+      membersByName.set(memberName, { kind: "property", name: memberName, type: asOption(rendered), readonly: true });
+    }
+  }
+  const genericParameters = typeParameters.size ? `<${[...typeParameters].map(value => `'${value}`).join(", ")}>` : "";
+  utilityInlineTypes.push({ name, genericParameters, members: [...membersByName.values()] });
   return `${name}${genericParameters}`;
 };
 const intersectionObjectType = (node, available, dependencies, typeParameters, inlineTypes) => {
@@ -1555,7 +1649,7 @@ const renderImplements = (declaration, available) => {
       rendered.push({ source: "XRFrame", rendered: "BabylonjsBindings.SimpleInterfaces.BrowserXRFrame" });
       continue;
     }
-    const target = maintainedSymbols.get(heritage.expression.text);
+    const target = maintainedTargetForIdentifier(heritage.expression);
     if (target && heritage.expression.text === "WebXRRenderTarget" && target.arity === 2 && !heritage.typeArguments?.length) {
       rendered.push({
         source: "WebXRRenderTarget",
@@ -1563,7 +1657,9 @@ const renderImplements = (declaration, available) => {
       });
       continue;
     }
-    if (!target || target.arity !== (heritage.typeArguments?.length ?? 0)) continue;
+    if (!target
+      || !referenceMatchesTargetModule(heritage.expression, target)
+      || target.arity !== (heritage.typeArguments?.length ?? 0)) continue;
     const dependencies = new Set();
     const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
     const arguments_ = (heritage.typeArguments ?? []).map(argument => fsharpType(argument, available, dependencies, typeParameters));

@@ -13,18 +13,18 @@
       "delta": 0
     },
     "interface": {
-      "maintained": 587,
-      "candidate": 587,
+      "maintained": 598,
+      "candidate": 598,
       "delta": 0
     },
     "class": {
-      "maintained": 1440,
-      "candidate": 1442,
+      "maintained": 1492,
+      "candidate": 1494,
       "delta": 2
     },
     "function": {
-      "maintained": 1219,
-      "candidate": 1219,
+      "maintained": 1232,
+      "candidate": 1232,
       "delta": 0
     },
     "variable": {

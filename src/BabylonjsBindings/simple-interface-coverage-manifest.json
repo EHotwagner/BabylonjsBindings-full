@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "e69f39f5219183080d92719b981b2097607d462bc5e0aebc99e86deb0d56d08c",
+  "proposalSha256": "9fa67b587a861a37639a950315092cf90e33185ed4756796a6137903021491f8",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -6569,6 +6569,148 @@
         "BabylonjsBindings.SimpleClasses.InteractivityGraphToFlowGraphParser"
       ],
       "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+      "name": "GLTFLoaderExtensionOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GLTFLoaderExtensionOptions",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/materialLoadingAdapter",
+      "name": "IMaterialLoadingAdapter",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterialLoadingAdapter",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BaseTexture",
+        "BabylonjsBindings.SimpleClasses.Color3",
+        "BabylonjsBindings.SimpleClasses.GLTF2Loader",
+        "BabylonjsBindings.SimpleClasses.Material"
+      ],
+      "memberCount": 93
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
+      "name": "ITransmissionHelperHolder",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITransmissionHelperHolder",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.TransmissionHelper"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "SceneLoaderPluginOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.SceneLoaderPluginOptions",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
+      "name": "ITransmissionHelperMaterialImpl",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITransmissionHelperMaterialImpl",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Material"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "AppendOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.AppendOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ImportAnimationsOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ImportAnimationsOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ImportMeshOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ImportMeshOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "LoadAssetContainerOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.LoadAssetContainerOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "LoadOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.LoadOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ISceneLoaderPluginFactory",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginMetadata"
+      ],
+      "memberCount": 1
     }
   ],
   "reviewStatus": "maintained"

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "b6907ce71024b1c86283a647a21f78e2cea59ec00f64fe0c1d02c9496434367e",
+  "proposalSha256": "4d2c1afc59438d0f5418f1e27db17f1d9d0c5cd597d71bac756731288d7611ca",
   "exports": [
     {
       "package": "@babylonjs/loaders",
@@ -890,6 +890,34 @@
         "BabylonjsBindings.SimpleInterfaces.IAnimationKey"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationTransitionTo",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "appendSceneAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.appendSceneAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.AppendOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_appendSceneAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "AppendSceneAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AppendSceneAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.AppendOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AppendSceneAsync",
       "overloadCount": 1
     },
     {
@@ -3051,6 +3079,20 @@
       "overloadCount": 1
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
+      "name": "ensureTransmissionHelper",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ensureTransmissionHelper",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.GLTF2Loader",
+        "BabylonjsBindings.SimpleClasses.Material"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ensureTransmissionHelper",
+      "overloadCount": 1
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Buffers/bufferUtils",
       "name": "EnumerateFloatValues",
@@ -4045,6 +4087,49 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "importAnimationsAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.importAnimationsAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ImportAnimationsOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_importAnimationsAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ImportAnimationsAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ImportAnimationsAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ImportAnimationsOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ImportAnimationsAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ImportMeshAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ImportMeshAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult",
+        "BabylonjsBindings.SimpleInterfaces.ImportMeshOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ImportMeshAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/csg2",
       "name": "InitializeCSG2Async",
       "kind": "function",
@@ -4389,6 +4474,36 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "loadAssetContainerAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.loadAssetContainerAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AssetContainer",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.LoadAssetContainerOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_loadAssetContainerAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "LoadAssetContainerAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadAssetContainerAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AssetContainer",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.LoadAssetContainerOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LoadAssetContainerAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
       "name": "LoadAssetContainerFromSerializedScene",
       "kind": "function",
@@ -4440,6 +4555,36 @@
         "BabylonjsBindings.SimpleInterfaces.IUploadImageToTexture2DArrayLayerOptions"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LoadImageToTexture2DArrayLayerAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "loadSceneAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.loadSceneAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.LoadOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_loadSceneAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "LoadSceneAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadSceneAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.LoadOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LoadSceneAsync",
       "overloadCount": 1
     },
     {
@@ -9192,6 +9337,20 @@
     },
     {
       "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry",
+      "name": "registerGLTFExtension",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.registerGLTFExtension",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.GLTF2Loader",
+        "BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_registerGLTFExtension",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
       "name": "RegisterGLTFFileLoader",
       "kind": "function",
@@ -11709,6 +11868,36 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterSceneHelpers",
       "dependencies": [],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RegisterSceneHelpers",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "registerSceneLoaderPlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.registerSceneLoaderPlugin",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_registerSceneLoaderPlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "RegisterSceneLoaderPlugin",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterSceneLoaderPlugin",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RegisterSceneLoaderPlugin",
       "overloadCount": 1
     },
     {

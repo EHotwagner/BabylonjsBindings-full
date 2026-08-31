@@ -2407,6 +2407,12 @@ module SimpleInterfaces =
 
     /// Exact inline object used by a Babylon interface signature.
     [<AllowNullLiteral>]
+    type LoaderExtensionOptionBag =
+        inherit BrowserRecord<string, obj>
+        abstract ``enabled``: bool option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
     type InlineObject1f7e3b7e13b4Object =
         [<EmitIndexer>] abstract Item: ``key``: string -> IGlyphData with get, set
 
@@ -3481,6 +3487,11 @@ module SimpleInterfaces =
         abstract ``name``: string with get
         abstract ``enabled``: bool with get, set
         abstract ``order``: float option with get, set
+
+    /// @babylonjs/loaders/glTF/glTFFileLoader.pure
+    [<AllowNullLiteral>]
+    type GLTFLoaderExtensionOptions =
+        inherit BrowserRecord<string, BrowserRecord<string, obj> option>
 
     /// @babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces
     [<AllowNullLiteral>]
@@ -4982,6 +4993,103 @@ module SimpleInterfaces =
         abstract ``useVertexPulling``: bool with get, set
         abstract ``reset``: unit -> unit
 
+    /// @babylonjs/loaders/glTF/2.0/materialLoadingAdapter
+    [<AllowNullLiteral>]
+    type IMaterialLoadingAdapter =
+        abstract ``material``: BabylonjsBindings.SimpleClasses.Material with get
+        abstract ``finalizeAsync``: ``loader``: BabylonjsBindings.SimpleClasses.GLTF2Loader -> JS.Promise<unit>
+        abstract ``isUnlit``: bool with get, set
+        abstract ``backFaceCulling``: bool with get, set
+        abstract ``twoSidedLighting``: bool with get, set
+        abstract ``alphaCutOff``: float with get, set
+        abstract ``useAlphaFromBaseColorTexture``: bool with get, set
+        abstract ``transparencyAsAlphaCoverage``: bool with get, set
+        abstract ``baseColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``baseColorTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``baseDiffuseRoughness``: float with get, set
+        abstract ``baseDiffuseRoughnessTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``baseMetalness``: float with get, set
+        abstract ``baseMetalnessTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``useRoughnessFromMetallicTextureGreen``: bool with get, set
+        abstract ``useMetallicFromMetallicTextureBlue``: bool with get, set
+        abstract ``enableSpecularEdgeColor``: ?``enableEdgeColor``: bool -> unit
+        abstract ``configureSpecularGlossiness``: unit -> unit
+        abstract ``specularWeight``: float with get, set
+        abstract ``specularWeightTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``specularColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``specularColorTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``specularRoughness``: float with get, set
+        abstract ``specularRoughnessTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``specularIor``: float with get, set
+        abstract ``glossiness``: float with get, set
+        abstract ``emissionColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``emissionLuminance``: float with get, set
+        abstract ``emissionColorTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``ambientOcclusionTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``ambientOcclusionTextureStrength``: float with get, set
+        abstract ``configureCoat``: unit -> unit
+        abstract ``coatWeight``: float with get, set
+        abstract ``coatWeightTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``coatColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``coatColorTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``coatRoughness``: float with get, set
+        abstract ``coatRoughnessTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``coatIor``: float with get, set
+        abstract ``coatDarkening``: float with get, set
+        abstract ``coatDarkeningTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``coatRoughnessAnisotropy``: float with get, set
+        abstract ``geometryCoatTangentAngle``: float with get, set
+        abstract ``geometryCoatTangentTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``transmissionWeight``: float with get, set
+        abstract ``transmissionWeightTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``transmissionDepth``: float with get, set
+        abstract ``transmissionColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``transmissionScatter``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``transmissionScatterTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``transmissionScatterAnisotropy``: float with get, set
+        abstract ``transmissionDispersionAbbeNumber``: float with get, set
+        abstract ``transmissionDispersionScale``: float with get, set
+        abstract ``refractionBackgroundTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``configureTransmission``: unit -> unit
+        abstract ``configureVolume``: unit -> unit
+        abstract ``geometryThinWalled``: bool with get, set
+        abstract ``volumeThicknessTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``volumeThickness``: float with get, set
+        abstract ``configureSubsurface``: unit -> unit
+        abstract ``subsurfaceWeight``: float with get, set
+        abstract ``subsurfaceWeightTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``subsurfaceColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``subsurfaceColorTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``diffuseTransmissionTint``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``diffuseTransmissionTintTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``subsurfaceRadius``: float with get, set
+        abstract ``subsurfaceRadiusScale``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``subsurfaceScatterAnisotropy``: float with get, set
+        abstract ``isTranslucent``: unit -> bool
+        abstract ``configureFuzz``: unit -> unit
+        abstract ``fuzzWeight``: float with get, set
+        abstract ``fuzzWeightTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``fuzzColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
+        abstract ``fuzzColorTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``fuzzRoughness``: float with get, set
+        abstract ``fuzzRoughnessTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``specularRoughnessAnisotropy``: float with get, set
+        abstract ``geometryTangentAngle``: float with get, set
+        abstract ``geometryTangentTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``configureGltfStyleAnisotropy``: ?``useGltfStyle``: bool -> unit
+        abstract ``thinFilmWeight``: float with get, set
+        abstract ``thinFilmIor``: float with get, set
+        abstract ``thinFilmThicknessMinimum``: float with get, set
+        abstract ``thinFilmThicknessMaximum``: float with get, set
+        abstract ``thinFilmWeightTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``thinFilmThicknessTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``unlit``: bool with get, set
+        abstract ``geometryOpacity``: float with get, set
+        abstract ``geometryNormalTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``setNormalMapInversions``: ``invertX``: bool * ``invertY``: bool -> unit
+        abstract ``geometryCoatNormalTexture``: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract ``geometryCoatNormalTextureScale``: float with get, set
+
     /// Exact readonly projection of IMatrixLike used by Babylon DeepImmutable<IMatrixLike> signatures.
     [<AllowNullLiteral>]
     type DeepImmutableIMatrixLike =
@@ -6116,6 +6224,11 @@ module SimpleInterfaces =
 
     /// @babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper
     [<AllowNullLiteral>]
+    type ITransmissionHelperHolder =
+        abstract ``_transmissionHelper``: BabylonjsBindings.SimpleClasses.TransmissionHelper option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper
+    [<AllowNullLiteral>]
     type ITransmissionHelperOptions =
         abstract ``renderSize``: float with get, set
         abstract ``samples``: float with get, set
@@ -6992,6 +7105,11 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type ScaleGizmoOptions =
         abstract ``additionalTransformNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type SceneLoaderPluginOptions =
+        inherit BrowserRecord<string, BrowserRecord<string, obj> option>
 
     /// @babylonjs/core/scene.pure
     [<AllowNullLiteral>]
@@ -8387,6 +8505,20 @@ module SimpleInterfaces =
         abstract ``removePendingData``: ``data``: obj -> unit
         abstract ``offlineProvider``: IOfflineProvider with get, set
 
+    /// Function-valued ISceneLoaderOptions.onProgress property.
+    [<AllowNullLiteral>]
+    type ISceneLoaderOptionsOnProgressCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``event``: ISceneLoaderProgressEvent -> unit
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type ISceneLoaderOptions =
+        abstract ``rootUrl``: string option with get, set
+        abstract ``onProgress``: ISceneLoaderOptionsOnProgressCallback option with get, set
+        abstract ``pluginExtension``: string option with get, set
+        abstract ``name``: string option with get, set
+        abstract ``pluginOptions``: BrowserRecord<string, LoaderExtensionOptionBag option> option with get, set
+
     /// Function-valued ISceneLoaderPluginMetadata.canDirectLoad property.
     [<AllowNullLiteral>]
     type ISceneLoaderPluginMetadataCanDirectLoadCallback =
@@ -8729,6 +8861,12 @@ module SimpleInterfaces =
         abstract ``onAborted``: ITimerOptionsOnAbortedCallback<'T> option with get, set
         abstract ``onTick``: ITimerOptionsOnTickCallback<'T> option with get, set
 
+    /// @babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper
+    [<AllowNullLiteral>]
+    type ITransmissionHelperMaterialImpl =
+        abstract ``materialClass``: BabylonjsBindings.SimpleClasses.MaterialStatic with get, set
+        abstract ``adapterClass``: BrowserConstructor<BabylonjsBindings.SimpleClasses.Material, IMaterialLoadingAdapter> with get, set
+
     /// Exact readonly projection of IVector3Like used by Babylon DeepImmutable<IVector3Like> signatures.
     [<AllowNullLiteral>]
     type DeepImmutableIVector3Like =
@@ -9026,6 +9164,11 @@ module SimpleInterfaces =
         abstract ``isNDCHalfZRange``: bool option with get, set
         abstract ``useReverseDepthBuffer``: bool option with get, set
         abstract ``processCodeAfterIncludes``: BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction option with get, set
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type AppendOptions =
+        inherit ISceneLoaderOptions
 
     /// @babylonjs/core/Engines/thinEngine.pure
     [<AllowNullLiteral>]
@@ -9685,6 +9828,25 @@ module SimpleInterfaces =
         abstract ``fallbackProfileIds``: ResizeArray<string> with get, set
         abstract ``layouts``: IMotionControllerLayoutMap with get, set
         abstract ``profileId``: string with get, set
+
+    /// Function-valued ImportAnimationsOptions.targetConverter property.
+    [<AllowNullLiteral>]
+    type ImportAnimationsOptionsTargetConverterCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``target``: obj -> obj
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type ImportAnimationsOptions =
+        inherit ISceneLoaderOptions
+        abstract ``overwriteAnimations``: bool option with get, set
+        abstract ``animationGroupLoadingMode``: BabylonjsBindings.Enums.SceneLoaderAnimationGroupLoadingMode option with get, set
+        abstract ``targetConverter``: ImportAnimationsOptionsTargetConverterCallback option with get, set
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type ImportMeshOptions =
+        inherit ISceneLoaderOptions
+        abstract ``meshNames``: U2<string, System.Collections.Generic.IReadOnlyList<string>> option with get, set
 
     /// @babylonjs/core/Engines/Native/nativeInterfaces
     [<AllowNullLiteral>]
@@ -10351,6 +10513,16 @@ module SimpleInterfaces =
         abstract ``deltaY``: float with get, set
         abstract ``deltaZ``: float with get, set
         abstract ``wheelDelta``: float option with get, set
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type LoadAssetContainerOptions =
+        inherit ISceneLoaderOptions
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type LoadOptions =
+        inherit ISceneLoaderOptions
 
     /// @babylonjs/core/Engines/webgpuEngine.pure
     [<AllowNullLiteral>]
@@ -11093,6 +11265,12 @@ module SimpleInterfaces =
         abstract ``occlusionTexture``: IMaterialOcclusionTextureInfo option with get, set
         abstract ``emissiveTexture``: ITextureInfo option with get, set
         abstract ``_data``: InlineObject441d9769b966Object option with get, set
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type ISceneLoaderPluginFactory =
+        inherit ISceneLoaderPluginMetadata
+        abstract ``createPlugin``: ``options``: SceneLoaderPluginOptions -> U3<ISceneLoaderPlugin, ISceneLoaderPluginAsync, JS.Promise<U2<ISceneLoaderPlugin, ISceneLoaderPluginAsync>>>
 
     /// @babylonjs/core/AudioV2/abstractAudio/staticSound
     [<AllowNullLiteral>]

@@ -99,6 +99,12 @@ const typeFailuresByInterface = new Map();
 let diagnosedInterface;
 let collectTypeFailures = false;
 const utilityInlineTypes = [];
+const isOpenLoaderOptionsMap = node => ts.isMappedTypeNode(node)
+  && ts.isTypeOperatorNode(node.typeParameter.constraint)
+  && node.typeParameter.constraint.operator === ts.SyntaxKind.KeyOfKeyword
+  && ts.isTypeReferenceNode(node.typeParameter.constraint.type)
+  && ts.isIdentifier(node.typeParameter.constraint.type.typeName)
+  && ["GLTFLoaderExtensionOptions", "SceneLoaderPluginOptions"].includes(node.typeParameter.constraint.type.typeName.text);
 const excludedEnumTypes = new Map();
 const numericLiteralValues = new Set();
 for (const value of [33776, 33777, 33778, 33779, 34046, 34047, 35916, 35917, 35918, 35919]) numericLiteralValues.add(value);
@@ -395,6 +401,18 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (ts.isTupleTypeNode(node) && node.elements.length >= 2) {
     const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type, available, dependencies, typeParameters) : !ts.isNamedTupleMember(element) ? fsharpType(element, available, dependencies, typeParameters) : undefined);
     return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
+  }
+  if (isOpenLoaderOptionsMap(node)) {
+    const optionBagName = "LoaderExtensionOptionBag";
+    if (!utilityInlineTypes.some(inline => inline.name === optionBagName)) {
+      utilityInlineTypes.push({
+        name: optionBagName,
+        genericParameters: "",
+        bases: ["BrowserRecord<string, obj>"],
+        members: [{ kind: "property", name: "enabled", type: "bool option", readonly: false }]
+      });
+    }
+    return `BrowserRecord<string, ${optionBagName} option>`;
   }
   if (ts.isMappedTypeNode(node)) {
     const keys = node.typeParameter.constraint ? mappedKeyNames(node.typeParameter.constraint) : undefined;
@@ -1010,6 +1028,11 @@ const renderHeritage = (declaration, available) => {
       const name = type.expression.text;
       if (name === "Pick") {
         continue;
+      } else if (name === "Record" && type.typeArguments?.length === 2) {
+        const key = fsharpType(type.typeArguments[0], available, dependencies, typeParameters);
+        const value = fsharpType(type.typeArguments[1], available, dependencies, typeParameters);
+        if (!key || !value) return undefined;
+        bases.push(`BrowserRecord<${key}, ${value}>`);
       } else if (available.has(projectedInterfaceName(type.expression))
         && referenceMatchesTargetModule(type.expression, available.get(projectedInterfaceName(type.expression)))) {
         const projectedName = projectedInterfaceName(type.expression);
@@ -1470,7 +1493,8 @@ for (const inline of retainedUtilityInlineTypes) {
   if (emittedInlineTypeNames.has(inline.name)) continue;
   emittedInlineTypeNames.add(inline.name);
   lines.push("", "    /// Exact inline object used by a Babylon interface signature.", "    [<AllowNullLiteral>]", `    type ${inline.name}${inline.genericParameters} =`);
-  if (inline.members.length === 0) lines.push("        interface end");
+  for (const base of inline.bases ?? []) lines.push(`        inherit ${base}`);
+  if (inline.members.length === 0 && !(inline.bases?.length)) lines.push("        interface end");
   else for (const member of inline.members) lines.push(`        ${renderInlineMember(member)}`);
 }
 for (const entry of entries) {

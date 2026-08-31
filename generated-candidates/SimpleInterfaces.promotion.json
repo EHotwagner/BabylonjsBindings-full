@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "e99953a22914e85810e145e7b97047e73e8ba62f2b3ece56b384fa3ee0f8f485",
+  "proposalSha256": "e0114b38d82a1397968a28e926da4f15b3fc76f8344e341dad85270063f304ff",
   "exports": [
     {
       "package": "@babylonjs/loaders",
@@ -303,6 +303,17 @@
       "fidelityIssues": [],
       "dependencies": [],
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+      "name": "GLTFLoaderExtensionOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GLTFLoaderExtensionOptions",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 0
     },
     {
       "package": "@babylonjs/core",
@@ -1882,6 +1893,22 @@
       "memberCount": 3
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/materialLoadingAdapter",
+      "name": "IMaterialLoadingAdapter",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterialLoadingAdapter",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BaseTexture",
+        "BabylonjsBindings.SimpleClasses.Color3",
+        "BabylonjsBindings.SimpleClasses.GLTF2Loader",
+        "BabylonjsBindings.SimpleClasses.Material"
+      ],
+      "memberCount": 93
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IMatrixLike",
@@ -2999,6 +3026,19 @@
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
+      "name": "ITransmissionHelperHolder",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITransmissionHelperHolder",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.TransmissionHelper"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
       "name": "ITransmissionHelperOptions",
       "kind": "interface",
       "disposition": "typed",
@@ -3901,6 +3941,17 @@
         "BabylonjsBindings.SimpleClasses.TransformNode"
       ],
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "SceneLoaderPluginOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.SceneLoaderPluginOptions",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 0
     },
     {
       "package": "@babylonjs/core",
@@ -5433,6 +5484,19 @@
       "memberCount": 7
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
+      "name": "ITransmissionHelperMaterialImpl",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITransmissionHelperMaterialImpl",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Material"
+      ],
+      "memberCount": 2
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.like",
       "name": "IVector3Like",
@@ -5813,6 +5877,19 @@
       ],
       "partialSymbol": "BabylonjsBindings.SimpleInterfaces.Partial_IProcessingOptions",
       "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "AppendOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.AppendOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 0
     },
     {
       "package": "@babylonjs/core",
@@ -6310,6 +6387,32 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ImportAnimationsOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ImportAnimationsOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ImportMeshOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ImportMeshOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Navigation/INavigationEngine",
       "name": "INavigationEnginePlugin",
       "kind": "interface",
@@ -6713,6 +6816,32 @@
         "BabylonjsBindings.SimpleInterfaces.IMouseEvent"
       ],
       "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "LoadAssetContainerOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.LoadAssetContainerOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "LoadOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.LoadOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions"
+      ],
+      "memberCount": 0
     },
     {
       "package": "@babylonjs/core",
@@ -7419,6 +7548,19 @@
         "BabylonjsBindings.SimpleInterfaces.IArrayItem"
       ],
       "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ISceneLoaderPluginFactory",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginMetadata"
+      ],
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",
@@ -8406,6 +8548,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INativeImageConstructor",
       "dependencies": [],
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "ISceneLoaderOptions",
+      "kind": "interface-support",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISceneLoaderOptions",
+      "dependencies": [],
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/loaders",

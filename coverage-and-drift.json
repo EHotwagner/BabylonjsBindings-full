@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "e4016c298afb82e28b0d3fa385d1a1db799dce43384114f548a8ec3dd86887d2",
+  "maintainedSurfaceDigest": "63de9bf79da5b79d8a1c89d374c1b0af5b1708a57eb9a690d211a073aeb7a66a",
   "summary": {
     "total": 4323,
-    "typed": 4152,
+    "typed": 4228,
     "runtimeOnly": 1,
-    "blocked": 170,
+    "blocked": 94,
     "lossy": 0
   },
   "exports": [
@@ -12834,24 +12834,27 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "AppendOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.AppendOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "appendSceneAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.appendSceneAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "AppendSceneAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AppendSceneAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -12866,40 +12869,45 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "importAnimationsAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.importAnimationsAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "ImportAnimationsAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ImportAnimationsAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "ImportAnimationsOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ImportAnimationsOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "ImportMeshAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ImportMeshAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "ImportMeshOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ImportMeshOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -12951,8 +12959,9 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "ISceneLoaderPluginFactory",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory"
     },
     {
       "package": "@babylonjs/core",
@@ -12977,48 +12986,54 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "loadAssetContainerAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.loadAssetContainerAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "LoadAssetContainerAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadAssetContainerAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "LoadAssetContainerOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.LoadAssetContainerOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "LoadOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.LoadOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "loadSceneAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.loadSceneAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "LoadSceneAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadSceneAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -13033,16 +13048,18 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "registerSceneLoaderPlugin",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.registerSceneLoaderPlugin"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "RegisterSceneLoaderPlugin",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterSceneLoaderPlugin"
     },
     {
       "package": "@babylonjs/core",
@@ -13066,8 +13083,9 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "SceneLoaderPluginOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.SceneLoaderPluginOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -36517,8 +36535,9 @@
       "module": "@babylonjs/loaders/BVH/bvhFileLoader.pure",
       "name": "BVHFileLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BVHFileLoader"
     },
     {
       "package": "@babylonjs/loaders",
@@ -36570,8 +36589,9 @@
       "module": "@babylonjs/loaders/FBX/fbxFileLoader.pure",
       "name": "FBXFileLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FBXFileLoader"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37072,8 +37092,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_area.pure",
       "name": "EXT_lights_area",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EXT_lights_area"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37089,8 +37110,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.pure",
       "name": "EXT_lights_ies",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EXT_lights_ies"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37106,8 +37128,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_image_based.pure",
       "name": "EXT_lights_image_based",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EXT_lights_image_based"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37123,8 +37146,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.pure",
       "name": "EXT_mesh_gpu_instancing",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EXT_mesh_gpu_instancing"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37140,8 +37164,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.pure",
       "name": "EXT_meshopt_compression",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EXT_meshopt_compression"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37157,8 +37182,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.pure",
       "name": "EXT_texture_avif",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EXT_texture_avif"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37174,8 +37200,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.pure",
       "name": "EXT_texture_webp",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EXT_texture_webp"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37191,8 +37218,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.pure",
       "name": "ExtrasAsMetadata",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ExtrasAsMetadata"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37226,8 +37254,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.pure",
       "name": "KHR_animation_pointer",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_animation_pointer"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37243,8 +37272,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.pure",
       "name": "KHR_draco_mesh_compression",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_draco_mesh_compression"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37260,8 +37290,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_gaussian_splatting.pure",
       "name": "KHR_gaussian_splatting",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_gaussian_splatting"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37286,8 +37317,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure",
       "name": "KHR_interactivity",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_interactivity"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37393,8 +37425,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_lights_punctual.pure",
       "name": "KHR_lights",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_lights"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37410,8 +37443,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.pure",
       "name": "KHR_materials_anisotropy",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_anisotropy"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37427,8 +37461,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.pure",
       "name": "KHR_materials_clearcoat",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_clearcoat"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37444,8 +37479,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.pure",
       "name": "KHR_materials_coat",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_coat"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37461,8 +37497,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.pure",
       "name": "KHR_materials_diffuse_roughness",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_diffuse_roughness"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37478,8 +37515,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.pure",
       "name": "KHR_materials_diffuse_transmission",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_diffuse_transmission"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37495,8 +37533,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.pure",
       "name": "KHR_materials_dispersion",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_dispersion"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37512,8 +37551,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.pure",
       "name": "KHR_materials_emissive_strength",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_emissive_strength"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37529,8 +37569,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.pure",
       "name": "KHR_materials_fuzz",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_fuzz"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37546,8 +37587,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.pure",
       "name": "KHR_materials_ior",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_ior"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37563,8 +37605,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.pure",
       "name": "KHR_materials_iridescence",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_iridescence"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37580,8 +37623,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.pure",
       "name": "KHR_materials_pbrSpecularGlossiness",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_pbrSpecularGlossiness"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37597,8 +37641,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.pure",
       "name": "KHR_materials_sheen",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_sheen"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37614,8 +37659,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.pure",
       "name": "KHR_materials_specular",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_specular"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37631,8 +37677,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.pure",
       "name": "KHR_materials_transmission",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_transmission"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37648,8 +37695,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.pure",
       "name": "KHR_materials_unlit",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_unlit"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37665,8 +37713,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure",
       "name": "KHR_materials_variants",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_variants"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37698,8 +37747,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.pure",
       "name": "KHR_materials_volume_scatter",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_volume_scatter"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37715,8 +37765,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.pure",
       "name": "KHR_materials_volume",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_materials_volume"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37732,8 +37783,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.pure",
       "name": "KHR_mesh_quantization",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_mesh_quantization"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37749,8 +37801,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.pure",
       "name": "KHR_node_hoverability",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_node_hoverability"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37766,8 +37819,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.pure",
       "name": "KHR_node_selectability",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_node_selectability"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37783,8 +37837,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.pure",
       "name": "KHR_node_visibility",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_node_visibility"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37800,8 +37855,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.pure",
       "name": "KHR_texture_basisu",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_texture_basisu"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37817,8 +37873,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.pure",
       "name": "KHR_texture_transform",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_texture_transform"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37834,8 +37891,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.pure",
       "name": "KHR_xmp_json_ld",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KHR_xmp_json_ld"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37851,8 +37909,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_audio_emitter.pure",
       "name": "MSFT_audio_emitter",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MSFT_audio_emitter"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37868,8 +37927,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.pure",
       "name": "MSFT_lod",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MSFT_lod"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37885,8 +37945,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.pure",
       "name": "MSFT_minecraftMesh",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MSFT_minecraftMesh"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37902,8 +37963,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.pure",
       "name": "MSFT_sRGBFactors",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MSFT_sRGBFactors"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38006,24 +38068,27 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
       "name": "ensureTransmissionHelper",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ensureTransmissionHelper"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
       "name": "ITransmissionHelperHolder",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITransmissionHelperHolder"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
       "name": "ITransmissionHelperMaterialImpl",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITransmissionHelperMaterialImpl"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38039,8 +38104,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper",
       "name": "TransmissionHelper",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.TransmissionHelper"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38056,8 +38122,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/glTFLoader.pure",
       "name": "GLTFLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GLTF2Loader"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38179,8 +38246,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry",
       "name": "registerGLTFExtension",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.registerGLTFExtension"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38447,24 +38515,27 @@
       "module": "@babylonjs/loaders/glTF/2.0/materialLoadingAdapter",
       "name": "IMaterialLoadingAdapter",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterialLoadingAdapter"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/2.0/openpbrMaterialLoadingAdapter",
       "name": "OpenPBRMaterialLoadingAdapter",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OpenPBRMaterialLoadingAdapter"
     },
     {
       "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/2.0/pbrMaterialLoadingAdapter",
       "name": "PBRMaterialLoadingAdapter",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PBRMaterialLoadingAdapter"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38489,8 +38560,9 @@
       "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
       "name": "GLTFFileLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GLTFFileLoader"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38524,8 +38596,9 @@
       "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
       "name": "GLTFLoaderExtensionOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GLTFLoaderExtensionOptions"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38585,8 +38658,9 @@
       "module": "@babylonjs/loaders/glTF/glTFValidation",
       "name": "GLTFValidation",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GLTFValidation"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38628,8 +38702,9 @@
       "module": "@babylonjs/loaders/OBJ/objFileLoader.pure",
       "name": "OBJFileLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OBJFileLoader"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38717,8 +38792,9 @@
       "module": "@babylonjs/loaders/SPLAT/splatFileLoader.pure",
       "name": "SPLATFileLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SPLATFileLoader"
     },
     {
       "package": "@babylonjs/loaders",

@@ -1347,6 +1347,22 @@ module SimpleFunctions =
     [<Import("AnimationTransitionTo", "@babylonjs/core/Animations/animation.pure.js")>]
     let ``AnimationTransitionTo``: FunctionBinding_AnimationTransitionTo = jsNative
 
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_appendSceneAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.AppendOptions -> JS.Promise<unit>
+
+    [<Import("appendSceneAsync", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``appendSceneAsync``: FunctionBinding_appendSceneAsync = jsNative
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_AppendSceneAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.AppendOptions -> JS.Promise<unit>
+
+    [<Import("AppendSceneAsync", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``AppendSceneAsync``: FunctionBinding_AppendSceneAsync = jsNative
+
     /// @babylonjs/core/Misc/khronosTextureContainer2Worker
     [<AllowNullLiteral>]
     type FunctionBinding_applyConfig =
@@ -2604,6 +2620,14 @@ module SimpleFunctions =
     [<Import("editableInPropertyPage", "@babylonjs/core/Decorators/nodeDecorator.js")>]
     let ``editableInPropertyPage``: FunctionBinding_editableInPropertyPage = jsNative
 
+    /// @babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper
+    [<AllowNullLiteral>]
+    type FunctionBinding_ensureTransmissionHelper =
+        [<Emit("$0($1...)")>] abstract Invoke: ``loader``: BabylonjsBindings.SimpleClasses.GLTF2Loader * ``babylonMaterial``: BabylonjsBindings.SimpleClasses.Material -> unit
+
+    [<Import("ensureTransmissionHelper", "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper.js")>]
+    let ``ensureTransmissionHelper``: FunctionBinding_ensureTransmissionHelper = jsNative
+
     /// @babylonjs/core/Buffers/bufferUtils
     [<AllowNullLiteral>]
     type FunctionBinding_EnumerateFloatValues =
@@ -3220,6 +3244,30 @@ module SimpleFunctions =
     [<Import("ImageProcessingConfigurationParse", "@babylonjs/core/Materials/imageProcessingConfiguration.pure.js")>]
     let ``ImageProcessingConfigurationParse``: FunctionBinding_ImageProcessingConfigurationParse = jsNative
 
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_importAnimationsAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.ImportAnimationsOptions -> JS.Promise<unit>
+
+    [<Import("importAnimationsAsync", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``importAnimationsAsync``: FunctionBinding_importAnimationsAsync = jsNative
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_ImportAnimationsAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.ImportAnimationsOptions -> JS.Promise<unit>
+
+    [<Import("ImportAnimationsAsync", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``ImportAnimationsAsync``: FunctionBinding_ImportAnimationsAsync = jsNative
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_ImportMeshAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.ImportMeshOptions -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+
+    [<Import("ImportMeshAsync", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``ImportMeshAsync``: FunctionBinding_ImportMeshAsync = jsNative
+
     /// @babylonjs/core/Meshes/csg2
     [<AllowNullLiteral>]
     type FunctionBinding_InitializeCSG2Async =
@@ -3444,6 +3492,22 @@ module SimpleFunctions =
     [<Import("LoadAllSmartAssetsAsync", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
     let ``LoadAllSmartAssetsAsync``: FunctionBinding_LoadAllSmartAssetsAsync = jsNative
 
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_loadAssetContainerAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.LoadAssetContainerOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.AssetContainer>
+
+    [<Import("loadAssetContainerAsync", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``loadAssetContainerAsync``: FunctionBinding_loadAssetContainerAsync = jsNative
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_LoadAssetContainerAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ``scene``: BabylonjsBindings.SimpleClasses.Scene * ?``options``: BabylonjsBindings.SimpleInterfaces.LoadAssetContainerOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.AssetContainer>
+
+    [<Import("LoadAssetContainerAsync", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``LoadAssetContainerAsync``: FunctionBinding_LoadAssetContainerAsync = jsNative
+
     /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
     [<AllowNullLiteral>]
     type FunctionBinding_LoadAssetContainerFromSerializedScene =
@@ -3475,6 +3539,22 @@ module SimpleFunctions =
 
     [<Import("LoadImageToTexture2DArrayLayerAsync", "@babylonjs/core/Materials/Textures/rawTexture2DArray.functions.js")>]
     let ``LoadImageToTexture2DArrayLayerAsync``: FunctionBinding_LoadImageToTexture2DArrayLayerAsync = jsNative
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_loadSceneAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.LoadOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.Scene>
+
+    [<Import("loadSceneAsync", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``loadSceneAsync``: FunctionBinding_loadSceneAsync = jsNative
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_LoadSceneAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine * ?``options``: BabylonjsBindings.SimpleInterfaces.LoadOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.Scene>
+
+    [<Import("LoadSceneAsync", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``LoadSceneAsync``: FunctionBinding_LoadSceneAsync = jsNative
 
     /// @babylonjs/core/SmartAssets/smartAssetManager.pure
     [<AllowNullLiteral>]
@@ -6772,6 +6852,14 @@ module SimpleFunctions =
     [<Import("RegisterGLTF2Loader", "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js")>]
     let ``RegisterGLTF2Loader``: FunctionBinding_RegisterGLTF2Loader = jsNative
 
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry
+    [<AllowNullLiteral>]
+    type FunctionBinding_registerGLTFExtension =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``isGLTFExtension``: bool * ``factory``: System.Func<BabylonjsBindings.SimpleClasses.GLTF2Loader, U2<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension, JS.Promise<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension>>> -> unit
+
+    [<Import("registerGLTFExtension", "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry.js")>]
+    let ``registerGLTFExtension``: FunctionBinding_registerGLTFExtension = jsNative
+
     /// @babylonjs/loaders/glTF/glTFFileLoader.pure
     [<AllowNullLiteral>]
     type FunctionBinding_RegisterGLTFFileLoader =
@@ -8603,6 +8691,22 @@ module SimpleFunctions =
 
     [<Import("RegisterSceneHelpers", "@babylonjs/core/Helpers/sceneHelpers.pure.js")>]
     let ``RegisterSceneHelpers``: FunctionBinding_RegisterSceneHelpers = jsNative
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_registerSceneLoaderPlugin =
+        [<Emit("$0($1...)")>] abstract Invoke: ``plugin``: U3<BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory> -> unit
+
+    [<Import("registerSceneLoaderPlugin", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``registerSceneLoaderPlugin``: FunctionBinding_registerSceneLoaderPlugin = jsNative
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_RegisterSceneLoaderPlugin =
+        [<Emit("$0($1...)")>] abstract Invoke: ``plugin``: U3<BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory> -> unit
+
+    [<Import("RegisterSceneLoaderPlugin", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``RegisterSceneLoaderPlugin``: FunctionBinding_RegisterSceneLoaderPlugin = jsNative
 
     /// @babylonjs/core/Misc/screenshotTools.pure
     [<AllowNullLiteral>]
