@@ -73,7 +73,7 @@ printfn "M3 clean consumer passed"
   if (!browser.includes("<output>M3 packed Chromium consumer passed</output>")) throw new Error(`packed Chromium consumer failed\n${browser}`);
   const chromiumVersion = (await run("chromium", ["--version"], consumer)).trim();
   const packageSha256 = createHash("sha256").update(await readFile(packagePath)).digest("hex");
-  const receipt = { schemaVersion: 1, package: `artifacts/m3-package/BabylonjsBindings.${packageVersion}.nupkg`, packageVersion, packageSha256, sourceVersion, fable: "5.13.0", npm: { core: "9.19.0", loaders: "9.19.0" }, node: "pass", chromium: chromiumVersion, isolatedNugetCache: true, result: "pass" };
+  const receipt = { schemaVersion: 1, package: packagePath, packageVersion, packageSha256, sourceVersion, fable: "5.13.0", npm: { core: "9.19.0", loaders: "9.19.0" }, node: "pass", chromium: chromiumVersion, isolatedNugetCache: true, result: "pass" };
   await writeFile(resolve(root, "reports/m3-clean-consumer.json"), `${JSON.stringify(receipt, null, 2)}\n`);
   console.log(JSON.stringify(receipt, null, 2));
 } finally { await rm(consumer, { recursive: true, force: true }); }
