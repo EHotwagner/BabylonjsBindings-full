@@ -290,8 +290,10 @@ let m3Sync10 (factory: CoroutineFactory10<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8
 let m3Async10 (factory: AsyncCoroutineFactory10<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'A10, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable10<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'A10, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
 let m3AccessorFactory<'This, 'V> (target: ClassAccessorDecoratorTarget<'This, 'V>) (context: ClassAccessorDecoratorContext<'This, 'V>) =
     let expand: AccessorDecorator<'This, 'V> = expandToProperty.Invoke("markDirty")
-    let material: AccessorDecorator<'This, 'V> = addAccessorsForMaterialProperty.Invoke("markDirty", None)
-    expand.Invoke(target, context), material.Invoke(target, context)
+    let expandNull: AccessorDecorator<'This, 'V> = expandToProperty.InvokeNull("markDirty")
+    let material: AccessorDecorator<'This, 'V> = addAccessorsForMaterialProperty.Invoke("markDirty")
+    let materialNull: AccessorDecorator<'This, 'V> = addAccessorsForMaterialProperty.InvokeNull("markDirty")
+    expand.Invoke(target, context), expandNull.Invoke(target, context), material.Invoke(target, context), materialNull.Invoke(target, context)
 let m3NativeBoundary
     (predicate: Predicate10<int, int, int, int, int, int, int, int, int, int>)
     (method: ThisCallable10<obj, int, int, int, int, int, int, int, int, int, int, int>)
@@ -302,9 +304,17 @@ let m3NativeBoundary
     direct.Call(thisArg, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10), filtered.Call(thisArg, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
 let m3ImageProcessingBoth (value: ImageProcessingPushMaterial) = value.getEffect(), value.cameraExposure
 let m3ImageProcessingDefinesBoth (value: ImageProcessingDefinesPBRMaterialDefinesBase) = value.markAsProcessed(), value.IMAGEPROCESSING
+let m3BackgroundImageProcessingDefinesBoth (value: ImageProcessingDefinesBackgroundMaterialDefinesBase) = value.markAsProcessed(), value.IMAGEPROCESSING
+let m3StandardImageProcessingDefinesBoth (value: ImageProcessingDefinesStandardMaterialDefinesBase) = value.markAsProcessed(), value.IMAGEPROCESSING
+let m3OpenPBRImageProcessingDefinesBoth (value: ImageProcessingDefinesOpenPBRMaterialDefinesWithEnvLighting) = value.markAsProcessed(), value.IMAGEPROCESSING
+let m3NodeImageProcessingDefinesBoth (value: ImageProcessingDefinesNodeMaterialDefinesBase) = value.markAsProcessed(), value.IMAGEPROCESSING
 let m3UVBoth (value: UVDefinesMaterialDefines) = value.markAsProcessed(), value.UV6
 let m3ImageProcessingSpecialization (baseCtor: PushMaterialStatic) : ImageProcessingPushMaterialStatic = ImageProcessingMixin.Invoke(baseCtor)
 let m3ImageDefinesSpecialization (baseCtor: PBRMaterialDefinesBaseStatic) : ImageProcessingDefinesPBRMaterialDefinesBaseStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
+let m3BackgroundImageDefinesSpecialization (baseCtor: BackgroundMaterialDefinesBaseStatic) : ImageProcessingDefinesBackgroundMaterialDefinesBaseStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
+let m3StandardImageDefinesSpecialization (baseCtor: StandardMaterialDefinesBaseStatic) : ImageProcessingDefinesStandardMaterialDefinesBaseStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
+let m3OpenPBRImageDefinesSpecialization (baseCtor: OpenPBRMaterialDefinesWithEnvLightingStatic) : ImageProcessingDefinesOpenPBRMaterialDefinesWithEnvLightingStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
+let m3NodeImageDefinesSpecialization (baseCtor: NodeMaterialDefinesBaseStatic) : ImageProcessingDefinesNodeMaterialDefinesBaseStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
 let m3UVSpecialization (baseCtor: MaterialDefinesStatic) : UVDefinesMaterialDefinesStatic = UVDefinesMixin.Invoke(baseCtor)
 
 let engine = nullEngine ()

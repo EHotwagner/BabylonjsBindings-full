@@ -7,11 +7,11 @@ let normalizedSpecificationJson = """{
   "schemaVersion": 1,
   "identity": "SPEC-001",
   "provenance": {
-    "agent": "codex",
-    "session": "m3-higher-order-runtime-apis-20260831t1508z",
+    "agent": "m3-higher-order-runtime-apis-20260831t090000z",
+    "session": "m3-repair-round-1",
     "sourcePath": "work/005-m3-higher-order-runtime-apis/specification.fsx",
     "sourceRevision": "0000000000000000000000000000000000000000000000000000000000000000",
-    "authoredAtUtc": "2026-08-31T15:01:13.6835043\u002B00:00"
+    "authoredAtUtc": "2026-08-31T15:52:47.5308669\u002B00:00"
   },
   "intent": "Close exactly eight M3 higher-order runtime exports with evidence-derived callable arities and exact decorator and mixin correlations",
   "evidenceObligations": [
@@ -42,11 +42,16 @@ let normalizedSpecificationJson = """{
     },
     {
       "id": "EV006",
+      "kind": "test",
+      "description": "Aggregate positive, negative, emitted JavaScript, Node, and Chromium checks into one observed non-synthetic test receipt."
+    },
+    {
+      "id": "EV007",
       "kind": "verification",
       "description": "Regenerate coverage and prove exactly 4,287 typed, 35 blocked, one runtime-only, and zero lossy with exactly eight exports reclassified."
     },
     {
-      "id": "EV007",
+      "id": "EV008",
       "kind": "test",
       "description": "Pack and consume version 0.1.4 in a clean project with exact npm dependencies, emitted imports, Node, and Chromium proof."
     }
@@ -176,7 +181,7 @@ let normalizedSpecificationJson = """{
         ],
         "evidenceObligationIds": [
           "EV001",
-          "EV006"
+          "EV007"
         ]
       },
       {
@@ -188,7 +193,7 @@ let normalizedSpecificationJson = """{
         "evidenceObligationIds": [
           "EV003",
           "EV005",
-          "EV007"
+          "EV008"
         ]
       }
     ],

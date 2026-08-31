@@ -11,11 +11,11 @@ sourceAnalysis: readiness/005-m3-higher-order-runtime-apis/analysis.json
 sourceSnapshots:
   - label: analysis
     path: readiness/005-m3-higher-order-runtime-apis/analysis.json
-    digest: 394c1c6893401784f187b51bb6073a423075701f61a234a967904507ec96e4ee
+    digest: 2fe448241605dfe36eafdfe5cb047d055c88f9103804ae88c180347001225a35
     schemaVersion: 1
   - label: checklist
     path: work/005-m3-higher-order-runtime-apis/checklist.md
-    digest: 61c1b727a9d14f7cd5e2d43a46b321ff716d0cb340bc05f7c51e4b8b96ba6997
+    digest: 29ec88c070b0de018eca3a1a8fa1985d5aa56e12d747a429fad147bc6e82c929
     schemaVersion: 1
   - label: clarifications
     path: work/005-m3-higher-order-runtime-apis/clarifications.md
@@ -23,15 +23,15 @@ sourceSnapshots:
     schemaVersion: 1
   - label: plan
     path: work/005-m3-higher-order-runtime-apis/plan.md
-    digest: 449aa78c22d78f92a223b5db2dd6915274364cbc2156ece87d97b3bb1733d5b1
+    digest: 1bc73c39870b6dbadebb7d1f608b28bd8ac5ad097234a3d9a8757a3a0e7c65bc
     schemaVersion: 1
   - label: spec
     path: work/005-m3-higher-order-runtime-apis/spec.md
-    digest: 900156d50fd35d0289e5aa233f632f6678ff4193e4ced70ed310b314462e7ea1
+    digest: 5325c8ef19196d3ade637bf305935b8ea7729c5e19d458a77e08100df7eae0ac
     schemaVersion: 1
   - label: tasks
     path: work/005-m3-higher-order-runtime-apis/tasks.yml
-    digest: d3e81f95d19969801225848b80494dea4e22ee73d5e1f4223165fac6819a1bac
+    digest: 9eec0c613065539fe7eb3247751adcf9615059d2510c1422400725a623c903b2
     schemaVersion: 1
 evidence:
   - id: EV001

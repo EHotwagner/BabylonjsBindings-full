@@ -15,7 +15,7 @@
   },
   "mixinSpecializations": {
     "ImageProcessingMixin": ["PushMaterial"],
-    "ImageProcessingDefinesMixin": ["MaterialDefines", "PBRMaterialDefinesBase", "StandardMaterialDefinesBase", "OpenPBRMaterialDefinesWithEnvLighting", "NodeMaterialDefinesBase"],
+    "ImageProcessingDefinesMixin": ["BackgroundMaterialDefinesBase", "PBRMaterialDefinesBase", "StandardMaterialDefinesBase", "OpenPBRMaterialDefinesWithEnvLighting", "NodeMaterialDefinesBase"],
     "UVDefinesMixin": ["MaterialDefines"]
   },
   "rejected": ["ParamArray<obj>", "U2<Base,Mixin>", "unconstrained obj result"],

@@ -9,8 +9,8 @@ publicOrToolFacingImpact: true
 ---
 
 <!-- fsgg-typed-specification/v1 -->
-<!-- source-fingerprint: 069c1db0edbe6780d6f826965c17f72ab679aec86c8a08208f858389e35ddf2a -->
-<!-- generated-fingerprint: ef6bf833b8ea247cbc76e1d6b261c4b5cda17767d52599a7b9d6feaec5cc4ee3 -->
+<!-- source-fingerprint: d47cd562eb16b6e990d5f5da71061e91939e167f5345e6593379ba001aba42e9 -->
+<!-- generated-fingerprint: c97301bc0d2e00aa369f3535a640b9c8811eef485ca074275d8487f44dd0b4a3 -->
 # Specification SPEC-001
 
 - Schema: `1`
@@ -28,8 +28,9 @@ Close exactly eight M3 higher-order runtime exports with evidence-derived callab
 - `EV003` (`test`): Fable-compile representative coroutine and decorator calls, inspect emitted JavaScript call and this semantics, and execute Node proof.
 - `EV004` (`test`): Compile and execute named both-member ImageProcessing, ImageProcessingDefines, and UV mixin specializations without U2 or unconstrained obj.
 - `EV005` (`test`): Execute applicable Chromium runtime and import proof for decorator and mixin modules.
-- `EV006` (`verification`): Regenerate coverage and prove exactly 4,287 typed, 35 blocked, one runtime-only, and zero lossy with exactly eight exports reclassified.
-- `EV007` (`test`): Pack and consume version 0.1.4 in a clean project with exact npm dependencies, emitted imports, Node, and Chromium proof.
+- `EV006` (`test`): Aggregate positive, negative, emitted JavaScript, Node, and Chromium checks into one observed non-synthetic test receipt.
+- `EV007` (`verification`): Regenerate coverage and prove exactly 4,287 typed, 35 blocked, one runtime-only, and zero lossy with exactly eight exports reclassified.
+- `EV008` (`test`): Pack and consume version 0.1.4 in a clean project with exact npm dependencies, emitted imports, Node, and Chromium proof.
 
 ## Extension
 

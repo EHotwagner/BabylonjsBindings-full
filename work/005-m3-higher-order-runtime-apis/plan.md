@@ -16,9 +16,9 @@ publicOrToolFacingImpact: true
 Prose status: planned
 
 ## Source Snapshot
-- spec: work/005-m3-higher-order-runtime-apis/spec.md sha256:900156d50fd35d0289e5aa233f632f6678ff4193e4ced70ed310b314462e7ea1 schemaVersion:1
+- spec: work/005-m3-higher-order-runtime-apis/spec.md sha256:5325c8ef19196d3ade637bf305935b8ea7729c5e19d458a77e08100df7eae0ac schemaVersion:1
 - clarifications: work/005-m3-higher-order-runtime-apis/clarifications.md sha256:efc2857ad48a9e96274b3f0db133bc3031b7aa775882111849a459db487e70f0 schemaVersion:1
-- checklist: work/005-m3-higher-order-runtime-apis/checklist.md sha256:61c1b727a9d14f7cd5e2d43a46b321ff716d0cb340bc05f7c51e4b8b96ba6997 schemaVersion:1
+- checklist: work/005-m3-higher-order-runtime-apis/checklist.md sha256:29ec88c070b0de018eca3a1a8fa1985d5aa56e12d747a429fad147bc6e82c929 schemaVersion:1
 
 ## Plan Scope
 - Add one deterministic declaration-arity scanner and reviewed M3 manifest/proposal, then curate maintained higher-order runtime projections.

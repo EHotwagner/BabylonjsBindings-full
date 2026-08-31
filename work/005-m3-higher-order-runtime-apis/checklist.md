@@ -21,7 +21,7 @@ Prose status: checklistReady
 - work/005-m3-higher-order-runtime-apis/clarifications.md
 
 ## Source Snapshot
-- spec: work/005-m3-higher-order-runtime-apis/spec.md sha256:900156d50fd35d0289e5aa233f632f6678ff4193e4ced70ed310b314462e7ea1 schemaVersion:1
+- spec: work/005-m3-higher-order-runtime-apis/spec.md sha256:5325c8ef19196d3ade637bf305935b8ea7729c5e19d458a77e08100df7eae0ac schemaVersion:1
 - clarifications: work/005-m3-higher-order-runtime-apis/clarifications.md sha256:efc2857ad48a9e96274b3f0db133bc3031b7aa775882111849a459db487e70f0 schemaVersion:1
 
 ## Checklist Items

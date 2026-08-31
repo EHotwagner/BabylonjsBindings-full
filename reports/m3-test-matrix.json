@@ -17,6 +17,22 @@
   },
   "exportsClosed": 8,
   "negativeFixtures": 3,
+  "cleanConsumer": {
+    "schemaVersion": 1,
+    "package": "artifacts/m3-package/BabylonjsBindings.0.1.4.nupkg",
+    "packageVersion": "0.1.4",
+    "packageSha256": "5e3b782aac4ac562f7b5b2705231150222c7a2e3bb2124f827a3883ec64d49fd",
+    "sourceVersion": "0.1.3",
+    "fable": "5.13.0",
+    "npm": {
+      "core": "9.19.0",
+      "loaders": "9.19.0"
+    },
+    "node": "pass",
+    "chromium": "Chromium 151.0.7922.173 Arch Linux",
+    "isolatedNugetCache": true,
+    "result": "pass"
+  },
   "checks": [
     {
       "name": "locked callable arity policy",

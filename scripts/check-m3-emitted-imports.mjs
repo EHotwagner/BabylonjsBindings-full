@@ -22,4 +22,7 @@ if (!program.includes("nativeOverride.filter") || !program.includes("direct.call
 if (!program.includes("makeSyncFunction(factory)") || !program.includes("makeAsyncFunction(factory, scheduler)")) {
   throw new Error("emitted coroutine factories lost positional call semantics");
 }
+for (const call of ["expandToProperty(\"markDirty\")", "expandToProperty(\"markDirty\", null)", "addAccessorsForMaterialProperty(\"markDirty\")", "addAccessorsForMaterialProperty(\"markDirty\", null)"]) {
+  if (!program.includes(call)) throw new Error(`missing emitted decorator omitted/null call: ${call}`);
+}
 console.log("M3 emitted calls exact: 8 exports, callable filter, explicit this");

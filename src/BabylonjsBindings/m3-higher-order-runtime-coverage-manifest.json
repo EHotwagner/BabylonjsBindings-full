@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewStatus": "maintained",
-  "proposalSha256": "0fe9a40b7271317fe9ac4bd90c53b7119e7cbc926b988873c71d832dfafc7a90",
+  "proposalSha256": "f716d7bf027cbad744dc7caddf5d547c34ee38f61e35fa2326191768c6f7f374",
   "exports": [
     { "package": "@babylonjs/core", "module": "@babylonjs/core/Misc/coroutine", "name": "makeAsyncFunction", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.makeAsyncFunction" },
     { "package": "@babylonjs/core", "module": "@babylonjs/core/Misc/coroutine", "name": "makeSyncFunction", "kind": "function", "disposition": "typed", "fsharpSymbol": "BabylonjsBindings.HigherOrderRuntimeApis.makeSyncFunction" },

@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { spawnSync } from "node:child_process";
 
@@ -49,6 +49,7 @@ const matrix = {
   arityPolicy: { minimum: 0, maximum: 10, maximumFixedCallbackArity: 10, maximumFixedCallableDeclarationArityContext: 17 },
   exportsClosed: 8,
   negativeFixtures: 3,
+  cleanConsumer: JSON.parse(await readFile(resolve(root, "reports/m3-clean-consumer.json"), "utf8")),
   checks: results
 };
 await mkdir(dirname(trxPath), { recursive: true });

@@ -201,7 +201,9 @@ module HigherOrderRuntimeApis =
         [<Emit("$0($1...)")>] abstract Invoke: value: ClassAccessorDecoratorTarget<'This, 'V> * context: ClassAccessorDecoratorContext<'This, 'V> -> ClassAccessorDecoratorResult<'This, 'V>
     [<AllowNullLiteral>]
     type AccessorDecoratorFactory =
-        [<Emit("$0($1...)")>] abstract Invoke<'This, 'V>: callback: string * ?targetKey: string option -> AccessorDecorator<'This, 'V>
+        [<Emit("$0($1)")>] abstract Invoke<'This, 'V>: callback: string -> AccessorDecorator<'This, 'V>
+        [<Emit("$0($1, $2)")>] abstract Invoke<'This, 'V>: callback: string * targetKey: string -> AccessorDecorator<'This, 'V>
+        [<Emit("$0($1, null)")>] abstract InvokeNull<'This, 'V>: callback: string -> AccessorDecorator<'This, 'V>
     [<Import("expandToProperty", "@babylonjs/core/Misc/decorators.js")>]
     let expandToProperty: AccessorDecoratorFactory = jsNative
     [<Import("addAccessorsForMaterialProperty", "@babylonjs/core/Misc/decorators.js")>]
@@ -371,6 +373,13 @@ module HigherOrderRuntimeApis =
         inherit MaterialDefines
         inherit ImageProcessingDefinesMixinMembers
     [<AllowNullLiteral>]
+    type BackgroundMaterialDefinesBase =
+        inherit MaterialDefines
+    [<AllowNullLiteral>]
+    type ImageProcessingDefinesBackgroundMaterialDefinesBase =
+        inherit BackgroundMaterialDefinesBase
+        inherit ImageProcessingDefinesMixinMembers
+    [<AllowNullLiteral>]
     type ImageProcessingDefinesPBRMaterialDefinesBase =
         inherit PBRMaterialDefinesBase
         inherit ImageProcessingDefinesMixinMembers
@@ -390,6 +399,12 @@ module HigherOrderRuntimeApis =
     type ImageProcessingDefinesMaterialDefinesStatic =
         [<EmitConstructor>] abstract Create: ?externalProperties: MaterialDefinesConstructor19Parameter1Object -> ImageProcessingDefinesMaterialDefines
     [<AllowNullLiteral>]
+    type BackgroundMaterialDefinesBaseStatic =
+        [<EmitConstructor>] abstract Create: ?externalProperties: MaterialDefinesConstructor19Parameter1Object -> BackgroundMaterialDefinesBase
+    [<AllowNullLiteral>]
+    type ImageProcessingDefinesBackgroundMaterialDefinesBaseStatic =
+        [<EmitConstructor>] abstract Create: ?externalProperties: MaterialDefinesConstructor19Parameter1Object -> ImageProcessingDefinesBackgroundMaterialDefinesBase
+    [<AllowNullLiteral>]
     type ImageProcessingDefinesPBRMaterialDefinesBaseStatic =
         [<EmitConstructor>] abstract Create: ?externalProperties: MaterialDefinesConstructor19Parameter1Object -> ImageProcessingDefinesPBRMaterialDefinesBase
     [<AllowNullLiteral>]
@@ -403,7 +418,7 @@ module HigherOrderRuntimeApis =
         [<EmitConstructor>] abstract Create: ?externalProperties: MaterialDefinesConstructor19Parameter1Object -> ImageProcessingDefinesNodeMaterialDefinesBase
     [<AllowNullLiteral>]
     type ImageProcessingDefinesMixinBinding =
-        [<Emit("$0($1)")>] abstract Invoke: ``base``: MaterialDefinesStatic -> ImageProcessingDefinesMaterialDefinesStatic
+        [<Emit("$0($1)")>] abstract Invoke: ``base``: BackgroundMaterialDefinesBaseStatic -> ImageProcessingDefinesBackgroundMaterialDefinesBaseStatic
         [<Emit("$0($1)")>] abstract Invoke: ``base``: PBRMaterialDefinesBaseStatic -> ImageProcessingDefinesPBRMaterialDefinesBaseStatic
         [<Emit("$0($1)")>] abstract Invoke: ``base``: StandardMaterialDefinesBaseStatic -> ImageProcessingDefinesStandardMaterialDefinesBaseStatic
         [<Emit("$0($1)")>] abstract Invoke: ``base``: OpenPBRMaterialDefinesWithEnvLightingStatic -> ImageProcessingDefinesOpenPBRMaterialDefinesWithEnvLightingStatic
