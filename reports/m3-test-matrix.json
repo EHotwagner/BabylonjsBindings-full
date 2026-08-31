@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "workId": "005-m3-higher-order-runtime-apis",
+  "result": "pass",
+  "coverage": {
+    "total": 4323,
+    "typed": 4287,
+    "runtimeOnly": 1,
+    "blocked": 35,
+    "lossy": 0
+  },
+  "arityPolicy": {
+    "minimum": 0,
+    "maximum": 10,
+    "maximumFixedCallbackArity": 10,
+    "maximumFixedCallableDeclarationArityContext": 17
+  },
+  "exportsClosed": 8,
+  "negativeFixtures": 3,
+  "cleanConsumer": {
+    "schemaVersion": 1,
+    "package": "artifacts/m3-package/BabylonjsBindings.0.1.4.nupkg",
+    "packageVersion": "0.1.4",
+    "packageSha256": "5e3b782aac4ac562f7b5b2705231150222c7a2e3bb2124f827a3883ec64d49fd",
+    "sourceVersion": "0.1.3",
+    "fable": "5.13.0",
+    "npm": {
+      "core": "9.19.0",
+      "loaders": "9.19.0"
+    },
+    "node": "pass",
+    "chromium": "Chromium 151.0.7922.173 Arch Linux",
+    "isolatedNugetCache": true,
+    "result": "pass"
+  },
+  "checks": [
+    {
+      "name": "locked callable arity policy",
+      "command": "npm run scan:m3-arity",
+      "result": "pass"
+    },
+    {
+      "name": "reviewed maintained projection",
+      "command": "npm run check:m3-reviewed-projection",
+      "result": "pass"
+    },
+    {
+      "name": "locked maintained restore",
+      "command": "dotnet restore --locked-mode",
+      "result": "pass"
+    },
+    {
+      "name": "maintained positive compile matrix",
+      "command": "dotnet build --no-restore --nologo -v:minimal",
+      "result": "pass"
+    },
+    {
+      "name": "negative higher-order correlations",
+      "command": "npm run test:m3-negative",
+      "result": "pass"
+    },
+    {
+      "name": "Fable emitted compile",
+      "command": "npm run test:m3-fable",
+      "result": "pass"
+    },
+    {
+      "name": "exact emitted calls and imports",
+      "command": "npm run test:m3-imports",
+      "result": "pass"
+    },
+    {
+      "name": "Node higher-order runtime smoke",
+      "command": "npm run test:m3-node",
+      "result": "pass"
+    },
+    {
+      "name": "Chromium higher-order runtime smoke",
+      "command": "npm run test:m3-browser",
+      "result": "pass"
+    },
+    {
+      "name": "clean packed Fable consumer",
+      "command": "npm run test:m3-clean-consumer",
+      "result": "pass"
+    },
+    {
+      "name": "exact coverage totals",
+      "command": "npm run coverage:check",
+      "result": "pass"
+    },
+    {
+      "name": "locked declaration drift",
+      "command": "npm run check:drift",
+      "result": "pass"
+    },
+    {
+      "name": "analysis deterministic",
+      "command": "npm run analysis:determinism",
+      "result": "pass"
+    },
+    {
+      "name": "analysis current",
+      "command": "npm run analysis:check",
+      "result": "pass"
+    }
+  ]
+}

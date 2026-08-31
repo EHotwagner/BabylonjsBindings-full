@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="00000000-0000-4000-8000-000000000005" name="M3 higher-order runtime APIs" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Results>
+    <UnitTestResult executionId="00000001-0000-4000-8000-000000000001" testId="aaaaaaa1-aaaa-4aaa-8aaa-aaaaaaaaaaa1" testName="locked callable arity policy" outcome="Passed" />
+    <UnitTestResult executionId="00000002-0000-4000-8000-000000000002" testId="aaaaaaa2-aaaa-4aaa-8aaa-aaaaaaaaaaa2" testName="reviewed maintained projection" outcome="Passed" />
+    <UnitTestResult executionId="00000003-0000-4000-8000-000000000003" testId="aaaaaaa3-aaaa-4aaa-8aaa-aaaaaaaaaaa3" testName="locked maintained restore" outcome="Passed" />
+    <UnitTestResult executionId="00000004-0000-4000-8000-000000000004" testId="aaaaaaa4-aaaa-4aaa-8aaa-aaaaaaaaaaa4" testName="maintained positive compile matrix" outcome="Passed" />
+    <UnitTestResult executionId="00000005-0000-4000-8000-000000000005" testId="aaaaaaa5-aaaa-4aaa-8aaa-aaaaaaaaaaa5" testName="negative higher-order correlations" outcome="Passed" />
+    <UnitTestResult executionId="00000006-0000-4000-8000-000000000006" testId="aaaaaaa6-aaaa-4aaa-8aaa-aaaaaaaaaaa6" testName="Fable emitted compile" outcome="Passed" />
+    <UnitTestResult executionId="00000007-0000-4000-8000-000000000007" testId="aaaaaaa7-aaaa-4aaa-8aaa-aaaaaaaaaaa7" testName="exact emitted calls and imports" outcome="Passed" />
+    <UnitTestResult executionId="00000008-0000-4000-8000-000000000008" testId="aaaaaaa8-aaaa-4aaa-8aaa-aaaaaaaaaaa8" testName="Node higher-order runtime smoke" outcome="Passed" />
+    <UnitTestResult executionId="00000009-0000-4000-8000-000000000009" testId="aaaaaaa9-aaaa-4aaa-8aaa-aaaaaaaaaaa9" testName="Chromium higher-order runtime smoke" outcome="Passed" />
+    <UnitTestResult executionId="00000010-0000-4000-8000-000000000010" testId="aaaaaa10-aaaa-4aaa-8aaa-aaaaaaaaaa10" testName="clean packed Fable consumer" outcome="Passed" />
+    <UnitTestResult executionId="00000011-0000-4000-8000-000000000011" testId="aaaaaa11-aaaa-4aaa-8aaa-aaaaaaaaaa11" testName="exact coverage totals" outcome="Passed" />
+    <UnitTestResult executionId="00000012-0000-4000-8000-000000000012" testId="aaaaaa12-aaaa-4aaa-8aaa-aaaaaaaaaa12" testName="locked declaration drift" outcome="Passed" />
+    <UnitTestResult executionId="00000013-0000-4000-8000-000000000013" testId="aaaaaa13-aaaa-4aaa-8aaa-aaaaaaaaaa13" testName="analysis deterministic" outcome="Passed" />
+    <UnitTestResult executionId="00000014-0000-4000-8000-000000000014" testId="aaaaaa14-aaaa-4aaa-8aaa-aaaaaaaaaa14" testName="analysis current" outcome="Passed" />
+  </Results>
+  <ResultSummary outcome="Completed"><Counters total="14" executed="14" passed="14" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" notExecuted="0" /></ResultSummary>
+</TestRun>

@@ -6,6 +6,7 @@ open BabylonjsBindings.ObjectTypes
 open BabylonjsBindings.SimpleInterfaces
 open BabylonjsBindings.SimpleClasses
 open BabylonjsBindings.FiniteDependentMaps
+open BabylonjsBindings.HigherOrderRuntimeApis
 let shaderLanguage: ShaderLanguage = ShaderLanguage.``WGSL``
 let loaderState: GLTFLoaderState = GLTFLoaderState.``READY``
 let fftSize: AudioAnalyzerFFTSizeType = AudioAnalyzerFFTSizeType.``N32768``
@@ -265,6 +266,57 @@ let richTypeColor4: RichType<Color4> = BabylonjsBindings.SimpleVariables.``RichT
 let staticOffsetColor3: DeepImmutableColor3 = BabylonjsBindings.SimpleVariables.``_StaticOffsetValueColor3``
 let staticOffsetColor4: DeepImmutableColor4 = BabylonjsBindings.SimpleVariables.``_StaticOffsetValueColor4``
 let staticOffsetSize: DeepImmutableSize = BabylonjsBindings.SimpleVariables.``_StaticOffsetValueSize``
+let m3Sync0 (factory: CoroutineFactory0<'R>) : SyncCallable0<'R> = makeSyncFunction.Invoke(factory)
+let m3Async0 (factory: AsyncCoroutineFactory0<'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable0<'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync1 (factory: CoroutineFactory1<'A1, 'R>) : SyncCallable1<'A1, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async1 (factory: AsyncCoroutineFactory1<'A1, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable1<'A1, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync2 (factory: CoroutineFactory2<'A1, 'A2, 'R>) : SyncCallable2<'A1, 'A2, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async2 (factory: AsyncCoroutineFactory2<'A1, 'A2, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable2<'A1, 'A2, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync3 (factory: CoroutineFactory3<'A1, 'A2, 'A3, 'R>) : SyncCallable3<'A1, 'A2, 'A3, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async3 (factory: AsyncCoroutineFactory3<'A1, 'A2, 'A3, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable3<'A1, 'A2, 'A3, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync4 (factory: CoroutineFactory4<'A1, 'A2, 'A3, 'A4, 'R>) : SyncCallable4<'A1, 'A2, 'A3, 'A4, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async4 (factory: AsyncCoroutineFactory4<'A1, 'A2, 'A3, 'A4, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable4<'A1, 'A2, 'A3, 'A4, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync5 (factory: CoroutineFactory5<'A1, 'A2, 'A3, 'A4, 'A5, 'R>) : SyncCallable5<'A1, 'A2, 'A3, 'A4, 'A5, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async5 (factory: AsyncCoroutineFactory5<'A1, 'A2, 'A3, 'A4, 'A5, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable5<'A1, 'A2, 'A3, 'A4, 'A5, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync6 (factory: CoroutineFactory6<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'R>) : SyncCallable6<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async6 (factory: AsyncCoroutineFactory6<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable6<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync7 (factory: CoroutineFactory7<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'R>) : SyncCallable7<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async7 (factory: AsyncCoroutineFactory7<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable7<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync8 (factory: CoroutineFactory8<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'R>) : SyncCallable8<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async8 (factory: AsyncCoroutineFactory8<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable8<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync9 (factory: CoroutineFactory9<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'R>) : SyncCallable9<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async9 (factory: AsyncCoroutineFactory9<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable9<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3Sync10 (factory: CoroutineFactory10<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'A10, 'R>) : SyncCallable10<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'A10, 'R> = makeSyncFunction.Invoke(factory)
+let m3Async10 (factory: AsyncCoroutineFactory10<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'A10, 'R>) (scheduler: BabylonjsBindings.TypeAliases.CoroutineScheduler<'R>) : AsyncCallable10<'A1, 'A2, 'A3, 'A4, 'A5, 'A6, 'A7, 'A8, 'A9, 'A10, 'R> = makeAsyncFunction.Invoke(factory, scheduler)
+let m3AccessorFactory<'This, 'V> (target: ClassAccessorDecoratorTarget<'This, 'V>) (context: ClassAccessorDecoratorContext<'This, 'V>) =
+    let expand: AccessorDecorator<'This, 'V> = expandToProperty.Invoke("markDirty")
+    let expandNull: AccessorDecorator<'This, 'V> = expandToProperty.InvokeNull("markDirty")
+    let material: AccessorDecorator<'This, 'V> = addAccessorsForMaterialProperty.Invoke("markDirty")
+    let materialNull: AccessorDecorator<'This, 'V> = addAccessorsForMaterialProperty.InvokeNull("markDirty")
+    expand.Invoke(target, context), expandNull.Invoke(target, context), material.Invoke(target, context), materialNull.Invoke(target, context)
+let m3NativeBoundary
+    (predicate: Predicate10<int, int, int, int, int, int, int, int, int, int>)
+    (method: ThisCallable10<obj, int, int, int, int, int, int, int, int, int, int, int>)
+    (context: ClassMethodDecoratorContext<obj, ThisCallable10<obj, int, int, int, int, int, int, int, int, int, int, int>>)
+    (thisArg: obj) =
+    let direct = nativeOverride.Invoke(method, context)
+    let filtered = nativeOverride.filter.Invoke(predicate).Invoke(method, context)
+    direct.Call(thisArg, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10), filtered.Call(thisArg, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+let m3ImageProcessingBoth (value: ImageProcessingPushMaterial) = value.getEffect(), value.cameraExposure
+let m3ImageProcessingDefinesBoth (value: ImageProcessingDefinesPBRMaterialDefinesBase) = value.markAsProcessed(), value.IMAGEPROCESSING
+let m3BackgroundImageProcessingDefinesBoth (value: ImageProcessingDefinesBackgroundMaterialDefinesBase) = value.markAsProcessed(), value.IMAGEPROCESSING
+let m3StandardImageProcessingDefinesBoth (value: ImageProcessingDefinesStandardMaterialDefinesBase) = value.markAsProcessed(), value.IMAGEPROCESSING
+let m3OpenPBRImageProcessingDefinesBoth (value: ImageProcessingDefinesOpenPBRMaterialDefinesWithEnvLighting) = value.markAsProcessed(), value.IMAGEPROCESSING
+let m3NodeImageProcessingDefinesBoth (value: ImageProcessingDefinesNodeMaterialDefinesBase) = value.markAsProcessed(), value.IMAGEPROCESSING
+let m3UVBoth (value: UVDefinesMaterialDefines) = value.markAsProcessed(), value.UV6
+let m3ImageProcessingSpecialization (baseCtor: PushMaterialStatic) : ImageProcessingPushMaterialStatic = ImageProcessingMixin.Invoke(baseCtor)
+let m3ImageDefinesSpecialization (baseCtor: PBRMaterialDefinesBaseStatic) : ImageProcessingDefinesPBRMaterialDefinesBaseStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
+let m3BackgroundImageDefinesSpecialization (baseCtor: BackgroundMaterialDefinesBaseStatic) : ImageProcessingDefinesBackgroundMaterialDefinesBaseStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
+let m3StandardImageDefinesSpecialization (baseCtor: StandardMaterialDefinesBaseStatic) : ImageProcessingDefinesStandardMaterialDefinesBaseStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
+let m3OpenPBRImageDefinesSpecialization (baseCtor: OpenPBRMaterialDefinesWithEnvLightingStatic) : ImageProcessingDefinesOpenPBRMaterialDefinesWithEnvLightingStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
+let m3NodeImageDefinesSpecialization (baseCtor: NodeMaterialDefinesBaseStatic) : ImageProcessingDefinesNodeMaterialDefinesBaseStatic = ImageProcessingDefinesMixin.Invoke(baseCtor)
+let m3UVSpecialization (baseCtor: MaterialDefinesStatic) : UVDefinesMaterialDefinesStatic = UVDefinesMixin.Invoke(baseCtor)
+
 let engine = nullEngine ()
 let scene = scene engine
 let _ = box "compile-smoke" scene
