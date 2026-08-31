@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "4084251b446c8a04f59a1e2b25c6911dec85069287837ae9de7574543e8c39be",
+  "proposalSha256": "9135d54ed08478c58ca29d25a2dbf2b6ce4bf7e0a6d1c9fc6961a0cb0b838bce",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -707,6 +707,20 @@
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.MeshStageAction",
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh"
+      ],
+      "shape": "callback",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/motionController/webXRMotionControllerManager.pure",
+      "name": "MotionControllerConstructor",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MotionControllerConstructor",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractMotionController"
       ],
       "shape": "callback",
       "memberCount": 2

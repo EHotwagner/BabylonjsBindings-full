@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "4ad46eaa875c9b1fcc53b5267cfbaaf4872d93585fde5cf4a454ded70b48d01a",
+  "proposalSha256": "47e19a09540ef0f71835a5d4f91068948465c9b87b5369cde594a5b3d62067d5",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -25075,6 +25075,126 @@
         "BabylonjsBindings.SimpleInterfaces.IWebXRNearInteractionOptions"
       ],
       "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRAnchorSystem.pure",
+      "name": "WebXRAnchorSystem",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRAnchorSystem",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRAnchor",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRAnchorSystemOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRHitResult"
+      ],
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHitTest.pure",
+      "name": "WebXRHitTest",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRHitTest",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRHitResult",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRHitTestFeature",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRHitTestOptions"
+      ],
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRImageTracking.pure",
+      "name": "WebXRImageTracking",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRImageTracking",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRImageTrackingOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRTrackedImage"
+      ],
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRLightEstimation.pure",
+      "name": "WebXRLightEstimation",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRLightEstimation",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BaseTexture",
+        "BabylonjsBindings.SimpleClasses.DirectionalLight",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRLightEstimation",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRLightEstimationOptions"
+      ],
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRMeshDetector.pure",
+      "name": "WebXRMeshDetector",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRMeshDetector",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRMeshDetectorOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRVertexData"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRPlaneDetector.pure",
+      "name": "WebXRPlaneDetector",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRPlaneDetector",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRPlane",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRPlaneDetectorOptions"
+      ],
+      "memberCount": 10
     }
   ],
   "reviewStatus": "maintained"

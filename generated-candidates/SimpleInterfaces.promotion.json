@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "bf36a45def09e870e5444f228ae0131859ac9de984cff9deb425dc4751652902",
+  "proposalSha256": "b0315613f8a2d4533a40806865305efe38db6228a71ef80996869ad1ec87bbc3",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -2882,6 +2882,19 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRAnchorSystem.pure",
+      "name": "IWebXRAnchor",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRAnchor",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.TransformNode"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRAnchorSystem.pure",
       "name": "IWebXRAnchorSystemOptions",
       "kind": "interface",
       "disposition": "typed",
@@ -2997,6 +3010,28 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRLayers.pure",
+      "name": "IWebXRLayersOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRLayersOptions",
+      "dependencies": [],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHitTestLegacy",
+      "name": "IWebXRLegacyHitResult",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRLegacyHitResult",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Matrix"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRHitTestLegacy",
       "name": "IWebXRLegacyHitTestOptions",
       "kind": "interface",
@@ -3020,6 +3055,28 @@
         "BabylonjsBindings.SimpleClasses.Vector3"
       ],
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRLightEstimation.pure",
+      "name": "IWebXRLightEstimationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRLightEstimationOptions",
+      "dependencies": [],
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRMeshDetector.pure",
+      "name": "IWebXRMeshDetectorOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRMeshDetectorOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.TransformNode"
+      ],
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -3060,6 +3117,31 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRPlaneDetector.pure",
+      "name": "IWebXRPlane",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRPlane",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRPlaneDetector.pure",
+      "name": "IWebXRPlaneDetectorOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRPlaneDetectorOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.TransformNode"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRRawCameraAccess.pure",
       "name": "IWebXRRawCameraAccessOptions",
       "kind": "interface",
@@ -3085,6 +3167,32 @@
       ],
       "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIWebXRTeleportationOptions",
       "memberCount": 19
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRImageTracking.pure",
+      "name": "IWebXRTrackedImage",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRTrackedImage",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Matrix"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRMeshDetector.pure",
+      "name": "IWebXRVertexData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRVertexData",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleClasses.TransformNode"
+      ],
+      "memberCount": 8
     },
     {
       "package": "@babylonjs/core",
@@ -4804,6 +4912,33 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHitTest.pure",
+      "name": "IWebXRHitResult",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRHitResult",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRLegacyHitResult"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHitTest.pure",
+      "name": "IWebXRHitTestOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRHitTestOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRLegacyHitTestOptions"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRInput",
       "name": "IWebXRInputOptions",
       "kind": "interface",
@@ -5810,6 +5945,20 @@
       ],
       "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIWebAudioEngineOptions",
       "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHitTestLegacy",
+      "name": "IWebXRHitTestFeature",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRHitTestFeature",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRFeature"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 1
     },
     {
       "package": "@babylonjs/core",

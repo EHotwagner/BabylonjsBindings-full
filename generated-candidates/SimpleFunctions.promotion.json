@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "5e0c81ebe6b850ea4e82f20759a90b094f42fc93d065e14dc5eb0acbbfb65148",
+  "proposalSha256": "19be78ffe931cbdfe53b08e55ceb9deb7c65fa5bc92f9321943441100ac2e2d9",
   "exports": [
     {
       "package": "@babylonjs/loaders",
@@ -127,6 +127,19 @@
         "BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ConnectBefore",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "_executeWhenRenderingStateIsCompiled",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._executeWhenRenderingStateIsCompiled",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IPipelineContext"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__executeWhenRenderingStateIsCompiled",
       "overloadCount": 1
     },
     {
@@ -292,6 +305,23 @@
         "BabylonjsBindings.TypeAliases.WebGLContext"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__isRenderingStateCompiled",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.functions",
+      "name": "_LoadFile",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._LoadFile",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.LoadFileError",
+        "BabylonjsBindings.SimpleClasses.WebRequest",
+        "BabylonjsBindings.SimpleInterfaces.IFileRequest",
+        "BabylonjsBindings.SimpleInterfaces.IOfflineProvider",
+        "BabylonjsBindings.SimpleInterfaces.IWebRequest"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__LoadFile",
       "overloadCount": 1
     },
     {
@@ -1016,6 +1046,17 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tools.pure",
+      "name": "className",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.className",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_className",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/colorCurves.pure",
       "name": "ColorCurvesBind",
       "kind": "function",
@@ -1580,6 +1621,20 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure",
+      "name": "CreateGroundFromHeightMap",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateGroundFromHeightMap",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.GroundMesh",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGroundFromHeightMap",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure",
       "name": "CreateGroundFromHeightMapVertexData",
       "kind": "function",
       "disposition": "typed",
@@ -2095,6 +2150,53 @@
         "BabylonjsBindings.SimpleInterfaces.IScreenshotSize"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure",
+      "name": "CreateScreenshotForFrameGraphAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateScreenshotForFrameGraphAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.FrameGraph",
+        "BabylonjsBindings.SimpleInterfaces.IScreenshotSize"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotForFrameGraphAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure",
+      "name": "CreateScreenshotUsingRenderTarget",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateScreenshotUsingRenderTarget",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
+        "BabylonjsBindings.SimpleInterfaces.IScreenshotSize"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotUsingRenderTarget",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure",
+      "name": "CreateScreenshotUsingRenderTargetAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateScreenshotUsingRenderTargetAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
+        "BabylonjsBindings.SimpleInterfaces.IScreenshotSize"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotUsingRenderTargetAsync",
       "overloadCount": 1
     },
     {
@@ -3753,6 +3855,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
+      "name": "LoadAssetContainerFromSerializedScene",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadAssetContainerFromSerializedScene",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AssetContainer",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LoadAssetContainerFromSerializedScene",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Lights/IES/iesLoader",
       "name": "LoadIESData",
       "kind": "function",
@@ -4766,6 +4882,17 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetSerializer",
+      "name": "ReadJsonSourceAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ReadJsonSourceAsync",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ReadJsonSourceAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Probes/reflectionProbe.pure",
       "name": "ReflectionProbeParse",
       "kind": "function",
@@ -5557,6 +5684,17 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterClampBlock",
       "dependencies": [],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RegisterClampBlock",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/typeStore",
+      "name": "RegisterClass",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterClass",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RegisterClass",
       "overloadCount": 1
     },
     {
@@ -11337,6 +11475,19 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterTextureBlock",
       "dependencies": [],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RegisterTextureBlock",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager",
+      "name": "registerTextureLoader",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.registerTextureLoader",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_registerTextureLoader",
       "overloadCount": 1
     },
     {

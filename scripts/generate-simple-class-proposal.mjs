@@ -368,6 +368,9 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && inner.typeName.text === "XRSessionInit" && !inner.typeArguments?.length) {
         return "BabylonjsBindings.SimpleInterfaces.BrowserXRSessionInit";
       }
+      if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && inner.typeName.text === "XRProjectionLayerInit" && !inner.typeArguments?.length) {
+        return "BabylonjsBindings.SimpleInterfaces.BrowserXRProjectionLayerInit";
+      }
       if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && !inner.typeArguments?.length) {
         const partial = maintainedSymbols.get(inner.typeName.text)?.partialSymbol;
         if (partial) return partial;
@@ -533,6 +536,18 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && node.typeName.text === "XRRenderStateInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderStateInit";
     if (!node.typeArguments?.length && node.typeName.text === "XRReferenceSpaceType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType";
     if (!node.typeArguments?.length && node.typeName.text === "XRHandedness") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness";
+    if (!node.typeArguments?.length && node.typeName.text === "XRProjectionLayerInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRProjectionLayerInit";
+    if (!node.typeArguments?.length && node.typeName.text === "XRAnchor") return "BabylonjsBindings.SimpleInterfaces.BrowserXRAnchor";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitTestResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestResult";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitResult";
+    if (!node.typeArguments?.length && node.typeName.text === "XRMesh") return "BabylonjsBindings.SimpleInterfaces.BrowserXRMesh";
+    if (!node.typeArguments?.length && node.typeName.text === "XRPlane") return "BabylonjsBindings.SimpleInterfaces.BrowserXRPlane";
+    if (!node.typeArguments?.length && node.typeName.text === "XRImageTrackingResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRImageTrackingResult";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitTestTrackableType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestTrackableType";
+    if (!node.typeArguments?.length && node.typeName.text === "XRReflectionFormat") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReflectionFormat";
+    if (!node.typeArguments?.length && node.typeName.text === "XRGeometryDetectorOptions") return "BabylonjsBindings.SimpleInterfaces.BrowserXRGeometryDetectorOptions";
+    if (!node.typeArguments?.length && node.typeName.text === "DistanceModelType") return "BabylonjsBindings.SimpleInterfaces.BrowserDistanceModelType";
+    if (!node.typeArguments?.length && node.typeName.text === "PanningModelType") return "BabylonjsBindings.SimpleInterfaces.BrowserPanningModelType";
     if (!node.typeArguments?.length && node.typeName.text === "BigUint64Array") return "BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array";
     if (!node.typeArguments?.length && node.typeName.text === "GPUPowerPreference") return "BabylonjsBindings.SimpleInterfaces.BrowserGPUPowerPreference";
     if (!node.typeArguments?.length && node.typeName.text === "XMLHttpRequestBodyInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequestBodyInit";

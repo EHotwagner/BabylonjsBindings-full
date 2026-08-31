@@ -9548,6 +9548,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRAnchorSystem.pure.js",
+      "export": "WebXRAnchorSystem",
+      "runtimeExport": "WebXRAnchorSystem",
+      "moduleSha256": "7f1de986179bcf7ddad5c3916627a5a14b97fdf5334f27940038b2430e6880f9"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRBackgroundRemover.pure.js",
       "export": "WebXRBackgroundRemover",
       "runtimeExport": "WebXRBackgroundRemover",
@@ -9639,10 +9646,24 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHitTest.pure.js",
+      "export": "WebXRHitTest",
+      "runtimeExport": "WebXRHitTest",
+      "moduleSha256": "358820645041463b16b5157140fa60b985c7c345acb2a5b6660d106012af001b"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/motionController/webXRHTCViveMotionController.pure.js",
       "export": "WebXRHTCViveMotionController",
       "runtimeExport": "WebXRHTCViveMotionController",
       "moduleSha256": "70377b9eaabe931bf47efe70740d2a459b8ebfa079f8efb1108c358fcbacaf00"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRImageTracking.pure.js",
+      "export": "WebXRImageTracking",
+      "runtimeExport": "WebXRImageTracking",
+      "moduleSha256": "3c60f32a14508c6d197ce841d028e1c1ab812235ce233c4b445a04753478410b"
     },
     {
       "package": "@babylonjs/core",
@@ -9674,6 +9695,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRLightEstimation.pure.js",
+      "export": "WebXRLightEstimation",
+      "runtimeExport": "WebXRLightEstimation",
+      "moduleSha256": "227f2898932477b67188acd483a3f86a695820a7e8365c44ca5b5fed3de98f0f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRManagedOutputCanvas.js",
       "export": "WebXRManagedOutputCanvas",
       "runtimeExport": "WebXRManagedOutputCanvas",
@@ -9685,6 +9713,13 @@
       "export": "WebXRManagedOutputCanvasOptions",
       "runtimeExport": "WebXRManagedOutputCanvasOptions",
       "moduleSha256": "60f911f84fcc8ced4b03922f35e5e1b06154b396f7d9641cacc7d1814be3c08d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRMeshDetector.pure.js",
+      "export": "WebXRMeshDetector",
+      "runtimeExport": "WebXRMeshDetector",
+      "moduleSha256": "d106cbb94fe7e6ed55f91690972560ff2fe5d0237fb040420ff9a73d60904dbc"
     },
     {
       "package": "@babylonjs/core",
@@ -9727,6 +9762,13 @@
       "export": "WebXROculusTouchMotionController",
       "runtimeExport": "WebXROculusTouchMotionController",
       "moduleSha256": "cd1d0834d1b696a969d9ae6661f9c93583bf6705717e1eb6a808b5a75e91da6a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRPlaneDetector.pure.js",
+      "export": "WebXRPlaneDetector",
+      "runtimeExport": "WebXRPlaneDetector",
+      "moduleSha256": "7a4bde03edb0a3336941e1b3205065f364bd7852322d1bc881e075a1e4723566"
     },
     {
       "package": "@babylonjs/core",

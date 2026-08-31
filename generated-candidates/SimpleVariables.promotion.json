@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "aced1a7f18925704cb6aa91a9cbb0003258202f211acc24d4a074d5e7ccb0f00",
+  "proposalSha256": "01ad201f1a1618b51125f668fa034ebddee332b6dac8e358d67ee5f81752932e",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -56,6 +56,20 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables._IsMacPlatform",
       "dependencies": [],
       "fsharpType": "bool"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio",
+      "name": "_SpatialAudioDefaults",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._SpatialAudioDefaults",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "fsharpType": "VariableShape__SpatialAudioDefaults",
+      "memberCount": 13
     },
     {
       "package": "@babylonjs/core",
@@ -1132,6 +1146,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/Layers/WebXRProjectionLayer",
+      "name": "DefaultXRProjectionLayerInit",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.DefaultXRProjectionLayerInit",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleInterfaces.BrowserXRProjectionLayerInit"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/depthBoxBlur.fragment",
       "name": "depthBoxBlurPixelShader",
       "kind": "variable",
@@ -1327,6 +1351,17 @@
       "dependencies": [],
       "fsharpType": "VariableFunction_EncodeArrayBufferToBase64",
       "parameterCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dumpTools.pure",
+      "name": "EncodeImageAsync",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EncodeImageAsync",
+      "dependencies": [],
+      "fsharpType": "VariableFunction_EncodeImageAsync",
+      "parameterCount": 6
     },
     {
       "package": "@babylonjs/core",
@@ -2375,6 +2410,17 @@
       "dependencies": [],
       "fsharpType": "VariableShape_greasedLineVertexShaderWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure",
+      "name": "GroundBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GroundBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_GroundBuilder",
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/core",
@@ -3614,6 +3660,20 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
+      "name": "LoadAssetContainer",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LoadAssetContainer",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AssetContainer",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "fsharpType": "VariableFunction_LoadAssetContainer",
+      "parameterCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure",
       "name": "LoadDetailLevels",
       "kind": "variable",
       "disposition": "typed",
@@ -3624,6 +3684,22 @@
       ],
       "fsharpType": "VariableFunction_LoadDetailLevels",
       "parameterCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "LoadFile",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LoadFile",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.LoadFileError",
+        "BabylonjsBindings.SimpleClasses.WebRequest",
+        "BabylonjsBindings.SimpleInterfaces.IFileRequest",
+        "BabylonjsBindings.SimpleInterfaces.IOfflineProvider"
+      ],
+      "fsharpType": "VariableFunction_LoadFile",
+      "parameterCount": 7
     },
     {
       "package": "@babylonjs/core",
@@ -4212,6 +4288,16 @@
       "memberCount": 2
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter",
+      "name": "OptionalPathExceptionsList",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.OptionalPathExceptionsList",
+      "dependencies": [],
+      "fsharpType": "ResizeArray<VariableShape_OptionalPathExceptionsListElementObject>"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/outline.fragment",
       "name": "outlinePixelShader",
@@ -4587,6 +4673,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "ReadFile",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ReadFile",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.ReadFileError",
+        "BabylonjsBindings.SimpleInterfaces.IFileRequest"
+      ],
+      "fsharpType": "VariableFunction_ReadFile",
+      "parameterCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/reflectionFunction",
       "name": "reflectionFunction",
       "kind": "variable",
@@ -4628,6 +4728,22 @@
       "dependencies": [],
       "fsharpType": "VariableShape_renderableTextureFormatToIndex",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "RequestFile",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.RequestFile",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.RequestFileError",
+        "BabylonjsBindings.SimpleClasses.WebRequest",
+        "BabylonjsBindings.SimpleInterfaces.IFileRequest",
+        "BabylonjsBindings.SimpleInterfaces.IOfflineProvider"
+      ],
+      "fsharpType": "VariableFunction_RequestFile",
+      "parameterCount": 7
     },
     {
       "package": "@babylonjs/core",
@@ -4984,6 +5100,17 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure",
+      "name": "ScreenshotTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ScreenshotTools",
+      "dependencies": [],
+      "fsharpType": "VariableShape_ScreenshotTools",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/screenSpaceCurvature.fragment",
       "name": "screenSpaceCurvaturePixelShader",
       "kind": "variable",
@@ -5069,6 +5196,17 @@
       "dependencies": [],
       "fsharpType": "VariableShape_screenSpaceReflectionPixelShader",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "SetBasisTranscoderWorker",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.SetBasisTranscoderWorker",
+      "dependencies": [],
+      "fsharpType": "VariableFunction_SetBasisTranscoderWorker",
+      "parameterCount": 1
     },
     {
       "package": "@babylonjs/core",

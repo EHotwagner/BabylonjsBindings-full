@@ -65,6 +65,18 @@ const ambientHandleTypes = new Map([
   ["AudioNode", "BrowserAudioNode"],
   ["OfflineAudioContext", "BrowserOfflineAudioContext"],
   ["XRHandedness", "BrowserXRHandedness"],
+  ["XRProjectionLayerInit", "BrowserXRProjectionLayerInit"],
+  ["XRAnchor", "BrowserXRAnchor"],
+  ["XRHitTestResult", "BrowserXRHitTestResult"],
+  ["XRHitResult", "BrowserXRHitResult"],
+  ["XRMesh", "BrowserXRMesh"],
+  ["XRPlane", "BrowserXRPlane"],
+  ["XRImageTrackingResult", "BrowserXRImageTrackingResult"],
+  ["XRHitTestTrackableType", "BrowserXRHitTestTrackableType"],
+  ["XRReflectionFormat", "BrowserXRReflectionFormat"],
+  ["XRGeometryDetectorOptions", "BrowserXRGeometryDetectorOptions"],
+  ["DistanceModelType", "BrowserDistanceModelType"],
+  ["PanningModelType", "BrowserPanningModelType"],
   ["BigUint64Array", "BrowserBigUint64Array"]
 ]);
 const numericLiteralValues = new Set();
@@ -93,6 +105,7 @@ const fsharpType = (node, typeParameters = new Map()) => {
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.NeverKeyword) return "BabylonjsBindings.SimpleClasses.Never";
+  if (node.kind === ts.SyntaxKind.ObjectKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptObject";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
@@ -125,8 +138,11 @@ const fsharpType = (node, typeParameters = new Map()) => {
   }
   if (ts.isFunctionTypeNode(node)
     && !node.typeParameters?.length
-    && !node.parameters.some(parameter => parameter.dotDotDotToken || parameter.questionToken)) {
-    const parameterTypes = node.parameters.map(parameter => parameter.type ? fsharpType(parameter.type, typeParameters) : undefined);
+    && !node.parameters.some(parameter => parameter.dotDotDotToken)) {
+    const parameterTypes = node.parameters.map(parameter => {
+      const rendered = parameter.type ? fsharpType(parameter.type, typeParameters) : undefined;
+      return parameter.questionToken && rendered ? asOption(rendered) : rendered;
+    });
     const returnType = fsharpType(node.type, typeParameters);
     if (returnType && parameterTypes.every(Boolean)) {
       if (returnType === "unit") return parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`;
@@ -142,6 +158,7 @@ const fsharpType = (node, typeParameters = new Map()) => {
     if (target?.arity === 0) return target.fsharpSymbol;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "ProgressEvent" && (node.typeArguments?.length ?? 0) <= 1) return "Browser.Types.ProgressEvent";
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
     if (node.typeName.text === "DeepImmutable"
       && node.typeArguments?.length === 1

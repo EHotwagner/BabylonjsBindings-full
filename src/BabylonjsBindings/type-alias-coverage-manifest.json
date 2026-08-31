@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "e3a7adbc62be0b5fe5b41b7d5229f76a3143c88b16952dbbd2e8e2531daea394",
+  "proposalSha256": "aa22a26c8bfaf89574eb7a927c48dde99c8b630139d67acc89f6367741d08d8e",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1223,6 +1223,20 @@
       ],
       "shape": "alias",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/motionController/webXRMotionControllerManager.pure",
+      "name": "MotionControllerConstructor",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MotionControllerConstructor",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractMotionController"
+      ],
+      "shape": "callback",
+      "memberCount": 2
     }
   ],
   "reviewStatus": "maintained"

@@ -73,6 +73,7 @@ const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.NeverKeyword) return "BabylonjsBindings.SimpleClasses.Never";
+  if (node.kind === ts.SyntaxKind.ObjectKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptObject";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return "float";
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return "string";
@@ -104,8 +105,11 @@ const fsharpType = node => {
   }
   if (ts.isFunctionTypeNode(node)
     && !node.typeParameters?.length
-    && !node.parameters.some(parameter => parameter.dotDotDotToken || parameter.questionToken)) {
-    const parameterTypes = node.parameters.map(parameter => parameter.type ? fsharpType(parameter.type) : undefined);
+    && !node.parameters.some(parameter => parameter.dotDotDotToken)) {
+    const parameterTypes = node.parameters.map(parameter => {
+      const rendered = parameter.type ? fsharpType(parameter.type) : undefined;
+      return parameter.questionToken && rendered ? asOption(rendered) : rendered;
+    });
     const returnType = fsharpType(node.type);
     if (returnType && parameterTypes.every(Boolean)) {
       if (returnType === "unit") return parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`;
@@ -123,6 +127,7 @@ const fsharpType = node => {
     return maintainedSymbols.get(node.exprName.text)?.fsharpType;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "ProgressEvent" && (node.typeArguments?.length ?? 0) <= 1) return "Browser.Types.ProgressEvent";
     if (node.typeName.text === "DeepImmutable"
       && node.typeArguments?.length === 1
       && ts.isTypeReferenceNode(node.typeArguments[0])
@@ -164,6 +169,20 @@ const fsharpType = node => {
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
     if (!node.typeArguments?.length && node.typeName.text === "XRHandedness") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness";
+    if (!node.typeArguments?.length && node.typeName.text === "XRProjectionLayerInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRProjectionLayerInit";
+    if (!node.typeArguments?.length && node.typeName.text === "XRAnchor") return "BabylonjsBindings.SimpleInterfaces.BrowserXRAnchor";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitTestResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestResult";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitResult";
+    if (!node.typeArguments?.length && node.typeName.text === "XRMesh") return "BabylonjsBindings.SimpleInterfaces.BrowserXRMesh";
+    if (!node.typeArguments?.length && node.typeName.text === "XRPlane") return "BabylonjsBindings.SimpleInterfaces.BrowserXRPlane";
+    if (!node.typeArguments?.length && node.typeName.text === "XRImageTrackingResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRImageTrackingResult";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitTestTrackableType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestTrackableType";
+    if (!node.typeArguments?.length && node.typeName.text === "XRReflectionFormat") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReflectionFormat";
+    if (!node.typeArguments?.length && node.typeName.text === "XRGeometryDetectorOptions") return "BabylonjsBindings.SimpleInterfaces.BrowserXRGeometryDetectorOptions";
+    if (!node.typeArguments?.length && node.typeName.text === "DistanceModelType") return "BabylonjsBindings.SimpleInterfaces.BrowserDistanceModelType";
+    if (!node.typeArguments?.length && node.typeName.text === "PanningModelType") return "BabylonjsBindings.SimpleInterfaces.BrowserPanningModelType";
+    if (!node.typeArguments?.length && node.typeName.text === "RegExp") return "BabylonjsBindings.SimpleInterfaces.BrowserRegExp";
+    if (!node.typeArguments?.length && node.typeName.text === "Worker") return "BabylonjsBindings.SimpleInterfaces.BrowserWorker";
     if (!node.typeArguments?.length && node.typeName.text === "BigUint64Array") return "BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (maintainedSymbols.has(node.typeName.text)) {
@@ -179,7 +198,20 @@ const fsharpType = node => {
   return undefined;
 };
 const functionShape = (node, exportName) => {
-  if (!ts.isFunctionTypeNode(node) || node.typeParameters?.length || node.parameters.some(parameter => parameter.dotDotDotToken || (ts.isIdentifier(parameter.name) && parameter.name.text === "this"))) return undefined;
+  let callable = node;
+  if (ts.isTypeQueryNode(node)) {
+    let symbol = checker.getSymbolAtLocation(node.exprName);
+    if (symbol?.flags & ts.SymbolFlags.Alias) {
+      try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+    }
+    const declarations = symbol?.declarations?.filter(declaration => ts.isFunctionDeclaration(declaration) || ts.isMethodDeclaration(declaration) || ts.isMethodSignature(declaration)) ?? [];
+    if (declarations.length !== 1) return undefined;
+    callable = declarations[0];
+  }
+  if (!(ts.isFunctionTypeNode(callable) || ts.isFunctionDeclaration(callable) || ts.isMethodDeclaration(callable) || ts.isMethodSignature(callable))
+    || !callable.type
+    || callable.typeParameters?.length
+    || callable.parameters.some(parameter => parameter.dotDotDotToken || (ts.isIdentifier(parameter.name) && parameter.name.text === "this"))) return undefined;
   const inlineShapes = [];
   const renderType = (typeNode, role) => {
     const direct = fsharpType(typeNode);
@@ -190,8 +222,8 @@ const functionShape = (node, exportName) => {
     inlineShapes.push({ name, members });
     return name;
   };
-  const returnType = renderType(node.type, "Return");
-  const parameters = node.parameters.map((parameter, index) => ({
+  const returnType = renderType(callable.type, "Return");
+  const parameters = callable.parameters.map((parameter, index) => ({
     name: ts.isIdentifier(parameter.name) ? parameter.name.text : undefined,
     type: parameter.type ? renderType(parameter.type, `Parameter${index + 1}`) : undefined,
     optional: Boolean(parameter.questionToken)

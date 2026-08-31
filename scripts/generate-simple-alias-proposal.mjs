@@ -129,7 +129,6 @@ const stringLiteralType = value => {
   stringLiteralTypes.set(name, value);
   return name;
 };
-
 const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.UndefinedKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
@@ -175,8 +174,11 @@ const fsharpType = node => {
     && node.type) return auxiliaryIndexerType(node, fsharpType(node.typeParameter.constraint), fsharpType(node.type), Boolean(node.questionToken));
   if (ts.isFunctionTypeNode(node)
     && !node.typeParameters?.length
-    && !node.parameters.some(parameter => parameter.dotDotDotToken || parameter.questionToken)) {
-    const parameterTypes = node.parameters.map(parameter => parameter.type ? fsharpType(parameter.type) : undefined);
+    && !node.parameters.some(parameter => parameter.dotDotDotToken)) {
+    const parameterTypes = node.parameters.map(parameter => {
+      const rendered = parameter.type ? fsharpType(parameter.type) : undefined;
+      return parameter.questionToken && rendered ? asOption(rendered) : rendered;
+    });
     const returnType = fsharpType(node.type);
     if (returnType && parameterTypes.every(Boolean)) {
       if (returnType === "unit") return parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`;
@@ -273,6 +275,18 @@ const fsharpType = node => {
     if (!node.typeArguments?.length && node.typeName.text === "XRRenderStateInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderStateInit";
     if (!node.typeArguments?.length && node.typeName.text === "XRReferenceSpaceType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType";
     if (!node.typeArguments?.length && node.typeName.text === "XRHandedness") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness";
+    if (!node.typeArguments?.length && node.typeName.text === "XRProjectionLayerInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRProjectionLayerInit";
+    if (!node.typeArguments?.length && node.typeName.text === "XRAnchor") return "BabylonjsBindings.SimpleInterfaces.BrowserXRAnchor";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitTestResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestResult";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitResult";
+    if (!node.typeArguments?.length && node.typeName.text === "XRMesh") return "BabylonjsBindings.SimpleInterfaces.BrowserXRMesh";
+    if (!node.typeArguments?.length && node.typeName.text === "XRPlane") return "BabylonjsBindings.SimpleInterfaces.BrowserXRPlane";
+    if (!node.typeArguments?.length && node.typeName.text === "XRImageTrackingResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRImageTrackingResult";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitTestTrackableType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestTrackableType";
+    if (!node.typeArguments?.length && node.typeName.text === "XRReflectionFormat") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReflectionFormat";
+    if (!node.typeArguments?.length && node.typeName.text === "XRGeometryDetectorOptions") return "BabylonjsBindings.SimpleInterfaces.BrowserXRGeometryDetectorOptions";
+    if (!node.typeArguments?.length && node.typeName.text === "DistanceModelType") return "BabylonjsBindings.SimpleInterfaces.BrowserDistanceModelType";
+    if (!node.typeArguments?.length && node.typeName.text === "PanningModelType") return "BabylonjsBindings.SimpleInterfaces.BrowserPanningModelType";
     if (!node.typeArguments?.length && node.typeName.text === "BigUint64Array") return "BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array";
     if (!node.typeArguments?.length && node.typeName.text === "GPUPowerPreference") return "BabylonjsBindings.SimpleInterfaces.BrowserGPUPowerPreference";
     if (!node.typeArguments?.length && node.typeName.text === "XMLHttpRequestBodyInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequestBodyInit";
@@ -328,6 +342,13 @@ const fsharpType = node => {
       ,["PointerEventInit", "BrowserPointerEventInit"]
       ,["WebGLVertexArrayObject", "BrowserWebGLVertexArrayObject"]
       ,["Worker", "BrowserWorker"]
+      ,["XRReferenceSpace", "BrowserXRReferenceSpace"]
+      ,["XRFrame", "BrowserXRFrame"]
+      ,["XRSession", "BrowserXRSession"]
+      ,["XRViewerPose", "BrowserXRViewerPose"]
+      ,["XRInputSource", "BrowserXRInputSource"]
+      ,["XRPose", "BrowserXRPose"]
+      ,["XRView", "BrowserXRView"]
     ]);
     if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
     if (!node.typeArguments?.length && node.typeName.text === "GPUBufferUsageFlags") return "float";

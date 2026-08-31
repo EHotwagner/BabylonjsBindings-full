@@ -394,6 +394,114 @@ module SimpleInterfaces =
         | [<CompiledName("left")>] Left
         | [<CompiledName("right")>] Right
 
+    /// Exact WebXR projection-layer texture literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserXRTextureType =
+        | [<CompiledName("texture")>] Texture
+        | [<CompiledName("texture-array")>] TextureArray
+
+    /// Exact ambient WebXR projection-layer initializer.
+    [<AllowNullLiteral>]
+    type BrowserXRProjectionLayerInit =
+        abstract scaleFactor: float option with get, set
+        abstract textureType: BrowserXRTextureType option with get, set
+        abstract colorFormat: float option with get, set
+        abstract depthFormat: float option with get, set
+        abstract clearOnAccess: bool option with get, set
+
+    /// Exact Web Audio distance-model literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserDistanceModelType =
+        | [<CompiledName("exponential")>] Exponential
+        | [<CompiledName("inverse")>] Inverse
+        | [<CompiledName("linear")>] Linear
+
+    /// Exact Web Audio panning-model literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserPanningModelType =
+        | [<CompiledName("HRTF")>] Hrtf
+        | [<CompiledName("equalpower")>] EqualPower
+
+    /// Exact WebXR hit-test trackable literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserXRHitTestTrackableType =
+        | [<CompiledName("point")>] Point
+        | [<CompiledName("plane")>] Plane
+        | [<CompiledName("mesh")>] Mesh
+
+    /// Exact WebXR reflection-format literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserXRReflectionFormat =
+        | [<CompiledName("srgba8")>] Srgba8
+        | [<CompiledName("rgba16f")>] Rgba16f
+
+    /// Distinct ambient DOMPointReadOnly handle.
+    [<AllowNullLiteral>]
+    type BrowserDOMPointReadOnly =
+        interface end
+
+    /// Exact WebXR field-of-view shape used by geometry detection.
+    [<AllowNullLiteral>]
+    type BrowserXRFieldOfView =
+        abstract angleLeft: float with get, set
+        abstract angleRight: float with get, set
+        abstract angleUp: float with get, set
+        abstract angleDown: float with get, set
+
+    /// Exact WebXR frustum shape used by geometry detection.
+    [<AllowNullLiteral>]
+    type BrowserXRFrustum =
+        abstract position: BrowserDOMPointReadOnly with get, set
+        abstract orientation: BrowserDOMPointReadOnly with get, set
+        abstract fieldOfView: BrowserXRFieldOfView with get, set
+        abstract farDistance: float with get, set
+
+    /// Exact WebXR geometry-detection boundary discriminator literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserXRFrustumBoundaryType =
+        | [<CompiledName("frustum")>] Frustum
+
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserXRSphereBoundaryType =
+        | [<CompiledName("sphere")>] Sphere
+
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserXRBoxBoundaryType =
+        | [<CompiledName("box")>] Box
+
+    /// Exact WebXR frustum detection boundary.
+    [<AllowNullLiteral>]
+    type BrowserXRFrustumDetectionBoundary =
+        abstract ``type``: BrowserXRFrustumBoundaryType with get, set
+        abstract frustum: BrowserXRFrustum with get, set
+
+    /// Exact WebXR sphere detection boundary.
+    [<AllowNullLiteral>]
+    type BrowserXRSphereDetectionBoundary =
+        abstract ``type``: BrowserXRSphereBoundaryType with get, set
+        abstract radius: float with get, set
+
+    /// Exact WebXR box detection boundary.
+    [<AllowNullLiteral>]
+    type BrowserXRBoxDetectionBoundary =
+        abstract ``type``: BrowserXRBoxBoundaryType with get, set
+        abstract extent: BrowserDOMPointReadOnly with get, set
+
+    /// Exact WebXR geometry detection boundary union.
+    type BrowserXRDetectionBoundary = U3<BrowserXRFrustumDetectionBoundary, BrowserXRSphereDetectionBoundary, BrowserXRBoxDetectionBoundary>
+
+    /// Exact WebXR geometry-detector options.
+    [<AllowNullLiteral>]
+    type BrowserXRGeometryDetectorOptions =
+        abstract detectionBoundary: BrowserXRDetectionBoundary option with get, set
+        abstract updateInterval: float option with get, set
+
+    /// Ambient glTF EXT_lights_image_based augmentation required by loader interfaces.
+    [<AllowNullLiteral>]
+    type GLTFExtLightsImageBasedLightImageBased =
+        abstract _babylonTexture: BabylonjsBindings.SimpleClasses.BaseTexture option with get, set
+        abstract _loaded: JS.Promise<unit> option with get, set
+
     /// Distinct unsigned BigInt typed-array surface missing from the pinned Fable.Core.
     type BrowserBigUint64Array =
         inherit JS.TypedArray<System.Numerics.BigInteger>
@@ -683,6 +791,36 @@ module SimpleInterfaces =
     /// Distinct ambient WebXR composition-layer handle.
     [<AllowNullLiteral>]
     type BrowserXRCompositionLayer =
+        interface end
+
+    /// Distinct ambient WebXR anchor handle.
+    [<AllowNullLiteral>]
+    type BrowserXRAnchor =
+        interface end
+
+    /// Distinct ambient WebXR hit-test result handle.
+    [<AllowNullLiteral>]
+    type BrowserXRHitTestResult =
+        interface end
+
+    /// Distinct ambient legacy WebXR hit result handle.
+    [<AllowNullLiteral>]
+    type BrowserXRHitResult =
+        interface end
+
+    /// Distinct ambient WebXR mesh handle.
+    [<AllowNullLiteral>]
+    type BrowserXRMesh =
+        interface end
+
+    /// Distinct ambient WebXR plane handle.
+    [<AllowNullLiteral>]
+    type BrowserXRPlane =
+        interface end
+
+    /// Distinct ambient WebXR image-tracking result handle.
+    [<AllowNullLiteral>]
+    type BrowserXRImageTrackingResult =
         interface end
 
     /// Distinct ambient Web Audio buffer handle.
@@ -5136,6 +5274,16 @@ module SimpleInterfaces =
 
     /// @babylonjs/core/XR/features/WebXRAnchorSystem.pure
     [<AllowNullLiteral>]
+    type IWebXRAnchor =
+        abstract ``id``: float with get, set
+        abstract ``transformationMatrix``: BabylonjsBindings.SimpleClasses.Matrix with get, set
+        abstract ``xrAnchor``: BrowserXRAnchor with get, set
+        abstract ``attachedNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+        abstract ``remove``: unit -> unit
+        abstract ``_removed``: bool with get, set
+
+    /// @babylonjs/core/XR/features/WebXRAnchorSystem.pure
+    [<AllowNullLiteral>]
     type IWebXRAnchorSystemOptions =
         abstract ``worldParentNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
         abstract ``doNotRemoveAnchorsOnSessionEnded``: bool option with get, set
@@ -5257,6 +5405,18 @@ module SimpleInterfaces =
     type IWebXRImageTrackingOptions =
         abstract ``images``: ResizeArray<InlineObjectcead31b74f8fObject> with get, set
 
+    /// @babylonjs/core/XR/features/WebXRLayers.pure
+    [<AllowNullLiteral>]
+    type IWebXRLayersOptions =
+        abstract ``preferMultiviewOnInit``: bool option with get, set
+        abstract ``projectionLayerInit``: BrowserXRProjectionLayerInit option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRHitTestLegacy
+    [<AllowNullLiteral>]
+    type IWebXRLegacyHitResult =
+        abstract ``transformationMatrix``: BabylonjsBindings.SimpleClasses.Matrix with get, set
+        abstract ``xrHitResult``: U2<BrowserXRHitResult, BrowserXRHitTestResult> with get, set
+
     /// @babylonjs/core/XR/features/WebXRHitTestLegacy
     [<AllowNullLiteral>]
     type IWebXRLegacyHitTestOptions =
@@ -5270,6 +5430,29 @@ module SimpleInterfaces =
         abstract ``lightColor``: BabylonjsBindings.SimpleClasses.Color3 with get, set
         abstract ``lightDirection``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
         abstract ``sphericalHarmonics``: BabylonjsBindings.SimpleClasses.SphericalHarmonics with get, set
+
+    /// @babylonjs/core/XR/features/WebXRLightEstimation.pure
+    [<AllowNullLiteral>]
+    type IWebXRLightEstimationOptions =
+        abstract ``disableCubeMapReflection``: bool option with get, set
+        abstract ``setSceneEnvironmentTexture``: bool option with get, set
+        abstract ``cubeMapPollInterval``: float option with get, set
+        abstract ``lightEstimationPollInterval``: float option with get, set
+        abstract ``createDirectionalLightSource``: bool option with get, set
+        abstract ``directionalLightIntensityFactor``: float option with get, set
+        abstract ``reflectionFormat``: BrowserXRReflectionFormat option with get, set
+        abstract ``disableVectorReuse``: bool option with get, set
+        abstract ``disableSphericalPolynomial``: bool option with get, set
+        abstract ``disablePreFiltering``: bool option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRMeshDetector.pure
+    [<AllowNullLiteral>]
+    type IWebXRMeshDetectorOptions =
+        abstract ``worldParentNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+        abstract ``doNotRemoveMeshesOnSessionEnded``: bool option with get, set
+        abstract ``preferredDetectorOptions``: BrowserXRGeometryDetectorOptions option with get, set
+        abstract ``convertCoordinateSystems``: bool option with get, set
+        abstract ``generateMeshes``: bool option with get, set
 
     /// @babylonjs/core/XR/motionController/webXRControllerComponent
     [<AllowNullLiteral>]
@@ -5310,6 +5493,21 @@ module SimpleInterfaces =
         abstract ``nearInteractionControllerMode``: BabylonjsBindings.Enums.WebXRNearControllerMode option with get, set
         abstract ``motionControllerOrbMaterial``: BabylonjsBindings.SimpleClasses.Material option with get, set
         abstract ``motionControllerTouchMaterialSnippetUrl``: string option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRPlaneDetector.pure
+    [<AllowNullLiteral>]
+    type IWebXRPlane =
+        abstract ``id``: float with get, set
+        abstract ``polygonDefinition``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``transformationMatrix``: BabylonjsBindings.SimpleClasses.Matrix with get, set
+        abstract ``xrPlane``: BrowserXRPlane with get, set
+
+    /// @babylonjs/core/XR/features/WebXRPlaneDetector.pure
+    [<AllowNullLiteral>]
+    type IWebXRPlaneDetectorOptions =
+        abstract ``worldParentNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+        abstract ``doNotRemovePlanesOnSessionEnded``: bool option with get, set
+        abstract ``preferredDetectorOptions``: BrowserXRGeometryDetectorOptions option with get, set
 
     /// @babylonjs/core/XR/features/WebXRRawCameraAccess.pure
     [<AllowNullLiteral>]
@@ -5371,6 +5569,29 @@ module SimpleInterfaces =
         abstract ``blockedRayColor``: BabylonjsBindings.SimpleClasses.Color4 option with get, set
         abstract ``forceHandedness``: BrowserXRHandedness option with get, set
         abstract ``generateRayPathMesh``: IWebXRTeleportationOptionsGenerateRayPathMeshCallback option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRImageTracking.pure
+    [<AllowNullLiteral>]
+    type IWebXRTrackedImage =
+        abstract ``id``: float with get, set
+        abstract ``emulated``: bool option with get, set
+        abstract ``originalBitmap``: BrowserImageBitmap with get, set
+        abstract ``xrTrackingResult``: BrowserXRImageTrackingResult option with get, set
+        abstract ``realWorldWidth``: float option with get, set
+        abstract ``transformationMatrix``: BabylonjsBindings.SimpleClasses.Matrix with get, set
+        abstract ``ratio``: float option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRMeshDetector.pure
+    [<AllowNullLiteral>]
+    type IWebXRVertexData =
+        abstract ``id``: float with get, set
+        abstract ``xrMesh``: BrowserXRMesh with get, set
+        abstract ``worldParentNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+        abstract ``positions``: JS.Float32Array option with get, set
+        abstract ``indices``: JS.Uint32Array option with get, set
+        abstract ``normals``: JS.Float32Array option with get, set
+        abstract ``transformationMatrix``: BabylonjsBindings.SimpleClasses.Matrix option with get, set
+        abstract ``mesh``: BabylonjsBindings.SimpleClasses.Mesh option with get, set
 
     /// @babylonjs/core/XR/features/WebXRWalkingLocomotion.pure
     [<AllowNullLiteral>]
@@ -7187,6 +7408,28 @@ module SimpleInterfaces =
         abstract ``onFeatureAttachObservable``: BabylonjsBindings.SimpleClasses.Observable<IWebXRFeature> with get, set
         abstract ``onFeatureDetachObservable``: BabylonjsBindings.SimpleClasses.Observable<IWebXRFeature> with get, set
 
+    /// @babylonjs/core/XR/features/WebXRHitTest.pure
+    [<AllowNullLiteral>]
+    type IWebXRHitResult =
+        inherit IWebXRLegacyHitResult
+        abstract ``inputSource``: BrowserXRInputSource option with get, set
+        abstract ``isTransient``: bool option with get, set
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``rotationQuaternion``: BabylonjsBindings.SimpleClasses.Quaternion with get, set
+        abstract ``xrHitResult``: BrowserXRHitTestResult with get, set
+
+    /// @babylonjs/core/XR/features/WebXRHitTest.pure
+    [<AllowNullLiteral>]
+    type IWebXRHitTestOptions =
+        inherit IWebXRLegacyHitTestOptions
+        abstract ``disablePermanentHitTest``: bool option with get, set
+        abstract ``enableTransientHitTest``: bool option with get, set
+        abstract ``transientHitTestProfile``: string option with get, set
+        abstract ``offsetRay``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``transientOffsetRay``: BabylonjsBindings.SimpleClasses.Vector3 option with get, set
+        abstract ``useReferenceSpace``: bool option with get, set
+        abstract ``entityTypes``: ResizeArray<BrowserXRHitTestTrackableType> option with get, set
+
     /// @babylonjs/core/XR/webXRInput
     [<AllowNullLiteral>]
     type IWebXRInputOptions =
@@ -8156,6 +8399,12 @@ module SimpleInterfaces =
         abstract ``resumeOnInteraction``: bool option with get, set
         abstract ``resumeOnPause``: bool option with get, set
         abstract ``resumeOnPauseRetryInterval``: float option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRHitTestLegacy
+    [<AllowNullLiteral>]
+    type IWebXRHitTestFeature<'T when 'T :> IWebXRLegacyHitResult> =
+        inherit IWebXRFeature
+        abstract ``onHitTestResultObservable``: BabylonjsBindings.SimpleClasses.Observable<ResizeArray<'T>> with get, set
 
     /// @babylonjs/core/Engines/webgpuEngine.pure
     [<AllowNullLiteral>]

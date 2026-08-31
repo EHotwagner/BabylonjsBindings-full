@@ -126,6 +126,28 @@ module SimpleFunctions =
 
     /// Exact inline object used by a Babylon function signature.
     [<AllowNullLiteral>]
+    type InlineObject779dbe2dc4aa =
+        abstract ``width``: float option with get, set
+        abstract ``height``: float option with get, set
+        abstract ``subdivisions``: float option with get, set
+        abstract ``minHeight``: float option with get, set
+        abstract ``maxHeight``: float option with get, set
+        abstract ``colorFilter``: BabylonjsBindings.SimpleClasses.Color3 option with get, set
+        abstract ``alphaFilter``: float option with get, set
+        abstract ``updatable``: bool option with get, set
+        abstract ``onReady``: System.Action<BabylonjsBindings.SimpleClasses.GroundMesh, JS.Float32Array option> option with get, set
+        abstract ``onError``: System.Action<string option, obj option> option with get, set
+        abstract ``passHeightBufferInCallback``: bool option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject397db1f36d1a =
+        abstract ``data``: JS.Uint8Array with get, set
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
     type InlineObject48d2f07b6f20 =
         abstract ``xmin``: float with get, set
         abstract ``zmin``: float with get, set
@@ -731,6 +753,14 @@ module SimpleFunctions =
     [<Import("_ConnectBefore", "@babylonjs/core/Particles/Queue/executionQueue.js")>]
     let ``_ConnectBefore``: FunctionBinding__ConnectBefore = jsNative
 
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding__executeWhenRenderingStateIsCompiled =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pipelineContext``: BabylonjsBindings.SimpleInterfaces.IPipelineContext * ``action``: System.Action<BabylonjsBindings.SimpleInterfaces.IPipelineContext option> -> unit
+
+    [<Import("_executeWhenRenderingStateIsCompiled", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``_executeWhenRenderingStateIsCompiled``: FunctionBinding__executeWhenRenderingStateIsCompiled = jsNative
+
     /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
     [<AllowNullLiteral>]
     type FunctionBinding__GetAudioEngine =
@@ -834,6 +864,14 @@ module SimpleFunctions =
 
     [<Import("_isRenderingStateCompiled", "@babylonjs/core/Engines/thinEngine.functions.js")>]
     let ``_isRenderingStateCompiled``: FunctionBinding__isRenderingStateCompiled = jsNative
+
+    /// @babylonjs/core/Engines/abstractEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding__LoadFile =
+        [<Emit("$0($1...)")>] abstract Invoke: ``url``: string * ``onSuccess``: System.Action<U2<string, JS.ArrayBuffer>, string option> * ?``onProgress``: System.Action<obj> * ?``offlineProvider``: BabylonjsBindings.SimpleInterfaces.IOfflineProvider option * ?``useArrayBuffer``: bool * ?``onError``: System.Action<BabylonjsBindings.SimpleInterfaces.IWebRequest option, obj option> * ?``injectedLoadFile``: System.Func<string, System.Action<U2<string, JS.ArrayBuffer>, string option>, System.Action<Browser.Types.ProgressEvent> option, BabylonjsBindings.SimpleInterfaces.IOfflineProvider option, bool option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest option, BabylonjsBindings.SimpleClasses.LoadFileError option> option, BabylonjsBindings.SimpleInterfaces.IFileRequest> -> BabylonjsBindings.SimpleInterfaces.IFileRequest
+
+    [<Import("_LoadFile", "@babylonjs/core/Engines/abstractEngine.functions.js")>]
+    let ``_LoadFile``: FunctionBinding__LoadFile = jsNative
 
     /// @babylonjs/core/Misc/tools.internals
     [<AllowNullLiteral>]
@@ -1261,6 +1299,14 @@ module SimpleFunctions =
     [<Import("ClampCenterFromPolesInPlace", "@babylonjs/core/Cameras/geospatialCameraMovement.js")>]
     let ``ClampCenterFromPolesInPlace``: FunctionBinding_ClampCenterFromPolesInPlace = jsNative
 
+    /// @babylonjs/core/Misc/tools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_className =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``module``: string -> System.Action<BabylonjsBindings.SimpleInterfaces.JavaScriptObject>
+
+    [<Import("className", "@babylonjs/core/Misc/tools.pure.js")>]
+    let ``className``: FunctionBinding_className = jsNative
+
     /// @babylonjs/core/Materials/colorCurves.pure
     [<AllowNullLiteral>]
     type FunctionBinding_ColorCurvesBind =
@@ -1591,6 +1637,14 @@ module SimpleFunctions =
 
     /// @babylonjs/core/Meshes/Builders/groundBuilder.pure
     [<AllowNullLiteral>]
+    type FunctionBinding_CreateGroundFromHeightMap =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``url``: U2<string, InlineObject397db1f36d1a> * ?``options``: InlineObject779dbe2dc4aa * ?``scene``: BabylonjsBindings.SimpleClasses.Scene option -> BabylonjsBindings.SimpleClasses.GroundMesh
+
+    [<Import("CreateGroundFromHeightMap", "@babylonjs/core/Meshes/Builders/groundBuilder.pure.js")>]
+    let ``CreateGroundFromHeightMap``: FunctionBinding_CreateGroundFromHeightMap = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/groundBuilder.pure
+    [<AllowNullLiteral>]
     type FunctionBinding_CreateGroundFromHeightMapVertexData =
         [<Emit("$0($1...)")>] abstract Invoke: ``options``: InlineObject8a290422a0a1 -> BabylonjsBindings.SimpleClasses.VertexData
 
@@ -1884,6 +1938,30 @@ module SimpleFunctions =
 
     [<Import("CreateScreenshotAsync", "@babylonjs/core/Misc/screenshotTools.pure.js")>]
     let ``CreateScreenshotAsync``: FunctionBinding_CreateScreenshotAsync = jsNative
+
+    /// @babylonjs/core/Misc/screenshotTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateScreenshotForFrameGraphAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``frameGraph``: BabylonjsBindings.SimpleClasses.FrameGraph * ``camera``: BabylonjsBindings.SimpleClasses.Camera * ``size``: U2<BabylonjsBindings.SimpleInterfaces.IScreenshotSize, float> * ?``mimeType``: string * ?``samples``: float * ?``antialiasing``: bool * ?``fileName``: string * ?``quality``: float * ?``customDumpData``: System.Action<float, float, JS.ArrayBufferView, System.Action<U2<string, JS.ArrayBuffer>> option, string option, string option, bool option, bool option, float option> * ?``automaticDownload``: bool * ?``numberOfFramesToRender``: float -> JS.Promise<U2<string, JS.ArrayBuffer> option>
+
+    [<Import("CreateScreenshotForFrameGraphAsync", "@babylonjs/core/Misc/screenshotTools.pure.js")>]
+    let ``CreateScreenshotForFrameGraphAsync``: FunctionBinding_CreateScreenshotForFrameGraphAsync = jsNative
+
+    /// @babylonjs/core/Misc/screenshotTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateScreenshotUsingRenderTarget =
+        [<Emit("$0($1...)")>] abstract Invoke: ``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine * ``camera``: BabylonjsBindings.SimpleClasses.Camera * ``size``: U2<BabylonjsBindings.SimpleInterfaces.IScreenshotSize, float> * ?``successCallback``: System.Action<string> * ?``mimeType``: string * ?``samples``: float * ?``antialiasing``: bool * ?``fileName``: string * ?``renderSprites``: bool * ?``enableStencilBuffer``: bool * ?``useLayerMask``: bool * ?``quality``: float * ?``customizeTexture``: System.Action<BabylonjsBindings.SimpleClasses.RenderTargetTexture> * ?``customDumpData``: System.Action<float, float, JS.ArrayBufferView, System.Action<U2<string, JS.ArrayBuffer>> option, string option, string option, bool option, bool option, float option> * ?``timeoutInMilliseconds``: float * ?``timeoutErrorCallback``: System.Action -> unit
+
+    [<Import("CreateScreenshotUsingRenderTarget", "@babylonjs/core/Misc/screenshotTools.pure.js")>]
+    let ``CreateScreenshotUsingRenderTarget``: FunctionBinding_CreateScreenshotUsingRenderTarget = jsNative
+
+    /// @babylonjs/core/Misc/screenshotTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateScreenshotUsingRenderTargetAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine * ``camera``: BabylonjsBindings.SimpleClasses.Camera * ``size``: U2<BabylonjsBindings.SimpleInterfaces.IScreenshotSize, float> * ?``mimeType``: string * ?``samples``: float * ?``antialiasing``: bool * ?``fileName``: string * ?``renderSprites``: bool * ?``enableStencilBuffer``: bool * ?``useLayerMask``: bool * ?``quality``: float * ?``customizeTexture``: System.Action<BabylonjsBindings.SimpleClasses.RenderTargetTexture> * ?``customDumpData``: System.Action<float, float, JS.ArrayBufferView, System.Action<U2<string, JS.ArrayBuffer>> option, string option, string option, bool option, bool option, float option> -> JS.Promise<string>
+
+    [<Import("CreateScreenshotUsingRenderTargetAsync", "@babylonjs/core/Misc/screenshotTools.pure.js")>]
+    let ``CreateScreenshotUsingRenderTargetAsync``: FunctionBinding_CreateScreenshotUsingRenderTargetAsync = jsNative
 
     /// @babylonjs/core/Misc/screenshotTools.pure
     [<AllowNullLiteral>]
@@ -2910,6 +2988,14 @@ module SimpleFunctions =
     [<Import("LoadAllSmartAssetsAsync", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
     let ``LoadAllSmartAssetsAsync``: FunctionBinding_LoadAllSmartAssetsAsync = jsNative
 
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_LoadAssetContainerFromSerializedScene =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``serializedScene``: U2<string, BabylonjsBindings.SimpleInterfaces.JavaScriptObject> * ``rootUrl``: string -> BabylonjsBindings.SimpleClasses.AssetContainer
+
+    [<Import("LoadAssetContainerFromSerializedScene", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``LoadAssetContainerFromSerializedScene``: FunctionBinding_LoadAssetContainerFromSerializedScene = jsNative
+
     /// @babylonjs/core/Lights/IES/iesLoader
     [<AllowNullLiteral>]
     type FunctionBinding_LoadIESData =
@@ -3526,6 +3612,14 @@ module SimpleFunctions =
     [<Import("ReadExrDataAsync", "@babylonjs/core/Materials/Textures/Loaders/exrTextureLoader.js")>]
     let ``ReadExrDataAsync``: FunctionBinding_ReadExrDataAsync = jsNative
 
+    /// @babylonjs/core/SmartAssets/smartAssetSerializer
+    [<AllowNullLiteral>]
+    type FunctionBinding_ReadJsonSourceAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U3<string, Browser.Types.File, BabylonjsBindings.SimpleInterfaces.JavaScriptObject> -> JS.Promise<obj>
+
+    [<Import("ReadJsonSourceAsync", "@babylonjs/core/SmartAssets/smartAssetSerializer.js")>]
+    let ``ReadJsonSourceAsync``: FunctionBinding_ReadJsonSourceAsync = jsNative
+
     /// @babylonjs/core/Probes/reflectionProbe.pure
     [<AllowNullLiteral>]
     type FunctionBinding_ReflectionProbeParse =
@@ -4101,6 +4195,14 @@ module SimpleFunctions =
 
     [<Import("RegisterClampBlock", "@babylonjs/core/Materials/Node/Blocks/clampBlock.pure.js")>]
     let ``RegisterClampBlock``: FunctionBinding_RegisterClampBlock = jsNative
+
+    /// @babylonjs/core/Misc/typeStore
+    [<AllowNullLiteral>]
+    type FunctionBinding_RegisterClass =
+        [<Emit("$0($1...)")>] abstract Invoke: ``className``: string * ``type``: BabylonjsBindings.SimpleInterfaces.JavaScriptObject -> unit
+
+    [<Import("RegisterClass", "@babylonjs/core/Misc/typeStore.js")>]
+    let ``RegisterClass``: FunctionBinding_RegisterClass = jsNative
 
     /// @babylonjs/core/Meshes/Node/Blocks/cleanGeometryBlock.pure
     [<AllowNullLiteral>]
@@ -8301,6 +8403,14 @@ module SimpleFunctions =
 
     [<Import("RegisterTextureBlock", "@babylonjs/core/Materials/Node/Blocks/Dual/textureBlock.pure.js")>]
     let ``RegisterTextureBlock``: FunctionBinding_RegisterTextureBlock = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/textureLoaderManager
+    [<AllowNullLiteral>]
+    type FunctionBinding_registerTextureLoader =
+        [<Emit("$0($1...)")>] abstract Invoke: ``extension``: string * ``loaderFactory``: System.Func<string option, U2<BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader, JS.Promise<BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader>>> -> unit
+
+    [<Import("registerTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager.js")>]
+    let ``registerTextureLoader``: FunctionBinding_registerTextureLoader = jsNative
 
     /// @babylonjs/core/Engines/thinEngine.scissor.pure
     [<AllowNullLiteral>]

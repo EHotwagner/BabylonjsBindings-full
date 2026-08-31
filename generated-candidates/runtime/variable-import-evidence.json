@@ -49,6 +49,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio.js",
+      "export": "_SpatialAudioDefaults",
+      "runtimeExport": "_SpatialAudioDefaults",
+      "moduleSha256": "99d639809e1990a875b84a589f44488399b04f93c23ebabb6a0c5637d754e9c8"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener.js",
       "export": "_SpatialAudioListenerDefaults",
       "runtimeExport": "_SpatialAudioListenerDefaults",
@@ -721,6 +728,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/Layers/WebXRProjectionLayer.js",
+      "export": "DefaultXRProjectionLayerInit",
+      "runtimeExport": "DefaultXRProjectionLayerInit",
+      "moduleSha256": "9a42545dddb5b79c5914dcc5a846afa441362f09be40195d2a6448f4ec61d4a7"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/depthBoxBlur.fragment.js",
       "export": "depthBoxBlurPixelShader",
       "runtimeExport": "depthBoxBlurPixelShader",
@@ -844,6 +858,13 @@
       "export": "EncodeArrayBufferToBase64",
       "runtimeExport": "EncodeArrayBufferToBase64",
       "moduleSha256": "9ddf67ee7e15b609620e0dd1928235a6ebecb3dd75161576efc53fd0cc5120fe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/dumpTools.pure.js",
+      "export": "EncodeImageAsync",
+      "runtimeExport": "EncodeImageAsync",
+      "moduleSha256": "d14deb6fd221e4ceedaa90d41b08c5a88d9348e1769d5ab4c55074b7f157311a"
     },
     {
       "package": "@babylonjs/core",
@@ -1502,6 +1523,13 @@
       "export": "greasedLineVertexShaderWGSL",
       "runtimeExport": "greasedLineVertexShaderWGSL",
       "moduleSha256": "a975a286477de694acc4b79d4b998844671b8ab0916bf8ab1ad86043c09e76f4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure.js",
+      "export": "GroundBuilder",
+      "runtimeExport": "GroundBuilder",
+      "moduleSha256": "73460a621c8ae975e1ce203815ffd6f326477ec540f8d2935a1a169e2b178a5d"
     },
     {
       "package": "@babylonjs/core",
@@ -2297,9 +2325,23 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js",
+      "export": "LoadAssetContainer",
+      "runtimeExport": "LoadAssetContainer",
+      "moduleSha256": "6a6b745ff99f67f2fa5a02eae879b411f1c377c33f431a7200e095c060efc58f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js",
       "export": "LoadDetailLevels",
       "runtimeExport": "LoadDetailLevels",
       "moduleSha256": "6a6b745ff99f67f2fa5a02eae879b411f1c377c33f431a7200e095c060efc58f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "LoadFile",
+      "runtimeExport": "LoadFile",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
     },
     {
       "package": "@babylonjs/core",
@@ -2673,6 +2715,13 @@
       "moduleSha256": "8180967bcaaa5c5a19b577707401cda3d6c257eb0fa889c8a7d129755273dbfd"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter.js",
+      "export": "OptionalPathExceptionsList",
+      "runtimeExport": "OptionalPathExceptionsList",
+      "moduleSha256": "7005f57c26c5b34ef3ef7f051b1b3036ebb58014e88eafbdd924f1a29c45cb12"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/outline.fragment.js",
       "export": "outlinePixelShader",
@@ -2912,6 +2961,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "ReadFile",
+      "runtimeExport": "ReadFile",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/reflectionFunction.js",
       "export": "reflectionFunction",
       "runtimeExport": "reflectionFunction",
@@ -2937,6 +2993,13 @@
       "export": "renderableTextureFormatToIndex",
       "runtimeExport": "renderableTextureFormatToIndex",
       "moduleSha256": "fccf08740e394cafea2add69524f40e0125af66a3fc81f56a6529bbedd413665"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "RequestFile",
+      "runtimeExport": "RequestFile",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
     },
     {
       "package": "@babylonjs/core",
@@ -3150,6 +3213,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure.js",
+      "export": "ScreenshotTools",
+      "runtimeExport": "ScreenshotTools",
+      "moduleSha256": "3ebbfeefa2177696be323c425482cb8651092e4ae8f60a5621f48acbb11a6595"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/screenSpaceCurvature.fragment.js",
       "export": "screenSpaceCurvaturePixelShader",
       "runtimeExport": "screenSpaceCurvaturePixelShader",
@@ -3203,6 +3273,13 @@
       "export": "screenSpaceReflectionPixelShader",
       "runtimeExport": "screenSpaceReflectionPixelShader",
       "moduleSha256": "319e804aa0971701890165648de6b07337d142f0b69df9c7c033384e07c51ccd"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure.js",
+      "export": "SetBasisTranscoderWorker",
+      "runtimeExport": "SetBasisTranscoderWorker",
+      "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
     },
     {
       "package": "@babylonjs/core",

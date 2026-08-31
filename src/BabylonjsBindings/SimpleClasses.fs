@@ -43562,3 +43562,146 @@ module SimpleClasses =
     type ShapePathStatic =
         inherit Constructor<ShapePath>
         [<EmitConstructor>] abstract Create: ``resolution``: float -> ShapePath
+
+    /// @babylonjs/core/XR/features/WebXRAnchorSystem.pure
+    [<AllowNullLiteral>]
+    type WebXRAnchorSystem =
+        inherit WebXRAbstractFeature
+        abstract ``onAnchorAddedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRAnchor> with get, set
+        abstract ``onAnchorRemovedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRAnchor> with get, set
+        abstract ``onAnchorUpdatedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRAnchor> with get, set
+        abstract ``addAnchorPointUsingHitTestResultAsync`` : ``hitTestResult``: BabylonjsBindings.SimpleInterfaces.IWebXRHitResult * ?``position``: Vector3 * ?``rotationQuaternion``: Quaternion -> JS.Promise<BabylonjsBindings.SimpleInterfaces.IWebXRAnchor>
+        abstract ``addAnchorAtPositionAndRotationAsync`` : ``position``: Vector3 * ?``rotationQuaternion``: Quaternion * ?``forceCreateInCurrentFrame``: bool -> JS.Promise<BabylonjsBindings.SimpleInterfaces.IWebXRAnchor>
+        abstract ``detach`` : unit -> bool
+        abstract ``dispose`` : unit -> unit
+        abstract ``referenceSpaceForFrameAnchors``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpace with set
+        abstract ``anchors``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IWebXRAnchor> with get
+
+    [<AllowNullLiteral>]
+    type WebXRAnchorSystemStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRAnchorSystem>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ?``_options``: BabylonjsBindings.SimpleInterfaces.IWebXRAnchorSystemOptions -> WebXRAnchorSystem
+        abstract ``Name``: StringLiteral9e130c3af18e with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRAnchorSystem", "@babylonjs/core/XR/features/WebXRAnchorSystem.pure.js")>]
+    let WebXRAnchorSystem: WebXRAnchorSystemStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRHitTest.pure
+    [<AllowNullLiteral>]
+    type WebXRHitTest =
+        inherit WebXRAbstractFeature
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRHitTestFeature<BabylonjsBindings.SimpleInterfaces.IWebXRHitResult>
+        abstract ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRHitTestOptions with get
+        abstract ``autoCloneTransformation``: bool with get, set
+        abstract ``onHitTestResultObservable``: Observable<ResizeArray<BabylonjsBindings.SimpleInterfaces.IWebXRHitResult>> with get, set
+        abstract ``paused``: bool with get, set
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type WebXRHitTestStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRHitTest>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ?``options``: BabylonjsBindings.SimpleInterfaces.IWebXRHitTestOptions -> WebXRHitTest
+        abstract ``Name``: StringLiteral038540c29087 with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRHitTest", "@babylonjs/core/XR/features/WebXRHitTest.pure.js")>]
+    let WebXRHitTest: WebXRHitTestStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRImageTracking.pure
+    [<AllowNullLiteral>]
+    type WebXRImageTracking =
+        inherit WebXRAbstractFeature
+        abstract ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRImageTrackingOptions with get
+        abstract ``onUntrackableImageFoundObservable``: Observable<float> with get, set
+        abstract ``onTrackableImageFoundObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRTrackedImage> with get, set
+        abstract ``onTrackedImageUpdatedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRTrackedImage> with get, set
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``getTrackedImageById`` : ``id``: float -> BabylonjsBindings.SimpleInterfaces.IWebXRTrackedImage option
+        abstract ``dispose`` : unit -> unit
+        abstract ``getXRSessionInitExtension`` : unit -> JS.Promise<BabylonjsBindings.SimpleInterfaces.BrowserXRSessionInit>
+
+    [<AllowNullLiteral>]
+    type WebXRImageTrackingStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRImageTracking>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRImageTrackingOptions -> WebXRImageTracking
+        abstract ``Name``: StringLiterala08dc5432e1f with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRImageTracking", "@babylonjs/core/XR/features/WebXRImageTracking.pure.js")>]
+    let WebXRImageTracking: WebXRImageTrackingStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRLightEstimation.pure
+    [<AllowNullLiteral>]
+    type WebXRLightEstimation =
+        inherit WebXRAbstractFeature
+        abstract ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRLightEstimationOptions with get
+        abstract ``directionalLight``: DirectionalLight option with get, set
+        abstract ``directionalLightIntensityFactor``: float with get, set
+        abstract ``onReflectionCubeMapUpdatedObservable``: Observable<BaseTexture> with get, set
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``dispose`` : unit -> unit
+        abstract ``reflectionCubeMapTexture``: BaseTexture option with get
+        abstract ``xrLightingEstimate``: BabylonjsBindings.SimpleInterfaces.IWebXRLightEstimation option with get
+
+    [<AllowNullLiteral>]
+    type WebXRLightEstimationStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRLightEstimation>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRLightEstimationOptions -> WebXRLightEstimation
+        abstract ``Name``: StringLiteral7032ede09087 with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRLightEstimation", "@babylonjs/core/XR/features/WebXRLightEstimation.pure.js")>]
+    let WebXRLightEstimation: WebXRLightEstimationStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRMeshDetector.pure
+    [<AllowNullLiteral>]
+    type WebXRMeshDetector =
+        inherit WebXRAbstractFeature
+        abstract ``onMeshAddedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRVertexData> with get, set
+        abstract ``onMeshRemovedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRVertexData> with get, set
+        abstract ``onMeshUpdatedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRVertexData> with get, set
+        abstract ``detach`` : unit -> bool
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type WebXRMeshDetectorStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRMeshDetector>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ?``_options``: BabylonjsBindings.SimpleInterfaces.IWebXRMeshDetectorOptions -> WebXRMeshDetector
+        abstract ``Name``: StringLiteral02f2c64c3c6e with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRMeshDetector", "@babylonjs/core/XR/features/WebXRMeshDetector.pure.js")>]
+    let WebXRMeshDetector: WebXRMeshDetectorStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRPlaneDetector.pure
+    [<AllowNullLiteral>]
+    type WebXRPlaneDetector =
+        inherit WebXRAbstractFeature
+        abstract ``onPlaneAddedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRPlane> with get, set
+        abstract ``onPlaneRemovedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRPlane> with get, set
+        abstract ``onPlaneUpdatedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRPlane> with get, set
+        abstract ``detach`` : unit -> bool
+        abstract ``dispose`` : unit -> unit
+        abstract ``isCompatible`` : unit -> bool
+        abstract ``initiateRoomCapture`` : unit -> JS.Promise<unit>
+
+    [<AllowNullLiteral>]
+    type WebXRPlaneDetectorStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRPlaneDetector>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ?``_options``: BabylonjsBindings.SimpleInterfaces.IWebXRPlaneDetectorOptions -> WebXRPlaneDetector
+        abstract ``Name``: StringLiteral6a69383955b8 with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRPlaneDetector", "@babylonjs/core/XR/features/WebXRPlaneDetector.pure.js")>]
+    let WebXRPlaneDetector: WebXRPlaneDetectorStatic = jsNative

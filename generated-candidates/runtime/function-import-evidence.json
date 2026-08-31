@@ -84,6 +84,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions.js",
+      "export": "_executeWhenRenderingStateIsCompiled",
+      "runtimeExport": "_executeWhenRenderingStateIsCompiled",
+      "moduleSha256": "f0deb5cf140dad9e145c9530ae8dbe963889211c653df140aeb058a888a838a7"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js",
       "export": "_GetAudioEngine",
       "runtimeExport": "_GetAudioEngine",
@@ -172,6 +179,13 @@
       "export": "_isRenderingStateCompiled",
       "runtimeExport": "_isRenderingStateCompiled",
       "moduleSha256": "f0deb5cf140dad9e145c9530ae8dbe963889211c653df140aeb058a888a838a7"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.functions.js",
+      "export": "_LoadFile",
+      "runtimeExport": "_LoadFile",
+      "moduleSha256": "ffce32b94047837cb49f1382460e77730c20e6011beabe1984f770f20b617621"
     },
     {
       "package": "@babylonjs/core",
@@ -546,6 +560,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tools.pure.js",
+      "export": "className",
+      "runtimeExport": "className",
+      "moduleSha256": "d56734e8eb028a023411a97cd3eb0f4a072224b40a748b198ced9dfae6f3ab0a"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/colorCurves.pure.js",
       "export": "ColorCurvesBind",
       "runtimeExport": "ColorCurvesBind",
@@ -834,6 +855,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure.js",
+      "export": "CreateGroundFromHeightMap",
+      "runtimeExport": "CreateGroundFromHeightMap",
+      "moduleSha256": "73460a621c8ae975e1ce203815ffd6f326477ec540f8d2935a1a169e2b178a5d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/groundBuilder.pure.js",
       "export": "CreateGroundFromHeightMapVertexData",
       "runtimeExport": "CreateGroundFromHeightMapVertexData",
       "moduleSha256": "73460a621c8ae975e1ce203815ffd6f326477ec540f8d2935a1a169e2b178a5d"
@@ -1088,6 +1116,27 @@
       "module": "@babylonjs/core/Misc/screenshotTools.pure.js",
       "export": "CreateScreenshotAsync",
       "runtimeExport": "CreateScreenshotAsync",
+      "moduleSha256": "3ebbfeefa2177696be323c425482cb8651092e4ae8f60a5621f48acbb11a6595"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure.js",
+      "export": "CreateScreenshotForFrameGraphAsync",
+      "runtimeExport": "CreateScreenshotForFrameGraphAsync",
+      "moduleSha256": "3ebbfeefa2177696be323c425482cb8651092e4ae8f60a5621f48acbb11a6595"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure.js",
+      "export": "CreateScreenshotUsingRenderTarget",
+      "runtimeExport": "CreateScreenshotUsingRenderTarget",
+      "moduleSha256": "3ebbfeefa2177696be323c425482cb8651092e4ae8f60a5621f48acbb11a6595"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/screenshotTools.pure.js",
+      "export": "CreateScreenshotUsingRenderTargetAsync",
+      "runtimeExport": "CreateScreenshotUsingRenderTargetAsync",
       "moduleSha256": "3ebbfeefa2177696be323c425482cb8651092e4ae8f60a5621f48acbb11a6595"
     },
     {
@@ -1988,6 +2037,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js",
+      "export": "LoadAssetContainerFromSerializedScene",
+      "runtimeExport": "LoadAssetContainerFromSerializedScene",
+      "moduleSha256": "6a6b745ff99f67f2fa5a02eae879b411f1c377c33f431a7200e095c060efc58f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Lights/IES/iesLoader.js",
       "export": "LoadIESData",
       "runtimeExport": "LoadIESData",
@@ -2527,6 +2583,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetSerializer.js",
+      "export": "ReadJsonSourceAsync",
+      "runtimeExport": "ReadJsonSourceAsync",
+      "moduleSha256": "e790fdf6937acb977e49e6145847d69b2226036cd742c633b76a583bdcdf1480"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Probes/reflectionProbe.pure.js",
       "export": "ReflectionProbeParse",
       "runtimeExport": "ReflectionProbeParse",
@@ -3028,6 +3091,13 @@
       "export": "RegisterClampBlock",
       "runtimeExport": "RegisterClampBlock",
       "moduleSha256": "10ce005ad43ecbe444274bc51c228ce7adcaba6b223a3ec87bd2066da3484ce5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/typeStore.js",
+      "export": "RegisterClass",
+      "runtimeExport": "RegisterClass",
+      "moduleSha256": "25495e0c4667d15b5bd9502b18f7fa0fc937816143781afe71e2b8e8235eccd7"
     },
     {
       "package": "@babylonjs/core",
@@ -6703,6 +6773,13 @@
       "export": "RegisterTextureBlock",
       "runtimeExport": "RegisterTextureBlock",
       "moduleSha256": "4fab9d656f5c6a3a606e09ef95e27b443b947dee66ffe82d07037b221e10a5f5"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager.js",
+      "export": "registerTextureLoader",
+      "runtimeExport": "registerTextureLoader",
+      "moduleSha256": "1a99501acf171d87f2f42012f0eed2a92465c278e26f4ca61fb121b38a44216c"
     },
     {
       "package": "@babylonjs/core",

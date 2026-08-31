@@ -716,6 +716,11 @@ module TypeAliases =
         inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh * hardwareInstancedRendering: bool -> bool
 
+    /// @babylonjs/core/XR/motionController/webXRMotionControllerManager.pure
+    [<AllowNullLiteral>]
+    type MotionControllerConstructor =
+        [<Emit("$0($1...)")>] abstract Invoke: xrInput: BabylonjsBindings.SimpleInterfaces.BrowserXRInputSource * scene: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.WebXRAbstractMotionController
+
     /// @babylonjs/core/Engines/Native/nativeDataStream
     type NativeData = JS.Uint32Array
 

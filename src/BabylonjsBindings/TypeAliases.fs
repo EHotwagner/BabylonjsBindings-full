@@ -907,3 +907,8 @@ module TypeAliases =
 
     /// @babylonjs/core/Misc/environmentTextureTools.pure
     type EnvironmentTextureInfo = U2<BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV1, BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2>
+
+    /// @babylonjs/core/XR/motionController/webXRMotionControllerManager.pure
+    [<AllowNullLiteral>]
+    type MotionControllerConstructor =
+        [<Emit("$0($1...)")>] abstract Invoke: xrInput: BabylonjsBindings.SimpleInterfaces.BrowserXRInputSource * scene: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.WebXRAbstractMotionController

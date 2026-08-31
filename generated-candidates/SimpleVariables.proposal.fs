@@ -34,6 +34,27 @@ module SimpleVariables =
     [<Import("_IsMacPlatform", "@babylonjs/core/FlowGraph/utils.js")>]
     let ``_IsMacPlatform``: bool = jsNative
 
+    /// Inline object shape of _SpatialAudioDefaults.
+    [<AllowNullLiteral>]
+    type VariableShape__SpatialAudioDefaults =
+        abstract ``coneInnerAngle``: float with get
+        abstract ``coneOuterAngle``: float with get
+        abstract ``coneOuterVolume``: float with get
+        abstract ``distanceModel``: BabylonjsBindings.SimpleInterfaces.BrowserDistanceModelType with get
+        abstract ``maxDistance``: float with get
+        abstract ``minDistance``: float with get
+        abstract ``orientation``: BabylonjsBindings.SimpleClasses.Vector3 with get
+        abstract ``panningEnabled``: bool with get
+        abstract ``panningModel``: BabylonjsBindings.SimpleInterfaces.BrowserPanningModelType with get
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get
+        abstract ``rolloffFactor``: float with get
+        abstract ``rotation``: BabylonjsBindings.SimpleClasses.Vector3 with get
+        abstract ``rotationQuaternion``: BabylonjsBindings.SimpleClasses.Quaternion with get
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio
+    [<Import("_SpatialAudioDefaults", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio.js")>]
+    let ``_SpatialAudioDefaults``: VariableShape__SpatialAudioDefaults = jsNative
+
     /// Inline object shape of _SpatialAudioListenerDefaults.
     [<AllowNullLiteral>]
     type VariableShape__SpatialAudioListenerDefaults =
@@ -938,6 +959,10 @@ module SimpleVariables =
     [<Import("defaultVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/default.vertex.js")>]
     let ``defaultVertexShaderWGSL``: VariableShape_defaultVertexShaderWGSL = jsNative
 
+    /// @babylonjs/core/XR/features/Layers/WebXRProjectionLayer
+    [<Import("DefaultXRProjectionLayerInit", "@babylonjs/core/XR/features/Layers/WebXRProjectionLayer.js")>]
+    let ``DefaultXRProjectionLayerInit``: BabylonjsBindings.SimpleInterfaces.BrowserXRProjectionLayerInit = jsNative
+
     /// Inline object shape of depthBoxBlurPixelShader.
     [<AllowNullLiteral>]
     type VariableShape_depthBoxBlurPixelShader =
@@ -1118,6 +1143,15 @@ module SimpleVariables =
     /// @babylonjs/core/Misc/stringTools
     [<Import("EncodeArrayBufferToBase64", "@babylonjs/core/Misc/stringTools.js")>]
     let ``EncodeArrayBufferToBase64``: VariableFunction_EncodeArrayBufferToBase64 = jsNative
+
+    /// Callable shape of EncodeImageAsync.
+    [<AllowNullLiteral>]
+    type VariableFunction_EncodeImageAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pixelData``: JS.ArrayBufferView * ``width``: float * ``height``: float * ?``mimeType``: string * ?``invertY``: bool * ?``quality``: float -> JS.Promise<Browser.Types.Blob>
+
+    /// @babylonjs/core/Misc/dumpTools.pure
+    [<Import("EncodeImageAsync", "@babylonjs/core/Misc/dumpTools.pure.js")>]
+    let ``EncodeImageAsync``: VariableFunction_EncodeImageAsync = jsNative
 
     /// Callable shape of EndsWith.
     [<AllowNullLiteral>]
@@ -2067,6 +2101,17 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/greasedLine.vertex
     [<Import("greasedLineVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/greasedLine.vertex.js")>]
     let ``greasedLineVertexShaderWGSL``: VariableShape_greasedLineVertexShaderWGSL = jsNative
+
+    /// Inline object shape of GroundBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_GroundBuilder =
+        abstract ``CreateGround``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGround with get, set
+        abstract ``CreateGroundFromHeightMap``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGroundFromHeightMap with get, set
+        abstract ``CreateTiledGround``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledGround with get, set
+
+    /// @babylonjs/core/Meshes/Builders/groundBuilder.pure
+    [<Import("GroundBuilder", "@babylonjs/core/Meshes/Builders/groundBuilder.pure.js")>]
+    let ``GroundBuilder``: VariableShape_GroundBuilder = jsNative
 
     /// Inline object shape of GUID.
     [<AllowNullLiteral>]
@@ -3146,6 +3191,15 @@ module SimpleVariables =
     [<Import("lineVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/line.vertex.js")>]
     let ``lineVertexShaderWGSL``: VariableShape_lineVertexShaderWGSL = jsNative
 
+    /// Callable shape of LoadAssetContainer.
+    [<AllowNullLiteral>]
+    type VariableFunction_LoadAssetContainer =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``data``: U2<string, BabylonjsBindings.SimpleInterfaces.JavaScriptObject> * ``rootUrl``: string * ?``onError``: System.Action<string, obj option> * ?``addToScene``: bool -> BabylonjsBindings.SimpleClasses.AssetContainer
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
+    [<Import("LoadAssetContainer", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
+    let ``LoadAssetContainer``: VariableFunction_LoadAssetContainer = jsNative
+
     /// Callable shape of LoadDetailLevels.
     [<AllowNullLiteral>]
     type VariableFunction_LoadDetailLevels =
@@ -3154,6 +3208,15 @@ module SimpleVariables =
     /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
     [<Import("LoadDetailLevels", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
     let ``LoadDetailLevels``: VariableFunction_LoadDetailLevels = jsNative
+
+    /// Callable shape of LoadFile.
+    [<AllowNullLiteral>]
+    type VariableFunction_LoadFile =
+        [<Emit("$0($1...)")>] abstract Invoke: ``fileOrUrl``: U2<Browser.Types.File, string> * ``onSuccess``: System.Action<U2<string, JS.ArrayBuffer>, string option, string option> * ?``onProgress``: System.Action<Browser.Types.ProgressEvent> * ?``offlineProvider``: BabylonjsBindings.SimpleInterfaces.IOfflineProvider option * ?``useArrayBuffer``: bool * ?``onError``: System.Action<BabylonjsBindings.SimpleClasses.WebRequest option, BabylonjsBindings.SimpleClasses.LoadFileError option> * ?``onOpened``: System.Action<BabylonjsBindings.SimpleClasses.WebRequest> -> BabylonjsBindings.SimpleInterfaces.IFileRequest
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("LoadFile", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``LoadFile``: VariableFunction_LoadFile = jsNative
 
     /// Callable shape of LoadTextureFromTranscodeResult.
     [<AllowNullLiteral>]
@@ -3666,6 +3729,15 @@ module SimpleVariables =
     [<Import("openpbrVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/openpbr.vertex.js")>]
     let ``openpbrVertexShaderWGSL``: VariableShape_openpbrVertexShaderWGSL = jsNative
 
+    /// Nested inline object shape used by OptionalPathExceptionsList.
+    [<AllowNullLiteral>]
+    type VariableShape_OptionalPathExceptionsListElementObject =
+        abstract ``regex``: BabylonjsBindings.SimpleInterfaces.BrowserRegExp with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter
+    [<Import("OptionalPathExceptionsList", "@babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter.js")>]
+    let ``OptionalPathExceptionsList``: ResizeArray<VariableShape_OptionalPathExceptionsListElementObject> = jsNative
+
     /// Inline object shape of outlinePixelShader.
     [<AllowNullLiteral>]
     type VariableShape_outlinePixelShader =
@@ -3991,6 +4063,15 @@ module SimpleVariables =
     [<Import("proceduralVertexShaderWGSL", "@babylonjs/core/ShadersWGSL/procedural.vertex.js")>]
     let ``proceduralVertexShaderWGSL``: VariableShape_proceduralVertexShaderWGSL = jsNative
 
+    /// Callable shape of ReadFile.
+    [<AllowNullLiteral>]
+    type VariableFunction_ReadFile =
+        [<Emit("$0($1...)")>] abstract Invoke: ``file``: Browser.Types.File * ``onSuccess``: System.Action<obj> * ?``onProgress``: System.Func<Browser.Types.ProgressEvent, obj> * ?``useArrayBuffer``: bool * ?``onError``: System.Action<BabylonjsBindings.SimpleClasses.ReadFileError> -> BabylonjsBindings.SimpleInterfaces.IFileRequest
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("ReadFile", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``ReadFile``: VariableFunction_ReadFile = jsNative
+
     /// Inline object shape of reflectionFunction.
     [<AllowNullLiteral>]
     type VariableShape_reflectionFunction =
@@ -4029,6 +4110,15 @@ module SimpleVariables =
     /// @babylonjs/core/Engines/WebGPU/webgpuTextureManager
     [<Import("renderableTextureFormatToIndex", "@babylonjs/core/Engines/WebGPU/webgpuTextureManager.js")>]
     let ``renderableTextureFormatToIndex``: VariableShape_renderableTextureFormatToIndex = jsNative
+
+    /// Callable shape of RequestFile.
+    [<AllowNullLiteral>]
+    type VariableFunction_RequestFile =
+        [<Emit("$0($1...)")>] abstract Invoke: ``url``: string * ?``onSuccess``: System.Action<U2<string, JS.ArrayBuffer>, BabylonjsBindings.SimpleClasses.WebRequest option> * ?``onProgress``: System.Action<Browser.Types.ProgressEvent> * ?``offlineProvider``: BabylonjsBindings.SimpleInterfaces.IOfflineProvider option * ?``useArrayBuffer``: bool * ?``onError``: System.Action<BabylonjsBindings.SimpleClasses.RequestFileError> * ?``onOpened``: System.Action<BabylonjsBindings.SimpleClasses.WebRequest> -> BabylonjsBindings.SimpleInterfaces.IFileRequest
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("RequestFile", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``RequestFile``: VariableFunction_RequestFile = jsNative
 
     /// Inline object shape of rgbdDecodePixelShader.
     [<AllowNullLiteral>]
@@ -4239,6 +4329,20 @@ module SimpleVariables =
     [<Import("sceneVertexDeclaration", "@babylonjs/core/Shaders/ShadersInclude/sceneVertexDeclaration.js")>]
     let ``sceneVertexDeclaration``: VariableShape_sceneVertexDeclaration = jsNative
 
+    /// Inline object shape of ScreenshotTools.
+    [<AllowNullLiteral>]
+    type VariableShape_ScreenshotTools =
+        abstract ``CreateScreenshot``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshot with get, set
+        abstract ``CreateScreenshotAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotAsync with get, set
+        abstract ``CreateScreenshotWithResizeAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotWithResizeAsync with get, set
+        abstract ``CreateScreenshotUsingRenderTarget``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotUsingRenderTarget with get, set
+        abstract ``CreateScreenshotUsingRenderTargetAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotUsingRenderTargetAsync with get, set
+        abstract ``CreateScreenshotForFrameGraphAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateScreenshotForFrameGraphAsync with get, set
+
+    /// @babylonjs/core/Misc/screenshotTools.pure
+    [<Import("ScreenshotTools", "@babylonjs/core/Misc/screenshotTools.pure.js")>]
+    let ``ScreenshotTools``: VariableShape_ScreenshotTools = jsNative
+
     /// Inline object shape of screenSpaceCurvaturePixelShader.
     [<AllowNullLiteral>]
     type VariableShape_screenSpaceCurvaturePixelShader =
@@ -4318,6 +4422,15 @@ module SimpleVariables =
     /// @babylonjs/core/Shaders/screenSpaceReflection.fragment
     [<Import("screenSpaceReflectionPixelShader", "@babylonjs/core/Shaders/screenSpaceReflection.fragment.js")>]
     let ``screenSpaceReflectionPixelShader``: VariableShape_screenSpaceReflectionPixelShader = jsNative
+
+    /// Callable shape of SetBasisTranscoderWorker.
+    [<AllowNullLiteral>]
+    type VariableFunction_SetBasisTranscoderWorker =
+        [<Emit("$0($1...)")>] abstract Invoke: ``worker``: BabylonjsBindings.SimpleInterfaces.BrowserWorker -> unit
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<Import("SetBasisTranscoderWorker", "@babylonjs/core/Misc/basis.pure.js")>]
+    let ``SetBasisTranscoderWorker``: VariableFunction_SetBasisTranscoderWorker = jsNative
 
     /// Inline callable object shape used by SetCorsBehavior.
     [<AllowNullLiteral>]

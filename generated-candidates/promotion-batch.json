@@ -8,28 +8,28 @@
   "actualSize": 0,
   "maintainedBaseline": {
     "alias": {
-      "maintained": 103,
-      "candidate": 103,
+      "maintained": 104,
+      "candidate": 104,
       "delta": 0
     },
     "interface": {
-      "maintained": 520,
-      "candidate": 520,
+      "maintained": 532,
+      "candidate": 532,
       "delta": 0
     },
     "class": {
-      "maintained": 1399,
-      "candidate": 1400,
+      "maintained": 1405,
+      "candidate": 1406,
       "delta": 1
     },
     "function": {
-      "maintained": 1114,
-      "candidate": 1114,
+      "maintained": 1125,
+      "candidate": 1125,
       "delta": 0
     },
     "variable": {
-      "maintained": 528,
-      "candidate": 528,
+      "maintained": 539,
+      "candidate": 539,
       "delta": 0
     }
   },
