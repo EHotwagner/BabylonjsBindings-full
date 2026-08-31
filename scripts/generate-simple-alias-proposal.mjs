@@ -137,6 +137,7 @@ const fsharpType = node => {
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.NeverKeyword) return "BabylonjsBindings.SimpleClasses.Never";
   if (node.kind === ts.SyntaxKind.ObjectKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptObject";
+  if (node.kind === ts.SyntaxKind.SymbolKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserSymbol";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
@@ -186,6 +187,11 @@ const fsharpType = node => {
     }
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.getText().replace(/\s+/g, " ") === "Exclude<TypedArray, Float64Array | BigInt64Array | BigUint64Array>") {
+      return "U8<JS.Int8Array, JS.Uint8Array, JS.Uint8ClampedArray, JS.Int16Array, JS.Uint16Array, JS.Int32Array, JS.Uint32Array, JS.Float32Array>";
+    }
+    if (!node.typeArguments?.length && node.typeName.text === "SerializableContext") return "BabylonjsBindings.SimpleInterfaces.BrowserSerializableContext";
+    if (!node.typeArguments?.length && node.typeName.text === "DecoratorMetadataObject") return "BabylonjsBindings.SimpleInterfaces.BrowserDecoratorMetadataObject";
     if (node.typeName.text === "Pick"
       && node.typeArguments?.length === 2
       && ts.isTypeReferenceNode(node.typeArguments[0])
@@ -240,6 +246,11 @@ const fsharpType = node => {
       const value = fsharpType(node.typeArguments[1]);
       return key && value ? `JS.Map<${key}, ${value}>` : undefined;
     }
+    if (node.typeName.text === "ReadonlyMap" && node.typeArguments?.length === 2) {
+      const key = fsharpType(node.typeArguments[0]);
+      const value = fsharpType(node.typeArguments[1]);
+      return key && value ? `BabylonjsBindings.SimpleInterfaces.BrowserReadonlyMap<${key}, ${value}>` : undefined;
+    }
     if (node.typeName.text === "Record" && node.typeArguments?.length === 2) {
       return auxiliaryIndexerType(node, fsharpType(node.typeArguments[0]), fsharpType(node.typeArguments[1]), false);
     }
@@ -264,6 +275,20 @@ const fsharpType = node => {
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && node.typeName.text === "WebGL2RenderingContext") return "BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext";
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
+    if (!node.typeArguments?.length && node.typeName.text === "ImageBitmapOptions") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmapOptions";
+    if (!node.typeArguments?.length && node.typeName.text === "ElementImage") return "BabylonjsBindings.SimpleInterfaces.BrowserElementImage";
+    if (!node.typeArguments?.length && node.typeName.text === "WebGLCopyElementImageConfig") return "BabylonjsBindings.SimpleInterfaces.BrowserWebGLCopyElementImageConfig";
+    if (!node.typeArguments?.length && node.typeName.text === "XRRigidTransform") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRigidTransform";
+    if (!node.typeArguments?.length && node.typeName.text === "XRSpace") return "BabylonjsBindings.SimpleInterfaces.BrowserXRSpace";
+    if (!node.typeArguments?.length && node.typeName.text === "XRRay") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRay";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHitTestSource") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestSource";
+    if (!node.typeArguments?.length && node.typeName.text === "XRAnchorSet") return "BabylonjsBindings.SimpleInterfaces.BrowserXRAnchorSet";
+    if (!node.typeArguments?.length && node.typeName.text === "XRWorldInformation") return "BabylonjsBindings.SimpleInterfaces.BrowserXRWorldInformation";
+    if (!node.typeArguments?.length && node.typeName.text === "XRPlaneSet") return "BabylonjsBindings.SimpleInterfaces.BrowserXRPlaneSet";
+    if (!node.typeArguments?.length && node.typeName.text === "XRJointSpace") return "BabylonjsBindings.SimpleInterfaces.BrowserXRJointSpace";
+    if (!node.typeArguments?.length && node.typeName.text === "XRJointPose") return "BabylonjsBindings.SimpleInterfaces.BrowserXRJointPose";
+    if (!node.typeArguments?.length && node.typeName.text === "XRCPUDepthInformation") return "BabylonjsBindings.SimpleInterfaces.BrowserXRCPUDepthInformation";
+    if (!node.typeArguments?.length && node.typeName.text === "INativeXRFrame") return "BabylonjsBindings.SimpleInterfaces.BrowserNativeXRFrame";
     if (!node.typeArguments?.length && node.typeName.text === "VideoFrame") return "BabylonjsBindings.SimpleInterfaces.BrowserVideoFrame";
     if (!node.typeArguments?.length && node.typeName.text === "OffscreenCanvas") return "BabylonjsBindings.SimpleInterfaces.BrowserOffscreenCanvas";
     if (!node.typeArguments?.length && node.typeName.text === "WebGLQuery") return "BabylonjsBindings.SimpleInterfaces.BrowserWebGLQuery";
@@ -276,6 +301,7 @@ const fsharpType = node => {
     if (!node.typeArguments?.length && node.typeName.text === "XRReferenceSpaceType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType";
     if (!node.typeArguments?.length && node.typeName.text === "XRHandedness") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness";
     if (!node.typeArguments?.length && node.typeName.text === "XRProjectionLayerInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRProjectionLayerInit";
+    if (!node.typeArguments?.length && node.typeName.text === "XRProjectionLayer") return "BabylonjsBindings.SimpleInterfaces.BrowserXRProjectionLayer";
     if (!node.typeArguments?.length && node.typeName.text === "XRAnchor") return "BabylonjsBindings.SimpleInterfaces.BrowserXRAnchor";
     if (!node.typeArguments?.length && node.typeName.text === "XRHitTestResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitTestResult";
     if (!node.typeArguments?.length && node.typeName.text === "XRHitResult") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHitResult";
@@ -516,8 +542,16 @@ for (const sourceFile of program.getSourceFiles()) {
     const isCoroutine = name === "Coroutine"
       && declaration.typeParameters?.length === 1
       && declaration.typeParameters[0].name.text === "T";
+    const coroutineGeneric = declaration.typeParameters?.length === 1
+      && declaration.typeParameters[0].name.text === "T";
     if (isCoroutine) {
       entry = { package: packageName, module, name, shape: "coroutine", typeParameter: "T" };
+    } else if (name === "AsyncCoroutine" && coroutineGeneric) {
+      entry = { package: packageName, module, name, shape: "genericAlias", typeParameter: "T", target: "BabylonjsBindings.SimpleInterfaces.BrowserGenerator<U2<unit, JS.Promise<unit>>, 'T, unit>" };
+    } else if (name === "CoroutineStep" && coroutineGeneric) {
+      entry = { package: packageName, module, name, shape: "genericAlias", typeParameter: "T", target: "BabylonjsBindings.SimpleInterfaces.BrowserGeneratorResult<unit, 'T>" };
+    } else if (name === "CoroutineScheduler" && coroutineGeneric) {
+      entry = { package: packageName, module, name, shape: "genericAlias", typeParameter: "T", target: "System.Action<BabylonjsBindings.SimpleInterfaces.BrowserGenerator<U2<unit, JS.Promise<unit>>, 'T, unit>, System.Action<BabylonjsBindings.SimpleInterfaces.BrowserGeneratorResult<unit, 'T>>, System.Action<obj>>" };
     } else if (isNullable) {
       entry = { package: packageName, module, name, shape: "genericAlias", typeParameter: declaration.typeParameters[0].name.text, target: `'${declaration.typeParameters[0].name.text} option` };
     } else if (!declaration.typeParameters?.length && ts.isFunctionTypeNode(declaration.type)) {

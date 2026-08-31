@@ -66,6 +66,11 @@ module SimpleInterfaces =
     type BrowserMediaStream =
         interface end
 
+    /// Distinct ambient MediaStreamTrack handle.
+    [<AllowNullLiteral>]
+    type BrowserMediaStreamTrack =
+        interface end
+
     /// Distinct ambient AbortSignal handle.
     [<AllowNullLiteral>]
     type BrowserAbortSignal =
@@ -262,16 +267,75 @@ module SimpleInterfaces =
         abstract resizeQuality: BrowserResizeQuality option with get, set
         abstract resizeWidth: float option with get, set
 
+    /// Exact experimental HTML-in-Canvas transferable image surface.
+    [<AllowNullLiteral>]
+    type BrowserElementImage =
+        abstract width: float with get
+        abstract height: float with get
+        abstract close: unit -> unit
+
+    /// Exact source rectangle and sizing configuration for WebGL element-image copies.
+    [<AllowNullLiteral>]
+    type BrowserWebGLCopyElementImageConfig =
+        abstract sx: float option with get, set
+        abstract sy: float option with get, set
+        abstract swidth: float option with get, set
+        abstract sheight: float option with get, set
+        abstract width: float option with get, set
+        abstract height: float option with get, set
+
     /// Structural non-primitive JavaScript object surface used by TypeScript `object` declarations.
     [<AllowNullLiteral>]
     type JavaScriptObject =
         interface end
+
+    /// Erased nominal representation of the JavaScript `symbol` primitive.
+    [<Erase>]
+    type BrowserSymbol =
+        | BrowserSymbol of obj
+
+    /// Exact ECMAScript property-key union.
+    type BrowserPropertyKey = U3<string, float, BrowserSymbol>
+
+    /// Exact structural projection of a TypeScript Record.
+    [<AllowNullLiteral>]
+    type BrowserRecord<'TKey, 'TValue> =
+        [<EmitIndexer>] abstract Item: key: 'TKey -> 'TValue with get, set
+
+    /// Exact TC39 decorator metadata object.
+    [<AllowNullLiteral>]
+    type BrowserDecoratorMetadataObject =
+        [<EmitIndexer>] abstract Item: key: BrowserPropertyKey -> obj with get, set
+
+    /// Exact serialization-decorator context used by Babylon.
+    [<AllowNullLiteral>]
+    type BrowserSerializableContext =
+        abstract name: U2<string, BrowserSymbol> with get, set
+        abstract metadata: BrowserDecoratorMetadataObject option with get, set
 
     /// Exact structural ECMAScript iterator surface used by readonly sets.
     [<AllowNullLiteral>]
     type BrowserIterator<'T> =
         abstract next: ?value: obj -> JS.IteratorResult<'T>
         [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
+
+    /// Exact ECMAScript iterable surface.
+    [<AllowNullLiteral>]
+    type BrowserIterable<'T> =
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
+
+    /// Exact one-argument JavaScript constructor surface.
+    [<AllowNullLiteral>]
+    type BrowserConstructor<'TArgument, 'TResult> =
+        [<Emit("new $0($1)")>] abstract Create: argument: 'TArgument -> 'TResult
+
+    /// Exact constructor surface for Babylon typed-array factories.
+    [<AllowNullLiteral>]
+    type BrowserTypedArrayConstructor<'T> =
+        [<Emit("new $0($1)")>] abstract Create: length: float -> 'T
+        [<Emit("new $0($1)")>] abstract Create: elements: BrowserIterable<float> -> 'T
+        [<Emit("new $0($1...)")>] abstract Create: buffer: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> * ?byteOffset: float * ?length: float -> 'T
+        abstract BYTES_PER_ELEMENT: float with get
 
     /// Yield branch returned by an ECMAScript generator.
     [<AllowNullLiteral>]
@@ -306,6 +370,18 @@ module SimpleInterfaces =
         abstract keys: unit -> BrowserIterator<'T>
         abstract values: unit -> BrowserIterator<'T>
         [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
+
+    /// Exact readonly ECMAScript Map surface used by Babylon declarations.
+    [<AllowNullLiteral>]
+    type BrowserReadonlyMap<'TKey, 'TValue> =
+        abstract size: float with get
+        abstract has: key: 'TKey -> bool
+        abstract get: key: 'TKey -> 'TValue option
+        abstract forEach: callbackfn: System.Action<'TValue, 'TKey, BrowserReadonlyMap<'TKey, 'TValue>> * ?thisArg: obj -> unit
+        abstract entries: unit -> BrowserIterator<'TKey * 'TValue>
+        abstract keys: unit -> BrowserIterator<'TKey>
+        abstract values: unit -> BrowserIterator<'TValue>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'TKey * 'TValue>
 
     /// Exact numeric literal type for 1.
     type NumericLiteral1 =
@@ -399,6 +475,11 @@ module SimpleInterfaces =
     type BrowserXRTextureType =
         | [<CompiledName("texture")>] Texture
         | [<CompiledName("texture-array")>] TextureArray
+
+    /// Distinct ambient WebXR projection-layer handle.
+    [<AllowNullLiteral>]
+    type BrowserXRProjectionLayer =
+        interface end
 
     /// Exact ambient WebXR projection-layer initializer.
     [<AllowNullLiteral>]
@@ -866,6 +947,61 @@ module SimpleInterfaces =
     /// Distinct ambient Web Worker handle.
     [<AllowNullLiteral>]
     type BrowserWorker =
+        interface end
+
+    /// Distinct ambient WebXR rigid transform handle.
+    [<AllowNullLiteral>]
+    type BrowserXRRigidTransform =
+        interface end
+
+    /// Distinct ambient WebXR space handle.
+    [<AllowNullLiteral>]
+    type BrowserXRSpace =
+        interface end
+
+    /// Distinct ambient WebXR ray handle.
+    [<AllowNullLiteral>]
+    type BrowserXRRay =
+        interface end
+
+    /// Distinct ambient WebXR hit-test source handle.
+    [<AllowNullLiteral>]
+    type BrowserXRHitTestSource =
+        interface end
+
+    /// Distinct ambient WebXR anchor set handle.
+    [<AllowNullLiteral>]
+    type BrowserXRAnchorSet =
+        interface end
+
+    /// Distinct ambient WebXR world information handle.
+    [<AllowNullLiteral>]
+    type BrowserXRWorldInformation =
+        interface end
+
+    /// Distinct ambient WebXR plane set handle.
+    [<AllowNullLiteral>]
+    type BrowserXRPlaneSet =
+        interface end
+
+    /// Distinct ambient WebXR joint space handle.
+    [<AllowNullLiteral>]
+    type BrowserXRJointSpace =
+        interface end
+
+    /// Distinct ambient WebXR joint pose handle.
+    [<AllowNullLiteral>]
+    type BrowserXRJointPose =
+        interface end
+
+    /// Distinct ambient WebXR CPU depth information handle.
+    [<AllowNullLiteral>]
+    type BrowserXRCPUDepthInformation =
+        interface end
+
+    /// Distinct ambient native WebXR frame implementation handle.
+    [<AllowNullLiteral>]
+    type BrowserNativeXRFrame =
         interface end
 
     /// Distinct ambient WebGPU device-descriptor surface.
@@ -2967,6 +3103,14 @@ module SimpleInterfaces =
     type IDisposable =
         abstract ``dispose``: unit -> unit
 
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    [<AllowNullLiteral>]
+    type IDracoAttributeData =
+        abstract ``kind``: string with get, set
+        abstract ``dracoName``: BabylonjsBindings.StringEnums.DracoAttributeName with get, set
+        abstract ``size``: float with get, set
+        abstract ``data``: BabylonjsBindings.TypeAliases.VertexDataTypedArray with get, set
+
     /// @babylonjs/core/Meshes/Compression/dracoCodec
     [<AllowNullLiteral>]
     type IDracoCodecConfiguration =
@@ -2977,6 +3121,28 @@ module SimpleInterfaces =
         abstract ``workerPool``: BabylonjsBindings.SimpleClasses.WorkerPool option with get, set
         abstract ``wasmBinary``: JS.ArrayBuffer option with get, set
         abstract ``jsModule``: obj option with get, set
+
+    /// @babylonjs/core/Meshes/Compression/dracoCompression
+    [<AllowNullLiteral>]
+    type IDracoCompressionOptions =
+        abstract ``numWorkers``: float option with get, set
+        abstract ``workerPool``: BabylonjsBindings.SimpleClasses.WorkerPool option with get, set
+        abstract ``wasmBinary``: JS.ArrayBuffer option with get, set
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    [<AllowNullLiteral>]
+    type IDracoEncodedMeshData =
+        abstract ``data``: JS.Int8Array with get, set
+        abstract ``attributeIds``: BrowserRecord<string, float> with get, set
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    [<AllowNullLiteral>]
+    type IDracoEncoderOptions =
+        abstract ``decodeSpeed``: float option with get, set
+        abstract ``encodeSpeed``: float option with get, set
+        abstract ``method``: BabylonjsBindings.StringEnums.DracoEncoderMethod option with get, set
+        abstract ``quantizationBits``: BrowserRecord<BabylonjsBindings.StringEnums.DracoAttributeName, float> option with get, set
+        abstract ``excludedAttributes``: ResizeArray<string> option with get, set
 
     /// @babylonjs/core/Engines/IDrawContext
     [<AllowNullLiteral>]
@@ -4455,6 +4621,14 @@ module SimpleInterfaces =
         abstract ``_assetsContext``: InlineObjecta21bf015c053Object option with get, set
         abstract ``enableLogging``: bool option with get, set
 
+    /// @babylonjs/core/SmartAssets/smartAssetSerializer
+    [<AllowNullLiteral>]
+    type ISerializedSmartAssetEntry =
+        abstract ``url``: string with get
+        abstract ``type``: string option with get
+        abstract ``extension``: string option with get
+        abstract ``metadata``: BrowserRecord<string, obj> option with get
+
     /// Function-valued IShaderMaterialOptions.extraInitializationsAsync property.
     [<AllowNullLiteral>]
     type IShaderMaterialOptionsExtraInitializationsAsyncCallback =
@@ -5907,6 +6081,24 @@ module SimpleInterfaces =
         abstract ``jsPath``: string option with get, set
         abstract ``wasmPath``: string option with get, set
 
+    /// @babylonjs/core/Misc/videoRecorder
+    [<AllowNullLiteral>]
+    type VideoRecorderOptions =
+        abstract ``canvas``: Browser.Types.HTMLCanvasElement option with get, set
+        abstract ``mimeType``: string with get, set
+        abstract ``fps``: float with get, set
+        abstract ``recordChunckSize``: float with get, set
+        abstract ``audioTracks``: ResizeArray<BrowserMediaStreamTrack> option with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<VideoRecorderOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialVideoRecorderOptions =
+        abstract ``canvas``: Browser.Types.HTMLCanvasElement option with get, set
+        abstract ``mimeType``: string option with get, set
+        abstract ``fps``: float option with get, set
+        abstract ``recordChunckSize``: float option with get, set
+        abstract ``audioTracks``: ResizeArray<BrowserMediaStreamTrack> option with get, set
+
     /// @babylonjs/core/Materials/Textures/videoTexture.pure
     [<AllowNullLiteral>]
     type VideoTextureSettings =
@@ -6229,6 +6421,12 @@ module SimpleInterfaces =
         abstract ``max``: float option with get, set
         abstract ``notifiers``: InlineObject41a2570c8837Object option with get, set
         abstract ``options``: ResizeArray<IEditablePropertyListOption> option with get, set
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    [<AllowNullLiteral>]
+    type IEncodeSuccessMessage =
+        abstract ``id``: StringLiteralfcc89b3f4d1f with get, set
+        abstract ``encodedMeshData``: IDracoEncodedMeshData with get, set
 
     /// Function-valued IExplorerExtensibilityGroup.predicate property.
     [<AllowNullLiteral>]
@@ -6854,6 +7052,11 @@ module SimpleInterfaces =
         abstract ``rect``: ``x``: float * ``y``: float * ``width``: float * ``height``: float -> unit
         abstract ``roundRect``: ``x``: float * ``y``: float * ``width``: float * ``height``: float * ``radii``: float -> unit
 
+    /// @babylonjs/core/ObjectModel/objectModelInterfaces
+    [<AllowNullLiteral>]
+    type IPathToObjectConverter<'T> =
+        abstract ``convert``: ``path``: string -> IObjectInfo<'T, obj>
+
     /// @babylonjs/core/Physics/v2/IPhysicsEnginePlugin
     [<AllowNullLiteral>]
     type IPhysicsCollisionEvent =
@@ -7024,6 +7227,12 @@ module SimpleInterfaces =
         abstract ``metadata``: obj with get, set
         abstract ``signalInputs``: ResizeArray<ISerializedFlowGraphConnection> with get, set
         abstract ``signalOutputs``: ResizeArray<ISerializedFlowGraphConnection> with get, set
+
+    /// @babylonjs/core/SmartAssets/smartAssetSerializer
+    [<AllowNullLiteral>]
+    type ISerializedSmartAssetMap =
+        abstract ``version``: NumericLiteral1 with get
+        abstract ``assets``: BrowserRecord<string, ISerializedSmartAssetEntry> with get
 
     /// Function-valued IShaderProcessor.preProcessShaderCode property.
     [<AllowNullLiteral>]

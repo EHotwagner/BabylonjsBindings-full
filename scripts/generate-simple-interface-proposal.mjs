@@ -183,8 +183,15 @@ const maintainedSymbols = new Map(dependencyExports
     partialSymbol: entry.partialSymbol,
     requiredNonNullableSymbol: entry.requiredNonNullableSymbol,
     requiredSymbol: entry.requiredSymbol,
+    staticSymbol: entry.kind === "class" ? `${entry.fsharpSymbol}Static` : undefined,
     arity: entry.typeParameterCount ?? 0
   }]));
+const maintainedClassStaticSymbols = new Map();
+for (const entry of dependencyExports.filter(entry => entry.kind === "class")) {
+  const existing = maintainedClassStaticSymbols.get(entry.name);
+  if (existing === undefined) maintainedClassStaticSymbols.set(entry.name, `${entry.fsharpSymbol}Static`);
+  else if (existing !== `${entry.fsharpSymbol}Static`) maintainedClassStaticSymbols.set(entry.name, null);
+}
 
 // The maintained build compiles aliases, interfaces, and classes in one recursive
 // namespace. A bootstrap pass can therefore expose exact class names to interface
@@ -241,6 +248,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.ObjectKeyword) return "JavaScriptObject";
+  if (node.kind === ts.SyntaxKind.SymbolKeyword) return "BrowserSymbol";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
@@ -300,9 +308,23 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       return `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
     }
   }
+  if (ts.isConstructorTypeNode(node)
+    && !node.typeParameters?.length
+    && node.parameters.length === 1
+    && !node.parameters[0].dotDotDotToken
+    && node.parameters[0].type) {
+    const argumentType = fsharpType(node.parameters[0].type, available, dependencies, typeParameters);
+    const returnType = fsharpType(node.type, available, dependencies, typeParameters);
+    if (argumentType && returnType) return `BrowserConstructor<${argumentType}, ${returnType}>`;
+  }
   if (ts.isTypeLiteralNode(node)) {
     const digest = createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12);
     return inlineObjectType(node, available, dependencies, typeParameters, utilityInlineTypes, `InlineObject${digest}`);
+  }
+  if (ts.isTypeQueryNode(node) && ts.isIdentifier(node.exprName)) {
+    if (bootstrapClassSymbols.has(node.exprName.text)) return `${bootstrapClassSymbols.get(node.exprName.text).fsharpSymbol}Static`;
+    if (maintainedClassStaticSymbols.get(node.exprName.text)) return maintainedClassStaticSymbols.get(node.exprName.text);
+    if (maintainedSymbols.get(node.exprName.text)?.staticSymbol) return maintainedSymbols.get(node.exprName.text).staticSymbol;
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (!node.typeArguments?.length && node.typeName.text === "IEXTLightsImageBased_LightImageBased") return "GLTFExtLightsImageBasedLightImageBased";
@@ -388,6 +410,16 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       const value = fsharpType(node.typeArguments[1], available, dependencies, typeParameters);
       return key && value ? `JS.Map<${key}, ${value}>` : undefined;
     }
+    if (node.typeName.text === "ReadonlyMap" && node.typeArguments?.length === 2) {
+      const key = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      const value = fsharpType(node.typeArguments[1], available, dependencies, typeParameters);
+      return key && value ? `BrowserReadonlyMap<${key}, ${value}>` : undefined;
+    }
+    if (node.typeName.text === "Record" && node.typeArguments?.length === 2) {
+      const key = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      const value = fsharpType(node.typeArguments[1], available, dependencies, typeParameters);
+      return key && value ? `BrowserRecord<${key}, ${value}>` : undefined;
+    }
     if (node.typeName.text === "Nullable" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? asOption(inner) : undefined;
@@ -471,6 +503,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ["OfflineAudioContext", "BrowserOfflineAudioContext"],
       ["AudioBufferSourceNode", "BrowserAudioBufferSourceNode"],
       ["MediaTrackConstraints", "BrowserMediaTrackConstraints"],
+      ["MediaStreamTrack", "BrowserMediaStreamTrack"],
       ["PointerEventInit", "BrowserPointerEventInit"],
       ["WebGLVertexArrayObject", "BrowserWebGLVertexArrayObject"],
       ["Worker", "BrowserWorker"],
@@ -499,6 +532,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ,["XREye", "BrowserXREye"]
       ,["XRHandedness", "BrowserXRHandedness"]
       ,["XRProjectionLayerInit", "BrowserXRProjectionLayerInit"]
+      ,["XRProjectionLayer", "BrowserXRProjectionLayer"]
       ,["BigUint64Array", "BrowserBigUint64Array"]
       ,["DistanceModelType", "BrowserDistanceModelType"]
       ,["PanningModelType", "BrowserPanningModelType"]
@@ -511,6 +545,19 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ,["XRHitTestTrackableType", "BrowserXRHitTestTrackableType"]
       ,["XRReflectionFormat", "BrowserXRReflectionFormat"]
       ,["XRGeometryDetectorOptions", "BrowserXRGeometryDetectorOptions"]
+      ,["ElementImage", "BrowserElementImage"]
+      ,["WebGLCopyElementImageConfig", "BrowserWebGLCopyElementImageConfig"]
+      ,["XRRigidTransform", "BrowserXRRigidTransform"]
+      ,["XRSpace", "BrowserXRSpace"]
+      ,["XRRay", "BrowserXRRay"]
+      ,["XRHitTestSource", "BrowserXRHitTestSource"]
+      ,["XRAnchorSet", "BrowserXRAnchorSet"]
+      ,["XRWorldInformation", "BrowserXRWorldInformation"]
+      ,["XRPlaneSet", "BrowserXRPlaneSet"]
+      ,["XRJointSpace", "BrowserXRJointSpace"]
+      ,["XRJointPose", "BrowserXRJointPose"]
+      ,["XRCPUDepthInformation", "BrowserXRCPUDepthInformation"]
+      ,["INativeXRFrame", "BrowserNativeXRFrame"]
       ,["GPUPowerPreference", "BrowserGPUPowerPreference"]
       ,["XMLHttpRequestBodyInit", "BrowserXMLHttpRequestBodyInit"]
     ]);
@@ -518,6 +565,12 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && node.typeName.text === "GPUBufferUsageFlags") return "float";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
+    if (node.typeName.text === "IObjectInfo" && node.typeArguments?.length === 1 && available.has("IObjectInfo")) {
+      const rendered = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      if (!rendered) return undefined;
+      dependencies.add("IObjectInfo");
+      return `IObjectInfo<${rendered}, obj>`;
+    }
     if (!node.typeArguments?.length && node.typeName.text === "AcceptedRole") {
       let symbol = checker.getSymbolAtLocation(node.typeName);
       if (symbol?.flags & ts.SymbolFlags.Alias) {
@@ -643,7 +696,29 @@ const renderMembers = (declaration, available) => {
   const members = [];
   const inlineTypes = [];
   const seenMemberTexts = new Set();
-  for (const member of declaration.members) {
+  const sourceMembers = [...declaration.members];
+  for (const clause of declaration.heritageClauses ?? []) {
+    for (const heritage of clause.types) {
+      if (!ts.isIdentifier(heritage.expression) || heritage.expression.text !== "Pick") continue;
+      if (heritage.typeArguments?.length !== 2
+        || !ts.isTypeReferenceNode(heritage.typeArguments[0])
+        || !ts.isIdentifier(heritage.typeArguments[0].typeName)) return undefined;
+      let symbol = checker.getSymbolAtLocation(heritage.typeArguments[0].typeName);
+      if (symbol?.flags & ts.SymbolFlags.Alias) {
+        try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+      }
+      const source = symbol?.declarations?.find(ts.isInterfaceDeclaration);
+      const keyNodes = ts.isUnionTypeNode(heritage.typeArguments[1]) ? heritage.typeArguments[1].types : [heritage.typeArguments[1]];
+      const keys = keyNodes.map(node => ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal) ? node.literal.text : undefined);
+      if (!source || keys.some(key => !key)) return undefined;
+      const picked = source.members.filter(member => (ts.isPropertySignature(member) || ts.isMethodSignature(member))
+        && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))
+        && keys.includes(member.name.text));
+      if (picked.length !== keys.length) return undefined;
+      sourceMembers.push(...picked);
+    }
+  }
+  for (const member of sourceMembers) {
     const memberText = member.getText().replace(/\s+/g, " ");
     if (seenMemberTexts.has(memberText)) continue;
     seenMemberTexts.add(memberText);
@@ -710,7 +785,9 @@ const renderHeritage = (declaration, available) => {
     for (const type of clause.types) {
       if (!ts.isIdentifier(type.expression)) return undefined;
       const name = type.expression.text;
-      if (available.has(name)) {
+      if (name === "Pick") {
+        continue;
+      } else if (available.has(name)) {
         const target = available.get(name);
         const arguments_ = type.typeArguments ?? [];
         if (arguments_.length !== target.arity) return undefined;
@@ -963,6 +1040,7 @@ lines.push("", "    /// Distinct ambient media-stream audio destination-node han
 lines.push("", "    /// Distinct ambient Fetch Response handle.", "    [<AllowNullLiteral>]", "    type BrowserResponse =", "        interface end");
 lines.push("", "    /// Distinct ambient Fetch BodyInit value handle.", "    [<AllowNullLiteral>]", "    type BrowserBodyInit =", "        interface end");
 lines.push("", "    /// Distinct ambient MediaStream handle.", "    [<AllowNullLiteral>]", "    type BrowserMediaStream =", "        interface end");
+lines.push("", "    /// Distinct ambient MediaStreamTrack handle.", "    [<AllowNullLiteral>]", "    type BrowserMediaStreamTrack =", "        interface end");
 lines.push("", "    /// Distinct ambient AbortSignal handle.", "    [<AllowNullLiteral>]", "    type BrowserAbortSignal =", "        interface end");
 lines.push("", "    /// Ambient XMLHttpRequest handle used by Babylon request modifiers.", "    [<AllowNullLiteral>]", "    type BrowserXMLHttpRequest =", "        abstract setRequestHeader: name: string * value: string -> unit");
 lines.push("", "    /// Distinct ambient URL handle.", "    [<AllowNullLiteral>]", "    type BrowserURL =", "        interface end");
@@ -995,13 +1073,24 @@ lines.push("", "    /// Exact browser image orientation literals.", "    [<Strin
 lines.push("", "    /// Exact browser premultiplied-alpha literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserPremultiplyAlpha =", "        | [<CompiledName(\"default\")>] Default", "        | [<CompiledName(\"none\")>] None", "        | [<CompiledName(\"premultiply\")>] Premultiply");
 lines.push("", "    /// Exact browser bitmap resize-quality literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserResizeQuality =", "        | [<CompiledName(\"high\")>] High", "        | [<CompiledName(\"low\")>] Low", "        | [<CompiledName(\"medium\")>] Medium", "        | [<CompiledName(\"pixelated\")>] Pixelated");
 lines.push("", "    /// Exact structural browser ImageBitmapOptions surface.", "    [<AllowNullLiteral>]", "    type BrowserImageBitmapOptions =", "        abstract colorSpaceConversion: BrowserColorSpaceConversion option with get, set", "        abstract imageOrientation: BrowserImageOrientation option with get, set", "        abstract premultiplyAlpha: BrowserPremultiplyAlpha option with get, set", "        abstract resizeHeight: float option with get, set", "        abstract resizeQuality: BrowserResizeQuality option with get, set", "        abstract resizeWidth: float option with get, set");
+lines.push("", "    /// Exact experimental HTML-in-Canvas transferable image surface.", "    [<AllowNullLiteral>]", "    type BrowserElementImage =", "        abstract width: float with get", "        abstract height: float with get", "        abstract close: unit -> unit");
+lines.push("", "    /// Exact source rectangle and sizing configuration for WebGL element-image copies.", "    [<AllowNullLiteral>]", "    type BrowserWebGLCopyElementImageConfig =", "        abstract sx: float option with get, set", "        abstract sy: float option with get, set", "        abstract swidth: float option with get, set", "        abstract sheight: float option with get, set", "        abstract width: float option with get, set", "        abstract height: float option with get, set");
 lines.push("", "    /// Structural non-primitive JavaScript object surface used by TypeScript `object` declarations.", "    [<AllowNullLiteral>]", "    type JavaScriptObject =", "        interface end");
+lines.push("", "    /// Erased nominal representation of the JavaScript `symbol` primitive.", "    [<Erase>]", "    type BrowserSymbol =", "        | BrowserSymbol of obj");
+lines.push("", "    /// Exact ECMAScript property-key union.", "    type BrowserPropertyKey = U3<string, float, BrowserSymbol>");
+lines.push("", "    /// Exact structural projection of a TypeScript Record.", "    [<AllowNullLiteral>]", "    type BrowserRecord<'TKey, 'TValue> =", "        [<EmitIndexer>] abstract Item: key: 'TKey -> 'TValue with get, set");
+lines.push("", "    /// Exact TC39 decorator metadata object.", "    [<AllowNullLiteral>]", "    type BrowserDecoratorMetadataObject =", "        [<EmitIndexer>] abstract Item: key: BrowserPropertyKey -> obj with get, set");
+lines.push("", "    /// Exact serialization-decorator context used by Babylon.", "    [<AllowNullLiteral>]", "    type BrowserSerializableContext =", "        abstract name: U2<string, BrowserSymbol> with get, set", "        abstract metadata: BrowserDecoratorMetadataObject option with get, set");
 lines.push("", "    /// Exact structural ECMAScript iterator surface used by readonly sets.", "    [<AllowNullLiteral>]", "    type BrowserIterator<'T> =", "        abstract next: ?value: obj -> JS.IteratorResult<'T>", "        [<Emit(\"$0[Symbol.iterator]()\")>] abstract GetIterator: unit -> BrowserIterator<'T>");
+lines.push("", "    /// Exact ECMAScript iterable surface.", "    [<AllowNullLiteral>]", "    type BrowserIterable<'T> =", "        [<Emit(\"$0[Symbol.iterator]()\")>] abstract GetIterator: unit -> BrowserIterator<'T>");
+lines.push("", "    /// Exact one-argument JavaScript constructor surface.", "    [<AllowNullLiteral>]", "    type BrowserConstructor<'TArgument, 'TResult> =", "        [<Emit(\"new $0($1)\")>] abstract Create: argument: 'TArgument -> 'TResult");
+lines.push("", "    /// Exact constructor surface for Babylon typed-array factories.", "    [<AllowNullLiteral>]", "    type BrowserTypedArrayConstructor<'T> =", "        [<Emit(\"new $0($1)\")>] abstract Create: length: float -> 'T", "        [<Emit(\"new $0($1)\")>] abstract Create: elements: BrowserIterable<float> -> 'T", "        [<Emit(\"new $0($1...)\")>] abstract Create: buffer: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> * ?byteOffset: float * ?length: float -> 'T", "        abstract BYTES_PER_ELEMENT: float with get");
 lines.push("", "    /// Yield branch returned by an ECMAScript generator.", "    [<AllowNullLiteral>]", "    type BrowserGeneratorYieldResult<'T> =", "        abstract ``done``: bool option with get", "        abstract value: 'T with get");
 lines.push("", "    /// Completion branch returned by an ECMAScript generator.", "    [<AllowNullLiteral>]", "    type BrowserGeneratorReturnResult<'T> =", "        abstract ``done``: bool with get", "        abstract value: 'T with get");
 lines.push("", "    /// Exact yield-or-return result of an ECMAScript generator.", "    type BrowserGeneratorResult<'TYield, 'TReturn> = U2<BrowserGeneratorYieldResult<'TYield>, BrowserGeneratorReturnResult<'TReturn>>");
 lines.push("", "    /// Exact synchronous ECMAScript Generator surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserGenerator<'TYield, 'TReturn, 'TNext> =", "        abstract next: ?value: 'TNext -> BrowserGeneratorResult<'TYield, 'TReturn>", "        [<Emit(\"$0.return($1)\")>] abstract ``return``: ?value: 'TReturn -> BrowserGeneratorResult<'TYield, 'TReturn>", "        [<Emit(\"$0.throw($1)\")>] abstract ``throw``: ?error: obj -> BrowserGeneratorResult<'TYield, 'TReturn>", "        [<Emit(\"$0[Symbol.iterator]()\")>] abstract GetIterator: unit -> BrowserGenerator<'TYield, 'TReturn, 'TNext>");
 lines.push("", "    /// Exact readonly ECMAScript Set surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserReadonlySet<'T> =", "        abstract size: float with get", "        abstract has: value: 'T -> bool", "        abstract forEach: callbackfn: System.Action<'T, 'T, BrowserReadonlySet<'T>> * ?thisArg: obj -> unit", "        abstract entries: unit -> BrowserIterator<'T * 'T>", "        abstract keys: unit -> BrowserIterator<'T>", "        abstract values: unit -> BrowserIterator<'T>", "        [<Emit(\"$0[Symbol.iterator]()\")>] abstract GetIterator: unit -> BrowserIterator<'T>");
+lines.push("", "    /// Exact readonly ECMAScript Map surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserReadonlyMap<'TKey, 'TValue> =", "        abstract size: float with get", "        abstract has: key: 'TKey -> bool", "        abstract get: key: 'TKey -> 'TValue option", "        abstract forEach: callbackfn: System.Action<'TValue, 'TKey, BrowserReadonlyMap<'TKey, 'TValue>> * ?thisArg: obj -> unit", "        abstract entries: unit -> BrowserIterator<'TKey * 'TValue>", "        abstract keys: unit -> BrowserIterator<'TKey>", "        abstract values: unit -> BrowserIterator<'TValue>", "        [<Emit(\"$0[Symbol.iterator]()\")>] abstract GetIterator: unit -> BrowserIterator<'TKey * 'TValue>");
 for (const value of [...numericLiteralValues].sort((left, right) => left - right)) {
   const name = `NumericLiteral${value < 0 ? `Negative${Math.abs(value)}` : value}`;
   lines.push("", `    /// Exact numeric literal type for ${value}.`, `    type ${name} =`, `        | Value = ${value}`);
@@ -1014,6 +1103,7 @@ lines.push("", "    /// Exact opaque WebGLQuery handle.", "    [<AllowNullLitera
 lines.push("", "    /// Exact WebGL context-event extension surface.", "    [<AllowNullLiteral>]", "    type BrowserWebGLContextEvent =", "        inherit Browser.Types.Event", "        abstract statusMessage: string with get");
 lines.push("", "    /// Exact WebXR handedness literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserXRHandedness =", "        | [<CompiledName(\"none\")>] None", "        | [<CompiledName(\"left\")>] Left", "        | [<CompiledName(\"right\")>] Right");
 lines.push("", "    /// Exact WebXR projection-layer texture literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserXRTextureType =", "        | [<CompiledName(\"texture\")>] Texture", "        | [<CompiledName(\"texture-array\")>] TextureArray");
+lines.push("", "    /// Distinct ambient WebXR projection-layer handle.", "    [<AllowNullLiteral>]", "    type BrowserXRProjectionLayer =", "        interface end");
 lines.push("", "    /// Exact ambient WebXR projection-layer initializer.", "    [<AllowNullLiteral>]", "    type BrowserXRProjectionLayerInit =", "        abstract scaleFactor: float option with get, set", "        abstract textureType: BrowserXRTextureType option with get, set", "        abstract colorFormat: float option with get, set", "        abstract depthFormat: float option with get, set", "        abstract clearOnAccess: bool option with get, set");
 lines.push("", "    /// Exact Web Audio distance-model literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserDistanceModelType =", "        | [<CompiledName(\"exponential\")>] Exponential", "        | [<CompiledName(\"inverse\")>] Inverse", "        | [<CompiledName(\"linear\")>] Linear");
 lines.push("", "    /// Exact Web Audio panning-model literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserPanningModelType =", "        | [<CompiledName(\"HRTF\")>] Hrtf", "        | [<CompiledName(\"equalpower\")>] EqualPower");
@@ -1052,6 +1142,9 @@ for (const [name, description, values] of [
 ]) lines.push("", `    /// Exact WebGPU ${description} literals.`, "    [<StringEnum; RequireQualifiedAccess>]", `    type ${name} =`, ...values.map(value => `        | [<CompiledName(${fsharpString(value)})>] ${value.split(/[^A-Za-z0-9]+/).map(part => `${/^[0-9]/.test(part) ? "D" : ""}${part[0].toUpperCase()}${part.slice(1)}`).join("")}`));
 lines.push("", "    /// Exact WebGPU GPUBuffer instance surface used by Babylon declarations.", "    [<AllowNullLiteral>]", "    type BrowserGPUBuffer =", "        abstract label: string with get, set", "        abstract size: float with get", "        abstract usage: float with get", "        abstract mapState: BrowserGPUBufferMapState with get", "        abstract mapAsync: mode: float * ?offset: float * ?size: float -> JS.Promise<unit>", "        abstract getMappedRange: ?offset: float * ?size: float -> JS.ArrayBuffer", "        abstract unmap: unit -> unit", "        abstract destroy: unit -> unit");
 for (const [name, description] of [["BrowserGPUDevice", "WebGPU device"], ["BrowserGPURenderPassEncoder", "WebGPU render-pass encoder"], ["BrowserGPURenderPipeline", "WebGPU render pipeline"], ["BrowserGPUQuerySet", "WebGPU query set"], ["BrowserGPUCommandEncoder", "WebGPU command encoder"], ["BrowserGPURenderBundle", "WebGPU render bundle"], ["BrowserGPUTexture", "WebGPU texture"], ["BrowserGPUSampler", "WebGPU sampler"], ["BrowserGPUBindGroup", "WebGPU bind group"], ["BrowserGPUPipelineLayout", "WebGPU pipeline layout"], ["BrowserGPUBindGroupLayout", "WebGPU bind-group layout"], ["BrowserGPUShaderModule", "WebGPU shader module"], ["BrowserGPUComputePipeline", "WebGPU compute pipeline"], ["BrowserGPUCommandBuffer", "WebGPU command buffer"], ["BrowserGPUTextureView", "WebGPU texture view"], ["BrowserGPUAdapter", "WebGPU adapter"], ["BrowserGPUCanvasContext", "WebGPU canvas context"], ["BrowserGPUExternalTexture", "WebGPU external texture"], ["BrowserGPURenderBundleEncoder", "WebGPU render-bundle encoder"], ["BrowserGPURenderPassDescriptor", "WebGPU render-pass descriptor"], ["BrowserGPURenderPipelineDescriptor", "WebGPU render-pipeline descriptor"], ["BrowserGPUProgrammableStage", "WebGPU programmable-stage descriptor"], ["BrowserGPUBindGroupLayoutEntry", "WebGPU bind-group-layout entry"], ["BrowserGPUBindGroupEntry", "WebGPU bind-group entry"], ["BrowserGPUComputePassDescriptor", "WebGPU compute-pass descriptor"], ["BrowserGPUTextureViewDescriptor", "WebGPU texture-view descriptor"], ["BrowserXRWebGLBinding", "WebXR WebGL binding"], ["BrowserXRCompositionLayer", "WebXR composition-layer"], ["BrowserXRAnchor", "WebXR anchor"], ["BrowserXRHitTestResult", "WebXR hit-test result"], ["BrowserXRHitResult", "legacy WebXR hit result"], ["BrowserXRMesh", "WebXR mesh"], ["BrowserXRPlane", "WebXR plane"], ["BrowserXRImageTrackingResult", "WebXR image-tracking result"], ["BrowserAudioBuffer", "Web Audio buffer"], ["BrowserAudioNode", "Web Audio node"], ["BrowserGainNode", "Web Audio gain node"], ["BrowserOfflineAudioContext", "offline Web Audio context"], ["BrowserAudioBufferSourceNode", "Web Audio buffer-source node"], ["BrowserMediaTrackConstraints", "media-track constraints"], ["BrowserPointerEventInit", "pointer-event initializer"], ["BrowserWebGLVertexArrayObject", "WebGL vertex-array object"], ["BrowserWorker", "Web Worker"]]) {
+  lines.push("", `    /// Distinct ambient ${description} handle.`, "    [<AllowNullLiteral>]", `    type ${name} =`, "        interface end");
+}
+for (const [name, description] of [["BrowserXRRigidTransform", "WebXR rigid transform"], ["BrowserXRSpace", "WebXR space"], ["BrowserXRRay", "WebXR ray"], ["BrowserXRHitTestSource", "WebXR hit-test source"], ["BrowserXRAnchorSet", "WebXR anchor set"], ["BrowserXRWorldInformation", "WebXR world information"], ["BrowserXRPlaneSet", "WebXR plane set"], ["BrowserXRJointSpace", "WebXR joint space"], ["BrowserXRJointPose", "WebXR joint pose"], ["BrowserXRCPUDepthInformation", "WebXR CPU depth information"], ["BrowserNativeXRFrame", "native WebXR frame implementation"]]) {
   lines.push("", `    /// Distinct ambient ${description} handle.`, "    [<AllowNullLiteral>]", `    type ${name} =`, "        interface end");
 }
 lines.push("", "    /// Distinct ambient WebGPU device-descriptor surface.", "    [<AllowNullLiteral>]", "    type BrowserGPUDeviceDescriptor =", "        interface end");

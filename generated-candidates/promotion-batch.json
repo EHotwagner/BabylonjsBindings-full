@@ -8,43 +8,47 @@
   "actualSize": 0,
   "maintainedBaseline": {
     "alias": {
-      "maintained": 104,
-      "candidate": 104,
+      "maintained": 109,
+      "candidate": 109,
       "delta": 0
     },
     "interface": {
-      "maintained": 532,
-      "candidate": 532,
+      "maintained": 540,
+      "candidate": 540,
       "delta": 0
     },
     "class": {
-      "maintained": 1405,
-      "candidate": 1406,
-      "delta": 1
+      "maintained": 1411,
+      "candidate": 1413,
+      "delta": 2
     },
     "function": {
-      "maintained": 1125,
-      "candidate": 1125,
+      "maintained": 1189,
+      "candidate": 1189,
       "delta": 0
     },
     "variable": {
-      "maintained": 539,
-      "candidate": 539,
+      "maintained": 552,
+      "candidate": 552,
       "delta": 0
     }
   },
   "selectedRootCount": 0,
   "selectionDiagnostics": {
-    "remainingRoots": 1,
+    "remainingRoots": 2,
     "eligibleRoots": 0,
     "rootsWithUnresolvedDependencies": 0,
-    "rootsWithFidelityIssues": 1,
+    "rootsWithFidelityIssues": 2,
     "smallestEligibleClosures": [],
     "largestClosureWithinCeiling": 0,
     "smallestClosureAboveCeiling": null,
     "mostCommonFidelityBlockers": [
       {
         "symbol": "BabylonjsBindings.SimpleClasses.FlowGraphSwitchBlock",
+        "blockedRoots": 1
+      },
+      {
+        "symbol": "BabylonjsBindings.SimpleClasses.NativeXRFrame",
         "blockedRoots": 1
       }
     ]

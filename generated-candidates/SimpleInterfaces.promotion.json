@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "b0315613f8a2d4533a40806865305efe38db6228a71ef80996869ad1ec87bbc3",
+  "proposalSha256": "51857ec9e1b204e1e433c3d5d022e9be8e30d07549ea7b8e3ff581836b11da67",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -819,6 +819,18 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
+      "name": "IDracoAttributeData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoAttributeData",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.VertexDataTypedArray"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Compression/dracoCodec",
       "name": "IDracoCodecConfiguration",
       "kind": "interface",
@@ -828,6 +840,38 @@
         "BabylonjsBindings.SimpleClasses.WorkerPool"
       ],
       "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoCompression",
+      "name": "IDracoCompressionOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoCompressionOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WorkerPool"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
+      "name": "IDracoEncodedMeshData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoEncodedMeshData",
+      "dependencies": [],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
+      "name": "IDracoEncoderOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoEncoderOptions",
+      "dependencies": [],
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -2245,6 +2289,16 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetSerializer",
+      "name": "ISerializedSmartAssetEntry",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedSmartAssetEntry",
+      "dependencies": [],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/shaderMaterial.pure",
       "name": "IShaderMaterialOptions",
       "kind": "interface",
@@ -3537,6 +3591,17 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/videoRecorder",
+      "name": "VideoRecorderOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.VideoRecorderOptions",
+      "dependencies": [],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialVideoRecorderOptions",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/videoTexture.pure",
       "name": "VideoTextureSettings",
       "kind": "interface",
@@ -4571,6 +4636,17 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ObjectModel/objectModelInterfaces",
+      "name": "IPathToObjectConverter",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter",
+      "dependencies": [],
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
       "name": "IPhysicsCollisionEvent",
       "kind": "interface",
@@ -4667,6 +4743,16 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphBlock",
       "dependencies": [],
       "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetSerializer",
+      "name": "ISerializedSmartAssetMap",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedSmartAssetMap",
+      "dependencies": [],
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -6598,6 +6684,15 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.TexImageParameters",
       "dependencies": [],
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
+      "name": "IEncodeSuccessMessage",
+      "kind": "interface-support",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEncodeSuccessMessage",
+      "dependencies": [],
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/loaders",

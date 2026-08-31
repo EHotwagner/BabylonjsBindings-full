@@ -912,3 +912,18 @@ module TypeAliases =
     [<AllowNullLiteral>]
     type MotionControllerConstructor =
         [<Emit("$0($1...)")>] abstract Invoke: xrInput: BabylonjsBindings.SimpleInterfaces.BrowserXRInputSource * scene: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleClasses.WebXRAbstractMotionController
+
+    /// @babylonjs/core/Buffers/bufferUtils
+    type VertexDataTypedArray = U8<JS.Int8Array, JS.Uint8Array, JS.Uint8ClampedArray, JS.Int16Array, JS.Uint16Array, JS.Int32Array, JS.Uint32Array, JS.Float32Array>
+
+    /// @babylonjs/core/Misc/coroutine
+    type AsyncCoroutine<'T> = BabylonjsBindings.SimpleInterfaces.BrowserGenerator<U2<unit, JS.Promise<unit>>, 'T, unit>
+
+    /// @babylonjs/core/Misc/coroutine
+    type CoroutineScheduler<'T> = System.Action<BabylonjsBindings.SimpleInterfaces.BrowserGenerator<U2<unit, JS.Promise<unit>>, 'T, unit>, System.Action<BabylonjsBindings.SimpleInterfaces.BrowserGeneratorResult<unit, 'T>>, System.Action<obj>>
+
+    /// @babylonjs/core/Misc/coroutine
+    type CoroutineStep<'T> = BabylonjsBindings.SimpleInterfaces.BrowserGeneratorResult<unit, 'T>
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    type EncoderMessage = U2<BabylonjsBindings.SimpleInterfaces.IEncodeSuccessMessage, BabylonjsBindings.SimpleInterfaces.IEncodeErrorMessage>

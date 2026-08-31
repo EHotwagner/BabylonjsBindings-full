@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "aa22a26c8bfaf89574eb7a927c48dde99c8b630139d67acc89f6367741d08d8e",
+  "proposalSha256": "18d584be98249b0c143b2deef075eecf34e2301ac5046037cda2be8a8d328136",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1237,6 +1237,67 @@
       ],
       "shape": "callback",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils",
+      "name": "VertexDataTypedArray",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.VertexDataTypedArray",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/coroutine",
+      "name": "AsyncCoroutine",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.AsyncCoroutine",
+      "dependencies": [],
+      "shape": "genericAlias",
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/coroutine",
+      "name": "CoroutineScheduler",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CoroutineScheduler",
+      "dependencies": [],
+      "shape": "genericAlias",
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/coroutine",
+      "name": "CoroutineStep",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CoroutineStep",
+      "dependencies": [],
+      "shape": "genericAlias",
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
+      "name": "EncoderMessage",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.EncoderMessage",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IEncodeErrorMessage",
+        "BabylonjsBindings.SimpleInterfaces.IEncodeSuccessMessage"
+      ],
+      "shape": "alias",
+      "memberCount": 1
     }
   ],
   "reviewStatus": "maintained"

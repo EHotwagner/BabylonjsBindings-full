@@ -49,14 +49,14 @@ const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
-  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, arity: entry.typeParameterCount ?? 0 }]));
+  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, staticSymbol: entry.kind === "class" ? `${entry.fsharpSymbol}Static` : undefined, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, arity: entry.typeParameterCount ?? 0 }]));
 
 const isAbsentType = node => node.kind === ts.SyntaxKind.UndefinedKeyword
   || (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
 const asOption = type => type.endsWith(" option") ? type : `${type} option`;
 const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "DataView", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
 const browserTypes = new Set([
-  "AudioBuffer", "AudioContext", "AudioNode", "Blob", "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLVideoElement", "KeyboardEvent",
+  "AudioBuffer", "AudioContext", "AudioNode", "Blob", "Document", "Element", "Event", "File", "HTMLElement", "HTMLCanvasElement", "HTMLImageElement", "HTMLMediaElement", "HTMLVideoElement", "KeyboardEvent",
   "ImageData", "OfflineAudioContext", "WebGLUniformLocation", "WebGLRenderingContext",
   "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer",
 ]);
@@ -66,6 +66,7 @@ const ambientHandleTypes = new Map([
   ["OfflineAudioContext", "BrowserOfflineAudioContext"],
   ["XRHandedness", "BrowserXRHandedness"],
   ["XRProjectionLayerInit", "BrowserXRProjectionLayerInit"],
+  ["XRProjectionLayer", "BrowserXRProjectionLayer"],
   ["XRAnchor", "BrowserXRAnchor"],
   ["XRHitTestResult", "BrowserXRHitTestResult"],
   ["XRHitResult", "BrowserXRHitResult"],
@@ -75,6 +76,23 @@ const ambientHandleTypes = new Map([
   ["XRHitTestTrackableType", "BrowserXRHitTestTrackableType"],
   ["XRReflectionFormat", "BrowserXRReflectionFormat"],
   ["XRGeometryDetectorOptions", "BrowserXRGeometryDetectorOptions"],
+  ["ImageBitmapOptions", "BrowserImageBitmapOptions"],
+  ["ImageBitmap", "BrowserImageBitmap"],
+  ["Worker", "BrowserWorker"],
+  ["ElementImage", "BrowserElementImage"],
+  ["WebGLCopyElementImageConfig", "BrowserWebGLCopyElementImageConfig"],
+  ["XRRigidTransform", "BrowserXRRigidTransform"],
+  ["XRSpace", "BrowserXRSpace"],
+  ["XRRay", "BrowserXRRay"],
+  ["XRHitTestSource", "BrowserXRHitTestSource"],
+  ["XRAnchorSet", "BrowserXRAnchorSet"],
+  ["XRWorldInformation", "BrowserXRWorldInformation"],
+  ["XRPlaneSet", "BrowserXRPlaneSet"],
+  ["XRJointSpace", "BrowserXRJointSpace"],
+  ["XRJointPose", "BrowserXRJointPose"],
+  ["XRCPUDepthInformation", "BrowserXRCPUDepthInformation"],
+  ["INativeXRFrame", "BrowserNativeXRFrame"],
+  ["AbortSignal", "BrowserAbortSignal"],
   ["DistanceModelType", "BrowserDistanceModelType"],
   ["PanningModelType", "BrowserPanningModelType"],
   ["BigUint64Array", "BrowserBigUint64Array"]
@@ -106,6 +124,7 @@ const fsharpType = (node, typeParameters = new Map()) => {
   if (node.kind === ts.SyntaxKind.VoidKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.NeverKeyword) return "BabylonjsBindings.SimpleClasses.Never";
   if (node.kind === ts.SyntaxKind.ObjectKeyword) return "BabylonjsBindings.SimpleInterfaces.JavaScriptObject";
+  if (node.kind === ts.SyntaxKind.SymbolKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserSymbol";
   if (node.kind === ts.SyntaxKind.AnyKeyword || node.kind === ts.SyntaxKind.UnknownKeyword) return "obj";
   if (ts.isLiteralTypeNode(node) && ts.isNumericLiteral(node.literal)) return numericLiteralType(node.literal.text);
   if (ts.isLiteralTypeNode(node) && ts.isStringLiteral(node.literal)) return stringLiteralType(node.literal.text);
@@ -149,6 +168,23 @@ const fsharpType = (node, typeParameters = new Map()) => {
       return `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
     }
   }
+  if (ts.isTypeLiteralNode(node)
+    && node.members.length === 1
+    && ts.isCallSignatureDeclaration(node.members[0])
+    && !node.members[0].typeParameters?.length
+    && !node.members[0].parameters.some(parameter => parameter.dotDotDotToken)
+    && node.members[0].type) {
+    const call = node.members[0];
+    const parameterTypes = call.parameters.map(parameter => {
+      const rendered = parameter.type ? fsharpType(parameter.type, typeParameters) : undefined;
+      return parameter.questionToken && rendered ? asOption(rendered) : rendered;
+    });
+    const returnType = fsharpType(call.type, typeParameters);
+    if (returnType && parameterTypes.every(Boolean)) {
+      if (returnType === "unit") return parameterTypes.length === 0 ? "System.Action" : `System.Action<${parameterTypes.join(", ")}>`;
+      return `System.Func<${[...parameterTypes, returnType].join(", ")}>`;
+    }
+  }
   if (ts.isTypeLiteralNode(node)) return inlineObjectType(node, typeParameters);
   if (ts.isImportTypeNode(node)
     && node.qualifier
@@ -157,7 +193,17 @@ const fsharpType = (node, typeParameters = new Map()) => {
     const target = maintainedSymbols.get(node.qualifier.text);
     if (target?.arity === 0) return target.fsharpSymbol;
   }
+  if (ts.isTypeQueryNode(node) && ts.isIdentifier(node.exprName)) {
+    return maintainedSymbols.get(node.exprName.text)?.staticSymbol;
+  }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
+    if (node.typeName.text === "TypedArrayConstructor" && node.typeArguments?.length === 1) {
+      const element = fsharpType(node.typeArguments[0], typeParameters);
+      return element ? `BabylonjsBindings.SimpleInterfaces.BrowserTypedArrayConstructor<${element}>` : undefined;
+    }
+    if (!node.typeArguments?.length && node.typeName.text === "BufferSource") return "U2<JS.ArrayBufferView, JS.ArrayBuffer>";
+    if (!node.typeArguments?.length && node.typeName.text === "SerializableContext") return "BabylonjsBindings.SimpleInterfaces.BrowserSerializableContext";
+    if (!node.typeArguments?.length && node.typeName.text === "DecoratorMetadataObject") return "BabylonjsBindings.SimpleInterfaces.BrowserDecoratorMetadataObject";
     if (node.typeName.text === "ProgressEvent" && (node.typeArguments?.length ?? 0) <= 1) return "Browser.Types.ProgressEvent";
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
     if (node.typeName.text === "DeepImmutable"
@@ -194,10 +240,32 @@ const fsharpType = (node, typeParameters = new Map()) => {
       const inner = fsharpType(node.typeArguments[0], typeParameters);
       return inner ? `JS.Set<${inner}>` : undefined;
     }
+    if (node.typeName.text === "ReadonlySet" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], typeParameters);
+      return inner ? `BabylonjsBindings.SimpleInterfaces.BrowserReadonlySet<${inner}>` : undefined;
+    }
     if (node.typeName.text === "Map" && node.typeArguments?.length === 2) {
       const key = fsharpType(node.typeArguments[0], typeParameters);
       const value = fsharpType(node.typeArguments[1], typeParameters);
       return key && value ? `JS.Map<${key}, ${value}>` : undefined;
+    }
+    if (node.typeName.text === "Record" && node.typeArguments?.length === 2) {
+      const key = fsharpType(node.typeArguments[0], typeParameters);
+      const value = fsharpType(node.typeArguments[1], typeParameters);
+      return key && value ? `BabylonjsBindings.SimpleInterfaces.BrowserRecord<${key}, ${value}>` : undefined;
+    }
+    if (node.typeName.text === "Tuple"
+      && node.typeArguments?.length === 2
+      && ts.isLiteralTypeNode(node.typeArguments[1])
+      && ts.isNumericLiteral(node.typeArguments[1].literal)
+      && node.typeArguments[1].literal.text === "2") {
+      const element = fsharpType(node.typeArguments[0], typeParameters);
+      return element ? `(${element} * ${element})` : undefined;
+    }
+    if (node.typeName.text === "ReadonlyMap" && node.typeArguments?.length === 2) {
+      const key = fsharpType(node.typeArguments[0], typeParameters);
+      const value = fsharpType(node.typeArguments[1], typeParameters);
+      return key && value ? `BabylonjsBindings.SimpleInterfaces.BrowserReadonlyMap<${key}, ${value}>` : undefined;
     }
     if (node.typeName.text === "Error" && !node.typeArguments?.length) return "System.Exception";
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
@@ -249,11 +317,14 @@ const signature = declaration => {
   if (!declaration.type || declaration.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
   const typeParameters = new Map();
   for (const parameter of declaration.typeParameters ?? []) {
-    if (parameter.default
-      || !parameter.constraint
-      || !ts.isTypeReferenceNode(parameter.constraint)
+    if (!parameter.constraint || parameter.constraint.kind === ts.SyntaxKind.UnknownKeyword) {
+      typeParameters.set(parameter.name.text, undefined);
+      continue;
+    }
+    if (!ts.isTypeReferenceNode(parameter.constraint)
       || !ts.isIdentifier(parameter.constraint.typeName)
       || parameter.constraint.typeArguments?.length
+      || parameter.constraint.typeName.text === "TypedArray"
       || !maintainedSymbols.has(parameter.constraint.typeName.text)) return undefined;
     typeParameters.set(parameter.name.text, maintainedSymbols.get(parameter.constraint.typeName.text).fsharpSymbol);
   }
@@ -263,8 +334,9 @@ const signature = declaration => {
     type: parameter.type ? fsharpType(parameter.type, typeParameters) : undefined,
     optional: Boolean(parameter.questionToken)
   }));
+  const constraints = [...typeParameters].filter(([, constraint]) => constraint);
   const genericParameters = typeParameters.size
-    ? `<${[...typeParameters.keys()].map(name => `'${name}`).join(", ")} when ${[...typeParameters].map(([name, constraint]) => `'${name} :> ${constraint}`).join(" and ")}>`
+    ? `<${[...typeParameters.keys()].map(name => `'${name}`).join(", ")}${constraints.length ? ` when ${constraints.map(([name, constraint]) => `'${name} :> ${constraint}`).join(" and ")}` : ""}>`
     : "";
   return returnType && parameters.every(parameter => parameter.name && parameter.type) ? { returnType, parameters, genericParameters } : undefined;
 };

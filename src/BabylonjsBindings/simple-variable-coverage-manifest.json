@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "0a638d3868e6ca34c88fbaf2209294072d899844331456eb8e23ca2836108102",
+  "proposalSha256": "0391cecd301ca336bd0d4ccab2d66b834ebe19a1866083ea06c06aa427e934df",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5493,6 +5493,174 @@
       "dependencies": [],
       "fsharpType": "VariableFunction_EncodeImageAsync",
       "parameterCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "AnimationCreateFromSnippetAsync",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.AnimationCreateFromSnippetAsync",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationParseFromSnippetAsync"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/shaderMaterial.pure",
+      "name": "ShaderMaterialCreateFromSnippetAsync",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ShaderMaterialCreateFromSnippetAsync",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ShaderMaterialParseFromSnippetAsync"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/meshBuilder.pure",
+      "name": "MeshBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.MeshBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_MeshBuilder",
+      "memberCount": 29
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/shapeBuilder.pure",
+      "name": "ShapeBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ShapeBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_ShapeBuilder",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tubeBuilder.pure",
+      "name": "TubeBuilder",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TubeBuilder",
+      "dependencies": [],
+      "fsharpType": "VariableShape_TubeBuilder",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.functions",
+      "name": "EngineFunctionContext",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EngineFunctionContext",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.LoadFileError",
+        "BabylonjsBindings.SimpleClasses.WebRequest",
+        "BabylonjsBindings.SimpleInterfaces.IFileRequest",
+        "BabylonjsBindings.SimpleInterfaces.IOfflineProvider"
+      ],
+      "fsharpType": "VariableShape_EngineFunctionContext",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "LoadImage",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LoadImage",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleInterfaces.IOfflineProvider"
+      ],
+      "fsharpType": "VariableFunction_LoadImage",
+      "parameterCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.scalar",
+      "name": "Scalar",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Scalar",
+      "dependencies": [],
+      "fsharpType": "VariableShape_Scalar",
+      "memberCount": 28
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tga",
+      "name": "TGATools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TGATools",
+      "dependencies": [],
+      "fsharpType": "VariableShape_TGATools",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.functions",
+      "name": "createAndPreparePipelineContext",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.createAndPreparePipelineContext",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ICreateAndPreparePipelineContextOptions",
+        "BabylonjsBindings.SimpleInterfaces.IPipelineContext",
+        "BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext"
+      ],
+      "fsharpType": "VariableFunction_createAndPreparePipelineContext",
+      "parameterCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "FileTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FileTools",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.LoadFileError",
+        "BabylonjsBindings.SimpleClasses.ReadFileError",
+        "BabylonjsBindings.SimpleClasses.RequestFileError",
+        "BabylonjsBindings.SimpleClasses.WebRequest",
+        "BabylonjsBindings.SimpleInterfaces.IFileRequest",
+        "BabylonjsBindings.SimpleInterfaces.IOfflineProvider"
+      ],
+      "fsharpType": "VariableShape_FileTools",
+      "memberCount": 13
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "LoadImageConfiguration",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LoadImageConfiguration",
+      "dependencies": [],
+      "fsharpType": "VariableShape_LoadImageConfiguration",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "_injectLTSFileTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._injectLTSFileTools",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.LoadFileError",
+        "BabylonjsBindings.SimpleClasses.ReadFileError",
+        "BabylonjsBindings.SimpleClasses.RequestFileError",
+        "BabylonjsBindings.SimpleClasses.WebRequest",
+        "BabylonjsBindings.SimpleInterfaces.IFileRequest",
+        "BabylonjsBindings.SimpleInterfaces.IOfflineProvider"
+      ],
+      "fsharpType": "VariableFunction__injectLTSFileTools",
+      "parameterCount": 10
     }
   ],
   "reviewStatus": "maintained"

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "43f261821ea0a7beef777fab44e9ea41dad097361aaa4306298d9675cef71ff3",
+  "proposalSha256": "1e8a7dd857594e9638171bff47c311a8aa2a3c29d3481460edc0e8a5aa06523c",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5847,6 +5847,92 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRPlaneDetectorOptions",
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.TransformNode"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
+      "name": "IDracoAttributeData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoAttributeData",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.VertexDataTypedArray"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/videoRecorder",
+      "name": "VideoRecorderOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.VideoRecorderOptions",
+      "dependencies": [],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialVideoRecorderOptions",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/ObjectModel/objectModelInterfaces",
+      "name": "IPathToObjectConverter",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter",
+      "dependencies": [],
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
+      "name": "IDracoEncodedMeshData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoEncodedMeshData",
+      "dependencies": [],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
+      "name": "IDracoEncoderOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoEncoderOptions",
+      "dependencies": [],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetSerializer",
+      "name": "ISerializedSmartAssetEntry",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedSmartAssetEntry",
+      "dependencies": [],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetSerializer",
+      "name": "ISerializedSmartAssetMap",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedSmartAssetMap",
+      "dependencies": [],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoCompression",
+      "name": "IDracoCompressionOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoCompressionOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WorkerPool"
       ],
       "memberCount": 3
     }

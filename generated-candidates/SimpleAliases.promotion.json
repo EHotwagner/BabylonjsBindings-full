@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "9135d54ed08478c58ca29d25a2dbf2b6ce4bf7e0a6d1c9fc6961a0cb0b838bce",
+  "proposalSha256": "05d58e6964dbb1ac9cf99e93441cd6788e92653d01ee83851bdca37864d1b125",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -33,6 +33,18 @@
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.AnimationOptimization",
       "dependencies": [],
       "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/coroutine",
+      "name": "AsyncCoroutine",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.AsyncCoroutine",
+      "dependencies": [],
+      "shape": "genericAlias",
+      "typeParameterCount": 1,
       "memberCount": 1
     },
     {
@@ -162,6 +174,30 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/coroutine",
+      "name": "CoroutineScheduler",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CoroutineScheduler",
+      "dependencies": [],
+      "shape": "genericAlias",
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/coroutine",
+      "name": "CoroutineStep",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CoroutineStep",
+      "dependencies": [],
+      "shape": "genericAlias",
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/types",
       "name": "DataArray",
       "kind": "type",
@@ -238,6 +274,20 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.Empty",
       "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
+      "name": "EncoderMessage",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.EncoderMessage",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IEncodeErrorMessage",
+        "BabylonjsBindings.SimpleInterfaces.IEncodeSuccessMessage"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -1224,6 +1274,17 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.TypedArray",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils",
+      "name": "VertexDataTypedArray",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.VertexDataTypedArray",
       "dependencies": [],
       "shape": "alias",
       "memberCount": 1

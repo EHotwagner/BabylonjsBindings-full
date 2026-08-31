@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "47e19a09540ef0f71835a5d4f91068948465c9b87b5369cde594a5b3d62067d5",
+  "proposalSha256": "2c42a7d1c9fec2ed3eeb341ea70beb8e9b60c9e2bc942299d10ce83570b29708",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -25195,6 +25195,121 @@
         "BabylonjsBindings.SimpleInterfaces.IWebXRPlaneDetectorOptions"
       ],
       "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRLayers.pure",
+      "name": "WebXRLayers",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRLayers",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.DynamicTexture",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRCompositionLayerWrapper",
+        "BabylonjsBindings.SimpleClasses.WebXRLayerWrapper",
+        "BabylonjsBindings.SimpleClasses.WebXRProjectionLayerWrapper",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleClasses.WebXRWebGLLayerWrapper",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRLayersOptions"
+      ],
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/Layers/WebXRProjectionLayer",
+      "name": "WebXRProjectionLayerWrapper",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRProjectionLayerWrapper",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebXRCompositionLayerWrapper"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRDepthSensing.pure",
+      "name": "WebXRDepthSensing",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRDepthSensing",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.RawTexture",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRDepthSensingOptions"
+      ],
+      "memberCount": 18
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/videoRecorder",
+      "name": "VideoRecorder",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.VideoRecorder",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleInterfaces.VideoRecorderOptions"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder",
+      "name": "DracoEncoder",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DracoEncoder",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.DracoCodec",
+        "BabylonjsBindings.SimpleClasses.Geometry",
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleInterfaces.IDracoAttributeData",
+        "BabylonjsBindings.SimpleInterfaces.IDracoCodecConfiguration",
+        "BabylonjsBindings.SimpleInterfaces.IDracoEncodedMeshData",
+        "BabylonjsBindings.SimpleInterfaces.IDracoEncoderOptions"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoCompression",
+      "name": "DracoCompression",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DracoCompression",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BoundingInfo",
+        "BabylonjsBindings.SimpleClasses.Geometry",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.VertexData",
+        "BabylonjsBindings.SimpleInterfaces.IDracoCompressionConfiguration",
+        "BabylonjsBindings.SimpleInterfaces.IDracoCompressionOptions",
+        "BabylonjsBindings.SimpleInterfaces.MeshData"
+      ],
+      "memberCount": 12
     }
   ],
   "reviewStatus": "maintained"

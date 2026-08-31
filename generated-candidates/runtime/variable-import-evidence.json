@@ -42,6 +42,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "_injectLTSFileTools",
+      "runtimeExport": "_injectLTSFileTools",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/utils.js",
       "export": "_IsMacPlatform",
       "runtimeExport": "_IsMacPlatform",
@@ -130,6 +137,13 @@
       "export": "anaglyphPixelShaderWGSL",
       "runtimeExport": "anaglyphPixelShaderWGSL",
       "moduleSha256": "c18f2a3e54a63135f4fe8a09a3b8e828cff2b4f0b52a1ecceb47fa9237db16a0"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure.js",
+      "export": "AnimationCreateFromSnippetAsync",
+      "runtimeExport": "AnimationCreateFromSnippetAsync",
+      "moduleSha256": "2cf795f48354d5431807fcc9f6bc6b037472a99b8f32791a2f19adbe8a139e94"
     },
     {
       "package": "@babylonjs/core",
@@ -651,6 +665,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.functions.js",
+      "export": "createAndPreparePipelineContext",
+      "runtimeExport": "createAndPreparePipelineContext",
+      "moduleSha256": "4ae73adaaaefe5d34e9d7bed5a5d8b525d6e73c875f301d666a526734d1ff5e1"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/cylinderBuilder.pure.js",
       "export": "CylinderBuilder",
       "runtimeExport": "CylinderBuilder",
@@ -875,6 +896,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.functions.js",
+      "export": "EngineFunctionContext",
+      "runtimeExport": "EngineFunctionContext",
+      "moduleSha256": "ffce32b94047837cb49f1382460e77730c20e6011beabe1984f770f20b617621"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/environmentTextureTools.pure.js",
       "export": "EnvironmentTextureTools",
       "runtimeExport": "EnvironmentTextureTools",
@@ -921,6 +949,13 @@
       "export": "FBXFileLoaderMetadata",
       "runtimeExport": "FBXFileLoaderMetadata",
       "moduleSha256": "9a4c21b5e7e86c7a583afcb1b0a862a9544cffd95c5922bdd03075e3168e2495"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "FileTools",
+      "runtimeExport": "FileTools",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
     },
     {
       "package": "@babylonjs/core",
@@ -2345,6 +2380,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "LoadImage",
+      "runtimeExport": "LoadImage",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure.js",
+      "export": "LoadImageConfiguration",
+      "runtimeExport": "LoadImageConfiguration",
+      "moduleSha256": "b93bb9a6caf2f3cc4dc41b53eea8b70ac8f7e52c63b527c46c4b888327f2fd0f"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/basis.pure.js",
       "export": "LoadTextureFromTranscodeResult",
       "runtimeExport": "LoadTextureFromTranscodeResult",
@@ -2454,6 +2503,13 @@
       "export": "MaxHalfFloat",
       "runtimeExport": "MaxHalfFloat",
       "moduleSha256": "d868acf9252d270f89841b50b3f0a6f5e462cd7fbf283aadc06859f46d334d39"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/meshBuilder.pure.js",
+      "export": "MeshBuilder",
+      "runtimeExport": "MeshBuilder",
+      "moduleSha256": "92d483d31d68983654d14ac2c48dd0b541ba041e358854717dc11720ba959b25"
     },
     {
       "package": "@babylonjs/core",
@@ -3185,6 +3241,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.scalar.js",
+      "export": "Scalar",
+      "runtimeExport": "Scalar",
+      "moduleSha256": "04a4714b485b0d7bbb76e9ef0ec462d92588104c0c841e58c0777c9936cadd37"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/sceneFragmentDeclaration.js",
       "export": "sceneFragmentDeclaration",
       "runtimeExport": "sceneFragmentDeclaration",
@@ -3297,6 +3360,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/shaderMaterial.pure.js",
+      "export": "ShaderMaterialCreateFromSnippetAsync",
+      "runtimeExport": "ShaderMaterialCreateFromSnippetAsync",
+      "moduleSha256": "2496c9a5c2c31d728325e626cd6bcbcb7e4d9b0f347101c8950bbde082be0682"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Shaders/ShadersInclude/shadowMapFragment.js",
       "export": "shadowMapFragment",
       "runtimeExport": "shadowMapFragment",
@@ -3392,6 +3462,13 @@
       "export": "shadowsVertexWGSL",
       "runtimeExport": "shadowsVertexWGSL",
       "moduleSha256": "52e23835c064e309c287507b5c180b046ab11dd763bbad4812505ad6114e36a1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/shapeBuilder.pure.js",
+      "export": "ShapeBuilder",
+      "runtimeExport": "ShapeBuilder",
+      "moduleSha256": "c9a7fb7715dc613f77ed3d9cdd2fa1ecf3d8e93dcd2be2615f5ece2ca4df19cd"
     },
     {
       "package": "@babylonjs/core",
@@ -3598,6 +3675,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/tga.js",
+      "export": "TGATools",
+      "runtimeExport": "TGATools",
+      "moduleSha256": "fe80b319b1bcfe979f01459f6ec05d5914e3867af53f3564dfc99f2c52909326"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/tiledBoxBuilder.pure.js",
       "export": "TiledBoxBuilder",
       "runtimeExport": "TiledBoxBuilder",
@@ -3658,6 +3742,13 @@
       "export": "TranscodeAsync",
       "runtimeExport": "TranscodeAsync",
       "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/tubeBuilder.pure.js",
+      "export": "TubeBuilder",
+      "runtimeExport": "TubeBuilder",
+      "moduleSha256": "3189748909ca0c4cdbddde34678024725817fa1dbc44b2f2951bc7b85e4f5021"
     },
     {
       "package": "@babylonjs/core",

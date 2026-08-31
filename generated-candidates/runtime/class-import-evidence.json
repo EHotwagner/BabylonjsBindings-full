@@ -399,6 +399,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/native/nativeXRFrame.pure.js",
+      "export": "NativeXRFrame",
+      "runtimeExport": "NativeXRFrame",
+      "moduleSha256": "d5cfd1111dbcd4e951ecc537c223397f738ecb0c4ae74f5359e001371e2c3432"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/nullEngine.pure.js",
       "export": "NullEngineOptions",
       "runtimeExport": "NullEngineOptions",
@@ -2695,10 +2702,24 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoCompression.js",
+      "export": "DracoCompression",
+      "runtimeExport": "DracoCompression",
+      "moduleSha256": "a3bc58bb41af7e74f660ee8e0fa877483b607aa364275e782cba771eecb5af85"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Compression/dracoDecoder.js",
       "export": "DracoDecoder",
       "runtimeExport": "DracoDecoder",
       "moduleSha256": "9df68c00d62443a19f5a79f05f1051b14ad55a141d6e49c398673df6686bc8f1"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.js",
+      "export": "DracoEncoder",
+      "runtimeExport": "DracoEncoder",
+      "moduleSha256": "8d149ce29d1eda71f2c047b1fcab8d46e9a3649e4b40017ba514b523c4916d7b"
     },
     {
       "package": "@babylonjs/core",
@@ -9331,6 +9352,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/videoRecorder.js",
+      "export": "VideoRecorder",
+      "runtimeExport": "VideoRecorder",
+      "moduleSha256": "a8fd923214bc0093c905e30d136460a7793a5259bac2f4a0df42317c7faeadae"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/videoTexture.pure.js",
       "export": "VideoTexture",
       "runtimeExport": "VideoTexture",
@@ -9597,6 +9625,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRDepthSensing.pure.js",
+      "export": "WebXRDepthSensing",
+      "runtimeExport": "WebXRDepthSensing",
+      "moduleSha256": "876965baff85e8989c19497036c14b1136e38bd85a30a257d72e02fc68382905"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRDOMOverlay.pure.js",
       "export": "WebXRDomOverlay",
       "runtimeExport": "WebXRDomOverlay",
@@ -9688,6 +9723,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRLayers.pure.js",
+      "export": "WebXRLayers",
+      "runtimeExport": "WebXRLayers",
+      "moduleSha256": "4c7ed8d0b0ea29e8e5c4405cca1491a77360b4e63ff9268c278f064a32e3ec5e"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRLayerWrapper.js",
       "export": "WebXRLayerWrapper",
       "runtimeExport": "WebXRLayerWrapper",
@@ -9776,6 +9818,13 @@
       "export": "WebXRProfiledMotionController",
       "runtimeExport": "WebXRProfiledMotionController",
       "moduleSha256": "2f6487937727f70bc9f8a2fb9ff47c2eaea9f6562659716763da8bfb79c36e8b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/Layers/WebXRProjectionLayer.js",
+      "export": "WebXRProjectionLayerWrapper",
+      "runtimeExport": "WebXRProjectionLayerWrapper",
+      "moduleSha256": "9a42545dddb5b79c5914dcc5a846afa441362f09be40195d2a6448f4ec61d4a7"
     },
     {
       "package": "@babylonjs/core",

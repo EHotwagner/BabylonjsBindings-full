@@ -11,13 +11,13 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "8c3eb73275018fce9c9f6c2785a6e5e468027bc2997535d572b6b6e8e564ad1c",
+  "maintainedSurfaceDigest": "6b347b115be67de35166c72d4bb32f4529211f204883b8d48b0d33f86a897af1",
   "summary": {
     "total": 4323,
-    "typed": 3948,
+    "typed": 4044,
     "runtimeOnly": 1,
-    "blocked": 373,
-    "lossy": 1
+    "blocked": 278,
+    "lossy": 0
   },
   "exports": [
     {
@@ -277,8 +277,9 @@
       "module": "@babylonjs/core/Animations/animatable.core",
       "name": "AddAnimationExtensions",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AddAnimationExtensions"
     },
     {
       "package": "@babylonjs/core",
@@ -446,8 +447,9 @@
       "module": "@babylonjs/core/Animations/animation.pure",
       "name": "AnimationCreateFromSnippetAsync",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.AnimationCreateFromSnippetAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -490,8 +492,9 @@
       "module": "@babylonjs/core/Animations/animation.pure",
       "name": "AnimationParseFromSnippetAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AnimationParseFromSnippetAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -930,8 +933,9 @@
       "module": "@babylonjs/core/Audio/audioSceneComponent.pure",
       "name": "RegisterAudioSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterAudioSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -1271,8 +1275,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "CreateStreamingSoundAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateStreamingSoundAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -2338,8 +2343,9 @@
       "module": "@babylonjs/core/Buffers/bufferUtils",
       "name": "GetBlobBufferSource",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetBlobBufferSource"
     },
     {
       "package": "@babylonjs/core",
@@ -2364,24 +2370,27 @@
       "module": "@babylonjs/core/Buffers/bufferUtils",
       "name": "GetTypedArrayConstructor",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetTypedArrayConstructor"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Buffers/bufferUtils",
       "name": "GetTypedArrayData",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetTypedArrayData"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Buffers/bufferUtils",
       "name": "VertexDataTypedArray",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.VertexDataTypedArray"
     },
     {
       "package": "@babylonjs/core",
@@ -3864,8 +3873,9 @@
       "module": "@babylonjs/core/Culling/ray.core",
       "name": "AddRayExtensions",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AddRayExtensions"
     },
     {
       "package": "@babylonjs/core",
@@ -4212,8 +4222,9 @@
       "module": "@babylonjs/core/Decorators/nodeDecorator",
       "name": "editableInPropertyPage",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.editableInPropertyPage"
     },
     {
       "package": "@babylonjs/core",
@@ -4429,16 +4440,18 @@
       "module": "@babylonjs/core/Engines/abstractEngine.functions",
       "name": "EngineFunctionContext",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EngineFunctionContext"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/abstractEngine.functions",
       "name": "getHostDocument",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getHostDocument"
     },
     {
       "package": "@babylonjs/core",
@@ -4688,8 +4701,9 @@
       "module": "@babylonjs/core/Engines/engine.common",
       "name": "CreateImageBitmapFromSource",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateImageBitmapFromSource"
     },
     {
       "package": "@babylonjs/core",
@@ -5559,8 +5573,9 @@
       "module": "@babylonjs/core/Engines/thinNativeEngine.pure",
       "name": "RegisterNativeTypeAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterNativeTypeAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -9029,16 +9044,18 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/flowGraphBlockFactory",
       "name": "addToBlockFactory",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.addToBlockFactory"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/flowGraphBlockFactory",
       "name": "blockFactory",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.blockFactory"
     },
     {
       "package": "@babylonjs/core",
@@ -9456,16 +9473,18 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphParser",
       "name": "ParseGraphConnectionWithClassType",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseGraphConnectionWithClassType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphParser",
       "name": "ParseGraphDataConnection",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseGraphDataConnection"
     },
     {
       "package": "@babylonjs/core",
@@ -9524,8 +9543,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure",
       "name": "getRichTypeFromValue",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getRichTypeFromValue"
     },
     {
       "package": "@babylonjs/core",
@@ -11593,8 +11613,9 @@
       "module": "@babylonjs/core/Gamepads/gamepadSceneComponent.pure",
       "name": "RegisterGamepadSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterGamepadSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -12078,8 +12099,9 @@
       "module": "@babylonjs/core/Layers/effectLayerSceneComponent.pure",
       "name": "RegisterEffectLayerSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterEffectLayerSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -12293,8 +12315,9 @@
       "module": "@babylonjs/core/LensFlares/lensFlareSystemSceneComponent.pure",
       "name": "RegisterLensFlareSystemSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterLensFlareSystemSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -12337,8 +12360,9 @@
       "module": "@babylonjs/core/Lights/Clustered/clusteredLightingSceneComponent.pure",
       "name": "RegisterClusteredLightingSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterClusteredLightingSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -12435,8 +12459,9 @@
       "module": "@babylonjs/core/Lights/LTC/ltcTextureTool",
       "name": "DecodeLTCTextureDataAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DecodeLTCTextureDataAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -12551,8 +12576,9 @@
       "module": "@babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent.pure",
       "name": "RegisterShadowGeneratorSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterShadowGeneratorSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -13069,8 +13095,9 @@
       "module": "@babylonjs/core/Materials/clipPlaneMaterialHelper",
       "name": "PrepareDefinesForClipPlanes",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.PrepareDefinesForClipPlanes"
     },
     {
       "package": "@babylonjs/core",
@@ -13149,8 +13176,9 @@
       "module": "@babylonjs/core/Materials/effect.functions",
       "name": "createAndPreparePipelineContext",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.createAndPreparePipelineContext"
     },
     {
       "package": "@babylonjs/core",
@@ -16728,8 +16756,9 @@
       "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
       "name": "NodeMaterialParseFromSnippetAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.NodeMaterialParseFromSnippetAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -17141,8 +17170,9 @@
       "module": "@babylonjs/core/Materials/shaderMaterial.pure",
       "name": "ShaderMaterialCreateFromSnippetAsync",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ShaderMaterialCreateFromSnippetAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -17167,8 +17197,9 @@
       "module": "@babylonjs/core/Materials/shaderMaterial.pure",
       "name": "ShaderMaterialParseFromSnippetAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ShaderMaterialParseFromSnippetAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -17553,8 +17584,9 @@
       "module": "@babylonjs/core/Materials/Textures/HTML/htmlTexture",
       "name": "UploadHtmlElementToTexture",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.UploadHtmlElementToTexture"
     },
     {
       "package": "@babylonjs/core",
@@ -19310,8 +19342,9 @@
       "module": "@babylonjs/core/Maths/math.scalar",
       "name": "Scalar",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Scalar"
     },
     {
       "package": "@babylonjs/core",
@@ -20760,16 +20793,18 @@
       "module": "@babylonjs/core/Meshes/Builders/shapeBuilder.pure",
       "name": "ExtrudeShape",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ExtrudeShape"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/shapeBuilder.pure",
       "name": "ExtrudeShapeCustom",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ExtrudeShapeCustom"
     },
     {
       "package": "@babylonjs/core",
@@ -20785,8 +20820,9 @@
       "module": "@babylonjs/core/Meshes/Builders/shapeBuilder.pure",
       "name": "ShapeBuilder",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.ShapeBuilder"
     },
     {
       "package": "@babylonjs/core",
@@ -21009,8 +21045,9 @@
       "module": "@babylonjs/core/Meshes/Builders/tubeBuilder.pure",
       "name": "CreateTube",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTube"
     },
     {
       "package": "@babylonjs/core",
@@ -21026,8 +21063,9 @@
       "module": "@babylonjs/core/Meshes/Builders/tubeBuilder.pure",
       "name": "TubeBuilder",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TubeBuilder"
     },
     {
       "package": "@babylonjs/core",
@@ -21070,8 +21108,9 @@
       "module": "@babylonjs/core/Meshes/Compression/dracoCompression",
       "name": "DracoCompression",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DracoCompression"
     },
     {
       "package": "@babylonjs/core",
@@ -21087,8 +21126,9 @@
       "module": "@babylonjs/core/Meshes/Compression/dracoCompression",
       "name": "IDracoCompressionOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoCompressionOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -21158,8 +21198,9 @@
       "module": "@babylonjs/core/Meshes/Compression/dracoEncoder",
       "name": "DracoEncoder",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DracoEncoder"
     },
     {
       "package": "@babylonjs/core",
@@ -21184,32 +21225,36 @@
       "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
       "name": "EncoderMessage",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.EncoderMessage"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
       "name": "IDracoAttributeData",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoAttributeData"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
       "name": "IDracoEncodedMeshData",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoEncodedMeshData"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Compression/dracoEncoder.types",
       "name": "IDracoEncoderOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoEncoderOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -21801,9 +21846,9 @@
       "module": "@babylonjs/core/Meshes/meshBuilder.pure",
       "name": "MeshBuilder",
       "kind": "variable",
-      "disposition": "lossy",
-      "fsharpSymbol": "Qualification.Babylon.Box",
-      "reason": "The maintained qualification wrapper exposes only a small behavior slice, not the complete upstream declaration."
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.MeshBuilder",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly."
     },
     {
       "package": "@babylonjs/core",
@@ -21882,8 +21927,9 @@
       "module": "@babylonjs/core/Meshes/meshSimplificationSceneComponent.pure",
       "name": "RegisterMeshSimplificationSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterMeshSimplificationSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -24074,8 +24120,9 @@
       "module": "@babylonjs/core/Misc/coroutine",
       "name": "AsyncCoroutine",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.AsyncCoroutine"
     },
     {
       "package": "@babylonjs/core",
@@ -24091,32 +24138,36 @@
       "module": "@babylonjs/core/Misc/coroutine",
       "name": "CoroutineScheduler",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CoroutineScheduler"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/coroutine",
       "name": "CoroutineStep",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CoroutineStep"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/coroutine",
       "name": "createYieldingScheduler",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.createYieldingScheduler"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/coroutine",
       "name": "inlineScheduler",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.inlineScheduler"
     },
     {
       "package": "@babylonjs/core",
@@ -24139,24 +24190,27 @@
       "module": "@babylonjs/core/Misc/coroutine",
       "name": "runCoroutine",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.runCoroutine"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/coroutine",
       "name": "runCoroutineAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.runCoroutineAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/coroutine",
       "name": "runCoroutineSync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.runCoroutineSync"
     },
     {
       "package": "@babylonjs/core",
@@ -24241,112 +24295,126 @@
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serialize",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serialize"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsCameraReference",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsCameraReference"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsColor3",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsColor3"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsColor4",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsColor4"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsColorCurves",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsColorCurves"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsFresnelParameters",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsFresnelParameters"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsImageProcessingConfiguration",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsImageProcessingConfiguration"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsMatrix",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsMatrix"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsMeshReference",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsMeshReference"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsQuaternion",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsQuaternion"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsTexture",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsTexture"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsVector2",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsVector2"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsVector3",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsVector3"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/decorators",
       "name": "serializeAsVector4",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.serializeAsVector4"
     },
     {
       "package": "@babylonjs/core",
@@ -24738,8 +24806,9 @@
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "_injectLTSFileTools",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._injectLTSFileTools"
     },
     {
       "package": "@babylonjs/core",
@@ -24764,8 +24833,9 @@
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "FileTools",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FileTools"
     },
     {
       "package": "@babylonjs/core",
@@ -24826,16 +24896,18 @@
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "LoadImage",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LoadImage"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/fileTools.pure",
       "name": "LoadImageConfiguration",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LoadImageConfiguration"
     },
     {
       "package": "@babylonjs/core",
@@ -25870,8 +25942,9 @@
       "module": "@babylonjs/core/Misc/tga",
       "name": "TGATools",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TGATools"
     },
     {
       "package": "@babylonjs/core",
@@ -25941,8 +26014,9 @@
       "module": "@babylonjs/core/Misc/timer",
       "name": "setAndStartTimer",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.setAndStartTimer"
     },
     {
       "package": "@babylonjs/core",
@@ -26065,16 +26139,18 @@
       "module": "@babylonjs/core/Misc/videoRecorder",
       "name": "VideoRecorder",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.VideoRecorder"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/videoRecorder",
       "name": "VideoRecorderOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.VideoRecorderOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -26243,8 +26319,9 @@
       "module": "@babylonjs/core/ObjectModel/objectModelInterfaces",
       "name": "IPathToObjectConverter",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter"
     },
     {
       "package": "@babylonjs/core",
@@ -29291,8 +29368,9 @@
       "module": "@babylonjs/core/PostProcesses/RenderPipeline/postProcessRenderPipelineManagerSceneComponent.pure",
       "name": "RegisterPostProcessRenderPipelineManagerSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterPostProcessRenderPipelineManagerSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -29830,8 +29908,9 @@
       "module": "@babylonjs/core/Rendering/depthPeelingSceneComponent.pure",
       "name": "RegisterDepthPeelingSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterDepthPeelingSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -29856,8 +29935,9 @@
       "module": "@babylonjs/core/Rendering/depthRendererSceneComponent.pure",
       "name": "RegisterDepthRendererSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterDepthRendererSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -30053,8 +30133,9 @@
       "module": "@babylonjs/core/Rendering/geometryBufferRendererSceneComponent.pure",
       "name": "RegisterGeometryBufferRendererSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterGeometryBufferRendererSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -30115,8 +30196,9 @@
       "module": "@babylonjs/core/Rendering/iblCdfGeneratorSceneComponent.pure",
       "name": "RegisterIblCdfGeneratorSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterIblCdfGeneratorSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -30195,8 +30277,9 @@
       "module": "@babylonjs/core/Rendering/prePassRendererSceneComponent.pure",
       "name": "RegisterPrePassRendererSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterPrePassRendererSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -30275,8 +30358,9 @@
       "module": "@babylonjs/core/Rendering/subSurfaceSceneComponent.pure",
       "name": "RegisterSubSurfaceSceneComponent",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.RegisterSubSurfaceSceneComponent"
     },
     {
       "package": "@babylonjs/core",
@@ -34090,8 +34174,9 @@
       "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
       "name": "GetAllSmartAssets",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetAllSmartAssets"
     },
     {
       "package": "@babylonjs/core",
@@ -34107,8 +34192,9 @@
       "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
       "name": "GetSmartAssetTextureExtensions",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetSmartAssetTextureExtensions"
     },
     {
       "package": "@babylonjs/core",
@@ -34132,8 +34218,9 @@
       "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
       "name": "LoadSmartAssetMapAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadSmartAssetMapAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -34174,8 +34261,9 @@
       "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
       "name": "SerializeSmartAssetManagerMap",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.SerializeSmartAssetManagerMap"
     },
     {
       "package": "@babylonjs/core",
@@ -34208,8 +34296,9 @@
       "module": "@babylonjs/core/SmartAssets/smartAssetSerializer",
       "name": "DeserializeSmartAssetMap",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DeserializeSmartAssetMap"
     },
     {
       "package": "@babylonjs/core",
@@ -34225,16 +34314,18 @@
       "module": "@babylonjs/core/SmartAssets/smartAssetSerializer",
       "name": "ISerializedSmartAssetEntry",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedSmartAssetEntry"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/SmartAssets/smartAssetSerializer",
       "name": "ISerializedSmartAssetMap",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISerializedSmartAssetMap"
     },
     {
       "package": "@babylonjs/core",
@@ -34834,8 +34925,9 @@
       "module": "@babylonjs/core/XR/features/Layers/WebXRProjectionLayer",
       "name": "WebXRProjectionLayerWrapper",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRProjectionLayerWrapper"
     },
     {
       "package": "@babylonjs/core",
@@ -35169,8 +35261,9 @@
       "module": "@babylonjs/core/XR/features/WebXRDepthSensing.pure",
       "name": "WebXRDepthSensing",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRDepthSensing"
     },
     {
       "package": "@babylonjs/core",
@@ -35446,8 +35539,9 @@
       "module": "@babylonjs/core/XR/features/WebXRLayers.pure",
       "name": "WebXRLayers",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRLayers"
     },
     {
       "package": "@babylonjs/core",
@@ -37752,8 +37846,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
       "name": "AddObjectAccessorToKey",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.AddObjectAccessorToKey"
     },
     {
       "package": "@babylonjs/loaders",

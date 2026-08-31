@@ -505,6 +505,9 @@ module TypeAliases =
     /// @babylonjs/core/Animations/animation.optimizations
     type AnimationOptimization = U2<AliasObject38fb0477dfc1, AliasObjectc2a40b3b5670>
 
+    /// @babylonjs/core/Misc/coroutine
+    type AsyncCoroutine<'T> = BabylonjsBindings.SimpleInterfaces.BrowserGenerator<U2<unit, JS.Promise<unit>>, 'T, unit>
+
     /// @babylonjs/core/Loading/Plugins/babylonFileParser.function
     [<AllowNullLiteral>]
     type BabylonFileParser =
@@ -553,6 +556,12 @@ module TypeAliases =
         [<Emit("$0.throw === undefined ? undefined : $0.throw($1)")>] abstract tryThrow: ?error: obj -> CoroutineInternalResult<'T> option
         [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> Coroutine<'T>
 
+    /// @babylonjs/core/Misc/coroutine
+    type CoroutineScheduler<'T> = System.Action<BabylonjsBindings.SimpleInterfaces.BrowserGenerator<U2<unit, JS.Promise<unit>>, 'T, unit>, System.Action<BabylonjsBindings.SimpleInterfaces.BrowserGeneratorResult<unit, 'T>>, System.Action<obj>>
+
+    /// @babylonjs/core/Misc/coroutine
+    type CoroutineStep<'T> = BabylonjsBindings.SimpleInterfaces.BrowserGeneratorResult<unit, 'T>
+
     /// @babylonjs/core/types
     type DataArray = U3<ResizeArray<System.Double>, U2<JS.ArrayBuffer, BrowserSharedArrayBuffer>, JS.ArrayBufferView>
 
@@ -573,6 +582,9 @@ module TypeAliases =
 
     /// @babylonjs/core/types
     type Empty = ResizeArray<BabylonjsBindings.SimpleClasses.Never>
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    type EncoderMessage = U2<BabylonjsBindings.SimpleInterfaces.IEncodeSuccessMessage, BabylonjsBindings.SimpleInterfaces.IEncodeErrorMessage>
 
     /// @babylonjs/core/Misc/environmentTextureTools.pure
     type EnvironmentTextureInfo = U2<BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV1, BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2>
@@ -895,6 +907,9 @@ module TypeAliases =
 
     /// @babylonjs/core/types
     type TypedArray = U2<U8<JS.Int8Array, JS.Uint8Array, JS.Uint8ClampedArray, JS.Int16Array, JS.Uint16Array, JS.Int32Array, JS.Uint32Array, JS.Float32Array>, U3<JS.Float64Array, JS.BigInt64Array, BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array>>
+
+    /// @babylonjs/core/Buffers/bufferUtils
+    type VertexDataTypedArray = U8<JS.Int8Array, JS.Uint8Array, JS.Uint8ClampedArray, JS.Int16Array, JS.Uint16Array, JS.Int32Array, JS.Uint32Array, JS.Float32Array>
 
     /// @babylonjs/core/Engines/thinEngine.functions
     type WebGLContext = U2<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext>

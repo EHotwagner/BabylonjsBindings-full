@@ -8780,3 +8780,173 @@ module SimpleInterfaces =
         abstract ``worldParentNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
         abstract ``doNotRemovePlanesOnSessionEnded``: bool option with get, set
         abstract ``preferredDetectorOptions``: BrowserXRGeometryDetectorOptions option with get, set
+
+    /// Exact readonly ECMAScript Map surface used by Babylon declarations.
+    [<AllowNullLiteral>]
+    type BrowserReadonlyMap<'TKey, 'TValue> =
+        abstract size: float with get
+        abstract has: key: 'TKey -> bool
+        abstract get: key: 'TKey -> 'TValue option
+        abstract forEach: callbackfn: System.Action<'TValue, 'TKey, BrowserReadonlyMap<'TKey, 'TValue>> * ?thisArg: obj -> unit
+        abstract entries: unit -> BrowserIterator<'TKey * 'TValue>
+        abstract keys: unit -> BrowserIterator<'TKey>
+        abstract values: unit -> BrowserIterator<'TValue>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'TKey * 'TValue>
+
+    /// Distinct ambient WebXR projection-layer handle.
+    [<AllowNullLiteral>]
+    type BrowserXRProjectionLayer =
+        interface end
+
+    /// Erased nominal representation of the JavaScript `symbol` primitive.
+    [<Erase>]
+    type BrowserSymbol =
+        | BrowserSymbol of obj
+
+    /// Exact ECMAScript property-key union.
+    type BrowserPropertyKey = U3<string, float, BrowserSymbol>
+
+    /// Exact TC39 decorator metadata object.
+    [<AllowNullLiteral>]
+    type BrowserDecoratorMetadataObject =
+        [<EmitIndexer>] abstract Item: key: BrowserPropertyKey -> obj with get, set
+
+    /// Exact serialization-decorator context used by Babylon.
+    [<AllowNullLiteral>]
+    type BrowserSerializableContext =
+        abstract name: U2<string, BrowserSymbol> with get, set
+        abstract metadata: BrowserDecoratorMetadataObject option with get, set
+
+    /// Exact structural projection of a TypeScript Record.
+    [<AllowNullLiteral>]
+    type BrowserRecord<'TKey, 'TValue> =
+        [<EmitIndexer>] abstract Item: key: 'TKey -> 'TValue with get, set
+
+    /// Exact ECMAScript iterable surface.
+    [<AllowNullLiteral>]
+    type BrowserIterable<'T> =
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
+
+    /// Exact constructor surface for Babylon typed-array factories.
+    [<AllowNullLiteral>]
+    type BrowserTypedArrayConstructor<'T> =
+        [<Emit("new $0($1)")>] abstract Create: length: float -> 'T
+        [<Emit("new $0($1)")>] abstract Create: elements: BrowserIterable<float> -> 'T
+        [<Emit("new $0($1...)")>] abstract Create: buffer: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> * ?byteOffset: float * ?length: float -> 'T
+        abstract BYTES_PER_ELEMENT: float with get
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    [<AllowNullLiteral>]
+    type IDracoAttributeData =
+        abstract ``kind``: string with get, set
+        abstract ``dracoName``: BabylonjsBindings.StringEnums.DracoAttributeName with get, set
+        abstract ``size``: float with get, set
+        abstract ``data``: BabylonjsBindings.TypeAliases.VertexDataTypedArray with get, set
+
+    /// Exact experimental HTML-in-Canvas transferable image surface.
+    [<AllowNullLiteral>]
+    type BrowserElementImage =
+        abstract width: float with get
+        abstract height: float with get
+        abstract close: unit -> unit
+
+    /// Exact source rectangle and sizing configuration for WebGL element-image copies.
+    [<AllowNullLiteral>]
+    type BrowserWebGLCopyElementImageConfig =
+        abstract sx: float option with get, set
+        abstract sy: float option with get, set
+        abstract swidth: float option with get, set
+        abstract sheight: float option with get, set
+        abstract width: float option with get, set
+        abstract height: float option with get, set
+
+    /// Distinct ambient WebXR rigid transform handle.
+    [<AllowNullLiteral>]
+    type BrowserXRRigidTransform =
+        interface end
+
+    /// Distinct ambient MediaStreamTrack handle.
+    [<AllowNullLiteral>]
+    type BrowserMediaStreamTrack =
+        interface end
+
+    /// @babylonjs/core/Misc/videoRecorder
+    [<AllowNullLiteral>]
+    type VideoRecorderOptions =
+        abstract ``canvas``: Browser.Types.HTMLCanvasElement option with get, set
+        abstract ``mimeType``: string with get, set
+        abstract ``fps``: float with get, set
+        abstract ``recordChunckSize``: float with get, set
+        abstract ``audioTracks``: ResizeArray<BrowserMediaStreamTrack> option with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<VideoRecorderOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialVideoRecorderOptions =
+        abstract ``canvas``: Browser.Types.HTMLCanvasElement option with get, set
+        abstract ``mimeType``: string option with get, set
+        abstract ``fps``: float option with get, set
+        abstract ``recordChunckSize``: float option with get, set
+        abstract ``audioTracks``: ResizeArray<BrowserMediaStreamTrack> option with get, set
+
+    /// @babylonjs/core/ObjectModel/objectModelInterfaces
+    [<AllowNullLiteral>]
+    type IPathToObjectConverter<'T> =
+        abstract ``convert``: ``path``: string -> IObjectInfo<'T, obj>
+
+    /// Exact string literal type for "encodeMeshError".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral56b69f7fdd12 =
+        | [<CompiledName("encodeMeshError")>] Value
+
+    /// Exact string literal type for "encodeMeshSuccess".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralfcc89b3f4d1f =
+        | [<CompiledName("encodeMeshSuccess")>] Value
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    [<AllowNullLiteral>]
+    type IDracoEncodedMeshData =
+        abstract ``data``: JS.Int8Array with get, set
+        abstract ``attributeIds``: BrowserRecord<string, float> with get, set
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    [<AllowNullLiteral>]
+    type IDracoEncoderOptions =
+        abstract ``decodeSpeed``: float option with get, set
+        abstract ``encodeSpeed``: float option with get, set
+        abstract ``method``: BabylonjsBindings.StringEnums.DracoEncoderMethod option with get, set
+        abstract ``quantizationBits``: BrowserRecord<BabylonjsBindings.StringEnums.DracoAttributeName, float> option with get, set
+        abstract ``excludedAttributes``: ResizeArray<string> option with get, set
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    [<AllowNullLiteral>]
+    type IEncodeErrorMessage =
+        abstract ``id``: StringLiteral56b69f7fdd12 with get, set
+        abstract ``errorMessage``: string with get, set
+
+    /// @babylonjs/core/SmartAssets/smartAssetSerializer
+    [<AllowNullLiteral>]
+    type ISerializedSmartAssetEntry =
+        abstract ``url``: string with get
+        abstract ``type``: string option with get
+        abstract ``extension``: string option with get
+        abstract ``metadata``: BrowserRecord<string, obj> option with get
+
+    /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
+    [<AllowNullLiteral>]
+    type IEncodeSuccessMessage =
+        abstract ``id``: StringLiteralfcc89b3f4d1f with get, set
+        abstract ``encodedMeshData``: IDracoEncodedMeshData with get, set
+
+    /// @babylonjs/core/SmartAssets/smartAssetSerializer
+    [<AllowNullLiteral>]
+    type ISerializedSmartAssetMap =
+        abstract ``version``: NumericLiteral1 with get
+        abstract ``assets``: BrowserRecord<string, ISerializedSmartAssetEntry> with get
+
+    /// @babylonjs/core/Meshes/Compression/dracoCompression
+    [<AllowNullLiteral>]
+    type IDracoCompressionOptions =
+        abstract ``numWorkers``: float option with get, set
+        abstract ``workerPool``: BabylonjsBindings.SimpleClasses.WorkerPool option with get, set
+        abstract ``wasmBinary``: JS.ArrayBuffer option with get, set

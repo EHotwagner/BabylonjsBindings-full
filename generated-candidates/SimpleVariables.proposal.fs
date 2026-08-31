@@ -30,6 +30,29 @@ module SimpleVariables =
     [<Import("_forceTransformFeedbackToBundle", "@babylonjs/core/Engines/Extensions/engine.transformFeedback.pure.js")>]
     let ``_forceTransformFeedbackToBundle``: bool = jsNative
 
+    /// Inline callable object shape used by _injectLTSFileTools.
+    [<AllowNullLiteral>]
+    type VariableInline__injectLTSFileTools_Parameter3 =
+        abstract ``DefaultRetryStrategy``: obj with get, set
+        abstract ``BaseUrl``: obj with get, set
+        abstract ``CorsBehavior``: obj with get, set
+        abstract ``PreprocessUrl``: obj with get, set
+        abstract ``CleanUrl``: obj with get, set
+
+    /// Inline callable object shape used by _injectLTSFileTools.
+    [<AllowNullLiteral>]
+    type VariableInline__injectLTSFileTools_Parameter10_Parameter2 =
+        abstract ``crossOrigin``: string option with get, set
+
+    /// Callable shape of _injectLTSFileTools.
+    [<AllowNullLiteral>]
+    type VariableFunction__injectLTSFileTools =
+        [<Emit("$0($1...)")>] abstract Invoke: ``DecodeBase64UrlToBinary``: System.Func<string, JS.ArrayBuffer> * ``DecodeBase64UrlToString``: System.Func<string, string> * ``FileToolsOptions``: VariableInline__injectLTSFileTools_Parameter3 * ``IsBase64DataUrl``: System.Func<string, bool> * ``IsFileURL``: System.Func<bool> * ``LoadFile``: System.Func<U2<string, Browser.Types.File>, System.Action<U2<string, JS.ArrayBuffer>, string option>, System.Action<Browser.Types.ProgressEvent> option, BabylonjsBindings.SimpleInterfaces.IOfflineProvider option, bool option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest option, BabylonjsBindings.SimpleClasses.LoadFileError option> option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest> option, BabylonjsBindings.SimpleInterfaces.IFileRequest> * ``LoadImage``: System.Func<U4<string, JS.ArrayBuffer, JS.ArrayBufferView, Browser.Types.Blob>, System.Action<U2<Browser.Types.HTMLImageElement, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap>>, System.Action<string option, obj option>, BabylonjsBindings.SimpleInterfaces.IOfflineProvider option, string option, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmapOptions option, Browser.Types.HTMLImageElement option> * ``ReadFile``: System.Func<Browser.Types.File, System.Action<obj>, System.Func<Browser.Types.ProgressEvent, obj> option, bool option, System.Action<BabylonjsBindings.SimpleClasses.ReadFileError> option, BabylonjsBindings.SimpleInterfaces.IFileRequest> * ``RequestFile``: System.Func<string, System.Action<U2<string, JS.ArrayBuffer>, BabylonjsBindings.SimpleClasses.WebRequest option>, System.Action<Browser.Types.ProgressEvent> option, BabylonjsBindings.SimpleInterfaces.IOfflineProvider option, bool option, System.Action<BabylonjsBindings.SimpleClasses.RequestFileError> option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest> option, BabylonjsBindings.SimpleInterfaces.IFileRequest> * ``SetCorsBehavior``: System.Action<U2<string, ResizeArray<string>>, VariableInline__injectLTSFileTools_Parameter10_Parameter2> -> unit
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("_injectLTSFileTools", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``_injectLTSFileTools``: VariableFunction__injectLTSFileTools = jsNative
+
     /// @babylonjs/core/FlowGraph/utils
     [<Import("_IsMacPlatform", "@babylonjs/core/FlowGraph/utils.js")>]
     let ``_IsMacPlatform``: bool = jsNative
@@ -127,6 +150,10 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/anaglyph.fragment
     [<Import("anaglyphPixelShaderWGSL", "@babylonjs/core/ShadersWGSL/anaglyph.fragment.js")>]
     let ``anaglyphPixelShaderWGSL``: VariableShape_anaglyphPixelShaderWGSL = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<Import("AnimationCreateFromSnippetAsync", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``AnimationCreateFromSnippetAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_AnimationParseFromSnippetAsync = jsNative
 
     /// Inline object shape of areaLightTextureProcessingPixelShader.
     [<AllowNullLiteral>]
@@ -855,6 +882,15 @@ module SimpleVariables =
     [<Import("CopyTools", "@babylonjs/core/Misc/copyTools.js")>]
     let ``CopyTools``: VariableShape_CopyTools = jsNative
 
+    /// Callable shape of createAndPreparePipelineContext.
+    [<AllowNullLiteral>]
+    type VariableFunction_createAndPreparePipelineContext =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: BabylonjsBindings.SimpleInterfaces.ICreateAndPreparePipelineContextOptions * ``createPipelineContext``: System.Func<BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext option, BabylonjsBindings.SimpleInterfaces.IPipelineContext> * ``_preparePipelineContext``: System.Action<BabylonjsBindings.SimpleInterfaces.IPipelineContext, string, string, bool, string, string, obj, string option, ResizeArray<string> option, string, System.Action> * ``_executeWhenRenderingStateIsCompiled``: System.Action<BabylonjsBindings.SimpleInterfaces.IPipelineContext, System.Action> -> BabylonjsBindings.SimpleInterfaces.IPipelineContext
+
+    /// @babylonjs/core/Materials/effect.functions
+    [<Import("createAndPreparePipelineContext", "@babylonjs/core/Materials/effect.functions.js")>]
+    let ``createAndPreparePipelineContext``: VariableFunction_createAndPreparePipelineContext = jsNative
+
     /// Inline object shape of CylinderBuilder.
     [<AllowNullLiteral>]
     type VariableShape_CylinderBuilder =
@@ -1162,6 +1198,16 @@ module SimpleVariables =
     [<Import("EndsWith", "@babylonjs/core/Misc/stringTools.js")>]
     let ``EndsWith``: VariableFunction_EndsWith = jsNative
 
+    /// Inline object shape of EngineFunctionContext.
+    [<AllowNullLiteral>]
+    type VariableShape_EngineFunctionContext =
+        abstract ``loadFile``: System.Func<string, System.Action<U2<string, JS.ArrayBuffer>, string option>, System.Action<Browser.Types.ProgressEvent> option, BabylonjsBindings.SimpleInterfaces.IOfflineProvider option, bool option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest option, BabylonjsBindings.SimpleClasses.LoadFileError option> option, BabylonjsBindings.SimpleInterfaces.IFileRequest> option with get, set
+        abstract ``loadImage``: System.Func<U4<string, JS.ArrayBuffer, JS.ArrayBufferView, Browser.Types.Blob>, System.Action<U2<Browser.Types.HTMLImageElement, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap>>, System.Action<string option, obj option>, BabylonjsBindings.SimpleInterfaces.IOfflineProvider option, string option, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmapOptions option, BabylonjsBindings.SimpleClasses.AbstractEngine option, Browser.Types.HTMLImageElement option> option with get, set
+
+    /// @babylonjs/core/Engines/abstractEngine.functions
+    [<Import("EngineFunctionContext", "@babylonjs/core/Engines/abstractEngine.functions.js")>]
+    let ``EngineFunctionContext``: VariableShape_EngineFunctionContext = jsNative
+
     /// Inline object shape of EnvironmentTextureTools.
     [<AllowNullLiteral>]
     type VariableShape_EnvironmentTextureTools =
@@ -1246,6 +1292,32 @@ module SimpleVariables =
     /// @babylonjs/loaders/FBX/fbxFileLoader.metadata
     [<Import("FBXFileLoaderMetadata", "@babylonjs/loaders/FBX/fbxFileLoader.metadata.js")>]
     let ``FBXFileLoaderMetadata``: VariableShape_FBXFileLoaderMetadata = jsNative
+
+    /// Nested inline object shape used by FileTools.
+    [<AllowNullLiteral>]
+    type VariableShape_FileToolsProperty13Parameter2Object =
+        abstract ``crossOrigin``: string option with get, set
+
+    /// Inline object shape of FileTools.
+    [<AllowNullLiteral>]
+    type VariableShape_FileTools =
+        abstract ``DecodeBase64UrlToBinary``: System.Func<string, JS.ArrayBuffer> with get, set
+        abstract ``DecodeBase64UrlToString``: System.Func<string, string> with get, set
+        abstract ``DefaultRetryStrategy``: obj with get, set
+        abstract ``BaseUrl``: obj with get, set
+        abstract ``CorsBehavior``: obj with get, set
+        abstract ``PreprocessUrl``: obj with get, set
+        abstract ``IsBase64DataUrl``: System.Func<string, bool> with get, set
+        abstract ``IsFileURL``: System.Func<bool> with get, set
+        abstract ``LoadFile``: System.Func<U2<string, Browser.Types.File>, System.Action<U2<string, JS.ArrayBuffer>, string option>, System.Action<Browser.Types.ProgressEvent> option, BabylonjsBindings.SimpleInterfaces.IOfflineProvider option, bool option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest option, BabylonjsBindings.SimpleClasses.LoadFileError option> option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest> option, BabylonjsBindings.SimpleInterfaces.IFileRequest> with get, set
+        abstract ``LoadImage``: System.Func<U4<string, JS.ArrayBuffer, Browser.Types.Blob, JS.ArrayBufferView>, System.Action<U2<Browser.Types.HTMLImageElement, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap>>, System.Action<string option, obj option>, BabylonjsBindings.SimpleInterfaces.IOfflineProvider option, string option, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmapOptions option, Browser.Types.HTMLImageElement option> with get, set
+        abstract ``ReadFile``: System.Func<Browser.Types.File, System.Action<obj>, System.Func<Browser.Types.ProgressEvent, obj> option, bool option, System.Action<BabylonjsBindings.SimpleClasses.ReadFileError> option, BabylonjsBindings.SimpleInterfaces.IFileRequest> with get, set
+        abstract ``RequestFile``: System.Func<string, System.Action<U2<string, JS.ArrayBuffer>, BabylonjsBindings.SimpleClasses.WebRequest option>, System.Action<Browser.Types.ProgressEvent> option, BabylonjsBindings.SimpleInterfaces.IOfflineProvider option, bool option, System.Action<BabylonjsBindings.SimpleClasses.RequestFileError> option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest> option, BabylonjsBindings.SimpleInterfaces.IFileRequest> with get, set
+        abstract ``SetCorsBehavior``: System.Action<U2<string, ResizeArray<string>>, VariableShape_FileToolsProperty13Parameter2Object> with get, set
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("FileTools", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``FileTools``: VariableShape_FileTools = jsNative
 
     /// Inline object shape of FileToolsOptions.
     [<AllowNullLiteral>]
@@ -1954,7 +2026,7 @@ module SimpleVariables =
 
     /// Nested inline object shape used by gltfTypeToBabylonType.
     [<AllowNullLiteral>]
-    type VariableShape_gltfTypeToBabylonTypeProperty1Object =
+    type VariableShape_gltfTypeToBabylonTypeIndexer1ValueObject =
         abstract ``length``: float with get, set
         abstract ``flowGraphType``: BabylonjsBindings.StringEnums.FlowGraphTypes with get, set
         abstract ``elementType``: U2<string, string> with get, set
@@ -1962,7 +2034,7 @@ module SimpleVariables =
     /// Inline object shape of gltfTypeToBabylonType.
     [<AllowNullLiteral>]
     type VariableShape_gltfTypeToBabylonType =
-        [<EmitIndexer>] abstract Item: ``key``: string -> VariableShape_gltfTypeToBabylonTypeProperty1Object with get, set
+        [<EmitIndexer>] abstract Item: ``key``: string -> VariableShape_gltfTypeToBabylonTypeIndexer1ValueObject with get, set
 
     /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser
     [<Import("gltfTypeToBabylonType", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js")>]
@@ -3218,6 +3290,30 @@ module SimpleVariables =
     [<Import("LoadFile", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ``LoadFile``: VariableFunction_LoadFile = jsNative
 
+    /// Callable shape of LoadImage.
+    [<AllowNullLiteral>]
+    type VariableFunction_LoadImage =
+        [<Emit("$0($1...)")>] abstract Invoke: ``input``: U4<string, JS.ArrayBuffer, JS.ArrayBufferView, Browser.Types.Blob> * ``onLoad``: System.Action<U2<Browser.Types.HTMLImageElement, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap>> * ``onError``: System.Action<string option, obj option> * ``offlineProvider``: BabylonjsBindings.SimpleInterfaces.IOfflineProvider option * ?``mimeType``: string * ?``imageBitmapOptions``: BabylonjsBindings.SimpleInterfaces.BrowserImageBitmapOptions * ?``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine option -> Browser.Types.HTMLImageElement option
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("LoadImage", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``LoadImage``: VariableFunction_LoadImage = jsNative
+
+    /// Nested inline object shape used by LoadImageConfiguration.
+    [<AllowNullLiteral>]
+    type VariableShape_LoadImageConfigurationProperty1NullableReturnObject =
+        abstract ``width``: float with get, set
+        abstract ``height``: float with get, set
+
+    /// Inline object shape of LoadImageConfiguration.
+    [<AllowNullLiteral>]
+    type VariableShape_LoadImageConfiguration =
+        abstract ``getRequiredSize``: System.Func<U4<string, JS.ArrayBuffer, JS.ArrayBufferView, Browser.Types.Blob>, VariableShape_LoadImageConfigurationProperty1NullableReturnObject> option with get, set
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("LoadImageConfiguration", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``LoadImageConfiguration``: VariableShape_LoadImageConfiguration = jsNative
+
     /// Callable shape of LoadTextureFromTranscodeResult.
     [<AllowNullLiteral>]
     type VariableFunction_LoadTextureFromTranscodeResult =
@@ -3371,6 +3467,43 @@ module SimpleVariables =
     /// @babylonjs/core/Misc/halfFloat
     [<Import("MaxHalfFloat", "@babylonjs/core/Misc/halfFloat.js")>]
     let ``MaxHalfFloat``: float = jsNative
+
+    /// Inline object shape of MeshBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_MeshBuilder =
+        abstract ``CreateBox``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateBox with get, set
+        abstract ``CreateTiledBox``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledBox with get, set
+        abstract ``CreateSphere``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSphere with get, set
+        abstract ``CreateDisc``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDisc with get, set
+        abstract ``CreateIcoSphere``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateIcoSphere with get, set
+        abstract ``CreateRibbon``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateRibbon with get, set
+        abstract ``CreateCylinder``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCylinder with get, set
+        abstract ``CreateTorus``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorus with get, set
+        abstract ``CreateTorusKnot``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTorusKnot with get, set
+        abstract ``CreateLineSystem``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLineSystem with get, set
+        abstract ``CreateLines``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLines with get, set
+        abstract ``CreateDashedLines``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDashedLines with get, set
+        abstract ``ExtrudeShape``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtrudeShape with get, set
+        abstract ``ExtrudeShapeCustom``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtrudeShapeCustom with get, set
+        abstract ``CreateLathe``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateLathe with get, set
+        abstract ``CreateTiledPlane``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledPlane with get, set
+        abstract ``CreatePlane``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePlane with get, set
+        abstract ``CreateGround``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGround with get, set
+        abstract ``CreateTiledGround``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTiledGround with get, set
+        abstract ``CreateGroundFromHeightMap``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGroundFromHeightMap with get, set
+        abstract ``CreatePolygon``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolygon with get, set
+        abstract ``ExtrudePolygon``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtrudePolygon with get, set
+        abstract ``CreateTube``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTube with get, set
+        abstract ``CreatePolyhedron``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreatePolyhedron with get, set
+        abstract ``CreateGeodesic``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGeodesic with get, set
+        abstract ``CreateGoldberg``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateGoldberg with get, set
+        abstract ``CreateDecal``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateDecal with get, set
+        abstract ``CreateCapsule``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateCapsule with get, set
+        abstract ``CreateText``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateText with get, set
+
+    /// @babylonjs/core/Meshes/meshBuilder.pure
+    [<Import("MeshBuilder", "@babylonjs/core/Meshes/meshBuilder.pure.js")>]
+    let ``MeshBuilder``: VariableShape_MeshBuilder = jsNative
 
     /// Inline object shape of meshUboDeclarationWGSL.
     [<AllowNullLiteral>]
@@ -4289,6 +4422,42 @@ module SimpleVariables =
     [<Import("Samplers", "@babylonjs/core/Rendering/geometryBufferRenderer.pure.js")>]
     let ``Samplers``: ResizeArray<string> = jsNative
 
+    /// Inline object shape of Scalar.
+    [<AllowNullLiteral>]
+    type VariableShape_Scalar =
+        abstract ``TwoPi``: float with get, set
+        abstract ``Sign``: System.Func<float, float> with get, set
+        abstract ``Log2``: System.Func<float, float> with get, set
+        abstract ``HCF``: System.Func<float, float, float> with get, set
+        abstract ``ExtractAsInt``: ``value``: float -> float
+        abstract ``WithinEpsilon``: ``a``: float * ``b``: float * ?``epsilon``: float -> bool
+        abstract ``OutsideRange``: ``num``: float * ``min``: float * ``max``: float * ?``epsilon``: float -> bool
+        abstract ``RandomRange``: ``min``: float * ``max``: float -> float
+        abstract ``Lerp``: ``start``: float * ``end``: float * ``amount``: float -> float
+        abstract ``LerpAngle``: ``start``: float * ``end``: float * ``amount``: float -> float
+        abstract ``InverseLerp``: ``a``: float * ``b``: float * ``value``: float -> float
+        abstract ``Hermite``: ``value1``: float * ``tangent1``: float * ``value2``: float * ``tangent2``: float * ``amount``: float -> float
+        abstract ``Hermite1stDerivative``: ``value1``: float * ``tangent1``: float * ``value2``: float * ``tangent2``: float * ``time``: float -> float
+        abstract ``Clamp``: ``value``: float * ?``min``: float * ?``max``: float -> float
+        abstract ``NormalizeRadians``: ``angle``: float -> float
+        abstract ``ToHex``: ``i``: float -> string
+        abstract ``ILog2``: ``value``: float -> float
+        abstract ``Repeat``: ``value``: float * ``length``: float -> float
+        abstract ``Normalize``: ``value``: float * ``min``: float * ``max``: float -> float
+        abstract ``Denormalize``: ``normalized``: float * ``min``: float * ``max``: float -> float
+        abstract ``DeltaAngle``: ``current``: float * ``target``: float -> float
+        abstract ``PingPong``: ``tx``: float * ``length``: float -> float
+        abstract ``SmoothStep``: ``from``: float * ``to``: float * ``tx``: float -> float
+        abstract ``MoveTowards``: ``current``: float * ``target``: float * ``maxDelta``: float -> float
+        abstract ``MoveTowardsAngle``: ``current``: float * ``target``: float * ``maxDelta``: float -> float
+        abstract ``RangeToPercent``: ``number``: float * ``min``: float * ``max``: float -> float
+        abstract ``PercentToRange``: ``percent``: float * ``min``: float * ``max``: float -> float
+        abstract ``HighestCommonFactor``: ``a``: float * ``b``: float -> float
+
+    /// @babylonjs/core/Maths/math.scalar
+    [<Import("Scalar", "@babylonjs/core/Maths/math.scalar.js")>]
+    let ``Scalar``: VariableShape_Scalar = jsNative
+
     /// Inline object shape of sceneFragmentDeclaration.
     [<AllowNullLiteral>]
     type VariableShape_sceneFragmentDeclaration =
@@ -4450,6 +4619,10 @@ module SimpleVariables =
     [<Import("SfeModeDefine", "@babylonjs/core/Materials/Node/Blocks/Fragment/smartFilterFragmentOutputBlock.pure.js")>]
     let ``SfeModeDefine``: string = jsNative
 
+    /// @babylonjs/core/Materials/shaderMaterial.pure
+    [<Import("ShaderMaterialCreateFromSnippetAsync", "@babylonjs/core/Materials/shaderMaterial.pure.js")>]
+    let ``ShaderMaterialCreateFromSnippetAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ShaderMaterialParseFromSnippetAsync = jsNative
+
     /// Inline object shape of shadowMapFragment.
     [<AllowNullLiteral>]
     type VariableShape_shadowMapFragment =
@@ -4589,6 +4762,16 @@ module SimpleVariables =
     /// @babylonjs/core/ShadersWGSL/ShadersInclude/shadowsVertex
     [<Import("shadowsVertexWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/shadowsVertex.js")>]
     let ``shadowsVertexWGSL``: VariableShape_shadowsVertexWGSL = jsNative
+
+    /// Inline object shape of ShapeBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_ShapeBuilder =
+        abstract ``ExtrudeShape``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtrudeShape with get, set
+        abstract ``ExtrudeShapeCustom``: BabylonjsBindings.SimpleFunctions.FunctionBinding_ExtrudeShapeCustom with get, set
+
+    /// @babylonjs/core/Meshes/Builders/shapeBuilder.pure
+    [<Import("ShapeBuilder", "@babylonjs/core/Meshes/Builders/shapeBuilder.pure.js")>]
+    let ``ShapeBuilder``: VariableShape_ShapeBuilder = jsNative
 
     /// Inline object shape of sharpenPixelShader.
     [<AllowNullLiteral>]
@@ -4920,6 +5103,22 @@ module SimpleVariables =
     [<Import("TextureTools", "@babylonjs/core/Misc/textureTools.js")>]
     let ``TextureTools``: VariableShape_TextureTools = jsNative
 
+    /// Inline object shape of TGATools.
+    [<AllowNullLiteral>]
+    type VariableShape_TGATools =
+        abstract ``GetTGAHeader``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetTGAHeader with get, set
+        abstract ``UploadContent``: BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadContent with get, set
+        abstract ``_getImageData8bits``: System.Func<obj, JS.Uint8Array, JS.Uint8Array, float, float, float, float, float, float, JS.Uint8Array> with get, set
+        abstract ``_getImageData16bits``: System.Func<obj, JS.Uint8Array, JS.Uint8Array, float, float, float, float, float, float, JS.Uint8Array> with get, set
+        abstract ``_getImageData24bits``: System.Func<obj, JS.Uint8Array, JS.Uint8Array, float, float, float, float, float, float, JS.Uint8Array> with get, set
+        abstract ``_getImageData32bits``: System.Func<obj, JS.Uint8Array, JS.Uint8Array, float, float, float, float, float, float, JS.Uint8Array> with get, set
+        abstract ``_getImageDataGrey8bits``: System.Func<obj, JS.Uint8Array, JS.Uint8Array, float, float, float, float, float, float, JS.Uint8Array> with get, set
+        abstract ``_getImageDataGrey16bits``: System.Func<obj, JS.Uint8Array, JS.Uint8Array, float, float, float, float, float, float, JS.Uint8Array> with get, set
+
+    /// @babylonjs/core/Misc/tga
+    [<Import("TGATools", "@babylonjs/core/Misc/tga.js")>]
+    let ``TGATools``: VariableShape_TGATools = jsNative
+
     /// Inline object shape of TiledBoxBuilder.
     [<AllowNullLiteral>]
     type VariableShape_TiledBoxBuilder =
@@ -4992,6 +5191,15 @@ module SimpleVariables =
     /// @babylonjs/core/Misc/basis.pure
     [<Import("TranscodeAsync", "@babylonjs/core/Misc/basis.pure.js")>]
     let ``TranscodeAsync``: VariableFunction_TranscodeAsync = jsNative
+
+    /// Inline object shape of TubeBuilder.
+    [<AllowNullLiteral>]
+    type VariableShape_TubeBuilder =
+        abstract ``CreateTube``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTube with get, set
+
+    /// @babylonjs/core/Meshes/Builders/tubeBuilder.pure
+    [<Import("TubeBuilder", "@babylonjs/core/Meshes/Builders/tubeBuilder.pure.js")>]
+    let ``TubeBuilder``: VariableShape_TubeBuilder = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
     [<Import("ULONG_SIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]
