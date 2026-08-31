@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "0391cecd301ca336bd0d4ccab2d66b834ebe19a1866083ea06c06aa427e934df",
+  "proposalSha256": "f17dc9f9a70de379d928e058dbf0f407bc8d9b93ebd9dd540a2c7265714a4b51",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5661,6 +5661,21 @@
       ],
       "fsharpType": "VariableFunction__injectLTSFileTools",
       "parameterCount": 10
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry",
+      "name": "registeredGLTFExtensions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.registeredGLTFExtensions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.GLTF2Loader",
+        "BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension",
+        "BabylonjsBindings.TypeAliases.GLTFExtensionFactory"
+      ],
+      "fsharpType": "VariableShape_registeredGLTFExtensions",
+      "memberCount": 2
     }
   ],
   "reviewStatus": "maintained"

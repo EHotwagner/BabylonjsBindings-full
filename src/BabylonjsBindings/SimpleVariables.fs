@@ -5350,3 +5350,17 @@ module SimpleVariables =
     /// @babylonjs/core/Misc/fileTools.pure
     [<Import("_injectLTSFileTools", "@babylonjs/core/Misc/fileTools.pure.js")>]
     let ``_injectLTSFileTools``: VariableFunction__injectLTSFileTools = jsNative
+
+    /// Exact readonly value stored for each registered glTF 2.0 extension.
+    [<AllowNullLiteral>]
+    type VariableShape_RegisteredGLTFExtension =
+        abstract ``isGLTFExtension``: bool with get
+        abstract ``factory``: BabylonjsBindings.TypeAliases.GLTFExtensionFactory with get
+
+    /// Exact readonly glTF 2.0 extension registry map.
+    type VariableShape_registeredGLTFExtensions =
+        BabylonjsBindings.SimpleInterfaces.BrowserReadonlyMap<string, VariableShape_RegisteredGLTFExtension>
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry
+    [<Import("registeredGLTFExtensions", "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry.js")>]
+    let ``registeredGLTFExtensions``: VariableShape_registeredGLTFExtensions = jsNative
