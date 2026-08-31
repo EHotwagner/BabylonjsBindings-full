@@ -527,7 +527,7 @@ let findInvalidatedAuditBindingsIn (index: AuditIndex) (changedPaths: string lis
                         errors.Add(sprintf "invalidation: malformed audit %s: report is required" relativeAudit)
                     elif not (Regex.IsMatch(normalizedJsonString audit.reportSha256, "^[0-9a-f]{64}$")) then
                         errors.Add(sprintf "invalidation: malformed audit %s: reportSha256 must be 64 lowercase hex characters" relativeAudit)
-                    elif isNull (box audit.findings) || List.isEmpty audit.findings then
+                    elif isNull (box audit.findings) then
                         errors.Add(sprintf "invalidation: malformed audit %s: findings is required" relativeAudit)
                     else
                         for finding in audit.findings do

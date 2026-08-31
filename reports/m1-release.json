@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "milestone": "M1",
+  "implementationPr": "https://github.com/EHotwagner/BabylonjsBindings-full/pull/4",
+  "implementationMergeSha": "f930a427d7d373ad1e259be99392349d05136047",
+  "releaseVersion": "0.1.2",
+  "localFeed": "/home/developer/.local/share/nuget-local",
+  "packages": [
+    {
+      "project": "src/BabylonjsBindings/BabylonjsBindings.fsproj",
+      "package": "BabylonjsBindings.0.1.2.nupkg",
+      "sha256": "6c57042434b05a7bffdd8939a88a36989c63ca814ab27cf2cc8385bc556f0194",
+      "result": "pass"
+    },
+    {
+      "project": "generated-candidates/package/BabylonjsBindings.Candidate.fsproj",
+      "package": "BabylonjsBindings.Candidate.0.0.0-candidate.1.nupkg",
+      "sha256": "6bfa9ddc50e10aea5d73fd712341208a88533d23d07d74553c76a6798113f662",
+      "result": "pass"
+    }
+  ],
+  "cleanConsumer": {
+    "packageVersion": "0.1.2",
+    "babylonCore": "9.19.0",
+    "babylonLoaders": "9.19.0",
+    "fable": "5.13.0",
+    "result": "pass"
+  },
+  "nugetCacheCleanup": {
+    "httpCache": "removed",
+    "globalPackages": "removed",
+    "result": "pass"
+  }
+}
