@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "milestone": "M3",
+  "implementationPr": "https://github.com/EHotwagner/BabylonjsBindings-full/pull/9",
+  "implementationMergeSha": "4c1b5b73e02b4e2a137e2a3c2f9ecb0842278629",
+  "releasePr": "https://github.com/EHotwagner/BabylonjsBindings-full/pull/10",
+  "releaseCodeHeadCi": "https://github.com/EHotwagner/BabylonjsBindings-full/actions/runs/33415187863",
+  "releaseVersion": "0.1.4",
+  "localFeed": "/home/developer/.local/share/nuget-local",
+  "packages": [
+    {
+      "project": "src/BabylonjsBindings/BabylonjsBindings.fsproj",
+      "package": "BabylonjsBindings.0.1.4.nupkg",
+      "sha256": "4fe2eb8baefbd687c1770b079c5e60f3e0c48563023fe05c54030584dd52f813",
+      "result": "pass"
+    },
+    {
+      "project": "generated-candidates/package/BabylonjsBindings.Candidate.fsproj",
+      "package": "BabylonjsBindings.Candidate.0.0.0-candidate.1.nupkg",
+      "sha256": "968c75a173dc426644f405137cbcdae3eb69f57d9982950ebbd9f11c1a39ad48",
+      "result": "pass"
+    }
+  ],
+  "cleanConsumer": {
+    "receipt": "reports/m3-clean-consumer.json",
+    "packageVersion": "0.1.4",
+    "babylonCore": "9.19.0",
+    "babylonLoaders": "9.19.0",
+    "fable": "5.13.0",
+    "imports": "pass",
+    "node": "pass",
+    "chromium": "Chromium 151.0.7922.173 Arch Linux",
+    "isolatedNugetCache": true,
+    "result": "pass"
+  },
+  "aggregate": {
+    "receipt": "reports/m3-higher-order-runtime-apis.trx",
+    "passed": 14,
+    "failed": 0,
+    "coverage": {
+      "typed": 4287,
+      "blocked": 35,
+      "runtimeOnly": 1,
+      "lossy": 0
+    },
+    "result": "pass"
+  },
+  "nugetCacheCleanup": {
+    "httpCache": "removed",
+    "packageVersionEntry": "absent",
+    "candidateVersionEntry": "absent",
+    "result": "pass"
+  }
+}
