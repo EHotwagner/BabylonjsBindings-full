@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
     <PackageId>BabylonjsBindings</PackageId>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
     <Authors>EHotwagner</Authors>
     <Description>Versioned Fable bindings for @babylonjs/core and @babylonjs/loaders 9.19.0.</Description>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
