@@ -1,0 +1,306 @@
+{
+  "schemaVersion": 1,
+  "source": "Babylon.js 9.19.0 locked declarations",
+  "tables": [
+    {
+      "id": "device-type",
+      "sourceKeyCount": 8,
+      "mappingCount": 8,
+      "complete": true,
+      "rows": [
+        {
+          "key": "Generic",
+          "discriminator": "DeviceTypeGeneric",
+          "input": "float",
+          "event": "Never",
+          "signature": "DeviceSource<DeviceTypeGeneric,float,Never>"
+        },
+        {
+          "key": "Keyboard",
+          "discriminator": "DeviceTypeKeyboard",
+          "input": "float",
+          "event": "IKeyboardEvent",
+          "signature": "DeviceSource<DeviceTypeKeyboard,float,IKeyboardEvent>"
+        },
+        {
+          "key": "Mouse",
+          "discriminator": "DeviceTypeMouse",
+          "input": "PointerDeviceInput",
+          "event": "U2<IWheelEvent, IPointerEvent>",
+          "signature": "DeviceSource<DeviceTypeMouse,PointerDeviceInput,U2<IWheelEvent, IPointerEvent>>"
+        },
+        {
+          "key": "Touch",
+          "discriminator": "DeviceTypeTouch",
+          "input": "PointerDeviceInput",
+          "event": "IPointerEvent",
+          "signature": "DeviceSource<DeviceTypeTouch,PointerDeviceInput,IPointerEvent>"
+        },
+        {
+          "key": "DualShock",
+          "discriminator": "DeviceTypeDualShock",
+          "input": "DualShockInput",
+          "event": "Never",
+          "signature": "DeviceSource<DeviceTypeDualShock,DualShockInput,Never>"
+        },
+        {
+          "key": "Xbox",
+          "discriminator": "DeviceTypeXbox",
+          "input": "XboxInput",
+          "event": "Never",
+          "signature": "DeviceSource<DeviceTypeXbox,XboxInput,Never>"
+        },
+        {
+          "key": "Switch",
+          "discriminator": "DeviceTypeSwitch",
+          "input": "SwitchInput",
+          "event": "Never",
+          "signature": "DeviceSource<DeviceTypeSwitch,SwitchInput,Never>"
+        },
+        {
+          "key": "DualSense",
+          "discriminator": "DeviceTypeDualSense",
+          "input": "DualSenseInput",
+          "event": "Never",
+          "signature": "DeviceSource<DeviceTypeDualSense,DualSenseInput,Never>"
+        }
+      ]
+    },
+    {
+      "id": "flow-graph-asset-type",
+      "sourceKeyCount": 6,
+      "mappingCount": 6,
+      "complete": true,
+      "rows": [
+        {
+          "key": "Animation",
+          "discriminator": "FlowGraphAnimationAsset",
+          "result": "Animation",
+          "signature": "GetFlowGraphAssetWithType(FlowGraphAnimationAsset)->Animation option"
+        },
+        {
+          "key": "AnimationGroup",
+          "discriminator": "FlowGraphAnimationGroupAsset",
+          "result": "AnimationGroup",
+          "signature": "GetFlowGraphAssetWithType(FlowGraphAnimationGroupAsset)->AnimationGroup option"
+        },
+        {
+          "key": "Mesh",
+          "discriminator": "FlowGraphMeshAsset",
+          "result": "Mesh",
+          "signature": "GetFlowGraphAssetWithType(FlowGraphMeshAsset)->Mesh option"
+        },
+        {
+          "key": "Material",
+          "discriminator": "FlowGraphMaterialAsset",
+          "result": "Material",
+          "signature": "GetFlowGraphAssetWithType(FlowGraphMaterialAsset)->Material option"
+        },
+        {
+          "key": "Camera",
+          "discriminator": "FlowGraphCameraAsset",
+          "result": "Camera",
+          "signature": "GetFlowGraphAssetWithType(FlowGraphCameraAsset)->Camera option"
+        },
+        {
+          "key": "Light",
+          "discriminator": "FlowGraphLightAsset",
+          "result": "Light",
+          "signature": "GetFlowGraphAssetWithType(FlowGraphLightAsset)->Light option"
+        }
+      ]
+    },
+    {
+      "id": "webxr-feature-name",
+      "sourceKeyCount": 22,
+      "mappingCount": 22,
+      "complete": true,
+      "rows": [
+        {
+          "constant": "ANCHOR_SYSTEM",
+          "key": "xr-anchor-system",
+          "discriminator": "XRAnchorSystem",
+          "options": "IWebXRAnchorSystemOptions",
+          "result": "WebXRAnchorSystem",
+          "signature": "enableFeature(XRAnchorSystem,IWebXRAnchorSystemOptions)->WebXRAnchorSystem"
+        },
+        {
+          "constant": "BACKGROUND_REMOVER",
+          "key": "xr-background-remover",
+          "discriminator": "XRBackgroundRemover",
+          "options": "IWebXRBackgroundRemoverOptions",
+          "result": "WebXRBackgroundRemover",
+          "signature": "enableFeature(XRBackgroundRemover,IWebXRBackgroundRemoverOptions)->WebXRBackgroundRemover"
+        },
+        {
+          "constant": "HIT_TEST",
+          "key": "xr-hit-test",
+          "discriminator": "XRHitTest",
+          "options": "IWebXRHitTestOptions",
+          "result": "WebXRHitTest",
+          "signature": "enableFeature(XRHitTest,IWebXRHitTestOptions)->WebXRHitTest"
+        },
+        {
+          "constant": "MESH_DETECTION",
+          "key": "xr-mesh-detection",
+          "discriminator": "XRMeshDetection",
+          "options": "IWebXRMeshDetectorOptions",
+          "result": "WebXRMeshDetector",
+          "signature": "enableFeature(XRMeshDetection,IWebXRMeshDetectorOptions)->WebXRMeshDetector"
+        },
+        {
+          "constant": "PHYSICS_CONTROLLERS",
+          "key": "xr-physics-controller",
+          "discriminator": "XRPhysicsController",
+          "options": "IWebXRControllerPhysicsOptions",
+          "result": "WebXRControllerPhysics",
+          "signature": "enableFeature(XRPhysicsController,IWebXRControllerPhysicsOptions)->WebXRControllerPhysics"
+        },
+        {
+          "constant": "PLANE_DETECTION",
+          "key": "xr-plane-detection",
+          "discriminator": "XRPlaneDetection",
+          "options": "IWebXRPlaneDetectorOptions",
+          "result": "WebXRPlaneDetector",
+          "signature": "enableFeature(XRPlaneDetection,IWebXRPlaneDetectorOptions)->WebXRPlaneDetector"
+        },
+        {
+          "constant": "POINTER_SELECTION",
+          "key": "xr-controller-pointer-selection",
+          "discriminator": "XRPointerSelection",
+          "options": "IWebXRControllerPointerSelectionOptions",
+          "result": "WebXRControllerPointerSelection",
+          "signature": "enableFeature(XRPointerSelection,IWebXRControllerPointerSelectionOptions)->WebXRControllerPointerSelection"
+        },
+        {
+          "constant": "TELEPORTATION",
+          "key": "xr-controller-teleportation",
+          "discriminator": "XRTeleportation",
+          "options": "IWebXRTeleportationOptions",
+          "result": "WebXRMotionControllerTeleportation",
+          "signature": "enableFeature(XRTeleportation,IWebXRTeleportationOptions)->WebXRMotionControllerTeleportation"
+        },
+        {
+          "constant": "FEATURE_POINTS",
+          "key": "xr-feature-points",
+          "discriminator": "XRFeaturePoints",
+          "options": "undefined",
+          "result": "WebXRFeaturePointSystem",
+          "signature": "enableFeature(XRFeaturePoints,undefined)->WebXRFeaturePointSystem"
+        },
+        {
+          "constant": "HAND_TRACKING",
+          "key": "xr-hand-tracking",
+          "discriminator": "XRHandTracking",
+          "options": "IWebXRHandTrackingOptions",
+          "result": "WebXRHandTracking",
+          "signature": "enableFeature(XRHandTracking,IWebXRHandTrackingOptions)->WebXRHandTracking"
+        },
+        {
+          "constant": "IMAGE_TRACKING",
+          "key": "xr-image-tracking",
+          "discriminator": "XRImageTracking",
+          "options": "IWebXRImageTrackingOptions",
+          "result": "WebXRImageTracking",
+          "signature": "enableFeature(XRImageTracking,IWebXRImageTrackingOptions)->WebXRImageTracking"
+        },
+        {
+          "constant": "NEAR_INTERACTION",
+          "key": "xr-near-interaction",
+          "discriminator": "XRNearInteraction",
+          "options": "IWebXRNearInteractionOptions",
+          "result": "WebXRNearInteraction",
+          "signature": "enableFeature(XRNearInteraction,IWebXRNearInteractionOptions)->WebXRNearInteraction"
+        },
+        {
+          "constant": "DOM_OVERLAY",
+          "key": "xr-dom-overlay",
+          "discriminator": "XRDomOverlay",
+          "options": "IWebXRDomOverlayOptions",
+          "result": "WebXRDomOverlay",
+          "signature": "enableFeature(XRDomOverlay,IWebXRDomOverlayOptions)->WebXRDomOverlay"
+        },
+        {
+          "constant": "MOVEMENT",
+          "key": "xr-controller-movement",
+          "discriminator": "XRMovement",
+          "options": "IWebXRControllerMovementOptions",
+          "result": "WebXRControllerMovement",
+          "signature": "enableFeature(XRMovement,IWebXRControllerMovementOptions)->WebXRControllerMovement"
+        },
+        {
+          "constant": "LIGHT_ESTIMATION",
+          "key": "xr-light-estimation",
+          "discriminator": "XRLightEstimation",
+          "options": "IWebXRLightEstimationOptions",
+          "result": "WebXRLightEstimation",
+          "signature": "enableFeature(XRLightEstimation,IWebXRLightEstimationOptions)->WebXRLightEstimation"
+        },
+        {
+          "constant": "EYE_TRACKING",
+          "key": "xr-eye-tracking",
+          "discriminator": "XREyeTracking",
+          "options": "undefined",
+          "result": "WebXREyeTracking",
+          "signature": "enableFeature(XREyeTracking,undefined)->WebXREyeTracking"
+        },
+        {
+          "constant": "WALKING_LOCOMOTION",
+          "key": "xr-walking-locomotion",
+          "discriminator": "XRWalkingLocomotion",
+          "options": "IWebXRWalkingLocomotionOptions",
+          "result": "WebXRWalkingLocomotion",
+          "signature": "enableFeature(XRWalkingLocomotion,IWebXRWalkingLocomotionOptions)->WebXRWalkingLocomotion"
+        },
+        {
+          "constant": "LAYERS",
+          "key": "xr-layers",
+          "discriminator": "XRLayers",
+          "options": "IWebXRLayersOptions",
+          "result": "WebXRLayers",
+          "signature": "enableFeature(XRLayers,IWebXRLayersOptions)->WebXRLayers"
+        },
+        {
+          "constant": "DEPTH_SENSING",
+          "key": "xr-depth-sensing",
+          "discriminator": "XRDepthSensing",
+          "options": "IWebXRDepthSensingOptions",
+          "result": "WebXRDepthSensing",
+          "signature": "enableFeature(XRDepthSensing,IWebXRDepthSensingOptions)->WebXRDepthSensing"
+        },
+        {
+          "constant": "SPACE_WARP",
+          "key": "xr-space-warp",
+          "discriminator": "XRSpaceWarp",
+          "options": "undefined",
+          "result": "WebXRSpaceWarp",
+          "signature": "enableFeature(XRSpaceWarp,undefined)->WebXRSpaceWarp"
+        },
+        {
+          "constant": "RAW_CAMERA_ACCESS",
+          "key": "xr-raw-camera-access",
+          "discriminator": "XRRawCameraAccess",
+          "options": "IWebXRRawCameraAccessOptions",
+          "result": "WebXRRawCameraAccess",
+          "signature": "enableFeature(XRRawCameraAccess,IWebXRRawCameraAccessOptions)->WebXRRawCameraAccess"
+        },
+        {
+          "constant": "BODY_TRACKING",
+          "key": "xr-body-tracking",
+          "discriminator": "XRBodyTracking",
+          "options": "IWebXRBodyTrackingOptions",
+          "result": "WebXRBodyTracking",
+          "signature": "enableFeature(XRBodyTracking,IWebXRBodyTrackingOptions)->WebXRBodyTracking"
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "sourceRows": 36,
+    "uniqueSignatures": 36,
+    "missing": 0,
+    "extra": 0,
+    "duplicate": 0,
+    "collapsed": 0
+  }
+}

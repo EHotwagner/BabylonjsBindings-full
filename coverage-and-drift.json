@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "1b726240afcd005b1dee45f100211cd588cd1d43c2edf07639ad6c9d8c475a9b",
+  "maintainedSurfaceDigest": "91ce4aaaf9b630a7c7f80d17a8c02e8bd50966f1012d9c59c122aebc699e110c",
   "summary": {
     "total": 4323,
-    "typed": 4252,
+    "typed": 4279,
     "runtimeOnly": 1,
-    "blocked": 70,
+    "blocked": 43,
     "lossy": 0
   },
   "exports": [
@@ -2086,8 +2086,9 @@
       "module": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior",
       "name": "HandConstraintBehavior",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.HandConstraintBehavior"
     },
     {
       "package": "@babylonjs/core",
@@ -3525,8 +3526,9 @@
       "module": "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure",
       "name": "VRExperienceHelper",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.VRExperienceHelper"
     },
     {
       "package": "@babylonjs/core",
@@ -4352,32 +4354,36 @@
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceSource",
       "name": "DeviceSource",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceSource"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceSource",
       "name": "DeviceSourceEvent",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceSourceEvent"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceSourceManager",
       "name": "DeviceSourceManager",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/InputDevices/deviceTypes",
       "name": "DeviceInput",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceInput"
     },
     {
       "package": "@babylonjs/core",
@@ -4393,24 +4399,27 @@
       "module": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure",
       "name": "DeviceSourceType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceSourceType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure",
       "name": "InternalDeviceSourceManager",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.InternalDeviceSourceManager"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure",
       "name": "IObservableManager",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IObservableManager"
     },
     {
       "package": "@babylonjs/core",
@@ -6793,8 +6802,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetAssetBlock.pure",
       "name": "FlowGraphGetAssetBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphGetAssetBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -6819,16 +6829,18 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure",
       "name": "FlowGraphGetPropertyBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphGetPropertyBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure",
       "name": "IFlowGraphGetPropertyBlockConfiguration",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IFlowGraphGetPropertyBlockConfiguration"
     },
     {
       "package": "@babylonjs/core",
@@ -7906,8 +7918,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure",
       "name": "FlowGraphJsonPointerParserBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphJsonPointerParserBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8805,8 +8818,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSwitchBlock.pure",
       "name": "FlowGraphSwitchBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphSwitchBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8930,16 +8944,18 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure",
       "name": "FlowGraphSetPropertyBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphSetPropertyBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure",
       "name": "IFlowGraphSetPropertyBlockConfiguration",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IFlowGraphSetPropertyBlockConfiguration"
     },
     {
       "package": "@babylonjs/core",
@@ -9189,8 +9205,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphAssetsContext",
       "name": "AssetType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.AssetType"
     },
     {
       "package": "@babylonjs/core",
@@ -9206,8 +9223,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphAssetsContext",
       "name": "GetFlowGraphAssetWithType",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.GetFlowGraphAssetWithType"
     },
     {
       "package": "@babylonjs/core",
@@ -36200,8 +36218,9 @@
       "module": "@babylonjs/core/XR/webXRDefaultExperience",
       "name": "WebXRDefaultExperience",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXRDefaultExperience"
     },
     {
       "package": "@babylonjs/core",
@@ -36217,8 +36236,9 @@
       "module": "@babylonjs/core/XR/webXREnterExitUI",
       "name": "WebXREnterExitUI",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXREnterExitUI"
     },
     {
       "package": "@babylonjs/core",
@@ -36243,8 +36263,9 @@
       "module": "@babylonjs/core/XR/webXRExperienceHelper",
       "name": "WebXRExperienceHelper",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXRExperienceHelper"
     },
     {
       "package": "@babylonjs/core",
@@ -36269,32 +36290,36 @@
       "module": "@babylonjs/core/XR/webXRFeaturesManager",
       "name": "IWebXRFeatureNameOptionsMap",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IWebXRFeatureNameOptionsMap"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRFeaturesManager",
       "name": "IWebXRFeatureNameTypeMap",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IWebXRFeatureNameTypeMap"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRFeaturesManager",
       "name": "ResolveWebXRFeature",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.ResolveWebXRFeature"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRFeaturesManager",
       "name": "ResolveWebXRFeatureOptions",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.ResolveWebXRFeatureOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -36319,16 +36344,18 @@
       "module": "@babylonjs/core/XR/webXRFeaturesManager",
       "name": "WebXRFeatureNameType",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXRFeatureNameType"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRFeaturesManager",
       "name": "WebXRFeaturesManager",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained finite dependent-map projection with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXRFeaturesManager"
     },
     {
       "package": "@babylonjs/core",

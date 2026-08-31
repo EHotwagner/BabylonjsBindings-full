@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "workId": "004-m2-finite-dependent-maps",
+  "result": "pass",
+  "coverage": {
+    "total": 4323,
+    "typed": 4279,
+    "runtimeOnly": 1,
+    "blocked": 43,
+    "lossy": 0
+  },
+  "discriminatorTables": {
+    "deviceType": 8,
+    "flowGraphAsset": 6,
+    "webXRFeature": 22,
+    "uniqueSignatures": 36,
+    "collapsed": 0
+  },
+  "checks": [
+    {
+      "name": "finite source tables and signature uniqueness",
+      "command": "npm run check:m2-finite-maps",
+      "result": "pass"
+    },
+    {
+      "name": "locked maintained restore",
+      "command": "dotnet restore --locked-mode",
+      "result": "pass"
+    },
+    {
+      "name": "maintained positive compile matrix",
+      "command": "dotnet build --no-restore --nologo -v:minimal",
+      "result": "pass"
+    },
+    {
+      "name": "negative dependent mismatches",
+      "command": "npm run test:m2-negative",
+      "result": "pass"
+    },
+    {
+      "name": "Fable emitted compile",
+      "command": "npm run test:m2-fable",
+      "result": "pass"
+    },
+    {
+      "name": "exact emitted deep imports",
+      "command": "npm run test:m2-imports",
+      "result": "pass"
+    },
+    {
+      "name": "Node finite runtime smoke",
+      "command": "npm run test:m2-node",
+      "result": "pass"
+    },
+    {
+      "name": "Chromium deterministic WebXR stubs",
+      "command": "npm run test:m2-browser",
+      "result": "pass"
+    },
+    {
+      "name": "clean packed Fable consumer",
+      "command": "npm run test:m2-clean-consumer",
+      "result": "pass"
+    },
+    {
+      "name": "exact coverage totals",
+      "command": "npm run coverage:check",
+      "result": "pass"
+    },
+    {
+      "name": "locked declaration drift",
+      "command": "npm run check:drift",
+      "result": "pass"
+    },
+    {
+      "name": "analysis deterministic",
+      "command": "npm run analysis:determinism",
+      "result": "pass"
+    },
+    {
+      "name": "analysis current",
+      "command": "npm run analysis:check",
+      "result": "pass"
+    }
+  ]
+}
