@@ -1,7 +1,8 @@
-import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
-import { resolve } from "node:path";
+import { extname, resolve } from "node:path";
 import { spawn } from "node:child_process";
+import { createServer } from "node:http";
 
 const root = resolve(import.meta.dirname, "..");
 const projectText = await readFile(resolve(root, "src/BabylonjsBindings/BabylonjsBindings.fsproj"), "utf8");
@@ -50,5 +51,24 @@ printfn "M2 clean consumer passed"
   for (const module of ["@babylonjs/core/FlowGraph/flowGraphAssetsContext.js", "@babylonjs/core/XR/webXRFeaturesManager.js", "@babylonjs/core/XR/webXRExperienceHelper.js", "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior.js"]) if (!emitted.includes(module)) throw new Error(`clean consumer missing ${module}`);
   const runtime = await run("node", ["dist/Program.js"], consumer);
   if (!runtime.includes("M2 clean consumer passed")) throw new Error("clean consumer did not report pass");
-  console.log(JSON.stringify({ package: packagePath, packageVersion, fable: "5.13.0", npm: { core: "9.19.0", loaders: "9.19.0" }, result: "pass" }, null, 2));
+  await writeFile(resolve(consumer, "index.html"), `<!doctype html><meta charset="utf-8"><script type="importmap">{"imports":{"@babylonjs/core/":"/node_modules/@babylonjs/core/","@babylonjs/loaders/":"/node_modules/@babylonjs/loaders/"}}</script><output>running</output><script type="module">Object.defineProperty(navigator,"xr",{configurable:true,value:{isSessionSupported:async()=>true,requestSession:async()=>({end:async()=>{}})}});await import("./dist/Program.js");document.querySelector("output").textContent="M2 packed Chromium consumer passed";</script>`);
+  const mime = new Map([[".html", "text/html"], [".js", "text/javascript"]]);
+  const server = createServer(async (request, response) => {
+    try {
+      const pathname = decodeURIComponent(new URL(request.url, "http://127.0.0.1").pathname);
+      const file = resolve(consumer, `.${pathname}`);
+      if (file !== consumer && !file.startsWith(`${consumer}/`)) throw new Error("path escape");
+      if (!(await stat(file)).isFile()) throw new Error("not file");
+      response.writeHead(200, { "content-type": mime.get(extname(file)) ?? "application/octet-stream" }); response.end(await readFile(file));
+    } catch { response.writeHead(404); response.end("not found"); }
+  });
+  await new Promise((accept, reject) => { server.once("error", reject); server.listen(0, "127.0.0.1", accept); });
+  let browser;
+  try {
+    const url = `http://127.0.0.1:${server.address().port}/index.html`;
+    browser = await run("chromium", ["--headless", "--no-sandbox", "--disable-gpu", "--virtual-time-budget=8000", "--dump-dom", url], consumer);
+  } finally { await new Promise(accept => server.close(accept)); }
+  if (!browser.includes("<output>M2 packed Chromium consumer passed</output>")) throw new Error(`packed Chromium consumer failed\n${browser}`);
+  const chromiumVersion = (await run("chromium", ["--version"], consumer)).trim();
+  console.log(JSON.stringify({ package: packagePath, packageVersion, fable: "5.13.0", npm: { core: "9.19.0", loaders: "9.19.0" }, node: "pass", chromium: chromiumVersion, result: "pass" }, null, 2));
 } finally { await rm(consumer, { recursive: true, force: true }); }

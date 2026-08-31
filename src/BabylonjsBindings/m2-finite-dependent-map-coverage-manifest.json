@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "reviewStatus": "maintained",
-  "proposalSha256": "52bab0afca762ffb71b4ef3a3064cdebdcbfb8fbe286e4701091cc82fcf959cc",
+  "proposalSha256": "a48f4fd77000b95923f8c37976b07f847f1caf19dbdcc0c888411da4410a7b70",
   "exports": [
     {
       "package": "@babylonjs/core",

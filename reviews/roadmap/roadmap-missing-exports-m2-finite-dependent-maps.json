@@ -1,0 +1,97 @@
+{
+  "schema_version": 3,
+  "cycle_id": "roadmap-missing-exports-m2-finite-dependent-maps",
+  "milestone": "M2 — finite dependent maps",
+  "critic": "fresh-m2-independent-critic-20260831",
+  "initial_reviewed_commit": "d5f16acf705797523d5c7ee16ad0a589d8dcc082",
+  "scope": [
+    "requirements",
+    "diff",
+    "tests",
+    "architecture",
+    "roadmap-evidence"
+  ],
+  "initial_verdict": "changes-required",
+  "repair_rounds": 0,
+  "reviewed_commits": [
+    "d5f16acf705797523d5c7ee16ad0a589d8dcc082"
+  ],
+  "findings": [
+    {
+      "id": "M2-001",
+      "severity": "major",
+      "summary": "The maintained ResolveWebXRFeature and ResolveWebXRFeatureOptions exports are identity aliases, so they do not preserve the locked feature-to-result/options maps they claim to type.",
+      "evidence": [
+        "Locked Babylon.js 9.19.0 declarations at node_modules/@babylonjs/core/XR/webXRFeaturesManager.d.ts:280-293 define ResolveWebXRFeature<T> by indexing IWebXRFeatureNameTypeMap and ResolveWebXRFeatureOptions<T> by indexing/expanding IWebXRFeatureNameOptionsMap.",
+        "Maintained source at src/BabylonjsBindings/M2FiniteDependentMaps.fs:284-285 instead declares `type ResolveWebXRFeature<'Feature> = 'Feature` and `type ResolveWebXRFeatureOptions<'Options> = 'Options`; for example ResolveWebXRFeature<XRAnchorSystem> is XRAnchorSystem rather than WebXRAnchorSystem.",
+        "src/BabylonjsBindings/m2-finite-dependent-map-coverage-manifest.json classifies both aliases as typed, and coverage-and-drift.json:36303-36321 describes them as reviewed finite dependent-map projections, despite the missing mapping semantics.",
+        "tests/BabylonjsBindings.CompileTests/Program.fs:135-164 tests manager overloads but contains no direct positive or negative use of either Resolve alias, so the incorrect aliases remain green."
+      ],
+      "disposition": "follow-up",
+      "resolution_evidence": [
+        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must replace or accurately specialize both aliases and add direct compile-time correlation tests before they can remain typed."
+      ]
+    },
+    {
+      "id": "M2-002",
+      "severity": "major",
+      "summary": "Multiple exports counted as fully typed omit public locked members or construction/runtime surfaces, contradicting FR-004 and the coverage manifest's exactness claim.",
+      "evidence": [
+        "Locked DeviceSource at node_modules/@babylonjs/core/DeviceInput/InputDevices/deviceSource.d.ts:13-39 has a public constructor, but src/BabylonjsBindings/M2FiniteDependentMaps.fs:52-67 exposes only an interface shape and provides neither DeviceSourceStatic nor a runtime import; nevertheless coverage-and-drift.json:4351-4361 classifies the class as typed with every upstream member preserved exactly.",
+        "Locked FlowGraphJsonPointerParserBlock at node_modules/@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure.d.ts:34-76 includes generateAnimationsFunction, templateComponent, and a constructor; src/BabylonjsBindings/M2FiniteDependentMaps.fs:186-194 omits all three and does not expose a static/imported constructor. The other newly typed FlowGraph block classes likewise omit constructors and base-class members such as FlowGraphSwitchBlock.serialize declared at node_modules/@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSwitchBlock.pure.d.ts:55-78.",
+        "FR-004 in work/004-m2-finite-dependent-maps/spec.md:68 requires the six downstream XR/VR classes to retain exact members. Yet WebXRExperienceHelper omits enterXRAsync and spectator methods present at node_modules/@babylonjs/core/XR/webXRExperienceHelper.d.ts:76-101; WebXRDefaultExperience omits renderTarget present at node_modules/@babylonjs/core/XR/webXRDefaultExperience.d.ts:105-133; and HandConstraintBehavior omits handedness, lerpTime, name, enable, disable, and init present at node_modules/@babylonjs/core/Behaviors/Meshes/handConstraintBehavior.d.ts:105-136.",
+        "The maintained M2 manifest generator at scripts/generate-m2-finite-dependent-maps.mjs:78-83 validates only token presence and overload counts, not locked public-member equality, so coverage can advance to 4,279 while these class shapes remain partial."
+      ],
+      "disposition": "follow-up",
+      "resolution_evidence": [
+        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must reconcile every one of the 27 promoted exports against its locked public declaration, expose required runtime/static surfaces, and add a declaration-linked structural check before the coverage promotion is truthful."
+      ]
+    },
+    {
+      "id": "M2-003",
+      "severity": "major",
+      "summary": "The negative and boundary matrix does not establish the required correlations across all Device, FlowGraph, and WebXR specializations.",
+      "evidence": [
+        "FR-005 at work/004-m2-finite-dependent-maps/spec.md:69 requires negative fixtures for mismatched inputs, options, results, and specializations; the required test matrix at docs/2026-08-31T072958Z-missing-exports-design-roadmap.md:336,346 requires mismatch rejection rather than availability alone.",
+        "scripts/check-m2-negative-fixtures.mjs:4-11 runs only three fixtures. tests/negative/device-mismatch/Program.fs tests one keyboard/pointer input mismatch, tests/negative/flow-mismatch/Program.fs tests one asset result mismatch, and tests/negative/xr-mismatch/Program.fs tests one anchor/hit-options mismatch. There is no negative DeviceSourceEvent case, no FlowGraph property/parser/switch specialization case, no direct Resolve alias case, and no WebXR result mismatch case.",
+        "Positive coverage is also shallow: tests/BabylonjsBindings.CompileTests/Program.fs:108-119 calls getInput for only Keyboard, Mouse, and DualSense; lines 128-133 merely assign default values for the FlowGraph block/switch types; and lines 161-164 exercise enableFeature options for only 2 of 22 WebXR rows.",
+        "Independent execution of `npm run test:m2:trx` passed all 13 aggregate checks at d5f16acf705797523d5c7ee16ad0a589d8dcc082, demonstrating that the current green receipt does not detect these missing negative/boundary cases."
+      ],
+      "disposition": "follow-up",
+      "resolution_evidence": [
+        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must add isolated expected-failure coverage for every required correlation category and meaningful positive calls for all rows/specializations."
+      ]
+    },
+    {
+      "id": "M2-004",
+      "severity": "major",
+      "summary": "The browser and clean-consumer receipts do not perform the binding/package Chromium proof claimed by AC-004, AC-005, AC-007, and evidence.yml.",
+      "evidence": [
+        "runtime/browser/m2-xr.html:11 directly imports Babylon.js from ../../node_modules and never loads Fable-emitted BabylonjsBindings code or a packed consumer; its assertions therefore prove the upstream WebXRFeatureName registry and a navigator.xr stub, not the maintained binding's emitted XR calls/imports.",
+        "scripts/test-m2-clean-consumer.mjs:24-53 creates, Fable-compiles, and executes a temporary consumer only under Node. It never creates a browser page or invokes Chromium, although AC-007 and FR-007 at work/004-m2-finite-dependent-maps/spec.md:53,71 require clean-consumer Chromium proof.",
+        "reports/m2-test-matrix.json records both `Chromium deterministic WebXR stubs` and `clean packed Fable consumer` as pass, while work/004-m2-finite-dependent-maps/evidence.yml:187-210 marks FR-007 pass from the aggregate receipt; neither artifact discloses that the Chromium run bypasses the binding and is separate from the packed consumer.",
+        "Independent `npm run test:m2:trx` completed successfully at d5f16acf705797523d5c7ee16ad0a589d8dcc082, confirming the evidence pipeline accepts this split, non-binding browser coverage."
+      ],
+      "disposition": "follow-up",
+      "resolution_evidence": [
+        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must drive Chromium through Fable-emitted maintained bindings from the clean packed consumer (or narrow the acceptance/evidence claims before review) and bind the receipt to that observed run."
+      ]
+    }
+  ],
+  "confirmation": {
+    "reviewed_commit": "d5f16acf705797523d5c7ee16ad0a589d8dcc082",
+    "verdict": "changes-required",
+    "unresolved_blocker_major": [
+      "M2-001",
+      "M2-002",
+      "M2-003",
+      "M2-004"
+    ]
+  },
+  "human_escalation": null,
+  "game_functionality": false,
+  "player_journeys": [],
+  "uncovered_functionality": [],
+  "entry_point_not_test_ownable": false,
+  "entry_point_not_test_ownable_reason": null
+}

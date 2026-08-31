@@ -81,6 +81,15 @@ if ((maintained.match(/abstract enableFeature:/g) ?? []).length !== 22 || (maint
 for (const token of [...device.flatMap(row => row.slice(1)), ...flow.flatMap(row => row.slice(1)), ...xr.flatMap(row => row.slice(2))]) {
   if (token !== "undefined" && !maintained.includes(token)) throw new Error(`maintained projection is missing ${token}`);
 }
+for (const [, , discriminator, options, result] of xr) {
+  const suffix = discriminator.slice(2);
+  const projectedOptions = options === "undefined" ? "unit" : options;
+  if (!maintained.includes(`type ResolveWebXRFeature${suffix} = ${result}`)) throw new Error(`missing exact WebXR result singleton ${discriminator}`);
+  if (!maintained.includes(`type ResolveWebXRFeatureOptions${suffix} = ${projectedOptions}`)) throw new Error(`missing exact WebXR options singleton ${discriminator}`);
+}
+for (const runtimeImport of ["DeviceSource", "FlowGraphGetAssetBlock", "FlowGraphGetPropertyBlock", "FlowGraphSetPropertyBlock", "FlowGraphJsonPointerParserBlock", "FlowGraphSwitchBlock"]) {
+  if (!maintained.includes(`let ${runtimeImport}:`)) throw new Error(`missing runtime import ${runtimeImport}`);
+}
 
 const report = {
   schemaVersion: 1,

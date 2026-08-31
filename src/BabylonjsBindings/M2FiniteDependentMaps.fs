@@ -67,6 +67,20 @@ module FiniteDependentMaps =
     type DeviceSourceType = U8<GenericDeviceSource, KeyboardDeviceSource, MouseDeviceSource, TouchDeviceSource, DualShockDeviceSource, XboxDeviceSource, SwitchDeviceSource, DualSenseDeviceSource>
 
     [<AllowNullLiteral>]
+    type DeviceSourceStatic =
+        [<EmitConstructor>] abstract Create: deviceInputSystem: IDeviceInputSystem * deviceType: DeviceTypeGeneric * ?deviceSlot: float -> GenericDeviceSource
+        [<EmitConstructor>] abstract Create: deviceInputSystem: IDeviceInputSystem * deviceType: DeviceTypeKeyboard * ?deviceSlot: float -> KeyboardDeviceSource
+        [<EmitConstructor>] abstract Create: deviceInputSystem: IDeviceInputSystem * deviceType: DeviceTypeMouse * ?deviceSlot: float -> MouseDeviceSource
+        [<EmitConstructor>] abstract Create: deviceInputSystem: IDeviceInputSystem * deviceType: DeviceTypeTouch * ?deviceSlot: float -> TouchDeviceSource
+        [<EmitConstructor>] abstract Create: deviceInputSystem: IDeviceInputSystem * deviceType: DeviceTypeDualShock * ?deviceSlot: float -> DualShockDeviceSource
+        [<EmitConstructor>] abstract Create: deviceInputSystem: IDeviceInputSystem * deviceType: DeviceTypeXbox * ?deviceSlot: float -> XboxDeviceSource
+        [<EmitConstructor>] abstract Create: deviceInputSystem: IDeviceInputSystem * deviceType: DeviceTypeSwitch * ?deviceSlot: float -> SwitchDeviceSource
+        [<EmitConstructor>] abstract Create: deviceInputSystem: IDeviceInputSystem * deviceType: DeviceTypeDualSense * ?deviceSlot: float -> DualSenseDeviceSource
+
+    [<Import("DeviceSource", "@babylonjs/core/DeviceInput/InputDevices/deviceSource.js")>]
+    let DeviceSource: DeviceSourceStatic = jsNative
+
+    [<AllowNullLiteral>]
     type IObservableManager =
         abstract onDeviceConnectedObservable: Observable<DeviceSourceType> with get
         abstract onDeviceDisconnectedObservable: Observable<DeviceSourceType> with get
@@ -146,12 +160,25 @@ module FiniteDependentMaps =
 
     [<AllowNullLiteral>]
     type FlowGraphGetAssetBlock<'Discriminator, 'Asset> =
+        inherit FlowGraphBlock
         abstract config: IFlowGraphGetAssetBlockConfiguration<'Discriminator> with get, set
         abstract value: FlowGraphDataConnection<'Asset option> with get
         abstract ``type``: FlowGraphDataConnection<'Discriminator> with get
         abstract index: FlowGraphDataConnection<TypeAliases.FlowGraphNumber> with get
         abstract _updateOutputs: context: FlowGraphContext -> unit
         abstract getClassName: unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphGetAssetBlockStatic =
+        [<EmitConstructor>] abstract Create: config: IFlowGraphGetAssetBlockConfiguration<FlowGraphAnimationAsset> -> FlowGraphGetAssetBlock<FlowGraphAnimationAsset, Animation>
+        [<EmitConstructor>] abstract Create: config: IFlowGraphGetAssetBlockConfiguration<FlowGraphAnimationGroupAsset> -> FlowGraphGetAssetBlock<FlowGraphAnimationGroupAsset, AnimationGroup>
+        [<EmitConstructor>] abstract Create: config: IFlowGraphGetAssetBlockConfiguration<FlowGraphMeshAsset> -> FlowGraphGetAssetBlock<FlowGraphMeshAsset, Mesh>
+        [<EmitConstructor>] abstract Create: config: IFlowGraphGetAssetBlockConfiguration<FlowGraphMaterialAsset> -> FlowGraphGetAssetBlock<FlowGraphMaterialAsset, Material>
+        [<EmitConstructor>] abstract Create: config: IFlowGraphGetAssetBlockConfiguration<FlowGraphCameraAsset> -> FlowGraphGetAssetBlock<FlowGraphCameraAsset, Camera>
+        [<EmitConstructor>] abstract Create: config: IFlowGraphGetAssetBlockConfiguration<FlowGraphLightAsset> -> FlowGraphGetAssetBlock<FlowGraphLightAsset, Light>
+
+    [<Import("FlowGraphGetAssetBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetAssetBlock.pure.js")>]
+    let FlowGraphGetAssetBlock: FlowGraphGetAssetBlockStatic = jsNative
 
     [<AllowNullLiteral>]
     type IFlowGraphGetPropertyBlockConfiguration<'Asset> =
@@ -162,6 +189,7 @@ module FiniteDependentMaps =
 
     [<AllowNullLiteral>]
     type FlowGraphGetPropertyBlock<'Property, 'Asset> =
+        inherit FlowGraphCachedOperationBlock<'Property option>
         abstract config: IFlowGraphGetPropertyBlockConfiguration<'Asset> with get, set
         abstract ``object``: FlowGraphDataConnection<'Asset> with get
         abstract propertyName: FlowGraphDataConnection<string> with get
@@ -170,41 +198,79 @@ module FiniteDependentMaps =
         abstract getClassName: unit -> string
 
     [<AllowNullLiteral>]
+    type FlowGraphGetPropertyBlockStatic =
+        [<EmitConstructor>] abstract Create<'Property, 'Asset>: config: IFlowGraphGetPropertyBlockConfiguration<'Asset> -> FlowGraphGetPropertyBlock<'Property, 'Asset>
+
+    [<Import("FlowGraphGetPropertyBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure.js")>]
+    let FlowGraphGetPropertyBlock: FlowGraphGetPropertyBlockStatic = jsNative
+
+    [<AllowNullLiteral>]
     type IFlowGraphSetPropertyBlockConfiguration<'Asset> =
+        inherit IFlowGraphBlockConfiguration
         abstract propertyName: string option with get, set
         abstract target: 'Asset option with get, set
 
     [<AllowNullLiteral>]
     type FlowGraphSetPropertyBlock<'Property, 'Asset> =
+        inherit FlowGraphExecutionBlockWithOutSignal
         abstract config: IFlowGraphSetPropertyBlockConfiguration<'Asset> with get, set
         abstract value: FlowGraphDataConnection<'Property> with get
         abstract ``object``: FlowGraphDataConnection<'Asset> with get
         abstract propertyName: FlowGraphDataConnection<string> with get
         abstract customSetFunction: FlowGraphDataConnection<System.Action<'Asset, string, 'Property, FlowGraphContext>> with get
+        abstract _execute: context: FlowGraphContext * callingSignal: FlowGraphSignalConnection -> unit
         abstract getClassName: unit -> string
 
     [<AllowNullLiteral>]
+    type FlowGraphSetPropertyBlockStatic =
+        [<EmitConstructor>] abstract Create<'Property, 'Asset>: config: IFlowGraphSetPropertyBlockConfiguration<'Asset> -> FlowGraphSetPropertyBlock<'Property, 'Asset>
+
+    [<Import("FlowGraphSetPropertyBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure.js")>]
+    let FlowGraphSetPropertyBlock: FlowGraphSetPropertyBlockStatic = jsNative
+
+    [<AllowNullLiteral>]
     type FlowGraphJsonPointerParserBlock<'Property, 'Asset> =
+        inherit FlowGraphCachedOperationBlock<'Property>
         abstract config: IFlowGraphJsonPointerParserBlockConfiguration with get, set
         abstract ``object``: FlowGraphDataConnection<'Asset> with get
         abstract propertyName: FlowGraphDataConnection<string> with get
         abstract setterFunction: FlowGraphDataConnection<System.Action<'Asset, string, 'Property, FlowGraphContext>> with get
         abstract getterFunction: FlowGraphDataConnection<System.Func<'Asset, string, FlowGraphContext, 'Property option>> with get
+        abstract generateAnimationsFunction: FlowGraphDataConnection<System.Func<System.Func<ResizeArray<obj>, float, EasingFunction option, ResizeArray<Animation>>>> with get
+        abstract templateComponent: FlowGraphPathConverterComponent with get
         abstract _doOperation: context: FlowGraphContext -> 'Property
         abstract getClassName: unit -> string
 
     [<AllowNullLiteral>]
+    type FlowGraphJsonPointerParserBlockStatic =
+        [<EmitConstructor>] abstract Create<'Property, 'Asset>: config: IFlowGraphJsonPointerParserBlockConfiguration -> FlowGraphJsonPointerParserBlock<'Property, 'Asset>
+
+    [<Import("FlowGraphJsonPointerParserBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure.js")>]
+    let FlowGraphJsonPointerParserBlock: FlowGraphJsonPointerParserBlockStatic = jsNative
+
+    [<AllowNullLiteral>]
     type FlowGraphSwitchBlock<'Number> =
+        inherit FlowGraphExecutionBlock
         abstract config: IFlowGraphSwitchBlockConfiguration<'Number> with get, set
         abstract ``case``: FlowGraphDataConnection<'Number> with get
         abstract ``default``: FlowGraphSignalConnection with get
+        abstract _execute: context: FlowGraphContext * callingSignal: FlowGraphSignalConnection -> unit
         abstract addCase: newCase: 'Number -> unit
         abstract removeCase: caseToRemove: 'Number -> unit
         abstract _getOutputFlowForCase: caseValue: 'Number -> FlowGraphSignalConnection option
         abstract getClassName: unit -> string
+        abstract serialize: ?serializationObject: obj -> unit
 
     type FlowGraphNumberSwitchBlock = FlowGraphSwitchBlock<float>
     type FlowGraphIntegerSwitchBlock = FlowGraphSwitchBlock<FlowGraphInteger>
+
+    [<AllowNullLiteral>]
+    type FlowGraphSwitchBlockStatic =
+        [<EmitConstructor>] abstract Create: config: IFlowGraphSwitchBlockConfiguration<float> -> FlowGraphNumberSwitchBlock
+        [<EmitConstructor>] abstract Create: config: IFlowGraphSwitchBlockConfiguration<FlowGraphInteger> -> FlowGraphIntegerSwitchBlock
+
+    [<Import("FlowGraphSwitchBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSwitchBlock.pure.js")>]
+    let FlowGraphSwitchBlock: FlowGraphSwitchBlockStatic = jsNative
 
     [<StringEnum; RequireQualifiedAccess>] type XRAnchorSystem = | [<CompiledName("xr-anchor-system")>] Value
     [<StringEnum; RequireQualifiedAccess>] type XRBackgroundRemover = | [<CompiledName("xr-background-remover")>] Value
@@ -281,8 +347,58 @@ module FiniteDependentMaps =
         [<Emit("$0['xr-raw-camera-access']")>] abstract RawCameraAccess: IWebXRRawCameraAccessOptions with get
         [<Emit("$0['xr-body-tracking']")>] abstract BodyTracking: IWebXRBodyTrackingOptions with get
 
-    type ResolveWebXRFeature<'Feature> = 'Feature
-    type ResolveWebXRFeatureOptions<'Options> = 'Options
+    /// Finite result projection of the locked IWebXRFeatureNameTypeMap.
+    type ResolveWebXRFeature = U8<WebXRAnchorSystem, WebXRBackgroundRemover, WebXRHitTest, WebXRMeshDetector, WebXRControllerPhysics, WebXRPlaneDetector, WebXRControllerPointerSelection, U8<WebXRMotionControllerTeleportation, WebXRFeaturePointSystem, WebXRHandTracking, WebXRImageTracking, WebXRNearInteraction, WebXRDomOverlay, WebXRControllerMovement, U8<WebXRLightEstimation, WebXREyeTracking, WebXRWalkingLocomotion, WebXRLayers, WebXRDepthSensing, WebXRSpaceWarp, WebXRRawCameraAccess, WebXRBodyTracking>>>
+
+    /// Finite options projection of the locked IWebXRFeatureNameOptionsMap.
+    type ResolveWebXRFeatureOptions = U8<IWebXRAnchorSystemOptions, IWebXRBackgroundRemoverOptions, IWebXRHitTestOptions, IWebXRMeshDetectorOptions, IWebXRControllerPhysicsOptions, IWebXRPlaneDetectorOptions, IWebXRControllerPointerSelectionOptions, U8<IWebXRTeleportationOptions, unit, IWebXRHandTrackingOptions, IWebXRImageTrackingOptions, IWebXRNearInteractionOptions, IWebXRDomOverlayOptions, IWebXRControllerMovementOptions, U8<IWebXRLightEstimationOptions, unit, IWebXRWalkingLocomotionOptions, IWebXRLayersOptions, IWebXRDepthSensingOptions, unit, IWebXRRawCameraAccessOptions, IWebXRBodyTrackingOptions>>>
+
+    // Singleton views preserve the feature -> options -> result correlation at call sites.
+    type ResolveWebXRFeatureAnchorSystem = WebXRAnchorSystem
+    type ResolveWebXRFeatureBackgroundRemover = WebXRBackgroundRemover
+    type ResolveWebXRFeatureHitTest = WebXRHitTest
+    type ResolveWebXRFeatureMeshDetection = WebXRMeshDetector
+    type ResolveWebXRFeaturePhysicsController = WebXRControllerPhysics
+    type ResolveWebXRFeaturePlaneDetection = WebXRPlaneDetector
+    type ResolveWebXRFeaturePointerSelection = WebXRControllerPointerSelection
+    type ResolveWebXRFeatureTeleportation = WebXRMotionControllerTeleportation
+    type ResolveWebXRFeatureFeaturePoints = WebXRFeaturePointSystem
+    type ResolveWebXRFeatureHandTracking = WebXRHandTracking
+    type ResolveWebXRFeatureImageTracking = WebXRImageTracking
+    type ResolveWebXRFeatureNearInteraction = WebXRNearInteraction
+    type ResolveWebXRFeatureDomOverlay = WebXRDomOverlay
+    type ResolveWebXRFeatureMovement = WebXRControllerMovement
+    type ResolveWebXRFeatureLightEstimation = WebXRLightEstimation
+    type ResolveWebXRFeatureEyeTracking = WebXREyeTracking
+    type ResolveWebXRFeatureWalkingLocomotion = WebXRWalkingLocomotion
+    type ResolveWebXRFeatureLayers = WebXRLayers
+    type ResolveWebXRFeatureDepthSensing = WebXRDepthSensing
+    type ResolveWebXRFeatureSpaceWarp = WebXRSpaceWarp
+    type ResolveWebXRFeatureRawCameraAccess = WebXRRawCameraAccess
+    type ResolveWebXRFeatureBodyTracking = WebXRBodyTracking
+
+    type ResolveWebXRFeatureOptionsAnchorSystem = IWebXRAnchorSystemOptions
+    type ResolveWebXRFeatureOptionsBackgroundRemover = IWebXRBackgroundRemoverOptions
+    type ResolveWebXRFeatureOptionsHitTest = IWebXRHitTestOptions
+    type ResolveWebXRFeatureOptionsMeshDetection = IWebXRMeshDetectorOptions
+    type ResolveWebXRFeatureOptionsPhysicsController = IWebXRControllerPhysicsOptions
+    type ResolveWebXRFeatureOptionsPlaneDetection = IWebXRPlaneDetectorOptions
+    type ResolveWebXRFeatureOptionsPointerSelection = IWebXRControllerPointerSelectionOptions
+    type ResolveWebXRFeatureOptionsTeleportation = IWebXRTeleportationOptions
+    type ResolveWebXRFeatureOptionsFeaturePoints = unit
+    type ResolveWebXRFeatureOptionsHandTracking = IWebXRHandTrackingOptions
+    type ResolveWebXRFeatureOptionsImageTracking = IWebXRImageTrackingOptions
+    type ResolveWebXRFeatureOptionsNearInteraction = IWebXRNearInteractionOptions
+    type ResolveWebXRFeatureOptionsDomOverlay = IWebXRDomOverlayOptions
+    type ResolveWebXRFeatureOptionsMovement = IWebXRControllerMovementOptions
+    type ResolveWebXRFeatureOptionsLightEstimation = IWebXRLightEstimationOptions
+    type ResolveWebXRFeatureOptionsEyeTracking = unit
+    type ResolveWebXRFeatureOptionsWalkingLocomotion = IWebXRWalkingLocomotionOptions
+    type ResolveWebXRFeatureOptionsLayers = IWebXRLayersOptions
+    type ResolveWebXRFeatureOptionsDepthSensing = IWebXRDepthSensingOptions
+    type ResolveWebXRFeatureOptionsSpaceWarp = unit
+    type ResolveWebXRFeatureOptionsRawCameraAccess = IWebXRRawCameraAccessOptions
+    type ResolveWebXRFeatureOptionsBodyTracking = IWebXRBodyTrackingOptions
 
     [<AllowNullLiteral>]
     type WebXRFeaturesManager =
@@ -334,11 +450,18 @@ module FiniteDependentMaps =
         abstract detachFeature: featureName: string -> unit
         abstract disableFeature: featureName: U2<string, {| Name: string |}> -> bool
         abstract getEnabledFeatures: unit -> ResizeArray<string>
+        abstract _extendXRSessionInitObject: xrSessionInit: BrowserXRSessionInit -> JS.Promise<BrowserXRSessionInit>
         abstract dispose: unit -> unit
+
+    [<AllowNullLiteral>]
+    type WebXRFeatureConstructor =
+        [<Emit("$0($1...)")>] abstract Invoke: xrSessionManager: WebXRSessionManager * ?options: obj -> (unit -> IWebXRFeature)
 
     [<AllowNullLiteral>]
     type WebXRFeaturesManagerStatic =
         [<EmitConstructor>] abstract Create: xrSessionManager: WebXRSessionManager -> WebXRFeaturesManager
+        abstract AddWebXRFeature: featureName: string * constructorFunction: WebXRFeatureConstructor * ?version: float * ?stable: bool -> unit
+        abstract ConstructFeature: featureName: string * version: float option * xrSessionManager: WebXRSessionManager * ?options: obj -> (unit -> IWebXRFeature)
         abstract GetAvailableFeatures: unit -> ResizeArray<string>
         abstract GetAvailableVersions: featureName: string -> ResizeArray<string>
         abstract GetLatestVersionOfFeature: featureName: string -> float
@@ -348,6 +471,11 @@ module FiniteDependentMaps =
     let WebXRFeaturesManager: WebXRFeaturesManagerStatic = jsNative
 
     [<AllowNullLiteral>]
+    type WebXRSpectatorModeOption =
+        abstract fps: float option with get, set
+        abstract preferredCameraIndex: float option with get, set
+
+    [<AllowNullLiteral>]
     type WebXRExperienceHelper =
         abstract camera: WebXRCamera with get, set
         abstract featuresManager: WebXRFeaturesManager with get, set
@@ -355,7 +483,10 @@ module FiniteDependentMaps =
         abstract state: WebXRState with get, set
         abstract onInitialXRPoseSetObservable: Observable<WebXRCamera> with get, set
         abstract onStateChangedObservable: Observable<WebXRState> with get, set
+        abstract enterXRAsync: sessionMode: BrowserXRSessionMode * referenceSpaceType: BrowserXRReferenceSpaceType * ?renderTarget: WebXRRenderTarget<Browser.Types.WebGLRenderingContext, BrowserXRLayer> * ?sessionCreationOptions: BrowserXRSessionInit -> JS.Promise<WebXRSessionManager>
         abstract exitXRAsync: unit -> JS.Promise<unit>
+        abstract enableSpectatorMode: ?options: WebXRSpectatorModeOption -> unit
+        abstract disableSpecatatorMode: unit -> unit
         abstract dispose: unit -> unit
 
     [<AllowNullLiteral>]
@@ -368,6 +499,7 @@ module FiniteDependentMaps =
     [<AllowNullLiteral>]
     type WebXREnterExitUI =
         abstract options: WebXREnterExitUIOptions with get, set
+        abstract overlay: Browser.Types.HTMLDivElement with get
         abstract activeButtonChangedObservable: Observable<WebXREnterExitUIButton option> with get, set
         abstract setHelperAsync: helper: WebXRExperienceHelper * ?renderTarget: WebXRRenderTarget<Browser.Types.WebGLRenderingContext, BrowserXRLayer> -> JS.Promise<unit>
         abstract dispose: unit -> unit
@@ -386,6 +518,7 @@ module FiniteDependentMaps =
         abstract enterExitUI: WebXREnterExitUI with get, set
         abstract input: WebXRInput with get, set
         abstract pointerSelection: WebXRControllerPointerSelection with get, set
+        abstract renderTarget: WebXRRenderTarget<Browser.Types.WebGLRenderingContext, BrowserXRLayer> with get, set
         abstract teleportation: WebXRMotionControllerTeleportation with get, set
         abstract nearInteraction: WebXRNearInteraction with get, set
         abstract dispose: unit -> unit
@@ -400,14 +533,51 @@ module FiniteDependentMaps =
     [<AllowNullLiteral>]
     type VRExperienceHelper =
         abstract webVROptions: VRExperienceHelperOptions with get, set
+        abstract enableGazeEvenWhenNoPointerLock: bool with get, set
+        abstract exitVROnDoubleTap: bool with get, set
         abstract onEnteringVRObservable: Observable<VRExperienceHelper> with get, set
+        abstract onAfterEnteringVRObservable: Observable<OnAfterEnteringVRObservableEvent> with get, set
         abstract onExitingVRObservable: Observable<VRExperienceHelper> with get, set
+        abstract onEnteringVR: Observable<VRExperienceHelper> with get
+        abstract onExitingVR: Observable<VRExperienceHelper> with get
+        abstract onNewMeshSelected: Observable<AbstractMesh> with get, set
+        abstract onNewMeshPicked: Observable<PickingInfo> with get, set
+        abstract onBeforeCameraTeleport: Observable<Vector3> with get, set
+        abstract onAfterCameraTeleport: Observable<Vector3> with get, set
+        abstract onSelectedMeshUnselected: Observable<AbstractMesh> with get, set
+        abstract raySelectionPredicate: System.Func<AbstractMesh, bool> with get, set
+        abstract meshSelectionPredicate: System.Func<AbstractMesh, bool> with get, set
+        abstract teleportationEnabled: bool with get, set
+        abstract teleportationTarget: Mesh with get, set
+        abstract gazeTrackerMesh: Mesh with get, set
+        abstract updateGazeTrackerScale: bool with get, set
+        abstract updateGazeTrackerColor: bool with get, set
+        abstract updateControllerLaserColor: bool with get, set
+        abstract displayGaze: bool with get, set
+        abstract displayLaserPointer: bool with get, set
+        abstract deviceOrientationCamera: DeviceOrientationCamera option with get
+        abstract currentVRCamera: Camera option with get
+        abstract vrDeviceOrientationCamera: VRDeviceOrientationFreeCamera option with get
+        abstract vrButton: Browser.Types.HTMLButtonElement option with get
+        abstract requestPointerLockOnFullScreen: bool with get, set
         abstract xr: WebXRDefaultExperience with get, set
         abstract xrTestDone: bool with get, set
         abstract isInVRMode: bool with get
         abstract enterVR: unit -> unit
         abstract exitVR: unit -> unit
+        abstract position: Vector3 with get, set
+        abstract enableInteractions: unit -> unit
+        abstract addFloorMesh: floorMesh: Mesh -> unit
+        abstract removeFloorMesh: floorMesh: Mesh -> unit
+        abstract enableTeleportation: ?vrTeleportationOptions: VRTeleportationOptions -> unit
+        abstract teleportCamera: location: Vector3 -> unit
+        abstract setLaserColor: color: Color3 * ?pickedColor: Color3 -> unit
+        abstract setLaserLightingState: ?enabled: bool -> unit
+        abstract setGazeColor: color: Color3 * ?pickedColor: Color3 -> unit
+        abstract changeLaserColor: color: Color3 -> unit
+        abstract changeGazeColor: color: Color3 -> unit
         abstract dispose: unit -> unit
+        abstract getClassName: unit -> string
 
     [<AllowNullLiteral>]
     type VRExperienceHelperStatic =
@@ -420,6 +590,7 @@ module FiniteDependentMaps =
 
     [<AllowNullLiteral>]
     type HandConstraintBehavior =
+        inherit Behavior<TransformNode>
         abstract handConstraintVisibility: HandConstraintVisibility with get, set
         abstract palmUpStrictness: float with get, set
         abstract gazeProximityRadius: float with get, set
@@ -427,7 +598,13 @@ module FiniteDependentMaps =
         abstract targetZone: HandConstraintZone with get, set
         abstract zoneOrientationMode: HandConstraintOrientation with get, set
         abstract nodeOrientationMode: HandConstraintOrientation with get, set
+        abstract handedness: BrowserXRHandedness with get, set
+        abstract lerpTime: float with get, set
         abstract attachedNode: TransformNode option with get
+        abstract name: string with get
+        abstract enable: unit -> unit
+        abstract disable: unit -> unit
+        abstract init: unit -> unit
         abstract attach: node: TransformNode -> unit
         abstract detach: unit -> unit
         abstract linkToXRExperience: xr: U2<WebXRExperienceHelper, WebXRFeaturesManager> -> unit

@@ -1,4 +1,4 @@
-<!doctype html><meta charset="utf-8"><title>M2 deterministic WebXR smoke</title><output>running</output><script type="module">
+<!doctype html><meta charset="utf-8"><title>M2 deterministic WebXR smoke</title><script type="importmap">{"imports":{"@babylonjs/core/":"/node_modules/@babylonjs/core/","@babylonjs/loaders/":"/node_modules/@babylonjs/loaders/"}}</script><output>running</output><script type="module">
 const sessions = [];
 const xrStub = {
   async isSessionSupported(mode) { return mode === "immersive-vr" || mode === "immersive-ar"; },
@@ -8,6 +8,8 @@ const xrStub = {
   }
 };
 Object.defineProperty(navigator, "xr", { configurable: true, value: xrStub });
+// Load the Fable-emitted consumer first so Chromium proves the maintained binding imports.
+await import("../m2-dist/Program.js");
 const { WebXRFeatureName, WebXRFeaturesManager } = await import("../../node_modules/@babylonjs/core/XR/webXRFeaturesManager.js");
 const names = Object.values(WebXRFeatureName);
 if (new Set(names).size !== 22) throw new Error(`expected 22 WebXR feature names, got ${new Set(names).size}`);
