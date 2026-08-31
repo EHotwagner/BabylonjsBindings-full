@@ -1,0 +1,90 @@
+{
+  "schema_version": 3,
+  "cycle_id": "roadmap-missing-exports-m0-analysis-infrastructure",
+  "milestone": "M0 — analysis infrastructure",
+  "critic": "m0-independent-critic",
+  "initial_reviewed_commit": "2fc89ce400965cbadb281d69ce2aee677b422b99",
+  "scope": [
+    "requirements",
+    "diff",
+    "tests",
+    "architecture",
+    "roadmap-evidence"
+  ],
+  "initial_verdict": "changes-required",
+  "repair_rounds": 1,
+  "reviewed_commits": [
+    "2fc89ce400965cbadb281d69ce2aee677b422b99",
+    "528315802c35e77d413c3bb59be43f6daa0e1e99"
+  ],
+  "findings": [
+    {
+      "id": "M0-CRIT-001",
+      "severity": "major",
+      "summary": "The instantiation registry does not enforce deterministic entry ordering and its uniqueness rule prevents multiple closed-world instantiations of one TypeScript declaration.",
+      "evidence": [
+        "work/002-m0-analysis-infrastructure/spec.md:51,64 requires a deterministic registry for exact closed-world instantiations and deterministic ordering.",
+        "scripts/analysis-infrastructure-lib.mjs:32-46 checks duplicate declarationIdentity, duplicate fsharpSymbol, and expression normalization, but performs no ordering check.",
+        "Observable reproduction on 2fc89ce400965cbadb281d69ce2aee677b422b99: validateInstantiationEntries accepted an intentionally unsorted Add/Tuple entry array with [] diagnostics.",
+        "Observable reproduction on 2fc89ce400965cbadb281d69ce2aee677b422b99: two normalized Tuple instantiations with distinct expressions and F# symbols produced [\"duplicate declarationIdentity: @babylonjs/core|@babylonjs/core/types|Tuple\"].",
+        "docs/2026-08-31T072958Z-missing-exports-design-roadmap.md:projection mechanism 5 requires one recorded mapping for each normalized instantiation, so later milestones necessarily need multiple entries for declarations such as Tuple."
+      ],
+      "disposition": "resolved",
+      "resolution_evidence": [
+        "scripts/analysis-infrastructure-lib.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 keys uniqueness by declarationIdentity plus normalized typeScriptExpression and rejects non-increasing canonical key order.",
+        "scripts/test-analysis-infrastructure.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 adds passing coverage for two ordered Tuple instantiations and negative coverage for out-of-order and duplicate normalized instantiations.",
+        "Confirmation rerun: node --test scripts/test-analysis-infrastructure.mjs passed all 8 tests, including the repaired registry cases."
+      ]
+    },
+    {
+      "id": "M0-CRIT-002",
+      "severity": "major",
+      "summary": "Blocked-family rules are keyed only by export name, so the analyzer does not enforce the plan's exact package/module/export identities.",
+      "evidence": [
+        "work/002-m0-analysis-infrastructure/plan.md:29 requires the family registry to be keyed by exact package/module/export identity.",
+        "analysis/analysis-policy.json stores family exports as unqualified names, including a single PhysicsEngine name used to account for two distinct modules.",
+        "scripts/analysis-infrastructure-lib.mjs:78-103 selects a family with family.exports.includes(item.name); package and module are copied only after classification and never checked against policy.",
+        "Observable reproduction on 2fc89ce400965cbadb281d69ce2aee677b422b99: classifyBlockedExports classified evil|elsewhere|PhysicsEngine into the physics family with no diagnostics when the expected count was one. This permits a wrong-module same-name export to replace an intended identity while the count gate remains green.",
+        "scripts/test-analysis-infrastructure.mjs contains dependent-map and registry tests only; it has no classifier substitution, duplicate-identity, or wrong-module fixture."
+      ],
+      "disposition": "resolved",
+      "resolution_evidence": [
+        "analysis/analysis-policy.json at 528315802c35e77d413c3bb59be43f6daa0e1e99 lists all family members by exact package|module|export identity, including separate Physics v1 and v2 identities.",
+        "scripts/analysis-infrastructure-lib.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 matches identityOf(item), reports duplicate policy identities, and reports duplicate blocked identities.",
+        "scripts/test-analysis-infrastructure.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 adds wrong-module substitution and duplicate policy/blocked identity fixtures; the confirmation rerun passed both."
+      ]
+    },
+    {
+      "id": "M0-CRIT-003",
+      "severity": "major",
+      "summary": "The committed evidence does not execute the required two-generation byte comparison or the planned maintained binding build/test, so the roadmap exit evidence overstates what was observed.",
+      "evidence": [
+        "work/002-m0-analysis-infrastructure/spec.md:26 and :55 require two analysis generations with byte-identical results.",
+        "work/002-m0-analysis-infrastructure/plan.md:38 additionally requires generate-twice comparison, analysis:check, coverage:check, binding build/test, and a maintained-API diff assertion.",
+        "scripts/run-analysis-tests.mjs:7-16 executes only the fixture test, one generate-analysis-infrastructure.mjs --check invocation, and one generate-coverage.mjs --check invocation.",
+        "reports/m0-analysis.trx records only those three checks, while work/002-m0-analysis-infrastructure/evidence.yml EV001 and EV008 describe byte-identical repeated generation and EV006 claims VO-001 satisfied.",
+        "Independent review reran node --test scripts/test-analysis-infrastructure.mjs, node scripts/generate-analysis-infrastructure.mjs --check, and node --max-old-space-size=8192 scripts/generate-coverage.mjs --check successfully, but those commands still do not constitute two independent generations or a binding build/test.",
+        "git diff --name-only b92fbe1191fc83aaf04f8121bca29ee5ea05a98c..2fc89ce400965cbadb281d69ce2aee677b422b99 over src/BabylonjsBindings/**, coverage-and-drift.json, declaration-lock.json, package-lock.json, *.fs, and *.fsproj returned no paths, which supports the no-maintained-API-change portion but not the omitted run obligations."
+      ],
+      "disposition": "resolved",
+      "resolution_evidence": [
+        "scripts/check-analysis-determinism.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 generates both reports into two isolated temporary directories and compares their bytes; the confirmation rerun printed that both isolated generations were byte-identical.",
+        "scripts/run-analysis-tests.mjs at 528315802c35e77d413c3bb59be43f6daa0e1e99 now includes 8 checks covering fixtures, double generation, report currency, coverage, locked restore, maintained build, runtime smoke, and protected-path diff.",
+        "origin/main resolved to b92fbe1191fc83aaf04f8121bca29ee5ea05a98c during confirmation, so the aggregate protected-path comparison targets the requested exact base in this worktree.",
+        "Confirmation independently passed the focused tests, double-generation comparison, analysis check, coverage check, locked restore and solution build with SDK 10.0.302, Node runtime smoke, and git diff --quiet b92fbe1191fc83aaf04f8121bca29ee5ea05a98c over src/BabylonjsBindings, coverage-and-drift.json, declaration-lock.json, and package-lock.json.",
+        "reports/m0-analysis.trx at the repaired head has SHA-256 72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b and records 8 passed checks; work/002-m0-analysis-infrastructure/evidence.yml references that exact digest and count."
+      ]
+    }
+  ],
+  "confirmation": {
+    "reviewed_commit": "528315802c35e77d413c3bb59be43f6daa0e1e99",
+    "verdict": "pass",
+    "unresolved_blocker_major": []
+  },
+  "human_escalation": null,
+  "game_functionality": false,
+  "player_journeys": [],
+  "uncovered_functionality": [],
+  "entry_point_not_test_ownable": false,
+  "entry_point_not_test_ownable_reason": null
+}
