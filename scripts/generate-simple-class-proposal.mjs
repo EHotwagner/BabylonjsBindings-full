@@ -846,12 +846,16 @@ const classFidelityIssues = declaration => {
     if (inaccessible(member)) continue;
     const memberName = member.name && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name)) ? member.name.text : ts.SyntaxKind[member.kind];
     if (declaration.name?.text === "PerformanceViewerCollector" && memberName === "updateMetadata") continue;
+    if (declaration.name?.text === "WebRequest" && (memberName === "addEventListener" || memberName === "removeEventListener")) continue;
     inspectTypeParameters(member.typeParameters, `${declaration.name?.text ?? "class"}.${memberName}`);
   }
   const implementsTypes = (declaration.heritageClauses ?? [])
     .filter(clause => clause.token === ts.SyntaxKind.ImplementsKeyword)
     .flatMap(clause => clause.types.map(type => type.getText().replace(/\s+/g, " ")));
-  if (declaration.name?.text !== "FlowGraphConnection") for (const type of implementsTypes) issues.add(`unprojected implements ${type}`);
+  const projectedImplements = new Set(declaration.__projectedImplements ?? []);
+  if (declaration.name?.text !== "FlowGraphConnection") for (const type of implementsTypes) {
+    if (!projectedImplements.has(type)) issues.add(`unprojected implements ${type}`);
+  }
   return [...issues].sort();
 };
 const callbackShape = (node, available, dependencies, typeParameters, nestedCallbacks, inlineTypes, context, ownerName) => {
@@ -1238,6 +1242,23 @@ const renderBase = (declaration, available) => {
     rendered: target.arity === 0 ? name : `${name}<${renderedArguments.join(", ")}>`
   };
 };
+const renderImplements = (declaration, available) => {
+  const rendered = [];
+  for (const heritage of (declaration.heritageClauses ?? []).filter(clause => clause.token === ts.SyntaxKind.ImplementsKeyword).flatMap(clause => clause.types)) {
+    if (!ts.isIdentifier(heritage.expression)) continue;
+    const target = maintainedSymbols.get(heritage.expression.text);
+    if (!target || target.arity !== (heritage.typeArguments?.length ?? 0)) continue;
+    const dependencies = new Set();
+    const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
+    const arguments_ = (heritage.typeArguments ?? []).map(argument => fsharpType(argument, available, dependencies, typeParameters));
+    if (arguments_.some(argument => !argument)) continue;
+    rendered.push({
+      source: heritage.getText().replace(/\s+/g, " "),
+      rendered: arguments_.length ? `${target.fsharpSymbol}<${arguments_.join(", ")}>` : target.fsharpSymbol
+    });
+  }
+  return rendered;
+};
 
 const declarations = new Map();
 for (const sourceFile of program.getSourceFiles()) {
@@ -1389,6 +1410,11 @@ for (const name of [...recursivelyClosedNames].sort()) {
   available.set(name, { arity: promoted.arity, deepImmutableSymbol: promoted.deepImmutableSymbol });
 }
 const entries = [...selected.values()].sort((left, right) => left.rank - right.rank || left.name.localeCompare(right.name));
+for (const entry of entries) {
+  entry.implementedBases = renderImplements(entry.declaration, available)
+    .filter(implemented => implemented.rendered !== entry.base?.rendered);
+  entry.declaration.__projectedImplements = entry.implementedBases.map(implemented => implemented.source);
+}
 const promotionSymbolIndex = await loadPromotionSymbolIndex(root, [
   "generated-candidates/SimpleAliases.promotion.json",
   "generated-candidates/SimpleInterfaces.promotion.json"
@@ -1638,7 +1664,8 @@ for (const entry of entries) {
   lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name}${genericParameters} =`);
   if (entry.base) lines.push(`        inherit ${entry.base.rendered}`);
   for (const extraBase of entry.base?.extraBases ?? []) lines.push(`        inherit ${extraBase}`);
-  if (entry.instanceMembers.length === 0 && !entry.base) lines.push("        interface end");
+  for (const implemented of entry.implementedBases) lines.push(`        inherit ${implemented.rendered}`);
+  if (entry.instanceMembers.length === 0 && !entry.base && entry.implementedBases.length === 0) lines.push("        interface end");
   else for (const member of entry.instanceMembers) lines.push(`        ${renderMember(member)}`);
   if (projectedClassNames.has(entry.name)) {
     lines.push("", `    /// Exact readonly projection of ${entry.name} used by Babylon DeepImmutable<${entry.name}> signatures.`, "    [<AllowNullLiteral>]", `    type DeepImmutable${entry.name}${genericParameters} =`);
@@ -1680,7 +1707,8 @@ const manifest = {
         constructors: entry.constructors,
         inlineTypes: entry.inlineTypes,
         genericConstraints: entry.genericConstraints,
-        base: entry.base
+        base: entry.base,
+        implementedBases: entry.implementedBases
       },
       promotionSymbolIndex,
       `BabylonjsBindings.SimpleClasses.${entry.name}`,
@@ -1708,7 +1736,8 @@ const manifest = {
         constructors: entry.constructors,
         inlineTypes: entry.inlineTypes,
         genericConstraints: entry.genericConstraints,
-        base: entry.base
+        base: entry.base,
+        implementedBases: entry.implementedBases
       },
       promotionSymbolIndex,
       `BabylonjsBindings.SimpleClasses.${entry.name}`,

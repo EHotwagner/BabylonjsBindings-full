@@ -1232,6 +1232,7 @@ module SimpleClasses =
     /// @babylonjs/core/Actions/abstractActionManager
     [<AllowNullLiteral>]
     type AbstractActionManager =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``hoverCursor``: string with get, set
         abstract ``actions``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IAction> with get, set
         abstract ``isRecursive``: bool with get, set
@@ -1564,6 +1565,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.color.pure
     [<AllowNullLiteral>]
     type Color4 =
+        inherit BabylonjsBindings.SimpleInterfaces.IColor4Like
         abstract ``r``: float with get, set
         abstract ``g``: float with get, set
         abstract ``b``: float with get, set
@@ -2075,6 +2077,7 @@ module SimpleClasses =
     /// @babylonjs/core/Offline/database.pure
     [<AllowNullLiteral>]
     type Database =
+        inherit BabylonjsBindings.SimpleInterfaces.IOfflineProvider
         abstract ``open`` : ``successCallback``: System.Action * ``errorCallback``: System.Action -> unit
         abstract ``loadImage`` : ``url``: string * ``image``: Browser.Types.HTMLImageElement -> unit
         abstract ``loadFile`` : ``url``: string * ``sceneLoaded``: System.Action<obj> * ?``progressCallBack``: System.Action<obj> * ?``errorCallback``: System.Action * ?``useArrayBuffer``: bool -> unit
@@ -2164,6 +2167,7 @@ module SimpleClasses =
     /// @babylonjs/core/Loading/loadingScreen.pure
     [<AllowNullLiteral>]
     type DefaultLoadingScreen =
+        inherit BabylonjsBindings.SimpleInterfaces.ILoadingScreen
         abstract ``displayLoadingUI`` : unit -> unit
         abstract ``hideLoadingUI`` : unit -> unit
         abstract ``loadingUIText``: string with get, set
@@ -2222,6 +2226,7 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/Compression/dracoCodec
     [<AllowNullLiteral>]
     type DracoCodec =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``whenReadyAsync`` : unit -> JS.Promise<unit>
         abstract ``dispose`` : unit -> unit
 
@@ -2252,6 +2257,7 @@ module SimpleClasses =
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
     type EasingFunction =
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``setEasingMode`` : ``easingMode``: float -> unit
         abstract ``getEasingMode`` : unit -> float
         abstract ``easeInCore`` : ``gradient``: float -> float
@@ -2332,6 +2338,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/gradients
     [<AllowNullLiteral>]
     type FactorGradient =
+        inherit BabylonjsBindings.SimpleInterfaces.IValueGradient
         abstract ``gradient``: float with get, set
         abstract ``factor1``: float with get, set
         abstract ``factor2``: float option with get, set
@@ -2760,6 +2767,7 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/Compression/meshoptCompression
     [<AllowNullLiteral>]
     type MeshoptCompression =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``dispose`` : unit -> unit
         abstract ``decodeGltfBufferAsync`` : ``source``: JS.Uint8Array * ``count``: float * ``stride``: float * ``mode``: U3<StringLiteralafa7e559a55d, StringLiterala47bc963946f, StringLiterale21255ec54ba> * ?``filter``: string -> JS.Promise<JS.Uint8Array>
 
@@ -3364,6 +3372,7 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/meshSimplification.common
     [<AllowNullLiteral>]
     type SimplificationSettings =
+        inherit BabylonjsBindings.SimpleInterfaces.ISimplificationSettings
         abstract ``quality``: float with get, set
         abstract ``distance``: float with get, set
         abstract ``optimizeMesh``: bool option with get, set
@@ -3379,6 +3388,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.size
     [<AllowNullLiteral>]
     type Size =
+        inherit BabylonjsBindings.SimpleInterfaces.ISize
         abstract ``width``: float with get, set
         abstract ``height``: float with get, set
         abstract ``toString`` : unit -> string
@@ -3427,6 +3437,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/smartArray
     [<AllowNullLiteral>]
     type SmartArray<'T> =
+        inherit BabylonjsBindings.SimpleInterfaces.ISmartArrayLike<'T>
         abstract ``data``: ResizeArray<'T> with get, set
         abstract ``length``: float with get, set
         abstract ``push`` : ``value``: 'T -> unit
@@ -3462,6 +3473,7 @@ module SimpleClasses =
     /// @babylonjs/core/States/stencilState
     [<AllowNullLiteral>]
     type StencilState =
+        inherit BabylonjsBindings.SimpleInterfaces.IStencilState
         abstract ``reset`` : unit -> unit
         abstract ``func``: float with get, set
         abstract ``backFunc``: float with get, set
@@ -3595,6 +3607,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/ThinMaths/thinMath.matrix
     [<AllowNullLiteral>]
     type ThinMatrix =
+        inherit BabylonjsBindings.SimpleInterfaces.IMatrixLike
         abstract ``asArray`` : unit -> (float * float * float * float * float * float * float * float * float * float * float * float * float * float * float * float)
         abstract ``updateFlag``: float with get, set
 
@@ -3674,6 +3687,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.viewport
     [<AllowNullLiteral>]
     type Viewport =
+        inherit BabylonjsBindings.SimpleInterfaces.IViewportLike
         abstract ``x``: float with get, set
         abstract ``y``: float with get, set
         abstract ``width``: float with get, set
@@ -3704,6 +3718,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGL/webGL2ShaderProcessors
     [<AllowNullLiteral>]
     type WebGL2ShaderProcessor =
+        inherit BabylonjsBindings.SimpleInterfaces.IShaderProcessor
         abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
         abstract ``attributeProcessor`` : ``attribute``: string -> string
         abstract ``varyingCheck`` : ``varying``: string * ``_isFragment``: bool -> bool
@@ -3721,6 +3736,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGL/webGLHardwareTexture
     [<AllowNullLiteral>]
     type WebGLHardwareTexture =
+        inherit BabylonjsBindings.SimpleInterfaces.IHardwareTextureWrapper
         abstract ``memoryAllocated``: bool option with get, set
         abstract ``setUsage`` : unit -> unit
         abstract ``set`` : ``hardwareTexture``: Browser.Types.WebGLTexture -> unit
@@ -3762,6 +3778,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
     [<AllowNullLiteral>]
     type WebGPURenderItemBeginOcclusionQuery =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem
         abstract ``query``: float with get, set
         abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
         abstract ``clone`` : unit -> WebGPURenderItemBeginOcclusionQuery
@@ -3777,6 +3794,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
     [<AllowNullLiteral>]
     type WebGPURenderItemBlendColor =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem
         abstract ``color``: ResizeArray<float option> with get, set
         abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
         abstract ``clone`` : unit -> WebGPURenderItemBlendColor
@@ -3792,6 +3810,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
     [<AllowNullLiteral>]
     type WebGPURenderItemEndOcclusionQuery =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem
         abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
         abstract ``clone`` : unit -> WebGPURenderItemEndOcclusionQuery
 
@@ -3806,6 +3825,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
     [<AllowNullLiteral>]
     type WebGPURenderItemScissor =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem
         abstract ``x``: float with get, set
         abstract ``y``: float with get, set
         abstract ``w``: float with get, set
@@ -3824,6 +3844,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
     [<AllowNullLiteral>]
     type WebGPURenderItemStencilRef =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem
         abstract ``ref``: float with get, set
         abstract ``run`` : ``renderPass``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassEncoder -> unit
         abstract ``clone`` : unit -> WebGPURenderItemStencilRef
@@ -3839,6 +3860,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuBundleList
     [<AllowNullLiteral>]
     type WebGPURenderItemViewport =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem
         abstract ``x``: float with get, set
         abstract ``y``: float with get, set
         abstract ``w``: float with get, set
@@ -3898,6 +3920,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessingContext
     [<AllowNullLiteral>]
     type WebGPUShaderProcessingContext =
+        inherit BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext
         abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
         abstract ``uboNextBindingIndex``: float with get, set
         abstract ``freeGroupIndex``: float with get, set
@@ -3940,6 +3963,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuShaderProcessor
     [<AllowNullLiteral>]
     type WebGPUShaderProcessor =
+        inherit BabylonjsBindings.SimpleInterfaces.IShaderProcessor
         abstract ``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage with get, set
 
     [<AllowNullLiteral>]
@@ -3988,6 +4012,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/webRequest
     [<AllowNullLiteral>]
     type WebRequest =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebRequest
         abstract ``addEventListener`` : ``type``: XmlHttpRequestAbortEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
         abstract ``addEventListener`` : ``type``: XmlHttpRequestErrorEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
         abstract ``addEventListener`` : ``type``: XmlHttpRequestLoadEventType * ``listener``: System.Func<Browser.Types.ProgressEvent, obj> * ?``options``: U2<bool, BabylonjsBindings.SimpleInterfaces.BrowserAddEventListenerOptions> -> unit
@@ -4088,6 +4113,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/workerPool
     [<AllowNullLiteral>]
     type WorkerPool =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``dispose`` : unit -> unit
         abstract ``push`` : ``action``: System.Action<BabylonjsBindings.SimpleInterfaces.BrowserWorker, System.Action> -> unit
 
@@ -4133,6 +4159,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BackEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``amplitude``: float with get, set
         abstract ``easeInCore`` : ``gradient``: float -> float
 
@@ -4149,6 +4176,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BezierCurveEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``x1``: float with get, set
         abstract ``y1``: float with get, set
         abstract ``x2``: float with get, set
@@ -4168,6 +4196,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BounceEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``bounces``: float with get, set
         abstract ``bounciness``: float with get, set
         abstract ``easeInCore`` : ``gradient``: float -> float
@@ -4185,6 +4214,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CircleEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
@@ -4199,6 +4229,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.color.pure
     [<AllowNullLiteral>]
     type Color3 =
+        inherit BabylonjsBindings.SimpleInterfaces.IColor3Like
         abstract ``r``: float with get, set
         abstract ``g``: float with get, set
         abstract ``b``: float with get, set
@@ -4363,6 +4394,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/gradients
     [<AllowNullLiteral>]
     type ColorGradient =
+        inherit BabylonjsBindings.SimpleInterfaces.IValueGradient
         abstract ``gradient``: float with get, set
         abstract ``color1``: Color4 with get, set
         abstract ``color2``: Color4 option with get, set
@@ -4380,6 +4412,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CubicEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
@@ -4428,6 +4461,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ElasticEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``oscillations``: float with get, set
         abstract ``springiness``: float with get, set
         abstract ``easeInCore`` : ``gradient``: float -> float
@@ -4445,6 +4479,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ExponentialEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``exponent``: float with get, set
         abstract ``easeInCore`` : ``gradient``: float -> float
 
@@ -4512,6 +4547,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ImageProcessingConfigurationDefines =
         inherit MaterialDefines
+        inherit BabylonjsBindings.SimpleInterfaces.IImageProcessingConfigurationDefines
         abstract ``IMAGEPROCESSING``: bool with get, set
         abstract ``VIGNETTE``: bool with get, set
         abstract ``VIGNETTEBLENDMODEMULTIPLY``: bool with get, set
@@ -4795,6 +4831,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MotorEnabledJoint =
         inherit PhysicsJoint
+        inherit BabylonjsBindings.SimpleInterfaces.IMotorEnabledJoint
         abstract ``setMotor`` : ?``force``: float * ?``maxForce``: float -> unit
         abstract ``setLimit`` : ``upperLimit``: float * ?``lowerLimit``: float -> unit
 
@@ -4845,6 +4882,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/observable.pure
     [<AllowNullLiteral>]
     type Observer<'T> =
+        inherit BabylonjsBindings.SimpleInterfaces.IObserver
         abstract ``callback``: ObserverCallbackCallback<'T> with get, set
         abstract ``mask``: float with get, set
         abstract ``scope``: obj with get, set
@@ -4888,6 +4926,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type PowerEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``power``: float with get, set
         abstract ``easeInCore`` : ``gradient``: float -> float
 
@@ -4904,6 +4943,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type QuadraticEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
@@ -4919,6 +4959,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type QuarticEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
@@ -4934,6 +4975,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type QuinticEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
@@ -4979,6 +5021,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SineEase =
         inherit EasingFunction
+        inherit BabylonjsBindings.SimpleInterfaces.IEasingFunction
         abstract ``easeInCore`` : ``gradient``: float -> float
 
     [<AllowNullLiteral>]
@@ -5209,6 +5252,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/gradients
     [<AllowNullLiteral>]
     type Color3Gradient =
+        inherit BabylonjsBindings.SimpleInterfaces.IValueGradient
         abstract ``gradient``: float with get, set
         abstract ``color``: Color3 with get, set
 
@@ -5380,6 +5424,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/observable.pure
     [<AllowNullLiteral>]
     type Observable<'T> =
+        inherit BabylonjsBindings.SimpleInterfaces.IReadonlyObservable<'T>
         abstract ``notifyIfTriggered``: bool with get, set
         abstract ``_eventState``: EventState with get, set
         abstract ``add`` : ?``callback``: System.Action<'T, EventState> * ?``mask``: float * ?``insertFirst``: bool * ?``scope``: obj * ?``unregisterOnFirstCall``: bool -> Observer<'T> option
@@ -5783,6 +5828,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/timer
     [<AllowNullLiteral>]
     type AdvancedTimer<'T> =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``onEachCountObservable``: Observable<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>> with get, set
         abstract ``onTimerAbortedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>> with get, set
         abstract ``onTimerEndedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.ITimerData<'T>> with get, set
@@ -6031,6 +6077,7 @@ module SimpleClasses =
     /// @babylonjs/core/XR/motionController/webXRControllerComponent
     [<AllowNullLiteral>]
     type WebXRControllerComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``id``: string with get, set
         abstract ``type``: BabylonjsBindings.StringEnums.MotionControllerComponentType with get, set
         abstract ``onAxisValueChangedObservable``: Observable<InlineObject4b84b3d5395bObject> with get, set
@@ -6159,6 +6206,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Loaders/basisTextureLoader
     [<AllowNullLiteral>]
     type _BasisTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
         abstract ``supportCascades``: bool with get
         abstract ``loadCubeData`` : ``data``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``texture``: InternalTexture * ``createPolynomials``: bool * ``onLoad``: System.Action<obj option> option * ``onError``: System.Action<string option, obj option> option -> unit
         abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action, bool option> -> unit
@@ -6197,6 +6245,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Loaders/ddsTextureLoader
     [<AllowNullLiteral>]
     type _DDSTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
         abstract ``supportCascades``: bool with get
         abstract ``loadCubeData`` : ``imgs``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``texture``: InternalTexture * ``createPolynomials``: bool * ``onLoad``: System.Action<obj option> option -> unit
         abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action> -> unit
@@ -6212,6 +6261,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Loaders/envTextureLoader
     [<AllowNullLiteral>]
     type _ENVTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
         abstract ``supportCascades``: bool with get
         abstract ``loadCubeData`` : ``data``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``texture``: InternalTexture * ``createPolynomials``: bool * ``onLoad``: System.Action<obj option> option * ``onError``: System.Action<string option, obj option> option -> unit
         abstract ``loadData`` : unit -> unit
@@ -6227,6 +6277,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Loaders/exrTextureLoader
     [<AllowNullLiteral>]
     type _ExrTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
         abstract ``supportCascades``: bool with get
         abstract ``loadCubeData`` : ``_data``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``_texture``: InternalTexture * ``_createPolynomials``: bool * ``_onLoad``: System.Action<obj option> option * ``_onError``: System.Action<string option, obj option> option -> unit
         abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action, bool option> -> unit
@@ -6294,6 +6345,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Loaders/hdrTextureLoader
     [<AllowNullLiteral>]
     type _HDRTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
         abstract ``supportCascades``: bool with get
         abstract ``loadCubeData`` : unit -> unit
         abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action> -> unit
@@ -6309,6 +6361,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Loaders/iesTextureLoader
     [<AllowNullLiteral>]
     type _IESTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
         abstract ``supportCascades``: bool with get
         abstract ``loadCubeData`` : unit -> unit
         abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action> -> unit
@@ -6444,6 +6497,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Loaders/ktxTextureLoader
     [<AllowNullLiteral>]
     type _KTXTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
         abstract ``supportCascades``: bool with get
         abstract ``loadCubeData`` : ``data``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``texture``: InternalTexture * ``createPolynomials``: bool * ``onLoad``: System.Action<obj option> option -> unit
         abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action, bool> * ?``options``: obj -> unit
@@ -6591,6 +6645,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Loaders/tgaTextureLoader
     [<AllowNullLiteral>]
     type _TGATextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
         abstract ``supportCascades``: bool with get
         abstract ``loadCubeData`` : unit -> unit
         abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action> -> unit
@@ -6657,6 +6712,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type _WebAudioBus =
         inherit AudioBus
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode
         abstract ``engine``: _WebAudioEngine with get
         abstract ``_initAsync`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioBusOptions -> JS.Promise<unit>
         abstract ``dispose`` : unit -> unit
@@ -6745,6 +6801,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type _WebAudioMainBus =
         inherit MainAudioBus
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode
         abstract ``engine``: _WebAudioEngine with get
         abstract ``_initAsync`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIMainAudioBusOptions -> JS.Promise<unit>
         abstract ``dispose`` : unit -> unit
@@ -6765,6 +6822,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type _WebAudioMainOut =
         inherit _MainAudioOut
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioInNode
         abstract ``engine``: _WebAudioEngine with get
         abstract ``dispose`` : unit -> unit
         abstract ``getClassName`` : unit -> string
@@ -6807,6 +6865,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type _WebAudioStaticSound =
         inherit StaticSound
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode
         abstract ``_audioContext``: U2<BabylonjsBindings.SimpleInterfaces.BrowserAudioContext, BabylonjsBindings.SimpleInterfaces.BrowserOfflineAudioContext> with get, set
         abstract ``engine``: _WebAudioEngine with get
         abstract ``_initAsync`` : ``source``: U5<JS.ArrayBuffer, BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer, StaticSoundBuffer, string, ResizeArray<string>> * ``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundOptions -> JS.Promise<unit>
@@ -6854,6 +6913,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type _WebAudioStaticSoundInstance =
         inherit _StaticSoundInstance
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioOutNode
         abstract ``engine``: _WebAudioEngine with get
         abstract ``dispose`` : unit -> unit
         abstract ``getClassName`` : unit -> string
@@ -6880,6 +6940,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type _WebAudioStreamingSound =
         inherit StreamingSound
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode
         abstract ``_audioContext``: BabylonjsBindings.SimpleInterfaces.BrowserAudioContext with get, set
         abstract ``engine``: _WebAudioEngine with get
         abstract ``_source``: U3<Browser.Types.HTMLMediaElement, string, ResizeArray<string>> with get, set
@@ -6904,6 +6965,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type _WebAudioStreamingSoundInstance =
         inherit _StreamingSoundInstance
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioOutNode
         abstract ``engine``: _WebAudioEngine with get
         abstract ``dispose`` : unit -> unit
         abstract ``play`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundPlayOptions -> unit
@@ -6925,6 +6987,7 @@ module SimpleClasses =
     /// @babylonjs/core/assetContainer
     [<AllowNullLiteral>]
     type AbstractAssetContainer =
+        inherit BabylonjsBindings.SimpleInterfaces.IAssetContainer
         abstract ``rootNodes``: ResizeArray<Node> with get, set
         abstract ``cameras``: ResizeArray<Camera> with get, set
         abstract ``lights``: ResizeArray<Light> with get, set
@@ -7395,6 +7458,9 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type AbstractMesh =
         inherit TransformNode
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        inherit BabylonjsBindings.SimpleInterfaces.ICullable
+        inherit BabylonjsBindings.SimpleInterfaces.IGetSetVerticesData
         abstract ``_internalAbstractMeshDataInfo``: _InternalAbstractMeshDataInfo with get, set
         abstract ``_waitingMaterialId``: string option with get, set
         abstract ``_waitingMorphTargetManagerId``: float option with get, set
@@ -7908,6 +7974,7 @@ module SimpleClasses =
     /// @babylonjs/core/Actions/action.pure
     [<AllowNullLiteral>]
     type Action =
+        inherit BabylonjsBindings.SimpleInterfaces.IAction
         abstract ``triggerOptions``: obj with get, set
         abstract ``trigger``: float with get, set
         abstract ``_actionManager``: ActionManager with get, set
@@ -7937,6 +8004,7 @@ module SimpleClasses =
     /// @babylonjs/core/Actions/actionEvent
     [<AllowNullLiteral>]
     type ActionEvent =
+        inherit BabylonjsBindings.SimpleInterfaces.IActionEvent
         abstract ``source``: obj with get, set
         abstract ``pointerX``: float with get, set
         abstract ``pointerY``: float with get, set
@@ -8021,6 +8089,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type AggregatorBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
         abstract ``aggregation``: BabylonjsBindings.Enums.Aggregations with get, set
         abstract ``evaluateContext``: bool with get, set
         abstract ``getExecutionIndex`` : unit -> float
@@ -8122,6 +8191,7 @@ module SimpleClasses =
     /// @babylonjs/core/Physics/v1/Plugins/ammoJSPlugin
     [<AllowNullLiteral>]
     type AmmoJSPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin
         abstract ``bjsAMMO``: obj with get, set
         abstract ``world``: obj with get, set
         abstract ``name``: string with get, set
@@ -8477,6 +8547,7 @@ module SimpleClasses =
     /// @babylonjs/core/Animations/animationGroup.pure
     [<AllowNullLiteral>]
     type AnimationGroup =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``name``: string with get, set
         abstract ``_parentContainer``: BabylonjsBindings.SimpleInterfaces.IAssetContainer option with get, set
         abstract ``uniqueId``: float with get, set
@@ -8758,6 +8829,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/arcRotateCameraGamepadInput
     [<AllowNullLiteral>]
     type ArcRotateCameraGamepadInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<ArcRotateCamera>
         abstract ``camera``: ArcRotateCamera with get, set
         abstract ``gamepad``: Gamepad option with get, set
         abstract ``gamepadRotationSensibility``: float with get, set
@@ -8797,6 +8869,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/arcRotateCameraKeyboardMoveInput
     [<AllowNullLiteral>]
     type ArcRotateCameraKeyboardMoveInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<ArcRotateCamera>
         abstract ``camera``: ArcRotateCamera with get, set
         abstract ``keysUp``: ResizeArray<float> with get, set
         abstract ``keysDown``: ResizeArray<float> with get, set
@@ -8959,6 +9032,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/assetsManager
     [<AllowNullLiteral>]
     type AssetsProgressEvent =
+        inherit BabylonjsBindings.SimpleInterfaces.IAssetsProgressEvent
         abstract ``remainingCount``: float with get, set
         abstract ``totalCount``: float with get, set
         abstract ``task``: AbstractAssetTask with get, set
@@ -8974,6 +9048,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Meshes/attachToBoxBehavior
     [<AllowNullLiteral>]
     type AttachToBoxBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<Mesh>
         abstract ``name``: string with get, set
         abstract ``distanceAwayFromFace``: float with get, set
         abstract ``distanceAwayFromBottomOfFace``: float with get, set
@@ -9025,6 +9100,7 @@ module SimpleClasses =
     /// @babylonjs/core/Audio/audioEngine.pure
     [<AllowNullLiteral>]
     type AudioEngine =
+        inherit BabylonjsBindings.SimpleInterfaces.IAudioEngine
         abstract ``canUseWebAudio``: bool with get, set
         abstract ``WarnedWebAudioUnsupported``: bool with get, set
         abstract ``isMP3supported``: bool with get, set
@@ -9055,6 +9131,7 @@ module SimpleClasses =
     /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
     [<AllowNullLiteral>]
     type AudioEngineV2 =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``currentTime``: float with get
         abstract ``listener``: AbstractSpatialAudioListener with get
         abstract ``mainOut``: AbstractAudioNode with get
@@ -9102,6 +9179,7 @@ module SimpleClasses =
     /// @babylonjs/core/Audio/audioSceneComponent.pure
     [<AllowNullLiteral>]
     type AudioSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``audioPositioningRefreshRate``: float with get, set
@@ -9131,6 +9209,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Cameras/autoRotationBehavior
     [<AllowNullLiteral>]
     type AutoRotationBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<ArcRotateCamera>
         abstract ``targetAlpha``: float option with get, set
         abstract ``init`` : unit -> unit
         abstract ``attach`` : ``camera``: ArcRotateCamera -> unit
@@ -9192,6 +9271,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type AxisDragGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.IAxisDragGizmo
         abstract ``dragBehavior``: PointerDragBehavior with get, set
         abstract ``snapDistance``: float with get, set
         abstract ``onSnapObservable``: Observable<InlineObject245949b83ce1Object> with get, set
@@ -9216,6 +9296,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type AxisScaleGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.IAxisScaleGizmo
         abstract ``dragBehavior``: PointerDragBehavior with get, set
         abstract ``snapDistance``: float with get, set
         abstract ``onSnapObservable``: Observable<InlineObject245949b83ce1Object> with get, set
@@ -9312,6 +9393,7 @@ module SimpleClasses =
     /// @babylonjs/core/BakedVertexAnimation/bakedVertexAnimationManager
     [<AllowNullLiteral>]
     type BakedVertexAnimationManager =
+        inherit BabylonjsBindings.SimpleInterfaces.IBakedVertexAnimationManager
         abstract ``texture``: BaseTexture option with get, set
         abstract ``isEnabled``: bool with get, set
         abstract ``animationParameters``: Vector4 with get, set
@@ -9351,6 +9433,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/BaseCameraMouseWheelInput
     [<AllowNullLiteral>]
     type BaseCameraMouseWheelInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<Camera>
         abstract ``camera``: Camera with get, set
         abstract ``wheelPrecisionX``: float with get, set
         abstract ``wheelPrecisionY``: float with get, set
@@ -9372,6 +9455,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/BaseCameraPointersInput
     [<AllowNullLiteral>]
     type BaseCameraPointersInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<Camera>
         abstract ``camera``: Camera with get, set
         abstract ``buttons``: ResizeArray<float> with get, set
         abstract ``attachControl`` : ?``noPreventDefault``: bool -> unit
@@ -9417,6 +9501,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/baseParticleSystem.pure
     [<AllowNullLiteral>]
     type BaseParticleSystem =
+        inherit BabylonjsBindings.SimpleInterfaces.IClipPlanesHolder
         abstract ``animations``: ResizeArray<Animation> with get, set
         abstract ``uniqueId``: float with get, set
         abstract ``id``: string with get, set
@@ -9553,6 +9638,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Meshes/baseSixDofDragBehavior
     [<AllowNullLiteral>]
     type BaseSixDofDragBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<TransformNode>
         abstract ``draggableMeshes``: ResizeArray<AbstractMesh> option with get, set
         abstract ``zDragFactor``: float with get, set
         abstract ``currentDraggingPointerIds``: ResizeArray<float> with get, set
@@ -9582,6 +9668,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BaseTexture =
         inherit ThinTexture
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
         abstract ``uniqueId``: float with get, set
         abstract ``name``: string with get, set
         abstract ``displayName``: string with get, set
@@ -10100,6 +10187,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Cameras/bouncingBehavior
     [<AllowNullLiteral>]
     type BouncingBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<ArcRotateCamera>
         abstract ``transitionDuration``: float with get, set
         abstract ``lowerRadiusTransitionRange``: float with get, set
         abstract ``upperRadiusTransitionRange``: float with get, set
@@ -10142,6 +10230,7 @@ module SimpleClasses =
     /// @babylonjs/core/Culling/boundingBox
     [<AllowNullLiteral>]
     type BoundingBox =
+        inherit BabylonjsBindings.SimpleInterfaces.ICullable
         abstract ``vectors``: ResizeArray<Vector3> with get
         abstract ``center``: Vector3 with get
         abstract ``centerWorld``: Vector3 with get
@@ -10216,6 +10305,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BoundingBoxGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.IBoundingBoxGizmo
         abstract ``ignoreChildren``: bool with get, set
         abstract ``includeChildPredicate``: BoundingBoxGizmoIncludeChildPredicateCallback option with get, set
         abstract ``rotationSphereSize``: float with get, set
@@ -10263,6 +10353,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/boundingBoxRenderer.pure
     [<AllowNullLiteral>]
     type BoundingBoxRenderer =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``frontColor``: Color3 with get, set
@@ -10298,6 +10389,7 @@ module SimpleClasses =
     /// @babylonjs/core/Culling/boundingInfo
     [<AllowNullLiteral>]
     type BoundingInfo =
+        inherit BabylonjsBindings.SimpleInterfaces.ICullable
         abstract ``boundingBox``: BoundingBox with get
         abstract ``boundingSphere``: BoundingSphere with get
         abstract ``reConstruct`` : ``min``: DeepImmutableVector3 * ``max``: DeepImmutableVector3 * ?``worldMatrix``: DeepImmutableMatrix -> unit
@@ -10437,6 +10529,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/EmitterTypes/boxParticleEmitter
     [<AllowNullLiteral>]
     type BoxParticleEmitter =
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleEmitterType
         abstract ``direction1``: Vector3 with get, set
         abstract ``direction2``: Vector3 with get, set
         abstract ``minEmitBox``: Vector3 with get, set
@@ -10463,6 +10556,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type BoxShapeBlock =
         inherit NodeParticleBlock
+        inherit BabylonjsBindings.SimpleInterfaces.IShapeBlock
         abstract ``getClassName`` : unit -> string
         abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
         abstract ``particle``: NodeParticleConnectionPoint with get
@@ -10648,6 +10742,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CameraGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraGizmo
         abstract ``onClickedObservable``: Observable<Camera> with get, set
         abstract ``setCustomMesh`` : ``mesh``: Mesh -> unit
         abstract ``dispose`` : unit -> unit
@@ -10733,6 +10828,7 @@ module SimpleClasses =
     /// @babylonjs/core/Physics/v1/Plugins/cannonJSPlugin.pure
     [<AllowNullLiteral>]
     type CannonJSPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin
         abstract ``world``: obj with get, set
         abstract ``name``: string with get, set
         abstract ``BJSCANNON``: obj with get, set
@@ -11120,6 +11216,7 @@ module SimpleClasses =
     /// @babylonjs/core/Lights/Clustered/clusteredLightingSceneComponent.pure
     [<AllowNullLiteral>]
     type ClusteredLightingSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get, set
         abstract ``scene``: Scene with get, set
         abstract ``dispose`` : unit -> unit
@@ -11439,6 +11536,7 @@ module SimpleClasses =
     /// @babylonjs/core/Culling/Helper/computeShaderBoundingHelper.pure
     [<AllowNullLiteral>]
     type ComputeShaderBoundingHelper =
+        inherit BabylonjsBindings.SimpleInterfaces.IBoundingInfoHelperPlatform
         abstract ``processAsync`` : ``meshes``: U2<AbstractMesh, ResizeArray<AbstractMesh>> -> JS.Promise<unit>
         abstract ``registerMeshListAsync`` : ``meshes``: U2<AbstractMesh, ResizeArray<AbstractMesh>> -> JS.Promise<unit>
         abstract ``processMeshList`` : unit -> unit
@@ -11461,6 +11559,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/computeShaderParticleSystem.pure
     [<AllowNullLiteral>]
     type ComputeShaderParticleSystem =
+        inherit BabylonjsBindings.SimpleInterfaces.IGPUParticleSystemPlatform
         abstract ``alignDataInBuffer``: bool with get
         abstract ``contextLost`` : unit -> unit
         abstract ``isUpdateBufferCreated`` : unit -> bool
@@ -11577,6 +11676,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/EmitterTypes/coneParticleEmitter
     [<AllowNullLiteral>]
     type ConeParticleEmitter =
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleEmitterType
         abstract ``directionRandomizer``: float with get, set
         abstract ``radiusRange``: float with get, set
         abstract ``heightRange``: float with get, set
@@ -11605,6 +11705,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ConeShapeBlock =
         inherit NodeParticleBlock
+        inherit BabylonjsBindings.SimpleInterfaces.IShapeBlock
         abstract ``emitFromSpawnPointOnly``: bool with get, set
         abstract ``getClassName`` : unit -> string
         abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
@@ -11786,6 +11887,7 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/csg2
     [<AllowNullLiteral>]
     type CSG2 =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``subtract`` : ``csg``: CSG2 -> CSG2
         abstract ``intersect`` : ``csg``: CSG2 -> CSG2
         abstract ``add`` : ``csg``: CSG2 -> CSG2
@@ -11893,6 +11995,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CubeTextureAssetTask =
         inherit AbstractAssetTask
+        inherit BabylonjsBindings.SimpleInterfaces.ITextureAssetTask<CubeTexture>
         abstract ``name``: string with get, set
         abstract ``url``: string with get, set
         abstract ``extensionsOrOptions``: U2<ResizeArray<string>, BabylonjsBindings.SimpleInterfaces.ICubeTextureCreationOptions> option with get, set
@@ -12056,6 +12159,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/EmitterTypes/customParticleEmitter
     [<AllowNullLiteral>]
     type CustomParticleEmitter =
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleEmitterType
         abstract ``particlePositionGenerator``: CustomParticleEmitterParticlePositionGeneratorCallback with get, set
         abstract ``particleDestinationGenerator``: CustomParticleEmitterParticleDestinationGeneratorCallback with get, set
         abstract ``particleDirectionGenerator``: CustomParticleEmitterParticleDirectionGeneratorCallback with get, set
@@ -12100,6 +12204,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CustomShapeBlock =
         inherit NodeParticleBlock
+        inherit BabylonjsBindings.SimpleInterfaces.IShapeBlock
         abstract ``particlePositionGenerator``: System.Action<float, Particle option, Vector3> with get, set
         abstract ``particleDestinationGenerator``: System.Action<float, Particle option, Vector3> with get, set
         abstract ``particleDirectionGenerator``: System.Action<float, Particle option, Vector3> with get, set
@@ -12171,6 +12276,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/EmitterTypes/cylinderParticleEmitter
     [<AllowNullLiteral>]
     type CylinderParticleEmitter =
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleEmitterType
         abstract ``radius``: float with get, set
         abstract ``height``: float with get, set
         abstract ``radiusRange``: float with get, set
@@ -12197,6 +12303,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type CylinderShapeBlock =
         inherit NodeParticleBlock
+        inherit BabylonjsBindings.SimpleInterfaces.IShapeBlock
         abstract ``getClassName`` : unit -> string
         abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
         abstract ``particle``: NodeParticleConnectionPoint with get
@@ -12286,6 +12393,7 @@ module SimpleClasses =
     /// @babylonjs/core/Collisions/collisionCoordinator.pure
     [<AllowNullLiteral>]
     type DefaultCollisionCoordinator =
+        inherit BabylonjsBindings.SimpleInterfaces.ICollisionCoordinator
         abstract ``getNewPosition`` : ``position``: Vector3 * ``displacement``: Vector3 * ``collider``: Collider * ``maximumRetry``: float * ``excludedMesh``: AbstractMesh * ``onNewPosition``: System.Action<float, Vector3, AbstractMesh option> * ``collisionIndex``: float * ?``slideOnCollide``: bool -> Vector3
         abstract ``createCollider`` : unit -> Collider
         abstract ``init`` : ``scene``: Scene -> unit
@@ -12302,6 +12410,8 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type DefaultRenderingPipeline =
         inherit PostProcessRenderPipeline
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
         abstract ``ImageProcessingPostProcessId``: string with get
         abstract ``FxaaPostProcessId``: string with get
         abstract ``sharpen``: SharpenPostProcess with get, set
@@ -12420,6 +12530,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/depthPeelingSceneComponent.pure
     [<AllowNullLiteral>]
     type DepthPeelingSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -12488,6 +12599,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/depthRendererSceneComponent.pure
     [<AllowNullLiteral>]
     type DepthRendererSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -12899,6 +13011,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/edgesRenderer.pure
     [<AllowNullLiteral>]
     type EdgesRenderer =
+        inherit BabylonjsBindings.SimpleInterfaces.IEdgesRenderer
         abstract ``edgesWidthScalerForOrthographic``: float with get, set
         abstract ``edgesWidthScalerForPerspective``: float with get, set
         abstract ``isEnabled``: bool with get, set
@@ -12965,6 +13078,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/effect.pure
     [<AllowNullLiteral>]
     type Effect =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``name``: U2<BabylonjsBindings.ObjectTypes.IShaderPath, string> with get, set
         abstract ``defines``: string with get, set
         abstract ``onCompiled``: EffectOnCompiledCallback option with get, set
@@ -13089,6 +13203,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/effectFallbacks
     [<AllowNullLiteral>]
     type EffectFallbacks =
+        inherit BabylonjsBindings.SimpleInterfaces.IEffectFallbacks
         abstract ``unBindMesh`` : unit -> unit
         abstract ``addFallback`` : ``rank``: float * ``define``: string -> unit
         abstract ``addCPUSkinningFallback`` : ``rank``: float * ``mesh``: AbstractMesh -> unit
@@ -13162,6 +13277,7 @@ module SimpleClasses =
     /// @babylonjs/core/Layers/effectLayerSceneComponent.pure
     [<AllowNullLiteral>]
     type EffectLayerSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -13418,6 +13534,7 @@ module SimpleClasses =
     /// @babylonjs/core/Instrumentation/engineInstrumentation
     [<AllowNullLiteral>]
     type EngineInstrumentation =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``engine``: AbstractEngine with get, set
         abstract ``dispose`` : unit -> unit
         abstract ``gpuFrameTimeCounter``: PerfCounter with get
@@ -13560,6 +13677,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type EquiRectangularCubeTextureAssetTask =
         inherit AbstractAssetTask
+        inherit BabylonjsBindings.SimpleInterfaces.ITextureAssetTask<EquiRectangularCubeTexture>
         abstract ``name``: string with get, set
         abstract ``url``: string with get, set
         abstract ``size``: float with get, set
@@ -13682,6 +13800,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Meshes/fadeInOutBehavior
     [<AllowNullLiteral>]
     type FadeInOutBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<Mesh>
         abstract ``fadeInDelay``: float with get, set
         abstract ``fadeOutDelay``: float with get, set
         abstract ``fadeInTime``: float with get, set
@@ -15628,6 +15747,7 @@ module SimpleClasses =
     /// @babylonjs/core/FlowGraph/CustomTypes/flowGraphMatrix
     [<AllowNullLiteral>]
     type FlowGraphMatrix2D =
+        inherit BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrix<Vector2>
         abstract ``_m``: ResizeArray<float> with get, set
         abstract ``transformVector`` : ``v``: Vector2 -> Vector2
         abstract ``transformVectorToRef`` : ``v``: Vector2 * ``result``: Vector2 -> Vector2
@@ -15661,6 +15781,7 @@ module SimpleClasses =
     /// @babylonjs/core/FlowGraph/CustomTypes/flowGraphMatrix
     [<AllowNullLiteral>]
     type FlowGraphMatrix3D =
+        inherit BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrix<Vector3>
         abstract ``_m``: ResizeArray<float> with get, set
         abstract ``transformVector`` : ``v``: Vector3 -> Vector3
         abstract ``transformVectorToRef`` : ``v``: Vector3 * ``result``: Vector3 -> Vector3
@@ -16862,6 +16983,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/fluidRenderer/fluidRenderer.pure
     [<AllowNullLiteral>]
     type FluidRendererSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -17127,6 +17249,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/flyCameraKeyboardInput
     [<AllowNullLiteral>]
     type FlyCameraKeyboardInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FlyCamera>
         abstract ``camera``: FlyCamera with get, set
         abstract ``keysForward``: ResizeArray<float> with get, set
         abstract ``keysBackward``: ResizeArray<float> with get, set
@@ -17152,6 +17275,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/flyCameraMouseInput
     [<AllowNullLiteral>]
     type FlyCameraMouseInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FlyCamera>
         abstract ``camera``: FlyCamera with get, set
         abstract ``touchEnabled``: bool with get, set
         abstract ``buttons``: ResizeArray<float> with get, set
@@ -17200,6 +17324,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Meshes/followBehavior
     [<AllowNullLiteral>]
     type FollowBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<TransformNode>
         abstract ``attachedNode``: TransformNode option with get, set
         abstract ``interpolatePose``: bool with get, set
         abstract ``lerpTime``: float with get, set
@@ -17284,6 +17409,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/followCameraKeyboardMoveInput
     [<AllowNullLiteral>]
     type FollowCameraKeyboardMoveInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FollowCamera>
         abstract ``camera``: FollowCamera with get, set
         abstract ``keysHeightOffsetIncr``: ResizeArray<float> with get, set
         abstract ``keysHeightOffsetDecr``: ResizeArray<float> with get, set
@@ -17320,6 +17446,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/followCameraMouseWheelInput
     [<AllowNullLiteral>]
     type FollowCameraMouseWheelInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FollowCamera>
         abstract ``camera``: FollowCamera with get, set
         abstract ``axisControlRadius``: bool with get, set
         abstract ``axisControlHeight``: bool with get, set
@@ -17441,6 +17568,7 @@ module SimpleClasses =
     /// @babylonjs/core/FrameGraph/frameGraph
     [<AllowNullLiteral>]
     type FrameGraph =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``textureManager``: FrameGraphTextureManager with get
         abstract ``name``: string with get, set
         abstract ``uniqueId``: float with get
@@ -18289,6 +18417,7 @@ module SimpleClasses =
     /// @babylonjs/core/FrameGraph/Passes/pass
     [<AllowNullLiteral>]
     type FrameGraphPass<'T when 'T :> FrameGraphContext> =
+        inherit BabylonjsBindings.SimpleInterfaces.IFrameGraphPass
         abstract ``name``: string with get, set
         abstract ``disabled``: bool with get, set
         abstract ``setInitializeFunc`` : ``func``: System.Action<'T> -> unit
@@ -18791,6 +18920,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Cameras/framingBehavior
     [<AllowNullLiteral>]
     type FramingBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<ArcRotateCamera>
         abstract ``onTargetFramingAnimationEndObservable``: Observable<unit> with get, set
         abstract ``autoCorrectCameraLimitsAndSensibility``: bool with get, set
         abstract ``init`` : unit -> unit
@@ -18877,6 +19007,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/freeCameraDeviceOrientationInput.pure
     [<AllowNullLiteral>]
     type FreeCameraDeviceOrientationInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
         abstract ``smoothFactor``: float with get, set
         abstract ``_onDeviceOrientationChangedObservable``: Observable<unit> with get, set
         abstract ``attachControl`` : unit -> unit
@@ -18898,6 +19029,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/freeCameraGamepadInput
     [<AllowNullLiteral>]
     type FreeCameraGamepadInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
         abstract ``camera``: FreeCamera with get, set
         abstract ``gamepad``: Gamepad option with get, set
         abstract ``gamepadAngularSensibility``: float with get, set
@@ -18944,6 +19076,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/freeCameraKeyboardMoveInput
     [<AllowNullLiteral>]
     type FreeCameraKeyboardMoveInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
         abstract ``camera``: FreeCamera with get, set
         abstract ``keysUp``: ResizeArray<float> with get, set
         abstract ``keysUpward``: ResizeArray<float> with get, set
@@ -18974,6 +19107,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/freeCameraMouseInput
     [<AllowNullLiteral>]
     type FreeCameraMouseInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
         abstract ``touchEnabled``: bool with get, set
         abstract ``camera``: FreeCamera with get, set
         abstract ``buttons``: ResizeArray<float> with get, set
@@ -19021,6 +19155,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/freeCameraTouchInput
     [<AllowNullLiteral>]
     type FreeCameraTouchInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
         abstract ``allowMouse``: bool with get, set
         abstract ``camera``: FreeCamera with get, set
         abstract ``touchAngularSensibility``: float with get, set
@@ -19043,6 +19178,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/freeCameraVirtualJoystickInput.pure
     [<AllowNullLiteral>]
     type FreeCameraVirtualJoystickInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<FreeCamera>
         abstract ``camera``: FreeCamera with get, set
         abstract ``getLeftJoystick`` : unit -> VirtualJoystick
         abstract ``getRightJoystick`` : unit -> VirtualJoystick
@@ -19173,6 +19309,7 @@ module SimpleClasses =
     /// @babylonjs/core/Gamepads/gamepadSceneComponent.pure
     [<AllowNullLiteral>]
     type GamepadSystemSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -19657,6 +19794,7 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/geometry
     [<AllowNullLiteral>]
     type Geometry =
+        inherit BabylonjsBindings.SimpleInterfaces.IGetSetVerticesData
         abstract ``id``: string with get, set
         abstract ``uniqueId``: float with get, set
         abstract ``delayLoadState``: float with get, set
@@ -19823,6 +19961,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/geometryBufferRendererSceneComponent.pure
     [<AllowNullLiteral>]
     type GeometryBufferRendererSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -20171,6 +20310,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type GeometryOptimizeBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``epsilon``: float with get, set
         abstract ``optimizeFaces``: bool with get, set
@@ -20475,6 +20615,7 @@ module SimpleClasses =
     /// @babylonjs/core/Cameras/Inputs/geospatialCameraKeyboardInput
     [<AllowNullLiteral>]
     type GeospatialCameraKeyboardInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<GeospatialCamera>
         abstract ``camera``: GeospatialCamera with get, set
         abstract ``keysUp``: ResizeArray<float> with get, set
         abstract ``keysDown``: ResizeArray<float> with get, set
@@ -20574,6 +20715,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Cameras/geospatialClippingBehavior
     [<AllowNullLiteral>]
     type GeospatialClippingBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<GeospatialCamera>
         abstract ``init`` : unit -> unit
         abstract ``attach`` : ``camera``: GeospatialCamera -> unit
         abstract ``detach`` : unit -> unit
@@ -20738,6 +20880,7 @@ module SimpleClasses =
     /// @babylonjs/core/Gizmos/gizmo
     [<AllowNullLiteral>]
     type Gizmo =
+        inherit BabylonjsBindings.SimpleInterfaces.IGizmo
         abstract ``gizmoLayer``: UtilityLayerRenderer with get, set
         abstract ``_rootMesh``: Mesh with get, set
         abstract ``setCustomMesh`` : ``mesh``: Mesh -> unit
@@ -20776,6 +20919,7 @@ module SimpleClasses =
     /// @babylonjs/core/Gizmos/gizmoManager
     [<AllowNullLiteral>]
     type GizmoManager =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``gizmos``: GizmoManagerProperty2Object with get, set
         abstract ``clearGizmoOnEmptyPointerEvent``: bool with get, set
         abstract ``enableAutoPicking``: bool with get, set
@@ -20977,6 +21121,9 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type GPUParticleSystem =
         inherit BaseParticleSystem
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleSystem
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
         abstract ``layerMask``: float with get, set
         abstract ``_randomTexture``: RawTexture with get, set
         abstract ``_randomTexture2``: RawTexture with get, set
@@ -21218,6 +21365,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type GreasedLinePluginMaterial =
         inherit MaterialPluginBase
+        inherit BabylonjsBindings.SimpleInterfaces.IGreasedLineMaterial
         abstract ``useColors``: bool with get, set
         abstract ``visibility``: float with get, set
         abstract ``dashOffset``: float with get, set
@@ -21292,6 +21440,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type GreasedLineSimpleMaterial =
         inherit ShaderMaterial
+        inherit BabylonjsBindings.SimpleInterfaces.IGreasedLineMaterial
         abstract ``dispose`` : unit -> unit
         abstract ``updateLazy`` : unit -> unit
         abstract ``setColors`` : ``colors``: ResizeArray<Color3> option * ?``lazy``: bool * ?``forceNewTexture``: bool -> unit
@@ -21466,6 +21615,7 @@ module SimpleClasses =
     /// @babylonjs/core/Physics/v2/Plugins/havokPlugin
     [<AllowNullLiteral>]
     type HavokPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePluginV2
         abstract ``_hknp``: obj with get, set
         abstract ``world``: obj with get, set
         abstract ``name``: string with get, set
@@ -21608,6 +21758,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type HDRCubeTextureAssetTask =
         inherit AbstractAssetTask
+        inherit BabylonjsBindings.SimpleInterfaces.ITextureAssetTask<HDRCubeTexture>
         abstract ``name``: string with get, set
         abstract ``url``: string with get, set
         abstract ``size``: float with get, set
@@ -21701,6 +21852,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/EmitterTypes/hemisphericParticleEmitter
     [<AllowNullLiteral>]
     type HemisphericParticleEmitter =
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleEmitterType
         abstract ``radius``: float with get, set
         abstract ``radiusRange``: float with get, set
         abstract ``directionRandomizer``: float with get, set
@@ -21890,6 +22042,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/iblCdfGeneratorSceneComponent.pure
     [<AllowNullLiteral>]
     type IblCdfGeneratorSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -22389,6 +22542,8 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type InstantiateBaseBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryInstancingContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``getInstanceIndex`` : unit -> float
         abstract ``getExecutionIndex`` : unit -> float
@@ -22471,6 +22626,8 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type InstantiateOnFacesBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryInstancingContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``getInstanceIndex`` : unit -> float
         abstract ``getExecutionIndex`` : unit -> float
@@ -22504,6 +22661,8 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type InstantiateOnVerticesBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryInstancingContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``removeDuplicatedPositions``: bool with get, set
         abstract ``getInstanceIndex`` : unit -> float
@@ -22535,6 +22694,8 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type InstantiateOnVolumeBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryInstancingContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``gridMode``: bool with get, set
         abstract ``getInstanceIndex`` : unit -> float
@@ -22711,6 +22872,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Cameras/interpolatingBehavior
     [<AllowNullLiteral>]
     type InterpolatingBehavior<'C when 'C :> Camera> =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<'C>
         abstract ``easingFunction``: EasingFunction with get, set
         abstract ``easingMode``: float with get, set
         abstract ``transitionDuration``: float with get, set
@@ -22882,6 +23044,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type LatticeBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``resolutionX``: float with get, set
         abstract ``resolutionY``: float with get, set
@@ -22977,6 +23140,7 @@ module SimpleClasses =
     /// @babylonjs/core/Layers/layerSceneComponent
     [<AllowNullLiteral>]
     type LayerSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -23095,6 +23259,7 @@ module SimpleClasses =
     /// @babylonjs/core/LensFlares/lensFlareSystemSceneComponent.pure
     [<AllowNullLiteral>]
     type LensFlareSystemSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -23185,6 +23350,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type Light =
         inherit Node
+        inherit BabylonjsBindings.SimpleInterfaces.ISortableLight
         abstract ``diffuse``: Color3 with get, set
         abstract ``specular``: Color3 with get, set
         abstract ``falloffType``: float with get, set
@@ -23300,6 +23466,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type LightGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.ILightGizmo
         abstract ``onClickedObservable``: Observable<Light> with get, set
         abstract ``dispose`` : unit -> unit
         abstract ``attachedNode``: Node option with get, set
@@ -23570,6 +23737,8 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/material.pure
     [<AllowNullLiteral>]
     type Material =
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
+        inherit BabylonjsBindings.SimpleInterfaces.IClipPlanesHolder
         abstract ``customShaderNameResolve``: MaterialCustomShaderNameResolveCallback with get, set
         abstract ``shadowDepthWrapper``: ShadowDepthWrapper option with get, set
         abstract ``allowShaderHotSwapping``: bool with get, set
@@ -24058,6 +24227,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/materialStencilState
     [<AllowNullLiteral>]
     type MaterialStencilState =
+        inherit BabylonjsBindings.SimpleInterfaces.IStencilState
         abstract ``reset`` : unit -> unit
         abstract ``getClassName`` : unit -> string
         abstract ``copyTo`` : ``stencilState``: MaterialStencilState -> unit
@@ -24109,6 +24279,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.vector.pure
     [<AllowNullLiteral>]
     type Matrix =
+        inherit BabylonjsBindings.SimpleInterfaces.IMatrixLike
         abstract ``dimension``: (NumericLiteral4 * NumericLiteral4) with get
         abstract ``rank``: NumericLiteral2 with get
         abstract ``updateFlag``: float with get, set
@@ -24621,6 +24792,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type Mesh =
         inherit AbstractMesh
+        inherit BabylonjsBindings.SimpleInterfaces.IGetSetVerticesData
         abstract ``onMeshReadyObservable``: Observable<Mesh> with get, set
         abstract ``delayLoadState``: float with get, set
         abstract ``instances``: ResizeArray<InstancedMesh> with get, set
@@ -24955,6 +25127,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/EmitterTypes/meshParticleEmitter
     [<AllowNullLiteral>]
     type MeshParticleEmitter =
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleEmitterType
         abstract ``direction1``: Vector3 with get, set
         abstract ``direction2``: Vector3 with get, set
         abstract ``useMeshNormalsForDirection``: bool with get, set
@@ -24981,6 +25154,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type MeshShapeBlock =
         inherit NodeParticleBlock
+        inherit BabylonjsBindings.SimpleInterfaces.IShapeBlock
         abstract ``serializedCachedData``: bool with get, set
         abstract ``useMeshNormalsForDirection``: bool with get, set
         abstract ``useMeshColorForColor``: bool with get, set
@@ -25141,6 +25315,7 @@ module SimpleClasses =
     /// @babylonjs/core/Morph/morphTarget
     [<AllowNullLiteral>]
     type MorphTarget =
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
         abstract ``name``: string with get, set
         abstract ``animations``: ResizeArray<Animation> with get, set
         abstract ``onInfluenceChanged``: Observable<bool> with get, set
@@ -25186,6 +25361,7 @@ module SimpleClasses =
     /// @babylonjs/core/Morph/morphTargetManager
     [<AllowNullLiteral>]
     type MorphTargetManager =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``meshName``: string option with get, set
         abstract ``_textureVertexStride``: float with get, set
         abstract ``_textureWidth``: float with get, set
@@ -25357,6 +25533,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Meshes/multiPointerScaleBehavior
     [<AllowNullLiteral>]
     type MultiPointerScaleBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<Mesh>
         abstract ``init`` : unit -> unit
         abstract ``attach`` : ``ownerNode``: Mesh -> unit
         abstract ``detach`` : unit -> unit
@@ -25542,6 +25719,7 @@ module SimpleClasses =
     /// @babylonjs/core/node
     [<AllowNullLiteral>]
     type Node =
+        inherit BabylonjsBindings.SimpleInterfaces.IBehaviorAware<Node>
         abstract ``name``: string with get, set
         abstract ``id``: string with get, set
         abstract ``uniqueId``: float with get, set
@@ -28416,6 +28594,7 @@ module SimpleClasses =
     /// @babylonjs/core/Physics/v1/Plugins/oimoJSPlugin
     [<AllowNullLiteral>]
     type OimoJSPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin
         abstract ``world``: obj with get, set
         abstract ``name``: string with get, set
         abstract ``BJSOIMO``: obj with get, set
@@ -28706,6 +28885,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/outlineRenderer.pure
     [<AllowNullLiteral>]
     type OutlineRenderer =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get, set
         abstract ``scene``: Scene with get, set
         abstract ``zOffset``: float with get, set
@@ -29350,6 +29530,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/particleSystemSet
     [<AllowNullLiteral>]
     type ParticleSystemSet =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``systems``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IParticleSystem> with get, set
         abstract ``setEmitterAsSphere`` : ``options``: ParticleSystemSetMethod8Parameter1Object * ``renderingGroupId``: float * ``scene``: Scene -> unit
         abstract ``start`` : ?``emitter``: AbstractMesh -> unit
@@ -30594,6 +30775,7 @@ module SimpleClasses =
     /// @babylonjs/core/Physics/joinedPhysicsEngineComponent.pure
     [<AllowNullLiteral>]
     type PhysicsEngineSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -31075,6 +31257,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.plane
     [<AllowNullLiteral>]
     type Plane =
+        inherit BabylonjsBindings.SimpleInterfaces.IPlaneLike
         abstract ``normal``: Vector3 with get, set
         abstract ``d``: float with get, set
         abstract ``asArray`` : unit -> ResizeArray<float>
@@ -31147,6 +31330,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type PlaneDragGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.IPlaneDragGizmo
         abstract ``dragBehavior``: PointerDragBehavior with get, set
         abstract ``snapDistance``: float with get, set
         abstract ``onSnapObservable``: Observable<InlineObject245949b83ce1Object> with get, set
@@ -31170,6 +31354,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type PlaneRotationGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.IPlaneRotationGizmo
         abstract ``dragBehavior``: PointerDragBehavior with get, set
         abstract ``snapDistance``: float with get, set
         abstract ``onSnapObservable``: Observable<InlineObject245949b83ce1Object> with get, set
@@ -31255,6 +31440,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Meshes/pointerDragBehavior
     [<AllowNullLiteral>]
     type PointerDragBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<AbstractMesh>
         abstract ``attachedNode``: AbstractMesh with get, set
         abstract ``maxDragAngle``: float with get, set
         abstract ``dragButtons``: ResizeArray<float> with get, set
@@ -31374,6 +31560,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/EmitterTypes/pointParticleEmitter
     [<AllowNullLiteral>]
     type PointParticleEmitter =
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleEmitterType
         abstract ``direction1``: Vector3 with get, set
         abstract ``direction2``: Vector3 with get, set
         abstract ``startDirectionFunction`` : ``worldMatrix``: Matrix * ``directionToUpdate``: Vector3 * ``particle``: Particle * ``isLocal``: bool -> unit
@@ -31402,6 +31589,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/pointsCloudSystem
     [<AllowNullLiteral>]
     type PointsCloudSystem =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``particles``: ResizeArray<CloudPoint> with get, set
         abstract ``nbParticles``: float with get, set
         abstract ``counter``: float with get, set
@@ -31468,6 +31656,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type PointShapeBlock =
         inherit NodeParticleBlock
+        inherit BabylonjsBindings.SimpleInterfaces.IShapeBlock
         abstract ``getClassName`` : unit -> string
         abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
         abstract ``particle``: NodeParticleConnectionPoint with get
@@ -31566,6 +31755,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type PositionGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.IPositionGizmo
         abstract ``xGizmo``: BabylonjsBindings.SimpleInterfaces.IAxisDragGizmo with get, set
         abstract ``yGizmo``: BabylonjsBindings.SimpleInterfaces.IAxisDragGizmo with get, set
         abstract ``zGizmo``: BabylonjsBindings.SimpleInterfaces.IAxisDragGizmo with get, set
@@ -31843,6 +32033,7 @@ module SimpleClasses =
     /// @babylonjs/core/PostProcesses/RenderPipeline/postProcessRenderPipelineManagerSceneComponent.pure
     [<AllowNullLiteral>]
     type PostProcessRenderPipelineManagerSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -32002,6 +32193,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/prePassRendererSceneComponent.pure
     [<AllowNullLiteral>]
     type PrePassRendererSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -32150,6 +32342,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Procedurals/proceduralTextureSceneComponent
     [<AllowNullLiteral>]
     type ProceduralTextureSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -32204,6 +32397,7 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/meshSimplification
     [<AllowNullLiteral>]
     type QuadraticErrorSimplification =
+        inherit BabylonjsBindings.SimpleInterfaces.ISimplifier
         abstract ``syncIterations``: float with get, set
         abstract ``aggressiveness``: float with get, set
         abstract ``decimationIterations``: float with get, set
@@ -32227,6 +32421,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.vector.pure
     [<AllowNullLiteral>]
     type Quaternion =
+        inherit BabylonjsBindings.SimpleInterfaces.IQuaternionLike
         abstract ``_x``: float with get, set
         abstract ``_y``: float with get, set
         abstract ``_z``: float with get, set
@@ -32677,6 +32872,7 @@ module SimpleClasses =
     /// @babylonjs/core/Navigation/Plugins/recastJSPlugin
     [<AllowNullLiteral>]
     type RecastJSCrowd =
+        inherit BabylonjsBindings.SimpleInterfaces.ICrowd
         abstract ``bjsRECASTPlugin``: RecastJSPlugin with get, set
         abstract ``recastCrowd``: obj with get, set
         abstract ``transforms``: ResizeArray<TransformNode> with get, set
@@ -32715,6 +32911,7 @@ module SimpleClasses =
     /// @babylonjs/core/Navigation/Plugins/recastJSPlugin
     [<AllowNullLiteral>]
     type RecastJSPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.INavigationEnginePlugin
         abstract ``bjsRECAST``: obj with get, set
         abstract ``name``: string with get, set
         abstract ``navMesh``: obj with get, set
@@ -33256,6 +33453,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type RenderTargetTexture =
         inherit Texture
+        inherit BabylonjsBindings.SimpleInterfaces.IRenderTargetTexture
         abstract ``useCameraPostProcesses``: bool with get, set
         abstract ``ignoreCameraViewport``: bool with get, set
         abstract ``onBeforeBindObservable``: Observable<RenderTargetTexture> with get, set
@@ -33460,6 +33658,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type RotationGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.IRotationGizmo
         abstract ``xGizmo``: BabylonjsBindings.SimpleInterfaces.IPlaneRotationGizmo with get, set
         abstract ``yGizmo``: BabylonjsBindings.SimpleInterfaces.IPlaneRotationGizmo with get, set
         abstract ``zGizmo``: BabylonjsBindings.SimpleInterfaces.IPlaneRotationGizmo with get, set
@@ -33632,6 +33831,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ScaleGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.IScaleGizmo
         abstract ``xGizmo``: BabylonjsBindings.SimpleInterfaces.IAxisScaleGizmo with get, set
         abstract ``yGizmo``: BabylonjsBindings.SimpleInterfaces.IAxisScaleGizmo with get, set
         abstract ``zGizmo``: BabylonjsBindings.SimpleInterfaces.IAxisScaleGizmo with get, set
@@ -33777,6 +33977,9 @@ module SimpleClasses =
     /// @babylonjs/core/scene.pure
     [<AllowNullLiteral>]
     type Scene =
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
+        inherit BabylonjsBindings.SimpleInterfaces.IClipPlanesHolder
+        inherit BabylonjsBindings.SimpleInterfaces.IAssetContainer
         abstract ``_tempPickingRay``: Ray option with get, set
         abstract ``_cachedRayForTransform``: Ray with get, set
         abstract ``_pickWithRayInverseMatrix``: Matrix with get, set
@@ -34316,6 +34519,7 @@ module SimpleClasses =
     /// @babylonjs/core/Instrumentation/sceneInstrumentation
     [<AllowNullLiteral>]
     type SceneInstrumentation =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``scene``: Scene with get, set
         abstract ``dispose`` : unit -> unit
         abstract ``activeMeshesEvaluationTimeCounter``: PerfCounter with get
@@ -34366,6 +34570,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/sceneOptimizer
     [<AllowNullLiteral>]
     type SceneOptimizer =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``onSuccessObservable``: Observable<SceneOptimizer> with get, set
         abstract ``onNewOptimizationAppliedObservable``: Observable<SceneOptimization> with get, set
         abstract ``onFailureObservable``: Observable<SceneOptimizer> with get, set
@@ -34412,6 +34617,7 @@ module SimpleClasses =
     /// @babylonjs/core/Misc/sceneRecorder
     [<AllowNullLiteral>]
     type SceneRecorder =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``track`` : ``scene``: Scene -> unit
         abstract ``getDelta`` : unit -> obj
         abstract ``dispose`` : unit -> unit
@@ -34606,6 +34812,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SetColorsBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``getExecutionIndex`` : unit -> float
         abstract ``getExecutionLoopIndex`` : unit -> float
@@ -34651,6 +34858,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SetNormalsBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``getExecutionIndex`` : unit -> float
         abstract ``getExecutionLoopIndex`` : unit -> float
@@ -34692,6 +34900,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SetPositionsBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``getExecutionIndex`` : unit -> float
         abstract ``getExecutionLoopIndex`` : unit -> float
@@ -34733,6 +34942,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SetTangentsBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``getExecutionIndex`` : unit -> float
         abstract ``getExecutionLoopIndex`` : unit -> float
@@ -34784,6 +34994,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SetUVsBlock =
         inherit NodeGeometryBlock
+        inherit BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext
         abstract ``evaluateContext``: bool with get, set
         abstract ``textureCoordinateIndex``: float with get, set
         abstract ``getExecutionIndex`` : unit -> float
@@ -34922,6 +35133,7 @@ module SimpleClasses =
     /// @babylonjs/core/Lights/Shadows/shadowGenerator
     [<AllowNullLiteral>]
     type ShadowGenerator =
+        inherit BabylonjsBindings.SimpleInterfaces.IShadowGenerator
         abstract ``id``: string with get, set
         abstract ``customShaderOptions``: BabylonjsBindings.SimpleInterfaces.ICustomShaderOptions with get, set
         abstract ``customAllowRendering``: ShadowGeneratorCustomAllowRenderingCallback with get, set
@@ -35008,6 +35220,7 @@ module SimpleClasses =
     /// @babylonjs/core/Lights/Shadows/shadowGeneratorSceneComponent.pure
     [<AllowNullLiteral>]
     type ShadowGeneratorSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -35034,6 +35247,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ShadowLight =
         inherit Light
+        inherit BabylonjsBindings.SimpleInterfaces.IShadowLight
         abstract ``customProjectionMatrixBuilder``: ShadowLightCustomProjectionMatrixBuilderCallback with get, set
         abstract ``transformedPosition``: Vector3 with get, set
         abstract ``transformedDirection``: Vector3 with get, set
@@ -35201,6 +35415,7 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/meshSimplificationSceneComponent.pure
     [<AllowNullLiteral>]
     type SimplicationQueueSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -35242,6 +35457,7 @@ module SimpleClasses =
     /// @babylonjs/core/Bones/skeleton
     [<AllowNullLiteral>]
     type Skeleton =
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
         abstract ``name``: string with get, set
         abstract ``id``: string with get, set
         abstract ``bones``: ResizeArray<Bone> with get, set
@@ -35545,6 +35761,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/solidParticleSystem
     [<AllowNullLiteral>]
     type SolidParticleSystem =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``particles``: ResizeArray<SolidParticle> with get, set
         abstract ``nbParticles``: float with get, set
         abstract ``billboard``: bool with get, set
@@ -35720,6 +35937,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SpatialAudioGizmo =
         inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.ISpatialAudioGizmo
         abstract ``onClickedObservable``: Observable<AbstractSoundSource> with get
         abstract ``dispose`` : unit -> unit
         abstract ``soundSource``: AbstractSoundSource option with get, set
@@ -35788,6 +36006,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/EmitterTypes/sphereParticleEmitter
     [<AllowNullLiteral>]
     type SphereParticleEmitter =
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleEmitterType
         abstract ``radius``: float with get, set
         abstract ``radiusRange``: float with get, set
         abstract ``directionRandomizer``: float with get, set
@@ -35813,6 +36032,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type SphereShapeBlock =
         inherit NodeParticleBlock
+        inherit BabylonjsBindings.SimpleInterfaces.IShapeBlock
         abstract ``isHemispheric``: bool with get, set
         abstract ``getClassName`` : unit -> string
         abstract ``_build`` : ``state``: NodeParticleBuildState -> unit
@@ -36015,6 +36235,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type Sprite =
         inherit ThinSprite
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
         abstract ``name``: string with get, set
         abstract ``position``: Vector3 with get, set
         abstract ``color``: Color4 with get, set
@@ -36049,6 +36270,7 @@ module SimpleClasses =
     /// @babylonjs/core/Sprites/spriteManager
     [<AllowNullLiteral>]
     type SpriteManager =
+        inherit BabylonjsBindings.SimpleInterfaces.ISpriteManager
         abstract ``name``: string with get, set
         abstract ``_parentContainer``: BabylonjsBindings.SimpleInterfaces.IAssetContainer option with get, set
         abstract ``snippetId``: string with get, set
@@ -36098,6 +36320,7 @@ module SimpleClasses =
     /// @babylonjs/core/Sprites/spriteMap.pure
     [<AllowNullLiteral>]
     type SpriteMap =
+        inherit BabylonjsBindings.SimpleInterfaces.ISpriteMap
         abstract ``name``: string with get, set
         abstract ``atlasJSON``: BabylonjsBindings.SimpleInterfaces.ISpriteJSONAtlas with get, set
         abstract ``spriteSheet``: Texture with get, set
@@ -36173,6 +36396,7 @@ module SimpleClasses =
     /// @babylonjs/core/Sprites/spriteSceneComponent.pure
     [<AllowNullLiteral>]
     type SpriteSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -36415,6 +36639,8 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type StandardRenderingPipeline =
         inherit PostProcessRenderPipeline
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
         abstract ``originalPostProcess``: PostProcess option with get, set
         abstract ``downSampleX4PostProcess``: PostProcess option with get, set
         abstract ``brightPassPostProcess``: PostProcess option with get, set
@@ -36686,6 +36912,7 @@ module SimpleClasses =
     /// @babylonjs/loaders/STL/stlFileLoader.pure
     [<AllowNullLiteral>]
     type STLFileLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin
         abstract ``solidPattern``: BabylonjsBindings.SimpleInterfaces.BrowserRegExp with get, set
         abstract ``facetsPattern``: BabylonjsBindings.SimpleInterfaces.BrowserRegExp with get, set
         abstract ``normalPattern``: BabylonjsBindings.SimpleInterfaces.BrowserRegExp with get, set
@@ -36857,6 +37084,7 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/subMesh.pure
     [<AllowNullLiteral>]
     type SubMesh =
+        inherit BabylonjsBindings.SimpleInterfaces.ICullable
         abstract ``materialIndex``: float with get, set
         abstract ``verticesStart``: float with get, set
         abstract ``verticesCount``: float with get, set
@@ -36948,6 +37176,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/subSurfaceConfiguration
     [<AllowNullLiteral>]
     type SubSurfaceConfiguration =
+        inherit BabylonjsBindings.SimpleInterfaces.PrePassEffectConfiguration
         abstract ``postProcess``: SubSurfaceScatteringPostProcess with get, set
         abstract ``enabled``: bool with get, set
         abstract ``needsImageProcessing``: bool with get, set
@@ -36992,6 +37221,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/subSurfaceSceneComponent.pure
     [<AllowNullLiteral>]
     type SubSurfaceSceneComponent =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent
         abstract ``name``: string with get
         abstract ``scene``: Scene with get, set
         abstract ``register`` : unit -> unit
@@ -37027,6 +37257,7 @@ module SimpleClasses =
     /// @babylonjs/core/Behaviors/Meshes/surfaceMagnetismBehavior
     [<AllowNullLiteral>]
     type SurfaceMagnetismBehavior =
+        inherit BabylonjsBindings.SimpleInterfaces.Behavior<Mesh>
         abstract ``hitNormalOffset``: float with get, set
         abstract ``meshes``: ResizeArray<AbstractMesh> with get, set
         abstract ``init`` : unit -> unit
@@ -37445,6 +37676,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type TextureAssetTask =
         inherit AbstractAssetTask
+        inherit BabylonjsBindings.SimpleInterfaces.ITextureAssetTask<Texture>
         abstract ``name``: string with get, set
         abstract ``url``: string with get, set
         abstract ``noMipmapOrOptions``: U2<bool, BabylonjsBindings.SimpleInterfaces.ITextureCreationOptions> option with get, set
@@ -37600,6 +37832,7 @@ module SimpleClasses =
     /// @babylonjs/core/Materials/Textures/Packer/frame
     [<AllowNullLiteral>]
     type TexturePackerFrame =
+        inherit BabylonjsBindings.SimpleInterfaces.ITexturePackerFrame
         abstract ``id``: float with get, set
         abstract ``scale``: Vector2 with get, set
         abstract ``offset``: Vector2 with get, set
@@ -38713,6 +38946,9 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ThinParticleSystem =
         inherit BaseParticleSystem
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        inherit BabylonjsBindings.SimpleInterfaces.IAnimatable
+        inherit BabylonjsBindings.SimpleInterfaces.IParticleSystem
         abstract ``updateFunction``: ThinParticleSystemUpdateFunctionCallback with get, set
         abstract ``_emitterWorldMatrix``: Matrix with get, set
         abstract ``_emitterInverseWorldMatrix``: Matrix with get, set
@@ -38870,6 +39106,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type ThinRenderTargetTexture =
         inherit ThinTexture
+        inherit BabylonjsBindings.SimpleInterfaces.IRenderTargetTexture
         abstract ``resize`` : ``size``: BabylonjsBindings.TypeAliases.TextureSize -> unit
         abstract ``getInternalTexture`` : unit -> InternalTexture option
         abstract ``getClassName`` : unit -> string
@@ -39508,6 +39745,7 @@ module SimpleClasses =
     /// @babylonjs/core/Culling/Helper/transformFeedbackBoundingHelper.pure
     [<AllowNullLiteral>]
     type TransformFeedbackBoundingHelper =
+        inherit BabylonjsBindings.SimpleInterfaces.IBoundingInfoHelperPlatform
         abstract ``processAsync`` : ``meshes``: U2<AbstractMesh, ResizeArray<AbstractMesh>> -> JS.Promise<unit>
         abstract ``registerMeshListAsync`` : ``meshes``: U2<AbstractMesh, ResizeArray<AbstractMesh>> -> JS.Promise<unit>
         abstract ``processMeshList`` : unit -> unit
@@ -40378,6 +40616,7 @@ module SimpleClasses =
     /// @babylonjs/core/Rendering/utilityLayerRenderer
     [<AllowNullLiteral>]
     type UtilityLayerRenderer =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``originalScene``: Scene with get, set
         abstract ``handleEvents``: bool with get
         abstract ``getRenderCamera`` : ?``getRigParentIfPossible``: bool -> Camera
@@ -40436,6 +40675,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.vector.pure
     [<AllowNullLiteral>]
     type Vector2 =
+        inherit BabylonjsBindings.SimpleInterfaces.IVector2Like
         abstract ``x``: float with get, set
         abstract ``y``: float with get, set
         abstract ``dimension``: ReadonlyTuple1<NumericLiteral2> with get
@@ -40600,6 +40840,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.vector.pure
     [<AllowNullLiteral>]
     type Vector3 =
+        inherit BabylonjsBindings.SimpleInterfaces.IVector3Like
         abstract ``dimension``: ReadonlyTuple1<NumericLiteral3> with get
         abstract ``rank``: NumericLiteral1 with get
         abstract ``_x``: float with get, set
@@ -40836,6 +41077,7 @@ module SimpleClasses =
     /// @babylonjs/core/Maths/math.vector.pure
     [<AllowNullLiteral>]
     type Vector4 =
+        inherit BabylonjsBindings.SimpleInterfaces.IVector4Like
         abstract ``dimension``: ReadonlyTuple1<NumericLiteral4> with get
         abstract ``rank``: NumericLiteral1 with get
         abstract ``_x``: float with get, set
@@ -41440,6 +41682,7 @@ module SimpleClasses =
     /// @babylonjs/core/Meshes/mesh.vertexData
     [<AllowNullLiteral>]
     type VertexData =
+        inherit BabylonjsBindings.SimpleInterfaces.IVertexDataLike
         abstract ``positions``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
         abstract ``normals``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
         abstract ``tangents``: BabylonjsBindings.TypeAliases.FloatArray option with get, set
@@ -41832,6 +42075,7 @@ module SimpleClasses =
     /// @babylonjs/core/Particles/webgl2ParticleSystem.pure
     [<AllowNullLiteral>]
     type WebGL2ParticleSystem =
+        inherit BabylonjsBindings.SimpleInterfaces.IGPUParticleSystemPlatform
         abstract ``alignDataInBuffer``: bool with get
         abstract ``contextLost`` : unit -> unit
         abstract ``isUpdateBufferCreated`` : unit -> bool
@@ -42001,6 +42245,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuDrawContext
     [<AllowNullLiteral>]
     type WebGPUDrawContext =
+        inherit BabylonjsBindings.SimpleInterfaces.IDrawContext
         abstract ``fastBundle``: BabylonjsBindings.SimpleInterfaces.BrowserGPURenderBundle option with get, set
         abstract ``bindGroups``: ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserGPUBindGroup> option with get, set
         abstract ``uniqueId``: float with get, set
@@ -42264,6 +42509,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuHardwareTexture
     [<AllowNullLiteral>]
     type WebGPUHardwareTexture =
+        inherit BabylonjsBindings.SimpleInterfaces.IHardwareTextureWrapper
         abstract ``_mipmapGenRenderPassDescr``: ResizeArray<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserGPURenderPassDescriptor>> with get, set
         abstract ``_mipmapGenBindGroup``: ResizeArray<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserGPUBindGroup>> with get, set
         abstract ``_copyInvertYTempTexture``: BabylonjsBindings.SimpleInterfaces.BrowserGPUTexture option with get, set
@@ -42307,6 +42553,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuMaterialContext
     [<AllowNullLiteral>]
     type WebGPUMaterialContext =
+        inherit BabylonjsBindings.SimpleInterfaces.IMaterialContext
         abstract ``uniqueId``: float with get, set
         abstract ``updateId``: float with get, set
         abstract ``isDirty``: bool with get, set
@@ -42389,6 +42636,7 @@ module SimpleClasses =
     /// @babylonjs/core/Engines/WebGPU/webgpuPipelineContext
     [<AllowNullLiteral>]
     type WebGPUPipelineContext =
+        inherit BabylonjsBindings.SimpleInterfaces.IPipelineContext
         abstract ``engine``: WebGPUEngine with get, set
         abstract ``shaderProcessingContext``: WebGPUShaderProcessingContext with get, set
         abstract ``vertexBufferKindToType``: WebGPUPipelineContextProperty4Object with get, set
@@ -42537,6 +42785,7 @@ module SimpleClasses =
     /// @babylonjs/core/XR/features/WebXRAbstractFeature
     [<AllowNullLiteral>]
     type WebXRAbstractFeature =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRFeature
         abstract ``isDisposed``: bool with get, set
         abstract ``disableAutoAttach``: bool with get, set
         abstract ``onFeatureAttachObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IWebXRFeature> with get, set
@@ -42565,6 +42814,7 @@ module SimpleClasses =
     /// @babylonjs/core/XR/motionController/webXRAbstractMotionController
     [<AllowNullLiteral>]
     type WebXRAbstractMotionController =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``gamepadObject``: BabylonjsBindings.SimpleInterfaces.IMinimalMotionControllerObject with get, set
         abstract ``handedness``: BabylonjsBindings.StringEnums.MotionControllerHandedness with get, set
         abstract ``_doNotLoadControllerMesh``: bool with get, set
@@ -42828,6 +43078,7 @@ module SimpleClasses =
     /// @babylonjs/core/XR/features/WebXRHandTracking.pure
     [<AllowNullLiteral>]
     type WebXRHand =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``xrController``: WebXRInputSource with get
         abstract ``rigMapping``: BabylonjsBindings.TypeAliases.XRHandMeshRigMapping option with get
         abstract ``onHandMeshSetObservable``: Observable<WebXRHand> with get, set
@@ -42866,6 +43117,7 @@ module SimpleClasses =
     /// @babylonjs/core/XR/webXRInput
     [<AllowNullLiteral>]
     type WebXRInput =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
         abstract ``xrSessionManager``: WebXRSessionManager with get, set
         abstract ``xrCamera``: WebXRCamera with get, set
         abstract ``controllers``: ResizeArray<WebXRInputSource> with get, set
@@ -42908,6 +43160,7 @@ module SimpleClasses =
     /// @babylonjs/core/XR/webXRRenderTargetTextureProvider
     [<AllowNullLiteral>]
     type WebXRLayerRenderTargetTextureProvider =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRRenderTargetTextureProvider
         abstract ``layerWrapper``: WebXRLayerWrapper with get
         abstract ``trySetViewportForView`` : ``viewport``: Viewport * ``view``: BabylonjsBindings.SimpleInterfaces.BrowserXRView -> bool
         abstract ``getRenderTargetTextureForEye`` : ``eye``: BabylonjsBindings.SimpleInterfaces.BrowserXREye -> RenderTargetTexture option
@@ -43105,6 +43358,8 @@ module SimpleClasses =
     /// @babylonjs/core/XR/webXRSessionManager
     [<AllowNullLiteral>]
     type WebXRSessionManager =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRRenderTargetTextureProvider
         abstract ``scene``: Scene with get, set
         abstract ``baseReferenceSpace``: BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpace with get, set
         abstract ``currentFrame``: BabylonjsBindings.SimpleInterfaces.BrowserXRFrame option with get, set
@@ -43184,6 +43439,7 @@ module SimpleClasses =
     /// @babylonjs/core/XR/features/WebXRSpaceWarp.pure
     [<AllowNullLiteral>]
     type WebXRSpaceWarpRenderTargetTextureProvider =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRRenderTargetTextureProvider
         abstract ``trySetViewportForView`` : ``viewport``: Viewport * ``view``: BabylonjsBindings.SimpleInterfaces.BrowserXRView -> bool
         abstract ``accessMotionVector`` : ``view``: BabylonjsBindings.SimpleInterfaces.BrowserXRView -> unit
         abstract ``getRenderTargetTextureForEye`` : ``_eye``: BabylonjsBindings.SimpleInterfaces.BrowserXREye -> RenderTargetTexture option

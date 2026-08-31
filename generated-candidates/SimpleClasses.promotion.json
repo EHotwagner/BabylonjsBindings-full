@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "a3a01ae3a927a09344c030a40a795fa63e57fd85cff1d5bebc5551e14c499a5b",
+  "proposalSha256": "2938b5913551bc5f030927fbaf03babfd65b5936ea42566296f22893a8614393",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -35,12 +35,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractActionManager",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleInterfaces.IAction",
-        "BabylonjsBindings.SimpleInterfaces.IActionEvent"
+        "BabylonjsBindings.SimpleInterfaces.IActionEvent",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 18
     },
@@ -241,7 +240,6 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Color4",
       "fidelityIssues": [
-        "unprojected implements IColor4Like",
         "unprojected implements Tensor<Tuple<number, 4>, IColor4Like>"
       ],
       "dependencies": [
@@ -270,10 +268,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Database",
-      "fidelityIssues": [
-        "unprojected implements IOfflineProvider"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IOfflineProvider"
       ],
-      "dependencies": [],
       "memberCount": 7
     },
     {
@@ -329,10 +327,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DefaultLoadingScreen",
-      "fidelityIssues": [
-        "unprojected implements ILoadingScreen"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ILoadingScreen"
       ],
-      "dependencies": [],
       "memberCount": 7
     },
     {
@@ -364,10 +362,9 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DracoCodec",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IDracoCodecConfiguration"
       ],
       "memberCount": 3
@@ -390,10 +387,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EasingFunction",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
-      "dependencies": [],
       "memberCount": 8
     },
     {
@@ -436,10 +433,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FactorGradient",
-      "fidelityIssues": [
-        "unprojected implements IValueGradient"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IValueGradient"
       ],
-      "dependencies": [],
       "memberCount": 5
     },
     {
@@ -640,10 +637,9 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MeshoptCompression",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IMeshoptCompressionConfiguration"
       ],
       "memberCount": 5
@@ -937,10 +933,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SimplificationSettings",
-      "fidelityIssues": [
-        "unprojected implements ISimplificationSettings"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISimplificationSettings"
       ],
-      "dependencies": [],
       "memberCount": 4
     },
     {
@@ -950,10 +946,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Size",
-      "fidelityIssues": [
-        "unprojected implements ISize"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISize"
       ],
-      "dependencies": [],
       "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableSize",
       "memberCount": 18
     },
@@ -964,10 +960,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SmartArray",
-      "fidelityIssues": [
-        "unprojected implements ISmartArrayLike<T>"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISmartArrayLike"
       ],
-      "dependencies": [],
       "typeParameterCount": 1,
       "memberCount": 11
     },
@@ -995,10 +991,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StencilState",
-      "fidelityIssues": [
-        "unprojected implements IStencilState"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IStencilState"
       ],
-      "dependencies": [],
       "memberCount": 29
     },
     {
@@ -1054,10 +1050,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ThinMatrix",
-      "fidelityIssues": [
-        "unprojected implements IMatrixLike"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IMatrixLike"
       ],
-      "dependencies": [],
       "memberCount": 3
     },
     {
@@ -1103,10 +1099,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Viewport",
-      "fidelityIssues": [
-        "unprojected implements IViewportLike"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IViewportLike"
       ],
-      "dependencies": [],
       "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableViewport",
       "memberCount": 8
     },
@@ -1117,10 +1113,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGL2ShaderProcessor",
-      "fidelityIssues": [
-        "unprojected implements IShaderProcessor"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IShaderProcessor"
       ],
-      "dependencies": [],
       "memberCount": 6
     },
     {
@@ -1130,10 +1126,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGLHardwareTexture",
-      "fidelityIssues": [
-        "unprojected implements IHardwareTextureWrapper"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IHardwareTextureWrapper"
       ],
-      "dependencies": [],
       "memberCount": 10
     },
     {
@@ -1156,10 +1152,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemBeginOcclusionQuery",
-      "fidelityIssues": [
-        "unprojected implements IWebGPURenderItem"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem"
       ],
-      "dependencies": [],
       "memberCount": 4
     },
     {
@@ -1169,10 +1165,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemBlendColor",
-      "fidelityIssues": [
-        "unprojected implements IWebGPURenderItem"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem"
       ],
-      "dependencies": [],
       "memberCount": 4
     },
     {
@@ -1182,10 +1178,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemEndOcclusionQuery",
-      "fidelityIssues": [
-        "unprojected implements IWebGPURenderItem"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem"
       ],
-      "dependencies": [],
       "memberCount": 3
     },
     {
@@ -1195,10 +1191,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemScissor",
-      "fidelityIssues": [
-        "unprojected implements IWebGPURenderItem"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem"
       ],
-      "dependencies": [],
       "memberCount": 7
     },
     {
@@ -1208,10 +1204,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemStencilRef",
-      "fidelityIssues": [
-        "unprojected implements IWebGPURenderItem"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem"
       ],
-      "dependencies": [],
       "memberCount": 4
     },
     {
@@ -1221,10 +1217,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPURenderItemViewport",
-      "fidelityIssues": [
-        "unprojected implements IWebGPURenderItem"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem"
       ],
-      "dependencies": [],
       "memberCount": 7
     },
     {
@@ -1234,14 +1230,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessingContext",
-      "fidelityIssues": [
-        "unprojected implements _IShaderProcessingContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleInterfaces.WebGPUBindGroupLayoutEntryInfo",
         "BabylonjsBindings.SimpleInterfaces.WebGPUBufferDescription",
         "BabylonjsBindings.SimpleInterfaces.WebGPUSamplerDescription",
-        "BabylonjsBindings.SimpleInterfaces.WebGPUTextureDescription"
+        "BabylonjsBindings.SimpleInterfaces.WebGPUTextureDescription",
+        "BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext"
       ],
       "memberCount": 26
     },
@@ -1252,10 +1247,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessor",
-      "fidelityIssues": [
-        "unprojected implements IShaderProcessor"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IShaderProcessor"
       ],
-      "dependencies": [],
       "memberCount": 4
     },
     {
@@ -1278,12 +1273,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebRequest",
-      "fidelityIssues": [
-        "WebRequest.addEventListener: unprojected generic constraint K extends keyof XMLHttpRequestEventMap",
-        "WebRequest.removeEventListener: unprojected generic constraint K extends keyof XMLHttpRequestEventMap",
-        "unprojected implements IWebRequest"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IWebRequest"
       ],
-      "dependencies": [],
       "memberCount": 38
     },
     {
@@ -1315,10 +1308,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WorkerPool",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
-      "dependencies": [],
       "memberCount": 3
     },
     {
@@ -1355,11 +1348,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BackEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 3
     },
@@ -1370,11 +1362,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BezierCurveEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 6
     },
@@ -1385,11 +1376,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BounceEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 4
     },
@@ -1400,11 +1390,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CircleEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 2
     },
@@ -1416,7 +1405,6 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Color3",
       "fidelityIssues": [
-        "unprojected implements IColor3Like",
         "unprojected implements Tensor<Tuple<number, 3>, IColor3Like>"
       ],
       "dependencies": [
@@ -1434,11 +1422,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ColorGradient",
-      "fidelityIssues": [
-        "unprojected implements IValueGradient"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Color4"
+        "BabylonjsBindings.SimpleClasses.Color4",
+        "BabylonjsBindings.SimpleInterfaces.IValueGradient"
       ],
       "memberCount": 5
     },
@@ -1449,11 +1436,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CubicEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 2
     },
@@ -1491,11 +1477,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ElasticEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 4
     },
@@ -1506,11 +1491,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ExponentialEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 3
     },
@@ -1534,11 +1518,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ImageProcessingConfigurationDefines",
-      "fidelityIssues": [
-        "unprojected implements IImageProcessingConfigurationDefines"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.MaterialDefines"
+        "BabylonjsBindings.SimpleClasses.MaterialDefines",
+        "BabylonjsBindings.SimpleInterfaces.IImageProcessingConfigurationDefines"
       ],
       "memberCount": 16
     },
@@ -1667,11 +1650,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MotorEnabledJoint",
-      "fidelityIssues": [
-        "unprojected implements IMotorEnabledJoint"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.PhysicsJoint",
+        "BabylonjsBindings.SimpleInterfaces.IMotorEnabledJoint",
         "BabylonjsBindings.SimpleInterfaces.PhysicsJointData"
       ],
       "memberCount": 3
@@ -1683,11 +1665,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Observer",
-      "fidelityIssues": [
-        "unprojected implements IObserver"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EventState"
+        "BabylonjsBindings.SimpleClasses.EventState",
+        "BabylonjsBindings.SimpleInterfaces.IObserver"
       ],
       "typeParameterCount": 1,
       "memberCount": 8
@@ -1699,11 +1680,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PowerEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 3
     },
@@ -1714,11 +1694,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuadraticEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 2
     },
@@ -1729,11 +1708,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuarticEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 2
     },
@@ -1744,11 +1722,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuinticEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 2
     },
@@ -1785,11 +1762,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SineEase",
-      "fidelityIssues": [
-        "unprojected implements IEasingFunction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.EasingFunction"
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.IEasingFunction"
       ],
       "memberCount": 2
     },
@@ -1908,11 +1884,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Color3Gradient",
-      "fidelityIssues": [
-        "unprojected implements IValueGradient"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Color3"
+        "BabylonjsBindings.SimpleClasses.Color3",
+        "BabylonjsBindings.SimpleInterfaces.IValueGradient"
       ],
       "memberCount": 3
     },
@@ -2007,12 +1982,12 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Observable",
       "fidelityIssues": [
-        "Observable.FromPromise: generic default E = Error",
-        "unprojected implements IReadonlyObservable<T>"
+        "Observable.FromPromise: generic default E = Error"
       ],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.EventState",
-        "BabylonjsBindings.SimpleClasses.Observer"
+        "BabylonjsBindings.SimpleClasses.Observer",
+        "BabylonjsBindings.SimpleInterfaces.IReadonlyObservable"
       ],
       "typeParameterCount": 1,
       "memberCount": 19
@@ -2092,11 +2067,11 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AdvancedTimer",
       "fidelityIssues": [
-        "AdvancedTimer: generic default T = any",
-        "unprojected implements IDisposable"
+        "AdvancedTimer: generic default T = any"
       ],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.ITimerData",
         "BabylonjsBindings.SimpleInterfaces.ITimerOptions"
       ],
@@ -2166,11 +2141,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRControllerComponent",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IMinimalMotionControllerObject",
         "BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerAxesValue",
         "BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerComponentChanges"
@@ -2239,11 +2213,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._BasisTextureLoader",
-      "fidelityIssues": [
-        "unprojected implements IInternalTextureLoader"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.InternalTexture"
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
       ],
       "memberCount": 4
     },
@@ -2268,11 +2241,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._DDSTextureLoader",
-      "fidelityIssues": [
-        "unprojected implements IInternalTextureLoader"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.InternalTexture"
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
       ],
       "memberCount": 4
     },
@@ -2283,11 +2255,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._ENVTextureLoader",
-      "fidelityIssues": [
-        "unprojected implements IInternalTextureLoader"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.InternalTexture"
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
       ],
       "memberCount": 4
     },
@@ -2298,11 +2269,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._ExrTextureLoader",
-      "fidelityIssues": [
-        "unprojected implements IInternalTextureLoader"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.InternalTexture"
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
       ],
       "memberCount": 4
     },
@@ -2313,11 +2283,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._HDRTextureLoader",
-      "fidelityIssues": [
-        "unprojected implements IInternalTextureLoader"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.InternalTexture"
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
       ],
       "memberCount": 4
     },
@@ -2328,11 +2297,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._IESTextureLoader",
-      "fidelityIssues": [
-        "unprojected implements IInternalTextureLoader"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.InternalTexture"
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
       ],
       "memberCount": 4
     },
@@ -2370,11 +2338,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._KTXTextureLoader",
-      "fidelityIssues": [
-        "unprojected implements IInternalTextureLoader"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.InternalTexture"
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
       ],
       "memberCount": 4
     },
@@ -2472,11 +2439,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._TGATextureLoader",
-      "fidelityIssues": [
-        "unprojected implements IInternalTextureLoader"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.InternalTexture"
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
       ],
       "memberCount": 4
     },
@@ -2517,14 +2483,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioBus",
-      "fidelityIssues": [
-        "unprojected implements IWebAudioSuperNode"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AudioBus",
         "BabylonjsBindings.SimpleClasses._StereoAudio",
         "BabylonjsBindings.SimpleClasses._WebAudioEngine",
-        "BabylonjsBindings.SimpleInterfaces.IAudioBusOptions"
+        "BabylonjsBindings.SimpleInterfaces.IAudioBusOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
       ],
       "memberCount": 8
     },
@@ -2582,13 +2547,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioMainBus",
-      "fidelityIssues": [
-        "unprojected implements IWebAudioSuperNode"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.MainAudioBus",
         "BabylonjsBindings.SimpleClasses._WebAudioEngine",
-        "BabylonjsBindings.SimpleInterfaces.IMainAudioBusOptions"
+        "BabylonjsBindings.SimpleInterfaces.IMainAudioBusOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
       ],
       "memberCount": 7
     },
@@ -2599,13 +2563,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioMainOut",
-      "fidelityIssues": [
-        "unprojected implements IWebAudioInNode"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses._MainAudioOut",
         "BabylonjsBindings.SimpleClasses._WebAudioEngine",
-        "BabylonjsBindings.SimpleInterfaces.IAudioParameterRampOptions"
+        "BabylonjsBindings.SimpleInterfaces.IAudioParameterRampOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioInNode"
       ],
       "memberCount": 7
     },
@@ -2632,9 +2595,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStaticSound",
-      "fidelityIssues": [
-        "unprojected implements IWebAudioSuperNode"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.StaticSound",
         "BabylonjsBindings.SimpleClasses.StaticSoundBuffer",
@@ -2643,7 +2604,8 @@
         "BabylonjsBindings.SimpleClasses._WebAudioStaticSoundBuffer",
         "BabylonjsBindings.SimpleInterfaces.IStaticSoundCloneOptions",
         "BabylonjsBindings.SimpleInterfaces.IStaticSoundOptions",
-        "BabylonjsBindings.SimpleInterfaces.IStaticSoundStoredOptions"
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundStoredOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
       ],
       "memberCount": 12
     },
@@ -2670,15 +2632,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStreamingSound",
-      "fidelityIssues": [
-        "unprojected implements IWebAudioSuperNode"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.StreamingSound",
         "BabylonjsBindings.SimpleClasses._StereoAudio",
         "BabylonjsBindings.SimpleClasses._WebAudioEngine",
         "BabylonjsBindings.SimpleInterfaces.IStreamingSoundOptions",
-        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundStoredOptions"
+        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundStoredOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
       ],
       "memberCount": 11
     },
@@ -2689,9 +2650,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractAssetContainer",
-      "fidelityIssues": [
-        "unprojected implements IAssetContainer"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractActionManager",
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
@@ -2715,6 +2674,7 @@
         "BabylonjsBindings.SimpleClasses.Sound",
         "BabylonjsBindings.SimpleClasses.SpriteManager",
         "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
         "BabylonjsBindings.SimpleInterfaces.IParticleSystem"
       ],
       "memberCount": 26
@@ -2847,11 +2807,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractMesh",
-      "fidelityIssues": [
-        "unprojected implements ICullable",
-        "unprojected implements IDisposable",
-        "unprojected implements IGetSetVerticesData"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractActionManager",
         "BabylonjsBindings.SimpleClasses.BoundingInfo",
@@ -2882,8 +2838,11 @@
         "BabylonjsBindings.SimpleClasses.VertexBuffer",
         "BabylonjsBindings.SimpleClasses._InternalAbstractMeshDataInfo",
         "BabylonjsBindings.SimpleInterfaces.IBakedVertexAnimationManager",
+        "BabylonjsBindings.SimpleInterfaces.ICullable",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IEdgesRenderer",
         "BabylonjsBindings.SimpleInterfaces.IEdgesRendererOptions",
+        "BabylonjsBindings.SimpleInterfaces.IGetSetVerticesData",
         "BabylonjsBindings.SimpleInterfaces.IMeshDataOptions",
         "BabylonjsBindings.SimpleInterfaces.IParticleSystem",
         "BabylonjsBindings.TypeAliases.FloatArray",
@@ -2975,9 +2934,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Action",
-      "fidelityIssues": [
-        "unprojected implements IAction"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.ActionEvent",
         "BabylonjsBindings.SimpleClasses.ActionManager",
@@ -2985,7 +2942,8 @@
         "BabylonjsBindings.SimpleClasses.Material",
         "BabylonjsBindings.SimpleClasses.Node",
         "BabylonjsBindings.SimpleClasses.Observable",
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IAction"
       ],
       "memberCount": 18
     },
@@ -2996,14 +2954,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ActionEvent",
-      "fidelityIssues": [
-        "unprojected implements IActionEvent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.Sprite",
-        "BabylonjsBindings.SimpleClasses.Vector2"
+        "BabylonjsBindings.SimpleClasses.Vector2",
+        "BabylonjsBindings.SimpleInterfaces.IActionEvent"
       ],
       "memberCount": 11
     },
@@ -3044,12 +3001,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AggregatorBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
-        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext"
       ],
       "memberCount": 12
     },
@@ -3104,9 +3060,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AmmoJSPlugin",
-      "fidelityIssues": [
-        "unprojected implements IPhysicsEnginePlugin"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.PhysicsImpostor",
@@ -3114,6 +3068,7 @@
         "BabylonjsBindings.SimpleClasses.Quaternion",
         "BabylonjsBindings.SimpleClasses.Vector3",
         "BabylonjsBindings.SimpleInterfaces.IMotorEnabledJoint",
+        "BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin",
         "BabylonjsBindings.SimpleInterfaces.PhysicsImpostorJoint"
       ],
       "memberCount": 54
@@ -3289,9 +3244,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AnimationGroup",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Animatable",
         "BabylonjsBindings.SimpleClasses.Animation",
@@ -3299,7 +3252,8 @@
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.TargetedAnimation",
-        "BabylonjsBindings.SimpleInterfaces.IAssetContainer"
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 48
     },
@@ -3418,12 +3372,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ArcRotateCameraGamepadInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<ArcRotateCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.ArcRotateCamera",
-        "BabylonjsBindings.SimpleClasses.Gamepad"
+        "BabylonjsBindings.SimpleClasses.Gamepad",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 11
     },
@@ -3448,11 +3401,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ArcRotateCameraKeyboardMoveInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<ArcRotateCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.ArcRotateCamera"
+        "BabylonjsBindings.SimpleClasses.ArcRotateCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 18
     },
@@ -3566,11 +3518,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AssetsProgressEvent",
-      "fidelityIssues": [
-        "unprojected implements IAssetsProgressEvent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.AbstractAssetTask"
+        "BabylonjsBindings.SimpleClasses.AbstractAssetTask",
+        "BabylonjsBindings.SimpleInterfaces.IAssetsProgressEvent"
       ],
       "memberCount": 4
     },
@@ -3581,12 +3532,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AttachToBoxBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<Mesh>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Mesh",
-        "BabylonjsBindings.SimpleClasses.TransformNode"
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 8
     },
@@ -3628,9 +3578,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AudioEngine",
-      "fidelityIssues": [
-        "unprojected implements IAudioEngine"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Analyser",
         "BabylonjsBindings.SimpleClasses.Observable",
@@ -3646,9 +3594,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AudioEngineV2",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractAudioNode",
         "BabylonjsBindings.SimpleClasses.AbstractNamedAudioNode",
@@ -3662,6 +3608,7 @@
         "BabylonjsBindings.SimpleClasses.StreamingSound",
         "BabylonjsBindings.SimpleInterfaces.IAudioBusOptions",
         "BabylonjsBindings.SimpleInterfaces.IAudioParameterRampOptions",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IMainAudioBusOptions",
         "BabylonjsBindings.SimpleInterfaces.IReadonlyObservable",
         "BabylonjsBindings.SimpleInterfaces.ISoundSourceOptions",
@@ -3678,13 +3625,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AudioSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneSerializableComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.Vector3",
-        "BabylonjsBindings.SimpleInterfaces.IAssetContainer"
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent"
       ],
       "memberCount": 18
     },
@@ -3695,11 +3641,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AutoRotationBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<ArcRotateCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.ArcRotateCamera"
+        "BabylonjsBindings.SimpleClasses.ArcRotateCamera",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 13
     },
@@ -3738,9 +3683,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AxisDragGizmo",
-      "fidelityIssues": [
-        "unprojected implements IAxisDragGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Color3",
         "BabylonjsBindings.SimpleClasses.Gizmo",
@@ -3751,7 +3694,8 @@
         "BabylonjsBindings.SimpleClasses.StandardMaterial",
         "BabylonjsBindings.SimpleClasses.TransformNode",
         "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IAxisDragGizmo"
       ],
       "memberCount": 11
     },
@@ -3762,9 +3706,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AxisScaleGizmo",
-      "fidelityIssues": [
-        "unprojected implements IAxisScaleGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Color3",
         "BabylonjsBindings.SimpleClasses.Gizmo",
@@ -3774,7 +3716,8 @@
         "BabylonjsBindings.SimpleClasses.ScaleGizmo",
         "BabylonjsBindings.SimpleClasses.StandardMaterial",
         "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IAxisScaleGizmo"
       ],
       "memberCount": 15
     },
@@ -3809,14 +3752,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BakedVertexAnimationManager",
-      "fidelityIssues": [
-        "unprojected implements IBakedVertexAnimationManager"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.BaseTexture",
         "BabylonjsBindings.SimpleClasses.Effect",
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleClasses.Vector4"
+        "BabylonjsBindings.SimpleClasses.Vector4",
+        "BabylonjsBindings.SimpleInterfaces.IBakedVertexAnimationManager"
       ],
       "memberCount": 14
     },
@@ -3842,12 +3784,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BaseCameraMouseWheelInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<Camera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Camera",
-        "BabylonjsBindings.SimpleClasses.Observable"
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 10
     },
@@ -3858,11 +3799,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BaseCameraPointersInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<Camera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput",
         "BabylonjsBindings.SimpleInterfaces.IPointerEvent",
         "BabylonjsBindings.SimpleInterfaces.PointerTouch"
       ],
@@ -3889,9 +3829,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BaseParticleSystem",
-      "fidelityIssues": [
-        "unprojected implements IClipPlanesHolder"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Animation",
@@ -3916,6 +3854,7 @@
         "BabylonjsBindings.SimpleClasses.SphereParticleEmitter",
         "BabylonjsBindings.SimpleClasses.Vector2",
         "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IClipPlanesHolder",
         "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType"
       ],
       "memberCount": 125
@@ -3927,15 +3866,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BaseSixDofDragBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<TransformNode>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.PickingInfo",
         "BabylonjsBindings.SimpleClasses.TransformNode",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 17
     },
@@ -3946,9 +3884,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BaseTexture",
-      "fidelityIssues": [
-        "unprojected implements IAnimatable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.Animation",
@@ -3958,6 +3894,7 @@
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.ThinTexture",
         "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IAnimatable",
         "BabylonjsBindings.SimpleInterfaces.IAssetContainer"
       ],
       "memberCount": 65
@@ -4227,12 +4164,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BouncingBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<ArcRotateCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.ArcRotateCamera",
-        "BabylonjsBindings.SimpleClasses.BackEase"
+        "BabylonjsBindings.SimpleClasses.BackEase",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 13
     },
@@ -4257,15 +4193,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BoundingBox",
-      "fidelityIssues": [
-        "unprojected implements ICullable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.BoundingSphere",
         "BabylonjsBindings.SimpleClasses.DrawWrapper",
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Plane",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.ICullable"
       ],
       "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableBoundingBox",
       "memberCount": 29
@@ -4277,9 +4212,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BoundingBoxGizmo",
-      "fidelityIssues": [
-        "unprojected implements IBoundingBoxGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Color3",
@@ -4289,7 +4222,8 @@
         "BabylonjsBindings.SimpleClasses.PointerDragBehavior",
         "BabylonjsBindings.SimpleClasses.StandardMaterial",
         "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IBoundingBoxGizmo"
       ],
       "memberCount": 35
     },
@@ -4300,9 +4234,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BoundingBoxRenderer",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.BoundingBox",
@@ -4311,7 +4243,8 @@
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.SmartArray",
-        "BabylonjsBindings.SimpleClasses.SubMesh"
+        "BabylonjsBindings.SimpleClasses.SubMesh",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 24
     },
@@ -4322,16 +4255,15 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BoundingInfo",
-      "fidelityIssues": [
-        "unprojected implements ICullable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.BoundingBox",
         "BabylonjsBindings.SimpleClasses.BoundingSphere",
         "BabylonjsBindings.SimpleClasses.Collider",
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Plane",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.ICullable"
       ],
       "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableBoundingInfo",
       "memberCount": 18
@@ -4387,15 +4319,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BoxParticleEmitter",
-      "fidelityIssues": [
-        "unprojected implements IParticleEmitterType"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Particle",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType"
       ],
       "memberCount": 14
     },
@@ -4406,13 +4337,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.BoxShapeBlock",
-      "fidelityIssues": [
-        "unprojected implements IShapeBlock"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeParticleBlock",
         "BabylonjsBindings.SimpleClasses.NodeParticleBuildState",
-        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.IShapeBlock"
       ],
       "memberCount": 9
     },
@@ -4469,9 +4399,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CameraGizmo",
-      "fidelityIssues": [
-        "unprojected implements ICameraGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Camera",
         "BabylonjsBindings.SimpleClasses.Color3",
@@ -4479,7 +4407,8 @@
         "BabylonjsBindings.SimpleClasses.Mesh",
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.StandardMaterial",
-        "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer"
+        "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
+        "BabylonjsBindings.SimpleInterfaces.ICameraGizmo"
       ],
       "memberCount": 7
     },
@@ -4522,9 +4451,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CannonJSPlugin",
-      "fidelityIssues": [
-        "unprojected implements IPhysicsEnginePlugin"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.PhysicsImpostor",
@@ -4533,6 +4460,7 @@
         "BabylonjsBindings.SimpleClasses.Quaternion",
         "BabylonjsBindings.SimpleClasses.Vector3",
         "BabylonjsBindings.SimpleInterfaces.IMotorEnabledJoint",
+        "BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin",
         "BabylonjsBindings.SimpleInterfaces.PhysicsImpostorJoint"
       ],
       "memberCount": 39
@@ -4753,11 +4681,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ClusteredLightingSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -4942,12 +4869,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ComputeShaderBoundingHelper",
-      "fidelityIssues": [
-        "unprojected implements IBoundingInfoHelperPlatform"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
-        "BabylonjsBindings.SimpleClasses.AbstractMesh"
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleInterfaces.IBoundingInfoHelperPlatform"
       ],
       "memberCount": 6
     },
@@ -4958,9 +4884,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ComputeShaderParticleSystem",
-      "fidelityIssues": [
-        "unprojected implements IGPUParticleSystemPlatform"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Buffer",
         "BabylonjsBindings.SimpleClasses.DataBuffer",
@@ -4969,6 +4893,7 @@
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
         "BabylonjsBindings.SimpleClasses.VertexBuffer",
         "BabylonjsBindings.SimpleClasses.WebGPUEngine",
+        "BabylonjsBindings.SimpleInterfaces.IGPUParticleSystemPlatform",
         "BabylonjsBindings.TypeAliases.DataArray"
       ],
       "memberCount": 13
@@ -5042,15 +4967,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ConeParticleEmitter",
-      "fidelityIssues": [
-        "unprojected implements IParticleEmitterType"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Particle",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType"
       ],
       "memberCount": 16
     },
@@ -5061,13 +4985,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ConeShapeBlock",
-      "fidelityIssues": [
-        "unprojected implements IShapeBlock"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeParticleBlock",
         "BabylonjsBindings.SimpleClasses.NodeParticleBuildState",
-        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.IShapeBlock"
       ],
       "memberCount": 15
     },
@@ -5182,13 +5105,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CSG2",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Mesh",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.VertexData",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IMeshRebuildOptions",
         "BabylonjsBindings.SimpleInterfaces.IVertexDataRebuildOptions"
       ],
@@ -5235,14 +5157,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CubeTextureAssetTask",
-      "fidelityIssues": [
-        "unprojected implements ITextureAssetTask<CubeTexture>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractAssetTask",
         "BabylonjsBindings.SimpleClasses.CubeTexture",
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleInterfaces.ICubeTextureCreationOptions"
+        "BabylonjsBindings.SimpleInterfaces.ICubeTextureCreationOptions",
+        "BabylonjsBindings.SimpleInterfaces.ITextureAssetTask"
       ],
       "memberCount": 11
     },
@@ -5329,15 +5250,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CustomParticleEmitter",
-      "fidelityIssues": [
-        "unprojected implements IParticleEmitterType"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Particle",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType"
       ],
       "memberCount": 13
     },
@@ -5365,15 +5285,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CustomShapeBlock",
-      "fidelityIssues": [
-        "unprojected implements IShapeBlock"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeParticleBlock",
         "BabylonjsBindings.SimpleClasses.NodeParticleBuildState",
         "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint",
         "BabylonjsBindings.SimpleClasses.Particle",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IShapeBlock"
       ],
       "memberCount": 8
     },
@@ -5416,15 +5335,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CylinderParticleEmitter",
-      "fidelityIssues": [
-        "unprojected implements IParticleEmitterType"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Particle",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType"
       ],
       "memberCount": 14
     },
@@ -5435,13 +5353,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.CylinderShapeBlock",
-      "fidelityIssues": [
-        "unprojected implements IShapeBlock"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeParticleBlock",
         "BabylonjsBindings.SimpleClasses.NodeParticleBuildState",
-        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.IShapeBlock"
       ],
       "memberCount": 11
     },
@@ -5502,14 +5419,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DefaultCollisionCoordinator",
-      "fidelityIssues": [
-        "unprojected implements ICollisionCoordinator"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Collider",
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.ICollisionCoordinator"
       ],
       "memberCount": 4
     },
@@ -5520,10 +5436,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DefaultRenderingPipeline",
-      "fidelityIssues": [
-        "unprojected implements IAnimatable",
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Animation",
         "BabylonjsBindings.SimpleClasses.Camera",
@@ -5536,7 +5449,9 @@
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.PostProcessRenderPipeline",
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleClasses.SharpenPostProcess"
+        "BabylonjsBindings.SimpleClasses.SharpenPostProcess",
+        "BabylonjsBindings.SimpleInterfaces.IAnimatable",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 34
     },
@@ -5617,11 +5532,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DepthPeelingSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -5667,11 +5581,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DepthRendererSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -5961,14 +5874,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EdgesRenderer",
-      "fidelityIssues": [
-        "unprojected implements IEdgesRenderer"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.ShaderMaterial",
         "BabylonjsBindings.SimpleClasses.SmartArray",
+        "BabylonjsBindings.SimpleInterfaces.IEdgesRenderer",
         "BabylonjsBindings.SimpleInterfaces.IEdgesRendererOptions"
       ],
       "memberCount": 15
@@ -5980,9 +5892,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Effect",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.DataBuffer",
@@ -5991,6 +5901,7 @@
         "BabylonjsBindings.SimpleClasses.ThinTexture",
         "BabylonjsBindings.SimpleInterfaces.IColor3Like",
         "BabylonjsBindings.SimpleInterfaces.IColor4Like",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IEffectCreationOptions",
         "BabylonjsBindings.SimpleInterfaces.IEffectFallbacks",
         "BabylonjsBindings.SimpleInterfaces.IMatrixLike",
@@ -6013,12 +5924,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EffectFallbacks",
-      "fidelityIssues": [
-        "unprojected implements IEffectFallbacks"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
-        "BabylonjsBindings.SimpleClasses.Effect"
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.SimpleInterfaces.IEffectFallbacks"
       ],
       "memberCount": 6
     },
@@ -6051,12 +5961,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EffectLayerSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneSerializableComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleInterfaces.IAssetContainer"
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent"
       ],
       "memberCount": 9
     },
@@ -6157,12 +6066,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EngineInstrumentation",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
-        "BabylonjsBindings.SimpleClasses.PerfCounter"
+        "BabylonjsBindings.SimpleClasses.PerfCounter",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 7
     },
@@ -6254,13 +6162,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.EquiRectangularCubeTextureAssetTask",
-      "fidelityIssues": [
-        "unprojected implements ITextureAssetTask<EquiRectangularCubeTexture>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractAssetTask",
         "BabylonjsBindings.SimpleClasses.EquiRectangularCubeTexture",
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ITextureAssetTask"
       ],
       "memberCount": 11
     },
@@ -6344,11 +6251,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FadeInOutBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<Mesh>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Mesh"
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 13
     },
@@ -8106,9 +8012,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMatrix2D",
-      "fidelityIssues": [
-        "unprojected implements IFlowGraphMatrix<Vector2>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Vector2",
         "BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrix"
@@ -8122,9 +8026,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMatrix3D",
-      "fidelityIssues": [
-        "unprojected implements IFlowGraphMatrix<Vector3>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Vector3",
         "BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrix"
@@ -9225,11 +9127,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FluidRendererSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -9361,11 +9262,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlyCameraKeyboardInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FlyCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.FlyCamera"
+        "BabylonjsBindings.SimpleClasses.FlyCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 14
     },
@@ -9376,11 +9276,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlyCameraMouseInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FlyCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.FlyCamera"
+        "BabylonjsBindings.SimpleClasses.FlyCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 13
     },
@@ -9411,12 +9310,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FollowBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<TransformNode>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Camera",
-        "BabylonjsBindings.SimpleClasses.TransformNode"
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 24
     },
@@ -9458,11 +9356,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FollowCameraKeyboardMoveInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FollowCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.FollowCamera"
+        "BabylonjsBindings.SimpleClasses.FollowCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 25
     },
@@ -9473,11 +9370,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FollowCameraMouseWheelInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FollowCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.FollowCamera"
+        "BabylonjsBindings.SimpleClasses.FollowCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 11
     },
@@ -9551,9 +9447,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FrameGraph",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.Camera",
@@ -9566,7 +9460,8 @@
         "BabylonjsBindings.SimpleClasses.FrameGraphTextureManager",
         "BabylonjsBindings.SimpleClasses.NodeRenderGraph",
         "BabylonjsBindings.SimpleClasses.Observable",
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 29
     },
@@ -10164,12 +10059,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FrameGraphPass",
-      "fidelityIssues": [
-        "unprojected implements IFrameGraphPass"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.FrameGraphContext",
-        "BabylonjsBindings.SimpleClasses.FrameGraphTask"
+        "BabylonjsBindings.SimpleClasses.FrameGraphTask",
+        "BabylonjsBindings.SimpleInterfaces.IFrameGraphPass"
       ],
       "typeParameterCount": 1,
       "memberCount": 9
@@ -10522,15 +10416,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FramingBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<ArcRotateCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.ArcRotateCamera",
         "BabylonjsBindings.SimpleClasses.ExponentialEase",
         "BabylonjsBindings.SimpleClasses.Observable",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 26
     },
@@ -10559,12 +10452,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FreeCameraDeviceOrientationInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FreeCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.FreeCamera",
-        "BabylonjsBindings.SimpleClasses.Observable"
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 10
     },
@@ -10575,12 +10467,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FreeCameraGamepadInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FreeCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.FreeCamera",
-        "BabylonjsBindings.SimpleClasses.Gamepad"
+        "BabylonjsBindings.SimpleClasses.Gamepad",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 12
     },
@@ -10607,11 +10498,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FreeCameraKeyboardMoveInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FreeCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.FreeCamera"
+        "BabylonjsBindings.SimpleClasses.FreeCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 19
     },
@@ -10622,12 +10512,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FreeCameraMouseInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FreeCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.FreeCamera",
-        "BabylonjsBindings.SimpleClasses.Observable"
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 12
     },
@@ -10652,11 +10541,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FreeCameraTouchInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FreeCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.FreeCamera"
+        "BabylonjsBindings.SimpleClasses.FreeCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 11
     },
@@ -10667,12 +10555,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FreeCameraVirtualJoystickInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<FreeCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.FreeCamera",
-        "BabylonjsBindings.SimpleClasses.VirtualJoystick"
+        "BabylonjsBindings.SimpleClasses.VirtualJoystick",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 9
     },
@@ -10775,11 +10662,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GamepadSystemSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -11030,9 +10916,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Geometry",
-      "fidelityIssues": [
-        "unprojected implements IGetSetVerticesData"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.BoundingInfo",
@@ -11045,6 +10929,7 @@
         "BabylonjsBindings.SimpleClasses.VertexBuffer",
         "BabylonjsBindings.SimpleClasses.VertexData",
         "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.IGetSetVerticesData",
         "BabylonjsBindings.TypeAliases.DataArray",
         "BabylonjsBindings.TypeAliases.FloatArray",
         "BabylonjsBindings.TypeAliases.IndicesArray"
@@ -11092,11 +10977,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GeometryBufferRendererSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -11334,12 +11218,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GeometryOptimizeBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
-        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext"
       ],
       "memberCount": 13
     },
@@ -11542,11 +11425,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GeospatialCameraKeyboardInput",
-      "fidelityIssues": [
-        "unprojected implements ICameraInput<GeospatialCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.GeospatialCamera"
+        "BabylonjsBindings.SimpleClasses.GeospatialCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
       ],
       "memberCount": 16
     },
@@ -11609,11 +11491,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GeospatialClippingBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<GeospatialCamera>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.GeospatialCamera"
+        "BabylonjsBindings.SimpleClasses.GeospatialCamera",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 6
     },
@@ -11684,9 +11565,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Gizmo",
-      "fidelityIssues": [
-        "unprojected implements IGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Mesh",
@@ -11696,7 +11575,8 @@
         "BabylonjsBindings.SimpleClasses.Quaternion",
         "BabylonjsBindings.SimpleClasses.TransformNode",
         "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
-        "BabylonjsBindings.SimpleInterfaces.GizmoAxisCache"
+        "BabylonjsBindings.SimpleInterfaces.GizmoAxisCache",
+        "BabylonjsBindings.SimpleInterfaces.IGizmo"
       ],
       "memberCount": 19
     },
@@ -11707,9 +11587,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GizmoManager",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Mesh",
@@ -11721,6 +11599,7 @@
         "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
         "BabylonjsBindings.SimpleInterfaces.GizmoAxisCache",
         "BabylonjsBindings.SimpleInterfaces.IBoundingBoxGizmo",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IPositionGizmo",
         "BabylonjsBindings.SimpleInterfaces.IRotationGizmo",
         "BabylonjsBindings.SimpleInterfaces.IScaleGizmo"
@@ -11858,11 +11737,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GPUParticleSystem",
-      "fidelityIssues": [
-        "unprojected implements IAnimatable",
-        "unprojected implements IDisposable",
-        "unprojected implements IParticleSystem"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.Attractor",
@@ -11878,6 +11753,8 @@
         "BabylonjsBindings.SimpleClasses.RawTexture",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.Texture",
+        "BabylonjsBindings.SimpleInterfaces.IAnimatable",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IParticleSystem"
       ],
       "memberCount": 91
@@ -11995,9 +11872,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GreasedLinePluginMaterial",
-      "fidelityIssues": [
-        "unprojected implements IGreasedLineMaterial"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.BaseTexture",
@@ -12009,7 +11884,8 @@
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.Vector2",
-        "BabylonjsBindings.SimpleInterfaces.GreasedLineMaterialOptions"
+        "BabylonjsBindings.SimpleInterfaces.GreasedLineMaterialOptions",
+        "BabylonjsBindings.SimpleInterfaces.IGreasedLineMaterial"
       ],
       "memberCount": 35
     },
@@ -12038,16 +11914,15 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GreasedLineSimpleMaterial",
-      "fidelityIssues": [
-        "unprojected implements IGreasedLineMaterial"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Color3",
         "BabylonjsBindings.SimpleClasses.RawTexture",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.ShaderMaterial",
         "BabylonjsBindings.SimpleClasses.Vector2",
-        "BabylonjsBindings.SimpleInterfaces.GreasedLineMaterialOptions"
+        "BabylonjsBindings.SimpleInterfaces.GreasedLineMaterialOptions",
+        "BabylonjsBindings.SimpleInterfaces.IGreasedLineMaterial"
       ],
       "memberCount": 23
     },
@@ -12124,9 +11999,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.HavokPlugin",
-      "fidelityIssues": [
-        "unprojected implements IPhysicsEnginePluginV2"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.BodyPluginData",
         "BabylonjsBindings.SimpleClasses.BoundingBox",
@@ -12144,6 +12017,7 @@
         "BabylonjsBindings.SimpleInterfaces.HavokPluginParameters",
         "BabylonjsBindings.SimpleInterfaces.IBasePhysicsCollisionEvent",
         "BabylonjsBindings.SimpleInterfaces.IPhysicsCollisionEvent",
+        "BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePluginV2",
         "BabylonjsBindings.SimpleInterfaces.IPhysicsPointProximityQuery",
         "BabylonjsBindings.SimpleInterfaces.IPhysicsShapeCastQuery",
         "BabylonjsBindings.SimpleInterfaces.IPhysicsShapeProximityCastQuery",
@@ -12177,13 +12051,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.HDRCubeTextureAssetTask",
-      "fidelityIssues": [
-        "unprojected implements ITextureAssetTask<HDRCubeTexture>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractAssetTask",
         "BabylonjsBindings.SimpleClasses.HDRCubeTexture",
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ITextureAssetTask"
       ],
       "memberCount": 15
     },
@@ -12243,15 +12116,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.HemisphericParticleEmitter",
-      "fidelityIssues": [
-        "unprojected implements IParticleEmitterType"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Particle",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType"
       ],
       "memberCount": 13
     },
@@ -12397,11 +12269,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.IblCdfGeneratorSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 7
     },
@@ -12651,13 +12522,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.InstantiateBaseBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext",
-        "unprojected implements INodeGeometryInstancingContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
-        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryInstancingContext"
       ],
       "memberCount": 12
     },
@@ -12711,15 +12581,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.InstantiateOnFacesBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext",
-        "unprojected implements INodeGeometryInstancingContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
         "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
         "BabylonjsBindings.SimpleClasses.Vector2",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryInstancingContext"
       ],
       "memberCount": 20
     },
@@ -12730,13 +12599,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.InstantiateOnVerticesBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext",
-        "unprojected implements INodeGeometryInstancingContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
-        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryInstancingContext"
       ],
       "memberCount": 18
     },
@@ -12747,14 +12615,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.InstantiateOnVolumeBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext",
-        "unprojected implements INodeGeometryInstancingContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
         "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryInstancingContext"
       ],
       "memberCount": 20
     },
@@ -12817,13 +12684,13 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.InterpolatingBehavior",
       "fidelityIssues": [
-        "InterpolatingBehavior: generic default C = Camera",
-        "unprojected implements Behavior<C>"
+        "InterpolatingBehavior: generic default C = Camera"
       ],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Animation",
         "BabylonjsBindings.SimpleClasses.Camera",
         "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleInterfaces.Behavior",
         "BabylonjsBindings.TypeAliases.AllowedAnimValue"
       ],
       "typeParameterCount": 1,
@@ -12922,13 +12789,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.LatticeBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
         "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext"
       ],
       "memberCount": 16
     },
@@ -12973,12 +12839,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.LayerSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleInterfaces.IAssetContainer"
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 8
     },
@@ -13052,12 +12917,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.LensFlareSystemSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneSerializableComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleInterfaces.IAssetContainer"
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent"
       ],
       "memberCount": 9
     },
@@ -13097,9 +12961,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Light",
-      "fidelityIssues": [
-        "unprojected implements ISortableLight"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Camera",
@@ -13110,7 +12972,8 @@
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.Vector3",
-        "BabylonjsBindings.SimpleInterfaces.IShadowGenerator"
+        "BabylonjsBindings.SimpleInterfaces.IShadowGenerator",
+        "BabylonjsBindings.SimpleInterfaces.ISortableLight"
       ],
       "memberCount": 66
     },
@@ -13143,16 +13006,15 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.LightGizmo",
-      "fidelityIssues": [
-        "unprojected implements ILightGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Gizmo",
         "BabylonjsBindings.SimpleClasses.Light",
         "BabylonjsBindings.SimpleClasses.Node",
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.StandardMaterial",
-        "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer"
+        "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
+        "BabylonjsBindings.SimpleInterfaces.ILightGizmo"
       ],
       "memberCount": 6
     },
@@ -13304,10 +13166,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Material",
-      "fidelityIssues": [
-        "unprojected implements IAnimatable",
-        "unprojected implements IClipPlanesHolder"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Animation",
@@ -13329,6 +13188,7 @@
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleInterfaces.IAnimatable",
         "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.IClipPlanesHolder",
         "BabylonjsBindings.SimpleInterfaces.ICustomShaderNameResolveOptions",
         "BabylonjsBindings.SimpleInterfaces.IInspectable",
         "BabylonjsBindings.SimpleInterfaces.IMaterialCompilationOptions",
@@ -13437,11 +13297,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MaterialStencilState",
-      "fidelityIssues": [
-        "unprojected implements IStencilState"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IStencilState"
       ],
       "memberCount": 18
     },
@@ -13467,7 +13326,6 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Matrix",
       "fidelityIssues": [
-        "unprojected implements IMatrixLike",
         "unprojected implements Tensor<Tuple<Tuple<number, 4>, 4>, Matrix>"
       ],
       "dependencies": [
@@ -13476,6 +13334,7 @@
         "BabylonjsBindings.SimpleClasses.Vector3",
         "BabylonjsBindings.SimpleClasses.Vector4",
         "BabylonjsBindings.SimpleClasses.Viewport",
+        "BabylonjsBindings.SimpleInterfaces.IMatrixLike",
         "BabylonjsBindings.SimpleInterfaces.IPlaneLike",
         "BabylonjsBindings.TypeAliases.FloatArray"
       ],
@@ -13602,9 +13461,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Mesh",
-      "fidelityIssues": [
-        "unprojected implements IGetSetVerticesData"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
@@ -13640,6 +13497,7 @@
         "BabylonjsBindings.SimpleClasses._ThinInstanceDataStorage",
         "BabylonjsBindings.SimpleInterfaces.IAnimatable",
         "BabylonjsBindings.SimpleInterfaces.ICreateCapsuleOptions",
+        "BabylonjsBindings.SimpleInterfaces.IGetSetVerticesData",
         "BabylonjsBindings.SimpleInterfaces.IMeshDataOptions",
         "BabylonjsBindings.SimpleInterfaces.IPhysicsEnabledObject",
         "BabylonjsBindings.SimpleInterfaces.MeshCloneOptions",
@@ -13734,9 +13592,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MeshParticleEmitter",
-      "fidelityIssues": [
-        "unprojected implements IParticleEmitterType"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Matrix",
@@ -13744,7 +13600,8 @@
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType"
       ],
       "memberCount": 14
     },
@@ -13755,14 +13612,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MeshShapeBlock",
-      "fidelityIssues": [
-        "unprojected implements IShapeBlock"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Mesh",
         "BabylonjsBindings.SimpleClasses.NodeParticleBlock",
         "BabylonjsBindings.SimpleClasses.NodeParticleBuildState",
-        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.IShapeBlock"
       ],
       "memberCount": 16
     },
@@ -13866,9 +13722,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MorphTarget",
-      "fidelityIssues": [
-        "unprojected implements IAnimatable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Animation",
@@ -13876,6 +13730,7 @@
         "BabylonjsBindings.SimpleClasses.MorphTargetManager",
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IAnimatable",
         "BabylonjsBindings.TypeAliases.FloatArray"
       ],
       "memberCount": 34
@@ -13887,15 +13742,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MorphTargetManager",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Effect",
         "BabylonjsBindings.SimpleClasses.MorphTarget",
         "BabylonjsBindings.SimpleClasses.RawTexture2DArray",
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleInterfaces.IAssetContainer"
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 51
     },
@@ -13990,11 +13844,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MultiPointerScaleBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<Mesh>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Mesh"
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 6
     },
@@ -14127,9 +13980,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Node",
-      "fidelityIssues": [
-        "unprojected implements IBehaviorAware<Node>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractActionManager",
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
@@ -14145,6 +13996,7 @@
         "BabylonjsBindings.SimpleInterfaces.Behavior",
         "BabylonjsBindings.SimpleInterfaces.IAccessibilityTag",
         "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.IBehaviorAware",
         "BabylonjsBindings.SimpleInterfaces.IInspectable",
         "BabylonjsBindings.TypeAliases.NodeConstructor"
       ],
@@ -15590,9 +15442,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OimoJSPlugin",
-      "fidelityIssues": [
-        "unprojected implements IPhysicsEnginePlugin"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.PhysicsImpostor",
@@ -15601,6 +15451,7 @@
         "BabylonjsBindings.SimpleClasses.Quaternion",
         "BabylonjsBindings.SimpleClasses.Vector3",
         "BabylonjsBindings.SimpleInterfaces.IMotorEnabledJoint",
+        "BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin",
         "BabylonjsBindings.SimpleInterfaces.PhysicsImpostorJoint"
       ],
       "memberCount": 39
@@ -15669,13 +15520,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OutlineRenderer",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.SubMesh",
-        "BabylonjsBindings.SimpleClasses._InstancesBatch"
+        "BabylonjsBindings.SimpleClasses._InstancesBatch",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 12
     },
@@ -16053,14 +15903,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ParticleSystemSet",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Color3",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IParticleSystem"
       ],
       "memberCount": 9
@@ -16662,11 +16511,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PhysicsEngineSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -16960,12 +16808,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Plane",
-      "fidelityIssues": [
-        "unprojected implements IPlaneLike"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Matrix",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IPlaneLike"
       ],
       "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutablePlane",
       "memberCount": 18
@@ -16991,9 +16838,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PlaneDragGizmo",
-      "fidelityIssues": [
-        "unprojected implements IPlaneDragGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Color3",
         "BabylonjsBindings.SimpleClasses.Gizmo",
@@ -17004,7 +16849,8 @@
         "BabylonjsBindings.SimpleClasses.StandardMaterial",
         "BabylonjsBindings.SimpleClasses.TransformNode",
         "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IPlaneDragGizmo"
       ],
       "memberCount": 10
     },
@@ -17015,9 +16861,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PlaneRotationGizmo",
-      "fidelityIssues": [
-        "unprojected implements IPlaneRotationGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Color3",
         "BabylonjsBindings.SimpleClasses.Gizmo",
@@ -17026,7 +16870,8 @@
         "BabylonjsBindings.SimpleClasses.RotationGizmo",
         "BabylonjsBindings.SimpleClasses.StandardMaterial",
         "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IPlaneRotationGizmo"
       ],
       "memberCount": 13
     },
@@ -17066,15 +16911,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PointerDragBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<AbstractMesh>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.Ray",
         "BabylonjsBindings.SimpleClasses.TransformNode",
         "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.Behavior",
         "BabylonjsBindings.TypeAliases.DragEvent",
         "BabylonjsBindings.TypeAliases.DragStartEndEvent"
       ],
@@ -17151,15 +16995,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PointParticleEmitter",
-      "fidelityIssues": [
-        "unprojected implements IParticleEmitterType"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Particle",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType"
       ],
       "memberCount": 12
     },
@@ -17170,15 +17013,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PointsCloudSystem",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.CloudPoint",
         "BabylonjsBindings.SimpleClasses.Color4",
         "BabylonjsBindings.SimpleClasses.Material",
         "BabylonjsBindings.SimpleClasses.Mesh",
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 29
     },
@@ -17202,13 +17044,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PointShapeBlock",
-      "fidelityIssues": [
-        "unprojected implements IShapeBlock"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeParticleBlock",
         "BabylonjsBindings.SimpleClasses.NodeParticleBuildState",
-        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.IShapeBlock"
       ],
       "memberCount": 7
     },
@@ -17263,9 +17104,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PositionGizmo",
-      "fidelityIssues": [
-        "unprojected implements IPositionGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Gizmo",
@@ -17279,6 +17118,7 @@
         "BabylonjsBindings.SimpleInterfaces.GizmoAxisCache",
         "BabylonjsBindings.SimpleInterfaces.IAxisDragGizmo",
         "BabylonjsBindings.SimpleInterfaces.IPlaneDragGizmo",
+        "BabylonjsBindings.SimpleInterfaces.IPositionGizmo",
         "BabylonjsBindings.SimpleInterfaces.PositionGizmoOptions",
         "BabylonjsBindings.TypeAliases.DragEvent",
         "BabylonjsBindings.TypeAliases.DragStartEndEvent"
@@ -17442,11 +17282,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PostProcessRenderPipelineManagerSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -17537,11 +17376,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PrePassRendererSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -17628,11 +17466,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ProceduralTextureSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -17674,12 +17511,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.QuadraticErrorSimplification",
-      "fidelityIssues": [
-        "unprojected implements ISimplifier"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Mesh",
-        "BabylonjsBindings.SimpleInterfaces.ISimplificationSettings"
+        "BabylonjsBindings.SimpleInterfaces.ISimplificationSettings",
+        "BabylonjsBindings.SimpleInterfaces.ISimplifier"
       ],
       "memberCount": 6
     },
@@ -17692,12 +17528,12 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Quaternion",
       "fidelityIssues": [
         "Quaternion.FromFloatsToRef: generic default T = Quaternion",
-        "unprojected implements IQuaternionLike",
         "unprojected implements Tensor<Tuple<number, 4>, Quaternion>"
       ],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IQuaternionLike",
         "BabylonjsBindings.TypeAliases.FloatArray"
       ],
       "deepImmutableSymbol": "BabylonjsBindings.SimpleClasses.DeepImmutableQuaternion",
@@ -17868,16 +17704,15 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RecastJSCrowd",
-      "fidelityIssues": [
-        "unprojected implements ICrowd"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.RecastJSPlugin",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.TransformNode",
         "BabylonjsBindings.SimpleClasses.Vector3",
-        "BabylonjsBindings.SimpleInterfaces.IAgentParameters"
+        "BabylonjsBindings.SimpleInterfaces.IAgentParameters",
+        "BabylonjsBindings.SimpleInterfaces.ICrowd"
       ],
       "memberCount": 27
     },
@@ -17888,15 +17723,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RecastJSPlugin",
-      "fidelityIssues": [
-        "unprojected implements INavigationEnginePlugin"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Mesh",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.Vector3",
         "BabylonjsBindings.SimpleInterfaces.ICrowd",
         "BabylonjsBindings.SimpleInterfaces.INavMeshParameters",
+        "BabylonjsBindings.SimpleInterfaces.INavigationEnginePlugin",
         "BabylonjsBindings.TypeAliases.IObstacle"
       ],
       "memberCount": 33
@@ -18218,9 +18052,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
-      "fidelityIssues": [
-        "unprojected implements IRenderTargetTexture"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
@@ -18238,6 +18070,7 @@
         "BabylonjsBindings.SimpleClasses.Texture",
         "BabylonjsBindings.SimpleClasses.Vector3",
         "BabylonjsBindings.SimpleInterfaces.IParticleSystem",
+        "BabylonjsBindings.SimpleInterfaces.IRenderTargetTexture",
         "BabylonjsBindings.SimpleInterfaces.RenderTargetCreationOptions",
         "BabylonjsBindings.SimpleInterfaces.RenderTargetTextureOptions",
         "BabylonjsBindings.TypeAliases.TextureSize"
@@ -18309,9 +18142,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.RotationGizmo",
-      "fidelityIssues": [
-        "unprojected implements IRotationGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Gizmo",
@@ -18324,6 +18155,7 @@
         "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
         "BabylonjsBindings.SimpleInterfaces.GizmoAxisCache",
         "BabylonjsBindings.SimpleInterfaces.IPlaneRotationGizmo",
+        "BabylonjsBindings.SimpleInterfaces.IRotationGizmo",
         "BabylonjsBindings.SimpleInterfaces.RotationGizmoOptions",
         "BabylonjsBindings.TypeAliases.DragEvent",
         "BabylonjsBindings.TypeAliases.DragStartEndEvent"
@@ -18429,9 +18261,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ScaleGizmo",
-      "fidelityIssues": [
-        "unprojected implements IScaleGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Gizmo",
@@ -18445,6 +18275,7 @@
         "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
         "BabylonjsBindings.SimpleInterfaces.GizmoAxisCache",
         "BabylonjsBindings.SimpleInterfaces.IAxisScaleGizmo",
+        "BabylonjsBindings.SimpleInterfaces.IScaleGizmo",
         "BabylonjsBindings.SimpleInterfaces.ScaleGizmoOptions",
         "BabylonjsBindings.TypeAliases.DragEvent",
         "BabylonjsBindings.TypeAliases.DragStartEndEvent"
@@ -18474,10 +18305,7 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Scene",
       "fidelityIssues": [
         "Scene.addExternalData: unprojected generic constraint T extends object",
-        "Scene.getOrAddExternalDataWithFactory: unprojected generic constraint T extends object",
-        "unprojected implements IAnimatable",
-        "unprojected implements IAssetContainer",
-        "unprojected implements IClipPlanesHolder"
+        "Scene.getOrAddExternalDataWithFactory: unprojected generic constraint T extends object"
       ],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractActionManager",
@@ -18541,6 +18369,9 @@
         "BabylonjsBindings.SimpleClasses.Vector3",
         "BabylonjsBindings.SimpleClasses.Vector4",
         "BabylonjsBindings.SimpleClasses.WebRequest",
+        "BabylonjsBindings.SimpleInterfaces.IAnimatable",
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.IClipPlanesHolder",
         "BabylonjsBindings.SimpleInterfaces.ICollisionCoordinator",
         "BabylonjsBindings.SimpleInterfaces.ICreateSceneUboOptions",
         "BabylonjsBindings.SimpleInterfaces.IDisposable",
@@ -18595,12 +18426,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SceneInstrumentation",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.PerfCounter",
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 24
     },
@@ -18625,14 +18455,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SceneOptimizer",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.SceneOptimization",
-        "BabylonjsBindings.SimpleClasses.SceneOptimizerOptions"
+        "BabylonjsBindings.SimpleClasses.SceneOptimizerOptions",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 15
     },
@@ -18658,11 +18487,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SceneRecorder",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 5
     },
@@ -18788,12 +18616,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SetColorsBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
-        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext"
       ],
       "memberCount": 11
     },
@@ -18818,12 +18645,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SetNormalsBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
-        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext"
       ],
       "memberCount": 11
     },
@@ -18848,12 +18674,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SetPositionsBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
-        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext"
       ],
       "memberCount": 11
     },
@@ -18878,12 +18703,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SetTangentsBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
-        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext"
       ],
       "memberCount": 11
     },
@@ -18909,12 +18733,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SetUVsBlock",
-      "fidelityIssues": [
-        "unprojected implements INodeGeometryExecutionContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeGeometryBlock",
-        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeGeometryConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.INodeGeometryExecutionContext"
       ],
       "memberCount": 12
     },
@@ -18989,9 +18812,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ShadowGenerator",
-      "fidelityIssues": [
-        "unprojected implements IShadowGenerator"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Camera",
@@ -19015,12 +18836,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ShadowGeneratorSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneSerializableComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleInterfaces.IAssetContainer"
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent"
       ],
       "memberCount": 9
     },
@@ -19031,9 +18851,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ShadowLight",
-      "fidelityIssues": [
-        "unprojected implements IShadowLight"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Camera",
@@ -19143,11 +18961,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SimplicationQueueSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -19173,9 +18990,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Skeleton",
-      "fidelityIssues": [
-        "unprojected implements IAnimatable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Animatable",
@@ -19342,9 +19157,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SolidParticleSystem",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.DepthSortedParticle",
@@ -19355,7 +19168,8 @@
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.SolidParticle",
         "BabylonjsBindings.SimpleClasses.SolidParticleVertex",
-        "BabylonjsBindings.SimpleClasses.TargetCamera"
+        "BabylonjsBindings.SimpleClasses.TargetCamera",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 55
     },
@@ -19414,15 +19228,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SpatialAudioGizmo",
-      "fidelityIssues": [
-        "unprojected implements ISpatialAudioGizmo"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
         "BabylonjsBindings.SimpleClasses.Gizmo",
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.StandardMaterial",
-        "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer"
+        "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
+        "BabylonjsBindings.SimpleInterfaces.ISpatialAudioGizmo"
       ],
       "memberCount": 5
     },
@@ -19465,15 +19278,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SphereParticleEmitter",
-      "fidelityIssues": [
-        "unprojected implements IParticleEmitterType"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Matrix",
         "BabylonjsBindings.SimpleClasses.Particle",
         "BabylonjsBindings.SimpleClasses.UniformBuffer",
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
-        "BabylonjsBindings.SimpleClasses.Vector3"
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType"
       ],
       "memberCount": 13
     },
@@ -19484,13 +19296,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SphereShapeBlock",
-      "fidelityIssues": [
-        "unprojected implements IShapeBlock"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.NodeParticleBlock",
         "BabylonjsBindings.SimpleClasses.NodeParticleBuildState",
-        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint"
+        "BabylonjsBindings.SimpleClasses.NodeParticleConnectionPoint",
+        "BabylonjsBindings.SimpleInterfaces.IShapeBlock"
       ],
       "memberCount": 13
     },
@@ -19597,9 +19408,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Sprite",
-      "fidelityIssues": [
-        "unprojected implements IAnimatable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.ActionManager",
         "BabylonjsBindings.SimpleClasses.Animation",
@@ -19608,6 +19417,7 @@
         "BabylonjsBindings.SimpleClasses.SpriteManager",
         "BabylonjsBindings.SimpleClasses.ThinSprite",
         "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IAnimatable",
         "BabylonjsBindings.SimpleInterfaces.ISpriteManager"
       ],
       "memberCount": 22
@@ -19619,9 +19429,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SpriteManager",
-      "fidelityIssues": [
-        "unprojected implements ISpriteManager"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Camera",
         "BabylonjsBindings.SimpleClasses.Observable",
@@ -19632,6 +19440,7 @@
         "BabylonjsBindings.SimpleClasses.SpriteRenderer",
         "BabylonjsBindings.SimpleClasses.Texture",
         "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.ISpriteManager",
         "BabylonjsBindings.SimpleInterfaces.SpriteManagerOptions",
         "BabylonjsBindings.TypeAliases.InternalSpriteAugmentedScene"
       ],
@@ -19644,9 +19453,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SpriteMap",
-      "fidelityIssues": [
-        "unprojected implements ISpriteMap"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.RawTexture",
         "BabylonjsBindings.SimpleClasses.Scene",
@@ -19655,6 +19462,7 @@
         "BabylonjsBindings.SimpleClasses.Vector3",
         "BabylonjsBindings.SimpleInterfaces.ISpriteJSONAtlas",
         "BabylonjsBindings.SimpleInterfaces.ISpriteJSONSprite",
+        "BabylonjsBindings.SimpleInterfaces.ISpriteMap",
         "BabylonjsBindings.SimpleInterfaces.ISpriteMapOptions"
       ],
       "memberCount": 20
@@ -19701,11 +19509,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SpriteSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
       ],
       "memberCount": 6
     },
@@ -19788,10 +19595,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StandardRenderingPipeline",
-      "fidelityIssues": [
-        "unprojected implements IAnimatable",
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Animation",
         "BabylonjsBindings.SimpleClasses.BlurPostProcess",
@@ -19803,7 +19607,9 @@
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.ScreenSpaceReflectionPostProcess",
         "BabylonjsBindings.SimpleClasses.SpotLight",
-        "BabylonjsBindings.SimpleClasses.Texture"
+        "BabylonjsBindings.SimpleClasses.Texture",
+        "BabylonjsBindings.SimpleInterfaces.IAnimatable",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 64
     },
@@ -19979,13 +19785,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.STLFileLoader",
-      "fidelityIssues": [
-        "unprojected implements ISceneLoaderPlugin"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.AssetContainer",
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin"
       ],
       "memberCount": 11
     },
@@ -20111,9 +19916,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SubMesh",
-      "fidelityIssues": [
-        "unprojected implements ICullable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
@@ -20130,6 +19933,7 @@
         "BabylonjsBindings.SimpleClasses.Plane",
         "BabylonjsBindings.SimpleClasses.Ray",
         "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.ICullable",
         "BabylonjsBindings.SimpleInterfaces.IMaterialContext",
         "BabylonjsBindings.TypeAliases.FloatArray",
         "BabylonjsBindings.TypeAliases.IndicesArray",
@@ -20161,14 +19965,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SubSurfaceConfiguration",
-      "fidelityIssues": [
-        "unprojected implements PrePassEffectConfiguration"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Color3",
         "BabylonjsBindings.SimpleClasses.Color4",
         "BabylonjsBindings.SimpleClasses.Scene",
-        "BabylonjsBindings.SimpleClasses.SubSurfaceScatteringPostProcess"
+        "BabylonjsBindings.SimpleClasses.SubSurfaceScatteringPostProcess",
+        "BabylonjsBindings.SimpleInterfaces.PrePassEffectConfiguration"
       ],
       "memberCount": 18
     },
@@ -20196,11 +19999,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SubSurfaceSceneComponent",
-      "fidelityIssues": [
-        "unprojected implements ISceneSerializableComponent"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent"
       ],
       "memberCount": 9
     },
@@ -20224,14 +20026,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SurfaceMagnetismBehavior",
-      "fidelityIssues": [
-        "unprojected implements Behavior<Mesh>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Mesh",
         "BabylonjsBindings.SimpleClasses.PickingInfo",
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.Behavior"
       ],
       "memberCount": 15
     },
@@ -20426,13 +20227,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.TextureAssetTask",
-      "fidelityIssues": [
-        "unprojected implements ITextureAssetTask<Texture>"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractAssetTask",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.Texture",
+        "BabylonjsBindings.SimpleInterfaces.ITextureAssetTask",
         "BabylonjsBindings.SimpleInterfaces.ITextureCreationOptions"
       ],
       "memberCount": 10
@@ -20514,11 +20314,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.TexturePackerFrame",
-      "fidelityIssues": [
-        "unprojected implements ITexturePackerFrame"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.Vector2"
+        "BabylonjsBindings.SimpleClasses.Vector2",
+        "BabylonjsBindings.SimpleInterfaces.ITexturePackerFrame"
       ],
       "memberCount": 4
     },
@@ -21053,11 +20852,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ThinParticleSystem",
-      "fidelityIssues": [
-        "unprojected implements IAnimatable",
-        "unprojected implements IDisposable",
-        "unprojected implements IParticleSystem"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.BaseParticleSystem",
@@ -21074,6 +20869,8 @@
         "BabylonjsBindings.SimpleClasses.ProceduralTexture",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IAnimatable",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IParticleSystem",
         "BabylonjsBindings.SimpleInterfaces.ISize",
         "BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem"
@@ -21117,14 +20914,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ThinRenderTargetTexture",
-      "fidelityIssues": [
-        "unprojected implements IRenderTargetTexture"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.InternalTexture",
         "BabylonjsBindings.SimpleClasses.RenderTargetWrapper",
         "BabylonjsBindings.SimpleClasses.ThinTexture",
+        "BabylonjsBindings.SimpleInterfaces.IRenderTargetTexture",
         "BabylonjsBindings.SimpleInterfaces.RenderTargetCreationOptions",
         "BabylonjsBindings.TypeAliases.TextureSize"
       ],
@@ -21511,12 +21307,11 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.TransformFeedbackBoundingHelper",
-      "fidelityIssues": [
-        "unprojected implements IBoundingInfoHelperPlatform"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
-        "BabylonjsBindings.SimpleClasses.ThinEngine"
+        "BabylonjsBindings.SimpleClasses.ThinEngine",
+        "BabylonjsBindings.SimpleInterfaces.IBoundingInfoHelperPlatform"
       ],
       "memberCount": 6
     },
@@ -21833,15 +21628,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Camera",
         "BabylonjsBindings.SimpleClasses.HemisphericLight",
         "BabylonjsBindings.SimpleClasses.Observable",
-        "BabylonjsBindings.SimpleClasses.Scene"
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 22
     },
@@ -21867,7 +21661,6 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Vector2",
       "fidelityIssues": [
-        "unprojected implements IVector2Like",
         "unprojected implements Vector<Tuple<number, 2>, IVector2Like>"
       ],
       "dependencies": [
@@ -21890,7 +21683,6 @@
         "Vector3.FromFloatsToRef: generic default T = Vector3",
         "Vector3.SlerpToRef: generic default T = Vector3",
         "Vector3.SmoothToRef: generic default T = Vector3",
-        "unprojected implements IVector3Like",
         "unprojected implements Vector<Tuple<number, 3>, IVector3LikeInternal>"
       ],
       "dependencies": [
@@ -21898,6 +21690,7 @@
         "BabylonjsBindings.SimpleClasses.Plane",
         "BabylonjsBindings.SimpleClasses.Quaternion",
         "BabylonjsBindings.SimpleClasses.Viewport",
+        "BabylonjsBindings.SimpleInterfaces.IVector3Like",
         "BabylonjsBindings.SimpleInterfaces.IVector3LikeInternal",
         "BabylonjsBindings.TypeAliases.FloatArray",
         "BabylonjsBindings.TypeAliases.float"
@@ -21913,7 +21706,6 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Vector4",
       "fidelityIssues": [
-        "unprojected implements IVector4Like",
         "unprojected implements Vector<Tuple<number, 4>, IVector4Like>"
       ],
       "dependencies": [
@@ -22010,9 +21802,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.VertexData",
-      "fidelityIssues": [
-        "unprojected implements IVertexDataLike"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Color3",
         "BabylonjsBindings.SimpleClasses.Color4",
@@ -22025,6 +21815,7 @@
         "BabylonjsBindings.SimpleClasses.VertexDataMaterialInfo",
         "BabylonjsBindings.SimpleInterfaces.ICreateCapsuleOptions",
         "BabylonjsBindings.SimpleInterfaces.IGetSetVerticesData",
+        "BabylonjsBindings.SimpleInterfaces.IVertexDataLike",
         "BabylonjsBindings.TypeAliases.Coroutine",
         "BabylonjsBindings.TypeAliases.FloatArray",
         "BabylonjsBindings.TypeAliases.IndicesArray"
@@ -22266,9 +22057,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGL2ParticleSystem",
-      "fidelityIssues": [
-        "unprojected implements IGPUParticleSystemPlatform"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Buffer",
         "BabylonjsBindings.SimpleClasses.DataBuffer",
@@ -22277,6 +22066,7 @@
         "BabylonjsBindings.SimpleClasses.ThinEngine",
         "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
         "BabylonjsBindings.SimpleClasses.VertexBuffer",
+        "BabylonjsBindings.SimpleInterfaces.IGPUParticleSystemPlatform",
         "BabylonjsBindings.TypeAliases.DataArray"
       ],
       "memberCount": 13
@@ -22350,15 +22140,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUDrawContext",
-      "fidelityIssues": [
-        "unprojected implements IDrawContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.DataBuffer",
         "BabylonjsBindings.SimpleClasses.VertexBuffer",
         "BabylonjsBindings.SimpleClasses.WebGPUBufferManager",
         "BabylonjsBindings.SimpleClasses.WebGPUDataBuffer",
-        "BabylonjsBindings.SimpleClasses.WebGPUPipelineContext"
+        "BabylonjsBindings.SimpleClasses.WebGPUPipelineContext",
+        "BabylonjsBindings.SimpleInterfaces.IDrawContext"
       ],
       "memberCount": 16
     },
@@ -22434,11 +22223,10 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUHardwareTexture",
-      "fidelityIssues": [
-        "unprojected implements IHardwareTextureWrapper"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.WebGPUEngine"
+        "BabylonjsBindings.SimpleClasses.WebGPUEngine",
+        "BabylonjsBindings.SimpleInterfaces.IHardwareTextureWrapper"
       ],
       "memberCount": 22
     },
@@ -22449,13 +22237,12 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUMaterialContext",
-      "fidelityIssues": [
-        "unprojected implements IMaterialContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.ExternalTexture",
         "BabylonjsBindings.SimpleClasses.InternalTexture",
         "BabylonjsBindings.SimpleClasses.TextureSampler",
+        "BabylonjsBindings.SimpleInterfaces.IMaterialContext",
         "BabylonjsBindings.SimpleInterfaces.IWebGPUMaterialContextSamplerCache",
         "BabylonjsBindings.SimpleInterfaces.IWebGPUMaterialContextTextureCache"
       ],
@@ -22482,9 +22269,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUPipelineContext",
-      "fidelityIssues": [
-        "unprojected implements IPipelineContext"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractEngine",
         "BabylonjsBindings.SimpleClasses.Effect",
@@ -22494,6 +22279,7 @@
         "BabylonjsBindings.SimpleInterfaces.IColor3Like",
         "BabylonjsBindings.SimpleInterfaces.IColor4Like",
         "BabylonjsBindings.SimpleInterfaces.IMatrixLike",
+        "BabylonjsBindings.SimpleInterfaces.IPipelineContext",
         "BabylonjsBindings.SimpleInterfaces.IQuaternionLike",
         "BabylonjsBindings.SimpleInterfaces.IVector2Like",
         "BabylonjsBindings.SimpleInterfaces.IVector3Like",
@@ -22572,9 +22358,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
-      "fidelityIssues": [
-        "unprojected implements IWebXRFeature"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
@@ -22589,14 +22373,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRAbstractMotionController",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.WebXRControllerComponent",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IMinimalMotionControllerObject",
         "BabylonjsBindings.SimpleInterfaces.IMotionControllerLayout"
       ],
@@ -22774,15 +22557,14 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRHand",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AbstractMesh",
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.WebXRCamera",
         "BabylonjsBindings.SimpleClasses.WebXRInputSource",
         "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.TypeAliases.XRHandMeshRigMapping"
       ],
       "memberCount": 10
@@ -22809,14 +22591,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRInput",
-      "fidelityIssues": [
-        "unprojected implements IDisposable"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.WebXRCamera",
         "BabylonjsBindings.SimpleClasses.WebXRInputSource",
         "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IWebXRInputOptions"
       ],
       "memberCount": 7
@@ -22848,14 +22629,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRLayerRenderTargetTextureProvider",
-      "fidelityIssues": [
-        "unprojected implements IWebXRRenderTargetTextureProvider"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.Viewport",
-        "BabylonjsBindings.SimpleClasses.WebXRLayerWrapper"
+        "BabylonjsBindings.SimpleClasses.WebXRLayerWrapper",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRRenderTargetTextureProvider"
       ],
       "memberCount": 7
     },
@@ -23001,10 +22781,7 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
-      "fidelityIssues": [
-        "unprojected implements IDisposable",
-        "unprojected implements IWebXRRenderTargetTextureProvider"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.Observable",
         "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
@@ -23012,7 +22789,9 @@
         "BabylonjsBindings.SimpleClasses.Viewport",
         "BabylonjsBindings.SimpleClasses.WebXRLayerWrapper",
         "BabylonjsBindings.SimpleClasses.WebXRManagedOutputCanvasOptions",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
         "BabylonjsBindings.SimpleInterfaces.IWebXRGraphicsBinding",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRRenderTargetTextureProvider",
         "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget"
       ],
       "memberCount": 46
@@ -23039,14 +22818,13 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRSpaceWarpRenderTargetTextureProvider",
-      "fidelityIssues": [
-        "unprojected implements IWebXRRenderTargetTextureProvider"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
         "BabylonjsBindings.SimpleClasses.Scene",
         "BabylonjsBindings.SimpleClasses.Viewport",
-        "BabylonjsBindings.SimpleClasses.WebXRSessionManager"
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRRenderTargetTextureProvider"
       ],
       "memberCount": 6
     },
@@ -23413,16 +23191,15 @@
       "name": "_WebAudioStaticSoundInstance",
       "kind": "class-support",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStaticSoundInstance",
-      "fidelityIssues": [
-        "unprojected implements IWebAudioOutNode"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses._StaticSoundInstance",
         "BabylonjsBindings.SimpleClasses._WebAudioEngine",
         "BabylonjsBindings.SimpleClasses._WebAudioStaticSound",
         "BabylonjsBindings.SimpleInterfaces.IStaticSoundInstanceOptions",
         "BabylonjsBindings.SimpleInterfaces.IStaticSoundPlayOptions",
-        "BabylonjsBindings.SimpleInterfaces.IStaticSoundStopOptions"
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundStopOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioOutNode"
       ],
       "memberCount": 16
     },
@@ -23432,15 +23209,14 @@
       "name": "_WebAudioStreamingSoundInstance",
       "kind": "class-support",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStreamingSoundInstance",
-      "fidelityIssues": [
-        "unprojected implements IWebAudioOutNode"
-      ],
+      "fidelityIssues": [],
       "dependencies": [
         "BabylonjsBindings.SimpleClasses._StreamingSoundInstance",
         "BabylonjsBindings.SimpleClasses._WebAudioEngine",
         "BabylonjsBindings.SimpleClasses._WebAudioStreamingSound",
         "BabylonjsBindings.SimpleInterfaces.IStreamingSoundPlayOptions",
-        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundStoredOptions"
+        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundStoredOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioOutNode"
       ],
       "memberCount": 12
     },

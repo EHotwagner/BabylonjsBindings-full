@@ -82,7 +82,7 @@ while (pending.length > 0) {
       if (targetCategory) pending.push({ category: targetCategory, name: match[2] });
     }
     for (const referencedName of code.match(identifierPattern) ?? []) {
-      const usedAsType = new RegExp(`(?:[:<,*=]|\\binherit\\s+)\\s*${escapePattern(referencedName)}(?:\\b|<)`).test(typeCode);
+      const usedAsType = new RegExp(`(?:[:<,*=>]|\\binherit\\s+)\\s*${escapePattern(referencedName)}(?:\\b|<)`).test(typeCode);
       if (usedAsType && context.chunksByName.has(referencedName)) pending.push({ category: item.category, name: referencedName });
     }
   }

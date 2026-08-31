@@ -94,7 +94,7 @@ const inferredDependencies = node => {
         // every capitalized F# identifier as an export creates false edges
         // such as System.Action -> Babylon Action.
         const localNode = nodesByName.get(identifier);
-        const usedAsType = new RegExp(`(?:[:<,*=]|\\binherit\\s+)\\s*${escapePattern(identifier)}(?:\\b|<)`).test(typeCode);
+        const usedAsType = new RegExp(`(?:[:<,*=>]|\\binherit\\s+)\\s*${escapePattern(identifier)}(?:\\b|<)`).test(typeCode);
         if (localNode && localNode.fsharpSymbol !== node.fsharpSymbol && usedAsType) dependencies.add(localNode.fsharpSymbol);
         else if (!localNode && chunksByName.has(identifier) && usedAsType) pending.push(identifier);
       }
