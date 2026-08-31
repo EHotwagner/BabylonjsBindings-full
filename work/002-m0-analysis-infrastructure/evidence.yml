@@ -11,7 +11,7 @@ sourceAnalysis: readiness/002-m0-analysis-infrastructure/analysis.json
 sourceSnapshots:
   - label: analysis
     path: readiness/002-m0-analysis-infrastructure/analysis.json
-    digest: fb1b8491dc74d25127022ddbdb9b1c4b5ad5963f3ed58c44fb2cf758fa4f90ec
+    digest: 6602668748072c08a3a36fc4b3b6a6b08ebd759d7efc8d699a78d273e71ec650
     schemaVersion: 1
   - label: checklist
     path: work/002-m0-analysis-infrastructure/checklist.md
@@ -54,10 +54,10 @@ evidence:
     synthetic: false
     observedRun:
       source: reports/m0-analysis.trx
-      digest: "sha256:8d1550f7b2b97f1c1d6fbcb501c7e216d2a3a4892fc60e66b9b06a1f3767899c"
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
       digestContract: exact-bytes-v1
       outcome: passed
-      passed: 3
+      passed: 8
       failed: 0
       skipped: 0
     notes: [All 85 blocked exports are classified exactly once and the committed report passes the deterministic check.]
@@ -81,10 +81,10 @@ evidence:
     synthetic: false
     observedRun:
       source: reports/m0-analysis.trx
-      digest: "sha256:8d1550f7b2b97f1c1d6fbcb501c7e216d2a3a4892fc60e66b9b06a1f3767899c"
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
       digestContract: exact-bytes-v1
       outcome: passed
-      passed: 3
+      passed: 8
       failed: 0
       skipped: 0
     notes: [Declaration-derived map checks and missing extra duplicate fixtures pass.]
@@ -108,10 +108,10 @@ evidence:
     synthetic: false
     observedRun:
       source: reports/m0-analysis.trx
-      digest: "sha256:8d1550f7b2b97f1c1d6fbcb501c7e216d2a3a4892fc60e66b9b06a1f3767899c"
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
       digestContract: exact-bytes-v1
       outcome: passed
-      passed: 3
+      passed: 8
       failed: 0
       skipped: 0
     notes: [The empty M0 registry validates while malformed duplicate and non-normalized fixtures fail.]
@@ -135,10 +135,10 @@ evidence:
     synthetic: false
     observedRun:
       source: reports/m0-analysis.trx
-      digest: "sha256:8d1550f7b2b97f1c1d6fbcb501c7e216d2a3a4892fc60e66b9b06a1f3767899c"
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
       digestContract: exact-bytes-v1
       outcome: passed
-      passed: 3
+      passed: 8
       failed: 0
       skipped: 0
     notes: [Coverage check records 4237 typed 85 blocked one runtime-only and zero lossy exports.]
@@ -162,10 +162,10 @@ evidence:
     synthetic: false
     observedRun:
       source: reports/m0-analysis.trx
-      digest: "sha256:8d1550f7b2b97f1c1d6fbcb501c7e216d2a3a4892fc60e66b9b06a1f3767899c"
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
       digestContract: exact-bytes-v1
       outcome: passed
-      passed: 3
+      passed: 8
       failed: 0
       skipped: 0
     notes: [All new tool-facing JSON documents pass strict schema validation.]
@@ -189,10 +189,10 @@ evidence:
     synthetic: false
     observedRun:
       source: reports/m0-analysis.trx
-      digest: "sha256:8d1550f7b2b97f1c1d6fbcb501c7e216d2a3a4892fc60e66b9b06a1f3767899c"
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
       digestContract: exact-bytes-v1
       outcome: passed
-      passed: 3
+      passed: 8
       failed: 0
       skipped: 0
     notes: [The observed aggregate receipt covers focused tests deterministic report checks and coverage drift.]
@@ -216,10 +216,10 @@ evidence:
     synthetic: false
     observedRun:
       source: reports/m0-analysis.trx
-      digest: "sha256:8d1550f7b2b97f1c1d6fbcb501c7e216d2a3a4892fc60e66b9b06a1f3767899c"
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
       digestContract: exact-bytes-v1
       outcome: passed
-      passed: 3
+      passed: 8
       failed: 0
       skipped: 0
     notes: [Schema version 1 is additive and rejects unknown fields.]
@@ -243,10 +243,10 @@ evidence:
     synthetic: false
     observedRun:
       source: reports/m0-analysis.trx
-      digest: "sha256:8d1550f7b2b97f1c1d6fbcb501c7e216d2a3a4892fc60e66b9b06a1f3767899c"
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
       digestContract: exact-bytes-v1
       outcome: passed
-      passed: 3
+      passed: 8
       failed: 0
       skipped: 0
     notes: [Generated reports are current and byte-identical across repeated generation.]

@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TestRun id="00000000-0000-4000-8000-000000000002" name="M0 analysis infrastructure" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
   <Results>
-    <UnitTestResult executionId="11111111-1111-4111-8111-111111111111" testId="aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa" testName="analysis fixtures" outcome="Passed" />
-    <UnitTestResult executionId="22222222-2222-4222-8222-222222222222" testId="bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb" testName="deterministic analysis reports" outcome="Passed" />
-    <UnitTestResult executionId="33333333-3333-4333-8333-333333333333" testId="cccccccc-cccc-4ccc-8ccc-cccccccccccc" testName="unchanged coverage baseline" outcome="Passed" />
+    <UnitTestResult executionId="00000001-0000-4000-8000-000000000001" testId="aaaaaaa1-aaaa-4aaa-8aaa-aaaaaaaaaaa1" testName="analysis fixtures" outcome="Passed" />
+    <UnitTestResult executionId="00000002-0000-4000-8000-000000000002" testId="aaaaaaa2-aaaa-4aaa-8aaa-aaaaaaaaaaa2" testName="two-generation byte identity" outcome="Passed" />
+    <UnitTestResult executionId="00000003-0000-4000-8000-000000000003" testId="aaaaaaa3-aaaa-4aaa-8aaa-aaaaaaaaaaa3" testName="deterministic analysis reports" outcome="Passed" />
+    <UnitTestResult executionId="00000004-0000-4000-8000-000000000004" testId="aaaaaaa4-aaaa-4aaa-8aaa-aaaaaaaaaaa4" testName="unchanged coverage baseline" outcome="Passed" />
+    <UnitTestResult executionId="00000005-0000-4000-8000-000000000005" testId="aaaaaaa5-aaaa-4aaa-8aaa-aaaaaaaaaaa5" testName="maintained binding locked restore" outcome="Passed" />
+    <UnitTestResult executionId="00000006-0000-4000-8000-000000000006" testId="aaaaaaa6-aaaa-4aaa-8aaa-aaaaaaaaaaa6" testName="maintained binding build" outcome="Passed" />
+    <UnitTestResult executionId="00000007-0000-4000-8000-000000000007" testId="aaaaaaa7-aaaa-4aaa-8aaa-aaaaaaaaaaa7" testName="maintained binding runtime smoke" outcome="Passed" />
+    <UnitTestResult executionId="00000008-0000-4000-8000-000000000008" testId="aaaaaaa8-aaaa-4aaa-8aaa-aaaaaaaaaaa8" testName="no maintained API changes" outcome="Passed" />
   </Results>
   <ResultSummary outcome="Completed">
-    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" notExecuted="0" />
+    <Counters total="8" executed="8" passed="8" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" notExecuted="0" />
   </ResultSummary>
 </TestRun>

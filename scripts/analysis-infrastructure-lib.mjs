@@ -30,17 +30,21 @@ export const validateDependentMap = table => {
 };
 
 export const validateInstantiationEntries = entries => {
-  const identities = new Set();
+  const instantiations = new Set();
   const symbols = new Set();
   const diagnostics = [];
+  let previousKey;
   for (const entry of entries) {
-    if (identities.has(entry.declarationIdentity)) diagnostics.push(`duplicate declarationIdentity: ${entry.declarationIdentity}`);
-    identities.add(entry.declarationIdentity);
+    const key = `${entry.declarationIdentity}|${normalizeTypeScriptExpression(entry.typeScriptExpression)}`;
+    if (instantiations.has(key)) diagnostics.push(`duplicate instantiation: ${key}`);
+    instantiations.add(key);
     if (symbols.has(entry.fsharpSymbol)) diagnostics.push(`duplicate fsharpSymbol: ${entry.fsharpSymbol}`);
     symbols.add(entry.fsharpSymbol);
     if (normalizeTypeScriptExpression(entry.typeScriptExpression) !== entry.typeScriptExpression) {
       diagnostics.push(`non-normalized typeScriptExpression: ${entry.typeScriptExpression}`);
     }
+    if (previousKey !== undefined && previousKey.localeCompare(key) >= 0) diagnostics.push(`entries are not in canonical order: ${previousKey} before ${key}`);
+    previousKey = key;
   }
   return diagnostics.sort();
 };
@@ -78,8 +82,15 @@ export const extractDeclaredKeys = async (root, table) => {
 export const classifyBlockedExports = (blocked, policy) => {
   const matches = new Map(policy.families.map(family => [family.id, []]));
   const diagnostics = [];
+  const policyIdentities = policy.families.flatMap(family => family.exports);
+  const duplicatePolicyIdentities = policyIdentities.filter((identity, index) => policyIdentities.indexOf(identity) !== index);
+  for (const identity of [...new Set(duplicatePolicyIdentities)].sort()) diagnostics.push(`duplicate family policy identity: ${identity}`);
+  const seenBlocked = new Set();
   for (const item of blocked) {
-    const familyMatches = policy.families.filter(family => family.exports.includes(item.name));
+    const identity = identityOf(item);
+    if (seenBlocked.has(identity)) diagnostics.push(`duplicate blocked export identity: ${identity}`);
+    seenBlocked.add(identity);
+    const familyMatches = policy.families.filter(family => family.exports.includes(identity));
     if (familyMatches.length !== 1) diagnostics.push(`${identityOf(item)} matched ${familyMatches.length} families`);
     else matches.get(familyMatches[0].id).push(item);
   }

@@ -58,3 +58,4 @@ npm run check:promotion-batch
 npm run test:promotion-preview
 npm run coverage:check
 npm run test:runtime
+npm run analysis:test:trx

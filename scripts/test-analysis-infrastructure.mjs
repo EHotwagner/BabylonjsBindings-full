@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { resolve } from "node:path";
 import {
+  classifyBlockedExports,
   loadSchemaValidator,
   normalizeTypeScriptExpression,
   validateDependentMap,
@@ -38,13 +39,46 @@ test("dependent map reports sorted missing, extra, and duplicate keys", () => {
 test("instantiation registry normalization and uniqueness are enforced", () => {
   assert.equal(normalizeTypeScriptExpression(" Tuple< T , 2 > "), "Tuple<T,2>");
   const entries = [
-    { declarationIdentity: "a", typeScriptExpression: "Tuple<T,2>", fsharpSymbol: "A" },
-    { declarationIdentity: "a", typeScriptExpression: " Tuple<T,3> ", fsharpSymbol: "A" }
+    { declarationIdentity: "pkg|module|Tuple", typeScriptExpression: "Tuple<T,3>", fsharpSymbol: "A" },
+    { declarationIdentity: "pkg|module|Tuple", typeScriptExpression: " Tuple<T,2> ", fsharpSymbol: "A" }
   ];
   assert.deepEqual(validateInstantiationEntries(entries), [
-    "duplicate declarationIdentity: a",
     "duplicate fsharpSymbol: A",
-    "non-normalized typeScriptExpression:  Tuple<T,3> "
+    "entries are not in canonical order: pkg|module|Tuple|Tuple<T,3> before pkg|module|Tuple|Tuple<T,2>",
+    "non-normalized typeScriptExpression:  Tuple<T,2> "
+  ]);
+});
+
+test("instantiation registry accepts ordered distinct instantiations of one declaration", () => {
+  assert.deepEqual(validateInstantiationEntries([
+    { declarationIdentity: "pkg|module|Tuple", typeScriptExpression: "Tuple<T,2>", fsharpSymbol: "Tuple2" },
+    { declarationIdentity: "pkg|module|Tuple", typeScriptExpression: "Tuple<T,3>", fsharpSymbol: "Tuple3" }
+  ]), []);
+});
+
+test("instantiation registry rejects a duplicate normalized instantiation", () => {
+  assert.deepEqual(validateInstantiationEntries([
+    { declarationIdentity: "pkg|module|Tuple", typeScriptExpression: "Tuple<T,2>", fsharpSymbol: "Tuple2" },
+    { declarationIdentity: "pkg|module|Tuple", typeScriptExpression: "Tuple<T,2>", fsharpSymbol: "Tuple2Again" }
+  ]), [
+    "duplicate instantiation: pkg|module|Tuple|Tuple<T,2>",
+    "entries are not in canonical order: pkg|module|Tuple|Tuple<T,2> before pkg|module|Tuple|Tuple<T,2>"
+  ]);
+});
+
+test("family classification rejects a same-name wrong-module substitution", () => {
+  const policy = { families: [{ id: "physics", label: "Physics", expectedCount: 1, exports: ["pkg|right|PhysicsEngine"] }] };
+  const result = classifyBlockedExports([{ package: "pkg", module: "wrong", name: "PhysicsEngine", kind: "class", reason: "blocked" }], policy);
+  assert.deepEqual(result.diagnostics, ["physics expected 1 exports but found 0", "pkg|wrong|PhysicsEngine matched 0 families"]);
+});
+
+test("family classification rejects duplicate blocked and policy identities", () => {
+  const item = { package: "pkg", module: "right", name: "PhysicsEngine", kind: "class", reason: "blocked" };
+  const policy = { families: [{ id: "physics", label: "Physics", expectedCount: 2, exports: ["pkg|right|PhysicsEngine", "pkg|right|PhysicsEngine"] }] };
+  const result = classifyBlockedExports([item, item], policy);
+  assert.deepEqual(result.diagnostics, [
+    "duplicate blocked export identity: pkg|right|PhysicsEngine",
+    "duplicate family policy identity: pkg|right|PhysicsEngine"
   ]);
 });
 

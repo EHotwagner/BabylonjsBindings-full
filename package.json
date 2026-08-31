@@ -36,6 +36,7 @@
     "coverage:require-complete": "node --max-old-space-size=8192 scripts/generate-coverage.mjs --check --require-complete",
     "analysis:generate": "node scripts/generate-analysis-infrastructure.mjs",
     "analysis:check": "node scripts/generate-analysis-infrastructure.mjs --check",
+    "analysis:determinism": "node scripts/check-analysis-determinism.mjs",
     "analysis:test": "node --test scripts/test-analysis-infrastructure.mjs",
     "analysis:test:trx": "node scripts/run-analysis-tests.mjs reports/m0-analysis.trx",
     "test:candidate-compile": "node scripts/test-candidate-compile.mjs",

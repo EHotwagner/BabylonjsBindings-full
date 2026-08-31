@@ -1,4 +1,4 @@
-import { readFile, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import {
   classifyBlockedExports,
@@ -10,6 +10,9 @@ import {
 
 const root = resolve(import.meta.dirname, "..");
 const check = process.argv.includes("--check");
+const outDirIndex = process.argv.indexOf("--out-dir");
+const outputRoot = outDirIndex >= 0 ? resolve(root, process.argv[outDirIndex + 1]) : resolve(root, "analysis");
+if (outDirIndex >= 0 && !process.argv[outDirIndex + 1]) throw new Error("--out-dir requires a path");
 const readJson = async path => JSON.parse(await readFile(resolve(root, path), "utf8"));
 const render = value => `${JSON.stringify(value, null, 2)}\n`;
 const coverage = await readJson("coverage-and-drift.json");
@@ -64,15 +67,18 @@ for (const [name, document] of [
   if (!validate(document)) throw new Error(`${name} schema validation failed: ${JSON.stringify(validate.errors)}`);
 }
 
-for (const [path, document] of [
-  ["analysis/blocked-families.json", blockedReport],
-  ["analysis/dependent-map-completeness.json", dependentReport]
+for (const [name, document] of [
+  ["blocked-families.json", blockedReport],
+  ["dependent-map-completeness.json", dependentReport]
 ]) {
-  const output = resolve(root, path);
+  const output = resolve(outputRoot, name);
   const rendered = render(document);
   if (check) {
-    if (await readFile(output, "utf8") !== rendered) throw new Error(`${path} is stale; run npm run analysis:generate`);
-  } else await writeFile(output, rendered);
+    if (await readFile(output, "utf8") !== rendered) throw new Error(`${output} is stale; run npm run analysis:generate`);
+  } else {
+    await mkdir(outputRoot, { recursive: true });
+    await writeFile(output, rendered);
+  }
 }
 
 console.log(`analysis complete: ${blocked.length} blocked exports in ${classification.families.length} families; ${mapResults.length} dependent maps complete; ${registry.entries.length} registered instantiations; ${coverage.summary.typed} typed exports unchanged`);
