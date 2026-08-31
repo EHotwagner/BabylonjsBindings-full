@@ -5623,6 +5623,11 @@ module SimpleInterfaces =
     type KeyboardInputMapEntry<'TInteraction> = BrowserKeyboardInputMapEntry<'TInteraction>
     type InputMapEntry<'TInteraction> = BrowserInputMapEntry<'TInteraction>
     type InteractionName<'THandlers> = JavaScriptKeyOf<'THandlers>
+    type PointerInputMapEntry = PointerInputMapEntry<string>
+    type WheelInputMapEntry = WheelInputMapEntry<string>
+    type TouchInputMapEntry = TouchInputMapEntry<string>
+    type KeyboardInputMapEntry = KeyboardInputMapEntry<string>
+    type InputMapEntry = InputMapEntry<string>
 
     /// Distinct ambient WebGPU render pipeline handle.
     [<AllowNullLiteral>]
@@ -9841,6 +9846,7 @@ module SimpleInterfaces =
 
     /// @babylonjs/core/types — exact exported alias over the reviewed constructor support projection.
     type TypedArrayConstructor<'T> = BrowserTypedArrayConstructor<'T>
+    type TypedArrayConstructor = TypedArrayConstructor<BabylonjsBindings.TypeAliases.TypedArray>
 
     /// @babylonjs/core/Meshes/Compression/dracoEncoder.types
     [<AllowNullLiteral>]
@@ -11579,6 +11585,7 @@ module SimpleInterfaces =
         abstract ``length``: IObjectAccessor<ResizeArray<'GLTFTargetType>, ResizeArray<'BabylonTargetType>, float> with get, set
         abstract ``__array__``: IGLTFObjectModelTreeNodeArray<'GLTFTargetType, 'BabylonTargetType> with get, set
 
+    type IGLTFObjectModelTreeNodesObject<'GLTFTargetType> = IGLTFObjectModelTreeNodesObject<'GLTFTargetType, BabylonjsBindings.SimpleClasses.TransformNode>
     type IGLTFObjectModelTreeNodesObject = IGLTFObjectModelTreeNodesObject<INode, BabylonjsBindings.SimpleClasses.TransformNode>
 
     [<AllowNullLiteral>]

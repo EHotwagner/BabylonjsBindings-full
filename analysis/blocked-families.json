@@ -1,71 +1,22 @@
 {
   "schemaVersion": 1,
   "source": "coverage-and-drift.json",
-  "expectedTypedTotal": 4237,
-  "blockedExportCount": 85,
+  "expectedTypedTotal": 4252,
+  "blockedExportCount": 70,
   "familyCount": 11,
   "families": [
     {
       "id": "camera-input-mapper",
       "label": "Camera input mapper",
-      "count": 6,
-      "expectedCount": 6,
-      "exports": [
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|InputMapEntry",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Cameras/inputMapper",
-          "name": "InputMapEntry",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|InteractionName",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Cameras/inputMapper",
-          "name": "InteractionName",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|KeyboardInputMapEntry",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Cameras/inputMapper",
-          "name": "KeyboardInputMapEntry",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|PointerInputMapEntry",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Cameras/inputMapper",
-          "name": "PointerInputMapEntry",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|TouchInputMapEntry",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Cameras/inputMapper",
-          "name": "TouchInputMapEntry",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|WheelInputMapEntry",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Cameras/inputMapper",
-          "name": "WheelInputMapEntry",
-          "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        }
-      ]
+      "count": 0,
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "core-utility-types",
       "label": "Core utility types",
-      "count": 27,
-      "expectedCount": 27,
+      "count": 26,
+      "expectedCount": 26,
       "exports": [
         {
           "identity": "@babylonjs/core|@babylonjs/core/types|Add",
@@ -257,14 +208,6 @@
           "module": "@babylonjs/core/types",
           "name": "Tuple",
           "kind": "type",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/types|TypedArrayConstructor",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/types",
-          "name": "TypedArrayConstructor",
-          "kind": "interface",
           "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
         },
         {
@@ -528,8 +471,8 @@
     {
       "id": "misc-higher-order-functions",
       "label": "Miscellaneous higher-order functions",
-      "count": 6,
-      "expectedCount": 6,
+      "count": 5,
+      "expectedCount": 5,
       "exports": [
         {
           "identity": "@babylonjs/core|@babylonjs/core/Misc/coroutine|makeAsyncFunction",
@@ -570,56 +513,22 @@
           "name": "nativeOverride",
           "kind": "function",
           "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Misc/deepMerger|deepMerge",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Misc/deepMerger",
-          "name": "deepMerge",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
         }
       ]
     },
     {
       "id": "physics",
       "label": "Physics",
-      "count": 2,
-      "expectedCount": 2,
-      "exports": [
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Physics/v1/physicsEngine|PhysicsEngine",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Physics/v1/physicsEngine",
-          "name": "PhysicsEngine",
-          "kind": "class",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Physics/v2/physicsEngine|PhysicsEngine",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Physics/v2/physicsEngine",
-          "name": "PhysicsEngine",
-          "kind": "class",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        }
-      ]
+      "count": 0,
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "typed-array-factory",
       "label": "Typed-array factory",
-      "count": 1,
-      "expectedCount": 1,
-      "exports": [
-        {
-          "identity": "@babylonjs/core|@babylonjs/core/Buffers/bufferUtils|CreateAlignedTypedArray",
-          "package": "@babylonjs/core",
-          "module": "@babylonjs/core/Buffers/bufferUtils",
-          "name": "CreateAlignedTypedArray",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        }
-      ]
+      "count": 0,
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "xr-vr",
@@ -720,8 +629,8 @@
     {
       "id": "gltf-loaders",
       "label": "glTF loaders",
-      "count": 6,
-      "expectedCount": 6,
+      "count": 2,
+      "expectedCount": 2,
       "exports": [
         {
           "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/1.0/index|GLTF1",
@@ -732,43 +641,11 @@
           "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
         },
         {
-          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping|GetMappingForKey",
-          "package": "@babylonjs/loaders",
-          "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
-          "name": "GetMappingForKey",
-          "kind": "function",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping|IGLTFObjectModelTree",
-          "package": "@babylonjs/loaders",
-          "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
-          "name": "IGLTFObjectModelTree",
-          "kind": "interface",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping|IGLTFObjectModelTreeNodesObject",
-          "package": "@babylonjs/loaders",
-          "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
-          "name": "IGLTFObjectModelTreeNodesObject",
-          "kind": "interface",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
           "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/index|GLTF2",
           "package": "@babylonjs/loaders",
           "module": "@babylonjs/loaders/glTF/2.0/index",
           "name": "GLTF2",
           "kind": "namespace",
-          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
-        },
-        {
-          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/glTFFileLoader.pure|GLTFLoaderOptions",
-          "package": "@babylonjs/loaders",
-          "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
-          "name": "GLTFLoaderOptions",
-          "kind": "class",
           "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
         }
       ]
