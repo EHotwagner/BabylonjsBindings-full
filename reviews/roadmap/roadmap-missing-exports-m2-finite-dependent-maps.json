@@ -12,9 +12,10 @@
     "roadmap-evidence"
   ],
   "initial_verdict": "changes-required",
-  "repair_rounds": 0,
+  "repair_rounds": 1,
   "reviewed_commits": [
-    "d5f16acf705797523d5c7ee16ad0a589d8dcc082"
+    "d5f16acf705797523d5c7ee16ad0a589d8dcc082",
+    "12cf9070ea8067007757afb7d4cea7a134c86f5e"
   ],
   "findings": [
     {
@@ -29,7 +30,9 @@
       ],
       "disposition": "follow-up",
       "resolution_evidence": [
-        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must replace or accurately specialize both aliases and add direct compile-time correlation tests before they can remain typed."
+        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must replace or accurately specialize both aliases and add direct compile-time correlation tests before they can remain typed.",
+        "Round-1 repair 12cf9070ea8067007757afb7d4cea7a134c86f5e adds 22 result and 22 option singleton aliases plus a negative singleton test, but src/BabylonjsBindings/M2FiniteDependentMaps.fs:350-354 still exposes the coverage-manifest symbols ResolveWebXRFeature and ResolveWebXRFeatureOptions as non-generic broad U8 unions. Unlike the locked conditional aliases at node_modules/@babylonjs/core/XR/webXRFeaturesManager.d.ts:287-293, those named exports accept no feature discriminator and therefore cannot preserve feature-to-result/options correlation.",
+        "scripts/generate-m2-finite-dependent-maps.mjs:84-89 checks only the newly added singleton alias text, while src/BabylonjsBindings/m2-finite-dependent-map-coverage-manifest.json:157-172 continues to classify the broad base aliases as the typed upstream exports. tests/negative/xr-resolve-mismatch/Program.fs tests ResolveWebXRFeatureAnchorSystem, not ResolveWebXRFeature itself."
       ]
     },
     {
@@ -44,7 +47,10 @@
       ],
       "disposition": "follow-up",
       "resolution_evidence": [
-        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must reconcile every one of the 27 promoted exports against its locked public declaration, expose required runtime/static surfaces, and add a declaration-linked structural check before the coverage promotion is truthful."
+        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must reconcile every one of the 27 promoted exports against its locked public declaration, expose required runtime/static surfaces, and add a declaration-linked structural check before the coverage promotion is truthful.",
+        "Round-1 repair 12cf9070ea8067007757afb7d4cea7a134c86f5e adds the cited DeviceSource/FlowGraph constructors, FlowGraph members, and downstream XR/VR members, but exactness remains false for promoted FlowGraph shapes. In particular, locked node_modules/@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure.d.ts:10-19 declares IFlowGraphSetPropertyBlockConfiguration without a base interface, while src/BabylonjsBindings/M2FiniteDependentMaps.fs:207-211 adds IFlowGraphBlockConfiguration (and its open string indexer) as a base.",
+        "The locked property-block types use discriminator O and AssetType<O> at node_modules/@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure.d.ts:10-49 and node_modules/@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure.d.ts:10-51, whereas src/BabylonjsBindings/M2FiniteDependentMaps.fs:183-226 substitutes an unconstrained asset type directly. This does not preserve the discriminator-to-asset relationship required by FR-003.",
+        "The added generator assertions at scripts/generate-m2-finite-dependent-maps.mjs:84-92 check singleton text and six runtime-import names only; they still do not compare locked public member/signature structures, so the exact-typed coverage claim can remain green with these observable mismatches."
       ]
     },
     {
@@ -57,9 +63,11 @@
         "Positive coverage is also shallow: tests/BabylonjsBindings.CompileTests/Program.fs:108-119 calls getInput for only Keyboard, Mouse, and DualSense; lines 128-133 merely assign default values for the FlowGraph block/switch types; and lines 161-164 exercise enableFeature options for only 2 of 22 WebXR rows.",
         "Independent execution of `npm run test:m2:trx` passed all 13 aggregate checks at d5f16acf705797523d5c7ee16ad0a589d8dcc082, demonstrating that the current green receipt does not detect these missing negative/boundary cases."
       ],
-      "disposition": "follow-up",
+      "disposition": "resolved",
       "resolution_evidence": [
-        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must add isolated expected-failure coverage for every required correlation category and meaningful positive calls for all rows/specializations."
+        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must add isolated expected-failure coverage for every required correlation category and meaningful positive calls for all rows/specializations.",
+        "Resolved at 12cf9070ea8067007757afb7d4cea7a134c86f5e: scripts/check-m2-negative-fixtures.mjs:4-16 now runs eight isolated fixtures covering Device input and event, FlowGraph result/block/switch, WebXR options/resolver/result mismatches; each fixture failed compilation with an accepted F# type-error code during independent `npm run test:m2:trx` confirmation.",
+        "The existing positive matrix at tests/BabylonjsBindings.CompileTests/Program.fs:108-164 continues to compile all 8 Device source discriminators, all 6 FlowGraph asset results plus number/integer and representative property/parser specializations, and all 22 WebXR result discriminators; the round-1 maintained build and Fable compile both passed."
       ]
     },
     {
@@ -72,20 +80,20 @@
         "reports/m2-test-matrix.json records both `Chromium deterministic WebXR stubs` and `clean packed Fable consumer` as pass, while work/004-m2-finite-dependent-maps/evidence.yml:187-210 marks FR-007 pass from the aggregate receipt; neither artifact discloses that the Chromium run bypasses the binding and is separate from the packed consumer.",
         "Independent `npm run test:m2:trx` completed successfully at d5f16acf705797523d5c7ee16ad0a589d8dcc082, confirming the evidence pipeline accepts this split, non-binding browser coverage."
       ],
-      "disposition": "follow-up",
+      "disposition": "resolved",
       "resolution_evidence": [
-        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must drive Chromium through Fable-emitted maintained bindings from the clean packed consumer (or narrow the acceptance/evidence claims before review) and bind the receipt to that observed run."
+        "Unresolved at initial reviewed commit d5f16acf705797523d5c7ee16ad0a589d8dcc082; repair must drive Chromium through Fable-emitted maintained bindings from the clean packed consumer (or narrow the acceptance/evidence claims before review) and bind the receipt to that observed run.",
+        "Resolved at 12cf9070ea8067007757afb7d4cea7a134c86f5e: runtime/browser/m2-xr.html:1-13 installs a package import map and imports runtime/m2-dist/Program.js before the deterministic upstream XR-stub checks, so the maintained emitted binding imports are loaded in Chromium.",
+        "scripts/test-m2-clean-consumer.mjs:24-77 now packs the NuGet, creates an external Fable consumer with exact Babylon.js 9.19.0 dependencies, runs its emitted program under Node and Chromium, and requires the Chromium DOM pass marker. Independent `npm run test:m2:trx` confirmation reported both Node pass and Chromium 151.0.7922.173 pass."
       ]
     }
   ],
   "confirmation": {
-    "reviewed_commit": "d5f16acf705797523d5c7ee16ad0a589d8dcc082",
+    "reviewed_commit": "12cf9070ea8067007757afb7d4cea7a134c86f5e",
     "verdict": "changes-required",
     "unresolved_blocker_major": [
       "M2-001",
-      "M2-002",
-      "M2-003",
-      "M2-004"
+      "M2-002"
     ]
   },
   "human_escalation": null,

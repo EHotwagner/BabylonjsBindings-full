@@ -181,16 +181,16 @@ module FiniteDependentMaps =
     let FlowGraphGetAssetBlock: FlowGraphGetAssetBlockStatic = jsNative
 
     [<AllowNullLiteral>]
-    type IFlowGraphGetPropertyBlockConfiguration<'Asset> =
+    type IFlowGraphGetPropertyBlockConfiguration<'Discriminator, 'Asset> =
         inherit IFlowGraphBlockConfiguration
         abstract propertyName: string option with get, set
         abstract ``object``: 'Asset option with get, set
         abstract resetToDefaultWhenUndefined: bool option with get, set
 
     [<AllowNullLiteral>]
-    type FlowGraphGetPropertyBlock<'Property, 'Asset> =
-        inherit FlowGraphCachedOperationBlock<'Property option>
-        abstract config: IFlowGraphGetPropertyBlockConfiguration<'Asset> with get, set
+    type FlowGraphGetPropertyBlock<'Property, 'Discriminator, 'Asset> =
+        inherit FlowGraphCachedOperationBlock<'Property>
+        abstract config: IFlowGraphGetPropertyBlockConfiguration<'Discriminator, 'Asset> with get, set
         abstract ``object``: FlowGraphDataConnection<'Asset> with get
         abstract propertyName: FlowGraphDataConnection<string> with get
         abstract customGetFunction: FlowGraphDataConnection<System.Func<'Asset, string, FlowGraphContext, 'Property option>> with get
@@ -199,21 +199,25 @@ module FiniteDependentMaps =
 
     [<AllowNullLiteral>]
     type FlowGraphGetPropertyBlockStatic =
-        [<EmitConstructor>] abstract Create<'Property, 'Asset>: config: IFlowGraphGetPropertyBlockConfiguration<'Asset> -> FlowGraphGetPropertyBlock<'Property, 'Asset>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphGetPropertyBlockConfiguration<FlowGraphAnimationAsset, Animation> -> FlowGraphGetPropertyBlock<'Property, FlowGraphAnimationAsset, Animation>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphGetPropertyBlockConfiguration<FlowGraphAnimationGroupAsset, AnimationGroup> -> FlowGraphGetPropertyBlock<'Property, FlowGraphAnimationGroupAsset, AnimationGroup>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphGetPropertyBlockConfiguration<FlowGraphMeshAsset, Mesh> -> FlowGraphGetPropertyBlock<'Property, FlowGraphMeshAsset, Mesh>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphGetPropertyBlockConfiguration<FlowGraphMaterialAsset, Material> -> FlowGraphGetPropertyBlock<'Property, FlowGraphMaterialAsset, Material>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphGetPropertyBlockConfiguration<FlowGraphCameraAsset, Camera> -> FlowGraphGetPropertyBlock<'Property, FlowGraphCameraAsset, Camera>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphGetPropertyBlockConfiguration<FlowGraphLightAsset, Light> -> FlowGraphGetPropertyBlock<'Property, FlowGraphLightAsset, Light>
 
     [<Import("FlowGraphGetPropertyBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure.js")>]
     let FlowGraphGetPropertyBlock: FlowGraphGetPropertyBlockStatic = jsNative
 
     [<AllowNullLiteral>]
-    type IFlowGraphSetPropertyBlockConfiguration<'Asset> =
-        inherit IFlowGraphBlockConfiguration
+    type IFlowGraphSetPropertyBlockConfiguration<'Discriminator, 'Asset> =
         abstract propertyName: string option with get, set
         abstract target: 'Asset option with get, set
 
     [<AllowNullLiteral>]
-    type FlowGraphSetPropertyBlock<'Property, 'Asset> =
+    type FlowGraphSetPropertyBlock<'Property, 'Discriminator, 'Asset> =
         inherit FlowGraphExecutionBlockWithOutSignal
-        abstract config: IFlowGraphSetPropertyBlockConfiguration<'Asset> with get, set
+        abstract config: IFlowGraphSetPropertyBlockConfiguration<'Discriminator, 'Asset> with get, set
         abstract value: FlowGraphDataConnection<'Property> with get
         abstract ``object``: FlowGraphDataConnection<'Asset> with get
         abstract propertyName: FlowGraphDataConnection<string> with get
@@ -223,7 +227,12 @@ module FiniteDependentMaps =
 
     [<AllowNullLiteral>]
     type FlowGraphSetPropertyBlockStatic =
-        [<EmitConstructor>] abstract Create<'Property, 'Asset>: config: IFlowGraphSetPropertyBlockConfiguration<'Asset> -> FlowGraphSetPropertyBlock<'Property, 'Asset>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphSetPropertyBlockConfiguration<FlowGraphAnimationAsset, Animation> -> FlowGraphSetPropertyBlock<'Property, FlowGraphAnimationAsset, Animation>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphSetPropertyBlockConfiguration<FlowGraphAnimationGroupAsset, AnimationGroup> -> FlowGraphSetPropertyBlock<'Property, FlowGraphAnimationGroupAsset, AnimationGroup>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphSetPropertyBlockConfiguration<FlowGraphMeshAsset, Mesh> -> FlowGraphSetPropertyBlock<'Property, FlowGraphMeshAsset, Mesh>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphSetPropertyBlockConfiguration<FlowGraphMaterialAsset, Material> -> FlowGraphSetPropertyBlock<'Property, FlowGraphMaterialAsset, Material>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphSetPropertyBlockConfiguration<FlowGraphCameraAsset, Camera> -> FlowGraphSetPropertyBlock<'Property, FlowGraphCameraAsset, Camera>
+        [<EmitConstructor>] abstract Create<'Property>: config: IFlowGraphSetPropertyBlockConfiguration<FlowGraphLightAsset, Light> -> FlowGraphSetPropertyBlock<'Property, FlowGraphLightAsset, Light>
 
     [<Import("FlowGraphSetPropertyBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure.js")>]
     let FlowGraphSetPropertyBlock: FlowGraphSetPropertyBlockStatic = jsNative
@@ -347,11 +356,57 @@ module FiniteDependentMaps =
         [<Emit("$0['xr-raw-camera-access']")>] abstract RawCameraAccess: IWebXRRawCameraAccessOptions with get
         [<Emit("$0['xr-body-tracking']")>] abstract BodyTracking: IWebXRBodyTrackingOptions with get
 
-    /// Finite result projection of the locked IWebXRFeatureNameTypeMap.
-    type ResolveWebXRFeature = U8<WebXRAnchorSystem, WebXRBackgroundRemover, WebXRHitTest, WebXRMeshDetector, WebXRControllerPhysics, WebXRPlaneDetector, WebXRControllerPointerSelection, U8<WebXRMotionControllerTeleportation, WebXRFeaturePointSystem, WebXRHandTracking, WebXRImageTracking, WebXRNearInteraction, WebXRDomOverlay, WebXRControllerMovement, U8<WebXRLightEstimation, WebXREyeTracking, WebXRWalkingLocomotion, WebXRLayers, WebXRDepthSensing, WebXRSpaceWarp, WebXRRawCameraAccess, WebXRBodyTracking>>>
+    /// Compile-time finite resolver view of the locked feature-name result map.
+    [<AllowNullLiteral>]
+    type ResolveWebXRFeature =
+        abstract Resolve: XRAnchorSystem -> WebXRAnchorSystem
+        abstract Resolve: XRBackgroundRemover -> WebXRBackgroundRemover
+        abstract Resolve: XRHitTest -> WebXRHitTest
+        abstract Resolve: XRMeshDetection -> WebXRMeshDetector
+        abstract Resolve: XRPhysicsController -> WebXRControllerPhysics
+        abstract Resolve: XRPlaneDetection -> WebXRPlaneDetector
+        abstract Resolve: XRPointerSelection -> WebXRControllerPointerSelection
+        abstract Resolve: XRTeleportation -> WebXRMotionControllerTeleportation
+        abstract Resolve: XRFeaturePoints -> WebXRFeaturePointSystem
+        abstract Resolve: XRHandTracking -> WebXRHandTracking
+        abstract Resolve: XRImageTracking -> WebXRImageTracking
+        abstract Resolve: XRNearInteraction -> WebXRNearInteraction
+        abstract Resolve: XRDomOverlay -> WebXRDomOverlay
+        abstract Resolve: XRMovement -> WebXRControllerMovement
+        abstract Resolve: XRLightEstimation -> WebXRLightEstimation
+        abstract Resolve: XREyeTracking -> WebXREyeTracking
+        abstract Resolve: XRWalkingLocomotion -> WebXRWalkingLocomotion
+        abstract Resolve: XRLayers -> WebXRLayers
+        abstract Resolve: XRDepthSensing -> WebXRDepthSensing
+        abstract Resolve: XRSpaceWarp -> WebXRSpaceWarp
+        abstract Resolve: XRRawCameraAccess -> WebXRRawCameraAccess
+        abstract Resolve: XRBodyTracking -> WebXRBodyTracking
 
-    /// Finite options projection of the locked IWebXRFeatureNameOptionsMap.
-    type ResolveWebXRFeatureOptions = U8<IWebXRAnchorSystemOptions, IWebXRBackgroundRemoverOptions, IWebXRHitTestOptions, IWebXRMeshDetectorOptions, IWebXRControllerPhysicsOptions, IWebXRPlaneDetectorOptions, IWebXRControllerPointerSelectionOptions, U8<IWebXRTeleportationOptions, unit, IWebXRHandTrackingOptions, IWebXRImageTrackingOptions, IWebXRNearInteractionOptions, IWebXRDomOverlayOptions, IWebXRControllerMovementOptions, U8<IWebXRLightEstimationOptions, unit, IWebXRWalkingLocomotionOptions, IWebXRLayersOptions, IWebXRDepthSensingOptions, unit, IWebXRRawCameraAccessOptions, IWebXRBodyTrackingOptions>>>
+    /// Compile-time finite resolver view of the locked feature-name options map.
+    [<AllowNullLiteral>]
+    type ResolveWebXRFeatureOptions =
+        abstract Resolve: XRAnchorSystem -> IWebXRAnchorSystemOptions
+        abstract Resolve: XRBackgroundRemover -> IWebXRBackgroundRemoverOptions
+        abstract Resolve: XRHitTest -> IWebXRHitTestOptions
+        abstract Resolve: XRMeshDetection -> IWebXRMeshDetectorOptions
+        abstract Resolve: XRPhysicsController -> IWebXRControllerPhysicsOptions
+        abstract Resolve: XRPlaneDetection -> IWebXRPlaneDetectorOptions
+        abstract Resolve: XRPointerSelection -> IWebXRControllerPointerSelectionOptions
+        abstract Resolve: XRTeleportation -> IWebXRTeleportationOptions
+        abstract Resolve: XRFeaturePoints -> unit
+        abstract Resolve: XRHandTracking -> IWebXRHandTrackingOptions
+        abstract Resolve: XRImageTracking -> IWebXRImageTrackingOptions
+        abstract Resolve: XRNearInteraction -> IWebXRNearInteractionOptions
+        abstract Resolve: XRDomOverlay -> IWebXRDomOverlayOptions
+        abstract Resolve: XRMovement -> IWebXRControllerMovementOptions
+        abstract Resolve: XRLightEstimation -> IWebXRLightEstimationOptions
+        abstract Resolve: XREyeTracking -> unit
+        abstract Resolve: XRWalkingLocomotion -> IWebXRWalkingLocomotionOptions
+        abstract Resolve: XRLayers -> IWebXRLayersOptions
+        abstract Resolve: XRDepthSensing -> IWebXRDepthSensingOptions
+        abstract Resolve: XRSpaceWarp -> unit
+        abstract Resolve: XRRawCameraAccess -> IWebXRRawCameraAccessOptions
+        abstract Resolve: XRBodyTracking -> IWebXRBodyTrackingOptions
 
     // Singleton views preserve the feature -> options -> result correlation at call sites.
     type ResolveWebXRFeatureAnchorSystem = WebXRAnchorSystem

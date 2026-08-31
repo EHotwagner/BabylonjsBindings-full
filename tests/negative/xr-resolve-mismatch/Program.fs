@@ -1,4 +1,3 @@
 module XRResolveMismatch
-open BabylonjsBindings.SimpleClasses
 open BabylonjsBindings.FiniteDependentMaps
-let mismatch (feature: WebXRHitTest) : ResolveWebXRFeatureAnchorSystem = feature
+let mismatch (resolver: ResolveWebXRFeature) : ResolveWebXRFeatureAnchorSystem = resolver.Resolve XRHitTest.Value

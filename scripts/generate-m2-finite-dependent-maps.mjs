@@ -62,6 +62,11 @@ assertExact("flow-graph-asset-type", table("flow-graph-asset-type"), flow.map(ro
 assertExact("webxr-feature-name", table("webxr-feature-name"), xr.map(row => row[1]));
 
 const xrDeclaration = await readFile(resolve(root, "node_modules/@babylonjs/core/XR/webXRFeaturesManager.d.ts"), "utf8");
+const getPropertyDeclaration = await readFile(resolve(root, "node_modules/@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure.d.ts"), "utf8");
+const setPropertyDeclaration = await readFile(resolve(root, "node_modules/@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure.d.ts"), "utf8");
+if (!getPropertyDeclaration.includes("object?: AssetType<O>") || !getPropertyDeclaration.includes("FlowGraphDataConnection<AssetType<O>>")) throw new Error("locked get-property discriminator mapping changed");
+if (!setPropertyDeclaration.includes("target?: AssetType<O>") || !setPropertyDeclaration.includes("FlowGraphDataConnection<AssetType<O>>")) throw new Error("locked set-property discriminator mapping changed");
+if (/interface IFlowGraphSetPropertyBlockConfiguration<[^>]+>\s+extends/.test(setPropertyDeclaration)) throw new Error("locked set-property configuration unexpectedly acquired a base interface");
 for (const [constant, literal, , options, result] of xr) {
   if (!xrDeclaration.includes(`static readonly ${constant}: "${literal}";`)) throw new Error(`missing WebXR literal ${constant}/${literal}`);
   if (!new RegExp(`\\[WebXRFeatureName\\.${constant}\\]:\\s*${result.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*;`).test(xrDeclaration)) throw new Error(`missing WebXR result map ${literal}/${result}`);
@@ -86,7 +91,17 @@ for (const [, , discriminator, options, result] of xr) {
   const projectedOptions = options === "undefined" ? "unit" : options;
   if (!maintained.includes(`type ResolveWebXRFeature${suffix} = ${result}`)) throw new Error(`missing exact WebXR result singleton ${discriminator}`);
   if (!maintained.includes(`type ResolveWebXRFeatureOptions${suffix} = ${projectedOptions}`)) throw new Error(`missing exact WebXR options singleton ${discriminator}`);
+  if (!maintained.includes(`abstract Resolve: ${discriminator} -> ${result}`)) throw new Error(`missing exact WebXR result resolver row ${discriminator}`);
+  if (!maintained.includes(`abstract Resolve: ${discriminator} -> ${projectedOptions}`)) throw new Error(`missing exact WebXR options resolver row ${discriminator}`);
 }
+for (const [, discriminator, asset] of flow) {
+  for (const signature of [
+    `IFlowGraphGetPropertyBlockConfiguration<${discriminator}, ${asset}> -> FlowGraphGetPropertyBlock<'Property, ${discriminator}, ${asset}>`,
+    `IFlowGraphSetPropertyBlockConfiguration<${discriminator}, ${asset}> -> FlowGraphSetPropertyBlock<'Property, ${discriminator}, ${asset}>`
+  ]) if (!maintained.includes(signature)) throw new Error(`missing exact FlowGraph discriminator signature ${signature}`);
+}
+const setConfigBody = maintained.match(/type IFlowGraphSetPropertyBlockConfiguration[\s\S]*?\n\s*\[<AllowNullLiteral>\]/)?.[0] ?? "";
+if (setConfigBody.includes("inherit IFlowGraphBlockConfiguration")) throw new Error("set-property configuration has a non-authoritative base interface");
 for (const runtimeImport of ["DeviceSource", "FlowGraphGetAssetBlock", "FlowGraphGetPropertyBlock", "FlowGraphSetPropertyBlock", "FlowGraphJsonPointerParserBlock", "FlowGraphSwitchBlock"]) {
   if (!maintained.includes(`let ${runtimeImport}:`)) throw new Error(`missing runtime import ${runtimeImport}`);
 }

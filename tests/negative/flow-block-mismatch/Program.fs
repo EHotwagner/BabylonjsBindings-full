@@ -2,4 +2,4 @@ module FlowBlockMismatch
 open BabylonjsBindings.SimpleClasses
 open BabylonjsBindings.SimpleInterfaces
 open BabylonjsBindings.FiniteDependentMaps
-let mismatch (config: IFlowGraphGetAssetBlockConfiguration<FlowGraphMeshAsset>) : FlowGraphGetAssetBlock<FlowGraphAnimationAsset, Animation> = FlowGraphGetAssetBlock.Create config
+let mismatch (config: IFlowGraphGetPropertyBlockConfiguration<FlowGraphMeshAsset, Mesh>) : FlowGraphGetPropertyBlock<float, FlowGraphAnimationAsset, Animation> = FlowGraphGetPropertyBlock.Create config

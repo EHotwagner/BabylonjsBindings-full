@@ -127,8 +127,8 @@ let m2CameraAsset (assets: IAssetContainer) : Camera option = BabylonjsBindings.
 let m2LightAsset (assets: IAssetContainer) : Light option = BabylonjsBindings.FiniteDependentMaps.GetFlowGraphAssetWithType.Invoke(assets, FlowGraphLightAsset.Value, 0.0)
 let m2NumberSwitch: FlowGraphNumberSwitchBlock = Unchecked.defaultof<_>
 let m2IntegerSwitch: FlowGraphIntegerSwitchBlock = Unchecked.defaultof<_>
-let m2MeshGetter: FlowGraphGetPropertyBlock<float, Mesh> = Unchecked.defaultof<_>
-let m2MaterialSetter: FlowGraphSetPropertyBlock<Color3, Material> = Unchecked.defaultof<_>
+let m2MeshGetter: FlowGraphGetPropertyBlock<float, FlowGraphMeshAsset, Mesh> = Unchecked.defaultof<_>
+let m2MaterialSetter: FlowGraphSetPropertyBlock<Color3, FlowGraphMaterialAsset, Material> = Unchecked.defaultof<_>
 let m2CameraParser: FlowGraphJsonPointerParserBlock<string, Camera> = Unchecked.defaultof<_>
 let m2LightAssetBlock: FlowGraphGetAssetBlock<FlowGraphLightAsset, Light> = Unchecked.defaultof<_>
 
@@ -162,6 +162,9 @@ let m2XRExactOptions (manager: BabylonjsBindings.FiniteDependentMaps.WebXRFeatur
     let anchor: WebXRAnchorSystem = manager.enableFeature(XRAnchorSystem.Value, moduleOptions = anchorOptions)
     let hit: WebXRHitTest = manager.enableFeature(XRHitTest.Value, moduleOptions = hitOptions)
     anchor, hit
+
+let m2ResolveFeature (resolver: ResolveWebXRFeature) : WebXRAnchorSystem = resolver.Resolve XRAnchorSystem.Value
+let m2ResolveOptions (resolver: ResolveWebXRFeatureOptions) : IWebXRHitTestOptions = resolver.Resolve XRHitTest.Value
 
 let m2DownstreamTypes: BabylonjsBindings.FiniteDependentMaps.WebXRExperienceHelper * BabylonjsBindings.FiniteDependentMaps.WebXREnterExitUI * BabylonjsBindings.FiniteDependentMaps.WebXRDefaultExperience * BabylonjsBindings.FiniteDependentMaps.VRExperienceHelper * BabylonjsBindings.FiniteDependentMaps.HandConstraintBehavior = Unchecked.defaultof<_>
 let m2DeviceManagerFactory: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManagerStatic = BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager
