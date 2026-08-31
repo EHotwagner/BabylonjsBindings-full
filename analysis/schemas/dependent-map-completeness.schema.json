@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "source", "tableCount", "complete", "tables"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "source": { "const": "analysis/dependent-maps.json" },
+    "tableCount": { "type": "integer", "minimum": 0 },
+    "complete": { "const": true },
+    "tables": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "sourceIdentity", "sourceKeyCount", "mappingCount", "complete", "missingKeys", "extraKeys", "duplicateKeys"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "sourceIdentity": { "type": "string", "pattern": "^[^|]+\\|[^|]+\\|[^|]+$" },
+          "sourceKeyCount": { "type": "integer", "minimum": 1 },
+          "mappingCount": { "type": "integer", "minimum": 1 },
+          "complete": { "const": true },
+          "missingKeys": { "type": "array", "maxItems": 0 },
+          "extraKeys": { "type": "array", "maxItems": 0 },
+          "duplicateKeys": { "type": "array", "maxItems": 0 }
+        }
+      }
+    }
+  }
+}

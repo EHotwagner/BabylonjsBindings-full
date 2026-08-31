@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "tables": [
+    {
+      "id": "device-type",
+      "sourceIdentity": "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceEnums|DeviceType",
+      "sourceKind": "enum",
+      "sourceSymbol": "DeviceType",
+      "mappings": [
+        { "key": "Generic", "status": "blocked" }, { "key": "Keyboard", "status": "blocked" },
+        { "key": "Mouse", "status": "blocked" }, { "key": "Touch", "status": "blocked" },
+        { "key": "DualShock", "status": "blocked" }, { "key": "Xbox", "status": "blocked" },
+        { "key": "Switch", "status": "blocked" }, { "key": "DualSense", "status": "blocked" }
+      ]
+    },
+    {
+      "id": "flow-graph-asset-type",
+      "sourceIdentity": "@babylonjs/core|@babylonjs/core/FlowGraph/flowGraphAssetsContext|FlowGraphAssetType",
+      "sourceKind": "enum",
+      "sourceSymbol": "FlowGraphAssetType",
+      "mappings": [
+        { "key": "Animation", "status": "blocked" }, { "key": "AnimationGroup", "status": "blocked" },
+        { "key": "Mesh", "status": "blocked" }, { "key": "Material", "status": "blocked" },
+        { "key": "Camera", "status": "blocked" }, { "key": "Light", "status": "blocked" }
+      ]
+    },
+    {
+      "id": "webxr-feature-name",
+      "sourceIdentity": "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|WebXRFeatureName",
+      "sourceKind": "static-string-literals",
+      "sourceSymbol": "WebXRFeatureName",
+      "mappings": [
+        { "key": "xr-anchor-system", "status": "blocked" }, { "key": "xr-background-remover", "status": "blocked" },
+        { "key": "xr-hit-test", "status": "blocked" }, { "key": "xr-mesh-detection", "status": "blocked" },
+        { "key": "xr-physics-controller", "status": "blocked" }, { "key": "xr-plane-detection", "status": "blocked" },
+        { "key": "xr-controller-pointer-selection", "status": "blocked" }, { "key": "xr-controller-teleportation", "status": "blocked" },
+        { "key": "xr-feature-points", "status": "blocked" }, { "key": "xr-hand-tracking", "status": "blocked" },
+        { "key": "xr-image-tracking", "status": "blocked" }, { "key": "xr-near-interaction", "status": "blocked" },
+        { "key": "xr-dom-overlay", "status": "blocked" }, { "key": "xr-controller-movement", "status": "blocked" },
+        { "key": "xr-light-estimation", "status": "blocked" }, { "key": "xr-eye-tracking", "status": "blocked" },
+        { "key": "xr-walking-locomotion", "status": "blocked" }, { "key": "xr-layers", "status": "blocked" },
+        { "key": "xr-depth-sensing", "status": "blocked" }, { "key": "xr-space-warp", "status": "blocked" },
+        { "key": "xr-raw-camera-access", "status": "blocked" }, { "key": "xr-body-tracking", "status": "blocked" }
+      ]
+    },
+    {
+      "id": "typed-array-constructor",
+      "sourceIdentity": "@babylonjs/core|@babylonjs/core/types|TypedArray",
+      "sourceKind": "type-union",
+      "sourceSymbol": "TypedArray",
+      "mappings": [
+        { "key": "Int8Array", "status": "blocked" }, { "key": "Uint8Array", "status": "blocked" },
+        { "key": "Uint8ClampedArray", "status": "blocked" }, { "key": "Int16Array", "status": "blocked" },
+        { "key": "Uint16Array", "status": "blocked" }, { "key": "Int32Array", "status": "blocked" },
+        { "key": "Uint32Array", "status": "blocked" }, { "key": "Float32Array", "status": "blocked" },
+        { "key": "Float64Array", "status": "blocked" }, { "key": "BigInt64Array", "status": "blocked" },
+        { "key": "BigUint64Array", "status": "blocked" }
+      ]
+    }
+  ]
+}

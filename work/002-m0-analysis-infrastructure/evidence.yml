@@ -1,0 +1,254 @@
+schemaVersion: 1
+workId: 002-m0-analysis-infrastructure
+stage: evidence
+status: evidenceReady
+sourceSpec: work/002-m0-analysis-infrastructure/spec.md
+sourceClarifications: work/002-m0-analysis-infrastructure/clarifications.md
+sourceChecklist: work/002-m0-analysis-infrastructure/checklist.md
+sourcePlan: work/002-m0-analysis-infrastructure/plan.md
+sourceTasks: work/002-m0-analysis-infrastructure/tasks.yml
+sourceAnalysis: readiness/002-m0-analysis-infrastructure/analysis.json
+sourceSnapshots:
+  - label: analysis
+    path: readiness/002-m0-analysis-infrastructure/analysis.json
+    digest: 6602668748072c08a3a36fc4b3b6a6b08ebd759d7efc8d699a78d273e71ec650
+    schemaVersion: 1
+  - label: checklist
+    path: work/002-m0-analysis-infrastructure/checklist.md
+    digest: 0b32793477cd95848186063a12525f83fbbb82eb8d76489a719e4a3fc9d136bb
+    schemaVersion: 1
+  - label: clarifications
+    path: work/002-m0-analysis-infrastructure/clarifications.md
+    digest: 238ff48feabde93f42acf2fb78e56468cfc6c73544a54832ed138968af041387
+    schemaVersion: 1
+  - label: plan
+    path: work/002-m0-analysis-infrastructure/plan.md
+    digest: d7f17eb8e80375f321d459c4b195f5ba18705e314b273829f235c20d686943fa
+    schemaVersion: 1
+  - label: spec
+    path: work/002-m0-analysis-infrastructure/spec.md
+    digest: 0e417769f5315b01cb46dbf97a83565ec98fdc6fa176fad16eca761b8f2bede9
+    schemaVersion: 1
+  - label: tasks
+    path: work/002-m0-analysis-infrastructure/tasks.yml
+    digest: 3d9780e8e955058a95c5ac370e004ab5437bef9d0532375b75b20c24f3a1d621
+    schemaVersion: 1
+evidence:
+  - id: EV001
+    kind: verification
+    subject:
+      type: task
+      id: T001
+    taskRefs: [T001]
+    requirementRefs: [FR-001]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-001]
+    obligationRefs: [EV001]
+    artifacts: [analysis/blocked-families.json, reports/m0-analysis.trx, scripts/generate-analysis-infrastructure.mjs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m0-analysis.trx
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m0-analysis.trx
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 8
+      failed: 0
+      skipped: 0
+    notes: [All 85 blocked exports are classified exactly once and the committed report passes the deterministic check.]
+  - id: EV002
+    kind: verification
+    subject:
+      type: task
+      id: T002
+    taskRefs: [T002]
+    requirementRefs: [FR-002]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-002]
+    obligationRefs: [EV002]
+    artifacts: [analysis/dependent-map-completeness.json, analysis/dependent-maps.json, reports/m0-analysis.trx, scripts/test-analysis-infrastructure.mjs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m0-analysis.trx
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m0-analysis.trx
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 8
+      failed: 0
+      skipped: 0
+    notes: [Declaration-derived map checks and missing extra duplicate fixtures pass.]
+  - id: EV003
+    kind: verification
+    subject:
+      type: task
+      id: T003
+    taskRefs: [T003]
+    requirementRefs: [FR-003]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-003]
+    obligationRefs: [EV003]
+    artifacts: [analysis/instantiation-registry.json, analysis/schemas/instantiation-registry.schema.json, reports/m0-analysis.trx, scripts/test-analysis-infrastructure.mjs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m0-analysis.trx
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m0-analysis.trx
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 8
+      failed: 0
+      skipped: 0
+    notes: [The empty M0 registry validates while malformed duplicate and non-normalized fixtures fail.]
+  - id: EV004
+    kind: verification
+    subject:
+      type: task
+      id: T004
+    taskRefs: [T004]
+    requirementRefs: [FR-004]
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-004]
+    obligationRefs: [EV004]
+    artifacts: [coverage-and-drift.json, reports/m0-analysis.trx]
+    sourceRefs:
+      - kind: verification
+        path: reports/m0-analysis.trx
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m0-analysis.trx
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 8
+      failed: 0
+      skipped: 0
+    notes: [Coverage check records 4237 typed 85 blocked one runtime-only and zero lossy exports.]
+  - id: EV005
+    kind: verification
+    subject:
+      type: task
+      id: T005
+    taskRefs: [T005]
+    requirementRefs: []
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-001, PD-002, PD-003]
+    obligationRefs: [EV005]
+    artifacts: [analysis/schemas/blocked-families.schema.json, analysis/schemas/dependent-map-completeness.schema.json, analysis/schemas/instantiation-registry.schema.json, reports/m0-analysis.trx]
+    sourceRefs:
+      - kind: verification
+        path: reports/m0-analysis.trx
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m0-analysis.trx
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 8
+      failed: 0
+      skipped: 0
+    notes: [All new tool-facing JSON documents pass strict schema validation.]
+  - id: EV006
+    kind: verification
+    subject:
+      type: task
+      id: T006
+    taskRefs: [T006]
+    requirementRefs: []
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-001, PD-002, PD-003, PD-004]
+    obligationRefs: [EV006]
+    artifacts: [reports/m0-analysis.trx, scripts/run-analysis-tests.mjs]
+    sourceRefs:
+      - kind: verification
+        path: reports/m0-analysis.trx
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m0-analysis.trx
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 8
+      failed: 0
+      skipped: 0
+    notes: [The observed aggregate receipt covers focused tests deterministic report checks and coverage drift.]
+  - id: EV007
+    kind: verification
+    subject:
+      type: task
+      id: T007
+    taskRefs: [T007]
+    requirementRefs: []
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: []
+    obligationRefs: [EV007]
+    artifacts: [analysis/instantiation-registry.json, analysis/schemas/instantiation-registry.schema.json, reports/m0-analysis.trx]
+    sourceRefs:
+      - kind: verification
+        path: reports/m0-analysis.trx
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m0-analysis.trx
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 8
+      failed: 0
+      skipped: 0
+    notes: [Schema version 1 is additive and rejects unknown fields.]
+  - id: EV008
+    kind: verification
+    subject:
+      type: task
+      id: T008
+    taskRefs: [T008]
+    requirementRefs: []
+    acceptanceScenarioRefs: []
+    clarificationDecisionRefs: []
+    checklistResultRefs: []
+    planDecisionRefs: [PD-001, PD-002, PD-003]
+    obligationRefs: [EV008]
+    artifacts: [analysis/blocked-families.json, analysis/dependent-map-completeness.json, reports/m0-analysis.trx]
+    sourceRefs:
+      - kind: verification
+        path: reports/m0-analysis.trx
+    result: pass
+    synthetic: false
+    observedRun:
+      source: reports/m0-analysis.trx
+      digest: "sha256:72728aa47f704df623fb7d66e8e97e167037baebff8a0611d6cd9637708a4c1b"
+      digestContract: exact-bytes-v1
+      outcome: passed
+      passed: 8
+      failed: 0
+      skipped: 0
+    notes: [Generated reports are current and byte-identical across repeated generation.]
+lifecycleNotes:
+  - "Next lifecycle action: verify."

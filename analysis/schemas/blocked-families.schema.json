@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "source", "expectedTypedTotal", "blockedExportCount", "familyCount", "families"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "source": { "const": "coverage-and-drift.json" },
+    "expectedTypedTotal": { "type": "integer", "minimum": 0 },
+    "blockedExportCount": { "type": "integer", "minimum": 0 },
+    "familyCount": { "type": "integer", "minimum": 0 },
+    "families": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "label", "count", "expectedCount", "exports"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$" },
+          "label": { "type": "string", "minLength": 1 },
+          "count": { "type": "integer", "minimum": 0 },
+          "expectedCount": { "type": "integer", "minimum": 0 },
+          "exports": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["identity", "package", "module", "name", "kind", "reason"],
+              "properties": {
+                "identity": { "type": "string", "pattern": "^[^|]+\\|[^|]+\\|[^|]+$" },
+                "package": { "type": "string", "minLength": 1 },
+                "module": { "type": "string", "minLength": 1 },
+                "name": { "type": "string", "minLength": 1 },
+                "kind": { "type": "string", "minLength": 1 },
+                "reason": { "type": "string", "minLength": 1 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

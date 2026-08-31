@@ -1,0 +1,777 @@
+{
+  "schemaVersion": 1,
+  "source": "coverage-and-drift.json",
+  "expectedTypedTotal": 4237,
+  "blockedExportCount": 85,
+  "familyCount": 11,
+  "families": [
+    {
+      "id": "camera-input-mapper",
+      "label": "Camera input mapper",
+      "count": 6,
+      "expectedCount": 6,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|InputMapEntry",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Cameras/inputMapper",
+          "name": "InputMapEntry",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|InteractionName",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Cameras/inputMapper",
+          "name": "InteractionName",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|KeyboardInputMapEntry",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Cameras/inputMapper",
+          "name": "KeyboardInputMapEntry",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|PointerInputMapEntry",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Cameras/inputMapper",
+          "name": "PointerInputMapEntry",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|TouchInputMapEntry",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Cameras/inputMapper",
+          "name": "TouchInputMapEntry",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|WheelInputMapEntry",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Cameras/inputMapper",
+          "name": "WheelInputMapEntry",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "core-utility-types",
+      "label": "Core utility types",
+      "count": 27,
+      "expectedCount": 27,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Add",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Add",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Concat",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Concat",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Constructor",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Constructor",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Decrement",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Decrement",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|DeepImmutable",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "DeepImmutable",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|DeepImmutableObject",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "DeepImmutableObject",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|First",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "First",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Flatten",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Flatten",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|FlattenArray",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "FlattenArray",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|FlattenTuple",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "FlattenTuple",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|FromLength",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "FromLength",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Immutable",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Immutable",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Increment",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Increment",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|IsTuple",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "IsTuple",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Last",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Last",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Length",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Length",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Member",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Member",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|NonNullableFields",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "NonNullableFields",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Pop",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Pop",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Push",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Push",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Remove",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Remove",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Shift",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Shift",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Subtract",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Subtract",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Tuple",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Tuple",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|TypedArrayConstructor",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "TypedArrayConstructor",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|Unshift",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "Unshift",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/types|WritableObject",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/types",
+          "name": "WritableObject",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "device-input",
+      "label": "Device input",
+      "count": 7,
+      "expectedCount": 7,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceSource|DeviceSource",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/DeviceInput/InputDevices/deviceSource",
+          "name": "DeviceSource",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceSource|DeviceSourceEvent",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/DeviceInput/InputDevices/deviceSource",
+          "name": "DeviceSourceEvent",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceSourceManager|DeviceSourceManager",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/DeviceInput/InputDevices/deviceSourceManager",
+          "name": "DeviceSourceManager",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceTypes|DeviceInput",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/DeviceInput/InputDevices/deviceTypes",
+          "name": "DeviceInput",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure|DeviceSourceType",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure",
+          "name": "DeviceSourceType",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure|InternalDeviceSourceManager",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure",
+          "name": "InternalDeviceSourceManager",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure|IObservableManager",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure",
+          "name": "IObservableManager",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "flow-graph",
+      "label": "FlowGraph",
+      "count": 9,
+      "expectedCount": 9,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetAssetBlock.pure|FlowGraphGetAssetBlock",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetAssetBlock.pure",
+          "name": "FlowGraphGetAssetBlock",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure|FlowGraphGetPropertyBlock",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure",
+          "name": "FlowGraphGetPropertyBlock",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure|IFlowGraphGetPropertyBlockConfiguration",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure",
+          "name": "IFlowGraphGetPropertyBlockConfiguration",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure|FlowGraphJsonPointerParserBlock",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure",
+          "name": "FlowGraphJsonPointerParserBlock",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSwitchBlock.pure|FlowGraphSwitchBlock",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSwitchBlock.pure",
+          "name": "FlowGraphSwitchBlock",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure|FlowGraphSetPropertyBlock",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure",
+          "name": "FlowGraphSetPropertyBlock",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure|IFlowGraphSetPropertyBlockConfiguration",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure",
+          "name": "IFlowGraphSetPropertyBlockConfiguration",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/FlowGraph/flowGraphAssetsContext|AssetType",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/FlowGraph/flowGraphAssetsContext",
+          "name": "AssetType",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/FlowGraph/flowGraphAssetsContext|GetFlowGraphAssetWithType",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/FlowGraph/flowGraphAssetsContext",
+          "name": "GetFlowGraphAssetWithType",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "material-mixins",
+      "label": "Material mixins",
+      "count": 3,
+      "expectedCount": 3,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Materials/imageProcessing|ImageProcessingMixin",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Materials/imageProcessing",
+          "name": "ImageProcessingMixin",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Materials/imageProcessingConfiguration.defines|ImageProcessingDefinesMixin",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Materials/imageProcessingConfiguration.defines",
+          "name": "ImageProcessingDefinesMixin",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Materials/uv.defines|UVDefinesMixin",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Materials/uv.defines",
+          "name": "UVDefinesMixin",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "math-vector-tensor",
+      "label": "Math/vector/tensor",
+      "count": 7,
+      "expectedCount": 7,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Maths/math.vector.pure|Vector",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Maths/math.vector.pure",
+          "name": "Vector",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Maths/math.vector.pure|VectorStatic",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Maths/math.vector.pure",
+          "name": "VectorStatic",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|Dimension",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Maths/tensor",
+          "name": "Dimension",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|Tensor",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Maths/tensor",
+          "name": "Tensor",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|TensorLike",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Maths/tensor",
+          "name": "TensorLike",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|TensorStatic",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Maths/tensor",
+          "name": "TensorStatic",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Maths/tensor|ValueOfTensor",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Maths/tensor",
+          "name": "ValueOfTensor",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "misc-higher-order-functions",
+      "label": "Miscellaneous higher-order functions",
+      "count": 6,
+      "expectedCount": 6,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Misc/coroutine|makeAsyncFunction",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Misc/coroutine",
+          "name": "makeAsyncFunction",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Misc/coroutine|makeSyncFunction",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Misc/coroutine",
+          "name": "makeSyncFunction",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Misc/decorators|addAccessorsForMaterialProperty",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Misc/decorators",
+          "name": "addAccessorsForMaterialProperty",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Misc/decorators|expandToProperty",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Misc/decorators",
+          "name": "expandToProperty",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Misc/decorators|nativeOverride",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Misc/decorators",
+          "name": "nativeOverride",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Misc/deepMerger|deepMerge",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Misc/deepMerger",
+          "name": "deepMerge",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "physics",
+      "label": "Physics",
+      "count": 2,
+      "expectedCount": 2,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Physics/v1/physicsEngine|PhysicsEngine",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Physics/v1/physicsEngine",
+          "name": "PhysicsEngine",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Physics/v2/physicsEngine|PhysicsEngine",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Physics/v2/physicsEngine",
+          "name": "PhysicsEngine",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "typed-array-factory",
+      "label": "Typed-array factory",
+      "count": 1,
+      "expectedCount": 1,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Buffers/bufferUtils|CreateAlignedTypedArray",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Buffers/bufferUtils",
+          "name": "CreateAlignedTypedArray",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "xr-vr",
+      "label": "XR and VR",
+      "count": 11,
+      "expectedCount": 11,
+      "exports": [
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Behaviors/Meshes/handConstraintBehavior|HandConstraintBehavior",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior",
+          "name": "HandConstraintBehavior",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/Cameras/VR/vrExperienceHelper.pure|VRExperienceHelper",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure",
+          "name": "VRExperienceHelper",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/XR/webXRDefaultExperience|WebXRDefaultExperience",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/XR/webXRDefaultExperience",
+          "name": "WebXRDefaultExperience",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/XR/webXREnterExitUI|WebXREnterExitUI",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/XR/webXREnterExitUI",
+          "name": "WebXREnterExitUI",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/XR/webXRExperienceHelper|WebXRExperienceHelper",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/XR/webXRExperienceHelper",
+          "name": "WebXRExperienceHelper",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|IWebXRFeatureNameOptionsMap",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/XR/webXRFeaturesManager",
+          "name": "IWebXRFeatureNameOptionsMap",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|IWebXRFeatureNameTypeMap",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/XR/webXRFeaturesManager",
+          "name": "IWebXRFeatureNameTypeMap",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|ResolveWebXRFeature",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/XR/webXRFeaturesManager",
+          "name": "ResolveWebXRFeature",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|ResolveWebXRFeatureOptions",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/XR/webXRFeaturesManager",
+          "name": "ResolveWebXRFeatureOptions",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|WebXRFeatureNameType",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/XR/webXRFeaturesManager",
+          "name": "WebXRFeatureNameType",
+          "kind": "type",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|WebXRFeaturesManager",
+          "package": "@babylonjs/core",
+          "module": "@babylonjs/core/XR/webXRFeaturesManager",
+          "name": "WebXRFeaturesManager",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    },
+    {
+      "id": "gltf-loaders",
+      "label": "glTF loaders",
+      "count": 6,
+      "expectedCount": 6,
+      "exports": [
+        {
+          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/1.0/index|GLTF1",
+          "package": "@babylonjs/loaders",
+          "module": "@babylonjs/loaders/glTF/1.0/index",
+          "name": "GLTF1",
+          "kind": "namespace",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping|GetMappingForKey",
+          "package": "@babylonjs/loaders",
+          "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
+          "name": "GetMappingForKey",
+          "kind": "function",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping|IGLTFObjectModelTree",
+          "package": "@babylonjs/loaders",
+          "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
+          "name": "IGLTFObjectModelTree",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping|IGLTFObjectModelTreeNodesObject",
+          "package": "@babylonjs/loaders",
+          "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
+          "name": "IGLTFObjectModelTreeNodesObject",
+          "kind": "interface",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/index|GLTF2",
+          "package": "@babylonjs/loaders",
+          "module": "@babylonjs/loaders/glTF/2.0/index",
+          "name": "GLTF2",
+          "kind": "namespace",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        },
+        {
+          "identity": "@babylonjs/loaders|@babylonjs/loaders/glTF/glTFFileLoader.pure|GLTFLoaderOptions",
+          "package": "@babylonjs/loaders",
+          "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+          "name": "GLTFLoaderOptions",
+          "kind": "class",
+          "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+        }
+      ]
+    }
+  ]
+}

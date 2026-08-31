@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "source": "analysis/dependent-maps.json",
+  "tableCount": 4,
+  "complete": true,
+  "tables": [
+    {
+      "id": "device-type",
+      "sourceIdentity": "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceEnums|DeviceType",
+      "sourceKeyCount": 8,
+      "mappingCount": 8,
+      "complete": true,
+      "missingKeys": [],
+      "extraKeys": [],
+      "duplicateKeys": []
+    },
+    {
+      "id": "flow-graph-asset-type",
+      "sourceIdentity": "@babylonjs/core|@babylonjs/core/FlowGraph/flowGraphAssetsContext|FlowGraphAssetType",
+      "sourceKeyCount": 6,
+      "mappingCount": 6,
+      "complete": true,
+      "missingKeys": [],
+      "extraKeys": [],
+      "duplicateKeys": []
+    },
+    {
+      "id": "webxr-feature-name",
+      "sourceIdentity": "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|WebXRFeatureName",
+      "sourceKeyCount": 22,
+      "mappingCount": 22,
+      "complete": true,
+      "missingKeys": [],
+      "extraKeys": [],
+      "duplicateKeys": []
+    },
+    {
+      "id": "typed-array-constructor",
+      "sourceIdentity": "@babylonjs/core|@babylonjs/core/types|TypedArray",
+      "sourceKeyCount": 11,
+      "mappingCount": 11,
+      "complete": true,
+      "missingKeys": [],
+      "extraKeys": [],
+      "duplicateKeys": []
+    }
+  ]
+}

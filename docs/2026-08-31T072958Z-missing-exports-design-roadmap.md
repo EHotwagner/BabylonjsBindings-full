@@ -303,13 +303,13 @@ Build a normalized instantiation registry and exact closed-world projections. Ex
 
 | Milestone | Scope | Exports closed | Expected typed total | Exit criteria |
 |---|---|---:|---:|---|
-| M0 — analysis infrastructure | Add normalized blocked-family diagnostics, dependent-map completeness checks, and instantiation registry format | 0 | 4,237 | Deterministic reports; no maintained API changes |
-| M1 — exact existing projections and collisions | Camera input aliases (6), typed-array constructor/function (2), physics collisions (2), glTF options/tree/function (4), `deepMerge` (1) | 15 | 4,252 | Compile, import checks, Node smoke, coverage 70 blocked |
-| M2 — finite dependent maps | Device input (7), FlowGraph (9), XR/VR (11) | 27 | 4,279 | Every discriminator table complete; browser XR smoke; coverage 43 blocked |
-| M3 — higher-order runtime APIs | Remaining miscellaneous functions (5) and material mixins (3) | 8 | 4,287 | Arity policy recorded; emitted decorator/mixin runtime tests; coverage 35 blocked |
-| M4 — type-function core | Remaining utility types (26), then tensor/vector (7) | 33 | 4,320 | Instantiation closure complete; fixed shape tests; coverage 2 blocked |
-| M5 — namespace closure | GLTF1 and GLTF2 facades | 2 | 4,322 typed + 1 runtime-only | All 4,323 exports classified with zero blocked/lossy |
-| M6 — release evidence | Clean packed consumer, Node, Chromium, import resolution, drift and full-coverage gates | 0 | unchanged | `coverage:require-complete`, package consumer, browser and release evidence pass |
+| [x] M0 — analysis infrastructure | Add normalized blocked-family diagnostics, dependent-map completeness checks, and instantiation registry format | 0 | 4,237 | Deterministic reports; no maintained API changes.<br>Evidence: PR #2; merge date/outcome: 2026-08-31 / squash-merged; critique `reviews/roadmap/roadmap-missing-exports-m0-analysis-infrastructure.json`; feedback `feedback/2026-08-31-BabylonjsBindings-full.md`. |
+| [ ] M1 — exact existing projections and collisions | Camera input aliases (6), typed-array constructor/function (2), physics collisions (2), glTF options/tree/function (4), `deepMerge` (1) | 15 | 4,252 | Compile, import checks, Node smoke, coverage 70 blocked |
+| [ ] M2 — finite dependent maps | Device input (7), FlowGraph (9), XR/VR (11) | 27 | 4,279 | Every discriminator table complete; browser XR smoke; coverage 43 blocked |
+| [ ] M3 — higher-order runtime APIs | Remaining miscellaneous functions (5) and material mixins (3) | 8 | 4,287 | Arity policy recorded; emitted decorator/mixin runtime tests; coverage 35 blocked |
+| [ ] M4 — type-function core | Remaining utility types (26), then tensor/vector (7) | 33 | 4,320 | Instantiation closure complete; fixed shape tests; coverage 2 blocked |
+| [ ] M5 — namespace closure | GLTF1 and GLTF2 facades | 2 | 4,322 typed + 1 runtime-only | All 4,323 exports classified with zero blocked/lossy |
+| [ ] M6 — release evidence | Clean packed consumer, Node, Chromium, import resolution, drift and full-coverage gates | 0 | unchanged | `coverage:require-complete`, package consumer, browser and release evidence pass |
 
 The numerical targets assume no upstream pin change. Any Babylon.js update restarts the declaration-lock and blocked-family audit before roadmap counts are adjusted.
 

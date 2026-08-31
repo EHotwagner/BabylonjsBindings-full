@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "expectedCoverage": {
+    "total": 4323,
+    "typed": 4237,
+    "runtimeOnly": 1,
+    "blocked": 85,
+    "lossy": 0
+  },
+  "families": [
+    {
+      "id": "camera-input-mapper",
+      "label": "Camera input mapper",
+      "expectedCount": 6,
+      "exports": ["@babylonjs/core|@babylonjs/core/Cameras/inputMapper|InputMapEntry", "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|InteractionName", "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|KeyboardInputMapEntry", "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|PointerInputMapEntry", "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|TouchInputMapEntry", "@babylonjs/core|@babylonjs/core/Cameras/inputMapper|WheelInputMapEntry"]
+    },
+    {
+      "id": "core-utility-types",
+      "label": "Core utility types",
+      "expectedCount": 27,
+      "exports": ["@babylonjs/core|@babylonjs/core/types|Add", "@babylonjs/core|@babylonjs/core/types|Concat", "@babylonjs/core|@babylonjs/core/types|Constructor", "@babylonjs/core|@babylonjs/core/types|Decrement", "@babylonjs/core|@babylonjs/core/types|DeepImmutable", "@babylonjs/core|@babylonjs/core/types|DeepImmutableObject", "@babylonjs/core|@babylonjs/core/types|First", "@babylonjs/core|@babylonjs/core/types|Flatten", "@babylonjs/core|@babylonjs/core/types|FlattenArray", "@babylonjs/core|@babylonjs/core/types|FlattenTuple", "@babylonjs/core|@babylonjs/core/types|FromLength", "@babylonjs/core|@babylonjs/core/types|Immutable", "@babylonjs/core|@babylonjs/core/types|Increment", "@babylonjs/core|@babylonjs/core/types|IsTuple", "@babylonjs/core|@babylonjs/core/types|Last", "@babylonjs/core|@babylonjs/core/types|Length", "@babylonjs/core|@babylonjs/core/types|Member", "@babylonjs/core|@babylonjs/core/types|NonNullableFields", "@babylonjs/core|@babylonjs/core/types|Pop", "@babylonjs/core|@babylonjs/core/types|Push", "@babylonjs/core|@babylonjs/core/types|Remove", "@babylonjs/core|@babylonjs/core/types|Shift", "@babylonjs/core|@babylonjs/core/types|Subtract", "@babylonjs/core|@babylonjs/core/types|Tuple", "@babylonjs/core|@babylonjs/core/types|TypedArrayConstructor", "@babylonjs/core|@babylonjs/core/types|Unshift", "@babylonjs/core|@babylonjs/core/types|WritableObject"]
+    },
+    {
+      "id": "device-input",
+      "label": "Device input",
+      "expectedCount": 7,
+      "exports": ["@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceSource|DeviceSource", "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceSource|DeviceSourceEvent", "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceSourceManager|DeviceSourceManager", "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceTypes|DeviceInput", "@babylonjs/core|@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure|DeviceSourceType", "@babylonjs/core|@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure|InternalDeviceSourceManager", "@babylonjs/core|@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure|IObservableManager"]
+    },
+    {
+      "id": "flow-graph",
+      "label": "FlowGraph",
+      "expectedCount": 9,
+      "exports": ["@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetAssetBlock.pure|FlowGraphGetAssetBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure|FlowGraphGetPropertyBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure|IFlowGraphGetPropertyBlockConfiguration", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure|FlowGraphJsonPointerParserBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSwitchBlock.pure|FlowGraphSwitchBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure|FlowGraphSetPropertyBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure|IFlowGraphSetPropertyBlockConfiguration", "@babylonjs/core|@babylonjs/core/FlowGraph/flowGraphAssetsContext|AssetType", "@babylonjs/core|@babylonjs/core/FlowGraph/flowGraphAssetsContext|GetFlowGraphAssetWithType"]
+    },
+    {
+      "id": "material-mixins",
+      "label": "Material mixins",
+      "expectedCount": 3,
+      "exports": ["@babylonjs/core|@babylonjs/core/Materials/imageProcessing|ImageProcessingMixin", "@babylonjs/core|@babylonjs/core/Materials/imageProcessingConfiguration.defines|ImageProcessingDefinesMixin", "@babylonjs/core|@babylonjs/core/Materials/uv.defines|UVDefinesMixin"]
+    },
+    {
+      "id": "math-vector-tensor",
+      "label": "Math/vector/tensor",
+      "expectedCount": 7,
+      "exports": ["@babylonjs/core|@babylonjs/core/Maths/math.vector.pure|Vector", "@babylonjs/core|@babylonjs/core/Maths/math.vector.pure|VectorStatic", "@babylonjs/core|@babylonjs/core/Maths/tensor|Dimension", "@babylonjs/core|@babylonjs/core/Maths/tensor|Tensor", "@babylonjs/core|@babylonjs/core/Maths/tensor|TensorLike", "@babylonjs/core|@babylonjs/core/Maths/tensor|TensorStatic", "@babylonjs/core|@babylonjs/core/Maths/tensor|ValueOfTensor"]
+    },
+    {
+      "id": "misc-higher-order-functions",
+      "label": "Miscellaneous higher-order functions",
+      "expectedCount": 6,
+      "exports": ["@babylonjs/core|@babylonjs/core/Misc/coroutine|makeAsyncFunction", "@babylonjs/core|@babylonjs/core/Misc/coroutine|makeSyncFunction", "@babylonjs/core|@babylonjs/core/Misc/decorators|addAccessorsForMaterialProperty", "@babylonjs/core|@babylonjs/core/Misc/decorators|expandToProperty", "@babylonjs/core|@babylonjs/core/Misc/decorators|nativeOverride", "@babylonjs/core|@babylonjs/core/Misc/deepMerger|deepMerge"]
+    },
+    {
+      "id": "physics",
+      "label": "Physics",
+      "expectedCount": 2,
+      "exports": ["@babylonjs/core|@babylonjs/core/Physics/v1/physicsEngine|PhysicsEngine", "@babylonjs/core|@babylonjs/core/Physics/v2/physicsEngine|PhysicsEngine"]
+    },
+    {
+      "id": "typed-array-factory",
+      "label": "Typed-array factory",
+      "expectedCount": 1,
+      "exports": ["@babylonjs/core|@babylonjs/core/Buffers/bufferUtils|CreateAlignedTypedArray"]
+    },
+    {
+      "id": "xr-vr",
+      "label": "XR and VR",
+      "expectedCount": 11,
+      "exports": ["@babylonjs/core|@babylonjs/core/Behaviors/Meshes/handConstraintBehavior|HandConstraintBehavior", "@babylonjs/core|@babylonjs/core/Cameras/VR/vrExperienceHelper.pure|VRExperienceHelper", "@babylonjs/core|@babylonjs/core/XR/webXRDefaultExperience|WebXRDefaultExperience", "@babylonjs/core|@babylonjs/core/XR/webXREnterExitUI|WebXREnterExitUI", "@babylonjs/core|@babylonjs/core/XR/webXRExperienceHelper|WebXRExperienceHelper", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|IWebXRFeatureNameOptionsMap", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|IWebXRFeatureNameTypeMap", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|ResolveWebXRFeature", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|ResolveWebXRFeatureOptions", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|WebXRFeatureNameType", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|WebXRFeaturesManager"]
+    },
+    {
+      "id": "gltf-loaders",
+      "label": "glTF loaders",
+      "expectedCount": 6,
+      "exports": ["@babylonjs/loaders|@babylonjs/loaders/glTF/1.0/index|GLTF1", "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping|GetMappingForKey", "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping|IGLTFObjectModelTree", "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping|IGLTFObjectModelTreeNodesObject", "@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/index|GLTF2", "@babylonjs/loaders|@babylonjs/loaders/glTF/glTFFileLoader.pure|GLTFLoaderOptions"]
+    }
+  ]
+}
