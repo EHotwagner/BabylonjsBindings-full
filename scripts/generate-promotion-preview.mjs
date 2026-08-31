@@ -14,11 +14,8 @@ const specifications = [
   { category: "function", candidateName: "SimpleFunctions", maintainedFile: "SimpleFunctions.fs", moduleName: "SimpleFunctions" },
   { category: "variable", candidateName: "SimpleVariables", maintainedFile: "SimpleVariables.fs", moduleName: "SimpleVariables" }
 ];
-const declarationName = chunk => {
-  const match = chunk.match(/^    (?:type|let) (?:``([^`]+)``|([A-Za-z_][A-Za-z0-9_]*))/m);
-  return match?.[1] ?? match?.[2];
-};
-const chunks = source => source.trimEnd().split(/\n{2,}/).map((text, index) => ({ index, text, name: declarationName(text) }));
+const declarationNamesInChunk = chunk => [...chunk.matchAll(/^    (?:type|let) (?:``([^`]+)``|([A-Za-z_][A-Za-z0-9_]*))/gm)].map(match => match[1] ?? match[2]);
+const chunks = source => source.trimEnd().split(/\n{2,}/).map((text, index) => ({ index, text, names: declarationNamesInChunk(text) }));
 const symbolName = symbol => symbol?.split(".").at(-1);
 const declarationNames = (entry, category) => [entry.name, symbolName(entry.deepImmutableSymbol), symbolName(entry.partialSymbol), symbolName(entry.requiredNonNullableSymbol), symbolName(entry.requiredSymbol), category === "function" ? symbolName(entry.fsharpType) : undefined, category === "class" ? `${entry.name}Static` : undefined].filter(Boolean);
 const identifierPattern = /[A-Za-z_][A-Za-z0-9_]*/g;
@@ -36,15 +33,16 @@ for (const specification of specifications) {
   const candidateChunks = chunks(candidateSource);
   const chunksByName = new Map();
   for (const chunk of candidateChunks) {
-    if (!chunk.name) continue;
-    const values = chunksByName.get(chunk.name) ?? [];
-    values.push(chunk);
-    chunksByName.set(chunk.name, values);
+    for (const name of chunk.names) {
+      const values = chunksByName.get(name) ?? [];
+      values.push(chunk);
+      chunksByName.set(name, values);
+    }
   }
   const selectedEntries = batch.selected.filter(entry => entry.category === specification.category).map(entry => manifestBySymbol.get(entry.fsharpSymbol)).filter(Boolean);
   contexts.set(specification.category, {
     specification, maintainedSource, candidateChunks, chunksByName,
-    maintainedNames: new Set(chunks(maintainedSource).map(chunk => chunk.name).filter(Boolean)),
+    maintainedNames: new Set(chunks(maintainedSource).flatMap(chunk => chunk.names)),
     exportDeclarationNames: new Set(manifestEntries.flatMap(entry => declarationNames(entry, specification.category))),
     selectedDeclarationNames: new Set(selectedEntries.flatMap(entry => declarationNames(entry, specification.category))),
     selectedEntries, selectedChunkIndices: new Set()

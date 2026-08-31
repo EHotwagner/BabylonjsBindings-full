@@ -133,6 +133,8 @@ const lines = [
   "/// Exact dependency-closed object aliases exported by Babylon.js 9.19.0.",
   "module ObjectTypes ="
 ];
+lines.push("", "    /// Phantom structural witness for TypeScript Record<string, unknown> constraints.", "    [<AllowNullLiteral>]", "    type JavaScriptStringUnknownRecord =", "        interface end");
+const stringUnknownRecordAliases = new Set(["ArcRotateHandlers", "GeospatialHandlers", "TargetCameraHandlers"]);
 for (const entry of entries) {
   for (const member of entry.members.filter(member => member.kind === "callbackProperty")) {
     const helperName = `${entry.name}${pascal(member.name)}Callback`;
@@ -140,6 +142,7 @@ for (const entry of entries) {
     lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
   }
   lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name} =`);
+  if (stringUnknownRecordAliases.has(entry.name)) lines.push("        inherit JavaScriptStringUnknownRecord");
   for (const member of entry.members) {
     if (member.kind === "property") {
       lines.push(`        abstract \`\`${member.name}\`\`: ${member.type} with get${member.readonly ? "" : ", set"}`);

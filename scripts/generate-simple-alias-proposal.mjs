@@ -553,7 +553,10 @@ const lines = [
   "/// Exact primitive aliases and dependency-free callbacks exported by Babylon.js 9.19.0.",
   "module TypeAliases ="
 ];
+lines.push("", "    /// Phantom structural witness for TypeScript Function constraints.", "    [<AllowNullLiteral>]", "    type JavaScriptFunction =", "        interface end");
+const stageActionAliases = new Set(["CameraStageAction", "CameraStageFrameBufferAction", "EvaluateSubMeshStageAction", "MeshStageAction", "PointerMoveStageAction", "PointerUpDownStageAction", "PreActiveMeshStageAction", "RenderTargetStageAction", "RenderTargetsStageAction", "RenderingGroupStageAction", "RenderingMeshStageAction", "SimpleStageAction"]);
 lines.push("", "    /// Exact Symbol.toStringTag literal exposed by SharedArrayBuffer.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserSharedArrayBufferTag =", "        | [<CompiledName(\"SharedArrayBuffer\")>] SharedArrayBuffer");
+lines.push("", "    /// Phantom structural witness for NodeRenderGraphValueType generic constraints.", "    [<AllowNullLiteral>]", "    type NodeRenderGraphValue =", "        interface end");
 lines.push("", "    /// Exact ESNext SharedArrayBuffer instance surface used by ArrayBufferLike declarations.", "    [<AllowNullLiteral>]", "    type BrowserSharedArrayBuffer =", "        abstract byteLength: float with get", "        abstract growable: bool with get", "        abstract maxByteLength: float with get", "        abstract slice: ?beginIndex: float * ?endIndex: float -> BrowserSharedArrayBuffer", "        abstract grow: ?newByteLength: float -> unit", "        [<Emit(\"$0[Symbol.toStringTag]\")>] abstract toStringTag: BrowserSharedArrayBufferTag with get");
 lines.push("", "    /// Yield branch returned by a Babylon coroutine iterator.", "    [<AllowNullLiteral>]", "    type CoroutineInternalYieldResult =", "        abstract ``done``: bool option with get", "        abstract value: unit with get");
 lines.push("", "    /// Completion branch returned by a Babylon coroutine iterator.", "    [<AllowNullLiteral>]", "    type CoroutineInternalReturnResult<'T> =", "        abstract ``done``: bool with get", "        abstract value: 'T with get");
@@ -600,7 +603,9 @@ for (const entry of entries) {
     const argumentsType = entry.parameters.length === 0
       ? "unit"
       : entry.parameters.map(parameter => `${parameter.optional ? "?" : ""}${parameter.name}: ${parameter.type}`).join(" * ");
-    lines.push("    [<AllowNullLiteral>]", `    type ${entry.name} =`, `        [<Emit("$0($1...)")>] abstract Invoke: ${argumentsType} -> ${entry.returnType}`);
+    lines.push("    [<AllowNullLiteral>]", `    type ${entry.name} =`);
+    if (stageActionAliases.has(entry.name)) lines.push("        inherit JavaScriptFunction");
+    lines.push(`        [<Emit("$0($1...)")>] abstract Invoke: ${argumentsType} -> ${entry.returnType}`);
   } else if (entry.shape === "recursiveUnionAlias") {
     lines.push("    [<Erase>]", `    type ${entry.name} =`);
     entry.branches.forEach((branch, index) => lines.push(`        | ${entry.name}Case${index + 1} of ${branch}`));

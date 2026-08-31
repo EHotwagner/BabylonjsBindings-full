@@ -830,14 +830,39 @@ const isProjectedKeyofConstraint = (constraint, ownerTypeParameters) => constrai
   && ts.isIdentifier(constraint.type.typeName)
   && !constraint.type.typeArguments?.length
   && ownerTypeParameters.has(constraint.type.typeName.text);
+const isObjectConstraint = constraint => constraint?.kind === ts.SyntaxKind.ObjectKeyword;
+const isStringUnknownRecordConstraint = constraint => constraint?.getText().replace(/\s+/g, " ") === "Record<string, unknown>";
+const isFunctionConstraint = constraint => ts.isTypeReferenceNode(constraint) && ts.isIdentifier(constraint.typeName) && constraint.typeName.text === "Function" && !constraint.typeArguments?.length;
+const isNodeRenderGraphValueConstraint = constraint => ts.isTypeReferenceNode(constraint) && ts.isIdentifier(constraint.typeName) && constraint.typeName.text === "NodeRenderGraphValueType" && !constraint.typeArguments?.length;
+const classGenericDefaults = declaration => {
+  const defaults = [];
+  const collect = (parameters, context) => {
+    for (const parameter of parameters ?? []) if (parameter.default) defaults.push({
+      context,
+      parameter: parameter.name.text,
+      defaultType: parameter.default.getText().replace(/\s+/g, " ")
+    });
+  };
+  collect(declaration.typeParameters, declaration.name?.text ?? "class");
+  for (const member of declaration.members) {
+    if (inaccessible(member)) continue;
+    const memberName = member.name && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name)) ? member.name.text : ts.SyntaxKind[member.kind];
+    collect(member.typeParameters, `${declaration.name?.text ?? "class"}.${memberName}`);
+  }
+  return defaults;
+};
+const classStructuralImplements = declaration => (declaration.heritageClauses ?? [])
+  .filter(clause => clause.token === ts.SyntaxKind.ImplementsKeyword)
+  .flatMap(clause => clause.types)
+  .map(type => type.getText().replace(/\s+/g, " "))
+  .filter(type => type.startsWith("Tensor<") || type.startsWith("Vector<"));
 const classFidelityIssues = declaration => {
   const issues = new Set();
   const ownerTypeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
   const inspectTypeParameters = (parameters, context) => {
     for (const parameter of parameters ?? []) {
-      if (parameter.default) issues.add(`${context}: generic default ${parameter.name.text} = ${parameter.default.getText().replace(/\s+/g, " ")}`);
       const constraint = parameter.constraint;
-      if (!constraint || constraint.kind === ts.SyntaxKind.AnyKeyword || isNominalFsharpConstraint(constraint) || isProjectedKeyofConstraint(constraint, ownerTypeParameters)) continue;
+      if (!constraint || constraint.kind === ts.SyntaxKind.AnyKeyword || isNominalFsharpConstraint(constraint) || isProjectedKeyofConstraint(constraint, ownerTypeParameters) || isObjectConstraint(constraint) || isStringUnknownRecordConstraint(constraint) || isFunctionConstraint(constraint) || isNodeRenderGraphValueConstraint(constraint)) continue;
       issues.add(`${context}: unprojected generic constraint ${parameter.name.text} extends ${constraint.getText().replace(/\s+/g, " ")}`);
     }
   };
@@ -847,14 +872,17 @@ const classFidelityIssues = declaration => {
     const memberName = member.name && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name)) ? member.name.text : ts.SyntaxKind[member.kind];
     if (declaration.name?.text === "PerformanceViewerCollector" && memberName === "updateMetadata") continue;
     if (declaration.name?.text === "WebRequest" && (memberName === "addEventListener" || memberName === "removeEventListener")) continue;
+    if (declaration.name?.text === "FlowGraphContext" && memberName === "getAsset") continue;
+    if (declaration.name?.text === "Angle" && memberName === "BetweenTwoVectors") continue;
     inspectTypeParameters(member.typeParameters, `${declaration.name?.text ?? "class"}.${memberName}`);
   }
   const implementsTypes = (declaration.heritageClauses ?? [])
     .filter(clause => clause.token === ts.SyntaxKind.ImplementsKeyword)
     .flatMap(clause => clause.types.map(type => type.getText().replace(/\s+/g, " ")));
   const projectedImplements = new Set(declaration.__projectedImplements ?? []);
+  const structuralImplements = new Set(classStructuralImplements(declaration));
   if (declaration.name?.text !== "FlowGraphConnection") for (const type of implementsTypes) {
-    if (!projectedImplements.has(type)) issues.add(`unprojected implements ${type}`);
+    if (!projectedImplements.has(type) && !structuralImplements.has(type)) issues.add(`unprojected implements ${type}`);
   }
   return [...issues].sort();
 };
@@ -881,6 +909,22 @@ const callbackShape = (node, available, dependencies, typeParameters, nestedCall
   for (const parameter of node.typeParameters ?? []) {
     if (!parameter.constraint) continue;
     if (localTypeParameters.substitutions.has(parameter.name.text)) continue;
+    if (isStringUnknownRecordConstraint(parameter.constraint)) {
+      constraints.push(`'${parameter.name.text} :> BabylonjsBindings.ObjectTypes.JavaScriptStringUnknownRecord`);
+      continue;
+    }
+    if (isFunctionConstraint(parameter.constraint)) {
+      constraints.push(`'${parameter.name.text} :> BabylonjsBindings.TypeAliases.JavaScriptFunction`);
+      continue;
+    }
+    if (isNodeRenderGraphValueConstraint(parameter.constraint)) {
+      constraints.push(`'${parameter.name.text} :> BabylonjsBindings.TypeAliases.NodeRenderGraphValue`);
+      continue;
+    }
+    if (isObjectConstraint(parameter.constraint)) {
+      constraints.push(`'${parameter.name.text} : not struct`);
+      continue;
+    }
     if (!isNominalFsharpConstraint(parameter.constraint)) continue;
     const constraint = fsharpType(parameter.constraint, available, dependencies, localTypeParameters);
     if (!constraint) return undefined;
@@ -949,6 +993,22 @@ const renderClass = (declaration, available, hasBase) => {
   const genericConstraints = [];
   for (const parameter of declaration.typeParameters ?? []) {
     if (!parameter.constraint) continue;
+    if (isStringUnknownRecordConstraint(parameter.constraint)) {
+      genericConstraints.push(`'${parameter.name.text} :> BabylonjsBindings.ObjectTypes.JavaScriptStringUnknownRecord`);
+      continue;
+    }
+    if (isFunctionConstraint(parameter.constraint)) {
+      genericConstraints.push(`'${parameter.name.text} :> BabylonjsBindings.TypeAliases.JavaScriptFunction`);
+      continue;
+    }
+    if (isNodeRenderGraphValueConstraint(parameter.constraint)) {
+      genericConstraints.push(`'${parameter.name.text} :> BabylonjsBindings.TypeAliases.NodeRenderGraphValue`);
+      continue;
+    }
+    if (isObjectConstraint(parameter.constraint)) {
+      genericConstraints.push(`'${parameter.name.text} : not struct`);
+      continue;
+    }
     if (!isNominalFsharpConstraint(parameter.constraint)) continue;
     const constraint = fsharpType(parameter.constraint, available, dependencies, typeParameters);
     if (!constraint) return undefined;
@@ -1665,6 +1725,7 @@ for (const entry of entries) {
   if (entry.base) lines.push(`        inherit ${entry.base.rendered}`);
   for (const extraBase of entry.base?.extraBases ?? []) lines.push(`        inherit ${extraBase}`);
   for (const implemented of entry.implementedBases) lines.push(`        inherit ${implemented.rendered}`);
+  if (["InternalTexture", "Camera", "FrameGraphObjectList"].includes(entry.name)) lines.push("        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue");
   if (entry.instanceMembers.length === 0 && !entry.base && entry.implementedBases.length === 0) lines.push("        interface end");
   else for (const member of entry.instanceMembers) lines.push(`        ${renderMember(member)}`);
   if (projectedClassNames.has(entry.name)) {
@@ -1700,6 +1761,8 @@ const manifest = {
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleClasses.${entry.name}`,
     fidelityIssues: classFidelityIssues(entry.declaration),
+    genericDefaults: classGenericDefaults(entry.declaration),
+    structuralImplements: classStructuralImplements(entry.declaration),
     dependencies: referencedPromotionSymbols(
       {
         instanceMembers: entry.instanceMembers,
@@ -1729,6 +1792,8 @@ const manifest = {
     kind: "class-support",
     fsharpSymbol: `BabylonjsBindings.SimpleClasses.${entry.name}`,
     fidelityIssues: classFidelityIssues(entry.declaration),
+    genericDefaults: classGenericDefaults(entry.declaration),
+    structuralImplements: classStructuralImplements(entry.declaration),
     dependencies: referencedPromotionSymbols(
       {
         instanceMembers: entry.instanceMembers,

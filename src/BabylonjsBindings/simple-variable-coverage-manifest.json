@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "7447d4f20eb578e5f8bf5504cb2a94e704d871844c47d4c53223dd4e473e295a",
+  "proposalSha256": "e8cc631a462fcd30403f2719a1dbe5b13857d346fceb37fa37015666bc8e6d4f",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -4718,6 +4718,19 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleVariables.Wgs84Ellipsoid",
       "fsharpType": "BabylonjsBindings.SimpleInterfaces.DeepImmutableIEllipsoidLike"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/fileTools.pure",
+      "name": "FileToolsOptions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.FileToolsOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebRequest"
+      ],
+      "fsharpType": "VariableShape_FileToolsOptions",
+      "memberCount": 7
     }
   ],
   "reviewStatus": "maintained"

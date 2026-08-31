@@ -2502,7 +2502,7 @@ module SimpleClasses =
 
     /// @babylonjs/core/Cameras/inputMapper
     [<AllowNullLiteral>]
-    type InputMapper<'THandlers> =
+    type InputMapper<'THandlers when 'THandlers :> BabylonjsBindings.ObjectTypes.JavaScriptStringUnknownRecord> =
         abstract ``inputMap``: ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>>> with get, set
         abstract ``handlers``: 'THandlers with get
         abstract ``resolveInteraction`` : ``source``: BabylonjsBindings.StringEnums.InputSource * ?``currentConditions``: BabylonjsBindings.ObjectTypes.InputConditions -> BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>> option
@@ -2515,7 +2515,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type InputMapperStatic =
-        [<EmitConstructor>] abstract Create<'THandlers>: ``handlers``: 'THandlers * ?``createDefaultEntries``: System.Func<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>>>> -> InputMapper<'THandlers>
+        [<EmitConstructor>] abstract Create<'THandlers when 'THandlers :> BabylonjsBindings.ObjectTypes.JavaScriptStringUnknownRecord>: ``handlers``: 'THandlers * ?``createDefaultEntries``: System.Func<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>>>> -> InputMapper<'THandlers>
 
     [<Import("InputMapper", "@babylonjs/core/Cameras/inputMapper.js")>]
     let InputMapper: InputMapperStatic = jsNative
@@ -3458,14 +3458,14 @@ module SimpleClasses =
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
-    type Stage<'T> =
+    type Stage<'T when 'T :> BabylonjsBindings.TypeAliases.JavaScriptFunction> =
         inherit System.Collections.Generic.IList<InlineObject5403ebd5182cObject<'T>>
         abstract ``registerStep`` : ``index``: float * ``component``: BabylonjsBindings.SimpleInterfaces.ISceneComponent * ``action``: 'T -> unit
         abstract ``clear`` : unit -> unit
 
     [<AllowNullLiteral>]
     type StageStatic =
-        abstract ``Create``<'T> : unit -> Stage<'T>
+        abstract ``Create``<'T when 'T :> BabylonjsBindings.TypeAliases.JavaScriptFunction> : unit -> Stage<'T>
 
     [<Import("Stage", "@babylonjs/core/sceneComponent.js")>]
     let Stage: StageStatic = jsNative
@@ -10610,6 +10610,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type Camera =
         inherit Node
+        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue
         abstract ``inputs``: CameraInputsManager<Camera> with get, set
         abstract ``_position``: Vector3 with get, set
         abstract ``oblique``: BabylonjsBindings.SimpleInterfaces.IObliqueParams option with get, set
@@ -18339,6 +18340,7 @@ module SimpleClasses =
     /// @babylonjs/core/FrameGraph/frameGraphObjectList
     [<AllowNullLiteral>]
     type FrameGraphObjectList =
+        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue
         abstract ``meshes``: ResizeArray<AbstractMesh> option with get, set
         abstract ``particleSystems``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IParticleSystem> option with get, set
 
@@ -22762,6 +22764,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type InternalTexture =
         inherit TextureSampler
+        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue
         abstract ``isReady``: bool with get, set
         abstract ``isCube``: bool with get, set
         abstract ``is3D``: bool with get, set
@@ -27707,7 +27710,7 @@ module SimpleClasses =
         abstract ``isExternal``: bool with get, set
         abstract ``creationOptions``: BabylonjsBindings.TypeAliases.NodeRenderGraphInputCreationOptions with get, set
         abstract ``setDefaultValue`` : unit -> unit
-        abstract ``getTypedValue``<'T> : unit -> 'T
+        abstract ``getTypedValue``<'T when 'T :> BabylonjsBindings.TypeAliases.NodeRenderGraphValue> : unit -> 'T
         abstract ``getInternalTextureFromValue`` : unit -> InternalTexture option
         abstract ``getClassName`` : unit -> string
         abstract ``isAnyTexture`` : unit -> bool
@@ -34327,9 +34330,9 @@ module SimpleClasses =
         abstract ``getMorphTargetByName`` : ``name``: string -> MorphTarget option
         abstract ``getPostProcessByName`` : ``name``: string -> PostProcess option
         abstract ``isActiveMesh`` : ``mesh``: AbstractMesh -> bool
-        abstract ``addExternalData``<'T> : ``key``: string * ``data``: 'T -> bool
+        abstract ``addExternalData``<'T when 'T : not struct> : ``key``: string * ``data``: 'T -> bool
         abstract ``getExternalData``<'T> : ``key``: string -> 'T option
-        abstract ``getOrAddExternalDataWithFactory``<'T> : ``key``: string * ``factory``: System.Func<string, 'T> -> 'T
+        abstract ``getOrAddExternalDataWithFactory``<'T when 'T : not struct> : ``key``: string * ``factory``: System.Func<string, 'T> -> 'T
         abstract ``removeExternalData`` : ``key``: string -> bool
         abstract ``freeProcessedMaterials`` : unit -> unit
         abstract ``freeActiveMeshes`` : unit -> unit

@@ -4590,3 +4590,18 @@ module SimpleVariables =
     /// @babylonjs/core/Maths/math.geospatial.functions
     [<Import("Wgs84Ellipsoid", "@babylonjs/core/Maths/math.geospatial.functions.js")>]
     let ``Wgs84Ellipsoid``: BabylonjsBindings.SimpleInterfaces.DeepImmutableIEllipsoidLike = jsNative
+
+    /// Inline object shape of FileToolsOptions.
+    [<AllowNullLiteral>]
+    type VariableShape_FileToolsOptions =
+        abstract ``DefaultRetryStrategy``: System.Func<string, BabylonjsBindings.SimpleClasses.WebRequest, float, float> with get, set
+        abstract ``BaseUrl``: string with get, set
+        abstract ``CorsBehavior``: U2<string, System.Func<U2<string, ResizeArray<string>>, string>> with get, set
+        abstract ``PreprocessUrl``: System.Func<string, string> with get, set
+        abstract ``ScriptBaseUrl``: string with get, set
+        abstract ``ScriptPreprocessUrl``: System.Func<string, string> with get, set
+        abstract ``CleanUrl``: System.Func<string, string> with get, set
+
+    /// @babylonjs/core/Misc/fileTools.pure
+    [<Import("FileToolsOptions", "@babylonjs/core/Misc/fileTools.pure.js")>]
+    let ``FileToolsOptions``: VariableShape_FileToolsOptions = jsNative

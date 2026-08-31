@@ -6,10 +6,20 @@ open Fable.Core
 /// Exact primitive aliases and dependency-free callbacks exported by Babylon.js 9.19.0.
 module TypeAliases =
 
+    /// Phantom structural witness for TypeScript Function constraints.
+    [<AllowNullLiteral>]
+    type JavaScriptFunction =
+        interface end
+
     /// Exact Symbol.toStringTag literal exposed by SharedArrayBuffer.
     [<StringEnum; RequireQualifiedAccess>]
     type BrowserSharedArrayBufferTag =
         | [<CompiledName("SharedArrayBuffer")>] SharedArrayBuffer
+
+    /// Phantom structural witness for NodeRenderGraphValueType generic constraints.
+    [<AllowNullLiteral>]
+    type NodeRenderGraphValue =
+        interface end
 
     /// Exact ESNext SharedArrayBuffer instance surface used by ArrayBufferLike declarations.
     [<AllowNullLiteral>]
@@ -490,11 +500,13 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type CameraStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: camera: BabylonjsBindings.SimpleClasses.Camera -> unit
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type CameraStageFrameBufferAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: camera: BabylonjsBindings.SimpleClasses.Camera -> bool
 
     /// @babylonjs/core/Materials/Textures/textureMerger
@@ -552,6 +564,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type EvaluateSubMeshStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh * subMesh: BabylonjsBindings.SimpleClasses.SubMesh -> unit
 
     /// @babylonjs/core/types
@@ -684,6 +697,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type MeshStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh * hardwareInstancedRendering: bool -> bool
 
     /// @babylonjs/core/Engines/Native/nativeDataStream
@@ -746,11 +760,13 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type PointerMoveStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: unTranslatedPointerX: System.Double * unTranslatedPointerY: System.Double * pickResult: BabylonjsBindings.SimpleClasses.PickingInfo option * isMeshPicked: bool * element: Browser.Types.HTMLElement option -> BabylonjsBindings.SimpleClasses.PickingInfo option
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type PointerUpDownStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: unTranslatedPointerX: System.Double * unTranslatedPointerY: System.Double * pickResult: BabylonjsBindings.SimpleClasses.PickingInfo option * evt: BabylonjsBindings.SimpleInterfaces.IPointerEvent * doubleClick: bool -> BabylonjsBindings.SimpleClasses.PickingInfo option
 
     /// @babylonjs/core/PostProcesses/postProcess.pure
@@ -771,6 +787,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type PreActiveMeshStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh -> unit
 
     /// @babylonjs/core/Engines/abstractEngine.pure
@@ -789,21 +806,25 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderingGroupStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: renderingGroupId: System.Double -> unit
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderingMeshStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.Mesh * subMesh: BabylonjsBindings.SimpleClasses.SubMesh * batch: obj * effect: BabylonjsBindings.SimpleClasses.Effect option -> unit
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderTargetsStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: renderTargets: BabylonjsBindings.SimpleClasses.SmartArrayNoDuplicate<BabylonjsBindings.SimpleClasses.RenderTargetTexture> -> unit
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderTargetStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: renderTarget: BabylonjsBindings.SimpleClasses.RenderTargetTexture * ?faceIndex: System.Double * ?layer: System.Double -> unit
 
     /// @babylonjs/core/Engines/Extensions/engine.renderTarget.pure
@@ -822,6 +843,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type SimpleStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
 
     /// @babylonjs/core/SmartAssets/smartAssetManager.pure

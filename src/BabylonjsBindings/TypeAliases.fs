@@ -6,6 +6,11 @@ open Fable.Core
 /// Exact primitive aliases and dependency-free callbacks exported by Babylon.js 9.19.0.
 module TypeAliases =
 
+    /// Phantom structural witness for TypeScript Function constraints.
+    [<AllowNullLiteral>]
+    type JavaScriptFunction =
+        interface end
+
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
     type AliasObjectde9f6c1b6b0f =
@@ -189,6 +194,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderingGroupStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: renderingGroupId: System.Double -> unit
 
     /// @babylonjs/core/Engines/Extensions/engine.renderTarget.pure
@@ -202,6 +208,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type SimpleStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
 
     /// @babylonjs/core/Maths/tensor
@@ -406,3 +413,410 @@ module TypeAliases =
 
     /// @babylonjs/core/Engines/thinEngine.functions
     type WebGLContext = U2<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext>
+
+    /// Phantom structural witness for NodeRenderGraphValueType generic constraints.
+    [<AllowNullLiteral>]
+    type NodeRenderGraphValue =
+        interface end
+
+    /// Exact string literal type for "cylinder".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral05fa0965c7c3 =
+        | [<CompiledName("cylinder")>] Value
+
+    /// Exact string literal type for "box".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral26f8567f2569 =
+        | [<CompiledName("box")>] Value
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject6772b28860e6 =
+        abstract ``processCodeAfterIncludes``: System.Func<string, string, string, string> option with get, set
+        abstract ``processFinalCode``: System.Func<string, string, string, string> option with get, set
+        abstract ``defineCustomBindings``: System.Func<string, string option, ResizeArray<string>, ResizeArray<string>, string option> option with get, set
+        abstract ``bindCustomBindings``: System.Action<string, BabylonjsBindings.SimpleClasses.Effect> option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectdb70335810f5 =
+        abstract ``planetRadius``: System.Double with get, set
+        abstract ``pickPredicate``: BabylonjsBindings.TypeAliases.MeshPredicate option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject8a8f0eb7b989 =
+        abstract ``delta``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``dragPlanePoint``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``dragPlaneNormal``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``dragDistance``: System.Double with get, set
+        abstract ``pointerId``: System.Double with get, set
+        abstract ``pointerInfo``: BabylonjsBindings.SimpleClasses.PointerInfo option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type PickObject26759efc7574 =
+        abstract ``dragPlanePoint``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``pointerId``: System.Double with get, set
+        abstract ``pointerInfo``: BabylonjsBindings.SimpleClasses.PointerInfo option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectf8c432911558 =
+        abstract ``parentBody``: BabylonjsBindings.SimpleClasses.PhysicsBody with get, set
+        abstract ``parentBodyIndex``: System.Double with get, set
+        abstract ``childBody``: BabylonjsBindings.SimpleClasses.PhysicsBody with get, set
+        abstract ``childBodyIndex``: System.Double with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject8100b17d32ab =
+        abstract ``hasTexture``: bool with get, set
+        abstract ``texture``: BabylonjsBindings.SimpleClasses.BaseTexture with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject6203b669d6e3 =
+        abstract ``isReadyForSubMesh``: bool with get, set
+        abstract ``defines``: BabylonjsBindings.SimpleClasses.MaterialDefines with get, set
+        abstract ``subMesh``: BabylonjsBindings.SimpleClasses.SubMesh with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject94ac0c75db2a =
+        abstract ``defines``: BabylonjsBindings.SimpleClasses.MaterialDefines with get, set
+        abstract ``fallbacks``: BabylonjsBindings.SimpleClasses.EffectFallbacks with get, set
+        abstract ``fallbackRank``: System.Double with get, set
+        abstract ``customCode``: BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction option with get, set
+        abstract ``attributes``: ResizeArray<string> with get, set
+        abstract ``uniforms``: ResizeArray<string> with get, set
+        abstract ``samplers``: ResizeArray<string> with get, set
+        abstract ``uniformBuffersNames``: ResizeArray<string> with get, set
+        abstract ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh with get, set
+        abstract ``indexParameters``: obj with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject30d71ade1570 =
+        abstract ``defines``: BabylonjsBindings.SimpleClasses.MaterialDefines with get, set
+        abstract ``mesh``: BabylonjsBindings.SimpleClasses.AbstractMesh with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject4db22449cde4 =
+        abstract ``ubo``: BabylonjsBindings.SimpleClasses.UniformBuffer with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject973e5db2a604 =
+        abstract ``subMesh``: BabylonjsBindings.SimpleClasses.SubMesh with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectb703bdd55640 =
+        abstract ``animatables``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IAnimatable> with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject7127b8abcbb2 =
+        abstract ``activeTextures``: ResizeArray<BabylonjsBindings.SimpleClasses.BaseTexture> with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectf7cf6b4f3727 =
+        abstract ``renderTargets``: BabylonjsBindings.SimpleClasses.SmartArray<BabylonjsBindings.SimpleClasses.RenderTargetTexture> with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectf3be3b8e2a6a =
+        abstract ``defines``: AliasObjectcb14fbe7a9aa with get, set
+        abstract ``previousWorldMatrices``: AliasObject412d911943f6 with get, set
+        abstract ``previousViewProjection``: BabylonjsBindings.SimpleClasses.Matrix with get, set
+        abstract ``currentViewProjection``: BabylonjsBindings.SimpleClasses.Matrix with get, set
+        abstract ``previousBones``: AliasObject39ce38c5be16 with get, set
+        abstract ``lastUpdateFrameId``: System.Double with get, set
+        abstract ``excludedSkinnedMesh``: ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh> with get, set
+        abstract ``reverseCulling``: bool with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject1ef54cec7ea7 =
+        abstract ``LTC1``: BabylonjsBindings.SimpleClasses.BaseTexture with get, set
+        abstract ``LTC2``: BabylonjsBindings.SimpleClasses.BaseTexture with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectcc17c3f88910 =
+        abstract ``faceColors``: ResizeArray<BabylonjsBindings.SimpleClasses.Color4> with get, set
+        abstract ``faceCenters``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``faceZaxis``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``faceXaxis``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``faceYaxis``: ResizeArray<BabylonjsBindings.SimpleClasses.Vector3> with get, set
+        abstract ``nbSharedFaces``: System.Double with get, set
+        abstract ``nbUnsharedFaces``: System.Double with get, set
+        abstract ``nbFaces``: System.Double with get, set
+        abstract ``nbFacesAtPole``: System.Double with get, set
+        abstract ``adjacentFaces``: ResizeArray<ResizeArray<System.Double>> with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject044785759537 =
+        abstract ``pointsMode``: BabylonjsBindings.Enums.GreasedLineRibbonPointsMode option with get, set
+        abstract ``directions``: U2<ResizeArray<BabylonjsBindings.SimpleClasses.Vector3>, BabylonjsBindings.SimpleClasses.Vector3> option with get, set
+        abstract ``directionsAutoMode``: BabylonjsBindings.Enums.GreasedLineRibbonAutoDirectionMode option with get, set
+        abstract ``width``: System.Double option with get, set
+        abstract ``facesMode``: BabylonjsBindings.Enums.GreasedLineRibbonFacesMode option with get, set
+        abstract ``closePath``: bool option with get, set
+        abstract ``smoothShading``: bool option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject601302d1d559 =
+        abstract ``type``: StringLiteral26f8567f2569 with get, set
+        abstract ``ref``: obj with get, set
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``halfExtents``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``angle``: System.Double with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectf26a216b7486 =
+        abstract ``type``: StringLiteral05fa0965c7c3 with get, set
+        abstract ``ref``: obj with get, set
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
+        abstract ``radius``: System.Double with get, set
+        abstract ``height``: System.Double with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectcd9be493dba9 =
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene with get
+        abstract ``onChangedObservable``: BabylonjsBindings.SimpleClasses.Observable<unit> with get
+        abstract ``onAssetNotFound``: System.Func<string, string, JS.Promise<U2<string, Browser.Types.File> option>> option with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject5e89a90967c6 =
+        abstract ``optimizeWithUV``: bool with get, set
+        abstract ``UVScaling``: BabylonjsBindings.SimpleClasses.Vector2 with get, set
+        abstract ``invertY``: bool with get, set
+        abstract ``invertTextureY``: bool with get, set
+        abstract ``importVertexColors``: bool with get, set
+        abstract ``computeNormals``: bool with get, set
+        abstract ``optimizeNormals``: bool with get, set
+        abstract ``skipMaterials``: bool with get, set
+        abstract ``materialLoadingFailsSilently``: bool with get, set
+        abstract ``useLegacyBehavior``: bool with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectcb14fbe7a9aa =
+        [<EmitIndexer>] abstract Item: ``name``: string -> System.Double with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject412d911943f6 =
+        [<EmitIndexer>] abstract Item: ``index``: System.Double -> BabylonjsBindings.SimpleClasses.Matrix with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject39ce38c5be16 =
+        [<EmitIndexer>] abstract Item: ``index``: System.Double -> JS.Float32Array with get, set
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type CameraStageAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: camera: BabylonjsBindings.SimpleClasses.Camera -> unit
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type CameraStageFrameBufferAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: camera: BabylonjsBindings.SimpleClasses.Camera -> bool
+
+    /// @babylonjs/core/Physics/v2/IPhysicsEnginePlugin
+    type ConstrainedBodyPair = AliasObjectf8c432911558
+
+    /// @babylonjs/core/Behaviors/Meshes/pointerDragEvents
+    type DragEvent = AliasObject8a8f0eb7b989
+
+    /// @babylonjs/core/Behaviors/Meshes/pointerDragEvents
+    type DragStartEndEvent = PickObject26759efc7574
+
+    /// @babylonjs/core/Materials/effectRenderer.pure
+    type EffectWrapperCustomShaderCodeProcessing = AliasObject6772b28860e6
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type EvaluateSubMeshStageAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh * subMesh: BabylonjsBindings.SimpleClasses.SubMesh -> unit
+
+    /// @babylonjs/core/FlowGraph/utils
+    type FlowGraphVector = U4<BabylonjsBindings.SimpleClasses.Vector2, BabylonjsBindings.SimpleClasses.Vector3, BabylonjsBindings.SimpleClasses.Vector4, BabylonjsBindings.SimpleClasses.Quaternion>
+
+    /// @babylonjs/core/Materials/materialHelper.geometryrendering
+    type GeometryRenderingConfiguration = AliasObjectf3be3b8e2a6a
+
+    /// @babylonjs/core/Cameras/geospatialCamera.pure
+    type GeospatialCameraOptions = AliasObjectdb70335810f5
+
+    /// @babylonjs/core/Meshes/goldbergMesh.pure
+    type GoldbergData = AliasObjectcc17c3f88910
+
+    /// @babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh
+    type GreasedLinePoints = U6<ResizeArray<BabylonjsBindings.SimpleClasses.Vector3>, ResizeArray<ResizeArray<BabylonjsBindings.SimpleClasses.Vector3>>, JS.Float32Array, ResizeArray<JS.Float32Array>, ResizeArray<ResizeArray<System.Double>>, ResizeArray<System.Double>>
+
+    /// @babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh
+    type GreasedLineRibbonOptions = AliasObject044785759537
+
+    /// @babylonjs/core/Lights/LTC/ltcTextureTool
+    type ILTCTextures = AliasObject1ef54cec7ea7
+
+    /// @babylonjs/core/Loading/Plugins/babylonFileParser.function
+    [<AllowNullLiteral>]
+    type IndividualBabylonFileParser =
+        [<Emit("$0($1...)")>] abstract Invoke: parsedData: obj * scene: BabylonjsBindings.SimpleClasses.Scene * rootUrl: string -> obj
+
+    /// @babylonjs/core/Sprites/spriteSceneComponent.pure
+    [<AllowNullLiteral>]
+    type InternalSpriteAugmentedScene =
+        inherit BabylonjsBindings.SimpleClasses.Scene
+        abstract ``_onNewSpriteManagerAddedObservable``: BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleInterfaces.ISpriteManager> option with get, set
+        abstract ``_onSpriteManagerRemovedObservable``: BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleInterfaces.ISpriteManager> option with get, set
+
+    /// @babylonjs/core/Navigation/INavigationEngine
+    type IObstacle = U2<AliasObject601302d1d559, AliasObjectf26a216b7486>
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginBindForSubMesh = AliasObject973e5db2a604
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginFillRenderTargetTextures = AliasObjectf7cf6b4f3727
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginGetActiveTextures = AliasObject7127b8abcbb2
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginGetAnimatables = AliasObjectb703bdd55640
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginHardBindForSubMesh = AliasObject973e5db2a604
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginHasTexture = AliasObject8100b17d32ab
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginIsReadyForSubMesh = AliasObject6203b669d6e3
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginPrepareDefines = AliasObject30d71ade1570
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginPrepareEffect = AliasObject94ac0c75db2a
+
+    /// @babylonjs/core/Materials/materialPluginEvent
+    type MaterialPluginPrepareUniformBuffer = AliasObject4db22449cde4
+
+    /// @babylonjs/core/Culling/ray.core
+    [<AllowNullLiteral>]
+    type MeshPredicate =
+        [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh * thinInstanceIndex: System.Double -> bool
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type MeshStageAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh * hardwareInstancedRendering: bool -> bool
+
+    /// @babylonjs/core/node
+    [<AllowNullLiteral>]
+    type NodeConstructor =
+        [<Emit("$0($1...)")>] abstract Invoke: name: string * scene: BabylonjsBindings.SimpleClasses.Scene * ?options: obj -> System.Func<BabylonjsBindings.SimpleClasses.Node>
+
+    /// @babylonjs/core/Materials/Node/nodeMaterial.pure
+    type NodeMaterialTextureBlocks = U9<BabylonjsBindings.SimpleClasses.TextureBlock, BabylonjsBindings.SimpleClasses.ReflectionTextureBaseBlock, BabylonjsBindings.SimpleClasses.RefractionBlock, BabylonjsBindings.SimpleClasses.CurrentScreenBlock, BabylonjsBindings.SimpleClasses.ParticleTextureBlock, BabylonjsBindings.SimpleClasses.ImageSourceBlock, BabylonjsBindings.SimpleClasses.TriPlanarBlock, BabylonjsBindings.SimpleClasses.BiPlanarBlock, BabylonjsBindings.SimpleClasses.PrePassTextureBlock>
+
+    /// @babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes
+    type NodeRenderGraphBlockConnectionPointValueType = U6<BabylonjsBindings.TypeAliases.FrameGraphTextureHandle, BabylonjsBindings.SimpleClasses.Camera, BabylonjsBindings.SimpleClasses.FrameGraphObjectList, BabylonjsBindings.SimpleInterfaces.IShadowLight, BabylonjsBindings.SimpleClasses.FrameGraphShadowGeneratorTask, BabylonjsBindings.SimpleClasses.FrameGraphObjectRendererTask>
+
+    /// @babylonjs/core/FrameGraph/Node/Blocks/inputBlock.pure
+    type NodeRenderGraphValueType = U4<BabylonjsBindings.SimpleClasses.InternalTexture, BabylonjsBindings.SimpleClasses.Camera, BabylonjsBindings.SimpleClasses.FrameGraphObjectList, BabylonjsBindings.SimpleInterfaces.IShadowLight>
+
+    /// @babylonjs/loaders/OBJ/objLoadingOptions
+    type OBJLoadingOptions = AliasObject5e89a90967c6
+
+    /// @babylonjs/core/Misc/PerformanceViewer/performanceViewerCollectionStrategies
+    [<AllowNullLiteral>]
+    type PerfStrategyInitialization =
+        [<Emit("$0($1...)")>] abstract Invoke: scene: BabylonjsBindings.SimpleClasses.Scene -> BabylonjsBindings.SimpleInterfaces.IPerfViewerCollectionStrategy
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type PointerMoveStageAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: unTranslatedPointerX: System.Double * unTranslatedPointerY: System.Double * pickResult: BabylonjsBindings.SimpleClasses.PickingInfo option * isMeshPicked: bool * element: Browser.Types.HTMLElement option -> BabylonjsBindings.SimpleClasses.PickingInfo option
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type PointerUpDownStageAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: unTranslatedPointerX: System.Double * unTranslatedPointerY: System.Double * pickResult: BabylonjsBindings.SimpleClasses.PickingInfo option * evt: BabylonjsBindings.SimpleInterfaces.IPointerEvent * doubleClick: bool -> BabylonjsBindings.SimpleClasses.PickingInfo option
+
+    /// @babylonjs/core/PostProcesses/postProcess.pure
+    [<AllowNullLiteral>]
+    type PostProcessOptions =
+        inherit BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions
+        abstract ``width``: System.Double option with get, set
+        abstract ``height``: System.Double option with get, set
+        abstract ``size``: U2<System.Double, AliasObject38742680c103> option with get, set
+        abstract ``camera``: BabylonjsBindings.SimpleClasses.Camera option with get, set
+        abstract ``samplingMode``: System.Double option with get, set
+        abstract ``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine option with get, set
+        abstract ``reusable``: bool option with get, set
+        abstract ``textureType``: System.Double option with get, set
+        abstract ``textureFormat``: System.Double option with get, set
+        abstract ``effectWrapper``: BabylonjsBindings.SimpleClasses.EffectWrapper option with get, set
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type PreActiveMeshStageAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh -> unit
+
+    /// @babylonjs/core/Engines/abstractEngine.pure
+    [<AllowNullLiteral>]
+    type PrepareTextureProcessFunction =
+        [<Emit("$0($1...)")>] abstract Invoke: width: System.Double * height: System.Double * img: U3<Browser.Types.HTMLImageElement, BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap, AliasObject38742680c103> * extension: string * texture: BabylonjsBindings.SimpleClasses.InternalTexture * continuationCallback: System.Action -> bool
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type RenderingMeshStageAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.Mesh * subMesh: BabylonjsBindings.SimpleClasses.SubMesh * batch: obj * effect: BabylonjsBindings.SimpleClasses.Effect option -> unit
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type RenderTargetsStageAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: renderTargets: BabylonjsBindings.SimpleClasses.SmartArrayNoDuplicate<BabylonjsBindings.SimpleClasses.RenderTargetTexture> -> unit
+
+    /// @babylonjs/core/sceneComponent
+    [<AllowNullLiteral>]
+    type RenderTargetStageAction =
+        inherit JavaScriptFunction
+        [<Emit("$0($1...)")>] abstract Invoke: renderTarget: BabylonjsBindings.SimpleClasses.RenderTargetTexture * ?faceIndex: System.Double * ?layer: System.Double -> unit
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type SceneLoaderSuccessCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: meshes: ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh> * particleSystems: ResizeArray<BabylonjsBindings.SimpleInterfaces.IParticleSystem> * skeletons: ResizeArray<BabylonjsBindings.SimpleClasses.Skeleton> * animationGroups: ResizeArray<BabylonjsBindings.SimpleClasses.AnimationGroup> * transformNodes: ResizeArray<BabylonjsBindings.SimpleClasses.TransformNode> * geometries: ResizeArray<BabylonjsBindings.SimpleClasses.Geometry> * lights: ResizeArray<BabylonjsBindings.SimpleClasses.Light> * spriteManagers: ResizeArray<BabylonjsBindings.SimpleInterfaces.ISpriteManager> -> unit
+
+    /// @babylonjs/core/SmartAssets/smartAssetManager.pure
+    type SmartAssetManager = AliasObjectcd9be493dba9
+
+    /// @babylonjs/core/Culling/ray.core
+    [<AllowNullLiteral>]
+    type TrianglePickingPredicate =
+        [<Emit("$0($1...)")>] abstract Invoke: p0: BabylonjsBindings.SimpleClasses.Vector3 * p1: BabylonjsBindings.SimpleClasses.Vector3 * p2: BabylonjsBindings.SimpleClasses.Vector3 * ray: BabylonjsBindings.SimpleClasses.Ray * i0: System.Double * i1: System.Double * i2: System.Double -> bool

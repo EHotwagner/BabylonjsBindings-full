@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "e744372942cda979a8ef65e7c35c8e45464f112d4ce79570fb669338edabf293",
+  "proposalSha256": "fca0a3393f5e1fd063399300b5e59efef364d09b475528d4791b12904cb16196",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -186,6 +186,8 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractSoundOptionsBase",
+      "dependencies": [],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIAbstractSoundOptionsBase",
       "memberCount": 2
     },
     {
@@ -1366,6 +1368,8 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStreamingSoundOptionsBase",
+      "dependencies": [],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundOptionsBase",
       "memberCount": 1
     },
     {
@@ -1626,6 +1630,8 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ObjectRendererOptions",
+      "dependencies": [],
+      "requiredSymbol": "BabylonjsBindings.SimpleInterfaces.RequiredObjectRendererOptions",
       "memberCount": 3
     },
     {
@@ -1782,6 +1788,11 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractSoundStoredOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IAbstractSoundOptionsBase",
+        "BabylonjsBindings.SimpleInterfaces.IAbstractSoundPlayOptionsBase"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIAbstractSoundStoredOptions",
       "memberCount": 0
     },
     {
@@ -2626,6 +2637,11 @@
       "kind": "interface",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundStoredOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IAbstractSoundStoredOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundOptionsBase"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundStoredOptions",
       "memberCount": 2
     },
     {
@@ -2985,6 +3001,792 @@
         "BabylonjsBindings.SimpleInterfaces.ITextMetrics"
       ],
       "memberCount": 44
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Queue/executionQueue",
+      "name": "_IExecutionQueueItem",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Particle",
+        "BabylonjsBindings.SimpleClasses.ThinParticleSystem"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effectRenderer.pure",
+      "name": "EffectWrapperCreationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Effect"
+      ],
+      "requiredNonNullableSymbol": "BabylonjsBindings.SimpleInterfaces.RequiredNonNullableEffectWrapperCreationOptions",
+      "memberCount": 21
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Actions/action.pure",
+      "name": "IAction",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractActionManager",
+        "BabylonjsBindings.SimpleClasses.ActionEvent"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Actions/actionEvent",
+      "name": "IActionEvent",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IActionEvent",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animatable.interface",
+      "name": "IAnimatable",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAnimatable",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Animation"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/BakedVertexAnimation/bakedVertexAnimationManager",
+      "name": "IBakedVertexAnimationManager",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IBakedVertexAnimationManager",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BaseTexture",
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.SimpleClasses.Vector4"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "IBasePhysicsCollisionEvent",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IBasePhysicsCollisionEvent",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.PhysicsBody"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/cameraInputsManager",
+      "name": "ICameraInput",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICameraInput",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/interfaces/iClipPlanesHolder",
+      "name": "IClipPlanesHolder",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IClipPlanesHolder",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Plane"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Collisions/collisionCoordinator.pure",
+      "name": "ICollisionCoordinator",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICollisionCoordinator",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Collider",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Compute/computeEffect",
+      "name": "IComputeEffectCreationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IComputeEffectCreationOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.ComputeEffect"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/capsuleBuilder.pure",
+      "name": "ICreateCapsuleOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICreateCapsuleOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/boundingInfo",
+      "name": "ICullable",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICullable",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Plane"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoCodec",
+      "name": "IDracoCodecConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoCodecConfiguration",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WorkerPool"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/iEffectFallbacks",
+      "name": "IEffectFallbacks",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEffectFallbacks",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Effect"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/flowMap",
+      "name": "IFlowable",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowable",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/frameGraphTypes",
+      "name": "IFrameGraphPass",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFrameGraphPass",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FrameGraphContext"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/internalTextureLoader",
+      "name": "IInternalTextureLoader",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2",
+      "name": "IKhronosTextureContainer2Options",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IKhronosTextureContainer2Options",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AutoReleaseWorkerPool"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
+      "name": "INodeRenderGraphCustomBlockDescription",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INodeRenderGraphCustomBlockDescription",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FrameGraph",
+        "BabylonjsBindings.SimpleClasses.NodeRenderGraphBlock",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/EmitterTypes/IParticleEmitterType",
+      "name": "IParticleEmitterType",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IParticleEmitterType",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.Particle",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.UniformBuffer",
+        "BabylonjsBindings.SimpleClasses.UniformBufferEffectCommonAccessor",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v1/physicsImpostor.pure",
+      "name": "IPhysicsEnabledObject",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPhysicsEnabledObject",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.BoundingInfo",
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.TypeAliases.FloatArray",
+        "BabylonjsBindings.TypeAliases.IndicesArray"
+      ],
+      "memberCount": 18
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/renderTargetWrapper",
+      "name": "IRenderTargetTexture",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IRenderTargetTexture",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.RenderTargetWrapper"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "ISceneComponent",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISceneComponent",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Lights/Shadows/shadowGenerator",
+      "name": "IShadowGenerator",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IShadowGenerator",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.SimpleClasses.MaterialDefines",
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
+        "BabylonjsBindings.SimpleClasses.SubMesh"
+      ],
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Lights/shadowLight",
+      "name": "IShadowLight",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IShadowLight",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.Light",
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 19
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/texture.pure",
+      "name": "ITextureCreationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITextureCreationOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture"
+      ],
+      "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Layers/thinEffectLayer",
+      "name": "IThinEffectLayerOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IThinEffectLayerOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIThinEffectLayerOptions",
+      "requiredSymbol": "BabylonjsBindings.SimpleInterfaces.RequiredIThinEffectLayerOptions",
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/webgpuEngine.pure",
+      "name": "IWebGPURenderPipelineAsyncCreationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebGPURenderPipelineAsyncCreationOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Effect"
+      ],
+      "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/mesh.pure",
+      "name": "MeshCloneOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.MeshCloneOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Node"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsConstraintParameters",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PhysicsConstraintParameters",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v1/IPhysicsEnginePlugin",
+      "name": "PhysicsImpostorJoint",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PhysicsImpostorJoint",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.PhysicsImpostor",
+        "BabylonjsBindings.SimpleClasses.PhysicsJoint"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v1/physicsJoint",
+      "name": "PhysicsJointData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PhysicsJointData",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsMassProperties",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PhysicsMassProperties",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "PhysicsShapeParameters",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PhysicsShapeParameters",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.GroundMesh",
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 14
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Rendering/prePassEffectConfiguration",
+      "name": "PrePassEffectConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PrePassEffectConfiguration",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Color4",
+        "BabylonjsBindings.SimpleClasses.PostProcess"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/renderTargetTexture.pure",
+      "name": "RenderTargetTextureOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.RenderTargetTextureOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleClasses.ObjectRenderer"
+      ],
+      "memberCount": 18
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/cameraInputsManager",
+      "name": "CameraInputsMap",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.CameraInputsMap",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Audio/Interfaces/IAudioEngine",
+      "name": "IAudioEngine",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAudioEngine",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Analyser",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
+      ],
+      "memberCount": 16
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoCompression",
+      "name": "IDracoCompressionConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDracoCompressionConfiguration",
+      "dependencies": [],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Rendering/edgesRenderer.pure",
+      "name": "IEdgesRenderer",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEdgesRenderer",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.SmartArray",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/abstractMesh.pure",
+      "name": "IMeshDataOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMeshDataOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector4"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
+      "name": "INodeRenderGraphEditorOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INodeRenderGraphEditorOptions",
+      "dependencies": [],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/IParticleSystem",
+      "name": "IParticleSystem",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IParticleSystem",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Animation",
+        "BabylonjsBindings.SimpleClasses.BaseTexture",
+        "BabylonjsBindings.SimpleClasses.BoxParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.Color3",
+        "BabylonjsBindings.SimpleClasses.Color3Gradient",
+        "BabylonjsBindings.SimpleClasses.Color4",
+        "BabylonjsBindings.SimpleClasses.ColorGradient",
+        "BabylonjsBindings.SimpleClasses.ConeDirectedParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.ConeParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.CylinderDirectedParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.CylinderParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.DataBuffer",
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.SimpleClasses.FactorGradient",
+        "BabylonjsBindings.SimpleClasses.HemisphericParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.MeshParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.PointParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.SphereDirectedParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.SphereParticleEmitter",
+        "BabylonjsBindings.SimpleClasses.Vector2",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 134
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "IPhysicsCollisionEvent",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPhysicsCollisionEvent",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IBasePhysicsCollisionEvent"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v1/IPhysicsEnginePlugin",
+      "name": "IPhysicsEnginePlugin",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.PhysicsImpostor",
+        "BabylonjsBindings.SimpleClasses.PhysicsJoint",
+        "BabylonjsBindings.SimpleClasses.PhysicsRaycastResult",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "memberCount": 47
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Procedurals/proceduralTexture.pure",
+      "name": "IProceduralTextureCreationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IProceduralTextureCreationOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Texture",
+        "BabylonjsBindings.SimpleInterfaces.RenderTargetTextureOptions"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Sprites/spriteManager",
+      "name": "ISpriteManager",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISpriteManager",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.PickingInfo",
+        "BabylonjsBindings.SimpleClasses.Ray",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.Sprite",
+        "BabylonjsBindings.SimpleClasses.Texture",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
+      ],
+      "memberCount": 17
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/mesh.pure",
+      "name": "MeshCreationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.MeshCreationOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleInterfaces.MeshCloneOptions"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/physicsShape",
+      "name": "PhysicShapeOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PhysicShapeOptions",
+      "dependencies": [],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/textureCreationOptions",
+      "name": "RenderTargetCreationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.RenderTargetCreationOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.InternalTextureCreationOptions"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/IAssetContainer",
+      "name": "IAssetContainer",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractActionManager",
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Animation",
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.BaseTexture",
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.EffectLayer",
+        "BabylonjsBindings.SimpleClasses.Geometry",
+        "BabylonjsBindings.SimpleClasses.Layer",
+        "BabylonjsBindings.SimpleClasses.LensFlareSystem",
+        "BabylonjsBindings.SimpleClasses.Light",
+        "BabylonjsBindings.SimpleClasses.Material",
+        "BabylonjsBindings.SimpleClasses.MorphTargetManager",
+        "BabylonjsBindings.SimpleClasses.MultiMaterial",
+        "BabylonjsBindings.SimpleClasses.Node",
+        "BabylonjsBindings.SimpleClasses.PostProcess",
+        "BabylonjsBindings.SimpleClasses.ProceduralTexture",
+        "BabylonjsBindings.SimpleClasses.ReflectionProbe",
+        "BabylonjsBindings.SimpleClasses.Skeleton",
+        "BabylonjsBindings.SimpleClasses.Sound",
+        "BabylonjsBindings.SimpleClasses.TransformNode"
+      ],
+      "memberCount": 25
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/IPipelineContext",
+      "name": "IPipelineContext",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPipelineContext",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.TypeAliases.FloatArray"
+      ],
+      "memberCount": 45
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "ISceneSerializableComponent",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISceneSerializableComponent",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISceneComponent"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.functions",
+      "name": "ICreateAndPreparePipelineContextOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICreateAndPreparePipelineContextOptions",
+      "dependencies": [],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialICreateAndPreparePipelineContextOptions",
+      "memberCount": 13
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.pure",
+      "name": "IEffectCreationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEffectCreationOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction"
+      ],
+      "memberCount": 18
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.functions",
+      "name": "IPipelineGenerationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IPipelineGenerationOptions",
+      "dependencies": [],
+      "memberCount": 10
     }
   ],
   "reviewStatus": "maintained"

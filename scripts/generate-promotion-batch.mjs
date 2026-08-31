@@ -3,7 +3,10 @@ import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
 const check = process.argv.includes("--check");
-const targetSize = 200;
+// Babylon's recursive class graph has no fidelity-clean closure between 25 and
+// 306 declarations at this point. Use a ceiling large enough for the smallest
+// exact next closure instead of splitting mutually dependent public types.
+const targetSize = 400;
 const categories = [
   { name: "alias", candidate: "SimpleAliases", maintained: "type-alias" },
   { name: "interface", candidate: "SimpleInterfaces", maintained: "simple-interface" },
@@ -15,14 +18,11 @@ const identity = entry => `${entry.package}|${entry.module}|${entry.name}`;
 const symbolFields = entry => [entry.fsharpSymbol, entry.deepImmutableSymbol, entry.partialSymbol, entry.requiredNonNullableSymbol, entry.requiredSymbol].filter(Boolean);
 const ownedSymbolFields = entry => [...symbolFields(entry), ...(entry.category === "function" && entry.fsharpType ? [entry.fsharpType] : [])];
 const symbolName = symbol => symbol?.split(".").at(-1);
-const declarationName = chunk => {
-  const match = chunk.match(/^    (?:type|let) (?:``([^`]+)``|([A-Za-z_][A-Za-z0-9_]*))/m);
-  return match?.[1] ?? match?.[2];
-};
+const declarationNames = chunk => [...chunk.matchAll(/^    (?:type|let) (?:``([^`]+)``|([A-Za-z_][A-Za-z0-9_]*))/gm)].map(match => match[1] ?? match[2]);
 const proposalChunks = source => source.trimEnd().split(/\n{2,}/).map(text => ({
   text,
-  name: declarationName(text)
-})).filter(chunk => chunk.name);
+  names: declarationNames(text)
+})).filter(chunk => chunk.names.length > 0);
 const qualifiedSymbolPattern = /BabylonjsBindings\.(?:TypeAliases|SimpleInterfaces|SimpleClasses|SimpleFunctions|SimpleVariables)\.[A-Za-z_][A-Za-z0-9_]*/g;
 const identifierPattern = /[A-Za-z_][A-Za-z0-9_]*/g;
 const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -64,9 +64,11 @@ for (const category of categories) {
   const source = await readFile(resolve(root, `generated-candidates/${category.candidate}.proposal.fs`), "utf8");
   const chunksByName = new Map();
   for (const chunk of proposalChunks(source)) {
-    const values = chunksByName.get(chunk.name) ?? [];
-    values.push(chunk);
-    chunksByName.set(chunk.name, values);
+    for (const name of chunk.names) {
+      const values = chunksByName.get(name) ?? [];
+      values.push(chunk);
+      chunksByName.set(name, values);
+    }
   }
   chunksByCategoryAndName.set(category.name, chunksByName);
 }
@@ -105,7 +107,8 @@ const inferredDependencies = node => {
 };
 for (const node of candidateNodes) node.dependencies = inferredDependencies(node);
 
-const isMaintained = node => !node.supportOnly && maintainedIdentities.has(identity(node));
+const hasMaintainedIdentity = node => !node.supportOnly && maintainedIdentities.has(identity(node));
+const isMaintained = node => hasMaintainedIdentity(node) && ownedSymbolFields(node).every(symbol => maintainedSymbols.has(symbol));
 const closureCache = new Map();
 const closureFor = rootNode => {
   if (closureCache.has(rootNode.fsharpSymbol)) return closureCache.get(rootNode.fsharpSymbol);
@@ -166,6 +169,9 @@ const document = {
     eligibleRoots: roots.length,
     rootsWithUnresolvedDependencies: rootCandidates.filter(item => item.closure.unresolved.size > 0).length,
     rootsWithFidelityIssues: rootCandidates.filter(item => item.closure.fidelityIssues.size > 0).length,
+    smallestEligibleClosures: roots.slice(0, 20).map(item => ({ symbol: item.node.fsharpSymbol, size: item.closure.nodes.size })),
+    largestClosureWithinCeiling: [...roots].filter(item => item.closure.nodes.size <= targetSize).at(-1)?.closure.nodes.size ?? 0,
+    smallestClosureAboveCeiling: roots.find(item => item.closure.nodes.size > targetSize)?.closure.nodes.size ?? null,
     mostCommonFidelityBlockers: Object.entries(Object.fromEntries([...new Set(rootCandidates.flatMap(item => [...item.closure.fidelityIssues]))].map(symbol => [symbol, rootCandidates.filter(item => item.closure.fidelityIssues.has(symbol)).length])))
       .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 20).map(([symbol, blockedRoots]) => ({ symbol, blockedRoots }))
   },
@@ -176,6 +182,7 @@ const document = {
     name: node.name,
     category: node.category,
     supportOnly: node.supportOnly,
+    projectionOnly: hasMaintainedIdentity(node) && !isMaintained(node),
     fsharpSymbol: node.fsharpSymbol,
     dependencies: node.dependencies ?? [],
     fidelityIssues: node.fidelityIssues ?? []

@@ -1079,6 +1079,7 @@ for (const entry of entries) {
     lines.push("", `    /// Function-valued ${entry.name}.${member.name} property.`, "    [<AllowNullLiteral>]", `    type ${helperName}${genericParameters} =`, `        [<Emit("$0($1...)")>] abstract Invoke${member.callback.genericParameters}: ${callbackArguments(member.callback)} -> ${member.callback.returnType}`);
   }
   lines.push("", `    /// ${entry.module}`, "    [<AllowNullLiteral>]", `    type ${entry.name}${genericParameters} =`);
+  if (entry.name === "IShadowLight") lines.push("        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue");
   if (hasProjection) lines.push(`        inherit DeepImmutable${entry.name}${genericArguments}`);
   for (const base of entry.bases) lines.push(`        inherit ${base}`);
   if (entry.members.length === 0 && entry.bases.length === 0) {

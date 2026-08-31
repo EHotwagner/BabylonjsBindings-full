@@ -24,8 +24,10 @@ for (const specification of specifications) {
   const candidateManifest = JSON.parse(await readFile(resolve(root, `generated-candidates/${specification.candidateName}.promotion.json`), "utf8"));
   const candidateSource = await readFile(resolve(root, `generated-candidates/${specification.candidateName}.proposal.fs`), "utf8");
   const previewSource = await readFile(resolve(root, `generated-candidates/promotion-batch/${specification.maintainedFile}`), "utf8");
-  const selectedIdentities = new Set(batch.selected.filter(entry => entry.category === specification.category && !entry.supportOnly).map(identity));
-  if (selectedIdentities.size === 0) continue;
+  const selectedEntries = batch.selected.filter(entry => entry.category === specification.category && !entry.supportOnly);
+  if (selectedEntries.length === 0) continue;
+  const selectedIdentities = new Set(selectedEntries.filter(entry => !entry.projectionOnly).map(identity));
+  const projectionIdentities = new Set(selectedEntries.filter(entry => entry.projectionOnly).map(identity));
   const maintainedIdentities = new Set(maintainedManifest.exports.map(identity));
   const additions = candidateManifest.exports.filter(entry => selectedIdentities.has(identity(entry)) && !maintainedIdentities.has(identity(entry)));
   if (additions.length !== selectedIdentities.size) throw new Error(`${specification.category} selected export set did not map exactly to candidate exports`);
@@ -34,7 +36,9 @@ for (const specification of specifications) {
   const nextManifest = {
     ...maintainedManifest,
     proposalSha256: sha256(maintainedAsProposal),
-    exports: [...maintainedManifest.exports, ...additions],
+    exports: [...maintainedManifest.exports.map(entry => projectionIdentities.has(identity(entry))
+      ? candidateManifest.exports.find(candidate => identity(candidate) === identity(entry))
+      : entry), ...additions],
     reviewStatus: "maintained"
   };
   await writeFile(resolve(root, `src/BabylonjsBindings/${specification.maintainedFile}`), previewSource);

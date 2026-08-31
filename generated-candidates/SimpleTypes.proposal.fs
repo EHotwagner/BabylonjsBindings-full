@@ -6,10 +6,20 @@ open Fable.Core
 /// Exact primitive aliases and dependency-free callbacks exported by Babylon.js 9.19.0.
 module TypeAliases =
 
+    /// Phantom structural witness for TypeScript Function constraints.
+    [<AllowNullLiteral>]
+    type JavaScriptFunction =
+        interface end
+
     /// Exact Symbol.toStringTag literal exposed by SharedArrayBuffer.
     [<StringEnum; RequireQualifiedAccess>]
     type BrowserSharedArrayBufferTag =
         | [<CompiledName("SharedArrayBuffer")>] SharedArrayBuffer
+
+    /// Phantom structural witness for NodeRenderGraphValueType generic constraints.
+    [<AllowNullLiteral>]
+    type NodeRenderGraphValue =
+        interface end
 
     /// Exact ESNext SharedArrayBuffer instance surface used by ArrayBufferLike declarations.
     [<AllowNullLiteral>]
@@ -490,11 +500,13 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type CameraStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: camera: BabylonjsBindings.SimpleClasses.Camera -> unit
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type CameraStageFrameBufferAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: camera: BabylonjsBindings.SimpleClasses.Camera -> bool
 
     /// @babylonjs/core/Materials/Textures/textureMerger
@@ -552,6 +564,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type EvaluateSubMeshStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh * subMesh: BabylonjsBindings.SimpleClasses.SubMesh -> unit
 
     /// @babylonjs/core/types
@@ -684,6 +697,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type MeshStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh * hardwareInstancedRendering: bool -> bool
 
     /// @babylonjs/core/Engines/Native/nativeDataStream
@@ -746,11 +760,13 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type PointerMoveStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: unTranslatedPointerX: System.Double * unTranslatedPointerY: System.Double * pickResult: BabylonjsBindings.SimpleClasses.PickingInfo option * isMeshPicked: bool * element: Browser.Types.HTMLElement option -> BabylonjsBindings.SimpleClasses.PickingInfo option
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type PointerUpDownStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: unTranslatedPointerX: System.Double * unTranslatedPointerY: System.Double * pickResult: BabylonjsBindings.SimpleClasses.PickingInfo option * evt: BabylonjsBindings.SimpleInterfaces.IPointerEvent * doubleClick: bool -> BabylonjsBindings.SimpleClasses.PickingInfo option
 
     /// @babylonjs/core/PostProcesses/postProcess.pure
@@ -771,6 +787,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type PreActiveMeshStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.AbstractMesh -> unit
 
     /// @babylonjs/core/Engines/abstractEngine.pure
@@ -789,21 +806,25 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderingGroupStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: renderingGroupId: System.Double -> unit
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderingMeshStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: mesh: BabylonjsBindings.SimpleClasses.Mesh * subMesh: BabylonjsBindings.SimpleClasses.SubMesh * batch: obj * effect: BabylonjsBindings.SimpleClasses.Effect option -> unit
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderTargetsStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: renderTargets: BabylonjsBindings.SimpleClasses.SmartArrayNoDuplicate<BabylonjsBindings.SimpleClasses.RenderTargetTexture> -> unit
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type RenderTargetStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: renderTarget: BabylonjsBindings.SimpleClasses.RenderTargetTexture * ?faceIndex: System.Double * ?layer: System.Double -> unit
 
     /// @babylonjs/core/Engines/Extensions/engine.renderTarget.pure
@@ -822,6 +843,7 @@ module TypeAliases =
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type SimpleStageAction =
+        inherit JavaScriptFunction
         [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
 
     /// @babylonjs/core/SmartAssets/smartAssetManager.pure
@@ -5171,6 +5193,7 @@ module SimpleInterfaces =
     /// @babylonjs/core/Lights/shadowLight
     [<AllowNullLiteral>]
     type IShadowLight =
+        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue
         inherit BabylonjsBindings.SimpleClasses.Light
         abstract ``id``: string with get, set
         abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get, set
@@ -11784,7 +11807,7 @@ module SimpleClasses =
 
     /// @babylonjs/core/Cameras/inputMapper
     [<AllowNullLiteral>]
-    type InputMapper<'THandlers> =
+    type InputMapper<'THandlers when 'THandlers :> BabylonjsBindings.ObjectTypes.JavaScriptStringUnknownRecord> =
         abstract ``inputMap``: ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>>> with get, set
         abstract ``handlers``: 'THandlers with get
         abstract ``resolveInteraction`` : ``source``: BabylonjsBindings.StringEnums.InputSource * ?``currentConditions``: BabylonjsBindings.ObjectTypes.InputConditions -> BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>> option
@@ -11797,7 +11820,7 @@ module SimpleClasses =
 
     [<AllowNullLiteral>]
     type InputMapperStatic =
-        [<EmitConstructor>] abstract Create<'THandlers>: ``handlers``: 'THandlers * ?``createDefaultEntries``: System.Func<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>>>> -> InputMapper<'THandlers>
+        [<EmitConstructor>] abstract Create<'THandlers when 'THandlers :> BabylonjsBindings.ObjectTypes.JavaScriptStringUnknownRecord>: ``handlers``: 'THandlers * ?``createDefaultEntries``: System.Func<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserInputMapEntry<BabylonjsBindings.SimpleInterfaces.JavaScriptKeyOf<'THandlers>>>> -> InputMapper<'THandlers>
 
     [<Import("InputMapper", "@babylonjs/core/Cameras/inputMapper.js")>]
     let InputMapper: InputMapperStatic = jsNative
@@ -12740,14 +12763,14 @@ module SimpleClasses =
 
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
-    type Stage<'T> =
+    type Stage<'T when 'T :> BabylonjsBindings.TypeAliases.JavaScriptFunction> =
         inherit System.Collections.Generic.IList<InlineObject5403ebd5182cObject<'T>>
         abstract ``registerStep`` : ``index``: float * ``component``: BabylonjsBindings.SimpleInterfaces.ISceneComponent * ``action``: 'T -> unit
         abstract ``clear`` : unit -> unit
 
     [<AllowNullLiteral>]
     type StageStatic =
-        abstract ``Create``<'T> : unit -> Stage<'T>
+        abstract ``Create``<'T when 'T :> BabylonjsBindings.TypeAliases.JavaScriptFunction> : unit -> Stage<'T>
 
     [<Import("Stage", "@babylonjs/core/sceneComponent.js")>]
     let Stage: StageStatic = jsNative
@@ -19892,6 +19915,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type Camera =
         inherit Node
+        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue
         abstract ``inputs``: CameraInputsManager<Camera> with get, set
         abstract ``_position``: Vector3 with get, set
         abstract ``oblique``: BabylonjsBindings.SimpleInterfaces.IObliqueParams option with get, set
@@ -27621,6 +27645,7 @@ module SimpleClasses =
     /// @babylonjs/core/FrameGraph/frameGraphObjectList
     [<AllowNullLiteral>]
     type FrameGraphObjectList =
+        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue
         abstract ``meshes``: ResizeArray<AbstractMesh> option with get, set
         abstract ``particleSystems``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IParticleSystem> option with get, set
 
@@ -32044,6 +32069,7 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type InternalTexture =
         inherit TextureSampler
+        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue
         abstract ``isReady``: bool with get, set
         abstract ``isCube``: bool with get, set
         abstract ``is3D``: bool with get, set
@@ -36989,7 +37015,7 @@ module SimpleClasses =
         abstract ``isExternal``: bool with get, set
         abstract ``creationOptions``: BabylonjsBindings.TypeAliases.NodeRenderGraphInputCreationOptions with get, set
         abstract ``setDefaultValue`` : unit -> unit
-        abstract ``getTypedValue``<'T> : unit -> 'T
+        abstract ``getTypedValue``<'T when 'T :> BabylonjsBindings.TypeAliases.NodeRenderGraphValue> : unit -> 'T
         abstract ``getInternalTextureFromValue`` : unit -> InternalTexture option
         abstract ``getClassName`` : unit -> string
         abstract ``isAnyTexture`` : unit -> bool
@@ -43609,9 +43635,9 @@ module SimpleClasses =
         abstract ``getMorphTargetByName`` : ``name``: string -> MorphTarget option
         abstract ``getPostProcessByName`` : ``name``: string -> PostProcess option
         abstract ``isActiveMesh`` : ``mesh``: AbstractMesh -> bool
-        abstract ``addExternalData``<'T> : ``key``: string * ``data``: 'T -> bool
+        abstract ``addExternalData``<'T when 'T : not struct> : ``key``: string * ``data``: 'T -> bool
         abstract ``getExternalData``<'T> : ``key``: string -> 'T option
-        abstract ``getOrAddExternalDataWithFactory``<'T> : ``key``: string * ``factory``: System.Func<string, 'T> -> 'T
+        abstract ``getOrAddExternalDataWithFactory``<'T when 'T : not struct> : ``key``: string * ``factory``: System.Func<string, 'T> -> 'T
         abstract ``removeExternalData`` : ``key``: string -> bool
         abstract ``freeProcessedMaterials`` : unit -> unit
         abstract ``freeActiveMeshes`` : unit -> unit

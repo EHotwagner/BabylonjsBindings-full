@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "997ed7c665fc04ab85d65d1662e0a42188c788833fc1a4141e4b89d3621c6b1f",
+  "proposalSha256": "6156e46e567327be799caf834489c7d7434462ad296cdd5b08972886bc4d192b",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -435,6 +435,598 @@
       "dependencies": [],
       "shape": "alias",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "CameraStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CameraStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "CameraStageFrameBufferAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CameraStageFrameBufferAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin",
+      "name": "ConstrainedBodyPair",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ConstrainedBodyPair",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Meshes/pointerDragEvents",
+      "name": "DragEvent",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.DragEvent",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Meshes/pointerDragEvents",
+      "name": "DragStartEndEvent",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.DragStartEndEvent",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effectRenderer.pure",
+      "name": "EffectWrapperCustomShaderCodeProcessing",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.EffectWrapperCustomShaderCodeProcessing",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "EvaluateSubMeshStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.EvaluateSubMeshStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.SubMesh"
+      ],
+      "shape": "callback",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "FlowGraphVector",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.FlowGraphVector",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector2",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleClasses.Vector4"
+      ],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialHelper.geometryrendering",
+      "name": "GeometryRenderingConfiguration",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GeometryRenderingConfiguration",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/geospatialCamera.pure",
+      "name": "GeospatialCameraOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GeospatialCameraOptions",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/goldbergMesh.pure",
+      "name": "GoldbergData",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GoldbergData",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
+      "name": "GreasedLinePoints",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GreasedLinePoints",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GreasedLine/greasedLineBaseMesh",
+      "name": "GreasedLineRibbonOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GreasedLineRibbonOptions",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Lights/LTC/ltcTextureTool",
+      "name": "ILTCTextures",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ILTCTextures",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/Plugins/babylonFileParser.function",
+      "name": "IndividualBabylonFileParser",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.IndividualBabylonFileParser",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "shape": "callback",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Sprites/spriteSceneComponent.pure",
+      "name": "InternalSpriteAugmentedScene",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.InternalSpriteAugmentedScene",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ISpriteManager"
+      ],
+      "shape": "intersectionAlias",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Navigation/INavigationEngine",
+      "name": "IObstacle",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.IObstacle",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginBindForSubMesh",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginBindForSubMesh",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginFillRenderTargetTextures",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginFillRenderTargetTextures",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginGetActiveTextures",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginGetActiveTextures",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginGetAnimatables",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginGetAnimatables",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginHardBindForSubMesh",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginHardBindForSubMesh",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginHasTexture",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginHasTexture",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginIsReadyForSubMesh",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginIsReadyForSubMesh",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginPrepareDefines",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginPrepareDefines",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginPrepareEffect",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginPrepareEffect",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginPrepareUniformBuffer",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginPrepareUniformBuffer",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "MeshPredicate",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MeshPredicate",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh"
+      ],
+      "shape": "callback",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "MeshStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MeshStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh"
+      ],
+      "shape": "callback",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/node",
+      "name": "NodeConstructor",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeConstructor",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Node",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "shape": "callback",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterial.pure",
+      "name": "NodeMaterialTextureBlocks",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeMaterialTextureBlocks",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BiPlanarBlock",
+        "BabylonjsBindings.SimpleClasses.CurrentScreenBlock",
+        "BabylonjsBindings.SimpleClasses.ImageSourceBlock",
+        "BabylonjsBindings.SimpleClasses.ParticleTextureBlock",
+        "BabylonjsBindings.SimpleClasses.PrePassTextureBlock",
+        "BabylonjsBindings.SimpleClasses.ReflectionTextureBaseBlock",
+        "BabylonjsBindings.SimpleClasses.RefractionBlock",
+        "BabylonjsBindings.SimpleClasses.TextureBlock",
+        "BabylonjsBindings.SimpleClasses.TriPlanarBlock"
+      ],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes",
+      "name": "NodeRenderGraphBlockConnectionPointValueType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeRenderGraphBlockConnectionPointValueType",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.FrameGraphObjectList",
+        "BabylonjsBindings.SimpleClasses.FrameGraphObjectRendererTask",
+        "BabylonjsBindings.SimpleClasses.FrameGraphShadowGeneratorTask",
+        "BabylonjsBindings.SimpleInterfaces.IShadowLight"
+      ],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FrameGraph/Node/Blocks/inputBlock.pure",
+      "name": "NodeRenderGraphValueType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.NodeRenderGraphValueType",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.FrameGraphObjectList",
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IShadowLight"
+      ],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/OBJ/objLoadingOptions",
+      "name": "OBJLoadingOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.OBJLoadingOptions",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/PerformanceViewer/performanceViewerCollectionStrategies",
+      "name": "PerfStrategyInitialization",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PerfStrategyInitialization",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IPerfViewerCollectionStrategy"
+      ],
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "PointerMoveStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PointerMoveStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.PickingInfo"
+      ],
+      "shape": "callback",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "PointerUpDownStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PointerUpDownStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.PickingInfo",
+        "BabylonjsBindings.SimpleInterfaces.IPointerEvent"
+      ],
+      "shape": "callback",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/PostProcesses/postProcess.pure",
+      "name": "PostProcessOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PostProcessOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.EffectWrapper",
+        "BabylonjsBindings.SimpleInterfaces.EffectWrapperCreationOptions"
+      ],
+      "shape": "intersectionAlias",
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "PreActiveMeshStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PreActiveMeshStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh"
+      ],
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.pure",
+      "name": "PrepareTextureProcessFunction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrepareTextureProcessFunction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture"
+      ],
+      "shape": "callback",
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "RenderingMeshStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderingMeshStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleClasses.SubMesh"
+      ],
+      "shape": "callback",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "RenderTargetsStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderTargetsStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.RenderTargetTexture",
+        "BabylonjsBindings.SimpleClasses.SmartArrayNoDuplicate"
+      ],
+      "shape": "callback",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/sceneComponent",
+      "name": "RenderTargetStageAction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.RenderTargetStageAction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.RenderTargetTexture"
+      ],
+      "shape": "callback",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "SceneLoaderSuccessCallback",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.SceneLoaderSuccessCallback",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.Geometry",
+        "BabylonjsBindings.SimpleClasses.Light",
+        "BabylonjsBindings.SimpleClasses.Skeleton",
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.IParticleSystem",
+        "BabylonjsBindings.SimpleInterfaces.ISpriteManager"
+      ],
+      "shape": "callback",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/SmartAssets/smartAssetManager.pure",
+      "name": "SmartAssetManager",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.SmartAssetManager",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Culling/ray.core",
+      "name": "TrianglePickingPredicate",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.TrianglePickingPredicate",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Ray",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "shape": "callback",
+      "memberCount": 7
     }
   ],
   "reviewStatus": "maintained"

@@ -4310,6 +4310,7 @@ module SimpleInterfaces =
     /// @babylonjs/core/Lights/shadowLight
     [<AllowNullLiteral>]
     type IShadowLight =
+        inherit BabylonjsBindings.TypeAliases.NodeRenderGraphValue
         inherit BabylonjsBindings.SimpleClasses.Light
         abstract ``id``: string with get, set
         abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get, set

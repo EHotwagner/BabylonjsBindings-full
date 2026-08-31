@@ -6,6 +6,11 @@ open Fable.Core
 /// Exact dependency-closed object aliases exported by Babylon.js 9.19.0.
 module ObjectTypes =
 
+    /// Phantom structural witness for TypeScript Record<string, unknown> constraints.
+    [<AllowNullLiteral>]
+    type JavaScriptStringUnknownRecord =
+        interface end
+
     /// Function-valued ArcRotateHandlers.pan property.
     [<AllowNullLiteral>]
     type ArcRotateHandlersPanCallback =
@@ -24,6 +29,7 @@ module ObjectTypes =
     /// @babylonjs/core/Cameras/arcRotateCameraMovement
     [<AllowNullLiteral>]
     type ArcRotateHandlers =
+        inherit JavaScriptStringUnknownRecord
         abstract ``pan``: ArcRotateHandlersPanCallback with get, set
         abstract ``rotate``: ArcRotateHandlersRotateCallback with get, set
         abstract ``zoom``: ArcRotateHandlersZoomCallback with get, set
@@ -149,6 +155,7 @@ module ObjectTypes =
     /// @babylonjs/core/Cameras/targetCameraMovement
     [<AllowNullLiteral>]
     type TargetCameraHandlers =
+        inherit JavaScriptStringUnknownRecord
         abstract ``translate``: TargetCameraHandlersTranslateCallback with get, set
         abstract ``rotate``: TargetCameraHandlersRotateCallback with get, set
 
@@ -178,6 +185,7 @@ module ObjectTypes =
     /// @babylonjs/core/Cameras/geospatialCameraMovement
     [<AllowNullLiteral>]
     type GeospatialHandlers =
+        inherit JavaScriptStringUnknownRecord
         abstract ``pan``: GeospatialPanHandler with get, set
         abstract ``rotate``: GeospatialHandlersRotateCallback with get, set
         abstract ``zoom``: GeospatialHandlersZoomCallback with get, set

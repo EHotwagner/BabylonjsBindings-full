@@ -3,7 +3,7 @@
   "package": {
     "id": "BabylonjsBindings.Candidate",
     "version": "0.0.0-candidate.1",
-    "sha256": "f2022aeff73ca6c4efa014f84361e142348e8fd6a006117dff99bb807316b5f1"
+    "sha256": "c1086fcbb6bba97702a3056af98a23afee28f0932c304d0dd94cf45cc8531b0a"
   },
   "toolchain": {
     "fable": "5.13.0",
@@ -13,7 +13,7 @@
     "@babylonjs/core": "9.19.0",
     "@babylonjs/loaders": "9.19.0"
   },
-  "emittedProgramSha256": "3a1dc428a7f465910cb28e4f9c99de4649fe54a7cafcea811e25a472cf94cd3b",
+  "emittedProgramSha256": "3224a77eb62c496bb33cd39b236cfae538e57421d880d317dc3df4e4b599a32c",
   "imports": [
     "@babylonjs/core/Animations/animation.pure.js",
     "@babylonjs/core/Animations/animationEvent.js",

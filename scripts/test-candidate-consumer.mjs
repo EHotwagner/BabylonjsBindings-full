@@ -189,7 +189,9 @@ let observableB: Observable<string> = Observable.Create()
 let mutable observedValues = ResizeArray<string>()
 let observableCallback =
     System.Action<string, EventState>(fun value _ -> observedValues.Add(value))
-let observer = observableA.\`\`add\`\`(callback = observableCallback)
+// Observable also exposes IReadonlyObservable's required-callback overload;
+// the explicit optional argument selects the concrete class member in Fable.
+let observer = observableA.\`\`add\`\`(?callback = Some observableCallback)
 let multiCallback =
     System.Action<string, EventState>(fun value _ -> observedValues.Add($"multi:{value}"))
 let multiObserver = MultiObserver.\`\`Watch\`\`(ResizeArray [ observableA; observableB ], multiCallback)
