@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "viewVersion": "1.0",
+  "workId": "002-m0-analysis-infrastructure",
+  "stage": "ship",
+  "status": "shipReady",
+  "generator": "FS.GG.SDD.Artifacts/1.5.0",
+  "sourcesDigest": {
+    "algorithm": "sha256",
+    "value": "98ccd2f187f6d47dab0635d88dc6e80ed6a3477335750b47e3300e1cf2fb1dd4"
+  },
+  "verificationReadiness": {
+    "status": "verificationReady",
+    "evidenceSupportedCount": 8,
+    "evidenceSelfAttestedCount": 0,
+    "evidenceObservedCount": 8
+  },
+  "disposition": {
+    "state": "shipReady",
+    "blockingFindingIds": []
+  },
+  "readiness": "shipReady"
+}
