@@ -1,0 +1,30 @@
+{
+  "auditSchema": 1,
+  "report": "feedback/2026-08-31-BabylonjsBindings-full-m3-higher-order-runtime-apis.md",
+  "reportSha256": "b7bd8f33515a135bf839b98e16dc90e7c01b9e46f1afa10c5302952c6c1d2f1b",
+  "criticMode": "fresh-context-subagent",
+  "criticPromptVersion": "actionability-v1",
+  "findings": [
+    {
+      "id": "§4.1",
+      "status": "positive-pattern",
+      "missingFacts": [],
+      "checkedEvidence": [
+        {
+          "locator": "file:reports/m3-callable-arity-scan.json",
+          "result": "verified",
+          "sha256": "675af6d38c38a3a288932985a53a16c3d8d8def4ff90622b8cb19adc5108de24"
+        },
+        {
+          "locator": "command:npm run scan:m3-arity",
+          "result": "verified"
+        }
+      ],
+      "confidenceLimits": [
+        "Results apply only to the locked Babylon.js 9.19.0 declaration closure.",
+        "Callback classification covers fixed, non-rest TypeScript FunctionTypeNode and CallSignatureDeclaration forms recognized by the scanner.",
+        "The new recurrence result is bounded to committed earlier feedback reports and repository issues inspected during critique."
+      ]
+    }
+  ]
+}
