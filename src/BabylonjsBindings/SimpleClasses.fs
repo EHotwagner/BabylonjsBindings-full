@@ -46324,3 +46324,133 @@ module SimpleClasses =
 
     [<Import("TransmissionHelper", "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper.js")>]
     let TransmissionHelper: TransmissionHelperStatic = jsNative
+
+    /// Function-valued AssetsManager.onFinish property.
+    [<AllowNullLiteral>]
+    type AssetsManagerOnFinishCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``tasks``: ResizeArray<AbstractAssetTask> -> unit
+
+    /// Function-valued AssetsManager.onTaskSuccess property.
+    [<AllowNullLiteral>]
+    type AssetsManagerOnTaskSuccessCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: AbstractAssetTask -> unit
+
+    /// Function-valued AssetsManager.onTaskError property.
+    [<AllowNullLiteral>]
+    type AssetsManagerOnTaskErrorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: AbstractAssetTask -> unit
+
+    /// Function-valued AssetsManager.onProgress property.
+    [<AllowNullLiteral>]
+    type AssetsManagerOnProgressCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``remainingCount``: float * ``totalCount``: float * ``task``: AbstractAssetTask -> unit
+
+    /// @babylonjs/core/Misc/assetsManager
+    [<AllowNullLiteral>]
+    type AssetsManager =
+        abstract ``onFinish``: AssetsManagerOnFinishCallback with get, set
+        abstract ``onTaskSuccess``: AssetsManagerOnTaskSuccessCallback with get, set
+        abstract ``onTaskError``: AssetsManagerOnTaskErrorCallback with get, set
+        abstract ``onProgress``: AssetsManagerOnProgressCallback with get, set
+        abstract ``onTaskSuccessObservable``: Observable<AbstractAssetTask> with get, set
+        abstract ``onTaskErrorObservable``: Observable<AbstractAssetTask> with get, set
+        abstract ``onTasksDoneObservable``: Observable<ResizeArray<AbstractAssetTask>> with get, set
+        abstract ``onProgressObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IAssetsProgressEvent> with get, set
+        abstract ``useDefaultLoadingScreen``: bool with get, set
+        abstract ``autoHideLoadingUI``: bool with get, set
+        abstract ``addContainerTask`` : ``taskName``: string * ``meshesNames``: obj * ``rootUrl``: string * ``sceneFilename``: U2<string, Browser.Types.File> * ?``extension``: string -> ContainerAssetTask
+        abstract ``addMeshTask`` : ``taskName``: string * ``meshesNames``: obj * ``rootUrl``: string * ``sceneFilename``: U2<string, Browser.Types.File> * ?``extension``: string * ?``filename``: string * ?``pluginOptions``: BabylonjsBindings.TypeAliases.PluginOptions -> MeshAssetTask
+        abstract ``addTextFileTask`` : ``taskName``: string * ``url``: string -> TextFileAssetTask
+        abstract ``addBinaryFileTask`` : ``taskName``: string * ``url``: string -> BinaryFileAssetTask
+        abstract ``addImageTask`` : ``taskName``: string * ``url``: string -> ImageAssetTask
+        abstract ``addTextureTask`` : ``taskName``: string * ``url``: string * ?``noMipmapOrOptions``: U2<bool, BabylonjsBindings.SimpleInterfaces.ITextureCreationOptions> * ?``invertY``: bool * ?``samplingMode``: float -> TextureAssetTask
+        abstract ``addCubeTextureTask`` : ``taskName``: string * ``url``: string * ?``extensionsOrOptions``: U2<ResizeArray<string>, BabylonjsBindings.SimpleInterfaces.ICubeTextureCreationOptions> * ?``noMipmap``: bool * ?``files``: ResizeArray<string> * ?``prefiltered``: bool -> CubeTextureAssetTask
+        abstract ``addHDRCubeTextureTask`` : ``taskName``: string * ``url``: string * ``size``: float * ?``noMipmap``: bool * ?``generateHarmonics``: bool * ?``gammaSpace``: bool * ?``prefilterOnLoad``: bool * ?``supersample``: bool * ?``prefilterIrradianceOnLoad``: bool * ?``prefilterUsingCdf``: bool -> HDRCubeTextureAssetTask
+        abstract ``addEquiRectangularCubeTextureAssetTask`` : ``taskName``: string * ``url``: string * ``size``: float * ?``noMipmap``: bool * ?``gammaSpace``: bool * ?``superSample``: bool -> EquiRectangularCubeTextureAssetTask
+        abstract ``removeTask`` : ``task``: AbstractAssetTask -> unit
+        abstract ``reset`` : unit -> AssetsManager
+        abstract ``load`` : unit -> AssetsManager
+        abstract ``loadAsync`` : unit -> JS.Promise<unit>
+
+    [<AllowNullLiteral>]
+    type AssetsManagerStatic =
+        inherit Constructor<AssetsManager>
+        [<EmitConstructor>] abstract Create: ?``scene``: Scene -> AssetsManager
+
+    [<Import("AssetsManager", "@babylonjs/core/Misc/assetsManager.js")>]
+    let AssetsManager: AssetsManagerStatic = jsNative
+
+    /// Function-valued MeshAssetTask.onSuccess property.
+    [<AllowNullLiteral>]
+    type MeshAssetTaskOnSuccessCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: MeshAssetTask -> unit
+
+    /// Function-valued MeshAssetTask.onError property.
+    [<AllowNullLiteral>]
+    type MeshAssetTaskOnErrorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``task``: MeshAssetTask * ?``message``: string * ?``exception``: obj -> unit
+
+    /// @babylonjs/core/Misc/assetsManager
+    [<AllowNullLiteral>]
+    type MeshAssetTask =
+        inherit AbstractAssetTask
+        abstract ``name``: string with get, set
+        abstract ``meshesNames``: obj with get, set
+        abstract ``rootUrl``: string with get, set
+        abstract ``sceneFilename``: U2<string, Browser.Types.File> with get, set
+        abstract ``extension``: string option with get, set
+        abstract ``fileName``: string option with get, set
+        abstract ``pluginOptions``: BabylonjsBindings.TypeAliases.PluginOptions option with get, set
+        abstract ``loadedTransformNodes``: ResizeArray<TransformNode> with get, set
+        abstract ``loadedMeshes``: ResizeArray<AbstractMesh> with get, set
+        abstract ``loadedParticleSystems``: ResizeArray<BabylonjsBindings.SimpleInterfaces.IParticleSystem> with get, set
+        abstract ``loadedSkeletons``: ResizeArray<Skeleton> with get, set
+        abstract ``loadedAnimationGroups``: ResizeArray<AnimationGroup> with get, set
+        abstract ``onSuccess``: MeshAssetTaskOnSuccessCallback with get, set
+        abstract ``onError``: MeshAssetTaskOnErrorCallback with get, set
+        abstract ``runTask`` : ``scene``: Scene * ``onSuccess``: System.Action * ``onError``: System.Action<string option, obj option> -> unit
+
+    [<AllowNullLiteral>]
+    type MeshAssetTaskStatic =
+        inherit AbstractAssetTaskStatic
+        inherit Constructor<MeshAssetTask>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``meshesNames``: obj * ``rootUrl``: string * ``sceneFilename``: U2<string, Browser.Types.File> * ?``extension``: string * ?``fileName``: string * ?``pluginOptions``: BabylonjsBindings.TypeAliases.PluginOptions -> MeshAssetTask
+
+    [<Import("MeshAssetTask", "@babylonjs/core/Misc/assetsManager.js")>]
+    let MeshAssetTask: MeshAssetTaskStatic = jsNative
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type SceneLoader =
+        interface end
+
+    [<AllowNullLiteral>]
+    type SceneLoaderStatic =
+        inherit Constructor<SceneLoader>
+        [<EmitConstructor>] abstract Create: unit -> SceneLoader
+        abstract ``NO_LOGGING``: float with get
+        abstract ``MINIMAL_LOGGING``: float with get
+        abstract ``SUMMARY_LOGGING``: float with get
+        abstract ``DETAILED_LOGGING``: float with get
+        abstract ``OnPluginActivatedObservable``: Observable<U2<BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync>> with get
+        abstract ``GetDefaultPlugin`` : unit -> BabylonjsBindings.SimpleInterfaces.IRegisteredPlugin option
+        abstract ``GetPluginForExtension`` : ``extension``: string -> U3<BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory> option
+        abstract ``IsPluginForExtensionAvailable`` : ``extension``: string -> bool
+        abstract ``RegisterPlugin`` : ``plugin``: U3<BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync, BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory> -> unit
+        abstract ``ImportMesh`` : ``meshNames``: U2<string, System.Collections.Generic.IReadOnlyList<string>> option * ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``scene``: Scene * ?``onSuccess``: BabylonjsBindings.TypeAliases.SceneLoaderSuccessCallback * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``onError``: System.Action<Scene, string, obj option> * ?``pluginExtension``: string * ?``name``: string * ?``pluginOptions``: BabylonjsBindings.TypeAliases.PluginOptions -> unit
+        abstract ``ImportMeshAsync`` : ``meshNames``: U2<string, System.Collections.Generic.IReadOnlyList<string>> option * ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``scene``: Scene * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``pluginExtension``: string * ?``name``: string -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+        abstract ``Load`` : ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``engine``: AbstractEngine * ?``onSuccess``: System.Action<Scene> * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``onError``: System.Action<Scene, string, obj option> * ?``pluginExtension``: string * ?``name``: string -> unit
+        abstract ``LoadAsync`` : ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``engine``: AbstractEngine * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``pluginExtension``: string * ?``name``: string -> JS.Promise<Scene>
+        abstract ``Append`` : ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``scene``: Scene * ?``onSuccess``: System.Action<Scene> * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``onError``: System.Action<Scene, string, obj option> * ?``pluginExtension``: string * ?``name``: string -> unit
+        abstract ``AppendAsync`` : ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``scene``: Scene * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``pluginExtension``: string * ?``name``: string -> JS.Promise<Scene>
+        abstract ``LoadAssetContainer`` : ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``scene``: Scene * ?``onSuccess``: System.Action<AssetContainer> * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``onError``: System.Action<Scene, string, obj option> * ?``pluginExtension``: string * ?``name``: string -> unit
+        abstract ``LoadAssetContainerAsync`` : ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``scene``: Scene * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``pluginExtension``: string * ?``name``: string -> JS.Promise<AssetContainer>
+        abstract ``ImportAnimations`` : ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``scene``: Scene * ?``overwriteAnimations``: bool * ?``animationGroupLoadingMode``: BabylonjsBindings.Enums.SceneLoaderAnimationGroupLoadingMode * ?``targetConverter``: System.Func<obj, obj> * ?``onSuccess``: System.Action<Scene> * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``onError``: System.Action<Scene, string, obj option> * ?``pluginExtension``: string * ?``name``: string -> unit
+        abstract ``ImportAnimationsAsync`` : ``rootUrl``: string * ?``sceneFilename``: U3<string, Browser.Types.File, JS.ArrayBufferView> * ?``scene``: Scene * ?``overwriteAnimations``: bool * ?``animationGroupLoadingMode``: BabylonjsBindings.Enums.SceneLoaderAnimationGroupLoadingMode * ?``targetConverter``: System.Func<obj, obj> * ?``onSuccess``: System.Action<Scene> * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> * ?``onError``: System.Action<Scene, string, obj option> * ?``pluginExtension``: string * ?``name``: string -> JS.Promise<Scene>
+        abstract ``ForceFullSceneLoadingForIncremental``: bool with get, set
+        abstract ``ShowLoadingScreen``: bool with get, set
+        abstract ``loggingLevel``: float with get, set
+        abstract ``CleanBoneMatrixWeights``: bool with get, set
+
+    [<Import("SceneLoader", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let SceneLoader: SceneLoaderStatic = jsNative

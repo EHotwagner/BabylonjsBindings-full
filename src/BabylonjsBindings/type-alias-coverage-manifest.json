@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "1e9e54f0481bb6130873bcc2f16db364138775b24290824cee315d403e8bfb97",
+  "proposalSha256": "853d258ba03ba2355a304f7d5c5835692cff558d41acee376996b252ba53bace",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1321,6 +1321,53 @@
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebXRControllerMovementRegistrationConfiguration",
       "dependencies": [],
       "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "PluginOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PluginOptions",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.types",
+      "name": "MaterialVariantsController",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GLTFFileLoaderMaterialVariantsController",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure",
+      "name": "MaterialVariantsController",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialVariantsController",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry",
+      "name": "GLTFExtensionFactory",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GLTFExtensionFactory",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.GLTF2Loader",
+        "BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension"
+      ],
+      "shape": "callback",
       "memberCount": 1
     }
   ],

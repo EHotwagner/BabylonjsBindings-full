@@ -978,3 +978,23 @@ module TypeAliases =
 
     /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
     type WebXRControllerMovementRegistrationConfiguration = U2<AliasObject2d7882d93505, AliasObject406c176bc0c4>
+
+    /// @babylonjs/core/Loading/sceneLoader
+    type PluginOptions = BabylonjsBindings.SimpleInterfaces.BrowserRecord<string, BabylonjsBindings.SimpleInterfaces.LoaderExtensionOptionBag option> option
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectf497ac798630 =
+        abstract ``variants``: System.Collections.Generic.IReadOnlyList<string> with get
+        abstract ``selectedVariant``: string with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.types
+    type GLTFFileLoaderMaterialVariantsController = AliasObjectf497ac798630
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure
+    type MaterialVariantsController = AliasObjectf497ac798630
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry
+    [<AllowNullLiteral>]
+    type GLTFExtensionFactory =
+        [<Emit("$0($1...)")>] abstract Invoke: loader: BabylonjsBindings.SimpleClasses.GLTF2Loader -> U2<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension, JS.Promise<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension>>

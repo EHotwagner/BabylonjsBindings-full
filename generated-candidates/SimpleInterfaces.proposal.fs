@@ -2069,6 +2069,18 @@ module SimpleInterfaces =
 
     /// Exact inline object used by a Babylon interface signature.
     [<AllowNullLiteral>]
+    type SceneLoaderSyncPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin
+        abstract ``onDisposeObservable``: BabylonjsBindings.SimpleClasses.Observable<unit> option with get
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type SceneLoaderAsyncPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        abstract ``onDisposeObservable``: BabylonjsBindings.SimpleClasses.Observable<unit> option with get
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
     type InlineObject4f1820232dd6Object =
         abstract ``url``: string with get, set
 
@@ -5545,6 +5557,12 @@ module SimpleInterfaces =
         abstract ``collideWith``: float option with get, set
         abstract ``shouldHitTriggers``: bool option with get, set
         abstract ``ignoreBody``: BabylonjsBindings.SimpleClasses.PhysicsBody option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry
+    [<AllowNullLiteral>]
+    type IRegisteredGLTFExtension =
+        abstract ``isGLTFExtension``: bool with get, set
+        abstract ``factory``: BabylonjsBindings.TypeAliases.GLTFExtensionFactory with get, set
 
     /// @babylonjs/core/Rendering/renderingManager
     [<AllowNullLiteral>]
@@ -11458,6 +11476,13 @@ module SimpleInterfaces =
         abstract ``extendedCreatePipelineOptions``: PartialICreateAndPreparePipelineContextOptions option with get, set
         abstract ``waitForIsReady``: bool option with get, set
         abstract ``disableParallelCompilation``: bool option with get, set
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type IRegisteredPlugin =
+        abstract ``plugin``: U2<U2<SceneLoaderSyncPlugin, SceneLoaderAsyncPlugin>, ISceneLoaderPluginFactory> with get, set
+        abstract ``isBinary``: bool with get, set
+        abstract ``mimeType``: string option with get, set
 
     /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
     [<AllowNullLiteral>]

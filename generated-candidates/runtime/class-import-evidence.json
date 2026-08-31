@@ -1828,6 +1828,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/assetsManager.js",
+      "export": "AssetsManager",
+      "runtimeExport": "AssetsManager",
+      "moduleSha256": "f4609834f6c481f7c488ea567f9202b23de9672ff050e66574389e85873a599b"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/assetsManager.js",
       "export": "AssetsProgressEvent",
       "runtimeExport": "AssetsProgressEvent",
       "moduleSha256": "f4609834f6c481f7c488ea567f9202b23de9672ff050e66574389e85873a599b"
@@ -6370,6 +6377,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/assetsManager.js",
+      "export": "MeshAssetTask",
+      "runtimeExport": "MeshAssetTask",
+      "moduleSha256": "f4609834f6c481f7c488ea567f9202b23de9672ff050e66574389e85873a599b"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Node/Blocks/meshAttributeExistsBlock.pure.js",
       "export": "MeshAttributeExistsBlock",
       "runtimeExport": "MeshAttributeExistsBlock",
@@ -8418,6 +8432,13 @@
       "export": "SceneInstrumentation",
       "runtimeExport": "SceneInstrumentation",
       "moduleSha256": "a23ca05bd6c3dddf9466bc22ab73444ad55abca491ff799d93aff9779c078da6"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader.js",
+      "export": "SceneLoader",
+      "runtimeExport": "SceneLoader",
+      "moduleSha256": "f1c3af08bffbcb7a9a2e03a33e151054a9f4d2a228c4bcb34a7c9344ff317edf"
     },
     {
       "package": "@babylonjs/core",

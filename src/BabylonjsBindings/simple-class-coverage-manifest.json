@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "feca7e367346bc5131d29e5aa82561538ab0bb3274a959c9a55fefd3115edf37",
+  "proposalSha256": "0cc2cef6766894029deda96ce406cc4a6b537f207844c362024bdd362bb4cb7f",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -26881,6 +26881,84 @@
         "BabylonjsBindings.SimpleInterfaces.ITransmissionHelperOptions"
       ],
       "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/assetsManager",
+      "name": "AssetsManager",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AssetsManager",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAssetTask",
+        "BabylonjsBindings.SimpleClasses.BinaryFileAssetTask",
+        "BabylonjsBindings.SimpleClasses.ContainerAssetTask",
+        "BabylonjsBindings.SimpleClasses.CubeTextureAssetTask",
+        "BabylonjsBindings.SimpleClasses.EquiRectangularCubeTextureAssetTask",
+        "BabylonjsBindings.SimpleClasses.HDRCubeTextureAssetTask",
+        "BabylonjsBindings.SimpleClasses.ImageAssetTask",
+        "BabylonjsBindings.SimpleClasses.MeshAssetTask",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.TextFileAssetTask",
+        "BabylonjsBindings.SimpleClasses.TextureAssetTask",
+        "BabylonjsBindings.SimpleInterfaces.IAssetsProgressEvent",
+        "BabylonjsBindings.SimpleInterfaces.ICubeTextureCreationOptions",
+        "BabylonjsBindings.SimpleInterfaces.ITextureCreationOptions",
+        "BabylonjsBindings.TypeAliases.PluginOptions"
+      ],
+      "memberCount": 24
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/assetsManager",
+      "name": "MeshAssetTask",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MeshAssetTask",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAssetTask",
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.Skeleton",
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.IParticleSystem",
+        "BabylonjsBindings.TypeAliases.PluginOptions"
+      ],
+      "memberCount": 16
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "SceneLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SceneLoader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.AssetContainer",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IRegisteredPlugin",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent",
+        "BabylonjsBindings.TypeAliases.PluginOptions",
+        "BabylonjsBindings.TypeAliases.SceneLoaderSuccessCallback"
+      ],
+      "memberCount": 24
     }
   ],
   "reviewStatus": "maintained"

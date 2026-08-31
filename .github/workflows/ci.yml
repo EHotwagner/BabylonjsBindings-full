@@ -151,4 +151,4 @@ jobs:
             generated-candidates/SimpleTypes.proposal.fs
 
       - name: Run compile, import, Node, Chromium, and clean-consumer gates
-        run: npm run test:candidate
+        run: npm run test:candidate-prepared

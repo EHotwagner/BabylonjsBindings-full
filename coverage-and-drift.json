@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "63de9bf79da5b79d8a1c89d374c1b0af5b1708a57eb9a690d211a073aeb7a66a",
+  "maintainedSurfaceDigest": "c8920cd2f82498da09c2095f457de72d12bad18fb8751315709cf0da5871b8b5",
   "summary": {
     "total": 4323,
-    "typed": 4228,
+    "typed": 4235,
     "runtimeOnly": 1,
-    "blocked": 94,
+    "blocked": 87,
     "lossy": 0
   },
   "exports": [
@@ -13040,8 +13040,9 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "PluginOptions",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PluginOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -13066,8 +13067,9 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "SceneLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SceneLoader"
     },
     {
       "package": "@babylonjs/core",
@@ -23864,8 +23866,9 @@
       "module": "@babylonjs/core/Misc/assetsManager",
       "name": "AssetsManager",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AssetsManager"
     },
     {
       "package": "@babylonjs/core",
@@ -23962,8 +23965,9 @@
       "module": "@babylonjs/core/Misc/assetsManager",
       "name": "MeshAssetTask",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MeshAssetTask"
     },
     {
       "package": "@babylonjs/core",
@@ -37722,8 +37726,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure",
       "name": "MaterialVariantsController",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialVariantsController"
     },
     {
       "package": "@babylonjs/loaders",
@@ -37739,8 +37744,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.types",
       "name": "MaterialVariantsController",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GLTFFileLoaderMaterialVariantsController"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38230,8 +38236,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry",
       "name": "GLTFExtensionFactory",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.GLTFExtensionFactory"
     },
     {
       "package": "@babylonjs/loaders",

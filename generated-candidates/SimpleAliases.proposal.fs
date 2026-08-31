@@ -504,6 +504,12 @@ module TypeAliases =
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
+    type AliasObjectf497ac798630 =
+        abstract ``variants``: System.Collections.Generic.IReadOnlyList<string> with get
+        abstract ``selectedVariant``: string with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
     type AliasObjectf9837e5af8ce =
         abstract ``type``: BabylonjsBindings.Enums.ComputeBindingType with get, set
         abstract ``object``: obj with get, set
@@ -676,6 +682,14 @@ module TypeAliases =
     type GetValueFn =
         [<Emit("$0($1...)")>] abstract Invoke: target: obj * source: JS.Float32Array * offset: System.Double * scale: System.Double -> obj
 
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry
+    [<AllowNullLiteral>]
+    type GLTFExtensionFactory =
+        [<Emit("$0($1...)")>] abstract Invoke: loader: BabylonjsBindings.SimpleClasses.GLTF2Loader -> U2<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension, JS.Promise<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension>>
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.types
+    type GLTFFileLoaderMaterialVariantsController = AliasObjectf497ac798630
+
     /// @babylonjs/core/Meshes/Builders/goldbergBuilder
     [<AllowNullLiteral>]
     type GoldbergCreationOption =
@@ -759,6 +773,9 @@ module TypeAliases =
     /// @babylonjs/core/Materials/materialPluginEvent
     type MaterialPluginPrepareUniformBuffer = AliasObject4db22449cde4
 
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure
+    type MaterialVariantsController = AliasObjectf497ac798630
+
     /// @babylonjs/core/Culling/ray.core
     [<AllowNullLiteral>]
     type MeshPredicate =
@@ -828,6 +845,9 @@ module TypeAliases =
     [<AllowNullLiteral>]
     type PluginMaterialFactory =
         [<Emit("$0($1...)")>] abstract Invoke: material: BabylonjsBindings.SimpleClasses.Material -> BabylonjsBindings.SimpleClasses.MaterialPluginBase option
+
+    /// @babylonjs/core/Loading/sceneLoader
+    type PluginOptions = BabylonjsBindings.SimpleInterfaces.BrowserRecord<string, BabylonjsBindings.SimpleInterfaces.LoaderExtensionOptionBag option> option
 
     /// @babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure
     type PlyProperty = AliasObjectb68403858bab

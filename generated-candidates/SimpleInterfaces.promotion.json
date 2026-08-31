@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "e0114b38d82a1397968a28e926da4f15b3fc76f8344e341dad85270063f304ff",
+  "proposalSha256": "0b07a880f87684587fc040d9eeb53f311b22712f485037697c52e86fe89f06b0",
   "exports": [
     {
       "package": "@babylonjs/loaders",
@@ -8181,6 +8181,17 @@
       "memberCount": 5
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry",
+      "name": "IRegisteredGLTFExtension",
+      "kind": "interface-support",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IRegisteredGLTFExtension",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.GLTFExtensionFactory"
+      ],
+      "memberCount": 2
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Rendering/geometryBufferRenderer.pure",
       "name": "ISavedTransformationMatrix",
@@ -9059,6 +9070,15 @@
         "BabylonjsBindings.SimpleInterfaces.GLTF2IProperty"
       ],
       "memberCount": 17
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "IRegisteredPlugin",
+      "kind": "interface-support",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IRegisteredPlugin",
+      "dependencies": [],
+      "memberCount": 3
     },
     {
       "package": "@babylonjs/loaders",

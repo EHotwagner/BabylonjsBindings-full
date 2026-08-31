@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "9fa67b587a861a37639a950315092cf90e33185ed4756796a6137903021491f8",
+  "proposalSha256": "3b5b7a5911c1229ed9e55a77c2fead8343da8959a0ff3ef7030454b4e0ec9208",
   "exports": [
     {
       "package": "@babylonjs/core",

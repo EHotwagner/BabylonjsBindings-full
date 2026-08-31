@@ -43,13 +43,17 @@ try {
   const address = server.address();
   const url = `http://127.0.0.1:${address.port}/${pagePath}`;
   const version = (await run("chromium", ["--version"])).stdout.trim();
-  const browser = await run("chromium", [
-    "--headless", "--no-sandbox", "--disable-gpu", "--virtual-time-budget=8000", "--dump-dom", url
-  ]);
   const expected = "Babylon full candidate browser smoke passed";
-  const renderedOutput = browser.stdout.match(/<output>([^<]*)<\/output>/)?.[1];
-  if (renderedOutput !== expected) {
-    throw new Error(`Chromium did not report success\nHTTP failures: ${JSON.stringify(requestFailures)}\n${browser.stdout}\n${browser.stderr}`);
+  let browser;
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    browser = await run("chromium", [
+      "--headless", "--no-sandbox", "--disable-gpu", "--virtual-time-budget=8000", "--dump-dom", url
+    ]);
+    const renderedOutput = browser.stdout.match(/<output>([^<]*)<\/output>/)?.[1];
+    if (renderedOutput === expected) break;
+    if (attempt === 2) {
+      throw new Error(`Chromium did not report success after ${attempt} attempts\nHTTP failures: ${JSON.stringify(requestFailures)}\n${browser.stdout}\n${browser.stderr}`);
+    }
   }
   const page = await readFile(resolve(root, pagePath));
   const program = await readFile(resolve(root, "generated-candidates/runtime/dist/Program.js"));

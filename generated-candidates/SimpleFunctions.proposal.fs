@@ -6855,7 +6855,7 @@ module SimpleFunctions =
     /// @babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry
     [<AllowNullLiteral>]
     type FunctionBinding_registerGLTFExtension =
-        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``isGLTFExtension``: bool * ``factory``: System.Func<BabylonjsBindings.SimpleClasses.GLTF2Loader, U2<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension, JS.Promise<BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension>>> -> unit
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``isGLTFExtension``: bool * ``factory``: BabylonjsBindings.TypeAliases.GLTFExtensionFactory -> unit
 
     [<Import("registerGLTFExtension", "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry.js")>]
     let ``registerGLTFExtension``: FunctionBinding_registerGLTFExtension = jsNative

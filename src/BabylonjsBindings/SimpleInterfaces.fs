@@ -11102,3 +11102,22 @@ module SimpleInterfaces =
     type ISceneLoaderPluginFactory =
         inherit ISceneLoaderPluginMetadata
         abstract ``createPlugin``: ``options``: SceneLoaderPluginOptions -> U3<ISceneLoaderPlugin, ISceneLoaderPluginAsync, JS.Promise<U2<ISceneLoaderPlugin, ISceneLoaderPluginAsync>>>
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type SceneLoaderSyncPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPlugin
+        abstract ``onDisposeObservable``: BabylonjsBindings.SimpleClasses.Observable<unit> option with get
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type SceneLoaderAsyncPlugin =
+        inherit BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginAsync
+        abstract ``onDisposeObservable``: BabylonjsBindings.SimpleClasses.Observable<unit> option with get
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type IRegisteredPlugin =
+        abstract ``plugin``: U2<U2<SceneLoaderSyncPlugin, SceneLoaderAsyncPlugin>, ISceneLoaderPluginFactory> with get, set
+        abstract ``isBinary``: bool with get, set
+        abstract ``mimeType``: string option with get, set

@@ -782,6 +782,23 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       const declaration = symbol?.declarations?.find(ts.isTypeAliasDeclaration);
       if (declaration) return fsharpType(declaration.type, available, dependencies, typeParameters);
     }
+    if (!node.typeArguments?.length && node.typeName.text === "SceneLoaderPlugin") {
+      const pluginKinds = [
+        ["SceneLoaderSyncPlugin", "ISceneLoaderPlugin"],
+        ["SceneLoaderAsyncPlugin", "ISceneLoaderPluginAsync"]
+      ];
+      for (const [name, base] of pluginKinds) {
+        if (!utilityInlineTypes.some(inline => inline.name === name)) {
+          utilityInlineTypes.push({
+            name,
+            genericParameters: "",
+            bases: [`BabylonjsBindings.SimpleInterfaces.${base}`],
+            members: [{ kind: "property", name: "onDisposeObservable", type: "BabylonjsBindings.SimpleClasses.Observable<unit> option", readonly: true }]
+          });
+        }
+      }
+      return "U2<SceneLoaderSyncPlugin, SceneLoaderAsyncPlugin>";
+    }
     const projectedName = projectedInterfaceName(node.typeName);
     if (available.has(projectedName) && referenceMatchesTargetModule(node.typeName, available.get(projectedName))) {
       const target = available.get(projectedName);

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "4d2c1afc59438d0f5418f1e27db17f1d9d0c5cd597d71bac756731288d7611ca",
+  "proposalSha256": "6c504bb4ececff0b5996eee4e624696ae055c8524c1e0a8bbfe110e94c2a4a48",
   "exports": [
     {
       "package": "@babylonjs/loaders",
@@ -9343,8 +9343,7 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.registerGLTFExtension",
       "dependencies": [
-        "BabylonjsBindings.SimpleClasses.GLTF2Loader",
-        "BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension"
+        "BabylonjsBindings.TypeAliases.GLTFExtensionFactory"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_registerGLTFExtension",
       "overloadCount": 1

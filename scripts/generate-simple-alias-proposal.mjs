@@ -19,6 +19,9 @@ const program = ts.createProgram([...lockedPaths].map(file => resolve(nodeModule
   skipLibCheck: true
 });
 const checker = program.getTypeChecker();
+const aliasCollisionNames = new Map([
+  ["@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.types|MaterialVariantsController", "GLTFFileLoaderMaterialVariantsController"]
+]);
 const diagnose = process.argv.includes("--diagnose");
 const bootstrapClasses = process.argv.includes("--bootstrap-classes");
 const typeFailureCounts = new Map();
@@ -74,6 +77,28 @@ for (const entry of symbolExports) dependencyNameCounts.set(entry.name, (depende
 const maintainedSymbols = new Map(symbolExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
   .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, arity: entry.typeParameterCount ?? 0 }]));
+const maintainedSymbolsByIdentity = new Map(symbolExports.map(entry => [
+  `${entry.package}|${entry.module}|${entry.name}`,
+  { fsharpSymbol: entry.fsharpSymbol, arity: entry.typeParameterCount ?? 0 }
+]));
+const declarationIdentityForIdentifier = identifier => {
+  let symbol = checker.getSymbolAtLocation(identifier);
+  if (symbol?.flags & ts.SymbolFlags.Alias) {
+    try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+  }
+  const declaration = symbol?.declarations?.[0];
+  if (!declaration) return undefined;
+  const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
+  const packageName = module.startsWith("@babylonjs/core/")
+    ? "@babylonjs/core"
+    : module.startsWith("@babylonjs/loaders/")
+      ? "@babylonjs/loaders"
+      : undefined;
+  const name = declaration.name && (ts.isIdentifier(declaration.name) || ts.isStringLiteral(declaration.name))
+    ? declaration.name.text
+    : symbol.getName();
+  return packageName ? `${packageName}|${module}|${name}` : undefined;
+};
 if (bootstrapClasses) {
   const rawClassSymbols = new Map();
   for (const sourceFile of program.getSourceFiles()) {
@@ -146,6 +171,15 @@ const fsharpType = node => {
   if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.TrueKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserTrue";
   if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.FalseKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserFalse";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
+  if (ts.isIndexedAccessTypeNode(node)
+    && ts.isTypeReferenceNode(node.objectType)
+    && ts.isIdentifier(node.objectType.typeName)
+    && node.objectType.typeName.text === "ISceneLoaderOptions"
+    && ts.isLiteralTypeNode(node.indexType)
+    && ts.isStringLiteral(node.indexType.literal)
+    && node.indexType.literal.text === "pluginOptions") {
+    return "BabylonjsBindings.SimpleInterfaces.BrowserRecord<string, BabylonjsBindings.SimpleInterfaces.LoaderExtensionOptionBag option> option";
+  }
   if (ts.isIntersectionTypeNode(node) && node.types.length === 2) {
     const common = node.types.find(ts.isTypeLiteralNode);
     const other = node.types.find(branch => branch !== common);
@@ -450,7 +484,8 @@ const fsharpType = node => {
         }
       }
     }
-    const maintained = maintainedSymbols.get(node.typeName.text);
+    const maintained = maintainedSymbolsByIdentity.get(declarationIdentityForIdentifier(node.typeName))
+      ?? maintainedSymbols.get(node.typeName.text);
     if (maintained) {
       const arguments_ = node.typeArguments ?? [];
       if (arguments_.length !== maintained.arity) return undefined;
@@ -600,7 +635,9 @@ for (const sourceFile of program.getSourceFiles()) {
         ? "@babylonjs/loaders"
         : undefined;
     if (!packageName) continue;
-    const name = exported.getName();
+    const sourceName = exported.getName();
+    const identity = `${packageName}|${module}|${sourceName}`;
+    const name = aliasCollisionNames.get(identity) ?? sourceName;
     let entry;
     const isNullable = name === "Nullable"
       && declaration.typeParameters?.length === 1
@@ -674,7 +711,7 @@ for (const sourceFile of program.getSourceFiles()) {
       });
       if (partialBranches.every(Boolean)) entry.partialTarget = erasedUnionType(partialBranches);
     }
-    const identity = `${packageName}|${module}|${name}`;
+    if (entry && name !== sourceName) entry.sourceName = sourceName;
     if (entry && !maintainedIdentities.has(identity)) entriesByIdentity.set(identity, entry);
   }
 }
@@ -778,7 +815,7 @@ const manifest = {
   exports: entries.map(entry => ({
     package: entry.package,
     module: entry.module,
-    name: entry.name,
+    name: entry.sourceName ?? entry.name,
     kind: "type",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.TypeAliases.${entry.name}`,
