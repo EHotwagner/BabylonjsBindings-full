@@ -60,6 +60,7 @@
     "check:m0-sdd-readiness": "bash scripts/check-m0-sdd-readiness.sh",
     "check:m1-sdd-readiness": "bash scripts/check-m1-sdd-readiness.sh",
     "check:m2-sdd-readiness": "bash scripts/check-m2-sdd-readiness.sh",
+    "check:m3-sdd-readiness": "bash scripts/check-m3-sdd-readiness.sh",
     "check:m1-exact-projections": "node scripts/check-m1-exact-projections.mjs",
     "test:m1-clean-consumer": "node scripts/test-m1-clean-consumer.mjs",
     "test:m1:trx": "node scripts/run-m1-tests.mjs reports/m1-exact-projections.trx",
