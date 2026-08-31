@@ -1,0 +1,1257 @@
+{
+  "schemaVersion": 1,
+  "target": "generated-candidate",
+  "fable": "5.13.0",
+  "emittedProgram": {
+    "path": "runtime/full-dist/Program.js",
+    "sha256": "cc24d6cb3b50fdd4ff64dd1f8ae235421719c5a8feabe5afbc8e94c82d91850f"
+  },
+  "imports": [
+    {
+      "specifier": "@babylonjs/core/Animations/animation.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Animations/animation.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Animations/animationEvent.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Animations/animationEvent.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Animations/animationGroupMask.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Animations/animationGroupMask.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Animations/easing.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Animations/easing.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Behaviors/Meshes/handConstraintBehavior.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Buffers/buffer.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Buffers/buffer.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Buffers/bufferUtils.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Buffers/bufferUtils.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Cameras/freeCamera.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Cameras/freeCamera.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/Bindings.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Cameras/VR/vrExperienceHelper.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/DeviceInput/InputDevices/deviceSourceManager.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/DeviceInput/InputDevices/deviceSourceManager.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/constants.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/constants.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/Native/nativeDataStream.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/Native/nativeDataStream.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/Native/validatedNativeDataStream.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/Native/validatedNativeDataStream.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/nullEngine.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/nullEngine.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/Bindings.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/performanceConfigurator.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/performanceConfigurator.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/shaderStore.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/shaderStore.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/WebGL/webGLHardwareTexture.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/WebGL/webGLHardwareTexture.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Engines/WebGPU/webgpuShaderProcessor.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/FlowGraph/flowGraphAssetsContext.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/FlowGraph/flowGraphAssetsContext.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/FlowGraph/flowGraphRichTypes.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Gamepads/dualShockGamepad.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Gamepads/dualShockGamepad.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Gamepads/gamepad.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Gamepads/gamepad.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Gamepads/xboxGamepad.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Gamepads/xboxGamepad.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Lights/hemisphericLight.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Lights/hemisphericLight.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/Bindings.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Loading/sceneLoader.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Loading/sceneLoader.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/floatingOriginMatrixOverrides.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/floatingOriginMatrixOverrides.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/fresnelParameters.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/fresnelParameters.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/GreasedLine/greasedLinePluginMaterial.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/imageProcessing.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/imageProcessing.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/imageProcessingConfiguration.defines.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/imageProcessingConfiguration.defines.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/material.decalMapConfiguration.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/material.decalMapConfiguration.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/material.detailMapConfiguration.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/material.detailMapConfiguration.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/materialDefines.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/materialDefines.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/materialHelper.functions.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/materialHelper.functions.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/PBR/pbrAnisotropicConfiguration.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/PBR/pbrAnisotropicConfiguration.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/PBR/pbrBRDFConfiguration.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/PBR/pbrBRDFConfiguration.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/PBR/pbrClearCoatConfiguration.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/PBR/pbrClearCoatConfiguration.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/PBR/pbrIridescenceConfiguration.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/PBR/pbrSheenConfiguration.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/PBR/pbrSheenConfiguration.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/PBR/pbrSubSurfaceConfiguration.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.decoder.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.decoder.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.header.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.header.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/Textures/textureCreationOptions.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/Textures/textureCreationOptions.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Materials/uv.defines.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Materials/uv.defines.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Maths/math.color.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/math.color.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Maths/math.constants.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/math.constants.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Maths/math.geospatial.functions.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/math.geospatial.functions.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Maths/math.vector.functions.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/math.vector.functions.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Maths/math.vector.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/math.vector.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/Bindings.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Meshes/Builders/greasedLineBuilder.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Meshes/Builders/greasedLineBuilder.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Meshes/Compression/meshoptCompression.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Meshes/Compression/meshoptCompression.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Meshes/meshBuilder.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Meshes/meshBuilder.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/Bindings.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Meshes/meshSimplification.common.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Meshes/meshSimplification.common.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/basis.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/basis.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/bitArray.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/bitArray.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/coroutine.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/coroutine.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/dataStorage.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/dataStorage.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/decorators.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/decorators.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/deepMerger.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/deepMerger.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/error.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/error.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/filesInputStore.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/filesInputStore.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/fileTools.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/fileTools.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/gradients.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/gradients.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/guid.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/guid.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/lazy.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/lazy.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/observable.extensions.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/observable.extensions.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/observable.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/observable.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/smartArray.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/smartArray.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Misc/stringTools.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Misc/stringTools.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Physics/v1/physicsEngine.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Physics/v1/physicsEngine.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Physics/v2/physicsEngine.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Physics/v2/physicsEngine.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/scene.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/scene.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/Bindings.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/ShadersWGSL/clearQuad.vertex.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/ShadersWGSL/clearQuad.vertex.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/Sprites/thinSprite.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/Sprites/thinSprite.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/States/alphaCullingState.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/States/alphaCullingState.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/States/stencilState.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/States/stencilState.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/States/stencilStateComposer.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/States/stencilStateComposer.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/XR/features/WebXRBodyTracking.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/XR/motionController/webXRControllerComponent.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/XR/motionController/webXRControllerComponent.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/XR/webXRDefaultExperience.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/XR/webXRDefaultExperience.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/XR/webXREnterExitUI.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/XR/webXREnterExitUI.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/XR/webXRExperienceHelper.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/XR/webXRExperienceHelper.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/core/XR/webXRFeaturesManager.js",
+      "package": "@babylonjs/core",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/core/XR/webXRFeaturesManager.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/BVH/bvhFileLoader.metadata.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/BVH/bvhFileLoader.metadata.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_area.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_area.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_ies.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_image_based.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_lights_image_based.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_mesh_gpu_instancing.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_meshopt_compression.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_avif.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/EXT_texture_webp.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/ExtrasAsMetadata.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_animation_pointer.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_draco_mesh_compression.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_gaussian_splatting.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_gaussian_splatting.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_lights_punctual.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_lights_punctual.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_anisotropy.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_clearcoat.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_coat.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_roughness.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_diffuse_transmission.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_dispersion.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_emissive_strength.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_fuzz.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_ior.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_iridescence.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_pbrSpecularGlossiness.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_sheen.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_specular.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_transmission.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_unlit.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_variants.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume_scatter.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_materials_volume.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_mesh_quantization.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_hoverability.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_selectability.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_node_visibility.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_basisu.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_texture_transform.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/KHR_xmp_json_ld.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_audio_emitter.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_audio_emitter.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_lod.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_minecraftMesh.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/MSFT_sRGBFactors.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js",
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/Extensions/transmissionHelper.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js",
+      "emittedBy": [
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js",
+        "runtime/full-dist/src/BabylonjsBindings/M5GltfNamespaces.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/glTFFileLoader.metadata.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/glTFFileLoader.metadata.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js"
+      ]
+    },
+    {
+      "specifier": "@babylonjs/loaders/glTF/index.js",
+      "package": "@babylonjs/loaders",
+      "version": "9.19.0",
+      "resolvedPath": "node_modules/@babylonjs/loaders/glTF/index.js",
+      "emittedBy": [
+        "runtime/full-dist/Program.js",
+        "runtime/full-dist/src/BabylonjsBindings/Bindings.js"
+      ]
+    }
+  ],
+  "status": "pass"
+}

@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "maintained",
+  "proposalSha256": "f7f5009200119db1dc167f293d7c323c9f7546a0eae91f237001428ceb71ba92",
+  "analysisSha256": "3bc946910d4a24a9fd74c6723832ca48be808e3f645638b6e291eb29a4fd4c48",
+  "exports": [
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/index",
+      "name": "GLTF1",
+      "kind": "namespace",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.GltfNamespaces.GLTF1"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/index",
+      "name": "GLTF2",
+      "kind": "namespace",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.GltfNamespaces.GLTF2"
+    }
+  ]
+}

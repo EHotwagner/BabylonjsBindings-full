@@ -1,0 +1,273 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "maintained",
+  "proposalSha256": "e4f1be11707320ad333cc6555c3ef01b436327c74307905077ea492f7305cfb2",
+  "policy": "closed-world-exact-specializations",
+  "instantiationManifestSha256": "cc12b4ac3ad9682f565c98edfd940856b0a351c0272ca7503390f5eee9ae96cc",
+  "exports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.pure",
+      "name": "Vector",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Vector"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/math.vector.pure",
+      "name": "VectorStatic",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.VectorStatic"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/tensor",
+      "name": "Dimension",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Dimension"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/tensor",
+      "name": "Tensor",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Tensor"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/tensor",
+      "name": "TensorLike",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.TensorLike"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/tensor",
+      "name": "TensorStatic",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.TensorStatic"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Maths/tensor",
+      "name": "ValueOfTensor",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.ValueOfTensor"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Add",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Add"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Concat",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Concat"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Constructor",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Constructor"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Decrement",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Decrement"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "DeepImmutable",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.DeepImmutable"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "DeepImmutableObject",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.DeepImmutableObject"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "First",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.First"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Flatten",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Flatten"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "FlattenArray",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.FlattenArray"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "FlattenTuple",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.FlattenTuple"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "FromLength",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.FromLength"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Immutable",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Immutable"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Increment",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Increment"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "IsTuple",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.IsTuple"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Last",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Last"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Length",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Length"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Member",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Member"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "NonNullableFields",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.NonNullableFields"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Pop",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Pop"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Push",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Push"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Remove",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Remove"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Shift",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Shift"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Subtract",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Subtract"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Tuple",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Tuple"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "Unshift",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.Unshift"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "WritableObject",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeFunctionCore.WritableObject"
+    }
+  ]
+}

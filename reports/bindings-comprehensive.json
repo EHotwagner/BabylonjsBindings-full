@@ -1,0 +1,207 @@
+{
+  "schemaVersion": 1,
+  "result": "pass",
+  "environment": {
+    "dotnet": "10.0.302",
+    "fable": "5.13.0",
+    "node": "v26.8.1",
+    "npm": "12.0.2",
+    "chromium": "Chromium 152.0.7977.64 Arch Linux",
+    "packageLockSha256": "407078b393f819f6820930a14756bcf6c9c32e90c7adaa3c5bbcbd77021082fb"
+  },
+  "coverage": {
+    "total": 4323,
+    "typed": 4322,
+    "runtimeOnly": 1,
+    "blocked": 0,
+    "lossy": 0
+  },
+  "exhaustiveRuntimeInventory": {
+    "requests": 3317,
+    "modules": 1801
+  },
+  "checks": [
+    {
+      "name": "toolchain and lock doctor",
+      "command": "npm run doctor",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.10417937000000001
+    },
+    {
+      "name": "declaration closure drift",
+      "command": "npm run check:drift",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.52292551
+    },
+    {
+      "name": "typed export and runtime import inventory",
+      "command": "node --test tests/bindings/inventory.test.mjs tests/bindings/runtime-imports.test.mjs",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 1.0404352560000003
+    },
+    {
+      "name": "locked .NET restore",
+      "command": "dotnet restore BabylonjsBindings.slnx --locked-mode",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.7000220650000001
+    },
+    {
+      "name": "maintained .NET compile suite",
+      "command": "dotnet build BabylonjsBindings.slnx --no-restore --nologo -v:minimal",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 20.480246945999998
+    },
+    {
+      "name": "shared .NET and emitted JavaScript fixture",
+      "command": "node --test tests/bindings/cross-runtime.test.mjs",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 18.637680470000003
+    },
+    {
+      "name": "M2 dependent-map negative fixtures",
+      "command": "npm run test:m2-negative",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 17.572516067000006
+    },
+    {
+      "name": "M3 higher-order negative fixtures",
+      "command": "npm run test:m3-negative",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 6.245450597999996
+    },
+    {
+      "name": "M4 fixed-shape negative fixture",
+      "command": "npm run test:m4-negative",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 2.0594520530000007
+    },
+    {
+      "name": "full maintained Fable emission",
+      "command": "dotnet fable tests/BabylonjsBindings.CompileTests/BabylonjsBindings.CompileTests.fsproj --outDir runtime/full-dist --noCache",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 17.963494322
+    },
+    {
+      "name": "all emitted modular imports resolve",
+      "command": "node scripts/check-emitted-imports.mjs runtime/full-dist reports/bindings-emitted-imports.json",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.04901502099999925
+    },
+    {
+      "name": "fixed-shape and namespace emitted calls",
+      "command": "node scripts/check-m6-emitted.mjs runtime/full-dist",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.020763512999998058
+    },
+    {
+      "name": "Fable-emitted Node execution",
+      "command": "node runtime/full-dist/Program.js",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.23915791700000408
+    },
+    {
+      "name": "base Babylon Node smoke",
+      "command": "npm run test:runtime",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.25159337800000503
+    },
+    {
+      "name": "finite-map Node smoke",
+      "command": "npm run test:m2-node",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.19117165099999692
+    },
+    {
+      "name": "higher-order Node smoke",
+      "command": "npm run test:m3-node",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.08823370899999282
+    },
+    {
+      "name": "glTF namespace Node smoke",
+      "command": "npm run test:m5-node",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.22046410800000013
+    },
+    {
+      "name": "M2 browser fixture emission",
+      "command": "npm run test:m2-fable",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 19.09908110699999
+    },
+    {
+      "name": "M3 browser fixture emission",
+      "command": "npm run test:m3-fable",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 17.964659669
+    },
+    {
+      "name": "deterministic WebXR Chromium smoke",
+      "command": "npm run test:m2-browser",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 1.2659215679999907
+    },
+    {
+      "name": "higher-order Chromium smoke",
+      "command": "npm run test:m3-browser",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 1.2983811799999967
+    },
+    {
+      "name": "analysis unit tests",
+      "command": "npm run analysis:test",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.17709084099999745
+    },
+    {
+      "name": "analysis deterministic and current",
+      "command": "npm run analysis:determinism",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.2955278649999964
+    },
+    {
+      "name": "analysis generated views current",
+      "command": "npm run analysis:check",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 0.1642349899999972
+    },
+    {
+      "name": "complete export coverage gate",
+      "command": "npm run coverage:require-complete",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 1.1916057989999973
+    },
+    {
+      "name": "isolated packed NuGet/npm consumer",
+      "command": "npm run test:m6-clean-consumer",
+      "result": "pass",
+      "exitCode": 0,
+      "durationSeconds": 24.937019834999997
+    }
+  ]
+}

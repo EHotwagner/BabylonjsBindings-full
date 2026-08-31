@@ -1,0 +1,843 @@
+{
+  "schemaVersion": 1,
+  "source": "declaration-lock.json",
+  "lockedFileCount": 2928,
+  "policy": "closed-world-exact-specializations",
+  "utilityExportCount": 26,
+  "tensorVectorExportCount": 7,
+  "instantiationCount": 155,
+  "instantiations": [
+    {
+      "name": "Concat",
+      "expression": "Concat<_FromLength<A>,_FromLength<B>>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Concat",
+      "expression": "Concat<Unshift<A,0>,Shift<B>>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Decrement",
+      "expression": "Decrement<D>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<_I>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<AbstractMesh>",
+      "module": "@babylonjs/core/Culling/ray.core"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Array<Pick<ISceneLoaderPluginMetadata,\"name\">&{ /** * The extensions supported by the plugin. */ extensions: ({ /** * The file extension. */ extension: string; }&ISceneLoaderPluginExtensions[string])[]; }>>",
+      "module": "@babylonjs/core/Loading/sceneLoader"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<ArrayLike<number>>",
+      "module": "@babylonjs/core/Maths/math.color.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<ArrayLike<number>>",
+      "module": "@babylonjs/core/Maths/math.plane"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<ArrayLike<number>>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<BoundingBox>",
+      "module": "@babylonjs/core/Culling/boundingBox"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<BoundingBox>",
+      "module": "@babylonjs/core/Culling/ray.core"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<BoundingInfo>",
+      "module": "@babylonjs/core/Culling/boundingInfo"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<BoundingSphere>",
+      "module": "@babylonjs/core/Culling/boundingBox"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<BoundingSphere>",
+      "module": "@babylonjs/core/Culling/boundingSphere"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<BoundingSphere>",
+      "module": "@babylonjs/core/Culling/ray.core"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Color3>",
+      "module": "@babylonjs/core/Animations/animation.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Color3>",
+      "module": "@babylonjs/core/Maths/math.color.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Color4>",
+      "module": "@babylonjs/core/Animations/animation.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Color4>",
+      "module": "@babylonjs/core/Maths/math.color.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Curve3>",
+      "module": "@babylonjs/core/Maths/math.path"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Float32Array>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Float32Array|Array<number>>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<FloatArray>",
+      "module": "@babylonjs/core/Engines/Native/nativeDataStream"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<FloatArray>",
+      "module": "@babylonjs/core/Engines/thinEngine.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<FloatArray>",
+      "module": "@babylonjs/core/Engines/thinNativeEngine.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<FloatArray>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<FloatArray>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<FresnelParameters>",
+      "module": "@babylonjs/core/Materials/fresnelParameters.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<I>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IColor3Like>",
+      "module": "@babylonjs/core/Maths/math.color.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IColor4Like>",
+      "module": "@babylonjs/core/Maths/math.color.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IEllipsoidLike>",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<ILatLonAltLike>",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<ILatLonLike>",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IMatrixLike>",
+      "module": "@babylonjs/core/Materials/floatingOriginMatrixOverrides"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IMatrixLike>",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix.functions"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IPlaneLike>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IVector2Like>",
+      "module": "@babylonjs/core/Maths/math.vector.functions"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IVector2Like>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IVector3Like>",
+      "module": "@babylonjs/core/Cameras/geospatialCamera.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IVector3Like>",
+      "module": "@babylonjs/core/Maths/math.vector.functions"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IVector3LikeInternal>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IVector4Like>",
+      "module": "@babylonjs/core/Maths/math.vector.functions"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<IVector4Like>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Culling/boundingBox"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Culling/boundingInfo"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Culling/boundingSphere"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Culling/ray.core"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Maths/math.frustum"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Maths/math.plane"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Meshes/abstractMesh.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Meshes/mesh.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Meshes/subMesh.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Matrix>",
+      "module": "@babylonjs/core/Meshes/transformNode.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Pick<IEllipsoidLike,\"semiMajorAxis\"|\"firstEccentricitySquared\">>",
+      "module": "@babylonjs/core/Maths/math.geospatial.functions"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Plane>",
+      "module": "@babylonjs/core/Culling/boundingBox"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Plane>",
+      "module": "@babylonjs/core/Culling/boundingInfo"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Plane>",
+      "module": "@babylonjs/core/Culling/boundingSphere"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Plane>",
+      "module": "@babylonjs/core/Culling/ray.core"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Plane>",
+      "module": "@babylonjs/core/Maths/math.frustum"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Quaternion>",
+      "module": "@babylonjs/core/Animations/animation.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Quaternion>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Ray>",
+      "module": "@babylonjs/core/Culling/ray.core"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Size>",
+      "module": "@babylonjs/core/Animations/animation.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<T[K]>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<T>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<T>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<this>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Tuple<number,16>>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vec>",
+      "module": "@babylonjs/core/Maths/math.path"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector2>",
+      "module": "@babylonjs/core/Animations/animation.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector2>",
+      "module": "@babylonjs/core/Maths/math.path"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector2>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3[]>",
+      "module": "@babylonjs/core/Maths/math.path"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3[]>",
+      "module": "@babylonjs/core/Misc/trajectoryClassifier"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Animations/animation.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Cameras/camera.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Culling/boundingBox"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Culling/boundingInfo"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Culling/boundingSphere"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Culling/ray.core"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Maths/math.path"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Maths/math.plane"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Maths/math.polar"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Meshes/abstractMesh.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector3>",
+      "module": "@babylonjs/core/Misc/trajectoryClassifier"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector4>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Vector4>",
+      "module": "@babylonjs/core/Meshes/abstractMesh.pure"
+    },
+    {
+      "name": "DeepImmutable",
+      "expression": "DeepImmutable<Viewport>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "DeepImmutableObject",
+      "expression": "DeepImmutableObject<Matrix>",
+      "module": "@babylonjs/core/Meshes/thinInstanceMesh.types"
+    },
+    {
+      "name": "DeepImmutableObject",
+      "expression": "DeepImmutableObject<Matrix>",
+      "module": "@babylonjs/core/Physics/v2/characterController"
+    },
+    {
+      "name": "DeepImmutableObject",
+      "expression": "DeepImmutableObject<T>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Dimension",
+      "expression": "Dimension<N>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "Dimension",
+      "expression": "Dimension<U>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Dimension",
+      "expression": "Dimension<V>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Flatten",
+      "expression": "Flatten<ValueOfTensor<T>>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "FlattenArray",
+      "expression": "FlattenArray<A>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "FlattenTuple",
+      "expression": "FlattenTuple<A>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "FlattenTuple",
+      "expression": "FlattenTuple<Rest>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<{[key: string]: VertexBuffer; }>",
+      "module": "@babylonjs/core/Particles/gpuParticleSystem.pure"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<{[key: string]: VertexBuffer; }>",
+      "module": "@babylonjs/core/Particles/IParticleSystem"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<{[key: string]: VertexBuffer; }>",
+      "module": "@babylonjs/core/Particles/thinParticleSystem.pure"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<Array<AbstractMesh>>",
+      "module": "@babylonjs/core/Materials/Textures/renderTargetTexture.pure"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<Array<AbstractMesh>>",
+      "module": "@babylonjs/core/Rendering/objectRenderer"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<Array<NodeMaterialBlock>>",
+      "module": "@babylonjs/core/Materials/Node/nodeMaterialBuildStateSharedData"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<Array<number>>",
+      "module": "@babylonjs/core/Rendering/edgesRenderer.pure"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<GPUFeatureName[]>",
+      "module": "@babylonjs/core/Engines/webgpuEngine.pure"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<INodeRenderGraphCreateOptions>",
+      "module": "@babylonjs/core/FrameGraph/Node/nodeRenderGraph"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<Map<string,MorphTarget>>",
+      "module": "@babylonjs/core/Animations/animatorAvatar"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<number[]>",
+      "module": "@babylonjs/core/Materials/material.pure"
+    },
+    {
+      "name": "Immutable",
+      "expression": "Immutable<RenderingGroup[]>",
+      "module": "@babylonjs/core/Rendering/renderingManager"
+    },
+    {
+      "name": "IsTuple",
+      "expression": "IsTuple<A>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Length",
+      "expression": "Length<Concat<_FromLength<A>,_FromLength<B>>>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Length",
+      "expression": "Length<Dimension<V>>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Length",
+      "expression": "Length<R>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Length",
+      "expression": "Length<Remove<_FromLength<A>,_FromLength<B>>>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Length",
+      "expression": "Length<Shift<_FromLength<N>>>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Length",
+      "expression": "Length<T>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Length",
+      "expression": "Length<Unshift<_FromLength<N>,0>>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Member",
+      "expression": "Member<A[K],D>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Member",
+      "expression": "Member<Exclude<U,A>,D>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Member",
+      "expression": "Member<U,D extends number ? Decrement<D>: null>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "NonNullableFields",
+      "expression": "NonNullableFields<EffectWrapperCreationOptions>",
+      "module": "@babylonjs/core/Materials/effectRenderer.pure"
+    },
+    {
+      "name": "NonNullableFields",
+      "expression": "NonNullableFields<ThinImageProcessingPostProcessOptions>",
+      "module": "@babylonjs/core/PostProcesses/thinImageProcessingPostProcess"
+    },
+    {
+      "name": "Remove",
+      "expression": "Remove<_FromLength<A>,_FromLength<B>>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Remove",
+      "expression": "Remove<Shift<A>,Shift<B>>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Shift",
+      "expression": "Shift<_FromLength<N>>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Shift",
+      "expression": "Shift<A>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Shift",
+      "expression": "Shift<B>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Tensor",
+      "expression": "Tensor<any[],_I>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Tensor",
+      "expression": "Tensor<infer V,any>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Tensor",
+      "expression": "Tensor<TensorValue,infer I>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Tensor",
+      "expression": "Tensor<V,I>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "TensorLike",
+      "expression": "TensorLike<T>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "TensorLike",
+      "expression": "TensorLike<T>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<number,16>",
+      "module": "@babylonjs/core/Maths/math.like"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<number,16>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<number,16>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<number,16>",
+      "module": "@babylonjs/core/Maths/ThinMaths/thinMath.matrix"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<number,2>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<number,3>",
+      "module": "@babylonjs/core/Maths/math.color.pure"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<number,3>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<number,4>",
+      "module": "@babylonjs/core/Maths/math.color.pure"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<number,4>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<Tuple<number,4>,4>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "Tuple",
+      "expression": "Tuple<Uint16Array,2>",
+      "module": "@babylonjs/core/Lights/LTC/ltcTextureTool"
+    },
+    {
+      "name": "Unshift",
+      "expression": "Unshift<_FromLength<N>,0>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Unshift",
+      "expression": "Unshift<A,0>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "Unshift",
+      "expression": "Unshift<R,0>",
+      "module": "@babylonjs/core/types"
+    },
+    {
+      "name": "ValueOfTensor",
+      "expression": "ValueOfTensor<T>",
+      "module": "@babylonjs/core/Maths/tensor"
+    },
+    {
+      "name": "Vector",
+      "expression": "Vector<any[],_I>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    },
+    {
+      "name": "Vector",
+      "expression": "Vector<N,I>",
+      "module": "@babylonjs/core/Maths/math.vector.pure"
+    }
+  ],
+  "fixedShapes": [
+    {
+      "name": "Vector2",
+      "shape": [
+        2
+      ],
+      "coordinates": 2
+    },
+    {
+      "name": "Vector3",
+      "shape": [
+        3
+      ],
+      "coordinates": 3
+    },
+    {
+      "name": "Vector4",
+      "shape": [
+        4
+      ],
+      "coordinates": 4
+    },
+    {
+      "name": "Quaternion",
+      "shape": [
+        4
+      ],
+      "coordinates": 4
+    },
+    {
+      "name": "Color3",
+      "shape": [
+        3
+      ],
+      "coordinates": 3
+    },
+    {
+      "name": "Color4",
+      "shape": [
+        4
+      ],
+      "coordinates": 4
+    },
+    {
+      "name": "Matrix",
+      "shape": [
+        4,
+        4
+      ],
+      "coordinates": 16
+    }
+  ],
+  "rejected": [
+    "array-for-fixed-tuple",
+    "unconstrained-obj",
+    "unregistered-instantiation"
+  ]
+}

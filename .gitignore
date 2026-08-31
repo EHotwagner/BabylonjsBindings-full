@@ -18,6 +18,10 @@ nuget-cache/
 generated-candidates/package/_packageSources/
 generated-candidates/runtime/_candidateSources/
 generated-candidates/runtime/dist/
+runtime/full-dist/
+runtime/m2-dist/
+runtime/m3-dist/
+examples/VillageStarter/dist/
 # Promotion previews are disposable compile inputs. Keep their compact batch,
 # summary, project, and lock evidence, but do not version duplicated F# source.
 generated-candidates/promotion-batch/*.fs
