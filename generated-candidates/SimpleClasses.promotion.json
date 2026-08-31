@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "990c57d625bc7f9ea03be022d25d2b65b7f59f3827ceaebf32e930471034018d",
+  "proposalSha256": "1ded6ad68cb183f5078af4165570f977a035b8221a611cb80dc08073f1008dcd",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -170,6 +170,19 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/asyncLock",
+      "name": "AsyncLock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AsyncLock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/tools.pure",
       "name": "AsyncLoop",
       "kind": "class",
@@ -267,6 +280,19 @@
       "kind": "class",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ClipboardEventTypes",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/clipboardEvents",
+      "name": "ClipboardInfo",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ClipboardInfo",
       "fidelityIssues": [],
       "genericDefaults": [],
       "structuralImplements": [],
@@ -377,6 +403,21 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2",
+      "name": "DefaultKTX2DecoderOptions",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.DefaultKTX2DecoderOptions",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IKTX2DecoderOptions"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/loadingScreen.pure",
       "name": "DefaultLoadingScreen",
       "kind": "class",
@@ -389,6 +430,20 @@
         "BabylonjsBindings.SimpleInterfaces.ILoadingScreen"
       ],
       "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/deferred",
+      "name": "Deferred",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Deferred",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [],
+      "typeParameterCount": 1,
+      "memberCount": 4
     },
     {
       "package": "@babylonjs/core",
@@ -572,6 +627,25 @@
       "memberCount": 5
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter",
+      "name": "GLTFPathToObjectConverter",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GLTFPathToObjectConverter",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IGLTF",
+        "BabylonjsBindings.SimpleInterfaces.IObjectAccessor",
+        "BabylonjsBindings.SimpleInterfaces.IObjectInfo",
+        "BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter"
+      ],
+      "typeParameterCount": 3,
+      "memberCount": 2
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/gradients",
       "name": "GradientHelper",
@@ -612,6 +686,24 @@
       "dependencies": [],
       "typeParameterCount": 1,
       "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser",
+      "name": "InteractivityGraphToFlowGraphParser",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.InteractivityGraphToFlowGraphParser",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IKHRInteractivity_Graph",
+        "BabylonjsBindings.SimpleInterfaces.IGLTF",
+        "BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraph",
+        "BabylonjsBindings.SimpleInterfaces.InteractivityEvent"
+      ],
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -1199,6 +1291,20 @@
       "structuralImplements": [],
       "dependencies": [],
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringDictionary",
+      "name": "StringDictionary",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StringDictionary",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [],
+      "typeParameterCount": 1,
+      "memberCount": 14
     },
     {
       "package": "@babylonjs/core",
@@ -2485,6 +2591,21 @@
         "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefinesWithEnvLighting"
       ],
       "memberCount": 128
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/pressureObserverWrapper",
+      "name": "PressureObserverWrapper",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PressureObserverWrapper",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable"
+      ],
+      "memberCount": 6
     },
     {
       "package": "@babylonjs/core",
@@ -3960,6 +4081,22 @@
         "BabylonjsBindings.SimpleInterfaces.PointerTouch"
       ],
       "memberCount": 17
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/Inputs/arcRotateCameraVRDeviceOrientationInput.pure",
+      "name": "ArcRotateCameraVRDeviceOrientationInput",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.ArcRotateCameraVRDeviceOrientationInput",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.ArcRotateCamera",
+        "BabylonjsBindings.SimpleInterfaces.ICameraInput"
+      ],
+      "memberCount": 10
     },
     {
       "package": "@babylonjs/core",
@@ -8058,6 +8195,24 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphContextBlock.pure",
+      "name": "FlowGraphContextBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphContextBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphCoordinator",
       "name": "FlowGraphCoordinator",
       "kind": "class",
@@ -8732,6 +8887,25 @@
       ],
       "typeParameterCount": 1,
       "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/flowGraphGLTFDataProvider",
+      "name": "FlowGraphGLTFDataProvider",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGLTFDataProvider",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphGLTFDataProviderBlockConfiguration"
+      ],
+      "memberCount": 4
     },
     {
       "package": "@babylonjs/core",
@@ -13265,6 +13439,27 @@
     },
     {
       "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoader",
+      "name": "GLTFLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GLTF1Loader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AssetContainer",
+        "BabylonjsBindings.SimpleClasses.GLTFLoaderExtension",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IGLTFLoader",
+        "BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult",
+        "BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFBinaryExtension",
       "name": "GLTFBinaryExtension",
       "kind": "class",
@@ -14535,6 +14730,27 @@
         "BabylonjsBindings.SimpleClasses.InternalTexture"
       ],
       "memberCount": 18
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2",
+      "name": "KhronosTextureContainer2",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.KhronosTextureContainer2",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.AutoReleaseWorkerPool",
+        "BabylonjsBindings.SimpleClasses.DefaultKTX2DecoderOptions",
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IDecodedData",
+        "BabylonjsBindings.SimpleInterfaces.IKTX2DecoderOptions",
+        "BabylonjsBindings.SimpleInterfaces.IKhronosTextureContainer2Options"
+      ],
+      "memberCount": 8
     },
     {
       "package": "@babylonjs/core",
@@ -24128,6 +24344,23 @@
       "memberCount": 82
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation",
+      "name": "TransformNodeAnimationPropertyInfo",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.TransformNodeAnimationPropertyInfo",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AnimationPropertyInfo",
+        "BabylonjsBindings.SimpleInterfaces.GLTFNode",
+        "BabylonjsBindings.TypeAliases.GetValueFn"
+      ],
+      "memberCount": 2
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Node/Blocks/Matrices/translationBlock.pure",
       "name": "TranslationBlock",
@@ -25475,6 +25708,25 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerMovement.pure",
+      "name": "WebXRControllerMovement",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRControllerMovement",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRControllerMovementOptions",
+        "BabylonjsBindings.TypeAliases.WebXRControllerMovementRegistrationConfiguration"
+      ],
+      "memberCount": 14
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRControllerPhysics.pure",
       "name": "WebXRControllerPhysics",
       "kind": "class",
@@ -26217,6 +26469,22 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRGraphicsBinding",
+      "name": "WebXRWebGLGraphicsBinding",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRWebGLGraphicsBinding",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRGraphicsBinding"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRWebGLLayer",
       "name": "WebXRWebGLLayerRenderTargetTextureProvider",
       "kind": "class",
@@ -26263,6 +26531,39 @@
         "BabylonjsBindings.SimpleClasses.WebXRLayerRenderTargetTextureProvider"
       ],
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRGraphicsBinding",
+      "name": "WebXRWebGPUGraphicsBinding",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRWebGPUGraphicsBinding",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRGraphicsBinding"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation",
+      "name": "WeightAnimationPropertyInfo",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WeightAnimationPropertyInfo",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AnimationPropertyInfo",
+        "BabylonjsBindings.SimpleInterfaces.GLTFNode",
+        "BabylonjsBindings.TypeAliases.GetValueFn"
+      ],
+      "memberCount": 2
     },
     {
       "package": "@babylonjs/core",
@@ -26364,6 +26665,21 @@
       "structuralImplements": [],
       "dependencies": [],
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/characterController",
+      "name": "SimplexSolverActivePlanes",
+      "kind": "class-support",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SimplexSolverActivePlanes",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInfo",
+        "BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInteraction"
+      ],
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -26477,6 +26793,22 @@
         "BabylonjsBindings.SimpleClasses.MaterialDefines"
       ],
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/characterController",
+      "name": "SimplexSolverInfo",
+      "kind": "class-support",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SimplexSolverInfo",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.SimplexSolverActivePlanes",
+        "BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInfo",
+        "BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInteraction"
+      ],
+      "memberCount": 7
     },
     {
       "package": "@babylonjs/core",
@@ -26893,6 +27225,21 @@
         "BabylonjsBindings.SimpleClasses.Path2"
       ],
       "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Physics/v2/characterController",
+      "name": "SimplexSolverOutput",
+      "kind": "class-support",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SimplexSolverOutput",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInteraction"
+      ],
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",

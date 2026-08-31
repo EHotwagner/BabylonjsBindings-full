@@ -19,6 +19,27 @@ const program = ts.createProgram([...lockedPaths].map(file => resolve(nodeModule
   skipLibCheck: true
 });
 const checker = program.getTypeChecker();
+const packageForModule = module => module.startsWith("@babylonjs/core/")
+  ? "@babylonjs/core"
+  : module.startsWith("@babylonjs/loaders/")
+    ? "@babylonjs/loaders"
+    : module === "babylonjs-gltf2interface/babylon.glTF2Interface"
+      ? "babylonjs-gltf2interface"
+    : undefined;
+const declarationIdentityForIdentifier = identifier => {
+  let symbol = checker.getSymbolAtLocation(identifier);
+  if (symbol?.flags & ts.SymbolFlags.Alias) {
+    try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+  }
+  const declaration = symbol?.declarations?.[0];
+  if (!declaration) return undefined;
+  const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
+  const packageName = packageForModule(module);
+  const declarationName = declaration.name && (ts.isIdentifier(declaration.name) || ts.isStringLiteral(declaration.name))
+    ? declaration.name.text
+    : symbol.getName();
+  return packageName ? `${packageName}|${module}|${declarationName}` : undefined;
+};
 const diagnose = process.argv.includes("--diagnose");
 const typeFailureCounts = new Map();
 const failedFunctions = new Map();
@@ -47,9 +68,21 @@ const dependencyExports = (await Promise.all(dependencyManifestPaths.map(async p
   .flatMap(manifest => [...(manifest.exports ?? []), ...(manifest.supportTypes ?? [])]);
 const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
+const maintainedSymbolsByIdentity = new Map(dependencyExports.map(entry => [`${entry.package}|${entry.module}|${entry.name}`, { fsharpSymbol: entry.fsharpSymbol, staticSymbol: entry.kind === "class" ? `${entry.fsharpSymbol}Static` : undefined, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, module: entry.module, arity: entry.typeParameterCount ?? 0 }]));
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
-  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, staticSymbol: entry.kind === "class" ? `${entry.fsharpSymbol}Static` : undefined, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, arity: entry.typeParameterCount ?? 0 }]));
+  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, staticSymbol: entry.kind === "class" ? `${entry.fsharpSymbol}Static` : undefined, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, module: entry.module, arity: entry.typeParameterCount ?? 0 }]));
+const referenceMatchesTargetModule = (identifier, target) => {
+  if (!target.module) return true;
+  let symbol = checker.getSymbolAtLocation(identifier);
+  if (symbol?.flags & ts.SymbolFlags.Alias) {
+    try { symbol = checker.getAliasedSymbol(symbol); } catch { return false; }
+  }
+  const declaration = symbol?.declarations?.[0];
+  return !declaration || normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "") === target.module;
+};
+const maintainedTargetForIdentifier = identifier => maintainedSymbolsByIdentity.get(declarationIdentityForIdentifier(identifier))
+  ?? maintainedSymbols.get(identifier.text);
 
 const isAbsentType = node => node.kind === ts.SyntaxKind.UndefinedKeyword
   || (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.NullKeyword);
@@ -153,6 +186,15 @@ const fsharpType = (node, typeParameters = new Map()) => {
     const element = fsharpType(node.elementType, typeParameters);
     return element ? `ResizeArray<${element}>` : undefined;
   }
+  if (ts.isTupleTypeNode(node)
+    && node.elements.length === 2
+    && !ts.isNamedTupleMember(node.elements[0])
+    && ts.isRestTypeNode(node.elements[1])
+    && ts.isArrayTypeNode(node.elements[1].type)) {
+    const head = fsharpType(node.elements[0], typeParameters);
+    const tail = fsharpType(node.elements[1].type.elementType, typeParameters);
+    if (head && head === tail) return `BabylonjsBindings.SimpleInterfaces.BrowserNonEmptyReadonlyArray<${head}>`;
+  }
   if (ts.isTupleTypeNode(node) && node.elements.length >= 2) {
     const elements = node.elements.map(element => ts.isNamedTupleMember(element) && !element.questionToken && !element.dotDotDotToken ? fsharpType(element.type, typeParameters) : !ts.isNamedTupleMember(element) ? fsharpType(element, typeParameters) : undefined);
     return elements.every(Boolean) ? `(${elements.join(" * ")})` : undefined;
@@ -188,6 +230,33 @@ const fsharpType = (node, typeParameters = new Map()) => {
     }
   }
   if (ts.isTypeLiteralNode(node)) return inlineObjectType(node, typeParameters);
+  if (ts.isMappedTypeNode(node)
+    && node.typeParameter.constraint
+    && node.type) {
+    let constraint = node.typeParameter.constraint;
+    if (ts.isTypeReferenceNode(constraint) && ts.isIdentifier(constraint.typeName) && !constraint.typeArguments?.length) {
+      let symbol = checker.getSymbolAtLocation(constraint.typeName);
+      if (symbol?.flags & ts.SymbolFlags.Alias) {
+        try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+      }
+      const declaration = symbol?.declarations?.find(ts.isTypeAliasDeclaration);
+      if (declaration) constraint = declaration.type;
+    }
+    const keyNodes = ts.isUnionTypeNode(constraint) ? constraint.types : [constraint];
+    const keys = keyNodes.map(branch => ts.isLiteralTypeNode(branch) && ts.isStringLiteral(branch.literal) ? branch.literal.text : undefined);
+    const value = fsharpType(node.type, typeParameters);
+    if (keys.length > 0 && keys.every(Boolean) && value) {
+      const name = `InlineObject${createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12)}`;
+      const optional = Boolean(node.questionToken);
+      const readonly = Boolean(node.readonlyToken);
+      inlineTypesByName.set(name, {
+        name,
+        genericParameters: "",
+        members: keys.map(key => ({ kind: "property", name: key, type: optional ? asOption(value) : value, readonly }))
+      });
+      return name;
+    }
+  }
   if (ts.isImportTypeNode(node)
     && node.qualifier
     && ts.isIdentifier(node.qualifier)
@@ -339,8 +408,9 @@ const fsharpType = (node, typeParameters = new Map()) => {
     if (!node.typeArguments?.length && ambientHandleTypes.has(node.typeName.text)) return `BabylonjsBindings.SimpleInterfaces.${ambientHandleTypes.get(node.typeName.text)}`;
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
-    if (maintainedSymbols.has(node.typeName.text)) {
-      const target = maintainedSymbols.get(node.typeName.text);
+    const maintainedTarget = maintainedTargetForIdentifier(node.typeName);
+    if (maintainedTarget && referenceMatchesTargetModule(node.typeName, maintainedTarget)) {
+      const target = maintainedTarget;
       const arguments_ = node.typeArguments ?? [];
       if (arguments_.length !== target.arity) return undefined;
       const renderedArguments = arguments_.map(argument => fsharpType(argument, typeParameters));
@@ -395,6 +465,21 @@ const inlineObjectType = (node, typeParameters) => {
 };
 const signature = declaration => {
   if (!declaration.type || declaration.parameters.some(parameter => parameter.dotDotDotToken)) return undefined;
+  if (declaration.name?.text === "_GetVolumeAudioProperty"
+    && declaration.typeParameters?.length === 1
+    && declaration.parameters.length === 2
+    && ts.isIdentifier(declaration.parameters[1].name)
+    && declaration.parameters[1].name.text === "property") {
+    const subGraph = declaration.parameters[0].type ? fsharpType(declaration.parameters[0].type) : undefined;
+    if (subGraph) return {
+      returnType: "float",
+      parameters: [
+        { name: ts.isIdentifier(declaration.parameters[0].name) ? declaration.parameters[0].name.text : undefined, type: subGraph, optional: false },
+        { name: "property", type: stringLiteralType("volume"), optional: false }
+      ],
+      genericParameters: ""
+    };
+  }
   const typeParameters = new Map();
   for (const parameter of declaration.typeParameters ?? []) {
     if (!parameter.constraint || parameter.constraint.kind === ts.SyntaxKind.UnknownKeyword) {

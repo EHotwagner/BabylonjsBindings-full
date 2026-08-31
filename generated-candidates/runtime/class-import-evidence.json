@@ -98,6 +98,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/asyncLock.js",
+      "export": "AsyncLock",
+      "runtimeExport": "AsyncLock",
+      "moduleSha256": "3e1a2528544a825c431de56c0bc26ecfef4d880fe86bc6c8dd221f812101f76c"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/tools.pure.js",
       "export": "AsyncLoop",
       "runtimeExport": "AsyncLoop",
@@ -154,6 +161,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/clipboardEvents.js",
+      "export": "ClipboardInfo",
+      "runtimeExport": "ClipboardInfo",
+      "moduleSha256": "a07538c1aa5dfe43f1266f7878742b5952002307987a6e083e8767d4b29d1b1c"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.color.pure.js",
       "export": "Color4",
       "runtimeExport": "Color4",
@@ -203,10 +217,24 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2.js",
+      "export": "DefaultKTX2DecoderOptions",
+      "runtimeExport": "DefaultKTX2DecoderOptions",
+      "moduleSha256": "1d46c1c41cddd7aab7a100e8d2dea8efdfad6e3a09ee6cb2f0c302856f1fce92"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Loading/loadingScreen.pure.js",
       "export": "DefaultLoadingScreen",
       "runtimeExport": "DefaultLoadingScreen",
       "moduleSha256": "a8d971975abd51e11fa3484adc69814af4447beba8aa2b4f5135262a841a41d2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/deferred.js",
+      "export": "Deferred",
+      "runtimeExport": "Deferred",
+      "moduleSha256": "8aec8df2c52491270a15dce64887e34bd2c7dd3e5c8afea4fedd52b500dc22b3"
     },
     {
       "package": "@babylonjs/core",
@@ -300,6 +328,13 @@
       "moduleSha256": "12cb5165115e9fb2da94ee21dc22b60e1b6a3f96299aa3f74e74c3a0671bea0e"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter.js",
+      "export": "GLTFPathToObjectConverter",
+      "runtimeExport": "GLTFPathToObjectConverter",
+      "moduleSha256": "7005f57c26c5b34ef3ef7f051b1b3036ebb58014e88eafbdd924f1a29c45cb12"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/gradients.js",
       "export": "GradientHelper",
@@ -319,6 +354,13 @@
       "export": "InputMapper",
       "runtimeExport": "InputMapper",
       "moduleSha256": "fa9f88a331c90e7913ec34d7289cd179487fa11603d3d946905a6b78b080fc4c"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js",
+      "export": "InteractivityGraphToFlowGraphParser",
+      "runtimeExport": "InteractivityGraphToFlowGraphParser",
+      "moduleSha256": "fa0d80fb70457a4115069d2885c13b3f3774cce82a01839a1510633f0348ec14"
     },
     {
       "package": "@babylonjs/core",
@@ -613,6 +655,13 @@
       "export": "StickValues",
       "runtimeExport": "StickValues",
       "moduleSha256": "26b3e161808a56c713216792829a5a7a365912a1b0ef92fb9e76217fbe9309ca"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/stringDictionary.js",
+      "export": "StringDictionary",
+      "runtimeExport": "StringDictionary",
+      "moduleSha256": "565c58ea31502baa88edb5a59ecec67cca383278a6b8d09a4d00dcc4f6aaa4a4"
     },
     {
       "package": "@babylonjs/core",
@@ -1190,6 +1239,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/pressureObserverWrapper.js",
+      "export": "PressureObserverWrapper",
+      "runtimeExport": "PressureObserverWrapper",
+      "moduleSha256": "296e513630342d574bc283453c3b7e4276d4f5e263a72d652cd98fbe2a728e46"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/motionController/webXRControllerComponent.js",
       "export": "WebXRControllerComponent",
       "runtimeExport": "WebXRControllerComponent",
@@ -1726,6 +1782,13 @@
       "export": "ArcRotateCameraPointersInput",
       "runtimeExport": "ArcRotateCameraPointersInput",
       "moduleSha256": "f106b3f7fdcfe9bdc070d8aaa96cf38bb8116bc5cac6e0800c92c85216a56a1a"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/Inputs/arcRotateCameraVRDeviceOrientationInput.pure.js",
+      "export": "ArcRotateCameraVRDeviceOrientationInput",
+      "runtimeExport": "ArcRotateCameraVRDeviceOrientationInput",
+      "moduleSha256": "808b19de9ff9a89e50495e560ea9e7bd10fee90bfca80c0e69346dc10452dfbe"
     },
     {
       "package": "@babylonjs/core",
@@ -3248,6 +3311,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphContextBlock.pure.js",
+      "export": "FlowGraphContextBlock",
+      "runtimeExport": "FlowGraphContextBlock",
+      "moduleSha256": "35a49a237d93f356a16a4be6cfbdda5a6ea71bb848133a5afbedb42014d1cbd6"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphCoordinator.js",
       "export": "FlowGraphCoordinator",
       "runtimeExport": "FlowGraphCoordinator",
@@ -3511,6 +3581,13 @@
       "export": "FlowGraphGetVariableBlock",
       "runtimeExport": "FlowGraphGetVariableBlock",
       "moduleSha256": "528ebc74161770baf7dff5e51777b90111206490b7497f49caeecc3c60368357"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/flowGraphGLTFDataProvider.js",
+      "export": "FlowGraphGLTFDataProvider",
+      "runtimeExport": "FlowGraphGLTFDataProvider",
+      "moduleSha256": "ba50211533a14f74289e32b1b3e2b499b913a7f518fae366cf55db177f722c4c"
     },
     {
       "package": "@babylonjs/core",
@@ -5236,6 +5313,13 @@
     },
     {
       "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/1.0/glTFLoader.js",
+      "export": "GLTFLoader",
+      "runtimeExport": "GLTFLoader",
+      "moduleSha256": "5a590103cb205810b60e15682db7ef0642e8c56ff7a69daad92ba9e8c09440e2"
+    },
+    {
+      "package": "@babylonjs/loaders",
       "module": "@babylonjs/loaders/glTF/1.0/glTFBinaryExtension.js",
       "export": "GLTFBinaryExtension",
       "runtimeExport": "GLTFBinaryExtension",
@@ -5688,6 +5772,13 @@
       "export": "KhronosTextureContainer",
       "runtimeExport": "KhronosTextureContainer",
       "moduleSha256": "aced00468e66553bfae2e8bb885de59375f22fa970a2939f1896bca7a01c3f9e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2.js",
+      "export": "KhronosTextureContainer2",
+      "runtimeExport": "KhronosTextureContainer2",
+      "moduleSha256": "1d46c1c41cddd7aab7a100e8d2dea8efdfad6e3a09ee6cb2f0c302856f1fce92"
     },
     {
       "package": "@babylonjs/core",
@@ -9176,6 +9267,13 @@
       "moduleSha256": "e6daafc1e9aedd109913c8fbfe2a5ffba69db275b2a2557ea37ab6951065446e"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js",
+      "export": "TransformNodeAnimationPropertyInfo",
+      "runtimeExport": "TransformNodeAnimationPropertyInfo",
+      "moduleSha256": "a02b2767273f7ac90164dbe607241b438fc865e38c5ee046c9f1dc4db50211b6"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Node/Blocks/Matrices/translationBlock.pure.js",
       "export": "TranslationBlock",
@@ -9667,6 +9765,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerMovement.pure.js",
+      "export": "WebXRControllerMovement",
+      "runtimeExport": "WebXRControllerMovement",
+      "moduleSha256": "96f2ae48310af50a5ad5db04069b1e5be24644166895d4e1fd32d517a28a0d7e"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRControllerPhysics.pure.js",
       "export": "WebXRControllerPhysics",
       "runtimeExport": "WebXRControllerPhysics",
@@ -9940,6 +10045,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRGraphicsBinding.js",
+      "export": "WebXRWebGLGraphicsBinding",
+      "runtimeExport": "WebXRWebGLGraphicsBinding",
+      "moduleSha256": "43944a2eb33b2d30c5c22d8a7a576b8b0488d8b6965e52e6e397943a3ede3cd8"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/webXRWebGLLayer.js",
       "export": "WebXRWebGLLayerRenderTargetTextureProvider",
       "runtimeExport": "WebXRWebGLLayerRenderTargetTextureProvider",
@@ -9958,6 +10070,20 @@
       "export": "WebXRWebGLRenderTargetTextureProvider",
       "runtimeExport": "WebXRWebGLRenderTargetTextureProvider",
       "moduleSha256": "f75c4ae5d419e8657a800fbaba27b2c993ba2ddee4f817fe3dbed47eb7c13a0d"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRGraphicsBinding.js",
+      "export": "WebXRWebGPUGraphicsBinding",
+      "runtimeExport": "WebXRWebGPUGraphicsBinding",
+      "moduleSha256": "43944a2eb33b2d30c5c22d8a7a576b8b0488d8b6965e52e6e397943a3ede3cd8"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js",
+      "export": "WeightAnimationPropertyInfo",
+      "runtimeExport": "WeightAnimationPropertyInfo",
+      "moduleSha256": "a02b2767273f7ac90164dbe607241b438fc865e38c5ee046c9f1dc4db50211b6"
     },
     {
       "package": "@babylonjs/core",

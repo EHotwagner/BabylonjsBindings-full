@@ -268,6 +268,24 @@ module TypeAliases =
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
+    type AliasObject2d7882d93505 =
+        abstract ``allowedComponentTypes``: ResizeArray<BabylonjsBindings.StringEnums.MotionControllerComponentType> option with get, set
+        abstract ``forceHandedness``: BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness option with get, set
+        abstract ``mainComponentOnly``: bool option with get, set
+        abstract ``componentSelectionPredicate``: System.Func<BabylonjsBindings.SimpleClasses.WebXRInputSource, BabylonjsBindings.SimpleClasses.WebXRControllerComponent option> option with get, set
+        abstract ``axisChangedHandler``: System.Action<BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerAxesValue, BabylonjsBindings.ObjectTypes.WebXRControllerMovementState, BabylonjsBindings.TypeAliases.WebXRControllerMovementFeatureContext, BabylonjsBindings.SimpleClasses.WebXRInput> with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject406c176bc0c4 =
+        abstract ``allowedComponentTypes``: ResizeArray<BabylonjsBindings.StringEnums.MotionControllerComponentType> option with get, set
+        abstract ``forceHandedness``: BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness option with get, set
+        abstract ``mainComponentOnly``: bool option with get, set
+        abstract ``componentSelectionPredicate``: System.Func<BabylonjsBindings.SimpleClasses.WebXRInputSource, BabylonjsBindings.SimpleClasses.WebXRControllerComponent option> option with get, set
+        abstract ``buttonChangedHandler``: System.Action<BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerComponentChangesValues<bool>, BabylonjsBindings.ObjectTypes.WebXRControllerMovementState, BabylonjsBindings.TypeAliases.WebXRControllerMovementFeatureContext, BabylonjsBindings.SimpleClasses.WebXRInput> with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
     type AliasObjectf8c432911558 =
         abstract ``parentBody``: BabylonjsBindings.SimpleClasses.PhysicsBody with get, set
         abstract ``parentBodyIndex``: System.Double with get, set
@@ -947,6 +965,9 @@ module TypeAliases =
     /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
     type WebXRControllerMovementFeatureContext = AliasObjectc11d826e4a3c
 
+    /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
+    type WebXRControllerMovementRegistrationConfiguration = U2<AliasObject2d7882d93505, AliasObject406c176bc0c4>
+
     /// @babylonjs/core/XR/webXRFeaturesManager
     [<AllowNullLiteral>]
     type WebXRFeatureConstructor =
@@ -1297,6 +1318,191 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type BrowserRecord<'TKey, 'TValue> =
         [<EmitIndexer>] abstract Item: key: 'TKey -> 'TValue with get, set
+
+    /// Exact internal surface-constraint interaction status values declared by Babylon.
+    type SurfaceConstraintInteractionStatus =
+        | Ok = 0
+        | Failure3D = 1
+        | Failure2D = 2
+
+    /// Exact glTF interactivity value-signature literals from the pinned companion declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2ValueSignature =
+        | [<CompiledName("bool")>] Bool
+        | [<CompiledName("float")>] Float
+        | [<CompiledName("float2")>] Float2
+        | [<CompiledName("float3")>] Float3
+        | [<CompiledName("float4")>] Float4
+        | [<CompiledName("float2x2")>] Float2x2
+        | [<CompiledName("float3x3")>] Float3x3
+        | [<CompiledName("float4x4")>] Float4x4
+        | [<CompiledName("int")>] Int
+        | [<CompiledName("custom")>] Custom
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    type GLTF2AccessorComponentType =
+        | BYTE = 5120
+        | UNSIGNEDBYTE = 5121
+        | SHORT = 5122
+        | UNSIGNEDSHORT = 5123
+        | UNSIGNEDINT = 5125
+        | FLOAT = 5126
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2AccessorType =
+        | [<CompiledName("SCALAR")>] SCALAR
+        | [<CompiledName("VEC2")>] VEC2
+        | [<CompiledName("VEC3")>] VEC3
+        | [<CompiledName("VEC4")>] VEC4
+        | [<CompiledName("MAT2")>] MAT2
+        | [<CompiledName("MAT3")>] MAT3
+        | [<CompiledName("MAT4")>] MAT4
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2AnimationChannelTargetPath =
+        | [<CompiledName("translation")>] TRANSLATION
+        | [<CompiledName("rotation")>] ROTATION
+        | [<CompiledName("scale")>] SCALE
+        | [<CompiledName("weights")>] WEIGHTS
+        | [<CompiledName("pointer")>] POINTER
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2AnimationSamplerInterpolation =
+        | [<CompiledName("LINEAR")>] LINEAR
+        | [<CompiledName("STEP")>] STEP
+        | [<CompiledName("CUBICSPLINE")>] CUBICSPLINE
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2CameraType =
+        | [<CompiledName("perspective")>] PERSPECTIVE
+        | [<CompiledName("orthographic")>] ORTHOGRAPHIC
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2EXTLightsArea_LightType =
+        | [<CompiledName("rect")>] RECT
+        | [<CompiledName("disk")>] DISK
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2ImageMimeType =
+        | [<CompiledName("image/jpeg")>] JPEG
+        | [<CompiledName("image/png")>] PNG
+        | [<CompiledName("image/webp")>] WEBP
+        | [<CompiledName("image/avif")>] AVIF
+        | [<CompiledName("image/ktx2")>] KTX2
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2IMSFTAudioEmitter_AnimationEventAction =
+        | [<CompiledName("play")>] Play
+        | [<CompiledName("pause")>] Pause
+        | [<CompiledName("stop")>] Stop
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2IMSFTAudioEmitter_AudioMimeType =
+        | [<CompiledName("audio/wav")>] WAV
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2IMSFTAudioEmitter_DistanceModel =
+        | [<CompiledName("linear")>] Linear
+        | [<CompiledName("inverse")>] Inverse
+        | [<CompiledName("exponential")>] Exponential
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2KHRLightsPunctual_LightType =
+        | [<CompiledName("directional")>] DIRECTIONAL
+        | [<CompiledName("point")>] POINT
+        | [<CompiledName("spot")>] SPOT
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    [<StringEnum; RequireQualifiedAccess>]
+    type GLTF2MaterialAlphaMode =
+        | [<CompiledName("OPAQUE")>] OPAQUE
+        | [<CompiledName("MASK")>] MASK
+        | [<CompiledName("BLEND")>] BLEND
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    type GLTF2MeshPrimitiveMode =
+        | POINTS = 0
+        | LINES = 1
+        | LINELOOP = 2
+        | LINESTRIP = 3
+        | TRIANGLES = 4
+        | TRIANGLESTRIP = 5
+        | TRIANGLEFAN = 6
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    type GLTF2TextureMagFilter =
+        | NEAREST = 9728
+        | LINEAR = 9729
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    type GLTF2TextureMinFilter =
+        | NEAREST = 9728
+        | LINEAR = 9729
+        | NEARESTMIPMAPNEAREST = 9984
+        | LINEARMIPMAPNEAREST = 9985
+        | NEARESTMIPMAPLINEAR = 9986
+        | LINEARMIPMAPLINEAR = 9987
+
+    /// Exact enum from the pinned babylonjs-gltf2interface declaration.
+    type GLTF2TextureWrapMode =
+        | CLAMPTOEDGE = 33071
+        | MIRROREDREPEAT = 33648
+        | REPEAT = 10497
+
+    /// Exact ECMAScript PromiseLike surface.
+    [<AllowNullLiteral>]
+    type BrowserPromiseLike<'T> =
+        abstract ``then``<'TResult1, 'TResult2>: ?onfulfilled: System.Func<'T, U2<'TResult1, BrowserPromiseLike<'TResult1>>> * ?onrejected: System.Func<obj, U2<'TResult2, BrowserPromiseLike<'TResult2>>> -> BrowserPromiseLike<U2<'TResult1, 'TResult2>>
+
+    /// Erased nominal representation of a readonly TypeScript tuple with at least one element.
+    [<Erase>]
+    type BrowserNonEmptyReadonlyArray<'T> = private BrowserNonEmptyReadonlyArray of System.Collections.Generic.IReadOnlyList<'T>
+
+    /// Constructs the exact JavaScript array representation of a non-empty readonly tuple.
+    [<Emit("[$0, ...$1]")>]
+    let createBrowserNonEmptyReadonlyArray (head: 'T) (tail: System.Collections.Generic.IReadOnlyList<'T>): BrowserNonEmptyReadonlyArray<'T> = jsNative
+
+    /// Exact Compute Pressure source literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserPressureSource =
+        | [<CompiledName("cpu")>] Cpu
+
+    /// Exact Compute Pressure state literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserPressureState =
+        | [<CompiledName("nominal")>] Nominal
+        | [<CompiledName("fair")>] Fair
+        | [<CompiledName("serious")>] Serious
+        | [<CompiledName("critical")>] Critical
+
+    /// Exact Compute Pressure factor literals.
+    [<StringEnum; RequireQualifiedAccess>]
+    type BrowserPressureFactor =
+        | [<CompiledName("thermal")>] Thermal
+        | [<CompiledName("power-supply")>] PowerSupply
+
+    /// Exact experimental Compute Pressure record surface declared by Babylon.
+    [<AllowNullLiteral>]
+    type BrowserPressureRecord =
+        abstract source: BrowserPressureSource with get, set
+        abstract state: BrowserPressureState with get, set
+        abstract factors: System.Collections.Generic.IReadOnlyList<BrowserPressureFactor> with get, set
+        abstract time: float with get, set
+
+    /// Exact experimental Compute Pressure observer options declared by Babylon.
+    [<AllowNullLiteral>]
+    type BrowserPressureObserverOptions =
+        abstract sampleRate: float option with get, set
 
     /// Exact TC39 decorator metadata object.
     [<AllowNullLiteral>]
@@ -1871,6 +2077,11 @@ module SimpleInterfaces =
     type BrowserXRWebGLBinding =
         interface end
 
+    /// Distinct ambient WebXR WebGPU binding handle.
+    [<AllowNullLiteral>]
+    type BrowserXRGPUBinding =
+        interface end
+
     /// Distinct ambient WebXR composition-layer handle.
     [<AllowNullLiteral>]
     type BrowserXRCompositionLayer =
@@ -2279,6 +2490,11 @@ module SimpleInterfaces =
     type StringLiteral1fe289205936 =
         | [<CompiledName("application")>] Value
 
+    /// Exact string literal type for "QUATERNION".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral216dbd92832c =
+        | [<CompiledName("QUATERNION")>] Value
+
     /// Exact string literal type for "rowheader".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral224f0009e42e =
@@ -2419,6 +2635,11 @@ module SimpleInterfaces =
     type StringLiteral84393add8c48 =
         | [<CompiledName("article")>] Value
 
+    /// Exact string literal type for "OCTAHEDRAL".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral85a996ca80ec =
+        | [<CompiledName("OCTAHEDRAL")>] Value
+
     /// Exact string literal type for "figure".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral889393fb69a5 =
@@ -2453,6 +2674,11 @@ module SimpleInterfaces =
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiterala3e1f4935b09 =
         | [<CompiledName("floor")>] Value
+
+    /// Exact string literal type for "TRIANGLES".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiterala47bc963946f =
+        | [<CompiledName("TRIANGLES")>] Value
 
     /// Exact string literal type for "alertdialog".
     [<StringEnum; RequireQualifiedAccess>]
@@ -2489,6 +2715,11 @@ module SimpleInterfaces =
     type StringLiteraladb0e4b720cb =
         | [<CompiledName("columnheader")>] Value
 
+    /// Exact string literal type for "ATTRIBUTES".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralafa7e559a55d =
+        | [<CompiledName("ATTRIBUTES")>] Value
+
     /// Exact string literal type for "treeitem".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteralafe1839cc6d9 =
@@ -2523,6 +2754,11 @@ module SimpleInterfaces =
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteralc3e2d78f3ff3 =
         | [<CompiledName("button")>] Value
+
+    /// Exact string literal type for "NONE".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralc627c09c14e5 =
+        | [<CompiledName("NONE")>] Value
 
     /// Exact string literal type for "region".
     [<StringEnum; RequireQualifiedAccess>]
@@ -2579,6 +2815,11 @@ module SimpleInterfaces =
     type StringLiterale0d98dc32438 =
         | [<CompiledName("slider")>] Value
 
+    /// Exact string literal type for "INDICES".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiterale21255ec54ba =
+        | [<CompiledName("INDICES")>] Value
+
     /// Exact string literal type for "".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiterale3b0c44298fc =
@@ -2588,6 +2829,11 @@ module SimpleInterfaces =
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteraledb465624291 =
         | [<CompiledName("note")>] Value
+
+    /// Exact string literal type for "EXPONENTIAL".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralf21300c99630 =
+        | [<CompiledName("EXPONENTIAL")>] Value
 
     /// Exact string literal type for "complementary".
     [<StringEnum; RequireQualifiedAccess>]
@@ -3028,11 +3274,88 @@ module SimpleInterfaces =
 
     /// Exact inline object used by a Babylon interface signature.
     [<AllowNullLiteral>]
+    type InlineObjectb023cd843632Object =
+        [<EmitIndexer>] abstract Item: ``kind``: string -> JS.Promise<BabylonjsBindings.SimpleClasses.VertexBuffer> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject6fd6e205620fObject =
+        abstract ``babylonSourceMesh``: BabylonjsBindings.SimpleClasses.Mesh with get, set
+        abstract ``promise``: JS.Promise<obj> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectb1139181db41Object =
+        abstract ``babylonSkeleton``: BabylonjsBindings.SimpleClasses.Skeleton with get, set
+        abstract ``promise``: JS.Promise<unit> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
     type InlineObject93dc13e6dc30Object =
         abstract ``eventData``: bool with get, set
         abstract ``id``: string with get, set
         abstract ``type``: string with get, set
         abstract ``value``: obj option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectcb14fbe7a9aaObject =
+        [<EmitIndexer>] abstract Item: ``name``: string -> float with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectcef94c628823Object =
+        abstract ``generator``: string with get, set
+        abstract ``hasAnimations``: bool with get, set
+        abstract ``hasDefaultScene``: bool with get, set
+        abstract ``hasMaterials``: bool with get, set
+        abstract ``hasMorphTargets``: bool with get, set
+        abstract ``hasSkins``: bool with get, set
+        abstract ``hasTextures``: bool with get, set
+        abstract ``maxAttributesUsed``: float with get, set
+        abstract ``primitivesCount``: float with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject833fbd107350Object =
+        abstract ``messages``: ResizeArray<string> with get, set
+        abstract ``numErrors``: float with get, set
+        abstract ``numHints``: float with get, set
+        abstract ``numInfos``: float with get, set
+        abstract ``numWarnings``: float with get, set
+        abstract ``truncated``: bool with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject54cde576a846Object =
+        [<EmitIndexer>] abstract Item: ``name``: string -> float with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject558631677ca0Object =
+        abstract ``innerConeAngle``: float option with get, set
+        abstract ``outerConeAngle``: float option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject4141f6e42710Object =
+        abstract ``variants``: ResizeArray<float> with get, set
+        abstract ``material``: float with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject26b7eb1d0d15Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectdf1fd213e14fObject =
+        abstract ``aspect``: float with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectdd5fbe357414Object =
+        [<EmitIndexer>] abstract Item: ``id``: string -> InlineObject3188917dc4cfObject with get, set
 
     /// Exact inline object used by a Babylon interface signature.
     [<AllowNullLiteral>]
@@ -3077,6 +3400,58 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type InlineObjectc6343ebc447eObject =
         [<EmitIndexer>] abstract Item: ``key``: string -> IGLTFTechniqueParameter with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject5bbc2f1fb479Object =
+        [<EmitIndexer>] abstract Item: ``originName``: string -> IGLTFToFlowGraphMappingObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectb50b2a1c7176Object =
+        abstract ``values``: InlineObject5bbc2f1fb479Object option with get, set
+        abstract ``flows``: InlineObject5bbc2f1fb479Object option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject5807e9eb1367Object =
+        abstract ``values``: InlineObject5bbc2f1fb479Object option with get, set
+        abstract ``flows``: InlineObject5bbc2f1fb479Object option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject298705b65dd9Object =
+        abstract ``input``: string with get, set
+        abstract ``output``: string with get, set
+        abstract ``inputBlockIndex``: float with get, set
+        abstract ``outputBlockIndex``: float with get, set
+        abstract ``isVariable``: bool option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject4e409eaefbb8Object =
+        abstract ``valid``: bool with get, set
+        abstract ``error``: string option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject749f47aaa0bfObject =
+        [<EmitIndexer>] abstract Item: ``id``: string -> GLTF2IKHRInteractivity_Variable with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject0c999b4cb06bObject =
+        [<EmitIndexer>] abstract Item: ``id``: string -> U2<GLTF2IKHRInteractivity_Variable, GLTF2IKHRInteractivity_OutputSocketReference> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject08fece736369Object =
+        [<EmitIndexer>] abstract Item: ``id``: string -> GLTF2IKHRInteractivity_OutputFlow with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject4794d27e06d6Object =
+        [<EmitIndexer>] abstract Item: ``id``: string -> GLTF2IKHRInteractivity_Configuration with get, set
 
     /// Exact inline object used by a Babylon interface signature.
     [<AllowNullLiteral>]
@@ -3180,6 +3555,49 @@ module SimpleInterfaces =
 
     /// Exact inline object used by a Babylon interface signature.
     [<AllowNullLiteral>]
+    type InlineObject441d9769b966Object =
+        [<EmitIndexer>] abstract Item: ``babylonDrawMode``: float -> InlineObjectaf818667734fObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject478d8a76ee46Object =
+        abstract ``__target__``: bool with get, set
+        abstract ``orthographic``: InlineObject210e6b8963d6Object with get, set
+        abstract ``perspective``: InlineObject1aad2313281fObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject5573f38169f7Object =
+        abstract ``lights``: InlineObject15d0054181aaObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject4aac0a3e9f2eObject =
+        abstract ``lights``: InlineObject5b2e64067170Object with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectdb8f5d73dec2Object =
+        abstract ``lights``: InlineObject09e6ceed0bb8Object with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject4559920cb1f2Object =
+        abstract ``lights``: InlineObject7b517648b238Object with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectd156a044a7f9Object =
+        abstract ``__target__``: bool with get, set
+        abstract ``pbrMetallicRoughness``: InlineObject33bb58fb9047Object with get, set
+        abstract ``emissiveFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, BabylonjsBindings.SimpleClasses.Color3> with get, set
+        abstract ``normalTexture``: InlineObject8093fc5a8d33Object with get, set
+        abstract ``occlusionTexture``: InlineObjecte73ffa123ce1Object with get, set
+        abstract ``emissiveTexture``: InlineObject1078c225cfeeObject with get, set
+        abstract ``extensions``: InlineObject94daa705c9b5Object with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
     type InlineObject6f954ab3fd3eObject =
         abstract ``type``: BabylonjsBindings.StringEnums.MotionControllerComponentType with get, set
         abstract ``gamepadIndices``: InlineObject35c0cd1bec32Object with get, set
@@ -3227,6 +3645,98 @@ module SimpleInterfaces =
 
     /// Exact inline object used by a Babylon interface signature.
     [<AllowNullLiteral>]
+    type InlineObject3188917dc4cfObject =
+        abstract ``type``: float with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectaf818667734fObject =
+        abstract ``babylonMaterial``: BabylonjsBindings.SimpleClasses.Material with get, set
+        abstract ``babylonMeshes``: ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh> with get, set
+        abstract ``promise``: JS.Promise<unit> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject210e6b8963d6Object =
+        abstract ``xmag``: IObjectAccessor<ICamera, ICamera, BabylonjsBindings.SimpleClasses.Vector2> with get, set
+        abstract ``ymag``: IObjectAccessor<ICamera, ICamera, BabylonjsBindings.SimpleClasses.Vector2> with get, set
+        abstract ``zfar``: IObjectAccessor<ICamera, ICamera, float> with get, set
+        abstract ``znear``: IObjectAccessor<ICamera, ICamera, float> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject1aad2313281fObject =
+        abstract ``yfov``: IObjectAccessor<ICamera, ICamera, float> with get, set
+        abstract ``zfar``: IObjectAccessor<ICamera, ICamera, float> with get, set
+        abstract ``znear``: IObjectAccessor<ICamera, ICamera, float> with get, set
+        abstract ``aspectRatio``: IObjectAccessor<ICamera, ICamera, float option> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject15d0054181aaObject =
+        abstract ``length``: IObjectAccessor<ResizeArray<IKHRLightsPunctual_Light>, ResizeArray<BabylonjsBindings.SimpleClasses.Light>, float> with get, set
+        abstract ``__array__``: InlineObject26784fd0c645Object with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject5b2e64067170Object =
+        abstract ``length``: IObjectAccessor<ResizeArray<IEXTLightsArea_Light>, ResizeArray<BabylonjsBindings.SimpleClasses.Light>, float> with get, set
+        abstract ``__array__``: InlineObject042f2e24db01Object with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject09e6ceed0bb8Object =
+        abstract ``length``: IObjectAccessor<ResizeArray<IKHRLightsPunctual_Light>, ResizeArray<BabylonjsBindings.SimpleClasses.Light>, float> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject7b517648b238Object =
+        abstract ``__array__``: InlineObject5558de345792Object with get, set
+        abstract ``length``: IObjectAccessor<ResizeArray<GLTFExtLightsImageBasedLightImageBased>, ResizeArray<BabylonjsBindings.SimpleClasses.BaseTexture>, float> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject1078c225cfeeObject =
+        abstract ``extensions``: InlineObjectaeb9702798daObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject33bb58fb9047Object =
+        abstract ``baseColorFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, BabylonjsBindings.SimpleClasses.Color4> with get, set
+        abstract ``metallicFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float option> with get, set
+        abstract ``roughnessFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float option> with get, set
+        abstract ``baseColorTexture``: InlineObject1078c225cfeeObject with get, set
+        abstract ``metallicRoughnessTexture``: InlineObject1078c225cfeeObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject8093fc5a8d33Object =
+        abstract ``scale``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``extensions``: InlineObjectaeb9702798daObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjecte73ffa123ce1Object =
+        abstract ``strength``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``extensions``: InlineObjectaeb9702798daObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject94daa705c9b5Object =
+        abstract ``KHR_materials_anisotropy``: InlineObjectafcef396d07dObject with get, set
+        abstract ``KHR_materials_clearcoat``: InlineObject5ff644130530Object with get, set
+        abstract ``KHR_materials_dispersion``: InlineObjectf39c3b2faf31Object with get, set
+        abstract ``KHR_materials_emissive_strength``: InlineObject6322935848e9Object with get, set
+        abstract ``KHR_materials_ior``: InlineObject33ca5a8de512Object with get, set
+        abstract ``KHR_materials_iridescence``: InlineObject2f522de3a8beObject with get, set
+        abstract ``KHR_materials_sheen``: InlineObject7c28b3f4cc79Object with get, set
+        abstract ``KHR_materials_specular``: InlineObject61857645fd89Object with get, set
+        abstract ``KHR_materials_transmission``: InlineObject341f0df201e4Object with get, set
+        abstract ``KHR_materials_diffuse_transmission``: InlineObjectf015a3cb42c5Object with get, set
+        abstract ``KHR_materials_volume``: InlineObjectf01754149022Object with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
     type InlineObject35c0cd1bec32Object =
         abstract ``button``: float option with get, set
         abstract ``xAxis``: float option with get, set
@@ -3239,6 +3749,115 @@ module SimpleInterfaces =
 
     /// Exact inline object used by a Babylon interface signature.
     [<AllowNullLiteral>]
+    type InlineObject26784fd0c645Object =
+        abstract ``__target__``: bool with get, set
+        abstract ``color``: IObjectAccessor<IKHRLightsPunctual_Light, BabylonjsBindings.SimpleClasses.Light, BabylonjsBindings.SimpleClasses.Color3> with get, set
+        abstract ``intensity``: IObjectAccessor<IKHRLightsPunctual_Light, BabylonjsBindings.SimpleClasses.Light, float> with get, set
+        abstract ``range``: IObjectAccessor<IKHRLightsPunctual_Light, BabylonjsBindings.SimpleClasses.Light, float> with get, set
+        abstract ``spot``: InlineObject99705d71bc87Object with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject042f2e24db01Object =
+        abstract ``__target__``: bool with get, set
+        abstract ``color``: IObjectAccessor<IEXTLightsArea_Light, BabylonjsBindings.SimpleClasses.Light, BabylonjsBindings.SimpleClasses.Color3> with get, set
+        abstract ``intensity``: IObjectAccessor<IEXTLightsArea_Light, BabylonjsBindings.SimpleClasses.Light, float> with get, set
+        abstract ``size``: IObjectAccessor<IEXTLightsArea_Light, BabylonjsBindings.SimpleClasses.Light, float> with get, set
+        abstract ``rect``: InlineObject480572826e21Object with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject5558de345792Object =
+        abstract ``__target__``: bool with get, set
+        abstract ``intensity``: IObjectAccessor<GLTFExtLightsImageBasedLightImageBased, BabylonjsBindings.SimpleClasses.BaseTexture, float> with get, set
+        abstract ``rotation``: IObjectAccessor<GLTFExtLightsImageBasedLightImageBased, BabylonjsBindings.SimpleClasses.BaseTexture, BabylonjsBindings.SimpleClasses.Quaternion> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectaeb9702798daObject =
+        abstract ``KHR_texture_transform``: ITextureDefinition with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectafcef396d07dObject =
+        abstract ``anisotropyStrength``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``anisotropyRotation``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``anisotropyTexture``: InlineObject1078c225cfeeObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject5ff644130530Object =
+        abstract ``clearcoatFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``clearcoatRoughnessFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``clearcoatTexture``: InlineObject1078c225cfeeObject with get, set
+        abstract ``clearcoatNormalTexture``: InlineObject8093fc5a8d33Object with get, set
+        abstract ``clearcoatRoughnessTexture``: InlineObject1078c225cfeeObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectf39c3b2faf31Object =
+        abstract ``dispersion``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject6322935848e9Object =
+        abstract ``emissiveStrength``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject33ca5a8de512Object =
+        abstract ``ior``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject2f522de3a8beObject =
+        abstract ``iridescenceFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``iridescenceIor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``iridescenceThicknessMinimum``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``iridescenceThicknessMaximum``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``iridescenceTexture``: InlineObject1078c225cfeeObject with get, set
+        abstract ``iridescenceThicknessTexture``: InlineObject1078c225cfeeObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject7c28b3f4cc79Object =
+        abstract ``sheenColorFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, BabylonjsBindings.SimpleClasses.Color3> with get, set
+        abstract ``sheenRoughnessFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``sheenColorTexture``: InlineObject1078c225cfeeObject with get, set
+        abstract ``sheenRoughnessTexture``: InlineObject1078c225cfeeObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject61857645fd89Object =
+        abstract ``specularFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``specularColorFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, BabylonjsBindings.SimpleClasses.Color3> with get, set
+        abstract ``specularTexture``: InlineObject1078c225cfeeObject with get, set
+        abstract ``specularColorTexture``: InlineObject1078c225cfeeObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject341f0df201e4Object =
+        abstract ``transmissionFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``transmissionTexture``: InlineObject1078c225cfeeObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectf015a3cb42c5Object =
+        abstract ``diffuseTransmissionFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``diffuseTransmissionTexture``: InlineObject1078c225cfeeObject with get, set
+        abstract ``diffuseTransmissionColorFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, BabylonjsBindings.SimpleClasses.Color3 option> with get, set
+        abstract ``diffuseTransmissionColorTexture``: InlineObject1078c225cfeeObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObjectf01754149022Object =
+        abstract ``thicknessFactor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``attenuationColor``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, BabylonjsBindings.SimpleClasses.Color3> with get, set
+        abstract ``attenuationDistance``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``thicknessTexture``: InlineObject1078c225cfeeObject with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
     type InlineObjectbee9436f1edeObject =
         abstract ``componentProperty``: U4<StringLiteral49563714cd71, StringLiteral6633baa8668f, StringLiteralc3e2d78f3ff3, StringLiteral4ba69735ca53> with get, set
         abstract ``states``: ResizeArray<BabylonjsBindings.StringEnums.MotionControllerComponentStateType> with get, set
@@ -3246,6 +3865,24 @@ module SimpleInterfaces =
         abstract ``valueNodeName``: string option with get, set
         abstract ``minNodeName``: string option with get, set
         abstract ``maxNodeName``: string option with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject99705d71bc87Object =
+        abstract ``innerConeAngle``: IObjectAccessor<IKHRLightsPunctual_Light, BabylonjsBindings.SimpleClasses.Light, float> with get, set
+        abstract ``outerConeAngle``: IObjectAccessor<IKHRLightsPunctual_Light, BabylonjsBindings.SimpleClasses.Light, float> with get, set
+
+    /// Exact inline object used by a Babylon interface signature.
+    [<AllowNullLiteral>]
+    type InlineObject480572826e21Object =
+        abstract ``aspect``: IObjectAccessor<IEXTLightsArea_Light, BabylonjsBindings.SimpleClasses.Light, float> with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type _IAnimationSamplerData =
+        abstract ``input``: JS.Float32Array with get, set
+        abstract ``interpolation``: GLTF2AnimationSamplerInterpolation with get, set
+        abstract ``output``: JS.Float32Array with get, set
 
     /// @babylonjs/core/Animations/animation.pure
     [<AllowNullLiteral>]
@@ -3615,6 +4252,211 @@ module SimpleInterfaces =
         abstract ``glslang``: obj option with get, set
         abstract ``jsPath``: string option with get, set
         abstract ``wasmPath``: string option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTLightsArea_LightReference =
+        abstract ``light``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTLightsIES_LightReference =
+        abstract ``light``: float with get, set
+        abstract ``color``: ResizeArray<float> option with get, set
+        abstract ``multiplier``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTLightsImageBased =
+        abstract ``lights``: ResizeArray<GLTFExtLightsImageBasedLightImageBased> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTLightsImageBased_LightReferenceImageBased =
+        abstract ``light``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTMaterialsSpecularEdgeColor =
+        abstract ``specularEdgeColorEnabled``: bool option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTMeshGpuInstancing =
+        abstract ``mesh``: float option with get, set
+        abstract ``attributes``: InlineObject54cde576a846Object with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTMeshoptCompression =
+        abstract ``buffer``: float with get, set
+        abstract ``byteOffset``: float option with get, set
+        abstract ``byteLength``: float with get, set
+        abstract ``byteStride``: float with get, set
+        abstract ``count``: float with get, set
+        abstract ``mode``: U3<StringLiteralafa7e559a55d, StringLiterala47bc963946f, StringLiterale21255ec54ba> with get, set
+        abstract ``filter``: U4<StringLiteralc627c09c14e5, StringLiteral85a996ca80ec, StringLiteral216dbd92832c, StringLiteralf21300c99630> option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTTextureAVIF =
+        abstract ``source``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTTextureWebP =
+        abstract ``source``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IGLTFValidationResults =
+        abstract ``info``: InlineObjectcef94c628823Object with get, set
+        abstract ``issues``: InlineObject833fbd107350Object with get, set
+        abstract ``mimeType``: string with get, set
+        abstract ``uri``: string with get, set
+        abstract ``validatedAt``: string with get, set
+        abstract ``validatorVersion``: string with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRAnimationPointer =
+        abstract ``pointer``: string with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRDracoMeshCompression =
+        abstract ``bufferView``: float with get, set
+        abstract ``attributes``: InlineObject54cde576a846Object with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRGaussianSplatting =
+        abstract ``kernel``: string with get, set
+        abstract ``colorSpace``: string with get, set
+        abstract ``projection``: string option with get, set
+        abstract ``sortingMethod``: string option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity_Configuration =
+        abstract ``value``: ResizeArray<U3<bool, float, string>> option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity_Declaration =
+        abstract ``op``: string with get, set
+        abstract ``extension``: string option with get, set
+        abstract ``outputValueSockets``: InlineObjectdd5fbe357414Object option with get, set
+        abstract ``inputValueSockets``: InlineObjectdd5fbe357414Object option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity_OutputFlow =
+        abstract ``node``: float with get, set
+        abstract ``socket``: string option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity_OutputSocketReference =
+        abstract ``node``: float with get, set
+        abstract ``socket``: string option with get, set
+        abstract ``type``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity_Type =
+        abstract ``signature``: GLTF2ValueSignature with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity_Variable =
+        abstract ``value``: ResizeArray<U2<bool, float>> option with get, set
+        abstract ``type``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRLightsPunctual_LightReference =
+        abstract ``light``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsAnisotropyOpenPbr =
+        abstract ``anisotropyOpenPbrEnabled``: bool with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsDispersion =
+        abstract ``dispersion``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsEmissiveStrength =
+        abstract ``emissiveStrength``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsIor =
+        abstract ``ior``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRTextureBasisU =
+        abstract ``source``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRTextureTransform =
+        abstract ``offset``: ResizeArray<float> option with get, set
+        abstract ``rotation``: float option with get, set
+        abstract ``scale``: ResizeArray<float> option with get, set
+        abstract ``texCoord``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRXmpJsonLd_Gltf =
+        abstract ``packets``: ResizeArray<InlineObject26b7eb1d0d15Object> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRXmpJsonLd_Node =
+        abstract ``packet``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMSFTAudioEmitter_AnimationEvent =
+        abstract ``action``: GLTF2IMSFTAudioEmitter_AnimationEventAction with get, set
+        abstract ``emitter``: float with get, set
+        abstract ``time``: float with get, set
+        abstract ``startOffset``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMSFTAudioEmitter_ClipReference =
+        abstract ``clip``: float with get, set
+        abstract ``weight``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMSFTAudioEmitter_EmittersReference =
+        abstract ``emitters``: ResizeArray<float> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMSFTLOD =
+        abstract ``ids``: ResizeArray<float> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IProperty =
+        abstract ``extensions``: InlineObjecta21bf015c053Object option with get, set
+        abstract ``extras``: obj option with get, set
+
+    /// @babylonjs/loaders/glTF/glTFFileLoader.pure
+    [<AllowNullLiteral>]
+    type GLTFFileLoaderExtension =
+        abstract ``name``: string with get
+        abstract ``enabled``: bool with get, set
+        abstract ``order``: float option with get, set
 
     /// @babylonjs/core/Materials/GreasedLine/greasedLineMaterialInterfaces
     [<AllowNullLiteral>]
@@ -4665,6 +5507,24 @@ module SimpleInterfaces =
         abstract ``colorMask``: ResizeArray<bool> with get, set
         abstract ``cullFace``: ResizeArray<float> with get, set
 
+    /// Function-valued IGLTFToFlowGraphMappingObject.dataTransformer property.
+    [<AllowNullLiteral>]
+    type IGLTFToFlowGraphMappingObjectDataTransformerCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: obj * ``parser``: BabylonjsBindings.SimpleClasses.InteractivityGraphToFlowGraphParser -> obj
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper
+    [<AllowNullLiteral>]
+    type IGLTFToFlowGraphMappingObject =
+        abstract ``name``: string with get, set
+        abstract ``gltfType``: string option with get, set
+        abstract ``flowGraphType``: string option with get, set
+        abstract ``dataTransformer``: IGLTFToFlowGraphMappingObjectDataTransformerCallback option with get, set
+        abstract ``isArray``: bool option with get, set
+        abstract ``inOptions``: bool option with get, set
+        abstract ``isVariable``: bool option with get, set
+        abstract ``toBlock``: BabylonjsBindings.StringEnums.FlowGraphBlockNames option with get, set
+        abstract ``defaultValue``: obj option with get, set
+
     /// @babylonjs/loaders/glTF/glTFValidation
     [<AllowNullLiteral>]
     type IGLTFValidationConfiguration =
@@ -5537,6 +6397,15 @@ module SimpleInterfaces =
     type IPickingCustomization =
         abstract ``internalPickerForMesh``: IPickingCustomizationInternalPickerForMeshCallback option with get, set
 
+    /// @babylonjs/core/FrameGraph/Node/Blocks/PostProcesses/basePostProcessBlock
+    [<AllowNullLiteral>]
+    type IPostProcessLike =
+        abstract ``sourceSamplingMode``: float with get, set
+        abstract ``alphaMode``: float with get, set
+        abstract ``sourceTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle option with get, set
+        abstract ``targetTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle option with get, set
+        abstract ``outputTexture``: BabylonjsBindings.TypeAliases.FrameGraphTextureHandle with get, set
+
     /// @babylonjs/core/Physics/physicsRaycastResult
     [<AllowNullLiteral>]
     type IRaycastQuery =
@@ -6055,6 +6924,15 @@ module SimpleInterfaces =
         abstract ``dynamicFriction``: float with get, set
         abstract ``priority``: float with get, set
 
+    /// @babylonjs/core/Physics/v2/characterController
+    [<AllowNullLiteral>]
+    type ISurfaceConstraintInteraction =
+        abstract ``touched``: bool with get, set
+        abstract ``stopped``: bool with get, set
+        abstract ``surfaceTime``: float with get, set
+        abstract ``penaltyDistance``: float with get, set
+        abstract ``status``: SurfaceConstraintInteractionStatus with get, set
+
     /// @babylonjs/core/Engines/ICanvas
     [<AllowNullLiteral>]
     type ITextMetrics =
@@ -6504,6 +7382,21 @@ module SimpleInterfaces =
         abstract ``jointLocalRotationOffset``: BabylonjsBindings.SimpleClasses.Quaternion option with get, set
         abstract ``aimChildOverrides``: BrowserRecord<BabylonjsBindings.StringEnums.WebXRBodyJoint, BabylonjsBindings.StringEnums.WebXRBodyJoint option> option with get, set
         abstract ``isMixamoModel``: bool option with get, set
+
+    /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
+    [<AllowNullLiteral>]
+    type IWebXRControllerMovementOptions =
+        abstract ``customRegistrationConfigurations``: ResizeArray<BabylonjsBindings.TypeAliases.WebXRControllerMovementRegistrationConfiguration> option with get, set
+        abstract ``movementEnabled``: bool option with get, set
+        abstract ``movementOrientationFollowsViewerPose``: bool with get, set
+        abstract ``movementSpeed``: float option with get, set
+        abstract ``movementThreshold``: float option with get, set
+        abstract ``rotationEnabled``: bool option with get, set
+        abstract ``rotationThreshold``: float option with get, set
+        abstract ``rotationSpeed``: float option with get, set
+        abstract ``xrInput``: BabylonjsBindings.SimpleClasses.WebXRInput with get, set
+        abstract ``movementOrientationFollowsController``: bool with get, set
+        abstract ``orientationPreferredHandedness``: BrowserXRHandedness option with get, set
 
     /// @babylonjs/core/XR/webXRInputSource
     [<AllowNullLiteral>]
@@ -7116,6 +8009,13 @@ module SimpleInterfaces =
         abstract ``jsPath``: string option with get, set
         abstract ``wasmPath``: string option with get, set
 
+    /// @babylonjs/core/types
+    [<AllowNullLiteral>]
+    type TypedArrayLike =
+        inherit JS.ArrayBufferView
+        abstract ``length``: float with get
+        [<EmitIndexer>] abstract Item: ``n``: float -> float with get, set
+
     /// @babylonjs/core/Misc/videoRecorder
     [<AllowNullLiteral>]
     type VideoRecorderOptions =
@@ -7239,6 +8139,125 @@ module SimpleInterfaces =
     type EnvironmentTextureSpecularInfoV1 =
         abstract ``mipmaps``: ResizeArray<BufferImageData> with get, set
         abstract ``lodGenerationScale``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IAccessorSparseIndices =
+        inherit GLTF2IProperty
+        abstract ``bufferView``: float with get, set
+        abstract ``byteOffset``: float option with get, set
+        abstract ``componentType``: GLTF2AccessorComponentType with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IAccessorSparseValues =
+        inherit GLTF2IProperty
+        abstract ``bufferView``: float with get, set
+        abstract ``byteOffset``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IAnimationChannelTarget =
+        inherit GLTF2IProperty
+        abstract ``node``: float option with get, set
+        abstract ``path``: GLTF2AnimationChannelTargetPath with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IAnimationSampler =
+        inherit GLTF2IProperty
+        abstract ``input``: float with get, set
+        abstract ``interpolation``: GLTF2AnimationSamplerInterpolation option with get, set
+        abstract ``output``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2ICameraOrthographic =
+        inherit GLTF2IProperty
+        abstract ``xmag``: float with get, set
+        abstract ``ymag``: float with get, set
+        abstract ``zfar``: float with get, set
+        abstract ``znear``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2ICameraPerspective =
+        inherit GLTF2IProperty
+        abstract ``aspectRatio``: float option with get, set
+        abstract ``yfov``: float with get, set
+        abstract ``zfar``: float option with get, set
+        abstract ``znear``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IChildRootProperty =
+        inherit GLTF2IProperty
+        abstract ``name``: string option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity_Event =
+        abstract ``id``: string option with get, set
+        abstract ``values``: InlineObject749f47aaa0bfObject option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity_Node =
+        abstract ``declaration``: float with get, set
+        abstract ``values``: InlineObject0c999b4cb06bObject option with get, set
+        abstract ``flows``: InlineObject08fece736369Object option with get, set
+        abstract ``configuration``: InlineObject4794d27e06d6Object option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialVariants_Mapping =
+        inherit GLTF2IProperty
+        abstract ``mappings``: ResizeArray<InlineObject4141f6e42710Object> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialVariants_Variant =
+        inherit GLTF2IProperty
+        abstract ``name``: string with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMeshPrimitive =
+        inherit GLTF2IProperty
+        abstract ``attributes``: InlineObjectcb14fbe7a9aaObject with get, set
+        abstract ``indices``: float option with get, set
+        abstract ``material``: float option with get, set
+        abstract ``mode``: GLTF2MeshPrimitiveMode option with get, set
+        abstract ``targets``: ResizeArray<InlineObjectcb14fbe7a9aaObject> option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMSFTAudioEmitter_Clip =
+        inherit GLTF2IProperty
+        abstract ``uri``: string option with get, set
+        abstract ``bufferView``: float option with get, set
+        abstract ``mimeType``: GLTF2IMSFTAudioEmitter_AudioMimeType option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMSFTAudioEmitter_Emitter =
+        abstract ``name``: string option with get, set
+        abstract ``distanceModel``: GLTF2IMSFTAudioEmitter_DistanceModel option with get, set
+        abstract ``refDistance``: float option with get, set
+        abstract ``maxDistance``: float option with get, set
+        abstract ``rolloffFactor``: float option with get, set
+        abstract ``innerAngle``: float option with get, set
+        abstract ``outerAngle``: float option with get, set
+        abstract ``loop``: bool option with get, set
+        abstract ``volume``: float option with get, set
+        abstract ``clips``: ResizeArray<GLTF2IMSFTAudioEmitter_ClipReference> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2ITextureInfo =
+        inherit GLTF2IProperty
+        abstract ``index``: float with get, set
+        abstract ``texCoord``: float option with get, set
 
     /// @babylonjs/core/Meshes/Builders/greasedLineBuilder
     [<AllowNullLiteral>]
@@ -8022,6 +9041,17 @@ module SimpleInterfaces =
     type INativeImageConstructor =
         abstract ``prototype``: IImage with get, set
         [<EmitConstructor>] abstract Create: unit -> IImage
+
+    /// @babylonjs/core/Materials/Textures/ktx2decoderTypes
+    [<AllowNullLiteral>]
+    type INode =
+        abstract ``cap``: string option with get, set
+        abstract ``option``: string option with get, set
+        abstract ``alpha``: bool option with get, set
+        abstract ``transcodeFormat``: U2<BabylonjsBindings.Enums.TranscodeTarget, ResizeArray<BabylonjsBindings.Enums.TranscodeTarget>> option with get, set
+        abstract ``needsPowerOfTwo``: bool option with get, set
+        abstract ``yes``: U2<INode, ILeaf> option with get, set
+        abstract ``no``: U2<INode, ILeaf> option with get, set
 
     /// @babylonjs/core/FrameGraph/Node/Types/nodeRenderGraphTypes
     [<AllowNullLiteral>]
@@ -8999,6 +10029,284 @@ module SimpleInterfaces =
         abstract ``xy``: ResizeArray<float> with get, set
         abstract ``irradianceTexture``: EnvironmentTextureIrradianceTextureInfoV1 option with get, set
 
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IAccessorSparse =
+        inherit GLTF2IProperty
+        abstract ``count``: float with get, set
+        abstract ``indices``: GLTF2IAccessorSparseIndices with get, set
+        abstract ``values``: GLTF2IAccessorSparseValues with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IAnimationChannel =
+        inherit GLTF2IProperty
+        abstract ``sampler``: float with get, set
+        abstract ``target``: GLTF2IAnimationChannelTarget with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IAsset =
+        inherit GLTF2IChildRootProperty
+        abstract ``copyright``: string option with get, set
+        abstract ``generator``: string option with get, set
+        abstract ``version``: string with get, set
+        abstract ``minVersion``: string option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IBuffer =
+        inherit GLTF2IChildRootProperty
+        abstract ``uri``: string option with get, set
+        abstract ``byteLength``: float with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IBufferView =
+        inherit GLTF2IChildRootProperty
+        abstract ``buffer``: float with get, set
+        abstract ``byteOffset``: float option with get, set
+        abstract ``byteLength``: float with get, set
+        abstract ``byteStride``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2ICamera =
+        inherit GLTF2IChildRootProperty
+        abstract ``orthographic``: GLTF2ICameraOrthographic option with get, set
+        abstract ``perspective``: GLTF2ICameraPerspective option with get, set
+        abstract ``type``: GLTF2CameraType with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTLightsArea_Light =
+        inherit GLTF2IChildRootProperty
+        abstract ``type``: GLTF2EXTLightsArea_LightType with get, set
+        abstract ``color``: ResizeArray<float> option with get, set
+        abstract ``intensity``: float option with get, set
+        abstract ``size``: float option with get, set
+        abstract ``rect``: InlineObjectdf1fd213e14fObject option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTLightsIES_Light =
+        inherit GLTF2IChildRootProperty
+        abstract ``uri``: string option with get, set
+        abstract ``bufferView``: float option with get, set
+        abstract ``mimeType``: string option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTLightsImageBased_LightImageBased =
+        inherit GLTF2IChildRootProperty
+        abstract ``intensity``: float with get, set
+        abstract ``rotation``: ResizeArray<float> with get, set
+        abstract ``specularImageSize``: float with get, set
+        abstract ``specularImages``: ResizeArray<ResizeArray<float>> with get, set
+        abstract ``irradianceCoefficients``: ResizeArray<ResizeArray<float>> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IImage =
+        inherit GLTF2IChildRootProperty
+        abstract ``uri``: string option with get, set
+        abstract ``mimeType``: GLTF2ImageMimeType option with get, set
+        abstract ``bufferView``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity_Graph =
+        abstract ``types``: ResizeArray<GLTF2IKHRInteractivity_Type> option with get, set
+        abstract ``variables``: ResizeArray<GLTF2IKHRInteractivity_Variable> option with get, set
+        abstract ``events``: ResizeArray<GLTF2IKHRInteractivity_Event> option with get, set
+        abstract ``declarations``: ResizeArray<GLTF2IKHRInteractivity_Declaration> option with get, set
+        abstract ``nodes``: ResizeArray<GLTF2IKHRInteractivity_Node> option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRLightsPunctual_Light =
+        inherit GLTF2IChildRootProperty
+        abstract ``type``: GLTF2KHRLightsPunctual_LightType with get, set
+        abstract ``color``: ResizeArray<float> option with get, set
+        abstract ``intensity``: float option with get, set
+        abstract ``range``: float option with get, set
+        abstract ``spot``: InlineObject558631677ca0Object option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsAnisotropy =
+        abstract ``anisotropyStrength``: float option with get, set
+        abstract ``anisotropyRotation``: float option with get, set
+        abstract ``anisotropyTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``extensions``: InlineObjecta21bf015c053Object option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsClearcoatAnisotropy =
+        abstract ``clearcoatAnisotropyStrength``: float option with get, set
+        abstract ``clearcoatAnisotropyRotation``: float option with get, set
+        abstract ``clearcoatAnisotropyTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``extensions``: InlineObjecta21bf015c053Object option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsDiffuseRoughness =
+        abstract ``diffuseRoughnessFactor``: float option with get, set
+        abstract ``diffuseRoughnessTexture``: GLTF2ITextureInfo option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsDiffuseTransmission =
+        abstract ``diffuseTransmissionFactor``: float option with get, set
+        abstract ``diffuseTransmissionTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``diffuseTransmissionColorFactor``: ResizeArray<float> option with get, set
+        abstract ``diffuseTransmissionColorTexture``: GLTF2ITextureInfo option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsFuzz =
+        abstract ``fuzzFactor``: float option with get, set
+        abstract ``fuzzTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``fuzzColorFactor``: ResizeArray<float> option with get, set
+        abstract ``fuzzColorTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``fuzzRoughnessFactor``: float option with get, set
+        abstract ``fuzzRoughnessTexture``: GLTF2ITextureInfo option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsIridescence =
+        abstract ``iridescenceFactor``: float option with get, set
+        abstract ``iridescenceIor``: float option with get, set
+        abstract ``iridescenceThicknessMinimum``: float option with get, set
+        abstract ``iridescenceThicknessMaximum``: float option with get, set
+        abstract ``iridescenceTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``iridescenceThicknessTexture``: GLTF2ITextureInfo option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsPbrSpecularGlossiness =
+        abstract ``diffuseFactor``: ResizeArray<float> with get, set
+        abstract ``diffuseTexture``: GLTF2ITextureInfo with get, set
+        abstract ``specularFactor``: ResizeArray<float> with get, set
+        abstract ``glossinessFactor``: float with get, set
+        abstract ``specularGlossinessTexture``: GLTF2ITextureInfo with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsSheen =
+        abstract ``sheenColorFactor``: ResizeArray<float> option with get, set
+        abstract ``sheenColorTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``sheenRoughnessFactor``: float option with get, set
+        abstract ``sheenRoughnessTexture``: GLTF2ITextureInfo option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsSpecular =
+        abstract ``specularFactor``: float option with get, set
+        abstract ``specularColorFactor``: ResizeArray<float> option with get, set
+        abstract ``specularTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``specularColorTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``extensions``: InlineObjecta21bf015c053Object option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsTransmission =
+        abstract ``transmissionFactor``: float option with get, set
+        abstract ``transmissionTexture``: GLTF2ITextureInfo option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsVolume =
+        abstract ``thicknessFactor``: float option with get, set
+        abstract ``thicknessTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``attenuationDistance``: float option with get, set
+        abstract ``attenuationColor``: ResizeArray<float> option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsVolumeScatter =
+        abstract ``scatterAnisotropy``: float option with get, set
+        abstract ``multiscatterColorFactor``: ResizeArray<float> option with get, set
+        abstract ``multiscatterColorTexture``: GLTF2ITextureInfo option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialVariants_Variants =
+        inherit GLTF2IChildRootProperty
+        abstract ``variants``: ResizeArray<GLTF2IKHRMaterialVariants_Variant> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMaterialNormalTextureInfo =
+        inherit GLTF2ITextureInfo
+        abstract ``scale``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMaterialOcclusionTextureInfo =
+        inherit GLTF2ITextureInfo
+        abstract ``strength``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMaterialPbrMetallicRoughness =
+        abstract ``baseColorFactor``: ResizeArray<float> option with get, set
+        abstract ``baseColorTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``metallicFactor``: float option with get, set
+        abstract ``roughnessFactor``: float option with get, set
+        abstract ``metallicRoughnessTexture``: GLTF2ITextureInfo option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMesh =
+        inherit GLTF2IChildRootProperty
+        abstract ``primitives``: ResizeArray<GLTF2IMeshPrimitive> with get, set
+        abstract ``weights``: ResizeArray<float> option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2INode =
+        inherit GLTF2IChildRootProperty
+        abstract ``camera``: float option with get, set
+        abstract ``children``: ResizeArray<float> option with get, set
+        abstract ``skin``: float option with get, set
+        abstract ``matrix``: ResizeArray<float> option with get, set
+        abstract ``mesh``: float option with get, set
+        abstract ``rotation``: ResizeArray<float> option with get, set
+        abstract ``scale``: ResizeArray<float> option with get, set
+        abstract ``translation``: ResizeArray<float> option with get, set
+        abstract ``weights``: ResizeArray<float> option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2ISampler =
+        inherit GLTF2IChildRootProperty
+        abstract ``magFilter``: GLTF2TextureMagFilter option with get, set
+        abstract ``minFilter``: GLTF2TextureMinFilter option with get, set
+        abstract ``wrapS``: GLTF2TextureWrapMode option with get, set
+        abstract ``wrapT``: GLTF2TextureWrapMode option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IScene =
+        inherit GLTF2IChildRootProperty
+        abstract ``nodes``: ResizeArray<float> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2ISkin =
+        inherit GLTF2IChildRootProperty
+        abstract ``inverseBindMatrices``: float option with get, set
+        abstract ``skeleton``: float option with get, set
+        abstract ``joints``: ResizeArray<float> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2ITexture =
+        inherit GLTF2IChildRootProperty
+        abstract ``sampler``: float option with get, set
+        abstract ``source``: float option with get, set
+
     /// @babylonjs/core/Meshes/Builders/greasedLineBuilder
     [<AllowNullLiteral>]
     type GreasedLineMeshBuilderOptions =
@@ -9014,6 +10322,13 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type PartialIAbstractAudioBusOptions =
         inherit PartialIAbstractAudioOutNodeOptions
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IAnimationSampler =
+        inherit GLTF2IAnimationSampler
+        inherit IArrayItem
+        abstract ``_data``: JS.Promise<_IAnimationSamplerData> option with get, set
 
     /// @babylonjs/core/IAssetContainer
     [<AllowNullLiteral>]
@@ -9125,6 +10440,11 @@ module SimpleInterfaces =
     type ICustomProceduralTextureCreationOptions =
         inherit IProceduralTextureCreationOptions
         abstract ``skipJson``: bool option with get, set
+
+    /// @babylonjs/core/Materials/Textures/ktx2decoderTypes
+    [<AllowNullLiteral>]
+    type IDecisionTree =
+        [<EmitIndexer>] abstract Item: ``textureFormat``: string -> U2<INode, ILeaf> with get, set
 
     /// @babylonjs/core/Engines/Native/nativeInterfaces
     [<AllowNullLiteral>]
@@ -9327,6 +10647,13 @@ module SimpleInterfaces =
         abstract ``onClickedObservable``: BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleClasses.Light> with get, set
         abstract ``light``: BabylonjsBindings.SimpleClasses.Light option with get, set
         abstract ``material``: BabylonjsBindings.SimpleClasses.StandardMaterial with get
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IMeshPrimitive =
+        inherit GLTF2IMeshPrimitive
+        inherit IArrayItem
+        abstract ``_instanceData``: InlineObject6fd6e205620fObject option with get, set
 
     /// @babylonjs/core/XR/motionController/webXRAbstractMotionController
     [<AllowNullLiteral>]
@@ -9943,6 +11270,12 @@ module SimpleInterfaces =
         inherit IAbstractSoundStoredOptions
         inherit IStreamingSoundOptionsBase
 
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type ITextureInfo =
+        inherit GLTF2ITextureInfo
+        abstract ``nonColorData``: bool option with get, set
+
     /// Exact readonly projection of IVector4Like used by Babylon DeepImmutable<IVector4Like> signatures.
     [<AllowNullLiteral>]
     type DeepImmutableIVector4Like =
@@ -10030,6 +11363,102 @@ module SimpleInterfaces =
         abstract ``imageType``: string with get, set
         abstract ``binaryDataPosition``: float option with get, set
 
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IAccessor =
+        inherit GLTF2IChildRootProperty
+        abstract ``bufferView``: float option with get, set
+        abstract ``byteOffset``: float option with get, set
+        abstract ``componentType``: GLTF2AccessorComponentType with get, set
+        abstract ``normalized``: bool option with get, set
+        abstract ``count``: float with get, set
+        abstract ``type``: GLTF2AccessorType with get, set
+        abstract ``max``: ResizeArray<float> option with get, set
+        abstract ``min``: ResizeArray<float> option with get, set
+        abstract ``sparse``: GLTF2IAccessorSparse option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IAnimation =
+        inherit GLTF2IChildRootProperty
+        abstract ``channels``: ResizeArray<GLTF2IAnimationChannel> with get, set
+        abstract ``samplers``: ResizeArray<GLTF2IAnimationSampler> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IEXTLightsArea =
+        abstract ``lights``: ResizeArray<GLTF2IEXTLightsArea_Light> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRInteractivity =
+        abstract ``graphs``: ResizeArray<GLTF2IKHRInteractivity_Graph> with get, set
+        abstract ``graph``: float option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRLightsPunctual =
+        abstract ``lights``: ResizeArray<GLTF2IKHRLightsPunctual_Light> with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsClearcoat =
+        abstract ``clearcoatFactor``: float option with get, set
+        abstract ``clearcoatTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``clearcoatRoughnessFactor``: float option with get, set
+        abstract ``clearcoatRoughnessTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``clearcoatNormalTexture``: GLTF2IMaterialNormalTextureInfo option with get, set
+        abstract ``extensions``: InlineObjecta21bf015c053Object option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IKHRMaterialsCoat =
+        abstract ``coatFactor``: float option with get, set
+        abstract ``coatTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``coatRoughnessFactor``: float option with get, set
+        abstract ``coatRoughnessTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``coatNormalTexture``: GLTF2IMaterialNormalTextureInfo option with get, set
+        abstract ``coatIor``: float option with get, set
+        abstract ``coatDarkeningFactor``: float option with get, set
+        abstract ``coatColorFactor``: ResizeArray<float> option with get, set
+        abstract ``coatColorTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``coatAnisotropyStrength``: float option with get, set
+        abstract ``coatAnisotropyRotation``: float option with get, set
+        abstract ``coatAnisotropyTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``extensions``: InlineObjecta21bf015c053Object option with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IMaterial =
+        inherit GLTF2IChildRootProperty
+        abstract ``pbrMetallicRoughness``: GLTF2IMaterialPbrMetallicRoughness option with get, set
+        abstract ``normalTexture``: GLTF2IMaterialNormalTextureInfo option with get, set
+        abstract ``occlusionTexture``: GLTF2IMaterialOcclusionTextureInfo option with get, set
+        abstract ``emissiveTexture``: GLTF2ITextureInfo option with get, set
+        abstract ``emissiveFactor``: ResizeArray<float> option with get, set
+        abstract ``alphaMode``: GLTF2MaterialAlphaMode option with get, set
+        abstract ``alphaCutoff``: float option with get, set
+        abstract ``doubleSided``: bool option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type GLTFImage =
+        inherit GLTF2IImage
+        inherit IArrayItem
+        abstract ``_data``: JS.Promise<JS.ArrayBufferView> option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type GLTFNode =
+        inherit GLTF2INode
+        inherit IArrayItem
+        abstract ``parent``: GLTFNode option with get, set
+        abstract ``_babylonTransformNode``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+        abstract ``_babylonTransformNodeForSkin``: BabylonjsBindings.SimpleClasses.TransformNode option with get, set
+        abstract ``_primitiveBabylonMeshes``: ResizeArray<BabylonjsBindings.SimpleClasses.AbstractMesh> option with get, set
+        abstract ``_numMorphTargets``: float option with get, set
+        abstract ``_isJoint``: bool option with get, set
+
     /// @babylonjs/core/AudioV2/abstractAudio/abstractSound
     [<AllowNullLiteral>]
     type IAbstractSoundOptions =
@@ -10043,6 +11472,12 @@ module SimpleInterfaces =
         inherit PartialIAbstractSoundOptionsBase
         inherit PartialIAbstractSoundPlayOptions
         inherit PartialISoundSourceOptions
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IAnimationChannel =
+        inherit GLTF2IAnimationChannel
+        inherit IArrayItem
 
     /// @babylonjs/core/AudioV2/abstractAudio/audioBus
     [<AllowNullLiteral>]
@@ -10060,11 +11495,47 @@ module SimpleInterfaces =
         inherit PartialIStereoAudioOptions
         abstract ``outBus``: BabylonjsBindings.TypeAliases.PrimaryAudioBus option with get, set
 
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IBuffer =
+        inherit GLTF2IBuffer
+        inherit IArrayItem
+        abstract ``_data``: JS.Promise<JS.ArrayBufferView> option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IBufferView =
+        inherit GLTF2IBufferView
+        inherit IArrayItem
+        abstract ``_data``: JS.Promise<JS.ArrayBufferView> option with get, set
+        abstract ``_babylonBuffer``: JS.Promise<BabylonjsBindings.SimpleClasses.Buffer> option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type ICamera =
+        inherit GLTF2ICamera
+        inherit IArrayItem
+        abstract ``_babylonCamera``: BabylonjsBindings.SimpleClasses.Camera option with get, set
+
     /// @babylonjs/core/Debug/debugLayer.pure
     [<AllowNullLiteral>]
     type IExplorerAdditionalNode =
         abstract ``name``: string with get, set
         abstract ``getContent``: unit -> ResizeArray<IExplorerAdditionalChild>
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IEXTLightsArea_Light =
+        inherit GLTF2IEXTLightsArea_Light
+        inherit IArrayItem
+        abstract ``_babylonLight``: BabylonjsBindings.SimpleClasses.Light option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IEXTLightsIES_Light =
+        inherit GLTF2IEXTLightsIES_Light
+        inherit IArrayItem
+        abstract ``_babylonLight``: BabylonjsBindings.SimpleClasses.Light option with get, set
 
     /// Function-valued IFlowGraphBlockParseOptions.valueParseFunction property.
     [<AllowNullLiteral>]
@@ -10189,6 +11660,23 @@ module SimpleInterfaces =
         abstract ``node``: IGLTFNode with get, set
         abstract ``id``: string with get, set
 
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IKHRLightsPunctual_Light =
+        inherit GLTF2IKHRLightsPunctual_Light
+        inherit IArrayItem
+        abstract ``_babylonLight``: BabylonjsBindings.SimpleClasses.Light option with get, set
+
+    /// @babylonjs/core/Materials/Textures/ktx2decoderTypes
+    [<AllowNullLiteral>]
+    type IKTX2DecoderOptions =
+        abstract ``useRGBAIfASTCBC7NotAvailableWhenUASTC``: bool option with get, set
+        abstract ``forceRGBA``: bool option with get, set
+        abstract ``forceR8``: bool option with get, set
+        abstract ``forceRG8``: bool option with get, set
+        abstract ``bypassTranscoders``: ResizeArray<string> option with get, set
+        abstract ``transcodeFormatDecisionTree``: IDecisionTree option with get, set
+
     /// @babylonjs/core/AudioV2/abstractAudio/mainAudioBus
     [<AllowNullLiteral>]
     type IMainAudioBusOptions =
@@ -10198,6 +11686,32 @@ module SimpleInterfaces =
     [<AllowNullLiteral>]
     type PartialIMainAudioBusOptions =
         inherit PartialIAbstractAudioBusOptions
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IMaterialNormalTextureInfo =
+        inherit GLTF2IMaterialNormalTextureInfo
+        inherit ITextureInfo
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IMaterialOcclusionTextureInfo =
+        inherit GLTF2IMaterialOcclusionTextureInfo
+        inherit ITextureInfo
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IMaterialPbrMetallicRoughness =
+        inherit GLTF2IMaterialPbrMetallicRoughness
+        abstract ``baseColorTexture``: ITextureInfo option with get, set
+        abstract ``metallicRoughnessTexture``: ITextureInfo option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IMesh =
+        inherit GLTF2IMesh
+        inherit IArrayItem
+        abstract ``primitives``: ResizeArray<IMeshPrimitive> with get, set
 
     /// @babylonjs/loaders/glTF/1.0/glTFLoaderInterfaces
     [<AllowNullLiteral>]
@@ -10311,6 +11825,13 @@ module SimpleInterfaces =
         abstract ``addToAxisCache``: ``mesh``: BabylonjsBindings.SimpleClasses.Mesh * ``cache``: GizmoAxisCache -> unit
         abstract ``releaseDrag``: unit -> unit
 
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type ISampler =
+        inherit GLTF2ISampler
+        inherit IArrayItem
+        abstract ``_data``: _ISamplerData option with get, set
+
     /// @babylonjs/core/Gizmos/scaleGizmo
     [<AllowNullLiteral>]
     type IScaleGizmo =
@@ -10331,6 +11852,12 @@ module SimpleInterfaces =
         abstract ``coloredMaterial``: BabylonjsBindings.SimpleClasses.StandardMaterial with get, set
         abstract ``hoverMaterial``: BabylonjsBindings.SimpleClasses.StandardMaterial with get, set
         abstract ``disableMaterial``: BabylonjsBindings.SimpleClasses.StandardMaterial with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IScene =
+        inherit GLTF2IScene
+        inherit IArrayItem
 
     /// @babylonjs/core/Loading/sceneLoader
     [<AllowNullLiteral>]
@@ -10356,6 +11883,13 @@ module SimpleInterfaces =
         abstract ``removeFromContainer``: ``container``: IAssetContainer * ?``dispose``: bool -> unit
         abstract ``serialize``: ``serializationObject``: obj -> unit
 
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type ISkin =
+        inherit GLTF2ISkin
+        inherit IArrayItem
+        abstract ``_data``: InlineObjectb1139181db41Object option with get, set
+
     /// @babylonjs/core/Sprites/spriteMap.pure
     [<AllowNullLiteral>]
     type ISpriteMap =
@@ -10364,6 +11898,52 @@ module SimpleInterfaces =
         abstract ``atlasJSON``: ISpriteJSONAtlas with get, set
         abstract ``spriteSheet``: BabylonjsBindings.SimpleClasses.Texture with get, set
         abstract ``options``: ISpriteMapOptions with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type ITexture =
+        inherit GLTF2ITexture
+        inherit IArrayItem
+        abstract ``_textureInfo``: ITextureInfo with get, set
+
+    /// babylonjs-gltf2interface/babylon.glTF2Interface
+    [<AllowNullLiteral>]
+    type GLTF2IGLTF =
+        inherit GLTF2IProperty
+        abstract ``accessors``: ResizeArray<GLTF2IAccessor> option with get, set
+        abstract ``animations``: ResizeArray<GLTF2IAnimation> option with get, set
+        abstract ``asset``: GLTF2IAsset with get, set
+        abstract ``buffers``: ResizeArray<GLTF2IBuffer> option with get, set
+        abstract ``bufferViews``: ResizeArray<GLTF2IBufferView> option with get, set
+        abstract ``cameras``: ResizeArray<GLTF2ICamera> option with get, set
+        abstract ``extensionsUsed``: ResizeArray<string> option with get, set
+        abstract ``extensionsRequired``: ResizeArray<string> option with get, set
+        abstract ``images``: ResizeArray<GLTF2IImage> option with get, set
+        abstract ``materials``: ResizeArray<GLTF2IMaterial> option with get, set
+        abstract ``meshes``: ResizeArray<GLTF2IMesh> option with get, set
+        abstract ``nodes``: ResizeArray<GLTF2INode> option with get, set
+        abstract ``samplers``: ResizeArray<GLTF2ISampler> option with get, set
+        abstract ``scene``: float option with get, set
+        abstract ``scenes``: ResizeArray<GLTF2IScene> option with get, set
+        abstract ``skins``: ResizeArray<GLTF2ISkin> option with get, set
+        abstract ``textures``: ResizeArray<GLTF2ITexture> option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IAccessor =
+        inherit GLTF2IAccessor
+        inherit IArrayItem
+        abstract ``_data``: JS.Promise<JS.ArrayBufferView> option with get, set
+        abstract ``_babylonVertexBuffer``: InlineObjectb023cd843632Object option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IAnimation =
+        inherit GLTF2IAnimation
+        inherit IArrayItem
+        abstract ``channels``: ResizeArray<IAnimationChannel> with get, set
+        abstract ``samplers``: ResizeArray<IAnimationSampler> with get, set
+        abstract ``_babylonAnimationGroup``: BabylonjsBindings.SimpleClasses.AnimationGroup option with get, set
 
     /// Function-valued ICreateAndPreparePipelineContextOptions.rebuildRebind property.
     [<AllowNullLiteral>]
@@ -10446,6 +12026,19 @@ module SimpleInterfaces =
         abstract ``extraInitializationsAsync``: IEffectCreationOptionsExtraInitializationsAsyncCallback option with get, set
         abstract ``disableParallelShaderCompilation``: bool option with get, set
 
+    /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeCamerasObject =
+        abstract ``__array__``: InlineObject478d8a76ee46Object with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeExtensionsObject =
+        abstract ``KHR_lights_punctual``: InlineObject5573f38169f7Object with get, set
+        abstract ``EXT_lights_area``: InlineObject4aac0a3e9f2eObject with get, set
+        abstract ``EXT_lights_ies``: InlineObjectdb8f5d73dec2Object with get, set
+        abstract ``EXT_lights_image_based``: InlineObject4559920cb1f2Object with get, set
+
     /// @babylonjs/core/Debug/debugLayer.pure
     [<AllowNullLiteral>]
     type IInspectorOptions =
@@ -10465,6 +12058,17 @@ module SimpleInterfaces =
         abstract ``contextMenu``: BrowserRecord<BabylonjsBindings.StringEnums.IInspectorContextMenuType, ResizeArray<IInspectorContextMenuItem> option> option with get, set
         abstract ``contextMenuOverride``: ResizeArray<BabylonjsBindings.StringEnums.IInspectorContextMenuType> option with get, set
         abstract ``skipDefaultFontLoading``: bool option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IMaterial =
+        inherit GLTF2IMaterial
+        inherit IArrayItem
+        abstract ``pbrMetallicRoughness``: IMaterialPbrMetallicRoughness option with get, set
+        abstract ``normalTexture``: IMaterialNormalTextureInfo option with get, set
+        abstract ``occlusionTexture``: IMaterialOcclusionTextureInfo option with get, set
+        abstract ``emissiveTexture``: ITextureInfo option with get, set
+        abstract ``_data``: InlineObject441d9769b966Object option with get, set
 
     /// @babylonjs/core/AudioV2/abstractAudio/staticSound
     [<AllowNullLiteral>]
@@ -10507,6 +12111,138 @@ module SimpleInterfaces =
         abstract ``loadFileInjection``: System.Func<string, System.Action<U2<string, JS.ArrayBuffer>, string option>, System.Action<obj> option, IOfflineProvider option, bool option, System.Action<IWebRequest option, obj option> option, System.Func<string, System.Action<U2<string, JS.ArrayBuffer>, string option>, System.Action<Browser.Types.ProgressEvent> option, IOfflineProvider option, bool option, System.Action<BabylonjsBindings.SimpleClasses.WebRequest option, BabylonjsBindings.SimpleClasses.LoadFileError option> option, IFileRequest> option, IFileRequest> option with get, set
         abstract ``cachedPipelines``: InlineObject4583f044ad0cObject with get, set
 
+    /// Function-valued GLTF2LoaderExtension.onLoading property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionOnLoadingCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// Function-valued GLTF2LoaderExtension.onReady property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionOnReadyCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> unit
+
+    /// Function-valued GLTF2LoaderExtension.loadSceneAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadSceneAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``scene``: IScene -> JS.Promise<unit> option
+
+    /// Function-valued GLTF2LoaderExtension.loadNodeAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadNodeAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``node``: GLTFNode * ``assign``: System.Action<BabylonjsBindings.SimpleClasses.TransformNode> -> JS.Promise<BabylonjsBindings.SimpleClasses.TransformNode> option
+
+    /// Function-valued GLTF2LoaderExtension.loadCameraAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadCameraAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``camera``: ICamera * ``assign``: System.Action<BabylonjsBindings.SimpleClasses.Camera> -> JS.Promise<BabylonjsBindings.SimpleClasses.Camera> option
+
+    /// Function-valued GLTF2LoaderExtension._loadVertexDataAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadVertexDataAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``primitive``: IMeshPrimitive * ``babylonMesh``: BabylonjsBindings.SimpleClasses.Mesh -> JS.Promise<BabylonjsBindings.SimpleClasses.Geometry> option
+
+    /// Function-valued GLTF2LoaderExtension._loadMeshPrimitiveAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadMeshPrimitiveAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``name``: string * ``node``: GLTFNode * ``mesh``: IMesh * ``primitive``: IMeshPrimitive * ``assign``: System.Action<BabylonjsBindings.SimpleClasses.AbstractMesh> -> JS.Promise<BabylonjsBindings.SimpleClasses.AbstractMesh> option
+
+    /// Function-valued GLTF2LoaderExtension._loadMaterialAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadMaterialAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``material``: IMaterial * ``babylonMesh``: BabylonjsBindings.SimpleClasses.Mesh option * ``babylonDrawMode``: float * ``assign``: System.Action<BabylonjsBindings.SimpleClasses.Material> -> JS.Promise<BabylonjsBindings.SimpleClasses.Material> option
+
+    /// Function-valued GLTF2LoaderExtension.createMaterial property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionCreateMaterialCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``material``: IMaterial * ``babylonDrawMode``: float -> BabylonjsBindings.SimpleClasses.Material option
+
+    /// Function-valued GLTF2LoaderExtension.loadMaterialPropertiesAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadMaterialPropertiesAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``material``: IMaterial * ``babylonMaterial``: BabylonjsBindings.SimpleClasses.Material -> JS.Promise<unit> option
+
+    /// Function-valued GLTF2LoaderExtension.loadTextureInfoAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadTextureInfoAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``textureInfo``: ITextureInfo * ``assign``: System.Action<BabylonjsBindings.SimpleClasses.BaseTexture> -> JS.Promise<BabylonjsBindings.SimpleClasses.BaseTexture> option
+
+    /// Function-valued GLTF2LoaderExtension._loadTextureAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadTextureAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``texture``: ITexture * ``assign``: System.Action<BabylonjsBindings.SimpleClasses.BaseTexture> -> JS.Promise<BabylonjsBindings.SimpleClasses.BaseTexture> option
+
+    /// Function-valued GLTF2LoaderExtension.loadAnimationAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadAnimationAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``animation``: IAnimation -> JS.Promise<BabylonjsBindings.SimpleClasses.AnimationGroup> option
+
+    /// Function-valued GLTF2LoaderExtension._loadAnimationChannelAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadAnimationChannelAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``animationContext``: string * ``animation``: IAnimation * ``channel``: IAnimationChannel * ``onLoad``: System.Action<IAnimatable, BabylonjsBindings.SimpleClasses.Animation> -> JS.Promise<unit> option
+
+    /// Function-valued GLTF2LoaderExtension._loadSkinAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadSkinAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``node``: GLTFNode * ``skin``: ISkin -> JS.Promise<unit> option
+
+    /// Function-valued GLTF2LoaderExtension._loadUriAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadUriAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``property``: GLTF2IProperty * ``uri``: string -> JS.Promise<JS.ArrayBufferView> option
+
+    /// Function-valued GLTF2LoaderExtension.loadBufferViewAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadBufferViewAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``bufferView``: IBufferView -> JS.Promise<JS.ArrayBufferView> option
+
+    /// Function-valued GLTF2LoaderExtension.loadBufferAsync property.
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtensionLoadBufferAsyncCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: string * ``buffer``: IBuffer * ``byteOffset``: float * ``byteLength``: float -> JS.Promise<JS.ArrayBufferView> option
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderExtension
+    [<AllowNullLiteral>]
+    type GLTF2LoaderExtension =
+        inherit GLTFFileLoaderExtension
+        inherit IDisposable
+        abstract ``onLoading``: GLTF2LoaderExtensionOnLoadingCallback option with get, set
+        abstract ``onReady``: GLTF2LoaderExtensionOnReadyCallback option with get, set
+        abstract ``loadSceneAsync``: GLTF2LoaderExtensionLoadSceneAsyncCallback option with get, set
+        abstract ``loadNodeAsync``: GLTF2LoaderExtensionLoadNodeAsyncCallback option with get, set
+        abstract ``loadCameraAsync``: GLTF2LoaderExtensionLoadCameraAsyncCallback option with get, set
+        abstract ``_loadVertexDataAsync``: GLTF2LoaderExtensionLoadVertexDataAsyncCallback option with get, set
+        abstract ``_loadMeshPrimitiveAsync``: GLTF2LoaderExtensionLoadMeshPrimitiveAsyncCallback option with get, set
+        abstract ``_loadMaterialAsync``: GLTF2LoaderExtensionLoadMaterialAsyncCallback option with get, set
+        abstract ``createMaterial``: GLTF2LoaderExtensionCreateMaterialCallback option with get, set
+        abstract ``loadMaterialPropertiesAsync``: GLTF2LoaderExtensionLoadMaterialPropertiesAsyncCallback option with get, set
+        abstract ``loadTextureInfoAsync``: GLTF2LoaderExtensionLoadTextureInfoAsyncCallback option with get, set
+        abstract ``_loadTextureAsync``: GLTF2LoaderExtensionLoadTextureAsyncCallback option with get, set
+        abstract ``loadAnimationAsync``: GLTF2LoaderExtensionLoadAnimationAsyncCallback option with get, set
+        abstract ``_loadAnimationChannelAsync``: GLTF2LoaderExtensionLoadAnimationChannelAsyncCallback option with get, set
+        abstract ``_loadSkinAsync``: GLTF2LoaderExtensionLoadSkinAsyncCallback option with get, set
+        abstract ``_loadUriAsync``: GLTF2LoaderExtensionLoadUriAsyncCallback option with get, set
+        abstract ``loadBufferViewAsync``: GLTF2LoaderExtensionLoadBufferViewAsyncCallback option with get, set
+        abstract ``loadBufferAsync``: GLTF2LoaderExtensionLoadBufferAsyncCallback option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces
+    [<AllowNullLiteral>]
+    type IGLTF =
+        inherit GLTF2IGLTF
+        abstract ``accessors``: ResizeArray<IAccessor> option with get, set
+        abstract ``animations``: ResizeArray<IAnimation> option with get, set
+        abstract ``buffers``: ResizeArray<IBuffer> option with get, set
+        abstract ``bufferViews``: ResizeArray<IBufferView> option with get, set
+        abstract ``cameras``: ResizeArray<ICamera> option with get, set
+        abstract ``images``: ResizeArray<GLTFImage> option with get, set
+        abstract ``materials``: ResizeArray<IMaterial> option with get, set
+        abstract ``meshes``: ResizeArray<IMesh> option with get, set
+        abstract ``nodes``: ResizeArray<GLTFNode> option with get, set
+        abstract ``samplers``: ResizeArray<ISampler> option with get, set
+        abstract ``scenes``: ResizeArray<IScene> option with get, set
+        abstract ``skins``: ResizeArray<ISkin> option with get, set
+        abstract ``textures``: ResizeArray<ITexture> option with get, set
+
     /// @babylonjs/core/Materials/effect.functions
     [<AllowNullLiteral>]
     type IPipelineGenerationOptions =
@@ -10520,6 +12256,46 @@ module SimpleInterfaces =
         abstract ``extendedCreatePipelineOptions``: PartialICreateAndPreparePipelineContextOptions option with get, set
         abstract ``waitForIsReady``: bool option with get, set
         abstract ``disableParallelCompilation``: bool option with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
+    [<AllowNullLiteral>]
+    type ITextureDefinition =
+        abstract ``offset``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, BabylonjsBindings.SimpleClasses.Vector2> with get, set
+        abstract ``rotation``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, float> with get, set
+        abstract ``scale``: IObjectAccessor<IMaterial, BabylonjsBindings.SimpleClasses.PBRMaterial, BabylonjsBindings.SimpleClasses.Vector2> with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/flowGraphGLTFDataProvider
+    [<AllowNullLiteral>]
+    type IFlowGraphGLTFDataProviderBlockConfiguration =
+        inherit IFlowGraphBlockConfiguration
+        abstract ``glTF``: IGLTF with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
+    [<AllowNullLiteral>]
+    type IGLTFObjectModelTreeMaterialsObject =
+        abstract ``__array__``: InlineObjectd156a044a7f9Object with get, set
+
+    /// Function-valued IGLTFToFlowGraphMapping.validation property.
+    [<AllowNullLiteral>]
+    type IGLTFToFlowGraphMappingValidationCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``gltfBlock``: GLTF2IKHRInteractivity_Node * ``interactivityGraph``: GLTF2IKHRInteractivity_Graph * ?``glTFObject``: IGLTF -> InlineObject4e409eaefbb8Object
+
+    /// Function-valued IGLTFToFlowGraphMapping.extraProcessor property.
+    [<AllowNullLiteral>]
+    type IGLTFToFlowGraphMappingExtraProcessorCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``gltfBlock``: GLTF2IKHRInteractivity_Node * ``declaration``: GLTF2IKHRInteractivity_Declaration * ``mapping``: IGLTFToFlowGraphMapping * ``parser``: BabylonjsBindings.SimpleClasses.InteractivityGraphToFlowGraphParser * ``serializedObjects``: ResizeArray<ISerializedFlowGraphBlock> * ``context``: ISerializedFlowGraphContext * ?``globalGLTF``: IGLTF -> ResizeArray<ISerializedFlowGraphBlock>
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper
+    [<AllowNullLiteral>]
+    type IGLTFToFlowGraphMapping =
+        abstract ``blocks``: ResizeArray<U2<BabylonjsBindings.StringEnums.FlowGraphBlockNames, string>> with get, set
+        abstract ``inputs``: InlineObjectb50b2a1c7176Object option with get, set
+        abstract ``outputs``: InlineObject5807e9eb1367Object option with get, set
+        abstract ``configuration``: InlineObject5bbc2f1fb479Object option with get, set
+        abstract ``typeToTypeMapping``: InlineObject5bbc2f1fb479Object option with get, set
+        abstract ``interBlockConnectors``: ResizeArray<InlineObject298705b65dd9Object> option with get, set
+        abstract ``validation``: IGLTFToFlowGraphMappingValidationCallback option with get, set
+        abstract ``extraProcessor``: IGLTFToFlowGraphMappingExtraProcessorCallback option with get, set
 
     /// Function-valued ICanvas.remove property.
     [<AllowNullLiteral>]
@@ -10809,6 +12585,11 @@ module SimpleClasses =
     type StringLiteral094c6afa3051 =
         | [<CompiledName("texture2D")>] Value
 
+    /// Exact string literal type for "number".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral12886f9d0005 =
+        | [<CompiledName("number")>] Value
+
     /// Exact string literal type for "mat4".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral15fb65e5b0ac =
@@ -11044,6 +12825,11 @@ module SimpleClasses =
     type StringLiteralbe2f3b88c67d =
         | [<CompiledName("xr-eye-tracking")>] Value
 
+    /// Exact string literal type for "boolean".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralbf84d3d60e93 =
+        | [<CompiledName("boolean")>] Value
+
     /// Exact string literal type for "xr-physics-controller".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteralc472f4f2d0c2 =
@@ -11150,6 +12936,14 @@ module SimpleClasses =
         | Fragment = 2
         | VertexAndFragment = 3
 
+    /// Exact internal numeric enum required by a Babylon class signature.
+    type WebXRGraphicsBindingTypeWebGLLiteral =
+        | WebGL = 0
+
+    /// Exact internal numeric enum required by a Babylon class signature.
+    type WebXRGraphicsBindingTypeWebGPULiteral =
+        | WebGPU = 1
+
     /// Inline object shape used by a TypeScript utility projection.
     [<AllowNullLiteral>]
     type RecordObjectda57c00e8bb8 =
@@ -11189,6 +12983,31 @@ module SimpleClasses =
     [<AllowNullLiteral>]
     type InlineObject6606480d34c3Object =
         abstract ``levels``: ResizeArray<InlineObject92b639d82261Object> with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObjecte6c05bf73ef1Object =
+        abstract ``length``: float with get, set
+        abstract ``flowGraphType``: BabylonjsBindings.StringEnums.FlowGraphTypes with get, set
+        abstract ``elementType``: U2<StringLiteral12886f9d0005, StringLiteralbf84d3d60e93> with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject3b176ce44da0Object =
+        abstract ``flowGraphMapping``: BabylonjsBindings.SimpleInterfaces.IGLTFToFlowGraphMapping with get, set
+        abstract ``fullOperationName``: string with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject698fd97cc5f6Object =
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphTypes with get, set
+        abstract ``value``: ResizeArray<obj> with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObjectf91948621d52Object =
+        abstract ``blocks``: ResizeArray<BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphBlock> with get, set
+        abstract ``fullOperationName``: string with get, set
 
     /// Inline object shape used by a TypeScript utility projection.
     [<AllowNullLiteral>]
@@ -11538,6 +13357,11 @@ module SimpleClasses =
 
     /// Inline object shape used by a TypeScript utility projection.
     [<AllowNullLiteral>]
+    type InlineObjecta21bf015c053Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
     type InternalAliasd9f1bd2fc664Object =
         abstract ``texture``: InternalTexture option with get, set
         abstract ``name``: string with get, set
@@ -11651,6 +13475,12 @@ module SimpleClasses =
     type InlineObject13866b9d6794Object =
         abstract ``name``: string with get, set
         abstract ``handler``: System.Func<Browser.Types.FocusEvent, obj> option with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineIntersection50a7a4e23fa0Object =
+        inherit BabylonjsBindings.SimpleInterfaces.IKTX2DecoderOptions
+        inherit BabylonjsBindings.SimpleInterfaces.IDecodedData
 
     /// Inline object shape used by a TypeScript utility projection.
     [<AllowNullLiteral>]
@@ -12041,6 +13871,20 @@ module SimpleClasses =
     [<Import("ArrayItem", "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js")>]
     let ArrayItem: ArrayItemStatic = jsNative
 
+    /// @babylonjs/core/Misc/asyncLock
+    [<AllowNullLiteral>]
+    type AsyncLock =
+        abstract ``lockAsync``<'T> : ``func``: System.Func<U2<'T, JS.Promise<'T>>> * ?``signal``: BabylonjsBindings.SimpleInterfaces.BrowserAbortSignal -> JS.Promise<'T>
+
+    [<AllowNullLiteral>]
+    type AsyncLockStatic =
+        inherit Constructor<AsyncLock>
+        [<EmitConstructor>] abstract Create: unit -> AsyncLock
+        abstract ``LockAsync``<'T> : ``func``: System.Func<U2<'T, JS.Promise<'T>>> * ``locks``: ResizeArray<AsyncLock> * ?``signal``: BabylonjsBindings.SimpleInterfaces.BrowserAbortSignal -> JS.Promise<'T>
+
+    [<Import("AsyncLock", "@babylonjs/core/Misc/asyncLock.js")>]
+    let AsyncLock: AsyncLockStatic = jsNative
+
     /// @babylonjs/core/Misc/tools.pure
     [<AllowNullLiteral>]
     type AsyncLoop =
@@ -12181,6 +14025,21 @@ module SimpleClasses =
 
     [<Import("ClipboardEventTypes", "@babylonjs/core/Events/clipboardEvents.js")>]
     let ClipboardEventTypes: ClipboardEventTypesStatic = jsNative
+
+    /// @babylonjs/core/Events/clipboardEvents
+    [<AllowNullLiteral>]
+    type ClipboardInfo =
+        abstract ``type``: float with get, set
+        abstract ``event``: Browser.Types.ClipboardEvent with get, set
+
+    [<AllowNullLiteral>]
+    type ClipboardInfoStatic =
+        inherit Constructor<ClipboardInfo>
+        [<EmitConstructor>] abstract Create: ``type``: float * ``event``: Browser.Types.ClipboardEvent -> ClipboardInfo
+        abstract ``GetTypeFromCharacter`` : ``keyCode``: float -> float
+
+    [<Import("ClipboardInfo", "@babylonjs/core/Events/clipboardEvents.js")>]
+    let ClipboardInfo: ClipboardInfoStatic = jsNative
 
     /// @babylonjs/core/Maths/math.color.pure
     [<AllowNullLiteral>]
@@ -12784,6 +14643,26 @@ module SimpleClasses =
     [<Import("DeepCopier", "@babylonjs/core/Misc/deepCopier.js")>]
     let DeepCopier: DeepCopierStatic = jsNative
 
+    /// @babylonjs/core/Misc/khronosTextureContainer2
+    [<AllowNullLiteral>]
+    type DefaultKTX2DecoderOptions =
+        abstract ``_getKTX2DecoderOptions`` : unit -> BabylonjsBindings.SimpleInterfaces.IKTX2DecoderOptions
+        abstract ``isDirty``: bool with get
+        abstract ``useRGBAIfASTCBC7NotAvailableWhenUASTC``: bool option with get, set
+        abstract ``useRGBAIfOnlyBC1BC3AvailableWhenUASTC``: bool option with get, set
+        abstract ``forceRGBA``: bool option with get, set
+        abstract ``forceR8``: bool option with get, set
+        abstract ``forceRG8``: bool option with get, set
+        abstract ``bypassTranscoders``: ResizeArray<string> option with get, set
+
+    [<AllowNullLiteral>]
+    type DefaultKTX2DecoderOptionsStatic =
+        inherit Constructor<DefaultKTX2DecoderOptions>
+        [<EmitConstructor>] abstract Create: unit -> DefaultKTX2DecoderOptions
+
+    [<Import("DefaultKTX2DecoderOptions", "@babylonjs/core/Misc/khronosTextureContainer2.js")>]
+    let DefaultKTX2DecoderOptions: DefaultKTX2DecoderOptionsStatic = jsNative
+
     /// @babylonjs/core/Loading/loadingScreen.pure
     [<AllowNullLiteral>]
     type DefaultLoadingScreen =
@@ -12802,6 +14681,20 @@ module SimpleClasses =
 
     [<Import("DefaultLoadingScreen", "@babylonjs/core/Loading/loadingScreen.pure.js")>]
     let DefaultLoadingScreen: DefaultLoadingScreenStatic = jsNative
+
+    /// @babylonjs/core/Misc/deferred
+    [<AllowNullLiteral>]
+    type Deferred<'T> =
+        abstract ``promise``: JS.Promise<'T> with get
+        abstract ``resolve``: System.Action<U2<'T, BabylonjsBindings.SimpleInterfaces.BrowserPromiseLike<'T>>> with get
+        abstract ``reject``: System.Action<obj option> with get
+
+    [<AllowNullLiteral>]
+    type DeferredStatic =
+        [<EmitConstructor>] abstract Create<'T>: unit -> Deferred<'T>
+
+    [<Import("Deferred", "@babylonjs/core/Misc/deferred.js")>]
+    let Deferred: DeferredStatic = jsNative
 
     /// @babylonjs/core/States/depthCullingState
     [<AllowNullLiteral>]
@@ -13089,6 +14982,19 @@ module SimpleClasses =
         inherit Constructor<GLTFLoaderBaseOptions>
         [<EmitConstructor>] abstract Create: unit -> GLTFLoaderBaseOptions
 
+    /// @babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter
+    [<AllowNullLiteral>]
+    type GLTFPathToObjectConverter<'T, 'BabylonType, 'BabylonValue> =
+        inherit BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter<BabylonjsBindings.SimpleInterfaces.IObjectAccessor<'T, 'BabylonType, 'BabylonValue>>
+        abstract ``convert`` : ``path``: string -> BabylonjsBindings.SimpleInterfaces.IObjectInfo<BabylonjsBindings.SimpleInterfaces.IObjectAccessor<'T, 'BabylonType, 'BabylonValue>, obj>
+
+    [<AllowNullLiteral>]
+    type GLTFPathToObjectConverterStatic =
+        [<EmitConstructor>] abstract Create<'T, 'BabylonType, 'BabylonValue>: ``_gltf``: BabylonjsBindings.SimpleInterfaces.IGLTF * ``_infoTree``: obj -> GLTFPathToObjectConverter<'T, 'BabylonType, 'BabylonValue>
+
+    [<Import("GLTFPathToObjectConverter", "@babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter.js")>]
+    let GLTFPathToObjectConverter: GLTFPathToObjectConverterStatic = jsNative
+
     /// @babylonjs/core/Misc/gradients
     [<AllowNullLiteral>]
     type GradientHelper =
@@ -13139,6 +15045,31 @@ module SimpleClasses =
 
     [<Import("InputMapper", "@babylonjs/core/Cameras/inputMapper.js")>]
     let InputMapper: InputMapperStatic = jsNative
+
+    /// Inline object shape used by InteractivityGraphToFlowGraphParser.
+    [<AllowNullLiteral>]
+    type InteractivityGraphToFlowGraphParserAccessor11Object =
+        abstract ``types``: ResizeArray<InlineObjecte6c05bf73ef1Object> with get, set
+        abstract ``mappings``: ResizeArray<InlineObject3b176ce44da0Object> with get, set
+        abstract ``staticVariables``: ResizeArray<InlineObject698fd97cc5f6Object> with get, set
+        abstract ``events``: ResizeArray<BabylonjsBindings.SimpleInterfaces.InteractivityEvent> with get, set
+        abstract ``nodes``: ResizeArray<InlineObjectf91948621d52Object> with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser
+    [<AllowNullLiteral>]
+    type InteractivityGraphToFlowGraphParser =
+        abstract ``_animationTargetFps``: float with get, set
+        abstract ``getVariableName`` : ``index``: float -> string
+        abstract ``serializeToFlowGraph`` : unit -> BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraph
+        abstract ``arrays``: InteractivityGraphToFlowGraphParserAccessor11Object with get
+
+    [<AllowNullLiteral>]
+    type InteractivityGraphToFlowGraphParserStatic =
+        inherit Constructor<InteractivityGraphToFlowGraphParser>
+        [<EmitConstructor>] abstract Create: ``_interactivityGraph``: BabylonjsBindings.SimpleInterfaces.GLTF2IKHRInteractivity_Graph * ``_gltf``: BabylonjsBindings.SimpleInterfaces.IGLTF * ?``_animationTargetFps``: float -> InteractivityGraphToFlowGraphParser
+
+    [<Import("InteractivityGraphToFlowGraphParser", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js")>]
+    let InteractivityGraphToFlowGraphParser: InteractivityGraphToFlowGraphParserStatic = jsNative
 
     /// @babylonjs/core/Collisions/intersectionInfo
     [<AllowNullLiteral>]
@@ -14047,6 +15978,19 @@ module SimpleClasses =
     [<Import("ShaderStore", "@babylonjs/core/Engines/shaderStore.js")>]
     let ShaderStore: ShaderStoreStatic = jsNative
 
+    /// @babylonjs/core/Physics/v2/characterController
+    [<AllowNullLiteral>]
+    type SimplexSolverActivePlanes =
+        abstract ``index``: float with get, set
+        abstract ``constraint``: BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInfo with get, set
+        abstract ``interaction``: BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInteraction with get, set
+        abstract ``copyFrom`` : ``other``: SimplexSolverActivePlanes -> unit
+
+    [<AllowNullLiteral>]
+    type SimplexSolverActivePlanesStatic =
+        inherit Constructor<SimplexSolverActivePlanes>
+        [<EmitConstructor>] abstract Create: unit -> SimplexSolverActivePlanes
+
     /// @babylonjs/core/Meshes/meshSimplification
     [<AllowNullLiteral>]
     type SimplificationQueue =
@@ -14248,6 +16192,30 @@ module SimpleClasses =
 
     [<Import("StickValues", "@babylonjs/core/Gamepads/gamepad.js")>]
     let StickValues: StickValuesStatic = jsNative
+
+    /// @babylonjs/core/Misc/stringDictionary
+    [<AllowNullLiteral>]
+    type StringDictionary<'T> =
+        abstract ``copyFrom`` : ``source``: StringDictionary<'T> -> unit
+        abstract ``get`` : ``key``: string -> 'T option
+        abstract ``getOrAddWithFactory`` : ``key``: string * ``factory``: System.Func<string, 'T> -> 'T
+        abstract ``getOrAdd`` : ``key``: string * ``val``: 'T -> 'T
+        abstract ``contains`` : ``key``: string -> bool
+        abstract ``add`` : ``key``: string * ``value``: 'T -> bool
+        abstract ``set`` : ``key``: string * ``value``: 'T -> bool
+        abstract ``getAndRemove`` : ``key``: string -> 'T option
+        abstract ``remove`` : ``key``: string -> bool
+        abstract ``clear`` : unit -> unit
+        abstract ``forEach`` : ``callback``: System.Action<string, 'T> -> unit
+        abstract ``first``<'TRes> : ``callback``: System.Func<string, 'T, 'TRes option> -> 'TRes option
+        abstract ``count``: float with get
+
+    [<AllowNullLiteral>]
+    type StringDictionaryStatic =
+        [<EmitConstructor>] abstract Create<'T>: unit -> StringDictionary<'T>
+
+    [<Import("StringDictionary", "@babylonjs/core/Misc/stringDictionary.js")>]
+    let StringDictionary: StringDictionaryStatic = jsNative
 
     /// @babylonjs/core/Misc/tags
     [<AllowNullLiteral>]
@@ -15711,6 +17679,21 @@ module SimpleClasses =
     [<Import("RuntimeError", "@babylonjs/core/Misc/error.js")>]
     let RuntimeError: RuntimeErrorStatic = jsNative
 
+    /// @babylonjs/core/Physics/v2/characterController
+    [<AllowNullLiteral>]
+    type SimplexSolverInfo =
+        abstract ``supportPlanes``: ResizeArray<SimplexSolverActivePlanes> with get, set
+        abstract ``numSupportPlanes``: float with get, set
+        abstract ``currentTime``: float with get, set
+        abstract ``inputConstraints``: ResizeArray<BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInfo> with get, set
+        abstract ``outputInteractions``: ResizeArray<BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInteraction> with get, set
+        abstract ``getOutput`` : ``constraint``: BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInfo -> BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInteraction
+
+    [<AllowNullLiteral>]
+    type SimplexSolverInfoStatic =
+        inherit Constructor<SimplexSolverInfo>
+        [<EmitConstructor>] abstract Create: unit -> SimplexSolverInfo
+
     /// @babylonjs/core/Animations/easing
     [<AllowNullLiteral>]
     type SineEase =
@@ -16767,6 +18750,23 @@ module SimpleClasses =
 
     [<Import("OpenPBRMaterialDefines", "@babylonjs/core/Materials/PBR/openpbrMaterial.pure.js")>]
     let OpenPBRMaterialDefines: OpenPBRMaterialDefinesStatic = jsNative
+
+    /// @babylonjs/core/Misc/pressureObserverWrapper
+    [<AllowNullLiteral>]
+    type PressureObserverWrapper =
+        abstract ``onPressureChanged``: Observable<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserPressureRecord>> with get, set
+        abstract ``observe`` : ``source``: BabylonjsBindings.SimpleInterfaces.BrowserPressureSource -> unit
+        abstract ``unobserve`` : ``source``: BabylonjsBindings.SimpleInterfaces.BrowserPressureSource -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type PressureObserverWrapperStatic =
+        inherit Constructor<PressureObserverWrapper>
+        [<EmitConstructor>] abstract Create: ?``options``: BabylonjsBindings.SimpleInterfaces.BrowserPressureObserverOptions -> PressureObserverWrapper
+        abstract ``IsAvailable``: bool with get
+
+    [<Import("PressureObserverWrapper", "@babylonjs/core/Misc/pressureObserverWrapper.js")>]
+    let PressureObserverWrapper: PressureObserverWrapperStatic = jsNative
 
     /// @babylonjs/core/XR/motionController/webXRControllerComponent
     [<AllowNullLiteral>]
@@ -19661,6 +21661,28 @@ module SimpleClasses =
 
     [<Import("ArcRotateCameraPointersInput", "@babylonjs/core/Cameras/Inputs/arcRotateCameraPointersInput.js")>]
     let ArcRotateCameraPointersInput: ArcRotateCameraPointersInputStatic = jsNative
+
+    /// @babylonjs/core/Cameras/Inputs/arcRotateCameraVRDeviceOrientationInput.pure
+    [<AllowNullLiteral>]
+    type ArcRotateCameraVRDeviceOrientationInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<ArcRotateCamera>
+        abstract ``camera``: ArcRotateCamera with get, set
+        abstract ``alphaCorrection``: float with get, set
+        abstract ``gammaCorrection``: float with get, set
+        abstract ``attachControl`` : ?``noPreventDefault``: bool -> unit
+        abstract ``_onOrientationEvent`` : ``evt``: Browser.Types.DeviceOrientationEvent -> unit
+        abstract ``checkInputs`` : unit -> unit
+        abstract ``detachControl`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``getSimpleName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type ArcRotateCameraVRDeviceOrientationInputStatic =
+        inherit Constructor<ArcRotateCameraVRDeviceOrientationInput>
+        [<EmitConstructor>] abstract Create: unit -> ArcRotateCameraVRDeviceOrientationInput
+
+    [<Import("ArcRotateCameraVRDeviceOrientationInput", "@babylonjs/core/Cameras/Inputs/arcRotateCameraVRDeviceOrientationInput.pure.js")>]
+    let ArcRotateCameraVRDeviceOrientationInput: ArcRotateCameraVRDeviceOrientationInputStatic = jsNative
 
     /// @babylonjs/core/Materials/Node/Blocks/arcTan2Block.pure
     [<AllowNullLiteral>]
@@ -25530,6 +27552,25 @@ module SimpleClasses =
     [<Import("FlowGraphContext", "@babylonjs/core/FlowGraph/flowGraphContext.js")>]
     let FlowGraphContext: FlowGraphContextStatic = jsNative
 
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphContextBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphContextBlock =
+        inherit FlowGraphBlock
+        abstract ``userVariables``: FlowGraphDataConnection<InlineObjecta21bf015c053Object> with get
+        abstract ``executionId``: FlowGraphDataConnection<float> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphContextBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphContextBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphContextBlock
+
+    [<Import("FlowGraphContextBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphContextBlock.pure.js")>]
+    let FlowGraphContextBlock: FlowGraphContextBlockStatic = jsNative
+
     /// @babylonjs/core/FlowGraph/flowGraphCoordinator
     [<AllowNullLiteral>]
     type FlowGraphCoordinator =
@@ -26181,6 +28222,23 @@ module SimpleClasses =
 
     [<Import("FlowGraphGetVariableBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetVariableBlock.pure.js")>]
     let FlowGraphGetVariableBlock: FlowGraphGetVariableBlockStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/flowGraphGLTFDataProvider
+    [<AllowNullLiteral>]
+    type FlowGraphGLTFDataProvider =
+        inherit FlowGraphBlock
+        abstract ``animationGroups``: FlowGraphDataConnection<ResizeArray<AnimationGroup>> with get
+        abstract ``nodes``: FlowGraphDataConnection<ResizeArray<TransformNode>> with get
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphGLTFDataProviderStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphGLTFDataProvider>
+        [<EmitConstructor>] abstract Create: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphGLTFDataProviderBlockConfiguration -> FlowGraphGLTFDataProvider
+
+    [<Import("FlowGraphGLTFDataProvider", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/flowGraphGLTFDataProvider.js")>]
+    let FlowGraphGLTFDataProvider: FlowGraphGLTFDataProviderStatic = jsNative
 
     /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
     [<AllowNullLiteral>]
@@ -31866,6 +33924,29 @@ module SimpleClasses =
     [<Import("GlowLayer", "@babylonjs/core/Layers/glowLayer.pure.js")>]
     let GlowLayer: GlowLayerStatic = jsNative
 
+    /// Inline object shape used by GLTF1Loader.
+    [<AllowNullLiteral>]
+    type GLTFLoaderProperty1Object =
+        [<EmitIndexer>] abstract Item: ``name``: string -> GLTFLoaderExtension with get, set
+
+    /// @babylonjs/loaders/glTF/1.0/glTFLoader
+    [<AllowNullLiteral>]
+    type GLTF1Loader =
+        inherit BabylonjsBindings.SimpleInterfaces.IGLTFLoader
+        abstract ``dispose`` : unit -> unit
+        abstract ``importMeshAsync`` : ``meshesNames``: obj * ``scene``: Scene * ``assetContainer``: AssetContainer option * ``data``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData * ``rootUrl``: string * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+        abstract ``loadAsync`` : ``scene``: Scene * ``data``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData * ``rootUrl``: string * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> -> JS.Promise<unit>
+
+    [<AllowNullLiteral>]
+    type GLTF1LoaderStatic =
+        inherit Constructor<GLTF1Loader>
+        [<EmitConstructor>] abstract Create: unit -> GLTF1Loader
+        abstract ``Extensions``: GLTFLoaderProperty1Object with get, set
+        abstract ``RegisterExtension`` : ``extension``: GLTFLoaderExtension -> unit
+
+    [<Import("GLTFLoader", "@babylonjs/loaders/glTF/1.0/glTFLoader.js")>]
+    let GLTF1Loader: GLTF1LoaderStatic = jsNative
+
     /// @babylonjs/loaders/glTF/1.0/glTFBinaryExtension
     [<AllowNullLiteral>]
     type GLTFBinaryExtension =
@@ -33888,6 +35969,39 @@ module SimpleClasses =
 
     [<Import("KhronosTextureContainer", "@babylonjs/core/Misc/khronosTextureContainer.js")>]
     let KhronosTextureContainer: KhronosTextureContainerStatic = jsNative
+
+    /// Inline object shape used by KhronosTextureContainer2.
+    [<AllowNullLiteral>]
+    type KhronosTextureContainer2Property4Object =
+        abstract ``jsDecoderModule``: string with get, set
+        abstract ``wasmUASTCToASTC``: string option with get, set
+        abstract ``wasmUASTCToBC7``: string option with get, set
+        abstract ``wasmUASTCToRGBA_UNORM``: string option with get, set
+        abstract ``wasmUASTCToRGBA_SRGB``: string option with get, set
+        abstract ``wasmUASTCToR8_UNORM``: string option with get, set
+        abstract ``wasmUASTCToRG8_UNORM``: string option with get, set
+        abstract ``jsMSCTranscoder``: string option with get, set
+        abstract ``wasmMSCTranscoder``: string option with get, set
+        abstract ``wasmZSTDDecoder``: string option with get, set
+
+    /// @babylonjs/core/Misc/khronosTextureContainer2
+    [<AllowNullLiteral>]
+    type KhronosTextureContainer2 =
+        abstract ``_uploadAsync`` : ``data``: JS.ArrayBufferView * ``internalTexture``: InternalTexture * ?``options``: InlineIntersection50a7a4e23fa0Object -> JS.Promise<unit>
+        abstract ``_decodeAsync`` : ``data``: JS.ArrayBufferView * ?``options``: BabylonjsBindings.SimpleInterfaces.IKTX2DecoderOptions -> JS.Promise<BabylonjsBindings.SimpleInterfaces.IDecodedData>
+
+    [<AllowNullLiteral>]
+    type KhronosTextureContainer2Static =
+        inherit Constructor<KhronosTextureContainer2>
+        [<EmitConstructor>] abstract Create: ``engine``: AbstractEngine * ?``numWorkersOrOptions``: U2<float, BabylonjsBindings.SimpleInterfaces.IKhronosTextureContainer2Options> -> KhronosTextureContainer2
+        abstract ``URLConfig``: KhronosTextureContainer2Property4Object with get, set
+        abstract ``WorkerPool``: AutoReleaseWorkerPool option with get, set
+        abstract ``DefaultNumWorkers``: float with get, set
+        abstract ``DefaultDecoderOptions``: DefaultKTX2DecoderOptions with get, set
+        abstract ``IsValid`` : ``data``: JS.ArrayBufferView -> bool
+
+    [<Import("KhronosTextureContainer2", "@babylonjs/core/Misc/khronosTextureContainer2.js")>]
+    let KhronosTextureContainer2: KhronosTextureContainer2Static = jsNative
 
     /// @babylonjs/core/Meshes/lattice
     [<AllowNullLiteral>]
@@ -46289,6 +48403,19 @@ module SimpleClasses =
     [<Import("SimplexPerlin3DBlock", "@babylonjs/core/Materials/Node/Blocks/simplexPerlin3DBlock.pure.js")>]
     let SimplexPerlin3DBlock: SimplexPerlin3DBlockStatic = jsNative
 
+    /// @babylonjs/core/Physics/v2/characterController
+    [<AllowNullLiteral>]
+    type SimplexSolverOutput =
+        abstract ``position``: Vector3 with get, set
+        abstract ``velocity``: Vector3 with get, set
+        abstract ``deltaTime``: float with get, set
+        abstract ``planeInteractions``: ResizeArray<BabylonjsBindings.SimpleInterfaces.ISurfaceConstraintInteraction> with get, set
+
+    [<AllowNullLiteral>]
+    type SimplexSolverOutputStatic =
+        inherit Constructor<SimplexSolverOutput>
+        [<EmitConstructor>] abstract Create: unit -> SimplexSolverOutput
+
     /// @babylonjs/core/Meshes/meshSimplificationSceneComponent.pure
     [<AllowNullLiteral>]
     type SimplicationQueueSceneComponent =
@@ -50978,6 +53105,21 @@ module SimpleClasses =
     [<Import("TransformNode", "@babylonjs/core/Meshes/transformNode.pure.js")>]
     let TransformNode: TransformNodeStatic = jsNative
 
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderAnimation
+    [<AllowNullLiteral>]
+    type TransformNodeAnimationPropertyInfo =
+        inherit AnimationPropertyInfo
+        abstract ``buildAnimations`` : ``target``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``name``: string * ``fps``: float * ``keys``: ResizeArray<obj> -> ResizeArray<InlineObject188c62dea3f2Object>
+
+    [<AllowNullLiteral>]
+    type TransformNodeAnimationPropertyInfoStatic =
+        inherit AnimationPropertyInfoStatic
+        inherit Constructor<TransformNodeAnimationPropertyInfo>
+        [<EmitConstructor>] abstract Create: ``type``: float * ``name``: string * ``getValue``: BabylonjsBindings.TypeAliases.GetValueFn * ``getStride``: System.Func<obj, float> -> TransformNodeAnimationPropertyInfo
+
+    [<Import("TransformNodeAnimationPropertyInfo", "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js")>]
+    let TransformNodeAnimationPropertyInfo: TransformNodeAnimationPropertyInfoStatic = jsNative
+
     /// @babylonjs/core/Meshes/Node/Blocks/Matrices/translationBlock.pure
     [<AllowNullLiteral>]
     type TranslationBlock =
@@ -54145,6 +56287,38 @@ module SimpleClasses =
     [<Import("WebXRCompositionLayerWrapper", "@babylonjs/core/XR/features/Layers/WebXRCompositionLayer.js")>]
     let WebXRCompositionLayerWrapper: WebXRCompositionLayerWrapperStatic = jsNative
 
+    /// Inline object shape used by WebXRControllerMovement.
+    [<AllowNullLiteral>]
+    type WebXRControllerMovementProperty12Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> ResizeArray<BabylonjsBindings.TypeAliases.WebXRControllerMovementRegistrationConfiguration> with get, set
+
+    /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
+    [<AllowNullLiteral>]
+    type WebXRControllerMovement =
+        inherit WebXRAbstractFeature
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``movementDirection``: Quaternion with get
+        abstract ``movementEnabled``: bool with get, set
+        abstract ``movementOrientationFollowsViewerPose``: bool with get, set
+        abstract ``movementSpeed``: float with get, set
+        abstract ``movementThreshold``: float with get, set
+        abstract ``rotationEnabled``: bool with get, set
+        abstract ``rotationSpeed``: float with get, set
+        abstract ``rotationThreshold``: float with get, set
+
+    [<AllowNullLiteral>]
+    type WebXRControllerMovementStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRControllerMovement>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRControllerMovementOptions -> WebXRControllerMovement
+        abstract ``Name``: StringLiteral33d177285f0d with get
+        abstract ``REGISTRATIONS``: WebXRControllerMovementProperty12Object with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRControllerMovement", "@babylonjs/core/XR/features/WebXRControllerMovement.pure.js")>]
+    let WebXRControllerMovement: WebXRControllerMovementStatic = jsNative
+
     /// Inline object shape used by WebXRControllerPhysics.
     [<AllowNullLiteral>]
     type WebXRControllerPhysicsMethod30Parameter1Object =
@@ -55088,6 +57262,22 @@ module SimpleClasses =
     [<Import("WebXRWalkingLocomotion", "@babylonjs/core/XR/features/WebXRWalkingLocomotion.pure.js")>]
     let WebXRWalkingLocomotion: WebXRWalkingLocomotionStatic = jsNative
 
+    /// @babylonjs/core/XR/webXRGraphicsBinding
+    [<AllowNullLiteral>]
+    type WebXRWebGLGraphicsBinding =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRGraphicsBinding
+        abstract ``bindingType``: WebXRGraphicsBindingTypeWebGLLiteral with get
+        abstract ``binding``: BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLBinding with get
+
+    [<AllowNullLiteral>]
+    type WebXRWebGLGraphicsBindingStatic =
+        inherit Constructor<WebXRWebGLGraphicsBinding>
+        [<EmitConstructor>] abstract Create: ``session``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession * ``context``: U2<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext> -> WebXRWebGLGraphicsBinding
+        abstract ``CreateFromEngine`` : ``session``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession * ``engine``: AbstractEngine -> WebXRWebGLGraphicsBinding
+
+    [<Import("WebXRWebGLGraphicsBinding", "@babylonjs/core/XR/webXRGraphicsBinding.js")>]
+    let WebXRWebGLGraphicsBinding: WebXRWebGLGraphicsBindingStatic = jsNative
+
     /// @babylonjs/core/XR/webXRWebGLLayer
     [<AllowNullLiteral>]
     type WebXRWebGLLayerRenderTargetTextureProvider =
@@ -55134,6 +57324,37 @@ module SimpleClasses =
 
     [<Import("WebXRWebGLRenderTargetTextureProvider", "@babylonjs/core/XR/webXRWebGLRenderTargetTextureProvider.js")>]
     let WebXRWebGLRenderTargetTextureProvider: WebXRWebGLRenderTargetTextureProviderStatic = jsNative
+
+    /// @babylonjs/core/XR/webXRGraphicsBinding
+    [<AllowNullLiteral>]
+    type WebXRWebGPUGraphicsBinding =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRGraphicsBinding
+        abstract ``bindingType``: WebXRGraphicsBindingTypeWebGPULiteral with get
+        abstract ``binding``: BabylonjsBindings.SimpleInterfaces.BrowserXRGPUBinding with get
+
+    [<AllowNullLiteral>]
+    type WebXRWebGPUGraphicsBindingStatic =
+        inherit Constructor<WebXRWebGPUGraphicsBinding>
+        [<EmitConstructor>] abstract Create: ``session``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession * ``device``: BabylonjsBindings.SimpleInterfaces.BrowserGPUDevice -> WebXRWebGPUGraphicsBinding
+        abstract ``CreateFromEngine`` : ``session``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession * ``engine``: AbstractEngine -> WebXRWebGPUGraphicsBinding
+
+    [<Import("WebXRWebGPUGraphicsBinding", "@babylonjs/core/XR/webXRGraphicsBinding.js")>]
+    let WebXRWebGPUGraphicsBinding: WebXRWebGPUGraphicsBindingStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderAnimation
+    [<AllowNullLiteral>]
+    type WeightAnimationPropertyInfo =
+        inherit AnimationPropertyInfo
+        abstract ``buildAnimations`` : ``target``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``name``: string * ``fps``: float * ``keys``: ResizeArray<obj> -> ResizeArray<InlineObject188c62dea3f2Object>
+
+    [<AllowNullLiteral>]
+    type WeightAnimationPropertyInfoStatic =
+        inherit AnimationPropertyInfoStatic
+        inherit Constructor<WeightAnimationPropertyInfo>
+        [<EmitConstructor>] abstract Create: ``type``: float * ``name``: string * ``getValue``: BabylonjsBindings.TypeAliases.GetValueFn * ``getStride``: System.Func<obj, float> -> WeightAnimationPropertyInfo
+
+    [<Import("WeightAnimationPropertyInfo", "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js")>]
+    let WeightAnimationPropertyInfo: WeightAnimationPropertyInfoStatic = jsNative
 
     /// @babylonjs/core/Audio/weightedsound
     [<AllowNullLiteral>]

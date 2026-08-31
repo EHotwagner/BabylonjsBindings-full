@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "394bafef2d1428e60f660dce3bf4acbdc3d6d490efcec4444e29765533ca25a9",
+  "proposalSha256": "03796116888eebe9543dbab29edc19556003d14e7f80a911b835c75327162db2",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1319,6 +1319,17 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebXRControllerMovementFeatureContext",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerMovement.pure",
+      "name": "WebXRControllerMovementRegistrationConfiguration",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebXRControllerMovementRegistrationConfiguration",
       "dependencies": [],
       "shape": "alias",
       "memberCount": 1

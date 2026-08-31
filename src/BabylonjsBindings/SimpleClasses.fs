@@ -44399,3 +44399,407 @@ module SimpleClasses =
 
     [<Import("WebXRDefaultExperienceOptions", "@babylonjs/core/XR/webXRDefaultExperience.js")>]
     let WebXRDefaultExperienceOptions: WebXRDefaultExperienceOptionsStatic = jsNative
+
+    /// @babylonjs/core/Misc/pressureObserverWrapper
+    [<AllowNullLiteral>]
+    type PressureObserverWrapper =
+        abstract ``onPressureChanged``: Observable<ResizeArray<BabylonjsBindings.SimpleInterfaces.BrowserPressureRecord>> with get, set
+        abstract ``observe`` : ``source``: BabylonjsBindings.SimpleInterfaces.BrowserPressureSource -> unit
+        abstract ``unobserve`` : ``source``: BabylonjsBindings.SimpleInterfaces.BrowserPressureSource -> unit
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type PressureObserverWrapperStatic =
+        inherit Constructor<PressureObserverWrapper>
+        [<EmitConstructor>] abstract Create: ?``options``: BabylonjsBindings.SimpleInterfaces.BrowserPressureObserverOptions -> PressureObserverWrapper
+        abstract ``IsAvailable``: bool with get
+
+    [<Import("PressureObserverWrapper", "@babylonjs/core/Misc/pressureObserverWrapper.js")>]
+    let PressureObserverWrapper: PressureObserverWrapperStatic = jsNative
+
+    /// Inline object shape used by WebXRControllerMovement.
+    [<AllowNullLiteral>]
+    type WebXRControllerMovementProperty12Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> ResizeArray<BabylonjsBindings.TypeAliases.WebXRControllerMovementRegistrationConfiguration> with get, set
+
+    /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
+    [<AllowNullLiteral>]
+    type WebXRControllerMovement =
+        inherit WebXRAbstractFeature
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``movementDirection``: Quaternion with get
+        abstract ``movementEnabled``: bool with get, set
+        abstract ``movementOrientationFollowsViewerPose``: bool with get, set
+        abstract ``movementSpeed``: float with get, set
+        abstract ``movementThreshold``: float with get, set
+        abstract ``rotationEnabled``: bool with get, set
+        abstract ``rotationSpeed``: float with get, set
+        abstract ``rotationThreshold``: float with get, set
+
+    [<AllowNullLiteral>]
+    type WebXRControllerMovementStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRControllerMovement>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRControllerMovementOptions -> WebXRControllerMovement
+        abstract ``Name``: StringLiteral33d177285f0d with get
+        abstract ``REGISTRATIONS``: WebXRControllerMovementProperty12Object with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRControllerMovement", "@babylonjs/core/XR/features/WebXRControllerMovement.pure.js")>]
+    let WebXRControllerMovement: WebXRControllerMovementStatic = jsNative
+
+    /// Exact internal numeric enum required by a Babylon class signature.
+    type WebXRGraphicsBindingTypeWebGLLiteral =
+        | WebGL = 0
+
+    /// @babylonjs/core/XR/webXRGraphicsBinding
+    [<AllowNullLiteral>]
+    type WebXRWebGLGraphicsBinding =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRGraphicsBinding
+        abstract ``bindingType``: WebXRGraphicsBindingTypeWebGLLiteral with get
+        abstract ``binding``: BabylonjsBindings.SimpleInterfaces.BrowserXRWebGLBinding with get
+
+    [<AllowNullLiteral>]
+    type WebXRWebGLGraphicsBindingStatic =
+        inherit Constructor<WebXRWebGLGraphicsBinding>
+        [<EmitConstructor>] abstract Create: ``session``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession * ``context``: U2<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext> -> WebXRWebGLGraphicsBinding
+        abstract ``CreateFromEngine`` : ``session``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession * ``engine``: AbstractEngine -> WebXRWebGLGraphicsBinding
+
+    [<Import("WebXRWebGLGraphicsBinding", "@babylonjs/core/XR/webXRGraphicsBinding.js")>]
+    let WebXRWebGLGraphicsBinding: WebXRWebGLGraphicsBindingStatic = jsNative
+
+    /// Exact internal numeric enum required by a Babylon class signature.
+    type WebXRGraphicsBindingTypeWebGPULiteral =
+        | WebGPU = 1
+
+    /// @babylonjs/core/XR/webXRGraphicsBinding
+    [<AllowNullLiteral>]
+    type WebXRWebGPUGraphicsBinding =
+        inherit BabylonjsBindings.SimpleInterfaces.IWebXRGraphicsBinding
+        abstract ``bindingType``: WebXRGraphicsBindingTypeWebGPULiteral with get
+        abstract ``binding``: BabylonjsBindings.SimpleInterfaces.BrowserXRGPUBinding with get
+
+    [<AllowNullLiteral>]
+    type WebXRWebGPUGraphicsBindingStatic =
+        inherit Constructor<WebXRWebGPUGraphicsBinding>
+        [<EmitConstructor>] abstract Create: ``session``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession * ``device``: BabylonjsBindings.SimpleInterfaces.BrowserGPUDevice -> WebXRWebGPUGraphicsBinding
+        abstract ``CreateFromEngine`` : ``session``: BabylonjsBindings.SimpleInterfaces.BrowserXRSession * ``engine``: AbstractEngine -> WebXRWebGPUGraphicsBinding
+
+    [<Import("WebXRWebGPUGraphicsBinding", "@babylonjs/core/XR/webXRGraphicsBinding.js")>]
+    let WebXRWebGPUGraphicsBinding: WebXRWebGPUGraphicsBindingStatic = jsNative
+
+    /// @babylonjs/core/Misc/asyncLock
+    [<AllowNullLiteral>]
+    type AsyncLock =
+        abstract ``lockAsync``<'T> : ``func``: System.Func<U2<'T, JS.Promise<'T>>> * ?``signal``: BabylonjsBindings.SimpleInterfaces.BrowserAbortSignal -> JS.Promise<'T>
+
+    [<AllowNullLiteral>]
+    type AsyncLockStatic =
+        inherit Constructor<AsyncLock>
+        [<EmitConstructor>] abstract Create: unit -> AsyncLock
+        abstract ``LockAsync``<'T> : ``func``: System.Func<U2<'T, JS.Promise<'T>>> * ``locks``: ResizeArray<AsyncLock> * ?``signal``: BabylonjsBindings.SimpleInterfaces.BrowserAbortSignal -> JS.Promise<'T>
+
+    [<Import("AsyncLock", "@babylonjs/core/Misc/asyncLock.js")>]
+    let AsyncLock: AsyncLockStatic = jsNative
+
+    /// @babylonjs/core/Events/clipboardEvents
+    [<AllowNullLiteral>]
+    type ClipboardInfo =
+        abstract ``type``: float with get, set
+        abstract ``event``: Browser.Types.ClipboardEvent with get, set
+
+    [<AllowNullLiteral>]
+    type ClipboardInfoStatic =
+        inherit Constructor<ClipboardInfo>
+        [<EmitConstructor>] abstract Create: ``type``: float * ``event``: Browser.Types.ClipboardEvent -> ClipboardInfo
+        abstract ``GetTypeFromCharacter`` : ``keyCode``: float -> float
+
+    [<Import("ClipboardInfo", "@babylonjs/core/Events/clipboardEvents.js")>]
+    let ClipboardInfo: ClipboardInfoStatic = jsNative
+
+    /// @babylonjs/core/Cameras/Inputs/arcRotateCameraVRDeviceOrientationInput.pure
+    [<AllowNullLiteral>]
+    type ArcRotateCameraVRDeviceOrientationInput =
+        inherit BabylonjsBindings.SimpleInterfaces.ICameraInput<ArcRotateCamera>
+        abstract ``camera``: ArcRotateCamera with get, set
+        abstract ``alphaCorrection``: float with get, set
+        abstract ``gammaCorrection``: float with get, set
+        abstract ``attachControl`` : ?``noPreventDefault``: bool -> unit
+        abstract ``_onOrientationEvent`` : ``evt``: Browser.Types.DeviceOrientationEvent -> unit
+        abstract ``checkInputs`` : unit -> unit
+        abstract ``detachControl`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``getSimpleName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type ArcRotateCameraVRDeviceOrientationInputStatic =
+        inherit Constructor<ArcRotateCameraVRDeviceOrientationInput>
+        [<EmitConstructor>] abstract Create: unit -> ArcRotateCameraVRDeviceOrientationInput
+
+    [<Import("ArcRotateCameraVRDeviceOrientationInput", "@babylonjs/core/Cameras/Inputs/arcRotateCameraVRDeviceOrientationInput.pure.js")>]
+    let ArcRotateCameraVRDeviceOrientationInput: ArcRotateCameraVRDeviceOrientationInputStatic = jsNative
+
+    /// @babylonjs/core/Misc/khronosTextureContainer2
+    [<AllowNullLiteral>]
+    type DefaultKTX2DecoderOptions =
+        abstract ``_getKTX2DecoderOptions`` : unit -> BabylonjsBindings.SimpleInterfaces.IKTX2DecoderOptions
+        abstract ``isDirty``: bool with get
+        abstract ``useRGBAIfASTCBC7NotAvailableWhenUASTC``: bool option with get, set
+        abstract ``useRGBAIfOnlyBC1BC3AvailableWhenUASTC``: bool option with get, set
+        abstract ``forceRGBA``: bool option with get, set
+        abstract ``forceR8``: bool option with get, set
+        abstract ``forceRG8``: bool option with get, set
+        abstract ``bypassTranscoders``: ResizeArray<string> option with get, set
+
+    [<AllowNullLiteral>]
+    type DefaultKTX2DecoderOptionsStatic =
+        inherit Constructor<DefaultKTX2DecoderOptions>
+        [<EmitConstructor>] abstract Create: unit -> DefaultKTX2DecoderOptions
+
+    [<Import("DefaultKTX2DecoderOptions", "@babylonjs/core/Misc/khronosTextureContainer2.js")>]
+    let DefaultKTX2DecoderOptions: DefaultKTX2DecoderOptionsStatic = jsNative
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineIntersection50a7a4e23fa0Object =
+        inherit BabylonjsBindings.SimpleInterfaces.IKTX2DecoderOptions
+        inherit BabylonjsBindings.SimpleInterfaces.IDecodedData
+
+    /// Inline object shape used by KhronosTextureContainer2.
+    [<AllowNullLiteral>]
+    type KhronosTextureContainer2Property4Object =
+        abstract ``jsDecoderModule``: string with get, set
+        abstract ``wasmUASTCToASTC``: string option with get, set
+        abstract ``wasmUASTCToBC7``: string option with get, set
+        abstract ``wasmUASTCToRGBA_UNORM``: string option with get, set
+        abstract ``wasmUASTCToRGBA_SRGB``: string option with get, set
+        abstract ``wasmUASTCToR8_UNORM``: string option with get, set
+        abstract ``wasmUASTCToRG8_UNORM``: string option with get, set
+        abstract ``jsMSCTranscoder``: string option with get, set
+        abstract ``wasmMSCTranscoder``: string option with get, set
+        abstract ``wasmZSTDDecoder``: string option with get, set
+
+    /// @babylonjs/core/Misc/khronosTextureContainer2
+    [<AllowNullLiteral>]
+    type KhronosTextureContainer2 =
+        abstract ``_uploadAsync`` : ``data``: JS.ArrayBufferView * ``internalTexture``: InternalTexture * ?``options``: InlineIntersection50a7a4e23fa0Object -> JS.Promise<unit>
+        abstract ``_decodeAsync`` : ``data``: JS.ArrayBufferView * ?``options``: BabylonjsBindings.SimpleInterfaces.IKTX2DecoderOptions -> JS.Promise<BabylonjsBindings.SimpleInterfaces.IDecodedData>
+
+    [<AllowNullLiteral>]
+    type KhronosTextureContainer2Static =
+        inherit Constructor<KhronosTextureContainer2>
+        [<EmitConstructor>] abstract Create: ``engine``: AbstractEngine * ?``numWorkersOrOptions``: U2<float, BabylonjsBindings.SimpleInterfaces.IKhronosTextureContainer2Options> -> KhronosTextureContainer2
+        abstract ``URLConfig``: KhronosTextureContainer2Property4Object with get, set
+        abstract ``WorkerPool``: AutoReleaseWorkerPool option with get, set
+        abstract ``DefaultNumWorkers``: float with get, set
+        abstract ``DefaultDecoderOptions``: DefaultKTX2DecoderOptions with get, set
+        abstract ``IsValid`` : ``data``: JS.ArrayBufferView -> bool
+
+    [<Import("KhronosTextureContainer2", "@babylonjs/core/Misc/khronosTextureContainer2.js")>]
+    let KhronosTextureContainer2: KhronosTextureContainer2Static = jsNative
+
+    /// @babylonjs/core/Misc/deferred
+    [<AllowNullLiteral>]
+    type Deferred<'T> =
+        abstract ``promise``: JS.Promise<'T> with get
+        abstract ``resolve``: System.Action<U2<'T, BabylonjsBindings.SimpleInterfaces.BrowserPromiseLike<'T>>> with get
+        abstract ``reject``: System.Action<obj option> with get
+
+    [<AllowNullLiteral>]
+    type DeferredStatic =
+        [<EmitConstructor>] abstract Create<'T>: unit -> Deferred<'T>
+
+    [<Import("Deferred", "@babylonjs/core/Misc/deferred.js")>]
+    let Deferred: DeferredStatic = jsNative
+
+    /// @babylonjs/core/Misc/stringDictionary
+    [<AllowNullLiteral>]
+    type StringDictionary<'T> =
+        abstract ``copyFrom`` : ``source``: StringDictionary<'T> -> unit
+        abstract ``get`` : ``key``: string -> 'T option
+        abstract ``getOrAddWithFactory`` : ``key``: string * ``factory``: System.Func<string, 'T> -> 'T
+        abstract ``getOrAdd`` : ``key``: string * ``val``: 'T -> 'T
+        abstract ``contains`` : ``key``: string -> bool
+        abstract ``add`` : ``key``: string * ``value``: 'T -> bool
+        abstract ``set`` : ``key``: string * ``value``: 'T -> bool
+        abstract ``getAndRemove`` : ``key``: string -> 'T option
+        abstract ``remove`` : ``key``: string -> bool
+        abstract ``clear`` : unit -> unit
+        abstract ``forEach`` : ``callback``: System.Action<string, 'T> -> unit
+        abstract ``first``<'TRes> : ``callback``: System.Func<string, 'T, 'TRes option> -> 'TRes option
+        abstract ``count``: float with get
+
+    [<AllowNullLiteral>]
+    type StringDictionaryStatic =
+        [<EmitConstructor>] abstract Create<'T>: unit -> StringDictionary<'T>
+
+    [<Import("StringDictionary", "@babylonjs/core/Misc/stringDictionary.js")>]
+    let StringDictionary: StringDictionaryStatic = jsNative
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObjecta21bf015c053Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphContextBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphContextBlock =
+        inherit FlowGraphBlock
+        abstract ``userVariables``: FlowGraphDataConnection<InlineObjecta21bf015c053Object> with get
+        abstract ``executionId``: FlowGraphDataConnection<float> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphContextBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphContextBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphContextBlock
+
+    [<Import("FlowGraphContextBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphContextBlock.pure.js")>]
+    let FlowGraphContextBlock: FlowGraphContextBlockStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderAnimation
+    [<AllowNullLiteral>]
+    type TransformNodeAnimationPropertyInfo =
+        inherit AnimationPropertyInfo
+        abstract ``buildAnimations`` : ``target``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``name``: string * ``fps``: float * ``keys``: ResizeArray<obj> -> ResizeArray<InlineObject188c62dea3f2Object>
+
+    [<AllowNullLiteral>]
+    type TransformNodeAnimationPropertyInfoStatic =
+        inherit AnimationPropertyInfoStatic
+        inherit Constructor<TransformNodeAnimationPropertyInfo>
+        [<EmitConstructor>] abstract Create: ``type``: float * ``name``: string * ``getValue``: BabylonjsBindings.TypeAliases.GetValueFn * ``getStride``: System.Func<obj, float> -> TransformNodeAnimationPropertyInfo
+
+    [<Import("TransformNodeAnimationPropertyInfo", "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js")>]
+    let TransformNodeAnimationPropertyInfo: TransformNodeAnimationPropertyInfoStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderAnimation
+    [<AllowNullLiteral>]
+    type WeightAnimationPropertyInfo =
+        inherit AnimationPropertyInfo
+        abstract ``buildAnimations`` : ``target``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``name``: string * ``fps``: float * ``keys``: ResizeArray<obj> -> ResizeArray<InlineObject188c62dea3f2Object>
+
+    [<AllowNullLiteral>]
+    type WeightAnimationPropertyInfoStatic =
+        inherit AnimationPropertyInfoStatic
+        inherit Constructor<WeightAnimationPropertyInfo>
+        [<EmitConstructor>] abstract Create: ``type``: float * ``name``: string * ``getValue``: BabylonjsBindings.TypeAliases.GetValueFn * ``getStride``: System.Func<obj, float> -> WeightAnimationPropertyInfo
+
+    [<Import("WeightAnimationPropertyInfo", "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js")>]
+    let WeightAnimationPropertyInfo: WeightAnimationPropertyInfoStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter
+    [<AllowNullLiteral>]
+    type GLTFPathToObjectConverter<'T, 'BabylonType, 'BabylonValue> =
+        inherit BabylonjsBindings.SimpleInterfaces.IPathToObjectConverter<BabylonjsBindings.SimpleInterfaces.IObjectAccessor<'T, 'BabylonType, 'BabylonValue>>
+        abstract ``convert`` : ``path``: string -> BabylonjsBindings.SimpleInterfaces.IObjectInfo<BabylonjsBindings.SimpleInterfaces.IObjectAccessor<'T, 'BabylonType, 'BabylonValue>, obj>
+
+    [<AllowNullLiteral>]
+    type GLTFPathToObjectConverterStatic =
+        [<EmitConstructor>] abstract Create<'T, 'BabylonType, 'BabylonValue>: ``_gltf``: BabylonjsBindings.SimpleInterfaces.IGLTF * ``_infoTree``: obj -> GLTFPathToObjectConverter<'T, 'BabylonType, 'BabylonValue>
+
+    [<Import("GLTFPathToObjectConverter", "@babylonjs/loaders/glTF/2.0/Extensions/gltfPathToObjectConverter.js")>]
+    let GLTFPathToObjectConverter: GLTFPathToObjectConverterStatic = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/flowGraphGLTFDataProvider
+    [<AllowNullLiteral>]
+    type FlowGraphGLTFDataProvider =
+        inherit FlowGraphBlock
+        abstract ``animationGroups``: FlowGraphDataConnection<ResizeArray<AnimationGroup>> with get
+        abstract ``nodes``: FlowGraphDataConnection<ResizeArray<TransformNode>> with get
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphGLTFDataProviderStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphGLTFDataProvider>
+        [<EmitConstructor>] abstract Create: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphGLTFDataProviderBlockConfiguration -> FlowGraphGLTFDataProvider
+
+    [<Import("FlowGraphGLTFDataProvider", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/flowGraphGLTFDataProvider.js")>]
+    let FlowGraphGLTFDataProvider: FlowGraphGLTFDataProviderStatic = jsNative
+
+    /// Exact string literal type for "number".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral12886f9d0005 =
+        | [<CompiledName("number")>] Value
+
+    /// Exact string literal type for "boolean".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralbf84d3d60e93 =
+        | [<CompiledName("boolean")>] Value
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObjecte6c05bf73ef1Object =
+        abstract ``length``: float with get, set
+        abstract ``flowGraphType``: BabylonjsBindings.StringEnums.FlowGraphTypes with get, set
+        abstract ``elementType``: U2<StringLiteral12886f9d0005, StringLiteralbf84d3d60e93> with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject3b176ce44da0Object =
+        abstract ``flowGraphMapping``: BabylonjsBindings.SimpleInterfaces.IGLTFToFlowGraphMapping with get, set
+        abstract ``fullOperationName``: string with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject698fd97cc5f6Object =
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphTypes with get, set
+        abstract ``value``: ResizeArray<obj> with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObjectf91948621d52Object =
+        abstract ``blocks``: ResizeArray<BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphBlock> with get, set
+        abstract ``fullOperationName``: string with get, set
+
+    /// Inline object shape used by InteractivityGraphToFlowGraphParser.
+    [<AllowNullLiteral>]
+    type InteractivityGraphToFlowGraphParserAccessor11Object =
+        abstract ``types``: ResizeArray<InlineObjecte6c05bf73ef1Object> with get, set
+        abstract ``mappings``: ResizeArray<InlineObject3b176ce44da0Object> with get, set
+        abstract ``staticVariables``: ResizeArray<InlineObject698fd97cc5f6Object> with get, set
+        abstract ``events``: ResizeArray<BabylonjsBindings.SimpleInterfaces.InteractivityEvent> with get, set
+        abstract ``nodes``: ResizeArray<InlineObjectf91948621d52Object> with get, set
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser
+    [<AllowNullLiteral>]
+    type InteractivityGraphToFlowGraphParser =
+        abstract ``_animationTargetFps``: float with get, set
+        abstract ``getVariableName`` : ``index``: float -> string
+        abstract ``serializeToFlowGraph`` : unit -> BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraph
+        abstract ``arrays``: InteractivityGraphToFlowGraphParserAccessor11Object with get
+
+    [<AllowNullLiteral>]
+    type InteractivityGraphToFlowGraphParserStatic =
+        inherit Constructor<InteractivityGraphToFlowGraphParser>
+        [<EmitConstructor>] abstract Create: ``_interactivityGraph``: BabylonjsBindings.SimpleInterfaces.GLTF2IKHRInteractivity_Graph * ``_gltf``: BabylonjsBindings.SimpleInterfaces.IGLTF * ?``_animationTargetFps``: float -> InteractivityGraphToFlowGraphParser
+
+    [<Import("InteractivityGraphToFlowGraphParser", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/interactivityGraphParser.js")>]
+    let InteractivityGraphToFlowGraphParser: InteractivityGraphToFlowGraphParserStatic = jsNative
+
+    /// Inline object shape used by GLTF1Loader.
+    [<AllowNullLiteral>]
+    type GLTFLoaderProperty1Object =
+        [<EmitIndexer>] abstract Item: ``name``: string -> GLTFLoaderExtension with get, set
+
+    /// @babylonjs/loaders/glTF/1.0/glTFLoader
+    [<AllowNullLiteral>]
+    type GLTF1Loader =
+        inherit BabylonjsBindings.SimpleInterfaces.IGLTFLoader
+        abstract ``dispose`` : unit -> unit
+        abstract ``importMeshAsync`` : ``meshesNames``: obj * ``scene``: Scene * ``assetContainer``: AssetContainer option * ``data``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData * ``rootUrl``: string * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> -> JS.Promise<BabylonjsBindings.SimpleInterfaces.ISceneLoaderAsyncResult>
+        abstract ``loadAsync`` : ``scene``: Scene * ``data``: BabylonjsBindings.SimpleInterfaces.IGLTFLoaderData * ``rootUrl``: string * ?``onProgress``: System.Action<BabylonjsBindings.SimpleInterfaces.ISceneLoaderProgressEvent> -> JS.Promise<unit>
+
+    [<AllowNullLiteral>]
+    type GLTF1LoaderStatic =
+        inherit Constructor<GLTF1Loader>
+        [<EmitConstructor>] abstract Create: unit -> GLTF1Loader
+        abstract ``Extensions``: GLTFLoaderProperty1Object with get, set
+        abstract ``RegisterExtension`` : ``extension``: GLTFLoaderExtension -> unit
+
+    [<Import("GLTFLoader", "@babylonjs/loaders/glTF/1.0/glTFLoader.js")>]
+    let GLTF1Loader: GLTF1LoaderStatic = jsNative

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "596d1bc5f1cf4ab8a89555154ed29ccac9f1b213b5d787549f28651d9897b7ca",
+  "proposalSha256": "e69f39f5219183080d92719b981b2097607d462bc5e0aebc99e86deb0d56d08c",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -6072,6 +6072,503 @@
         "BabylonjsBindings.SimpleInterfaces.INativePath2DConstructor"
       ],
       "memberCount": 13
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerMovement.pure",
+      "name": "IWebXRControllerMovementOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRControllerMovementOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebXRInput",
+        "BabylonjsBindings.TypeAliases.WebXRControllerMovementRegistrationConfiguration"
+      ],
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
+      "name": "INode",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.INode",
+      "dependencies": [],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
+      "name": "IDecisionTree",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IDecisionTree",
+      "dependencies": [],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/ktx2decoderTypes",
+      "name": "IKTX2DecoderOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IKTX2DecoderOptions",
+      "dependencies": [],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "TypedArrayLike",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.TypedArrayLike",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IImage",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GLTFImage",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "INode",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GLTFNode",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "_IAnimationSamplerData",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces._IAnimationSamplerData",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IAnimationSampler",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAnimationSampler",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IAnimationSampler",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IMeshPrimitive",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMeshPrimitive",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IMeshPrimitive",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "ITextureInfo",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITextureInfo",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2ITextureInfo"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IAnimationChannel",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAnimationChannel",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IAnimationChannel",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IBuffer",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IBuffer",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IBuffer",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IBufferView",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IBufferView",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Buffer",
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IBufferView",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "ICamera",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ICamera",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleInterfaces.GLTF2ICamera",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IEXTLightsArea_Light",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEXTLightsArea_Light",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Light",
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IEXTLightsArea_Light",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IEXTLightsIES_Light",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IEXTLightsIES_Light",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Light",
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IEXTLightsIES_Light",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IKHRLightsPunctual_Light",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IKHRLightsPunctual_Light",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Light",
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IKHRLightsPunctual_Light",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IMaterialNormalTextureInfo",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterialNormalTextureInfo",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IMaterialNormalTextureInfo",
+        "BabylonjsBindings.SimpleInterfaces.ITextureInfo"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IMaterialOcclusionTextureInfo",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterialOcclusionTextureInfo",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IMaterialOcclusionTextureInfo",
+        "BabylonjsBindings.SimpleInterfaces.ITextureInfo"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IMaterialPbrMetallicRoughness",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterialPbrMetallicRoughness",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IMaterialPbrMetallicRoughness"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IMesh",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMesh",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IMesh",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "ISampler",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISampler",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2ISampler",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IScene",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IScene",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IScene",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "ISkin",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISkin",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2ISkin",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "ITexture",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ITexture",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2ITexture",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IAccessor",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAccessor",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IAccessor",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IAnimation",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAnimation",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IAnimation",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
+      "name": "IGLTFObjectModelTreeCamerasObject",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeCamerasObject",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
+      "name": "IGLTFObjectModelTreeExtensionsObject",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeExtensionsObject",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IMaterial",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IMaterial",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IMaterial",
+        "BabylonjsBindings.SimpleInterfaces.IArrayItem"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderInterfaces",
+      "name": "IGLTF",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTF",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IGLTF"
+      ],
+      "memberCount": 13
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/flowGraphGLTFDataProvider",
+      "name": "IFlowGraphGLTFDataProviderBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphGLTFDataProviderBlockConfiguration",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
+      "name": "IGLTFObjectModelTreeMaterialsObject",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeMaterialsObject",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+      "name": "IGLTFLoaderExtension",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GLTFFileLoaderExtension",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtension",
+      "name": "IGLTFLoaderExtension",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.GLTF2LoaderExtension",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Animation",
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.BaseTexture",
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.Geometry",
+        "BabylonjsBindings.SimpleClasses.Material",
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleInterfaces.GLTFFileLoaderExtension",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable"
+      ],
+      "memberCount": 18
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper",
+      "name": "IGLTFToFlowGraphMapping",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFToFlowGraphMapping",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InteractivityGraphToFlowGraphParser"
+      ],
+      "memberCount": 8
     }
   ],
   "reviewStatus": "maintained"

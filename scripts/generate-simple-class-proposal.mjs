@@ -20,6 +20,32 @@ const program = ts.createProgram([...lockedPaths].map(file => resolve(nodeModule
   skipLibCheck: true
 });
 const checker = program.getTypeChecker();
+const packageForModule = module => module.startsWith("@babylonjs/core/")
+  ? "@babylonjs/core"
+  : module.startsWith("@babylonjs/loaders/")
+    ? "@babylonjs/loaders"
+    : module === "babylonjs-gltf2interface/babylon.glTF2Interface"
+      ? "babylonjs-gltf2interface"
+    : undefined;
+const declarationIdentityForIdentifier = identifier => {
+  let symbol = checker.getSymbolAtLocation(identifier);
+  if (symbol?.flags & ts.SymbolFlags.Alias) {
+    try { symbol = checker.getAliasedSymbol(symbol); } catch { return undefined; }
+  }
+  const declaration = symbol?.declarations?.[0];
+  if (!declaration) return undefined;
+  const module = normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "");
+  const packageName = packageForModule(module);
+  const declarationName = declaration.name && (ts.isIdentifier(declaration.name) || ts.isStringLiteral(declaration.name))
+    ? declaration.name.text
+    : symbol.getName();
+  return packageName ? `${packageName}|${module}|${declarationName}` : undefined;
+};
+const classCollisionNames = new Map([
+  ["@babylonjs/loaders|@babylonjs/loaders/glTF/1.0/glTFLoader|GLTFLoader", "GLTF1Loader"],
+  ["@babylonjs/loaders|@babylonjs/loaders/glTF/2.0/glTFLoader.pure|GLTFLoader", "GLTF2Loader"]
+]);
+const projectedClassName = identifier => classCollisionNames.get(declarationIdentityForIdentifier(identifier)) ?? identifier.text;
 const deepImmutableTypeNames = new Set();
 for (const sourceFile of program.getSourceFiles()) {
   const lockedPath = normalize(sourceFile.fileName);
@@ -74,9 +100,21 @@ const dependencyExports = (await Promise.all(dependencyManifestPaths.map(async p
   .flatMap(manifest => [...manifest.exports, ...(manifest.supportTypes ?? [])]);
 const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
+const maintainedSymbolsByIdentity = new Map(dependencyExports.map(entry => [`${entry.package}|${entry.module}|${entry.name}`, { fsharpSymbol: entry.fsharpSymbol, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, requiredNonNullableSymbol: entry.requiredNonNullableSymbol, requiredSymbol: entry.requiredSymbol, module: entry.module, arity: entry.typeParameterCount ?? 0 }]));
 const maintainedSymbols = new Map(dependencyExports
   .filter(entry => dependencyNameCounts.get(entry.name) === 1)
-  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, requiredNonNullableSymbol: entry.requiredNonNullableSymbol, requiredSymbol: entry.requiredSymbol, arity: entry.typeParameterCount ?? 0 }]));
+  .map(entry => [entry.name, { fsharpSymbol: entry.fsharpSymbol, deepImmutableSymbol: entry.deepImmutableSymbol, partialSymbol: entry.partialSymbol, requiredNonNullableSymbol: entry.requiredNonNullableSymbol, requiredSymbol: entry.requiredSymbol, module: entry.module, arity: entry.typeParameterCount ?? 0 }]));
+const referenceMatchesTargetModule = (identifier, target) => {
+  if (!target.module) return true;
+  let symbol = checker.getSymbolAtLocation(identifier);
+  if (symbol?.flags & ts.SymbolFlags.Alias) {
+    try { symbol = checker.getAliasedSymbol(symbol); } catch { return false; }
+  }
+  const declaration = symbol?.declarations?.[0];
+  return !declaration || normalize(declaration.getSourceFile().fileName).replace(/\.d\.ts$/, "") === target.module;
+};
+const maintainedTargetForIdentifier = identifier => maintainedSymbolsByIdentity.get(declarationIdentityForIdentifier(identifier))
+  ?? maintainedSymbols.get(identifier.text);
 const maintainedClassExports = JSON.parse(await readFile(resolve(root, "src/BabylonjsBindings/simple-class-coverage-manifest.json"), "utf8")).exports;
 const maintainedClassNameCounts = new Map();
 for (const entry of maintainedClassExports) maintainedClassNameCounts.set(entry.name, (maintainedClassNameCounts.get(entry.name) ?? 0) + 1);
@@ -152,6 +190,27 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   if (ts.isTypePredicateNode(node)) return "bool";
   if (node.kind === ts.SyntaxKind.ThisType && typeParameters.ownerName) return typeParameters.ownerName;
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type, available, dependencies, typeParameters);
+  if (ts.isIndexedAccessTypeNode(node)
+    && ts.isTypeReferenceNode(node.objectType)
+    && ts.isIdentifier(node.objectType.typeName)
+    && !node.objectType.typeArguments?.length
+    && ts.isLiteralTypeNode(node.indexType)
+    && ts.isStringLiteral(node.indexType.literal)) {
+    let symbol = checker.getSymbolAtLocation(node.objectType.typeName);
+    if (symbol?.flags & ts.SymbolFlags.Alias) {
+      try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+    }
+    const declaration = symbol?.declarations?.find(candidate => ts.isClassDeclaration(candidate) || ts.isInterfaceDeclaration(candidate));
+    const member = declaration?.members.find(candidate =>
+      (ts.isPropertyDeclaration(candidate) || ts.isPropertySignature(candidate) || ts.isGetAccessorDeclaration(candidate))
+      && candidate.type
+      && (ts.isIdentifier(candidate.name) || ts.isStringLiteral(candidate.name))
+      && candidate.name.text === node.indexType.literal.text);
+    if (member?.type) {
+      const rendered = fsharpType(member.type, available, dependencies, typeParameters);
+      if (rendered) return rendered;
+    }
+  }
   const restrictedEnum = enumMemberUnionType(node);
   if (restrictedEnum) return restrictedEnum;
   if (ts.isTypeOperatorNode(node) && node.operator === ts.SyntaxKind.ReadonlyKeyword) {
@@ -340,6 +399,11 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
   }
   if (ts.isTypeReferenceNode(node) && ts.isIdentifier(node.typeName)) {
     if (!node.typeArguments?.length && node.typeName.text === "ReferrerPolicy") return "BabylonjsBindings.SimpleInterfaces.BrowserReferrerPolicy";
+    if (!node.typeArguments?.length && node.typeName.text === "PressureSource") return "BabylonjsBindings.SimpleInterfaces.BrowserPressureSource";
+    if (!node.typeArguments?.length && node.typeName.text === "PressureState") return "BabylonjsBindings.SimpleInterfaces.BrowserPressureState";
+    if (!node.typeArguments?.length && node.typeName.text === "PressureFactor") return "BabylonjsBindings.SimpleInterfaces.BrowserPressureFactor";
+    if (!node.typeArguments?.length && node.typeName.text === "PressureRecord") return "BabylonjsBindings.SimpleInterfaces.BrowserPressureRecord";
+    if (!node.typeArguments?.length && node.typeName.text === "PressureObserverOptions") return "BabylonjsBindings.SimpleInterfaces.BrowserPressureObserverOptions";
     if (!node.typeArguments?.length && node.typeName.text === "IArguments") return "BabylonjsBindings.SimpleInterfaces.BrowserArguments";
     if (node.typeName.text === "IObjectAccessor" && (node.typeArguments?.length ?? 0) < 3) {
       const target = available.get("IObjectAccessor") ?? maintainedSymbols.get("IObjectAccessor");
@@ -423,6 +487,26 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (node.typeName.text === "Partial"
       && node.typeArguments?.length === 1) {
       const inner = node.typeArguments[0];
+      if (ts.isTypeReferenceNode(inner)
+        && ts.isIdentifier(inner.typeName)
+        && inner.typeName.text === "Readonly"
+        && inner.typeArguments?.length === 1
+        && ts.isTypeReferenceNode(inner.typeArguments[0])
+        && ts.isIdentifier(inner.typeArguments[0].typeName)
+        && !inner.typeArguments[0].typeArguments?.length) {
+        let symbol = checker.getSymbolAtLocation(inner.typeArguments[0].typeName);
+        if (symbol?.flags & ts.SymbolFlags.Alias) {
+          try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+        }
+        const declaration = symbol?.declarations?.find(ts.isTypeAliasDeclaration);
+        if (declaration
+          && ts.isTypeLiteralNode(declaration.type)
+          && declaration.type.members.every(member => ts.isPropertySignature(member))) {
+          const digest = createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12);
+          const projection = inlineObjectType(declaration.type, available, dependencies, typeParameters, utilityInlineTypes, `PartialReadonly${digest}`, true, true);
+          if (projection) return projection;
+        }
+      }
       if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && inner.typeName.text === "XRSessionInit" && !inner.typeArguments?.length) {
         return "BabylonjsBindings.SimpleInterfaces.BrowserXRSessionInit";
       }
@@ -534,12 +618,31 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `System.Collections.Generic.IReadOnlyList<${inner}>` : undefined;
     }
-    if (node.typeName.text === "Readonly" && node.typeArguments?.length === 1 && ts.isTupleTypeNode(node.typeArguments[0])) {
-      return fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+    if (node.typeName.text === "Readonly" && node.typeArguments?.length === 1) {
+      const inner = node.typeArguments[0];
+      if (ts.isTupleTypeNode(inner)) return fsharpType(inner, available, dependencies, typeParameters);
+      if (ts.isTypeReferenceNode(inner) && ts.isIdentifier(inner.typeName) && !inner.typeArguments?.length) {
+        let symbol = checker.getSymbolAtLocation(inner.typeName);
+        if (symbol?.flags & ts.SymbolFlags.Alias) {
+          try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+        }
+        const declaration = symbol?.declarations?.find(ts.isTypeAliasDeclaration);
+        if (declaration && ts.isTypeLiteralNode(declaration.type) && declaration.type.members.every(member => ts.isPropertySignature(member))) {
+          const digest = createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12);
+          const projection = inlineObjectType(declaration.type, available, dependencies, typeParameters, utilityInlineTypes, `Readonly${digest}`, true);
+          if (projection) return projection;
+        }
+      }
+      recordTypeFailure(node);
+      return undefined;
     }
     if (node.typeName.text === "Promise" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? `JS.Promise<${inner}>` : undefined;
+    }
+    if (node.typeName.text === "PromiseLike" && node.typeArguments?.length === 1) {
+      const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
+      return inner ? `BabylonjsBindings.SimpleInterfaces.BrowserPromiseLike<${inner}>` : undefined;
     }
     if (node.typeName.text === "Generator" && node.typeArguments?.length === 3) {
       const yieldType = node.typeArguments[0].kind === ts.SyntaxKind.UndefinedKeyword ? "unit" : fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
@@ -579,11 +682,12 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       && ["ArrayBuffer", "ArrayBufferLike"].includes(node.typeArguments[0].typeName.text)
       && !node.typeArguments[0].typeArguments?.length) return `JS.${node.typeName.text}`;
     const browserTypes = new Set([
-      "AudioBuffer", "AudioBufferSourceNode", "AudioContext", "AudioDestinationNode", "AudioNode", "Blob", "Document", "Element", "Event", "File", "FocusEvent", "GainNode", "HTMLElement", "HTMLButtonElement", "HTMLCanvasElement", "HTMLDivElement", "HTMLImageElement", "HTMLMediaElement", "HTMLVideoElement", "KeyboardEvent", "MediaStreamAudioDestinationNode", "MediaTrackConstraints", "OfflineAudioContext", "PointerEvent", "PointerEventInit", "ProgressEvent", "Window", "XMLHttpRequest",
+      "AudioBuffer", "AudioBufferSourceNode", "AudioContext", "AudioDestinationNode", "AudioNode", "Blob", "ClipboardEvent", "DeviceOrientationEvent", "Document", "Element", "Event", "File", "FocusEvent", "GainNode", "HTMLElement", "HTMLButtonElement", "HTMLCanvasElement", "HTMLDivElement", "HTMLImageElement", "HTMLMediaElement", "HTMLVideoElement", "KeyboardEvent", "MediaStreamAudioDestinationNode", "MediaTrackConstraints", "OfflineAudioContext", "PointerEvent", "PointerEventInit", "ProgressEvent", "Window", "XMLHttpRequest",
       "ImageData", "WebGLUniformLocation", "WebGL2RenderingContext", "WebGLRenderingContext",
       "WebGLProgram", "WebGLShader", "WebGLBuffer", "WebGLTexture", "WebGLFramebuffer", "WebGLRenderbuffer", "WebGLVertexArrayObject",
     ]);
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmapSource") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmapSource";
+    if (!node.typeArguments?.length && node.typeName.text === "AbortSignal") return "BabylonjsBindings.SimpleInterfaces.BrowserAbortSignal";
     if (!node.typeArguments?.length && node.typeName.text === "AudioContext") return "BabylonjsBindings.SimpleInterfaces.BrowserAudioContext";
     if (!node.typeArguments?.length && node.typeName.text === "AudioDestinationNode") return "BabylonjsBindings.SimpleInterfaces.BrowserAudioDestinationNode";
     if (!node.typeArguments?.length && node.typeName.text === "MediaStreamAudioDestinationNode") return "BabylonjsBindings.SimpleInterfaces.BrowserMediaStreamAudioDestinationNode";
@@ -666,6 +770,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ["GPUTextureViewDimension", "BrowserGPUTextureViewDimension"],
       ["GPUSupportedLimits", "BrowserGPUSupportedLimits"],
       ["XRWebGLBinding", "BrowserXRWebGLBinding"]
+      ,["XRGPUBinding", "BrowserXRGPUBinding"]
       ,["XRCompositionLayer", "BrowserXRCompositionLayer"]
       ,["WebGLContextEvent", "BrowserWebGLContextEvent"]
       ,["AudioBuffer", "BrowserAudioBuffer"]
@@ -708,17 +813,19 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (!node.typeArguments?.length && typeParameters.substitutions?.has(node.typeName.text)) return typeParameters.substitutions.get(node.typeName.text);
     if (!node.typeArguments?.length && typeParameters.has(node.typeName.text)) return `'${node.typeName.text}`;
-    if (available.has(node.typeName.text)) {
-      const target = available.get(node.typeName.text);
+    const projectedName = projectedClassName(node.typeName);
+    if (available.has(projectedName)) {
+      const target = available.get(projectedName);
       const arguments_ = node.typeArguments ?? [];
       if (arguments_.length !== target.arity) return undefined;
       const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies, typeParameters));
       if (renderedArguments.some(argument => !argument)) return undefined;
-      dependencies.add(node.typeName.text);
-      return target.arity === 0 ? node.typeName.text : `${node.typeName.text}<${renderedArguments.join(", ")}>`;
+      dependencies.add(projectedName);
+      return target.arity === 0 ? projectedName : `${projectedName}<${renderedArguments.join(", ")}>`;
     }
-    if (maintainedSymbols.has(node.typeName.text)) {
-      const target = maintainedSymbols.get(node.typeName.text);
+    const maintainedTarget = maintainedTargetForIdentifier(node.typeName);
+    if (maintainedTarget && referenceMatchesTargetModule(node.typeName, maintainedTarget)) {
+      const target = maintainedTarget;
       const arguments_ = node.typeArguments ?? [];
       if (arguments_.length !== target.arity) return undefined;
       const renderedArguments = arguments_.map(argument => fsharpType(argument, available, dependencies, typeParameters));
@@ -781,6 +888,20 @@ const initializerType = node => {
   if (ts.isStringLiteral(node) || ts.isNoSubstitutionTemplateLiteral(node)) return "string";
   if (node.kind === ts.SyntaxKind.TrueKeyword || node.kind === ts.SyntaxKind.FalseKeyword) return "bool";
   if (ts.isPrefixUnaryExpression(node) && (node.operator === ts.SyntaxKind.PlusToken || node.operator === ts.SyntaxKind.MinusToken) && ts.isNumericLiteral(node.operand)) return "float";
+  if (ts.isPropertyAccessExpression(node)) {
+    let symbol = checker.getSymbolAtLocation(node.name);
+    if (symbol?.flags & ts.SymbolFlags.Alias) {
+      try { symbol = checker.getAliasedSymbol(symbol); } catch { symbol = undefined; }
+    }
+    const member = symbol?.declarations?.find(ts.isEnumMember);
+    const declaration = member?.parent && ts.isEnumDeclaration(member.parent) ? member.parent : undefined;
+    const value = member ? checker.getConstantValue(member) : undefined;
+    if (declaration && typeof value === "number" && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
+      const name = `${declaration.name.text}${member.name.text}Literal`;
+      internalEnumTypes.set(name, [{ name: member.name.text, value }]);
+      return name;
+    }
+  }
   return undefined;
 };
 const functionType = node => ts.isFunctionTypeNode(node)
@@ -833,7 +954,7 @@ const expandFixedRestTypes = (node, available, dependencies, typeParameters) => 
   }
   return undefined;
 };
-const inlineObjectType = (node, available, dependencies, typeParameters, inlineTypes, context, forceOptional = false) => {
+const inlineObjectType = (node, available, dependencies, typeParameters, inlineTypes, context, forceOptional = false, forceReadonly = false) => {
   if (!ts.isTypeLiteralNode(node)) return undefined;
   const name = `${context}Object`;
   const existing = inlineTypes.find(inline => inline.name === name);
@@ -844,17 +965,17 @@ const inlineObjectType = (node, available, dependencies, typeParameters, inlineT
   for (const [memberIndex, member] of node.members.entries()) {
     if (ts.isPropertySignature(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
       let type = ts.isTypeLiteralNode(member.type)
-        ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Property${memberIndex + 1}`, forceOptional)
+        ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Property${memberIndex + 1}`, forceOptional, forceReadonly)
         : fsharpType(member.type, available, dependencies, typeParameters);
       if (!type) return undefined;
-      members.push({ kind: "property", name: member.name.text, type: member.questionToken || forceOptional ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
+      members.push({ kind: "property", name: member.name.text, type: member.questionToken || forceOptional ? asOption(type) : type, readonly: forceReadonly || hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
     } else if (ts.isIndexSignatureDeclaration(member) && member.parameters.length === 1 && member.parameters[0].type && member.type && ts.isIdentifier(member.parameters[0].name)) {
       const keyType = fsharpType(member.parameters[0].type, available, dependencies, typeParameters);
       let valueType = ts.isTypeLiteralNode(member.type)
-        ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Value${memberIndex + 1}`, forceOptional)
+        ? inlineObjectType(member.type, available, dependencies, typeParameters, inlineTypes, `${name}Value${memberIndex + 1}`, forceOptional, forceReadonly)
         : fsharpType(member.type, available, dependencies, typeParameters);
       if (!keyType || !valueType) return undefined;
-      members.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
+      members.push({ kind: "indexer", name: member.parameters[0].name.text, keyType, valueType, readonly: forceReadonly || hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
     } else if (ts.isMethodSignature(member)
       && !member.typeParameters?.length
       && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
@@ -886,16 +1007,18 @@ const inlineObjectType = (node, available, dependencies, typeParameters, inlineT
 const intersectionObjectType = (node, available, dependencies, typeParameters, inlineTypes) => {
   if (!ts.isIntersectionTypeNode(node)) return undefined;
   const objectBranches = node.types.filter(ts.isTypeLiteralNode);
-  if (objectBranches.length !== 1) return undefined;
+  if (objectBranches.length > 1) return undefined;
   const digest = createHash("sha256").update(node.getText().replace(/\s+/g, " ")).digest("hex").slice(0, 12);
   const name = `InlineIntersection${digest}Object`;
   const existing = inlineTypes.find(inline => inline.name === name);
   if (existing) return `${name}${existing.genericParameters}`;
-  const objectBase = inlineObjectType(objectBranches[0], available, dependencies, typeParameters, inlineTypes, `${name}Members`);
+  const objectBase = objectBranches.length === 1
+    ? inlineObjectType(objectBranches[0], available, dependencies, typeParameters, inlineTypes, `${name}Members`)
+    : undefined;
   const otherBases = node.types.filter(branch => !ts.isTypeLiteralNode(branch)).map(branch => fsharpType(branch, available, dependencies, typeParameters));
-  if (!objectBase || otherBases.some(base => !base)) return undefined;
+  if ((objectBranches.length === 1 && !objectBase) || otherBases.some(base => !base)) return undefined;
   const genericParameters = typeParameters.size ? `<${[...typeParameters].map(value => `'${value}`).join(", ")}>` : "";
-  inlineTypes.push({ name, genericParameters, bases: [...otherBases, objectBase], members: [] });
+  inlineTypes.push({ name, genericParameters, bases: [...otherBases, ...(objectBase ? [objectBase] : [])], members: [] });
   return `${name}${genericParameters}`;
 };
 const flowGraphAssetKinds = [
@@ -1168,6 +1291,21 @@ const renderClass = (declaration, available, hasBase) => {
         target.push({ kind: "property", name: member.name.text, type: member.questionToken ? asOption(type) : type, readonly: hasModifier(member, ts.SyntaxKind.ReadonlyKeyword) });
       }
     } else if (ts.isMethodDeclaration(member) && member.type && (ts.isIdentifier(member.name) || ts.isStringLiteral(member.name))) {
+      if (declaration.name.text === "StringDictionary"
+        && member.name.text === "first"
+        && member.typeParameters?.length === 1
+        && member.typeParameters[0].name.text === "TRes") {
+        target.push({
+          kind: "method",
+          name: "first",
+          callback: {
+            returnType: "'TRes option",
+            parameters: [{ name: "callback", type: "System.Func<string, 'T, 'TRes option>", optional: false }],
+            genericParameters: "<'TRes>"
+          }
+        });
+        continue;
+      }
       if (declaration.name.text === "Angle" && member.name.text === "BetweenTwoVectors") {
         for (const vector of ["Vector2", "Vector3", "Vector4"]) {
           const targetVector = available.get(vector);
@@ -1359,11 +1497,12 @@ const renderBase = (declaration, available) => {
     return undefined;
   }
   if (extendsTypes.length !== 1 || !ts.isIdentifier(extendsTypes[0].expression)) return null;
-  const name = extendsTypes[0].expression.text;
-  if (name === "Error" && !(extendsTypes[0].typeArguments?.length)) {
+  const sourceName = extendsTypes[0].expression.text;
+  const name = projectedClassName(extendsTypes[0].expression);
+  if (sourceName === "Error" && !(extendsTypes[0].typeArguments?.length)) {
     return { name: "JavaScriptError", rendered: "JavaScriptError", builtin: true };
   }
-  if (name === "Array" && extendsTypes[0].typeArguments?.length === 1) {
+  if (sourceName === "Array" && extendsTypes[0].typeArguments?.length === 1) {
     const dependencies = new Set();
     const typeParameters = new Set((declaration.typeParameters ?? []).map(parameter => parameter.name.text));
     const element = fsharpType(extendsTypes[0].typeArguments[0], available, dependencies, typeParameters);
@@ -1456,12 +1595,15 @@ for (const sourceFile of program.getSourceFiles()) {
         ? "@babylonjs/loaders"
         : undefined;
     if (!packageName) continue;
-    const name = exported.getName();
+    const sourceName = exported.getName();
+    const identity = `${packageName}|${module}|${sourceName}`;
+    const name = classCollisionNames.get(identity) ?? sourceName;
     const runtimeExport = target.getName();
-    declarations.set(`${packageName}|${module}|${name}`, {
+    declarations.set(identity, {
       package: packageName,
       module,
       name,
+      sourceName,
       runtimeExport,
       declaration,
       arity: declaration.typeParameters?.length ?? 0,
@@ -1507,7 +1649,7 @@ while (true) {
     const base = renderBase(entry.declaration, available);
     if (base === null) continue;
     const renderAvailable = new Map(available);
-    renderAvailable.set(entry.name, { arity: entry.arity, deepImmutableSymbol: entry.deepImmutableSymbol });
+    renderAvailable.set(entry.name, { arity: entry.arity, deepImmutableSymbol: entry.deepImmutableSymbol, staticSymbol: `${entry.name}Static` });
     const rendered = renderClass(entry.declaration, renderAvailable, Boolean(base));
     if (!rendered) continue;
     if (base && !base.builtin && entry.declaration.members.every(member => !ts.isConstructorDeclaration(member))) {
@@ -1519,7 +1661,7 @@ while (true) {
   for (const [identity, entry] of additions) {
     selected.set(identity, entry);
     selectedByName.set(entry.name, entry);
-    available.set(entry.name, { arity: entry.arity, deepImmutableSymbol: entry.deepImmutableSymbol });
+    available.set(entry.name, { arity: entry.arity, deepImmutableSymbol: entry.deepImmutableSymbol, staticSymbol: `${entry.name}Static` });
   }
   rank += 1;
 }
@@ -1530,7 +1672,7 @@ while (true) {
 // edge to have been selected in an earlier rank.
 const optimisticAvailable = new Map(available);
 for (const entry of declarations.values()) {
-  if (nameCounts.get(entry.name) === 1) optimisticAvailable.set(entry.name, { arity: entry.arity, deepImmutableSymbol: entry.deepImmutableSymbol });
+  if (nameCounts.get(entry.name) === 1) optimisticAvailable.set(entry.name, { arity: entry.arity, deepImmutableSymbol: entry.deepImmutableSymbol, staticSymbol: `${entry.name}Static` });
 }
 const retainedNumericLiterals = new Set(numericLiteralValues);
 const retainedStringLiterals = new Map(stringLiteralTypes);
@@ -1584,7 +1726,7 @@ for (const name of [...recursivelyClosedNames].sort()) {
   const promoted = { ...candidate.entry, ...candidate.rendered, base: candidate.base, rank };
   selected.set(candidate.identity, promoted);
   selectedByName.set(name, promoted);
-  available.set(name, { arity: promoted.arity, deepImmutableSymbol: promoted.deepImmutableSymbol });
+  available.set(name, { arity: promoted.arity, deepImmutableSymbol: promoted.deepImmutableSymbol, staticSymbol: `${name}Static` });
 }
 const entries = [...selected.values()].sort((left, right) => left.rank - right.rank || left.name.localeCompare(right.name));
 for (const entry of entries) {
@@ -1600,7 +1742,7 @@ const candidateClassSymbols = new Map(entries.map(entry => [entry.name, `Babylon
 if (diagnose) {
   const optimistic = new Map([...declarations.values()]
     .filter(entry => nameCounts.get(entry.name) === 1)
-    .map(entry => [entry.name, { arity: entry.arity, deepImmutableSymbol: entry.deepImmutableSymbol }]));
+    .map(entry => [entry.name, { arity: entry.arity, deepImmutableSymbol: entry.deepImmutableSymbol, staticSymbol: `${entry.name}Static` }]));
   const shapeReady = [];
   const shapeReadyDependencies = new Map();
   const missingCounts = new Map();
@@ -1883,8 +2025,8 @@ const manifest = {
   exports: entries.filter(entry => !entry.supportOnly).map(entry => ({
     package: entry.package,
     module: entry.module,
-    name: entry.name,
-    ...(entry.runtimeExport !== entry.name ? { runtimeExport: entry.runtimeExport } : {}),
+    name: entry.sourceName ?? entry.name,
+    ...(entry.runtimeExport !== (entry.sourceName ?? entry.name) ? { runtimeExport: entry.runtimeExport } : {}),
     kind: "class",
     disposition: "typed",
     fsharpSymbol: `BabylonjsBindings.SimpleClasses.${entry.name}`,

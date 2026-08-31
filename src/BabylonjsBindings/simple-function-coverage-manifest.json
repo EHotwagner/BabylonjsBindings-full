@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "9124e269aa84129d43d402b6441a16788412097bafe1a0d9599f85212a96061d",
+  "proposalSha256": "d0d6e830387a0a560a1adf88a74c384c4e99499084578b90295c51d47b34aebe",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -13437,6 +13437,149 @@
         "BabylonjsBindings.SimpleInterfaces.IVector3Like"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_EcefFromLatLonAltToRef",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode",
+      "name": "_GetVolumeAudioProperty",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetVolumeAudioProperty",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._AbstractAudioSubGraph"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__GetVolumeAudioProperty",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/rawTexture2DArray.functions",
+      "name": "CreateTexture2DArrayFromImageUrlsAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTexture2DArrayFromImageUrlsAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.RawTexture2DArray",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.ICreateTexture2DArrayFromImageUrlsOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTexture2DArrayFromImageUrlsAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker",
+      "name": "applyConfig",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.applyConfig",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_applyConfig",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker",
+      "name": "initializeWebWorker",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.initializeWebWorker",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_initializeWebWorker",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker",
+      "name": "KTX2InitializeWebWorker",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.KTX2InitializeWebWorker",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_KTX2InitializeWebWorker",
+      "runtimeExport": "initializeWebWorker",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation",
+      "name": "getWeights",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getWeights",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTFNode"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_getWeights",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
+      "name": "GetPathToObjectConverter",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetPathToObjectConverter",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.GLTFPathToObjectConverter",
+        "BabylonjsBindings.SimpleInterfaces.IGLTF"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetPathToObjectConverter",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoader.pure",
+      "name": "LoadBoundingInfoFromPositionAccessor",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LoadBoundingInfoFromPositionAccessor",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BoundingInfo",
+        "BabylonjsBindings.SimpleInterfaces.IAccessor"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LoadBoundingInfoFromPositionAccessor",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper",
+      "name": "addNewInteractivityFlowGraphMapping",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.addNewInteractivityFlowGraphMapping",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IGLTFToFlowGraphMapping"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_addNewInteractivityFlowGraphMapping",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper",
+      "name": "getMappingForDeclaration",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getMappingForDeclaration",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.GLTF2IKHRInteractivity_Declaration",
+        "BabylonjsBindings.SimpleInterfaces.IGLTFToFlowGraphMapping"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_getMappingForDeclaration",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper",
+      "name": "getMappingForFullOperationName",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.getMappingForFullOperationName",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IGLTFToFlowGraphMapping"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_getMappingForFullOperationName",
       "overloadCount": 1
     }
   ],

@@ -17,7 +17,10 @@ const specifications = [
 const declarationNamesInChunk = chunk => [...chunk.matchAll(/^    (?:type|let) (?:``([^`]+)``|([A-Za-z_][A-Za-z0-9_]*))/gm)].map(match => match[1] ?? match[2]);
 const chunks = source => source.trimEnd().split(/\n{2,}/).map((text, index) => ({ index, text, names: declarationNamesInChunk(text) }));
 const symbolName = symbol => symbol?.split(".").at(-1);
-const declarationNames = (entry, category) => [entry.name, symbolName(entry.deepImmutableSymbol), symbolName(entry.partialSymbol), symbolName(entry.requiredNonNullableSymbol), symbolName(entry.requiredSymbol), category === "function" ? symbolName(entry.fsharpType) : undefined, category === "class" ? `${entry.name}Static` : undefined].filter(Boolean);
+const declarationNames = (entry, category) => {
+  const projectedName = symbolName(entry.fsharpSymbol);
+  return [projectedName, entry.name === projectedName ? entry.name : undefined, symbolName(entry.deepImmutableSymbol), symbolName(entry.partialSymbol), symbolName(entry.requiredNonNullableSymbol), symbolName(entry.requiredSymbol), category === "function" ? symbolName(entry.fsharpType) : undefined, category === "class" ? `${projectedName}Static` : undefined].filter(Boolean);
+};
 const identifierPattern = /[A-Za-z_][A-Za-z0-9_]*/g;
 const qualifiedPattern = /BabylonjsBindings\.(TypeAliases|SimpleInterfaces|SimpleClasses|SimpleFunctions|SimpleVariables)\.([A-Za-z_][A-Za-z0-9_]*)/g;
 const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");

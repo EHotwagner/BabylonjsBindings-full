@@ -268,6 +268,24 @@ module TypeAliases =
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
+    type AliasObject2d7882d93505 =
+        abstract ``allowedComponentTypes``: ResizeArray<BabylonjsBindings.StringEnums.MotionControllerComponentType> option with get, set
+        abstract ``forceHandedness``: BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness option with get, set
+        abstract ``mainComponentOnly``: bool option with get, set
+        abstract ``componentSelectionPredicate``: System.Func<BabylonjsBindings.SimpleClasses.WebXRInputSource, BabylonjsBindings.SimpleClasses.WebXRControllerComponent option> option with get, set
+        abstract ``axisChangedHandler``: System.Action<BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerAxesValue, BabylonjsBindings.ObjectTypes.WebXRControllerMovementState, BabylonjsBindings.TypeAliases.WebXRControllerMovementFeatureContext, BabylonjsBindings.SimpleClasses.WebXRInput> with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObject406c176bc0c4 =
+        abstract ``allowedComponentTypes``: ResizeArray<BabylonjsBindings.StringEnums.MotionControllerComponentType> option with get, set
+        abstract ``forceHandedness``: BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness option with get, set
+        abstract ``mainComponentOnly``: bool option with get, set
+        abstract ``componentSelectionPredicate``: System.Func<BabylonjsBindings.SimpleClasses.WebXRInputSource, BabylonjsBindings.SimpleClasses.WebXRControllerComponent option> option with get, set
+        abstract ``buttonChangedHandler``: System.Action<BabylonjsBindings.SimpleInterfaces.IWebXRMotionControllerComponentChangesValues<bool>, BabylonjsBindings.ObjectTypes.WebXRControllerMovementState, BabylonjsBindings.TypeAliases.WebXRControllerMovementFeatureContext, BabylonjsBindings.SimpleClasses.WebXRInput> with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
     type AliasObjectf8c432911558 =
         abstract ``parentBody``: BabylonjsBindings.SimpleClasses.PhysicsBody with get, set
         abstract ``parentBodyIndex``: System.Double with get, set
@@ -946,6 +964,9 @@ module TypeAliases =
 
     /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
     type WebXRControllerMovementFeatureContext = AliasObjectc11d826e4a3c
+
+    /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
+    type WebXRControllerMovementRegistrationConfiguration = U2<AliasObject2d7882d93505, AliasObject406c176bc0c4>
 
     /// @babylonjs/core/XR/webXRFeaturesManager
     [<AllowNullLiteral>]

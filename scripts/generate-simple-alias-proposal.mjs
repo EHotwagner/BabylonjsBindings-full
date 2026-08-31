@@ -146,6 +146,24 @@ const fsharpType = node => {
   if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.TrueKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserTrue";
   if (ts.isLiteralTypeNode(node) && node.literal.kind === ts.SyntaxKind.FalseKeyword) return "BabylonjsBindings.SimpleInterfaces.BrowserFalse";
   if (ts.isParenthesizedTypeNode(node)) return fsharpType(node.type);
+  if (ts.isIntersectionTypeNode(node) && node.types.length === 2) {
+    const common = node.types.find(ts.isTypeLiteralNode);
+    const other = node.types.find(branch => branch !== common);
+    const union = other && ts.isParenthesizedTypeNode(other) ? other.type : other;
+    if (common && ts.isUnionTypeNode(union) && union.types.every(ts.isTypeLiteralNode)) {
+      const commonMembers = typeLiteralShape(common, "DistributedIntersectionCommon");
+      if (commonMembers) {
+        const branches = union.types.map((branch, index) => {
+          const branchMembers = typeLiteralShape(branch, `DistributedIntersectionBranch${index + 1}`);
+          if (!branchMembers) return undefined;
+          const name = `AliasObject${createHash("sha256").update(`${node.getText().replace(/\s+/g, " ")}|${index}`).digest("hex").slice(0, 12)}`;
+          auxiliaryObjectTypes.set(name, { name, members: [...commonMembers, ...branchMembers] });
+          return name;
+        });
+        if (branches.every(Boolean)) return erasedUnionType(branches);
+      }
+    }
+  }
   if (ts.isTypeOperatorNode(node)
     && node.operator === ts.SyntaxKind.KeyOfKeyword
     && ts.isTypeReferenceNode(node.type)

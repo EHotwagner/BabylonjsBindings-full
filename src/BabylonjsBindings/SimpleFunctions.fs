@@ -10417,3 +10417,141 @@ module SimpleFunctions =
 
     [<Import("EcefFromLatLonAltToRef", "@babylonjs/core/Maths/math.geospatial.functions.js")>]
     let ``EcefFromLatLonAltToRef``: FunctionBinding_EcefFromLatLonAltToRef = jsNative
+
+    /// Exact string literal type for "volume".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral62d7a6b1211d =
+        | [<CompiledName("volume")>] Value
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode
+    [<AllowNullLiteral>]
+    type FunctionBinding__GetVolumeAudioProperty =
+        [<Emit("$0($1...)")>] abstract Invoke: ``subGraph``: BabylonjsBindings.SimpleClasses._AbstractAudioSubGraph * ``property``: StringLiteral62d7a6b1211d -> float
+
+    [<Import("_GetVolumeAudioProperty", "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode.js")>]
+    let ``_GetVolumeAudioProperty``: FunctionBinding__GetVolumeAudioProperty = jsNative
+
+    /// @babylonjs/core/Materials/Textures/rawTexture2DArray.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateTexture2DArrayFromImageUrlsAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene * ``urls``: BabylonjsBindings.SimpleInterfaces.BrowserNonEmptyReadonlyArray<string> * ?``options``: BabylonjsBindings.SimpleInterfaces.ICreateTexture2DArrayFromImageUrlsOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.RawTexture2DArray>
+
+    [<Import("CreateTexture2DArrayFromImageUrlsAsync", "@babylonjs/core/Materials/Textures/rawTexture2DArray.functions.js")>]
+    let ``CreateTexture2DArrayFromImageUrlsAsync``: FunctionBinding_CreateTexture2DArrayFromImageUrlsAsync = jsNative
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject117440ea7353 =
+        abstract ``wasmBaseUrl``: JS.ArrayBuffer option with get, set
+        abstract ``wasmUASTCToASTC``: JS.ArrayBuffer option with get, set
+        abstract ``wasmUASTCToBC7``: JS.ArrayBuffer option with get, set
+        abstract ``wasmUASTCToRGBA_UNORM``: JS.ArrayBuffer option with get, set
+        abstract ``wasmUASTCToRGBA_SRGB``: JS.ArrayBuffer option with get, set
+        abstract ``wasmUASTCToR8_UNORM``: JS.ArrayBuffer option with get, set
+        abstract ``wasmUASTCToRG8_UNORM``: JS.ArrayBuffer option with get, set
+        abstract ``wasmMSCTranscoder``: JS.ArrayBuffer option with get, set
+        abstract ``wasmZSTDDecoder``: JS.ArrayBuffer option with get, set
+        abstract ``jsDecoderModule``: JS.ArrayBuffer option with get, set
+        abstract ``jsMSCTranscoder``: JS.ArrayBuffer option with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject6b31f36b0353 =
+        abstract ``wasmBaseUrl``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``wasmUASTCToASTC``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``wasmUASTCToBC7``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``wasmUASTCToRGBA_UNORM``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``wasmUASTCToRGBA_SRGB``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``wasmUASTCToR8_UNORM``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``wasmUASTCToRG8_UNORM``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``wasmMSCTranscoder``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``wasmZSTDDecoder``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``jsDecoderModule``: U2<JS.ArrayBuffer, obj> with get, set
+        abstract ``jsMSCTranscoder``: U2<JS.ArrayBuffer, obj> with get, set
+
+    /// Exact inline object used by a Babylon function signature.
+    [<AllowNullLiteral>]
+    type InlineObject805c5c94cf58 =
+        abstract ``wasmBaseUrl``: string with get, set
+        abstract ``wasmUASTCToASTC``: string with get, set
+        abstract ``wasmUASTCToBC7``: string with get, set
+        abstract ``wasmUASTCToRGBA_UNORM``: string with get, set
+        abstract ``wasmUASTCToRGBA_SRGB``: string with get, set
+        abstract ``wasmUASTCToR8_UNORM``: string with get, set
+        abstract ``wasmUASTCToRG8_UNORM``: string with get, set
+        abstract ``wasmMSCTranscoder``: string with get, set
+        abstract ``wasmZSTDDecoder``: string with get, set
+        abstract ``jsDecoderModule``: string with get, set
+        abstract ``jsMSCTranscoder``: string with get, set
+
+    /// @babylonjs/core/Misc/khronosTextureContainer2Worker
+    [<AllowNullLiteral>]
+    type FunctionBinding_applyConfig =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``urls``: InlineObject805c5c94cf58 * ?``binariesAndModulesContainer``: InlineObject6b31f36b0353 -> unit
+
+    [<Import("applyConfig", "@babylonjs/core/Misc/khronosTextureContainer2Worker.js")>]
+    let ``applyConfig``: FunctionBinding_applyConfig = jsNative
+
+    /// @babylonjs/core/Misc/khronosTextureContainer2Worker
+    [<AllowNullLiteral>]
+    type FunctionBinding_initializeWebWorker =
+        [<Emit("$0($1...)")>] abstract Invoke: ``worker``: BabylonjsBindings.SimpleInterfaces.BrowserWorker * ?``wasmBinaries``: InlineObject117440ea7353 * ?``urls``: InlineObject805c5c94cf58 -> JS.Promise<BabylonjsBindings.SimpleInterfaces.BrowserWorker>
+
+    [<Import("initializeWebWorker", "@babylonjs/core/Misc/khronosTextureContainer2Worker.js")>]
+    let ``initializeWebWorker``: FunctionBinding_initializeWebWorker = jsNative
+
+    /// @babylonjs/core/Misc/khronosTextureContainer2Worker
+    [<AllowNullLiteral>]
+    type FunctionBinding_KTX2InitializeWebWorker =
+        [<Emit("$0($1...)")>] abstract Invoke: ``worker``: BabylonjsBindings.SimpleInterfaces.BrowserWorker * ?``wasmBinaries``: InlineObject117440ea7353 * ?``urls``: InlineObject805c5c94cf58 -> JS.Promise<BabylonjsBindings.SimpleInterfaces.BrowserWorker>
+
+    [<Import("initializeWebWorker", "@babylonjs/core/Misc/khronosTextureContainer2Worker.js")>]
+    let ``KTX2InitializeWebWorker``: FunctionBinding_KTX2InitializeWebWorker = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoaderAnimation
+    [<AllowNullLiteral>]
+    type FunctionBinding_getWeights =
+        [<Emit("$0($1...)")>] abstract Invoke: ``target``: BabylonjsBindings.SimpleInterfaces.GLTFNode * ``source``: JS.Float32Array * ``offset``: float * ``scale``: float -> ResizeArray<float>
+
+    [<Import("getWeights", "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js")>]
+    let ``getWeights``: FunctionBinding_getWeights = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetPathToObjectConverter =
+        [<Emit("$0($1...)")>] abstract Invoke: ``gltf``: BabylonjsBindings.SimpleInterfaces.IGLTF -> BabylonjsBindings.SimpleClasses.GLTFPathToObjectConverter<obj, obj, obj>
+
+    [<Import("GetPathToObjectConverter", "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.js")>]
+    let ``GetPathToObjectConverter``: FunctionBinding_GetPathToObjectConverter = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/glTFLoader.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_LoadBoundingInfoFromPositionAccessor =
+        [<Emit("$0($1...)")>] abstract Invoke: ``accessor``: BabylonjsBindings.SimpleInterfaces.IAccessor -> BabylonjsBindings.SimpleClasses.BoundingInfo option
+
+    [<Import("LoadBoundingInfoFromPositionAccessor", "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js")>]
+    let ``LoadBoundingInfoFromPositionAccessor``: FunctionBinding_LoadBoundingInfoFromPositionAccessor = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper
+    [<AllowNullLiteral>]
+    type FunctionBinding_addNewInteractivityFlowGraphMapping =
+        [<Emit("$0($1...)")>] abstract Invoke: ``key``: string * ``extension``: string * ``mapping``: BabylonjsBindings.SimpleInterfaces.IGLTFToFlowGraphMapping -> unit
+
+    [<Import("addNewInteractivityFlowGraphMapping", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js")>]
+    let ``addNewInteractivityFlowGraphMapping``: FunctionBinding_addNewInteractivityFlowGraphMapping = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper
+    [<AllowNullLiteral>]
+    type FunctionBinding_getMappingForDeclaration =
+        [<Emit("$0($1...)")>] abstract Invoke: ``declaration``: BabylonjsBindings.SimpleInterfaces.GLTF2IKHRInteractivity_Declaration * ?``returnNoOpIfNotAvailable``: bool -> BabylonjsBindings.SimpleInterfaces.IGLTFToFlowGraphMapping option
+
+    [<Import("getMappingForDeclaration", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js")>]
+    let ``getMappingForDeclaration``: FunctionBinding_getMappingForDeclaration = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper
+    [<AllowNullLiteral>]
+    type FunctionBinding_getMappingForFullOperationName =
+        [<Emit("$0($1...)")>] abstract Invoke: ``fullOperationName``: string -> BabylonjsBindings.SimpleInterfaces.IGLTFToFlowGraphMapping option
+
+    [<Import("getMappingForFullOperationName", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js")>]
+    let ``getMappingForFullOperationName``: FunctionBinding_getMappingForFullOperationName = jsNative

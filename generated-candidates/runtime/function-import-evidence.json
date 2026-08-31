@@ -141,6 +141,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode.js",
+      "export": "_GetVolumeAudioProperty",
+      "runtimeExport": "_GetVolumeAudioProperty",
+      "moduleSha256": "480bc010332cb127c2788349016875c918e31a0c777e4df877589b85b2d44706"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode.js",
       "export": "_GetVolumeAudioSubNode",
       "runtimeExport": "_GetVolumeAudioSubNode",
       "moduleSha256": "480bc010332cb127c2788349016875c918e31a0c777e4df877589b85b2d44706"
@@ -298,6 +305,13 @@
       "export": "AddIndividualParser",
       "runtimeExport": "AddIndividualParser",
       "moduleSha256": "183a2701c24765e7250beb7ae6341d8f95d3956937ef074453df27d9f6a85932"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js",
+      "export": "addNewInteractivityFlowGraphMapping",
+      "runtimeExport": "addNewInteractivityFlowGraphMapping",
+      "moduleSha256": "29d4278ed51a830be6cda7951d10a604d21ceca381596dbf3cac70e74ddb6ae8"
     },
     {
       "package": "@babylonjs/loaders",
@@ -473,6 +487,13 @@
       "export": "AnimationTransitionTo",
       "runtimeExport": "AnimationTransitionTo",
       "moduleSha256": "2cf795f48354d5431807fcc9f6bc6b037472a99b8f32791a2f19adbe8a139e94"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker.js",
+      "export": "applyConfig",
+      "runtimeExport": "applyConfig",
+      "moduleSha256": "e028892c5ac15b9b416d8daf4d5a63a3e918f6bfcf938da023aaf18bcfd98c9e"
     },
     {
       "package": "@babylonjs/core",
@@ -1310,6 +1331,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/rawTexture2DArray.functions.js",
+      "export": "CreateTexture2DArrayFromImageUrlsAsync",
+      "runtimeExport": "CreateTexture2DArrayFromImageUrlsAsync",
+      "moduleSha256": "204484cd8e73ea6ae95620e8d434aa201c2b5928c7f954702d2a7af37ba26d31"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/rawTexture2DArray.functions.js",
       "export": "CreateTexture2DArrayFromKTX2Async",
       "runtimeExport": "CreateTexture2DArrayFromKTX2Async",
       "moduleSha256": "204484cd8e73ea6ae95620e8d434aa201c2b5928c7f954702d2a7af37ba26d31"
@@ -1882,6 +1910,20 @@
       "moduleSha256": "183a2701c24765e7250beb7ae6341d8f95d3956937ef074453df27d9f6a85932"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js",
+      "export": "getMappingForDeclaration",
+      "runtimeExport": "getMappingForDeclaration",
+      "moduleSha256": "29d4278ed51a830be6cda7951d10a604d21ceca381596dbf3cac70e74ddb6ae8"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity/declarationMapper.js",
+      "export": "getMappingForFullOperationName",
+      "runtimeExport": "getMappingForFullOperationName",
+      "moduleSha256": "29d4278ed51a830be6cda7951d10a604d21ceca381596dbf3cac70e74ddb6ae8"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/utils.js",
       "export": "getNumericValue",
@@ -1901,6 +1943,13 @@
       "export": "GetParser",
       "runtimeExport": "GetParser",
       "moduleSha256": "183a2701c24765e7250beb7ae6341d8f95d3956937ef074453df27d9f6a85932"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.js",
+      "export": "GetPathToObjectConverter",
+      "runtimeExport": "GetPathToObjectConverter",
+      "moduleSha256": "3ab1c946b76162484655d61339fe30228c9d155aec2177a30b9da303b2aebc74"
     },
     {
       "package": "@babylonjs/core",
@@ -2015,6 +2064,13 @@
       "moduleSha256": "a02b2767273f7ac90164dbe607241b438fc865e38c5ee046c9f1dc4db50211b6"
     },
     {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderAnimation.js",
+      "export": "getWeights",
+      "runtimeExport": "getWeights",
+      "moduleSha256": "a02b2767273f7ac90164dbe607241b438fc865e38c5ee046c9f1dc4db50211b6"
+    },
+    {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/materialHelper.functions.js",
       "export": "HandleFallbacksForShadows",
@@ -2076,6 +2132,13 @@
       "export": "InitializeCSG2Async",
       "runtimeExport": "InitializeCSG2Async",
       "moduleSha256": "87a8ce591d7481aa6cd95cd097f7c95190e35831697221cab37841103bf98489"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker.js",
+      "export": "initializeWebWorker",
+      "runtimeExport": "initializeWebWorker",
+      "moduleSha256": "e028892c5ac15b9b416d8daf4d5a63a3e918f6bfcf938da023aaf18bcfd98c9e"
     },
     {
       "package": "@babylonjs/core",
@@ -2199,6 +2262,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker.js",
+      "export": "KTX2InitializeWebWorker",
+      "runtimeExport": "initializeWebWorker",
+      "moduleSha256": "e028892c5ac15b9b416d8daf4d5a63a3e918f6bfcf938da023aaf18bcfd98c9e"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/khronosTextureContainer2Worker.js",
       "export": "KTX2WorkerFunction",
       "runtimeExport": "workerFunction",
       "moduleSha256": "e028892c5ac15b9b416d8daf4d5a63a3e918f6bfcf938da023aaf18bcfd98c9e"
@@ -2258,6 +2328,13 @@
       "export": "LoadAssetContainerFromSerializedScene",
       "runtimeExport": "LoadAssetContainerFromSerializedScene",
       "moduleSha256": "6a6b745ff99f67f2fa5a02eae879b411f1c377c33f431a7200e095c060efc58f"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/glTFLoader.pure.js",
+      "export": "LoadBoundingInfoFromPositionAccessor",
+      "runtimeExport": "LoadBoundingInfoFromPositionAccessor",
+      "moduleSha256": "63b7799ac402265fd81f3c443496e08ca0bc6e167fd1bd374dcaebb62ecb1d91"
     },
     {
       "package": "@babylonjs/core",
