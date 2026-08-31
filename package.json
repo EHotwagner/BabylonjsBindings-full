@@ -68,6 +68,7 @@
     "check:promotion-batch": "node scripts/generate-promotion-batch.mjs --check",
     "generate:promotion-preview": "node scripts/generate-promotion-preview.mjs",
     "test:promotion-preview": "node scripts/generate-promotion-preview.mjs && dotnet restore generated-candidates/promotion-batch/BabylonjsBindings.PromotionPreview.fsproj --locked-mode && dotnet build generated-candidates/promotion-batch/BabylonjsBindings.PromotionPreview.fsproj --no-restore --nologo -v:minimal",
+    "promote:reviewed-batch": "node scripts/promote-reviewed-batch.mjs --apply-reviewed && node scripts/generate-simple-types-proposal.mjs --maintained",
     "test:browser": "chromium --headless --no-sandbox --disable-gpu --virtual-time-budget=3000 --dump-dom http://127.0.0.1:4173/runtime/browser/",
     "test:lifecycle": "bash scripts/run-sdd-lifecycle.sh reports/bindings.junit.xml",
     "doctor": "node scripts/doctor.mjs"

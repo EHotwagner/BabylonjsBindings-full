@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "89d28a22ffc369ecb26058c6e800a18fd765598d4551fd2124b4abbefc92df99",
+  "proposalSha256": "bb5e5b8d475f48f5eadd682b2ed745768446e8f78a31d5e4169232e85384e746",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -8335,6 +8335,112 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.workerFunction",
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_workerFunction",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "_setProgram",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._setProgram",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.WebGLContext"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__setProgram",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils",
+      "name": "CopyFloatData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CopyFloatData",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CopyFloatData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "deleteStateObject",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.deleteStateObject",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.WebGLContext"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_deleteStateObject",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils",
+      "name": "EnumerateFloatValues",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.EnumerateFloatValues",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_EnumerateFloatValues",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/bufferUtils",
+      "name": "GetFloatData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetFloatData",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray",
+        "BabylonjsBindings.TypeAliases.FloatArray"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetFloatData",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/buffer.pure",
+      "name": "VertexBufferForEach",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.VertexBufferForEach",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_VertexBufferForEach",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/buffer.pure",
+      "name": "VertexBufferGetDataType",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.VertexBufferGetDataType",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_VertexBufferGetDataType",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Buffers/buffer.pure",
+      "name": "VertexBufferGetFloatData",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.VertexBufferGetFloatData",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.DataArray",
+        "BabylonjsBindings.TypeAliases.FloatArray"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_VertexBufferGetFloatData",
       "overloadCount": 1
     }
   ],

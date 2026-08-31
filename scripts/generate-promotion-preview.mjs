@@ -23,6 +23,7 @@ const symbolName = symbol => symbol?.split(".").at(-1);
 const declarationNames = (entry, category) => [entry.name, symbolName(entry.deepImmutableSymbol), symbolName(entry.partialSymbol), symbolName(entry.requiredNonNullableSymbol), symbolName(entry.requiredSymbol), category === "function" ? symbolName(entry.fsharpType) : undefined, category === "class" ? `${entry.name}Static` : undefined].filter(Boolean);
 const identifierPattern = /[A-Za-z_][A-Za-z0-9_]*/g;
 const qualifiedPattern = /BabylonjsBindings\.(TypeAliases|SimpleInterfaces|SimpleClasses|SimpleFunctions|SimpleVariables)\.([A-Za-z_][A-Za-z0-9_]*)/g;
+const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const contexts = new Map();
 const categoryByModule = new Map(specifications.map(specification => [specification.moduleName, specification.category]));
@@ -75,12 +76,14 @@ while (pending.length > 0) {
     if (context.selectedChunkIndices.has(chunk.index)) continue;
     context.selectedChunkIndices.add(chunk.index);
     const code = chunk.text.split("\n").filter(line => !line.trimStart().startsWith("///")).join("\n");
+    const typeCode = code.replace(/"(?:\\.|[^"\\])*"/g, "");
     for (const match of code.matchAll(qualifiedPattern)) {
       const targetCategory = categoryByModule.get(match[1]);
       if (targetCategory) pending.push({ category: targetCategory, name: match[2] });
     }
     for (const referencedName of code.match(identifierPattern) ?? []) {
-      if (context.chunksByName.has(referencedName)) pending.push({ category: item.category, name: referencedName });
+      const usedAsType = new RegExp(`(?:[:<,*=]|\\binherit\\s+)\\s*${escapePattern(referencedName)}(?:\\b|<)`).test(typeCode);
+      if (usedAsType && context.chunksByName.has(referencedName)) pending.push({ category: item.category, name: referencedName });
     }
   }
 }
@@ -91,7 +94,9 @@ const outputs = new Map();
 const previewSummary = {};
 for (const [category, context] of contexts) {
   const additions = context.candidateChunks.filter(chunk => context.selectedChunkIndices.has(chunk.index)).map(chunk => chunk.text);
-  outputs.set(context.specification.maintainedFile, `${context.maintainedSource.trimEnd()}\n\n${additions.join("\n\n")}\n`);
+  outputs.set(context.specification.maintainedFile, additions.length === 0
+    ? context.maintainedSource
+    : `${context.maintainedSource.trimEnd()}\n\n${additions.join("\n\n")}\n`);
   previewSummary[category] = { selectedExports: context.selectedEntries.filter(entry => !entry.kind.endsWith("-support")).length, selectedChunks: additions.length };
 }
 

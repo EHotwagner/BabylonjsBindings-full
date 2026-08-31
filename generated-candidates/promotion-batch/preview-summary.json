@@ -1,22 +1,22 @@
 {
   "schemaVersion": 1,
-  "batchSize": 59,
+  "batchSize": 2,
   "categories": {
     "alias": {
-      "selectedExports": 7,
-      "selectedChunks": 15
+      "selectedExports": 0,
+      "selectedChunks": 0
     },
     "interface": {
-      "selectedExports": 27,
-      "selectedChunks": 157
+      "selectedExports": 0,
+      "selectedChunks": 0
     },
     "class": {
-      "selectedExports": 11,
-      "selectedChunks": 59
+      "selectedExports": 1,
+      "selectedChunks": 6
     },
     "function": {
-      "selectedExports": 8,
-      "selectedChunks": 16
+      "selectedExports": 0,
+      "selectedChunks": 0
     },
     "variable": {
       "selectedExports": 0,

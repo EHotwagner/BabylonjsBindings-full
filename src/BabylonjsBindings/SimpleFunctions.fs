@@ -6730,3 +6730,67 @@ module SimpleFunctions =
 
     [<Import("workerFunction", "@babylonjs/core/Misc/khronosTextureContainer2Worker.js")>]
     let ``workerFunction``: FunctionBinding_workerFunction = jsNative
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding__setProgram =
+        [<Emit("$0($1...)")>] abstract Invoke: ``program``: Browser.Types.WebGLProgram option * ``gl``: BabylonjsBindings.TypeAliases.WebGLContext -> unit
+
+    [<Import("_setProgram", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``_setProgram``: FunctionBinding__setProgram = jsNative
+
+    /// @babylonjs/core/Buffers/bufferUtils
+    [<AllowNullLiteral>]
+    type FunctionBinding_CopyFloatData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``input``: BabylonjsBindings.TypeAliases.DataArray * ``size``: float * ``type``: float * ``byteOffset``: float * ``byteStride``: float * ``normalized``: bool * ``totalVertices``: float * ``output``: JS.Float32Array -> unit
+
+    [<Import("CopyFloatData", "@babylonjs/core/Buffers/bufferUtils.js")>]
+    let ``CopyFloatData``: FunctionBinding_CopyFloatData = jsNative
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_deleteStateObject =
+        [<Emit("$0($1...)")>] abstract Invoke: ``context``: BabylonjsBindings.TypeAliases.WebGLContext -> unit
+
+    [<Import("deleteStateObject", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``deleteStateObject``: FunctionBinding_deleteStateObject = jsNative
+
+    /// @babylonjs/core/Buffers/bufferUtils
+    [<AllowNullLiteral>]
+    type FunctionBinding_EnumerateFloatValues =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: BabylonjsBindings.TypeAliases.DataArray * ``byteOffset``: float * ``byteStride``: float * ``componentCount``: float * ``componentType``: float * ``count``: float * ``normalized``: bool * ``callback``: System.Action<ResizeArray<float>, float> -> unit
+
+    [<Import("EnumerateFloatValues", "@babylonjs/core/Buffers/bufferUtils.js")>]
+    let ``EnumerateFloatValues``: FunctionBinding_EnumerateFloatValues = jsNative
+
+    /// @babylonjs/core/Buffers/bufferUtils
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetFloatData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: BabylonjsBindings.TypeAliases.DataArray * ``size``: float * ``type``: float * ``byteOffset``: float * ``byteStride``: float * ``normalized``: bool * ``totalVertices``: float * ?``forceCopy``: bool -> BabylonjsBindings.TypeAliases.FloatArray
+
+    [<Import("GetFloatData", "@babylonjs/core/Buffers/bufferUtils.js")>]
+    let ``GetFloatData``: FunctionBinding_GetFloatData = jsNative
+
+    /// @babylonjs/core/Buffers/buffer.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_VertexBufferForEach =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: BabylonjsBindings.TypeAliases.DataArray * ``byteOffset``: float * ``byteStride``: float * ``componentCount``: float * ``componentType``: float * ``count``: float * ``normalized``: bool * ``callback``: System.Action<float, float> -> unit
+
+    [<Import("VertexBufferForEach", "@babylonjs/core/Buffers/buffer.pure.js")>]
+    let ``VertexBufferForEach``: FunctionBinding_VertexBufferForEach = jsNative
+
+    /// @babylonjs/core/Buffers/buffer.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_VertexBufferGetDataType =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: BabylonjsBindings.TypeAliases.DataArray -> float
+
+    [<Import("VertexBufferGetDataType", "@babylonjs/core/Buffers/buffer.pure.js")>]
+    let ``VertexBufferGetDataType``: FunctionBinding_VertexBufferGetDataType = jsNative
+
+    /// @babylonjs/core/Buffers/buffer.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_VertexBufferGetFloatData =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: BabylonjsBindings.TypeAliases.DataArray * ``size``: float * ``type``: float * ``byteOffset``: float * ``byteStride``: float * ``normalized``: bool * ``totalVertices``: float * ?``forceCopy``: bool -> BabylonjsBindings.TypeAliases.FloatArray
+
+    [<Import("VertexBufferGetFloatData", "@babylonjs/core/Buffers/buffer.pure.js")>]
+    let ``VertexBufferGetFloatData``: FunctionBinding_VertexBufferGetFloatData = jsNative

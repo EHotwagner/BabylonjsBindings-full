@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "f2a7c9adbcc5bd735ea5fd263f2a4f6f98b109133cbf65409fdd158c43ad7db9",
+  "proposalSha256": "997ed7c665fc04ab85d65d1662e0a42188c788833fc1a4141e4b89d3621c6b1f",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -355,6 +355,84 @@
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.XRHandMeshRigMapping",
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/coroutine",
+      "name": "Coroutine",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.Coroutine",
+      "dependencies": [],
+      "shape": "coroutine",
+      "typeParameterCount": 1,
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "DataArray",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.DataArray",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "ImageSource",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.ImageSource",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/materialPluginEvent",
+      "name": "MaterialPluginCreated",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.MaterialPluginCreated",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/AbstractEngine/abstractEngine.query.pure",
+      "name": "OcclusionQuery",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.OcclusionQuery",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure",
+      "name": "PlyProperty",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PlyProperty",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "WebGLContext",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebGLContext",
+      "dependencies": [],
       "shape": "alias",
       "memberCount": 1
     }

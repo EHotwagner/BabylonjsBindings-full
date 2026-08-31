@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "ef1dfc91970c1d8e9e2c60ae156d49ce7210417c50cedd86628b4fe87e300f39",
+  "proposalSha256": "34b29057737fb8c0b5d6f4e5c5a6634669853b4ae34eca8557af648b63ecc628",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1197,6 +1197,147 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.SimpleClasses.Xbox360Pad",
       "memberCount": 29
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Instrumentation/timeToken",
+      "name": "_TimeToken",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._TimeToken",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Events/pointerEvents",
+      "name": "PointerInfoBase",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PointerInfoBase",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IMouseEvent"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuBundleList",
+      "name": "WebGPUBundleList",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUBundleList",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IWebGPURenderItem"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXREnterExitUI",
+      "name": "WebXREnterExitUIButton",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXREnterExitUIButton",
+      "fidelityIssues": [],
+      "dependencies": [],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuCacheSampler",
+      "name": "WebGPUCacheSampler",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUCacheSampler",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.TextureSampler"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/WebGPU/webgpuDataBuffer",
+      "name": "WebGPUDataBuffer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUDataBuffer",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.DataBuffer"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/WebGPU/webgpuShaderProcessorsWGSL.pure",
+      "name": "WebGPUShaderProcessorWGSL",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessorWGSL",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebGPUShaderProcessor",
+        "BabylonjsBindings.SimpleInterfaces._IShaderProcessingContext"
+      ],
+      "memberCount": 14
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXREnterExitUI",
+      "name": "WebXREnterExitUIOptions",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXREnterExitUIOptions",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebXREnterExitUIButton",
+        "BabylonjsBindings.SimpleInterfaces.WebXRRenderTarget"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/pbrBaseMaterial.pure",
+      "name": "PBRMaterialDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PBRMaterialDefines",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.PBRMaterialDefinesBase"
+      ],
+      "memberCount": 151
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/standardMaterial.pure",
+      "name": "StandardMaterialDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StandardMaterialDefines",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.StandardMaterialDefinesBase"
+      ],
+      "memberCount": 116
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/PBR/openpbrMaterial.pure",
+      "name": "OpenPBRMaterialDefines",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefines",
+      "fidelityIssues": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.OpenPBRMaterialDefinesWithEnvLighting"
+      ],
+      "memberCount": 128
     }
   ],
   "reviewStatus": "maintained"

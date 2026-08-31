@@ -25,6 +25,7 @@ const proposalChunks = source => source.trimEnd().split(/\n{2,}/).map(text => ({
 })).filter(chunk => chunk.name);
 const qualifiedSymbolPattern = /BabylonjsBindings\.(?:TypeAliases|SimpleInterfaces|SimpleClasses|SimpleFunctions|SimpleVariables)\.[A-Za-z_][A-Za-z0-9_]*/g;
 const identifierPattern = /[A-Za-z_][A-Za-z0-9_]*/g;
+const escapePattern = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const maintainedSymbols = new Set();
 const maintainedIdentities = new Set();
@@ -82,14 +83,20 @@ const inferredDependencies = node => {
     visited.add(name);
     for (const chunk of chunksByName.get(name) ?? []) {
       const code = chunk.text.split("\n").filter(line => !line.trimStart().startsWith("///")).join("\n");
+      const typeCode = code.replace(/"(?:\\.|[^"\\])*"/g, "");
       for (const symbol of code.match(qualifiedSymbolPattern) ?? []) {
         const dependencyNode = nodeBySymbol.get(symbol);
         if (dependencyNode && dependencyNode.fsharpSymbol !== node.fsharpSymbol) dependencies.add(dependencyNode.fsharpSymbol);
       }
       for (const identifier of code.match(identifierPattern) ?? []) {
+        // Export-to-export dependencies come from the structured manifests.
+        // Lexical traversal is only for anonymous proposal helpers; treating
+        // every capitalized F# identifier as an export creates false edges
+        // such as System.Action -> Babylon Action.
         const localNode = nodesByName.get(identifier);
-        if (localNode && localNode.fsharpSymbol !== node.fsharpSymbol) dependencies.add(localNode.fsharpSymbol);
-        else if (chunksByName.has(identifier)) pending.push(identifier);
+        const usedAsType = new RegExp(`(?:[:<,*=]|\\binherit\\s+)\\s*${escapePattern(identifier)}(?:\\b|<)`).test(typeCode);
+        if (localNode && localNode.fsharpSymbol !== node.fsharpSymbol && usedAsType) dependencies.add(localNode.fsharpSymbol);
+        else if (!localNode && chunksByName.has(identifier) && usedAsType) pending.push(identifier);
       }
     }
   }
@@ -125,9 +132,10 @@ const closureFor = rootNode => {
   return result;
 };
 
-const roots = candidateNodes
+const rootCandidates = candidateNodes
   .filter(node => !node.supportOnly && !isMaintained(node))
-  .map(node => ({ node, closure: closureFor(node) }))
+  .map(node => ({ node, closure: closureFor(node) }));
+const roots = rootCandidates
   .filter(item => item.closure.unresolved.size === 0 && item.closure.fidelityIssues.size === 0)
   .sort((left, right) => Number(left.node.name.startsWith("_")) - Number(right.node.name.startsWith("_"))
     || left.closure.nodes.size - right.closure.nodes.size
@@ -153,6 +161,14 @@ const document = {
   actualSize: selected.length,
   maintainedBaseline: summary,
   selectedRootCount: selectedRoots.length,
+  selectionDiagnostics: {
+    remainingRoots: rootCandidates.length,
+    eligibleRoots: roots.length,
+    rootsWithUnresolvedDependencies: rootCandidates.filter(item => item.closure.unresolved.size > 0).length,
+    rootsWithFidelityIssues: rootCandidates.filter(item => item.closure.fidelityIssues.size > 0).length,
+    mostCommonFidelityBlockers: Object.entries(Object.fromEntries([...new Set(rootCandidates.flatMap(item => [...item.closure.fidelityIssues]))].map(symbol => [symbol, rootCandidates.filter(item => item.closure.fidelityIssues.has(symbol)).length])))
+      .sort((left, right) => right[1] - left[1] || left[0].localeCompare(right[0])).slice(0, 20).map(([symbol, blockedRoots]) => ({ symbol, blockedRoots }))
+  },
   selectedRoots,
   selected: selected.map(node => ({
     package: node.package,
@@ -176,5 +192,5 @@ if (check) {
 } else {
   await writeFile(output, rendered);
 }
-if (!document.validation.dependencyClosed || document.actualSize === 0 || document.actualSize > targetSize) throw new Error(`promotion batch is not closed within the ${targetSize}-type ceiling`);
+if (!document.validation.dependencyClosed || document.actualSize > targetSize) throw new Error(`promotion batch is not closed within the ${targetSize}-type ceiling`);
 console.log(`generated dependency-closed promotion batch with ${selectedRoots.length} roots and ${selected.length} total types (${targetSize} ceiling)`);
