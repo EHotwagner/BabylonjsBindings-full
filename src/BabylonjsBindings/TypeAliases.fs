@@ -877,3 +877,11 @@ module TypeAliases =
     [<AllowNullLiteral>]
     type WebXRFeatureConstructor =
         [<Emit("$0($1...)")>] abstract Invoke: xrSessionManager: BabylonjsBindings.SimpleClasses.WebXRSessionManager * ?options: obj -> System.Func<BabylonjsBindings.SimpleInterfaces.IWebXRFeature>
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphCodeExecutionBlock
+    [<AllowNullLiteral>]
+    type CodeExecutionFunction =
+        [<Emit("$0($1...)")>] abstract Invoke: value: obj * context: BabylonjsBindings.SimpleClasses.FlowGraphContext -> obj
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioBus
+    type PrimaryAudioBus = U2<BabylonjsBindings.SimpleClasses.MainAudioBus, BabylonjsBindings.SimpleClasses.AudioBus>

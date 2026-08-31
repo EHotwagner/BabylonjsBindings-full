@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "3d4297ad859a537ec94657c23ffc60638aace5751e47b839f1808e312775737a",
+  "maintainedSurfaceDigest": "2f7438143bdbb7fef3458c62f9f779e49f7878646315ecb10acab094af804a3e",
   "summary": {
     "total": 4323,
-    "typed": 3613,
+    "typed": 3881,
     "runtimeOnly": 1,
-    "blocked": 708,
+    "blocked": 440,
     "lossy": 1
   },
   "exports": [
@@ -365,8 +365,9 @@
       "module": "@babylonjs/core/Animations/animation.pure",
       "name": "_StaticOffsetValueQuaternion",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueQuaternion"
     },
     {
       "package": "@babylonjs/core",
@@ -382,16 +383,18 @@
       "module": "@babylonjs/core/Animations/animation.pure",
       "name": "_StaticOffsetValueVector2",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueVector2"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Animations/animation.pure",
       "name": "_StaticOffsetValueVector3",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueVector3"
     },
     {
       "package": "@babylonjs/core",
@@ -900,8 +903,9 @@
       "module": "@babylonjs/core/Audio/audioEngine.pure",
       "name": "AudioEngine",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AudioEngine"
     },
     {
       "package": "@babylonjs/core",
@@ -1006,8 +1010,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioBus",
       "name": "AbstractAudioBus",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractAudioBus"
     },
     {
       "package": "@babylonjs/core",
@@ -1023,16 +1028,18 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioNode",
       "name": "AbstractAudioNode",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractAudioNode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioNode",
       "name": "AbstractNamedAudioNode",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractNamedAudioNode"
     },
     {
       "package": "@babylonjs/core",
@@ -1048,8 +1055,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioOutNode",
       "name": "AbstractAudioOutNode",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractAudioOutNode"
     },
     {
       "package": "@babylonjs/core",
@@ -1065,16 +1073,18 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSound",
       "name": "AbstractSound",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractSound"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSound",
       "name": "IAbstractSoundOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractSoundOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1117,8 +1127,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSoundInstance",
       "name": "_AbstractSoundInstance",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._AbstractSoundInstance"
     },
     {
       "package": "@babylonjs/core",
@@ -1134,56 +1145,63 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSoundSource",
       "name": "AbstractSoundSource",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractSoundSource"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSoundSource",
       "name": "ISoundSourceOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISoundSourceOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioBus",
       "name": "AudioBus",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AudioBus"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioBus",
       "name": "IAudioBusOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAudioBusOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioBus",
       "name": "PrimaryAudioBus",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrimaryAudioBus"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "_GetAudioEngine",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetAudioEngine"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "AudioEngineV2",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AudioEngineV2"
     },
     {
       "package": "@babylonjs/core",
@@ -1199,48 +1217,54 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "CreateAudioBusAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateAudioBusAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "CreateMainAudioBusAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateMainAudioBusAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "CreateMicrophoneSoundSourceAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateMicrophoneSoundSourceAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "CreateSoundAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSoundAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "CreateSoundBufferAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSoundBufferAsync"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "CreateSoundSourceAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSoundSourceAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -1264,16 +1288,18 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "LastCreatedAudioEngine",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LastCreatedAudioEngine"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
       "name": "OnAudioEngineV2CreatedObservable",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.OnAudioEngineV2CreatedObservable"
     },
     {
       "package": "@babylonjs/core",
@@ -1289,32 +1315,36 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/mainAudioBus",
       "name": "MainAudioBus",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MainAudioBus"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/mainAudioOut",
       "name": "_MainAudioOut",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._MainAudioOut"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/staticSound",
       "name": "IStaticSoundCloneOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundCloneOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/staticSound",
       "name": "IStaticSoundOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1357,8 +1387,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/staticSound",
       "name": "StaticSound",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StaticSound"
     },
     {
       "package": "@babylonjs/core",
@@ -1383,16 +1414,18 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/staticSoundBuffer",
       "name": "StaticSoundBuffer",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StaticSoundBuffer"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/staticSoundInstance",
       "name": "_StaticSoundInstance",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._StaticSoundInstance"
     },
     {
       "package": "@babylonjs/core",
@@ -1408,8 +1441,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/streamingSound",
       "name": "IStreamingSoundOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStreamingSoundOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1443,16 +1477,18 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/streamingSound",
       "name": "StreamingSound",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StreamingSound"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/streamingSoundInstance",
       "name": "_StreamingSoundInstance",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._StreamingSoundInstance"
     },
     {
       "package": "@babylonjs/core",
@@ -1468,16 +1504,18 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/abstractAudioSubGraph",
       "name": "_AbstractAudioSubGraph",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._AbstractAudioSubGraph"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/abstractAudioSubNode",
       "name": "_AbstractAudioSubNode",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._AbstractAudioSubNode"
     },
     {
       "package": "@babylonjs/core",
@@ -1501,8 +1539,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode",
       "name": "_GetVolumeAudioSubNode",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetVolumeAudioSubNode"
     },
     {
       "package": "@babylonjs/core",
@@ -1518,8 +1557,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode",
       "name": "_VolumeAudioSubNode",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._VolumeAudioSubNode"
     },
     {
       "package": "@babylonjs/core",
@@ -1580,8 +1620,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio",
       "name": "_HasSpatialAudioOptions",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._HasSpatialAudioOptions"
     },
     {
       "package": "@babylonjs/core",
@@ -1614,16 +1655,18 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener",
       "name": "_HasSpatialAudioListenerOptions",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._HasSpatialAudioListenerOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener",
       "name": "_SpatialAudioListenerDefaults",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._SpatialAudioListenerDefaults"
     },
     {
       "package": "@babylonjs/core",
@@ -1684,8 +1727,9 @@
       "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/stereoAudio",
       "name": "_StereoAudio",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._StereoAudio"
     },
     {
       "package": "@babylonjs/core",
@@ -1728,8 +1772,9 @@
       "module": "@babylonjs/core/AudioV2/webAudio/subNodes/webAudioBaseSubGraph",
       "name": "_WebAudioBaseSubGraph",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioBaseSubGraph"
     },
     {
       "package": "@babylonjs/core",
@@ -1745,8 +1790,9 @@
       "module": "@babylonjs/core/AudioV2/webAudio/subNodes/webAudioBusAndSoundSubGraph",
       "name": "_WebAudioBusAndSoundSubGraph",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioBusAndSoundSubGraph"
     },
     {
       "package": "@babylonjs/core",
@@ -1762,24 +1808,27 @@
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioBus",
       "name": "_WebAudioBus",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioBus"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioEngine",
       "name": "_WebAudioEngine",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioEngine"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioEngine",
       "name": "CreateAudioEngineAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateAudioEngineAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -1795,80 +1844,90 @@
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioMainBus",
       "name": "_WebAudioMainBus",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioMainBus"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioMainOut",
       "name": "_WebAudioMainOut",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioMainOut"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioNode",
       "name": "IWebAudioInNode",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebAudioInNode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioNode",
       "name": "IWebAudioOutNode",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebAudioOutNode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioNode",
       "name": "IWebAudioSubNode",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebAudioSubNode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioNode",
       "name": "IWebAudioSuperNode",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioSoundSource",
       "name": "_WebAudioSoundSource",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioSoundSource"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioStaticSound",
       "name": "_WebAudioStaticSound",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStaticSound"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioStaticSound",
       "name": "_WebAudioStaticSoundBuffer",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStaticSoundBuffer"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/AudioV2/webAudio/webAudioStreamingSound",
       "name": "_WebAudioStreamingSound",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStreamingSound"
     },
     {
       "package": "@babylonjs/core",
@@ -3094,24 +3153,27 @@
       "module": "@babylonjs/core/Cameras/RigModes/stereoscopicAnaglyphRigMode",
       "name": "_SetStereoscopicAnaglyphRigMode",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._SetStereoscopicAnaglyphRigMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Cameras/RigModes/stereoscopicRigMode",
       "name": "_SetStereoscopicRigMode",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._SetStereoscopicRigMode"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Cameras/RigModes/vrRigMode",
       "name": "_SetVrRigMode",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._SetVrRigMode"
     },
     {
       "package": "@babylonjs/core",
@@ -4605,16 +4667,18 @@
       "module": "@babylonjs/core/Engines/engine.common",
       "name": "_CommonDispose",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._CommonDispose"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/engine.common",
       "name": "_CommonInit",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._CommonInit"
     },
     {
       "package": "@babylonjs/core",
@@ -5371,8 +5435,9 @@
       "module": "@babylonjs/core/Engines/thinEngine.functions",
       "name": "_isRenderingStateCompiled",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._isRenderingStateCompiled"
     },
     {
       "package": "@babylonjs/core",
@@ -6548,8 +6613,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Audio/flowGraphGetSoundVolumeBlock.pure",
       "name": "FlowGraphGetSoundVolumeBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetSoundVolumeBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -6565,8 +6631,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Audio/flowGraphIsSoundPlayingBlock.pure",
       "name": "FlowGraphIsSoundPlayingBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIsSoundPlayingBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -6582,24 +6649,27 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphBinaryOperationBlock",
       "name": "FlowGraphBinaryOperationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphCachedOperationBlock",
       "name": "FlowGraphCachedOperationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConditionalDataBlock.pure",
       "name": "FlowGraphConditionalDataBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConditionalDataBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -6615,8 +6685,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConstantBlock.pure",
       "name": "FlowGraphConstantBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConstantBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -6641,16 +6712,18 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConstantOperationBlock",
       "name": "FlowGraphConstantOperationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConstantOperationBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphDataSwitchBlock.pure",
       "name": "FlowGraphDataSwitchBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDataSwitchBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -6726,8 +6799,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetVariableBlock.pure",
       "name": "FlowGraphGetVariableBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetVariableBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -6752,24 +6826,27 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphIsKeyPressedBlock",
       "name": "FlowGraphIsKeyPressedBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIsKeyPressedBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphTernaryOperationBlock",
       "name": "FlowGraphTernaryOperationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTernaryOperationBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphTransformCoordinatesSystemBlock.pure",
       "name": "FlowGraphTransformCoordinatesSystemBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTransformCoordinatesSystemBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -6785,496 +6862,558 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphUnaryOperationBlock",
       "name": "FlowGraphUnaryOperationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphAbsBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAbsBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphAcosBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAcosBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphAcoshBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAcoshBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphAddBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAddBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphAsinBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAsinBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphAsinhBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAsinhBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphAtan2Block",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAtan2Block"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphAtanBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAtanBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphAtanhBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAtanhBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphBitwiseAndBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseAndBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphBitwiseLeftShiftBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseLeftShiftBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphBitwiseNotBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseNotBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphBitwiseOrBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseOrBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphBitwiseRightShiftBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseRightShiftBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphBitwiseXorBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseXorBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphCeilBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCeilBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphClampBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphClampBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphCosBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCosBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphCoshBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCoshBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphCubeRootBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCubeRootBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphDegToRadBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDegToRadBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphDivideBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDivideBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphEBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphEBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphEqualityBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphEqualityBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphExpBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExpBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphFloorBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFloorBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphFractionBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFractionBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphGreaterThanBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGreaterThanBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphGreaterThanOrEqualBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGreaterThanOrEqualBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphInfBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphInfBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphIsInfinityBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIsInfinityBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphIsNanBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIsNanBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphLeadingZerosBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLeadingZerosBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphLessThanBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLessThanBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphLessThanOrEqualBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLessThanOrEqualBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphLog10Block",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLog10Block"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphLog2Block",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLog2Block"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphLogBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLogBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphMathInterpolationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMathInterpolationBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphMaxBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMaxBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphMinBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMinBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphModuloBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphModuloBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphMultiplyBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMultiplyBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphNaNBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphNaNBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphNegationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphNegationBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphOneBitsCounterBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphOneBitsCounterBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphPiBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPiBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphPowerBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPowerBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphRadToDegBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRadToDegBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphRandomBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRandomBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphRoundBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRoundBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphSaturateBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSaturateBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphSignBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSignBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphSinBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSinBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphSinhBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSinhBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphSquareRootBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSquareRootBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphSubtractBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSubtractBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphTanBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTanBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphTanhBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTanhBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphTrailingZerosBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTrailingZerosBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
       "name": "FlowGraphTruncBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTruncBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7326,96 +7465,108 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphCombineMatrix2DBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineMatrix2DBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphCombineMatrix3DBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineMatrix3DBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphCombineMatrixBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineMatrixBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphCombineVector2Block",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineVector2Block"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphCombineVector3Block",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineVector3Block"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphCombineVector4Block",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineVector4Block"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphExtractMatrix2DBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractMatrix2DBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphExtractMatrix3DBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractMatrix3DBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphExtractMatrixBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractMatrixBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphExtractVector2Block",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractVector2Block"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphExtractVector3Block",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractVector3Block"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
       "name": "FlowGraphExtractVector4Block",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractVector4Block"
     },
     {
       "package": "@babylonjs/core",
@@ -7440,48 +7591,54 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
       "name": "FlowGraphDeterminantBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDeterminantBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
       "name": "FlowGraphInvertMatrixBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphInvertMatrixBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
       "name": "FlowGraphMatrixComposeBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMatrixComposeBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
       "name": "FlowGraphMatrixDecomposeBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMatrixDecomposeBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
       "name": "FlowGraphMatrixMultiplicationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMatrixMultiplicationBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
       "name": "FlowGraphTransposeBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTransposeBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7506,104 +7663,117 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphAngleBetweenBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAngleBetweenBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphAxisAngleFromQuaternionBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAxisAngleFromQuaternionBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphConjugateBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConjugateBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphCrossBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCrossBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphDotBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDotBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphLengthBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLengthBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphNormalizeBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphNormalizeBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphQuaternionFromAxisAngleBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphQuaternionFromAxisAngleBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphQuaternionFromDirectionsBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphQuaternionFromDirectionsBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphRotate2DBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRotate2DBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphRotate3DBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRotate3DBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphTransformBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTransformBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
       "name": "FlowGraphTransformCoordinatesBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTransformCoordinatesBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7637,8 +7807,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetAngularVelocityBlock.pure",
       "name": "FlowGraphGetAngularVelocityBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetAngularVelocityBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7654,8 +7825,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetLinearVelocityBlock.pure",
       "name": "FlowGraphGetLinearVelocityBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetLinearVelocityBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7671,8 +7843,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetPhysicsMassPropertiesBlock.pure",
       "name": "FlowGraphGetPhysicsMassPropertiesBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetPhysicsMassPropertiesBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7713,48 +7886,54 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
       "name": "FlowGraphBooleanToFloat",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBooleanToFloat"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
       "name": "FlowGraphBooleanToInt",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBooleanToInt"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
       "name": "FlowGraphFloatToBoolean",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFloatToBoolean"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
       "name": "FlowGraphFloatToInt",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFloatToInt"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
       "name": "FlowGraphIntToBoolean",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIntToBoolean"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
       "name": "FlowGraphIntToFloat",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIntToFloat"
     },
     {
       "package": "@babylonjs/core",
@@ -7779,8 +7958,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphArrayIndexBlock.pure",
       "name": "FlowGraphArrayIndexBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphArrayIndexBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7796,16 +7976,18 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphCodeExecutionBlock",
       "name": "CodeExecutionFunction",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CodeExecutionFunction"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphCodeExecutionBlock",
       "name": "FlowGraphCodeExecutionBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCodeExecutionBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7829,8 +8011,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphFunctionReferenceBlock.pure",
       "name": "FlowGraphFunctionReferenceBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFunctionReferenceBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7846,8 +8029,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphIndexOfBlock.pure",
       "name": "FlowGraphIndexOfBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIndexOfBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7863,8 +8047,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyboardEventBlock",
       "name": "FlowGraphKeyboardEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphKeyboardEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7880,8 +8065,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyDownEventBlock",
       "name": "FlowGraphKeyDownEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphKeyDownEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7897,16 +8083,18 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyUpEventBlock",
       "name": "FlowGraphKeyUpEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphKeyUpEventBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphMeshPickEventBlock.pure",
       "name": "FlowGraphMeshPickEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMeshPickEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7931,8 +8119,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPhysicsCollisionEventBlock.pure",
       "name": "FlowGraphPhysicsCollisionEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPhysicsCollisionEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7957,8 +8146,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOutEventBlock.pure",
       "name": "FlowGraphPointerOutEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPointerOutEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -7992,8 +8182,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOverEventBlock.pure",
       "name": "FlowGraphPointerOverEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPointerOverEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8027,8 +8218,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphReceiveCustomEventBlock.pure",
       "name": "FlowGraphReceiveCustomEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphReceiveCustomEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8053,8 +8245,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSceneReadyEventBlock.pure",
       "name": "FlowGraphSceneReadyEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSceneReadyEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8070,8 +8263,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSceneTickEventBlock.pure",
       "name": "FlowGraphSceneTickEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSceneTickEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8096,8 +8290,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSendCustomEventBlock.pure",
       "name": "FlowGraphSendCustomEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSendCustomEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8122,8 +8317,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSoundEndedEventBlock.pure",
       "name": "FlowGraphSoundEndedEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSoundEndedEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8139,8 +8335,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphBezierCurveEasingBlock.pure",
       "name": "FlowGraphBezierCurveEasingBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBezierCurveEasingBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8165,8 +8362,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphEasingBlock.pure",
       "name": "FlowGraphEasingBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphEasingBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8182,8 +8380,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphInterpolationBlock.pure",
       "name": "FlowGraphInterpolationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphInterpolationBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8208,8 +8407,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphPauseAnimationBlock.pure",
       "name": "FlowGraphPauseAnimationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPauseAnimationBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8225,8 +8425,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphPlayAnimationBlock.pure",
       "name": "FlowGraphPlayAnimationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPlayAnimationBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8242,8 +8443,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphStopAnimationBlock.pure",
       "name": "FlowGraphStopAnimationBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphStopAnimationBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8259,8 +8461,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphPauseSoundBlock.pure",
       "name": "FlowGraphPauseSoundBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPauseSoundBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8276,8 +8479,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphPlaySoundBlock.pure",
       "name": "FlowGraphPlaySoundBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPlaySoundBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8293,8 +8497,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphSetSoundVolumeBlock.pure",
       "name": "FlowGraphSetSoundVolumeBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetSoundVolumeBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8310,8 +8515,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphStopSoundBlock.pure",
       "name": "FlowGraphStopSoundBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphStopSoundBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8327,8 +8533,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphBranchBlock.pure",
       "name": "FlowGraphBranchBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBranchBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8344,8 +8551,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphCancelDelayBlock.pure",
       "name": "FlowGraphCancelDelayBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCancelDelayBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8361,8 +8569,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphCounterBlock.pure",
       "name": "FlowGraphCallCounterBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCallCounterBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8378,8 +8587,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphDebounceBlock.pure",
       "name": "FlowGraphDebounceBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDebounceBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8395,8 +8605,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphDoNBlock.pure",
       "name": "FlowGraphDoNBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDoNBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8421,8 +8632,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphFlipFlopBlock.pure",
       "name": "FlowGraphFlipFlopBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFlipFlopBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8447,8 +8659,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphForLoopBlock.pure",
       "name": "FlowGraphForLoopBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphForLoopBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8473,8 +8686,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphMultiGateBlock.pure",
       "name": "FlowGraphMultiGateBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMultiGateBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8499,8 +8713,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSequenceBlock.pure",
       "name": "FlowGraphSequenceBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSequenceBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8525,8 +8740,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSetDelayBlock.pure",
       "name": "FlowGraphSetDelayBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetDelayBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8568,8 +8784,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphThrottleBlock.pure",
       "name": "FlowGraphThrottleBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphThrottleBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8585,8 +8802,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWaitAllBlock.pure",
       "name": "FlowGraphWaitAllBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphWaitAllBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8611,8 +8829,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWhileLoopBlock.pure",
       "name": "FlowGraphWhileLoopBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphWhileLoopBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8637,8 +8856,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphConsoleLogBlock.pure",
       "name": "FlowGraphConsoleLogBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConsoleLogBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8688,8 +8908,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetVariableBlock.pure",
       "name": "FlowGraphSetVariableBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetVariableBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8714,8 +8935,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphApplyForceBlock.pure",
       "name": "FlowGraphApplyForceBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphApplyForceBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8731,8 +8953,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphApplyImpulseBlock.pure",
       "name": "FlowGraphApplyImpulseBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphApplyImpulseBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8748,8 +8971,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetAngularVelocityBlock.pure",
       "name": "FlowGraphSetAngularVelocityBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetAngularVelocityBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8765,8 +8989,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetLinearVelocityBlock.pure",
       "name": "FlowGraphSetLinearVelocityBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetLinearVelocityBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8782,8 +9007,9 @@
       "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetPhysicsMotionTypeBlock.pure",
       "name": "FlowGraphSetPhysicsMotionTypeBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetPhysicsMotionTypeBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8869,8 +9095,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraph",
       "name": "FlowGraph",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraph"
     },
     {
       "package": "@babylonjs/core",
@@ -8895,8 +9122,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraph",
       "name": "IFlowGraphParams",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphParams"
     },
     {
       "package": "@babylonjs/core",
@@ -8936,16 +9164,18 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphAsyncExecutionBlock",
       "name": "FlowGraphAsyncExecutionBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAsyncExecutionBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphBlock",
       "name": "FlowGraphBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -8996,40 +9226,45 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphContext",
       "name": "FlowGraphContext",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphContext"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphContext",
       "name": "IFlowGraphContextConfiguration",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphContextConfiguration"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphContext",
       "name": "IFlowGraphContextParseOptions",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphContextParseOptions"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphContext",
       "name": "IFlowGraphPendingActivation",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphPendingActivation"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphCoordinator",
       "name": "FlowGraphCoordinator",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCoordinator"
     },
     {
       "package": "@babylonjs/core",
@@ -9053,8 +9288,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphDataConnection.pure",
       "name": "FlowGraphDataConnection",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection"
     },
     {
       "package": "@babylonjs/core",
@@ -9070,8 +9306,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphEventBlock",
       "name": "FlowGraphEventBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock"
     },
     {
       "package": "@babylonjs/core",
@@ -9087,16 +9324,18 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphExecutionBlock",
       "name": "FlowGraphExecutionBlock",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphExecutionBlockWithOutSignal",
       "name": "FlowGraphExecutionBlockWithOutSignal",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal"
     },
     {
       "package": "@babylonjs/core",
@@ -9130,16 +9369,18 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphParser",
       "name": "GetDataOutConnectionByUniqueId",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetDataOutConnectionByUniqueId"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphParser",
       "name": "GetSignalInConnectionByUniqueId",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetSignalInConnectionByUniqueId"
     },
     {
       "package": "@babylonjs/core",
@@ -9186,8 +9427,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphParser",
       "name": "ParseFlowGraphContext",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseFlowGraphContext"
     },
     {
       "package": "@babylonjs/core",
@@ -9448,8 +9690,9 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphSignalConnection.pure",
       "name": "FlowGraphSignalConnection",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection"
     },
     {
       "package": "@babylonjs/core",
@@ -9474,32 +9717,36 @@
       "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
       "name": "IFlowGraphValidationIssue",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationIssue"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
       "name": "IFlowGraphValidationResult",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationResult"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
       "name": "ValidateFlowGraph",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ValidateFlowGraph"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
       "name": "ValidateFlowGraphWithBlockList",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ValidateFlowGraphWithBlockList"
     },
     {
       "package": "@babylonjs/core",
@@ -9596,8 +9843,9 @@
       "module": "@babylonjs/core/FlowGraph/utils",
       "name": "_IsDescendantOf",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._IsDescendantOf"
     },
     {
       "package": "@babylonjs/core",
@@ -11655,16 +11903,18 @@
       "module": "@babylonjs/core/Gizmos/spatialAudioGizmo",
       "name": "ISpatialAudioGizmo",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISpatialAudioGizmo"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Gizmos/spatialAudioGizmo",
       "name": "SpatialAudioGizmo",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SpatialAudioGizmo"
     },
     {
       "package": "@babylonjs/core",
@@ -12884,8 +13134,9 @@
       "module": "@babylonjs/core/Materials/effect.functions",
       "name": "_ProcessShaderCode",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ProcessShaderCode"
     },
     {
       "package": "@babylonjs/core",
@@ -17427,24 +17678,27 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/basisTextureLoader",
       "name": "_BasisTextureLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._BasisTextureLoader"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/ddsTextureLoader",
       "name": "_DDSTextureLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._DDSTextureLoader"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/envTextureLoader",
       "name": "_ENVTextureLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._ENVTextureLoader"
     },
     {
       "package": "@babylonjs/core",
@@ -17890,8 +18144,9 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/exrTextureLoader",
       "name": "_ExrTextureLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._ExrTextureLoader"
     },
     {
       "package": "@babylonjs/core",
@@ -17907,16 +18162,18 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/hdrTextureLoader",
       "name": "_HDRTextureLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._HDRTextureLoader"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/iesTextureLoader",
       "name": "_IESTextureLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._IESTextureLoader"
     },
     {
       "package": "@babylonjs/core",
@@ -17932,16 +18189,18 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/ktxTextureLoader",
       "name": "_KTXTextureLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._KTXTextureLoader"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager",
       "name": "_GetCompatibleTextureLoader",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetCompatibleTextureLoader"
     },
     {
       "package": "@babylonjs/core",
@@ -17965,8 +18224,9 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/tgaTextureLoader",
       "name": "_TGATextureLoader",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._TGATextureLoader"
     },
     {
       "package": "@babylonjs/core",
@@ -20771,8 +21031,9 @@
       "module": "@babylonjs/core/Meshes/Compression/dracoCodec",
       "name": "_IsConfigurationAvailable",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._IsConfigurationAvailable"
     },
     {
       "package": "@babylonjs/core",
@@ -24235,8 +24496,9 @@
       "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
       "name": "_UpdateRGBDAsync",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._UpdateRGBDAsync"
     },
     {
       "package": "@babylonjs/core",
@@ -27350,24 +27612,27 @@
       "module": "@babylonjs/core/Particles/Queue/executionQueue",
       "name": "_ConnectAfter",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ConnectAfter"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Particles/Queue/executionQueue",
       "name": "_ConnectAtTheEnd",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ConnectAtTheEnd"
     },
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Particles/Queue/executionQueue",
       "name": "_ConnectBefore",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ConnectBefore"
     },
     {
       "package": "@babylonjs/core",
@@ -27383,8 +27648,9 @@
       "module": "@babylonjs/core/Particles/Queue/executionQueue",
       "name": "_RemoveFromQueue",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._RemoveFromQueue"
     },
     {
       "package": "@babylonjs/core",
@@ -34609,8 +34875,9 @@
       "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
       "name": "_ResolveMixamoRigMapping",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ResolveMixamoRigMapping"
     },
     {
       "package": "@babylonjs/core",
@@ -36784,8 +37051,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure",
       "name": "_AddInteractivityObjectModel",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._AddInteractivityObjectModel"
     },
     {
       "package": "@babylonjs/loaders",

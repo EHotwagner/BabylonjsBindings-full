@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "e1449dba9973e48a298c191d32ced90778d8f8bac54fb140c6f0b683a3046fc4",
+  "proposalSha256": "31ad00faf35e3d460f677c087bfed5f16d65768dcdcd6ce5e7988801198d766d",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5225,6 +5225,69 @@
       "dependencies": [],
       "fsharpType": "VariableShape_TorusKnotBuilder",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener",
+      "name": "_SpatialAudioListenerDefaults",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._SpatialAudioListenerDefaults",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "fsharpType": "VariableShape__SpatialAudioListenerDefaults",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "_StaticOffsetValueQuaternion",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueQuaternion",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Quaternion"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableQuaternion"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "_StaticOffsetValueVector2",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueVector2",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector2"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableVector2"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Animations/animation.pure",
+      "name": "_StaticOffsetValueVector3",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables._StaticOffsetValueVector3",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Vector3"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleClasses.DeepImmutableVector3"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "OnAudioEngineV2CreatedObservable",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.OnAudioEngineV2CreatedObservable",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleClasses.Observable"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleClasses.AudioEngineV2>"
     }
   ],
   "reviewStatus": "maintained"

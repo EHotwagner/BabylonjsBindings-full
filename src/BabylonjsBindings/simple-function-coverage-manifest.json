@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "79bc08f5e85b573c26074485767db05de2423233820be0cb703d40b5a52b29a8",
+  "proposalSha256": "74805964e70bc8c3d746d7f2f28757c6b4a24c46443d1066b2de04f03fb62f3a",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -11634,6 +11634,477 @@
         "BabylonjsBindings.SimpleClasses.TAARenderingPipeline"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_TAARenderingPipelineParse",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure",
+      "name": "_AddInteractivityObjectModel",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._AddInteractivityObjectModel",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__AddInteractivityObjectModel",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/engine.common",
+      "name": "_CommonDispose",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._CommonDispose",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__CommonDispose",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/engine.common",
+      "name": "_CommonInit",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._CommonInit",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleInterfaces.AbstractEngineOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__CommonInit",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Queue/executionQueue",
+      "name": "_ConnectAfter",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ConnectAfter",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ConnectAfter",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Queue/executionQueue",
+      "name": "_ConnectAtTheEnd",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ConnectAtTheEnd",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ConnectAtTheEnd",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Queue/executionQueue",
+      "name": "_ConnectBefore",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ConnectBefore",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ConnectBefore",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "_GetAudioEngine",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetAudioEngine",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__GetAudioEngine",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager",
+      "name": "_GetCompatibleTextureLoader",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetCompatibleTextureLoader",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__GetCompatibleTextureLoader",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode",
+      "name": "_GetVolumeAudioSubNode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._GetVolumeAudioSubNode",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._AbstractAudioSubGraph",
+        "BabylonjsBindings.SimpleClasses._VolumeAudioSubNode"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__GetVolumeAudioSubNode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener",
+      "name": "_HasSpatialAudioListenerOptions",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._HasSpatialAudioListenerOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISpatialAudioListenerOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__HasSpatialAudioListenerOptions",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio",
+      "name": "_HasSpatialAudioOptions",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._HasSpatialAudioOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.ISpatialAudioOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__HasSpatialAudioOptions",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Compression/dracoCodec",
+      "name": "_IsConfigurationAvailable",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._IsConfigurationAvailable",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IDracoCodecConfiguration"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__IsConfigurationAvailable",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/utils",
+      "name": "_IsDescendantOf",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._IsDescendantOf",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Node"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__IsDescendantOf",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/thinEngine.functions",
+      "name": "_isRenderingStateCompiled",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._isRenderingStateCompiled",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IPipelineContext",
+        "BabylonjsBindings.TypeAliases.WebGLContext"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__isRenderingStateCompiled",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/effect.functions",
+      "name": "_ProcessShaderCode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ProcessShaderCode",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.Effect",
+        "BabylonjsBindings.SimpleInterfaces._IProcessingOptions",
+        "BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ProcessShaderCode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Particles/Queue/executionQueue",
+      "name": "_RemoveFromQueue",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._RemoveFromQueue",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__RemoveFromQueue",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRBodyTracking.pure",
+      "name": "_ResolveMixamoRigMapping",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._ResolveMixamoRigMapping",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__ResolveMixamoRigMapping",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/RigModes/stereoscopicAnaglyphRigMode",
+      "name": "_SetStereoscopicAnaglyphRigMode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._SetStereoscopicAnaglyphRigMode",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__SetStereoscopicAnaglyphRigMode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/RigModes/stereoscopicRigMode",
+      "name": "_SetStereoscopicRigMode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._SetStereoscopicRigMode",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__SetStereoscopicRigMode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/RigModes/vrRigMode",
+      "name": "_SetVrRigMode",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._SetVrRigMode",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Camera"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__SetVrRigMode",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "_UpdateRGBDAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions._UpdateRGBDAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleClasses.SphericalPolynomial"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding__UpdateRGBDAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateAudioBusAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateAudioBusAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioBus",
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleInterfaces.IAudioBusOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateAudioBusAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioEngine",
+      "name": "CreateAudioEngineAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateAudioEngineAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioEngineOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateAudioEngineAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateMainAudioBusAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateMainAudioBusAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleClasses.MainAudioBus",
+        "BabylonjsBindings.SimpleInterfaces.IMainAudioBusOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateMainAudioBusAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateMicrophoneSoundSourceAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateMicrophoneSoundSourceAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleInterfaces.ISoundSourceOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateMicrophoneSoundSourceAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateSoundAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSoundAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleClasses.StaticSound",
+        "BabylonjsBindings.SimpleClasses.StaticSoundBuffer",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSoundAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateSoundBufferAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSoundBufferAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleClasses.StaticSoundBuffer",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundBufferOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSoundBufferAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "CreateSoundSourceAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateSoundSourceAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleInterfaces.ISoundSourceOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateSoundSourceAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser",
+      "name": "GetDataOutConnectionByUniqueId",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetDataOutConnectionByUniqueId",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetDataOutConnectionByUniqueId",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser",
+      "name": "GetSignalInConnectionByUniqueId",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetSignalInConnectionByUniqueId",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetSignalInConnectionByUniqueId",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "LastCreatedAudioEngine",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.LastCreatedAudioEngine",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_LastCreatedAudioEngine",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphParser",
+      "name": "ParseFlowGraphContext",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseFlowGraphContext",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphContextParseOptions",
+        "BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphContext"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ParseFlowGraphContext",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
+      "name": "ValidateFlowGraph",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ValidateFlowGraph",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraph",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationResult"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ValidateFlowGraph",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
+      "name": "ValidateFlowGraphWithBlockList",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ValidateFlowGraphWithBlockList",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraph",
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationResult"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ValidateFlowGraphWithBlockList",
       "overloadCount": 1
     }
   ],

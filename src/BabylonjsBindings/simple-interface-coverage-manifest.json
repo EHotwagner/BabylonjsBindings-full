@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "6547ca4ecc7a4c78d4a12bfdad7603fe3be44df5efa70158b76ebf07406f6a9c",
+  "proposalSha256": "5a8e52b24885a95ca1088f8a100a4f3757fd9accd61d409edfdb8e60d2681061",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5406,6 +5406,236 @@
         "BabylonjsBindings.SimpleInterfaces.IDisposable"
       ],
       "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraph",
+      "name": "IFlowGraphParams",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphParams",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphCoordinator",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphContext",
+      "name": "IFlowGraphPendingActivation",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphPendingActivation",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
+      "name": "IFlowGraphValidationIssue",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationIssue",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/staticSound",
+      "name": "IStaticSoundCloneOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundCloneOptions",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.PrimaryAudioBus"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundCloneOptions",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioNode",
+      "name": "IWebAudioInNode",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebAudioInNode",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioNode"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioNode",
+      "name": "IWebAudioOutNode",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebAudioOutNode",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioNode"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioNode",
+      "name": "IWebAudioSubNode",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebAudioSubNode",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._AbstractAudioSubNode"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphValidator",
+      "name": "IFlowGraphValidationResult",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationResult",
+      "dependencies": [],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioNode",
+      "name": "IWebAudioSuperNode",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioInNode",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioOutNode"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSoundSource",
+      "name": "ISoundSourceOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISoundSourceOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IAbstractAudioOutNodeOptions",
+        "BabylonjsBindings.SimpleInterfaces.ISpatialAudioOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStereoAudioOptions",
+        "BabylonjsBindings.TypeAliases.PrimaryAudioBus"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialISoundSourceOptions",
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gizmos/spatialAudioGizmo",
+      "name": "ISpatialAudioGizmo",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.ISpatialAudioGizmo",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.StandardMaterial",
+        "BabylonjsBindings.SimpleInterfaces.IGizmo"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSound",
+      "name": "IAbstractSoundOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAbstractSoundOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IAbstractSoundOptionsBase",
+        "BabylonjsBindings.SimpleInterfaces.IAbstractSoundPlayOptions",
+        "BabylonjsBindings.SimpleInterfaces.ISoundSourceOptions"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIAbstractSoundOptions",
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioBus",
+      "name": "IAudioBusOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IAudioBusOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IAbstractAudioBusOptions",
+        "BabylonjsBindings.SimpleInterfaces.ISpatialAudioOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStereoAudioOptions",
+        "BabylonjsBindings.TypeAliases.PrimaryAudioBus"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIAudioBusOptions",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphContext",
+      "name": "IFlowGraphContextConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphContextConfiguration",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphCoordinator",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSceneEventCoordinator",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphContext",
+      "name": "IFlowGraphContextParseOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IFlowGraphContextParseOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraph",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/staticSound",
+      "name": "IStaticSoundOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStaticSoundOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IAbstractSoundOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundBufferOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundStoredOptions"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundOptions",
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/streamingSound",
+      "name": "IStreamingSoundOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IStreamingSoundOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.IAbstractSoundOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundOptionsBase"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundOptions",
+      "memberCount": 0
     }
   ],
   "reviewStatus": "maintained"

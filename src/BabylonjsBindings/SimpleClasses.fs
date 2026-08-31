@@ -39613,3 +39613,3791 @@ module SimpleClasses =
 
     [<Import("WebXRWebGLRenderTargetTextureProvider", "@babylonjs/core/XR/webXRWebGLRenderTargetTextureProvider.js")>]
     let WebXRWebGLRenderTargetTextureProvider: WebXRWebGLRenderTargetTextureProviderStatic = jsNative
+
+    /// Exact Animation discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphAnimationAssetType =
+        | [<CompiledName("Animation")>] Value
+
+    /// Exact AnimationGroup discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphAnimationGroupAssetType =
+        | [<CompiledName("AnimationGroup")>] Value
+
+    /// Exact Mesh discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphMeshAssetType =
+        | [<CompiledName("Mesh")>] Value
+
+    /// Exact Material discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphMaterialAssetType =
+        | [<CompiledName("Material")>] Value
+
+    /// Exact Camera discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphCameraAssetType =
+        | [<CompiledName("Camera")>] Value
+
+    /// Exact Light discriminator accepted by FlowGraphContext.getAsset.
+    [<StringEnum; RequireQualifiedAccess>]
+    type FlowGraphLightAssetType =
+        | [<CompiledName("Light")>] Value
+
+    /// Exact string literal type for "log".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteral836ff184e7b4 =
+        | [<CompiledName("log")>] Value
+
+    /// Exact string literal type for "warn".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralaa63925edf22 =
+        | [<CompiledName("warn")>] Value
+
+    /// Exact string literal type for "error".
+    [<StringEnum; RequireQualifiedAccess>]
+    type StringLiteralca00fccfb408 =
+        | [<CompiledName("error")>] Value
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject75f16650067cObject =
+        abstract ``newName``: string with get, set
+        abstract ``oldName``: string with get, set
+        abstract ``node``: AbstractNamedAudioNode with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type MappedObject67e90531ed13 =
+        [<EmitIndexer>] abstract Item: ``key``: BabylonjsBindings.StringEnums.FlowGraphEventType -> ResizeArray<FlowGraphEventBlock> with get, set
+
+    /// Inline object shape used by a TypeScript utility projection.
+    [<AllowNullLiteral>]
+    type InlineObject11b93aedc709Object<'T> =
+        abstract ``duration``: FlowGraphDataConnection<float> with get, set
+        abstract ``value``: FlowGraphDataConnection<'T> with get, set
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subNodes/abstractAudioSubGraph
+    [<AllowNullLiteral>]
+    type _AbstractAudioSubGraph =
+        abstract ``callOnSubNode``<'T when 'T :> _AbstractAudioSubNode> : ``name``: BabylonjsBindings.StringEnums.AudioSubNode * ``callback``: System.Action<'T> -> unit
+        abstract ``createAndAddSubNodeAsync`` : ``name``: BabylonjsBindings.StringEnums.AudioSubNode -> JS.Promise<_AbstractAudioSubNode>
+        abstract ``dispose`` : unit -> unit
+        abstract ``getSubNode``<'T when 'T :> _AbstractAudioSubNode> : ``name``: string -> 'T option
+        abstract ``removeSubNodeAsync`` : ``subNode``: _AbstractAudioSubNode option -> JS.Promise<unit>
+
+    [<AllowNullLiteral>]
+    type _AbstractAudioSubGraphStatic =
+        interface end
+
+    [<Import("_AbstractAudioSubGraph", "@babylonjs/core/AudioV2/abstractAudio/subNodes/abstractAudioSubGraph.js")>]
+    let _AbstractAudioSubGraph: _AbstractAudioSubGraphStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subNodes/abstractAudioSubNode
+    [<AllowNullLiteral>]
+    type _AbstractAudioSubNode =
+        inherit AbstractNamedAudioNode
+        abstract ``connect`` : ``node``: _AbstractAudioSubNode -> unit
+        abstract ``disconnect`` : ``node``: _AbstractAudioSubNode -> unit
+        abstract ``disconnectAll`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type _AbstractAudioSubNodeStatic =
+        inherit AbstractNamedAudioNodeStatic
+
+    [<Import("_AbstractAudioSubNode", "@babylonjs/core/AudioV2/abstractAudio/subNodes/abstractAudioSubNode.js")>]
+    let _AbstractAudioSubNode: _AbstractAudioSubNodeStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/abstractSoundInstance
+    [<AllowNullLiteral>]
+    type _AbstractSoundInstance =
+        inherit AbstractAudioNode
+        abstract ``onEndedObservable``: Observable<_AbstractSoundInstance> with get
+        abstract ``onErrorObservable``: Observable<obj> with get
+        abstract ``onStateChangedObservable``: Observable<_AbstractSoundInstance> with get
+        abstract ``currentTime``: float with get, set
+        abstract ``startTime``: float with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``play`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIAbstractSoundPlayOptions -> unit
+        abstract ``pause`` : unit -> unit
+        abstract ``resume`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAbstractSoundPlayOptions -> unit
+        abstract ``stop`` : unit -> unit
+        abstract ``loop``: bool with set
+        abstract ``state``: BabylonjsBindings.Enums.SoundState with get
+
+    [<AllowNullLiteral>]
+    type _AbstractSoundInstanceStatic =
+        inherit AbstractAudioNodeStatic
+
+    [<Import("_AbstractSoundInstance", "@babylonjs/core/AudioV2/abstractAudio/abstractSoundInstance.js")>]
+    let _AbstractSoundInstance: _AbstractSoundInstanceStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/basisTextureLoader
+    [<AllowNullLiteral>]
+    type _BasisTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
+        abstract ``supportCascades``: bool with get
+        abstract ``loadCubeData`` : ``data``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``texture``: InternalTexture * ``createPolynomials``: bool * ``onLoad``: System.Action<obj option> option * ``onError``: System.Action<string option, obj option> option -> unit
+        abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action, bool option> -> unit
+
+    [<AllowNullLiteral>]
+    type _BasisTextureLoaderStatic =
+        inherit Constructor<_BasisTextureLoader>
+        [<EmitConstructor>] abstract Create: unit -> _BasisTextureLoader
+
+    [<Import("_BasisTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/basisTextureLoader.js")>]
+    let _BasisTextureLoader: _BasisTextureLoaderStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/ddsTextureLoader
+    [<AllowNullLiteral>]
+    type _DDSTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
+        abstract ``supportCascades``: bool with get
+        abstract ``loadCubeData`` : ``imgs``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``texture``: InternalTexture * ``createPolynomials``: bool * ``onLoad``: System.Action<obj option> option -> unit
+        abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action> -> unit
+
+    [<AllowNullLiteral>]
+    type _DDSTextureLoaderStatic =
+        inherit Constructor<_DDSTextureLoader>
+        [<EmitConstructor>] abstract Create: unit -> _DDSTextureLoader
+
+    [<Import("_DDSTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/ddsTextureLoader.js")>]
+    let _DDSTextureLoader: _DDSTextureLoaderStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/envTextureLoader
+    [<AllowNullLiteral>]
+    type _ENVTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
+        abstract ``supportCascades``: bool with get
+        abstract ``loadCubeData`` : ``data``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``texture``: InternalTexture * ``createPolynomials``: bool * ``onLoad``: System.Action<obj option> option * ``onError``: System.Action<string option, obj option> option -> unit
+        abstract ``loadData`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type _ENVTextureLoaderStatic =
+        inherit Constructor<_ENVTextureLoader>
+        [<EmitConstructor>] abstract Create: unit -> _ENVTextureLoader
+
+    [<Import("_ENVTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/envTextureLoader.js")>]
+    let _ENVTextureLoader: _ENVTextureLoaderStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/exrTextureLoader
+    [<AllowNullLiteral>]
+    type _ExrTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
+        abstract ``supportCascades``: bool with get
+        abstract ``loadCubeData`` : ``_data``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``_texture``: InternalTexture * ``_createPolynomials``: bool * ``_onLoad``: System.Action<obj option> option * ``_onError``: System.Action<string option, obj option> option -> unit
+        abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action, bool option> -> unit
+
+    [<AllowNullLiteral>]
+    type _ExrTextureLoaderStatic =
+        inherit Constructor<_ExrTextureLoader>
+        [<EmitConstructor>] abstract Create: unit -> _ExrTextureLoader
+
+    [<Import("_ExrTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/exrTextureLoader.js")>]
+    let _ExrTextureLoader: _ExrTextureLoaderStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/hdrTextureLoader
+    [<AllowNullLiteral>]
+    type _HDRTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
+        abstract ``supportCascades``: bool with get
+        abstract ``loadCubeData`` : unit -> unit
+        abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action> -> unit
+
+    [<AllowNullLiteral>]
+    type _HDRTextureLoaderStatic =
+        inherit Constructor<_HDRTextureLoader>
+        [<EmitConstructor>] abstract Create: unit -> _HDRTextureLoader
+
+    [<Import("_HDRTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/hdrTextureLoader.js")>]
+    let _HDRTextureLoader: _HDRTextureLoaderStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/iesTextureLoader
+    [<AllowNullLiteral>]
+    type _IESTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
+        abstract ``supportCascades``: bool with get
+        abstract ``loadCubeData`` : unit -> unit
+        abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action> -> unit
+
+    [<AllowNullLiteral>]
+    type _IESTextureLoaderStatic =
+        inherit Constructor<_IESTextureLoader>
+        [<EmitConstructor>] abstract Create: unit -> _IESTextureLoader
+
+    [<Import("_IESTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/iesTextureLoader.js")>]
+    let _IESTextureLoader: _IESTextureLoaderStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/ktxTextureLoader
+    [<AllowNullLiteral>]
+    type _KTXTextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
+        abstract ``supportCascades``: bool with get
+        abstract ``loadCubeData`` : ``data``: U2<JS.ArrayBufferView, ResizeArray<JS.ArrayBufferView>> * ``texture``: InternalTexture * ``createPolynomials``: bool * ``onLoad``: System.Action<obj option> option -> unit
+        abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action, bool> * ?``options``: obj -> unit
+
+    [<AllowNullLiteral>]
+    type _KTXTextureLoaderStatic =
+        inherit Constructor<_KTXTextureLoader>
+        [<EmitConstructor>] abstract Create: unit -> _KTXTextureLoader
+
+    [<Import("_KTXTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/ktxTextureLoader.js")>]
+    let _KTXTextureLoader: _KTXTextureLoaderStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/mainAudioOut
+    [<AllowNullLiteral>]
+    type _MainAudioOut =
+        inherit AbstractAudioNode
+
+    [<AllowNullLiteral>]
+    type _MainAudioOutStatic =
+        inherit AbstractAudioNodeStatic
+
+    [<Import("_MainAudioOut", "@babylonjs/core/AudioV2/abstractAudio/mainAudioOut.js")>]
+    let _MainAudioOut: _MainAudioOutStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/staticSoundInstance
+    [<AllowNullLiteral>]
+    type _StaticSoundInstance =
+        inherit _AbstractSoundInstance
+        abstract ``play`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundPlayOptions -> unit
+        abstract ``stop`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundStopOptions -> unit
+        abstract ``loopStart``: float with set
+        abstract ``loopEnd``: float with set
+        abstract ``pitch``: float with set
+        abstract ``playbackRate``: float with set
+
+    [<AllowNullLiteral>]
+    type _StaticSoundInstanceStatic =
+        inherit _AbstractSoundInstanceStatic
+
+    [<Import("_StaticSoundInstance", "@babylonjs/core/AudioV2/abstractAudio/staticSoundInstance.js")>]
+    let _StaticSoundInstance: _StaticSoundInstanceStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/stereoAudio
+    [<AllowNullLiteral>]
+    type _StereoAudio =
+        inherit AbstractStereoAudio
+        abstract ``pan``: float with get, set
+
+    [<AllowNullLiteral>]
+    type _StereoAudioStatic =
+        inherit AbstractStereoAudioStatic
+        inherit Constructor<_StereoAudio>
+        [<EmitConstructor>] abstract Create: ``subGraph``: _AbstractAudioSubGraph -> _StereoAudio
+
+    [<Import("_StereoAudio", "@babylonjs/core/AudioV2/abstractAudio/subProperties/stereoAudio.js")>]
+    let _StereoAudio: _StereoAudioStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/streamingSoundInstance
+    [<AllowNullLiteral>]
+    type _StreamingSoundInstance =
+        inherit _AbstractSoundInstance
+        abstract ``onReadyObservable``: Observable<_StreamingSoundInstance> with get
+        abstract ``preloadedPromise``: JS.Promise<unit> with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``startOffset``: float with set
+
+    [<AllowNullLiteral>]
+    type _StreamingSoundInstanceStatic =
+        inherit _AbstractSoundInstanceStatic
+
+    [<Import("_StreamingSoundInstance", "@babylonjs/core/AudioV2/abstractAudio/streamingSoundInstance.js")>]
+    let _StreamingSoundInstance: _StreamingSoundInstanceStatic = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/tgaTextureLoader
+    [<AllowNullLiteral>]
+    type _TGATextureLoader =
+        inherit BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader
+        abstract ``supportCascades``: bool with get
+        abstract ``loadCubeData`` : unit -> unit
+        abstract ``loadData`` : ``data``: JS.ArrayBufferView * ``texture``: InternalTexture * ``callback``: System.Action<float, float, bool, bool, System.Action> -> unit
+
+    [<AllowNullLiteral>]
+    type _TGATextureLoaderStatic =
+        inherit Constructor<_TGATextureLoader>
+        [<EmitConstructor>] abstract Create: unit -> _TGATextureLoader
+
+    [<Import("_TGATextureLoader", "@babylonjs/core/Materials/Textures/Loaders/tgaTextureLoader.js")>]
+    let _TGATextureLoader: _TGATextureLoaderStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode
+    [<AllowNullLiteral>]
+    type _VolumeAudioSubNode =
+        inherit _AbstractAudioSubNode
+        abstract ``volume``: float with get, set
+        abstract ``setOptions`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIVolumeAudioOptions -> unit
+        abstract ``setVolume`` : ``value``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioParameterRampOptions -> unit
+
+    [<AllowNullLiteral>]
+    type _VolumeAudioSubNodeStatic =
+        inherit _AbstractAudioSubNodeStatic
+
+    [<Import("_VolumeAudioSubNode", "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode.js")>]
+    let _VolumeAudioSubNode: _VolumeAudioSubNodeStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/subNodes/webAudioBaseSubGraph
+    [<AllowNullLiteral>]
+    type _WebAudioBaseSubGraph =
+        inherit _AbstractAudioSubGraph
+        abstract ``initAsync`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIWebAudioBaseSubGraphOptions -> JS.Promise<unit>
+        abstract ``_inNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``_outNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+
+    [<AllowNullLiteral>]
+    type _WebAudioBaseSubGraphStatic =
+        inherit _AbstractAudioSubGraphStatic
+        inherit Constructor<_WebAudioBaseSubGraph>
+        [<EmitConstructor>] abstract Create: ``owner``: BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode -> _WebAudioBaseSubGraph
+
+    [<Import("_WebAudioBaseSubGraph", "@babylonjs/core/AudioV2/webAudio/subNodes/webAudioBaseSubGraph.js")>]
+    let _WebAudioBaseSubGraph: _WebAudioBaseSubGraphStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioBus
+    [<AllowNullLiteral>]
+    type _WebAudioBus =
+        inherit AudioBus
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode
+        abstract ``engine``: _WebAudioEngine with get
+        abstract ``_initAsync`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioBusOptions -> JS.Promise<unit>
+        abstract ``dispose`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``_inNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``_outNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``stereo``: _StereoAudio with get
+
+    [<AllowNullLiteral>]
+    type _WebAudioBusStatic =
+        inherit AudioBusStatic
+        inherit Constructor<_WebAudioBus>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``engine``: _WebAudioEngine * ``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioBusOptions -> _WebAudioBus
+
+    [<Import("_WebAudioBus", "@babylonjs/core/AudioV2/webAudio/webAudioBus.js")>]
+    let _WebAudioBus: _WebAudioBusStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/subNodes/webAudioBusAndSoundSubGraph
+    [<AllowNullLiteral>]
+    type _WebAudioBusAndSoundSubGraph =
+        inherit _WebAudioBaseSubGraph
+        abstract ``initAsync`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIWebAudioBusAndSoundSubGraphOptions -> JS.Promise<unit>
+        abstract ``_inNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+
+    [<AllowNullLiteral>]
+    type _WebAudioBusAndSoundSubGraphStatic =
+        inherit _WebAudioBaseSubGraphStatic
+        inherit Constructor<_WebAudioBusAndSoundSubGraph>
+        [<EmitConstructor>] abstract Create: ``owner``: BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode -> _WebAudioBusAndSoundSubGraph
+
+    [<Import("_WebAudioBusAndSoundSubGraph", "@babylonjs/core/AudioV2/webAudio/subNodes/webAudioBusAndSoundSubGraph.js")>]
+    let _WebAudioBusAndSoundSubGraph: _WebAudioBusAndSoundSubGraphStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioEngine
+    [<AllowNullLiteral>]
+    type _WebAudioEngine =
+        inherit AudioEngineV2
+        abstract ``_audioContext``: BabylonjsBindings.SimpleInterfaces.BrowserAudioContext with get
+        abstract ``_isUsingOfflineAudioContext``: bool with get
+        abstract ``isReadyPromise``: JS.Promise<unit> with get
+        abstract ``stateChangedObservable``: Observable<string> with get, set
+        abstract ``userGestureObservable``: Observable<unit> with get, set
+        abstract ``_initAsync`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIWebAudioEngineOptions -> JS.Promise<unit>
+        abstract ``createBusAsync`` : ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioBusOptions -> JS.Promise<AudioBus>
+        abstract ``createMainBusAsync`` : ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIMainAudioBusOptions -> JS.Promise<MainAudioBus>
+        abstract ``createMicrophoneSoundSourceAsync`` : ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialISoundSourceOptions -> JS.Promise<AbstractSoundSource>
+        abstract ``createSoundAsync`` : ``name``: string * ``source``: U5<JS.ArrayBuffer, BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer, StaticSoundBuffer, string, ResizeArray<string>> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundOptions -> JS.Promise<StaticSound>
+        abstract ``createSoundBufferAsync`` : ``source``: U5<JS.ArrayBuffer, BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer, StaticSoundBuffer, string, ResizeArray<string>> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundBufferOptions -> JS.Promise<StaticSoundBuffer>
+        abstract ``createSoundSourceAsync`` : ``name``: string * ``source``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialISoundSourceOptions -> JS.Promise<AbstractSoundSource>
+        abstract ``createStreamingSoundAsync`` : ``name``: string * ``source``: U3<Browser.Types.HTMLMediaElement, string, ResizeArray<string>> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundOptions -> JS.Promise<StreamingSound>
+        abstract ``dispose`` : unit -> unit
+        abstract ``flagInvalidFormat`` : ``format``: string -> unit
+        abstract ``isFormatValid`` : ``format``: string -> bool
+        abstract ``pauseAsync`` : unit -> JS.Promise<unit>
+        abstract ``resumeAsync`` : unit -> JS.Promise<unit>
+        abstract ``setVolume`` : ``value``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioParameterRampOptions -> unit
+        abstract ``_addMainBus`` : ``mainBus``: MainAudioBus -> unit
+        abstract ``_removeMainBus`` : ``mainBus``: MainAudioBus -> unit
+        abstract ``_addNode`` : ``node``: AbstractNamedAudioNode -> unit
+        abstract ``_removeNode`` : ``node``: AbstractNamedAudioNode -> unit
+        abstract ``_addSound`` : ``sound``: AbstractSound -> unit
+        abstract ``_removeSound`` : ``sound``: AbstractSound -> unit
+        abstract ``_onSoundPlaybackStateChanged`` : unit -> unit
+        abstract ``_addUpdateObserver`` : ``callback``: System.Action -> unit
+        abstract ``_removeUpdateObserver`` : ``callback``: System.Action -> unit
+        abstract ``currentTime``: float with get
+        abstract ``_inNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode with get
+        abstract ``mainOut``: _WebAudioMainOut with get
+        abstract ``listener``: AbstractSpatialAudioListener with get
+        abstract ``state``: BabylonjsBindings.StringEnums.AudioEngineV2State with get
+        abstract ``volume``: float with get, set
+        abstract ``_audioDestination``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode with get
+        [<Emit("$0._audioDestination = $1")>] abstract ``setAudioDestination``: value: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option -> unit
+        abstract ``_unmuteUIEnabled``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type _WebAudioEngineStatic =
+        inherit AudioEngineV2Static
+        inherit Constructor<_WebAudioEngine>
+        [<EmitConstructor>] abstract Create: ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIWebAudioEngineOptions -> _WebAudioEngine
+
+    [<Import("_WebAudioEngine", "@babylonjs/core/AudioV2/webAudio/webAudioEngine.js")>]
+    let _WebAudioEngine: _WebAudioEngineStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioMainBus
+    [<AllowNullLiteral>]
+    type _WebAudioMainBus =
+        inherit MainAudioBus
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode
+        abstract ``engine``: _WebAudioEngine with get
+        abstract ``_initAsync`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialIMainAudioBusOptions -> JS.Promise<unit>
+        abstract ``dispose`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``_inNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``_outNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+
+    [<AllowNullLiteral>]
+    type _WebAudioMainBusStatic =
+        inherit MainAudioBusStatic
+        inherit Constructor<_WebAudioMainBus>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``engine``: _WebAudioEngine -> _WebAudioMainBus
+
+    [<Import("_WebAudioMainBus", "@babylonjs/core/AudioV2/webAudio/webAudioMainBus.js")>]
+    let _WebAudioMainBus: _WebAudioMainBusStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioMainOut
+    [<AllowNullLiteral>]
+    type _WebAudioMainOut =
+        inherit _MainAudioOut
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioInNode
+        abstract ``engine``: _WebAudioEngine with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``setVolume`` : ``value``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioParameterRampOptions -> unit
+        abstract ``_inNode``: BabylonjsBindings.SimpleInterfaces.BrowserGainNode with get, set
+        abstract ``volume``: float with get, set
+
+    [<AllowNullLiteral>]
+    type _WebAudioMainOutStatic =
+        inherit _MainAudioOutStatic
+        inherit Constructor<_WebAudioMainOut>
+        [<EmitConstructor>] abstract Create: ``engine``: _WebAudioEngine -> _WebAudioMainOut
+
+    [<Import("_WebAudioMainOut", "@babylonjs/core/AudioV2/webAudio/webAudioMainOut.js")>]
+    let _WebAudioMainOut: _WebAudioMainOutStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioSoundSource
+    [<AllowNullLiteral>]
+    type _WebAudioSoundSource =
+        inherit AbstractSoundSource
+        abstract ``_audioContext``: U2<BabylonjsBindings.SimpleInterfaces.BrowserAudioContext, BabylonjsBindings.SimpleInterfaces.BrowserOfflineAudioContext> with get, set
+        abstract ``engine``: _WebAudioEngine with get
+        abstract ``_initAsync`` : ``options``: BabylonjsBindings.SimpleInterfaces.PartialISoundSourceOptions -> JS.Promise<unit>
+        abstract ``dispose`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``_inNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``_outNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``stereo``: _StereoAudio with get
+
+    [<AllowNullLiteral>]
+    type _WebAudioSoundSourceStatic =
+        inherit AbstractSoundSourceStatic
+        inherit Constructor<_WebAudioSoundSource>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``webAudioNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode * ``engine``: _WebAudioEngine * ``options``: BabylonjsBindings.SimpleInterfaces.PartialISoundSourceOptions -> _WebAudioSoundSource
+
+    [<Import("_WebAudioSoundSource", "@babylonjs/core/AudioV2/webAudio/webAudioSoundSource.js")>]
+    let _WebAudioSoundSource: _WebAudioSoundSourceStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioStaticSound
+    [<AllowNullLiteral>]
+    type _WebAudioStaticSound =
+        inherit StaticSound
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode
+        abstract ``_audioContext``: U2<BabylonjsBindings.SimpleInterfaces.BrowserAudioContext, BabylonjsBindings.SimpleInterfaces.BrowserOfflineAudioContext> with get, set
+        abstract ``engine``: _WebAudioEngine with get
+        abstract ``_initAsync`` : ``source``: U5<JS.ArrayBuffer, BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer, StaticSoundBuffer, string, ResizeArray<string>> * ``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundOptions -> JS.Promise<unit>
+        abstract ``cloneAsync`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundCloneOptions -> JS.Promise<StaticSound>
+        abstract ``dispose`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``_getOptions`` : unit -> BabylonjsBindings.SimpleInterfaces.IStaticSoundStoredOptions
+        abstract ``buffer``: _WebAudioStaticSoundBuffer with get
+        abstract ``_inNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``_outNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``stereo``: _StereoAudio with get
+
+    [<AllowNullLiteral>]
+    type _WebAudioStaticSoundStatic =
+        inherit StaticSoundStatic
+        inherit Constructor<_WebAudioStaticSound>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``engine``: _WebAudioEngine * ``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundOptions -> _WebAudioStaticSound
+
+    [<Import("_WebAudioStaticSound", "@babylonjs/core/AudioV2/webAudio/webAudioStaticSound.js")>]
+    let _WebAudioStaticSound: _WebAudioStaticSoundStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioStaticSound
+    [<AllowNullLiteral>]
+    type _WebAudioStaticSoundBuffer =
+        inherit StaticSoundBuffer
+        abstract ``_audioBuffer``: BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer with get, set
+        abstract ``engine``: _WebAudioEngine with get
+        abstract ``_initAsync`` : ``source``: U5<JS.ArrayBuffer, BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer, StaticSoundBuffer, string, ResizeArray<string>> * ``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundBufferOptions -> JS.Promise<unit>
+        abstract ``clone`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundBufferCloneOptions -> StaticSoundBuffer
+        abstract ``channelCount``: float with get
+        abstract ``duration``: float with get
+        abstract ``length``: float with get
+        abstract ``sampleRate``: float with get
+
+    [<AllowNullLiteral>]
+    type _WebAudioStaticSoundBufferStatic =
+        inherit StaticSoundBufferStatic
+        inherit Constructor<_WebAudioStaticSoundBuffer>
+        [<EmitConstructor>] abstract Create: ``engine``: _WebAudioEngine -> _WebAudioStaticSoundBuffer
+
+    [<Import("_WebAudioStaticSoundBuffer", "@babylonjs/core/AudioV2/webAudio/webAudioStaticSound.js")>]
+    let _WebAudioStaticSoundBuffer: _WebAudioStaticSoundBufferStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioStreamingSound
+    [<AllowNullLiteral>]
+    type _WebAudioStreamingSound =
+        inherit StreamingSound
+        inherit BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode
+        abstract ``_audioContext``: BabylonjsBindings.SimpleInterfaces.BrowserAudioContext with get, set
+        abstract ``engine``: _WebAudioEngine with get
+        abstract ``_source``: U3<Browser.Types.HTMLMediaElement, string, ResizeArray<string>> with get, set
+        abstract ``_initAsync`` : ``source``: U3<Browser.Types.HTMLMediaElement, string, ResizeArray<string>> * ``options``: BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundOptions -> JS.Promise<unit>
+        abstract ``dispose`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``_getOptions`` : unit -> BabylonjsBindings.SimpleInterfaces.IStreamingSoundStoredOptions
+        abstract ``_inNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``_outNode``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode option with get
+        abstract ``stereo``: _StereoAudio with get
+
+    [<AllowNullLiteral>]
+    type _WebAudioStreamingSoundStatic =
+        inherit StreamingSoundStatic
+        inherit Constructor<_WebAudioStreamingSound>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``engine``: _WebAudioEngine * ``options``: BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundOptions -> _WebAudioStreamingSound
+
+    [<Import("_WebAudioStreamingSound", "@babylonjs/core/AudioV2/webAudio/webAudioStreamingSound.js")>]
+    let _WebAudioStreamingSound: _WebAudioStreamingSoundStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/abstractAudioBus
+    [<AllowNullLiteral>]
+    type AbstractAudioBus =
+        inherit AbstractAudioOutNode
+
+    [<AllowNullLiteral>]
+    type AbstractAudioBusStatic =
+        inherit AbstractAudioOutNodeStatic
+
+    [<Import("AbstractAudioBus", "@babylonjs/core/AudioV2/abstractAudio/abstractAudioBus.js")>]
+    let AbstractAudioBus: AbstractAudioBusStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/abstractAudioNode
+    [<AllowNullLiteral>]
+    type AbstractAudioNode =
+        abstract ``engine``: AudioEngineV2 with get
+        abstract ``onDisposeObservable``: Observable<AbstractAudioNode> with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type AbstractAudioNodeStatic =
+        interface end
+
+    [<Import("AbstractAudioNode", "@babylonjs/core/AudioV2/abstractAudio/abstractAudioNode.js")>]
+    let AbstractAudioNode: AbstractAudioNodeStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/abstractAudioOutNode
+    [<AllowNullLiteral>]
+    type AbstractAudioOutNode =
+        inherit AbstractNamedAudioNode
+        abstract ``dispose`` : unit -> unit
+        abstract ``setVolume`` : ``value``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioParameterRampOptions -> unit
+        abstract ``analyzer``: AbstractAudioAnalyzer with get
+        abstract ``volume``: float with get, set
+
+    [<AllowNullLiteral>]
+    type AbstractAudioOutNodeStatic =
+        inherit AbstractNamedAudioNodeStatic
+
+    [<Import("AbstractAudioOutNode", "@babylonjs/core/AudioV2/abstractAudio/abstractAudioOutNode.js")>]
+    let AbstractAudioOutNode: AbstractAudioOutNodeStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/abstractAudioNode
+    [<AllowNullLiteral>]
+    type AbstractNamedAudioNode =
+        inherit AbstractAudioNode
+        abstract ``onNameChangedObservable``: Observable<InlineObject75f16650067cObject> with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``name``: string with get, set
+
+    [<AllowNullLiteral>]
+    type AbstractNamedAudioNodeStatic =
+        inherit AbstractAudioNodeStatic
+
+    [<Import("AbstractNamedAudioNode", "@babylonjs/core/AudioV2/abstractAudio/abstractAudioNode.js")>]
+    let AbstractNamedAudioNode: AbstractNamedAudioNodeStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/abstractSound
+    [<AllowNullLiteral>]
+    type AbstractSound =
+        inherit AbstractSoundSource
+        abstract ``onEndedObservable``: Observable<AbstractSound> with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``play`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAbstractSoundPlayOptions -> unit
+        abstract ``pause`` : unit -> unit
+        abstract ``resume`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAbstractSoundPlayOptions -> unit
+        abstract ``stop`` : unit -> unit
+        abstract ``activeInstancesCount``: float with get
+        abstract ``autoplay``: bool with get
+        abstract ``currentTime``: float with get, set
+        abstract ``loop``: bool with get, set
+        abstract ``maxInstances``: float with get, set
+        abstract ``startOffset``: float with get, set
+        abstract ``state``: BabylonjsBindings.Enums.SoundState with get
+
+    [<AllowNullLiteral>]
+    type AbstractSoundStatic =
+        inherit AbstractSoundSourceStatic
+
+    [<Import("AbstractSound", "@babylonjs/core/AudioV2/abstractAudio/abstractSound.js")>]
+    let AbstractSound: AbstractSoundStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/abstractSoundSource
+    [<AllowNullLiteral>]
+    type AbstractSoundSource =
+        inherit AbstractAudioOutNode
+        abstract ``stereo``: AbstractStereoAudio with get, set
+        abstract ``dispose`` : unit -> unit
+        abstract ``outBus``: BabylonjsBindings.TypeAliases.PrimaryAudioBus option with get, set
+        abstract ``spatial``: AbstractSpatialAudio with get
+        abstract ``_isSpatial``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type AbstractSoundSourceStatic =
+        inherit AbstractAudioOutNodeStatic
+
+    [<Import("AbstractSoundSource", "@babylonjs/core/AudioV2/abstractAudio/abstractSoundSource.js")>]
+    let AbstractSoundSource: AbstractSoundSourceStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioBus
+    [<AllowNullLiteral>]
+    type AudioBus =
+        inherit AbstractAudioBus
+        abstract ``stereo``: AbstractStereoAudio with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``outBus``: BabylonjsBindings.TypeAliases.PrimaryAudioBus option with get, set
+        abstract ``spatial``: AbstractSpatialAudio with get
+
+    [<AllowNullLiteral>]
+    type AudioBusStatic =
+        inherit AbstractAudioBusStatic
+
+    [<Import("AudioBus", "@babylonjs/core/AudioV2/abstractAudio/audioBus.js")>]
+    let AudioBus: AudioBusStatic = jsNative
+
+    /// @babylonjs/core/Audio/audioEngine.pure
+    [<AllowNullLiteral>]
+    type AudioEngine =
+        inherit BabylonjsBindings.SimpleInterfaces.IAudioEngine
+        abstract ``canUseWebAudio``: bool with get, set
+        abstract ``WarnedWebAudioUnsupported``: bool with get, set
+        abstract ``isMP3supported``: bool with get, set
+        abstract ``isOGGsupported``: bool with get, set
+        abstract ``unlocked``: bool with get, set
+        abstract ``onAudioUnlockedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IAudioEngine> with get, set
+        abstract ``onAudioLockedObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IAudioEngine> with get, set
+        abstract ``_v2``: _WebAudioEngine with get, set
+        abstract ``lock`` : unit -> unit
+        abstract ``unlock`` : unit -> unit
+        abstract ``_resumeAudioContextOnStateChange`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``getGlobalVolume`` : unit -> float
+        abstract ``setGlobalVolume`` : ``newVolume``: float -> unit
+        abstract ``connectToAnalyser`` : ``analyser``: Analyser -> unit
+        abstract ``masterGain``: BabylonjsBindings.SimpleInterfaces.BrowserGainNode with get, set
+        abstract ``useCustomUnlockedButton``: bool with get, set
+        abstract ``audioContext``: BabylonjsBindings.SimpleInterfaces.BrowserAudioContext option with get
+
+    [<AllowNullLiteral>]
+    type AudioEngineStatic =
+        inherit Constructor<AudioEngine>
+        [<EmitConstructor>] abstract Create: ?``hostElement``: Browser.Types.HTMLElement * ?``audioContext``: BabylonjsBindings.SimpleInterfaces.BrowserAudioContext * ?``audioDestination``: U2<BabylonjsBindings.SimpleInterfaces.BrowserAudioDestinationNode, BabylonjsBindings.SimpleInterfaces.BrowserMediaStreamAudioDestinationNode> -> AudioEngine
+
+    [<Import("AudioEngine", "@babylonjs/core/Audio/audioEngine.pure.js")>]
+    let AudioEngine: AudioEngineStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<AllowNullLiteral>]
+    type AudioEngineV2 =
+        inherit BabylonjsBindings.SimpleInterfaces.IDisposable
+        abstract ``currentTime``: float with get
+        abstract ``listener``: AbstractSpatialAudioListener with get
+        abstract ``mainOut``: AbstractAudioNode with get
+        abstract ``state``: BabylonjsBindings.StringEnums.AudioEngineV2State with get
+        abstract ``volume``: float with get, set
+        abstract ``createBusAsync`` : ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioBusOptions -> JS.Promise<AudioBus>
+        abstract ``createMainBusAsync`` : ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIMainAudioBusOptions -> JS.Promise<MainAudioBus>
+        abstract ``createMicrophoneSoundSourceAsync`` : ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialISoundSourceOptions -> JS.Promise<AbstractSoundSource>
+        abstract ``createSoundAsync`` : ``name``: string * ``source``: U5<JS.ArrayBuffer, BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer, StaticSoundBuffer, string, ResizeArray<string>> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundOptions -> JS.Promise<StaticSound>
+        abstract ``createSoundBufferAsync`` : ``source``: U5<JS.ArrayBuffer, BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer, StaticSoundBuffer, string, ResizeArray<string>> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundBufferOptions -> JS.Promise<StaticSoundBuffer>
+        abstract ``createSoundSourceAsync`` : ``name``: string * ``source``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialISoundSourceOptions -> JS.Promise<AbstractSoundSource>
+        abstract ``createStreamingSoundAsync`` : ``name``: string * ``source``: U3<Browser.Types.HTMLMediaElement, string, ResizeArray<string>> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundOptions -> JS.Promise<StreamingSound>
+        abstract ``dispose`` : unit -> unit
+        abstract ``isFormatValid`` : ``format``: string -> bool
+        abstract ``pauseAsync`` : unit -> JS.Promise<unit>
+        abstract ``resumeAsync`` : unit -> JS.Promise<unit>
+        abstract ``setVolume`` : ``value``: float * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioParameterRampOptions -> unit
+        abstract ``unlockAsync`` : unit -> JS.Promise<unit>
+        abstract ``_onSoundPlaybackStateChanged`` : unit -> unit
+        abstract ``onNodeAddedObservable``: BabylonjsBindings.SimpleInterfaces.IReadonlyObservable<AbstractNamedAudioNode> with get
+        abstract ``onNodeRemovedObservable``: BabylonjsBindings.SimpleInterfaces.IReadonlyObservable<AbstractNamedAudioNode> with get
+        abstract ``onDisposeObservable``: BabylonjsBindings.SimpleInterfaces.IReadonlyObservable<AudioEngineV2> with get
+        abstract ``defaultMainBus``: MainAudioBus option with get
+        abstract ``parameterRampDuration``: float with get, set
+        abstract ``sounds``: System.Collections.Generic.IReadOnlyList<AbstractSound> with get
+        abstract ``nodes``: BabylonjsBindings.SimpleInterfaces.BrowserReadonlySet<AbstractNamedAudioNode> with get
+
+    [<AllowNullLiteral>]
+    type AudioEngineV2Static =
+        abstract ``Instances``: System.Collections.Generic.IReadOnlyList<AudioEngineV2> with get
+
+    [<Import("AudioEngineV2", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let AudioEngineV2: AudioEngineV2Static = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraph
+    [<AllowNullLiteral>]
+    type FlowGraph =
+        abstract ``name``: string with get, set
+        abstract ``uniqueId``: string with get, set
+        abstract ``onStateChangedObservable``: Observable<BabylonjsBindings.Enums.FlowGraphState> with get, set
+        abstract ``_eventBlocks``: MappedObject67e90531ed13 with get, set
+        abstract ``_allBlocks``: ResizeArray<FlowGraphBlock> with get, set
+        abstract ``_scene``: Scene with get
+        abstract ``setScene`` : ``scene``: Scene -> unit
+        abstract ``createContext`` : unit -> FlowGraphContext
+        abstract ``getContext`` : ``index``: float -> FlowGraphContext
+        abstract ``removeContext`` : ``index``: float -> FlowGraphContext option
+        abstract ``getAllBlocks`` : unit -> System.Collections.Generic.IReadOnlyList<FlowGraphBlock>
+        abstract ``addBlock`` : ``block``: FlowGraphBlock -> unit
+        abstract ``removeBlock`` : ``block``: FlowGraphBlock -> unit
+        abstract ``addEventBlock`` : ``block``: FlowGraphEventBlock -> unit
+        abstract ``stop`` : unit -> unit
+        abstract ``pause`` : unit -> unit
+        abstract ``start`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``visitAllBlocks`` : ``visitor``: System.Action<FlowGraphBlock> -> unit
+        abstract ``validate`` : unit -> BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationResult
+        abstract ``serialize`` : ?``serializationObject``: obj * ?``valueSerializeFunction``: System.Action<string, obj, obj> -> unit
+        abstract ``edit`` : ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphEditorLaunchOptions -> JS.Promise<unit>
+        abstract ``scene``: Scene with get
+        abstract ``coordinator``: FlowGraphCoordinator with get
+        abstract ``sceneEventCoordinator``: FlowGraphSceneEventCoordinator with get
+        abstract ``state``: BabylonjsBindings.Enums.FlowGraphState with get, set
+        abstract ``contextCount``: float with get
+
+    [<AllowNullLiteral>]
+    type FlowGraphStatic =
+        inherit Constructor<FlowGraph>
+        [<EmitConstructor>] abstract Create: ``params``: BabylonjsBindings.SimpleInterfaces.IFlowGraphParams -> FlowGraph
+        abstract ``EditorURL``: string with get, set
+
+    [<Import("FlowGraph", "@babylonjs/core/FlowGraph/flowGraph.js")>]
+    let FlowGraph: FlowGraphStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAbsBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAbsBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphAbsBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAbsBlock
+
+    [<Import("FlowGraphAbsBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphAbsBlock: FlowGraphAbsBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAcosBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAcosBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphAcosBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAcosBlock
+
+    [<Import("FlowGraphAcosBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphAcosBlock: FlowGraphAcosBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAcoshBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAcoshBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphAcoshBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAcoshBlock
+
+    [<Import("FlowGraphAcoshBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphAcoshBlock: FlowGraphAcoshBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAddBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAddBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphAddBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMathBlockConfiguration -> FlowGraphAddBlock
+
+    [<Import("FlowGraphAddBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphAddBlock: FlowGraphAddBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAngleBetweenBlock =
+        inherit FlowGraphBinaryOperationBlock<Quaternion, Quaternion, float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAngleBetweenBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphAngleBetweenBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAngleBetweenBlock
+
+    [<Import("FlowGraphAngleBetweenBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphAngleBetweenBlock: FlowGraphAngleBetweenBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphApplyForceBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphApplyForceBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``body``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``force``: FlowGraphDataConnection<Vector3> with get
+        abstract ``location``: FlowGraphDataConnection<Vector3> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphApplyForceBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphApplyForceBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphApplyForceBlock
+
+    [<Import("FlowGraphApplyForceBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphApplyForceBlock.pure.js")>]
+    let FlowGraphApplyForceBlock: FlowGraphApplyForceBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphApplyImpulseBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphApplyImpulseBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``body``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``impulse``: FlowGraphDataConnection<Vector3> with get
+        abstract ``location``: FlowGraphDataConnection<Vector3> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphApplyImpulseBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphApplyImpulseBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphApplyImpulseBlock
+
+    [<Import("FlowGraphApplyImpulseBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphApplyImpulseBlock.pure.js")>]
+    let FlowGraphApplyImpulseBlock: FlowGraphApplyImpulseBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphArrayIndexBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphArrayIndexBlock<'T> =
+        inherit FlowGraphBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration with get, set
+        abstract ``array``: FlowGraphDataConnection<ResizeArray<'T>> with get
+        abstract ``index``: FlowGraphDataConnection<BabylonjsBindings.TypeAliases.FlowGraphNumber> with get
+        abstract ``value``: FlowGraphDataConnection<'T option> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphArrayIndexBlockStatic =
+        inherit FlowGraphBlockStatic
+        [<EmitConstructor>] abstract Create<'T>: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphArrayIndexBlock<'T>
+
+    [<Import("FlowGraphArrayIndexBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphArrayIndexBlock.pure.js")>]
+    let FlowGraphArrayIndexBlock: FlowGraphArrayIndexBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAsinBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAsinBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphAsinBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAsinBlock
+
+    [<Import("FlowGraphAsinBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphAsinBlock: FlowGraphAsinBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAsinhBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAsinhBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphAsinhBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAsinhBlock
+
+    [<Import("FlowGraphAsinhBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphAsinhBlock: FlowGraphAsinhBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphAsyncExecutionBlock
+    [<AllowNullLiteral>]
+    type FlowGraphAsyncExecutionBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``done``: FlowGraphSignalConnection with get, set
+        abstract ``_preparePendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_executeOnTick`` : ``_context``: FlowGraphContext -> unit
+        abstract ``_startPendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_resetAfterCanceled`` : ``context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``context``: FlowGraphContext -> unit
+
+    [<AllowNullLiteral>]
+    type FlowGraphAsyncExecutionBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphAsyncExecutionBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration * ?``events``: ResizeArray<string> -> FlowGraphAsyncExecutionBlock
+
+    [<Import("FlowGraphAsyncExecutionBlock", "@babylonjs/core/FlowGraph/flowGraphAsyncExecutionBlock.js")>]
+    let FlowGraphAsyncExecutionBlock: FlowGraphAsyncExecutionBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAtan2Block =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAtan2BlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphAtan2Block>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAtan2Block
+
+    [<Import("FlowGraphAtan2Block", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphAtan2Block: FlowGraphAtan2BlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAtanBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAtanBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphAtanBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAtanBlock
+
+    [<Import("FlowGraphAtanBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphAtanBlock: FlowGraphAtanBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAtanhBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphAtanhBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphAtanhBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAtanhBlock
+
+    [<Import("FlowGraphAtanhBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphAtanhBlock: FlowGraphAtanhBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphAxisAngleFromQuaternionBlock =
+        inherit FlowGraphBlock
+        abstract ``a``: FlowGraphDataConnection<Quaternion> with get
+        abstract ``axis``: FlowGraphDataConnection<Vector3> with get
+        abstract ``angle``: FlowGraphDataConnection<float> with get
+        abstract ``isValid``: FlowGraphDataConnection<bool> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphAxisAngleFromQuaternionBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphAxisAngleFromQuaternionBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphAxisAngleFromQuaternionBlock
+
+    [<Import("FlowGraphAxisAngleFromQuaternionBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphAxisAngleFromQuaternionBlock: FlowGraphAxisAngleFromQuaternionBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphBezierCurveEasingBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBezierCurveEasingBlock =
+        inherit FlowGraphBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration option with get, set
+        abstract ``mode``: FlowGraphDataConnection<float> with get
+        abstract ``controlPoint1``: FlowGraphDataConnection<Vector2> with get
+        abstract ``controlPoint2``: FlowGraphDataConnection<Vector2> with get
+        abstract ``easingFunction``: FlowGraphDataConnection<EasingFunction> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphBezierCurveEasingBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphBezierCurveEasingBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphBezierCurveEasingBlock
+
+    [<Import("FlowGraphBezierCurveEasingBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphBezierCurveEasingBlock.pure.js")>]
+    let FlowGraphBezierCurveEasingBlock: FlowGraphBezierCurveEasingBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphBinaryOperationBlock
+    [<AllowNullLiteral>]
+    type FlowGraphBinaryOperationBlock<'LeftT, 'RightT, 'ResultT> =
+        inherit FlowGraphCachedOperationBlock<'ResultT>
+        abstract ``a``: FlowGraphDataConnection<'LeftT> with get, set
+        abstract ``b``: FlowGraphDataConnection<'RightT> with get, set
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> 'ResultT
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphBinaryOperationBlockStatic =
+        inherit FlowGraphCachedOperationBlockStatic
+        [<EmitConstructor>] abstract Create<'LeftT, 'RightT, 'ResultT>: ``leftRichType``: RichType<'LeftT> * ``rightRichType``: RichType<'RightT> * ``resultRichType``: RichType<'ResultT> * ``_operation``: System.Func<'LeftT, 'RightT, 'ResultT> * ``_className``: string * ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphBinaryOperationBlock<'LeftT, 'RightT, 'ResultT>
+
+    [<Import("FlowGraphBinaryOperationBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphBinaryOperationBlock.js")>]
+    let FlowGraphBinaryOperationBlock: FlowGraphBinaryOperationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseAndBlock =
+        inherit FlowGraphBinaryOperationBlock<U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>, U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>, U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>>
+
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseAndBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphBitwiseAndBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBitwiseBlockConfiguration -> FlowGraphBitwiseAndBlock
+
+    [<Import("FlowGraphBitwiseAndBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphBitwiseAndBlock: FlowGraphBitwiseAndBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseLeftShiftBlock =
+        inherit FlowGraphBinaryOperationBlock<FlowGraphInteger, FlowGraphInteger, FlowGraphInteger>
+
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseLeftShiftBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphBitwiseLeftShiftBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphBitwiseLeftShiftBlock
+
+    [<Import("FlowGraphBitwiseLeftShiftBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphBitwiseLeftShiftBlock: FlowGraphBitwiseLeftShiftBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseNotBlock =
+        inherit FlowGraphUnaryOperationBlock<U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>, U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>>
+
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseNotBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphBitwiseNotBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBitwiseBlockConfiguration -> FlowGraphBitwiseNotBlock
+
+    [<Import("FlowGraphBitwiseNotBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphBitwiseNotBlock: FlowGraphBitwiseNotBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseOrBlock =
+        inherit FlowGraphBinaryOperationBlock<U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>, U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>, U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>>
+
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseOrBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphBitwiseOrBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBitwiseBlockConfiguration -> FlowGraphBitwiseOrBlock
+
+    [<Import("FlowGraphBitwiseOrBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphBitwiseOrBlock: FlowGraphBitwiseOrBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseRightShiftBlock =
+        inherit FlowGraphBinaryOperationBlock<FlowGraphInteger, FlowGraphInteger, FlowGraphInteger>
+
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseRightShiftBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphBitwiseRightShiftBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphBitwiseRightShiftBlock
+
+    [<Import("FlowGraphBitwiseRightShiftBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphBitwiseRightShiftBlock: FlowGraphBitwiseRightShiftBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseXorBlock =
+        inherit FlowGraphBinaryOperationBlock<U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>, U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>, U3<FlowGraphInteger, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>>
+
+    [<AllowNullLiteral>]
+    type FlowGraphBitwiseXorBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphBitwiseXorBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphBitwiseXorBlock
+
+    [<Import("FlowGraphBitwiseXorBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphBitwiseXorBlock: FlowGraphBitwiseXorBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphBlock
+    [<AllowNullLiteral>]
+    type FlowGraphBlock =
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration option with get, set
+        abstract ``uniqueId``: string with get, set
+        abstract ``name``: string with get, set
+        abstract ``dataInputs``: ResizeArray<FlowGraphDataConnection<obj>> with get, set
+        abstract ``dataOutputs``: ResizeArray<FlowGraphDataConnection<obj>> with get, set
+        abstract ``metadata``: obj with get, set
+        abstract ``_updateOutputs`` : ``_context``: FlowGraphContext -> unit
+        abstract ``registerDataInput``<'T> : ``name``: string * ``richType``: RichType<'T> * ?``defaultValue``: 'T -> FlowGraphDataConnection<'T>
+        abstract ``registerDataOutput``<'T> : ``name``: string * ``richType``: RichType<'T> * ?``defaultValue``: 'T -> FlowGraphDataConnection<'T>
+        abstract ``getDataInput`` : ``name``: string -> FlowGraphDataConnection<obj> option
+        abstract ``getDataOutput`` : ``name``: string -> FlowGraphDataConnection<obj> option
+        abstract ``serialize`` : ?``serializationObject``: obj * ?``_valueSerializeFunction``: System.Func<string, obj, obj, obj> -> unit
+        abstract ``deserialize`` : ``_serializationObject``: BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphBlock -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphBlockStatic =
+        inherit Constructor<FlowGraphBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphBlock
+
+    [<Import("FlowGraphBlock", "@babylonjs/core/FlowGraph/flowGraphBlock.js")>]
+    let FlowGraphBlock: FlowGraphBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBooleanToFloat =
+        inherit FlowGraphUnaryOperationBlock<bool, float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphBooleanToFloatStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphBooleanToFloat>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphBooleanToFloat
+
+    [<Import("FlowGraphBooleanToFloat", "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure.js")>]
+    let FlowGraphBooleanToFloat: FlowGraphBooleanToFloatStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBooleanToInt =
+        inherit FlowGraphUnaryOperationBlock<bool, FlowGraphInteger>
+
+    [<AllowNullLiteral>]
+    type FlowGraphBooleanToIntStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphBooleanToInt>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphBooleanToInt
+
+    [<Import("FlowGraphBooleanToInt", "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure.js")>]
+    let FlowGraphBooleanToInt: FlowGraphBooleanToIntStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphBranchBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphBranchBlock =
+        inherit FlowGraphExecutionBlock
+        abstract ``condition``: FlowGraphDataConnection<bool> with get
+        abstract ``onTrue``: FlowGraphSignalConnection with get
+        abstract ``onFalse``: FlowGraphSignalConnection with get
+        abstract ``_execute`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphBranchBlockStatic =
+        inherit FlowGraphExecutionBlockStatic
+        inherit Constructor<FlowGraphBranchBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphBranchBlock
+
+    [<Import("FlowGraphBranchBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphBranchBlock.pure.js")>]
+    let FlowGraphBranchBlock: FlowGraphBranchBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphCachedOperationBlock
+    [<AllowNullLiteral>]
+    type FlowGraphCachedOperationBlock<'OutputT> =
+        inherit FlowGraphBlock
+        abstract ``value``: FlowGraphDataConnection<'OutputT> with get
+        abstract ``isValid``: FlowGraphDataConnection<bool> with get
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> 'OutputT option
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+
+    [<AllowNullLiteral>]
+    type FlowGraphCachedOperationBlockStatic =
+        inherit FlowGraphBlockStatic
+        [<EmitConstructor>] abstract Create<'OutputT>: ``outputRichType``: RichType<'OutputT> * ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCachedOperationBlock<'OutputT>
+
+    [<Import("FlowGraphCachedOperationBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphCachedOperationBlock.js")>]
+    let FlowGraphCachedOperationBlock: FlowGraphCachedOperationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphCounterBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCallCounterBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``count``: FlowGraphDataConnection<float> with get
+        abstract ``reset``: FlowGraphSignalConnection with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphCallCounterBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphCallCounterBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCallCounterBlock
+
+    [<Import("FlowGraphCallCounterBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphCounterBlock.pure.js")>]
+    let FlowGraphCallCounterBlock: FlowGraphCallCounterBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphCancelDelayBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCancelDelayBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``delayIndex``: FlowGraphDataConnection<FlowGraphInteger> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphCancelDelayBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphCancelDelayBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCancelDelayBlock
+
+    [<Import("FlowGraphCancelDelayBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphCancelDelayBlock.pure.js")>]
+    let FlowGraphCancelDelayBlock: FlowGraphCancelDelayBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCeilBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphCeilBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphCeilBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCeilBlock
+
+    [<Import("FlowGraphCeilBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphCeilBlock: FlowGraphCeilBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphClampBlock =
+        inherit FlowGraphTernaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphClampBlockStatic =
+        inherit FlowGraphTernaryOperationBlockStatic
+        inherit Constructor<FlowGraphClampBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphClampBlock
+
+    [<Import("FlowGraphClampBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphClampBlock: FlowGraphClampBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphCodeExecutionBlock
+    [<AllowNullLiteral>]
+    type FlowGraphCodeExecutionBlock =
+        inherit FlowGraphBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration with get, set
+        abstract ``executionFunction``: FlowGraphDataConnection<BabylonjsBindings.TypeAliases.CodeExecutionFunction> with get
+        abstract ``value``: FlowGraphDataConnection<obj> with get
+        abstract ``result``: FlowGraphDataConnection<obj> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphCodeExecutionBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphCodeExecutionBlock>
+        [<EmitConstructor>] abstract Create: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCodeExecutionBlock
+
+    [<Import("FlowGraphCodeExecutionBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphCodeExecutionBlock.js")>]
+    let FlowGraphCodeExecutionBlock: FlowGraphCodeExecutionBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCombineMatrix2DBlock =
+        inherit FlowGraphMathCombineBlock<FlowGraphMatrix2D>
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> FlowGraphMatrix2D
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphCombineMatrix2DBlockStatic =
+        inherit FlowGraphMathCombineBlockStatic
+        inherit Constructor<FlowGraphCombineMatrix2DBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphCombineMatrixBlockConfiguration -> FlowGraphCombineMatrix2DBlock
+
+    [<Import("FlowGraphCombineMatrix2DBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphCombineMatrix2DBlock: FlowGraphCombineMatrix2DBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCombineMatrix3DBlock =
+        inherit FlowGraphMathCombineBlock<FlowGraphMatrix3D>
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> FlowGraphMatrix3D
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphCombineMatrix3DBlockStatic =
+        inherit FlowGraphMathCombineBlockStatic
+        inherit Constructor<FlowGraphCombineMatrix3DBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphCombineMatrixBlockConfiguration -> FlowGraphCombineMatrix3DBlock
+
+    [<Import("FlowGraphCombineMatrix3DBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphCombineMatrix3DBlock: FlowGraphCombineMatrix3DBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCombineMatrixBlock =
+        inherit FlowGraphMathCombineBlock<Matrix>
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> Matrix
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphCombineMatrixBlockStatic =
+        inherit FlowGraphMathCombineBlockStatic
+        inherit Constructor<FlowGraphCombineMatrixBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphCombineMatrixBlockConfiguration -> FlowGraphCombineMatrixBlock
+
+    [<Import("FlowGraphCombineMatrixBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphCombineMatrixBlock: FlowGraphCombineMatrixBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCombineVector2Block =
+        inherit FlowGraphMathCombineBlock<Vector2>
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> Vector2
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphCombineVector2BlockStatic =
+        inherit FlowGraphMathCombineBlockStatic
+        inherit Constructor<FlowGraphCombineVector2Block>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCombineVector2Block
+
+    [<Import("FlowGraphCombineVector2Block", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphCombineVector2Block: FlowGraphCombineVector2BlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCombineVector3Block =
+        inherit FlowGraphMathCombineBlock<Vector3>
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> Vector3
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphCombineVector3BlockStatic =
+        inherit FlowGraphMathCombineBlockStatic
+        inherit Constructor<FlowGraphCombineVector3Block>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCombineVector3Block
+
+    [<Import("FlowGraphCombineVector3Block", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphCombineVector3Block: FlowGraphCombineVector3BlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCombineVector4Block =
+        inherit FlowGraphMathCombineBlock<Vector4>
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> Vector4
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphCombineVector4BlockStatic =
+        inherit FlowGraphMathCombineBlockStatic
+        inherit Constructor<FlowGraphCombineVector4Block>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCombineVector4Block
+
+    [<Import("FlowGraphCombineVector4Block", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphCombineVector4Block: FlowGraphCombineVector4BlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphConditionalDataBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphConditionalDataBlock<'T> =
+        inherit FlowGraphBlock
+        abstract ``condition``: FlowGraphDataConnection<bool> with get
+        abstract ``onTrue``: FlowGraphDataConnection<'T> with get
+        abstract ``onFalse``: FlowGraphDataConnection<'T> with get
+        abstract ``output``: FlowGraphDataConnection<'T> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphConditionalDataBlockStatic =
+        inherit FlowGraphBlockStatic
+        [<EmitConstructor>] abstract Create<'T>: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphConditionalDataBlock<'T>
+
+    [<Import("FlowGraphConditionalDataBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConditionalDataBlock.pure.js")>]
+    let FlowGraphConditionalDataBlock: FlowGraphConditionalDataBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphConjugateBlock =
+        inherit FlowGraphUnaryOperationBlock<Quaternion, Quaternion>
+
+    [<AllowNullLiteral>]
+    type FlowGraphConjugateBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphConjugateBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphConjugateBlock
+
+    [<Import("FlowGraphConjugateBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphConjugateBlock: FlowGraphConjugateBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/flowGraphConsoleLogBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphConsoleLogBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``message``: FlowGraphDataConnection<obj> with get
+        abstract ``logType``: FlowGraphDataConnection<U3<StringLiteral836ff184e7b4, StringLiteralaa63925edf22, StringLiteralca00fccfb408>> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphConsoleLogBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphConsoleLogBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphConsoleLogBlockConfiguration -> FlowGraphConsoleLogBlock
+
+    [<Import("FlowGraphConsoleLogBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphConsoleLogBlock.pure.js")>]
+    let FlowGraphConsoleLogBlock: FlowGraphConsoleLogBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphConstantBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphConstantBlock<'T> =
+        inherit FlowGraphBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphConstantBlockConfiguration<'T> with get, set
+        abstract ``output``: FlowGraphDataConnection<'T> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : ?``serializationObject``: obj * ?``valueSerializeFunction``: System.Func<string, obj, obj, obj> -> unit
+
+    [<AllowNullLiteral>]
+    type FlowGraphConstantBlockStatic =
+        inherit FlowGraphBlockStatic
+        [<EmitConstructor>] abstract Create<'T>: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphConstantBlockConfiguration<'T> -> FlowGraphConstantBlock<'T>
+
+    [<Import("FlowGraphConstantBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConstantBlock.pure.js")>]
+    let FlowGraphConstantBlock: FlowGraphConstantBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphConstantOperationBlock
+    [<AllowNullLiteral>]
+    type FlowGraphConstantOperationBlock<'ResultT> =
+        inherit FlowGraphCachedOperationBlock<'ResultT>
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> 'ResultT
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphConstantOperationBlockStatic =
+        inherit FlowGraphCachedOperationBlockStatic
+        [<EmitConstructor>] abstract Create<'ResultT>: ``richType``: RichType<'ResultT> * ``_operation``: System.Func<FlowGraphContext, 'ResultT> * ``_className``: string * ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphConstantOperationBlock<'ResultT>
+
+    [<Import("FlowGraphConstantOperationBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConstantOperationBlock.js")>]
+    let FlowGraphConstantOperationBlock: FlowGraphConstantOperationBlockStatic = jsNative
+
+    /// Inline object shape used by FlowGraphContext.
+    [<AllowNullLiteral>]
+    type FlowGraphContextAccessor28Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> obj with get, set
+
+    /// Inline object shape used by FlowGraphContext.
+    [<AllowNullLiteral>]
+    type FlowGraphContextAccessor31Object =
+        [<EmitIndexer>] abstract Item: ``key``: string -> string with get, set
+
+    /// Function-valued FlowGraphContext.breakpointPredicate property.
+    [<AllowNullLiteral>]
+    type FlowGraphContextBreakpointPredicateCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``block``: FlowGraphExecutionBlock -> bool
+
+    /// @babylonjs/core/FlowGraph/flowGraphContext
+    [<AllowNullLiteral>]
+    type FlowGraphContext =
+        abstract ``uniqueId``: string with get, set
+        abstract ``name``: string with get, set
+        abstract ``onNodeExecutedObservable``: Observable<FlowGraphBlock> with get, set
+        abstract ``onBreakpointHitObservable``: Observable<BabylonjsBindings.SimpleInterfaces.IFlowGraphPendingActivation> with get, set
+        abstract ``breakpointPredicate``: FlowGraphContextBreakpointPredicateCallback option with get, set
+        abstract ``assetsContext``: BabylonjsBindings.SimpleInterfaces.IAssetContainer with get, set
+        abstract ``treatDataAsRightHanded``: bool with get, set
+        abstract ``logger``: FlowGraphLogger option with get, set
+        abstract ``hasVariable`` : ``name``: string -> bool
+        abstract ``setVariable`` : ``name``: string * ``value``: obj -> unit
+        abstract ``getAsset`` : ``type``: BabylonjsBindings.StringEnums.FlowGraphAssetType * ``index``: float -> U6<Animation, AnimationGroup, Mesh, Material, Camera, Light> option
+        abstract ``getAsset`` : ``type``: FlowGraphAnimationAssetType * ``index``: float -> Animation option
+        abstract ``getAsset`` : ``type``: FlowGraphAnimationGroupAssetType * ``index``: float -> AnimationGroup option
+        abstract ``getAsset`` : ``type``: FlowGraphMeshAssetType * ``index``: float -> Mesh option
+        abstract ``getAsset`` : ``type``: FlowGraphMaterialAssetType * ``index``: float -> Material option
+        abstract ``getAsset`` : ``type``: FlowGraphCameraAssetType * ``index``: float -> Camera option
+        abstract ``getAsset`` : ``type``: FlowGraphLightAssetType * ``index``: float -> Light option
+        abstract ``getVariable`` : ``name``: string -> obj
+        abstract ``setVariableType`` : ``name``: string * ``typeName``: string -> unit
+        abstract ``getVariableType`` : ``name``: string -> string option
+        abstract ``getScene`` : unit -> Scene
+        abstract ``_getGlobalContextVariable``<'T> : ``name``: string * ``defaultValue``: 'T -> 'T
+        abstract ``_setGlobalContextVariable``<'T> : ``name``: string * ``value``: 'T -> unit
+        abstract ``_deleteGlobalContextVariable`` : ``name``: string -> unit
+        abstract ``_hasGlobalContextVariable`` : ``name``: string -> bool
+        abstract ``_setExecutionVariable`` : ``block``: FlowGraphBlock * ``name``: string * ``value``: obj -> unit
+        abstract ``_getExecutionVariable``<'T> : ``block``: FlowGraphBlock * ``name``: string * ``defaultValue``: 'T -> 'T
+        abstract ``_deleteExecutionVariable`` : ``block``: FlowGraphBlock * ``name``: string -> unit
+        abstract ``_hasExecutionVariable`` : ``block``: FlowGraphBlock * ``name``: string -> bool
+        abstract ``_hasConnectionValue`` : ``connectionPoint``: FlowGraphDataConnection<obj> -> bool
+        abstract ``_setConnectionValue``<'T> : ``connectionPoint``: FlowGraphDataConnection<'T> * ``value``: 'T -> unit
+        abstract ``_setConnectionValueByKey``<'T> : ``key``: string * ``value``: 'T -> unit
+        abstract ``_getConnectionValue``<'T> : ``connectionPoint``: FlowGraphDataConnection<'T> -> 'T
+        abstract ``_addPendingBlock`` : ``block``: FlowGraphAsyncExecutionBlock -> unit
+        abstract ``_removePendingBlock`` : ``block``: FlowGraphAsyncExecutionBlock -> unit
+        abstract ``_clearPendingBlocks`` : unit -> unit
+        abstract ``_notifyExecuteNode`` : ``node``: FlowGraphBlock -> unit
+        abstract ``_notifyOnTick`` : ``framePayload``: BabylonjsBindings.SimpleInterfaces.IFlowGraphOnTickEventPayload -> unit
+        abstract ``_increaseExecutionId`` : unit -> unit
+        abstract ``_shouldBreak`` : ``block``: FlowGraphExecutionBlock * ``signal``: FlowGraphSignalConnection -> bool
+        abstract ``continueExecution`` : unit -> unit
+        abstract ``stepExecution`` : unit -> unit
+        abstract ``_clearPendingActivation`` : unit -> unit
+        abstract ``serialize`` : ?``serializationObject``: obj * ?``valueSerializationFunction``: System.Action<string, obj, obj> -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``enableLogging``: bool with get, set
+        abstract ``userVariables``: FlowGraphContextAccessor28Object with get
+        abstract ``variableTypes``: FlowGraphContextAccessor31Object with get
+        abstract ``configuration``: BabylonjsBindings.SimpleInterfaces.IFlowGraphContextConfiguration with get
+        abstract ``hasPendingBlocks``: bool with get
+        abstract ``executionId``: float with get
+        abstract ``pendingActivation``: BabylonjsBindings.SimpleInterfaces.IFlowGraphPendingActivation option with get
+
+    [<AllowNullLiteral>]
+    type FlowGraphContextStatic =
+        inherit Constructor<FlowGraphContext>
+        [<EmitConstructor>] abstract Create: ``params``: BabylonjsBindings.SimpleInterfaces.IFlowGraphContextConfiguration -> FlowGraphContext
+
+    [<Import("FlowGraphContext", "@babylonjs/core/FlowGraph/flowGraphContext.js")>]
+    let FlowGraphContext: FlowGraphContextStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphCoordinator
+    [<AllowNullLiteral>]
+    type FlowGraphCoordinator =
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphCoordinatorConfiguration with get, set
+        abstract ``dispatchEventsSynchronously``: bool with get, set
+        abstract ``createGraph`` : ?``name``: string -> FlowGraph
+        abstract ``removeGraph`` : ``graph``: FlowGraph -> unit
+        abstract ``start`` : unit -> unit
+        abstract ``dispose`` : unit -> unit
+        abstract ``serialize`` : ``serializationObject``: obj * ?``valueSerializeFunction``: System.Action<string, obj, obj> -> unit
+        abstract ``getCustomEventObservable`` : ``id``: string -> Observable<obj>
+        abstract ``notifyCustomEvent`` : ``id``: string * ``data``: obj * ?``async``: bool -> unit
+        abstract ``flowGraphs``: ResizeArray<FlowGraph> with get
+
+    [<AllowNullLiteral>]
+    type FlowGraphCoordinatorStatic =
+        inherit Constructor<FlowGraphCoordinator>
+        [<EmitConstructor>] abstract Create: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphCoordinatorConfiguration -> FlowGraphCoordinator
+        abstract ``MaxEventsPerType``: float with get, set
+        abstract ``MaxEventTypeExecutionPerFrame``: float with get, set
+        abstract ``SceneCoordinators``: JS.Map<Scene, ResizeArray<FlowGraphCoordinator>> with get
+        abstract ``OnFlowGraphAddedObservable``: BabylonjsBindings.SimpleInterfaces.IReadonlyObservable<FlowGraph> with get
+        abstract ``OnFlowGraphRemovedObservable``: BabylonjsBindings.SimpleInterfaces.IReadonlyObservable<FlowGraph> with get
+
+    [<Import("FlowGraphCoordinator", "@babylonjs/core/FlowGraph/flowGraphCoordinator.js")>]
+    let FlowGraphCoordinator: FlowGraphCoordinatorStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCosBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphCosBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphCosBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCosBlock
+
+    [<Import("FlowGraphCosBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphCosBlock: FlowGraphCosBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCoshBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphCoshBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphCoshBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCoshBlock
+
+    [<Import("FlowGraphCoshBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphCoshBlock: FlowGraphCoshBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCrossBlock =
+        inherit FlowGraphBinaryOperationBlock<Vector3, Vector3, Vector3>
+
+    [<AllowNullLiteral>]
+    type FlowGraphCrossBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphCrossBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCrossBlock
+
+    [<Import("FlowGraphCrossBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphCrossBlock: FlowGraphCrossBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphCubeRootBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphCubeRootBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphCubeRootBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphCubeRootBlock
+
+    [<Import("FlowGraphCubeRootBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphCubeRootBlock: FlowGraphCubeRootBlockStatic = jsNative
+
+    /// Function-valued FlowGraphDataConnection.dataTransformer property.
+    [<AllowNullLiteral>]
+    type FlowGraphDataConnectionDataTransformerCallback<'T> =
+        [<Emit("$0($1...)")>] abstract Invoke: ``value``: 'T -> 'T
+
+    /// @babylonjs/core/FlowGraph/flowGraphDataConnection.pure
+    [<AllowNullLiteral>]
+    type FlowGraphDataConnection<'T> =
+        inherit FlowGraphConnection<FlowGraphBlock, FlowGraphDataConnection<'T>>
+        abstract ``richType``: RichType<'T> with get, set
+        abstract ``dataTransformer``: FlowGraphDataConnectionDataTransformerCallback<'T> option with get, set
+        abstract ``onValueChangedObservable``: Observable<'T> with get, set
+        abstract ``_isSingularConnection`` : unit -> bool
+        abstract ``setValue`` : ``value``: 'T * ``context``: FlowGraphContext -> unit
+        abstract ``resetToDefaultValue`` : ``context``: FlowGraphContext -> unit
+        abstract ``_reresolveDefaultValueForScene`` : ``scene``: Scene -> unit
+        abstract ``connectTo`` : ``point``: FlowGraphDataConnection<'T> -> unit
+        abstract ``getValue`` : ``context``: FlowGraphContext -> 'T
+        abstract ``_getLastValue`` : unit -> 'T option
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``optional``: bool with get
+        abstract ``isDisabled``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type FlowGraphDataConnectionStatic =
+        inherit FlowGraphConnectionStatic
+        [<EmitConstructor>] abstract Create<'T>: ``name``: string * ``connectionType``: BabylonjsBindings.Enums.FlowGraphConnectionType * ``ownerBlock``: FlowGraphBlock * ``richType``: RichType<'T> * ?``_defaultValue``: 'T * ?``_optional``: bool -> FlowGraphDataConnection<'T>
+
+    [<Import("FlowGraphDataConnection", "@babylonjs/core/FlowGraph/flowGraphDataConnection.pure.js")>]
+    let FlowGraphDataConnection: FlowGraphDataConnectionStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphDataSwitchBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphDataSwitchBlock<'T> =
+        inherit FlowGraphBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphDataSwitchBlockConfiguration<'T> with get, set
+        abstract ``case``: FlowGraphDataConnection<BabylonjsBindings.TypeAliases.FlowGraphNumber> with get
+        abstract ``default``: FlowGraphDataConnection<'T> with get
+        abstract ``value``: FlowGraphDataConnection<'T option> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphDataSwitchBlockStatic =
+        inherit FlowGraphBlockStatic
+        [<EmitConstructor>] abstract Create<'T>: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphDataSwitchBlockConfiguration<'T> -> FlowGraphDataSwitchBlock<'T>
+
+    [<Import("FlowGraphDataSwitchBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphDataSwitchBlock.pure.js")>]
+    let FlowGraphDataSwitchBlock: FlowGraphDataSwitchBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphDebounceBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphDebounceBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``count``: FlowGraphDataConnection<float> with get
+        abstract ``reset``: FlowGraphSignalConnection with get
+        abstract ``currentCount``: FlowGraphDataConnection<float> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphDebounceBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphDebounceBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphDebounceBlock
+
+    [<Import("FlowGraphDebounceBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphDebounceBlock.pure.js")>]
+    let FlowGraphDebounceBlock: FlowGraphDebounceBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphDegToRadBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphDegToRadBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphDegToRadBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphDegToRadBlock
+
+    [<Import("FlowGraphDegToRadBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphDegToRadBlock: FlowGraphDegToRadBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphDeterminantBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMatrix, float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphDeterminantBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphDeterminantBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrixBlockConfiguration -> FlowGraphDeterminantBlock
+
+    [<Import("FlowGraphDeterminantBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure.js")>]
+    let FlowGraphDeterminantBlock: FlowGraphDeterminantBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphDivideBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphDivideBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphDivideBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMathBlockConfiguration -> FlowGraphDivideBlock
+
+    [<Import("FlowGraphDivideBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphDivideBlock: FlowGraphDivideBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphDoNBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphDoNBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphDoNBlockConfiguration with get, set
+        abstract ``reset``: FlowGraphSignalConnection with get
+        abstract ``maxExecutions``: FlowGraphDataConnection<FlowGraphInteger> with get
+        abstract ``executionCount``: FlowGraphDataConnection<FlowGraphInteger> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphDoNBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphDoNBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphDoNBlockConfiguration -> FlowGraphDoNBlock
+
+    [<Import("FlowGraphDoNBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphDoNBlock.pure.js")>]
+    let FlowGraphDoNBlock: FlowGraphDoNBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphDotBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphVector, BabylonjsBindings.TypeAliases.FlowGraphVector, float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphDotBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphDotBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphDotBlock
+
+    [<Import("FlowGraphDotBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphDotBlock: FlowGraphDotBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphEasingBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphEasingBlock =
+        inherit FlowGraphBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration option with get, set
+        abstract ``type``: FlowGraphDataConnection<BabylonjsBindings.Enums.EasingFunctionType> with get
+        abstract ``mode``: FlowGraphDataConnection<float> with get
+        abstract ``parameters``: FlowGraphDataConnection<ResizeArray<float>> with get
+        abstract ``easingFunction``: FlowGraphDataConnection<EasingFunction> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphEasingBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphEasingBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphEasingBlock
+
+    [<Import("FlowGraphEasingBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphEasingBlock.pure.js")>]
+    let FlowGraphEasingBlock: FlowGraphEasingBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphEBlock =
+        inherit FlowGraphConstantOperationBlock<float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphEBlockStatic =
+        inherit FlowGraphConstantOperationBlockStatic
+        inherit Constructor<FlowGraphEBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphEBlock
+
+    [<Import("FlowGraphEBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphEBlock: FlowGraphEBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphEqualityBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, bool>
+
+    [<AllowNullLiteral>]
+    type FlowGraphEqualityBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphEqualityBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphEqualityBlock
+
+    [<Import("FlowGraphEqualityBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphEqualityBlock: FlowGraphEqualityBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphEventBlock
+    [<AllowNullLiteral>]
+    type FlowGraphEventBlock =
+        inherit FlowGraphAsyncExecutionBlock
+        abstract ``initPriority``: float with get, set
+        abstract ``deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphEventType with get
+        abstract ``_execute`` : ``context``: FlowGraphContext -> unit
+        abstract ``_startPendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_executeEvent`` : ``context``: FlowGraphContext * ``payload``: obj -> bool
+
+    [<AllowNullLiteral>]
+    type FlowGraphEventBlockStatic =
+        inherit FlowGraphAsyncExecutionBlockStatic
+        inherit Constructor<FlowGraphEventBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphEventBlock
+
+    [<Import("FlowGraphEventBlock", "@babylonjs/core/FlowGraph/flowGraphEventBlock.js")>]
+    let FlowGraphEventBlock: FlowGraphEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphExecutionBlock
+    [<AllowNullLiteral>]
+    type FlowGraphExecutionBlock =
+        inherit FlowGraphBlock
+        abstract ``in``: FlowGraphSignalConnection with get
+        abstract ``error``: FlowGraphSignalConnection with get
+        abstract ``signalInputs``: ResizeArray<FlowGraphSignalConnection> with get, set
+        abstract ``signalOutputs``: ResizeArray<FlowGraphSignalConnection> with get, set
+        abstract ``priority``: float with get
+        abstract ``_lastExecutionTime``: float with get, set
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getSignalInput`` : ``name``: string -> FlowGraphSignalConnection option
+        abstract ``getSignalOutput`` : ``name``: string -> FlowGraphSignalConnection option
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``deserialize`` : ``serializationObject``: obj -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphExecutionBlockStatic =
+        inherit FlowGraphBlockStatic
+
+    [<Import("FlowGraphExecutionBlock", "@babylonjs/core/FlowGraph/flowGraphExecutionBlock.js")>]
+    let FlowGraphExecutionBlock: FlowGraphExecutionBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphExecutionBlockWithOutSignal
+    [<AllowNullLiteral>]
+    type FlowGraphExecutionBlockWithOutSignal =
+        inherit FlowGraphExecutionBlock
+        abstract ``out``: FlowGraphSignalConnection with get
+
+    [<AllowNullLiteral>]
+    type FlowGraphExecutionBlockWithOutSignalStatic =
+        inherit FlowGraphExecutionBlockStatic
+
+    [<Import("FlowGraphExecutionBlockWithOutSignal", "@babylonjs/core/FlowGraph/flowGraphExecutionBlockWithOutSignal.js")>]
+    let FlowGraphExecutionBlockWithOutSignal: FlowGraphExecutionBlockWithOutSignalStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphExpBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphExpBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphExpBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphExpBlock
+
+    [<Import("FlowGraphExpBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphExpBlock: FlowGraphExpBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphExtractMatrix2DBlock =
+        inherit FlowGraphMathExtractBlock<FlowGraphMatrix2D>
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphExtractMatrix2DBlockStatic =
+        inherit FlowGraphMathExtractBlockStatic
+        inherit Constructor<FlowGraphExtractMatrix2DBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphExtractMatrix2DBlock
+
+    [<Import("FlowGraphExtractMatrix2DBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphExtractMatrix2DBlock: FlowGraphExtractMatrix2DBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphExtractMatrix3DBlock =
+        inherit FlowGraphMathExtractBlock<FlowGraphMatrix3D>
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphExtractMatrix3DBlockStatic =
+        inherit FlowGraphMathExtractBlockStatic
+        inherit Constructor<FlowGraphExtractMatrix3DBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphExtractMatrix3DBlock
+
+    [<Import("FlowGraphExtractMatrix3DBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphExtractMatrix3DBlock: FlowGraphExtractMatrix3DBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphExtractMatrixBlock =
+        inherit FlowGraphMathExtractBlock<Matrix>
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphExtractMatrixBlockStatic =
+        inherit FlowGraphMathExtractBlockStatic
+        inherit Constructor<FlowGraphExtractMatrixBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphExtractMatrixBlock
+
+    [<Import("FlowGraphExtractMatrixBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphExtractMatrixBlock: FlowGraphExtractMatrixBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphExtractVector2Block =
+        inherit FlowGraphMathExtractBlock<Vector2>
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphExtractVector2BlockStatic =
+        inherit FlowGraphMathExtractBlockStatic
+        inherit Constructor<FlowGraphExtractVector2Block>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphExtractVector2Block
+
+    [<Import("FlowGraphExtractVector2Block", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphExtractVector2Block: FlowGraphExtractVector2BlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphExtractVector3Block =
+        inherit FlowGraphMathExtractBlock<Vector3>
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphExtractVector3BlockStatic =
+        inherit FlowGraphMathExtractBlockStatic
+        inherit Constructor<FlowGraphExtractVector3Block>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphExtractVector3Block
+
+    [<Import("FlowGraphExtractVector3Block", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphExtractVector3Block: FlowGraphExtractVector3BlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphExtractVector4Block =
+        inherit FlowGraphMathExtractBlock<Vector4>
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphExtractVector4BlockStatic =
+        inherit FlowGraphMathExtractBlockStatic
+        inherit Constructor<FlowGraphExtractVector4Block>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphExtractVector4Block
+
+    [<Import("FlowGraphExtractVector4Block", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure.js")>]
+    let FlowGraphExtractVector4Block: FlowGraphExtractVector4BlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphFlipFlopBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphFlipFlopBlock =
+        inherit FlowGraphExecutionBlock
+        abstract ``onOn``: FlowGraphSignalConnection with get
+        abstract ``onOff``: FlowGraphSignalConnection with get
+        abstract ``value``: FlowGraphDataConnection<bool> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphFlipFlopBlockStatic =
+        inherit FlowGraphExecutionBlockStatic
+        inherit Constructor<FlowGraphFlipFlopBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphFlipFlopBlockConfiguration -> FlowGraphFlipFlopBlock
+
+    [<Import("FlowGraphFlipFlopBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphFlipFlopBlock.pure.js")>]
+    let FlowGraphFlipFlopBlock: FlowGraphFlipFlopBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphFloatToBoolean =
+        inherit FlowGraphUnaryOperationBlock<float, bool>
+
+    [<AllowNullLiteral>]
+    type FlowGraphFloatToBooleanStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphFloatToBoolean>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphFloatToBoolean
+
+    [<Import("FlowGraphFloatToBoolean", "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure.js")>]
+    let FlowGraphFloatToBoolean: FlowGraphFloatToBooleanStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphFloatToInt =
+        inherit FlowGraphUnaryOperationBlock<float, FlowGraphInteger>
+
+    [<AllowNullLiteral>]
+    type FlowGraphFloatToIntStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphFloatToInt>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphFloatToIntConfiguration -> FlowGraphFloatToInt
+
+    [<Import("FlowGraphFloatToInt", "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure.js")>]
+    let FlowGraphFloatToInt: FlowGraphFloatToIntStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphFloorBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphFloorBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphFloorBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphFloorBlock
+
+    [<Import("FlowGraphFloorBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphFloorBlock: FlowGraphFloorBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphForLoopBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphForLoopBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``startIndex``: FlowGraphDataConnection<BabylonjsBindings.TypeAliases.FlowGraphNumber> with get
+        abstract ``endIndex``: FlowGraphDataConnection<BabylonjsBindings.TypeAliases.FlowGraphNumber> with get
+        abstract ``step``: FlowGraphDataConnection<float> with get
+        abstract ``index``: FlowGraphDataConnection<FlowGraphInteger> with get
+        abstract ``executionFlow``: FlowGraphSignalConnection with get
+        abstract ``completed``: FlowGraphSignalConnection with get
+        abstract ``_execute`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphForLoopBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphForLoopBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphForLoopBlockConfiguration -> FlowGraphForLoopBlock
+        abstract ``MaxLoopIterations``: float with get, set
+
+    [<Import("FlowGraphForLoopBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphForLoopBlock.pure.js")>]
+    let FlowGraphForLoopBlock: FlowGraphForLoopBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphFractionBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphFractionBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphFractionBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphFractionBlock
+
+    [<Import("FlowGraphFractionBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphFractionBlock: FlowGraphFractionBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphFunctionReferenceBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphFunctionReferenceBlock =
+        inherit FlowGraphBlock
+        abstract ``functionName``: FlowGraphDataConnection<string> with get
+        abstract ``object``: FlowGraphDataConnection<obj> with get
+        abstract ``context``: FlowGraphDataConnection<obj> with get
+        abstract ``output``: FlowGraphDataConnection<System.Delegate> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphFunctionReferenceBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphFunctionReferenceBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphFunctionReferenceBlock
+
+    [<Import("FlowGraphFunctionReferenceBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphFunctionReferenceBlock.pure.js")>]
+    let FlowGraphFunctionReferenceBlock: FlowGraphFunctionReferenceBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetAngularVelocityBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphGetAngularVelocityBlock =
+        inherit FlowGraphCachedOperationBlock<Vector3>
+        abstract ``body``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> Vector3 option
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphGetAngularVelocityBlockStatic =
+        inherit FlowGraphCachedOperationBlockStatic
+        inherit Constructor<FlowGraphGetAngularVelocityBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphGetAngularVelocityBlock
+
+    [<Import("FlowGraphGetAngularVelocityBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetAngularVelocityBlock.pure.js")>]
+    let FlowGraphGetAngularVelocityBlock: FlowGraphGetAngularVelocityBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetLinearVelocityBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphGetLinearVelocityBlock =
+        inherit FlowGraphCachedOperationBlock<Vector3>
+        abstract ``body``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> Vector3 option
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphGetLinearVelocityBlockStatic =
+        inherit FlowGraphCachedOperationBlockStatic
+        inherit Constructor<FlowGraphGetLinearVelocityBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphGetLinearVelocityBlock
+
+    [<Import("FlowGraphGetLinearVelocityBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetLinearVelocityBlock.pure.js")>]
+    let FlowGraphGetLinearVelocityBlock: FlowGraphGetLinearVelocityBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetPhysicsMassPropertiesBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphGetPhysicsMassPropertiesBlock =
+        inherit FlowGraphBlock
+        abstract ``body``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``mass``: FlowGraphDataConnection<float> with get
+        abstract ``centerOfMass``: FlowGraphDataConnection<Vector3> with get
+        abstract ``inertia``: FlowGraphDataConnection<Vector3> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphGetPhysicsMassPropertiesBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphGetPhysicsMassPropertiesBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphGetPhysicsMassPropertiesBlock
+
+    [<Import("FlowGraphGetPhysicsMassPropertiesBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetPhysicsMassPropertiesBlock.pure.js")>]
+    let FlowGraphGetPhysicsMassPropertiesBlock: FlowGraphGetPhysicsMassPropertiesBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Audio/flowGraphGetSoundVolumeBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphGetSoundVolumeBlock =
+        inherit FlowGraphCachedOperationBlock<float>
+        abstract ``sound``: FlowGraphDataConnection<AbstractSound> with get
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> float option
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphGetSoundVolumeBlockStatic =
+        inherit FlowGraphCachedOperationBlockStatic
+        inherit Constructor<FlowGraphGetSoundVolumeBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphGetSoundVolumeBlock
+
+    [<Import("FlowGraphGetSoundVolumeBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Audio/flowGraphGetSoundVolumeBlock.pure.js")>]
+    let FlowGraphGetSoundVolumeBlock: FlowGraphGetSoundVolumeBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetVariableBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphGetVariableBlock<'T> =
+        inherit FlowGraphBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphGetVariableBlockConfiguration<'T> with get, set
+        abstract ``value``: FlowGraphDataConnection<'T> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphGetVariableBlockStatic =
+        inherit FlowGraphBlockStatic
+        [<EmitConstructor>] abstract Create<'T>: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphGetVariableBlockConfiguration<'T> -> FlowGraphGetVariableBlock<'T>
+
+    [<Import("FlowGraphGetVariableBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetVariableBlock.pure.js")>]
+    let FlowGraphGetVariableBlock: FlowGraphGetVariableBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphGreaterThanBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphNumber, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>
+
+    [<AllowNullLiteral>]
+    type FlowGraphGreaterThanBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphGreaterThanBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphGreaterThanBlock
+
+    [<Import("FlowGraphGreaterThanBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphGreaterThanBlock: FlowGraphGreaterThanBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphGreaterThanOrEqualBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphNumber, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>
+
+    [<AllowNullLiteral>]
+    type FlowGraphGreaterThanOrEqualBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphGreaterThanOrEqualBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphGreaterThanOrEqualBlock
+
+    [<Import("FlowGraphGreaterThanOrEqualBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphGreaterThanOrEqualBlock: FlowGraphGreaterThanOrEqualBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphIndexOfBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphIndexOfBlock<'T> =
+        inherit FlowGraphBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration with get, set
+        abstract ``object``: FlowGraphDataConnection<'T> with get
+        abstract ``array``: FlowGraphDataConnection<ResizeArray<'T>> with get
+        abstract ``index``: FlowGraphDataConnection<FlowGraphInteger> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphIndexOfBlockStatic =
+        inherit FlowGraphBlockStatic
+        [<EmitConstructor>] abstract Create<'T>: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphIndexOfBlock<'T>
+
+    [<Import("FlowGraphIndexOfBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphIndexOfBlock.pure.js")>]
+    let FlowGraphIndexOfBlock: FlowGraphIndexOfBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphInfBlock =
+        inherit FlowGraphConstantOperationBlock<float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphInfBlockStatic =
+        inherit FlowGraphConstantOperationBlockStatic
+        inherit Constructor<FlowGraphInfBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphInfBlock
+
+    [<Import("FlowGraphInfBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphInfBlock: FlowGraphInfBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphInterpolationBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphInterpolationBlock<'T> =
+        inherit FlowGraphBlock
+        abstract ``initialValue``: FlowGraphDataConnection<'T> with get
+        abstract ``endValue``: FlowGraphDataConnection<'T> with get
+        abstract ``animation``: FlowGraphDataConnection<U2<Animation, ResizeArray<Animation>>> with get
+        abstract ``easingFunction``: FlowGraphDataConnection<EasingFunction> with get
+        abstract ``propertyName``: FlowGraphDataConnection<U2<string, ResizeArray<string>>> with get
+        abstract ``customBuildAnimation``: FlowGraphDataConnection<System.Func<obj, obj, FlowGraphContext, System.Func<ResizeArray<obj>, float, float, EasingFunction option, U2<Animation, ResizeArray<Animation>>>>> with get
+        abstract ``keyFrames``: ResizeArray<InlineObject11b93aedc709Object<'T>> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphInterpolationBlockStatic =
+        inherit FlowGraphBlockStatic
+        [<EmitConstructor>] abstract Create<'T>: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphInterpolationBlockConfiguration -> FlowGraphInterpolationBlock<'T>
+
+    [<Import("FlowGraphInterpolationBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphInterpolationBlock.pure.js")>]
+    let FlowGraphInterpolationBlock: FlowGraphInterpolationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphIntToBoolean =
+        inherit FlowGraphUnaryOperationBlock<FlowGraphInteger, bool>
+
+    [<AllowNullLiteral>]
+    type FlowGraphIntToBooleanStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphIntToBoolean>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphIntToBoolean
+
+    [<Import("FlowGraphIntToBoolean", "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure.js")>]
+    let FlowGraphIntToBoolean: FlowGraphIntToBooleanStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphIntToFloat =
+        inherit FlowGraphUnaryOperationBlock<FlowGraphInteger, float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphIntToFloatStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphIntToFloat>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphIntToFloat
+
+    [<Import("FlowGraphIntToFloat", "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure.js")>]
+    let FlowGraphIntToFloat: FlowGraphIntToFloatStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphInvertMatrixBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMatrix, BabylonjsBindings.TypeAliases.FlowGraphMatrix>
+
+    [<AllowNullLiteral>]
+    type FlowGraphInvertMatrixBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphInvertMatrixBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrixBlockConfiguration -> FlowGraphInvertMatrixBlock
+
+    [<Import("FlowGraphInvertMatrixBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure.js")>]
+    let FlowGraphInvertMatrixBlock: FlowGraphInvertMatrixBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphIsInfinityBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>
+
+    [<AllowNullLiteral>]
+    type FlowGraphIsInfinityBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphIsInfinityBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphIsInfinityBlock
+
+    [<Import("FlowGraphIsInfinityBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphIsInfinityBlock: FlowGraphIsInfinityBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphIsKeyPressedBlock
+    [<AllowNullLiteral>]
+    type FlowGraphIsKeyPressedBlock =
+        inherit FlowGraphBlock
+        abstract ``key``: FlowGraphDataConnection<string> with get
+        abstract ``withShift``: FlowGraphDataConnection<bool> with get
+        abstract ``withCtrl``: FlowGraphDataConnection<bool> with get
+        abstract ``withAlt``: FlowGraphDataConnection<bool> with get
+        abstract ``withMeta``: FlowGraphDataConnection<bool> with get
+        abstract ``withCommandOrCtrl``: FlowGraphDataConnection<bool> with get
+        abstract ``isPressed``: FlowGraphDataConnection<bool> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphIsKeyPressedBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphIsKeyPressedBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphIsKeyPressedBlock
+
+    [<Import("FlowGraphIsKeyPressedBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphIsKeyPressedBlock.js")>]
+    let FlowGraphIsKeyPressedBlock: FlowGraphIsKeyPressedBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphIsNanBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>
+
+    [<AllowNullLiteral>]
+    type FlowGraphIsNanBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphIsNanBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphIsNanBlock
+
+    [<Import("FlowGraphIsNanBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphIsNanBlock: FlowGraphIsNanBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Audio/flowGraphIsSoundPlayingBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphIsSoundPlayingBlock =
+        inherit FlowGraphCachedOperationBlock<bool>
+        abstract ``sound``: FlowGraphDataConnection<AbstractSound> with get
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> bool option
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphIsSoundPlayingBlockStatic =
+        inherit FlowGraphCachedOperationBlockStatic
+        inherit Constructor<FlowGraphIsSoundPlayingBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphIsSoundPlayingBlock
+
+    [<Import("FlowGraphIsSoundPlayingBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Audio/flowGraphIsSoundPlayingBlock.pure.js")>]
+    let FlowGraphIsSoundPlayingBlock: FlowGraphIsSoundPlayingBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyboardEventBlock
+    [<AllowNullLiteral>]
+    type FlowGraphKeyboardEventBlock =
+        inherit FlowGraphEventBlock
+        abstract ``key``: FlowGraphDataConnection<string> with get
+        abstract ``keyCode``: FlowGraphDataConnection<string> with get
+        abstract ``keyValue``: FlowGraphDataConnection<string> with get
+        abstract ``shiftKey``: FlowGraphDataConnection<bool> with get
+        abstract ``ctrlKey``: FlowGraphDataConnection<bool> with get
+        abstract ``altKey``: FlowGraphDataConnection<bool> with get
+        abstract ``metaKey``: FlowGraphDataConnection<bool> with get
+        abstract ``commandOrCtrl``: FlowGraphDataConnection<bool> with get
+        abstract ``_executeEvent`` : ``context``: FlowGraphContext * ``keyboardInfo``: KeyboardInfo -> bool
+        abstract ``_preparePendingTasks`` : ``_context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``_context``: FlowGraphContext -> unit
+
+    [<AllowNullLiteral>]
+    type FlowGraphKeyboardEventBlockStatic =
+        inherit FlowGraphEventBlockStatic
+
+    [<Import("FlowGraphKeyboardEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyboardEventBlock.js")>]
+    let FlowGraphKeyboardEventBlock: FlowGraphKeyboardEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyDownEventBlock
+    [<AllowNullLiteral>]
+    type FlowGraphKeyDownEventBlock =
+        inherit FlowGraphKeyboardEventBlock
+        abstract ``isRepeat``: FlowGraphDataConnection<bool> with get
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphEventType with get
+        abstract ``_executeEvent`` : ``context``: FlowGraphContext * ``keyboardInfo``: KeyboardInfo -> bool
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphKeyDownEventBlockStatic =
+        inherit FlowGraphKeyboardEventBlockStatic
+        inherit Constructor<FlowGraphKeyDownEventBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphKeyDownEventBlockConfiguration -> FlowGraphKeyDownEventBlock
+
+    [<Import("FlowGraphKeyDownEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyDownEventBlock.js")>]
+    let FlowGraphKeyDownEventBlock: FlowGraphKeyDownEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyUpEventBlock
+    [<AllowNullLiteral>]
+    type FlowGraphKeyUpEventBlock =
+        inherit FlowGraphKeyboardEventBlock
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphEventType with get
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphKeyUpEventBlockStatic =
+        inherit FlowGraphKeyboardEventBlockStatic
+        inherit Constructor<FlowGraphKeyUpEventBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphKeyboardEventBlockConfiguration -> FlowGraphKeyUpEventBlock
+
+    [<Import("FlowGraphKeyUpEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyUpEventBlock.js")>]
+    let FlowGraphKeyUpEventBlock: FlowGraphKeyUpEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphLeadingZerosBlock =
+        inherit FlowGraphUnaryOperationBlock<FlowGraphInteger, FlowGraphInteger>
+
+    [<AllowNullLiteral>]
+    type FlowGraphLeadingZerosBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphLeadingZerosBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphLeadingZerosBlock
+
+    [<Import("FlowGraphLeadingZerosBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphLeadingZerosBlock: FlowGraphLeadingZerosBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphLengthBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphVector, float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphLengthBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphLengthBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphLengthBlock
+
+    [<Import("FlowGraphLengthBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphLengthBlock: FlowGraphLengthBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphLessThanBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphNumber, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>
+
+    [<AllowNullLiteral>]
+    type FlowGraphLessThanBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphLessThanBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphLessThanBlock
+
+    [<Import("FlowGraphLessThanBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphLessThanBlock: FlowGraphLessThanBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphLessThanOrEqualBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphNumber, BabylonjsBindings.TypeAliases.FlowGraphNumber, bool>
+
+    [<AllowNullLiteral>]
+    type FlowGraphLessThanOrEqualBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphLessThanOrEqualBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphLessThanOrEqualBlock
+
+    [<Import("FlowGraphLessThanOrEqualBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphLessThanOrEqualBlock: FlowGraphLessThanOrEqualBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphLog10Block =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphLog10BlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphLog10Block>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphLog10Block
+
+    [<Import("FlowGraphLog10Block", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphLog10Block: FlowGraphLog10BlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphLog2Block =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphLog2BlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphLog2Block>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphLog2Block
+
+    [<Import("FlowGraphLog2Block", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphLog2Block: FlowGraphLog2BlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphLogBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphLogBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphLogBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphLogBlock
+
+    [<Import("FlowGraphLogBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphLogBlock: FlowGraphLogBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMathCombineBlock<'ResultT> =
+        inherit FlowGraphCachedOperationBlock<'ResultT>
+
+    [<AllowNullLiteral>]
+    type FlowGraphMathCombineBlockStatic =
+        inherit FlowGraphCachedOperationBlockStatic
+        [<EmitConstructor>] abstract Create<'ResultT>: ``numberOfInputs``: float * ``type``: RichType<'ResultT> * ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphMathCombineBlock<'ResultT>
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMathExtractBlock<'InputT> =
+        inherit FlowGraphBlock
+
+    [<AllowNullLiteral>]
+    type FlowGraphMathExtractBlockStatic =
+        inherit FlowGraphBlockStatic
+        [<EmitConstructor>] abstract Create<'InputT>: ``numberOfOutputs``: float * ``type``: RichType<'InputT> * ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphMathExtractBlock<'InputT>
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMathInterpolationBlock =
+        inherit FlowGraphTernaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphMathInterpolationBlockStatic =
+        inherit FlowGraphTernaryOperationBlockStatic
+        inherit Constructor<FlowGraphMathInterpolationBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphMathInterpolationBlock
+
+    [<Import("FlowGraphMathInterpolationBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphMathInterpolationBlock: FlowGraphMathInterpolationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMatrixComposeBlock =
+        inherit FlowGraphBlock
+        abstract ``position``: FlowGraphDataConnection<Vector3> with get
+        abstract ``rotationQuaternion``: FlowGraphDataConnection<Quaternion> with get
+        abstract ``scaling``: FlowGraphDataConnection<Vector3> with get
+        abstract ``value``: FlowGraphDataConnection<Matrix> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphMatrixComposeBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphMatrixComposeBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphMatrixComposeBlock
+
+    [<Import("FlowGraphMatrixComposeBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure.js")>]
+    let FlowGraphMatrixComposeBlock: FlowGraphMatrixComposeBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMatrixDecomposeBlock =
+        inherit FlowGraphBlock
+        abstract ``input``: FlowGraphDataConnection<Matrix> with get
+        abstract ``position``: FlowGraphDataConnection<Vector3> with get
+        abstract ``rotationQuaternion``: FlowGraphDataConnection<Quaternion> with get
+        abstract ``scaling``: FlowGraphDataConnection<Vector3> with get
+        abstract ``isValid``: FlowGraphDataConnection<bool> with get
+        abstract ``_updateOutputs`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphMatrixDecomposeBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphMatrixDecomposeBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphMatrixDecomposeBlock
+
+    [<Import("FlowGraphMatrixDecomposeBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure.js")>]
+    let FlowGraphMatrixDecomposeBlock: FlowGraphMatrixDecomposeBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMatrixMultiplicationBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMatrix, BabylonjsBindings.TypeAliases.FlowGraphMatrix, BabylonjsBindings.TypeAliases.FlowGraphMatrix>
+
+    [<AllowNullLiteral>]
+    type FlowGraphMatrixMultiplicationBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphMatrixMultiplicationBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrixBlockConfiguration -> FlowGraphMatrixMultiplicationBlock
+
+    [<Import("FlowGraphMatrixMultiplicationBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure.js")>]
+    let FlowGraphMatrixMultiplicationBlock: FlowGraphMatrixMultiplicationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMaxBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphMaxBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphMaxBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphMaxBlock
+
+    [<Import("FlowGraphMaxBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphMaxBlock: FlowGraphMaxBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphMeshPickEventBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMeshPickEventBlock =
+        inherit FlowGraphEventBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMeshPickEventBlockConfiguration option with get, set
+        abstract ``asset``: FlowGraphDataConnection<AbstractMesh> with get
+        abstract ``pickedPoint``: FlowGraphDataConnection<Vector3> with get
+        abstract ``pickOrigin``: FlowGraphDataConnection<Vector3> with get
+        abstract ``pointerId``: FlowGraphDataConnection<float> with get
+        abstract ``pickedMesh``: FlowGraphDataConnection<AbstractMesh> with get
+        abstract ``pointerType``: FlowGraphDataConnection<PointerEventTypes> with get
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphEventType with get
+        abstract ``_getReferencedMesh`` : ``context``: FlowGraphContext -> AbstractMesh
+        abstract ``_executeEvent`` : ``context``: FlowGraphContext * ``pickedInfo``: PointerInfo -> bool
+        abstract ``_preparePendingTasks`` : ``_context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``_context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphMeshPickEventBlockStatic =
+        inherit FlowGraphEventBlockStatic
+        inherit Constructor<FlowGraphMeshPickEventBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMeshPickEventBlockConfiguration -> FlowGraphMeshPickEventBlock
+
+    [<Import("FlowGraphMeshPickEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphMeshPickEventBlock.pure.js")>]
+    let FlowGraphMeshPickEventBlock: FlowGraphMeshPickEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMinBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphMinBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphMinBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphMinBlock
+
+    [<Import("FlowGraphMinBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphMinBlock: FlowGraphMinBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphModuloBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphModuloBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphModuloBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphModuloBlock
+
+    [<Import("FlowGraphModuloBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphModuloBlock: FlowGraphModuloBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphMultiGateBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMultiGateBlock =
+        inherit FlowGraphExecutionBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMultiGateBlockConfiguration with get, set
+        abstract ``reset``: FlowGraphSignalConnection with get
+        abstract ``outputSignals``: ResizeArray<FlowGraphSignalConnection> with get
+        abstract ``lastIndex``: FlowGraphDataConnection<FlowGraphInteger> with get
+        abstract ``setNumberOfOutputSignals`` : ?``numberOutputSignals``: float -> unit
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+
+    [<AllowNullLiteral>]
+    type FlowGraphMultiGateBlockStatic =
+        inherit FlowGraphExecutionBlockStatic
+        inherit Constructor<FlowGraphMultiGateBlock>
+        [<EmitConstructor>] abstract Create: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMultiGateBlockConfiguration -> FlowGraphMultiGateBlock
+
+    [<Import("FlowGraphMultiGateBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphMultiGateBlock.pure.js")>]
+    let FlowGraphMultiGateBlock: FlowGraphMultiGateBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphMultiplyBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphMultiplyBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphMultiplyBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMathBlockConfiguration -> FlowGraphMultiplyBlock
+
+    [<Import("FlowGraphMultiplyBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphMultiplyBlock: FlowGraphMultiplyBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphNaNBlock =
+        inherit FlowGraphConstantOperationBlock<float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphNaNBlockStatic =
+        inherit FlowGraphConstantOperationBlockStatic
+        inherit Constructor<FlowGraphNaNBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphNaNBlock
+
+    [<Import("FlowGraphNaNBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphNaNBlock: FlowGraphNaNBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphNegationBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphNegationBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphNegationBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphNegationBlock
+
+    [<Import("FlowGraphNegationBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphNegationBlock: FlowGraphNegationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphNormalizeBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphVector, BabylonjsBindings.TypeAliases.FlowGraphVector>
+
+    [<AllowNullLiteral>]
+    type FlowGraphNormalizeBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphNormalizeBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphNormalizeBlockConfiguration -> FlowGraphNormalizeBlock
+
+    [<Import("FlowGraphNormalizeBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphNormalizeBlock: FlowGraphNormalizeBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphOneBitsCounterBlock =
+        inherit FlowGraphUnaryOperationBlock<FlowGraphInteger, FlowGraphInteger>
+
+    [<AllowNullLiteral>]
+    type FlowGraphOneBitsCounterBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphOneBitsCounterBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphOneBitsCounterBlock
+
+    [<Import("FlowGraphOneBitsCounterBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphOneBitsCounterBlock: FlowGraphOneBitsCounterBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphPauseAnimationBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphPauseAnimationBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``animationToPause``: FlowGraphDataConnection<AnimationGroup> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphPauseAnimationBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphPauseAnimationBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphPauseAnimationBlock
+
+    [<Import("FlowGraphPauseAnimationBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphPauseAnimationBlock.pure.js")>]
+    let FlowGraphPauseAnimationBlock: FlowGraphPauseAnimationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphPauseSoundBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphPauseSoundBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``sound``: FlowGraphDataConnection<AbstractSound> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphPauseSoundBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphPauseSoundBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphPauseSoundBlock
+
+    [<Import("FlowGraphPauseSoundBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphPauseSoundBlock.pure.js")>]
+    let FlowGraphPauseSoundBlock: FlowGraphPauseSoundBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphPhysicsCollisionEventBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphPhysicsCollisionEventBlock =
+        inherit FlowGraphEventBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphPhysicsCollisionEventBlockConfiguration option with get, set
+        abstract ``body``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``otherBody``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``point``: FlowGraphDataConnection<Vector3> with get
+        abstract ``normal``: FlowGraphDataConnection<Vector3> with get
+        abstract ``impulse``: FlowGraphDataConnection<float> with get
+        abstract ``distance``: FlowGraphDataConnection<float> with get
+        abstract ``_preparePendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_executeEvent`` : ``_context``: FlowGraphContext * ``_payload``: obj -> bool
+        abstract ``_cancelPendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphPhysicsCollisionEventBlockStatic =
+        inherit FlowGraphEventBlockStatic
+        inherit Constructor<FlowGraphPhysicsCollisionEventBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphPhysicsCollisionEventBlockConfiguration -> FlowGraphPhysicsCollisionEventBlock
+
+    [<Import("FlowGraphPhysicsCollisionEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPhysicsCollisionEventBlock.pure.js")>]
+    let FlowGraphPhysicsCollisionEventBlock: FlowGraphPhysicsCollisionEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphPiBlock =
+        inherit FlowGraphConstantOperationBlock<float>
+
+    [<AllowNullLiteral>]
+    type FlowGraphPiBlockStatic =
+        inherit FlowGraphConstantOperationBlockStatic
+        inherit Constructor<FlowGraphPiBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphPiBlock
+
+    [<Import("FlowGraphPiBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphPiBlock: FlowGraphPiBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphPlayAnimationBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphPlayAnimationBlock =
+        inherit FlowGraphAsyncExecutionBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration option with get, set
+        abstract ``speed``: FlowGraphDataConnection<float> with get
+        abstract ``loop``: FlowGraphDataConnection<bool> with get
+        abstract ``from``: FlowGraphDataConnection<float> with get
+        abstract ``to``: FlowGraphDataConnection<float> with get
+        abstract ``currentFrame``: FlowGraphDataConnection<float> with get
+        abstract ``currentTime``: FlowGraphDataConnection<float> with get
+        abstract ``currentAnimationGroup``: FlowGraphDataConnection<AnimationGroup> with get
+        abstract ``animationGroup``: FlowGraphDataConnection<AnimationGroup> with get
+        abstract ``animation``: FlowGraphDataConnection<U2<Animation, ResizeArray<Animation>>> with get
+        abstract ``object``: FlowGraphDataConnection<obj> with get
+        abstract ``_preparePendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_executeOnTick`` : ``_context``: FlowGraphContext -> unit
+        abstract ``_execute`` : ``context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphPlayAnimationBlockStatic =
+        inherit FlowGraphAsyncExecutionBlockStatic
+        inherit Constructor<FlowGraphPlayAnimationBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphPlayAnimationBlock
+
+    [<Import("FlowGraphPlayAnimationBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphPlayAnimationBlock.pure.js")>]
+    let FlowGraphPlayAnimationBlock: FlowGraphPlayAnimationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphPlaySoundBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphPlaySoundBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``sound``: FlowGraphDataConnection<AbstractSound> with get
+        abstract ``volume``: FlowGraphDataConnection<float> with get
+        abstract ``startOffset``: FlowGraphDataConnection<float> with get
+        abstract ``loop``: FlowGraphDataConnection<bool> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphPlaySoundBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphPlaySoundBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphPlaySoundBlock
+
+    [<Import("FlowGraphPlaySoundBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphPlaySoundBlock.pure.js")>]
+    let FlowGraphPlaySoundBlock: FlowGraphPlaySoundBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOutEventBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphPointerOutEventBlock =
+        inherit FlowGraphEventBlock
+        abstract ``pointerId``: FlowGraphDataConnection<float> with get
+        abstract ``targetMesh``: FlowGraphDataConnection<AbstractMesh> with get
+        abstract ``meshOutOfPointer``: FlowGraphDataConnection<AbstractMesh> with get
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphEventType with get
+        abstract ``_executeEvent`` : ``context``: FlowGraphContext * ``payload``: BabylonjsBindings.SimpleInterfaces.IFlowGraphPointerOutEventPayload -> bool
+        abstract ``_preparePendingTasks`` : ``_context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``_context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> BabylonjsBindings.StringEnums.FlowGraphBlockNames
+
+    [<AllowNullLiteral>]
+    type FlowGraphPointerOutEventBlockStatic =
+        inherit FlowGraphEventBlockStatic
+        inherit Constructor<FlowGraphPointerOutEventBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphPointerOutEventBlockConfiguration -> FlowGraphPointerOutEventBlock
+
+    [<Import("FlowGraphPointerOutEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOutEventBlock.pure.js")>]
+    let FlowGraphPointerOutEventBlock: FlowGraphPointerOutEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOverEventBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphPointerOverEventBlock =
+        inherit FlowGraphEventBlock
+        abstract ``pointerId``: FlowGraphDataConnection<float> with get
+        abstract ``targetMesh``: FlowGraphDataConnection<AbstractMesh> with get
+        abstract ``meshUnderPointer``: FlowGraphDataConnection<AbstractMesh> with get
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphEventType with get
+        abstract ``_executeEvent`` : ``context``: FlowGraphContext * ``payload``: BabylonjsBindings.SimpleInterfaces.IFlowGraphPointerOverEventPayload -> bool
+        abstract ``_preparePendingTasks`` : ``_context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``_context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> BabylonjsBindings.StringEnums.FlowGraphBlockNames
+
+    [<AllowNullLiteral>]
+    type FlowGraphPointerOverEventBlockStatic =
+        inherit FlowGraphEventBlockStatic
+        inherit Constructor<FlowGraphPointerOverEventBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphPointerOverEventBlockConfiguration -> FlowGraphPointerOverEventBlock
+
+    [<Import("FlowGraphPointerOverEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOverEventBlock.pure.js")>]
+    let FlowGraphPointerOverEventBlock: FlowGraphPointerOverEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphPowerBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphPowerBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphPowerBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphPowerBlock
+
+    [<Import("FlowGraphPowerBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphPowerBlock: FlowGraphPowerBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphQuaternionFromAxisAngleBlock =
+        inherit FlowGraphBinaryOperationBlock<Vector3, float, Quaternion>
+
+    [<AllowNullLiteral>]
+    type FlowGraphQuaternionFromAxisAngleBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphQuaternionFromAxisAngleBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphQuaternionFromAxisAngleBlock
+
+    [<Import("FlowGraphQuaternionFromAxisAngleBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphQuaternionFromAxisAngleBlock: FlowGraphQuaternionFromAxisAngleBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphQuaternionFromDirectionsBlock =
+        inherit FlowGraphBinaryOperationBlock<Vector3, Vector3, Quaternion>
+
+    [<AllowNullLiteral>]
+    type FlowGraphQuaternionFromDirectionsBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphQuaternionFromDirectionsBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphQuaternionFromDirectionsBlock
+
+    [<Import("FlowGraphQuaternionFromDirectionsBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphQuaternionFromDirectionsBlock: FlowGraphQuaternionFromDirectionsBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphRadToDegBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphRadToDegBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphRadToDegBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphRadToDegBlock
+
+    [<Import("FlowGraphRadToDegBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphRadToDegBlock: FlowGraphRadToDegBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphRandomBlock =
+        inherit FlowGraphConstantOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+        abstract ``min``: FlowGraphDataConnection<float> with get
+        abstract ``max``: FlowGraphDataConnection<float> with get
+
+    [<AllowNullLiteral>]
+    type FlowGraphRandomBlockStatic =
+        inherit FlowGraphConstantOperationBlockStatic
+        inherit Constructor<FlowGraphRandomBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphRandomBlockConfiguration -> FlowGraphRandomBlock
+
+    [<Import("FlowGraphRandomBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphRandomBlock: FlowGraphRandomBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphReceiveCustomEventBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphReceiveCustomEventBlock =
+        inherit FlowGraphEventBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphReceiveCustomEventBlockConfiguration with get, set
+        abstract ``initPriority``: float with get, set
+        abstract ``_preparePendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_executeEvent`` : ``_context``: FlowGraphContext * ``_payload``: obj -> bool
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphReceiveCustomEventBlockStatic =
+        inherit FlowGraphEventBlockStatic
+        inherit Constructor<FlowGraphReceiveCustomEventBlock>
+        [<EmitConstructor>] abstract Create: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphReceiveCustomEventBlockConfiguration -> FlowGraphReceiveCustomEventBlock
+
+    [<Import("FlowGraphReceiveCustomEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphReceiveCustomEventBlock.pure.js")>]
+    let FlowGraphReceiveCustomEventBlock: FlowGraphReceiveCustomEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphRotate2DBlock =
+        inherit FlowGraphBinaryOperationBlock<Vector2, float, Vector2>
+
+    [<AllowNullLiteral>]
+    type FlowGraphRotate2DBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphRotate2DBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphRotate2DBlock
+
+    [<Import("FlowGraphRotate2DBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphRotate2DBlock: FlowGraphRotate2DBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphRotate3DBlock =
+        inherit FlowGraphBinaryOperationBlock<Vector3, Quaternion, Vector3>
+
+    [<AllowNullLiteral>]
+    type FlowGraphRotate3DBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphRotate3DBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphRotate3DBlock
+
+    [<Import("FlowGraphRotate3DBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphRotate3DBlock: FlowGraphRotate3DBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphRoundBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphRoundBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphRoundBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphRoundBlockConfiguration -> FlowGraphRoundBlock
+
+    [<Import("FlowGraphRoundBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphRoundBlock: FlowGraphRoundBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSaturateBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphSaturateBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphSaturateBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSaturateBlock
+
+    [<Import("FlowGraphSaturateBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphSaturateBlock: FlowGraphSaturateBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphSceneReadyEventBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSceneReadyEventBlock =
+        inherit FlowGraphEventBlock
+        abstract ``initPriority``: float with get, set
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphEventType with get
+        abstract ``_executeEvent`` : ``context``: FlowGraphContext * ``_payload``: obj -> bool
+        abstract ``_preparePendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> BabylonjsBindings.StringEnums.FlowGraphBlockNames
+
+    [<AllowNullLiteral>]
+    type FlowGraphSceneReadyEventBlockStatic =
+        inherit FlowGraphEventBlockStatic
+        inherit Constructor<FlowGraphSceneReadyEventBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSceneReadyEventBlock
+
+    [<Import("FlowGraphSceneReadyEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSceneReadyEventBlock.pure.js")>]
+    let FlowGraphSceneReadyEventBlock: FlowGraphSceneReadyEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphSceneTickEventBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSceneTickEventBlock =
+        inherit FlowGraphEventBlock
+        abstract ``timeSinceStart``: FlowGraphDataConnection<float> with get
+        abstract ``deltaTime``: FlowGraphDataConnection<float> with get
+        abstract ``type``: BabylonjsBindings.StringEnums.FlowGraphEventType with get
+        abstract ``_preparePendingTasks`` : ``_context``: FlowGraphContext -> unit
+        abstract ``_executeEvent`` : ``context``: FlowGraphContext * ``payload``: BabylonjsBindings.SimpleInterfaces.IFlowGraphOnTickEventPayload -> bool
+        abstract ``_cancelPendingTasks`` : ``_context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphSceneTickEventBlockStatic =
+        inherit FlowGraphEventBlockStatic
+        inherit Constructor<FlowGraphSceneTickEventBlock>
+        [<EmitConstructor>] abstract Create: unit -> FlowGraphSceneTickEventBlock
+
+    [<Import("FlowGraphSceneTickEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSceneTickEventBlock.pure.js")>]
+    let FlowGraphSceneTickEventBlock: FlowGraphSceneTickEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphSendCustomEventBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSendCustomEventBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphSendCustomEventBlockConfiguration with get, set
+        abstract ``_execute`` : ``context``: FlowGraphContext -> unit
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphSendCustomEventBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphSendCustomEventBlock>
+        [<EmitConstructor>] abstract Create: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphSendCustomEventBlockConfiguration -> FlowGraphSendCustomEventBlock
+
+    [<Import("FlowGraphSendCustomEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSendCustomEventBlock.pure.js")>]
+    let FlowGraphSendCustomEventBlock: FlowGraphSendCustomEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSequenceBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSequenceBlock =
+        inherit FlowGraphExecutionBlock
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphSequenceBlockConfiguration with get, set
+        abstract ``executionSignals``: ResizeArray<FlowGraphSignalConnection> with get, set
+        abstract ``_execute`` : ``context``: FlowGraphContext -> unit
+        abstract ``setNumberOfOutputSignals`` : ?``outputSignalCount``: float -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphSequenceBlockStatic =
+        inherit FlowGraphExecutionBlockStatic
+        inherit Constructor<FlowGraphSequenceBlock>
+        [<EmitConstructor>] abstract Create: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphSequenceBlockConfiguration -> FlowGraphSequenceBlock
+
+    [<Import("FlowGraphSequenceBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSequenceBlock.pure.js")>]
+    let FlowGraphSequenceBlock: FlowGraphSequenceBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetAngularVelocityBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSetAngularVelocityBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``body``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``velocity``: FlowGraphDataConnection<Vector3> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphSetAngularVelocityBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphSetAngularVelocityBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSetAngularVelocityBlock
+
+    [<Import("FlowGraphSetAngularVelocityBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetAngularVelocityBlock.pure.js")>]
+    let FlowGraphSetAngularVelocityBlock: FlowGraphSetAngularVelocityBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSetDelayBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSetDelayBlock =
+        inherit FlowGraphAsyncExecutionBlock
+        abstract ``cancel``: FlowGraphSignalConnection with get
+        abstract ``duration``: FlowGraphDataConnection<float> with get
+        abstract ``lastDelayIndex``: FlowGraphDataConnection<FlowGraphInteger> with get
+        abstract ``_preparePendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphSetDelayBlockStatic =
+        inherit FlowGraphAsyncExecutionBlockStatic
+        inherit Constructor<FlowGraphSetDelayBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSetDelayBlock
+        abstract ``MaxParallelDelayCount``: float with get, set
+
+    [<Import("FlowGraphSetDelayBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSetDelayBlock.pure.js")>]
+    let FlowGraphSetDelayBlock: FlowGraphSetDelayBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetLinearVelocityBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSetLinearVelocityBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``body``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``velocity``: FlowGraphDataConnection<Vector3> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphSetLinearVelocityBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphSetLinearVelocityBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSetLinearVelocityBlock
+
+    [<Import("FlowGraphSetLinearVelocityBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetLinearVelocityBlock.pure.js")>]
+    let FlowGraphSetLinearVelocityBlock: FlowGraphSetLinearVelocityBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetPhysicsMotionTypeBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSetPhysicsMotionTypeBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``body``: FlowGraphDataConnection<PhysicsBody> with get
+        abstract ``motionType``: FlowGraphDataConnection<float> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphSetPhysicsMotionTypeBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphSetPhysicsMotionTypeBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSetPhysicsMotionTypeBlock
+
+    [<Import("FlowGraphSetPhysicsMotionTypeBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetPhysicsMotionTypeBlock.pure.js")>]
+    let FlowGraphSetPhysicsMotionTypeBlock: FlowGraphSetPhysicsMotionTypeBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphSetSoundVolumeBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSetSoundVolumeBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``sound``: FlowGraphDataConnection<AbstractSound> with get
+        abstract ``volume``: FlowGraphDataConnection<float> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphSetSoundVolumeBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphSetSoundVolumeBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSetSoundVolumeBlock
+
+    [<Import("FlowGraphSetSoundVolumeBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphSetSoundVolumeBlock.pure.js")>]
+    let FlowGraphSetSoundVolumeBlock: FlowGraphSetSoundVolumeBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetVariableBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSetVariableBlock<'T> =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+
+    [<AllowNullLiteral>]
+    type FlowGraphSetVariableBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        [<EmitConstructor>] abstract Create<'T>: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphSetVariableBlockConfiguration -> FlowGraphSetVariableBlock<'T>
+
+    [<Import("FlowGraphSetVariableBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetVariableBlock.pure.js")>]
+    let FlowGraphSetVariableBlock: FlowGraphSetVariableBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphSignalConnection.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSignalConnection =
+        inherit FlowGraphConnection<FlowGraphExecutionBlock, FlowGraphSignalConnection>
+        abstract ``payload``: obj with get, set
+        abstract ``priority``: float with get, set
+        abstract ``_isSingularConnection`` : unit -> bool
+        abstract ``connectTo`` : ``point``: FlowGraphSignalConnection -> unit
+        abstract ``_lastActivationTime``: float with get, set
+        abstract ``_activateSignal`` : ``context``: FlowGraphContext -> unit
+
+    [<AllowNullLiteral>]
+    type FlowGraphSignalConnectionStatic =
+        inherit FlowGraphConnectionStatic
+        inherit Constructor<FlowGraphSignalConnection>
+        [<EmitConstructor>] abstract Create: ``name``: string * ``_connectionType``: BabylonjsBindings.Enums.FlowGraphConnectionType * ``_ownerBlock``: 'BlockT -> FlowGraphSignalConnection
+
+    [<Import("FlowGraphSignalConnection", "@babylonjs/core/FlowGraph/flowGraphSignalConnection.pure.js")>]
+    let FlowGraphSignalConnection: FlowGraphSignalConnectionStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSignBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphSignBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphSignBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSignBlock
+
+    [<Import("FlowGraphSignBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphSignBlock: FlowGraphSignBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSinBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphSinBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphSinBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSinBlock
+
+    [<Import("FlowGraphSinBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphSinBlock: FlowGraphSinBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSinhBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphSinhBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphSinhBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSinhBlock
+
+    [<Import("FlowGraphSinhBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphSinhBlock: FlowGraphSinhBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Event/flowGraphSoundEndedEventBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSoundEndedEventBlock =
+        inherit FlowGraphEventBlock
+        abstract ``sound``: FlowGraphDataConnection<AbstractSound> with get
+        abstract ``_preparePendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_executeEvent`` : ``_context``: FlowGraphContext * ``_payload``: obj -> bool
+        abstract ``_cancelPendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphSoundEndedEventBlockStatic =
+        inherit FlowGraphEventBlockStatic
+        inherit Constructor<FlowGraphSoundEndedEventBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSoundEndedEventBlock
+
+    [<Import("FlowGraphSoundEndedEventBlock", "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSoundEndedEventBlock.pure.js")>]
+    let FlowGraphSoundEndedEventBlock: FlowGraphSoundEndedEventBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSquareRootBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphSquareRootBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphSquareRootBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphSquareRootBlock
+
+    [<Import("FlowGraphSquareRootBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphSquareRootBlock: FlowGraphSquareRootBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphStopAnimationBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphStopAnimationBlock =
+        inherit FlowGraphAsyncExecutionBlock
+        abstract ``animationGroup``: FlowGraphDataConnection<AnimationGroup> with get
+        abstract ``stopAtFrame``: FlowGraphDataConnection<float> with get
+        abstract ``_preparePendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_cancelPendingTasks`` : ``context``: FlowGraphContext -> unit
+        abstract ``_execute`` : ``context``: FlowGraphContext -> unit
+        abstract ``_executeOnTick`` : ``context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphStopAnimationBlockStatic =
+        inherit FlowGraphAsyncExecutionBlockStatic
+        inherit Constructor<FlowGraphStopAnimationBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphStopAnimationBlock
+
+    [<Import("FlowGraphStopAnimationBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphStopAnimationBlock.pure.js")>]
+    let FlowGraphStopAnimationBlock: FlowGraphStopAnimationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphStopSoundBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphStopSoundBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``sound``: FlowGraphDataConnection<AbstractSound> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphStopSoundBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphStopSoundBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphStopSoundBlock
+
+    [<Import("FlowGraphStopSoundBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphStopSoundBlock.pure.js")>]
+    let FlowGraphStopSoundBlock: FlowGraphStopSoundBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphSubtractBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphSubtractBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphSubtractBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMathBlockConfiguration -> FlowGraphSubtractBlock
+
+    [<Import("FlowGraphSubtractBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphSubtractBlock: FlowGraphSubtractBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphTanBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphTanBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphTanBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphTanBlock
+
+    [<Import("FlowGraphTanBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphTanBlock: FlowGraphTanBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphTanhBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphTanhBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphTanhBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphTanhBlock
+
+    [<Import("FlowGraphTanhBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphTanhBlock: FlowGraphTanhBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphTernaryOperationBlock
+    [<AllowNullLiteral>]
+    type FlowGraphTernaryOperationBlock<'T1, 'T2, 'T3, 'ResultT> =
+        inherit FlowGraphCachedOperationBlock<'ResultT>
+        abstract ``a``: FlowGraphDataConnection<'T1> with get, set
+        abstract ``b``: FlowGraphDataConnection<'T2> with get, set
+        abstract ``c``: FlowGraphDataConnection<'T3> with get, set
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> 'ResultT
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphTernaryOperationBlockStatic =
+        inherit FlowGraphCachedOperationBlockStatic
+        [<EmitConstructor>] abstract Create<'T1, 'T2, 'T3, 'ResultT>: ``t1Type``: RichType<'T1> * ``t2Type``: RichType<'T2> * ``t3Type``: RichType<'T3> * ``resultRichType``: RichType<'ResultT> * ``_operation``: System.Func<'T1, 'T2, 'T3, 'ResultT> * ``_className``: string * ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphTernaryOperationBlock<'T1, 'T2, 'T3, 'ResultT>
+
+    [<Import("FlowGraphTernaryOperationBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphTernaryOperationBlock.js")>]
+    let FlowGraphTernaryOperationBlock: FlowGraphTernaryOperationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphThrottleBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphThrottleBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``duration``: FlowGraphDataConnection<float> with get
+        abstract ``reset``: FlowGraphSignalConnection with get
+        abstract ``lastRemainingTime``: FlowGraphDataConnection<float> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphThrottleBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphThrottleBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphThrottleBlock
+
+    [<Import("FlowGraphThrottleBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphThrottleBlock.pure.js")>]
+    let FlowGraphThrottleBlock: FlowGraphThrottleBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphTrailingZerosBlock =
+        inherit FlowGraphUnaryOperationBlock<FlowGraphInteger, FlowGraphInteger>
+
+    [<AllowNullLiteral>]
+    type FlowGraphTrailingZerosBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphTrailingZerosBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphTrailingZerosBlock
+
+    [<Import("FlowGraphTrailingZerosBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphTrailingZerosBlock: FlowGraphTrailingZerosBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphTransformBlock =
+        inherit FlowGraphBinaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphVector, BabylonjsBindings.TypeAliases.FlowGraphMatrix, BabylonjsBindings.TypeAliases.FlowGraphVector>
+
+    [<AllowNullLiteral>]
+    type FlowGraphTransformBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphTransformBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphTransformBlockConfiguration -> FlowGraphTransformBlock
+
+    [<Import("FlowGraphTransformBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphTransformBlock: FlowGraphTransformBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphTransformCoordinatesBlock =
+        inherit FlowGraphBinaryOperationBlock<Vector3, Matrix, Vector3>
+
+    [<AllowNullLiteral>]
+    type FlowGraphTransformCoordinatesBlockStatic =
+        inherit FlowGraphBinaryOperationBlockStatic
+        inherit Constructor<FlowGraphTransformCoordinatesBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphTransformCoordinatesBlock
+
+    [<Import("FlowGraphTransformCoordinatesBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure.js")>]
+    let FlowGraphTransformCoordinatesBlock: FlowGraphTransformCoordinatesBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphTransformCoordinatesSystemBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphTransformCoordinatesSystemBlock =
+        inherit FlowGraphBlock
+        abstract ``sourceSystem``: FlowGraphDataConnection<TransformNode> with get
+        abstract ``destinationSystem``: FlowGraphDataConnection<TransformNode> with get
+        abstract ``inputCoordinates``: FlowGraphDataConnection<Vector3> with get
+        abstract ``outputCoordinates``: FlowGraphDataConnection<Vector3> with get
+        abstract ``_updateOutputs`` : ``_context``: FlowGraphContext -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphTransformCoordinatesSystemBlockStatic =
+        inherit FlowGraphBlockStatic
+        inherit Constructor<FlowGraphTransformCoordinatesSystemBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphTransformCoordinatesSystemBlock
+
+    [<Import("FlowGraphTransformCoordinatesSystemBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphTransformCoordinatesSystemBlock.pure.js")>]
+    let FlowGraphTransformCoordinatesSystemBlock: FlowGraphTransformCoordinatesSystemBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphTransposeBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMatrix, BabylonjsBindings.TypeAliases.FlowGraphMatrix>
+
+    [<AllowNullLiteral>]
+    type FlowGraphTransposeBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphTransposeBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrixBlockConfiguration -> FlowGraphTransposeBlock
+
+    [<Import("FlowGraphTransposeBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure.js")>]
+    let FlowGraphTransposeBlock: FlowGraphTransposeBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure
+    [<AllowNullLiteral>]
+    type FlowGraphTruncBlock =
+        inherit FlowGraphUnaryOperationBlock<BabylonjsBindings.TypeAliases.FlowGraphMathOperationType, BabylonjsBindings.TypeAliases.FlowGraphMathOperationType>
+
+    [<AllowNullLiteral>]
+    type FlowGraphTruncBlockStatic =
+        inherit FlowGraphUnaryOperationBlockStatic
+        inherit Constructor<FlowGraphTruncBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphTruncBlock
+
+    [<Import("FlowGraphTruncBlock", "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure.js")>]
+    let FlowGraphTruncBlock: FlowGraphTruncBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Data/flowGraphUnaryOperationBlock
+    [<AllowNullLiteral>]
+    type FlowGraphUnaryOperationBlock<'InputT, 'ResultT> =
+        inherit FlowGraphCachedOperationBlock<'ResultT>
+        abstract ``a``: FlowGraphDataConnection<'InputT> with get, set
+        abstract ``_doOperation`` : ``context``: FlowGraphContext -> 'ResultT
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphUnaryOperationBlockStatic =
+        inherit FlowGraphCachedOperationBlockStatic
+        [<EmitConstructor>] abstract Create<'InputT, 'ResultT>: ``inputRichType``: RichType<'InputT> * ``resultRichType``: RichType<'ResultT> * ``_operation``: System.Func<'InputT, 'ResultT> * ``_className``: string * ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration -> FlowGraphUnaryOperationBlock<'InputT, 'ResultT>
+
+    [<Import("FlowGraphUnaryOperationBlock", "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphUnaryOperationBlock.js")>]
+    let FlowGraphUnaryOperationBlock: FlowGraphUnaryOperationBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWaitAllBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphWaitAllBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphWaitAllBlockConfiguration with get, set
+        abstract ``reset``: FlowGraphSignalConnection with get, set
+        abstract ``completed``: FlowGraphSignalConnection with get, set
+        abstract ``remainingInputs``: FlowGraphDataConnection<FlowGraphInteger> with get, set
+        abstract ``inFlows``: ResizeArray<FlowGraphSignalConnection> with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+        abstract ``serialize`` : ?``serializationObject``: obj -> unit
+
+    [<AllowNullLiteral>]
+    type FlowGraphWaitAllBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphWaitAllBlock>
+        [<EmitConstructor>] abstract Create: ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphWaitAllBlockConfiguration -> FlowGraphWaitAllBlock
+
+    [<Import("FlowGraphWaitAllBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWaitAllBlock.pure.js")>]
+    let FlowGraphWaitAllBlock: FlowGraphWaitAllBlockStatic = jsNative
+
+    /// @babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWhileLoopBlock.pure
+    [<AllowNullLiteral>]
+    type FlowGraphWhileLoopBlock =
+        inherit FlowGraphExecutionBlockWithOutSignal
+        abstract ``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphWhileLoopBlockConfiguration option with get, set
+        abstract ``condition``: FlowGraphDataConnection<bool> with get
+        abstract ``executionFlow``: FlowGraphSignalConnection with get
+        abstract ``completed``: FlowGraphSignalConnection with get
+        abstract ``_execute`` : ``context``: FlowGraphContext * ``_callingSignal``: FlowGraphSignalConnection -> unit
+        abstract ``getClassName`` : unit -> string
+
+    [<AllowNullLiteral>]
+    type FlowGraphWhileLoopBlockStatic =
+        inherit FlowGraphExecutionBlockWithOutSignalStatic
+        inherit Constructor<FlowGraphWhileLoopBlock>
+        [<EmitConstructor>] abstract Create: ?``config``: BabylonjsBindings.SimpleInterfaces.IFlowGraphWhileLoopBlockConfiguration -> FlowGraphWhileLoopBlock
+        abstract ``MaxLoopCount``: float with get, set
+
+    [<Import("FlowGraphWhileLoopBlock", "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWhileLoopBlock.pure.js")>]
+    let FlowGraphWhileLoopBlock: FlowGraphWhileLoopBlockStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/mainAudioBus
+    [<AllowNullLiteral>]
+    type MainAudioBus =
+        inherit AbstractAudioBus
+
+    [<AllowNullLiteral>]
+    type MainAudioBusStatic =
+        inherit AbstractAudioBusStatic
+
+    [<Import("MainAudioBus", "@babylonjs/core/AudioV2/abstractAudio/mainAudioBus.js")>]
+    let MainAudioBus: MainAudioBusStatic = jsNative
+
+    /// @babylonjs/core/Gizmos/spatialAudioGizmo
+    [<AllowNullLiteral>]
+    type SpatialAudioGizmo =
+        inherit Gizmo
+        inherit BabylonjsBindings.SimpleInterfaces.ISpatialAudioGizmo
+        abstract ``onClickedObservable``: Observable<AbstractSoundSource> with get
+        abstract ``dispose`` : unit -> unit
+        abstract ``soundSource``: AbstractSoundSource option with get, set
+        abstract ``material``: StandardMaterial with get
+
+    [<AllowNullLiteral>]
+    type SpatialAudioGizmoStatic =
+        inherit GizmoStatic
+        inherit Constructor<SpatialAudioGizmo>
+        [<EmitConstructor>] abstract Create: ?``gizmoLayer``: UtilityLayerRenderer -> SpatialAudioGizmo
+
+    [<Import("SpatialAudioGizmo", "@babylonjs/core/Gizmos/spatialAudioGizmo.js")>]
+    let SpatialAudioGizmo: SpatialAudioGizmoStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/staticSound
+    [<AllowNullLiteral>]
+    type StaticSound =
+        inherit AbstractSound
+        abstract ``buffer``: StaticSoundBuffer with get
+        abstract ``cloneAsync`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundCloneOptions -> JS.Promise<StaticSound>
+        abstract ``play`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundPlayOptions -> unit
+        abstract ``resume`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundPlayOptions -> unit
+        abstract ``stop`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundStopOptions -> unit
+        abstract ``duration``: float with get, set
+        abstract ``loopStart``: float with get, set
+        abstract ``loopEnd``: float with get, set
+        abstract ``pitch``: float with get, set
+        abstract ``playbackRate``: float with get, set
+
+    [<AllowNullLiteral>]
+    type StaticSoundStatic =
+        inherit AbstractSoundStatic
+
+    [<Import("StaticSound", "@babylonjs/core/AudioV2/abstractAudio/staticSound.js")>]
+    let StaticSound: StaticSoundStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/staticSoundBuffer
+    [<AllowNullLiteral>]
+    type StaticSoundBuffer =
+        abstract ``engine``: AudioEngineV2 with get
+        abstract ``name``: string with get, set
+        abstract ``sampleRate``: float with get
+        abstract ``length``: float with get
+        abstract ``duration``: float with get
+        abstract ``channelCount``: float with get
+        abstract ``clone`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundBufferCloneOptions -> StaticSoundBuffer
+
+    [<AllowNullLiteral>]
+    type StaticSoundBufferStatic =
+        interface end
+
+    [<Import("StaticSoundBuffer", "@babylonjs/core/AudioV2/abstractAudio/staticSoundBuffer.js")>]
+    let StaticSoundBuffer: StaticSoundBufferStatic = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/streamingSound
+    [<AllowNullLiteral>]
+    type StreamingSound =
+        inherit AbstractSound
+        abstract ``preloadInstanceAsync`` : unit -> JS.Promise<unit>
+        abstract ``preloadInstancesAsync`` : ``count``: float -> JS.Promise<unit>
+        abstract ``play`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundPlayOptions -> unit
+        abstract ``resume`` : ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundPlayOptions -> unit
+        abstract ``stop`` : unit -> unit
+        abstract ``preloadCount``: float with get
+        abstract ``preloadCompletedCount``: float with get
+
+    [<AllowNullLiteral>]
+    type StreamingSoundStatic =
+        inherit AbstractSoundStatic
+
+    [<Import("StreamingSound", "@babylonjs/core/AudioV2/abstractAudio/streamingSound.js")>]
+    let StreamingSound: StreamingSoundStatic = jsNative

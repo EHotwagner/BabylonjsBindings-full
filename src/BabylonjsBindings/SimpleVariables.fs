@@ -4951,3 +4951,30 @@ module SimpleVariables =
     /// @babylonjs/core/Meshes/Builders/torusKnotBuilder.pure
     [<Import("TorusKnotBuilder", "@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure.js")>]
     let ``TorusKnotBuilder``: VariableShape_TorusKnotBuilder = jsNative
+
+    /// Inline object shape of _SpatialAudioListenerDefaults.
+    [<AllowNullLiteral>]
+    type VariableShape__SpatialAudioListenerDefaults =
+        abstract ``position``: BabylonjsBindings.SimpleClasses.Vector3 with get
+        abstract ``rotation``: BabylonjsBindings.SimpleClasses.Vector3 with get
+        abstract ``rotationQuaternion``: BabylonjsBindings.SimpleClasses.Quaternion with get
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener
+    [<Import("_SpatialAudioListenerDefaults", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener.js")>]
+    let ``_SpatialAudioListenerDefaults``: VariableShape__SpatialAudioListenerDefaults = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<Import("_StaticOffsetValueQuaternion", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``_StaticOffsetValueQuaternion``: BabylonjsBindings.SimpleClasses.DeepImmutableQuaternion = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<Import("_StaticOffsetValueVector2", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``_StaticOffsetValueVector2``: BabylonjsBindings.SimpleClasses.DeepImmutableVector2 = jsNative
+
+    /// @babylonjs/core/Animations/animation.pure
+    [<Import("_StaticOffsetValueVector3", "@babylonjs/core/Animations/animation.pure.js")>]
+    let ``_StaticOffsetValueVector3``: BabylonjsBindings.SimpleClasses.DeepImmutableVector3 = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<Import("OnAudioEngineV2CreatedObservable", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``OnAudioEngineV2CreatedObservable``: BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleClasses.AudioEngineV2> = jsNative

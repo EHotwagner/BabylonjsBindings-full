@@ -9213,3 +9213,275 @@ module SimpleFunctions =
 
     [<Import("TAARenderingPipelineParse", "@babylonjs/core/PostProcesses/RenderPipeline/Pipelines/taaRenderingPipeline.pure.js")>]
     let ``TAARenderingPipelineParse``: FunctionBinding_TAARenderingPipelineParse = jsNative
+
+    /// @babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding__AddInteractivityObjectModel =
+        [<Emit("$0($1...)")>] abstract Invoke: ``scene``: BabylonjsBindings.SimpleClasses.Scene -> unit
+
+    [<Import("_AddInteractivityObjectModel", "@babylonjs/loaders/glTF/2.0/Extensions/KHR_interactivity.pure.js")>]
+    let ``_AddInteractivityObjectModel``: FunctionBinding__AddInteractivityObjectModel = jsNative
+
+    /// @babylonjs/core/Engines/engine.common
+    [<AllowNullLiteral>]
+    type FunctionBinding__CommonDispose =
+        [<Emit("$0($1...)")>] abstract Invoke: ``commonEngine``: BabylonjsBindings.SimpleClasses.AbstractEngine * ``canvas``: Browser.Types.HTMLCanvasElement option -> unit
+
+    [<Import("_CommonDispose", "@babylonjs/core/Engines/engine.common.js")>]
+    let ``_CommonDispose``: FunctionBinding__CommonDispose = jsNative
+
+    /// @babylonjs/core/Engines/engine.common
+    [<AllowNullLiteral>]
+    type FunctionBinding__CommonInit =
+        [<Emit("$0($1...)")>] abstract Invoke: ``commonEngine``: BabylonjsBindings.SimpleClasses.AbstractEngine * ``canvas``: Browser.Types.HTMLCanvasElement * ``creationOptions``: BabylonjsBindings.SimpleInterfaces.AbstractEngineOptions -> unit
+
+    [<Import("_CommonInit", "@babylonjs/core/Engines/engine.common.js")>]
+    let ``_CommonInit``: FunctionBinding__CommonInit = jsNative
+
+    /// @babylonjs/core/Particles/Queue/executionQueue
+    [<AllowNullLiteral>]
+    type FunctionBinding__ConnectAfter =
+        [<Emit("$0($1...)")>] abstract Invoke: ``newOne``: BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem * ``activeOne``: BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem -> unit
+
+    [<Import("_ConnectAfter", "@babylonjs/core/Particles/Queue/executionQueue.js")>]
+    let ``_ConnectAfter``: FunctionBinding__ConnectAfter = jsNative
+
+    /// @babylonjs/core/Particles/Queue/executionQueue
+    [<AllowNullLiteral>]
+    type FunctionBinding__ConnectAtTheEnd =
+        [<Emit("$0($1...)")>] abstract Invoke: ``newOne``: BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem * ``root``: BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem -> unit
+
+    [<Import("_ConnectAtTheEnd", "@babylonjs/core/Particles/Queue/executionQueue.js")>]
+    let ``_ConnectAtTheEnd``: FunctionBinding__ConnectAtTheEnd = jsNative
+
+    /// @babylonjs/core/Particles/Queue/executionQueue
+    [<AllowNullLiteral>]
+    type FunctionBinding__ConnectBefore =
+        [<Emit("$0($1...)")>] abstract Invoke: ``newOne``: BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem * ``activeOne``: BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem -> unit
+
+    [<Import("_ConnectBefore", "@babylonjs/core/Particles/Queue/executionQueue.js")>]
+    let ``_ConnectBefore``: FunctionBinding__ConnectBefore = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<AllowNullLiteral>]
+    type FunctionBinding__GetAudioEngine =
+        [<Emit("$0($1...)")>] abstract Invoke: ``engine``: BabylonjsBindings.SimpleClasses.AudioEngineV2 option -> BabylonjsBindings.SimpleClasses.AudioEngineV2
+
+    [<Import("_GetAudioEngine", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``_GetAudioEngine``: FunctionBinding__GetAudioEngine = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/textureLoaderManager
+    [<AllowNullLiteral>]
+    type FunctionBinding__GetCompatibleTextureLoader =
+        [<Emit("$0($1...)")>] abstract Invoke: ``extension``: string * ?``mimeType``: string -> JS.Promise<BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader> option
+
+    [<Import("_GetCompatibleTextureLoader", "@babylonjs/core/Materials/Textures/Loaders/textureLoaderManager.js")>]
+    let ``_GetCompatibleTextureLoader``: FunctionBinding__GetCompatibleTextureLoader = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode
+    [<AllowNullLiteral>]
+    type FunctionBinding__GetVolumeAudioSubNode =
+        [<Emit("$0($1...)")>] abstract Invoke: ``subGraph``: BabylonjsBindings.SimpleClasses._AbstractAudioSubGraph -> BabylonjsBindings.SimpleClasses._VolumeAudioSubNode option
+
+    [<Import("_GetVolumeAudioSubNode", "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode.js")>]
+    let ``_GetVolumeAudioSubNode``: FunctionBinding__GetVolumeAudioSubNode = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener
+    [<AllowNullLiteral>]
+    type FunctionBinding__HasSpatialAudioListenerOptions =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: BabylonjsBindings.SimpleInterfaces.PartialISpatialAudioListenerOptions -> bool
+
+    [<Import("_HasSpatialAudioListenerOptions", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudioListener.js")>]
+    let ``_HasSpatialAudioListenerOptions``: FunctionBinding__HasSpatialAudioListenerOptions = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio
+    [<AllowNullLiteral>]
+    type FunctionBinding__HasSpatialAudioOptions =
+        [<Emit("$0($1...)")>] abstract Invoke: ``options``: BabylonjsBindings.SimpleInterfaces.PartialISpatialAudioOptions -> bool
+
+    [<Import("_HasSpatialAudioOptions", "@babylonjs/core/AudioV2/abstractAudio/subProperties/abstractSpatialAudio.js")>]
+    let ``_HasSpatialAudioOptions``: FunctionBinding__HasSpatialAudioOptions = jsNative
+
+    /// @babylonjs/core/Meshes/Compression/dracoCodec
+    [<AllowNullLiteral>]
+    type FunctionBinding__IsConfigurationAvailable =
+        [<Emit("$0($1...)")>] abstract Invoke: ``config``: BabylonjsBindings.SimpleInterfaces.IDracoCodecConfiguration -> bool
+
+    [<Import("_IsConfigurationAvailable", "@babylonjs/core/Meshes/Compression/dracoCodec.js")>]
+    let ``_IsConfigurationAvailable``: FunctionBinding__IsConfigurationAvailable = jsNative
+
+    /// @babylonjs/core/FlowGraph/utils
+    [<AllowNullLiteral>]
+    type FunctionBinding__IsDescendantOf =
+        [<Emit("$0($1...)")>] abstract Invoke: ``mesh1``: BabylonjsBindings.SimpleClasses.Node * ``mesh2``: BabylonjsBindings.SimpleClasses.Node -> bool
+
+    [<Import("_IsDescendantOf", "@babylonjs/core/FlowGraph/utils.js")>]
+    let ``_IsDescendantOf``: FunctionBinding__IsDescendantOf = jsNative
+
+    /// @babylonjs/core/Engines/thinEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding__isRenderingStateCompiled =
+        [<Emit("$0($1...)")>] abstract Invoke: ``pipelineContext``: BabylonjsBindings.SimpleInterfaces.IPipelineContext * ``gl``: BabylonjsBindings.TypeAliases.WebGLContext * ?``validateShaderPrograms``: bool -> bool
+
+    [<Import("_isRenderingStateCompiled", "@babylonjs/core/Engines/thinEngine.functions.js")>]
+    let ``_isRenderingStateCompiled``: FunctionBinding__isRenderingStateCompiled = jsNative
+
+    /// @babylonjs/core/Materials/effect.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding__ProcessShaderCode =
+        [<Emit("$0($1...)")>] abstract Invoke: ``processorOptions``: BabylonjsBindings.SimpleInterfaces._IProcessingOptions * ``baseName``: obj * ?``processFinalCode``: BabylonjsBindings.TypeAliases.ShaderCustomProcessingFunction option * ?``onFinalCodeReady``: System.Action<string, string> * ?``shaderLanguage``: BabylonjsBindings.Enums.ShaderLanguage * ?``engine``: BabylonjsBindings.SimpleClasses.AbstractEngine * ?``effectContext``: BabylonjsBindings.SimpleClasses.Effect -> unit
+
+    [<Import("_ProcessShaderCode", "@babylonjs/core/Materials/effect.functions.js")>]
+    let ``_ProcessShaderCode``: FunctionBinding__ProcessShaderCode = jsNative
+
+    /// @babylonjs/core/Particles/Queue/executionQueue
+    [<AllowNullLiteral>]
+    type FunctionBinding__RemoveFromQueue =
+        [<Emit("$0($1...)")>] abstract Invoke: ``item``: BabylonjsBindings.SimpleInterfaces._IExecutionQueueItem -> unit
+
+    [<Import("_RemoveFromQueue", "@babylonjs/core/Particles/Queue/executionQueue.js")>]
+    let ``_RemoveFromQueue``: FunctionBinding__RemoveFromQueue = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRBodyTracking.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding__ResolveMixamoRigMapping =
+        [<Emit("$0($1...)")>] abstract Invoke: ``bodyMesh``: BabylonjsBindings.SimpleClasses.AbstractMesh -> BabylonjsBindings.TypeAliases.XRBodyMeshRigMapping
+
+    [<Import("_ResolveMixamoRigMapping", "@babylonjs/core/XR/features/WebXRBodyTracking.pure.js")>]
+    let ``_ResolveMixamoRigMapping``: FunctionBinding__ResolveMixamoRigMapping = jsNative
+
+    /// @babylonjs/core/Cameras/RigModes/stereoscopicAnaglyphRigMode
+    [<AllowNullLiteral>]
+    type FunctionBinding__SetStereoscopicAnaglyphRigMode =
+        [<Emit("$0($1...)")>] abstract Invoke: ``camera``: BabylonjsBindings.SimpleClasses.Camera -> unit
+
+    [<Import("_SetStereoscopicAnaglyphRigMode", "@babylonjs/core/Cameras/RigModes/stereoscopicAnaglyphRigMode.js")>]
+    let ``_SetStereoscopicAnaglyphRigMode``: FunctionBinding__SetStereoscopicAnaglyphRigMode = jsNative
+
+    /// @babylonjs/core/Cameras/RigModes/stereoscopicRigMode
+    [<AllowNullLiteral>]
+    type FunctionBinding__SetStereoscopicRigMode =
+        [<Emit("$0($1...)")>] abstract Invoke: ``camera``: BabylonjsBindings.SimpleClasses.Camera -> unit
+
+    [<Import("_SetStereoscopicRigMode", "@babylonjs/core/Cameras/RigModes/stereoscopicRigMode.js")>]
+    let ``_SetStereoscopicRigMode``: FunctionBinding__SetStereoscopicRigMode = jsNative
+
+    /// @babylonjs/core/Cameras/RigModes/vrRigMode
+    [<AllowNullLiteral>]
+    type FunctionBinding__SetVrRigMode =
+        [<Emit("$0($1...)")>] abstract Invoke: ``camera``: BabylonjsBindings.SimpleClasses.Camera * ``rigParams``: obj -> unit
+
+    [<Import("_SetVrRigMode", "@babylonjs/core/Cameras/RigModes/vrRigMode.js")>]
+    let ``_SetVrRigMode``: FunctionBinding__SetVrRigMode = jsNative
+
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding__UpdateRGBDAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``internalTexture``: BabylonjsBindings.SimpleClasses.InternalTexture * ``data``: ResizeArray<ResizeArray<JS.ArrayBufferView>> * ``sphericalPolynomial``: BabylonjsBindings.SimpleClasses.SphericalPolynomial option * ``lodScale``: float * ``lodOffset``: float -> JS.Promise<BabylonjsBindings.SimpleClasses.InternalTexture>
+
+    [<Import("_UpdateRGBDAsync", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``_UpdateRGBDAsync``: FunctionBinding__UpdateRGBDAsync = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateAudioBusAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIAudioBusOptions * ?``engine``: BabylonjsBindings.SimpleClasses.AudioEngineV2 option -> JS.Promise<BabylonjsBindings.SimpleClasses.AudioBus>
+
+    [<Import("CreateAudioBusAsync", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``CreateAudioBusAsync``: FunctionBinding_CreateAudioBusAsync = jsNative
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioEngine
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateAudioEngineAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIWebAudioEngineOptions -> JS.Promise<BabylonjsBindings.SimpleClasses.AudioEngineV2>
+
+    [<Import("CreateAudioEngineAsync", "@babylonjs/core/AudioV2/webAudio/webAudioEngine.js")>]
+    let ``CreateAudioEngineAsync``: FunctionBinding_CreateAudioEngineAsync = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateMainAudioBusAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIMainAudioBusOptions * ?``engine``: BabylonjsBindings.SimpleClasses.AudioEngineV2 option -> JS.Promise<BabylonjsBindings.SimpleClasses.MainAudioBus>
+
+    [<Import("CreateMainAudioBusAsync", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``CreateMainAudioBusAsync``: FunctionBinding_CreateMainAudioBusAsync = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateMicrophoneSoundSourceAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialISoundSourceOptions * ?``engine``: BabylonjsBindings.SimpleClasses.AudioEngineV2 option -> JS.Promise<BabylonjsBindings.SimpleClasses.AbstractSoundSource>
+
+    [<Import("CreateMicrophoneSoundSourceAsync", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``CreateMicrophoneSoundSourceAsync``: FunctionBinding_CreateMicrophoneSoundSourceAsync = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateSoundAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``source``: U5<JS.ArrayBuffer, BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer, BabylonjsBindings.SimpleClasses.StaticSoundBuffer, string, ResizeArray<string>> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundOptions * ?``engine``: BabylonjsBindings.SimpleClasses.AudioEngineV2 option -> JS.Promise<BabylonjsBindings.SimpleClasses.StaticSound>
+
+    [<Import("CreateSoundAsync", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``CreateSoundAsync``: FunctionBinding_CreateSoundAsync = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateSoundBufferAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U5<JS.ArrayBuffer, BabylonjsBindings.SimpleInterfaces.BrowserAudioBuffer, BabylonjsBindings.SimpleClasses.StaticSoundBuffer, string, ResizeArray<string>> * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialIStaticSoundBufferOptions * ?``engine``: BabylonjsBindings.SimpleClasses.AudioEngineV2 option -> JS.Promise<BabylonjsBindings.SimpleClasses.StaticSoundBuffer>
+
+    [<Import("CreateSoundBufferAsync", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``CreateSoundBufferAsync``: FunctionBinding_CreateSoundBufferAsync = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateSoundSourceAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``name``: string * ``source``: BabylonjsBindings.SimpleInterfaces.BrowserAudioNode * ?``options``: BabylonjsBindings.SimpleInterfaces.PartialISoundSourceOptions * ?``engine``: BabylonjsBindings.SimpleClasses.AudioEngineV2 option -> JS.Promise<BabylonjsBindings.SimpleClasses.AbstractSoundSource>
+
+    [<Import("CreateSoundSourceAsync", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``CreateSoundSourceAsync``: FunctionBinding_CreateSoundSourceAsync = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetDataOutConnectionByUniqueId =
+        [<Emit("$0($1...)")>] abstract Invoke: ``blocks``: ResizeArray<BabylonjsBindings.SimpleClasses.FlowGraphBlock> * ``uniqueId``: string -> BabylonjsBindings.SimpleClasses.FlowGraphDataConnection<obj>
+
+    [<Import("GetDataOutConnectionByUniqueId", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``GetDataOutConnectionByUniqueId``: FunctionBinding_GetDataOutConnectionByUniqueId = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetSignalInConnectionByUniqueId =
+        [<Emit("$0($1...)")>] abstract Invoke: ``blocks``: ResizeArray<BabylonjsBindings.SimpleClasses.FlowGraphBlock> * ``uniqueId``: string -> BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection
+
+    [<Import("GetSignalInConnectionByUniqueId", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``GetSignalInConnectionByUniqueId``: FunctionBinding_GetSignalInConnectionByUniqueId = jsNative
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
+    [<AllowNullLiteral>]
+    type FunctionBinding_LastCreatedAudioEngine =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> BabylonjsBindings.SimpleClasses.AudioEngineV2 option
+
+    [<Import("LastCreatedAudioEngine", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
+    let ``LastCreatedAudioEngine``: FunctionBinding_LastCreatedAudioEngine = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphParser
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseFlowGraphContext =
+        [<Emit("$0($1...)")>] abstract Invoke: ``serializationObject``: BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphContext * ``options``: BabylonjsBindings.SimpleInterfaces.IFlowGraphContextParseOptions * ?``rightHanded``: bool -> BabylonjsBindings.SimpleClasses.FlowGraphContext
+
+    [<Import("ParseFlowGraphContext", "@babylonjs/core/FlowGraph/flowGraphParser.js")>]
+    let ``ParseFlowGraphContext``: FunctionBinding_ParseFlowGraphContext = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphValidator
+    [<AllowNullLiteral>]
+    type FunctionBinding_ValidateFlowGraph =
+        [<Emit("$0($1...)")>] abstract Invoke: ``flowGraph``: BabylonjsBindings.SimpleClasses.FlowGraph -> BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationResult
+
+    [<Import("ValidateFlowGraph", "@babylonjs/core/FlowGraph/flowGraphValidator.js")>]
+    let ``ValidateFlowGraph``: FunctionBinding_ValidateFlowGraph = jsNative
+
+    /// @babylonjs/core/FlowGraph/flowGraphValidator
+    [<AllowNullLiteral>]
+    type FunctionBinding_ValidateFlowGraphWithBlockList =
+        [<Emit("$0($1...)")>] abstract Invoke: ``flowGraph``: BabylonjsBindings.SimpleClasses.FlowGraph * ``allKnownBlocks``: ResizeArray<BabylonjsBindings.SimpleClasses.FlowGraphBlock> -> BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationResult
+
+    [<Import("ValidateFlowGraphWithBlockList", "@babylonjs/core/FlowGraph/flowGraphValidator.js")>]
+    let ``ValidateFlowGraphWithBlockList``: FunctionBinding_ValidateFlowGraphWithBlockList = jsNative

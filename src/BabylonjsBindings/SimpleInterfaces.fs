@@ -8085,3 +8085,199 @@ module SimpleInterfaces =
         abstract ``atlasJSON``: ISpriteJSONAtlas with get, set
         abstract ``spriteSheet``: BabylonjsBindings.SimpleClasses.Texture with get, set
         abstract ``options``: ISpriteMapOptions with get, set
+
+    /// Exact structural ECMAScript iterator surface used by readonly sets.
+    [<AllowNullLiteral>]
+    type BrowserIterator<'T> =
+        abstract next: ?value: obj -> JS.IteratorResult<'T>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
+
+    /// Exact readonly ECMAScript Set surface used by Babylon declarations.
+    [<AllowNullLiteral>]
+    type BrowserReadonlySet<'T> =
+        abstract size: float with get
+        abstract has: value: 'T -> bool
+        abstract forEach: callbackfn: System.Action<'T, 'T, BrowserReadonlySet<'T>> * ?thisArg: obj -> unit
+        abstract entries: unit -> BrowserIterator<'T * 'T>
+        abstract keys: unit -> BrowserIterator<'T>
+        abstract values: unit -> BrowserIterator<'T>
+        [<Emit("$0[Symbol.iterator]()")>] abstract GetIterator: unit -> BrowserIterator<'T>
+
+    /// Distinct ambient offline Web Audio context handle.
+    [<AllowNullLiteral>]
+    type BrowserOfflineAudioContext =
+        interface end
+
+    /// @babylonjs/core/FlowGraph/flowGraph
+    [<AllowNullLiteral>]
+    type IFlowGraphParams =
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene with get, set
+        abstract ``coordinator``: BabylonjsBindings.SimpleClasses.FlowGraphCoordinator with get, set
+        abstract ``name``: string option with get, set
+        abstract ``uniqueId``: string option with get, set
+
+    /// @babylonjs/core/FlowGraph/flowGraphContext
+    [<AllowNullLiteral>]
+    type IFlowGraphPendingActivation =
+        abstract ``block``: BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock with get
+        abstract ``context``: BabylonjsBindings.SimpleClasses.FlowGraphContext with get
+        abstract ``signal``: BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection with get
+
+    /// @babylonjs/core/FlowGraph/flowGraphValidator
+    [<AllowNullLiteral>]
+    type IFlowGraphValidationIssue =
+        abstract ``severity``: BabylonjsBindings.Enums.FlowGraphValidationSeverity with get, set
+        abstract ``message``: string with get, set
+        abstract ``block``: BabylonjsBindings.SimpleClasses.FlowGraphBlock option with get, set
+        abstract ``connectionName``: string option with get, set
+
+    /// @babylonjs/core/AudioV2/abstractAudio/staticSound
+    [<AllowNullLiteral>]
+    type IStaticSoundCloneOptions =
+        abstract ``cloneBuffer``: bool with get, set
+        abstract ``outBus``: BabylonjsBindings.TypeAliases.PrimaryAudioBus option with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IStaticSoundCloneOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStaticSoundCloneOptions =
+        abstract ``cloneBuffer``: bool option with get, set
+        abstract ``outBus``: BabylonjsBindings.TypeAliases.PrimaryAudioBus option with get, set
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioNode
+    [<AllowNullLiteral>]
+    type IWebAudioInNode =
+        inherit BabylonjsBindings.SimpleClasses.AbstractAudioNode
+        abstract ``_inNode``: BrowserAudioNode option with get, set
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioNode
+    [<AllowNullLiteral>]
+    type IWebAudioOutNode =
+        inherit BabylonjsBindings.SimpleClasses.AbstractAudioNode
+        abstract ``_outNode``: BrowserAudioNode option with get, set
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioNode
+    [<AllowNullLiteral>]
+    type IWebAudioSubNode =
+        inherit BabylonjsBindings.SimpleClasses._AbstractAudioSubNode
+        abstract ``node``: BrowserAudioNode with get, set
+
+    /// @babylonjs/core/FlowGraph/flowGraphValidator
+    [<AllowNullLiteral>]
+    type IFlowGraphValidationResult =
+        abstract ``isValid``: bool with get, set
+        abstract ``issues``: ResizeArray<IFlowGraphValidationIssue> with get, set
+        abstract ``errorCount``: float with get, set
+        abstract ``warningCount``: float with get, set
+        abstract ``issuesByBlock``: JS.Map<string, ResizeArray<IFlowGraphValidationIssue>> with get, set
+
+    /// @babylonjs/core/AudioV2/webAudio/webAudioNode
+    [<AllowNullLiteral>]
+    type IWebAudioSuperNode =
+        inherit IWebAudioInNode
+        inherit IWebAudioOutNode
+        abstract ``engine``: BabylonjsBindings.SimpleClasses._WebAudioEngine with get, set
+
+    /// @babylonjs/core/AudioV2/abstractAudio/abstractSoundSource
+    [<AllowNullLiteral>]
+    type ISoundSourceOptions =
+        inherit IAbstractAudioOutNodeOptions
+        inherit ISpatialAudioOptions
+        inherit IStereoAudioOptions
+        abstract ``outBus``: BabylonjsBindings.TypeAliases.PrimaryAudioBus option with get, set
+        abstract ``outBusAutoDefault``: bool with get, set
+        abstract ``mediaStreamSinkEnabled``: bool with get, set
+        abstract ``stopMediaStreamTracksOnDispose``: bool with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<ISoundSourceOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialISoundSourceOptions =
+        inherit PartialIAbstractAudioOutNodeOptions
+        inherit PartialISpatialAudioOptions
+        inherit PartialIStereoAudioOptions
+        abstract ``outBus``: BabylonjsBindings.TypeAliases.PrimaryAudioBus option with get, set
+        abstract ``outBusAutoDefault``: bool option with get, set
+        abstract ``mediaStreamSinkEnabled``: bool option with get, set
+        abstract ``stopMediaStreamTracksOnDispose``: bool option with get, set
+
+    /// @babylonjs/core/Gizmos/spatialAudioGizmo
+    [<AllowNullLiteral>]
+    type ISpatialAudioGizmo =
+        inherit IGizmo
+        abstract ``onClickedObservable``: BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleClasses.AbstractSoundSource> with get, set
+        abstract ``soundSource``: BabylonjsBindings.SimpleClasses.AbstractSoundSource option with get, set
+        abstract ``material``: BabylonjsBindings.SimpleClasses.StandardMaterial with get
+
+    /// @babylonjs/core/AudioV2/abstractAudio/abstractSound
+    [<AllowNullLiteral>]
+    type IAbstractSoundOptions =
+        inherit IAbstractSoundOptionsBase
+        inherit IAbstractSoundPlayOptions
+        inherit ISoundSourceOptions
+
+    /// Exact optional-property projection used by Babylon Partial<IAbstractSoundOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIAbstractSoundOptions =
+        inherit PartialIAbstractSoundOptionsBase
+        inherit PartialIAbstractSoundPlayOptions
+        inherit PartialISoundSourceOptions
+
+    /// @babylonjs/core/AudioV2/abstractAudio/audioBus
+    [<AllowNullLiteral>]
+    type IAudioBusOptions =
+        inherit IAbstractAudioBusOptions
+        inherit ISpatialAudioOptions
+        inherit IStereoAudioOptions
+        abstract ``outBus``: BabylonjsBindings.TypeAliases.PrimaryAudioBus with get, set
+
+    /// Exact optional-property projection used by Babylon Partial<IAudioBusOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIAudioBusOptions =
+        inherit PartialIAbstractAudioBusOptions
+        inherit PartialISpatialAudioOptions
+        inherit PartialIStereoAudioOptions
+        abstract ``outBus``: BabylonjsBindings.TypeAliases.PrimaryAudioBus option with get, set
+
+    /// @babylonjs/core/FlowGraph/flowGraphContext
+    [<AllowNullLiteral>]
+    type IFlowGraphContextConfiguration =
+        abstract ``scene``: BabylonjsBindings.SimpleClasses.Scene with get
+        abstract ``coordinator``: BabylonjsBindings.SimpleClasses.FlowGraphCoordinator with get
+        abstract ``sceneEventCoordinator``: BabylonjsBindings.SimpleClasses.FlowGraphSceneEventCoordinator option with get
+        abstract ``assetsContext``: IAssetContainer option with get
+
+    /// Function-valued IFlowGraphContextParseOptions.valueParseFunction property.
+    [<AllowNullLiteral>]
+    type IFlowGraphContextParseOptionsValueParseFunctionCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``key``: string * ``serializationObject``: obj * ``assetsContainer``: IAssetContainer * ``scene``: BabylonjsBindings.SimpleClasses.Scene -> obj
+
+    /// @babylonjs/core/FlowGraph/flowGraphContext
+    [<AllowNullLiteral>]
+    type IFlowGraphContextParseOptions =
+        abstract ``valueParseFunction``: IFlowGraphContextParseOptionsValueParseFunctionCallback option with get
+        abstract ``graph``: BabylonjsBindings.SimpleClasses.FlowGraph with get
+
+    /// @babylonjs/core/AudioV2/abstractAudio/staticSound
+    [<AllowNullLiteral>]
+    type IStaticSoundOptions =
+        inherit IAbstractSoundOptions
+        inherit IStaticSoundBufferOptions
+        inherit IStaticSoundStoredOptions
+
+    /// Exact optional-property projection used by Babylon Partial<IStaticSoundOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStaticSoundOptions =
+        inherit PartialIAbstractSoundOptions
+        inherit PartialIStaticSoundBufferOptions
+        inherit PartialIStaticSoundStoredOptions
+
+    /// @babylonjs/core/AudioV2/abstractAudio/streamingSound
+    [<AllowNullLiteral>]
+    type IStreamingSoundOptions =
+        inherit IAbstractSoundOptions
+        inherit IStreamingSoundOptionsBase
+
+    /// Exact optional-property projection used by Babylon Partial<IStreamingSoundOptions> signatures.
+    [<AllowNullLiteral>]
+    type PartialIStreamingSoundOptions =
+        inherit PartialIAbstractSoundOptions
+        inherit PartialIStreamingSoundOptionsBase

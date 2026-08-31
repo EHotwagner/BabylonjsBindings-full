@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "e9956c31662c64c8abef17d0d5f16e95840c3687fd47b64f4f59d027b06213d6",
+  "proposalSha256": "e998bf9d3327b15ce997efaae176800f5867b5d4c359b01c64c64bdc14c49eb8",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1160,6 +1160,33 @@
       ],
       "shape": "callback",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphCodeExecutionBlock",
+      "name": "CodeExecutionFunction",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.CodeExecutionFunction",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext"
+      ],
+      "shape": "callback",
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioBus",
+      "name": "PrimaryAudioBus",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.PrimaryAudioBus",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioBus",
+        "BabylonjsBindings.SimpleClasses.MainAudioBus"
+      ],
+      "shape": "alias",
+      "memberCount": 1
     }
   ],
   "reviewStatus": "maintained"

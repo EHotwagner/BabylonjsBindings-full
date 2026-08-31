@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "2bc4e746388361be5846cbccf8d82841d2f6dbb9aa0e104bc7e2eae84497fc15",
+  "proposalSha256": "2e34026369e7f9c34c8e6bd760aa6d65c6e0dc6b3eec93363cb8e5e0638732bd",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -21203,6 +21203,3795 @@
         "BabylonjsBindings.SimpleClasses.WebXRLayerRenderTargetTextureProvider"
       ],
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/abstractAudioSubGraph",
+      "name": "_AbstractAudioSubGraph",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._AbstractAudioSubGraph",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._AbstractAudioSubNode"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/abstractAudioSubNode",
+      "name": "_AbstractAudioSubNode",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._AbstractAudioSubNode",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractNamedAudioNode"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSoundInstance",
+      "name": "_AbstractSoundInstance",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._AbstractSoundInstance",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioNode",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.IAbstractSoundPlayOptions"
+      ],
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/basisTextureLoader",
+      "name": "_BasisTextureLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._BasisTextureLoader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/ddsTextureLoader",
+      "name": "_DDSTextureLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._DDSTextureLoader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/envTextureLoader",
+      "name": "_ENVTextureLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._ENVTextureLoader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/exrTextureLoader",
+      "name": "_ExrTextureLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._ExrTextureLoader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/hdrTextureLoader",
+      "name": "_HDRTextureLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._HDRTextureLoader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/iesTextureLoader",
+      "name": "_IESTextureLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._IESTextureLoader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/ktxTextureLoader",
+      "name": "_KTXTextureLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._KTXTextureLoader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/mainAudioOut",
+      "name": "_MainAudioOut",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._MainAudioOut",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioNode"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/staticSoundInstance",
+      "name": "_StaticSoundInstance",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._StaticSoundInstance",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._AbstractSoundInstance",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundPlayOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundStopOptions"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subProperties/stereoAudio",
+      "name": "_StereoAudio",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._StereoAudio",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractStereoAudio",
+        "BabylonjsBindings.SimpleClasses._AbstractAudioSubGraph"
+      ],
+      "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/streamingSoundInstance",
+      "name": "_StreamingSoundInstance",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._StreamingSoundInstance",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses._AbstractSoundInstance"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/tgaTextureLoader",
+      "name": "_TGATextureLoader",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._TGATextureLoader",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleInterfaces.IInternalTextureLoader"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/subNodes/volumeAudioSubNode",
+      "name": "_VolumeAudioSubNode",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._VolumeAudioSubNode",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._AbstractAudioSubNode",
+        "BabylonjsBindings.SimpleInterfaces.IAudioParameterRampOptions",
+        "BabylonjsBindings.SimpleInterfaces.IVolumeAudioOptions"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/subNodes/webAudioBaseSubGraph",
+      "name": "_WebAudioBaseSubGraph",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioBaseSubGraph",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._AbstractAudioSubGraph",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioBaseSubGraphOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioBus",
+      "name": "_WebAudioBus",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioBus",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioBus",
+        "BabylonjsBindings.SimpleClasses._StereoAudio",
+        "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+        "BabylonjsBindings.SimpleInterfaces.IAudioBusOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/subNodes/webAudioBusAndSoundSubGraph",
+      "name": "_WebAudioBusAndSoundSubGraph",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioBusAndSoundSubGraph",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._WebAudioBaseSubGraph",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioBusAndSoundSubGraphOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioEngine",
+      "name": "_WebAudioEngine",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractNamedAudioNode",
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
+        "BabylonjsBindings.SimpleClasses.AbstractSpatialAudioListener",
+        "BabylonjsBindings.SimpleClasses.AudioBus",
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleClasses.MainAudioBus",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.StaticSound",
+        "BabylonjsBindings.SimpleClasses.StaticSoundBuffer",
+        "BabylonjsBindings.SimpleClasses.StreamingSound",
+        "BabylonjsBindings.SimpleClasses._WebAudioMainOut",
+        "BabylonjsBindings.SimpleInterfaces.IAudioBusOptions",
+        "BabylonjsBindings.SimpleInterfaces.IAudioParameterRampOptions",
+        "BabylonjsBindings.SimpleInterfaces.IMainAudioBusOptions",
+        "BabylonjsBindings.SimpleInterfaces.ISoundSourceOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundBufferOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioEngineOptions"
+      ],
+      "memberCount": 38
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioMainBus",
+      "name": "_WebAudioMainBus",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioMainBus",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.MainAudioBus",
+        "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+        "BabylonjsBindings.SimpleInterfaces.IMainAudioBusOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioMainOut",
+      "name": "_WebAudioMainOut",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioMainOut",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses._MainAudioOut",
+        "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+        "BabylonjsBindings.SimpleInterfaces.IAudioParameterRampOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioInNode"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioSoundSource",
+      "name": "_WebAudioSoundSource",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioSoundSource",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
+        "BabylonjsBindings.SimpleClasses._StereoAudio",
+        "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+        "BabylonjsBindings.SimpleInterfaces.ISoundSourceOptions"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioStaticSound",
+      "name": "_WebAudioStaticSound",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStaticSound",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.StaticSound",
+        "BabylonjsBindings.SimpleClasses.StaticSoundBuffer",
+        "BabylonjsBindings.SimpleClasses._StereoAudio",
+        "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+        "BabylonjsBindings.SimpleClasses._WebAudioStaticSoundBuffer",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundCloneOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundStoredOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
+      ],
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioStaticSound",
+      "name": "_WebAudioStaticSoundBuffer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStaticSoundBuffer",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.StaticSoundBuffer",
+        "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundBufferCloneOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundBufferOptions"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/webAudio/webAudioStreamingSound",
+      "name": "_WebAudioStreamingSound",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses._WebAudioStreamingSound",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.StreamingSound",
+        "BabylonjsBindings.SimpleClasses._StereoAudio",
+        "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundStoredOptions",
+        "BabylonjsBindings.SimpleInterfaces.IWebAudioSuperNode"
+      ],
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioBus",
+      "name": "AbstractAudioBus",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractAudioBus",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioOutNode"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioNode",
+      "name": "AbstractAudioNode",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractAudioNode",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleClasses.Observable"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioOutNode",
+      "name": "AbstractAudioOutNode",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractAudioOutNode",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioAnalyzer",
+        "BabylonjsBindings.SimpleClasses.AbstractNamedAudioNode",
+        "BabylonjsBindings.SimpleInterfaces.IAudioParameterRampOptions"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractAudioNode",
+      "name": "AbstractNamedAudioNode",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractNamedAudioNode",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioNode",
+        "BabylonjsBindings.SimpleClasses.Observable"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSound",
+      "name": "AbstractSound",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractSound",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleInterfaces.IAbstractSoundPlayOptions"
+      ],
+      "memberCount": 13
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/abstractSoundSource",
+      "name": "AbstractSoundSource",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioOutNode",
+        "BabylonjsBindings.SimpleClasses.AbstractSpatialAudio",
+        "BabylonjsBindings.SimpleClasses.AbstractStereoAudio",
+        "BabylonjsBindings.TypeAliases.PrimaryAudioBus"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioBus",
+      "name": "AudioBus",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AudioBus",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioBus",
+        "BabylonjsBindings.SimpleClasses.AbstractSpatialAudio",
+        "BabylonjsBindings.SimpleClasses.AbstractStereoAudio",
+        "BabylonjsBindings.TypeAliases.PrimaryAudioBus"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Audio/audioEngine.pure",
+      "name": "AudioEngine",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AudioEngine",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Analyser",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses._WebAudioEngine",
+        "BabylonjsBindings.SimpleInterfaces.IAudioEngine"
+      ],
+      "memberCount": 19
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2",
+      "name": "AudioEngineV2",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioNode",
+        "BabylonjsBindings.SimpleClasses.AbstractNamedAudioNode",
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
+        "BabylonjsBindings.SimpleClasses.AbstractSpatialAudioListener",
+        "BabylonjsBindings.SimpleClasses.AudioBus",
+        "BabylonjsBindings.SimpleClasses.MainAudioBus",
+        "BabylonjsBindings.SimpleClasses.StaticSound",
+        "BabylonjsBindings.SimpleClasses.StaticSoundBuffer",
+        "BabylonjsBindings.SimpleClasses.StreamingSound",
+        "BabylonjsBindings.SimpleInterfaces.IAudioBusOptions",
+        "BabylonjsBindings.SimpleInterfaces.IAudioParameterRampOptions",
+        "BabylonjsBindings.SimpleInterfaces.IDisposable",
+        "BabylonjsBindings.SimpleInterfaces.IMainAudioBusOptions",
+        "BabylonjsBindings.SimpleInterfaces.IReadonlyObservable",
+        "BabylonjsBindings.SimpleInterfaces.ISoundSourceOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundBufferOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundOptions"
+      ],
+      "memberCount": 27
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraph",
+      "name": "FlowGraph",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraph",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphCoordinator",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSceneEventCoordinator",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphEditorLaunchOptions",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphParams",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphValidationResult"
+      ],
+      "memberCount": 29
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphAbsBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAbsBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphAcosBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAcosBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphAcoshBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAcoshBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphAddBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAddBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMathBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphAngleBetweenBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAngleBetweenBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphApplyForceBlock.pure",
+      "name": "FlowGraphApplyForceBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphApplyForceBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleClasses.PhysicsBody",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphApplyImpulseBlock.pure",
+      "name": "FlowGraphApplyImpulseBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphApplyImpulseBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleClasses.PhysicsBody",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphArrayIndexBlock.pure",
+      "name": "FlowGraphArrayIndexBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphArrayIndexBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [
+        {
+          "context": "FlowGraphArrayIndexBlock",
+          "parameter": "T",
+          "defaultType": "any"
+        }
+      ],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphAsinBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAsinBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphAsinhBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAsinhBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphAsyncExecutionBlock",
+      "name": "FlowGraphAsyncExecutionBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAsyncExecutionBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphAtan2Block",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAtan2Block",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphAtanBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAtanBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphAtanhBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAtanhBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphAxisAngleFromQuaternionBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphAxisAngleFromQuaternionBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphBezierCurveEasingBlock.pure",
+      "name": "FlowGraphBezierCurveEasingBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBezierCurveEasingBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.Vector2",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphBinaryOperationBlock",
+      "name": "FlowGraphBinaryOperationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.RichType",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "typeParameterCount": 3,
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphBitwiseAndBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseAndBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBitwiseBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphBitwiseLeftShiftBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseLeftShiftBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphBitwiseNotBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseNotBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBitwiseBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphBitwiseOrBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseOrBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBitwiseBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphBitwiseRightShiftBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseRightShiftBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphBitwiseXorBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBitwiseXorBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphBlock",
+      "name": "FlowGraphBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.RichType",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.SimpleInterfaces.ISerializedFlowGraphBlock"
+      ],
+      "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
+      "name": "FlowGraphBooleanToFloat",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBooleanToFloat",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
+      "name": "FlowGraphBooleanToInt",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBooleanToInt",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphBranchBlock.pure",
+      "name": "FlowGraphBranchBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphBranchBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphCachedOperationBlock",
+      "name": "FlowGraphCachedOperationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.RichType",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphCounterBlock.pure",
+      "name": "FlowGraphCallCounterBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCallCounterBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphCancelDelayBlock.pure",
+      "name": "FlowGraphCancelDelayBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCancelDelayBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphInteger",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphCeilBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCeilBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphClampBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphClampBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphTernaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphCodeExecutionBlock",
+      "name": "FlowGraphCodeExecutionBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCodeExecutionBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.CodeExecutionFunction"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphCombineMatrix2DBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineMatrix2DBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathCombineBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMatrix2D",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphCombineMatrixBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphCombineMatrix3DBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineMatrix3DBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathCombineBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMatrix3D",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphCombineMatrixBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphCombineMatrixBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineMatrixBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathCombineBlock",
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphCombineMatrixBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphCombineVector2Block",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineVector2Block",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathCombineBlock",
+        "BabylonjsBindings.SimpleClasses.Vector2",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphCombineVector3Block",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineVector3Block",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathCombineBlock",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphCombineVector4Block",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCombineVector4Block",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathCombineBlock",
+        "BabylonjsBindings.SimpleClasses.Vector4",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConditionalDataBlock.pure",
+      "name": "FlowGraphConditionalDataBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConditionalDataBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphConjugateBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConjugateBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphConsoleLogBlock.pure",
+      "name": "FlowGraphConsoleLogBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConsoleLogBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphConsoleLogBlockConfiguration"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConstantBlock.pure",
+      "name": "FlowGraphConstantBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConstantBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphConstantBlockConfiguration"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphConstantOperationBlock",
+      "name": "FlowGraphConstantOperationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphConstantOperationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.RichType",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphContext",
+      "name": "FlowGraphContext",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Animation",
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.Camera",
+        "BabylonjsBindings.SimpleClasses.FlowGraphAsyncExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphLogger",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleClasses.Light",
+        "BabylonjsBindings.SimpleClasses.Material",
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IAssetContainer",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphContextConfiguration",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphOnTickEventPayload",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphPendingActivation"
+      ],
+      "memberCount": 53
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphCoordinator",
+      "name": "FlowGraphCoordinator",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCoordinator",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraph",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphCoordinatorConfiguration",
+        "BabylonjsBindings.SimpleInterfaces.IReadonlyObservable"
+      ],
+      "memberCount": 16
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphCosBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCosBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphCoshBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCoshBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphCrossBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCrossBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphCubeRootBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphCubeRootBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphDataConnection.pure",
+      "name": "FlowGraphDataConnection",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.RichType",
+        "BabylonjsBindings.SimpleClasses.Scene"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 15
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphDataSwitchBlock.pure",
+      "name": "FlowGraphDataSwitchBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDataSwitchBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphDataSwitchBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphDebounceBlock.pure",
+      "name": "FlowGraphDebounceBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDebounceBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphDegToRadBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDegToRadBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
+      "name": "FlowGraphDeterminantBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDeterminantBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrixBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMatrix"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphDivideBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDivideBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMathBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphDoNBlock.pure",
+      "name": "FlowGraphDoNBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDoNBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphInteger",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphDoNBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphDotBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphDotBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphVector"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphEasingBlock.pure",
+      "name": "FlowGraphEasingBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphEasingBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphEBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphEBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphConstantOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphEqualityBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphEqualityBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphEventBlock",
+      "name": "FlowGraphEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphAsyncExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphExecutionBlock",
+      "name": "FlowGraphExecutionBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection"
+      ],
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphExecutionBlockWithOutSignal",
+      "name": "FlowGraphExecutionBlockWithOutSignal",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphExpBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExpBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphExtractMatrix2DBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractMatrix2DBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathExtractBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphExtractMatrix3DBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractMatrix3DBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathExtractBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphExtractMatrixBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractMatrixBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathExtractBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphExtractVector2Block",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractVector2Block",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathExtractBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphExtractVector3Block",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractVector3Block",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathExtractBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathCombineExtractBlocks.pure",
+      "name": "FlowGraphExtractVector4Block",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphExtractVector4Block",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphMathExtractBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphFlipFlopBlock.pure",
+      "name": "FlowGraphFlipFlopBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFlipFlopBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphFlipFlopBlockConfiguration"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
+      "name": "FlowGraphFloatToBoolean",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFloatToBoolean",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
+      "name": "FlowGraphFloatToInt",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFloatToInt",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphFloatToIntConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphFloorBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFloorBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphForLoopBlock.pure",
+      "name": "FlowGraphForLoopBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphForLoopBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphInteger",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphForLoopBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphFractionBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFractionBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphFunctionReferenceBlock.pure",
+      "name": "FlowGraphFunctionReferenceBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphFunctionReferenceBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetAngularVelocityBlock.pure",
+      "name": "FlowGraphGetAngularVelocityBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetAngularVelocityBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.PhysicsBody",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetLinearVelocityBlock.pure",
+      "name": "FlowGraphGetLinearVelocityBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetLinearVelocityBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.PhysicsBody",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Physics/flowGraphGetPhysicsMassPropertiesBlock.pure",
+      "name": "FlowGraphGetPhysicsMassPropertiesBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetPhysicsMassPropertiesBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.PhysicsBody",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Audio/flowGraphGetSoundVolumeBlock.pure",
+      "name": "FlowGraphGetSoundVolumeBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetSoundVolumeBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetVariableBlock.pure",
+      "name": "FlowGraphGetVariableBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGetVariableBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphGetVariableBlockConfiguration"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphGreaterThanBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGreaterThanBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphGreaterThanOrEqualBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphGreaterThanOrEqualBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Utils/flowGraphIndexOfBlock.pure",
+      "name": "FlowGraphIndexOfBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIndexOfBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [
+        {
+          "context": "FlowGraphIndexOfBlock",
+          "parameter": "T",
+          "defaultType": "any"
+        }
+      ],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphInteger",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphInfBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphInfBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphConstantOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphInterpolationBlock.pure",
+      "name": "FlowGraphInterpolationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphInterpolationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Animation",
+        "BabylonjsBindings.SimpleClasses.EasingFunction",
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphInterpolationBlockConfiguration"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
+      "name": "FlowGraphIntToBoolean",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIntToBoolean",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphTypeToTypeBlocks.pure",
+      "name": "FlowGraphIntToFloat",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIntToFloat",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
+      "name": "FlowGraphInvertMatrixBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphInvertMatrixBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrixBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMatrix"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphIsInfinityBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIsInfinityBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphIsKeyPressedBlock",
+      "name": "FlowGraphIsKeyPressedBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIsKeyPressedBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphIsNanBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIsNanBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Audio/flowGraphIsSoundPlayingBlock.pure",
+      "name": "FlowGraphIsSoundPlayingBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphIsSoundPlayingBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyboardEventBlock",
+      "name": "FlowGraphKeyboardEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphKeyboardEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleClasses.KeyboardInfo"
+      ],
+      "memberCount": 11
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyDownEventBlock",
+      "name": "FlowGraphKeyDownEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphKeyDownEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphKeyboardEventBlock",
+        "BabylonjsBindings.SimpleClasses.KeyboardInfo",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphKeyDownEventBlockConfiguration"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphKeyUpEventBlock",
+      "name": "FlowGraphKeyUpEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphKeyUpEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphKeyboardEventBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphKeyboardEventBlockConfiguration"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphLeadingZerosBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLeadingZerosBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphLengthBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLengthBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphVector"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphLessThanBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLessThanBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphLessThanOrEqualBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLessThanOrEqualBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphNumber"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphLog10Block",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLog10Block",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphLog2Block",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLog2Block",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphLogBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphLogBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphMathInterpolationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMathInterpolationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphTernaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
+      "name": "FlowGraphMatrixComposeBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMatrixComposeBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
+      "name": "FlowGraphMatrixDecomposeBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMatrixDecomposeBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.Matrix",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
+      "name": "FlowGraphMatrixMultiplicationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMatrixMultiplicationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrixBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMatrix"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphMaxBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMaxBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphMeshPickEventBlock.pure",
+      "name": "FlowGraphMeshPickEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMeshPickEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleClasses.PointerEventTypes",
+        "BabylonjsBindings.SimpleClasses.PointerInfo",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMeshPickEventBlockConfiguration"
+      ],
+      "memberCount": 14
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphMinBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMinBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphModuloBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphModuloBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphMultiGateBlock.pure",
+      "name": "FlowGraphMultiGateBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMultiGateBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphInteger",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMultiGateBlockConfiguration"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphMultiplyBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphMultiplyBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMathBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphNaNBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphNaNBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphConstantOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphNegationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphNegationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphNormalizeBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphNormalizeBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphNormalizeBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphVector"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphOneBitsCounterBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphOneBitsCounterBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphPauseAnimationBlock.pure",
+      "name": "FlowGraphPauseAnimationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPauseAnimationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphPauseSoundBlock.pure",
+      "name": "FlowGraphPauseSoundBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPauseSoundBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPhysicsCollisionEventBlock.pure",
+      "name": "FlowGraphPhysicsCollisionEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPhysicsCollisionEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleClasses.PhysicsBody",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphPhysicsCollisionEventBlockConfiguration"
+      ],
+      "memberCount": 12
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphPiBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPiBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphConstantOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphPlayAnimationBlock.pure",
+      "name": "FlowGraphPlayAnimationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPlayAnimationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Animation",
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.FlowGraphAsyncExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 17
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphPlaySoundBlock.pure",
+      "name": "FlowGraphPlaySoundBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPlaySoundBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOutEventBlock.pure",
+      "name": "FlowGraphPointerOutEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPointerOutEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphPointerOutEventBlockConfiguration",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphPointerOutEventPayload"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphPointerOverEventBlock.pure",
+      "name": "FlowGraphPointerOverEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPointerOverEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphPointerOverEventBlockConfiguration",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphPointerOverEventPayload"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphPowerBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphPowerBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphQuaternionFromAxisAngleBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphQuaternionFromAxisAngleBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphQuaternionFromDirectionsBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphQuaternionFromDirectionsBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphRadToDegBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRadToDegBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphRandomBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRandomBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphConstantOperationBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphRandomBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphReceiveCustomEventBlock.pure",
+      "name": "FlowGraphReceiveCustomEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphReceiveCustomEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphReceiveCustomEventBlockConfiguration"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphRotate2DBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRotate2DBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphRotate3DBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRotate3DBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphRoundBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphRoundBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphRoundBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphSaturateBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSaturateBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSceneReadyEventBlock.pure",
+      "name": "FlowGraphSceneReadyEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSceneReadyEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSceneTickEventBlock.pure",
+      "name": "FlowGraphSceneTickEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSceneTickEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphOnTickEventPayload"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSendCustomEventBlock.pure",
+      "name": "FlowGraphSendCustomEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSendCustomEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphSendCustomEventBlockConfiguration"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSequenceBlock.pure",
+      "name": "FlowGraphSequenceBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSequenceBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphSequenceBlockConfiguration"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetAngularVelocityBlock.pure",
+      "name": "FlowGraphSetAngularVelocityBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetAngularVelocityBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleClasses.PhysicsBody",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSetDelayBlock.pure",
+      "name": "FlowGraphSetDelayBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetDelayBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphAsyncExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphInteger",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetLinearVelocityBlock.pure",
+      "name": "FlowGraphSetLinearVelocityBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetLinearVelocityBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleClasses.PhysicsBody",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Physics/flowGraphSetPhysicsMotionTypeBlock.pure",
+      "name": "FlowGraphSetPhysicsMotionTypeBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetPhysicsMotionTypeBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleClasses.PhysicsBody",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphSetSoundVolumeBlock.pure",
+      "name": "FlowGraphSetSoundVolumeBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetSoundVolumeBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetVariableBlock.pure",
+      "name": "FlowGraphSetVariableBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSetVariableBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphSetVariableBlockConfiguration"
+      ],
+      "typeParameterCount": 1,
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphSignalConnection.pure",
+      "name": "FlowGraphSignalConnection",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphSignBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSignBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphSinBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSinBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphSinhBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSinhBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Event/flowGraphSoundEndedEventBlock.pure",
+      "name": "FlowGraphSoundEndedEventBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSoundEndedEventBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphEventBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphSquareRootBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSquareRootBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Animation/flowGraphStopAnimationBlock.pure",
+      "name": "FlowGraphStopAnimationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphStopAnimationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AnimationGroup",
+        "BabylonjsBindings.SimpleClasses.FlowGraphAsyncExecutionBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/Audio/flowGraphStopSoundBlock.pure",
+      "name": "FlowGraphStopSoundBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphStopSoundBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphSubtractBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphSubtractBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMathBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphTanBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTanBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphTanhBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTanhBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphTernaryOperationBlock",
+      "name": "FlowGraphTernaryOperationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTernaryOperationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.RichType",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "typeParameterCount": 4,
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphThrottleBlock.pure",
+      "name": "FlowGraphThrottleBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphThrottleBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 6
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphTrailingZerosBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTrailingZerosBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphTransformBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTransformBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphTransformBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMatrix",
+        "BabylonjsBindings.TypeAliases.FlowGraphVector"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphVectorMathBlocks.pure",
+      "name": "FlowGraphTransformCoordinatesBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTransformCoordinatesBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBinaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphTransformCoordinatesSystemBlock.pure",
+      "name": "FlowGraphTransformCoordinatesSystemBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTransformCoordinatesSystemBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.TransformNode",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMatrixMathBlocks.pure",
+      "name": "FlowGraphTransposeBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTransposeBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphMatrixBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMatrix"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Math/flowGraphMathBlocks.pure",
+      "name": "FlowGraphTruncBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphTruncBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration",
+        "BabylonjsBindings.TypeAliases.FlowGraphMathOperationType"
+      ],
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphUnaryOperationBlock",
+      "name": "FlowGraphUnaryOperationBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphUnaryOperationBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphCachedOperationBlock",
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.RichType",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphBlockConfiguration"
+      ],
+      "typeParameterCount": 2,
+      "memberCount": 4
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWaitAllBlock.pure",
+      "name": "FlowGraphWaitAllBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphWaitAllBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphInteger",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphWaitAllBlockConfiguration"
+      ],
+      "memberCount": 9
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphWhileLoopBlock.pure",
+      "name": "FlowGraphWhileLoopBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.FlowGraphWhileLoopBlock",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.FlowGraphContext",
+        "BabylonjsBindings.SimpleClasses.FlowGraphDataConnection",
+        "BabylonjsBindings.SimpleClasses.FlowGraphExecutionBlockWithOutSignal",
+        "BabylonjsBindings.SimpleClasses.FlowGraphSignalConnection",
+        "BabylonjsBindings.SimpleInterfaces.IFlowGraphWhileLoopBlockConfiguration"
+      ],
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/mainAudioBus",
+      "name": "MainAudioBus",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.MainAudioBus",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractAudioBus"
+      ],
+      "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Gizmos/spatialAudioGizmo",
+      "name": "SpatialAudioGizmo",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.SpatialAudioGizmo",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSoundSource",
+        "BabylonjsBindings.SimpleClasses.Gizmo",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.StandardMaterial",
+        "BabylonjsBindings.SimpleClasses.UtilityLayerRenderer",
+        "BabylonjsBindings.SimpleInterfaces.ISpatialAudioGizmo"
+      ],
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/staticSound",
+      "name": "StaticSound",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StaticSound",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleClasses.StaticSoundBuffer",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundCloneOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundPlayOptions",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundStopOptions"
+      ],
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/staticSoundBuffer",
+      "name": "StaticSoundBuffer",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StaticSoundBuffer",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AudioEngineV2",
+        "BabylonjsBindings.SimpleInterfaces.IStaticSoundBufferCloneOptions"
+      ],
+      "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/AudioV2/abstractAudio/streamingSound",
+      "name": "StreamingSound",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.StreamingSound",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractSound",
+        "BabylonjsBindings.SimpleInterfaces.IStreamingSoundPlayOptions"
+      ],
+      "memberCount": 7
     }
   ],
   "reviewStatus": "maintained"
