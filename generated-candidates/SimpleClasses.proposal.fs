@@ -180,11 +180,6 @@ module SimpleClasses =
     type StringLiteral094c6afa3051 =
         | [<CompiledName("texture2D")>] Value
 
-    /// Exact string literal type for "none".
-    [<StringEnum; RequireQualifiedAccess>]
-    type StringLiteral140bedbf9c3f =
-        | [<CompiledName("none")>] Value
-
     /// Exact string literal type for "mat4".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral15fb65e5b0ac =
@@ -215,11 +210,6 @@ module SimpleClasses =
     type StringLiteral252f10c83610 =
         | [<CompiledName("f")>] Value
 
-    /// Exact string literal type for "right".
-    [<StringEnum; RequireQualifiedAccess>]
-    type StringLiteral27042f4e6eca =
-        | [<CompiledName("right")>] Value
-
     /// Exact string literal type for "x".
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral2d711642b726 =
@@ -229,11 +219,6 @@ module SimpleClasses =
     [<StringEnum; RequireQualifiedAccess>]
     type StringLiteral33d177285f0d =
         | [<CompiledName("xr-controller-movement")>] Value
-
-    /// Exact string literal type for "left".
-    [<StringEnum; RequireQualifiedAccess>]
-    type StringLiteral360f84035942 =
-        | [<CompiledName("left")>] Value
 
     /// Exact string literal type for "stl".
     [<StringEnum; RequireQualifiedAccess>]
@@ -42985,6 +42970,45 @@ module SimpleClasses =
     [<Import("WebXRControllerPhysics", "@babylonjs/core/XR/features/WebXRControllerPhysics.pure.js")>]
     let WebXRControllerPhysics: WebXRControllerPhysicsStatic = jsNative
 
+    /// Function-valued WebXRControllerPointerSelection.raySelectionPredicate property.
+    [<AllowNullLiteral>]
+    type WebXRControllerPointerSelectionRaySelectionPredicateCallback =
+        [<Emit("$0($1...)")>] abstract Invoke: ``mesh``: AbstractMesh -> bool
+
+    /// @babylonjs/core/XR/features/WebXRControllerPointerSelection.pure
+    [<AllowNullLiteral>]
+    type WebXRControllerPointerSelection =
+        inherit WebXRAbstractFeature
+        abstract ``disablePointerLighting``: bool with get, set
+        abstract ``disableSelectionMeshLighting``: bool with get, set
+        abstract ``displayLaserPointer``: bool with get, set
+        abstract ``displaySelectionMesh``: bool with get, set
+        abstract ``laserPointerPickedColor``: Color3 with get, set
+        abstract ``laserPointerDefaultColor``: Color3 with get, set
+        abstract ``selectionMeshDefaultColor``: Color3 with get, set
+        abstract ``selectionMeshPickedColor``: Color3 with get, set
+        abstract ``raySelectionPredicate``: WebXRControllerPointerSelectionRaySelectionPredicateCallback with get, set
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``getMeshUnderPointer`` : ``controllerId``: string -> AbstractMesh option
+        abstract ``setAttachedController`` : ``controllerId``: U2<BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness, string> -> bool
+        abstract ``getXRControllerByPointerId`` : ``id``: float -> WebXRInputSource option
+        abstract ``_getPointerSelectionDisabledByPointerId`` : ``id``: float -> bool
+        abstract ``_setPointerSelectionDisabledByPointerId`` : ``id``: float * ``state``: bool -> unit
+        abstract ``attachedControllerId``: string with get
+        abstract ``lasterPointerDefaultColor``: Color3 with get
+
+    [<AllowNullLiteral>]
+    type WebXRControllerPointerSelectionStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRControllerPointerSelection>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ``_options``: BabylonjsBindings.SimpleInterfaces.IWebXRControllerPointerSelectionOptions -> WebXRControllerPointerSelection
+        abstract ``Name``: StringLiteral9607d79e7e6e with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRControllerPointerSelection", "@babylonjs/core/XR/features/WebXRControllerPointerSelection.pure.js")>]
+    let WebXRControllerPointerSelection: WebXRControllerPointerSelectionStatic = jsNative
+
     /// @babylonjs/core/XR/features/WebXRDOMOverlay.pure
     [<AllowNullLiteral>]
     type WebXRDomOverlay =
@@ -43101,6 +43125,35 @@ module SimpleClasses =
 
     [<Import("WebXRHand", "@babylonjs/core/XR/features/WebXRHandTracking.pure.js")>]
     let WebXRHand: WebXRHandStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRHandTracking.pure
+    [<AllowNullLiteral>]
+    type WebXRHandTracking =
+        inherit WebXRAbstractFeature
+        abstract ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRHandTrackingOptions with get
+        abstract ``onHandAddedObservable``: Observable<WebXRHand> with get, set
+        abstract ``onHandRemovedObservable``: Observable<WebXRHand> with get, set
+        abstract ``isCompatible`` : unit -> bool
+        abstract ``getHandByControllerId`` : ``controllerId``: string -> WebXRHand option
+        abstract ``getHandByHandedness`` : ``handedness``: BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness -> WebXRHand option
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``dispose`` : unit -> unit
+
+    [<AllowNullLiteral>]
+    type WebXRHandTrackingStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRHandTracking>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ``options``: BabylonjsBindings.SimpleInterfaces.IWebXRHandTrackingOptions -> WebXRHandTracking
+        abstract ``Name``: StringLiteral030241635d52 with get
+        abstract ``Version``: float with get
+        abstract ``DEFAULT_HAND_MODEL_BASE_URL``: string with get, set
+        abstract ``DEFAULT_HAND_MODEL_RIGHT_FILENAME``: string with get, set
+        abstract ``DEFAULT_HAND_MODEL_LEFT_FILENAME``: string with get, set
+        abstract ``DEFAULT_HAND_MODEL_SHADER_URL``: string with get, set
+
+    [<Import("WebXRHandTracking", "@babylonjs/core/XR/features/WebXRHandTracking.pure.js")>]
+    let WebXRHandTracking: WebXRHandTrackingStatic = jsNative
 
     /// @babylonjs/core/XR/motionController/webXRHTCViveMotionController.pure
     [<AllowNullLiteral>]
@@ -43286,6 +43339,73 @@ module SimpleClasses =
 
     [<Import("WebXRMotionControllerManager", "@babylonjs/core/XR/motionController/webXRMotionControllerManager.pure.js")>]
     let WebXRMotionControllerManager: WebXRMotionControllerManagerStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRControllerTeleportation.pure
+    [<AllowNullLiteral>]
+    type WebXRMotionControllerTeleportation =
+        inherit WebXRAbstractFeature
+        abstract ``skipNextTeleportation``: bool with get, set
+        abstract ``backwardsMovementEnabled``: bool with get, set
+        abstract ``backwardsTeleportationDistance``: float with get, set
+        abstract ``parabolicCheckRadius``: float with get, set
+        abstract ``parabolicRayEnabled``: bool with get, set
+        abstract ``straightRayEnabled``: bool with get, set
+        abstract ``rotationAngle``: float with get, set
+        abstract ``onTargetMeshPositionUpdatedObservable``: Observable<PickingInfo> with get, set
+        abstract ``teleportationEnabled``: bool with get, set
+        abstract ``onBeforeCameraTeleportRotation``: Observable<float> with get, set
+        abstract ``onAfterCameraTeleportRotation``: Observable<Quaternion> with get, set
+        abstract ``onBeforeCameraTeleport``: Observable<Vector3> with get, set
+        abstract ``onAfterCameraTeleport``: Observable<Vector3> with get, set
+        abstract ``addFloorMesh`` : ``mesh``: AbstractMesh -> unit
+        abstract ``addBlockerMesh`` : ``mesh``: AbstractMesh -> unit
+        abstract ``addSnapPoint`` : ``newSnapPoint``: Vector3 -> unit
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``dispose`` : unit -> unit
+        abstract ``removeFloorMesh`` : ``mesh``: AbstractMesh -> unit
+        abstract ``removeBlockerMesh`` : ``mesh``: AbstractMesh -> unit
+        abstract ``removeFloorMeshByName`` : ``name``: string -> unit
+        abstract ``removeSnapPoint`` : ``snapPointToRemove``: Vector3 -> bool
+        abstract ``setSelectionFeature`` : ``selectionFeature``: BabylonjsBindings.SimpleInterfaces.IWebXRFeature option -> unit
+        abstract ``rotationEnabled``: bool with get, set
+        abstract ``teleportationTargetMesh``: AbstractMesh option with get
+        abstract ``snapPointsOnly``: bool with get, set
+
+    [<AllowNullLiteral>]
+    type WebXRMotionControllerTeleportationStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRMotionControllerTeleportation>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ``_options``: BabylonjsBindings.SimpleInterfaces.IWebXRTeleportationOptions -> WebXRMotionControllerTeleportation
+        abstract ``Name``: StringLiteral4bff47d82478 with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRMotionControllerTeleportation", "@babylonjs/core/XR/features/WebXRControllerTeleportation.pure.js")>]
+    let WebXRMotionControllerTeleportation: WebXRMotionControllerTeleportationStatic = jsNative
+
+    /// @babylonjs/core/XR/features/WebXRNearInteraction.pure
+    [<AllowNullLiteral>]
+    type WebXRNearInteraction =
+        inherit WebXRAbstractFeature
+        abstract ``selectionMeshDefaultColor``: Color3 with get, set
+        abstract ``selectionMeshPickedColor``: Color3 with get, set
+        abstract ``alwaysHideSelectionMesh``: bool with get, set
+        abstract ``attach`` : unit -> bool
+        abstract ``detach`` : unit -> bool
+        abstract ``getMeshUnderPointer`` : ``controllerId``: string -> AbstractMesh option
+        abstract ``getXRControllerByPointerId`` : ``id``: float -> WebXRInputSource option
+        abstract ``setFarInteractionFeature`` : ``farInteractionFeature``: WebXRControllerPointerSelection option -> unit
+
+    [<AllowNullLiteral>]
+    type WebXRNearInteractionStatic =
+        inherit WebXRAbstractFeatureStatic
+        inherit Constructor<WebXRNearInteraction>
+        [<EmitConstructor>] abstract Create: ``_xrSessionManager``: WebXRSessionManager * ``_options``: BabylonjsBindings.SimpleInterfaces.IWebXRNearInteractionOptions -> WebXRNearInteraction
+        abstract ``Name``: StringLiteral76a2d47646e9 with get
+        abstract ``Version``: float with get
+
+    [<Import("WebXRNearInteraction", "@babylonjs/core/XR/features/WebXRNearInteraction.pure.js")>]
+    let WebXRNearInteraction: WebXRNearInteractionStatic = jsNative
 
     /// @babylonjs/core/XR/motionController/webXROculusHandController.pure
     [<AllowNullLiteral>]

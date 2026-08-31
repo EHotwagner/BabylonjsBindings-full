@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "2e34026369e7f9c34c8e6bd760aa6d65c6e0dc6b3eec93363cb8e5e0638732bd",
+  "proposalSha256": "4ad46eaa875c9b1fcc53b5267cfbaaf4872d93585fde5cf4a454ded70b48d01a",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -24992,6 +24992,89 @@
         "BabylonjsBindings.SimpleInterfaces.IStreamingSoundPlayOptions"
       ],
       "memberCount": 7
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerPointerSelection.pure",
+      "name": "WebXRControllerPointerSelection",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRControllerPointerSelection",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Color3",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRInputSource",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRControllerPointerSelectionOptions"
+      ],
+      "memberCount": 21
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHandTracking.pure",
+      "name": "WebXRHandTracking",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRHandTracking",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRHand",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRHandTrackingOptions"
+      ],
+      "memberCount": 16
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerTeleportation.pure",
+      "name": "WebXRMotionControllerTeleportation",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRMotionControllerTeleportation",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Observable",
+        "BabylonjsBindings.SimpleClasses.PickingInfo",
+        "BabylonjsBindings.SimpleClasses.Quaternion",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRFeature",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRTeleportationOptions"
+      ],
+      "memberCount": 30
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRNearInteraction.pure",
+      "name": "WebXRNearInteraction",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.WebXRNearInteraction",
+      "fidelityIssues": [],
+      "genericDefaults": [],
+      "structuralImplements": [],
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Color3",
+        "BabylonjsBindings.SimpleClasses.WebXRAbstractFeature",
+        "BabylonjsBindings.SimpleClasses.WebXRControllerPointerSelection",
+        "BabylonjsBindings.SimpleClasses.WebXRInputSource",
+        "BabylonjsBindings.SimpleClasses.WebXRSessionManager",
+        "BabylonjsBindings.SimpleInterfaces.IWebXRNearInteractionOptions"
+      ],
+      "memberCount": 11
     }
   ],
   "reviewStatus": "maintained"

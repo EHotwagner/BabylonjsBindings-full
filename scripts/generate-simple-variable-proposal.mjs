@@ -45,7 +45,7 @@ const dependencyManifestPaths = [
   "generated-candidates/SimpleFunctions.promotion.json"
 ];
 const dependencyExports = (await Promise.all(dependencyManifestPaths.map(async path => JSON.parse(await readFile(resolve(root, path), "utf8")))))
-  .flatMap(manifest => manifest.exports);
+  .flatMap(manifest => [...(manifest.exports ?? []), ...(manifest.supportTypes ?? [])]);
 const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
@@ -150,6 +150,7 @@ const fsharpType = node => {
       const inner = fsharpType(node.typeArguments[0]);
       return inner ? `${inner} option` : undefined;
     }
+    if (node.typeName.text === "ArrayBufferLike" && !node.typeArguments?.length) return "U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer>";
     if (node.typeName.text === "Set" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0]);
       return inner ? `JS.Set<${inner}>` : undefined;
@@ -162,6 +163,8 @@ const fsharpType = node => {
     if (node.typeName.text === "Error" && !node.typeArguments?.length) return "System.Exception";
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
     if (!node.typeArguments?.length && node.typeName.text === "ImageBitmap") return "BabylonjsBindings.SimpleInterfaces.BrowserImageBitmap";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHandedness") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness";
+    if (!node.typeArguments?.length && node.typeName.text === "BigUint64Array") return "BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array";
     if (!node.typeArguments?.length && browserTypes.has(node.typeName.text)) return `Browser.Types.${node.typeName.text}`;
     if (maintainedSymbols.has(node.typeName.text)) {
       const target = maintainedSymbols.get(node.typeName.text);

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "a95615fb6e4d512f0915d47e7267ed2f5b6f2c8ec6657624dc80bd46993e1eef",
+  "proposalSha256": "5e0c81ebe6b850ea4e82f20759a90b094f42fc93d065e14dc5eb0acbbfb65148",
   "exports": [
     {
       "package": "@babylonjs/loaders",
@@ -463,6 +463,17 @@
         "BabylonjsBindings.TypeAliases.SmartAssetManager"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_AddSmartAssetManagerCreatedObserver",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.functions",
+      "name": "allocateAndCopyTypedBuffer",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.allocateAndCopyTypedBuffer",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_allocateAndCopyTypedBuffer",
       "overloadCount": 1
     },
     {
@@ -1648,6 +1659,19 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "CreateIrradianceImageDataArrayBufferViews",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateIrradianceImageDataArrayBufferViews",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.EnvironmentTextureInfo"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateIrradianceImageDataArrayBufferViews",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/latheBuilder.pure",
       "name": "CreateLathe",
       "kind": "function",
@@ -1978,6 +2002,19 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "CreateRadianceImageDataArrayBufferViews",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateRadianceImageDataArrayBufferViews",
+      "dependencies": [
+        "BabylonjsBindings.TypeAliases.EnvironmentTextureInfo"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateRadianceImageDataArrayBufferViews",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/textureTools",
       "name": "CreateResizedCopy",
       "kind": "function",
@@ -2188,6 +2225,20 @@
         "BabylonjsBindings.SimpleInterfaces.IFontData"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateText",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/textBuilder",
+      "name": "CreateTextShapePaths",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateTextShapePaths",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.ShapePath",
+        "BabylonjsBindings.SimpleInterfaces.IFontData"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateTextShapePaths",
       "overloadCount": 1
     },
     {
@@ -2461,6 +2512,17 @@
         "BabylonjsBindings.SimpleInterfaces.DataCursor"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_DecodeFloat32",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.rle",
+      "name": "DecodeRunLength",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.DecodeRunLength",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_DecodeRunLength",
       "overloadCount": 1
     },
     {
@@ -2941,6 +3003,19 @@
       "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetElementPixelFromUv",
       "dependencies": [],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetElementPixelFromUv",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "GetEnvInfo",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetEnvInfo",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetEnvInfo",
       "overloadCount": 1
     },
     {
@@ -3935,6 +4010,20 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "normalizeEnvInfo",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.normalizeEnvInfo",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2",
+        "BabylonjsBindings.TypeAliases.EnvironmentTextureInfo"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_normalizeEnvInfo",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions",
       "name": "NormalizeRadians",
       "kind": "function",
@@ -4087,6 +4176,19 @@
         "BabylonjsBindings.SimpleInterfaces.DataCursor"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ParseInt64",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core",
+      "name": "ParseNullTerminatedString",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.ParseNullTerminatedString",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.DataCursor"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_ParseNullTerminatedString",
       "overloadCount": 1
     },
     {
@@ -12671,6 +12773,34 @@
         "BabylonjsBindings.SimpleClasses.InternalTexture"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadContent",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "UploadEnvLevelsAsync",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.UploadEnvLevelsAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.TypeAliases.EnvironmentTextureInfo"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadEnvLevelsAsync",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "UploadEnvSpherical",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.UploadEnvSpherical",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.TypeAliases.EnvironmentTextureInfo"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadEnvSpherical",
       "overloadCount": 1
     },
     {

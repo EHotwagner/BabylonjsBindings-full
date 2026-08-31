@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "e998bf9d3327b15ce997efaae176800f5867b5d4c359b01c64c64bdc14c49eb8",
+  "proposalSha256": "e3a7adbc62be0b5fe5b41b7d5229f76a3143c88b16952dbbd2e8e2531daea394",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -1184,6 +1184,42 @@
       "dependencies": [
         "BabylonjsBindings.SimpleClasses.AudioBus",
         "BabylonjsBindings.SimpleClasses.MainAudioBus"
+      ],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "TypedArray",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.TypedArray",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerMovement.pure",
+      "name": "WebXRControllerMovementFeatureContext",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebXRControllerMovementFeatureContext",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "EnvironmentTextureInfo",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.EnvironmentTextureInfo",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV1",
+        "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2"
       ],
       "shape": "alias",
       "memberCount": 1

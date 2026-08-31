@@ -9583,6 +9583,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerPointerSelection.pure.js",
+      "export": "WebXRControllerPointerSelection",
+      "runtimeExport": "WebXRControllerPointerSelection",
+      "moduleSha256": "c419d3adda77b30aba8db27a8fd44f6f1913963ce72dcc7853ac565c687a5d2d"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/XR/features/WebXRDOMOverlay.pure.js",
       "export": "WebXRDomOverlay",
       "runtimeExport": "WebXRDomOverlay",
@@ -9621,6 +9628,13 @@
       "module": "@babylonjs/core/XR/features/WebXRHandTracking.pure.js",
       "export": "WebXRHand",
       "runtimeExport": "WebXRHand",
+      "moduleSha256": "3010019b57a7c95ed96e49fcb51b810165a4707321c9575b244569867096dbfe"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHandTracking.pure.js",
+      "export": "WebXRHandTracking",
+      "runtimeExport": "WebXRHandTracking",
       "moduleSha256": "3010019b57a7c95ed96e49fcb51b810165a4707321c9575b244569867096dbfe"
     },
     {
@@ -9685,6 +9699,20 @@
       "export": "WebXRMotionControllerManager",
       "runtimeExport": "WebXRMotionControllerManager",
       "moduleSha256": "e243a0125e6251429341484c21d99718bb9e809535dcda6226b39518feda1322"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerTeleportation.pure.js",
+      "export": "WebXRMotionControllerTeleportation",
+      "runtimeExport": "WebXRMotionControllerTeleportation",
+      "moduleSha256": "2c29c01bc0c61dd52ce1a410e548729c9aff19a265f65c78abff3fc48b7dc3cb"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRNearInteraction.pure.js",
+      "export": "WebXRNearInteraction",
+      "runtimeExport": "WebXRNearInteraction",
+      "moduleSha256": "e9a8936a24e286bd8cff3c73b058edb0d89fbc05d8b007c6413c00b93e355d8e"
     },
     {
       "package": "@babylonjs/core",

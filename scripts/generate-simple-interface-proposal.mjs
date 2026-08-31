@@ -172,7 +172,7 @@ const dependencyManifestPaths = [
   "generated-candidates/SimpleClasses.promotion.json"
 ];
 const dependencyExports = (await Promise.all(dependencyManifestPaths.map(async path => JSON.parse(await readFile(resolve(root, path), "utf8")))))
-  .flatMap(manifest => manifest.exports);
+  .flatMap(manifest => [...(manifest.exports ?? []), ...(manifest.supportTypes ?? [])]);
 const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
@@ -388,6 +388,7 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       const inner = fsharpType(node.typeArguments[0], available, dependencies, typeParameters);
       return inner ? asOption(inner) : undefined;
     }
+    if (node.typeName.text === "ArrayBufferLike" && !node.typeArguments?.length) return "U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer>";
     const jsTypes = new Set(["ArrayBuffer", "ArrayBufferView", "BigInt64Array", "DataView", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
     if (!node.typeArguments?.length && jsTypes.has(node.typeName.text)) return `JS.${node.typeName.text}`;
     if (node.typeArguments?.length === 1
@@ -492,6 +493,8 @@ const fsharpType = (node, available, dependencies = new Set(), typeParameters = 
       ,["XRReferenceSpaceType", "BrowserXRReferenceSpaceType"]
       ,["XRSessionMode", "BrowserXRSessionMode"]
       ,["XREye", "BrowserXREye"]
+      ,["XRHandedness", "BrowserXRHandedness"]
+      ,["BigUint64Array", "BrowserBigUint64Array"]
       ,["GPUPowerPreference", "BrowserGPUPowerPreference"]
       ,["XMLHttpRequestBodyInit", "BrowserXMLHttpRequestBodyInit"]
     ]);
@@ -993,6 +996,8 @@ for (const [name, members] of [...excludedEnumTypes].sort(([left], [right]) => l
 }
 lines.push("", "    /// Exact opaque WebGLQuery handle.", "    [<AllowNullLiteral>]", "    type BrowserWebGLQuery =", "        interface end");
 lines.push("", "    /// Exact WebGL context-event extension surface.", "    [<AllowNullLiteral>]", "    type BrowserWebGLContextEvent =", "        inherit Browser.Types.Event", "        abstract statusMessage: string with get");
+lines.push("", "    /// Exact WebXR handedness literals.", "    [<StringEnum; RequireQualifiedAccess>]", "    type BrowserXRHandedness =", "        | [<CompiledName(\"none\")>] None", "        | [<CompiledName(\"left\")>] Left", "        | [<CompiledName(\"right\")>] Right");
+lines.push("", "    /// Distinct unsigned BigInt typed-array surface missing from the pinned Fable.Core.", "    type BrowserBigUint64Array =", "        inherit JS.TypedArray<System.Numerics.BigInteger>");
 lines.push("", "    /// Distinct opaque handle for the ambient JavaScript RegExp API.", "    [<AllowNullLiteral>]", "    type BrowserRegExp =", "        interface end");
 lines.push("", "    /// Exact nominal type for a required JavaScript null literal.", "    [<AllowNullLiteral>]", "    type JavaScriptNull =", "        interface end");
 lines.push("", "    /// Erased, owner-typed JavaScript property key.", "    [<Erase>]", "    type JavaScriptKeyOf<'TOwner> =", "        | JavaScriptKeyOf of string");

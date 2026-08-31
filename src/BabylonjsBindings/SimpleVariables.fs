@@ -4978,3 +4978,54 @@ module SimpleVariables =
     /// @babylonjs/core/AudioV2/abstractAudio/audioEngineV2
     [<Import("OnAudioEngineV2CreatedObservable", "@babylonjs/core/AudioV2/abstractAudio/audioEngineV2.js")>]
     let ``OnAudioEngineV2CreatedObservable``: BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleClasses.AudioEngineV2> = jsNative
+
+    /// Inline object shape of BasisTools.
+    [<AllowNullLiteral>]
+    type VariableShape_BasisTools =
+        abstract ``JSModuleURL``: string with get, set
+        abstract ``WasmModuleURL``: string with get, set
+        abstract ``GetInternalFormatFromBasisFormat``: System.Func<float, BabylonjsBindings.SimpleClasses.AbstractEngine, float> with get, set
+        abstract ``TranscodeAsync``: System.Func<U2<JS.ArrayBuffer, JS.ArrayBufferView>, BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration, JS.Promise<BabylonjsBindings.SimpleClasses.TranscodeResult>> with get, set
+        abstract ``LoadTextureFromTranscodeResult``: System.Action<BabylonjsBindings.SimpleClasses.InternalTexture, BabylonjsBindings.SimpleClasses.TranscodeResult> with get, set
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<Import("BasisTools", "@babylonjs/core/Misc/basis.pure.js")>]
+    let ``BasisTools``: VariableShape_BasisTools = jsNative
+
+    /// Inline object shape of EnvironmentTextureTools.
+    [<AllowNullLiteral>]
+    type VariableShape_EnvironmentTextureTools =
+        abstract ``GetEnvInfo``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetEnvInfo with get, set
+        abstract ``CreateEnvTextureAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateEnvTextureAsync with get, set
+        abstract ``CreateRadianceImageDataArrayBufferViews``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateRadianceImageDataArrayBufferViews with get, set
+        abstract ``CreateIrradianceImageDataArrayBufferViews``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateIrradianceImageDataArrayBufferViews with get, set
+        abstract ``UploadEnvLevelsAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadEnvLevelsAsync with get, set
+        abstract ``UploadRadianceLevelsAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadRadianceLevelsAsync with get, set
+        abstract ``UploadIrradianceLevelsAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadIrradianceLevelsAsync with get, set
+        abstract ``UploadEnvSpherical``: BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadEnvSpherical with get, set
+
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<Import("EnvironmentTextureTools", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``EnvironmentTextureTools``: VariableShape_EnvironmentTextureTools = jsNative
+
+    /// @babylonjs/loaders/glTF/glTFFileLoader.pure
+    [<Import("GLTFLoaderDefaultOptions", "@babylonjs/loaders/glTF/glTFFileLoader.pure.js")>]
+    let ``GLTFLoaderDefaultOptions``: BabylonjsBindings.SimpleClasses.GLTFLoaderBaseOptions = jsNative
+
+    /// Callable shape of LoadTextureFromTranscodeResult.
+    [<AllowNullLiteral>]
+    type VariableFunction_LoadTextureFromTranscodeResult =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.SimpleClasses.InternalTexture * ``transcodeResult``: BabylonjsBindings.SimpleClasses.TranscodeResult -> unit
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<Import("LoadTextureFromTranscodeResult", "@babylonjs/core/Misc/basis.pure.js")>]
+    let ``LoadTextureFromTranscodeResult``: VariableFunction_LoadTextureFromTranscodeResult = jsNative
+
+    /// Callable shape of TranscodeAsync.
+    [<AllowNullLiteral>]
+    type VariableFunction_TranscodeAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: U2<JS.ArrayBuffer, JS.ArrayBufferView> * ``config``: BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration -> JS.Promise<BabylonjsBindings.SimpleClasses.TranscodeResult>
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<Import("TranscodeAsync", "@babylonjs/core/Misc/basis.pure.js")>]
+    let ``TranscodeAsync``: VariableFunction_TranscodeAsync = jsNative

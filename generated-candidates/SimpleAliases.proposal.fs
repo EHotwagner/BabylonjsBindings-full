@@ -244,6 +244,19 @@ module TypeAliases =
 
     /// Exact nested object used by a Babylon type alias.
     [<AllowNullLiteral>]
+    type AliasObjectc11d826e4a3c =
+        abstract ``movementEnabled``: bool with get, set
+        abstract ``movementOrientationFollowsViewerPose``: bool with get, set
+        abstract ``movementOrientationFollowsController``: bool with get, set
+        abstract ``orientationPreferredHandedness``: BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness option with get, set
+        abstract ``movementSpeed``: System.Double with get, set
+        abstract ``movementThreshold``: System.Double with get, set
+        abstract ``rotationEnabled``: bool with get, set
+        abstract ``rotationSpeed``: System.Double with get, set
+        abstract ``rotationThreshold``: System.Double with get, set
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
     type AliasObjectf8c432911558 =
         abstract ``parentBody``: BabylonjsBindings.SimpleClasses.PhysicsBody with get, set
         abstract ``parentBodyIndex``: System.Double with get, set
@@ -561,6 +574,9 @@ module TypeAliases =
     /// @babylonjs/core/types
     type Empty = ResizeArray<BabylonjsBindings.SimpleClasses.Never>
 
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    type EnvironmentTextureInfo = U2<BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV1, BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2>
+
     /// @babylonjs/core/sceneComponent
     [<AllowNullLiteral>]
     type EvaluateSubMeshStageAction =
@@ -872,8 +888,14 @@ module TypeAliases =
     type TrianglePickingPredicate =
         [<Emit("$0($1...)")>] abstract Invoke: p0: BabylonjsBindings.SimpleClasses.Vector3 * p1: BabylonjsBindings.SimpleClasses.Vector3 * p2: BabylonjsBindings.SimpleClasses.Vector3 * ray: BabylonjsBindings.SimpleClasses.Ray * i0: System.Double * i1: System.Double * i2: System.Double -> bool
 
+    /// @babylonjs/core/types
+    type TypedArray = U2<U8<JS.Int8Array, JS.Uint8Array, JS.Uint8ClampedArray, JS.Int16Array, JS.Uint16Array, JS.Int32Array, JS.Uint32Array, JS.Float32Array>, U3<JS.Float64Array, JS.BigInt64Array, BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array>>
+
     /// @babylonjs/core/Engines/thinEngine.functions
     type WebGLContext = U2<Browser.Types.WebGLRenderingContext, BabylonjsBindings.SimpleInterfaces.BrowserWebGL2RenderingContext>
+
+    /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
+    type WebXRControllerMovementFeatureContext = AliasObjectc11d826e4a3c
 
     /// @babylonjs/core/XR/webXRFeaturesManager
     [<AllowNullLiteral>]

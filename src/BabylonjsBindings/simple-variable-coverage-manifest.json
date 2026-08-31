@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "31ad00faf35e3d460f677c087bfed5f16d65768dcdcd6ce5e7988801198d766d",
+  "proposalSha256": "0b1316a9df4201b117507cb946db84668c2a040e4ac9f0dd1ae008c0607f4c80",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5288,6 +5288,73 @@
         "BabylonjsBindings.SimpleClasses.Observable"
       ],
       "fsharpType": "BabylonjsBindings.SimpleClasses.Observable<BabylonjsBindings.SimpleClasses.AudioEngineV2>"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "BasisTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BasisTools",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration",
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleClasses.TranscodeResult"
+      ],
+      "fsharpType": "VariableShape_BasisTools",
+      "memberCount": 5
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "EnvironmentTextureTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EnvironmentTextureTools",
+      "dependencies": [],
+      "fsharpType": "VariableShape_EnvironmentTextureTools",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+      "name": "GLTFLoaderDefaultOptions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GLTFLoaderDefaultOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.GLTFLoaderBaseOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleClasses.GLTFLoaderBaseOptions"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "LoadTextureFromTranscodeResult",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LoadTextureFromTranscodeResult",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleClasses.TranscodeResult"
+      ],
+      "fsharpType": "VariableFunction_LoadTextureFromTranscodeResult",
+      "parameterCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "TranscodeAsync",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TranscodeAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration",
+        "BabylonjsBindings.SimpleClasses.TranscodeResult"
+      ],
+      "fsharpType": "VariableFunction_TranscodeAsync",
+      "parameterCount": 2
     }
   ],
   "reviewStatus": "maintained"

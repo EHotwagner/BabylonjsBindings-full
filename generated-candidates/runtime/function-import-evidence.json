@@ -266,6 +266,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Engines/abstractEngine.functions.js",
+      "export": "allocateAndCopyTypedBuffer",
+      "runtimeExport": "allocateAndCopyTypedBuffer",
+      "moduleSha256": "ffce32b94047837cb49f1382460e77730c20e6011beabe1984f770f20b617621"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure.js",
       "export": "AllocateShBuffers",
       "runtimeExport": "AllocateShBuffers",
@@ -868,6 +875,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure.js",
+      "export": "CreateIrradianceImageDataArrayBufferViews",
+      "runtimeExport": "CreateIrradianceImageDataArrayBufferViews",
+      "moduleSha256": "c380f244a4900d0c4d3838ee1fc50e16674719a342d84adfe3f098364bb66dc4"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Meshes/Builders/latheBuilder.pure.js",
       "export": "CreateLathe",
       "runtimeExport": "CreateLathe",
@@ -1029,6 +1043,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure.js",
+      "export": "CreateRadianceImageDataArrayBufferViews",
+      "runtimeExport": "CreateRadianceImageDataArrayBufferViews",
+      "moduleSha256": "c380f244a4900d0c4d3838ee1fc50e16674719a342d84adfe3f098364bb66dc4"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/textureTools.js",
       "export": "CreateResizedCopy",
       "runtimeExport": "CreateResizedCopy",
@@ -1130,6 +1151,13 @@
       "module": "@babylonjs/core/Meshes/Builders/textBuilder.js",
       "export": "CreateText",
       "runtimeExport": "CreateText",
+      "moduleSha256": "05f481ed6d53dd721c187cffa49d9bf16cb5f8bc7ca841a4fdc734df1d615e9c"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Meshes/Builders/textBuilder.js",
+      "export": "CreateTextShapePaths",
+      "runtimeExport": "CreateTextShapePaths",
       "moduleSha256": "05f481ed6d53dd721c187cffa49d9bf16cb5f8bc7ca841a4fdc734df1d615e9c"
     },
     {
@@ -1271,6 +1299,13 @@
       "export": "DecodeFloat32",
       "runtimeExport": "DecodeFloat32",
       "moduleSha256": "fefdf123ea91336ff2b3cda550df63dea4cf22a96cc43f78925f38bc36fa6a75"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.rle.js",
+      "export": "DecodeRunLength",
+      "runtimeExport": "DecodeRunLength",
+      "moduleSha256": "d3cb2fdb364dc380a760f936df2a6b1430e167b01f74385a12c97bb7b89bb460"
     },
     {
       "package": "@babylonjs/core",
@@ -1537,6 +1572,13 @@
       "export": "GetElementPixelFromUv",
       "runtimeExport": "GetElementPixelFromUv",
       "moduleSha256": "fd8f6aaf18811e756fb7f4d8ed15a669007aa9663b58881fb4cc952582af9572"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure.js",
+      "export": "GetEnvInfo",
+      "runtimeExport": "GetEnvInfo",
+      "moduleSha256": "c380f244a4900d0c4d3838ee1fc50e16674719a342d84adfe3f098364bb66dc4"
     },
     {
       "package": "@babylonjs/core",
@@ -2079,6 +2121,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure.js",
+      "export": "normalizeEnvInfo",
+      "runtimeExport": "normalizeEnvInfo",
+      "moduleSha256": "c380f244a4900d0c4d3838ee1fc50e16674719a342d84adfe3f098364bb66dc4"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.scalar.functions.js",
       "export": "NormalizeRadians",
       "runtimeExport": "NormalizeRadians",
@@ -2159,6 +2208,13 @@
       "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js",
       "export": "ParseInt64",
       "runtimeExport": "ParseInt64",
+      "moduleSha256": "fefdf123ea91336ff2b3cda550df63dea4cf22a96cc43f78925f38bc36fa6a75"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js",
+      "export": "ParseNullTerminatedString",
+      "runtimeExport": "ParseNullTerminatedString",
       "moduleSha256": "fefdf123ea91336ff2b3cda550df63dea4cf22a96cc43f78925f38bc36fa6a75"
     },
     {
@@ -7515,6 +7571,20 @@
       "export": "UploadContent",
       "runtimeExport": "UploadContent",
       "moduleSha256": "fe80b319b1bcfe979f01459f6ec05d5914e3867af53f3564dfc99f2c52909326"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure.js",
+      "export": "UploadEnvLevelsAsync",
+      "runtimeExport": "UploadEnvLevelsAsync",
+      "moduleSha256": "c380f244a4900d0c4d3838ee1fc50e16674719a342d84adfe3f098364bb66dc4"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure.js",
+      "export": "UploadEnvSpherical",
+      "runtimeExport": "UploadEnvSpherical",
+      "moduleSha256": "c380f244a4900d0c4d3838ee1fc50e16674719a342d84adfe3f098364bb66dc4"
     },
     {
       "package": "@babylonjs/core",

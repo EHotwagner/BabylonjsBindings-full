@@ -62,7 +62,7 @@ const dependencyManifestPaths = [
   "generated-candidates/SimpleClasses.promotion.json"
 ];
 const dependencyExports = (await Promise.all(dependencyManifestPaths.map(async path => JSON.parse(await readFile(resolve(root, path), "utf8")))))
-  .flatMap(manifest => manifest.exports);
+  .flatMap(manifest => [...(manifest.exports ?? []), ...(manifest.supportTypes ?? [])]);
 const maintainedIdentities = new Set(dependencyExports.map(entry => `${entry.package}|${entry.module}|${entry.name}`));
 let priorAliasExports = [];
 try {
@@ -131,6 +131,7 @@ const stringLiteralType = value => {
 };
 
 const fsharpType = node => {
+  if (node.kind === ts.SyntaxKind.UndefinedKeyword) return "unit";
   if (node.kind === ts.SyntaxKind.StringKeyword) return "string";
   if (node.kind === ts.SyntaxKind.NumberKeyword) return "System.Double";
   if (node.kind === ts.SyntaxKind.BooleanKeyword) return "bool";
@@ -271,6 +272,8 @@ const fsharpType = node => {
     if (!node.typeArguments?.length && node.typeName.text === "XRRenderState") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderState";
     if (!node.typeArguments?.length && node.typeName.text === "XRRenderStateInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXRRenderStateInit";
     if (!node.typeArguments?.length && node.typeName.text === "XRReferenceSpaceType") return "BabylonjsBindings.SimpleInterfaces.BrowserXRReferenceSpaceType";
+    if (!node.typeArguments?.length && node.typeName.text === "XRHandedness") return "BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness";
+    if (!node.typeArguments?.length && node.typeName.text === "BigUint64Array") return "BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array";
     if (!node.typeArguments?.length && node.typeName.text === "GPUPowerPreference") return "BabylonjsBindings.SimpleInterfaces.BrowserGPUPowerPreference";
     if (!node.typeArguments?.length && node.typeName.text === "XMLHttpRequestBodyInit") return "BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequestBodyInit";
     if (!node.typeArguments?.length && node.typeName.text === "XMLHttpRequest") return "BabylonjsBindings.SimpleInterfaces.BrowserXMLHttpRequest";
@@ -428,7 +431,7 @@ const intersectionShape = node => {
       members.push(...renderedMembers);
     } else {
       const rendered = fsharpType(branch);
-      if (!rendered) {
+      if (!rendered || /^U\d</.test(rendered)) {
         recordTypeFailure(branch);
         return undefined;
       }
@@ -455,7 +458,8 @@ const deepImmutableFsharpType = node => {
       const element = deepImmutableFsharpType(node.typeArguments[0]);
       return element ? `System.Collections.Generic.IReadOnlyList<${element}>` : undefined;
     }
-    const typedArrays = new Set(["BigInt64Array", "BigUint64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
+    if (!node.typeArguments?.length && node.typeName.text === "BigUint64Array") return "BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array";
+    const typedArrays = new Set(["BigInt64Array", "Float32Array", "Float64Array", "Int8Array", "Int16Array", "Int32Array", "Uint8Array", "Uint8ClampedArray", "Uint16Array", "Uint32Array"]);
     if (!node.typeArguments?.length && typedArrays.has(node.typeName.text)) return `JS.${node.typeName.text}`;
   }
   return undefined;

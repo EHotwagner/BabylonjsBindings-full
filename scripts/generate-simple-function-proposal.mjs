@@ -44,7 +44,7 @@ const dependencyManifestPaths = [
   "generated-candidates/SimpleClasses.promotion.json"
 ];
 const dependencyExports = (await Promise.all(dependencyManifestPaths.map(async path => JSON.parse(await readFile(resolve(root, path), "utf8")))))
-  .flatMap(manifest => manifest.exports);
+  .flatMap(manifest => [...(manifest.exports ?? []), ...(manifest.supportTypes ?? [])]);
 const dependencyNameCounts = new Map();
 for (const entry of dependencyExports) dependencyNameCounts.set(entry.name, (dependencyNameCounts.get(entry.name) ?? 0) + 1);
 const maintainedSymbols = new Map(dependencyExports
@@ -63,7 +63,9 @@ const browserTypes = new Set([
 const ambientHandleTypes = new Map([
   ["AudioBuffer", "BrowserAudioBuffer"],
   ["AudioNode", "BrowserAudioNode"],
-  ["OfflineAudioContext", "BrowserOfflineAudioContext"]
+  ["OfflineAudioContext", "BrowserOfflineAudioContext"],
+  ["XRHandedness", "BrowserXRHandedness"],
+  ["BigUint64Array", "BrowserBigUint64Array"]
 ]);
 const numericLiteralValues = new Set();
 const stringLiteralTypes = new Map();
@@ -170,6 +172,7 @@ const fsharpType = (node, typeParameters = new Map()) => {
       const inner = fsharpType(node.typeArguments[0], typeParameters);
       return inner ? `${inner} option` : undefined;
     }
+    if (node.typeName.text === "ArrayBufferLike" && !node.typeArguments?.length) return "U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer>";
     if (node.typeName.text === "Set" && node.typeArguments?.length === 1) {
       const inner = fsharpType(node.typeArguments[0], typeParameters);
       return inner ? `JS.Set<${inner}>` : undefined;

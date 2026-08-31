@@ -215,6 +215,19 @@ module SimpleVariables =
     [<Import("bakedVertexAnimationWGSL", "@babylonjs/core/ShadersWGSL/ShadersInclude/bakedVertexAnimation.js")>]
     let ``bakedVertexAnimationWGSL``: VariableShape_bakedVertexAnimationWGSL = jsNative
 
+    /// Inline object shape of BasisTools.
+    [<AllowNullLiteral>]
+    type VariableShape_BasisTools =
+        abstract ``JSModuleURL``: string with get, set
+        abstract ``WasmModuleURL``: string with get, set
+        abstract ``GetInternalFormatFromBasisFormat``: System.Func<float, BabylonjsBindings.SimpleClasses.AbstractEngine, float> with get, set
+        abstract ``TranscodeAsync``: System.Func<U2<JS.ArrayBuffer, JS.ArrayBufferView>, BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration, JS.Promise<BabylonjsBindings.SimpleClasses.TranscodeResult>> with get, set
+        abstract ``LoadTextureFromTranscodeResult``: System.Action<BabylonjsBindings.SimpleClasses.InternalTexture, BabylonjsBindings.SimpleClasses.TranscodeResult> with get, set
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<Import("BasisTools", "@babylonjs/core/Misc/basis.pure.js")>]
+    let ``BasisTools``: VariableShape_BasisTools = jsNative
+
     /// Inline object shape of BasisToolsOptions.
     [<AllowNullLiteral>]
     type VariableShape_BasisToolsOptions =
@@ -1115,6 +1128,22 @@ module SimpleVariables =
     [<Import("EndsWith", "@babylonjs/core/Misc/stringTools.js")>]
     let ``EndsWith``: VariableFunction_EndsWith = jsNative
 
+    /// Inline object shape of EnvironmentTextureTools.
+    [<AllowNullLiteral>]
+    type VariableShape_EnvironmentTextureTools =
+        abstract ``GetEnvInfo``: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetEnvInfo with get, set
+        abstract ``CreateEnvTextureAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateEnvTextureAsync with get, set
+        abstract ``CreateRadianceImageDataArrayBufferViews``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateRadianceImageDataArrayBufferViews with get, set
+        abstract ``CreateIrradianceImageDataArrayBufferViews``: BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateIrradianceImageDataArrayBufferViews with get, set
+        abstract ``UploadEnvLevelsAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadEnvLevelsAsync with get, set
+        abstract ``UploadRadianceLevelsAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadRadianceLevelsAsync with get, set
+        abstract ``UploadIrradianceLevelsAsync``: BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadIrradianceLevelsAsync with get, set
+        abstract ``UploadEnvSpherical``: BabylonjsBindings.SimpleFunctions.FunctionBinding_UploadEnvSpherical with get, set
+
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<Import("EnvironmentTextureTools", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``EnvironmentTextureTools``: VariableShape_EnvironmentTextureTools = jsNative
+
     /// @babylonjs/core/Maths/math.constants
     [<Import("Epsilon", "@babylonjs/core/Maths/math.constants.js")>]
     let ``Epsilon``: float = jsNative
@@ -1880,6 +1909,10 @@ module SimpleVariables =
     /// @babylonjs/loaders/glTF/glTFFileLoader.metadata
     [<Import("GLTFFileLoaderMetadata", "@babylonjs/loaders/glTF/glTFFileLoader.metadata.js")>]
     let ``GLTFFileLoaderMetadata``: VariableShape_GLTFFileLoaderMetadata = jsNative
+
+    /// @babylonjs/loaders/glTF/glTFFileLoader.pure
+    [<Import("GLTFLoaderDefaultOptions", "@babylonjs/loaders/glTF/glTFFileLoader.pure.js")>]
+    let ``GLTFLoaderDefaultOptions``: BabylonjsBindings.SimpleClasses.GLTFLoaderBaseOptions = jsNative
 
     /// @babylonjs/loaders/glTF/glTFFileLoader.metadata
     [<Import("GLTFMagicBase64Encoded", "@babylonjs/loaders/glTF/glTFFileLoader.metadata.js")>]
@@ -3121,6 +3154,15 @@ module SimpleVariables =
     /// @babylonjs/core/Loading/Plugins/babylonFileLoader.pure
     [<Import("LoadDetailLevels", "@babylonjs/core/Loading/Plugins/babylonFileLoader.pure.js")>]
     let ``LoadDetailLevels``: VariableFunction_LoadDetailLevels = jsNative
+
+    /// Callable shape of LoadTextureFromTranscodeResult.
+    [<AllowNullLiteral>]
+    type VariableFunction_LoadTextureFromTranscodeResult =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.SimpleClasses.InternalTexture * ``transcodeResult``: BabylonjsBindings.SimpleClasses.TranscodeResult -> unit
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<Import("LoadTextureFromTranscodeResult", "@babylonjs/core/Misc/basis.pure.js")>]
+    let ``LoadTextureFromTranscodeResult``: VariableFunction_LoadTextureFromTranscodeResult = jsNative
 
     /// Inline object shape of lodCubePixelShader.
     [<AllowNullLiteral>]
@@ -4828,6 +4870,15 @@ module SimpleVariables =
     /// @babylonjs/core/Meshes/Builders/torusKnotBuilder.pure
     [<Import("TorusKnotBuilder", "@babylonjs/core/Meshes/Builders/torusKnotBuilder.pure.js")>]
     let ``TorusKnotBuilder``: VariableShape_TorusKnotBuilder = jsNative
+
+    /// Callable shape of TranscodeAsync.
+    [<AllowNullLiteral>]
+    type VariableFunction_TranscodeAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: U2<JS.ArrayBuffer, JS.ArrayBufferView> * ``config``: BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration -> JS.Promise<BabylonjsBindings.SimpleClasses.TranscodeResult>
+
+    /// @babylonjs/core/Misc/basis.pure
+    [<Import("TranscodeAsync", "@babylonjs/core/Misc/basis.pure.js")>]
+    let ``TranscodeAsync``: VariableFunction_TranscodeAsync = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces
     [<Import("ULONG_SIZE", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.interfaces.js")>]

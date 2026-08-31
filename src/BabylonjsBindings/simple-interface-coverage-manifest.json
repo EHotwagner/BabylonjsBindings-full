@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "5a8e52b24885a95ca1088f8a100a4f3757fd9accd61d409edfdb8e60d2681061",
+  "proposalSha256": "95def29fcc44f56e773e024dbaf0025b4b1147ac9161409960a344429f747d6b",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -5636,6 +5636,70 @@
       ],
       "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIStreamingSoundOptions",
       "memberCount": 0
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerPointerSelection.pure",
+      "name": "IWebXRControllerPointerSelectionOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRControllerPointerSelectionOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Mesh",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.WebXRCamera",
+        "BabylonjsBindings.SimpleClasses.WebXRInput"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIWebXRControllerPointerSelectionOptions",
+      "memberCount": 19
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRHandTracking.pure",
+      "name": "IWebXRHandTrackingOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRHandTrackingOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.WebXRInput"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIWebXRHandTrackingOptions",
+      "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRNearInteraction.pure",
+      "name": "IWebXRNearInteractionOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRNearInteractionOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.Material",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.WebXRControllerPointerSelection",
+        "BabylonjsBindings.SimpleClasses.WebXRInput"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIWebXRNearInteractionOptions",
+      "memberCount": 10
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerTeleportation.pure",
+      "name": "IWebXRTeleportationOptions",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IWebXRTeleportationOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractMesh",
+        "BabylonjsBindings.SimpleClasses.Color4",
+        "BabylonjsBindings.SimpleClasses.PickingInfo",
+        "BabylonjsBindings.SimpleClasses.Scene",
+        "BabylonjsBindings.SimpleClasses.Vector3",
+        "BabylonjsBindings.SimpleClasses.WebXRInput"
+      ],
+      "partialSymbol": "BabylonjsBindings.SimpleInterfaces.PartialIWebXRTeleportationOptions",
+      "memberCount": 19
     }
   ],
   "reviewStatus": "maintained"

@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "310eeab3d387053789179308739eaac3ec1d72227e288b4b9fee4ec163fde556",
+  "proposalSha256": "aced1a7f18925704cb6aa91a9cbb0003258202f211acc24d4a074d5e7ccb0f00",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -320,6 +320,22 @@
       "dependencies": [],
       "fsharpType": "VariableShape_bakedVertexAnimationWGSL",
       "memberCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "BasisTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.BasisTools",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.AbstractEngine",
+        "BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration",
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleClasses.TranscodeResult"
+      ],
+      "fsharpType": "VariableShape_BasisTools",
+      "memberCount": 5
     },
     {
       "package": "@babylonjs/core",
@@ -1325,6 +1341,17 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "EnvironmentTextureTools",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.EnvironmentTextureTools",
+      "dependencies": [],
+      "fsharpType": "VariableShape_EnvironmentTextureTools",
+      "memberCount": 8
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants",
       "name": "Epsilon",
       "kind": "variable",
@@ -2162,6 +2189,18 @@
       "dependencies": [],
       "fsharpType": "VariableShape_GLTFFileLoaderMetadata",
       "memberCount": 3
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
+      "name": "GLTFLoaderDefaultOptions",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.GLTFLoaderDefaultOptions",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.GLTFLoaderBaseOptions"
+      ],
+      "fsharpType": "BabylonjsBindings.SimpleClasses.GLTFLoaderBaseOptions"
     },
     {
       "package": "@babylonjs/loaders",
@@ -3584,6 +3623,20 @@
         "BabylonjsBindings.SimpleClasses.Scene"
       ],
       "fsharpType": "VariableFunction_LoadDetailLevels",
+      "parameterCount": 2
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "LoadTextureFromTranscodeResult",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.LoadTextureFromTranscodeResult",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.InternalTexture",
+        "BabylonjsBindings.SimpleClasses.TranscodeResult"
+      ],
+      "fsharpType": "VariableFunction_LoadTextureFromTranscodeResult",
       "parameterCount": 2
     },
     {
@@ -5600,6 +5653,20 @@
       "dependencies": [],
       "fsharpType": "VariableShape_TorusKnotBuilder",
       "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure",
+      "name": "TranscodeAsync",
+      "kind": "variable",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.TranscodeAsync",
+      "dependencies": [
+        "BabylonjsBindings.SimpleClasses.BasisTranscodeConfiguration",
+        "BabylonjsBindings.SimpleClasses.TranscodeResult"
+      ],
+      "fsharpType": "VariableFunction_TranscodeAsync",
+      "parameterCount": 2
     },
     {
       "package": "@babylonjs/core",

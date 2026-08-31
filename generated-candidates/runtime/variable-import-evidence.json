@@ -211,6 +211,13 @@
     {
       "package": "@babylonjs/core",
       "module": "@babylonjs/core/Misc/basis.pure.js",
+      "export": "BasisTools",
+      "runtimeExport": "BasisTools",
+      "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure.js",
       "export": "BasisToolsOptions",
       "runtimeExport": "BasisToolsOptions",
       "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
@@ -847,6 +854,13 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure.js",
+      "export": "EnvironmentTextureTools",
+      "runtimeExport": "EnvironmentTextureTools",
+      "moduleSha256": "c380f244a4900d0c4d3838ee1fc50e16674719a342d84adfe3f098364bb66dc4"
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Maths/math.constants.js",
       "export": "Epsilon",
       "runtimeExport": "Epsilon",
@@ -1369,6 +1383,13 @@
       "export": "GLTFFileLoaderMetadata",
       "runtimeExport": "GLTFFileLoaderMetadata",
       "moduleSha256": "66f0d1c6bd51de7c08a7e777e9145e0d1a9f49f1d6dfa1691c3adc098cdee1b6"
+    },
+    {
+      "package": "@babylonjs/loaders",
+      "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure.js",
+      "export": "GLTFLoaderDefaultOptions",
+      "runtimeExport": "GLTFLoaderDefaultOptions",
+      "moduleSha256": "db5bb4f5e81545fb23109579bbb1699b8ec90ff796487a54dcad22452b9392ef"
     },
     {
       "package": "@babylonjs/loaders",
@@ -2279,6 +2300,13 @@
       "export": "LoadDetailLevels",
       "runtimeExport": "LoadDetailLevels",
       "moduleSha256": "6a6b745ff99f67f2fa5a02eae879b411f1c377c33f431a7200e095c060efc58f"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure.js",
+      "export": "LoadTextureFromTranscodeResult",
+      "runtimeExport": "LoadTextureFromTranscodeResult",
+      "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
     },
     {
       "package": "@babylonjs/core",
@@ -3546,6 +3574,13 @@
       "export": "TorusKnotBuilder",
       "runtimeExport": "TorusKnotBuilder",
       "moduleSha256": "fe654351f1679dabdc0abdaeebd893de95ba1efe8a5396c19a792f341787a249"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/basis.pure.js",
+      "export": "TranscodeAsync",
+      "runtimeExport": "TranscodeAsync",
+      "moduleSha256": "a94c293d9920adebf255ef8528262d6ea41b52b409307fc762f41c8b90c19230"
     },
     {
       "package": "@babylonjs/core",

@@ -939,6 +939,14 @@ module SimpleFunctions =
     [<Import("AddSmartAssetManagerCreatedObserver", "@babylonjs/core/SmartAssets/smartAssetManager.pure.js")>]
     let ``AddSmartAssetManagerCreatedObserver``: FunctionBinding_AddSmartAssetManagerCreatedObserver = jsNative
 
+    /// @babylonjs/core/Engines/abstractEngine.functions
+    [<AllowNullLiteral>]
+    type FunctionBinding_allocateAndCopyTypedBuffer =
+        [<Emit("$0($1...)")>] abstract Invoke: ``type``: float * ``sizeOrDstBuffer``: U2<float, U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer>> * ?``sizeInBytes``: bool * ?``copyBuffer``: JS.ArrayBuffer -> JS.ArrayBufferView
+
+    [<Import("allocateAndCopyTypedBuffer", "@babylonjs/core/Engines/abstractEngine.functions.js")>]
+    let ``allocateAndCopyTypedBuffer``: FunctionBinding_allocateAndCopyTypedBuffer = jsNative
+
     /// @babylonjs/core/Meshes/GaussianSplatting/gaussianSplattingMeshBase.pure
     [<AllowNullLiteral>]
     type FunctionBinding_AllocateShBuffers =
@@ -1629,6 +1637,14 @@ module SimpleFunctions =
     [<Import("CreateIcoSphereVertexData", "@babylonjs/core/Meshes/Builders/icoSphereBuilder.pure.js")>]
     let ``CreateIcoSphereVertexData``: FunctionBinding_CreateIcoSphereVertexData = jsNative
 
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateIrradianceImageDataArrayBufferViews =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: JS.ArrayBufferView * ``info``: BabylonjsBindings.TypeAliases.EnvironmentTextureInfo -> ResizeArray<JS.ArrayBufferView>
+
+    [<Import("CreateIrradianceImageDataArrayBufferViews", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``CreateIrradianceImageDataArrayBufferViews``: FunctionBinding_CreateIrradianceImageDataArrayBufferViews = jsNative
+
     /// @babylonjs/core/Meshes/Builders/latheBuilder.pure
     [<AllowNullLiteral>]
     type FunctionBinding_CreateLathe =
@@ -1813,6 +1829,14 @@ module SimpleFunctions =
     [<Import("CreatePolyhedronVertexData", "@babylonjs/core/Meshes/Builders/polyhedronBuilder.pure.js")>]
     let ``CreatePolyhedronVertexData``: FunctionBinding_CreatePolyhedronVertexData = jsNative
 
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateRadianceImageDataArrayBufferViews =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: JS.ArrayBufferView * ``info``: BabylonjsBindings.TypeAliases.EnvironmentTextureInfo -> ResizeArray<ResizeArray<JS.ArrayBufferView>>
+
+    [<Import("CreateRadianceImageDataArrayBufferViews", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``CreateRadianceImageDataArrayBufferViews``: FunctionBinding_CreateRadianceImageDataArrayBufferViews = jsNative
+
     /// @babylonjs/core/Misc/textureTools
     [<AllowNullLiteral>]
     type FunctionBinding_CreateResizedCopy =
@@ -1932,6 +1956,14 @@ module SimpleFunctions =
 
     [<Import("CreateText", "@babylonjs/core/Meshes/Builders/textBuilder.js")>]
     let ``CreateText``: FunctionBinding_CreateText = jsNative
+
+    /// @babylonjs/core/Meshes/Builders/textBuilder
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateTextShapePaths =
+        [<Emit("$0($1...)")>] abstract Invoke: ``text``: string * ``size``: float * ``resolution``: float * ``fontData``: BabylonjsBindings.SimpleInterfaces.IFontData -> ResizeArray<BabylonjsBindings.SimpleClasses.ShapePath>
+
+    [<Import("CreateTextShapePaths", "@babylonjs/core/Meshes/Builders/textBuilder.js")>]
+    let ``CreateTextShapePaths``: FunctionBinding_CreateTextShapePaths = jsNative
 
     /// @babylonjs/core/Materials/Textures/rawTexture2DArray.functions
     [<AllowNullLiteral>]
@@ -2092,6 +2124,14 @@ module SimpleFunctions =
 
     [<Import("DecodeFloat32", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
     let ``DecodeFloat32``: FunctionBinding_DecodeFloat32 = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.rle
+    [<AllowNullLiteral>]
+    type FunctionBinding_DecodeRunLength =
+        [<Emit("$0($1...)")>] abstract Invoke: ``source``: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> -> ResizeArray<float>
+
+    [<Import("DecodeRunLength", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.compression.rle.js")>]
+    let ``DecodeRunLength``: FunctionBinding_DecodeRunLength = jsNative
 
     /// @babylonjs/core/PostProcesses/RenderPipeline/Pipelines/defaultRenderingPipeline.pure
     [<AllowNullLiteral>]
@@ -2397,6 +2437,14 @@ module SimpleFunctions =
 
     [<Import("GetElementPixelFromUv", "@babylonjs/core/Materials/Textures/HTML/htmlRaycastInteractionManager.js")>]
     let ``GetElementPixelFromUv``: FunctionBinding_GetElementPixelFromUv = jsNative
+
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetEnvInfo =
+        [<Emit("$0($1...)")>] abstract Invoke: ``data``: JS.ArrayBufferView -> BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2 option
+
+    [<Import("GetEnvInfo", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``GetEnvInfo``: FunctionBinding_GetEnvInfo = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.header
     [<AllowNullLiteral>]
@@ -3014,6 +3062,14 @@ module SimpleFunctions =
     [<Import("Normalize", "@babylonjs/core/Maths/math.scalar.functions.js")>]
     let ``Normalize``: FunctionBinding_Normalize = jsNative
 
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_normalizeEnvInfo =
+        [<Emit("$0($1...)")>] abstract Invoke: ``info``: BabylonjsBindings.TypeAliases.EnvironmentTextureInfo -> BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2
+
+    [<Import("normalizeEnvInfo", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``normalizeEnvInfo``: FunctionBinding_normalizeEnvInfo = jsNative
+
     /// @babylonjs/core/Maths/math.scalar.functions
     [<AllowNullLiteral>]
     type FunctionBinding_NormalizeRadians =
@@ -3109,6 +3165,14 @@ module SimpleFunctions =
 
     [<Import("ParseInt64", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
     let ``ParseInt64``: FunctionBinding_ParseInt64 = jsNative
+
+    /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
+    [<AllowNullLiteral>]
+    type FunctionBinding_ParseNullTerminatedString =
+        [<Emit("$0($1...)")>] abstract Invoke: ``buffer``: U2<JS.ArrayBuffer, BabylonjsBindings.TypeAliases.BrowserSharedArrayBuffer> * ``offset``: BabylonjsBindings.SimpleInterfaces.DataCursor -> string
+
+    [<Import("ParseNullTerminatedString", "@babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core.js")>]
+    let ``ParseNullTerminatedString``: FunctionBinding_ParseNullTerminatedString = jsNative
 
     /// @babylonjs/core/Materials/Textures/Loaders/EXR/exrLoader.core
     [<AllowNullLiteral>]
@@ -9229,6 +9293,22 @@ module SimpleFunctions =
 
     [<Import("UploadContent", "@babylonjs/core/Misc/tga.js")>]
     let ``UploadContent``: FunctionBinding_UploadContent = jsNative
+
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_UploadEnvLevelsAsync =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.SimpleClasses.InternalTexture * ``data``: JS.ArrayBufferView * ``info``: BabylonjsBindings.TypeAliases.EnvironmentTextureInfo -> JS.Promise<ResizeArray<unit>>
+
+    [<Import("UploadEnvLevelsAsync", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``UploadEnvLevelsAsync``: FunctionBinding_UploadEnvLevelsAsync = jsNative
+
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    [<AllowNullLiteral>]
+    type FunctionBinding_UploadEnvSpherical =
+        [<Emit("$0($1...)")>] abstract Invoke: ``texture``: BabylonjsBindings.SimpleClasses.InternalTexture * ``info``: BabylonjsBindings.TypeAliases.EnvironmentTextureInfo -> unit
+
+    [<Import("UploadEnvSpherical", "@babylonjs/core/Misc/environmentTextureTools.pure.js")>]
+    let ``UploadEnvSpherical``: FunctionBinding_UploadEnvSpherical = jsNative
 
     /// @babylonjs/core/Materials/Textures/rawTexture2DArray.functions
     [<AllowNullLiteral>]

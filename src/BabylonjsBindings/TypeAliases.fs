@@ -885,3 +885,25 @@ module TypeAliases =
 
     /// @babylonjs/core/AudioV2/abstractAudio/audioBus
     type PrimaryAudioBus = U2<BabylonjsBindings.SimpleClasses.MainAudioBus, BabylonjsBindings.SimpleClasses.AudioBus>
+
+    /// Exact nested object used by a Babylon type alias.
+    [<AllowNullLiteral>]
+    type AliasObjectc11d826e4a3c =
+        abstract ``movementEnabled``: bool with get, set
+        abstract ``movementOrientationFollowsViewerPose``: bool with get, set
+        abstract ``movementOrientationFollowsController``: bool with get, set
+        abstract ``orientationPreferredHandedness``: BabylonjsBindings.SimpleInterfaces.BrowserXRHandedness option with get, set
+        abstract ``movementSpeed``: System.Double with get, set
+        abstract ``movementThreshold``: System.Double with get, set
+        abstract ``rotationEnabled``: bool with get, set
+        abstract ``rotationSpeed``: System.Double with get, set
+        abstract ``rotationThreshold``: System.Double with get, set
+
+    /// @babylonjs/core/types
+    type TypedArray = U2<U8<JS.Int8Array, JS.Uint8Array, JS.Uint8ClampedArray, JS.Int16Array, JS.Uint16Array, JS.Int32Array, JS.Uint32Array, JS.Float32Array>, U3<JS.Float64Array, JS.BigInt64Array, BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array>>
+
+    /// @babylonjs/core/XR/features/WebXRControllerMovement.pure
+    type WebXRControllerMovementFeatureContext = AliasObjectc11d826e4a3c
+
+    /// @babylonjs/core/Misc/environmentTextureTools.pure
+    type EnvironmentTextureInfo = U2<BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV1, BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2>

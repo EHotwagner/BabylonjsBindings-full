@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "0ae9220c1aece9030205546516c5a57193aa4cecda866d07e1e52300ed2b1d31",
+  "proposalSha256": "4084251b446c8a04f59a1e2b25c6911dec85069287837ae9de7574543e8c39be",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -238,6 +238,20 @@
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.Empty",
       "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Misc/environmentTextureTools.pure",
+      "name": "EnvironmentTextureInfo",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.EnvironmentTextureInfo",
+      "dependencies": [
+        "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV1",
+        "BabylonjsBindings.SimpleInterfaces.EnvironmentTextureInfoV2"
+      ],
       "shape": "alias",
       "memberCount": 1
     },
@@ -1191,11 +1205,33 @@
     },
     {
       "package": "@babylonjs/core",
+      "module": "@babylonjs/core/types",
+      "name": "TypedArray",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.TypedArray",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
       "module": "@babylonjs/core/Engines/thinEngine.functions",
       "name": "WebGLContext",
       "kind": "type",
       "disposition": "typed",
       "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebGLContext",
+      "dependencies": [],
+      "shape": "alias",
+      "memberCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/features/WebXRControllerMovement.pure",
+      "name": "WebXRControllerMovementFeatureContext",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.TypeAliases.WebXRControllerMovementFeatureContext",
       "dependencies": [],
       "shape": "alias",
       "memberCount": 1
