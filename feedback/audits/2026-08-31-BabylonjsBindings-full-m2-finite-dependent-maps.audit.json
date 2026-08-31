@@ -1,0 +1,51 @@
+{
+  "auditSchema": 1,
+  "report": "feedback/2026-08-31-BabylonjsBindings-full-m2-finite-dependent-maps.md",
+  "reportSha256": "c6566b44d59fd5e27d750529e99796d1cc206e19d8f393028452f728bd65789b",
+  "criticMode": "fresh-context-subagent",
+  "criticPromptVersion": "actionability-v1",
+  "findings": [
+    {
+      "id": "§4.1",
+      "status": "positive-pattern",
+      "missingFacts": [],
+      "checkedEvidence": [
+        {
+          "locator": "command:fsgg-sdd plan --root . --work 004-m2-finite-dependent-maps",
+          "result": "verified"
+        },
+        {
+          "locator": "issue:FS-GG/FS.GG.SDD#821",
+          "result": "verified"
+        }
+      ],
+      "confidenceLimits": [
+        "The independent reproduction verified the diagnostic but ultimately blocked because the archive did not contain exact-cache Typed authority."
+      ]
+    },
+    {
+      "id": "§4.2",
+      "status": "actionable",
+      "missingFacts": [],
+      "checkedEvidence": [
+        {
+          "locator": "file:scripts/test-m2-clean-consumer.mjs",
+          "result": "verified",
+          "sha256": "11283b4b4f4abcb1c962c66e7ff78655dd6e2f9d33858776c71c1f4d183959d5"
+        },
+        {
+          "locator": "file:feedback/checkpoints/roadmap-missing-exports-m2-finite-dependent-maps.jsonl",
+          "result": "verified",
+          "sha256": "6028bc539235a3cadb391b335cfbbbdc1f8f0230923a6b3bb155b766862d5ff5"
+        },
+        {
+          "locator": "issue:EHotwagner/BabylonjsBindings-full#8",
+          "result": "verified"
+        }
+      ],
+      "confidenceLimits": [
+        "The failure/control pair is independently reproducible; only the historical count of two retries rests on checkpoint evidence."
+      ]
+    }
+  ]
+}
