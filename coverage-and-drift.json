@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "c8920cd2f82498da09c2095f457de72d12bad18fb8751315709cf0da5871b8b5",
+  "maintainedSurfaceDigest": "949e2db53b2c0a62e9e67e2d7b25041f72d7fc18d8ec09302612a4d5d55dc736",
   "summary": {
     "total": 4323,
-    "typed": 4235,
+    "typed": 4237,
     "runtimeOnly": 1,
-    "blocked": 87,
+    "blocked": 85,
     "lossy": 0
   },
   "exports": [
@@ -12861,8 +12861,9 @@
       "module": "@babylonjs/core/Loading/sceneLoader",
       "name": "GetRegisteredSceneLoaderPluginMetadata",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetRegisteredSceneLoaderPluginMetadata"
     },
     {
       "package": "@babylonjs/core",
@@ -38245,8 +38246,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/glTFLoaderExtensionRegistry",
       "name": "registeredGLTFExtensions",
       "kind": "variable",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime variable or constant with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleVariables.registeredGLTFExtensions"
     },
     {
       "package": "@babylonjs/loaders",

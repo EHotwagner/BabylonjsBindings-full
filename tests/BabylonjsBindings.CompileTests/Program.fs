@@ -77,6 +77,7 @@ let genericPadFactory: GenericPadStatic = GenericPad
 let multiObserverFactory: MultiObserverStatic = MultiObserver
 let xbox360PadFactory: Xbox360PadStatic = Xbox360Pad
 let prepareAttributesForInstances = BabylonjsBindings.SimpleFunctions.``PrepareAttributesForInstances``
+let getRegisteredSceneLoaderPluginMetadata: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetRegisteredSceneLoaderPluginMetadata = BabylonjsBindings.SimpleFunctions.``GetRegisteredSceneLoaderPluginMetadata``
 let identityMatrixToRef: BabylonjsBindings.SimpleFunctions.FunctionBinding_IdentityMatrixToRef = BabylonjsBindings.SimpleFunctions.``IdentityMatrixToRef``
 let markAsDirty: BabylonjsBindings.SimpleFunctions.FunctionBinding_MarkAsDirty = BabylonjsBindings.SimpleFunctions.``MarkAsDirty``
 let scalingMatrixToRef: BabylonjsBindings.SimpleFunctions.FunctionBinding_ScalingMatrixToRef = BabylonjsBindings.SimpleFunctions.``ScalingMatrixToRef``
@@ -143,6 +144,7 @@ let stringTools = BabylonjsBindings.SimpleVariables.``StringTools``
 let guid = BabylonjsBindings.SimpleVariables.``GUID``
 let bvhLoaderMetadata = BabylonjsBindings.SimpleVariables.``BVHFileLoaderMetadata``
 let gltfMagicBase64Encoded = BabylonjsBindings.SimpleVariables.``GLTFMagicBase64Encoded``
+let registeredGltfExtensions: BabylonjsBindings.SimpleVariables.VariableShape_registeredGLTFExtensions = BabylonjsBindings.SimpleVariables.``registeredGLTFExtensions``
 let errorCodes: BabylonjsBindings.SimpleVariables.VariableShape_ErrorCodes = BabylonjsBindings.SimpleVariables.``ErrorCodes``
 let wgs84Ellipsoid: DeepImmutableIEllipsoidLike = BabylonjsBindings.SimpleVariables.``Wgs84Ellipsoid``
 let richTypeColor3: RichType<Color3> = BabylonjsBindings.SimpleVariables.``RichTypeColor3``
@@ -225,6 +227,7 @@ genericPadFactory |> ignore
 multiObserverFactory |> ignore
 xbox360PadFactory |> ignore
 prepareAttributesForInstances |> ignore
+getRegisteredSceneLoaderPluginMetadata |> ignore
 identityMatrixToRef |> ignore
 markAsDirty |> ignore
 scalingMatrixToRef |> ignore
@@ -291,6 +294,7 @@ stringTools |> ignore
 guid |> ignore
 bvhLoaderMetadata |> ignore
 gltfMagicBase64Encoded |> ignore
+registeredGltfExtensions |> ignore
 errorCodes |> ignore
 wgs84Ellipsoid |> ignore
 richTypeColor3 |> ignore

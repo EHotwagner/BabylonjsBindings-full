@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "f01313d8496a4cb0401f0b4ba6506a01480e8164d71f46597a44a72514929e48",
+  "proposalSha256": "be1dc833d340860cdf9a4ef60ed9d0624e758bada7e1ae606749a16ac9907b06",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -13769,6 +13769,17 @@
         "BabylonjsBindings.SimpleInterfaces.ISceneLoaderPluginFactory"
       ],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_RegisterSceneLoaderPlugin",
+      "overloadCount": 1
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Loading/sceneLoader",
+      "name": "GetRegisteredSceneLoaderPluginMetadata",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetRegisteredSceneLoaderPluginMetadata",
+      "dependencies": [],
+      "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetRegisteredSceneLoaderPluginMetadata",
       "overloadCount": 1
     }
   ],

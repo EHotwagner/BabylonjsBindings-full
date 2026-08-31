@@ -10659,3 +10659,24 @@ module SimpleFunctions =
 
     [<Import("RegisterSceneLoaderPlugin", "@babylonjs/core/Loading/sceneLoader.js")>]
     let ``RegisterSceneLoaderPlugin``: FunctionBinding_RegisterSceneLoaderPlugin = jsNative
+
+    /// Exact readonly extension metadata returned by GetRegisteredSceneLoaderPluginMetadata.
+    [<AllowNullLiteral>]
+    type RegisteredSceneLoaderPluginExtensionMetadata =
+        abstract ``extension``: string with get
+        abstract ``isBinary``: bool with get
+        abstract ``mimeType``: string option with get
+
+    /// Exact readonly plugin metadata returned by GetRegisteredSceneLoaderPluginMetadata.
+    [<AllowNullLiteral>]
+    type RegisteredSceneLoaderPluginMetadata =
+        abstract ``name``: string with get
+        abstract ``extensions``: System.Collections.Generic.IReadOnlyList<RegisteredSceneLoaderPluginExtensionMetadata> with get
+
+    /// @babylonjs/core/Loading/sceneLoader
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetRegisteredSceneLoaderPluginMetadata =
+        [<Emit("$0($1...)")>] abstract Invoke: unit -> System.Collections.Generic.IReadOnlyList<RegisteredSceneLoaderPluginMetadata>
+
+    [<Import("GetRegisteredSceneLoaderPluginMetadata", "@babylonjs/core/Loading/sceneLoader.js")>]
+    let ``GetRegisteredSceneLoaderPluginMetadata``: FunctionBinding_GetRegisteredSceneLoaderPluginMetadata = jsNative
