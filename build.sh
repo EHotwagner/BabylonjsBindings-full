@@ -58,4 +58,9 @@ npm run check:promotion-batch
 npm run test:promotion-preview
 npm run coverage:check
 npm run test:runtime
-npm run analysis:test:trx
+# Keep the maintained build on the reusable analysis gates. The M0-only TRX
+# receipt additionally compares this milestone with its base branch, so it is
+# generated explicitly by the milestone evidence command rather than here.
+npm run analysis:test
+npm run analysis:determinism
+npm run analysis:check
