@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "expectedCoverage": {
     "total": 4323,
-    "typed": 4252,
+    "typed": 4279,
     "runtimeOnly": 1,
-    "blocked": 70,
+    "blocked": 43,
     "lossy": 0
   },
   "families": [
@@ -23,14 +23,14 @@
     {
       "id": "device-input",
       "label": "Device input",
-      "expectedCount": 7,
-      "exports": ["@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceSource|DeviceSource", "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceSource|DeviceSourceEvent", "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceSourceManager|DeviceSourceManager", "@babylonjs/core|@babylonjs/core/DeviceInput/InputDevices/deviceTypes|DeviceInput", "@babylonjs/core|@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure|DeviceSourceType", "@babylonjs/core|@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure|InternalDeviceSourceManager", "@babylonjs/core|@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure|IObservableManager"]
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "flow-graph",
       "label": "FlowGraph",
-      "expectedCount": 9,
-      "exports": ["@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetAssetBlock.pure|FlowGraphGetAssetBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure|FlowGraphGetPropertyBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure|IFlowGraphGetPropertyBlockConfiguration", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure|FlowGraphJsonPointerParserBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSwitchBlock.pure|FlowGraphSwitchBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure|FlowGraphSetPropertyBlock", "@babylonjs/core|@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure|IFlowGraphSetPropertyBlockConfiguration", "@babylonjs/core|@babylonjs/core/FlowGraph/flowGraphAssetsContext|AssetType", "@babylonjs/core|@babylonjs/core/FlowGraph/flowGraphAssetsContext|GetFlowGraphAssetWithType"]
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "material-mixins",
@@ -65,8 +65,8 @@
     {
       "id": "xr-vr",
       "label": "XR and VR",
-      "expectedCount": 11,
-      "exports": ["@babylonjs/core|@babylonjs/core/Behaviors/Meshes/handConstraintBehavior|HandConstraintBehavior", "@babylonjs/core|@babylonjs/core/Cameras/VR/vrExperienceHelper.pure|VRExperienceHelper", "@babylonjs/core|@babylonjs/core/XR/webXRDefaultExperience|WebXRDefaultExperience", "@babylonjs/core|@babylonjs/core/XR/webXREnterExitUI|WebXREnterExitUI", "@babylonjs/core|@babylonjs/core/XR/webXRExperienceHelper|WebXRExperienceHelper", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|IWebXRFeatureNameOptionsMap", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|IWebXRFeatureNameTypeMap", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|ResolveWebXRFeature", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|ResolveWebXRFeatureOptions", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|WebXRFeatureNameType", "@babylonjs/core|@babylonjs/core/XR/webXRFeaturesManager|WebXRFeaturesManager"]
+      "expectedCount": 0,
+      "exports": []
     },
     {
       "id": "gltf-loaders",

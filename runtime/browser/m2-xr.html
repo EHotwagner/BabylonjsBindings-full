@@ -1,0 +1,20 @@
+<!doctype html><meta charset="utf-8"><title>M2 deterministic WebXR smoke</title><output>running</output><script type="module">
+const sessions = [];
+const xrStub = {
+  async isSessionSupported(mode) { return mode === "immersive-vr" || mode === "immersive-ar"; },
+  async requestSession(mode, init) {
+    const session = { mode, init, ended: false, async requestReferenceSpace(type) { return { type }; }, async end() { this.ended = true; } };
+    sessions.push(session); return session;
+  }
+};
+Object.defineProperty(navigator, "xr", { configurable: true, value: xrStub });
+const { WebXRFeatureName, WebXRFeaturesManager } = await import("../../node_modules/@babylonjs/core/XR/webXRFeaturesManager.js");
+const names = Object.values(WebXRFeatureName);
+if (new Set(names).size !== 22) throw new Error(`expected 22 WebXR feature names, got ${new Set(names).size}`);
+if (!(await navigator.xr.isSessionSupported("immersive-vr"))) throw new Error("stubbed WebXR support failed");
+const session = await navigator.xr.requestSession("immersive-vr", { optionalFeatures: [WebXRFeatureName.HAND_TRACKING] });
+const space = await session.requestReferenceSpace("local-floor");
+await session.end();
+if (space.type !== "local-floor" || !session.ended || sessions.length !== 1 || !Array.isArray(WebXRFeaturesManager.GetAvailableFeatures())) throw new Error("deterministic WebXR stub lifecycle failed");
+document.querySelector("output").textContent = "M2 deterministic WebXR smoke passed";
+</script>

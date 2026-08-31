@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 1,
+  "reviewStatus": "maintained",
+  "proposalSha256": "52bab0afca762ffb71b4ef3a3064cdebdcbfb8fbe286e4701091cc82fcf959cc",
+  "exports": [
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceTypes",
+      "name": "DeviceInput",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceInput"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceSource",
+      "name": "DeviceSourceEvent",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceSourceEvent"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure",
+      "name": "DeviceSourceType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceSourceType"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure",
+      "name": "IObservableManager",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IObservableManager"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceSource",
+      "name": "DeviceSource",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceSource"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/InputDevices/deviceSourceManager",
+      "name": "DeviceSourceManager",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/DeviceInput/internalDeviceSourceManager.pure",
+      "name": "InternalDeviceSourceManager",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.InternalDeviceSourceManager"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphAssetsContext",
+      "name": "AssetType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.AssetType"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/flowGraphAssetsContext",
+      "name": "GetFlowGraphAssetWithType",
+      "kind": "function",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.GetFlowGraphAssetWithType"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetAssetBlock.pure",
+      "name": "FlowGraphGetAssetBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphGetAssetBlock"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure",
+      "name": "FlowGraphGetPropertyBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphGetPropertyBlock"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/flowGraphGetPropertyBlock.pure",
+      "name": "IFlowGraphGetPropertyBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IFlowGraphGetPropertyBlockConfiguration"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Data/Transformers/flowGraphJsonPointerParserBlock.pure",
+      "name": "FlowGraphJsonPointerParserBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphJsonPointerParserBlock"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/ControlFlow/flowGraphSwitchBlock.pure",
+      "name": "FlowGraphSwitchBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphSwitchBlock"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure",
+      "name": "FlowGraphSetPropertyBlock",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.FlowGraphSetPropertyBlock"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/FlowGraph/Blocks/Execution/flowGraphSetPropertyBlock.pure",
+      "name": "IFlowGraphSetPropertyBlockConfiguration",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IFlowGraphSetPropertyBlockConfiguration"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "WebXRFeatureNameType",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXRFeatureNameType"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "IWebXRFeatureNameTypeMap",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IWebXRFeatureNameTypeMap"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "IWebXRFeatureNameOptionsMap",
+      "kind": "interface",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.IWebXRFeatureNameOptionsMap"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "ResolveWebXRFeature",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.ResolveWebXRFeature"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "ResolveWebXRFeatureOptions",
+      "kind": "type",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.ResolveWebXRFeatureOptions"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRFeaturesManager",
+      "name": "WebXRFeaturesManager",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXRFeaturesManager"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRExperienceHelper",
+      "name": "WebXRExperienceHelper",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXRExperienceHelper"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXREnterExitUI",
+      "name": "WebXREnterExitUI",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXREnterExitUI"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/XR/webXRDefaultExperience",
+      "name": "WebXRDefaultExperience",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.WebXRDefaultExperience"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Cameras/VR/vrExperienceHelper.pure",
+      "name": "VRExperienceHelper",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.VRExperienceHelper"
+    },
+    {
+      "package": "@babylonjs/core",
+      "module": "@babylonjs/core/Behaviors/Meshes/handConstraintBehavior",
+      "name": "HandConstraintBehavior",
+      "kind": "class",
+      "disposition": "typed",
+      "fsharpSymbol": "BabylonjsBindings.FiniteDependentMaps.HandConstraintBehavior"
+    }
+  ]
+}

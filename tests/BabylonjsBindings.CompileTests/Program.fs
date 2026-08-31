@@ -5,6 +5,7 @@ open BabylonjsBindings.StringEnums
 open BabylonjsBindings.ObjectTypes
 open BabylonjsBindings.SimpleInterfaces
 open BabylonjsBindings.SimpleClasses
+open BabylonjsBindings.FiniteDependentMaps
 let shaderLanguage: ShaderLanguage = ShaderLanguage.``WGSL``
 let loaderState: GLTFLoaderState = GLTFLoaderState.``READY``
 let fftSize: AudioAnalyzerFFTSizeType = AudioAnalyzerFFTSizeType.``N32768``
@@ -103,6 +104,74 @@ let vector3ScaleInPlace = BabylonjsBindings.SimpleFunctions.``Vector3ScaleInPlac
 let vector3ScaleToRef = BabylonjsBindings.SimpleFunctions.``Vector3ScaleToRef``
 let vector3SubtractToRef = BabylonjsBindings.SimpleFunctions.``Vector3SubtractToRef``
 let completeGreasedLineColorTable = BabylonjsBindings.SimpleFunctions.``CompleteGreasedLineColorTable``
+
+// M2 DeviceType dependent-map positive cases (all eight rows).
+let m2GenericSource (manager: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager) = manager.getDeviceSource(DeviceTypeGeneric.Generic)
+let m2KeyboardSource (manager: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager) = manager.getDeviceSource(DeviceTypeKeyboard.Keyboard)
+let m2MouseSource (manager: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager) = manager.getDeviceSource(DeviceTypeMouse.Mouse)
+let m2TouchSource (manager: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager) = manager.getDeviceSource(DeviceTypeTouch.Touch)
+let m2DualShockSource (manager: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager) = manager.getDeviceSource(DeviceTypeDualShock.DualShock)
+let m2XboxSource (manager: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager) = manager.getDeviceSource(DeviceTypeXbox.Xbox)
+let m2SwitchSource (manager: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager) = manager.getDeviceSource(DeviceTypeSwitch.Switch)
+let m2DualSenseSource (manager: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager) = manager.getDeviceSource(DeviceTypeDualSense.DualSense)
+let m2KeyboardInput (source: KeyboardDeviceSource) : float = source.getInput 13.0
+let m2MouseInput (source: MouseDeviceSource) : float = source.getInput PointerDeviceInput.LeftClick
+let m2DualSenseInput (source: DualSenseDeviceSource) : float = source.getInput DualSenseInput.Cross
+
+// M2 FlowGraph dependent-map positive cases (all six rows and both switch domains).
+let m2AnimationAsset (assets: IAssetContainer) : Animation option = BabylonjsBindings.FiniteDependentMaps.GetFlowGraphAssetWithType.Invoke(assets, FlowGraphAnimationAsset.Value, 0.0)
+let m2AnimationGroupAsset (assets: IAssetContainer) : AnimationGroup option = BabylonjsBindings.FiniteDependentMaps.GetFlowGraphAssetWithType.Invoke(assets, FlowGraphAnimationGroupAsset.Value, 0.0)
+let m2MeshAsset (assets: IAssetContainer) : Mesh option = BabylonjsBindings.FiniteDependentMaps.GetFlowGraphAssetWithType.Invoke(assets, FlowGraphMeshAsset.Value, 0.0)
+let m2MaterialAsset (assets: IAssetContainer) : Material option = BabylonjsBindings.FiniteDependentMaps.GetFlowGraphAssetWithType.Invoke(assets, FlowGraphMaterialAsset.Value, 0.0)
+let m2CameraAsset (assets: IAssetContainer) : Camera option = BabylonjsBindings.FiniteDependentMaps.GetFlowGraphAssetWithType.Invoke(assets, FlowGraphCameraAsset.Value, 0.0)
+let m2LightAsset (assets: IAssetContainer) : Light option = BabylonjsBindings.FiniteDependentMaps.GetFlowGraphAssetWithType.Invoke(assets, FlowGraphLightAsset.Value, 0.0)
+let m2NumberSwitch: FlowGraphNumberSwitchBlock = Unchecked.defaultof<_>
+let m2IntegerSwitch: FlowGraphIntegerSwitchBlock = Unchecked.defaultof<_>
+let m2MeshGetter: FlowGraphGetPropertyBlock<float, Mesh> = Unchecked.defaultof<_>
+let m2MaterialSetter: FlowGraphSetPropertyBlock<Color3, Material> = Unchecked.defaultof<_>
+let m2CameraParser: FlowGraphJsonPointerParserBlock<string, Camera> = Unchecked.defaultof<_>
+let m2LightAssetBlock: FlowGraphGetAssetBlock<FlowGraphLightAsset, Light> = Unchecked.defaultof<_>
+
+// M2 WebXR dependent-map positive cases (all twenty-two rows).
+let m2XRRows (manager: BabylonjsBindings.FiniteDependentMaps.WebXRFeaturesManager) =
+    let anchor: WebXRAnchorSystem = manager.getEnabledFeature XRAnchorSystem.Value
+    let background: WebXRBackgroundRemover = manager.getEnabledFeature XRBackgroundRemover.Value
+    let hitTest: WebXRHitTest = manager.getEnabledFeature XRHitTest.Value
+    let mesh: WebXRMeshDetector = manager.getEnabledFeature XRMeshDetection.Value
+    let physics: WebXRControllerPhysics = manager.getEnabledFeature XRPhysicsController.Value
+    let plane: WebXRPlaneDetector = manager.getEnabledFeature XRPlaneDetection.Value
+    let pointer: WebXRControllerPointerSelection = manager.getEnabledFeature XRPointerSelection.Value
+    let teleport: WebXRMotionControllerTeleportation = manager.getEnabledFeature XRTeleportation.Value
+    let points: WebXRFeaturePointSystem = manager.getEnabledFeature XRFeaturePoints.Value
+    let hands: WebXRHandTracking = manager.getEnabledFeature XRHandTracking.Value
+    let images: WebXRImageTracking = manager.getEnabledFeature XRImageTracking.Value
+    let near: WebXRNearInteraction = manager.getEnabledFeature XRNearInteraction.Value
+    let dom: WebXRDomOverlay = manager.getEnabledFeature XRDomOverlay.Value
+    let movement: WebXRControllerMovement = manager.getEnabledFeature XRMovement.Value
+    let light: WebXRLightEstimation = manager.getEnabledFeature XRLightEstimation.Value
+    let eyes: WebXREyeTracking = manager.getEnabledFeature XREyeTracking.Value
+    let walking: WebXRWalkingLocomotion = manager.getEnabledFeature XRWalkingLocomotion.Value
+    let layers: WebXRLayers = manager.getEnabledFeature XRLayers.Value
+    let depth: WebXRDepthSensing = manager.getEnabledFeature XRDepthSensing.Value
+    let warp: WebXRSpaceWarp = manager.getEnabledFeature XRSpaceWarp.Value
+    let raw: WebXRRawCameraAccess = manager.getEnabledFeature XRRawCameraAccess.Value
+    let body: WebXRBodyTracking = manager.getEnabledFeature XRBodyTracking.Value
+    anchor, background, hitTest, mesh, physics, plane, pointer, teleport, points, hands, images, near, dom, movement, light, eyes, walking, layers, depth, warp, raw, body
+
+let m2XRExactOptions (manager: BabylonjsBindings.FiniteDependentMaps.WebXRFeaturesManager) (anchorOptions: IWebXRAnchorSystemOptions) (hitOptions: IWebXRHitTestOptions) =
+    let anchor: WebXRAnchorSystem = manager.enableFeature(XRAnchorSystem.Value, moduleOptions = anchorOptions)
+    let hit: WebXRHitTest = manager.enableFeature(XRHitTest.Value, moduleOptions = hitOptions)
+    anchor, hit
+
+let m2DownstreamTypes: BabylonjsBindings.FiniteDependentMaps.WebXRExperienceHelper * BabylonjsBindings.FiniteDependentMaps.WebXREnterExitUI * BabylonjsBindings.FiniteDependentMaps.WebXRDefaultExperience * BabylonjsBindings.FiniteDependentMaps.VRExperienceHelper * BabylonjsBindings.FiniteDependentMaps.HandConstraintBehavior = Unchecked.defaultof<_>
+let m2DeviceManagerFactory: BabylonjsBindings.FiniteDependentMaps.DeviceSourceManagerStatic = BabylonjsBindings.FiniteDependentMaps.DeviceSourceManager
+let m2InternalDeviceManagerFactory: BabylonjsBindings.FiniteDependentMaps.InternalDeviceSourceManagerStatic = BabylonjsBindings.FiniteDependentMaps.InternalDeviceSourceManager
+let m2XRFeaturesFactory: BabylonjsBindings.FiniteDependentMaps.WebXRFeaturesManagerStatic = BabylonjsBindings.FiniteDependentMaps.WebXRFeaturesManager
+let m2XRExperienceFactory: BabylonjsBindings.FiniteDependentMaps.WebXRExperienceHelperStatic = BabylonjsBindings.FiniteDependentMaps.WebXRExperienceHelper
+let m2XREnterExitFactory: BabylonjsBindings.FiniteDependentMaps.WebXREnterExitUIStatic = BabylonjsBindings.FiniteDependentMaps.WebXREnterExitUI
+let m2XRDefaultFactory: BabylonjsBindings.FiniteDependentMaps.WebXRDefaultExperienceStatic = BabylonjsBindings.FiniteDependentMaps.WebXRDefaultExperience
+let m2VRFactory: BabylonjsBindings.FiniteDependentMaps.VRExperienceHelperStatic = BabylonjsBindings.FiniteDependentMaps.VRExperienceHelper
+let m2HandConstraintFactory: BabylonjsBindings.FiniteDependentMaps.HandConstraintBehaviorStatic = BabylonjsBindings.FiniteDependentMaps.HandConstraintBehavior
 
 // M1 exact projection compile proofs.
 let pointerAliasRoundTrip (value: BrowserPointerInputMapEntry<string>) : PointerInputMapEntry<string> = value
