@@ -11,12 +11,12 @@
     }
   ],
   "sourceDigest": "c45d432327b9b71c5249c3e3c88142571d27e73d47ddcf77b127db062b231a3e",
-  "maintainedSurfaceDigest": "949e2db53b2c0a62e9e67e2d7b25041f72d7fc18d8ec09302612a4d5d55dc736",
+  "maintainedSurfaceDigest": "53ca3bc531573288d3dc6424a38a34e01e1a3b99046d2548ba2505ed7eb16b20",
   "summary": {
     "total": 4323,
-    "typed": 4237,
+    "typed": 4252,
     "runtimeOnly": 1,
-    "blocked": 85,
+    "blocked": 70,
     "lossy": 0
   },
   "exports": [
@@ -2328,8 +2328,9 @@
       "module": "@babylonjs/core/Buffers/bufferUtils",
       "name": "CreateAlignedTypedArray",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.CreateAlignedTypedArray"
     },
     {
       "package": "@babylonjs/core",
@@ -2813,8 +2814,9 @@
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "InputMapEntry",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.InputMapEntry"
     },
     {
       "package": "@babylonjs/core",
@@ -2848,8 +2850,9 @@
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "InteractionName",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.InteractionName"
     },
     {
       "package": "@babylonjs/core",
@@ -2865,8 +2868,9 @@
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "KeyboardInputMapEntry",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.KeyboardInputMapEntry"
     },
     {
       "package": "@babylonjs/core",
@@ -2882,8 +2886,9 @@
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "PointerInputMapEntry",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.PointerInputMapEntry"
     },
     {
       "package": "@babylonjs/core",
@@ -2899,8 +2904,9 @@
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "TouchInputMapEntry",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.TouchInputMapEntry"
     },
     {
       "package": "@babylonjs/core",
@@ -2916,8 +2922,9 @@
       "module": "@babylonjs/core/Cameras/inputMapper",
       "name": "WheelInputMapEntry",
       "kind": "type",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained primitive or dependency-free callback alias with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.WheelInputMapEntry"
     },
     {
       "package": "@babylonjs/core",
@@ -24510,8 +24517,9 @@
       "module": "@babylonjs/core/Misc/deepMerger",
       "name": "deepMerge",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.deepMerge"
     },
     {
       "package": "@babylonjs/core",
@@ -28163,8 +28171,9 @@
       "module": "@babylonjs/core/Physics/v1/physicsEngine",
       "name": "PhysicsEngine",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PhysicsEngineV1"
     },
     {
       "package": "@babylonjs/core",
@@ -28639,8 +28648,9 @@
       "module": "@babylonjs/core/Physics/v2/physicsEngine",
       "name": "PhysicsEngine",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.PhysicsEngineV2"
     },
     {
       "package": "@babylonjs/core",
@@ -34941,8 +34951,9 @@
       "module": "@babylonjs/core/types",
       "name": "TypedArrayConstructor",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor"
     },
     {
       "package": "@babylonjs/core",
@@ -37997,8 +38008,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
       "name": "GetMappingForKey",
       "kind": "function",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime function with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleFunctions.GetMappingForKey"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38014,8 +38026,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
       "name": "IGLTFObjectModelTree",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTree"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38058,8 +38071,9 @@
       "module": "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping",
       "name": "IGLTFObjectModelTreeNodesObject",
       "kind": "interface",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed interface with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleInterfaces.IGLTFObjectModelTreeNodesObject"
     },
     {
       "package": "@babylonjs/loaders",
@@ -38614,8 +38628,9 @@
       "module": "@babylonjs/loaders/glTF/glTFFileLoader.pure",
       "name": "GLTFLoaderOptions",
       "kind": "class",
-      "disposition": "blocked",
-      "reason": "Present only in a review-only generated candidate; promotion to maintained F# source is pending."
+      "disposition": "typed",
+      "reason": "Reviewed maintained dependency-closed runtime class with every upstream member and value preserved exactly.",
+      "fsharpSymbol": "BabylonjsBindings.SimpleClasses.GLTFLoaderOptions"
     },
     {
       "package": "@babylonjs/loaders",

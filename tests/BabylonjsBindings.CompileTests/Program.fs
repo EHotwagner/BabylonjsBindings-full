@@ -1,4 +1,5 @@
 open Qualification.Babylon
+open Fable.Core
 open BabylonjsBindings.Enums
 open BabylonjsBindings.StringEnums
 open BabylonjsBindings.ObjectTypes
@@ -102,6 +103,29 @@ let vector3ScaleInPlace = BabylonjsBindings.SimpleFunctions.``Vector3ScaleInPlac
 let vector3ScaleToRef = BabylonjsBindings.SimpleFunctions.``Vector3ScaleToRef``
 let vector3SubtractToRef = BabylonjsBindings.SimpleFunctions.``Vector3SubtractToRef``
 let completeGreasedLineColorTable = BabylonjsBindings.SimpleFunctions.``CompleteGreasedLineColorTable``
+
+// M1 exact projection compile proofs.
+let pointerAliasRoundTrip (value: BrowserPointerInputMapEntry<string>) : PointerInputMapEntry<string> = value
+let pointerSupportRoundTrip (value: PointerInputMapEntry<string>) : BrowserPointerInputMapEntry<string> = value
+let wheelAliasRoundTrip (value: BrowserWheelInputMapEntry<string>) : WheelInputMapEntry<string> = value
+let touchAliasRoundTrip (value: BrowserTouchInputMapEntry<string>) : TouchInputMapEntry<string> = value
+let keyboardAliasRoundTrip (value: BrowserKeyboardInputMapEntry<string>) : KeyboardInputMapEntry<string> = value
+let inputMapAliasRoundTrip (value: BrowserInputMapEntry<string>) : InputMapEntry<string> = value
+let interactionAliasRoundTrip (value: JavaScriptKeyOf<obj>) : InteractionName<obj> = value
+let typedArrayConstructorAliasRoundTrip (value: BrowserTypedArrayConstructor<JS.Float32Array>) : TypedArrayConstructor<JS.Float32Array> = value
+let createAlignedInt8 (constructor: TypedArrayConstructor<JS.Int8Array>) : JS.Int8Array = BabylonjsBindings.SimpleFunctions.``CreateAlignedTypedArray``.InvokeInt8(constructor, 4.0)
+let createAlignedFloat32 (constructor: TypedArrayConstructor<JS.Float32Array>) : JS.Float32Array = BabylonjsBindings.SimpleFunctions.``CreateAlignedTypedArray``.InvokeFloat32(constructor, 4.0)
+let createAlignedBigInt64 (constructor: TypedArrayConstructor<JS.BigInt64Array>) : JS.BigInt64Array = BabylonjsBindings.SimpleFunctions.``CreateAlignedTypedArray``.InvokeBigInt64(constructor, 4.0)
+let inspectNodeIntersection (tree: IGLTFObjectModelTree) =
+    let nodes = tree.``nodes``
+    let weights = nodes.``__array__``.``weights``
+    weights.``componentsCount``, weights.``length``.``type``, weights.``__array__``.``__target__``, weights.``__array__``.``get``
+let inspectTreeConstituents (tree: IGLTFObjectModelTree) = tree.``cameras``, tree.``nodes``, tree.``materials``, tree.``extensions``, tree.``animations``, tree.``meshes``
+let mappingForKey: BabylonjsBindings.SimpleFunctions.FunctionBinding_GetMappingForKey = BabylonjsBindings.SimpleFunctions.``GetMappingForKey``
+let deepMerge: BabylonjsBindings.SimpleFunctions.FunctionBinding_deepMerge = BabylonjsBindings.SimpleFunctions.``deepMerge``
+let physicsV1Factory: PhysicsEngineV1Static = PhysicsEngineV1
+let physicsV2Factory: PhysicsEngineV2Static = PhysicsEngineV2
+let gltfLoaderOptionsTypeOnly: GLTFLoaderOptions = Unchecked.defaultof<GLTFLoaderOptions>
 let materialDefinesFactory: MaterialDefinesStatic = MaterialDefines
 let decalMapDefinesFactory: DecalMapDefinesStatic = DecalMapDefines
 let imageProcessingDefinesFactory: ImageProcessingConfigurationDefinesStatic = ImageProcessingConfigurationDefines

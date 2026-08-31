@@ -10221,6 +10221,40 @@ module SimpleFunctions =
     [<Import("AddObjectAccessorToKey", "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.js")>]
     let ``AddObjectAccessorToKey``: FunctionBinding_AddObjectAccessorToKey = jsNative
 
+    /// @babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping
+    [<AllowNullLiteral>]
+    type FunctionBinding_GetMappingForKey =
+        [<Emit("$0($1...)")>] abstract Invoke: ``key``: string -> BabylonjsBindings.SimpleInterfaces.IObjectAccessor<obj, obj, obj> option
+
+    [<Import("GetMappingForKey", "@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping.js")>]
+    let ``GetMappingForKey``: FunctionBinding_GetMappingForKey = jsNative
+
+    /// @babylonjs/core/Misc/deepMerger
+    [<AllowNullLiteral>]
+    type FunctionBinding_deepMerge =
+        [<Emit("$0($1...)")>] abstract Invoke<'T when 'T :> obj>: [<System.ParamArray>] ``objects``: 'T array -> 'T
+
+    [<Import("deepMerge", "@babylonjs/core/Misc/deepMerger.js")>]
+    let ``deepMerge``: FunctionBinding_deepMerge = jsNative
+
+    /// @babylonjs/core/Buffers/bufferUtils — finite exact constructor/return correlation matrix.
+    [<AllowNullLiteral>]
+    type FunctionBinding_CreateAlignedTypedArray =
+        [<Emit("$0($1...)")>] abstract InvokeInt8: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.Int8Array> * ``elementCount``: float -> JS.Int8Array
+        [<Emit("$0($1...)")>] abstract InvokeUint8: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.Uint8Array> * ``elementCount``: float -> JS.Uint8Array
+        [<Emit("$0($1...)")>] abstract InvokeUint8Clamped: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.Uint8ClampedArray> * ``elementCount``: float -> JS.Uint8ClampedArray
+        [<Emit("$0($1...)")>] abstract InvokeInt16: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.Int16Array> * ``elementCount``: float -> JS.Int16Array
+        [<Emit("$0($1...)")>] abstract InvokeUint16: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.Uint16Array> * ``elementCount``: float -> JS.Uint16Array
+        [<Emit("$0($1...)")>] abstract InvokeInt32: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.Int32Array> * ``elementCount``: float -> JS.Int32Array
+        [<Emit("$0($1...)")>] abstract InvokeUint32: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.Uint32Array> * ``elementCount``: float -> JS.Uint32Array
+        [<Emit("$0($1...)")>] abstract InvokeFloat32: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.Float32Array> * ``elementCount``: float -> JS.Float32Array
+        [<Emit("$0($1...)")>] abstract InvokeFloat64: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.Float64Array> * ``elementCount``: float -> JS.Float64Array
+        [<Emit("$0($1...)")>] abstract InvokeBigInt64: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<JS.BigInt64Array> * ``elementCount``: float -> JS.BigInt64Array
+        [<Emit("$0($1...)")>] abstract InvokeBigUint64: ``type``: BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor<BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array> * ``elementCount``: float -> BabylonjsBindings.SimpleInterfaces.BrowserBigUint64Array
+
+    [<Import("CreateAlignedTypedArray", "@babylonjs/core/Buffers/bufferUtils.js")>]
+    let ``CreateAlignedTypedArray``: FunctionBinding_CreateAlignedTypedArray = jsNative
+
     /// @babylonjs/core/Misc/timer
     [<AllowNullLiteral>]
     type FunctionBinding_setAndStartTimer =

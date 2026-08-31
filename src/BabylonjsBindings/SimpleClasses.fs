@@ -37094,6 +37094,40 @@ module SimpleClasses =
     [<Import("PhysicsEngine", "@babylonjs/core/Physics/v2/physicsEngine.js")>]
     let PhysicsEngineV2: PhysicsEngineV2Static = jsNative
 
+    /// @babylonjs/core/Physics/v1/physicsEngine — module-qualified collision projection.
+    [<AllowNullLiteral>]
+    type PhysicsEngineV1 =
+        inherit BabylonjsBindings.SimpleInterfaces.IPhysicsEngine
+        abstract ``gravity``: Vector3 with get, set
+        abstract ``getPluginVersion``: unit -> float
+        abstract ``setGravity``: ``gravity``: Vector3 -> unit
+        abstract ``setTimeStep``: ?``newTimeStep``: float -> unit
+        abstract ``getTimeStep``: unit -> float
+        abstract ``setSubTimeStep``: ?``subTimeStep``: float -> unit
+        abstract ``getSubTimeStep``: unit -> float
+        abstract ``dispose``: unit -> unit
+        abstract ``getPhysicsPluginName``: unit -> string
+        abstract ``addImpostor``: ``impostor``: PhysicsImpostor -> unit
+        abstract ``removeImpostor``: ``impostor``: PhysicsImpostor -> unit
+        abstract ``addJoint``: ``mainImpostor``: PhysicsImpostor * ``connectedImpostor``: PhysicsImpostor * ``joint``: PhysicsJoint -> unit
+        abstract ``removeJoint``: ``mainImpostor``: PhysicsImpostor * ``connectedImpostor``: PhysicsImpostor * ``joint``: PhysicsJoint -> unit
+        abstract ``_step``: ``delta``: float -> unit
+        abstract ``getPhysicsPlugin``: unit -> BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin
+        abstract ``getImpostors``: unit -> ResizeArray<PhysicsImpostor>
+        abstract ``getImpostorForPhysicsObject``: ``object``: BabylonjsBindings.SimpleInterfaces.IPhysicsEnabledObject -> PhysicsImpostor option
+        abstract ``getImpostorWithPhysicsBody``: ``body``: obj option -> PhysicsImpostor option
+        abstract ``raycast``: ``from``: Vector3 * ``to``: Vector3 -> PhysicsRaycastResult
+        abstract ``raycastToRef``: ``from``: Vector3 * ``to``: Vector3 * ``result``: PhysicsRaycastResult -> unit
+
+    [<AllowNullLiteral>]
+    type PhysicsEngineV1Static =
+        inherit Constructor<PhysicsEngineV1>
+        abstract ``DefaultPluginFactory``: unit -> BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin
+        [<EmitConstructor>] abstract Create: ``gravity``: Vector3 option * ?``_physicsPlugin``: BabylonjsBindings.SimpleInterfaces.IPhysicsEnginePlugin -> PhysicsEngineV1
+
+    [<Import("PhysicsEngine", "@babylonjs/core/Physics/v1/physicsEngine.js")>]
+    let PhysicsEngineV1: PhysicsEngineV1Static = jsNative
+
     /// @babylonjs/core/Physics/physicsHelper
     [<AllowNullLiteral>]
     type PhysicsGravitationalFieldEvent =

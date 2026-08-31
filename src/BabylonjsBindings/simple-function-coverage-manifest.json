@@ -4,7 +4,7 @@
     "declarationLock": "declaration-lock.json",
     "packageVersion": "9.19.0"
   },
-  "proposalSha256": "be1dc833d340860cdf9a4ef60ed9d0624e758bada7e1ae606749a16ac9907b06",
+  "proposalSha256": "fa6aa05fb81968716f62d83813bb224d22c832014273c5018b65aad4a9913e55",
   "exports": [
     {
       "package": "@babylonjs/core",
@@ -13781,7 +13781,10 @@
       "dependencies": [],
       "fsharpType": "BabylonjsBindings.SimpleFunctions.FunctionBinding_GetRegisteredSceneLoaderPluginMetadata",
       "overloadCount": 1
-    }
+    },
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Buffers/bufferUtils","name":"CreateAlignedTypedArray","kind":"function","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleFunctions.CreateAlignedTypedArray","dependencies":["BabylonjsBindings.SimpleInterfaces.TypedArrayConstructor"],"fsharpType":"BabylonjsBindings.SimpleFunctions.FunctionBinding_CreateAlignedTypedArray","overloadCount":11},
+    {"package":"@babylonjs/loaders","module":"@babylonjs/loaders/glTF/2.0/Extensions/objectModelMapping","name":"GetMappingForKey","kind":"function","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleFunctions.GetMappingForKey","dependencies":["BabylonjsBindings.SimpleInterfaces.IObjectAccessor"],"fsharpType":"BabylonjsBindings.SimpleFunctions.FunctionBinding_GetMappingForKey","overloadCount":1},
+    {"package":"@babylonjs/core","module":"@babylonjs/core/Misc/deepMerger","name":"deepMerge","kind":"function","disposition":"typed","fsharpSymbol":"BabylonjsBindings.SimpleFunctions.deepMerge","dependencies":[],"fsharpType":"BabylonjsBindings.SimpleFunctions.FunctionBinding_deepMerge","overloadCount":1}
   ],
   "reviewStatus": "maintained"
 }
