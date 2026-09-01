@@ -1,5 +1,13 @@
 # Publishing the Fable bindings
 
+## Current distribution status
+
+Version 0.2.0 is available as a tested `.nupkg` attached to the
+[GitHub release](https://github.com/EHotwagner/BabylonjsBindings-full/releases/tag/v0.2.0).
+It has not been pushed to NuGet.org. Consumers must use the downloaded artifact
+as a local package source until the NuGet workflow below is performed and the
+published package is independently verified.
+
 Fable bindings are published as NuGet packages. The NuGet artifact contains the
 F#/.NET binding API; it does not bundle the JavaScript implementation. Consumers
 install the binding from NuGet and separately install its native npm packages.

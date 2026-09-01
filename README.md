@@ -1,17 +1,74 @@
-# BabylonjsBindings — full Fable bindings effort
+# BabylonjsBindings
 
 [![CI](https://github.com/EHotwagner/BabylonjsBindings-full/actions/workflows/ci.yml/badge.svg)](https://github.com/EHotwagner/BabylonjsBindings-full/actions/workflows/ci.yml)
+[![GitHub release](https://img.shields.io/github/v/release/EHotwagner/BabylonjsBindings-full)](https://github.com/EHotwagner/BabylonjsBindings-full/releases/latest)
 
-> **Status:** complete for the locked Babylon.js 9.19.0 declaration closure.
-> Package 0.2.0 classifies all 4,323 exports: 4,322 typed, one intentional
-> loader-registration side effect, zero blocked, and zero lossy.
+Complete, version-locked Fable bindings for Babylon.js, covering
+`@babylonjs/core@9.19.0` and `@babylonjs/loaders@9.19.0`.
 
-Source repository: https://github.com/EHotwagner/BabylonjsBindings-full
+| Current state | Value |
+| --- | --- |
+| Latest release | [v0.2.0](https://github.com/EHotwagner/BabylonjsBindings-full/releases/tag/v0.2.0), distributed on GitHub |
+| Development version | 0.2.1 on `main` |
+| Typed exports | 4,322 of 4,323 |
+| Runtime-only exports | 1 intentional loader-registration side effect |
+| Blocked / lossy exports | 0 / 0 |
+| Qualified toolchain | Fable 5.13.0, Fable.Core 5.2.0, Babylon.js 9.19.0 |
 
-The initial reviewed slice is a narrow, modular scene path (NullEngine, Scene,
-maths, camera/light, box, and explicit glTF side effect). Run locked restores,
-curate `src/`, then run compile, emitted-import, Node and real-browser runtime,
-drift, and clean-consumer evidence before release.
+## Install the current release
+
+Version 0.2.0 is currently a **GitHub release, not a NuGet.org publication**.
+Download the package into a local source and reference it explicitly:
+
+```bash
+mkdir -p packages
+curl -L \
+  -o packages/BabylonjsBindings.0.2.0.nupkg \
+  https://github.com/EHotwagner/BabylonjsBindings-full/releases/download/v0.2.0/BabylonjsBindings.0.2.0.nupkg
+
+dotnet add YourApp.fsproj package BabylonjsBindings \
+  --version 0.2.0 \
+  --source ./packages
+
+npm install --save-exact \
+  @babylonjs/core@9.19.0 \
+  @babylonjs/loaders@9.19.0
+```
+
+The binding package contains the F#/.NET API only. Babylon.js remains a native
+JavaScript dependency and is installed separately from npm. NuGet.org
+publication is intentionally deferred until its release workflow is completed
+and verified.
+
+## Try the Village Starter scene
+
+[`examples/VillageStarter`](examples/VillageStarter/) recreates Babylon.js
+Getting Started Chapter 4 with the village, animated car and wheels, walking
+Dude, collision zone, and interactive arc-rotate camera.
+
+```bash
+npm ci
+npm run build:village
+npm run test:village-browser -- --headed
+```
+
+The last command opens and validates the scene in a real Chromium window.
+
+## Build and test
+
+```bash
+npm ci
+npm test
+```
+
+The comprehensive suite runs 26 checks across locked .NET builds, Fable
+compilation, emitted JavaScript imports, Node, Chromium, export coverage,
+package shape, and an isolated clean consumer. See
+[`docs/testing-bindings.md`](docs/testing-bindings.md) for the test inventory
+and [`docs/publishing-bindings.md`](docs/publishing-bindings.md) for the current
+distribution boundary and eventual NuGet procedure.
+
+## How the bindings are maintained
 
 `npm run generate:candidate` writes only tracked `generated-candidates/`; it never overwrites maintained source or advances the declaration lock. `npm run check:drift` follows every selected relative declaration import/export and fails on changed transitive hashes. Unsupported TypeScript constructs must be recorded in `coverage-and-drift.json`, never silently exposed as `obj`. Product skills are supplied by the Templates-owned `fable-bindings` skill manifest rather than copied into this provider template. Local proof precedes publication and any registry/wizard activation.
 
